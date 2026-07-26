@@ -142,6 +142,10 @@
             "minLength": 1
           },
           "description": "Optional display labels for configuration-table fields."
+        },
+        "visual": {
+          "$ref": "#/$defs/visual",
+          "description": "Renderer-neutral visual asset metadata used by visual interaction renderers."
         }
       },
       "additionalProperties": false
@@ -160,10 +164,53 @@
         },
         "label": {
           "type": "string"
+        },
+        "callout": {
+          "$ref": "#/$defs/callout"
         }
       },
       "additionalProperties": true,
       "description": "Renderer-neutral task identity and prompt with optional future renderer metadata."
+    },
+    "visual": {
+      "type": "object",
+      "required": ["src", "alt"],
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "callout": {
+      "type": "object",
+      "required": ["label", "x", "y"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": false
     },
     "answerOption": {
       "type": "object",

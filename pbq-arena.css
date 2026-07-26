@@ -185,6 +185,7 @@ html {
 
 .pbq-select:focus-visible,
 .pbq-control-button:focus-visible,
+.pbq-visual-marker:focus-visible,
 .pbq-table-scroll:focus-visible,
 .pbq-review:focus-visible {
   outline: 3px solid #ffd700;
@@ -240,6 +241,103 @@ html {
   margin-top: 7px;
   font-weight: 400;
   line-height: 1.45;
+}
+
+.pbq-visual-labeling {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.pbq-visual-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.pbq-visual-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 247, 255, 0.55);
+  border-radius: 9px;
+  background: #05000d;
+}
+
+.pbq-visual-stage.has-load-error {
+  min-height: 220px;
+  background:
+    linear-gradient(135deg, transparent 48%, rgba(255, 95, 127, 0.45) 49%, rgba(255, 95, 127, 0.45) 51%, transparent 52%),
+    #05000d;
+}
+
+.pbq-visual-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pbq-visual-marker {
+  position: absolute;
+  display: grid;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  place-items: center;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  background: #090014;
+  color: #ffd700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.55);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.pbq-visual-marker:hover,
+.pbq-visual-marker.is-answered {
+  border-color: #67ff9a;
+  color: #67ff9a;
+  box-shadow: 0 0 14px rgba(103, 255, 154, 0.55);
+}
+
+.pbq-visual-caption {
+  padding: 10px 4px 0;
+  color: #d9baff;
+  line-height: 1.45;
+}
+
+.pbq-visual-answer-list {
+  display: grid;
+  gap: 12px;
+}
+
+.pbq-visual-answer {
+  padding: 14px;
+  border: 1px solid rgba(0, 247, 255, 0.45);
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.pbq-visual-answer-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.pbq-visual-callout-label {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border: 1px solid #ffd700;
+  border-radius: 50%;
+  color: #ffd700;
+  font-weight: 900;
 }
 
 .pbq-cell-label {
@@ -465,7 +563,8 @@ html {
 
 @media (max-width: 820px) {
   .pbq-status-panel,
-  .pbq-mission-layout {
+  .pbq-mission-layout,
+  .pbq-visual-labeling {
     grid-template-columns: 1fr;
   }
 
@@ -559,4 +658,9 @@ html {
     width: 100%;
   }
 
+}
+#pbqReturnLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }

@@ -2,6 +2,18 @@
   "use strict";
 
   const CERTIFICATIONS = Object.freeze({
+    "visual-labeling-sample": {
+      label: "Hydra Renderer Acceptance Sample",
+      bank: "json/pbq-samples/visual-labeling-sample.json",
+      returnHref: "pbq-arena.html?certification=visual-labeling-sample",
+      returnLabel: "Reload Visual Labeling Sample"
+    },
+    "aplus-core1": {
+      label: "CompTIA A+ Core 1 (220-1201)",
+      bank: "json/aplus-core1/pbq/production.json",
+      returnHref: "aplus-core1-final-dungeon.html",
+      returnLabel: "Return to A+ Core 1 Final Dungeon"
+    },
     "security-plus": {
       label: "CompTIA Security+",
       bank: "json/security-plus/pbq/phase-1.json",
@@ -150,13 +162,43 @@
       if (!Array.isArray(item.instructions) || item.instructions.length === 0) {
         throw new Error(`Mission "${item.id}" has no instructions.`);
       }
+      if (item.type === "visual-labeling") {
+        if (!item.visual?.src || !item.visual?.alt) {
+          throw new Error(`Visual-labeling mission "${item.id}" requires a visual source and alternative text.`);
+        }
+        if (!Array.isArray(item.options) || item.options.length === 0) {
+          throw new Error(`Visual-labeling mission "${item.id}" requires answer options.`);
+        }
+      }
       const taskIds = new Set();
+      const calloutLabels = new Set();
       item.tasks.forEach(task => {
         if (!task.id || !task.prompt) throw new Error(`Mission "${item.id}" contains an invalid task.`);
         if (taskIds.has(task.id)) throw new Error(`Mission "${item.id}" contains duplicate task ID "${task.id}".`);
         taskIds.add(task.id);
         if (!(task.id in item.solution)) throw new Error(`Mission "${item.id}" has no solution for "${task.id}".`);
         if (!(task.id in item.explanations)) throw new Error(`Mission "${item.id}" has no explanation for "${task.id}".`);
+        if (item.type === "visual-labeling") {
+          const callout = task.callout;
+          if (
+            !callout?.label ||
+            !Number.isFinite(callout.x) ||
+            !Number.isFinite(callout.y) ||
+            callout.x < 0 ||
+            callout.x > 100 ||
+            callout.y < 0 ||
+            callout.y > 100
+          ) {
+            throw new Error(`Visual-labeling mission "${item.id}" contains an invalid callout for "${task.id}".`);
+          }
+          if (calloutLabels.has(callout.label)) {
+            throw new Error(`Visual-labeling mission "${item.id}" contains duplicate callout label "${callout.label}".`);
+          }
+          calloutLabels.add(callout.label);
+          if (!item.options.some(option => option.id === item.solution[task.id])) {
+            throw new Error(`Visual-labeling mission "${item.id}" has an invalid solution for "${task.id}".`);
+          }
+        }
       });
       if (!item.scoring.partialCredit || item.scoring.maxPoints <= 0) {
         throw new Error(`Mission "${item.id}" must define positive partial-credit scoring.`);
@@ -817,6 +859,108 @@
         };
       });
 
+      return {
+        points,
+        maxPoints: activeMission.scoring.maxPoints,
+        percent: Math.round((points / activeMission.scoring.maxPoints) * 100),
+        taskResults
+      };
+    }
+  });
+
+  registerRenderer("visual-labeling", {
+    render(activeMission, context) {
+      const layout = createElement("div", "pbq-visual-labeling");
+      const figure = createElement("figure", "pbq-visual-figure");
+      const imageStage = createElement("div", "pbq-visual-stage");
+      const image = createElement("img", "pbq-visual-image");
+      image.src = activeMission.visual.src;
+      image.alt = activeMission.visual.alt;
+      image.addEventListener("error", () => {
+        imageStage.classList.add("has-load-error");
+        announce("The mission image could not be loaded.");
+      });
+      imageStage.append(image);
+
+      const answerList = createElement("div", "pbq-visual-answer-list");
+      const markerMap = new Map();
+
+      function updateMarkers() {
+        activeMission.tasks.forEach(task => {
+          const marker = markerMap.get(task.id);
+          const answered = Boolean(context.answers[task.id]);
+          const markerPrompt = task.prompt.replace(/[.!?]+$/, "");
+          marker?.classList.toggle("is-answered", answered);
+          marker?.setAttribute(
+            "aria-label",
+            `Callout ${task.callout.label}: ${markerPrompt}. ${answered ? "Answered." : "Not answered."} Focus answer control.`
+          );
+        });
+      }
+
+      activeMission.tasks.forEach((task, index) => {
+        const selectId = `pbq-visual-${task.id}`;
+        const marker = createElement("button", "pbq-visual-marker", task.callout.label);
+        marker.type = "button";
+        marker.dataset.taskId = task.id;
+        marker.style.left = `${task.callout.x}%`;
+        marker.style.top = `${task.callout.y}%`;
+        marker.setAttribute("aria-controls", selectId);
+        marker.addEventListener("click", () => {
+          document.getElementById(selectId)?.focus();
+          announce(`Callout ${task.callout.label} answer control focused.`);
+        });
+        markerMap.set(task.id, marker);
+        imageStage.append(marker);
+
+        const row = createElement("article", "pbq-visual-answer");
+        const heading = createElement("div", "pbq-visual-answer-heading");
+        heading.append(
+          createElement("span", "pbq-visual-callout-label", task.callout.label),
+          createElement("strong", "", `${index + 1}. ${task.prompt}`)
+        );
+        const label = createElement("label", "pbq-cell-label", `Answer for callout ${task.callout.label}`);
+        label.htmlFor = selectId;
+        const select = createElement("select", "pbq-select");
+        select.id = selectId;
+        select.dataset.taskId = task.id;
+        select.append(new Option(task.placeholder || "Select the correct label", ""));
+        activeMission.options.forEach(option => select.append(new Option(option.label, option.id)));
+        select.value = context.answers[task.id] || "";
+        select.addEventListener("change", () => {
+          if (select.value) context.answers[task.id] = select.value;
+          else delete context.answers[task.id];
+          updateSingleUseOptions(activeMission, answerList, context.answers);
+          updateMarkers();
+          context.onChange();
+        });
+        row.append(heading, label, select);
+        answerList.append(row);
+      });
+
+      figure.append(imageStage);
+      if (activeMission.visual.caption) {
+        figure.append(createElement("figcaption", "pbq-visual-caption", activeMission.visual.caption));
+      }
+      layout.append(figure, answerList);
+      context.container.append(layout);
+      updateSingleUseOptions(activeMission, answerList, context.answers);
+      updateMarkers();
+    },
+    grade(activeMission, answers) {
+      let points = 0;
+      const taskResults = {};
+      activeMission.tasks.forEach(task => {
+        const answer = answers[task.id] || "";
+        const correctAnswer = activeMission.solution[task.id];
+        const correct = answer === correctAnswer;
+        if (correct) points += 1;
+        taskResults[task.id] = {
+          correct,
+          answerLabel: optionLabel(activeMission, answer),
+          correctLabel: optionLabel(activeMission, correctAnswer)
+        };
+      });
       return {
         points,
         maxPoints: activeMission.scoring.maxPoints,
