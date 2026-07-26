@@ -1,0 +1,2028 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "bankLabel": "CompTIA A+ Core 2 (220-1202) PBQ Arena Production Campaign",
+  "missions": [
+    {
+      "id": "aplus-core2-pbq-001",
+      "certification": "aplus-core2",
+      "type": "classification",
+      "title": "Choose the Deployment Realm",
+      "objective": "220-1202 1.1–1.3 — OS types, installations, upgrades, and Windows editions",
+      "difficulty": 1,
+      "briefing": "Four users require platforms suited to different workloads.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A kiosk runs one managed Windows application and must block unapproved software."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A design user needs domain join, BitLocker management, and Remote Desktop hosting."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A developer needs a Unix-like desktop with native Apple application testing."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A lab appliance needs a lightweight open-source server without a desktop."
+        }
+      ],
+      "options": [
+        {
+          "id": "windows-kiosk",
+          "label": "Windows kiosk configuration",
+          "reusable": true
+        },
+        {
+          "id": "windows-pro",
+          "label": "Windows Pro",
+          "reusable": true
+        },
+        {
+          "id": "macos",
+          "label": "macOS",
+          "reusable": true
+        },
+        {
+          "id": "linux-server",
+          "label": "Linux server",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "windows-kiosk",
+        "task-2": "windows-pro",
+        "task-3": "macos",
+        "task-4": "linux-server"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Kiosk mode restricts the device to its assigned application.",
+        "task-2": "Windows Pro supplies the requested business features.",
+        "task-3": "macOS is required for native Apple platform development.",
+        "task-4": "A minimal Linux server suits the headless open-source appliance."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-002",
+      "certification": "aplus-core2",
+      "type": "matching",
+      "title": "Equip the Windows Administration Bench",
+      "objective": "220-1202 1.4 — Windows features and tools",
+      "difficulty": 2,
+      "briefing": "A support team must open the correct Windows console for each request.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Review recurring application errors and their timestamps."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Create and resize a local partition."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Create a program that runs every Friday evening."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Temporarily disable selected startup services for diagnosis."
+        }
+      ],
+      "options": [
+        {
+          "id": "event-viewer",
+          "label": "Event Viewer",
+          "reusable": false
+        },
+        {
+          "id": "disk-management",
+          "label": "Disk Management",
+          "reusable": false
+        },
+        {
+          "id": "task-scheduler",
+          "label": "Task Scheduler",
+          "reusable": false
+        },
+        {
+          "id": "system-configuration",
+          "label": "System Configuration",
+          "reusable": false
+        },
+        {
+          "id": "device-manager",
+          "label": "Device Manager",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "event-viewer",
+        "task-2": "disk-management",
+        "task-3": "task-scheduler",
+        "task-4": "system-configuration"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Event Viewer exposes timestamped application logs.",
+        "task-2": "Disk Management controls local volumes and partitions.",
+        "task-3": "Task Scheduler launches programs on triggers.",
+        "task-4": "System Configuration supports selective startup diagnosis."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-003",
+      "certification": "aplus-core2",
+      "type": "matching",
+      "title": "Command the Recovery Terminal",
+      "objective": "220-1202 1.5 — Windows command-line tools",
+      "difficulty": 2,
+      "briefing": "Match each recovery need to the command that performs it most directly.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Verify and repair protected Windows system files."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Inspect and repair file-system errors on a volume."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Display the current IP address, gateway, and DNS configuration."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Immediately refresh computer and user Group Policy."
+        }
+      ],
+      "options": [
+        {
+          "id": "sfc",
+          "label": "sfc",
+          "reusable": false
+        },
+        {
+          "id": "chkdsk",
+          "label": "chkdsk",
+          "reusable": false
+        },
+        {
+          "id": "ipconfig",
+          "label": "ipconfig",
+          "reusable": false
+        },
+        {
+          "id": "gpupdate",
+          "label": "gpupdate",
+          "reusable": false
+        },
+        {
+          "id": "netstat",
+          "label": "netstat",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "sfc",
+        "task-2": "chkdsk",
+        "task-3": "ipconfig",
+        "task-4": "gpupdate"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "SFC validates protected operating-system files.",
+        "task-2": "CHKDSK checks a volume and its file system.",
+        "task-3": "IPCONFIG displays Windows TCP/IP configuration.",
+        "task-4": "GPUPDATE refreshes Group Policy."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-004",
+      "certification": "aplus-core2",
+      "type": "configuration-table",
+      "title": "Configure the Branch Workstations",
+      "objective": "220-1202 1.6–1.7 — Windows settings and networking",
+      "difficulty": 3,
+      "briefing": "Apply the approved Windows network profile, address method, sharing state, and remote-access setting.",
+      "instructions": [
+        "Review each requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Reception",
+          "prompt": "Public-facing reception PC; DHCP; no sharing; no inbound remote desktop."
+        },
+        {
+          "id": "task-2",
+          "label": "Accounting",
+          "prompt": "Trusted domain PC; DHCP; approved file sharing; inbound remote desktop disabled."
+        },
+        {
+          "id": "task-3",
+          "label": "Support lab",
+          "prompt": "Isolated private lab; static address; approved sharing; inbound remote desktop enabled."
+        }
+      ],
+      "options": {
+        "profile": [
+          "Public",
+          "Domain",
+          "Private"
+        ],
+        "addressing": [
+          "DHCP",
+          "Static"
+        ],
+        "sharing": [
+          "Disabled",
+          "Enabled"
+        ],
+        "remote": [
+          "Disabled",
+          "Enabled"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "profile": "Public",
+          "addressing": "DHCP",
+          "sharing": "Disabled",
+          "remote": "Disabled"
+        },
+        "task-2": {
+          "profile": "Domain",
+          "addressing": "DHCP",
+          "sharing": "Enabled",
+          "remote": "Disabled"
+        },
+        "task-3": {
+          "profile": "Private",
+          "addressing": "Static",
+          "sharing": "Enabled",
+          "remote": "Enabled"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "profile",
+          "addressing",
+          "sharing",
+          "remote"
+        ]
+      },
+      "explanations": {
+        "task-1": "Public profile and disabled inbound services reduce reception exposure.",
+        "task-2": "The domain profile permits centrally controlled sharing without unnecessary remote desktop.",
+        "task-3": "The isolated support lab uses its approved static and remote-management configuration."
+      },
+      "tableLabel": "Branch Windows configuration",
+      "fieldLabels": {
+        "profile": "Network profile",
+        "addressing": "Addressing",
+        "sharing": "File sharing",
+        "remote": "Remote Desktop"
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-005",
+      "certification": "aplus-core2",
+      "type": "classification",
+      "title": "Cross the Unix Toolchain",
+      "objective": "220-1202 1.8–1.9 — macOS and Linux features and tools",
+      "difficulty": 2,
+      "briefing": "Identify the platform tool that best completes each administrative task.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Install a signed macOS application package distributed as a disk image."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Change Linux file permissions using symbolic or octal modes."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Review macOS backup history created by the built-in backup utility."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Install a package from a Debian-family repository."
+        }
+      ],
+      "options": [
+        {
+          "id": "dmg",
+          "label": "Mount a DMG",
+          "reusable": true
+        },
+        {
+          "id": "chmod",
+          "label": "chmod",
+          "reusable": true
+        },
+        {
+          "id": "time-machine",
+          "label": "Time Machine",
+          "reusable": true
+        },
+        {
+          "id": "apt",
+          "label": "apt",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "dmg",
+        "task-2": "chmod",
+        "task-3": "time-machine",
+        "task-4": "apt"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "DMG files are commonly mounted to install macOS applications.",
+        "task-2": "CHMOD changes Unix permission bits.",
+        "task-3": "Time Machine is the built-in macOS backup system.",
+        "task-4": "APT manages packages on Debian-family Linux systems."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-006",
+      "certification": "aplus-core2",
+      "type": "categorization",
+      "title": "Approve the Application Caravan",
+      "objective": "220-1202 1.10–1.11 — Application requirements and cloud productivity",
+      "difficulty": 2,
+      "briefing": "Categorize each deployment by its primary delivery or compatibility model.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A graphics program runs locally and requires a supported GPU and operating-system version."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Staff use mail entirely through a managed browser subscription."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A legacy finance program runs only inside a maintained virtual machine."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A collaboration client stores synchronized working copies locally and in a cloud service."
+        }
+      ],
+      "options": [
+        {
+          "id": "local",
+          "label": "Local application",
+          "reusable": true
+        },
+        {
+          "id": "saas",
+          "label": "Browser SaaS",
+          "reusable": true
+        },
+        {
+          "id": "virtualized",
+          "label": "Virtualized legacy application",
+          "reusable": true
+        },
+        {
+          "id": "sync",
+          "label": "Cloud-synchronized client",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "local",
+        "task-2": "saas",
+        "task-3": "virtualized",
+        "task-4": "sync"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Local applications must meet hardware and OS requirements.",
+        "task-2": "A complete browser subscription is SaaS.",
+        "task-3": "Virtualization isolates the legacy dependency.",
+        "task-4": "A synchronization client maintains cloud and local copies."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-007",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Migrate the Guild Workstations",
+      "objective": "220-1202 1.2–1.7 — Controlled Windows migration",
+      "difficulty": 4,
+      "briefing": "Sequence a managed migration while preserving data and network access.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Inventory applications, verify compatibility, and document the rollback plan."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Back up user data and validate the backup."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Perform the approved operating-system installation or upgrade."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Install approved drivers, applications, updates, and network settings."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Validate user data, security controls, connectivity, and documentation."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Compatibility and rollback planning precede change.",
+        "task-2": "A verified backup protects recoverability.",
+        "task-3": "Installation follows preparation.",
+        "task-4": "Required software and configuration restore function.",
+        "task-5": "End-to-end validation closes the migration."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-008",
+      "certification": "aplus-core2",
+      "type": "categorization",
+      "title": "Sort the Defensive Shields",
+      "objective": "220-1202 2.1 — Security measures and purposes",
+      "difficulty": 1,
+      "briefing": "Classify each safeguard by its primary control family.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A locked equipment room limits physical entry."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Multifactor authentication protects administrative sign-in."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A written onboarding process defines account approvals."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A badge reader records entry to a restricted workspace."
+        }
+      ],
+      "options": [
+        {
+          "id": "physical",
+          "label": "Physical",
+          "reusable": true
+        },
+        {
+          "id": "technical",
+          "label": "Technical",
+          "reusable": true
+        },
+        {
+          "id": "administrative",
+          "label": "Administrative",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "physical",
+        "task-2": "technical",
+        "task-3": "administrative",
+        "task-4": "physical"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Locks are physical barriers.",
+        "task-2": "MFA is a technical identity control.",
+        "task-3": "Written approval workflow is administrative.",
+        "task-4": "A badge reader is a physical access control supported by technology."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-009",
+      "certification": "aplus-core2",
+      "type": "configuration-table",
+      "title": "Secure the Shared Workshop",
+      "objective": "220-1202 2.2 — Windows security settings",
+      "difficulty": 3,
+      "briefing": "Configure account type, data protection, local access, and auditing for shared systems.",
+      "instructions": [
+        "Review each requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Front desk",
+          "prompt": "Standard daily user; encrypted drive; no shared-folder modification; sign-in auditing enabled."
+        },
+        {
+          "id": "task-2",
+          "label": "Technician",
+          "prompt": "Standard daily user; encrypted drive; modify approved support share; sign-in auditing enabled."
+        },
+        {
+          "id": "task-3",
+          "label": "Offline lab",
+          "prompt": "Local administrator for isolated recovery work; encrypted drive; modify lab share; sign-in auditing enabled."
+        }
+      ],
+      "options": {
+        "account": [
+          "Standard user",
+          "Local administrator"
+        ],
+        "encryption": [
+          "BitLocker enabled",
+          "BitLocker disabled"
+        ],
+        "share": [
+          "Read only",
+          "Modify"
+        ],
+        "audit": [
+          "Enabled",
+          "Disabled"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "account": "Standard user",
+          "encryption": "BitLocker enabled",
+          "share": "Read only",
+          "audit": "Enabled"
+        },
+        "task-2": {
+          "account": "Standard user",
+          "encryption": "BitLocker enabled",
+          "share": "Modify",
+          "audit": "Enabled"
+        },
+        "task-3": {
+          "account": "Local administrator",
+          "encryption": "BitLocker enabled",
+          "share": "Modify",
+          "audit": "Enabled"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "account",
+          "encryption",
+          "share",
+          "audit"
+        ]
+      },
+      "explanations": {
+        "task-1": "Least privilege, encryption, read-only access, and auditing suit the front desk.",
+        "task-2": "The technician retains standard-user status while receiving only required share modification.",
+        "task-3": "The isolated recovery role requires its approved local administrative access and auditing."
+      },
+      "tableLabel": "Shared-workshop security baseline",
+      "fieldLabels": {
+        "account": "Account type",
+        "encryption": "Drive encryption",
+        "share": "Share permission",
+        "audit": "Sign-in audit"
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-010",
+      "certification": "aplus-core2",
+      "type": "configuration-table",
+      "title": "Fortify the Artisan Wireless Network",
+      "objective": "220-1202 2.3 and 2.10 — Wireless authentication and SOHO security",
+      "difficulty": 3,
+      "briefing": "Apply an approved security profile to three wireless networks.",
+      "instructions": [
+        "Review each requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Staff",
+          "prompt": "Modern managed devices; strongest personal-mode encryption; client access to internal resources."
+        },
+        {
+          "id": "task-2",
+          "label": "Guest",
+          "prompt": "Internet-only visitors; modern encryption; wireless clients isolated from each other."
+        },
+        {
+          "id": "task-3",
+          "label": "Legacy quarantine",
+          "prompt": "Temporary incompatible device segment; separate SSID; no internal access; scheduled for removal."
+        }
+      ],
+      "options": {
+        "security": [
+          "WPA3-Personal",
+          "WPA2-Personal"
+        ],
+        "isolation": [
+          "Disabled",
+          "Enabled"
+        ],
+        "internal": [
+          "Allowed",
+          "Blocked"
+        ],
+        "admin": [
+          "Default password",
+          "Unique password"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "security": "WPA3-Personal",
+          "isolation": "Disabled",
+          "internal": "Allowed",
+          "admin": "Unique password"
+        },
+        "task-2": {
+          "security": "WPA3-Personal",
+          "isolation": "Enabled",
+          "internal": "Blocked",
+          "admin": "Unique password"
+        },
+        "task-3": {
+          "security": "WPA2-Personal",
+          "isolation": "Enabled",
+          "internal": "Blocked",
+          "admin": "Unique password"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "security",
+          "isolation",
+          "internal",
+          "admin"
+        ]
+      },
+      "explanations": {
+        "task-1": "Staff devices use WPA3 and the approved internal path.",
+        "task-2": "Guest isolation and blocked internal access separate visitors.",
+        "task-3": "The quarantined legacy SSID uses its strongest compatible security and strict isolation."
+      },
+      "tableLabel": "Wireless hardening profiles",
+      "fieldLabels": {
+        "security": "Wireless security",
+        "isolation": "Client isolation",
+        "internal": "Internal access",
+        "admin": "Router administrator password"
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-011",
+      "certification": "aplus-core2",
+      "type": "classification",
+      "title": "Identify the Human Threats",
+      "objective": "220-1202 2.4–2.5 — Malware and social engineering",
+      "difficulty": 1,
+      "briefing": "Classify the primary threat shown by each original incident.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A caller claims to be an executive and demands an urgent password reset."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A document macro encrypts accessible files and demands payment."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A message directs an employee to a cloned sign-in page."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A free utility silently records keyboard input."
+        }
+      ],
+      "options": [
+        {
+          "id": "vishing",
+          "label": "Vishing",
+          "reusable": true
+        },
+        {
+          "id": "ransomware",
+          "label": "Ransomware",
+          "reusable": true
+        },
+        {
+          "id": "phishing",
+          "label": "Phishing",
+          "reusable": true
+        },
+        {
+          "id": "keylogger",
+          "label": "Keylogger",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "vishing",
+        "task-2": "ransomware",
+        "task-3": "phishing",
+        "task-4": "keylogger"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Voice impersonation is vishing.",
+        "task-2": "File encryption plus extortion indicates ransomware.",
+        "task-3": "A deceptive credential page delivered by message is phishing.",
+        "task-4": "Silent keystroke capture is keylogging."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-012",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Purge the Infected Workstation",
+      "objective": "220-1202 2.6 — Malware removal",
+      "difficulty": 3,
+      "briefing": "Order the approved malware-removal process.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Investigate symptoms and verify the malware indicators."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Quarantine the system and disable restore points when required by procedure."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Update protection tools and run approved removal scans."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Remediate remaining damage, update the operating system, and re-enable protection."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Verify normal operation, educate the user, and document the incident."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Create a new verified restore point after the system is clean."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        },
+        {
+          "id": "p6",
+          "label": "6th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5",
+        "task-6": "p6"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "The infection must first be identified.",
+        "task-2": "Quarantine limits spread before removal.",
+        "task-3": "Updated tools improve detection and cleanup.",
+        "task-4": "Repair and patching address residual risk.",
+        "task-5": "Verification and education reduce recurrence.",
+        "task-6": "A clean restore point provides a safe recovery baseline."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-013",
+      "certification": "aplus-core2",
+      "type": "matching",
+      "title": "Harden the Traveling Fleet",
+      "objective": "220-1202 2.7, 2.8, and 2.11 — Endpoint, mobile, and browser security",
+      "difficulty": 2,
+      "briefing": "Match each exposure to the most direct hardening action.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A laptop permits unlimited failed sign-in attempts."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A managed phone containing business mail is reported missing."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A browser permits unapproved extensions from any source."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Workstations continue using unsupported software versions."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Sensitive browser sessions remain active after shared-device use."
+        }
+      ],
+      "options": [
+        {
+          "id": "lockout",
+          "label": "Configure account lockout",
+          "reusable": false
+        },
+        {
+          "id": "remote-wipe",
+          "label": "Issue managed remote lock or wipe",
+          "reusable": false
+        },
+        {
+          "id": "extension-control",
+          "label": "Restrict browser extensions",
+          "reusable": false
+        },
+        {
+          "id": "patch",
+          "label": "Patch or replace unsupported software",
+          "reusable": false
+        },
+        {
+          "id": "clear-session",
+          "label": "End sessions and clear sensitive browser data",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "lockout",
+        "task-2": "remote-wipe",
+        "task-3": "extension-control",
+        "task-4": "patch",
+        "task-5": "clear-session"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Lockout slows repeated password guessing.",
+        "task-2": "Managed lock or wipe protects data on a missing phone.",
+        "task-3": "Extension control prevents unauthorized add-ons.",
+        "task-4": "Supported patched software reduces known vulnerability exposure.",
+        "task-5": "Ending sessions prevents the next user from inheriting access."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-014",
+      "certification": "aplus-core2",
+      "type": "categorization",
+      "title": "Retire the Records Vault",
+      "objective": "220-1202 2.9 — Data destruction and disposal",
+      "difficulty": 4,
+      "briefing": "Assign the approved disposal method to each storage case.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A reusable encrypted SSD leaves the department but remains company property."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A failed magnetic hard disk held highly sensitive records and cannot be reused."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Paper forms contain customer identifiers."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A working magnetic disk will be reassigned internally after approved sanitization."
+        },
+        {
+          "id": "task-5",
+          "prompt": "A damaged flash device cannot be securely erased."
+        }
+      ],
+      "options": [
+        {
+          "id": "cryptographic-erase",
+          "label": "Cryptographic erase",
+          "reusable": true
+        },
+        {
+          "id": "physical-destruction",
+          "label": "Physical destruction",
+          "reusable": true
+        },
+        {
+          "id": "crosscut",
+          "label": "Cross-cut shredding",
+          "reusable": true
+        },
+        {
+          "id": "overwrite",
+          "label": "Approved overwrite",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "cryptographic-erase",
+        "task-2": "physical-destruction",
+        "task-3": "crosscut",
+        "task-4": "overwrite",
+        "task-5": "physical-destruction"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Cryptographic erase can rapidly render encrypted SSD data inaccessible.",
+        "task-2": "A failed sensitive disk requires documented destruction.",
+        "task-3": "Cross-cut shredding destroys paper records.",
+        "task-4": "Approved overwriting prepares working magnetic media for reuse.",
+        "task-5": "Unreliable flash media must be destroyed when secure erase cannot be verified."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-015",
+      "certification": "aplus-core2",
+      "type": "classification",
+      "title": "Read the Boot Omens",
+      "objective": "220-1202 3.1 — Windows OS troubleshooting",
+      "difficulty": 2,
+      "briefing": "Classify the most likely Windows failure from each symptom set.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A system loops immediately after a newly installed driver loads."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Only one user receives temporary-profile notices; other accounts work."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Disk usage remains at 100 percent and the system responds slowly."
+        },
+        {
+          "id": "task-4",
+          "prompt": "An update repeatedly rolls back during restart."
+        }
+      ],
+      "options": [
+        {
+          "id": "driver",
+          "label": "Faulty driver",
+          "reusable": true
+        },
+        {
+          "id": "profile",
+          "label": "Corrupt user profile",
+          "reusable": true
+        },
+        {
+          "id": "storage-load",
+          "label": "Storage saturation",
+          "reusable": true
+        },
+        {
+          "id": "update",
+          "label": "Failed update",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "driver",
+        "task-2": "profile",
+        "task-3": "storage-load",
+        "task-4": "update"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Failure beginning with a driver installation implicates that driver.",
+        "task-2": "A single affected account points to profile corruption.",
+        "task-3": "Sustained disk saturation explains system-wide delay.",
+        "task-4": "Repeated rollback is an update installation failure."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-016",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Restore the Broken Startup Chain",
+      "objective": "220-1202 3.1 — Windows recovery workflow",
+      "difficulty": 3,
+      "briefing": "Order a least-disruptive startup repair.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Record the startup symptom and recent changes."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Enter the recovery environment and run startup diagnostics."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Attempt the least disruptive correction, such as removing the recent driver or update."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Use broader repair or restore options only if the targeted correction fails."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Restart repeatedly, validate applications and data, and document the result."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Evidence collection protects diagnosis.",
+        "task-2": "Recovery diagnostics provide controlled access.",
+        "task-3": "Targeted rollback minimizes impact.",
+        "task-4": "Broader recovery follows failed narrow repair.",
+        "task-5": "Repeated validation confirms stability."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-017",
+      "certification": "aplus-core2",
+      "type": "matching",
+      "title": "Repair the Mobile Application Fleet",
+      "objective": "220-1202 3.2 — Mobile OS and application troubleshooting",
+      "difficulty": 2,
+      "briefing": "Match each mobile symptom to its safest initial correction.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "One application cannot use the camera after a privacy-setting change."
+        },
+        {
+          "id": "task-2",
+          "prompt": "An application crashes after its cached data becomes corrupted."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A vendor fixed a known application defect in the current release."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A nonessential application remains unstable after settings and updates are verified."
+        }
+      ],
+      "options": [
+        {
+          "id": "permissions",
+          "label": "Review application permissions",
+          "reusable": false
+        },
+        {
+          "id": "cache",
+          "label": "Clear application cache",
+          "reusable": false
+        },
+        {
+          "id": "update",
+          "label": "Update the application",
+          "reusable": false
+        },
+        {
+          "id": "reinstall",
+          "label": "Reinstall the application",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "permissions",
+        "task-2": "cache",
+        "task-3": "update",
+        "task-4": "reinstall"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Camera access is controlled by application permissions.",
+        "task-2": "Clearing cache removes disposable corrupted state.",
+        "task-3": "Installing the fixed release addresses the known defect.",
+        "task-4": "Reinstallation replaces damaged program files after safer checks."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-018",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Contain the Lost Mobile Device",
+      "objective": "220-1202 3.3 — Mobile security troubleshooting",
+      "difficulty": 3,
+      "briefing": "Sequence the response to a missing managed phone.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Confirm ownership, last known use, and the incident report."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Revoke active sessions and sensitive tokens according to policy."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Use management tools to locate and remotely lock the device."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Escalate to an approved wipe if recovery fails and policy conditions are met."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Document actions, restore the user on a replacement, and review the incident."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Verification prevents action against the wrong asset.",
+        "task-2": "Revocation limits account exposure.",
+        "task-3": "Location and lock protect data while preserving recovery.",
+        "task-4": "Wipe is an escalated destructive control.",
+        "task-5": "Documentation and restoration complete the response."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-019",
+      "certification": "aplus-core2",
+      "type": "classification",
+      "title": "Diagnose the Compromised Office",
+      "objective": "220-1202 3.4 — PC security troubleshooting",
+      "difficulty": 4,
+      "briefing": "Classify each correlated indicator set.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Browser searches redirect, an unknown proxy appears, and extensions return after removal."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Security tools stop, files receive new extensions, and a payment note appears."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A new local administrator exists and remote sign-ins occur overnight."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Users see pop-ups from an installed program that also changes the home page."
+        }
+      ],
+      "options": [
+        {
+          "id": "browser-hijack",
+          "label": "Browser hijacking",
+          "reusable": true
+        },
+        {
+          "id": "ransomware",
+          "label": "Ransomware",
+          "reusable": true
+        },
+        {
+          "id": "account-compromise",
+          "label": "Account compromise",
+          "reusable": true
+        },
+        {
+          "id": "pup",
+          "label": "Potentially unwanted program",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "browser-hijack",
+        "task-2": "ransomware",
+        "task-3": "account-compromise",
+        "task-4": "pup"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Persistent proxy and extension changes indicate browser hijacking.",
+        "task-2": "Encrypted files and extortion identify ransomware.",
+        "task-3": "An unauthorized administrator plus remote activity indicates account compromise.",
+        "task-4": "Bundled advertising and browser changes are typical of a potentially unwanted program."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-020",
+      "certification": "aplus-core2",
+      "type": "configuration-table",
+      "title": "Recover the Mixed-Platform Outpost",
+      "objective": "220-1202 3.1–3.4 — Integrated software and security troubleshooting",
+      "difficulty": 5,
+      "briefing": "Select the first diagnosis, containment action, recovery path, and validation target for each incident.",
+      "instructions": [
+        "Review each requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Windows boot",
+          "prompt": "A driver update causes a repeatable startup crash; data remains intact."
+        },
+        {
+          "id": "task-2",
+          "label": "Managed tablet",
+          "prompt": "A tablet is missing with active business sessions."
+        },
+        {
+          "id": "task-3",
+          "label": "Office PC",
+          "prompt": "Files are encrypted and a ransom notice is visible."
+        }
+      ],
+      "options": {
+        "diagnosis": [
+          "Driver regression",
+          "Lost managed device",
+          "Ransomware"
+        ],
+        "containment": [
+          "Recovery environment",
+          "Revoke sessions and remote lock",
+          "Network isolation"
+        ],
+        "recovery": [
+          "Roll back driver",
+          "Recover or approved wipe",
+          "Restore from verified clean backup"
+        ],
+        "validation": [
+          "Repeated clean boots",
+          "Management compliance and account access",
+          "Clean scans and restored-file integrity"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "diagnosis": "Driver regression",
+          "containment": "Recovery environment",
+          "recovery": "Roll back driver",
+          "validation": "Repeated clean boots"
+        },
+        "task-2": {
+          "diagnosis": "Lost managed device",
+          "containment": "Revoke sessions and remote lock",
+          "recovery": "Recover or approved wipe",
+          "validation": "Management compliance and account access"
+        },
+        "task-3": {
+          "diagnosis": "Ransomware",
+          "containment": "Network isolation",
+          "recovery": "Restore from verified clean backup",
+          "validation": "Clean scans and restored-file integrity"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "diagnosis",
+          "containment",
+          "recovery",
+          "validation"
+        ]
+      },
+      "explanations": {
+        "task-1": "The repeatable post-driver crash calls for controlled rollback and boot validation.",
+        "task-2": "The lost managed device requires session protection, remote control, and compliance validation.",
+        "task-3": "Ransomware requires isolation, clean recovery, and integrity verification."
+      },
+      "tableLabel": "Mixed-platform incident response matrix",
+      "fieldLabels": {
+        "diagnosis": "Primary diagnosis",
+        "containment": "Immediate containment",
+        "recovery": "Recovery action",
+        "validation": "Validation"
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-021",
+      "certification": "aplus-core2",
+      "type": "categorization",
+      "title": "Route the Support Records",
+      "objective": "220-1202 4.1–4.2 — Documentation, support systems, and change management",
+      "difficulty": 1,
+      "briefing": "Classify each record by its proper support-system destination.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A user reports a single application failure and receives a case number."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A laptop serial number, owner, and warranty date are updated."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A proven repair procedure is prepared for future technicians."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A firewall modification requires impact analysis and approval."
+        }
+      ],
+      "options": [
+        {
+          "id": "incident",
+          "label": "Incident ticket",
+          "reusable": true
+        },
+        {
+          "id": "asset",
+          "label": "Asset record",
+          "reusable": true
+        },
+        {
+          "id": "knowledge",
+          "label": "Knowledge article",
+          "reusable": true
+        },
+        {
+          "id": "change",
+          "label": "Change request",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "incident",
+        "task-2": "asset",
+        "task-3": "knowledge",
+        "task-4": "change"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "An individual service interruption belongs in an incident ticket.",
+        "task-2": "Ownership and warranty data belong in the asset record.",
+        "task-3": "Reusable verified procedures belong in the knowledge base.",
+        "task-4": "Planned infrastructure modification requires change control."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-022",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Restore the Archive After the Flood",
+      "objective": "220-1202 4.3 — Backup and recovery",
+      "difficulty": 3,
+      "briefing": "Order the recovery of a damaged file server.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Confirm the incident scope and protect the damaged source from further writes."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Select the approved recovery point and verify backup integrity."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Restore the full backup to isolated replacement storage."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Apply the required incremental backups in chronological order."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Validate files and permissions, obtain owner acceptance, and return the service."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Document recovery time, data loss, and corrective actions."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        },
+        {
+          "id": "p6",
+          "label": "6th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5",
+        "task-6": "p6"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Protecting evidence and remaining data comes first.",
+        "task-2": "The chosen restore source must be verified.",
+        "task-3": "The full backup establishes the base.",
+        "task-4": "Incrementals are applied in their dependency order.",
+        "task-5": "Validation precedes production return.",
+        "task-6": "Documentation captures outcomes and improvements."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-023",
+      "certification": "aplus-core2",
+      "type": "visual-labeling",
+      "title": "Inspect the Safe Repair Bay",
+      "objective": "220-1202 4.4–4.5 — Safety procedures and environmental controls",
+      "difficulty": 1,
+      "briefing": "Identify four safety and environmental-control areas in the original Hydra repair-bay diagram.",
+      "instructions": [
+        "Study the original Hydra diagram.",
+        "Select the best label for every callout.",
+        "Each correct callout earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Identify the ESD-controlled workbench.",
+          "callout": {
+            "label": "A",
+            "x": 29,
+            "y": 43
+          }
+        },
+        {
+          "id": "task-2",
+          "prompt": "Identify the isolated battery container.",
+          "callout": {
+            "label": "B",
+            "x": 70,
+            "y": 72
+          }
+        },
+        {
+          "id": "task-3",
+          "prompt": "Identify the ventilated service enclosure.",
+          "callout": {
+            "label": "C",
+            "x": 72,
+            "y": 30
+          }
+        },
+        {
+          "id": "task-4",
+          "prompt": "Identify the electronics recycling station.",
+          "callout": {
+            "label": "D",
+            "x": 18,
+            "y": 78
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "esd",
+          "label": "ESD workbench",
+          "reusable": false
+        },
+        {
+          "id": "battery",
+          "label": "Battery isolation container",
+          "reusable": false
+        },
+        {
+          "id": "ventilation",
+          "label": "Ventilated service enclosure",
+          "reusable": false
+        },
+        {
+          "id": "recycling",
+          "label": "Electronics recycling station",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "esd",
+        "task-2": "battery",
+        "task-3": "ventilation",
+        "task-4": "recycling"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "The grounded mat and wrist connection mark the ESD bench.",
+        "task-2": "The fire-resistant marked container isolates damaged batteries.",
+        "task-3": "The extraction hood provides ventilation for approved service work.",
+        "task-4": "The labeled collection bin separates electronic waste."
+      },
+      "visual": {
+        "src": "assets/pbq/aplus-core2/operational-safety-workspace.svg",
+        "alt": "Original repair-bay diagram showing a grounded ESD bench, a battery isolation container, a ventilated service enclosure, and an electronics recycling station.",
+        "caption": "Hydra repair-bay safety layout; equipment is symbolic and not vendor-specific."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-024",
+      "certification": "aplus-core2",
+      "type": "matching",
+      "title": "Conduct the Privacy-Safe Remote Session",
+      "objective": "220-1202 4.6, 4.7, and 4.9 — Privacy, professionalism, and remote access",
+      "difficulty": 4,
+      "briefing": "Match each remote-support event to the correct professional response.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Before connecting, the technician cannot verify the caller or device owner."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Private customer records appear while screen sharing is active."
+        },
+        {
+          "id": "task-3",
+          "prompt": "The user becomes frustrated and interrupts troubleshooting."
+        },
+        {
+          "id": "task-4",
+          "prompt": "The repair is complete but the unattended remote agent remains installed."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Potentially prohibited material appears in a folder unrelated to the reported issue."
+        }
+      ],
+      "options": [
+        {
+          "id": "verify",
+          "label": "Verify identity and obtain authorization",
+          "reusable": false
+        },
+        {
+          "id": "protect",
+          "label": "Stop sharing and protect private information",
+          "reusable": false
+        },
+        {
+          "id": "professional",
+          "label": "Use calm questions and confirm understanding",
+          "reusable": false
+        },
+        {
+          "id": "remove-agent",
+          "label": "End the session and remove unauthorized persistence",
+          "reusable": false
+        },
+        {
+          "id": "policy",
+          "label": "Stop unnecessary inspection and follow reporting policy",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "verify",
+        "task-2": "protect",
+        "task-3": "professional",
+        "task-4": "remove-agent",
+        "task-5": "policy"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Identity and authorization must precede remote access.",
+        "task-2": "Screen sharing should stop when private information is exposed.",
+        "task-3": "Professional communication keeps the user informed and the session productive.",
+        "task-4": "Remote persistence must match authorization and policy.",
+        "task-5": "Technicians should avoid unnecessary access and follow organizational reporting rules."
+      }
+    },
+    {
+      "id": "aplus-core2-pbq-025",
+      "certification": "aplus-core2",
+      "type": "ordering",
+      "title": "Govern the Automation Oracle",
+      "objective": "220-1202 4.2, 4.8, and 4.10 — Change management, scripting, and AI fundamentals",
+      "difficulty": 5,
+      "briefing": "Sequence the controlled introduction of an AI-assisted support script.",
+      "instructions": [
+        "Review every task.",
+        "Select the best response for each task.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Define the support problem, allowed data, success criteria, and human owner."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Design the script logic with validated inputs, safe conditions, logging, and error handling."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Test deterministic script behavior and independently verify AI-generated recommendations with synthetic data."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Submit risks, test evidence, rollback steps, and privacy controls for approval."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Deploy to a limited group with monitoring and a ready rollback path."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Review outputs, failures, bias or hallucination indicators, and user feedback before expansion."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        },
+        {
+          "id": "p6",
+          "label": "6th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5",
+        "task-6": "p6"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Scope and ownership define safe use.",
+        "task-2": "Input validation and error handling make automation predictable.",
+        "task-3": "AI output requires independent verification in testing.",
+        "task-4": "Approval depends on evidence and rollback planning.",
+        "task-5": "Limited deployment reduces change risk.",
+        "task-6": "Ongoing human review detects unreliable output before broader use."
+      }
+    }
+  ]
+}

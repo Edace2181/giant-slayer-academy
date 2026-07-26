@@ -2,17 +2,17 @@
   "use strict";
 
   const CERTIFICATIONS = Object.freeze({
-    "visual-labeling-sample": {
-      label: "Hydra Renderer Acceptance Sample",
-      bank: "json/pbq-samples/visual-labeling-sample.json",
-      returnHref: "pbq-arena.html?certification=visual-labeling-sample",
-      returnLabel: "Reload Visual Labeling Sample"
-    },
     "aplus-core1": {
       label: "CompTIA A+ Core 1 (220-1201)",
       bank: "json/aplus-core1/pbq/production.json",
       returnHref: "aplus-core1-final-dungeon.html",
       returnLabel: "Return to A+ Core 1 Final Dungeon"
+    },
+    "aplus-core2": {
+      label: "CompTIA A+ Core 2 (220-1202)",
+      bank: "json/aplus-core2/pbq/production.json",
+      returnHref: "aplus-core2-final-dungeon.html",
+      returnLabel: "Return to A+ Core 2 Final Dungeon"
     },
     "security-plus": {
       label: "CompTIA Security+",
