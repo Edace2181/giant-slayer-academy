@@ -81,9 +81,6 @@
     element("h2", "", `Your ${body.dataset.journeyName} Journey`),
     element("p", "", "Five campaign worlds lead to mixed review, Captain Challenges, and the Exam Chamber.")
   );
-  const dashboardLink = element("a", "link-btn campaign-dashboard-link", "🐉 Open Command Center");
-  dashboardLink.href = "dashboard.html";
-  commandCopy.append(dashboardLink);
   const overall = element("section", "campaign-overall-slot");
   overall.dataset.overallProgress = "";
   overall.dataset.questions = body.dataset.questions;
