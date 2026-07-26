@@ -99,6 +99,48 @@ margin-top: 0;
     color: black;
 }
 
+@media (max-width: 768px) {
+    #main-content {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+        padding: 24px 0;
+        box-sizing: border-box;
+        transform: none;
+    }
+
+    .games-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 240px));
+        justify-content: center;
+        gap: 14px;
+        width: min(540px, calc(100% - 32px));
+        margin: 0 auto;
+    }
+
+    .games-links .link-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
+    .flag-question-btn,
+    .favorite-question-btn {
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-links {
+        grid-template-columns: minmax(0, 280px);
+    }
+}
+
 .crt-overlay {
     pointer-events: none;
     position: fixed;
