@@ -47,6 +47,8 @@
     flag: document.getElementById("pbqFlag"),
     reset: document.getElementById("pbqReset"),
     submit: document.getElementById("pbqSubmit"),
+    showReport: document.getElementById("pbqShowReport"),
+    campaignReport: document.getElementById("pbqCampaignReport"),
     status: document.getElementById("pbqStatus"),
     returnLink: document.getElementById("pbqReturnLink")
   };
@@ -250,6 +252,8 @@
     elements.next.disabled = currentIndex === bank.missions.length - 1;
     elements.review.classList.add("hidden");
     elements.review.replaceChildren();
+    elements.campaignReport.classList.add("hidden");
+    elements.campaignReport.replaceChildren();
     elements.workspace.replaceChildren();
 
     renderers.get(activeMission.type).render(activeMission, {
@@ -266,6 +270,7 @@
     updateProgress(activeMission);
     if (state.submitted[activeMission.id]) renderReview(activeMission, state.submitted[activeMission.id], false);
     disableSubmittedWorkspace(activeMission);
+    updateReportButton();
     if (options.focus) elements.missionTitle.focus?.();
     announce(`Mission ${currentIndex + 1}: ${activeMission.title}`);
   }
@@ -296,6 +301,283 @@
     if (moveFocus) elements.review.focus();
   }
 
+  function objectiveCode(activeMission) {
+    return activeMission.objective.match(/\b\d+\.\d+(?:[–-]\d+\.\d+)?\b/)?.[0] || activeMission.objective;
+  }
+
+  function domainCode(activeMission) {
+    return activeMission.objective.match(/\b(\d+)\.\d+\b/)?.[1] || "Other";
+  }
+
+  function rendererLabel(type) {
+    return type
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+
+  function performanceStatus(percent) {
+    if (percent >= 80) return { label: "Strong", className: "is-strong" };
+    if (percent < 70) return { label: "Weak", className: "is-weak" };
+    return { label: "Developing", className: "is-developing" };
+  }
+
+  function missionRecords() {
+    return bank.missions.map((item, index) => {
+      const result = state.submitted[item.id];
+      return {
+        mission: item,
+        index,
+        result,
+        points: result?.points || 0,
+        maxPoints: result?.maxPoints || item.scoring.maxPoints,
+        percent: result?.percent ?? null,
+        flagged: Boolean(state.flags[item.id])
+      };
+    });
+  }
+
+  function aggregatePerformance(records, keySelector, labelSelector = keySelector) {
+    const groups = new Map();
+    records.filter(record => record.result).forEach(record => {
+      const key = keySelector(record.mission);
+      const group = groups.get(key) || {
+        key,
+        label: labelSelector(record.mission),
+        points: 0,
+        maxPoints: 0,
+        missions: 0
+      };
+      group.points += record.points;
+      group.maxPoints += record.maxPoints;
+      group.missions += 1;
+      groups.set(key, group);
+    });
+    return [...groups.values()]
+      .map(group => ({
+        ...group,
+        percent: Math.round((group.points / group.maxPoints) * 100)
+      }))
+      .sort((a, b) => a.key.localeCompare(b.key, undefined, { numeric: true }));
+  }
+
+  function appendPerformanceSection(report, title, groups, emptyMessage) {
+    const section = createElement("section", "pbq-report-section");
+    section.append(createElement("h3", "", title));
+    if (!groups.length) {
+      section.append(createElement("p", "", emptyMessage));
+      report.append(section);
+      return;
+    }
+    const grid = createElement("div", "pbq-performance-grid");
+    groups.forEach(group => {
+      const status = performanceStatus(group.percent);
+      const card = createElement("article", `pbq-performance-card ${status.className}`);
+      const progress = createElement("progress", "pbq-report-progress");
+      progress.max = 100;
+      progress.value = group.percent;
+      progress.setAttribute("aria-label", `${group.label}: ${group.percent} percent`);
+      card.append(
+        createElement("h4", "", group.label),
+        createElement("p", "", `${group.points}/${group.maxPoints} points · ${group.percent}% · ${status.label}`),
+        createElement("p", "", `${group.missions} graded ${group.missions === 1 ? "mission" : "missions"}`),
+        progress
+      );
+      grid.append(card);
+    });
+    section.append(grid);
+    report.append(section);
+  }
+
+  function reportStat(label, value) {
+    const card = createElement("div", "pbq-report-stat");
+    card.append(createElement("span", "", label), createElement("strong", "", value));
+    return card;
+  }
+
+  function openMissionFromReport(index) {
+    currentIndex = index;
+    renderMission({ focus: true });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderCampaignReport() {
+    const records = missionRecords();
+    const submitted = records.filter(record => record.result);
+    const earnedPoints = submitted.reduce((sum, record) => sum + record.points, 0);
+    const gradedPoints = submitted.reduce((sum, record) => sum + record.maxPoints, 0);
+    const campaignPoints = records.reduce((sum, record) => sum + record.maxPoints, 0);
+    const overallPercent = gradedPoints ? Math.round((earnedPoints / gradedPoints) * 100) : 0;
+    const perfectMissions = submitted.filter(record => record.percent === 100).length;
+    const partialMissions = submitted.filter(record => record.points > 0 && record.points < record.maxPoints);
+    const zeroMissions = submitted.filter(record => record.points === 0).length;
+    const rendererGroups = aggregatePerformance(
+      records,
+      activeMission => activeMission.type,
+      activeMission => rendererLabel(activeMission.type)
+    );
+    const objectiveGroups = aggregatePerformance(records, objectiveCode, objectiveCode);
+    const domainGroups = aggregatePerformance(
+      records,
+      domainCode,
+      activeMission => `Domain ${domainCode(activeMission)}`
+    );
+    const weakObjectives = objectiveGroups.filter(group => group.percent < 70).sort((a, b) => a.percent - b.percent);
+    const strongObjectives = objectiveGroups.filter(group => group.percent >= 80).sort((a, b) => b.percent - a.percent);
+    const revisit = records
+      .filter(record => record.result && (record.percent < 80 || record.flagged))
+      .sort((a, b) => (a.percent - b.percent) || Number(b.flagged) - Number(a.flagged));
+
+    const report = elements.campaignReport;
+    report.replaceChildren();
+    const header = createElement("div", "pbq-report-header");
+    const headingGroup = createElement("div");
+    const title = createElement("h2", "", "📊 Hydra PBQ Campaign Report");
+    title.id = "pbqCampaignReportTitle";
+    headingGroup.append(
+      title,
+      createElement(
+        "p",
+        "pbq-report-subtitle",
+        `${configuration.label} · ${submitted.length} of ${records.length} missions submitted`
+      )
+    );
+    const close = createElement("button", "pbq-control-button pbq-report-close", "Close Report");
+    close.type = "button";
+    close.addEventListener("click", () => {
+      report.classList.add("hidden");
+      elements.showReport.focus();
+      announce("Campaign report closed.");
+    });
+    header.append(headingGroup, close);
+    report.append(header);
+
+    const overview = createElement("div", "pbq-report-grid");
+    overview.append(
+      reportStat("Overall PBQ score", gradedPoints ? `${earnedPoints}/${gradedPoints} · ${overallPercent}%` : "No graded missions"),
+      reportStat("Campaign progress", `${submitted.length}/${records.length} missions`),
+      reportStat("Perfect missions", String(perfectMissions)),
+      reportStat("Partial-credit missions", String(partialMissions.length))
+    );
+    report.append(overview);
+
+    const scopeNotice = createElement(
+      "p",
+      "",
+      submitted.length === records.length
+        ? `Final report includes all ${campaignPoints} available campaign points.`
+        : `Progress report is based on ${gradedPoints} graded points. The complete campaign contains ${campaignPoints} available points.`
+    );
+    report.append(scopeNotice);
+
+    appendPerformanceSection(report, "Renderer Performance", rendererGroups, "Submit a mission to generate renderer performance.");
+    appendPerformanceSection(report, "Domain Performance", domainGroups, "Submit a mission to generate domain performance.");
+    appendPerformanceSection(report, "Objective Performance", objectiveGroups, "Submit a mission to generate objective performance.");
+
+    const partialSection = createElement("section", "pbq-report-section");
+    partialSection.append(
+      createElement("h3", "", "Partial-Credit Summary"),
+      createElement(
+        "p",
+        "",
+        `${partialMissions.length} partially correct · ${perfectMissions} perfect · ${zeroMissions} zero-credit · ${records.length - submitted.length} not submitted`
+      ),
+      createElement(
+        "p",
+        "",
+        partialMissions.length
+          ? `${partialMissions.reduce((sum, record) => sum + record.points, 0)} of ${partialMissions.reduce((sum, record) => sum + record.maxPoints, 0)} possible points were earned across partially correct missions.`
+          : "No partially correct missions have been recorded."
+      )
+    );
+    report.append(partialSection);
+
+    const insightSection = createElement("section", "pbq-report-section");
+    insightSection.append(createElement("h3", "", "Hydra Strength and Weakness Analysis"));
+    const insightGrid = createElement("div", "pbq-performance-grid");
+    const strongCard = createElement("article", "pbq-performance-card is-strong");
+    strongCard.append(createElement("h4", "", "Strong Objectives"));
+    const strongList = createElement("ul", "pbq-report-list");
+    if (strongObjectives.length) {
+      strongObjectives.forEach(group => strongList.append(createElement("li", "", `${group.label} — ${group.percent}%`)));
+    } else {
+      strongList.append(createElement("li", "", "No objective has reached the 80% strength threshold yet."));
+    }
+    strongCard.append(strongList);
+    const weakCard = createElement("article", "pbq-performance-card is-weak");
+    weakCard.append(createElement("h4", "", "Weak Objectives"));
+    const weakList = createElement("ul", "pbq-report-list");
+    if (weakObjectives.length) {
+      weakObjectives.forEach(group => weakList.append(createElement("li", "", `${group.label} — ${group.percent}%`)));
+    } else {
+      weakList.append(createElement("li", "", "No submitted objective is below the 70% weakness threshold."));
+    }
+    weakCard.append(weakList);
+    insightGrid.append(strongCard, weakCard);
+    insightSection.append(insightGrid);
+    report.append(insightSection);
+
+    const revisitSection = createElement("section", "pbq-report-section");
+    revisitSection.append(createElement("h3", "", "Recommended Missions to Revisit"));
+    if (!revisit.length) {
+      revisitSection.append(createElement("p", "", "No submitted mission currently requires review."));
+    } else {
+      const revisitList = createElement("div", "pbq-mission-results");
+      revisit.forEach(record => {
+        const card = createElement("article", "pbq-mission-result is-revisit");
+        const reasons = [];
+        if (record.percent < 80) reasons.push(`${record.percent}% score`);
+        if (record.flagged) reasons.push("flagged for review");
+        const button = createElement("button", "pbq-control-button", "Open Mission");
+        button.type = "button";
+        button.addEventListener("click", () => openMissionFromReport(record.index));
+        card.append(
+          createElement("h4", "", `Mission ${record.index + 1}: ${record.mission.title}`),
+          createElement("p", "", `${objectiveCode(record.mission)} · ${rendererLabel(record.mission.type)}`),
+          createElement("p", "", reasons.join(" · ")),
+          button
+        );
+        revisitList.append(card);
+      });
+      revisitSection.append(revisitList);
+    }
+    report.append(revisitSection);
+
+    const missionSection = createElement("section", "pbq-report-section");
+    missionSection.append(createElement("h3", "", "Mission-by-Mission Results"));
+    const missionGrid = createElement("div", "pbq-mission-results");
+    records.forEach(record => {
+      const needsReview = record.result && (record.percent < 80 || record.flagged);
+      const card = createElement("article", `pbq-mission-result${needsReview ? " is-revisit" : ""}`);
+      const button = createElement("button", "pbq-control-button", record.result ? "Open Battlefield Analysis" : "Open Mission");
+      button.type = "button";
+      button.addEventListener("click", () => openMissionFromReport(record.index));
+      card.append(
+        createElement("h4", "", `Mission ${record.index + 1}: ${record.mission.title}`),
+        createElement("p", "", `${rendererLabel(record.mission.type)} · ${objectiveCode(record.mission)}`),
+        createElement(
+          "p",
+          "",
+          record.result ? `${record.points}/${record.maxPoints} points · ${record.percent}%` : "Not submitted"
+        ),
+        createElement("p", "", record.flagged ? "⚑ Flagged for review" : "Not flagged"),
+        button
+      );
+      missionGrid.append(card);
+    });
+    missionSection.append(missionGrid);
+    report.append(missionSection);
+
+    report.classList.remove("hidden");
+    report.focus();
+    announce(`Campaign report opened. ${submitted.length} of ${records.length} missions submitted. Overall score ${overallPercent} percent.`);
+  }
+
+  function updateReportButton() {
+    const submitted = Object.keys(state.submitted).length;
+    elements.showReport.textContent = `📊 Campaign Report (${submitted}/${bank.missions.length})`;
+  }
+
   function submitMission() {
     const activeMission = mission();
     const result = renderers.get(activeMission.type).grade(activeMission, missionAnswers(activeMission));
@@ -304,6 +586,7 @@
     renderChecklist(activeMission);
     renderReview(activeMission, result);
     disableSubmittedWorkspace(activeMission);
+    updateReportButton();
     announce(`PBQ submitted. Score ${result.points} of ${result.maxPoints}, ${result.percent} percent.`);
   }
 
@@ -559,6 +842,7 @@
     });
     elements.reset.addEventListener("click", resetMission);
     elements.submit.addEventListener("click", submitMission);
+    elements.showReport.addEventListener("click", renderCampaignReport);
   }
 
   async function initialize() {

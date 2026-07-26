@@ -286,6 +286,11 @@ html {
   color: #ffd700;
 }
 
+.pbq-report-button {
+  border-color: #b67cff;
+  color: #d9baff;
+}
+
 .pbq-control-button:disabled,
 .pbq-select:disabled {
   cursor: not-allowed;
@@ -332,6 +337,121 @@ html {
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   line-height: 1.55;
+}
+
+.pbq-campaign-report {
+  margin-top: 20px;
+  padding: 24px;
+  border: 2px solid #b67cff;
+  border-radius: 12px;
+  background: rgba(8, 0, 24, 0.97);
+  box-shadow: 0 0 20px rgba(182, 124, 255, 0.25);
+}
+
+.pbq-campaign-report:focus-visible {
+  outline: 3px solid #ffd700;
+  outline-offset: 3px;
+}
+
+.pbq-report-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.pbq-report-header h2,
+.pbq-report-section h3 {
+  margin-top: 0;
+  color: #ffd700;
+}
+
+.pbq-report-subtitle {
+  color: #00f7ff;
+  font-weight: 700;
+}
+
+.pbq-report-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.pbq-report-stat,
+.pbq-performance-card,
+.pbq-mission-result {
+  padding: 16px;
+  border: 1px solid rgba(0, 247, 255, 0.5);
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.pbq-report-stat strong {
+  display: block;
+  margin-top: 5px;
+  color: #ffd700;
+  font-size: 1.3rem;
+}
+
+.pbq-report-section {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pbq-performance-grid,
+.pbq-mission-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pbq-performance-card h4,
+.pbq-mission-result h4 {
+  margin: 0 0 8px;
+  color: #00f7ff;
+}
+
+.pbq-performance-card p,
+.pbq-mission-result p {
+  margin: 5px 0;
+}
+
+.pbq-performance-card.is-strong {
+  border-color: #67ff9a;
+}
+
+.pbq-performance-card.is-weak,
+.pbq-mission-result.is-revisit {
+  border-color: #ff5f7f;
+}
+
+.pbq-performance-card.is-developing {
+  border-color: #ffd700;
+}
+
+.pbq-report-progress {
+  width: 100%;
+  height: 13px;
+  margin-top: 8px;
+  accent-color: #00f7ff;
+}
+
+.pbq-report-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.pbq-report-list li {
+  margin: 10px 0;
+  line-height: 1.45;
+}
+
+.pbq-mission-result button,
+.pbq-report-close {
+  min-height: 44px;
+  margin-top: 10px;
 }
 
 .pbq-screen-reader-status {
@@ -392,6 +512,12 @@ html {
     font-weight: 700;
     white-space: normal;
   }
+
+  .pbq-report-grid,
+  .pbq-performance-grid,
+  .pbq-mission-results {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -412,6 +538,24 @@ html {
   }
 
   .pbq-control-button {
+    width: 100%;
+  }
+
+  .pbq-campaign-report {
+    padding: 16px;
+  }
+
+  .pbq-report-header {
+    display: block;
+  }
+
+  .pbq-report-grid,
+  .pbq-performance-grid,
+  .pbq-mission-results {
+    grid-template-columns: 1fr;
+  }
+
+  .pbq-report-close {
     width: 100%;
   }
 
