@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "bankLabel": "Security+ PBQ Arena Production Campaign",
+  "missions": [
+    {
+      "id": "security-plus-pbq-poc-001",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Harden the Research Outpost",
+      "objective": "SY0-701 4.1 — Apply common security techniques to computing resources",
+      "difficulty": 3,
+      "briefing": "A research outpost completed an internal security review. Match each finding to the most appropriate primary control. Each control can be deployed only once, and one available control will not be used.",
+      "instructions": [
+        "Review each finding before selecting a control.",
+        "Choose the single control that most directly reduces the stated risk.",
+        "Selections are saved immediately and can be changed before submission."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Administrators sign in to the management portal using only passwords."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A compromised workstation can initiate connections directly to database servers."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Sensitive design documents can be copied to personal cloud-storage accounts."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Endpoint malware activity is recorded locally but cannot be investigated from a central console."
+        },
+        {
+          "id": "task-5",
+          "prompt": "New servers are deployed with inconsistent services, local policies, and security settings."
+        }
+      ],
+      "options": [
+        {
+          "id": "multifactor-authentication",
+          "label": "Multifactor authentication",
+          "reusable": false
+        },
+        {
+          "id": "network-segmentation",
+          "label": "Network segmentation",
+          "reusable": false
+        },
+        {
+          "id": "data-loss-prevention",
+          "label": "Data loss prevention",
+          "reusable": false
+        },
+        {
+          "id": "endpoint-detection-response",
+          "label": "Endpoint detection and response",
+          "reusable": false
+        },
+        {
+          "id": "secure-configuration-baseline",
+          "label": "Secure configuration baseline",
+          "reusable": false
+        },
+        {
+          "id": "deception-host",
+          "label": "Deception host",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "multifactor-authentication",
+        "task-2": "network-segmentation",
+        "task-3": "data-loss-prevention",
+        "task-4": "endpoint-detection-response",
+        "task-5": "secure-configuration-baseline"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Multifactor authentication requires an additional factor beyond a password and reduces the impact of stolen administrative credentials.",
+        "task-2": "Network segmentation restricts east-west communication and can prevent a compromised user endpoint from reaching protected database networks directly.",
+        "task-3": "Data loss prevention can identify sensitive content and block unauthorized transfers to personal storage services.",
+        "task-4": "Endpoint detection and response centralizes endpoint telemetry and provides investigation and response capabilities.",
+        "task-5": "A secure configuration baseline establishes an approved, repeatable set of services, policies, and security settings for new systems."
+      }
+    },
+    {
+      "id": "security-plus-pbq-poc-002",
+      "certification": "security-plus",
+      "type": "configuration-table",
+      "title": "Seal the Citadel Firewall",
+      "objective": "SY0-701 3.2 — Apply security principles to secure enterprise infrastructure",
+      "difficulty": 4,
+      "briefing": "The Citadel security team is replacing temporary firewall entries with least-privilege rules. Configure one rule for each approved traffic flow. All other traffic remains blocked by the firewall's implicit deny.",
+      "instructions": [
+        "Create one rule for each approved business requirement.",
+        "Select the exact source, destination, protocol, destination port, and action.",
+        "Each correctly configured field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "rule-1",
+          "label": "Rule 1",
+          "prompt": "Permit the vulnerability scanner at 10.40.8.15 to establish a secure shell session with the Linux administration host at 10.40.20.10."
+        },
+        {
+          "id": "rule-2",
+          "label": "Rule 2",
+          "prompt": "Permit the public reverse proxy at 172.20.5.25 to send encrypted web requests to the application service at 10.40.30.40."
+        },
+        {
+          "id": "rule-3",
+          "label": "Rule 3",
+          "prompt": "Explicitly block the guest network 10.40.90.0/24 from initiating remote desktop sessions to the finance workstation at 10.40.50.22."
+        }
+      ],
+      "options": {
+        "source": [
+          "10.40.8.15",
+          "172.20.5.25",
+          "10.40.90.0/24"
+        ],
+        "destination": [
+          "10.40.20.10",
+          "10.40.30.40",
+          "10.40.50.22"
+        ],
+        "protocol": [
+          "TCP",
+          "UDP"
+        ],
+        "port": [
+          "22",
+          "80",
+          "443",
+          "3389"
+        ],
+        "action": [
+          "Allow",
+          "Block"
+        ]
+      },
+      "solution": {
+        "rule-1": {
+          "source": "10.40.8.15",
+          "destination": "10.40.20.10",
+          "protocol": "TCP",
+          "port": "22",
+          "action": "Allow"
+        },
+        "rule-2": {
+          "source": "172.20.5.25",
+          "destination": "10.40.30.40",
+          "protocol": "TCP",
+          "port": "443",
+          "action": "Allow"
+        },
+        "rule-3": {
+          "source": "10.40.90.0/24",
+          "destination": "10.40.50.22",
+          "protocol": "TCP",
+          "port": "3389",
+          "action": "Block"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 15,
+        "partialCredit": true,
+        "fields": [
+          "source",
+          "destination",
+          "protocol",
+          "port",
+          "action"
+        ]
+      },
+      "explanations": {
+        "rule-1": "Secure shell uses TCP port 22. The scanner is the connection source, and the Linux administration host is the destination.",
+        "rule-2": "Encrypted HTTP uses TCP port 443. Only the reverse proxy needs to initiate this connection to the internal application service.",
+        "rule-3": "Remote Desktop Protocol uses TCP port 3389. The explicit block identifies the guest subnet as the source and the finance workstation as the destination."
+      }
+    },
+    {
+      "id": "security-plus-pbq-003",
+      "certification": "security-plus",
+      "type": "classification",
+      "title": "Restore the Three Shields",
+      "objective": "SY0-701 1.1 — Compare and contrast security controls",
+      "difficulty": 1,
+      "briefing": "A records service is labeling safeguards by the security property they protect most directly. Classify each safeguard as primarily supporting confidentiality, integrity, or availability.",
+      "instructions": ["Choose the primary security property for each safeguard.", "Categories may be used more than once.", "Each correct classification earns one point."],
+      "tasks": [
+        {"id": "shield-1", "prompt": "Encrypt archived customer records with an approved cipher."},
+        {"id": "shield-2", "prompt": "Digitally sign software packages before distribution."},
+        {"id": "shield-3", "prompt": "Maintain a tested warm recovery site for the records service."}
+      ],
+      "options": [
+        {"id": "confidentiality", "label": "Confidentiality", "reusable": true},
+        {"id": "integrity", "label": "Integrity", "reusable": true},
+        {"id": "availability", "label": "Availability", "reusable": true}
+      ],
+      "solution": {"shield-1": "confidentiality", "shield-2": "integrity", "shield-3": "availability"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "shield-1": "Encryption primarily prevents unauthorized disclosure and therefore supports confidentiality.",
+        "shield-2": "A digital signature helps recipients detect unauthorized modification and verify integrity.",
+        "shield-3": "A recovery site helps keep the service accessible after disruption and therefore supports availability."
+      }
+    },
+    {
+      "id": "security-plus-pbq-004",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Guard the Change Forge",
+      "objective": "SY0-701 1.2–1.3 — Fundamental security concepts and secure change management",
+      "difficulty": 1,
+      "briefing": "A development team is preparing a sensitive production change. Match each requirement to the security concept that best satisfies it.",
+      "instructions": ["Match each requirement to one concept.", "Each concept can be used once.", "One unused option is provided."],
+      "tasks": [
+        {"id": "forge-1", "prompt": "No single administrator may request and approve the same production deployment."},
+        {"id": "forge-2", "prompt": "The deployment account receives only the permissions required by the release process."},
+        {"id": "forge-3", "prompt": "A signed record proves which administrator approved the release."}
+      ],
+      "options": [
+        {"id": "separation-duties", "label": "Separation of duties", "reusable": false},
+        {"id": "least-privilege", "label": "Least privilege", "reusable": false},
+        {"id": "non-repudiation", "label": "Non-repudiation", "reusable": false},
+        {"id": "obfuscation", "label": "Obfuscation", "reusable": false}
+      ],
+      "solution": {"forge-1": "separation-duties", "forge-2": "least-privilege", "forge-3": "non-repudiation"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "forge-1": "Separation of duties divides critical authority so one person cannot complete the entire sensitive action.",
+        "forge-2": "Least privilege limits an identity to the minimum permissions necessary for its assigned task.",
+        "forge-3": "Non-repudiation provides evidence tying an action or approval to a particular identity."
+      }
+    },
+    {
+      "id": "security-plus-pbq-005",
+      "certification": "security-plus",
+      "type": "categorization",
+      "title": "Sort the Cryptographic Relics",
+      "objective": "SY0-701 1.4 — Explain the importance of using appropriate cryptographic solutions",
+      "difficulty": 1,
+      "briefing": "The cryptography archive contains several technologies with different purposes. Place each technology into its primary cryptographic category.",
+      "instructions": ["Assign each technology to its primary category.", "Categories may be reused.", "Score is awarded per correct placement."],
+      "tasks": [
+        {"id": "relic-1", "prompt": "AES-256 protects a stored database backup."},
+        {"id": "relic-2", "prompt": "SHA-256 produces a fixed-length digest for a downloaded image."},
+        {"id": "relic-3", "prompt": "A public key validates a software publisher's digital signature."}
+      ],
+      "options": [
+        {"id": "symmetric-encryption", "label": "Symmetric encryption", "reusable": true},
+        {"id": "hashing", "label": "Hashing", "reusable": true},
+        {"id": "asymmetric-cryptography", "label": "Asymmetric cryptography", "reusable": true}
+      ],
+      "solution": {"relic-1": "symmetric-encryption", "relic-2": "hashing", "relic-3": "asymmetric-cryptography"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "relic-1": "AES is a symmetric cipher that uses the same secret key for encryption and decryption.",
+        "relic-2": "SHA-256 is a hashing algorithm used to create a digest for integrity comparison.",
+        "relic-3": "Digital signatures use asymmetric cryptography so a public key can validate a signature made with the corresponding private key."
+      }
+    },
+    {
+      "id": "security-plus-pbq-006",
+      "certification": "security-plus",
+      "type": "classification",
+      "title": "Identify the Intruders",
+      "objective": "SY0-701 2.1 — Compare and contrast common threat actors and motivations",
+      "difficulty": 1,
+      "briefing": "Three incidents have different motivations and levels of access. Classify the most likely threat actor behind each event.",
+      "instructions": ["Select the most likely actor for each event.", "Actor types may be reused.", "Use the evidence in each description."],
+      "tasks": [
+        {"id": "actor-1", "prompt": "An employee exports a client list before resigning to join a competitor."},
+        {"id": "actor-2", "prompt": "A government-backed group quietly steals aerospace research over several months."},
+        {"id": "actor-3", "prompt": "An inexperienced attacker runs a public exploit tool against random internet hosts for attention."}
+      ],
+      "options": [
+        {"id": "insider", "label": "Malicious insider", "reusable": true},
+        {"id": "nation-state", "label": "Nation-state actor", "reusable": true},
+        {"id": "unskilled-attacker", "label": "Unskilled attacker", "reusable": true}
+      ],
+      "solution": {"actor-1": "insider", "actor-2": "nation-state", "actor-3": "unskilled-attacker"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "actor-1": "The employee has authorized internal access and a personal or competitive motivation.",
+        "actor-2": "Long-term strategic espionage against sensitive national industry is characteristic of a nation-state operation.",
+        "actor-3": "Use of public tools with little targeting or sophistication is consistent with an unskilled attacker."
+      }
+    },
+    {
+      "id": "security-plus-pbq-007",
+      "certification": "security-plus",
+      "type": "categorization",
+      "title": "Map the Attack Roads",
+      "objective": "SY0-701 2.2 — Explain common threat vectors and attack surfaces",
+      "difficulty": 1,
+      "briefing": "A security analyst is grouping observed entry methods by attack vector. Categorize each observation.",
+      "instructions": ["Choose the vector that best describes each entry method.", "Vectors may be used more than once.", "Classify the initial access path, not the later impact."],
+      "tasks": [
+        {"id": "road-1", "prompt": "A user opens a convincing invoice attachment delivered by email."},
+        {"id": "road-2", "prompt": "An attacker enters a restricted office behind an employee without presenting a badge."},
+        {"id": "road-3", "prompt": "A public API accepts requests containing an exposed developer token from a source repository."}
+      ],
+      "options": [
+        {"id": "message-based", "label": "Message-based vector", "reusable": true},
+        {"id": "physical", "label": "Physical vector", "reusable": true},
+        {"id": "supply-cloud", "label": "Cloud or exposed-service vector", "reusable": true}
+      ],
+      "solution": {"road-1": "message-based", "road-2": "physical", "road-3": "supply-cloud"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "road-1": "Email attachments are a message-based delivery vector frequently used for phishing and malware.",
+        "road-2": "Following an authorized person into a controlled area is a physical social-engineering vector.",
+        "road-3": "An internet-facing API combined with an exposed token creates an attack surface through a cloud-hosted service."
+      }
+    },
+    {
+      "id": "security-plus-pbq-008",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Diagnose the Weak Walls",
+      "objective": "SY0-701 2.3 — Explain various types of vulnerabilities",
+      "difficulty": 2,
+      "briefing": "A review of a newly acquired application found several weaknesses. Match each finding to the most accurate vulnerability type.",
+      "instructions": ["Select one vulnerability type per finding.", "Types are single-use.", "One distractor is included."],
+      "tasks": [
+        {"id": "wall-1", "prompt": "User input is joined directly into a database query string."},
+        {"id": "wall-2", "prompt": "Two processes update the same authorization record without coordinating access."},
+        {"id": "wall-3", "prompt": "A storage bucket permits anonymous reads because its access policy was copied incorrectly."}
+      ],
+      "options": [
+        {"id": "injection", "label": "Injection vulnerability", "reusable": false},
+        {"id": "race-condition", "label": "Race condition", "reusable": false},
+        {"id": "misconfiguration", "label": "Cloud misconfiguration", "reusable": false},
+        {"id": "integer-overflow", "label": "Integer overflow", "reusable": false}
+      ],
+      "solution": {"wall-1": "injection", "wall-2": "race-condition", "wall-3": "misconfiguration"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "wall-1": "Untrusted input placed into a query can alter the command and creates an injection vulnerability.",
+        "wall-2": "Unsynchronized operations whose result depends on timing create a race condition.",
+        "wall-3": "An incorrectly applied cloud access policy is a security misconfiguration."
+      }
+    },
+    {
+      "id": "security-plus-pbq-009",
+      "certification": "security-plus",
+      "type": "classification",
+      "title": "Read the Battle Scars",
+      "objective": "SY0-701 2.4 — Analyze indicators of malicious activity",
+      "difficulty": 2,
+      "briefing": "The monitoring team collected three sets of indicators. Classify the attack type most consistent with each pattern.",
+      "instructions": ["Classify each indicator set.", "Attack types may be reused.", "Use the complete pattern rather than a single symptom."],
+      "tasks": [
+        {"id": "scar-1", "prompt": "Hundreds of accounts receive one login attempt using the same commonly used password."},
+        {"id": "scar-2", "prompt": "A web server launches a shell process immediately after receiving a request containing encoded command separators."},
+        {"id": "scar-3", "prompt": "Files become unreadable, extensions change, and a payment notice appears on shared storage."}
+      ],
+      "options": [
+        {"id": "password-spraying", "label": "Password spraying", "reusable": true},
+        {"id": "command-injection", "label": "Command injection", "reusable": true},
+        {"id": "ransomware", "label": "Ransomware", "reusable": true}
+      ],
+      "solution": {"scar-1": "password-spraying", "scar-2": "command-injection", "scar-3": "ransomware"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "scar-1": "Password spraying applies a small number of likely passwords across many accounts to avoid lockouts.",
+        "scar-2": "A shell spawned by crafted web input indicates that commands were injected into server-side processing.",
+        "scar-3": "Encryption of accessible files combined with a payment demand is a classic ransomware pattern."
+      }
+    },
+    {
+      "id": "security-plus-pbq-010",
+      "certification": "security-plus",
+      "type": "ordering",
+      "title": "Contain the Fallen Workstation",
+      "objective": "SY0-701 2.5 — Explain the purpose of mitigation techniques",
+      "difficulty": 2,
+      "briefing": "An endpoint protection alert confirms active malware on an employee workstation. Put the immediate mitigation actions in a safe operational order.",
+      "instructions": ["Assign each action a unique position.", "Use every position once.", "Order the actions from first to last."],
+      "tasks": [
+        {"id": "contain-1", "prompt": "Isolate the workstation from production networks."},
+        {"id": "contain-2", "prompt": "Preserve relevant volatile and endpoint evidence."},
+        {"id": "contain-3", "prompt": "Reimage the device from an approved secure baseline."},
+        {"id": "contain-4", "prompt": "Reconnect the validated device and monitor it."}
+      ],
+      "options": [
+        {"id": "position-1", "label": "1 — First", "reusable": false},
+        {"id": "position-2", "label": "2 — Second", "reusable": false},
+        {"id": "position-3", "label": "3 — Third", "reusable": false},
+        {"id": "position-4", "label": "4 — Last", "reusable": false}
+      ],
+      "solution": {"contain-1": "position-1", "contain-2": "position-2", "contain-3": "position-3", "contain-4": "position-4"},
+      "scoring": {"method": "per-task", "maxPoints": 4, "partialCredit": true},
+      "explanations": {
+        "contain-1": "Isolation first limits command-and-control traffic and lateral movement.",
+        "contain-2": "Evidence should be preserved before remediation destroys useful forensic information.",
+        "contain-3": "Reimaging from a trusted baseline removes the compromised operating environment.",
+        "contain-4": "The device should return to service only after validation, followed by monitoring for recurrence."
+      }
+    },
+    {
+      "id": "security-plus-pbq-011",
+      "certification": "security-plus",
+      "type": "configuration-table",
+      "title": "Enforce the Zero Trust Gate",
+      "objective": "SY0-701 3.1 — Compare and contrast security implications of different architecture models",
+      "difficulty": 2,
+      "briefing": "The access broker needs explicit policies for three workloads. Configure the identity, device state, resource, and decision for each request.",
+      "instructions": ["Apply least privilege and continuous verification.", "Choose every field for each request.", "Each correct field earns one point."],
+      "tasks": [
+        {"id": "gate-1", "label": "Request 1", "prompt": "A payroll specialist on a compliant managed laptop needs the payroll portal."},
+        {"id": "gate-2", "label": "Request 2", "prompt": "A contractor on an unmanaged tablet requests the source-code repository."},
+        {"id": "gate-3", "label": "Request 3", "prompt": "A backup service identity from its approved workload needs the backup vault."}
+      ],
+      "options": {
+        "identity": ["Payroll specialist", "Contractor", "Backup service"],
+        "device": ["Managed compliant", "Unmanaged", "Approved workload"],
+        "resource": ["Payroll portal", "Source repository", "Backup vault"],
+        "action": ["Allow", "Block"]
+      },
+      "solution": {
+        "gate-1": {"identity": "Payroll specialist", "device": "Managed compliant", "resource": "Payroll portal", "action": "Allow"},
+        "gate-2": {"identity": "Contractor", "device": "Unmanaged", "resource": "Source repository", "action": "Block"},
+        "gate-3": {"identity": "Backup service", "device": "Approved workload", "resource": "Backup vault", "action": "Allow"}
+      },
+      "scoring": {"method": "per-field", "maxPoints": 12, "partialCredit": true, "fields": ["identity", "device", "resource", "action"]},
+      "tableLabel": "Zero Trust access policy",
+      "fieldLabels": {"identity": "Identity", "device": "Device state", "resource": "Resource", "action": "Decision"},
+      "explanations": {
+        "gate-1": "A verified payroll identity using a compliant managed device may receive scoped access to the payroll portal.",
+        "gate-2": "An unmanaged device requesting sensitive source code fails the device-trust requirement and should be blocked.",
+        "gate-3": "A workload identity operating from its approved execution context may access only its designated backup resource."
+      }
+    },
+    {
+      "id": "security-plus-pbq-012",
+      "certification": "security-plus",
+      "type": "categorization",
+      "title": "Protect Data Through the Journey",
+      "objective": "SY0-701 3.3 — Compare and contrast concepts and strategies to protect data",
+      "difficulty": 2,
+      "briefing": "A data owner is documenting protections for information in different states. Categorize each example by the data state it protects.",
+      "instructions": ["Choose the applicable data state.", "States may be reused.", "Classify where the information exists during the described control."],
+      "tasks": [
+        {"id": "journey-1", "prompt": "Full-disk encryption protects a powered-off laptop in storage."},
+        {"id": "journey-2", "prompt": "TLS protects an API request traveling between two services."},
+        {"id": "journey-3", "prompt": "Memory encryption protects records while an analytics process is using them."}
+      ],
+      "options": [
+        {"id": "at-rest", "label": "Data at rest", "reusable": true},
+        {"id": "in-transit", "label": "Data in transit", "reusable": true},
+        {"id": "in-use", "label": "Data in use", "reusable": true}
+      ],
+      "solution": {"journey-1": "at-rest", "journey-2": "in-transit", "journey-3": "in-use"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "journey-1": "Stored information on a powered-off device is data at rest.",
+        "journey-2": "Information moving between endpoints is data in transit.",
+        "journey-3": "Information actively processed in memory is data in use."
+      }
+    },
+    {
+      "id": "security-plus-pbq-013",
+      "certification": "security-plus",
+      "type": "ordering",
+      "title": "Retire the Ancient Server",
+      "objective": "SY0-701 4.2 — Explain the security implications of proper hardware, software, and data asset management",
+      "difficulty": 2,
+      "briefing": "A legacy file server has reached end of life. Order the retirement activities so records remain protected and the asset inventory stays accurate.",
+      "instructions": ["Assign one unique position to each activity.", "Order the controlled retirement from first through last.", "Each correct position earns credit."],
+      "tasks": [
+        {"id": "retire-1", "prompt": "Obtain owner approval and identify retention requirements."},
+        {"id": "retire-2", "prompt": "Migrate required records and validate the destination copy."},
+        {"id": "retire-3", "prompt": "Sanitize the server's storage media using the approved method."},
+        {"id": "retire-4", "prompt": "Remove the server from inventory and record its disposition."}
+      ],
+      "options": [
+        {"id": "position-1", "label": "1 — First", "reusable": false},
+        {"id": "position-2", "label": "2 — Second", "reusable": false},
+        {"id": "position-3", "label": "3 — Third", "reusable": false},
+        {"id": "position-4", "label": "4 — Last", "reusable": false}
+      ],
+      "solution": {"retire-1": "position-1", "retire-2": "position-2", "retire-3": "position-3", "retire-4": "position-4"},
+      "scoring": {"method": "per-task", "maxPoints": 4, "partialCredit": true},
+      "explanations": {
+        "retire-1": "Ownership and retention decisions must be established before data or equipment is changed.",
+        "retire-2": "Required records are migrated and verified before their original media is sanitized.",
+        "retire-3": "Sanitization prevents later recovery of protected information from retired media.",
+        "retire-4": "Inventory and disposition records are finalized after the physical and data-handling work is complete."
+      }
+    },
+    {
+      "id": "security-plus-pbq-014",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Prioritize the Vulnerability Hunt",
+      "objective": "SY0-701 4.3 — Explain various activities associated with vulnerability management",
+      "difficulty": 2,
+      "briefing": "A vulnerability team must choose the most appropriate next activity for three findings. Match each condition to the best action.",
+      "instructions": ["Choose the strongest next action for each finding.", "Actions are single-use.", "One distractor is available."],
+      "tasks": [
+        {"id": "hunt-1", "prompt": "A scanner reports a critical flaw on an internet-facing gateway, but the banner evidence may be inaccurate."},
+        {"id": "hunt-2", "prompt": "A validated high-risk vulnerability has an approved vendor patch and active exploitation is reported."},
+        {"id": "hunt-3", "prompt": "A legacy system cannot be patched until replacement next quarter."}
+      ],
+      "options": [
+        {"id": "validate-finding", "label": "Validate the finding", "reusable": false},
+        {"id": "expedited-remediation", "label": "Expedite remediation", "reusable": false},
+        {"id": "compensating-control", "label": "Apply a compensating control", "reusable": false},
+        {"id": "accept-without-review", "label": "Accept without review", "reusable": false}
+      ],
+      "solution": {"hunt-1": "validate-finding", "hunt-2": "expedited-remediation", "hunt-3": "compensating-control"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "hunt-1": "Potential false positives should be validated before disruptive remediation is scheduled.",
+        "hunt-2": "Exposure, severity, patch availability, and active exploitation justify expedited remediation.",
+        "hunt-3": "A compensating control reduces exposure while the vulnerable legacy system awaits replacement."
+      }
+    },
+    {
+      "id": "security-plus-pbq-015",
+      "certification": "security-plus",
+      "type": "classification",
+      "title": "Choose the Resilience Posture",
+      "objective": "SY0-701 3.4 — Explain the importance of resilience and recovery in security architecture",
+      "difficulty": 3,
+      "briefing": "A continuity architect is comparing recovery designs. Classify each design by its readiness level.",
+      "instructions": ["Select the most accurate recovery-site classification.", "Classifications may be reused.", "Consider equipment, data, and activation time."],
+      "tasks": [
+        {"id": "posture-1", "prompt": "A leased facility has power and connectivity but no installed computing equipment."},
+        {"id": "posture-2", "prompt": "A secondary site has equipment and periodic data copies but requires configuration before operation."},
+        {"id": "posture-3", "prompt": "A mirrored site continuously receives data and can assume service with minimal interruption."}
+      ],
+      "options": [
+        {"id": "cold-site", "label": "Cold site", "reusable": true},
+        {"id": "warm-site", "label": "Warm site", "reusable": true},
+        {"id": "hot-site", "label": "Hot site", "reusable": true}
+      ],
+      "solution": {"posture-1": "cold-site", "posture-2": "warm-site", "posture-3": "hot-site"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "posture-1": "A cold site supplies basic facilities but requires equipment and data restoration.",
+        "posture-2": "A warm site has partial infrastructure and data but still needs activation work.",
+        "posture-3": "A hot site maintains near-current systems and data for rapid failover."
+      }
+    },
+    {
+      "id": "security-plus-pbq-016",
+      "certification": "security-plus",
+      "type": "ordering",
+      "title": "Tune the Signal Tower",
+      "objective": "SY0-701 4.4 — Explain security alerting and monitoring concepts and tools",
+      "difficulty": 3,
+      "briefing": "A new detection rule produces too many false positives. Order the tuning workflow while preserving evidence and change control.",
+      "instructions": ["Order the actions from first to last.", "Use each position once.", "Do not disable the rule without analysis."],
+      "tasks": [
+        {"id": "tune-1", "prompt": "Collect representative true-positive and false-positive events."},
+        {"id": "tune-2", "prompt": "Identify the attributes that reliably distinguish benign activity."},
+        {"id": "tune-3", "prompt": "Test a revised threshold or condition against historical events."},
+        {"id": "tune-4", "prompt": "Approve, deploy, and monitor the revised rule."}
+      ],
+      "options": [
+        {"id": "position-1", "label": "1 — First", "reusable": false},
+        {"id": "position-2", "label": "2 — Second", "reusable": false},
+        {"id": "position-3", "label": "3 — Third", "reusable": false},
+        {"id": "position-4", "label": "4 — Last", "reusable": false}
+      ],
+      "solution": {"tune-1": "position-1", "tune-2": "position-2", "tune-3": "position-3", "tune-4": "position-4"},
+      "scoring": {"method": "per-task", "maxPoints": 4, "partialCredit": true},
+      "explanations": {
+        "tune-1": "Representative events provide evidence for understanding the rule's current behavior.",
+        "tune-2": "Reliable distinguishing attributes are needed before changing logic or thresholds.",
+        "tune-3": "Historical testing estimates the effect of a proposed change without weakening live detection.",
+        "tune-4": "Controlled deployment and continued monitoring confirm that tuning reduced noise without hiding attacks."
+      }
+    },
+    {
+      "id": "security-plus-pbq-017",
+      "certification": "security-plus",
+      "type": "configuration-table",
+      "title": "Route the Investigation Logs",
+      "objective": "SY0-701 4.9 — Use data sources to support an investigation",
+      "difficulty": 3,
+      "briefing": "An investigation team needs the most useful primary data source for three questions. Configure the request source, event focus, retention tier, and access decision.",
+      "instructions": ["Choose the best evidence source for each question.", "Apply the appropriate retention tier.", "Every correct field earns partial credit."],
+      "tasks": [
+        {"id": "log-1", "label": "Question 1", "prompt": "Determine which account changed a cloud storage policy yesterday."},
+        {"id": "log-2", "label": "Question 2", "prompt": "Determine whether a workstation contacted a known command-and-control address last week."},
+        {"id": "log-3", "label": "Question 3", "prompt": "Determine which process created an encrypted archive on an endpoint two hours ago."}
+      ],
+      "options": {
+        "source": ["Cloud audit log", "DNS and proxy logs", "Endpoint telemetry"],
+        "focus": ["Administrative change", "Network destination", "Process activity"],
+        "retention": ["Standard online", "Extended searchable", "High-detail recent"],
+        "action": ["Grant investigator read access", "Deny request"]
+      },
+      "solution": {
+        "log-1": {"source": "Cloud audit log", "focus": "Administrative change", "retention": "Standard online", "action": "Grant investigator read access"},
+        "log-2": {"source": "DNS and proxy logs", "focus": "Network destination", "retention": "Extended searchable", "action": "Grant investigator read access"},
+        "log-3": {"source": "Endpoint telemetry", "focus": "Process activity", "retention": "High-detail recent", "action": "Grant investigator read access"}
+      },
+      "scoring": {"method": "per-field", "maxPoints": 12, "partialCredit": true, "fields": ["source", "focus", "retention", "action"]},
+      "tableLabel": "Investigation evidence requests",
+      "fieldLabels": {"source": "Primary source", "focus": "Event focus", "retention": "Retention tier", "action": "Access"},
+      "explanations": {
+        "log-1": "Cloud audit logs record control-plane changes and the identity that performed them.",
+        "log-2": "DNS and proxy records provide historical destination evidence and benefit from extended searchable retention.",
+        "log-3": "Recent high-detail endpoint telemetry records process creation and local file activity."
+      }
+    },
+    {
+      "id": "security-plus-pbq-018",
+      "certification": "security-plus",
+      "type": "categorization",
+      "title": "Assign the Identity Keys",
+      "objective": "SY0-701 4.6 — Implement and maintain identity and access management",
+      "difficulty": 3,
+      "briefing": "An identity architect is assigning the most suitable authentication approach to different access cases. Categorize each case.",
+      "instructions": ["Choose the strongest appropriate method.", "Methods may be reused.", "Consider usability, assurance, and account type."],
+      "tasks": [
+        {"id": "key-1", "prompt": "Employees access several internal web applications through one centrally managed identity provider."},
+        {"id": "key-2", "prompt": "Administrators require phishing-resistant authentication for privileged cloud access."},
+        {"id": "key-3", "prompt": "A non-human deployment pipeline authenticates to an API without an interactive user."}
+      ],
+      "options": [
+        {"id": "sso-federation", "label": "Federated single sign-on", "reusable": true},
+        {"id": "hardware-fido", "label": "Hardware-backed FIDO authentication", "reusable": true},
+        {"id": "workload-certificate", "label": "Workload certificate", "reusable": true}
+      ],
+      "solution": {"key-1": "sso-federation", "key-2": "hardware-fido", "key-3": "workload-certificate"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "key-1": "Federation centralizes authentication and lets employees use one identity across relying applications.",
+        "key-2": "Hardware-backed FIDO authenticators resist credential phishing and are suitable for privileged access.",
+        "key-3": "A workload certificate gives a non-human process a cryptographic identity without storing an interactive password."
+      }
+    },
+    {
+      "id": "security-plus-pbq-019",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Automate the Watchtowers",
+      "objective": "SY0-701 4.7 — Explain the importance of automation and orchestration related to secure operations",
+      "difficulty": 3,
+      "briefing": "The operations team wants to automate repetitive security work. Match each automation need to the most appropriate mechanism.",
+      "instructions": ["Match each need to one mechanism.", "Mechanisms are single-use.", "One distractor is included."],
+      "tasks": [
+        {"id": "tower-1", "prompt": "Create identical hardened cloud networks from a reviewed definition."},
+        {"id": "tower-2", "prompt": "Enrich a phishing alert, disable the account, and open a case using a repeatable workflow."},
+        {"id": "tower-3", "prompt": "Reject a deployment automatically when a container image contains a critical known vulnerability."}
+      ],
+      "options": [
+        {"id": "infrastructure-code", "label": "Infrastructure as code", "reusable": false},
+        {"id": "soar-playbook", "label": "SOAR playbook", "reusable": false},
+        {"id": "pipeline-security-gate", "label": "CI/CD security gate", "reusable": false},
+        {"id": "manual-runbook", "label": "Manual-only runbook", "reusable": false}
+      ],
+      "solution": {"tower-1": "infrastructure-code", "tower-2": "soar-playbook", "tower-3": "pipeline-security-gate"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "tower-1": "Infrastructure as code creates consistent environments from version-controlled definitions.",
+        "tower-2": "A SOAR playbook coordinates enrichment, containment, and case-management actions.",
+        "tower-3": "A pipeline security gate can enforce policy before a vulnerable artifact is deployed."
+      }
+    },
+    {
+      "id": "security-plus-pbq-020",
+      "certification": "security-plus",
+      "type": "ordering",
+      "title": "Command the Incident Vanguard",
+      "objective": "SY0-701 4.8 — Apply appropriate incident response activities",
+      "difficulty": 3,
+      "briefing": "A web application server is confirmed compromised. Order the major response activities according to a controlled incident lifecycle.",
+      "instructions": ["Assign each phase a unique position.", "Order phases from first to last.", "The sequence begins after preparation is already complete."],
+      "tasks": [
+        {"id": "vanguard-1", "prompt": "Analyze evidence and confirm the scope of compromise."},
+        {"id": "vanguard-2", "prompt": "Contain affected systems to limit additional damage."},
+        {"id": "vanguard-3", "prompt": "Remove persistence and remediate the exploited weakness."},
+        {"id": "vanguard-4", "prompt": "Restore validated services and monitor for recurrence."},
+        {"id": "vanguard-5", "prompt": "Document lessons learned and update response procedures."}
+      ],
+      "options": [
+        {"id": "position-1", "label": "1 — First", "reusable": false},
+        {"id": "position-2", "label": "2 — Second", "reusable": false},
+        {"id": "position-3", "label": "3 — Third", "reusable": false},
+        {"id": "position-4", "label": "4 — Fourth", "reusable": false},
+        {"id": "position-5", "label": "5 — Last", "reusable": false}
+      ],
+      "solution": {"vanguard-1": "position-1", "vanguard-2": "position-2", "vanguard-3": "position-3", "vanguard-4": "position-4", "vanguard-5": "position-5"},
+      "scoring": {"method": "per-task", "maxPoints": 5, "partialCredit": true},
+      "explanations": {
+        "vanguard-1": "Detection and analysis establish that an incident exists and determine its scope.",
+        "vanguard-2": "Containment limits spread while preserving the ability to investigate.",
+        "vanguard-3": "Eradication removes attacker persistence and the cause of compromise.",
+        "vanguard-4": "Recovery restores clean services and watches for renewed malicious activity.",
+        "vanguard-5": "Lessons learned improve controls and response performance after operations stabilize."
+      }
+    },
+    {
+      "id": "security-plus-pbq-021",
+      "certification": "security-plus",
+      "type": "classification",
+      "title": "Interpret the Evidence Vault",
+      "objective": "SY0-701 4.5 — Modify enterprise capabilities to enhance security",
+      "difficulty": 4,
+      "briefing": "A security architect is reviewing proposed control changes. Classify the primary security capability enhanced by each proposal.",
+      "instructions": ["Select the primary capability improved.", "Capabilities may be reused.", "Choose the closest operational effect."],
+      "tasks": [
+        {"id": "vault-1", "prompt": "Route outbound web traffic through a service that blocks malicious domains and inspects permitted requests."},
+        {"id": "vault-2", "prompt": "Place decoy credentials and instrumented services where unauthorized users may discover them."},
+        {"id": "vault-3", "prompt": "Require approved applications to run inside isolated execution environments on employee endpoints."}
+      ],
+      "options": [
+        {"id": "secure-web-gateway", "label": "Secure web gateway", "reusable": true},
+        {"id": "deception", "label": "Deception and disruption", "reusable": true},
+        {"id": "application-isolation", "label": "Application isolation", "reusable": true}
+      ],
+      "solution": {"vault-1": "secure-web-gateway", "vault-2": "deception", "vault-3": "application-isolation"},
+      "scoring": {"method": "per-task", "maxPoints": 3, "partialCredit": true},
+      "explanations": {
+        "vault-1": "A secure web gateway filters destinations and inspects web requests under organizational policy.",
+        "vault-2": "Decoy artifacts and instrumented services detect and disrupt unauthorized exploration.",
+        "vault-3": "Application isolation limits the ability of one process to affect the host or other applications."
+      }
+    },
+    {
+      "id": "security-plus-pbq-022",
+      "certification": "security-plus",
+      "type": "categorization",
+      "title": "Govern the Five Provinces",
+      "objective": "SY0-701 5.1 — Summarize elements of effective security governance",
+      "difficulty": 4,
+      "briefing": "A governance council is organizing documents and responsibilities. Categorize each item by its governance role.",
+      "instructions": ["Choose the best governance category.", "Categories may be reused.", "Focus on authority and purpose."],
+      "tasks": [
+        {"id": "province-1", "prompt": "A mandatory statement requires encryption for all restricted data at rest."},
+        {"id": "province-2", "prompt": "A detailed document explains the approved steps for granting a privileged account."},
+        {"id": "province-3", "prompt": "A senior executive is formally accountable for deciding how customer data is used."},
+        {"id": "province-4", "prompt": "A recommended secure-coding document offers guidance but permits justified alternatives."}
+      ],
+      "options": [
+        {"id": "policy", "label": "Policy", "reusable": true},
+        {"id": "procedure", "label": "Procedure", "reusable": true},
+        {"id": "data-owner", "label": "Data owner responsibility", "reusable": true},
+        {"id": "guideline", "label": "Guideline", "reusable": true}
+      ],
+      "solution": {"province-1": "policy", "province-2": "procedure", "province-3": "data-owner", "province-4": "guideline"},
+      "scoring": {"method": "per-task", "maxPoints": 4, "partialCredit": true},
+      "explanations": {
+        "province-1": "A policy states mandatory organizational intent and requirements.",
+        "province-2": "A procedure supplies detailed repeatable steps for carrying out a process.",
+        "province-3": "A data owner has business accountability for classification, use, and protection decisions.",
+        "province-4": "A guideline recommends practices while allowing reasonable alternatives."
+      }
+    },
+    {
+      "id": "security-plus-pbq-023",
+      "certification": "security-plus",
+      "type": "matching",
+      "title": "Measure the Kingdom's Risk",
+      "objective": "SY0-701 5.2 — Explain elements of the risk management process",
+      "difficulty": 4,
+      "briefing": "A risk committee is reviewing a payment platform. Match each decision or measurement to the correct risk concept.",
+      "instructions": ["Match every statement to one risk concept.", "Concepts are single-use.", "One distractor is included."],
+      "tasks": [
+        {"id": "risk-1", "prompt": "The organization stops offering a high-risk service because no control can reduce exposure to an acceptable level."},
+        {"id": "risk-2", "prompt": "Cyber insurance shifts part of the financial impact to an insurer."},
+        {"id": "risk-3", "prompt": "After controls are implemented, the remaining exposure is documented and approved by leadership."},
+        {"id": "risk-4", "prompt": "The expected yearly loss is calculated from single-loss expectancy and annual rate of occurrence."}
+      ],
+      "options": [
+        {"id": "avoidance", "label": "Risk avoidance", "reusable": false},
+        {"id": "transfer", "label": "Risk transfer", "reusable": false},
+        {"id": "residual-risk", "label": "Residual risk acceptance", "reusable": false},
+        {"id": "annual-loss-expectancy", "label": "Annual loss expectancy", "reusable": false},
+        {"id": "risk-appetite", "label": "Risk appetite", "reusable": false}
+      ],
+      "solution": {"risk-1": "avoidance", "risk-2": "transfer", "risk-3": "residual-risk", "risk-4": "annual-loss-expectancy"},
+      "scoring": {"method": "per-task", "maxPoints": 4, "partialCredit": true},
+      "explanations": {
+        "risk-1": "Risk avoidance removes the activity that creates the unacceptable exposure.",
+        "risk-2": "Insurance transfers specified financial consequences to another party under a contract.",
+        "risk-3": "Residual risk is the exposure remaining after treatment and may require formal acceptance.",
+        "risk-4": "Annual loss expectancy estimates yearly loss by multiplying single-loss expectancy by annual rate of occurrence."
+      }
+    },
+    {
+      "id": "security-plus-pbq-024",
+      "certification": "security-plus",
+      "type": "ordering",
+      "title": "Vet the Supply Caravan",
+      "objective": "SY0-701 5.3 — Explain processes associated with third-party risk assessment and management",
+      "difficulty": 5,
+      "briefing": "A vendor will process restricted customer records. Order the third-party risk activities from initial review through continuing oversight.",
+      "instructions": ["Assign each activity a unique position.", "Use the complete vendor lifecycle.", "Order the activities from first through last."],
+      "tasks": [
+        {"id": "caravan-1", "prompt": "Define data sensitivity, service criticality, and security requirements."},
+        {"id": "caravan-2", "prompt": "Perform due diligence using evidence, questionnaires, and independent reports."},
+        {"id": "caravan-3", "prompt": "Document security obligations, notification terms, audit rights, and exit requirements in the contract."},
+        {"id": "caravan-4", "prompt": "Approve access and onboard the vendor using least privilege."},
+        {"id": "caravan-5", "prompt": "Monitor performance, reassess risk, and review material changes."},
+        {"id": "caravan-6", "prompt": "Revoke access and verify data return or destruction at termination."}
+      ],
+      "options": [
+        {"id": "position-1", "label": "1 — First", "reusable": false},
+        {"id": "position-2", "label": "2 — Second", "reusable": false},
+        {"id": "position-3", "label": "3 — Third", "reusable": false},
+        {"id": "position-4", "label": "4 — Fourth", "reusable": false},
+        {"id": "position-5", "label": "5 — Fifth", "reusable": false},
+        {"id": "position-6", "label": "6 — Last", "reusable": false}
+      ],
+      "solution": {"caravan-1": "position-1", "caravan-2": "position-2", "caravan-3": "position-3", "caravan-4": "position-4", "caravan-5": "position-5", "caravan-6": "position-6"},
+      "scoring": {"method": "per-task", "maxPoints": 6, "partialCredit": true},
+      "explanations": {
+        "caravan-1": "Requirements and criticality define the standard against which the vendor will be assessed.",
+        "caravan-2": "Due diligence evaluates whether the vendor can satisfy those requirements before commitment.",
+        "caravan-3": "Contract language makes security, incident, audit, and termination expectations enforceable.",
+        "caravan-4": "Onboarding occurs after approval and should provision only necessary access.",
+        "caravan-5": "Continuous monitoring addresses changes in vendor posture and service performance.",
+        "caravan-6": "Offboarding closes access paths and verifies proper disposition of organizational data."
+      }
+    },
+    {
+      "id": "security-plus-pbq-025",
+      "certification": "security-plus",
+      "type": "configuration-table",
+      "title": "Close the Final Audit",
+      "objective": "SY0-701 5.4–5.6 — Compliance, security assessments, audits, and awareness practices",
+      "difficulty": 5,
+      "briefing": "A final internal audit identified four findings across compliance, control testing, and workforce awareness. Build a remediation register that assigns each finding to the correct evidence, owner, priority, and treatment.",
+      "instructions": ["Configure every field for each audit finding.", "Select the strongest responsible owner and evidence source.", "Each correct field earns partial credit."],
+      "tasks": [
+        {"id": "audit-1", "label": "Finding 1", "prompt": "Quarterly privileged-access reviews were required but the latest review has no approval record."},
+        {"id": "audit-2", "label": "Finding 2", "prompt": "A payment system stores regulated records longer than the approved retention period."},
+        {"id": "audit-3", "label": "Finding 3", "prompt": "A phishing exercise shows repeated credential submission by the same business unit."},
+        {"id": "audit-4", "label": "Finding 4", "prompt": "A critical recovery control is documented but has not been technically tested this year."}
+      ],
+      "options": {
+        "evidence": ["Signed access-review report", "Retention and deletion logs", "Role-based training completion", "Recovery exercise results"],
+        "owner": ["IAM manager", "Data governance lead", "Awareness program lead", "Continuity manager"],
+        "priority": ["High", "Medium"],
+        "action": ["Complete and attest review", "Delete excess records and enforce lifecycle", "Assign targeted coaching and retest", "Run technical recovery exercise"]
+      },
+      "solution": {
+        "audit-1": {"evidence": "Signed access-review report", "owner": "IAM manager", "priority": "High", "action": "Complete and attest review"},
+        "audit-2": {"evidence": "Retention and deletion logs", "owner": "Data governance lead", "priority": "High", "action": "Delete excess records and enforce lifecycle"},
+        "audit-3": {"evidence": "Role-based training completion", "owner": "Awareness program lead", "priority": "Medium", "action": "Assign targeted coaching and retest"},
+        "audit-4": {"evidence": "Recovery exercise results", "owner": "Continuity manager", "priority": "High", "action": "Run technical recovery exercise"}
+      },
+      "scoring": {"method": "per-field", "maxPoints": 16, "partialCredit": true, "fields": ["evidence", "owner", "priority", "action"]},
+      "tableLabel": "Audit remediation register",
+      "fieldLabels": {"evidence": "Required evidence", "owner": "Control owner", "priority": "Priority", "action": "Remediation"},
+      "explanations": {
+        "audit-1": "The IAM manager should complete and attest the missing privileged-access review, producing a signed review record.",
+        "audit-2": "The data governance lead should enforce the retention schedule and provide deletion evidence for regulated records.",
+        "audit-3": "Repeated simulation failures call for targeted role-based coaching followed by another measured exercise.",
+        "audit-4": "A documented recovery control is not adequately assured until the continuity team performs and records a technical exercise."
+      }
+    }
+  ]
+}

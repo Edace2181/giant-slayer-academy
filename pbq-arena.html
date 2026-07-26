@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | PBQ Arena</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pbq-arena.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body pbq-arena-body">
+  <div class="crt-overlay"></div>
+  <main class="pbq-arena-shell">
+    <header class="pbq-arena-hero">
+      <span class="campaign-kicker">FINAL DUNGEON TRAINING GROUND</span>
+      <h1 class="arcade-title">🧩 HYDRA PBQ ARENA</h1>
+      <p id="pbqCertification" class="tagline">Loading certification…</p>
+    </header>
+
+    <section id="pbqLoading" class="pbq-panel" aria-live="polite">
+      <h2>Preparing the arena…</h2>
+      <p>Hydra is loading your mission bank.</p>
+    </section>
+
+    <section id="pbqError" class="pbq-panel hidden" role="alert">
+      <h2>Arena unavailable</h2>
+      <p id="pbqErrorMessage"></p>
+      <a href="security-plus-final-dungeon.html" class="link-btn">← Return to Final Dungeon</a>
+    </section>
+
+    <div id="pbqApplication" class="hidden">
+      <section class="pbq-status-panel" aria-label="PBQ mission status">
+        <div>
+          <span id="pbqMissionNumber" class="pbq-eyebrow">Mission 1 of 2</span>
+          <h2 id="pbqMissionTitle" tabindex="-1">Mission title</h2>
+          <p id="pbqObjective"></p>
+        </div>
+        <div class="pbq-progress-block">
+          <label for="pbqTaskProgress">Task progress</label>
+          <progress id="pbqTaskProgress" value="0" max="1"></progress>
+          <span id="pbqProgressText">0 of 0 tasks answered</span>
+        </div>
+      </section>
+
+      <section class="pbq-mission-layout">
+        <aside class="pbq-briefing-panel" aria-labelledby="pbqBriefingHeading">
+          <span class="pbq-panel-label">MISSION BRIEFING</span>
+          <h2 id="pbqBriefingHeading">Scenario</h2>
+          <p id="pbqBriefing"></p>
+          <div class="pbq-reference">
+            <h3>Instructions</h3>
+            <ol id="pbqInstructions"></ol>
+          </div>
+          <div>
+            <h3>Task Checklist</h3>
+            <ol id="pbqTaskChecklist" class="pbq-task-checklist"></ol>
+          </div>
+        </aside>
+
+        <section class="pbq-workspace-panel" aria-labelledby="pbqWorkspaceHeading">
+          <span class="pbq-panel-label">INTERACTIVE WORKSPACE</span>
+          <h2 id="pbqWorkspaceHeading">Complete the mission</h2>
+          <div id="pbqWorkspace"></div>
+          <div id="pbqReview" class="pbq-review hidden" tabindex="-1"></div>
+        </section>
+      </section>
+
+      <section class="pbq-controls" aria-label="PBQ controls">
+        <button id="pbqPrevious" class="pbq-control-button" type="button">← Previous</button>
+        <button id="pbqFlag" class="pbq-control-button" type="button" aria-pressed="false">⚑ Flag for Review</button>
+        <button id="pbqReset" class="pbq-control-button" type="button">↻ Reset Scenario</button>
+        <button id="pbqSubmit" class="pbq-control-button pbq-submit-button" type="button">⚔ Submit PBQ</button>
+        <button id="pbqNext" class="pbq-control-button" type="button">Next →</button>
+      </section>
+
+      <p id="pbqStatus" class="pbq-screen-reader-status" aria-live="polite" aria-atomic="true"></p>
+      <footer class="arcade-footer">
+        <a id="pbqReturnLink" href="security-plus-final-dungeon.html" class="back-link">← Return to Security+ Final Dungeon</a>
+      </footer>
+    </div>
+  </main>
+  <script src="pbq-engine.js"></script>
+</body>
+</html>
