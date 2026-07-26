@@ -1,0 +1,112 @@
+[
+  {
+    "id": "L010-5.2-R001",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Management > User Commands",
+    "difficulty": "Level 2",
+    "question": "Which category of administrative tools is used to create and maintain Linux login accounts?",
+    "choices": ["Archive commands", "User management commands", "Routing commands", "Text-filter commands"],
+    "answer": 1,
+    "explanation": "User management commands create and maintain login accounts and their account properties."
+  },
+  {
+    "id": "L010-5.2-R002",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Management > Group Commands",
+    "difficulty": "Level 2",
+    "question": "Which category of tools creates and maintains collections of Linux users for shared access control?",
+    "choices": ["Compression utilities", "Process viewers", "DNS clients", "Group management commands"],
+    "answer": 3,
+    "explanation": "Group management commands administer groups, which collect user identities for shared permissions and access control."
+  },
+  {
+    "id": "L010-5.2-R003",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "User IDs",
+    "difficulty": "Level 2",
+    "question": "What numeric value uniquely identifies a Linux user account to the operating system?",
+    "choices": ["PID", "GID", "UID", "TTL"],
+    "answer": 2,
+    "explanation": "A user ID, or UID, is the numeric identifier Linux uses internally for a user account."
+  },
+  {
+    "id": "L010-5.2-R004",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Files > /etc/passwd",
+    "difficulty": "Level 2",
+    "question": "After a local user is created, which file receives the account's public record, including its UID and home directory?",
+    "choices": ["/etc/hosts", "/etc/skel/", "/var/log/", "/etc/passwd"],
+    "answer": 3,
+    "explanation": "Creating a local user adds a general account record to /etc/passwd containing fields such as the UID, home directory, and shell."
+  },
+  {
+    "id": "L010-5.2-R005",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Files > /etc/shadow",
+    "difficulty": "Level 2",
+    "question": "Where is the protected password record for a newly created local Linux account maintained?",
+    "choices": ["/etc/shadow", "/etc/services", "/proc/", "/boot/"],
+    "answer": 0,
+    "explanation": "/etc/shadow maintains protected password and aging data associated with local user accounts."
+  },
+  {
+    "id": "L010-5.2-R006",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Files > /etc/group",
+    "difficulty": "Level 2",
+    "question": "When an administrator creates a local group, which file records its name and numeric GID?",
+    "choices": ["/etc/resolv.conf", "/etc/group", "/etc/profile", "/var/log/dmesg"],
+    "answer": 1,
+    "explanation": "/etc/group stores local group records, including each group's name, GID, and supplementary membership list."
+  },
+  {
+    "id": "L010-5.2-R007",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Home Directory Templates > /etc/skel/",
+    "difficulty": "Level 2",
+    "question": "Which directory provides template files that can be copied into a new user's home directory?",
+    "choices": ["/etc/skel/", "/dev/", "/sys/", "/var/tmp/"],
+    "answer": 0,
+    "explanation": "/etc/skel/ contains template files used to initialize a new user's home directory."
+  },
+  {
+    "id": "L010-5.2-R008",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Account Commands > useradd",
+    "difficulty": "Level 2",
+    "question": "Which command creates a new local Linux user account?",
+    "choices": ["groupadd", "passwd", "useradd", "who"],
+    "answer": 2,
+    "explanation": "The useradd command creates a local user account using supplied options and system defaults."
+  },
+  {
+    "id": "L010-5.2-R009",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Group Commands > groupadd",
+    "difficulty": "Level 2",
+    "question": "Which command adds a new local group to a Linux system?",
+    "choices": ["useradd", "chmod", "last", "groupadd"],
+    "answer": 3,
+    "explanation": "The groupadd command creates a new local group and assigns or accepts its group identifier."
+  },
+  {
+    "id": "L010-5.2-R010",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Password Commands > passwd",
+    "difficulty": "Level 2",
+    "question": "Which command sets or changes the password for a Linux user account?",
+    "choices": ["id", "su", "passwd", "ps"],
+    "answer": 2,
+    "explanation": "The passwd command sets or changes an account password and can also manage related password status information."
+  }
+]

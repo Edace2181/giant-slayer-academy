@@ -1,0 +1,146 @@
+[
+  {
+    "id": "AWSCLF-2.1-R001",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "AWS Shared Responsibility Model",
+    "difficulty": "Level 2",
+    "question": "What does the AWS shared responsibility model define?",
+    "choices": [
+      "How security and compliance duties are divided between AWS and the customer",
+      "How AWS divides monthly charges among linked accounts",
+      "How customers share application data with other companies",
+      "How AWS assigns employees to customer projects"
+    ],
+    "answer": 0,
+    "explanation": "The AWS shared responsibility model identifies which security and compliance tasks AWS performs and which tasks remain the customer's responsibility."
+  },
+  {
+    "id": "AWSCLF-2.1-R002",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Shared Responsibility Components",
+    "difficulty": "Level 2",
+    "question": "Which phrase correctly identifies the two main components of the AWS shared responsibility model?",
+    "choices": [
+      "Security of the cloud and security in the cloud",
+      "Inbound billing and outbound billing",
+      "Public pricing and private pricing",
+      "Regional services and global services"
+    ],
+    "answer": 0,
+    "explanation": "AWS is responsible for security of the cloud, while customers are responsible for security in the cloud according to the services and configurations they use."
+  },
+  {
+    "id": "AWSCLF-2.1-R003",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Customer Responsibilities",
+    "difficulty": "Level 2",
+    "question": "Which task is generally an AWS customer responsibility?",
+    "choices": [
+      "Protecting AWS data-center buildings",
+      "Maintaining the physical servers that run AWS services",
+      "Configuring permissions for the customer's cloud resources",
+      "Replacing failed networking equipment in an Availability Zone"
+    ],
+    "answer": 2,
+    "explanation": "Customers are responsible for configuring access to their resources and data. AWS protects and maintains the facilities and physical infrastructure that provide AWS services."
+  },
+  {
+    "id": "AWSCLF-2.1-R004",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "AWS Responsibilities",
+    "difficulty": "Level 2",
+    "question": "Which task is an AWS responsibility under the shared responsibility model?",
+    "choices": [
+      "Classifying a customer's confidential data",
+      "Maintaining the physical infrastructure that operates AWS services",
+      "Choosing which users receive administrator access",
+      "Configuring security groups for customer workloads"
+    ],
+    "answer": 1,
+    "explanation": "AWS is responsible for the facilities, hardware, networking, and foundational infrastructure used to deliver AWS Cloud services."
+  },
+  {
+    "id": "AWSCLF-2.1-R005",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Shared Responsibilities",
+    "difficulty": "Level 2",
+    "question": "Which activity can involve responsibilities for both AWS and the customer?",
+    "choices": [
+      "Maintaining AWS data-center cooling equipment",
+      "Managing physical access to AWS server rooms",
+      "Applying security controls within each party's area of responsibility",
+      "Replacing failed disks in AWS-owned storage systems"
+    ],
+    "answer": 2,
+    "explanation": "Security is shared: AWS applies controls to the cloud infrastructure, while customers apply controls to their workloads, identities, configurations, and data."
+  },
+  {
+    "id": "AWSCLF-2.1-R006",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Responsibility Shifts by Service",
+    "difficulty": "Level 2",
+    "question": "Why do customer responsibilities change among AWS services?",
+    "choices": [
+      "Different services provide different levels of AWS management",
+      "Every AWS Region uses a different responsibility model",
+      "Customers select their responsibilities through AWS Budgets",
+      "Responsibilities depend only on the customer's support plan"
+    ],
+    "answer": 0,
+    "explanation": "The division changes with the service model. AWS manages more of the technology stack for managed and serverless services than it does for infrastructure services."
+  },
+  {
+    "id": "AWSCLF-2.1-R007",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Responsibility by Service > Amazon EC2",
+    "difficulty": "Level 2",
+    "question": "When running an application on Amazon EC2, who is responsible for patching the guest operating system?",
+    "choices": [
+      "The customer",
+      "AWS Support",
+      "The AWS Marketplace seller",
+      "The data-center operator selected by the customer"
+    ],
+    "answer": 0,
+    "explanation": "For Amazon EC2, AWS manages the underlying infrastructure, but the customer manages and patches the guest operating system and applications."
+  },
+  {
+    "id": "AWSCLF-2.1-R008",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Responsibility by Service > Amazon RDS",
+    "difficulty": "Level 2",
+    "question": "Which responsibility does AWS assume when a customer uses Amazon RDS instead of hosting a database directly on Amazon EC2?",
+    "choices": [
+      "Classifying all records stored in the database",
+      "Managing the database engine's underlying infrastructure and routine platform maintenance",
+      "Choosing which customer employees can read the data",
+      "Writing the customer's database queries"
+    ],
+    "answer": 1,
+    "explanation": "Amazon RDS is managed, so AWS handles more of the database platform and underlying maintenance. The customer still controls data, access, and application use."
+  },
+  {
+    "id": "AWSCLF-2.1-R009",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Responsibility by Service > AWS Lambda",
+    "difficulty": "Level 2",
+    "question": "Which task remains the customer's responsibility when using AWS Lambda?",
+    "choices": [
+      "Maintaining the physical host server",
+      "Patching the underlying operating system",
+      "Securing the function code and its permissions",
+      "Replacing failed data-center networking devices"
+    ],
+    "answer": 2,
+    "explanation": "AWS manages the Lambda execution infrastructure, while the customer remains responsible for function code, data, dependencies, and access permissions."
+  }
+]

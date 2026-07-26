@@ -1,0 +1,134 @@
+[
+  {
+    "id": "AWSCLF-3.6-R001",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "AWS Storage Services",
+    "difficulty": "Level 2",
+    "question": "Why does AWS provide object, block, and file storage services?",
+    "choices": ["Different workloads require different methods of organizing and accessing data", "Every application uses the same storage interface", "Storage services are used only for invoices", "All data must remain on one physical disk"],
+    "answer": 0,
+    "explanation": "AWS offers multiple storage models because applications have different access, sharing, performance, and durability requirements."
+  },
+  {
+    "id": "AWSCLF-3.6-R002",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Object Storage",
+    "difficulty": "Level 2",
+    "question": "Which type of data is well suited to object storage?",
+    "choices": ["Files, media, backups, and other data accessed as objects", "A boot volume requiring block access", "A mounted shared POSIX file system only", "CPU instructions"],
+    "answer": 0,
+    "explanation": "Object storage is suited to data such as documents, media, backups, logs, and application objects accessed through object APIs."
+  },
+  {
+    "id": "AWSCLF-3.6-R003",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Amazon S3 Storage Classes",
+    "difficulty": "Level 2",
+    "question": "Why does Amazon S3 offer multiple storage classes?",
+    "choices": ["To match different access patterns, resilience needs, and storage costs", "To assign IAM passwords", "To create database schemas", "To route DNS queries"],
+    "answer": 0,
+    "explanation": "S3 storage classes provide different combinations of access cost, storage price, retrieval behavior, and resilience for different data patterns."
+  },
+  {
+    "id": "AWSCLF-3.6-R004",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Block Storage",
+    "difficulty": "Level 2",
+    "question": "How does block storage present data to a compute system?",
+    "choices": ["As addressable storage blocks that can support a volume and file system", "Only as objects retrieved through a web API", "Only as messages in a queue", "As DNS records"],
+    "answer": 0,
+    "explanation": "Block storage presents raw storage volumes made of addressable blocks, commonly used for operating systems, applications, and databases."
+  },
+  {
+    "id": "AWSCLF-3.6-R005",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Block Storage > Amazon EBS",
+    "difficulty": "Level 2",
+    "question": "Which AWS service provides persistent block storage volumes for Amazon EC2?",
+    "choices": ["Amazon EBS", "Amazon S3", "Amazon EFS", "Amazon SQS"],
+    "answer": 0,
+    "explanation": "Amazon Elastic Block Store provides persistent block volumes designed for use with Amazon EC2."
+  },
+  {
+    "id": "AWSCLF-3.6-R006",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Block Storage > Instance Store",
+    "difficulty": "Level 2",
+    "question": "Which Amazon EC2 storage option provides temporary block storage physically attached to the host?",
+    "choices": ["Instance store", "Amazon EBS snapshot", "Amazon S3 Glacier", "Amazon EFS"],
+    "answer": 0,
+    "explanation": "Instance store provides temporary host-attached block storage whose data does not persist through certain instance lifecycle events."
+  },
+  {
+    "id": "AWSCLF-3.6-R007",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "File Services",
+    "difficulty": "Level 2",
+    "question": "What does a file storage service provide?",
+    "choices": ["A hierarchical file system that clients can mount or access", "Only key-value database records", "Only API audit events", "Physical shipment of disks"],
+    "answer": 0,
+    "explanation": "File services organize data in files and directories and provide shared file-system access through supported protocols."
+  },
+  {
+    "id": "AWSCLF-3.6-R008",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "File Services > Amazon EFS",
+    "difficulty": "Level 2",
+    "question": "Which AWS service provides a managed elastic file system for Linux workloads?",
+    "choices": ["Amazon EFS", "Amazon EBS", "Amazon DynamoDB", "AWS CloudTrail"],
+    "answer": 0,
+    "explanation": "Amazon Elastic File System provides managed, elastic shared file storage for Linux-based workloads."
+  },
+  {
+    "id": "AWSCLF-3.6-R009",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "File Services > Amazon FSx",
+    "difficulty": "Level 2",
+    "question": "Which AWS service offers managed file systems built for specific file-system technologies?",
+    "choices": ["Amazon FSx", "Amazon SNS", "AWS Budgets", "AWS WAF"],
+    "answer": 0,
+    "explanation": "Amazon FSx provides managed file systems for technologies such as Windows File Server, Lustre, NetApp ONTAP, and OpenZFS."
+  },
+  {
+    "id": "AWSCLF-3.6-R010",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Cached File Systems > AWS Storage Gateway",
+    "difficulty": "Level 2",
+    "question": "Which AWS service connects on-premises environments to cloud storage and can cache frequently accessed data locally?",
+    "choices": ["AWS Storage Gateway", "AWS IAM Identity Center", "Amazon Lex", "AWS CodeBuild"],
+    "answer": 0,
+    "explanation": "AWS Storage Gateway provides hybrid storage interfaces and can maintain local cached access while using AWS storage."
+  },
+  {
+    "id": "AWSCLF-3.6-R011",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Lifecycle Policies",
+    "difficulty": "Level 2",
+    "question": "What is a storage lifecycle policy used for?",
+    "choices": ["Automatically transition or expire data according to defined rules", "Grant administrator access", "Create a VPN tunnel", "Distribute application traffic"],
+    "answer": 0,
+    "explanation": "Lifecycle policies automate data transitions to suitable storage classes or deletion when data reaches defined ages or conditions."
+  },
+  {
+    "id": "AWSCLF-3.6-R012",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "AWS Backup",
+    "difficulty": "Level 2",
+    "question": "Which AWS service centrally manages backup policies for supported AWS resources?",
+    "choices": ["AWS Backup", "AWS Artifact", "Amazon Route 53", "Amazon Kendra"],
+    "answer": 0,
+    "explanation": "AWS Backup centralizes and automates backup policies, schedules, retention, and monitoring for supported resources."
+  }
+]

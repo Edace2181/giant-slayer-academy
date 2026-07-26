@@ -1,0 +1,145 @@
+[
+  {
+    "id": "L010-2.3-R001",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Files",
+    "difficulty": "Level 2",
+    "question": "Which filesystem object normally stores a named collection of data?",
+    "choices": ["File", "Directory path separator", "Shell prompt", "User group"],
+    "answer": 0,
+    "explanation": "A file is a named filesystem object used to store data such as text, program code, images, or configuration information."
+  },
+  {
+    "id": "L010-2.3-R002",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Directories",
+    "difficulty": "Level 2",
+    "question": "Which filesystem object organizes references to files and other directories?",
+    "choices": ["Environment variable", "Directory", "Command option", "Process"],
+    "answer": 1,
+    "explanation": "A directory organizes filesystem entries and can contain references to files and nested directories."
+  },
+  {
+    "id": "L010-2.3-R003",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Hidden Files and Directories",
+    "difficulty": "Level 2",
+    "question": "How is a hidden file conventionally identified in a Linux directory?",
+    "choices": ["Its name ends in a slash", "Its name contains no letters", "Its name begins with a dot", "Its name is written entirely in uppercase"],
+    "answer": 2,
+    "explanation": "Linux tools conventionally treat names beginning with a dot as hidden entries."
+  },
+  {
+    "id": "L010-2.3-R004",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Home Directories",
+    "difficulty": "Level 2",
+    "question": "What is a user's home directory intended to provide?",
+    "choices": ["A location containing only kernel drivers", "A shared directory that every user must edit", "A replacement for the root filesystem", "A personal location for files and user-specific settings"],
+    "answer": 3,
+    "explanation": "A home directory gives a user a personal location for documents, data, and user-specific configuration files."
+  },
+  {
+    "id": "L010-2.3-R005",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Absolute Paths",
+    "difficulty": "Level 2",
+    "question": "Which path is absolute?",
+    "choices": ["/var/log/messages", "documents/report.txt", "../images/logo.png", "./script.sh"],
+    "answer": 0,
+    "explanation": "An absolute path begins at the filesystem root, represented by the leading slash in /var/log/messages."
+  },
+  {
+    "id": "L010-2.3-R006",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Relative Paths",
+    "difficulty": "Level 2",
+    "question": "Which description identifies a relative path?",
+    "choices": ["It always begins with /", "It is interpreted from the current working directory", "It can refer only to directories", "It must contain a username"],
+    "answer": 1,
+    "explanation": "A relative path is resolved from the current working directory rather than from the filesystem root."
+  },
+  {
+    "id": "L010-2.3-R007",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "ls Options > Long Listing",
+    "difficulty": "Level 2",
+    "question": "Which command displays directory entries in a long format containing details such as permissions and ownership?",
+    "choices": ["ls -a", "ls -R", "ls -l", "ls -d"],
+    "answer": 2,
+    "explanation": "The -l option requests the long listing format, which includes details such as permissions, ownership, size, and modification time."
+  },
+  {
+    "id": "L010-2.3-R008",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "ls Options > Hidden Entries",
+    "difficulty": "Level 2",
+    "question": "Which command includes hidden entries when listing the current directory?",
+    "choices": ["ls -l", "ls -h", "ls -s", "ls -a"],
+    "answer": 3,
+    "explanation": "The -a option tells ls not to omit names beginning with a dot, so hidden entries are included."
+  },
+  {
+    "id": "L010-2.3-R009",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Recursive Listings",
+    "difficulty": "Level 2",
+    "question": "Which command recursively lists a directory and its subdirectories?",
+    "choices": ["ls -R", "ls -a", "ls -l", "ls -t"],
+    "answer": 0,
+    "explanation": "The uppercase -R option makes ls descend into subdirectories and list their contents recursively."
+  },
+  {
+    "id": "L010-2.3-R010",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "cd",
+    "difficulty": "Level 2",
+    "question": "Which command changes the shell's current working directory?",
+    "choices": ["ls", "cd", "echo", "type"],
+    "answer": 1,
+    "explanation": "The cd command changes the current working directory used by the shell."
+  },
+  {
+    "id": "L010-2.3-R011",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Dot Directory Entry",
+    "difficulty": "Level 2",
+    "question": "What does a single dot represent in a Linux path?",
+    "choices": ["The filesystem root", "The parent directory", "The current directory", "The user's home directory"],
+    "answer": 2,
+    "explanation": "A single dot represents the current directory and can be used explicitly in relative paths such as ./script.sh."
+  },
+  {
+    "id": "L010-2.3-R012",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Parent Directory Entry",
+    "difficulty": "Level 2",
+    "question": "What does a double dot represent in a Linux path?",
+    "choices": ["A hidden file", "The current user's account", "The root user's home", "The parent directory"],
+    "answer": 3,
+    "explanation": "Two dots represent the parent of the current directory and can be used to move or refer one level upward."
+  },
+  {
+    "id": "L010-2.3-R013",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Home and Tilde",
+    "difficulty": "Level 2",
+    "question": "What does an unquoted tilde normally expand to in a shell path?",
+    "choices": ["The current user's home directory", "The filesystem root directory", "The current process identifier", "The system documentation directory"],
+    "answer": 0,
+    "explanation": "The shell normally expands an unquoted tilde at the start of a path to the current user's home directory."
+  }
+]

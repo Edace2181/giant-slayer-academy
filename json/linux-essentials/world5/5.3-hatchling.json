@@ -1,0 +1,90 @@
+[
+  {
+    "id": "L010-5.3-R001",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Permissions > File Permissions",
+    "difficulty": "Level 2",
+    "question": "Which Linux settings determine whether a user may read, modify, or execute a regular file?",
+    "choices": ["File permissions", "Routing entries", "Process priorities", "DNS records"],
+    "answer": 0,
+    "explanation": "File permissions control read, write, and execute access for the file's owner, group, and other users."
+  },
+  {
+    "id": "L010-5.3-R002",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Permissions > Directory Permissions",
+    "difficulty": "Level 2",
+    "question": "Which Linux settings control actions such as listing a directory and accessing entries within it?",
+    "choices": ["Shell variables", "Directory permissions", "Kernel messages", "Package repositories"],
+    "answer": 1,
+    "explanation": "Directory permissions govern operations such as listing directory contents, modifying entries, and traversing the directory."
+  },
+  {
+    "id": "L010-5.3-R003",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Ownership > File Ownership",
+    "difficulty": "Level 2",
+    "question": "Which metadata identifies the user and group associated with a Linux file?",
+    "choices": ["File compression", "File location", "File ownership", "File extension"],
+    "answer": 2,
+    "explanation": "File ownership records the owning user and group used when Linux evaluates the file's permission classes."
+  },
+  {
+    "id": "L010-5.3-R004",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Ownership > Directory Ownership",
+    "difficulty": "Level 2",
+    "question": "What identifies which user and group own a Linux directory?",
+    "choices": ["Its hostname", "Its process ID", "Its mount command", "Directory ownership"],
+    "answer": 3,
+    "explanation": "Directory ownership identifies the user and group whose permission bits apply as the owner and group classes."
+  },
+  {
+    "id": "L010-5.3-R005",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Permission Display > ls -l",
+    "difficulty": "Level 2",
+    "question": "Which command displays a long listing that includes permissions, ownership, size, and timestamps?",
+    "choices": ["ls -l", "ls -a", "chmod", "pwd"],
+    "answer": 0,
+    "explanation": "The ls -l command uses long-listing format to show permission bits, owner, group, size, time, and name."
+  },
+  {
+    "id": "L010-5.3-R006",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Hidden File Display > ls -a",
+    "difficulty": "Level 2",
+    "question": "Which command lists directory entries including names that begin with a dot?",
+    "choices": ["ls -d", "ls -a", "ls -S", "ls -i"],
+    "answer": 1,
+    "explanation": "The -a option tells ls to include hidden entries whose names begin with a dot."
+  },
+  {
+    "id": "L010-5.3-R007",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Permission Management > chmod",
+    "difficulty": "Level 2",
+    "question": "Which command changes the permission bits assigned to a file or directory?",
+    "choices": ["chown", "passwd", "chmod", "who"],
+    "answer": 2,
+    "explanation": "The chmod command changes read, write, and execute permissions using symbolic or numeric modes."
+  },
+  {
+    "id": "L010-5.3-R008",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Ownership Management > chown",
+    "difficulty": "Level 2",
+    "question": "Which command changes the owning user or group of a Linux filesystem object?",
+    "choices": ["touch", "grep", "sudo", "chown"],
+    "answer": 3,
+    "explanation": "The chown command changes a file or directory's user ownership and can also update its group ownership."
+  }
+]

@@ -1,0 +1,482 @@
+[
+  {
+    "id": "A1201-W7-BR2-001",
+    "domain": "1",
+    "objective": "1.1/5.4",
+    "blueprint": "Mobile power and safety",
+    "difficulty": "Level 3",
+    "question": "At a regional clinic, a laptop touchpad rises above the palm rest and the case separates following an office relocation. What should the technician do FIRST?",
+    "choices": [
+      "Power down the laptop and isolate it for swollen-battery service",
+      "Press the case closed and continue charging",
+      "Calibrate the touchpad in the operating system",
+      "Replace the Wi-Fi card"
+    ],
+    "answer": 0,
+    "explanation": "Case separation near the touchpad strongly indicates a swollen lithium battery; powering down and isolating it reduces fire and injury risk."
+  },
+  {
+    "id": "A1201-W7-BR2-002",
+    "domain": "1",
+    "objective": "1.1/5.4",
+    "blueprint": "Wireless hardware troubleshooting",
+    "difficulty": "Level 3",
+    "question": "A laptop at a regional clinic sees Wi-Fi only when it is beside the access point. The wireless card was replaced following an office relocation. Bluetooth remains normal. What should be checked NEXT?",
+    "choices": [
+      "Wi-Fi antenna leads and their card connectors",
+      "The SSD partition table",
+      "The keyboard ribbon cable",
+      "The cellular data cap"
+    ],
+    "answer": 0,
+    "explanation": "Extremely short Wi-Fi range after card service points to disconnected or incorrectly attached antenna leads."
+  },
+  {
+    "id": "A1201-W7-BR2-003",
+    "domain": "1",
+    "objective": "1.2/3.2",
+    "blueprint": "Docking and video connectivity",
+    "difficulty": "Level 3",
+    "question": "a regional clinic deploys USB-C docks. Charging and USB devices work, but external monitors remain blank on several laptops. What should be verified FIRST?",
+    "choices": [
+      "That the laptop USB-C ports support the required video alternate mode",
+      "That DHCP reservations exist for every monitor",
+      "That the laptops use ECC memory",
+      "That NFC is disabled"
+    ],
+    "answer": 0,
+    "explanation": "USB-C connector shape alone does not guarantee video support; the port must support the required alternate mode."
+  },
+  {
+    "id": "A1201-W7-BR2-004",
+    "domain": "1",
+    "objective": "1.3/2.6",
+    "blueprint": "Cellular and managed configuration",
+    "difficulty": "Level 3",
+    "question": "a regional clinic activates forty managed tablets. Wi-Fi works, but none register on the carrier after eSIM profiles are pushed. What is the BEST next check?",
+    "choices": [
+      "Confirm the eSIM profiles and cellular data policy are activated for the correct carrier",
+      "Replace every tablet battery",
+      "Enable Bluetooth pairing mode",
+      "Change the wireless access-point channel"
+    ],
+    "answer": 0,
+    "explanation": "Carrier registration depends on correctly activated subscriber profiles and an MDM policy that permits cellular data."
+  },
+  {
+    "id": "A1201-W7-BR2-005",
+    "domain": "1",
+    "objective": "1.2/1.3",
+    "blueprint": "Short-range connectivity",
+    "difficulty": "Level 3",
+    "question": "A technician must pair a medical scanner at a regional clinic without confusing it with identical nearby units. The scanner supports NFC-assisted Bluetooth setup. What is the BEST method?",
+    "choices": [
+      "Tap the intended scanner with NFC, then verify the Bluetooth connection",
+      "Enable a phone hotspot and select the strongest SSID",
+      "Enter the scanner's IP address into GPS settings",
+      "Connect through a public USB charging port"
+    ],
+    "answer": 0,
+    "explanation": "NFC-assisted pairing identifies the nearby intended device before Bluetooth establishes the longer-lived connection."
+  },
+  {
+    "id": "A1201-W7-BR2-006",
+    "domain": "1",
+    "objective": "1.3/4.2",
+    "blueprint": "Synchronization and data usage",
+    "difficulty": "Level 3",
+    "question": "Field tablets at a regional clinic exceed cellular data caps while synchronizing large cloud folders. Mail and calendars must remain current. Which policy is BEST?",
+    "choices": [
+      "Restrict bulk cloud-file synchronization to Wi-Fi while allowing essential mail and calendar sync",
+      "Disable all synchronization permanently",
+      "Remove the SIM cards and use Bluetooth only",
+      "Increase screen timeout to reduce traffic"
+    ],
+    "answer": 0,
+    "explanation": "Selective synchronization preserves essential business data while preventing large file transfers over capped cellular service."
+  },
+  {
+    "id": "A1201-W7-BR2-007",
+    "domain": "2",
+    "objective": "2.1/2.3",
+    "blueprint": "Ports and hosted services",
+    "difficulty": "Level 3",
+    "question": "a regional clinic moves email behind a new firewall. Users can browse securely and retrieve existing mail, but outbound server-to-server delivery fails. Which rule should be checked FIRST?",
+    "choices": [
+      "TCP port 25 for SMTP delivery",
+      "TCP port 3389 for RDP",
+      "UDP port 67 for DHCP",
+      "TCP port 445 for SMB"
+    ],
+    "answer": 0,
+    "explanation": "Server-to-server SMTP delivery commonly requires TCP port 25; unrelated web and retrieval functions may still work."
+  },
+  {
+    "id": "A1201-W7-BR2-008",
+    "domain": "2",
+    "objective": "2.2/5.5",
+    "blueprint": "Wireless interference analysis",
+    "difficulty": "Level 3",
+    "question": "Wi-Fi at a regional clinic becomes unusable only when nearby machinery runs. Signal strength stays high, but retries spike. Which tool and action are BEST?",
+    "choices": [
+      "Use a Wi-Fi or spectrum analyzer, then move clients to a cleaner channel or band",
+      "Use a crimper and replace every RJ45 plug",
+      "Use a loopback plug and change the default gateway",
+      "Use a punchdown tool and disable WPA"
+    ],
+    "answer": 0,
+    "explanation": "High retries with strong signal during machinery operation indicate interference that should be measured before channel redesign."
+  },
+  {
+    "id": "A1201-W7-BR2-009",
+    "domain": "2",
+    "objective": "2.4/2.6",
+    "blueprint": "DHCP and addressing",
+    "difficulty": "Level 3",
+    "question": "a regional clinic creates a new VLAN. Clients receive 169.254 addresses, while statically addressed devices reach the gateway. What should be configured FIRST?",
+    "choices": [
+      "A DHCP scope or relay for the new VLAN",
+      "An MX record for the VLAN",
+      "A larger wireless channel width",
+      "A new printer driver"
+    ],
+    "answer": 0,
+    "explanation": "APIPA addresses show DHCP failure; the routed VLAN needs a reachable scope, often through a relay."
+  },
+  {
+    "id": "A1201-W7-BR2-010",
+    "domain": "2",
+    "objective": "2.5/3.6",
+    "blueprint": "PoE capacity planning",
+    "difficulty": "Level 3",
+    "question": "a regional clinic adds forty PoE cameras. They boot in groups, then randomly power off as infrared lighting starts. What is the BEST fix?",
+    "choices": [
+      "Calculate peak PoE demand and add sufficient PoE budget or injectors",
+      "Replace the DNS server",
+      "Configure RAID 1 on each camera",
+      "Lower the switch's Ethernet speed"
+    ],
+    "answer": 0,
+    "explanation": "Infrared operation raises camera power demand; the switch must supply enough peak PoE budget."
+  },
+  {
+    "id": "A1201-W7-BR2-011",
+    "domain": "2",
+    "objective": "2.4/2.3",
+    "blueprint": "DNS mail authentication",
+    "difficulty": "Level 3",
+    "question": "a regional clinic sends legitimate mail, but recipients reject it because the sending host is not authorized in DNS. Which record should be corrected FIRST?",
+    "choices": [
+      "The SPF policy in a TXT record",
+      "The AAAA record for an internal printer",
+      "The DHCP exclusion list",
+      "The NTP server address"
+    ],
+    "answer": 0,
+    "explanation": "SPF publishes which hosts may send mail for a domain and is stored in DNS TXT data."
+  },
+  {
+    "id": "A1201-W7-BR2-012",
+    "domain": "2",
+    "objective": "2.8/3.2",
+    "blueprint": "Cable identification and validation",
+    "difficulty": "Level 3",
+    "question": "An unlabeled wall jack at a regional clinic must be mapped and then checked for correct conductor order. Which tools should be used in sequence?",
+    "choices": [
+      "A toner probe followed by a cable tester",
+      "A Wi-Fi analyzer followed by a loopback plug",
+      "A network tap followed by a multimeter",
+      "A crimper followed by an NFC reader"
+    ],
+    "answer": 0,
+    "explanation": "A toner identifies the cable run; a cable tester then verifies continuity and pin mapping."
+  },
+  {
+    "id": "A1201-W7-BR2-013",
+    "domain": "3",
+    "objective": "3.1/5.3",
+    "blueprint": "Display troubleshooting",
+    "difficulty": "Level 3",
+    "question": "A projector at a regional clinic shows a sharp image from one laptop but a fuzzy, oversized image from another using the same cable. What should be checked FIRST?",
+    "choices": [
+      "The second laptop's resolution and scaling settings",
+      "The projector's network gateway",
+      "The laptop battery chemistry",
+      "The printer PCL driver"
+    ],
+    "answer": 0,
+    "explanation": "A known-good projector and cable isolate the likely cause to the second laptop's display configuration."
+  },
+  {
+    "id": "A1201-W7-BR2-014",
+    "domain": "3",
+    "objective": "3.3/3.5",
+    "blueprint": "Memory compatibility",
+    "difficulty": "Level 3",
+    "question": "a regional clinic upgrades workstations with mixed-capacity DIMMs. All memory is detected, but dual-channel operation is lost. What is the BEST correction?",
+    "choices": [
+      "Install matched compatible modules in the motherboard's paired slots",
+      "Enable Secure Boot",
+      "Replace SATA cables with eSATA",
+      "Disable the TPM"
+    ],
+    "answer": 0,
+    "explanation": "Channel operation depends on compatible matched modules installed in the correct paired slots."
+  },
+  {
+    "id": "A1201-W7-BR2-015",
+    "domain": "3",
+    "objective": "3.4/5.2",
+    "blueprint": "RAID troubleshooting",
+    "difficulty": "Level 3",
+    "question": "A RAID 5 array at a regional clinic is degraded after one disk fails. A second disk reports increasing S.M.A.R.T. errors. What should happen FIRST?",
+    "choices": [
+      "Back up critical data before stressing the array with a rebuild",
+      "Initialize both disks immediately",
+      "Convert the live array to RAID 0",
+      "Ignore the warning until another disk fails"
+    ],
+    "answer": 0,
+    "explanation": "A second at-risk disk could fail during rebuild; protecting current data is the safest first action."
+  },
+  {
+    "id": "A1201-W7-BR2-016",
+    "domain": "3",
+    "objective": "3.5/3.6",
+    "blueprint": "Power and thermal design",
+    "difficulty": "Level 4",
+    "question": "a regional clinic installs a higher-power CPU and GPU. The system shuts down under load, temperatures are normal, and the PSU is below the recommended wattage. What is the BEST fix?",
+    "choices": [
+      "Install a properly rated efficient PSU with the required connectors",
+      "Add more thermal paste to every component",
+      "Replace the monitor inverter",
+      "Enable mobile hotspot mode"
+    ],
+    "answer": 0,
+    "explanation": "Normal temperatures plus load-related shutdown and inadequate wattage point to PSU capacity or connector limitations."
+  },
+  {
+    "id": "A1201-W7-BR2-017",
+    "domain": "3",
+    "objective": "3.7/2.3",
+    "blueprint": "Secure multifunction printing",
+    "difficulty": "Level 4",
+    "question": "a regional clinic needs users to scan to a protected file share and prevent unattended confidential printouts. Which configuration BEST meets both needs?",
+    "choices": [
+      "Scan to SMB with authorized credentials and secured print release",
+      "Scan to public email and enable anonymous printing",
+      "Use USB-only printing and disable audit logs",
+      "Install a generic driver and share one badge"
+    ],
+    "answer": 0,
+    "explanation": "Authenticated SMB scanning protects destination access, while secure release prevents documents from sitting unattended."
+  },
+  {
+    "id": "A1201-W7-BR2-018",
+    "domain": "3",
+    "objective": "3.2/3.5",
+    "blueprint": "Internal cabling and storage",
+    "difficulty": "Level 4",
+    "question": "A newly installed M.2 NVMe drive at a regional clinic is not detected. The same motherboard disables that M.2 slot when certain SATA ports are used. What should be done NEXT?",
+    "choices": [
+      "Review the motherboard lane-sharing table and move the SATA device if required",
+      "Terminate the drive with T568B",
+      "Attach an F-type adapter",
+      "Enable Bluetooth discovery"
+    ],
+    "answer": 0,
+    "explanation": "Motherboards may share PCIe lanes between M.2 slots and SATA ports; the documented configuration determines which can operate together."
+  },
+  {
+    "id": "A1201-W7-BR2-019",
+    "domain": "4",
+    "objective": "4.1/5.1",
+    "blueprint": "Hypervisor selection and isolation",
+    "difficulty": "Level 4",
+    "question": "a regional clinic needs a malware-analysis lab with strong isolation and minimal host operating-system exposure. Which platform is BEST?",
+    "choices": [
+      "A Type 1 hypervisor on dedicated hardware with isolated virtual networking",
+      "A Type 2 hypervisor on an employee's daily laptop bridged to production",
+      "A container sharing a production host with unrestricted networking",
+      "A public file share with executable access"
+    ],
+    "answer": 0,
+    "explanation": "A dedicated bare-metal hypervisor and isolated virtual network reduce interaction with user and production environments."
+  },
+  {
+    "id": "A1201-W7-BR2-020",
+    "domain": "4",
+    "objective": "4.1/2.3",
+    "blueprint": "VDI capacity and networking",
+    "difficulty": "Level 4",
+    "question": "a regional clinic launches forty VDI desktops. Login storms saturate storage while network use remains moderate. What should be addressed FIRST?",
+    "choices": [
+      "Storage IOPS and image-start scheduling",
+      "Wireless channel selection",
+      "SMTP relay permissions",
+      "Printer toner calibration"
+    ],
+    "answer": 0,
+    "explanation": "Simultaneous VDI startup is storage intensive; adequate IOPS and staggered starts directly address the bottleneck."
+  },
+  {
+    "id": "A1201-W7-BR2-021",
+    "domain": "4",
+    "objective": "4.1/4.2",
+    "blueprint": "Containers and persistence",
+    "difficulty": "Level 4",
+    "question": "A containerized application at a regional clinic loses uploaded files whenever the container is replaced. Which change is BEST?",
+    "choices": [
+      "Store uploads on a persistent volume outside the container's ephemeral layer",
+      "Increase the container's screen resolution",
+      "Convert the network to a PAN",
+      "Disable the hypervisor"
+    ],
+    "answer": 0,
+    "explanation": "Containers are replaceable; persistent application data belongs on durable external storage."
+  },
+  {
+    "id": "A1201-W7-BR2-022",
+    "domain": "4",
+    "objective": "4.2/2.6",
+    "blueprint": "Cloud cost and network planning",
+    "difficulty": "Level 4",
+    "question": "a regional clinic moves backups to cloud storage. Uploads are free, but disaster-recovery downloads incur large charges. Which metric should be included in planning?",
+    "choices": [
+      "Cloud egress utilization and cost",
+      "Laptop pixel density",
+      "Printer duty cycle",
+      "Bluetooth PIN length"
+    ],
+    "answer": 0,
+    "explanation": "Restoring data transfers it out of the cloud, so egress volume and pricing affect recovery cost."
+  },
+  {
+    "id": "A1201-W7-BR2-023",
+    "domain": "4",
+    "objective": "4.2/4.1",
+    "blueprint": "Hybrid-cloud architecture",
+    "difficulty": "Level 4",
+    "question": "a regional clinic must keep regulated data private while scaling stateless web servers during a peak sales event. Which design is BEST?",
+    "choices": [
+      "Keep regulated data in the private environment and burst approved web capacity into public cloud",
+      "Move every database to an anonymous public tenant",
+      "Use a Type 2 hypervisor with no access controls",
+      "Synchronize regulated files to personal accounts"
+    ],
+    "answer": 0,
+    "explanation": "A controlled hybrid design preserves private regulated data while using public elasticity for approved stateless workloads."
+  },
+  {
+    "id": "A1201-W7-BR2-024",
+    "domain": "4",
+    "objective": "4.1/3.4",
+    "blueprint": "Virtual-machine resource planning",
+    "difficulty": "Level 4",
+    "question": "Several VMs at a regional clinic pause during backups because snapshots consume the datastore's remaining capacity. What should the administrator do NEXT?",
+    "choices": [
+      "Consolidate or remove verified old snapshots and expand datastore capacity before the next backup",
+      "Increase monitor refresh rates",
+      "Disable guest network adapters",
+      "Convert SSDs to optical media"
+    ],
+    "answer": 0,
+    "explanation": "Snapshots consume datastore space and can grow during backup activity; capacity and snapshot lifecycle must be corrected."
+  },
+  {
+    "id": "A1201-W7-BR2-025",
+    "domain": "5",
+    "objective": "5.1/3.5",
+    "blueprint": "Hardware fault isolation",
+    "difficulty": "Level 4",
+    "question": "A desktop at a regional clinic powers on, emits a repeating memory-related POST code, and never displays video following an office relocation. What should be tried FIRST?",
+    "choices": [
+      "Reseat and test compatible RAM one module at a time",
+      "Replace the network switch",
+      "Rebuild the print queue",
+      "Change the DNS MX record"
+    ],
+    "answer": 0,
+    "explanation": "A memory-specific POST code makes systematic RAM reseating and module isolation the best first test."
+  },
+  {
+    "id": "A1201-W7-BR2-026",
+    "domain": "5",
+    "objective": "5.2/3.4",
+    "blueprint": "Storage failure response",
+    "difficulty": "Level 4",
+    "question": "A laptop at a regional clinic becomes slow, logs S.M.A.R.T. warnings, and makes occasional clicks. What is the BEST next step?",
+    "choices": [
+      "Back up recoverable data and replace the drive",
+      "Run repeated stress tests until it fails",
+      "Defragment the drive continuously",
+      "Update the Wi-Fi channel"
+    ],
+    "answer": 0,
+    "explanation": "S.M.A.R.T. warnings and mechanical clicking indicate imminent disk failure; data protection takes priority."
+  },
+  {
+    "id": "A1201-W7-BR2-027",
+    "domain": "5",
+    "objective": "5.3/3.1",
+    "blueprint": "Projector thermal troubleshooting",
+    "difficulty": "Level 4",
+    "question": "A projector at a regional clinic displays normally for ten minutes and then shuts down. Its filter is clogged and its exhaust is hot. What should be done FIRST?",
+    "choices": [
+      "Power it down, clean the airflow path, and verify cooling before further use",
+      "Increase the source resolution",
+      "Replace the HDMI cable while powered on",
+      "Configure a DHCP reservation"
+    ],
+    "answer": 0,
+    "explanation": "The timing and clogged filter indicate thermal protection; safe cooling maintenance should precede component replacement."
+  },
+  {
+    "id": "A1201-W7-BR2-028",
+    "domain": "5",
+    "objective": "5.4/1.1",
+    "blueprint": "Mobile safety troubleshooting",
+    "difficulty": "Level 4",
+    "question": "A phone at a regional clinic charges intermittently, becomes hot near the port, and has visible connector damage. What is the BEST action?",
+    "choices": [
+      "Stop charging it and service the damaged port before reuse",
+      "Force the plug into a new angle",
+      "Reset Bluetooth pairing",
+      "Increase display brightness"
+    ],
+    "answer": 0,
+    "explanation": "Heat and physical connector damage create electrical and fire risk, so charging should stop until repair."
+  },
+  {
+    "id": "A1201-W7-BR2-029",
+    "domain": "5",
+    "objective": "5.5/2.2",
+    "blueprint": "Network performance analysis",
+    "difficulty": "Level 4",
+    "question": "Voice calls at a regional clinic break up during busy periods. Pings show stable latency but widely varying arrival times and packet loss. Which condition should be prioritized?",
+    "choices": [
+      "Jitter and congestion affecting real-time traffic",
+      "A failed CMOS battery",
+      "An incorrect printer tray",
+      "A damaged webcam shutter"
+    ],
+    "answer": 0,
+    "explanation": "Variable packet timing and loss directly degrade VoIP even when average latency appears acceptable."
+  },
+  {
+    "id": "A1201-W7-BR2-030",
+    "domain": "5",
+    "objective": "5.6/3.8",
+    "blueprint": "Printer defect isolation",
+    "difficulty": "Level 4",
+    "question": "A laser printer at a regional clinic produces a faint duplicate image at the same interval on every page. Which component area is MOST likely involved?",
+    "choices": [
+      "The fuser or imaging drum causing a repeating defect",
+      "The DHCP lease timer",
+      "The wireless card antenna",
+      "The monitor color gamut"
+    ],
+    "answer": 0,
+    "explanation": "A regularly spaced echo image points to a rotating imaging or fusing component with a repeatable circumference."
+  }
+]

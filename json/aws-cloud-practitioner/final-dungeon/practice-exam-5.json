@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "AWSCLF-PEX5-001",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Self-service provisioning",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A developer is authorized to create a sandbox without submitting a hardware purchase request. Which cloud characteristic enables this?",
+    "choices": [
+      "On-demand self-service",
+      "Physical server ownership",
+      "Fixed annual capacity",
+      "Manual facility construction"
+    ],
+    "answer": 0,
+    "explanation": "Authorized users can provision cloud resources when needed without waiting for physical procurement."
+  },
+  {
+    "id": "AWSCLF-PEX5-002",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Usage metering",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which cloud characteristic gives a company detailed measurements of consumed resources for cost analysis?",
+    "choices": [
+      "Permanent overprovisioning",
+      "Metered usage",
+      "Customer-managed cooling",
+      "Single-tenant offices"
+    ],
+    "answer": 1,
+    "explanation": "Cloud services meter resource consumption, providing data for billing, allocation, and optimization."
+  },
+  {
+    "id": "AWSCLF-PEX5-003",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Resource pooling",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "How does a cloud provider efficiently serve many customers while keeping their workloads logically isolated?",
+    "choices": [
+      "Give every customer an entire Region",
+      "Use one shared root password",
+      "Pool infrastructure and allocate resources securely as needed",
+      "Disable virtualization"
+    ],
+    "answer": 2,
+    "explanation": "Cloud providers pool large infrastructure fleets while isolation controls separate customer workloads and data."
+  },
+  {
+    "id": "AWSCLF-PEX5-004",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Scale horizontally",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An application needs more web-serving capacity. Which action is horizontal scaling?",
+    "choices": [
+      "Replace one server with a larger server",
+      "Increase one volume’s size",
+      "Extend a password lifetime",
+      "Add more web server instances"
+    ],
+    "answer": 3,
+    "explanation": "Horizontal scaling increases capacity by adding additional resource instances."
+  },
+  {
+    "id": "AWSCLF-PEX5-005",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Avoid overprovisioning",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A workload’s peak lasts only one hour each Friday. What is the cost problem with running peak capacity all week?",
+    "choices": [
+      "Most capacity remains idle",
+      "AWS cannot measure usage",
+      "The workload becomes encrypted",
+      "All traffic becomes regional"
+    ],
+    "answer": 0,
+    "explanation": "Permanent peak capacity wastes money during the many hours when demand is lower."
+  },
+  {
+    "id": "AWSCLF-PEX5-006",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Focus on business value",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A startup uses managed AWS services so engineers can spend more time on product features than maintaining infrastructure. Which benefit is demonstrated?",
+    "choices": [
+      "Ownership of data-center generators",
+      "Focus on business differentiation",
+      "Elimination of all security duties",
+      "Guaranteed product success"
+    ],
+    "answer": 1,
+    "explanation": "Managed cloud capabilities reduce undifferentiated infrastructure work and free staff for product-focused activities."
+  },
+  {
+    "id": "AWSCLF-PEX5-007",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Well-Architected Security",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A workload uses traceable identities, automated controls, and protection at multiple layers. Which pillar do these practices support?",
+    "choices": [
+      "Sustainability",
+      "Cost Optimization",
+      "Security",
+      "Performance Efficiency"
+    ],
+    "answer": 2,
+    "explanation": "Strong identity foundations, traceability, automation, and layered controls are Security pillar principles."
+  },
+  {
+    "id": "AWSCLF-PEX5-008",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Reliability testing",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A team regularly simulates component failures to confirm automatic recovery works. What principle is it following?",
+    "choices": [
+      "Assume infrastructure never fails",
+      "Avoid automation",
+      "Keep all resources in one location",
+      "Test recovery procedures"
+    ],
+    "answer": 3,
+    "explanation": "Testing recovery paths validates that the workload can restore service when real failures occur."
+  },
+  {
+    "id": "AWSCLF-PEX5-009",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "AWS DMS",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company needs continuous replication from an on-premises database to AWS with a short final cutover. Which service should it evaluate?",
+    "choices": [
+      "AWS Database Migration Service",
+      "AWS Shield",
+      "Amazon Cognito",
+      "AWS Budgets"
+    ],
+    "answer": 0,
+    "explanation": "AWS DMS supports ongoing database replication and can reduce downtime during migration cutover."
+  },
+  {
+    "id": "AWSCLF-PEX5-010",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "AWS SCT",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A migration must convert a commercial database schema to a different engine before data moves. Which tool assists with the conversion assessment?",
+    "choices": [
+      "AWS WAF",
+      "AWS Schema Conversion Tool",
+      "Amazon CloudFront",
+      "AWS CloudShell"
+    ],
+    "answer": 1,
+    "explanation": "AWS SCT assesses and converts database schemas and code when migrating between different database engines."
+  },
+  {
+    "id": "AWSCLF-PEX5-011",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Forecast refinement",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A finance team updates its AWS forecast monthly using actual growth and deployment plans. Why is this useful?",
+    "choices": [
+      "AWS bills never vary",
+      "Forecasts replace security policies",
+      "Cloud forecasts can be refined as consumption changes",
+      "Resource tags create capacity"
+    ],
+    "answer": 2,
+    "explanation": "Frequent forecasting incorporates current usage and planned changes, improving financial visibility in a variable-cost environment."
+  },
+  {
+    "id": "AWSCLF-PEX5-012",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Decoupled failure domains",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A checkout request currently waits for inventory analytics to finish. Which redesign lets checkout succeed if analytics is delayed?",
+    "choices": [
+      "Run analytics in the checkout transaction",
+      "Remove message durability",
+      "Host both processes on one instance",
+      "Publish an event for asynchronous analytics processing"
+    ],
+    "answer": 3,
+    "explanation": "Asynchronous event delivery separates the checkout path from analytics availability and limits cascading failures."
+  },
+  {
+    "id": "AWSCLF-PEX5-013",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Migration business case",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A proposed migration has infrastructure savings but requires retraining and temporary parallel environments. What should the business case include?",
+    "choices": [
+      "Savings, transition costs, risks, and expected business outcomes",
+      "Only the future EC2 hourly price",
+      "Only the number of applications",
+      "No organizational costs"
+    ],
+    "answer": 0,
+    "explanation": "A migration business case should account for full transition investment, risk, operational changes, and expected value."
+  },
+  {
+    "id": "AWSCLF-PEX5-014",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Phased migration",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company wants early feedback before moving its most critical systems. Which approach best reduces transformation risk?",
+    "choices": [
+      "Move every workload simultaneously",
+      "Begin with a representative pilot wave",
+      "Skip dependency discovery",
+      "Start with the least understood critical system"
+    ],
+    "answer": 1,
+    "explanation": "A representative pilot validates tooling, processes, and assumptions before larger or more critical migration waves."
+  },
+  {
+    "id": "AWSCLF-PEX5-015",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "FinOps accountability",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Engineering controls deployment choices while finance sees the bill later. Which operating change best improves cost outcomes?",
+    "choices": [
+      "Hide all cost information from builders",
+      "Let finance configure production alone",
+      "Give engineering timely cost data and shared optimization responsibility",
+      "Eliminate budgets"
+    ],
+    "answer": 2,
+    "explanation": "FinOps aligns engineering, finance, and business teams so cost feedback reaches the people who influence architecture and consumption."
+  },
+  {
+    "id": "AWSCLF-PEX5-016",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Marginal cost",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An API’s requests double but fixed development costs stay unchanged. Which measurement helps evaluate the added cloud expense of that growth?",
+    "choices": [
+      "Total office rent",
+      "Number of source files",
+      "Age of the AWS account",
+      "Incremental infrastructure cost per additional request"
+    ],
+    "answer": 3,
+    "explanation": "Marginal unit cost shows how much additional cloud spending is associated with each added unit of demand."
+  },
+  {
+    "id": "AWSCLF-PEX5-017",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Customer backups",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Who decides the backup retention period for customer business data stored in AWS?",
+    "choices": [
+      "The customer",
+      "AWS physical security",
+      "The CPU manufacturer",
+      "The domain registrar"
+    ],
+    "answer": 0,
+    "explanation": "Customers define data-protection and retention requirements for their workloads."
+  },
+  {
+    "id": "AWSCLF-PEX5-018",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "AWS network infrastructure",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Who maintains the routers and cabling inside AWS facilities?",
+    "choices": [
+      "The customer’s application team",
+      "AWS",
+      "The customer’s auditors",
+      "The software reseller"
+    ],
+    "answer": 1,
+    "explanation": "AWS operates the physical networking infrastructure that underlies AWS services."
+  },
+  {
+    "id": "AWSCLF-PEX5-019",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Confidentiality",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A security requirement states that payroll records may be viewed only by authorized staff. Which information-security objective is described?",
+    "choices": [
+      "Availability",
+      "Elasticity",
+      "Confidentiality",
+      "Cost allocation"
+    ],
+    "answer": 2,
+    "explanation": "Confidentiality prevents information from being disclosed to identities that are not authorized to access it."
+  },
+  {
+    "id": "AWSCLF-PEX5-020",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM last accessed information",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which IAM information can help an administrator identify service permissions that an identity has not used recently?",
+    "choices": [
+      "A VPC flow log",
+      "An AWS invoice PDF",
+      "An EC2 user-data script",
+      "Service last accessed information"
+    ],
+    "answer": 3,
+    "explanation": "IAM last accessed information reports when an identity or policy last used supported services and helps refine permissions."
+  },
+  {
+    "id": "AWSCLF-PEX5-021",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM credential report",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which account-level report lists IAM users and the status of their passwords, access keys, and MFA devices?",
+    "choices": [
+      "IAM credential report",
+      "VPC flow log",
+      "AWS Cost and Usage Report",
+      "Amazon Inspector report"
+    ],
+    "answer": 0,
+    "explanation": "An IAM credential report inventories IAM users and credential status information for account-wide security reviews."
+  },
+  {
+    "id": "AWSCLF-PEX5-022",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Amazon Inspector",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which service reports software vulnerabilities in supported AWS compute workloads?",
+    "choices": [
+      "Amazon QuickSight",
+      "Amazon Inspector",
+      "AWS Cost Explorer",
+      "Amazon Route 53"
+    ],
+    "answer": 1,
+    "explanation": "Inspector scans supported workloads and images for known software vulnerabilities and exposure."
+  },
+  {
+    "id": "AWSCLF-PEX5-023",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Customer network configuration",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An EC2 instance allows SSH from every internet address because of its security group. Who must correct this rule?",
+    "choices": [
+      "AWS facilities operations",
+      "The instance hardware vendor",
+      "The customer",
+      "The certificate issuer"
+    ],
+    "answer": 2,
+    "explanation": "Customers configure security groups and are responsible for restricting resource network access."
+  },
+  {
+    "id": "AWSCLF-PEX5-024",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "AWS Artifact agreements",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A legal team needs to accept and manage an eligible AWS compliance agreement for its account. Where should it go?",
+    "choices": [
+      "Amazon GuardDuty",
+      "AWS Systems Manager",
+      "AWS Compute Optimizer",
+      "AWS Artifact Agreements"
+    ],
+    "answer": 3,
+    "explanation": "AWS Artifact Agreements provides self-service review and acceptance of supported AWS agreements."
+  },
+  {
+    "id": "AWSCLF-PEX5-025",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "AWS Config aggregator",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A central team needs one view of resource configuration and compliance data from multiple accounts and Regions. Which feature helps?",
+    "choices": [
+      "AWS Config aggregator",
+      "An EC2 placement group",
+      "S3 Transfer Acceleration",
+      "A CloudFront origin group"
+    ],
+    "answer": 0,
+    "explanation": "A Config aggregator collects configuration and compliance data across authorized accounts and Regions."
+  },
+  {
+    "id": "AWSCLF-PEX5-026",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "CloudWatch Logs Insights",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An operator needs interactive queries over application logs already stored in CloudWatch Logs. Which capability should be used?",
+    "choices": [
+      "AWS Artifact",
+      "CloudWatch Logs Insights",
+      "Amazon ECR",
+      "AWS Savings Plans"
+    ],
+    "answer": 1,
+    "explanation": "CloudWatch Logs Insights provides a query language for searching and analyzing CloudWatch log data."
+  },
+  {
+    "id": "AWSCLF-PEX5-027",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM conditions",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A policy should allow an action only when the request originates from an approved IP range. Which policy element implements this restriction?",
+    "choices": [
+      "Effect only",
+      "Version only",
+      "Condition",
+      "Statement identifier only"
+    ],
+    "answer": 2,
+    "explanation": "Policy conditions evaluate request context, including source IP addresses, before access is allowed."
+  },
+  {
+    "id": "AWSCLF-PEX5-028",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "AWS STS",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which service issues temporary security credentials when a principal assumes an IAM role?",
+    "choices": [
+      "AWS Shield",
+      "Amazon SES",
+      "AWS Storage Gateway",
+      "AWS Security Token Service"
+    ],
+    "answer": 3,
+    "explanation": "AWS STS provides temporary, limited-privilege credentials for role sessions and federated access."
+  },
+  {
+    "id": "AWSCLF-PEX5-029",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "AWS Security Hub standards",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A team wants automated checks of its AWS environment against supported security best-practice standards. Which service provides this capability?",
+    "choices": [
+      "AWS Security Hub",
+      "Amazon Athena",
+      "AWS DataSync",
+      "Amazon AppStream 2.0"
+    ],
+    "answer": 0,
+    "explanation": "Security Hub runs supported security-standard controls and consolidates their findings."
+  },
+  {
+    "id": "AWSCLF-PEX5-030",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "AWS Certificate Manager Private CA",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company needs a managed private certificate authority for internal applications. Which service is appropriate?",
+    "choices": [
+      "Amazon Macie",
+      "AWS Private CA",
+      "AWS Billing Conductor",
+      "Amazon Translate"
+    ],
+    "answer": 1,
+    "explanation": "AWS Private CA provides managed private certificate-authority capabilities for internal PKI use cases."
+  },
+  {
+    "id": "AWSCLF-PEX5-031",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Fargate responsibility",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A container runs on AWS Fargate. Which component remains the customer’s security responsibility?",
+    "choices": [
+      "The underlying host operating system",
+      "Physical server replacement",
+      "The container image and application dependencies",
+      "Fargate control-plane patching"
+    ],
+    "answer": 2,
+    "explanation": "AWS manages Fargate infrastructure while the customer secures container images, code, permissions, and data."
+  },
+  {
+    "id": "AWSCLF-PEX5-032",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "AWS Control Tower controls",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A Control Tower preventive control prohibits a resource configuration in an organizational unit. Can a member-account administrator bypass it with an IAM allow?",
+    "choices": [
+      "Yes, administrator policies always override it",
+      "Yes, by disabling CloudTrail",
+      "No, because IAM allows are never used",
+      "No, the preventive control constrains member-account permissions"
+    ],
+    "answer": 3,
+    "explanation": "Preventive Control Tower controls commonly use SCPs, which set permission boundaries that member-account IAM policies cannot exceed."
+  },
+  {
+    "id": "AWSCLF-PEX5-033",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "CloudTrail organization trail",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A security team needs account activity logs delivered consistently from every current and future account in an AWS Organization. What should it create?",
+    "choices": [
+      "An organization trail",
+      "A separate manual trail only in the management account",
+      "An S3 lifecycle policy",
+      "A VPC peering connection"
+    ],
+    "answer": 0,
+    "explanation": "A CloudTrail organization trail applies event logging across member accounts, including accounts added later."
+  },
+  {
+    "id": "AWSCLF-PEX5-034",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "ABAC",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company wants permissions determined by matching a developer’s Project tag with the target resource’s Project tag. Which access strategy is this?",
+    "choices": [
+      "Anonymous access",
+      "Attribute-based access control",
+      "Network address translation",
+      "Mandatory root access"
+    ],
+    "answer": 1,
+    "explanation": "Attribute-based access control uses identity, resource, and request attributes such as tags to make authorization decisions."
+  },
+  {
+    "id": "AWSCLF-PEX5-035",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Amazon Inspector versus GuardDuty",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A team needs known package vulnerability detection rather than behavioral threat detection. Which service should it choose?",
+    "choices": [
+      "Amazon GuardDuty",
+      "AWS Shield Standard",
+      "Amazon Inspector",
+      "Amazon Detective"
+    ],
+    "answer": 2,
+    "explanation": "Inspector identifies software vulnerabilities; GuardDuty primarily detects suspicious behavior from telemetry."
+  },
+  {
+    "id": "AWSCLF-PEX5-036",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "AWS Management Console",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which AWS interface is accessed through a web browser and presents graphical service pages?",
+    "choices": [
+      "AWS Direct Connect",
+      "AWS Snowball",
+      "Amazon SQS",
+      "AWS Management Console"
+    ],
+    "answer": 3,
+    "explanation": "The Management Console is AWS’s browser-based graphical interface."
+  },
+  {
+    "id": "AWSCLF-PEX5-037",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Availability Zones",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Why does an AWS Region contain multiple Availability Zones?",
+    "choices": [
+      "To support isolated, redundant deployments",
+      "To create one shared failure point",
+      "To eliminate customer backups",
+      "To combine every Region into one building"
+    ],
+    "answer": 0,
+    "explanation": "Multiple isolated Availability Zones allow customers to design resilient regional workloads."
+  },
+  {
+    "id": "AWSCLF-PEX5-038",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Amazon EC2",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A legacy application requires full control of its guest operating system. Which compute service is suitable?",
+    "choices": [
+      "AWS Lambda",
+      "Amazon EC2",
+      "Amazon S3",
+      "Amazon DynamoDB"
+    ],
+    "answer": 1,
+    "explanation": "EC2 provides virtual servers with customer control over the guest operating system."
+  },
+  {
+    "id": "AWSCLF-PEX5-039",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Amazon Redshift",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which AWS service is primarily a managed data warehouse?",
+    "choices": [
+      "Amazon ElastiCache",
+      "Amazon Neptune",
+      "Amazon Redshift",
+      "Amazon EFS"
+    ],
+    "answer": 2,
+    "explanation": "Redshift is designed for analytical queries over large data warehouse datasets."
+  },
+  {
+    "id": "AWSCLF-PEX5-040",
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Amazon VPC",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "What does Amazon VPC provide?",
+    "choices": [
+      "A managed email inbox",
+      "A machine-learning model registry",
+      "A billing support plan",
+      "A logically isolated virtual network"
+    ],
+    "answer": 3,
+    "explanation": "Amazon VPC lets customers define isolated cloud networks, addressing, subnets, routing, and security controls."
+  },
+  {
+    "id": "AWSCLF-PEX5-041",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "Amazon S3 Glacier",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which storage family is intended for long-term archival data?",
+    "choices": [
+      "Amazon S3 Glacier storage classes",
+      "EC2 instance store",
+      "Amazon ElastiCache",
+      "Amazon SQS"
+    ],
+    "answer": 0,
+    "explanation": "S3 Glacier storage classes provide low-cost archival object storage with different retrieval characteristics."
+  },
+  {
+    "id": "AWSCLF-PEX5-042",
+    "domain": "3",
+    "objective": "3.8",
+    "blueprint": "Amazon SNS",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A weather service must push the same alert to email, mobile, and queue subscribers. Which service is appropriate?",
+    "choices": [
+      "Amazon EBS",
+      "Amazon SNS",
+      "AWS Direct Connect",
+      "Amazon RDS"
+    ],
+    "answer": 1,
+    "explanation": "SNS fans published messages out to multiple subscribed endpoint types."
+  },
+  {
+    "id": "AWSCLF-PEX5-043",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "AWS CloudFormation drift",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A resource was changed manually after its stack deployment. Which CloudFormation feature can identify the difference?",
+    "choices": [
+      "S3 Versioning",
+      "EC2 hibernation",
+      "Drift detection",
+      "Route 53 DNSSEC"
+    ],
+    "answer": 2,
+    "explanation": "CloudFormation drift detection compares actual supported resource configurations with their template definitions."
+  },
+  {
+    "id": "AWSCLF-PEX5-044",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "AWS Global Infrastructure",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An architect must verify whether a particular AWS service is offered in a candidate Region. What should be checked?",
+    "choices": [
+      "The account’s password policy",
+      "The VPC CIDR alone",
+      "The monthly invoice color",
+      "The AWS Regional Services list"
+    ],
+    "answer": 3,
+    "explanation": "Service availability varies by Region, so the official Regional Services information should be reviewed."
+  },
+  {
+    "id": "AWSCLF-PEX5-045",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "EC2 Dedicated Instances",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A policy requires EC2 instances to run on hardware dedicated to one customer but does not require host-level visibility. Which tenancy option fits?",
+    "choices": [
+      "Dedicated Instances",
+      "Spot Instances",
+      "Standard shared tenancy",
+      "AWS Lambda"
+    ],
+    "answer": 0,
+    "explanation": "Dedicated Instances run in a VPC on hardware dedicated to a single customer without Dedicated Host visibility and control."
+  },
+  {
+    "id": "AWSCLF-PEX5-046",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Amazon WorkSpaces",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company wants persistent managed virtual desktops delivered to remote employees. Which service should it use?",
+    "choices": [
+      "Amazon ECS",
+      "Amazon WorkSpaces",
+      "AWS Batch",
+      "Amazon API Gateway"
+    ],
+    "answer": 1,
+    "explanation": "Amazon WorkSpaces provides centrally managed persistent cloud desktops that authorized employees can access remotely."
+  },
+  {
+    "id": "AWSCLF-PEX5-047",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Amazon Keyspaces",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An application needs a scalable managed database compatible with Apache Cassandra. Which service should it evaluate?",
+    "choices": [
+      "Amazon Aurora",
+      "Amazon Neptune",
+      "Amazon Keyspaces",
+      "Amazon Redshift"
+    ],
+    "answer": 2,
+    "explanation": "Amazon Keyspaces is a managed, scalable Apache Cassandra-compatible database service."
+  },
+  {
+    "id": "AWSCLF-PEX5-048",
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Route 53 health checks",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A DNS failover record should stop directing users to an unhealthy endpoint. Which capability supplies endpoint status?",
+    "choices": [
+      "EBS snapshots",
+      "IAM Access Analyzer",
+      "S3 Object Lock",
+      "Route 53 health checks"
+    ],
+    "answer": 3,
+    "explanation": "Route 53 health checks monitor endpoint health and integrate with failover DNS routing."
+  },
+  {
+    "id": "AWSCLF-PEX5-049",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "S3 Object Lock",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Records must be stored in a write-once-read-many format so they cannot be deleted during a retention period. Which feature fits?",
+    "choices": [
+      "S3 Object Lock",
+      "S3 Transfer Acceleration",
+      "EBS Fast Snapshot Restore",
+      "EC2 Auto Scaling"
+    ],
+    "answer": 0,
+    "explanation": "S3 Object Lock provides WORM retention controls that prevent protected object versions from deletion or overwrite."
+  },
+  {
+    "id": "AWSCLF-PEX5-050",
+    "domain": "3",
+    "objective": "3.7",
+    "blueprint": "Amazon Textract",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A claims department needs text and table data extracted from scanned forms. Which AI service should it use?",
+    "choices": [
+      "Amazon Polly",
+      "Amazon Textract",
+      "Amazon Lex",
+      "Amazon Forecast"
+    ],
+    "answer": 1,
+    "explanation": "Textract extracts printed text, handwriting, forms, and tables from documents."
+  },
+  {
+    "id": "AWSCLF-PEX5-051",
+    "domain": "3",
+    "objective": "3.8",
+    "blueprint": "Amazon Connect",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company wants a managed cloud contact center with call routing and agent tools. Which service is designed for this?",
+    "choices": [
+      "Amazon MQ",
+      "AWS Step Functions",
+      "Amazon Connect",
+      "Amazon ECR"
+    ],
+    "answer": 2,
+    "explanation": "Amazon Connect is a managed omnichannel cloud contact-center service."
+  },
+  {
+    "id": "AWSCLF-PEX5-052",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Route 53 geolocation routing",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A publisher wants DNS responses based on the geographic location from which users query. Which routing policy is appropriate?",
+    "choices": [
+      "Weighted routing",
+      "Latency routing",
+      "Simple routing",
+      "Geolocation routing"
+    ],
+    "answer": 3,
+    "explanation": "Geolocation routing selects records based on the geographic origin of DNS queries."
+  },
+  {
+    "id": "AWSCLF-PEX5-053",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "EC2 hibernation",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A long-running in-memory development environment must pause and later resume with RAM contents preserved. Which EC2 feature can help?",
+    "choices": [
+      "Hibernation",
+      "Termination protection only",
+      "Spot interruption",
+      "Dedicated tenancy"
+    ],
+    "answer": 0,
+    "explanation": "EC2 hibernation saves RAM contents to the root EBS volume and restores them when the instance resumes."
+  },
+  {
+    "id": "AWSCLF-PEX5-054",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DynamoDB global tables",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A key-value application needs active access to replicated data in multiple AWS Regions. Which database feature should it use?",
+    "choices": [
+      "An RDS read replica in one Availability Zone",
+      "DynamoDB global tables",
+      "Amazon ElastiCache snapshots",
+      "An EBS Multi-Attach volume"
+    ],
+    "answer": 1,
+    "explanation": "DynamoDB global tables provide managed multi-Region replication for active key-value and document workloads."
+  },
+  {
+    "id": "AWSCLF-PEX5-055",
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "AWS Client VPN",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Remote employees need secure client-based access to resources in a VPC. Which managed networking service fits?",
+    "choices": [
+      "AWS Direct Connect",
+      "A NAT gateway",
+      "AWS Client VPN",
+      "Amazon CloudFront"
+    ],
+    "answer": 2,
+    "explanation": "AWS Client VPN provides managed VPN connectivity for individual remote clients."
+  },
+  {
+    "id": "AWSCLF-PEX5-056",
+    "domain": "3",
+    "objective": "3.6",
+    "blueprint": "EFS lifecycle management",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Files on Amazon EFS become cold after several weeks. Which feature can reduce their storage cost automatically?",
+    "choices": [
+      "EC2 Auto Scaling",
+      "S3 Cross-Region Replication",
+      "Route 53 failover",
+      "EFS lifecycle management"
+    ],
+    "answer": 3,
+    "explanation": "EFS lifecycle management moves eligible files between storage classes according to access patterns."
+  },
+  {
+    "id": "AWSCLF-PEX5-057",
+    "domain": "3",
+    "objective": "3.7",
+    "blueprint": "Amazon EMR",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A company must run large-scale Apache Spark jobs using a managed big-data platform. Which service should it select?",
+    "choices": [
+      "Amazon EMR",
+      "Amazon SES",
+      "AWS WAF",
+      "Amazon Lightsail"
+    ],
+    "answer": 0,
+    "explanation": "Amazon EMR runs managed big-data frameworks such as Apache Spark."
+  },
+  {
+    "id": "AWSCLF-PEX5-058",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Pay for usage",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "What is a common AWS pricing principle?",
+    "choices": [
+      "Pay one fixed price for every service",
+      "Pay for measured consumption",
+      "Purchase all hardware upfront",
+      "Receive unlimited resources at no cost"
+    ],
+    "answer": 1,
+    "explanation": "Many AWS services use usage-based pricing so charges reflect measured resource consumption."
+  },
+  {
+    "id": "AWSCLF-PEX5-059",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "AWS Cost Explorer",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which tool can group historical AWS spending by service, account, or tag?",
+    "choices": [
+      "AWS WAF",
+      "Amazon Inspector",
+      "AWS Cost Explorer",
+      "AWS CloudTrail Lake"
+    ],
+    "answer": 2,
+    "explanation": "Cost Explorer filters and groups historical cost and usage across dimensions such as service, account, and tags."
+  },
+  {
+    "id": "AWSCLF-PEX5-060",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Reserved Instance payment options",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "For an eligible Reserved Instance term, which payment choice generally provides the greatest discount?",
+    "choices": [
+      "No Upfront",
+      "Monthly On-Demand only",
+      "Spot payment",
+      "All Upfront"
+    ],
+    "answer": 3,
+    "explanation": "All Upfront Reserved Instance payment generally provides a greater discount than partial or no-upfront options for the same term."
+  },
+  {
+    "id": "AWSCLF-PEX5-061",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Cost Categories",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Finance wants to define business rules that group accounts and tags into categories such as Production and Research. Which feature should it use?",
+    "choices": [
+      "AWS Cost Categories",
+      "AWS Security Hub",
+      "Amazon Route 53",
+      "AWS Certificate Manager"
+    ],
+    "answer": 0,
+    "explanation": "Cost Categories create rule-based business groupings for cost and usage analysis."
+  },
+  {
+    "id": "AWSCLF-PEX5-062",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "AWS Skill Builder",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "Which AWS resource provides digital training for people developing AWS Cloud knowledge and skills?",
+    "choices": [
+      "Amazon GuardDuty",
+      "AWS Skill Builder",
+      "AWS Artifact",
+      "AWS Transit Gateway"
+    ],
+    "answer": 1,
+    "explanation": "AWS Skill Builder is AWS’s digital learning center for cloud training."
+  },
+  {
+    "id": "AWSCLF-PEX5-063",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Spot Fleet diversification",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A batch workload uses Spot capacity and wants fewer interruptions caused by shortage of one instance type. Which strategy helps?",
+    "choices": [
+      "Require one exact instance type in one Zone",
+      "Use one Dedicated Host",
+      "Diversify across multiple instance types and Availability Zones",
+      "Disable checkpointing"
+    ],
+    "answer": 2,
+    "explanation": "Diversification expands the available Spot capacity pools and reduces dependence on a single constrained pool."
+  },
+  {
+    "id": "AWSCLF-PEX5-064",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Savings Plans recommendations",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "A finance analyst wants commitment recommendations derived from historical eligible compute usage. Which billing tool area provides them?",
+    "choices": [
+      "AWS Artifact reports",
+      "CloudTrail event history",
+      "Amazon Inspector findings",
+      "Savings Plans recommendations in Cost Explorer"
+    ],
+    "answer": 3,
+    "explanation": "Cost Explorer provides Savings Plans purchase recommendations based on historical eligible usage."
+  },
+  {
+    "id": "AWSCLF-PEX5-065",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "AWS Professional Services",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer AWS Practice Exam Question",
+    "question": "An enterprise wants AWS-employed experts to assist with a complex cloud transformation engagement. Which resource is most directly relevant?",
+    "choices": [
+      "AWS Professional Services",
+      "AWS Marketplace software only",
+      "Amazon Macie",
+      "AWS Free Tier"
+    ],
+    "answer": 0,
+    "explanation": "AWS Professional Services provides AWS experts who help customers execute cloud initiatives and transformations."
+  }
+]

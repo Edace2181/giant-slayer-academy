@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydra Academy | Command Center</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body">
+  <div class="crt-overlay"></div>
+  <main class="command-center">
+    <header class="command-center-hero">
+      <span class="campaign-kicker">STUDENT PROGRESS SYSTEM</span>
+      <h1 class="arcade-title">🐉 HYDRA COMMAND CENTER</h1>
+      <p class="tagline">Recognition builds mastery. Mastery conquers the Academy.</p>
+    </header>
+
+    <section id="academySummary" class="academy-summary" aria-labelledby="academyHeading">
+      <h2 id="academyHeading">Overall Academy</h2>
+    </section>
+
+    <section aria-labelledby="campaignHeading">
+      <h2 id="campaignHeading" class="dashboard-section-title">Certification Campaigns</h2>
+      <div id="campaignDashboard" class="dashboard-grid"></div>
+    </section>
+
+    <footer class="arcade-footer">
+      <a href="index.html" class="link-btn">← Return to Academy</a>
+    </footer>
+  </main>
+  <script src="campaign-ui.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

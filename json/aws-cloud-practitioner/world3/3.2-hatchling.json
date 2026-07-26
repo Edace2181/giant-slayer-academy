@@ -1,0 +1,145 @@
+[
+  {
+    "id": "AWSCLF-3.2-R001",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "AWS Global Infrastructure > Regions",
+    "difficulty": "Level 2",
+    "question": "What is an AWS Region?",
+    "choices": ["A separate geographic area containing multiple Availability Zones", "A single customer account", "One physical server", "A billing category"],
+    "answer": 0,
+    "explanation": "An AWS Region is a distinct geographic area that contains multiple isolated Availability Zones."
+  },
+  {
+    "id": "AWSCLF-3.2-R002",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "AWS Global Infrastructure > Availability Zones",
+    "difficulty": "Level 2",
+    "question": "What is an AWS Availability Zone?",
+    "choices": ["One or more discrete data centers with redundant infrastructure in a Region", "A global billing account", "A customer-managed subnet", "A software licensing model"],
+    "answer": 0,
+    "explanation": "An Availability Zone is an isolated location within a Region consisting of one or more data centers with independent infrastructure."
+  },
+  {
+    "id": "AWSCLF-3.2-R003",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "AWS Global Infrastructure > Edge Locations",
+    "difficulty": "Level 2",
+    "question": "What is the primary role of an AWS edge location?",
+    "choices": ["Deliver supported content and services closer to end users", "Host every customer's relational database", "Replace all Availability Zones", "Store IAM passwords"],
+    "answer": 0,
+    "explanation": "Edge locations place supported delivery and networking capabilities closer to users to improve performance and latency."
+  },
+  {
+    "id": "AWSCLF-3.2-R004",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "High Availability",
+    "difficulty": "Level 2",
+    "question": "What is the goal of high availability?",
+    "choices": ["Keep a workload accessible despite certain failures", "Keep every component in one facility", "Eliminate all monitoring", "Prevent resources from scaling"],
+    "answer": 0,
+    "explanation": "High availability designs reduce disruption and keep workloads accessible when individual components fail."
+  },
+  {
+    "id": "AWSCLF-3.2-R005",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Use of Multiple Regions",
+    "difficulty": "Level 2",
+    "question": "What does a multi-Region architecture use?",
+    "choices": ["Resources deployed in more than one AWS geographic Region", "Several subnets in one Availability Zone", "Only edge locations", "Multiple IAM groups"],
+    "answer": 0,
+    "explanation": "A multi-Region architecture deploys resources in more than one AWS Region to meet specific resilience, latency, or regulatory needs."
+  },
+  {
+    "id": "AWSCLF-3.2-R006",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Benefits of Edge Locations",
+    "difficulty": "Level 2",
+    "question": "Which benefit can edge locations provide?",
+    "choices": ["Lower latency by serving supported content nearer to users", "Unlimited database storage at no cost", "Automatic root-user protection", "Replacement of all regional services"],
+    "answer": 0,
+    "explanation": "Edge locations can reduce latency because supported content and traffic services operate closer to end users."
+  },
+  {
+    "id": "AWSCLF-3.2-R007",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Regions, Availability Zones, and Edge Location Relationships",
+    "difficulty": "Level 2",
+    "question": "Which statement correctly describes AWS global infrastructure?",
+    "choices": ["A Region contains Availability Zones, while edge locations extend supported delivery closer to users", "An Availability Zone contains several Regions", "An edge location contains every AWS service", "A Region is located inside one customer VPC"],
+    "answer": 0,
+    "explanation": "Regions are geographic areas containing Availability Zones. Edge locations are separate points of presence used by supported services near end users."
+  },
+  {
+    "id": "AWSCLF-3.2-R008",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "High Availability with Multiple Availability Zones",
+    "difficulty": "Level 2",
+    "question": "How can a workload improve availability within one AWS Region?",
+    "choices": ["Deploy redundant resources across multiple Availability Zones", "Place every component in one Availability Zone", "Disable health checks", "Use one physical server"],
+    "answer": 0,
+    "explanation": "Distributing redundant resources across Availability Zones helps a workload remain available if one location experiences a disruption."
+  },
+  {
+    "id": "AWSCLF-3.2-R009",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Availability Zone Failure Isolation",
+    "difficulty": "Level 2",
+    "question": "Why are Availability Zones designed with independent infrastructure?",
+    "choices": ["To avoid sharing a single point of failure", "To force all workloads into one data center", "To combine all Regions into one location", "To remove the need for redundancy"],
+    "answer": 0,
+    "explanation": "Availability Zones are isolated so a failure affecting one location is less likely to affect another."
+  },
+  {
+    "id": "AWSCLF-3.2-R010",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Multiple Regions > Disaster Recovery",
+    "difficulty": "Level 2",
+    "question": "Why might an organization maintain workload resources in a second AWS Region?",
+    "choices": ["To support disaster recovery if the primary Region becomes unavailable", "To create an IAM password policy", "To replace encryption", "To avoid monitoring costs"],
+    "answer": 0,
+    "explanation": "A second Region can provide geographically separate recovery resources for a regional disaster."
+  },
+  {
+    "id": "AWSCLF-3.2-R011",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Multiple Regions > Business Continuity",
+    "difficulty": "Level 2",
+    "question": "How can using multiple AWS Regions support business continuity?",
+    "choices": ["Operations can continue from another geographic area during a major disruption", "All resources become free", "Every service becomes global automatically", "Customer responsibilities transfer to AWS"],
+    "answer": 0,
+    "explanation": "Multi-Region planning can help important business operations continue when a major event affects the primary Region."
+  },
+  {
+    "id": "AWSCLF-3.2-R012",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Multiple Regions > Low Latency",
+    "difficulty": "Level 2",
+    "question": "Which multi-Region benefit helps users located far apart?",
+    "choices": ["Applications can serve users from a Region closer to them", "All data becomes public", "IAM permissions are no longer needed", "On-premises hardware scales automatically"],
+    "answer": 0,
+    "explanation": "Serving users from geographically closer Regions can reduce network latency."
+  },
+  {
+    "id": "AWSCLF-3.2-R013",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Multiple Regions > Data Sovereignty",
+    "difficulty": "Level 2",
+    "question": "Which requirement can influence an organization's choice of AWS Region?",
+    "choices": ["A rule requiring data to remain within a particular jurisdiction", "A preference for longer network delays", "A need to remove all backups", "A plan to share root credentials"],
+    "answer": 0,
+    "explanation": "Data-sovereignty and residency obligations can require data to be stored or processed in approved geographic locations."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "L010-5.4-R001",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Temporary Storage > Temporary Files",
+    "difficulty": "Level 2",
+    "question": "What is a temporary file primarily intended to hold?",
+    "choices": ["Short-lived data needed during a task", "Permanent user account records", "The Linux kernel source tree", "Hardware device identifiers"],
+    "answer": 0,
+    "explanation": "A temporary file holds short-lived working data that an application or user does not intend to preserve permanently."
+  },
+  {
+    "id": "L010-5.4-R002",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Temporary Storage > Temporary Directories",
+    "difficulty": "Level 2",
+    "question": "What is the purpose of a temporary directory?",
+    "choices": ["To store boot-loader configuration", "To provide a location for transient working files", "To define local user groups", "To list available processors"],
+    "answer": 1,
+    "explanation": "A temporary directory provides space for transient files created while programs and users perform tasks."
+  },
+  {
+    "id": "L010-5.4-R003",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Links > Symbolic Links",
+    "difficulty": "Level 2",
+    "question": "Which filesystem object stores a path that points to another file or directory?",
+    "choices": ["Process", "Partition", "Symbolic link", "User group"],
+    "answer": 2,
+    "explanation": "A symbolic link is a special filesystem object containing a path to another file or directory."
+  },
+  {
+    "id": "L010-5.4-R004",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Temporary Directories > /tmp/",
+    "difficulty": "Level 2",
+    "question": "Which shared directory is the conventional location for temporary files that may be cleared during startup?",
+    "choices": ["/boot/", "/etc/", "/home/", "/tmp/"],
+    "answer": 3,
+    "explanation": "/tmp/ is the conventional shared location for temporary data and its contents may be removed during boot or routine cleanup."
+  },
+  {
+    "id": "L010-5.4-R005",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Temporary Directories > /var/tmp/",
+    "difficulty": "Level 2",
+    "question": "Which directory is intended for temporary files that should normally survive a system restart?",
+    "choices": ["/var/tmp/", "/proc/", "/dev/", "/sys/"],
+    "answer": 0,
+    "explanation": "/var/tmp/ holds temporary files with longer lifetimes that are normally preserved across reboots."
+  },
+  {
+    "id": "L010-5.4-R006",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Special Permissions > Sticky Bit",
+    "difficulty": "Level 2",
+    "question": "Which special permission on a shared directory prevents users from deleting files owned by other users?",
+    "choices": ["setgid", "Sticky bit", "Read bit", "Execute bit"],
+    "answer": 1,
+    "explanation": "On a shared directory, the sticky bit restricts removal or renaming of an entry to its owner, the directory owner, or root."
+  },
+  {
+    "id": "L010-5.4-R007",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Directory Display > ls -d",
+    "difficulty": "Level 2",
+    "question": "Which command form lists a directory entry itself instead of listing the directory's contents?",
+    "choices": ["ls -a", "ls -l", "ls -d", "ls -R"],
+    "answer": 2,
+    "explanation": "The -d option tells ls to display a directory as an entry rather than descend into and list its contents."
+  },
+  {
+    "id": "L010-5.4-R008",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Link Creation > ln -s",
+    "difficulty": "Level 2",
+    "question": "Which command creates a symbolic link to a target path?",
+    "choices": ["cp -r", "mv -i", "mkdir -p", "ln -s"],
+    "answer": 3,
+    "explanation": "The ln command with the -s option creates a symbolic link rather than a hard link."
+  }
+]

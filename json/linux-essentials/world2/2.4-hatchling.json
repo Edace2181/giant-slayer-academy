@@ -1,0 +1,101 @@
+[
+  {
+    "id": "L010-2.4-R001",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Files and Directories",
+    "difficulty": "Level 2",
+    "question": "Which statement correctly distinguishes a directory from a regular file?",
+    "choices": ["A directory organizes filesystem entries, while a regular file stores data", "A directory can contain only commands, while a file contains only usernames", "A directory must be hidden, while a file must be visible", "A directory exists only in memory, while a file exists only on a network"],
+    "answer": 0,
+    "explanation": "A directory organizes references to filesystem entries, while a regular file stores data such as text, configuration, or program content."
+  },
+  {
+    "id": "L010-2.4-R002",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Case Sensitivity",
+    "difficulty": "Level 2",
+    "question": "How does a typical Linux filesystem treat the names Report.txt and report.txt?",
+    "choices": ["As two links to the same file", "As distinct names", "As invalid because capital letters are prohibited", "As directories rather than files"],
+    "answer": 1,
+    "explanation": "Linux filenames are normally case-sensitive, so Report.txt and report.txt can identify two different entries."
+  },
+  {
+    "id": "L010-2.4-R003",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Simple Globbing",
+    "difficulty": "Level 2",
+    "question": "Which shell pattern matches filenames ending in .txt?",
+    "choices": ["?.txt?", "[txt]", "*.txt", "/txt/"],
+    "answer": 2,
+    "explanation": "In simple shell globbing, the asterisk matches any sequence of characters, so *.txt matches names ending in .txt."
+  },
+  {
+    "id": "L010-2.4-R004",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "mv",
+    "difficulty": "Level 2",
+    "question": "Which command moves a file to another path or renames it?",
+    "choices": ["cp", "touch", "rm", "mv"],
+    "answer": 3,
+    "explanation": "The mv command moves filesystem entries and can rename a file or directory when the destination specifies a new name."
+  },
+  {
+    "id": "L010-2.4-R005",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "cp",
+    "difficulty": "Level 2",
+    "question": "Which command creates a copy of a file at another location?",
+    "choices": ["cp", "mv", "rmdir", "history"],
+    "answer": 0,
+    "explanation": "The cp command copies files and, with appropriate options, directories to another path."
+  },
+  {
+    "id": "L010-2.4-R006",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "rm",
+    "difficulty": "Level 2",
+    "question": "Which command removes a regular file?",
+    "choices": ["mkdir", "rm", "touch", "cd"],
+    "answer": 1,
+    "explanation": "The rm command removes files; its use should be deliberate because command-line removal may not provide a desktop trash recovery step."
+  },
+  {
+    "id": "L010-2.4-R007",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "touch",
+    "difficulty": "Level 2",
+    "question": "Which command can create an empty file when the named file does not already exist?",
+    "choices": ["rmdir", "mv", "touch", "ls"],
+    "answer": 2,
+    "explanation": "The touch command updates file timestamps and creates an empty file when the specified file does not exist."
+  },
+  {
+    "id": "L010-2.4-R008",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "mkdir",
+    "difficulty": "Level 2",
+    "question": "Which command creates a new directory?",
+    "choices": ["rm", "cp", "touch", "mkdir"],
+    "answer": 3,
+    "explanation": "The mkdir command creates one or more directories."
+  },
+  {
+    "id": "L010-2.4-R009",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "rmdir",
+    "difficulty": "Level 2",
+    "question": "Which command removes an empty directory?",
+    "choices": ["rmdir", "mkdir", "mv", "echo"],
+    "answer": 0,
+    "explanation": "The rmdir command removes directories that are empty."
+  }
+]

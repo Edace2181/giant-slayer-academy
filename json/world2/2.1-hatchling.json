@@ -1,0 +1,240 @@
+[
+  {
+    "id": "2.1-01",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Routing Technologies",
+    "concept": "Static Routing",
+    "blueprint": "Static Routing",
+    "question": "Which routing method requires routes to be manually configured by an administrator?",
+    "choices": [
+      "OSPF",
+      "Static Routing",
+      "BGP",
+      "EIGRP"
+    ],
+    "answer": 1,
+    "explanation": "Static routing uses manually configured routes and does not automatically learn path updates."
+  },
+  {
+    "id": "2.1-02",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Routing Technologies",
+    "concept": "Dynamic Routing",
+    "blueprint": "Dynamic Routing",
+    "question": "Which routing method automatically learns and updates routes between routers?",
+    "choices": [
+      "Static Routing",
+      "Dynamic Routing",
+      "NAT",
+      "PAT"
+    ],
+    "answer": 1,
+    "explanation": "Dynamic routing protocols automatically exchange route information and update routing tables."
+  },
+  {
+    "id": "2.1-03",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Routing Technologies",
+    "concept": "BGP",
+    "blueprint": "BGP",
+    "question": "Which dynamic routing protocol is commonly used for routing between autonomous systems on the Internet?",
+    "choices": [
+      "OSPF",
+      "EIGRP",
+      "BGP",
+      "RIP"
+    ],
+    "answer": 2,
+    "explanation": "BGP is used for routing between autonomous systems, especially across the Internet."
+  },
+  {
+    "id": "2.1-04",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Routing Technologies",
+    "concept": "EIGRP",
+    "blueprint": "EIGRP",
+    "question": "Which dynamic routing protocol was originally developed by Cisco and is considered an advanced distance-vector protocol?",
+    "choices": [
+      "OSPF",
+      "EIGRP",
+      "BGP",
+      "NAT"
+    ],
+    "answer": 1,
+    "explanation": "EIGRP was developed by Cisco and combines features of distance-vector and link-state behavior."
+  },
+  {
+    "id": "2.1-05",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Routing Technologies",
+    "concept": "OSPF",
+    "blueprint": "OSPF",
+    "question": "Which dynamic routing protocol uses link-state information and the shortest path first algorithm?",
+    "choices": [
+      "OSPF",
+      "EIGRP",
+      "BGP",
+      "PAT"
+    ],
+    "answer": 0,
+    "explanation": "OSPF is a link-state routing protocol that uses the SPF algorithm to determine the best path."
+  },
+  {
+    "id": "2.1-06",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Route Selection",
+    "concept": "Administrative Distance",
+    "blueprint": "Administrative Distance",
+    "question": "Which route selection characteristic indicates how trustworthy a route source is?",
+    "choices": [
+      "Prefix Length",
+      "Administrative Distance",
+      "Metric",
+      "NAT"
+    ],
+    "answer": 1,
+    "explanation": "Administrative distance is used to rank the trustworthiness of routes learned from different sources."
+  },
+  {
+    "id": "2.1-07",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Route Selection",
+    "concept": "Prefix Length",
+    "blueprint": "Prefix Length",
+    "question": "Which route selection characteristic refers to how specific a network route is, such as /24 or /30?",
+    "choices": [
+      "Metric",
+      "Prefix Length",
+      "Administrative Distance",
+      "VIP"
+    ],
+    "answer": 1,
+    "explanation": "Prefix length defines the size and specificity of a network route, such as /24 or /30."
+  },
+  {
+    "id": "2.1-08",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Route Selection",
+    "concept": "Metric",
+    "blueprint": "Metric",
+    "question": "Which route selection characteristic is used by routing protocols to determine the best path based on values such as cost or hop count?",
+    "choices": [
+      "Metric",
+      "Prefix Length",
+      "Administrative Distance",
+      "NAT"
+    ],
+    "answer": 0,
+    "explanation": "A metric is a value used by routing protocols to compare possible paths and choose the best one."
+  },
+  {
+    "id": "2.1-09",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Address Translation",
+    "concept": "NAT",
+    "blueprint": "NAT",
+    "question": "Which address translation technology maps one private IP address to one public IP address?",
+    "choices": [
+      "NAT",
+      "PAT",
+      "VIP",
+      "OSPF"
+    ],
+    "answer": 0,
+    "explanation": "NAT can perform one-to-one translation between a private IP and a public IP."
+  },
+  {
+    "id": "2.1-10",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Address Translation",
+    "concept": "PAT",
+    "blueprint": "PAT",
+    "question": "Which address translation technology allows multiple devices to share one public IP address by using different port numbers?",
+    "choices": [
+      "NAT",
+      "PAT",
+      "BGP",
+      "EIGRP"
+    ],
+    "answer": 1,
+    "explanation": "PAT uses port numbers so multiple internal devices can share a single public IP address."
+  },
+  {
+    "id": "2.1-11",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Address Translation",
+    "concept": "Address Translation Recognition",
+    "blueprint": "Address Translation Recognition",
+    "question": "Which networking function translates private IP addresses into public IP addresses?",
+    "choices": [
+      "OSPF",
+      "NAT/PAT",
+      "VLAN",
+      "MTU"
+    ],
+    "answer": 1,
+    "explanation": "NAT and PAT are address translation technologies that convert private IP addressing for public network access."
+  },
+  {
+    "id": "2.1-12",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Redundancy and Interfaces",
+    "concept": "FHRP",
+    "blueprint": "FHRP",
+    "question": "Which technology provides gateway redundancy so that if one router fails, another can take over as the default gateway?",
+    "choices": [
+      "BGP",
+      "FHRP",
+      "PAT",
+      "SVI"
+    ],
+    "answer": 1,
+    "explanation": "First Hop Redundancy Protocols provide backup default gateway functionality for hosts."
+  },
+  {
+    "id": "2.1-13",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Redundancy and Interfaces",
+    "concept": "VIP",
+    "blueprint": "VIP",
+    "question": "Which type of IP address is shared by redundant routers in a First Hop Redundancy Protocol deployment?",
+    "choices": [
+      "Private IP",
+      "Public IP",
+      "Virtual IP",
+      "Loopback IP"
+    ],
+    "answer": 2,
+    "explanation": "A Virtual IP (VIP) is shared by redundant routers so hosts can use one default gateway address."
+  },
+  {
+    "id": "2.1-14",
+    "objective": "2.1",
+    "mode": "hatchling",
+    "category": "Redundancy and Interfaces",
+    "concept": "Subinterfaces",
+    "blueprint": "Subinterfaces",
+    "question": "Which router feature allows a single physical interface to be divided into multiple logical interfaces?",
+    "choices": [
+      "VLAN Database",
+      "Subinterfaces",
+      "MTU",
+      "Duplex"
+    ],
+    "answer": 1,
+    "explanation": "Subinterfaces allow one physical router interface to support multiple logical networks, often for inter-VLAN routing."
+  }
+]

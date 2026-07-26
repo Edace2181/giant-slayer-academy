@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydra Academy | World 4</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="hydra.png">
+</head>
+
+<body class="arcade-body">
+
+    <div class="crt-overlay"></div>
+
+    <main class="world-screen">
+
+        <!-- INTRO CARD -->
+        <section class="world-intro-card">
+
+            <h1 class="arcade-title">🌲 WORLD 4</h1>
+
+            <h2 class="world-subtitle">Network Security</h2>
+
+            <div class="message-box">
+
+                <p>Every network deserves</p>
+                <p>to be protected.</p>
+
+                <br>
+
+                <p>Build your defenses.</p>
+
+                <br>
+
+                <p>Protect what you've created.</p>
+
+            </div>
+
+            <button id="enterWorldBtn" class="link-btn">
+                ▶ PRESS START
+            </button>
+
+            <br><br>
+
+            <a href="network-campaign.html" class="back-link">
+                ← Return to Campaign Map
+            </a>
+
+        </section>
+
+        <!-- TRAINING MENU -->
+        <section id="world4-menu" class="hidden">
+
+            <h1 class="arcade-title">🌲 WORLD 4</h1>
+
+            <p class="tagline">
+                Choose Your Training Mode
+            </p>
+
+            <div class="mode-grid">
+
+                <a href="hydra-quiz.html?world=4&objective=4.1" class="mode-card">
+                    🧭<br>
+                    Objective Sweep
+                </a>
+                
+                <a href="#" class="mode-card" onclick="comingSoon('Story Mode');return false;"> 
+                        🎮<br /> 
+                        Story Mode
+                    </a> 
+                    
+                    <a href="#" class="mode-card" onclick="comingSoon('Recognition Mode');return false;"> 
+                        🎯<br /> 
+                        Recognition Mode 
+                    </a> 
+                    
+                    <a href="#" class="mode-card"onclick="comingSoon('Recognition Mode');return false;"> 
+                        ⚔️<br /> 
+                        Mini Boss 
+                    </a> 
+
+            </div>
+
+            <br>
+
+            <a href="network-campaign.html" class="back-link">
+                ← Return to Campaign Map
+            </a>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        const enterWorldBtn = document.getElementById("enterWorldBtn");
+        const introCard = document.querySelector(".world-intro-card");
+        const worldMenu = document.getElementById("world4-menu");
+
+        enterWorldBtn.addEventListener("click", () => {
+
+            introCard.style.display = "none";
+            worldMenu.classList.remove("hidden");
+
+        });
+
+        function comingSoon(mode)  {
+            alert (`====================================
+            ${mode}
+            Coming in Hydra v2.0
+            This game mode is still under construction.
+            Press OK to return.
+            ==================================`);
+        }
+
+    </script>
+
+</body>
+</html>

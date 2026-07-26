@@ -1,0 +1,482 @@
+[
+  {
+    "id": "S701-W7-BOSSRUSH1-001",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Preventive and detective controls",
+    "difficulty": "Level 3",
+    "question": "A retailer blocks unsigned executables and also alerts when protected files change. Which control pairing BEST describes these safeguards?",
+    "choices": [
+      "Preventive application allowlisting and detective file-integrity monitoring",
+      "Corrective patching and deterrent signage",
+      "Directive policy and compensating insurance",
+      "Physical locks and recovery backups"
+    ],
+    "answer": 0,
+    "explanation": "Allowlisting prevents execution, while file-integrity monitoring detects changes."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-002",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Availability and non-repudiation",
+    "difficulty": "Level 3",
+    "question": "A payment service must remain reachable during a node failure and must prove which administrator approved each refund. Which combination BEST meets both requirements?",
+    "choices": [
+      "Hashing refunds and encrypting backups",
+      "Failover clustering and digitally signed approvals",
+      "Tokenizing accounts and adding a warm site",
+      "Masking logs and using shared administrator accounts"
+    ],
+    "answer": 1,
+    "explanation": "Clustering supports availability; digital signatures provide attributable approval and non-repudiation."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-003",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Change management",
+    "difficulty": "Level 3",
+    "question": "An emergency firewall change restored service but created an undocumented inbound rule. What should the security manager do NEXT?",
+    "choices": [
+      "Delete every emergency rule immediately",
+      "Wait for the annual audit to document it",
+      "Enter the change into the emergency review process and validate the rule",
+      "Replace the firewall with a new model"
+    ],
+    "answer": 2,
+    "explanation": "Emergency changes still require retrospective approval, documentation, and validation."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-004",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Certificate revocation",
+    "difficulty": "Level 3",
+    "question": "A web server private key may have been copied. The certificate remains within its validity period. What is the BEST immediate PKI action?",
+    "choices": [
+      "Renew the same certificate with the same key",
+      "Publish the private key in DNSSEC",
+      "Archive the certificate until expiration",
+      "Revoke the certificate and replace the key pair"
+    ],
+    "answer": 3,
+    "explanation": "A suspected private-key compromise requires revocation and a new key pair."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-005",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Hashing and salting",
+    "difficulty": "Level 3",
+    "question": "Two users choose the same password, but the stored credential values must differ. Which implementation BEST provides this result?",
+    "choices": [
+      "A unique salt before password hashing",
+      "Symmetric encryption with one shared key",
+      "Tokenization with a common token",
+      "A digital signature on each password"
+    ],
+    "answer": 0,
+    "explanation": "Unique salts cause identical passwords to produce different stored hashes."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-006",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Zero trust",
+    "difficulty": "Level 3",
+    "question": "An employee connected to the internal LAN requests a sensitive database. Policy requires device health, user identity, and request context to be evaluated every time. Which principle is being applied?",
+    "choices": [
+      "Implicit trust based on network location",
+      "Explicit verification under zero trust",
+      "Transitive trust through federation",
+      "Availability through load balancing"
+    ],
+    "answer": 1,
+    "explanation": "Zero trust continuously evaluates identity, device, and context rather than trusting location."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-007",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Threat actor motivation",
+    "difficulty": "Level 3",
+    "question": "A group quietly steals diplomatic cables for several years using custom implants and substantial infrastructure. Which actor is MOST likely?",
+    "choices": [
+      "An unskilled script kiddie seeking attention",
+      "An accidental insider",
+      "A nation-state conducting espionage",
+      "A competitor performing an authorized audit"
+    ],
+    "answer": 2,
+    "explanation": "Long-term stealth, custom capability, and diplomatic targeting indicate nation-state espionage."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-008",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Phishing and typosquatting",
+    "difficulty": "Level 3",
+    "question": "Employees receive payroll messages from payrol-example.com that link to a cloned login page. Which two attack elements are present?",
+    "choices": [
+      "Vishing and SQL injection",
+      "Smishing and ARP poisoning",
+      "Watering-hole attack and tailgating",
+      "Phishing and typosquatting"
+    ],
+    "answer": 3,
+    "explanation": "The message is phishing and the look-alike domain is typosquatting."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-009",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Cloud misconfiguration",
+    "difficulty": "Level 3",
+    "question": "A storage bucket containing invoices can be listed anonymously even though the application code is current. What is the MOST likely weakness?",
+    "choices": [
+      "A cloud access-policy misconfiguration",
+      "A race condition",
+      "A buffer overflow",
+      "A malicious firmware update"
+    ],
+    "answer": 0,
+    "explanation": "Anonymous listing points to incorrectly configured cloud permissions."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-010",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Ransomware indicators",
+    "difficulty": "Level 3",
+    "question": "Workstations rapidly rename documents, generate ransom notes, and contact one unfamiliar host. What should the analyst do FIRST?",
+    "choices": [
+      "Pay the requested amount",
+      "Isolate affected endpoints from the network",
+      "Delete every backup copy",
+      "Reimage the domain controllers before containment"
+    ],
+    "answer": 1,
+    "explanation": "Immediate isolation limits ransomware propagation and command-and-control activity."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-011",
+    "domain": "2",
+    "objective": "2.5",
+    "blueprint": "Compensating controls",
+    "difficulty": "Level 3",
+    "question": "A medical controller cannot be patched until the vendor recertifies it. Which mitigation is BEST while it remains in service?",
+    "choices": [
+      "Expose it directly for easier vendor access",
+      "Disable all monitoring to preserve performance",
+      "Place it in a restricted segment with tightly limited flows",
+      "Grant users local administrator rights"
+    ],
+    "answer": 2,
+    "explanation": "Segmentation and flow restriction compensate for the unavailable patch."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-012",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Password spraying",
+    "difficulty": "Level 4",
+    "question": "Authentication logs show one common password tried once against 900 accounts with few lockouts. Which attack is occurring?",
+    "choices": [
+      "Credential stuffing",
+      "Offline rainbow-table cracking",
+      "Pass-the-hash",
+      "Password spraying"
+    ],
+    "answer": 3,
+    "explanation": "Password spraying applies a small number of common passwords across many accounts."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-013",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Shared responsibility",
+    "difficulty": "Level 3",
+    "question": "A SaaS provider secures the platform, but a customer exposes records by assigning broad user roles. Who is responsible for the access error?",
+    "choices": [
+      "The customer organization",
+      "Only the cloud provider",
+      "The internet service provider",
+      "The certificate authority"
+    ],
+    "answer": 0,
+    "explanation": "SaaS customers remain responsible for identities, permissions, and their data configuration."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-014",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Fail-closed",
+    "difficulty": "Level 4",
+    "question": "A factory requires a failed access gateway to stop remote administrative traffic even if production support is delayed. Which failure mode is required?",
+    "choices": [
+      "Fail-open",
+      "Fail-closed",
+      "Passive tap",
+      "Load-balanced"
+    ],
+    "answer": 1,
+    "explanation": "Fail-closed blocks traffic when the security control fails."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-015",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Tokenization",
+    "difficulty": "Level 3",
+    "question": "A merchant wants applications to reference card numbers without storing the actual values. Which method is BEST?",
+    "choices": [
+      "Hash card numbers used for future payments",
+      "Display only the last four digits",
+      "Replace card numbers with tokens mapped in a protected vault",
+      "Compress the database"
+    ],
+    "answer": 2,
+    "explanation": "Tokenization substitutes non-sensitive references while retaining controlled mapping."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-016",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Recovery objectives",
+    "difficulty": "Level 4",
+    "question": "A business can lose at most 15 minutes of transactions and must restore service within two hours. Which values should be documented?",
+    "choices": [
+      "RTO of 15 minutes and RPO of two hours",
+      "MTBF of 15 minutes and MTTR of two hours",
+      "SLE of 15 minutes and ALE of two hours",
+      "RPO of 15 minutes and RTO of two hours"
+    ],
+    "answer": 3,
+    "explanation": "RPO measures acceptable data loss; RTO measures restoration time."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-017",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "WAF placement",
+    "difficulty": "Level 3",
+    "question": "An internet storefront needs protection from malicious HTTP requests without changing its database firewall. Where should a WAF be placed?",
+    "choices": [
+      "In front of the web application",
+      "Behind the database on a storage network",
+      "On employee Bluetooth adapters",
+      "Between the UPS and server power supply"
+    ],
+    "answer": 0,
+    "explanation": "A WAF belongs in the HTTP request path before the application."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-018",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Backup resilience",
+    "difficulty": "Level 4",
+    "question": "Attackers with domain-admin rights encrypted production and online backups. Which design would BEST improve recovery from this event?",
+    "choices": [
+      "More frequent backups to the same writable share",
+      "Offline immutable backups in a separately controlled location",
+      "A larger RAID array in production",
+      "Longer log retention on the compromised domain"
+    ],
+    "answer": 1,
+    "explanation": "Offline immutable copies resist alteration by compromised production credentials."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-019",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Secure baseline maintenance",
+    "difficulty": "Level 3",
+    "question": "A hardened workstation image was approved six months ago, but deployed systems now differ after manual changes. What should operations implement?",
+    "choices": [
+      "One-time penetration testing only",
+      "Password sharing for administrators",
+      "Continuous configuration enforcement against the approved baseline",
+      "A public bug bounty for desktop users"
+    ],
+    "answer": 2,
+    "explanation": "Continuous enforcement detects and corrects baseline drift."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-020",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Asset inventory",
+    "difficulty": "Level 4",
+    "question": "A vulnerability scanner reports an unmanaged server, but no team claims it. Which process should be improved FIRST?",
+    "choices": [
+      "Certificate pinning",
+      "Email content filtering",
+      "Password expiration",
+      "Asset inventory with assigned ownership"
+    ],
+    "answer": 3,
+    "explanation": "An authoritative inventory and owner assignment are prerequisites for managing the server."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-021",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Vulnerability prioritization",
+    "difficulty": "Level 3",
+    "question": "Two findings have equal CVSS scores. One is internet-facing with active exploitation; the other is isolated in a lab. Which should be remediated first?",
+    "choices": [
+      "The internet-facing actively exploited finding",
+      "The isolated lab finding",
+      "Both only after the next annual audit",
+      "Neither because their scores are equal"
+    ],
+    "answer": 0,
+    "explanation": "Exposure and active exploitation raise the environmental priority."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-022",
+    "domain": "4",
+    "objective": "4.4",
+    "blueprint": "SIEM alert tuning",
+    "difficulty": "Level 4",
+    "question": "A SIEM rule generates thousands of alerts from an approved vulnerability scanner, hiding real probes. What is the BEST next action?",
+    "choices": [
+      "Disable network logging globally",
+      "Tune the rule for the scanner while preserving detection for other sources",
+      "Delete all historical events",
+      "Whitelist every internal address"
+    ],
+    "answer": 1,
+    "explanation": "Targeted tuning reduces known noise without losing broader coverage."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-023",
+    "domain": "4",
+    "objective": "4.5",
+    "blueprint": "Email authentication",
+    "difficulty": "Level 3",
+    "question": "A domain owner wants recipients to reject spoofed mail and receive alignment reports. Which control should be configured?",
+    "choices": [
+      "SNMPv3 traps",
+      "A host-based firewall",
+      "DMARC with an enforcement policy",
+      "Full-disk encryption"
+    ],
+    "answer": 2,
+    "explanation": "DMARC supplies policy enforcement and reporting based on SPF/DKIM alignment."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-024",
+    "domain": "4",
+    "objective": "4.6",
+    "blueprint": "Just-in-time privilege",
+    "difficulty": "Level 4",
+    "question": "Database administrators need elevated access only during approved maintenance windows, with automatic removal afterward. Which solution is BEST?",
+    "choices": [
+      "Permanent membership in the administrator group",
+      "A shared root password",
+      "Discretionary access controlled by each user",
+      "PAM with just-in-time permissions"
+    ],
+    "answer": 3,
+    "explanation": "Just-in-time PAM grants time-limited elevation and removes it automatically."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-025",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Policy versus procedure",
+    "difficulty": "Level 3",
+    "question": "Management states that sensitive exports must be approved; operations documents the exact approval steps. What are these two documents?",
+    "choices": [
+      "A policy and a procedure",
+      "A guideline and a risk register",
+      "An SLA and an MOU",
+      "A standard and a threat feed"
+    ],
+    "answer": 0,
+    "explanation": "Policy sets required direction; procedure gives step-by-step execution."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-026",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Annualized loss expectancy",
+    "difficulty": "Level 4",
+    "question": "A $200,000 asset would lose 25% of its value per incident, and one incident is expected every two years. What is the ALE?",
+    "choices": [
+      "$50,000",
+      "$25,000",
+      "$100,000",
+      "$400,000"
+    ],
+    "answer": 1,
+    "explanation": "SLE is $50,000 and ARO is 0.5, producing a $25,000 ALE."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-027",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Right-to-audit",
+    "difficulty": "Level 3",
+    "question": "A customer needs contractual authority to inspect a processor’s security controls after a breach. Which clause is MOST relevant?",
+    "choices": [
+      "Force majeure clause",
+      "Password standard",
+      "Right-to-audit clause",
+      "Acceptable use policy"
+    ],
+    "answer": 2,
+    "explanation": "A right-to-audit clause grants the customer inspection authority."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-028",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Data controller",
+    "difficulty": "Level 4",
+    "question": "A hospital decides why patient data is processed; a cloud company processes it under instructions. Which role does the hospital hold?",
+    "choices": [
+      "Data processor",
+      "Data custodian only",
+      "Certificate authority",
+      "Data controller"
+    ],
+    "answer": 3,
+    "explanation": "The controller determines the purposes and means of processing."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-029",
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Unknown-environment test",
+    "difficulty": "Level 3",
+    "question": "A penetration tester receives only the company name and no network diagrams or credentials. Which test knowledge level applies?",
+    "choices": [
+      "Unknown environment",
+      "Known environment",
+      "Partially known environment",
+      "Integrated environment"
+    ],
+    "answer": 0,
+    "explanation": "An unknown-environment test begins with essentially no internal knowledge."
+  },
+  {
+    "id": "S701-W7-BOSSRUSH1-030",
+    "domain": "5",
+    "objective": "5.6",
+    "blueprint": "Awareness metrics",
+    "difficulty": "Level 4",
+    "question": "After quarterly phishing simulations, click rates fall but reporting remains slow. Which program change BEST addresses the remaining weakness?",
+    "choices": [
+      "Stop simulations because click rates improved",
+      "Train and measure rapid suspicious-message reporting",
+      "Publish employee passwords in a handbook",
+      "Remove the reporting button"
+    ],
+    "answer": 1,
+    "explanation": "Reporting-focused training and metrics address the observed response delay."
+  }
+]

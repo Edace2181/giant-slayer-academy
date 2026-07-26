@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydra A+ Core 2 | World 4</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body">
+  <div class="crt-overlay"></div>
+  <main class="world-screen">
+    <section class="world-intro-card">
+      <h1 class="arcade-title">📋 WORLD 4</h1>
+      <h2 class="world-subtitle">Operational Procedures I</h2>
+      <div class="message-box"><p>A+ Core 2 • 220-1202</p><p>Begin the Objective Sweep and strengthen your recognition.</p><br><p>Trust your training.</p></div>
+      <button id="enterWorldBtn" class="link-btn">▶ PRESS START</button><br><br>
+      <a href="aplus-core2-campaign.html" class="back-link">← Return to Campaign Map</a>
+    </section>
+    <section id="world4-menu" class="hidden">
+      <h1 class="arcade-title">📋 WORLD 4</h1>
+      <p class="tagline">Choose Your Training Mode</p>
+      <div class="mode-grid"><a href="aplus-core2-world4-objectives.html" class="mode-card">🧭<br>Objective Sweep</a>
+        <a class="mode-card" aria-disabled="true">🎮<br>Story Mode — Coming Soon</a>
+        <a class="mode-card" aria-disabled="true">🎯<br>Recognition Mode — Coming Soon</a>
+        <a class="mode-card" aria-disabled="true">⚔️<br>Mini Boss — Coming Soon</a></div><br>
+      <a href="aplus-core2-campaign.html" class="back-link">← Return to Campaign Map</a>
+    </section>
+  </main>
+  <script>
+    const enterWorldBtn = document.getElementById("enterWorldBtn");
+    const introCard = document.querySelector(".world-intro-card");
+    const worldMenu = document.getElementById("world4-menu");
+    enterWorldBtn.addEventListener("click", () => { introCard.style.display = "none"; worldMenu.classList.remove("hidden"); });
+  </script>
+</body>
+</html>

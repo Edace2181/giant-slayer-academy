@@ -1,0 +1,189 @@
+[
+  {
+    "id": "AWSCLF-4.1-R001",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing Options",
+    "difficulty": "Level 2",
+    "question": "Why does AWS provide several compute purchasing options?",
+    "choices": ["To match different workload commitments, interruption tolerance, and cost goals", "To assign IAM permissions", "To select database schemas", "To replace all storage classes"],
+    "answer": 0,
+    "explanation": "AWS purchasing options trade flexibility, commitment, availability, tenancy, and price to fit different workload requirements."
+  },
+  {
+    "id": "AWSCLF-4.1-R002",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > On-Demand Instances",
+    "difficulty": "Level 2",
+    "question": "Which Amazon EC2 purchasing option requires no long-term commitment and charges for usage?",
+    "choices": ["On-Demand Instances", "Reserved Instances", "Dedicated Hosts", "Spot Instances"],
+    "answer": 0,
+    "explanation": "On-Demand Instances provide flexible compute usage without a long-term commitment."
+  },
+  {
+    "id": "AWSCLF-4.1-R003",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > Reserved Instances",
+    "difficulty": "Level 2",
+    "question": "Which option provides Amazon EC2 billing discounts in exchange for a one-year or three-year commitment?",
+    "choices": ["Reserved Instances", "On-Demand Instances", "Spot Instances", "Capacity Reservations"],
+    "answer": 0,
+    "explanation": "Reserved Instances are a billing discount model based on a commitment to a consistent EC2 configuration and term."
+  },
+  {
+    "id": "AWSCLF-4.1-R004",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > Spot Instances",
+    "difficulty": "Level 2",
+    "question": "Which Amazon EC2 option uses spare capacity at a discount but can be interrupted by AWS?",
+    "choices": ["Spot Instances", "Dedicated Hosts", "Reserved Instances", "Capacity Reservations"],
+    "answer": 0,
+    "explanation": "Spot Instances offer discounted spare EC2 capacity for workloads that can tolerate interruption."
+  },
+  {
+    "id": "AWSCLF-4.1-R005",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > AWS Savings Plans",
+    "difficulty": "Level 2",
+    "question": "Which pricing model offers compute discounts in exchange for a consistent amount of usage per hour?",
+    "choices": ["AWS Savings Plans", "AWS Budgets", "Capacity Reservations", "AWS Free Tier"],
+    "answer": 0,
+    "explanation": "Savings Plans provide discounted eligible compute usage in exchange for a one-year or three-year hourly spending commitment."
+  },
+  {
+    "id": "AWSCLF-4.1-R006",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > Dedicated Hosts",
+    "difficulty": "Level 2",
+    "question": "Which Amazon EC2 option gives a customer an entire physical server dedicated to its use?",
+    "choices": ["Dedicated Host", "Dedicated Instance", "Spot Instance", "On-Demand shared instance"],
+    "answer": 0,
+    "explanation": "A Dedicated Host is a physical EC2 server dedicated to one customer and can support certain compliance and server-bound licensing needs."
+  },
+  {
+    "id": "AWSCLF-4.1-R007",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > Dedicated Instances",
+    "difficulty": "Level 2",
+    "question": "Which EC2 tenancy option runs instances on hardware dedicated to one customer without exposing host-level placement control?",
+    "choices": ["Dedicated Instances", "Dedicated Hosts", "Spot Instances", "Reserved Instances"],
+    "answer": 0,
+    "explanation": "Dedicated Instances run on single-tenant hardware, while Dedicated Hosts additionally provide visibility and control over the physical host."
+  },
+  {
+    "id": "AWSCLF-4.1-R008",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Compute Purchasing > Capacity Reservations",
+    "difficulty": "Level 2",
+    "question": "Which Amazon EC2 option reserves instance capacity in a specific Availability Zone?",
+    "choices": ["On-Demand Capacity Reservation", "Savings Plan", "Spot Fleet", "AWS Budget"],
+    "answer": 0,
+    "explanation": "An On-Demand Capacity Reservation holds EC2 capacity for a specified configuration in an Availability Zone."
+  },
+  {
+    "id": "AWSCLF-4.1-R009",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Storage Options and Tiers",
+    "difficulty": "Level 2",
+    "question": "What should guide selection of an AWS storage option or tier?",
+    "choices": ["Access frequency, performance, durability, retrieval time, and cost", "The number of IAM groups", "The account support plan only", "The alphabetic order of service names"],
+    "answer": 0,
+    "explanation": "Storage selection should match the workload's access pattern, performance, resilience, retrieval, and cost requirements."
+  },
+  {
+    "id": "AWSCLF-4.1-R010",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Selecting Compute Purchasing Options",
+    "difficulty": "Level 2",
+    "question": "Which purchasing option is BEST for a fault-tolerant batch job that can restart after interruption?",
+    "choices": ["Spot Instances", "Dedicated Hosts", "Capacity Reservations", "On-Demand Instances at full price"],
+    "answer": 0,
+    "explanation": "Spot Instances can reduce cost for flexible, fault-tolerant workloads that can handle interruption."
+  },
+  {
+    "id": "AWSCLF-4.1-R011",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Reserved Instance Flexibility",
+    "difficulty": "Level 2",
+    "question": "What type of flexibility can some Reserved Instance offerings provide?",
+    "choices": ["The ability to exchange or modify eligible reservation attributes under applicable terms", "Guaranteed use of every AWS service", "Unlimited free data transfer", "Automatic conversion into a Dedicated Host"],
+    "answer": 0,
+    "explanation": "Depending on the RI type, eligible reservations can support modification or exchange options, while Standard and Convertible RIs offer different flexibility."
+  },
+  {
+    "id": "AWSCLF-4.1-R012",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Reserved Instances in AWS Organizations",
+    "difficulty": "Level 2",
+    "question": "How can Reserved Instance discounts behave with AWS Organizations consolidated billing?",
+    "choices": ["Eligible discounts can be shared across linked accounts when discount sharing is enabled", "Reservations automatically create new accounts", "Discounts apply only to the management account's root user", "Every member account must use a different Region"],
+    "answer": 0,
+    "explanation": "With consolidated billing and sharing enabled, eligible Reserved Instance discounts can apply across accounts in the organization."
+  },
+  {
+    "id": "AWSCLF-4.1-R013",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Data Transfer Pricing > Incoming",
+    "difficulty": "Level 2",
+    "question": "How is data transfer into AWS from the internet commonly priced?",
+    "choices": ["It is generally free for many AWS services", "It always costs more than outgoing transfer", "It requires a Dedicated Host", "It is included only with Enterprise Support"],
+    "answer": 0,
+    "explanation": "Inbound internet data transfer is generally free for many AWS services, although customers should verify service-specific pricing."
+  },
+  {
+    "id": "AWSCLF-4.1-R014",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Data Transfer Pricing > Outgoing",
+    "difficulty": "Level 2",
+    "question": "Which data movement commonly produces a data-transfer charge?",
+    "choices": ["Sending data from AWS to the internet", "Uploading data into many AWS services", "Reading an IAM policy", "Viewing an AWS Artifact report"],
+    "answer": 0,
+    "explanation": "Data transferred out of AWS to the internet commonly incurs charges based on service, destination, and volume."
+  },
+  {
+    "id": "AWSCLF-4.1-R015",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Data Transfer Pricing > Between Regions",
+    "difficulty": "Level 2",
+    "question": "What should a customer expect when transferring data between AWS Regions?",
+    "choices": ["Regional data-transfer charges can apply", "The transfer is always free", "The data automatically becomes public", "A new AWS account is required"],
+    "answer": 0,
+    "explanation": "Inter-Region data transfer commonly incurs charges, so cross-Region architecture should include transfer costs."
+  },
+  {
+    "id": "AWSCLF-4.1-R016",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Data Transfer Pricing > Within a Region",
+    "difficulty": "Level 2",
+    "question": "Why should a customer review pricing for data transferred within one AWS Region?",
+    "choices": ["Charges can depend on the services and Availability Zones involved", "All same-Region traffic has one universal free price", "Same-Region traffic uses only edge locations", "Pricing depends only on IAM permissions"],
+    "answer": 0,
+    "explanation": "Same-Region transfer pricing varies by service and path, including whether traffic crosses Availability Zones."
+  },
+  {
+    "id": "AWSCLF-4.1-R017",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Storage Pricing",
+    "difficulty": "Level 2",
+    "question": "Which factors can affect the price of an AWS storage tier?",
+    "choices": ["Stored volume, access pattern, retrievals, requests, and minimum duration", "The number of root-user logins", "The selected support contact", "The name of the VPC"],
+    "answer": 0,
+    "explanation": "Storage pricing can include capacity, requests, retrieval charges, minimum storage periods, transfer, and other tier-specific dimensions."
+  }
+]

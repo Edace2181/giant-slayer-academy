@@ -1,0 +1,134 @@
+[
+  {
+    "id": "L010-5.1-R001",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "User Types > Root User",
+    "difficulty": "Level 2",
+    "question": "Which Linux account has unrestricted administrative authority over the system?",
+    "choices": ["Guest", "Standard user", "Root user", "Service client"],
+    "answer": 2,
+    "explanation": "The root account is the Linux superuser and has unrestricted administrative privileges."
+  },
+  {
+    "id": "L010-5.1-R002",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "User Types > Standard Users",
+    "difficulty": "Level 2",
+    "question": "Which account type normally performs everyday tasks with limited system privileges?",
+    "choices": ["Standard user", "Root user", "Kernel thread", "Boot loader"],
+    "answer": 0,
+    "explanation": "A standard user account is intended for routine work and lacks root's unrestricted administrative authority."
+  },
+  {
+    "id": "L010-5.1-R003",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "User Types > System Users",
+    "difficulty": "Level 2",
+    "question": "Which account type is commonly created so a background service can run without using a person's login account?",
+    "choices": ["Desktop user", "System user", "Anonymous FTP client", "Remote administrator"],
+    "answer": 1,
+    "explanation": "System users provide identities for services and other operating-system components rather than for normal interactive login."
+  },
+  {
+    "id": "L010-5.1-R004",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Account Databases > /etc/passwd",
+    "difficulty": "Level 2",
+    "question": "Which file stores basic Linux user account records such as usernames, user IDs, home directories, and login shells?",
+    "choices": ["/etc/group", "/var/log/wtmp", "/etc/shadow", "/etc/passwd"],
+    "answer": 3,
+    "explanation": "/etc/passwd stores general user account information, including usernames, numeric IDs, home directories, and login shells."
+  },
+  {
+    "id": "L010-5.1-R005",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Account Databases > /etc/shadow",
+    "difficulty": "Level 2",
+    "question": "Which protected file contains Linux password hashes and password-aging information?",
+    "choices": ["/etc/shadow", "/etc/hosts", "/etc/profile", "/proc/meminfo"],
+    "answer": 0,
+    "explanation": "/etc/shadow stores password hashes and password-aging fields in a file restricted from ordinary users."
+  },
+  {
+    "id": "L010-5.1-R006",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Account Databases > /etc/group",
+    "difficulty": "Level 2",
+    "question": "Which file defines Linux groups and lists their supplementary members?",
+    "choices": ["/etc/resolv.conf", "/etc/group", "/etc/fstab", "/boot/grub.cfg"],
+    "answer": 1,
+    "explanation": "/etc/group contains group names, group IDs, and lists of supplementary group members."
+  },
+  {
+    "id": "L010-5.1-R007",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Identity Commands > id",
+    "difficulty": "Level 2",
+    "question": "Which command displays a user's UID, primary GID, and group memberships?",
+    "choices": ["last", "w", "free", "id"],
+    "answer": 3,
+    "explanation": "The id command reports user and group identifiers, including a user's UID, primary GID, and supplementary groups."
+  },
+  {
+    "id": "L010-5.1-R008",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Login History > last",
+    "difficulty": "Level 2",
+    "question": "Which command displays a history of user login sessions?",
+    "choices": ["who", "top", "last", "echo"],
+    "answer": 2,
+    "explanation": "The last command reads login records and displays historical user sessions."
+  },
+  {
+    "id": "L010-5.1-R009",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Logged-In Users > who",
+    "difficulty": "Level 2",
+    "question": "Which command lists users who are currently logged in to the Linux system?",
+    "choices": ["who", "cut", "route", "tar"],
+    "answer": 0,
+    "explanation": "The who command reports the users currently logged in and their session information."
+  },
+  {
+    "id": "L010-5.1-R010",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Logged-In Users > w",
+    "difficulty": "Level 2",
+    "question": "Which command shows logged-in users together with what they are currently doing?",
+    "choices": ["ps", "history", "w", "mkdir"],
+    "answer": 2,
+    "explanation": "The w command shows logged-in users, their sessions, and the commands or activities associated with those sessions."
+  },
+  {
+    "id": "L010-5.1-R011",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Privilege Management > sudo",
+    "difficulty": "Level 2",
+    "question": "Which command allows an authorized user to run a specific command with elevated privileges?",
+    "choices": ["su", "sudo", "who", "grep"],
+    "answer": 1,
+    "explanation": "sudo permits an authorized user to execute a command as another user, commonly root, according to configured policy."
+  },
+  {
+    "id": "L010-5.1-R012",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Privilege Management > su",
+    "difficulty": "Level 2",
+    "question": "Which command starts a shell as another user, with root used by default when no username is supplied?",
+    "choices": ["passwd", "id", "sudo", "su"],
+    "answer": 3,
+    "explanation": "The su command switches user identity for a shell session and targets root by default when no user is named."
+  }
+]

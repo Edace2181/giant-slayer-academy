@@ -1,0 +1,167 @@
+[
+  {
+    "id": "L010-3.2-R001",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Command Line Pipes",
+    "difficulty": "Level 2",
+    "question": "What does the pipe operator do between two Linux commands?",
+    "choices": ["Connects the first command's standard output to the second command's standard input", "Runs both commands only after the next login", "Stores both commands in a compressed archive", "Changes ownership of both command files"],
+    "answer": 0,
+    "explanation": "A pipe passes the standard output of the command on its left to the standard input of the command on its right."
+  },
+  {
+    "id": "L010-3.2-R002",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "I/O Redirection > Output",
+    "difficulty": "Level 2",
+    "question": "Which operator redirects a command's standard output into a file and overwrites that file?",
+    "choices": ["<", ">", "|", "&"],
+    "answer": 1,
+    "explanation": "The greater-than operator redirects standard output to a file, creating it or replacing its existing contents."
+  },
+  {
+    "id": "L010-3.2-R003",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "I/O Redirection > Input",
+    "difficulty": "Level 2",
+    "question": "Which operator makes a command read standard input from a file?",
+    "choices": [">>", ">", "<", "|"],
+    "answer": 2,
+    "explanation": "The less-than operator redirects a file into a command's standard input."
+  },
+  {
+    "id": "L010-3.2-R004",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Regular Expressions > Dot",
+    "difficulty": "Level 2",
+    "question": "In a basic regular expression, what does an unescaped dot normally match?",
+    "choices": ["Only a literal period", "The beginning of a line", "Any number of words", "Any single character"],
+    "answer": 3,
+    "explanation": "An unescaped dot in a regular expression normally matches any one character."
+  },
+  {
+    "id": "L010-3.2-R005",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Regular Expressions > Brackets",
+    "difficulty": "Level 2",
+    "question": "What does the regular-expression pattern [abc] match?",
+    "choices": ["One character that is a, b, or c", "The complete string abc only", "Any three characters", "Every line except those containing a, b, or c"],
+    "answer": 0,
+    "explanation": "A bracket expression matches one character from the listed set, so [abc] matches a, b, or c."
+  },
+  {
+    "id": "L010-3.2-R006",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Regular Expressions > Asterisk",
+    "difficulty": "Level 2",
+    "question": "What does an asterisk mean when it follows an item in a basic regular expression?",
+    "choices": ["Match the item exactly once", "Match zero or more occurrences of the preceding item", "Match only at the end of a line", "Treat the preceding item as a filename"],
+    "answer": 1,
+    "explanation": "The asterisk is a repetition operator that matches zero or more occurrences of the preceding regular-expression item."
+  },
+  {
+    "id": "L010-3.2-R007",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Regular Expressions > Question Mark",
+    "difficulty": "Level 2",
+    "question": "In regular-expression syntax where ? is enabled as an operator, what does it mean?",
+    "choices": ["Match any directory path", "Start a character class", "Match zero or one occurrence of the preceding item", "Repeat the preceding item indefinitely"],
+    "answer": 2,
+    "explanation": "Where supported as a regular-expression operator, the question mark makes the preceding item optional by matching it zero or one time."
+  },
+  {
+    "id": "L010-3.2-R008",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "grep",
+    "difficulty": "Level 2",
+    "question": "Which command prints input lines that match a supplied pattern?",
+    "choices": ["sort", "wc", "cut", "grep"],
+    "answer": 3,
+    "explanation": "grep searches input for a pattern and prints the matching lines."
+  },
+  {
+    "id": "L010-3.2-R009",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "less",
+    "difficulty": "Level 2",
+    "question": "Which command lets a user interactively page forward and backward through a long text file?",
+    "choices": ["less", "cat", "echo", "export"],
+    "answer": 0,
+    "explanation": "less is an interactive pager that supports navigation and searching within long text output."
+  },
+  {
+    "id": "L010-3.2-R010",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "cat",
+    "difficulty": "Level 2",
+    "question": "Which command concatenates files and writes their contents to standard output?",
+    "choices": ["head", "cat", "tail", "sort"],
+    "answer": 1,
+    "explanation": "cat concatenates the contents of one or more files and writes the result to standard output."
+  },
+  {
+    "id": "L010-3.2-R011",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "head",
+    "difficulty": "Level 2",
+    "question": "Which command displays the beginning of a text file by default?",
+    "choices": ["tail", "less", "head", "wc"],
+    "answer": 2,
+    "explanation": "head displays the first portion of its input, which is ten lines by default in common implementations."
+  },
+  {
+    "id": "L010-3.2-R012",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "tail",
+    "difficulty": "Level 2",
+    "question": "Which command displays the end of a text file?",
+    "choices": ["cat", "cut", "head", "tail"],
+    "answer": 3,
+    "explanation": "tail displays the final portion of a file or input stream."
+  },
+  {
+    "id": "L010-3.2-R013",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "sort",
+    "difficulty": "Level 2",
+    "question": "Which command arranges input lines into an ordered sequence?",
+    "choices": ["sort", "grep", "cut", "wc"],
+    "answer": 0,
+    "explanation": "sort reads input lines and writes them in an order determined by its selected comparison and key options."
+  },
+  {
+    "id": "L010-3.2-R014",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "cut",
+    "difficulty": "Level 2",
+    "question": "Which command extracts selected fields or character positions from each input line?",
+    "choices": ["wc", "cut", "less", "tail"],
+    "answer": 1,
+    "explanation": "cut selects specified fields, bytes, or characters from each line of input."
+  },
+  {
+    "id": "L010-3.2-R015",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "wc",
+    "difficulty": "Level 2",
+    "question": "Which command reports counts such as lines, words, and bytes from input?",
+    "choices": ["sort", "grep", "wc", "cat"],
+    "answer": 2,
+    "explanation": "wc reports line, word, and byte or character counts according to the selected options."
+  }
+]

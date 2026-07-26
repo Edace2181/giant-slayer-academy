@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydra Academy | Final Dungeon</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="hydra.png">
+</head>
+
+<body class="arcade-body">
+    <main class="world-screen">
+
+        <!-- INTRO CARD -->
+        <section class="world-intro-card">
+            <h1>🏰 Final Dungeon</h1>
+            <h2 class="world-subtitle">Practice Exam Gauntlet</h2>
+
+            <div class="message-box">
+                <p>The chamber is behind you.</p>
+                <p>The dungeon is now open.</p>
+
+                <br>
+
+                <p>Six trials stand before you.</p>
+                <p>Each one will test your recognition, logic, and endurance.</p>
+
+                <br>
+
+                <p>Stay calm.</p>
+                <p>Trust your training. Trust your first instinct.</p>
+
+                <br>
+
+                <p>Defeat the gauntlet.</p>
+                <p>Claim the victory.</p>
+            </div>
+
+            <div class="intro-actions">
+                <a href="#" id="enterWorldBtn" class="link-btn">▶ Begin the Gauntlet</a>
+            </div>
+
+            <br>
+
+            <a href="network-campaign.html" class="back-link">
+                ← Return to Campaign Map
+            </a>
+        </section>
+
+        <!-- FINAL DUNGEON MENU -->
+        <section id="world8-menu" class="hidden">
+            <h1 class="arcade-title">🏰 Final Dungeon</h1>
+
+            <p class="tagline">
+                6 Exams · Recognition · Endurance
+            </p>
+
+            <div class="mode-grid">
+                <a href="network-final-gauntlet.html" class="mode-card">
+                    🐉<br>
+                    Final Boss
+                </a>
+
+                <a class="mode-card" aria-disabled="true" title="PBQ Arena coming soon">
+                    🧩<br>
+                    PBQ Arena — Coming Soon
+                </a>
+
+                <a class="mode-card" aria-disabled="true" title="Victory Screen coming soon">
+                    🏆<br>
+                    Victory Screen — Coming Soon
+                </a>
+            </div>
+
+            <br>
+
+            <a href="network-campaign.html" class="back-link">
+                ← Return to Campaign Map
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        const enterWorldBtn = document.getElementById("enterWorldBtn");
+        const introCard = document.querySelector(".world-intro-card");
+        const worldMenu = document.getElementById("world8-menu");
+
+        enterWorldBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            introCard.style.display = "none";
+            worldMenu.classList.remove("hidden");
+        });
+
+    </script>
+
+</body>
+</html>

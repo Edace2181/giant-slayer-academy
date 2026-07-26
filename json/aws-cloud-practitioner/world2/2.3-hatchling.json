@@ -1,0 +1,354 @@
+[
+  {
+    "id": "AWSCLF-2.3-R001",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Identity and Access Management > AWS IAM",
+    "difficulty": "Level 2",
+    "question": "What is the primary purpose of AWS Identity and Access Management?",
+    "choices": [
+      "To control authentication and authorization for AWS resources",
+      "To calculate monthly AWS charges",
+      "To distribute web content from edge locations",
+      "To migrate physical storage devices"
+    ],
+    "answer": 0,
+    "explanation": "AWS IAM controls who can authenticate to AWS and which actions those identities are authorized to perform on resources."
+  },
+  {
+    "id": "AWSCLF-2.3-R002",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "AWS Root User Protection",
+    "difficulty": "Level 2",
+    "question": "Why is protecting the AWS account root user especially important?",
+    "choices": [
+      "The root user has unrestricted access to the account",
+      "The root user can access only billing information",
+      "The root user is automatically disabled after account creation",
+      "The root user can use only services in one Region"
+    ],
+    "answer": 0,
+    "explanation": "The root user has complete access to the account, including sensitive account and billing operations, so its credentials require strong protection."
+  },
+  {
+    "id": "AWSCLF-2.3-R003",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Principle of Least Privilege",
+    "difficulty": "Level 2",
+    "question": "What does the principle of least privilege require?",
+    "choices": [
+      "Granting only the permissions needed to perform an assigned task",
+      "Giving every employee administrator access",
+      "Sharing one root credential among all teams",
+      "Allowing all actions until an incident occurs"
+    ],
+    "answer": 0,
+    "explanation": "Least privilege limits an identity to the minimum permissions required for its responsibilities, reducing unnecessary access and risk."
+  },
+  {
+    "id": "AWSCLF-2.3-R004",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "AWS IAM Identity Center",
+    "difficulty": "Level 2",
+    "question": "Which AWS service centrally manages workforce access to multiple AWS accounts and supported applications?",
+    "choices": [
+      "AWS IAM Identity Center",
+      "Amazon Inspector",
+      "AWS Artifact",
+      "Amazon Route 53"
+    ],
+    "answer": 0,
+    "explanation": "AWS IAM Identity Center provides centralized workforce access to multiple AWS accounts and applications and supports single sign-on."
+  },
+  {
+    "id": "AWSCLF-2.3-R005",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Credential Management > Access Keys",
+    "difficulty": "Level 2",
+    "question": "What are AWS access keys primarily used for?",
+    "choices": [
+      "Signing programmatic requests made through tools such as the AWS CLI or SDKs",
+      "Opening the physical doors of AWS data centers",
+      "Encrypting every object stored in Amazon S3",
+      "Purchasing Reserved Instances"
+    ],
+    "answer": 0,
+    "explanation": "An access key ID and secret access key can identify and sign programmatic requests to AWS. They must be protected like other sensitive credentials."
+  },
+  {
+    "id": "AWSCLF-2.3-R006",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Credential Management > Password Policies",
+    "difficulty": "Level 2",
+    "question": "What does an IAM password policy control?",
+    "choices": [
+      "Password requirements for IAM users in an AWS account",
+      "The network route used to reach an AWS Region",
+      "The storage class assigned to Amazon S3 objects",
+      "The price of an AWS Support plan"
+    ],
+    "answer": 0,
+    "explanation": "An IAM password policy defines requirements such as minimum length, character rules, expiration, and password reuse for IAM users."
+  },
+  {
+    "id": "AWSCLF-2.3-R007",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Credential Storage",
+    "difficulty": "Level 2",
+    "question": "Where should an application store sensitive credentials?",
+    "choices": [
+      "In a purpose-built protected credential store",
+      "Inside publicly readable source code",
+      "In an unencrypted shared spreadsheet",
+      "In the application's public documentation"
+    ],
+    "answer": 0,
+    "explanation": "Sensitive credentials should be stored in a protected service designed to control, encrypt, retrieve, and where appropriate rotate secrets."
+  },
+  {
+    "id": "AWSCLF-2.3-R008",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Credential Storage > AWS Secrets Manager",
+    "difficulty": "Level 2",
+    "question": "Which AWS service stores, retrieves, and can rotate secrets such as database credentials?",
+    "choices": [
+      "AWS Secrets Manager",
+      "AWS CloudTrail",
+      "Amazon CloudFront",
+      "AWS Budgets"
+    ],
+    "answer": 0,
+    "explanation": "AWS Secrets Manager securely stores and retrieves secrets and supports managed rotation for supported credential types."
+  },
+  {
+    "id": "AWSCLF-2.3-R009",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Credential Storage > AWS Systems Manager",
+    "difficulty": "Level 2",
+    "question": "Which AWS Systems Manager capability can securely store configuration values and encrypted parameters?",
+    "choices": [
+      "Parameter Store",
+      "AWS Systems Manager Inventory",
+      "AWS Systems Manager Patch Manager",
+      "AWS Systems Manager Fleet Manager"
+    ],
+    "answer": 0,
+    "explanation": "AWS Systems Manager Parameter Store provides hierarchical storage for configuration data and secrets and supports encrypted SecureString parameters."
+  },
+  {
+    "id": "AWSCLF-2.3-R010",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "AWS Authentication Methods",
+    "difficulty": "Level 2",
+    "question": "What is authentication in AWS?",
+    "choices": [
+      "Verifying the identity of a user or workload",
+      "Determining the monthly cost of a resource",
+      "Selecting an Availability Zone",
+      "Copying data to a backup"
+    ],
+    "answer": 0,
+    "explanation": "Authentication verifies who or what is making a request. Authorization then determines what that authenticated identity is allowed to do."
+  },
+  {
+    "id": "AWSCLF-2.3-R011",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Authentication Methods > Multi-Factor Authentication",
+    "difficulty": "Level 2",
+    "question": "What security benefit does multi-factor authentication provide?",
+    "choices": [
+      "It requires an additional verification factor beyond a password",
+      "It grants permanent administrator permission",
+      "It replaces every IAM policy",
+      "It makes account credentials safe to share"
+    ],
+    "answer": 0,
+    "explanation": "MFA strengthens authentication by requiring another factor in addition to the password, reducing the risk from a compromised password."
+  },
+  {
+    "id": "AWSCLF-2.3-R012",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Authentication Methods > IAM Identity Center",
+    "difficulty": "Level 2",
+    "question": "Which authentication capability allows employees to use a centralized sign-in portal for assigned AWS accounts?",
+    "choices": [
+      "AWS IAM Identity Center",
+      "AWS Shield",
+      "Amazon GuardDuty",
+      "AWS Config"
+    ],
+    "answer": 0,
+    "explanation": "IAM Identity Center provides a centralized portal through which workforce users can authenticate and access assigned AWS accounts and applications."
+  },
+  {
+    "id": "AWSCLF-2.3-R013",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Authentication Methods > Cross-Account IAM Roles",
+    "difficulty": "Level 2",
+    "question": "Which AWS feature lets an authorized identity obtain temporary permissions in another AWS account?",
+    "choices": [
+      "A cross-account IAM role",
+      "An Amazon S3 lifecycle rule",
+      "An AWS Budgets alert",
+      "An Amazon CloudFront distribution"
+    ],
+    "answer": 0,
+    "explanation": "A cross-account IAM role establishes trust and allows an authorized identity from another account to assume temporary permissions."
+  },
+  {
+    "id": "AWSCLF-2.3-R014",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM Identities and Policies > Groups",
+    "difficulty": "Level 2",
+    "question": "What is the purpose of an IAM user group?",
+    "choices": [
+      "To apply permissions to a collection of IAM users",
+      "To combine multiple AWS Regions",
+      "To store application passwords",
+      "To distribute incoming web traffic"
+    ],
+    "answer": 0,
+    "explanation": "An IAM user group simplifies permission management by allowing policies to be assigned to a collection of IAM users."
+  },
+  {
+    "id": "AWSCLF-2.3-R015",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM Identities and Policies > Users",
+    "difficulty": "Level 2",
+    "question": "What does an IAM user represent?",
+    "choices": [
+      "An identity with credentials and permissions in one AWS account",
+      "A physical server in an AWS data center",
+      "A collection of Availability Zones",
+      "A monthly billing report"
+    ],
+    "answer": 0,
+    "explanation": "An IAM user is an identity in an AWS account that can have long-term credentials and permissions, although workforce federation is preferred where appropriate."
+  },
+  {
+    "id": "AWSCLF-2.3-R016",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM Identities and Policies > Custom Policies",
+    "difficulty": "Level 2",
+    "question": "When is a customer-managed custom IAM policy useful?",
+    "choices": [
+      "When an organization needs permissions tailored to its specific requirements",
+      "When a customer wants AWS to repair physical servers",
+      "When an application needs a different pricing model",
+      "When a user needs to change an AWS Region's location"
+    ],
+    "answer": 0,
+    "explanation": "A customer-managed policy can define permissions tailored to the organization's resources and job functions."
+  },
+  {
+    "id": "AWSCLF-2.3-R017",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM Identities and Policies > Managed Policies",
+    "difficulty": "Level 2",
+    "question": "What is an IAM managed policy?",
+    "choices": [
+      "A standalone permissions policy that can be attached to multiple identities",
+      "A physical security procedure for an AWS facility",
+      "A report that contains only monthly charges",
+      "A network connection between two Availability Zones"
+    ],
+    "answer": 0,
+    "explanation": "A managed policy is a standalone IAM policy that can be attached to multiple users, groups, or roles. It can be managed by AWS or by the customer."
+  },
+  {
+    "id": "AWSCLF-2.3-R018",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "IAM Policies > Least-Privilege Permissions",
+    "difficulty": "Level 2",
+    "question": "Which IAM policy BEST follows least privilege for an employee who only needs to read objects from one Amazon S3 bucket?",
+    "choices": [
+      "A policy allowing read access only to that bucket",
+      "A policy granting administrator access to every AWS service",
+      "A policy allowing all Amazon S3 actions on every bucket",
+      "A policy granting access through the root user"
+    ],
+    "answer": 0,
+    "explanation": "The least-privilege choice grants only the required read actions and limits them to the specific bucket needed for the employee's work."
+  },
+  {
+    "id": "AWSCLF-2.3-R019",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Root User-Only Tasks",
+    "difficulty": "Level 2",
+    "question": "Which type of action can require the AWS account root user?",
+    "choices": [
+      "Certain sensitive account-management tasks that cannot be delegated",
+      "Routine application monitoring",
+      "Daily creation of Amazon EC2 instances",
+      "Reading standard Amazon CloudWatch metrics"
+    ],
+    "answer": 0,
+    "explanation": "A limited set of sensitive account operations can be performed only by the root user. Routine administrative work should use appropriately authorized identities instead."
+  },
+  {
+    "id": "AWSCLF-2.3-R020",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Root User Protection Methods",
+    "difficulty": "Level 2",
+    "question": "Which action BEST protects an AWS account root user?",
+    "choices": [
+      "Enable MFA, protect the credentials, and avoid routine root-user use",
+      "Create root access keys and share them with administrators",
+      "Disable logging for root-user activity",
+      "Use the root user for every daily task"
+    ],
+    "answer": 0,
+    "explanation": "AWS recommends enabling MFA for the root user, securing its credentials, avoiding root access keys, and using the root user only when required."
+  },
+  {
+    "id": "AWSCLF-2.3-R021",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Identity Management Types",
+    "difficulty": "Level 2",
+    "question": "Why might an organization use different identity-management approaches in AWS?",
+    "choices": [
+      "Workforce users, workloads, and external identities can require different authentication methods",
+      "Every AWS service requires a separate root user",
+      "Identity management is used only to calculate charges",
+      "All users must receive identical permissions"
+    ],
+    "answer": 0,
+    "explanation": "AWS supports several identity approaches because human users, applications, devices, and external identity providers have different authentication and access needs."
+  },
+  {
+    "id": "AWSCLF-2.3-R022",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Identity Management Types > Federated Identity",
+    "difficulty": "Level 2",
+    "question": "What is identity federation?",
+    "choices": [
+      "Using identities from an external identity provider to obtain access to AWS",
+      "Sharing the root password between multiple AWS accounts",
+      "Creating permanent access keys for every employee",
+      "Combining several AWS Regions into one Region"
+    ],
+    "answer": 0,
+    "explanation": "Federation lets users authenticate through an external identity provider and receive authorized access to AWS, commonly with temporary credentials."
+  }
+]

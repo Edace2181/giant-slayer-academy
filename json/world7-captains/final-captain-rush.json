@@ -1,0 +1,1142 @@
+[
+  {
+    "id": 7091,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Encapsulation",
+    "difficulty": "Captain Level 4",
+    "question": "A multinational VPN carries voice and database traffic. Large database responses fail only across one carrier path, while voice and small pings work. The carrier blocks ICMP. Which action is BEST?",
+    "choices": [
+      "Lower tunnel MTU and permit required ICMP feedback",
+      "Increase DNS TTL",
+      "Disable voice QoS",
+      "Replace access switches"
+    ],
+    "answer": 0,
+    "explanation": "Encapsulation overhead plus blocked Path MTU feedback causes large-packet failure; correcting MTU and ICMP addresses the cause."
+  },
+  {
+    "id": 7092,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "OSI analysis",
+    "difficulty": "Captain Level 4",
+    "question": "A server receives TCP SYN packets and sends SYN-ACK responses, but the client never completes the handshake. A capture at the client edge shows no SYN-ACK. Where should investigation focus FIRST?",
+    "choices": [
+      "The return network path",
+      "The application presentation layer",
+      "The server file system",
+      "The client's DNS cache"
+    ],
+    "answer": 0,
+    "explanation": "The server transport stack responds, so the missing reply should be traced along the return path."
+  },
+  {
+    "id": 7093,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Load balancing",
+    "difficulty": "Captain Level 4",
+    "question": "A load-balanced API must survive a node failure, but requests are not stateful. Health checks pass even when the application cannot reach its database. What is the BEST improvement?",
+    "choices": [
+      "Use an application-level health check that tests a database-dependent endpoint",
+      "Enable source persistence",
+      "Add a DNS alias",
+      "Increase switch MTU"
+    ],
+    "answer": 0,
+    "explanation": "A meaningful application check removes nodes that are up at the network layer but unable to serve valid transactions."
+  },
+  {
+    "id": 7094,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Network functions",
+    "difficulty": "Captain Level 4",
+    "question": "Encrypted traffic must be inspected for malware before reaching internal web servers, and original client addresses must remain available to logging. Which design is BEST?",
+    "choices": [
+      "A reverse proxy performing TLS inspection and forwarding client identity",
+      "A Layer 2 hub",
+      "A DHCP relay",
+      "A passive tap only"
+    ],
+    "answer": 0,
+    "explanation": "A reverse proxy can terminate and inspect TLS while preserving client identity through supported forwarding metadata."
+  },
+  {
+    "id": 7095,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Cloud resilience",
+    "difficulty": "Captain Level 4",
+    "question": "A hybrid application uses one private cloud circuit. Management requires continued cloud access after a circuit failure without relying on manual reconfiguration. Which design is BEST?",
+    "choices": [
+      "A diverse secondary connection with dynamic route failover",
+      "A larger on-premises VLAN",
+      "A public DNS CNAME only",
+      "A second DHCP scope"
+    ],
+    "answer": 0,
+    "explanation": "Physical diversity plus dynamic routing provides automatic connectivity failover."
+  },
+  {
+    "id": 7096,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Cloud security",
+    "difficulty": "Captain Level 4",
+    "question": "Cloud workloads in separate accounts need private east-west connectivity without exposing services publicly or building a full mesh of tunnels. Which solution is BEST?",
+    "choices": [
+      "A cloud transit hub",
+      "Internet gateways on every subnet",
+      "Public load balancers",
+      "Client VPNs on each server"
+    ],
+    "answer": 0,
+    "explanation": "A transit hub centralizes scalable private routing among multiple cloud networks."
+  },
+  {
+    "id": 7097,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Application protocols",
+    "difficulty": "Captain Level 4",
+    "question": "A mail gateway accepts inbound mail but cannot validate sending-domain policies. Packet captures show outbound UDP 53 requests receive truncated replies, followed by failed TCP attempts. What should be changed?",
+    "choices": [
+      "Permit DNS over TCP as well as UDP",
+      "Open inbound SMTP submission",
+      "Disable MX records",
+      "Block EDNS"
+    ],
+    "answer": 0,
+    "explanation": "Large DNS answers may fall back to TCP; blocking TCP 53 prevents complete policy lookups."
+  },
+  {
+    "id": 7098,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Time services",
+    "difficulty": "Captain Level 4",
+    "question": "Kerberos authentication fails intermittently across branch sites, and logs show clocks differ by seven minutes. Which remediation is BEST?",
+    "choices": [
+      "Create a reliable NTP hierarchy using approved time sources",
+      "Increase password length",
+      "Clear ARP tables",
+      "Enable multicast routing"
+    ],
+    "answer": 0,
+    "explanation": "Kerberos depends on closely synchronized clocks; a controlled NTP hierarchy resolves drift."
+  },
+  {
+    "id": 7099,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Optical design",
+    "difficulty": "Captain Level 4",
+    "question": "A campus backbone must support 100Gbps over 8 km and allow future wavelength expansion. Which media choice is BEST?",
+    "choices": [
+      "Single-mode fiber with matched long-reach optics",
+      "OM3 multimode with SR optics",
+      "Cat 8 copper",
+      "Passive twinax"
+    ],
+    "answer": 0,
+    "explanation": "Single-mode fiber and long-reach optics support the distance and scalable high-speed backbone use."
+  },
+  {
+    "id": 7100,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Fiber loss",
+    "difficulty": "Captain Level 4",
+    "question": "A new fiber span is within distance limits but has excessive loss. OTDR results show a large reflection at one intermediate point and normal attenuation elsewhere. What is the MOST likely cause?",
+    "choices": [
+      "A dirty or poorly seated connector",
+      "An incorrect VLAN",
+      "A routing loop",
+      "An exhausted DHCP pool"
+    ],
+    "answer": 0,
+    "explanation": "A localized reflective event indicates a connector or mechanical discontinuity rather than distributed fiber attenuation."
+  },
+  {
+    "id": 7101,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.6",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Address planning",
+    "difficulty": "Captain Level 4",
+    "question": "A department needs 100 usable IPv4 addresses now and expects 20% growth. Which smallest subnet is appropriate?",
+    "choices": [
+      "/25",
+      "/26",
+      "/27",
+      "/24"
+    ],
+    "answer": 0,
+    "explanation": "A /25 provides 126 usable addresses, meeting 120-host growth while conserving more space than /24."
+  },
+  {
+    "id": 7102,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 1,
+    "objective": "1.7",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Infrastructure as code",
+    "difficulty": "Captain Level 4",
+    "question": "A team must deploy identical network policy in development and production while detecting unauthorized drift. Which approach is BEST?",
+    "choices": [
+      "Declarative infrastructure as code stored in version control",
+      "Manual CLI templates on laptops",
+      "Untracked controller changes",
+      "Weekly screenshots"
+    ],
+    "answer": 0,
+    "explanation": "Versioned declarative configuration enables repeatable deployment, review, and drift detection."
+  },
+  {
+    "id": 7103,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "BGP policy",
+    "difficulty": "Captain Level 4",
+    "question": "A company connects to two ISPs. It wants inbound traffic for a public prefix to prefer ISP-A while retaining ISP-B as backup. Which advertised attribute is commonly used?",
+    "choices": [
+      "AS-path prepending toward ISP-B",
+      "A lower local preference on ISP-A",
+      "A static host route",
+      "A lower STP priority"
+    ],
+    "answer": 0,
+    "explanation": "Prepending makes the backup advertisement appear less attractive to external BGP peers."
+  },
+  {
+    "id": 7104,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Route summarization",
+    "difficulty": "Captain Level 4",
+    "question": "Four contiguous branch networks, 10.44.8.0/24 through 10.44.11.0/24, should be advertised as one route. Which summary is correct?",
+    "choices": [
+      "10.44.8.0/22",
+      "10.44.8.0/21",
+      "10.44.10.0/23",
+      "10.44.0.0/24"
+    ],
+    "answer": 0,
+    "explanation": "A /22 aligned at .8 spans .8 through .11 exactly."
+  },
+  {
+    "id": 7105,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Routing loops",
+    "difficulty": "Captain Level 4",
+    "question": "After mutual redistribution between OSPF and BGP, routes repeatedly reenter their source protocol and metrics rise. Which control is BEST?",
+    "choices": [
+      "Tag redistributed routes and filter their return",
+      "Disable route authentication",
+      "Increase interface MTU",
+      "Enable DHCP snooping"
+    ],
+    "answer": 0,
+    "explanation": "Route tags and policy filters prevent redistributed routes from being fed back into their originating protocol."
+  },
+  {
+    "id": 7106,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Loop protection",
+    "difficulty": "Captain Level 4",
+    "question": "An employee connects a small unmanaged switch to two wall ports, causing a loop. Which access-layer controls BEST limit recurrence?",
+    "choices": [
+      "BPDU guard with storm control",
+      "Port mirroring with LLDP",
+      "LACP on every user port",
+      "A larger native VLAN"
+    ],
+    "answer": 0,
+    "explanation": "BPDU guard can shut an unexpected switching connection, while storm control limits broadcast impact."
+  },
+  {
+    "id": 7107,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "VLAN security",
+    "difficulty": "Captain Level 4",
+    "question": "A trunk to a third party must carry VLAN 210 only. Which configuration BEST reduces exposure?",
+    "choices": [
+      "Explicitly allow only VLAN 210 and use an unused native VLAN",
+      "Allow all VLANs and native VLAN 1",
+      "Disable tagging",
+      "Configure the port as an access port in every VLAN"
+    ],
+    "answer": 0,
+    "explanation": "Pruning the allowed list and avoiding a used native VLAN minimizes unintended VLAN access."
+  },
+  {
+    "id": 7108,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "LACP troubleshooting",
+    "difficulty": "Captain Level 4",
+    "question": "Two links are configured as one LACP channel, but one remains individual. Logs show different speed settings. What should be done FIRST?",
+    "choices": [
+      "Make member-link parameters consistent",
+      "Disable spanning tree",
+      "Add a static route",
+      "Change the DNS server"
+    ],
+    "answer": 0,
+    "explanation": "Aggregation members must share compatible speed and other link settings before joining the bundle."
+  },
+  {
+    "id": 7109,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "RF design",
+    "difficulty": "Captain Level 4",
+    "question": "A warehouse survey shows strong 5GHz coverage but scanners disconnect near metal shelving as inventory changes. Which action is BEST?",
+    "choices": [
+      "Perform an active survey with representative inventory and client devices",
+      "Increase every AP to maximum power",
+      "Use only 2.4GHz channel 6",
+      "Hide the SSID"
+    ],
+    "answer": 0,
+    "explanation": "An active survey under realistic physical and client conditions reveals dynamic reflection and roaming behavior."
+  },
+  {
+    "id": 7110,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Wireless authentication",
+    "difficulty": "Captain Level 4",
+    "question": "Users authenticate to Wi-Fi with certificates. After a CA renewal, only devices lacking the new root fail. What is the BEST remediation?",
+    "choices": [
+      "Deploy the new trusted root through device management",
+      "Change to a shared PSK",
+      "Disable server validation",
+      "Increase RF power"
+    ],
+    "answer": 0,
+    "explanation": "Clients must trust the CA chain used by the authentication server; managed root deployment preserves secure validation."
+  },
+  {
+    "id": 7111,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Channel width",
+    "difficulty": "Captain Level 4",
+    "question": "A dense office uses 80MHz channels and experiences high co-channel contention. Which change is MOST likely to improve total capacity?",
+    "choices": [
+      "Reduce channel width and reuse more non-overlapping channels",
+      "Bond to 160MHz",
+      "Set identical channels on all APs",
+      "Increase beacon interval indefinitely"
+    ],
+    "answer": 0,
+    "explanation": "Narrower channels increase reuse options and reduce contention in dense deployments."
+  },
+  {
+    "id": 7112,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Environmental risk",
+    "difficulty": "Captain Level 4",
+    "question": "Core switches in a closet reboot at midday. Logs show thermal alarms; cooling is functional but intake vents face hot exhaust from another rack. What is the BEST fix?",
+    "choices": [
+      "Correct hot-aisle/cold-aisle airflow orientation",
+      "Increase routing metrics",
+      "Replace fiber with copper",
+      "Disable SNMP"
+    ],
+    "answer": 0,
+    "explanation": "Separating intake air from hot exhaust corrects the identified thermal recirculation."
+  },
+  {
+    "id": 7113,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Physical resilience",
+    "difficulty": "Captain Level 4",
+    "question": "A critical switch has dual power supplies, but both connect to the same UPS. Which change BEST removes the remaining power-path weakness?",
+    "choices": [
+      "Connect supplies to independent UPS and circuits",
+      "Add another Ethernet trunk",
+      "Use one larger power cable",
+      "Enable PoE"
+    ],
+    "answer": 0,
+    "explanation": "Independent power sources eliminate the shared UPS and circuit as single points of failure."
+  },
+  {
+    "id": 7114,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 2,
+    "objective": "2.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "IPv6 routing",
+    "difficulty": "Captain Level 4",
+    "question": "IPv6 hosts communicate locally but not beyond the router. They have global addresses but no default route, and router advertisements are absent. What should be fixed?",
+    "choices": [
+      "Enable correct IPv6 router advertisements",
+      "Add IPv4 DHCP option 3",
+      "Configure PAT",
+      "Lower STP priority"
+    ],
+    "answer": 0,
+    "explanation": "IPv6 hosts commonly learn the default gateway through router advertisements."
+  },
+  {
+    "id": 7115,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Documentation",
+    "difficulty": "Captain Level 4",
+    "question": "During an outage, responders cannot identify service dependencies and restart systems in the wrong order. Which artifact should be improved FIRST?",
+    "choices": [
+      "Application and network dependency map",
+      "Acceptable use policy",
+      "Rack elevation only",
+      "Asset purchase receipts"
+    ],
+    "answer": 0,
+    "explanation": "A dependency map shows upstream relationships and supports correct restoration sequence."
+  },
+  {
+    "id": 7116,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Change governance",
+    "difficulty": "Captain Level 4",
+    "question": "An emergency firewall rule restored service but bypassed normal approval. What should happen NEXT?",
+    "choices": [
+      "Document, review, and formally validate the emergency change",
+      "Leave it undocumented",
+      "Remove all firewall rules",
+      "Wait for the next annual audit"
+    ],
+    "answer": 0,
+    "explanation": "Emergency changes still require retrospective documentation, review, and validation."
+  },
+  {
+    "id": 7117,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "SLA analysis",
+    "difficulty": "Captain Level 4",
+    "question": "A provider promises 99.99% monthly availability. Which evidence is BEST for disputing a missed SLA?",
+    "choices": [
+      "Timestamped independent availability measurements aligned to the contract",
+      "User recollections",
+      "A current topology diagram",
+      "Switch inventory"
+    ],
+    "answer": 0,
+    "explanation": "Objective measurements mapped to the SLA definition substantiate downtime and exclusions."
+  },
+  {
+    "id": 7118,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Telemetry",
+    "difficulty": "Captain Level 4",
+    "question": "Interface counters reset after every reboot, obscuring long-term error trends. Which solution is BEST?",
+    "choices": [
+      "Export time-series telemetry to centralized storage",
+      "Increase the interface description length",
+      "Disable logging",
+      "Use static ARP"
+    ],
+    "answer": 0,
+    "explanation": "External time-series storage preserves historical metrics beyond device restarts."
+  },
+  {
+    "id": 7119,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "SNMP security",
+    "difficulty": "Captain Level 4",
+    "question": "Monitoring requires authenticated, encrypted polling and per-user accountability. Which configuration is BEST?",
+    "choices": [
+      "SNMPv3 authPriv with individual credentials",
+      "SNMPv2c with public community",
+      "Unauthenticated syslog",
+      "Telnet polling"
+    ],
+    "answer": 0,
+    "explanation": "SNMPv3 authPriv provides authentication, encryption, and user-based access."
+  },
+  {
+    "id": 7120,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Capacity planning",
+    "difficulty": "Captain Level 4",
+    "question": "WAN usage grows 8% monthly and reaches 75% during peaks. What should operations do BEST?",
+    "choices": [
+      "Forecast saturation and schedule capacity before thresholds are exceeded",
+      "Wait for packet loss",
+      "Disable monitoring",
+      "Shorten DNS TTL"
+    ],
+    "answer": 0,
+    "explanation": "Trend-based forecasting allows proactive upgrades before utilization degrades service."
+  },
+  {
+    "id": 7121,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Recovery design",
+    "difficulty": "Captain Level 4",
+    "question": "A warm site has current hardware but configurations are copied monthly, violating a four-hour RPO. Which improvement is BEST?",
+    "choices": [
+      "Automate frequent encrypted configuration replication",
+      "Buy more rack space",
+      "Extend the RTO",
+      "Remove redundant links"
+    ],
+    "answer": 0,
+    "explanation": "Frequent automated replication brings configuration loss within the required RPO."
+  },
+  {
+    "id": 7122,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Failover testing",
+    "difficulty": "Captain Level 4",
+    "question": "A redundant ISP has never been tested because production must remain available. Which method BEST validates it with controlled risk?",
+    "choices": [
+      "Conduct an approved maintenance-window failover with monitoring and rollback",
+      "Unplug both circuits at noon",
+      "Trust provider documentation",
+      "Change DNS only"
+    ],
+    "answer": 0,
+    "explanation": "A planned, observed failover validates the complete path while controlling business risk."
+  },
+  {
+    "id": 7123,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "IPAM",
+    "difficulty": "Captain Level 4",
+    "question": "Duplicate static addresses recur because teams use separate spreadsheets. Which solution is BEST?",
+    "choices": [
+      "Centralized IPAM integrated with DHCP and DNS",
+      "Longer Ethernet cables",
+      "More NTP servers",
+      "A hidden SSID"
+    ],
+    "answer": 0,
+    "explanation": "Central IPAM provides authoritative allocation visibility and integration with address services."
+  },
+  {
+    "id": 7124,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "DNS resilience",
+    "difficulty": "Captain Level 4",
+    "question": "A DNS zone is served by two authoritative servers in one data center. Which change BEST improves resilience?",
+    "choices": [
+      "Place a secondary authoritative server in a separate failure domain",
+      "Add more records to the primary",
+      "Increase negative caching",
+      "Use one larger server"
+    ],
+    "answer": 0,
+    "explanation": "Geographic and infrastructure diversity keeps authoritative resolution available during a site failure."
+  },
+  {
+    "id": 7125,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Automation validation",
+    "difficulty": "Captain Level 4",
+    "question": "A configuration API returns success, but several switches retain old policy. What should the workflow do NEXT?",
+    "choices": [
+      "Query actual device state and compare it with intended state",
+      "Assume success",
+      "Delete audit logs",
+      "Disable authentication"
+    ],
+    "answer": 0,
+    "explanation": "Post-change state validation detects partial or falsely reported automation outcomes."
+  },
+  {
+    "id": 7126,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 3,
+    "objective": "3.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Management access",
+    "difficulty": "Captain Level 4",
+    "question": "Administrators use one bastion host, but its compromise would expose every device. Which improvement BEST reduces risk?",
+    "choices": [
+      "Add MFA, privileged-session logging, and restricted bastion ACLs",
+      "Enable Telnet fallback",
+      "Share one root account",
+      "Place it on the guest VLAN"
+    ],
+    "answer": 0,
+    "explanation": "Strong authentication, recorded sessions, and scoped reachability harden the centralized management path."
+  },
+  {
+    "id": 7127,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Microsegmentation",
+    "difficulty": "Captain Level 4",
+    "question": "Two application tiers share a subnet, but policy requires only front-end servers to reach database port 5432. Which control is BEST?",
+    "choices": [
+      "Host-aware microsegmentation policy",
+      "A subnet-wide permit rule",
+      "A larger broadcast domain",
+      "DNS round robin"
+    ],
+    "answer": 0,
+    "explanation": "Microsegmentation enforces workload-specific east-west policy even within one subnet."
+  },
+  {
+    "id": 7128,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Identity federation",
+    "difficulty": "Captain Level 4",
+    "question": "A partner's employees need application access using their home organization's identities, without local passwords. Which solution is BEST?",
+    "choices": [
+      "Federated identity with scoped claims",
+      "Shared administrator account",
+      "MAC filtering",
+      "Static NAT"
+    ],
+    "answer": 0,
+    "explanation": "Federation accepts trusted external identity assertions while claims limit authorized access."
+  },
+  {
+    "id": 7129,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "PKI lifecycle",
+    "difficulty": "Captain Level 4",
+    "question": "A VPN outage occurs when its gateway certificate expires. Which control BEST prevents recurrence?",
+    "choices": [
+      "Automated certificate inventory, alerting, and renewal",
+      "Longer DHCP leases",
+      "Disable certificate validation",
+      "Add a routing protocol"
+    ],
+    "answer": 0,
+    "explanation": "Lifecycle monitoring and automated renewal address expiration before service impact."
+  },
+  {
+    "id": 7130,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "On-path detection",
+    "difficulty": "Captain Level 4",
+    "question": "Users receive certificate warnings only on one untrusted network, and captures show a different certificate issuer. What is the MOST likely cause?",
+    "choices": [
+      "TLS interception by an on-path device",
+      "A duplex mismatch",
+      "DHCP exhaustion",
+      "STP convergence"
+    ],
+    "answer": 0,
+    "explanation": "An unexpected issuer localized to one network strongly indicates interception of TLS sessions."
+  },
+  {
+    "id": 7131,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Credential attack",
+    "difficulty": "Captain Level 4",
+    "question": "Many accounts receive one login attempt using the same common password, avoiding lockout thresholds. Which attack is occurring?",
+    "choices": [
+      "Password spraying",
+      "Credential stuffing",
+      "Brute force against one account",
+      "ARP poisoning"
+    ],
+    "answer": 0,
+    "explanation": "Password spraying tests one or few passwords across many accounts to evade per-account controls."
+  },
+  {
+    "id": 7132,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "VLAN hopping",
+    "difficulty": "Captain Level 4",
+    "question": "A user on an access port sends negotiation frames and unexpectedly forms a trunk. Which hardening is BEST?",
+    "choices": [
+      "Disable dynamic trunk negotiation and force access mode",
+      "Enable native VLAN 1",
+      "Allow every VLAN",
+      "Disable port security"
+    ],
+    "answer": 0,
+    "explanation": "Static access mode with negotiation disabled prevents unauthorized trunk formation."
+  },
+  {
+    "id": 7133,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Route hijacking",
+    "difficulty": "Captain Level 4",
+    "question": "Internet traffic to the company suddenly follows an unknown autonomous system advertising a more specific prefix. What is the MOST likely event?",
+    "choices": [
+      "BGP route hijack",
+      "Rogue DHCP",
+      "Evil twin",
+      "MAC flooding"
+    ],
+    "answer": 0,
+    "explanation": "A false more-specific BGP announcement can attract traffic away from the legitimate origin."
+  },
+  {
+    "id": 7134,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Firewall policy",
+    "difficulty": "Captain Level 4",
+    "question": "A web server needs inbound HTTPS and outbound access only to a database and update repository. Which policy BEST follows least privilege?",
+    "choices": [
+      "Explicit required flows with a final deny",
+      "Allow any outbound and inbound",
+      "Permit the entire server VLAN",
+      "Rely only on NAT"
+    ],
+    "answer": 0,
+    "explanation": "Explicitly scoped rules plus default deny limit exposure to documented dependencies."
+  },
+  {
+    "id": 7135,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "RADIUS resilience",
+    "difficulty": "Captain Level 4",
+    "question": "802.1X authentication fails whenever the sole RADIUS server is patched. Which design is BEST?",
+    "choices": [
+      "Deploy redundant RADIUS servers and test failover",
+      "Disable 802.1X",
+      "Use one shared switch password",
+      "Increase AP power"
+    ],
+    "answer": 0,
+    "explanation": "Redundant authentication servers remove the maintenance single point of failure."
+  },
+  {
+    "id": 7136,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "DDoS defense",
+    "difficulty": "Captain Level 4",
+    "question": "A public service is saturated upstream before traffic reaches the local firewall. Which mitigation is BEST?",
+    "choices": [
+      "Provider-based scrubbing or upstream filtering",
+      "A local ACL only",
+      "Change internal VLAN IDs",
+      "Disable DNSSEC"
+    ],
+    "answer": 0,
+    "explanation": "Mitigation must occur upstream when the access circuit is already saturated."
+  },
+  {
+    "id": 7137,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Secrets management",
+    "difficulty": "Captain Level 4",
+    "question": "Automation scripts contain device passwords in plaintext repositories. Which remediation is BEST?",
+    "choices": [
+      "Use a secrets vault with short-lived scoped credentials",
+      "Obfuscate passwords in comments",
+      "Share one API token",
+      "Make the repository public"
+    ],
+    "answer": 0,
+    "explanation": "A vault controls retrieval, rotation, auditing, and scope without storing plaintext secrets."
+  },
+  {
+    "id": 7138,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 4,
+    "objective": "4.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Guest isolation",
+    "difficulty": "Captain Level 4",
+    "question": "Guests need internet access but must not discover peers or internal addresses. Which controls are BEST?",
+    "choices": [
+      "Client isolation plus firewall denial to internal prefixes",
+      "One shared corporate VLAN",
+      "LLDP and port mirroring",
+      "Static routes to servers"
+    ],
+    "answer": 0,
+    "explanation": "Client isolation blocks peer traffic and firewall policy prevents access to internal networks."
+  },
+  {
+    "id": 7139,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Evidence preservation",
+    "difficulty": "Captain Level 4",
+    "question": "A suspected attack is active, but rebooting the firewall may destroy volatile evidence. What should the responder do FIRST?",
+    "choices": [
+      "Follow incident procedures and capture approved volatile evidence",
+      "Factory-reset immediately",
+      "Delete logs",
+      "Announce assumptions as facts"
+    ],
+    "answer": 0,
+    "explanation": "Incident handling balances containment with authorized preservation of volatile evidence."
+  },
+  {
+    "id": 7140,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.1",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Problem scope",
+    "difficulty": "Captain Level 4",
+    "question": "Only one floor reports intermittent access after a campus change. What should be done FIRST?",
+    "choices": [
+      "Compare affected and unaffected paths and configurations",
+      "Replace the core",
+      "Change all passwords",
+      "Readdress every subnet"
+    ],
+    "answer": 0,
+    "explanation": "Comparative scoping isolates the components unique to the affected floor."
+  },
+  {
+    "id": 7141,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Copper certification",
+    "difficulty": "Captain Level 4",
+    "question": "A 10Gbps copper link negotiates only 1Gbps. Continuity passes, but certification shows excessive near-end crosstalk. What is the BEST fix?",
+    "choices": [
+      "Reterminate or replace the noncompliant run",
+      "Force 10Gbps",
+      "Change DNS",
+      "Increase PoE budget"
+    ],
+    "answer": 0,
+    "explanation": "Excessive crosstalk reflects cabling or termination quality that must meet the higher-speed category limits."
+  },
+  {
+    "id": 7142,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.2",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Optical budget",
+    "difficulty": "Captain Level 4",
+    "question": "A long fiber link flaps only in heavy rain. An outdoor splice enclosure contains moisture, and receive power approaches the minimum. What is the BEST action?",
+    "choices": [
+      "Repair and reseal the splice, then retest optical loss",
+      "Change routing metrics",
+      "Enable jumbo frames",
+      "Flush DHCP"
+    ],
+    "answer": 0,
+    "explanation": "Moisture at the splice increases attenuation; physical repair and loss verification address the intermittent fault."
+  },
+  {
+    "id": 7143,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Split DNS",
+    "difficulty": "Captain Level 4",
+    "question": "Remote VPN users resolve an internal application to its public address while office users receive the private address. Which component should be checked FIRST?",
+    "choices": [
+      "The DNS view assigned to VPN clients",
+      "Switch STP priority",
+      "Fiber polarity",
+      "PoE class"
+    ],
+    "answer": 0,
+    "explanation": "Split DNS must place VPN clients in the internal view to return private service addresses."
+  },
+  {
+    "id": 7144,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "DHCP failover",
+    "difficulty": "Captain Level 4",
+    "question": "Two DHCP partners both enter an isolated state after losing communication, then issue conflicting leases. Which design issue should be reviewed?",
+    "choices": [
+      "Failover mode, timers, and partner-state behavior",
+      "DNSSEC signing",
+      "Wireless channels",
+      "BGP communities"
+    ],
+    "answer": 0,
+    "explanation": "Incorrect failover state and timing can permit overlapping allocation during partner isolation."
+  },
+  {
+    "id": 7145,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.3",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "NTP diagnosis",
+    "difficulty": "Captain Level 4",
+    "question": "Devices point to the same NTP server, but some reject it as unsynchronized. The server reports stratum 16. What does this indicate?",
+    "choices": [
+      "The server is not synchronized to a valid source",
+      "The server is the most accurate clock",
+      "DNS is required for NTP",
+      "The devices need PoE"
+    ],
+    "answer": 0,
+    "explanation": "Stratum 16 represents an unsynchronized and unusable NTP source."
+  },
+  {
+    "id": 7146,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Latency isolation",
+    "difficulty": "Captain Level 4",
+    "question": "Application response time is high, but WAN RTT and loss are normal. Packet captures show the server waits seconds before responding to requests. What is the BEST conclusion?",
+    "choices": [
+      "The delay is primarily server-side",
+      "The WAN is congested",
+      "The client has a cable open",
+      "STP is looping"
+    ],
+    "answer": 0,
+    "explanation": "Normal transport timing followed by server think-time isolates delay above the network path."
+  },
+  {
+    "id": 7147,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Queue drops",
+    "difficulty": "Captain Level 4",
+    "question": "A WAN interface has no physical errors but shows output drops during backups. Which data should be examined NEXT?",
+    "choices": [
+      "Queue statistics and QoS class utilization",
+      "ARP age only",
+      "Certificate SANs",
+      "Rack temperature only"
+    ],
+    "answer": 0,
+    "explanation": "Output drops under load point to congestion and queue behavior rather than physical corruption."
+  },
+  {
+    "id": 7148,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.4",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "RF roaming",
+    "difficulty": "Captain Level 4",
+    "question": "Clients cling to distant APs despite nearer coverage. Signal thresholds are very permissive and AP power is high. Which change is BEST?",
+    "choices": [
+      "Tune cell power and minimum RSSI with a validation survey",
+      "Use one channel everywhere",
+      "Disable roaming standards",
+      "Increase 2.4GHz width"
+    ],
+    "answer": 0,
+    "explanation": "Balanced cell sizing and minimum signal policy encourage timely roaming without indiscriminate disconnections."
+  },
+  {
+    "id": 7149,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Packet capture placement",
+    "difficulty": "Captain Level 4",
+    "question": "A firewall appears to alter packets unexpectedly. Where should simultaneous captures be taken to prove the change?",
+    "choices": [
+      "On both ingress and egress sides of the firewall",
+      "Only at the DNS server",
+      "Only on an unrelated access port",
+      "At the patch panel without a tap"
+    ],
+    "answer": 0,
+    "explanation": "Paired captures before and after the device reveal transformations or drops attributable to it."
+  },
+  {
+    "id": 7150,
+    "world": 7,
+    "captainLevel": 4,
+    "domain": 5,
+    "objective": "5.5",
+    "sourceType": "Original Hydra Captain Question",
+    "blueprint": "Name resolution tools",
+    "difficulty": "Captain Level 4",
+    "question": "A resolver returns different answers depending on which authoritative server responds. Which diagnostic approach is BEST?",
+    "choices": [
+      "Query each authoritative server directly and compare records and serials",
+      "Run traceroute to the gateway only",
+      "Replace client cables",
+      "Clear switch MAC tables"
+    ],
+    "answer": 0,
+    "explanation": "Direct authoritative queries reveal inconsistent zone data or replication state."
+  }
+]

@@ -1,0 +1,1442 @@
+[
+  {
+    "id": 20001,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "IPv4 subnetting",
+    "difficulty": "Level 3",
+    "question": "Office C1 requires 45 usable IPv4 addresses. Which smallest conventional subnet meets the requirement?",
+    "choices": [
+      "/27",
+      "/26",
+      "/25",
+      "/24"
+    ],
+    "answer": 1,
+    "explanation": "A /26 supplies 62 usable addresses, enough for Office C1 without the excess of a /25."
+  },
+  {
+    "id": 20002,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
+    "difficulty": "Level 4",
+    "question": "Incident T1 began after a firewall deployment. What should occur before rollback?",
+    "choices": [
+      "Confirm scope and test the correlation",
+      "Replace all endpoints",
+      "Delete logs",
+      "Close the ticket"
+    ],
+    "answer": 0,
+    "explanation": "Testing scope and correlation provides evidence before acting on Incident T1."
+  },
+  {
+    "id": 20003,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Route selection",
+    "difficulty": "Level 2",
+    "question": "Router I1 knows 10.55.0.0/16 by OSPF and 10.55.1.0/24 statically. Which route carries traffic to 10.55.1.9?",
+    "choices": [
+      "Static /24",
+      "OSPF /16",
+      "Default route",
+      "Both equally"
+    ],
+    "answer": 0,
+    "explanation": "Longest-prefix matching selects Router I1's more-specific /24."
+  },
+  {
+    "id": 20004,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Change management",
+    "difficulty": "Level 3",
+    "question": "Change O1 passed lab testing but has no defined reversal trigger. What must be added before approval?",
+    "choices": [
+      "Rollback criteria and steps",
+      "Guest password",
+      "DHCP reservation",
+      "Cable label"
+    ],
+    "answer": 0,
+    "explanation": "Controlled Change O1 needs objective rollback conditions and procedures."
+  },
+  {
+    "id": 20005,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Least privilege",
+    "difficulty": "Level 4",
+    "question": "Vendor S1 needs read-only monitoring for five days. Which access is BEST?",
+    "choices": [
+      "Time-limited read-only role",
+      "Permanent global administrator",
+      "Shared root account",
+      "Anonymous access"
+    ],
+    "answer": 0,
+    "explanation": "A time-limited read-only role limits Vendor S1 by privilege and duration."
+  },
+  {
+    "id": 20006,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Secure protocols",
+    "difficulty": "Level 2",
+    "question": "Collector C2 must poll devices with encrypted authentication and payload protection. Which protocol version is BEST?",
+    "choices": [
+      "SNMPv3",
+      "SNMPv1",
+      "TFTP",
+      "Telnet"
+    ],
+    "answer": 0,
+    "explanation": "SNMPv3 provides authenticated, encrypted management exchanges for Collector C2."
+  },
+  {
+    "id": 20007,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Copper cabling",
+    "difficulty": "Level 3",
+    "question": "Cable T2 passes continuity but fails return-loss certification. What should be inspected FIRST?",
+    "choices": [
+      "Terminations and excessive pair untwist",
+      "DNS records",
+      "Route metrics",
+      "Wireless beacons"
+    ],
+    "answer": 0,
+    "explanation": "Poor termination geometry commonly causes return-loss failure on Cable T2."
+  },
+  {
+    "id": 20008,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "VLAN configuration",
+    "difficulty": "Level 4",
+    "question": "Port I2 serves an IP phone and attached PC. Which design separates their broadcast traffic?",
+    "choices": [
+      "Tagged voice VLAN and separate data access VLAN",
+      "One open VLAN for both",
+      "Port mirroring",
+      "Disabled tagging"
+    ],
+    "answer": 0,
+    "explanation": "Separate voice and data VLAN assignments isolate both device classes on Port I2."
+  },
+  {
+    "id": 20009,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Monitoring",
+    "difficulty": "Level 2",
+    "question": "Link O2 suffers four-second congestion bursts that hourly averages conceal. Which collection method is BEST?",
+    "choices": [
+      "Streaming telemetry or shorter polling",
+      "Disable counters",
+      "Increase DNS TTL",
+      "Remove timestamps"
+    ],
+    "answer": 0,
+    "explanation": "Higher-frequency telemetry exposes the short bursts on Link O2."
+  },
+  {
+    "id": 20010,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Denial of service",
+    "difficulty": "Level 3",
+    "question": "Gateway S2 receives thousands of spoofed SYN packets without completed handshakes. Which attack is occurring?",
+    "choices": [
+      "SYN flood",
+      "Evil twin",
+      "Tailgating",
+      "VLAN pruning"
+    ],
+    "answer": 0,
+    "explanation": "Spoofed half-open sessions characterize a SYN flood against Gateway S2."
+  },
+  {
+    "id": 20011,
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "OSI model",
+    "difficulty": "Level 3",
+    "question": "At site C3, IP forwarding succeeds but TCP retransmissions rise sharply. Which OSI layer should be examined next?",
+    "choices": [
+      "Physical",
+      "Data Link",
+      "Transport",
+      "Presentation"
+    ],
+    "answer": 2,
+    "explanation": "TCP reliability and retransmission operate at the Transport layer for site C3."
+  },
+  {
+    "id": 20012,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Interface errors",
+    "difficulty": "Level 4",
+    "question": "Port T3 accumulates CRC errors only during high traffic. Which physical cause is MOST plausible?",
+    "choices": [
+      "Damaged cabling or interference",
+      "Expired DNS cache",
+      "Duplicate hostname",
+      "Incorrect NTP stratum"
+    ],
+    "answer": 0,
+    "explanation": "Damage or interference can corrupt busy-link frames on Port T3."
+  },
+  {
+    "id": 20013,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless design",
+    "difficulty": "Level 2",
+    "question": "Area I3 has excellent 6GHz coverage, but older scanners cannot discover the SSID. What is the BEST correction?",
+    "choices": [
+      "Offer a compatible 5GHz radio profile",
+      "Increase fiber length",
+      "Lower STP priority",
+      "Add a BGP peer"
+    ],
+    "answer": 0,
+    "explanation": "Scanners without 6GHz radios require a compatible band in Area I3."
+  },
+  {
+    "id": 20014,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Recovery objectives",
+    "difficulty": "Level 3",
+    "question": "Database O3 may lose no more than twelve minutes of transactions. Which metric is twelve minutes?",
+    "choices": [
+      "RPO",
+      "RTO",
+      "MTBF",
+      "SLA uptime"
+    ],
+    "answer": 0,
+    "explanation": "Database O3's recovery point objective expresses tolerable data loss in time."
+  },
+  {
+    "id": 20015,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Network access control",
+    "difficulty": "Level 4",
+    "question": "Endpoint S3 lacks required disk encryption and must enter remediation. Which control performs this assignment?",
+    "choices": [
+      "NAC posture policy",
+      "DNS round robin",
+      "LACP hashing",
+      "Route summarization"
+    ],
+    "answer": 0,
+    "explanation": "NAC posture evaluation can place noncompliant Endpoint S3 into remediation."
+  },
+  {
+    "id": 20016,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud models",
+    "difficulty": "Level 2",
+    "question": "Workload C4 runs privately but temporarily consumes provider resources during demand spikes. Which model is this?",
+    "choices": [
+      "Hybrid cloud",
+      "Public-only cloud",
+      "Community-only cloud",
+      "Colocation without cloud"
+    ],
+    "answer": 0,
+    "explanation": "Hybrid cloud permits private Workload C4 to integrate with elastic provider capacity."
+  },
+  {
+    "id": 20017,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "DHCP troubleshooting",
+    "difficulty": "Level 3",
+    "question": "VLAN T4 clients obtain addresses but cannot reach other networks. Which lease option should be verified?",
+    "choices": [
+      "Default gateway",
+      "TFTP filename",
+      "NTP stratum",
+      "DNS serial"
+    ],
+    "answer": 0,
+    "explanation": "The gateway option supplies VLAN T4 clients with an off-subnet next hop."
+  },
+  {
+    "id": 20018,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Power over Ethernet",
+    "difficulty": "Level 4",
+    "question": "Camera I4 powers on but reboots when its heater activates; the switch logs a power-class denial. What should be corrected?",
+    "choices": [
+      "PoE class and available budget",
+      "DNS TTL",
+      "Native VLAN name",
+      "ARP cache duration"
+    ],
+    "answer": 0,
+    "explanation": "Camera I4's peak load requires sufficient negotiated PoE class and switch budget."
+  },
+  {
+    "id": 20019,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DNS operations",
+    "difficulty": "Level 2",
+    "question": "Zone O4 changes on its primary, but the secondary never transfers it. Which field should be checked first?",
+    "choices": [
+      "SOA serial",
+      "MAC aging timer",
+      "PoE class",
+      "Wi-Fi channel"
+    ],
+    "answer": 0,
+    "explanation": "The secondary compares Zone O4's SOA serial to identify newer data."
+  },
+  {
+    "id": 20020,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Firewall rules",
+    "difficulty": "Level 3",
+    "question": "Database S4 should accept TCP 5432 only from 10.4.40.0/24. Which rule is BEST?",
+    "choices": [
+      "Permit that source and port, then deny others",
+      "Permit every source and port",
+      "Deny the application subnet",
+      "Allow broadcast ICMP only"
+    ],
+    "answer": 0,
+    "explanation": "A narrowly scoped permit enforces least privilege for Database S4."
+  },
+  {
+    "id": 20021,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Network media",
+    "difficulty": "Level 3",
+    "question": "Backbone C5 must carry 10Gbps across 7 km. Which medium is BEST?",
+    "choices": [
+      "Single-mode fiber and long-reach optics",
+      "Cat 6 UTP",
+      "RG-59 coaxial",
+      "Short-reach multimode optics"
+    ],
+    "answer": 0,
+    "explanation": "Long-reach single-mode fiber supports Backbone C5's multi-kilometer requirement."
+  },
+  {
+    "id": 20022,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Command tools",
+    "difficulty": "Level 4",
+    "question": "Host T5 resolves a name differently from the approved DNS server. Which command directly queries that chosen resolver?",
+    "choices": [
+      "nslookup specifying the server",
+      "arp -d",
+      "route delete",
+      "hostname"
+    ],
+    "answer": 0,
+    "explanation": "nslookup can target the approved resolver and compare its answer for Host T5."
+  },
+  {
+    "id": 20023,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Spanning tree",
+    "difficulty": "Level 2",
+    "question": "An unauthorized switch sends BPDUs into edge port I5. Which feature should disable that port?",
+    "choices": [
+      "BPDU guard",
+      "DHCP relay",
+      "LACP",
+      "SPAN"
+    ],
+    "answer": 0,
+    "explanation": "BPDU guard protects edge port I5 by disabling it after unexpected BPDUs."
+  },
+  {
+    "id": 20024,
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Management access",
+    "difficulty": "Level 3",
+    "question": "Engineers must reach console O5 during a complete production-network outage. Which architecture is BEST?",
+    "choices": [
+      "Independent out-of-band network",
+      "Management through the failed core",
+      "Public Telnet",
+      "Guest Wi-Fi access"
+    ],
+    "answer": 0,
+    "explanation": "An independent out-of-band path preserves console O5 access during production failure."
+  },
+  {
+    "id": 20025,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Physical security",
+    "difficulty": "Level 4",
+    "question": "Rack S5 sits in a shared corridor. Which control BEST restricts and records individual entry?",
+    "choices": [
+      "Badge-controlled locked enclosure",
+      "Open cabinet",
+      "Hidden SSID",
+      "DNS alias"
+    ],
+    "answer": 0,
+    "explanation": "A logged badge-controlled enclosure protects Rack S5 and records access."
+  },
+  {
+    "id": 20026,
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Traffic delivery",
+    "difficulty": "Level 2",
+    "question": "Service C6 advertises one address from several cities, and routing selects a nearby instance. Which delivery method applies?",
+    "choices": [
+      "Anycast",
+      "Broadcast",
+      "Multicast",
+      "Unknown unicast flooding"
+    ],
+    "answer": 0,
+    "explanation": "Anycast lets Service C6 share one address across sites while routing chooses an instance."
+  },
+  {
+    "id": 20027,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Fiber troubleshooting",
+    "difficulty": "Level 3",
+    "question": "OTDR trace T6 shows gradual attenuation followed by one sharp reflective spike. What does the spike MOST likely mark?",
+    "choices": [
+      "Connector, open end, or break",
+      "DHCP renewal",
+      "STP election",
+      "DNS recursion"
+    ],
+    "answer": 0,
+    "explanation": "A sharp reflection on trace T6 indicates an air gap, connector, open end, or break."
+  },
+  {
+    "id": 20028,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless capacity",
+    "difficulty": "Level 4",
+    "question": "Cell I6 has strong RSSI but 94% channel utilization. Which change BEST adds capacity?",
+    "choices": [
+      "Add a planned AP on a different channel",
+      "Maximize every transmitter",
+      "Use one overlapping channel",
+      "Remove wired backhaul"
+    ],
+    "answer": 0,
+    "explanation": "A planned additional cell supplies more airtime for Cell I6 without raising contention."
+  },
+  {
+    "id": 20029,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Documentation",
+    "difficulty": "Level 2",
+    "question": "Technicians cannot map wall jack O6 to its switch interface. Which record needs correction?",
+    "choices": [
+      "Cable and port map",
+      "Password history",
+      "DNS root hints",
+      "Certificate policy"
+    ],
+    "answer": 0,
+    "explanation": "A cable and port map records jack O6's termination and switch interface."
+  },
+  {
+    "id": 20030,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Least privilege",
+    "difficulty": "Level 3",
+    "question": "Vendor S6 needs read-only monitoring for five days. Which access is BEST?",
+    "choices": [
+      "Time-limited read-only role",
+      "Permanent global administrator",
+      "Shared root account",
+      "Anonymous access"
+    ],
+    "answer": 0,
+    "explanation": "A time-limited read-only role limits Vendor S6 by privilege and duration."
+  },
+  {
+    "id": 20031,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Network appliances",
+    "difficulty": "Level 3",
+    "question": "Application C7 needs requests sent only to backend nodes that pass health probes. Which device BEST fits?",
+    "choices": [
+      "Load balancer",
+      "Patch panel",
+      "Repeater",
+      "Media converter"
+    ],
+    "answer": 0,
+    "explanation": "A load balancer checks backend health and distributes Application C7 requests."
+  },
+  {
+    "id": 20032,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Wireless troubleshooting",
+    "difficulty": "Level 4",
+    "question": "Client T7 has strong RSSI, but retries rise when nearby machinery starts. Which tool BEST confirms the cause?",
+    "choices": [
+      "Spectrum analyzer",
+      "Cable toner",
+      "Loopback plug",
+      "Route viewer"
+    ],
+    "answer": 0,
+    "explanation": "A spectrum analyzer can reveal non-Wi-Fi interference affecting Client T7."
+  },
+  {
+    "id": 20033,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Route selection",
+    "difficulty": "Level 2",
+    "question": "Router I7 knows 10.55.0.0/16 by OSPF and 10.55.7.0/24 statically. Which route carries traffic to 10.55.7.9?",
+    "choices": [
+      "Static /24",
+      "OSPF /16",
+      "Default route",
+      "Both equally"
+    ],
+    "answer": 0,
+    "explanation": "Longest-prefix matching selects Router I7's more-specific /24."
+  },
+  {
+    "id": 20034,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Change management",
+    "difficulty": "Level 3",
+    "question": "Change O7 passed lab testing but has no defined reversal trigger. What must be added before approval?",
+    "choices": [
+      "Rollback criteria and steps",
+      "Guest password",
+      "DHCP reservation",
+      "Cable label"
+    ],
+    "answer": 0,
+    "explanation": "Controlled Change O7 needs objective rollback conditions and procedures."
+  },
+  {
+    "id": 20035,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Denial of service",
+    "difficulty": "Level 4",
+    "question": "Gateway S7 receives thousands of spoofed SYN packets without completed handshakes. Which attack is occurring?",
+    "choices": [
+      "SYN flood",
+      "Evil twin",
+      "Tailgating",
+      "VLAN pruning"
+    ],
+    "answer": 0,
+    "explanation": "Spoofed half-open sessions characterize a SYN flood against Gateway S7."
+  },
+  {
+    "id": 20036,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "IPv4 subnetting",
+    "difficulty": "Level 2",
+    "question": "Office C8 requires 45 usable IPv4 addresses. Which smallest conventional subnet meets the requirement?",
+    "choices": [
+      "/27",
+      "/26",
+      "/25",
+      "/24"
+    ],
+    "answer": 1,
+    "explanation": "A /26 supplies 62 usable addresses, enough for Office C8 without the excess of a /25."
+  },
+  {
+    "id": 20037,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
+    "difficulty": "Level 3",
+    "question": "Incident T8 began after a firewall deployment. What should occur before rollback?",
+    "choices": [
+      "Confirm scope and test the correlation",
+      "Replace all endpoints",
+      "Delete logs",
+      "Close the ticket"
+    ],
+    "answer": 0,
+    "explanation": "Testing scope and correlation provides evidence before acting on Incident T8."
+  },
+  {
+    "id": 20038,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "VLAN configuration",
+    "difficulty": "Level 4",
+    "question": "Port I8 serves an IP phone and attached PC. Which design separates their broadcast traffic?",
+    "choices": [
+      "Tagged voice VLAN and separate data access VLAN",
+      "One open VLAN for both",
+      "Port mirroring",
+      "Disabled tagging"
+    ],
+    "answer": 0,
+    "explanation": "Separate voice and data VLAN assignments isolate both device classes on Port I8."
+  },
+  {
+    "id": 20039,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Monitoring",
+    "difficulty": "Level 2",
+    "question": "Link O8 suffers four-second congestion bursts that hourly averages conceal. Which collection method is BEST?",
+    "choices": [
+      "Streaming telemetry or shorter polling",
+      "Disable counters",
+      "Increase DNS TTL",
+      "Remove timestamps"
+    ],
+    "answer": 0,
+    "explanation": "Higher-frequency telemetry exposes the short bursts on Link O8."
+  },
+  {
+    "id": 20040,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Network access control",
+    "difficulty": "Level 3",
+    "question": "Endpoint S8 lacks required disk encryption and must enter remediation. Which control performs this assignment?",
+    "choices": [
+      "NAC posture policy",
+      "DNS round robin",
+      "LACP hashing",
+      "Route summarization"
+    ],
+    "answer": 0,
+    "explanation": "NAC posture evaluation can place noncompliant Endpoint S8 into remediation."
+  },
+  {
+    "id": 20041,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Secure protocols",
+    "difficulty": "Level 3",
+    "question": "Collector C9 must poll devices with encrypted authentication and payload protection. Which protocol version is BEST?",
+    "choices": [
+      "SNMPv3",
+      "SNMPv1",
+      "TFTP",
+      "Telnet"
+    ],
+    "answer": 0,
+    "explanation": "SNMPv3 provides authenticated, encrypted management exchanges for Collector C9."
+  },
+  {
+    "id": 20042,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Copper cabling",
+    "difficulty": "Level 4",
+    "question": "Cable T9 passes continuity but fails return-loss certification. What should be inspected FIRST?",
+    "choices": [
+      "Terminations and excessive pair untwist",
+      "DNS records",
+      "Route metrics",
+      "Wireless beacons"
+    ],
+    "answer": 0,
+    "explanation": "Poor termination geometry commonly causes return-loss failure on Cable T9."
+  },
+  {
+    "id": 20043,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless design",
+    "difficulty": "Level 2",
+    "question": "Area I9 has excellent 6GHz coverage, but older scanners cannot discover the SSID. What is the BEST correction?",
+    "choices": [
+      "Offer a compatible 5GHz radio profile",
+      "Increase fiber length",
+      "Lower STP priority",
+      "Add a BGP peer"
+    ],
+    "answer": 0,
+    "explanation": "Scanners without 6GHz radios require a compatible band in Area I9."
+  },
+  {
+    "id": 20044,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Recovery objectives",
+    "difficulty": "Level 3",
+    "question": "Database O9 may lose no more than twelve minutes of transactions. Which metric is twelve minutes?",
+    "choices": [
+      "RPO",
+      "RTO",
+      "MTBF",
+      "SLA uptime"
+    ],
+    "answer": 0,
+    "explanation": "Database O9's recovery point objective expresses tolerable data loss in time."
+  },
+  {
+    "id": 20045,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Firewall rules",
+    "difficulty": "Level 4",
+    "question": "Database S9 should accept TCP 5432 only from 10.9.40.0/24. Which rule is BEST?",
+    "choices": [
+      "Permit that source and port, then deny others",
+      "Permit every source and port",
+      "Deny the application subnet",
+      "Allow broadcast ICMP only"
+    ],
+    "answer": 0,
+    "explanation": "A narrowly scoped permit enforces least privilege for Database S9."
+  },
+  {
+    "id": 20046,
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "OSI model",
+    "difficulty": "Level 2",
+    "question": "At site C10, IP forwarding succeeds but TCP retransmissions rise sharply. Which OSI layer should be examined next?",
+    "choices": [
+      "Physical",
+      "Data Link",
+      "Transport",
+      "Presentation"
+    ],
+    "answer": 2,
+    "explanation": "TCP reliability and retransmission operate at the Transport layer for site C10."
+  },
+  {
+    "id": 20047,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Interface errors",
+    "difficulty": "Level 3",
+    "question": "Port T10 accumulates CRC errors only during high traffic. Which physical cause is MOST plausible?",
+    "choices": [
+      "Damaged cabling or interference",
+      "Expired DNS cache",
+      "Duplicate hostname",
+      "Incorrect NTP stratum"
+    ],
+    "answer": 0,
+    "explanation": "Damage or interference can corrupt busy-link frames on Port T10."
+  },
+  {
+    "id": 20048,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Power over Ethernet",
+    "difficulty": "Level 4",
+    "question": "Camera I10 powers on but reboots when its heater activates; the switch logs a power-class denial. What should be corrected?",
+    "choices": [
+      "PoE class and available budget",
+      "DNS TTL",
+      "Native VLAN name",
+      "ARP cache duration"
+    ],
+    "answer": 0,
+    "explanation": "Camera I10's peak load requires sufficient negotiated PoE class and switch budget."
+  },
+  {
+    "id": 20049,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DNS operations",
+    "difficulty": "Level 2",
+    "question": "Zone O10 changes on its primary, but the secondary never transfers it. Which field should be checked first?",
+    "choices": [
+      "SOA serial",
+      "MAC aging timer",
+      "PoE class",
+      "Wi-Fi channel"
+    ],
+    "answer": 0,
+    "explanation": "The secondary compares Zone O10's SOA serial to identify newer data."
+  },
+  {
+    "id": 20050,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Physical security",
+    "difficulty": "Level 3",
+    "question": "Rack S10 sits in a shared corridor. Which control BEST restricts and records individual entry?",
+    "choices": [
+      "Badge-controlled locked enclosure",
+      "Open cabinet",
+      "Hidden SSID",
+      "DNS alias"
+    ],
+    "answer": 0,
+    "explanation": "A logged badge-controlled enclosure protects Rack S10 and records access."
+  },
+  {
+    "id": 20051,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud models",
+    "difficulty": "Level 3",
+    "question": "Workload C11 runs privately but temporarily consumes provider resources during demand spikes. Which model is this?",
+    "choices": [
+      "Hybrid cloud",
+      "Public-only cloud",
+      "Community-only cloud",
+      "Colocation without cloud"
+    ],
+    "answer": 0,
+    "explanation": "Hybrid cloud permits private Workload C11 to integrate with elastic provider capacity."
+  },
+  {
+    "id": 20052,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "DHCP troubleshooting",
+    "difficulty": "Level 4",
+    "question": "VLAN T11 clients obtain addresses but cannot reach other networks. Which lease option should be verified?",
+    "choices": [
+      "Default gateway",
+      "TFTP filename",
+      "NTP stratum",
+      "DNS serial"
+    ],
+    "answer": 0,
+    "explanation": "The gateway option supplies VLAN T11 clients with an off-subnet next hop."
+  },
+  {
+    "id": 20053,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Spanning tree",
+    "difficulty": "Level 2",
+    "question": "An unauthorized switch sends BPDUs into edge port I11. Which feature should disable that port?",
+    "choices": [
+      "BPDU guard",
+      "DHCP relay",
+      "LACP",
+      "SPAN"
+    ],
+    "answer": 0,
+    "explanation": "BPDU guard protects edge port I11 by disabling it after unexpected BPDUs."
+  },
+  {
+    "id": 20054,
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Management access",
+    "difficulty": "Level 3",
+    "question": "Engineers must reach console O11 during a complete production-network outage. Which architecture is BEST?",
+    "choices": [
+      "Independent out-of-band network",
+      "Management through the failed core",
+      "Public Telnet",
+      "Guest Wi-Fi access"
+    ],
+    "answer": 0,
+    "explanation": "An independent out-of-band path preserves console O11 access during production failure."
+  },
+  {
+    "id": 20055,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Least privilege",
+    "difficulty": "Level 4",
+    "question": "Vendor S11 needs read-only monitoring for five days. Which access is BEST?",
+    "choices": [
+      "Time-limited read-only role",
+      "Permanent global administrator",
+      "Shared root account",
+      "Anonymous access"
+    ],
+    "answer": 0,
+    "explanation": "A time-limited read-only role limits Vendor S11 by privilege and duration."
+  },
+  {
+    "id": 20056,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Network media",
+    "difficulty": "Level 2",
+    "question": "Backbone C12 must carry 10Gbps across 7 km. Which medium is BEST?",
+    "choices": [
+      "Single-mode fiber and long-reach optics",
+      "Cat 6 UTP",
+      "RG-59 coaxial",
+      "Short-reach multimode optics"
+    ],
+    "answer": 0,
+    "explanation": "Long-reach single-mode fiber supports Backbone C12's multi-kilometer requirement."
+  },
+  {
+    "id": 20057,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Command tools",
+    "difficulty": "Level 3",
+    "question": "Host T12 resolves a name differently from the approved DNS server. Which command directly queries that chosen resolver?",
+    "choices": [
+      "nslookup specifying the server",
+      "arp -d",
+      "route delete",
+      "hostname"
+    ],
+    "answer": 0,
+    "explanation": "nslookup can target the approved resolver and compare its answer for Host T12."
+  },
+  {
+    "id": 20058,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless capacity",
+    "difficulty": "Level 4",
+    "question": "Cell I12 has strong RSSI but 94% channel utilization. Which change BEST adds capacity?",
+    "choices": [
+      "Add a planned AP on a different channel",
+      "Maximize every transmitter",
+      "Use one overlapping channel",
+      "Remove wired backhaul"
+    ],
+    "answer": 0,
+    "explanation": "A planned additional cell supplies more airtime for Cell I12 without raising contention."
+  },
+  {
+    "id": 20059,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Documentation",
+    "difficulty": "Level 2",
+    "question": "Technicians cannot map wall jack O12 to its switch interface. Which record needs correction?",
+    "choices": [
+      "Cable and port map",
+      "Password history",
+      "DNS root hints",
+      "Certificate policy"
+    ],
+    "answer": 0,
+    "explanation": "A cable and port map records jack O12's termination and switch interface."
+  },
+  {
+    "id": 20060,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Denial of service",
+    "difficulty": "Level 3",
+    "question": "Gateway S12 receives thousands of spoofed SYN packets without completed handshakes. Which attack is occurring?",
+    "choices": [
+      "SYN flood",
+      "Evil twin",
+      "Tailgating",
+      "VLAN pruning"
+    ],
+    "answer": 0,
+    "explanation": "Spoofed half-open sessions characterize a SYN flood against Gateway S12."
+  },
+  {
+    "id": 20061,
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Traffic delivery",
+    "difficulty": "Level 3",
+    "question": "Service C13 advertises one address from several cities, and routing selects a nearby instance. Which delivery method applies?",
+    "choices": [
+      "Anycast",
+      "Broadcast",
+      "Multicast",
+      "Unknown unicast flooding"
+    ],
+    "answer": 0,
+    "explanation": "Anycast lets Service C13 share one address across sites while routing chooses an instance."
+  },
+  {
+    "id": 20062,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Fiber troubleshooting",
+    "difficulty": "Level 4",
+    "question": "OTDR trace T13 shows gradual attenuation followed by one sharp reflective spike. What does the spike MOST likely mark?",
+    "choices": [
+      "Connector, open end, or break",
+      "DHCP renewal",
+      "STP election",
+      "DNS recursion"
+    ],
+    "answer": 0,
+    "explanation": "A sharp reflection on trace T13 indicates an air gap, connector, open end, or break."
+  },
+  {
+    "id": 20063,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Route selection",
+    "difficulty": "Level 2",
+    "question": "Router I13 knows 10.55.0.0/16 by OSPF and 10.55.13.0/24 statically. Which route carries traffic to 10.55.13.9?",
+    "choices": [
+      "Static /24",
+      "OSPF /16",
+      "Default route",
+      "Both equally"
+    ],
+    "answer": 0,
+    "explanation": "Longest-prefix matching selects Router I13's more-specific /24."
+  },
+  {
+    "id": 20064,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Change management",
+    "difficulty": "Level 3",
+    "question": "Change O13 passed lab testing but has no defined reversal trigger. What must be added before approval?",
+    "choices": [
+      "Rollback criteria and steps",
+      "Guest password",
+      "DHCP reservation",
+      "Cable label"
+    ],
+    "answer": 0,
+    "explanation": "Controlled Change O13 needs objective rollback conditions and procedures."
+  },
+  {
+    "id": 20065,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Network access control",
+    "difficulty": "Level 4",
+    "question": "Endpoint S13 lacks required disk encryption and must enter remediation. Which control performs this assignment?",
+    "choices": [
+      "NAC posture policy",
+      "DNS round robin",
+      "LACP hashing",
+      "Route summarization"
+    ],
+    "answer": 0,
+    "explanation": "NAC posture evaluation can place noncompliant Endpoint S13 into remediation."
+  },
+  {
+    "id": 20066,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Network appliances",
+    "difficulty": "Level 2",
+    "question": "Application C14 needs requests sent only to backend nodes that pass health probes. Which device BEST fits?",
+    "choices": [
+      "Load balancer",
+      "Patch panel",
+      "Repeater",
+      "Media converter"
+    ],
+    "answer": 0,
+    "explanation": "A load balancer checks backend health and distributes Application C14 requests."
+  },
+  {
+    "id": 20067,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Wireless troubleshooting",
+    "difficulty": "Level 3",
+    "question": "Client T14 has strong RSSI, but retries rise when nearby machinery starts. Which tool BEST confirms the cause?",
+    "choices": [
+      "Spectrum analyzer",
+      "Cable toner",
+      "Loopback plug",
+      "Route viewer"
+    ],
+    "answer": 0,
+    "explanation": "A spectrum analyzer can reveal non-Wi-Fi interference affecting Client T14."
+  },
+  {
+    "id": 20068,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "VLAN configuration",
+    "difficulty": "Level 4",
+    "question": "Port I14 serves an IP phone and attached PC. Which design separates their broadcast traffic?",
+    "choices": [
+      "Tagged voice VLAN and separate data access VLAN",
+      "One open VLAN for both",
+      "Port mirroring",
+      "Disabled tagging"
+    ],
+    "answer": 0,
+    "explanation": "Separate voice and data VLAN assignments isolate both device classes on Port I14."
+  },
+  {
+    "id": 20069,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Monitoring",
+    "difficulty": "Level 2",
+    "question": "Link O14 suffers four-second congestion bursts that hourly averages conceal. Which collection method is BEST?",
+    "choices": [
+      "Streaming telemetry or shorter polling",
+      "Disable counters",
+      "Increase DNS TTL",
+      "Remove timestamps"
+    ],
+    "answer": 0,
+    "explanation": "Higher-frequency telemetry exposes the short bursts on Link O14."
+  },
+  {
+    "id": 20070,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "IPv4 subnetting",
+    "difficulty": "Level 3",
+    "question": "Office C15 requires 45 usable IPv4 addresses. Which smallest conventional subnet meets the requirement?",
+    "choices": [
+      "/27",
+      "/26",
+      "/25",
+      "/24"
+    ],
+    "answer": 1,
+    "explanation": "A /26 supplies 62 usable addresses, enough for Office C15 without the excess of a /25."
+  },
+  {
+    "id": 20071,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
+    "difficulty": "Level 3",
+    "question": "Incident T15 began after a firewall deployment. What should occur before rollback?",
+    "choices": [
+      "Confirm scope and test the correlation",
+      "Replace all endpoints",
+      "Delete logs",
+      "Close the ticket"
+    ],
+    "answer": 0,
+    "explanation": "Testing scope and correlation provides evidence before acting on Incident T15."
+  },
+  {
+    "id": 20072,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless design",
+    "difficulty": "Level 4",
+    "question": "Area I15 has excellent 6GHz coverage, but older scanners cannot discover the SSID. What is the BEST correction?",
+    "choices": [
+      "Offer a compatible 5GHz radio profile",
+      "Increase fiber length",
+      "Lower STP priority",
+      "Add a BGP peer"
+    ],
+    "answer": 0,
+    "explanation": "Scanners without 6GHz radios require a compatible band in Area I15."
+  },
+  {
+    "id": 20073,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Recovery objectives",
+    "difficulty": "Level 2",
+    "question": "Database O15 may lose no more than twelve minutes of transactions. Which metric is twelve minutes?",
+    "choices": [
+      "RPO",
+      "RTO",
+      "MTBF",
+      "SLA uptime"
+    ],
+    "answer": 0,
+    "explanation": "Database O15's recovery point objective expresses tolerable data loss in time."
+  },
+  {
+    "id": 20074,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Secure protocols",
+    "difficulty": "Level 3",
+    "question": "Collector C16 must poll devices with encrypted authentication and payload protection. Which protocol version is BEST?",
+    "choices": [
+      "SNMPv3",
+      "SNMPv1",
+      "TFTP",
+      "Telnet"
+    ],
+    "answer": 0,
+    "explanation": "SNMPv3 provides authenticated, encrypted management exchanges for Collector C16."
+  },
+  {
+    "id": 20075,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Copper cabling",
+    "difficulty": "Level 4",
+    "question": "Cable T16 passes continuity but fails return-loss certification. What should be inspected FIRST?",
+    "choices": [
+      "Terminations and excessive pair untwist",
+      "DNS records",
+      "Route metrics",
+      "Wireless beacons"
+    ],
+    "answer": 0,
+    "explanation": "Poor termination geometry commonly causes return-loss failure on Cable T16."
+  },
+  {
+    "id": 20076,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Power over Ethernet",
+    "difficulty": "Level 2",
+    "question": "Camera I16 powers on but reboots when its heater activates; the switch logs a power-class denial. What should be corrected?",
+    "choices": [
+      "PoE class and available budget",
+      "DNS TTL",
+      "Native VLAN name",
+      "ARP cache duration"
+    ],
+    "answer": 0,
+    "explanation": "Camera I16's peak load requires sufficient negotiated PoE class and switch budget."
+  },
+  {
+    "id": 20077,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DNS operations",
+    "difficulty": "Level 3",
+    "question": "Zone O16 changes on its primary, but the secondary never transfers it. Which field should be checked first?",
+    "choices": [
+      "SOA serial",
+      "MAC aging timer",
+      "PoE class",
+      "Wi-Fi channel"
+    ],
+    "answer": 0,
+    "explanation": "The secondary compares Zone O16's SOA serial to identify newer data."
+  },
+  {
+    "id": 20078,
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "OSI model",
+    "difficulty": "Level 4",
+    "question": "At site C17, IP forwarding succeeds but TCP retransmissions rise sharply. Which OSI layer should be examined next?",
+    "choices": [
+      "Physical",
+      "Data Link",
+      "Transport",
+      "Presentation"
+    ],
+    "answer": 2,
+    "explanation": "TCP reliability and retransmission operate at the Transport layer for site C17."
+  },
+  {
+    "id": 20079,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Interface errors",
+    "difficulty": "Level 2",
+    "question": "Port T17 accumulates CRC errors only during high traffic. Which physical cause is MOST plausible?",
+    "choices": [
+      "Damaged cabling or interference",
+      "Expired DNS cache",
+      "Duplicate hostname",
+      "Incorrect NTP stratum"
+    ],
+    "answer": 0,
+    "explanation": "Damage or interference can corrupt busy-link frames on Port T17."
+  },
+  {
+    "id": 20080,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Spanning tree",
+    "difficulty": "Level 3",
+    "question": "An unauthorized switch sends BPDUs into edge port I17. Which feature should disable that port?",
+    "choices": [
+      "BPDU guard",
+      "DHCP relay",
+      "LACP",
+      "SPAN"
+    ],
+    "answer": 0,
+    "explanation": "BPDU guard protects edge port I17 by disabling it after unexpected BPDUs."
+  },
+  {
+    "id": 20081,
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Management access",
+    "difficulty": "Level 3",
+    "question": "Engineers must reach console O17 during a complete production-network outage. Which architecture is BEST?",
+    "choices": [
+      "Independent out-of-band network",
+      "Management through the failed core",
+      "Public Telnet",
+      "Guest Wi-Fi access"
+    ],
+    "answer": 0,
+    "explanation": "An independent out-of-band path preserves console O17 access during production failure."
+  },
+  {
+    "id": 20082,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud models",
+    "difficulty": "Level 4",
+    "question": "Workload C18 runs privately but temporarily consumes provider resources during demand spikes. Which model is this?",
+    "choices": [
+      "Hybrid cloud",
+      "Public-only cloud",
+      "Community-only cloud",
+      "Colocation without cloud"
+    ],
+    "answer": 0,
+    "explanation": "Hybrid cloud permits private Workload C18 to integrate with elastic provider capacity."
+  },
+  {
+    "id": 20083,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "DHCP troubleshooting",
+    "difficulty": "Level 2",
+    "question": "VLAN T18 clients obtain addresses but cannot reach other networks. Which lease option should be verified?",
+    "choices": [
+      "Default gateway",
+      "TFTP filename",
+      "NTP stratum",
+      "DNS serial"
+    ],
+    "answer": 0,
+    "explanation": "The gateway option supplies VLAN T18 clients with an off-subnet next hop."
+  },
+  {
+    "id": 20084,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless capacity",
+    "difficulty": "Level 3",
+    "question": "Cell I18 has strong RSSI but 94% channel utilization. Which change BEST adds capacity?",
+    "choices": [
+      "Add a planned AP on a different channel",
+      "Maximize every transmitter",
+      "Use one overlapping channel",
+      "Remove wired backhaul"
+    ],
+    "answer": 0,
+    "explanation": "A planned additional cell supplies more airtime for Cell I18 without raising contention."
+  },
+  {
+    "id": 20085,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Network media",
+    "difficulty": "Level 4",
+    "question": "Backbone C19 must carry 10Gbps across 7 km. Which medium is BEST?",
+    "choices": [
+      "Single-mode fiber and long-reach optics",
+      "Cat 6 UTP",
+      "RG-59 coaxial",
+      "Short-reach multimode optics"
+    ],
+    "answer": 0,
+    "explanation": "Long-reach single-mode fiber supports Backbone C19's multi-kilometer requirement."
+  },
+  {
+    "id": 20086,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Command tools",
+    "difficulty": "Level 2",
+    "question": "Host T19 resolves a name differently from the approved DNS server. Which command directly queries that chosen resolver?",
+    "choices": [
+      "nslookup specifying the server",
+      "arp -d",
+      "route delete",
+      "hostname"
+    ],
+    "answer": 0,
+    "explanation": "nslookup can target the approved resolver and compare its answer for Host T19."
+  },
+  {
+    "id": 20087,
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Traffic delivery",
+    "difficulty": "Level 3",
+    "question": "Service C20 advertises one address from several cities, and routing selects a nearby instance. Which delivery method applies?",
+    "choices": [
+      "Anycast",
+      "Broadcast",
+      "Multicast",
+      "Unknown unicast flooding"
+    ],
+    "answer": 0,
+    "explanation": "Anycast lets Service C20 share one address across sites while routing chooses an instance."
+  },
+  {
+    "id": 20088,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Fiber troubleshooting",
+    "difficulty": "Level 4",
+    "question": "OTDR trace T20 shows gradual attenuation followed by one sharp reflective spike. What does the spike MOST likely mark?",
+    "choices": [
+      "Connector, open end, or break",
+      "DHCP renewal",
+      "STP election",
+      "DNS recursion"
+    ],
+    "answer": 0,
+    "explanation": "A sharp reflection on trace T20 indicates an air gap, connector, open end, or break."
+  },
+  {
+    "id": 20089,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Network appliances",
+    "difficulty": "Level 2",
+    "question": "Application C21 needs requests sent only to backend nodes that pass health probes. Which device BEST fits?",
+    "choices": [
+      "Load balancer",
+      "Patch panel",
+      "Repeater",
+      "Media converter"
+    ],
+    "answer": 0,
+    "explanation": "A load balancer checks backend health and distributes Application C21 requests."
+  },
+  {
+    "id": 20090,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Wireless troubleshooting",
+    "difficulty": "Level 3",
+    "question": "Client T21 has strong RSSI, but retries rise when nearby machinery starts. Which tool BEST confirms the cause?",
+    "choices": [
+      "Spectrum analyzer",
+      "Cable toner",
+      "Loopback plug",
+      "Route viewer"
+    ],
+    "answer": 0,
+    "explanation": "A spectrum analyzer can reveal non-Wi-Fi interference affecting Client T21."
+  }
+]
