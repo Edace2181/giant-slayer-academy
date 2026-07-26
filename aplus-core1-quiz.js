@@ -116,7 +116,7 @@ async function loadQuiz() {
     }
     if (!questions.length) throw new Error("This test bank is empty.");
     questions = shuffle(questions);
-    showQuestion();
+    startQuizOrTimer();
   } catch (error) {
     questionEl.textContent = "Unable to load quiz.";
     feedback.textContent = error.message;
@@ -145,6 +145,22 @@ function showQuestion() {
   window.HydraFlags?.setCurrentQuestion({ question: q, world, objective, bankPath: `json/aplus-core1/world${world}/${objective}-hatchling.json` });
 }
 
+function startQuizOrTimer() {
+  const timerPrepared = exam && window.HydraExamTimer?.prepare({
+    questionCount: questions.length,
+    onBegin: showQuestion,
+    onExpire: expirePracticeExam
+  });
+  if (!timerPrepared) showQuestion();
+}
+
+function expirePracticeExam() {
+  if (finished) return;
+  const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+  if (selectedAnswer && !submitBtn.classList.contains("hidden")) submitBtn.click();
+  showResults({ timeExpired: true });
+}
+
 submitBtn.addEventListener("click", () => {
   if (finished || selected === null) { feedback.textContent = "Select an answer first."; return; }
   const q = questions[current];
@@ -170,8 +186,12 @@ nextBtn.addEventListener("click", () => {
   if (current < questions.length) showQuestion(); else showResults();
 });
 
-function showResults() {
+function showResults(options = {}) {
+  if (finished) return;
   finished = true;
+  const timingSummary = exam
+    ? window.HydraExamTimer?.finish({ reason: options.timeExpired ? "expired" : "manual" })
+    : null;
   const percent = Math.round((score / questions.length) * 100);
   const passed = percent >= 85;
   const destination = resultDestination();
@@ -204,6 +224,9 @@ function showResults() {
        <p>Hydra has identified weaknesses.</p>
        <p>Review the objective and try again.</p>
        <a href="${destination.href}" class="next-objective-btn">${destination.label}</a>`;
+  if (timingSummary) {
+    feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+  }
   rankEl.textContent = passed ? "Hatchling Victor" : "Hatchling";
   submitBtn.classList.add("hidden");
   nextBtn.classList.add("hidden");

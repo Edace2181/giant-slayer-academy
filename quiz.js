@@ -87,6 +87,7 @@ let questions = [];
 let currentQuestion = 0;
 let score = 0;
 let answered = false;
+let finished = false;
 
 // ============================================
 // PAGE ELEMENTS
@@ -211,7 +212,7 @@ async function loadQuestions() {
             modeDisplay.textContent = world7Modes[mode].name;
         }
         
-        loadQuestion();
+        startQuizOrTimer();
 
     } catch (error) {
 
@@ -275,11 +276,28 @@ function loadQuestion() {
 
 }
 
+function startQuizOrTimer() {
+    const timerPrepared = isFinalExam && window.HydraExamTimer?.prepare({
+        questionCount: questions.length,
+        onBegin: loadQuestion,
+        onExpire: expirePracticeExam
+    });
+    if (!timerPrepared) loadQuestion();
+}
+
+function expirePracticeExam() {
+    if (finished) return;
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer && !submitBtn.classList.contains("hidden")) submitBtn.click();
+    showResults({ timeExpired: true });
+}
+
 // ============================================
 // SUBMIT ANSWER
 // ============================================
 
 submitBtn.addEventListener("click", () => {
+    if (finished) return;
     const selected =  document.querySelector('input[name="answer"]:checked');
 
     if (!selected) {
@@ -362,7 +380,12 @@ nextBtn.addEventListener("click", () => {
 // SHOW RESULTS
 // ============================================
 
-function showResults() {
+function showResults(options = {}) {
+    if (finished) return;
+    finished = true;
+    const timingSummary = isFinalExam
+        ? window.HydraExamTimer?.finish({ reason: options.timeExpired ? "expired" : "manual" })
+        : null;
 
     if (isWorld7Mode || isFinalExam) {
         returnLink.classList.add("hidden");
@@ -424,6 +447,9 @@ function showResults() {
             <p>${isFinalExam ? `You completed Practice Exam ${exam}.` : isWorld6Mode ? `You completed ${world6Modes[mode].name}.` : isWorld7Mode ? `You completed ${world7Modes[mode].name}.` : `You have mastered Objective ${objective}.`}</p>
             <p>🐉 Hydra recognizes your victory.</p>
         `;
+        if (timingSummary) {
+            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+        }
 
         if (isFinalExam) {
             feedback.innerHTML += `
@@ -481,6 +507,9 @@ function showResults() {
             <p>Hydra has identified weaknesses.</p>
             <p>Review the objective and try again.</p>
         `;
+        if (timingSummary) {
+            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+        }
 
         if (isFinalExam) {
             feedback.innerHTML += `
