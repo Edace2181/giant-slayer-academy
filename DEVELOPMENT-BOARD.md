@@ -236,6 +236,38 @@ Final Dungeon question production is complete. The next development sprint may b
 
 Backlog items are exploratory until formally approved and assigned to a development sprint.
 
+## Engineering Milestones
+
+### Hydra PBQ Campaign Releases — July 26, 2026
+
+| Certification | Missions | Points | Release Commit | Release Summary |
+|---|---:|---:|---|---|
+| CompTIA Security+ | 25 | 130 | `3eaf58f020c28bd62a1f89077ffe72831dc0485e` | Launched the first complete Hydra PBQ campaign with original, objective-mapped simulations and the shared PBQ Arena foundation. |
+| CompTIA A+ Core 1 | 25 | 107 | `9735f3ba4b05505133a5985d62276d9adc831d6c` | Added the complete 220-1201 PBQ campaign, original SVG learning assets, and the reusable Visual Labeling renderer. |
+| CompTIA A+ Core 2 | 25 | 144 | `2be8dfc141467fe28bc485e82b28b5f48a0eb7bb` | Added the complete 220-1202 PBQ campaign covering operating systems, security, troubleshooting, and operational procedures. |
+| CompTIA Network+ | 25 | 157 | `ded42302094d8fec01922d835001d68044e238ce` | Added the complete Network+ PBQ campaign, two original network diagrams, and the live Final Dungeon PBQ route. |
+| **Production total** | **100** | **538** | — | Four live PBQ campaigns delivered through the shared Hydra PBQ Arena. |
+
+The shared PBQ platform reached several important engineering milestones during these releases:
+
+- A certification-independent PBQ schema and renderer registry.
+- Six reusable interaction renderers: Matching, Configuration Table, Ordering, Categorization, Classification, and Visual Labeling.
+- Shared partial-credit grading, objective and renderer performance analysis, mission-by-mission results, Battlefield Analysis, and Campaign Reports.
+- Persistent attempt state, submitted-answer locking, keyboard support, accessible status announcements, and responsive mobile layouts.
+- Shared campaign reporting released in commit `45db5e3587b75dcc4efc0ea8460917d4c5cb8e12`.
+
+### The CompTIA Trifecta
+
+Giant Slayer Academy now includes live Recognition Campaigns, Practice Exams, and PBQ Campaigns for the complete CompTIA trifecta:
+
+| Certification | Recognition Campaigns | Practice Exams | PBQ Campaigns |
+|---|---|---|---|
+| CompTIA A+ | Live | Live | Live — Core 1 and Core 2 |
+| CompTIA Network+ | Live | Live | Live |
+| CompTIA Security+ | Live | Live | Live |
+
+Together, the A+ Core 1 and Core 2 PBQ campaigns contribute 50 missions and 251 points to the Hydra PBQ Arena.
+
 ## Version History
 
 ### Version 1.0 — July 17, 2026
@@ -295,6 +327,13 @@ Backlog items are exploratory until formally approved and assigned to a developm
 - Recorded the final 771-question production corpus and exact per-exam blueprint, difficulty, and answer-position distributions.
 - Recorded successful JSON, schema, loader, navigation, JavaScript, empty-bank, duplicate, and scenario-core release audits.
 - Added AWS v1.0 GitHub publication preparation as the next release action.
+
+### Version 1.8 — July 26, 2026
+
+- Completed and released the Security+, A+ Core 1, A+ Core 2, and Network+ PBQ campaigns.
+- Reached 100 live PBQ missions worth 538 total points.
+- Completed live Recognition Campaign, Practice Exam, and PBQ Campaign coverage for the CompTIA Trifecta.
+- Recorded the shared PBQ engine, renderer, grading, reporting, persistence, accessibility, and responsive-design milestones.
 
 ---
 
