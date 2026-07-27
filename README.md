@@ -4,6 +4,23 @@
 
 Giant Slayer Academy is a browser-based certification training platform that turns official exam objectives into campaign-style learning paths. Each campaign progresses through objective recognition, mixed review, Captain challenges, an Exam Chamber, and full-length practice exams.
 
+## Linux Labs v1.0
+
+Linux Labs adds a complete learn-by-doing path for LPI Linux Essentials:
+
+- 25 skill-first missions covering all 19 Version 1.6 objectives
+- Mission Briefing, Learn, Walkthrough, Guided Practice, Commander Challenge, Debrief, and Fenrir's Tip
+- A safe browser-contained Linux simulator
+- State-based grading that accepts valid alternative command sequences
+- Three progressive hints: Concept, Recognition, and Command
+- Persistent progress, replay, keyboard support, accessibility announcements, and responsive layouts
+- Mission 26 graduation chamber with Fenrir's completion message
+
+Live routes:
+
+- [Linux Labs](https://edace2181.github.io/giant-slayer-academy/linux-labs.html)
+- [Giant Slayer Academy](https://edace2181.github.io/giant-slayer-academy/index.html)
+
 ## AWS Certified Cloud Practitioner v1.0
 
 The AWS Certified Cloud Practitioner campaign is production-complete for the CLF-C02 blueprint.
@@ -49,6 +66,8 @@ Start at `index.html` and select **AWS Cloud Practitioner**.
 - `aws-cloud-practitioner-quiz.js` — AWS quiz loader and runtime behavior
 - `AWS-CLOUD-PRACTITIONER-OBJECTIVE-MAP.md` — CLF-C02 objective mapping
 - `AWS-CLOUD-PRACTITIONER-DEVELOPMENT-ADDENDUM-v1.0.md` — campaign production standard
+- `LINUX-LABS-v1.0-RELEASE-NOTES.md` — Linux Labs release summary
+- `LINUX-LABS-v1.0-AUDIT.json` — machine-readable Linux Labs release evidence
 - `DEVELOPMENT-STANDARD.md` — platform engineering and release requirements
 - `DEVELOPMENT-BOARD.md` — roadmap and release-history ledger
 

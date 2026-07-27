@@ -1,7 +1,7 @@
 # Hydra Academy Development Board
 
-**Version 1.7**  
-**Date: July 25, 2026**  
+**Version 1.9**
+**Date: July 27, 2026**
 **Purpose:** Project roadmap, milestone tracker, and release-history ledger
 
 ## Project Overview
@@ -12,10 +12,10 @@ This board tracks active development, completed platform milestones, upcoming pr
 
 ## Current Version
 
-**Development Board:** Version 1.7  
-**Hydra Academy Platform:** Version 1.0  
-**Current active campaign:** AWS Certified Cloud Practitioner CLF-C02  
-**Current campaign state:** Version 1.0 production-complete; final static release audit passed; GitHub release preparation complete
+**Development Board:** Version 1.9
+**Hydra Academy Platform:** Version 1.0
+**Current active campaign:** Linux Essentials
+**Current campaign state:** Recognition campaign and Linux Labs v1.0 production-complete and live on GitHub Pages
 
 Official Version 1.0 certification releases currently include:
 
@@ -26,6 +26,25 @@ Official Version 1.0 certification releases currently include:
 - AWS Certified Cloud Practitioner
 
 ## Completed Milestones
+
+### Linux Labs Version 1.0 — Production Complete
+
+The Linux Essentials instructional lab campaign is complete and live as a companion to the existing recognition, review, Captain, and Practice Exam progression.
+
+- Released 25 objective-mapped Linux missions covering all 19 LPI Linux Essentials Version 1.6 objectives.
+- Preserved the approved seven-phase lesson flow: Mission Briefing, Learn, Walkthrough, Guided Practice, Commander Challenge, Debrief, and Fenrir's Tip.
+- Released a browser-contained Linux simulator with state-based grading, valid alternative command sequences, replay, persistence, command reference help, accessible announcements, keyboard operation, and responsive layouts.
+- Preserved progressive Commander Challenge hints in Concept, Recognition, and Command order.
+- Added Mission 26 as a non-graded graduation chamber with Fenrir's campaign-completion message.
+- Completed five production batches with a local checkpoint after each batch.
+- Completed the final repository and live-site acceptance audit with no release-blocking defects.
+- Published the completed release to GitHub Pages.
+
+**Linux Labs version:** 1.0
+**Production missions:** 25
+**Graduation chamber:** Mission 26
+**Final release commit:** `f8f9d8b31d1a2cc4b8f55918dab0c67ba2ce700e`
+**Linux Labs production status:** Complete and live
 
 ### AWS Cloud Practitioner Version 1.0 — Production Complete
 
@@ -154,7 +173,7 @@ All six Linux Essentials Practice Exams are complete and validated as independen
 - Validated JSON parsing, required schema, four choices, zero-based answer indices, JavaScript syntax, and dynamic loader compatibility.
 
 **Final Dungeon production status:** Complete  
-**Next authorized phase:** Linux Essentials Final Static Release Audit
+**Completion note:** The final static release audit and Linux Labs acceptance audit were subsequently completed.
 
 ### Phase 3 Better Study Tools — Completed
 
@@ -212,14 +231,13 @@ Completed within the current campaign:
 - Six independently authored Linux Essentials Practice Exams completed with 240 validated questions.
 - Platform-wide Phase 3 Better Study Tools completed and validated across all five certifications.
 
-Final Dungeon question production is complete. The next development sprint may begin the Linux Essentials Final Static Release Audit.
+The Linux Essentials recognition campaign, Final Dungeon, Linux Labs v1.0, graduation chamber, and final live acceptance audit are complete.
 
 ## Upcoming Milestones
 
-1. **AWS GitHub Publication** — Initialize Git, choose a license, exclude editor metadata, capture screenshots/GIFs, and publish AWS v1.0.
-2. **Linux Essentials Final Static Audit** — Validate schema, originality, IDs, prompts, loaders, HTML, JavaScript, navigation, and internal references.
-3. **Linux Essentials Browser Verification** — Complete desktop, tablet, mobile, console, navigation, and runtime verification.
-4. **Platform UI Consistency Review** — Continue comparing shared campaign surfaces against the current canonical templates.
+1. **Automated Regression Foundation** — Add repeatable syntax, JSON, internal-link, and mission-bank checks to continuous integration.
+2. **Platform UI Consistency Review** — Continue comparing shared campaign surfaces against the current canonical templates.
+3. **Accessibility Follow-up** — Extend the explicit focus-visible standard across legacy campaign controls.
 
 ## Future Ideas / Backlog
 
@@ -228,7 +246,7 @@ Final Dungeon question production is complete. The next development sprint may b
 - Story Mode
 - Recognition Mode controls
 - Mini Bosses
-- Hydra Labs
+- Additional certification labs using the approved Linux Labs instructional architecture
 - Cross-certification progress dashboard
 - Accessibility and keyboard-navigation review
 - Additional certification campaigns, including AWS Cloud Practitioner and Linux-focused advanced pathways
@@ -334,6 +352,15 @@ Together, the A+ Core 1 and Core 2 PBQ campaigns contribute 50 missions and 251 
 - Reached 100 live PBQ missions worth 538 total points.
 - Completed live Recognition Campaign, Practice Exam, and PBQ Campaign coverage for the CompTIA Trifecta.
 - Recorded the shared PBQ engine, renderer, grading, reporting, persistence, accessibility, and responsive-design milestones.
+
+### Version 1.9 — July 27, 2026
+
+- Marked Linux Labs v1.0 production-complete and live.
+- Recorded 25 instructional missions covering all 19 official LPI Linux Essentials objectives.
+- Recorded the reusable simulator, state-based grading, progressive hints, persistence, replay, accessibility, responsive behavior, and Final Dungeon navigation.
+- Recorded Mission 26 as the non-graded Linux Labs graduation chamber.
+- Recorded the completed repository-wide and live-site acceptance audit.
+- Replaced outdated Linux final-audit milestones with automated regression, UI consistency, and accessibility follow-up work.
 
 ---
 
