@@ -245,6 +245,7 @@
       <div class="linux-next-actions" aria-label="Next actions">
         <button id="linuxReplayMission" class="linux-secondary-button" type="button">↻ Replay Mission</button>
         ${nextMission ? `<a class="linux-action-button" href="linux-lab.html?mission=${encodeURIComponent(nextMission.id)}">Next Mission →</a>` : ""}
+        ${mission.missionNumber === 25 ? `<a class="linux-action-button" href="linux-labs-graduation.html">Enter Mission 26 →</a>` : ""}
         <a class="linux-secondary-button" href="linux-labs.html">Return to Linux Labs</a>
         <a class="linux-secondary-button" href="linux-essentials-final-dungeon.html">Return to Linux Final Dungeon</a>
       </div>
