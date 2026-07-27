@@ -35,12 +35,22 @@
           "scratch.txt": file("Disposable scratch data.\n"),
           "events.log": file("INFO academy started\nWARN disk nearing limit\nINFO patrol ready\nERROR backup missing\n"),
           "scores.csv": file("hydra,90\nfenrir,95\natlas,90\n"),
+          "LICENSE-GPL": file("GPL: source code and the same license must accompany distributed derivatives.\n"),
+          "LICENSE-BSD": file("BSD: redistribution is permitted with attribution and disclaimer.\n"),
+          "privacy-checklist.txt": file("verify identity\nconfirm trusted session\nuse a unique password\nprotect private project data\n"),
           empty: directory({}),
           unused: directory({}),
           ".academy": file("Hidden Hydra Academy configuration.\n")
         })
       }),
       tmp: directory({}),
+      etc: directory({
+        "os-release": file("NAME=Hydra Linux\nID=hydra\nVERSION_ID=1.0\n"),
+        hosts: file("127.0.0.1 localhost\n")
+      }),
+      proc: directory({
+        cpuinfo: file("model name: Hydra Virtual CPU\n")
+      }),
       var: directory({
         log: directory({
           "hydra.log": file("Hydra Linux Simulator ready.\n")
@@ -181,6 +191,11 @@
         sort: () => this.commandTextTool("sort", tokens),
         uniq: () => this.commandTextTool("uniq", tokens),
         chmod: () => this.commandChmod(tokens),
+        cat: () => this.commandCat(tokens),
+        uname: () => this.commandUname(tokens),
+        which: () => this.commandWhich(tokens),
+        tty: () => this.commandTty(tokens),
+        whoami: () => this.commandWhoami(tokens),
         clear: () => ({ output: "", ok: true, clear: true }),
         help: () => this.commandHelp()
       };
@@ -287,6 +302,31 @@
       return args.length === 2 && args[0] === "+x" && this.hasFile(args[1])
         ? { output: "", ok: true }
         : { output: "chmod: use +x with an existing script.", ok: false };
+    }
+
+    commandCat(args) {
+      if (args.length !== 1 || !this.hasFile(args[0])) return { output: `cat: ${args[0] || ""}: No such file`, ok: false };
+      return { output: this.getNode(args[0]).content.trimEnd(), ok: true };
+    }
+
+    commandUname(args) {
+      if (args.length > 1 || (args.length === 1 && args[0] !== "-m")) return { output: "uname: use uname or uname -m.", ok: false };
+      return { output: args[0] === "-m" ? "x86_64" : "Linux", ok: true };
+    }
+
+    commandWhich(args) {
+      const known = new Set(["python3", "firefox", "nginx", "apt-get", "bash"]);
+      return args.length === 1 && known.has(args[0])
+        ? { output: `/usr/bin/${args[0]}`, ok: true }
+        : { output: `${args[0] || "command"} not found`, ok: false };
+    }
+
+    commandTty(args) {
+      return args.length ? { output: "tty: no arguments are used.", ok: false } : { output: "/dev/pts/0", ok: true };
+    }
+
+    commandWhoami(args) {
+      return args.length ? { output: "whoami: no arguments are used.", ok: false } : { output: this.username, ok: true };
     }
 
     commandPwd(args) {
@@ -528,6 +568,9 @@
           "  tar              create, inspect, or extract an archive",
           "  grep, head, tail, wc, cut, sort, uniq  process text",
           "  chmod            change script execution permission",
+          "  cat              display a text file",
+          "  uname, which     inspect the system and available tools",
+          "  tty, whoami      verify the current session",
           "  clear            clear the terminal display",
           "  help             show this guide",
           ...lessonExamples
