@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | Linux Lab Mission</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="linux-labs.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body linux-labs-body">
+  <div class="crt-overlay"></div>
+  <main class="linux-labs-shell linux-lesson-shell">
+    <header class="linux-labs-hero">
+      <span class="campaign-kicker">HYDRA LINUX SIMULATOR · SAFE BROWSER TRAINING</span>
+      <h1 class="arcade-title">🐧 LINUX LAB</h1>
+      <p class="tagline">No commands are executed on your computer.</p>
+    </header>
+
+    <section id="linuxLabLoading" class="linux-labs-panel" aria-live="polite">
+      <h2>Preparing the training chamber…</h2>
+    </section>
+
+    <section id="linuxLabError" class="linux-labs-panel hidden" role="alert">
+      <h2>Mission unavailable</h2>
+      <p id="linuxLabErrorMessage"></p>
+      <a href="linux-labs.html" class="linux-action-button">Return to Linux Labs</a>
+    </section>
+
+    <div id="linuxLabApplication" class="hidden">
+      <section class="linux-lesson-status" aria-labelledby="linuxMissionTitle">
+        <div>
+          <span id="linuxMissionNumber" class="linux-labs-label"></span>
+          <h2 id="linuxMissionTitle" tabindex="-1"></h2>
+          <p id="linuxMissionObjective"></p>
+        </div>
+        <div class="linux-labs-progress">
+          <label for="linuxLessonProgress">Lesson progress</label>
+          <progress id="linuxLessonProgress" value="1" max="7"></progress>
+          <span id="linuxLessonProgressText">Mission Briefing · 1 of 7</span>
+        </div>
+      </section>
+
+      <section id="linuxLessonPanel" class="linux-labs-panel linux-lesson-panel" tabindex="-1"></section>
+
+      <section id="linuxTerminalPanel" class="linux-terminal-panel hidden" aria-labelledby="linuxTerminalTitle">
+        <div class="linux-terminal-heading">
+          <div>
+            <span class="linux-labs-label">HYDRA LINUX SIMULATOR</span>
+            <h2 id="linuxTerminalTitle">Safe training terminal</h2>
+          </div>
+          <span id="linuxTerminalMode" class="linux-terminal-mode">Guided Practice</span>
+        </div>
+        <div class="linux-terminal-workspace">
+          <aside class="linux-terminal-guide" aria-labelledby="linuxTerminalGuideTitle">
+            <span class="linux-labs-label">CURRENT MISSION</span>
+            <h3 id="linuxTerminalGuideTitle">Follow these steps</h3>
+            <p id="linuxTerminalInstructions"></p>
+            <ol id="linuxTerminalChecklist"></ol>
+            <p class="linux-terminal-guide-note"><strong>Need help?</strong> Use the Hydra hint after submitting, or type <code>help</code> in the terminal.</p>
+            <div id="linuxProgressiveHintControls" class="linux-progressive-hints hidden">
+              <button id="linuxRevealHint" class="linux-secondary-button" type="button">🐺 Ask Fenrir for a Hint</button>
+              <div id="linuxHintPanel" class="linux-hint-panel hidden" tabindex="-1" aria-live="polite"></div>
+            </div>
+          </aside>
+          <div>
+            <div id="linuxTerminal" class="linux-terminal" role="region" aria-label="Simulated Linux terminal">
+              <div id="linuxTerminalOutput" class="linux-terminal-output" role="log" aria-live="polite" aria-relevant="additions text"></div>
+              <form id="linuxTerminalForm" class="linux-terminal-command">
+                <label id="linuxTerminalPrompt" for="linuxTerminalInput">hydra@academy:~$</label>
+                <input id="linuxTerminalInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="linuxTerminalInstructions linuxTerminalChecklist linuxTerminalHelp">
+                <button type="submit">Run command</button>
+              </form>
+            </div>
+            <p id="linuxTerminalHelp" class="linux-terminal-help">Type <code>help</code> to see the commands available in this training simulator.</p>
+          </div>
+        </div>
+        <div class="linux-practice-controls">
+          <button id="linuxResetPractice" class="linux-secondary-button" type="button">↻ Reset Practice</button>
+          <button id="linuxSubmitPractice" class="linux-action-button" type="button">Submit Guided Practice</button>
+        </div>
+        <div id="linuxFeedback" class="linux-feedback hidden" tabindex="-1" aria-live="polite"></div>
+      </section>
+
+      <nav id="linuxLessonControls" class="linux-lesson-controls" aria-label="Lesson navigation">
+        <button id="linuxPreviousStep" class="linux-secondary-button" type="button">← Previous Step</button>
+        <button id="linuxNextStep" class="linux-action-button" type="button">Begin Lesson</button>
+      </nav>
+
+      <footer id="linuxLabFooter" class="linux-lab-footer">
+        <a href="linux-labs.html" class="back-link">← Return to Linux Labs</a>
+        <a href="linux-essentials-final-dungeon.html" class="back-link">Return to Linux Final Dungeon</a>
+      </footer>
+      <p id="linuxLabStatus" class="linux-screen-reader-status" aria-live="polite" aria-atomic="true"></p>
+    </div>
+  </main>
+  <script src="hydra-linux-simulator.js"></script>
+  <script src="linux-labs-engine.js"></script>
+</body>
+</html>

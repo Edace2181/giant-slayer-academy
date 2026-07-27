@@ -1,0 +1,563 @@
+:root {
+  --linux-green: #5cff86;
+  --linux-green-deep: #123b26;
+  --linux-cyan: #00f7ff;
+  --linux-gold: #ffd700;
+  --linux-panel: rgba(7, 13, 25, 0.94);
+  --linux-border: rgba(92, 255, 134, 0.55);
+}
+
+.linux-labs-body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.linux-labs-shell .hidden {
+  display: none !important;
+}
+
+.linux-labs-shell {
+  width: min(100% - 32px, 1120px);
+  margin: 0 auto;
+  padding: 32px 0 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.linux-labs-hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.linux-labs-hero > p:not(.tagline) {
+  max-width: 760px;
+  margin: 14px auto 0;
+}
+
+.linux-labs-dashboard,
+.linux-lesson-status,
+.linux-labs-panel,
+.linux-terminal-panel,
+.linux-kingdom-heading {
+  border: 2px solid var(--linux-border);
+  background: var(--linux-panel);
+  box-shadow: 0 0 22px rgba(92, 255, 134, 0.12);
+}
+
+.linux-labs-dashboard,
+.linux-lesson-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+  gap: 24px;
+  align-items: center;
+  padding: 22px;
+  margin-bottom: 24px;
+}
+
+.linux-labs-label,
+.linux-mission-number {
+  display: block;
+  color: var(--linux-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.linux-labs-progress {
+  display: grid;
+  gap: 8px;
+}
+
+.linux-labs-progress progress {
+  width: 100%;
+  height: 16px;
+  accent-color: var(--linux-green);
+}
+
+.linux-kingdom-heading {
+  padding: 20px;
+  border-bottom: 0;
+}
+
+.linux-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.linux-mission-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 22px;
+  border: 2px solid var(--linux-border);
+  background: linear-gradient(145deg, rgba(12, 27, 36, 0.98), rgba(8, 11, 24, 0.98));
+}
+
+.linux-mission-card h3,
+.linux-mission-card p {
+  overflow-wrap: anywhere;
+}
+
+.linux-mission-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: auto 0 4px;
+}
+
+.linux-mission-meta div {
+  min-width: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.linux-mission-meta dt {
+  color: #a8b8c8;
+  font-size: 0.75rem;
+}
+
+.linux-mission-meta dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.linux-action-button,
+.linux-secondary-button {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 2px solid var(--linux-green);
+  align-items: center;
+  justify-content: center;
+  background: var(--linux-green-deep);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.linux-secondary-button {
+  border-color: var(--linux-cyan);
+  background: rgba(0, 80, 90, 0.28);
+}
+
+.linux-action-button:hover,
+.linux-action-button:focus-visible,
+.linux-secondary-button:hover,
+.linux-secondary-button:focus-visible,
+.linux-terminal-command input:focus-visible,
+.linux-terminal-command button:focus-visible,
+.linux-command-example:focus-visible {
+  outline: 3px solid var(--linux-gold);
+  outline-offset: 3px;
+}
+
+.linux-action-button:disabled,
+.linux-secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.linux-lesson-status {
+  margin-bottom: 18px;
+}
+
+.linux-labs-panel,
+.linux-terminal-panel {
+  padding: 24px;
+}
+
+.linux-lesson-panel {
+  min-height: 280px;
+}
+
+.linux-safety-note,
+.linux-big-idea,
+.linux-takeaway {
+  margin-top: 20px;
+  padding: 16px;
+  border-left: 4px solid var(--linux-green);
+  background: rgba(92, 255, 134, 0.08);
+}
+
+.linux-big-idea {
+  border-left-color: var(--linux-gold);
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.linux-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.linux-concept-card {
+  padding: 16px;
+  border: 1px solid rgba(0, 247, 255, 0.45);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.linux-concept-badge {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--linux-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.linux-concept-card code,
+.linux-command-example code,
+.linux-terminal-help code {
+  color: var(--linux-green);
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.linux-command-example {
+  max-width: 100%;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--linux-green);
+  background: #020706;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.linux-step-dots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.linux-step-dots li {
+  padding: 10px;
+  border: 1px solid #526175;
+}
+
+.linux-step-dots .is-current {
+  border-color: var(--linux-gold);
+  color: var(--linux-gold);
+}
+
+.linux-step-dots .is-viewed {
+  border-color: var(--linux-green);
+}
+
+.linux-terminal-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.linux-terminal-mode {
+  padding: 8px 12px;
+  border: 1px solid var(--linux-gold);
+  color: var(--linux-gold);
+}
+
+.linux-terminal-workspace {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.65fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.linux-terminal-guide {
+  padding: 18px;
+  border: 2px solid rgba(0, 247, 255, 0.48);
+  background: rgba(0, 40, 48, 0.22);
+}
+
+.linux-terminal-guide h3 {
+  margin-top: 8px;
+}
+
+.linux-terminal-guide ol {
+  display: grid;
+  gap: 10px;
+  padding-left: 22px;
+}
+
+.linux-terminal-guide li {
+  padding-left: 4px;
+}
+
+.linux-terminal-guide-note {
+  margin-bottom: 0;
+  padding: 12px;
+  border-left: 3px solid var(--linux-gold);
+  background: rgba(255, 215, 0, 0.07);
+}
+
+.linux-progressive-hints {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.linux-progressive-hints .linux-secondary-button {
+  width: 100%;
+}
+
+.linux-hint-panel {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 2px solid var(--linux-gold);
+  background: rgba(255, 215, 0, 0.07);
+}
+
+.linux-hint-panel:focus-visible {
+  outline: 3px solid var(--linux-cyan);
+  outline-offset: 3px;
+}
+
+.linux-hint-level + .linux-hint-level {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 215, 0, 0.35);
+}
+
+.linux-hint-level p {
+  margin: 6px 0 0;
+}
+
+.linux-terminal-guide code {
+  color: var(--linux-green);
+}
+
+.linux-terminal {
+  border: 2px solid #416d50;
+  border-radius: 4px;
+  background: #020604;
+  color: #e6ffed;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.linux-terminal-output {
+  height: 300px;
+  padding: 16px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.linux-terminal-output p,
+.linux-terminal-output pre {
+  margin: 0 0 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.linux-terminal-system {
+  color: #9bc5a7;
+}
+
+.linux-terminal-entry-prompt {
+  color: var(--linux-green);
+}
+
+.linux-terminal-error {
+  color: #ff9b9b;
+}
+
+.linux-terminal-command {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #416d50;
+}
+
+.linux-terminal-command label {
+  color: var(--linux-green);
+  white-space: nowrap;
+}
+
+.linux-terminal-command input {
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #608d6d;
+  padding: 8px;
+  background: #07110a;
+  color: #fff;
+  font: inherit;
+}
+
+.linux-terminal-command button {
+  min-height: 44px;
+  border: 1px solid var(--linux-green);
+  padding: 8px 12px;
+  background: var(--linux-green-deep);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.linux-terminal-help {
+  margin-bottom: 0;
+  color: #b6c5d1;
+}
+
+.linux-practice-controls,
+.linux-lesson-controls,
+.linux-next-actions,
+.linux-lab-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.linux-lesson-controls {
+  justify-content: space-between;
+}
+
+.linux-feedback {
+  margin-top: 18px;
+  padding: 16px;
+  border: 2px solid currentColor;
+}
+
+.linux-feedback.is-correct {
+  color: var(--linux-green);
+  background: rgba(92, 255, 134, 0.08);
+}
+
+.linux-feedback.is-incorrect {
+  color: #ffb1b1;
+  background: rgba(255, 80, 80, 0.08);
+}
+
+.linux-wolf-tip {
+  margin-top: 20px;
+  padding: 18px;
+  border: 2px solid var(--linux-gold);
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.linux-guide-name {
+  display: block;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+}
+
+.linux-guide-title {
+  display: block;
+  margin-top: 3px;
+  color: var(--linux-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.linux-guide-advice {
+  margin-top: 16px;
+  padding: 14px;
+  border: 2px solid var(--linux-green);
+  background: rgba(92, 255, 134, 0.08);
+  box-shadow: inset 0 0 14px rgba(92, 255, 134, 0.06);
+}
+
+.linux-guide-category {
+  display: inline-block;
+  color: var(--linux-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.linux-guide-advice p {
+  margin: 10px 0 0;
+}
+
+.linux-lab-footer {
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.linux-lab-footer .back-link,
+.linux-labs-shell > .arcade-footer .back-link {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 10px 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.linux-screen-reader-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .linux-labs-dashboard,
+  .linux-lesson-status,
+  .linux-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .linux-mission-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .linux-terminal-command {
+    grid-template-columns: 1fr;
+  }
+
+  .linux-terminal-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .linux-terminal-command label {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .linux-terminal-heading {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .linux-labs-shell {
+    width: min(100% - 20px, 1120px);
+    padding-top: 18px;
+  }
+
+  .linux-labs-panel,
+  .linux-terminal-panel,
+  .linux-labs-dashboard,
+  .linux-lesson-status,
+  .linux-kingdom-heading,
+  .linux-mission-card {
+    padding: 16px;
+  }
+
+  .linux-practice-controls > *,
+  .linux-lesson-controls > *,
+  .linux-next-actions > *,
+  .linux-lab-footer > * {
+    width: 100%;
+  }
+
+  .linux-terminal-output {
+    height: 250px;
+  }
+}

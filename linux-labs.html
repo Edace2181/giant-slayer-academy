@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | Linux Labs</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="linux-labs.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body linux-labs-body">
+  <div class="crt-overlay"></div>
+  <main class="linux-labs-shell">
+    <header class="linux-labs-hero">
+      <span class="campaign-kicker">LINUX ESSENTIALS · LEARN BY DOING</span>
+      <h1 class="arcade-title">🐧 LINUX LABS</h1>
+      <p class="tagline">Guided browser simulations—not official LPI PBQs</p>
+      <p>Learn each concept, follow the walkthrough, practice safely, and complete the Commander Challenge.</p>
+    </header>
+
+    <section class="linux-labs-dashboard" aria-labelledby="linuxLabsProgressTitle">
+      <div>
+        <span class="linux-labs-label">CAMPAIGN PROGRESS</span>
+        <h2 id="linuxLabsProgressTitle">Navigation and Commands</h2>
+      </div>
+      <div class="linux-labs-progress">
+        <label for="linuxLabsProgress">Missions completed</label>
+        <progress id="linuxLabsProgress" value="0" max="2"></progress>
+        <span id="linuxLabsProgressText">0 of 2 complete · 0%</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="kingdomOneTitle">
+      <div class="linux-kingdom-heading">
+        <span class="linux-labs-label">KINGDOM I</span>
+        <h2 id="kingdomOneTitle">Navigation and Commands</h2>
+        <p id="linuxKingdomProgress">0 of 2 proof-of-concept missions complete</p>
+      </div>
+      <div id="linuxMissionGrid" class="linux-mission-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="linuxLabsError" class="linux-labs-panel hidden" role="alert">
+      <h2>Linux Labs unavailable</h2>
+      <p id="linuxLabsErrorMessage"></p>
+    </section>
+
+    <footer class="arcade-footer">
+      <a href="linux-essentials-final-dungeon.html" class="back-link">← Return to Linux Final Dungeon</a>
+    </footer>
+  </main>
+  <script src="linux-labs-menu.js"></script>
+</body>
+</html>

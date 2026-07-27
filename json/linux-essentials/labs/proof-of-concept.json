@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "campaign": "linux-labs",
+  "certification": "LPI Linux Essentials 010-160",
+  "status": "proof-of-concept",
+  "missions": [
+    {
+      "id": "linux-lab-01",
+      "missionNumber": 1,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Where Am I?",
+      "skill": "Navigate Linux and confirm your location",
+      "goal": "Discover where you are, explore the available directories, and move to the correct destination.",
+      "bigIdea": "Linux always tracks your current working directory, and every relative movement begins from that location.",
+      "objective": "2.3 Using Directories and Listing Files",
+      "difficulty": 1,
+      "briefing": "You have entered the Hydra training account at /home/hydra. Before exploring the castle, you must learn how to identify your location, inspect the rooms around you, and enter the correct directory.",
+      "learn": [
+        {
+          "command": "pwd",
+          "badge": "New command",
+          "explanation": "pwd means print working directory. It answers: “Where am I right now?”"
+        },
+        {
+          "command": "ls",
+          "badge": "New command",
+          "explanation": "ls lists the files and directories in your current location."
+        },
+        {
+          "command": "cd Documents",
+          "badge": "New command",
+          "explanation": "cd means change directory. Add a directory name to move into that location."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Identify your location",
+          "text": "Run pwd. Linux prints /home/hydra, which is the current working directory.",
+          "command": "pwd"
+        },
+        {
+          "title": "Look for the destination",
+          "text": "Run ls. The output includes Documents, Downloads, and training.",
+          "command": "ls"
+        },
+        {
+          "title": "Enter the directory",
+          "text": "Run cd Documents. The command changes your location without printing a success message.",
+          "command": "cd Documents"
+        },
+        {
+          "title": "Confirm the move",
+          "text": "Run pwd again. The new path is /home/hydra/Documents.",
+          "command": "pwd"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Starting in /home/hydra, identify your location, list its contents, enter the Documents directory, and confirm your new location.",
+        "steps": [
+          "Identify your current location.",
+          "List the directories around you.",
+          "Enter the Documents directory.",
+          "Confirm your new location."
+        ],
+        "helpExamples": [
+          "pwd",
+          "ls",
+          "cd Documents"
+        ],
+        "successFeedback": "Guided practice complete. You used pwd to identify the path, ls to find Documents, and cd to enter it.",
+        "incorrectFeedback": "The terminal is safe to retry. One or more navigation steps are still missing.",
+        "retryHint": "Use pwd, then ls, then cd Documents. Run pwd once more after changing directories.",
+        "goals": [
+          { "type": "command-ran", "command": "pwd" },
+          { "type": "command-ran", "command": "ls" },
+          { "type": "cwd", "path": "/home/hydra/Documents" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "You are back in /home/hydra. Discover the available destinations, move into Downloads, and prove that you arrived there.",
+        "steps": [
+          "Inspect the directories available in /home/hydra.",
+          "Move into the Downloads directory.",
+          "Confirm that Downloads is now your current location."
+        ],
+        "helpExamples": [
+          "ls — inspect a directory",
+          "cd — move into a directory",
+          "pwd — show the current location"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Think about the three actions you need to perform: inspect your surroundings, move to the destination, and confirm your final location."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Which commands list directory contents, change directories, and print the working directory?"
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Try this sequence: ls, cd Downloads, pwd."
+          }
+        ],
+        "successFeedback": "Commander Challenge complete. The terminal confirms that you reached /home/hydra/Downloads.",
+        "incorrectFeedback": "The destination has not been confirmed yet.",
+        "retryHint": "List the available directories if needed, use cd with the destination name, and use pwd to verify the final path.",
+        "goals": [
+          { "type": "command-ran", "command": "ls" },
+          { "type": "command-ran", "command": "cd" },
+          { "type": "command-ran", "command": "pwd" },
+          { "type": "cwd", "path": "/home/hydra/Downloads" }
+        ]
+      },
+      "correctFeedback": "Excellent navigation. You recognized the purpose of pwd, ls, and cd and used them in a meaningful sequence.",
+      "incorrectFeedback": "Review which command identifies a location, which command lists contents, and which command changes directories.",
+      "fenrirTip": "pwd asks “Where am I?”, ls looks around the room, and cd walks through a doorway.",
+      "debrief": "You learned to identify the current working directory with pwd, inspect it with ls, and move into another directory with cd. On the exam, path or navigation language should trigger recognition of these commands.",
+      "takeaway": "Location → pwd. Contents → ls. Movement → cd."
+    },
+    {
+      "id": "linux-lab-02",
+      "missionNumber": 2,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Build the Workspace",
+      "skill": "Build and verify a simple Linux workspace",
+      "goal": "Create an organized directory containing the required file and verify that the workspace is ready.",
+      "bigIdea": "Linux creates files and directories in your current location, so where you are matters as much as what command you run.",
+      "objective": "2.4 Creating, Moving and Deleting Files",
+      "difficulty": 1,
+      "briefing": "The Hydra Commander needs a clean workspace for training records. You will create a directory, enter it, create an empty file, and verify that the file exists.",
+      "learn": [
+        {
+          "command": "mkdir workshop",
+          "badge": "New command",
+          "explanation": "mkdir means make directory. It creates a new directory with the name you provide."
+        },
+        {
+          "command": "cd workshop",
+          "badge": "Mission 1 review",
+          "explanation": "cd enters the directory you created so the new file is placed inside the workspace."
+        },
+        {
+          "command": "touch notes.txt",
+          "badge": "New command",
+          "explanation": "touch can create an empty file when that file does not already exist."
+        },
+        {
+          "command": "ls",
+          "badge": "Mission 1 review",
+          "explanation": "After creating something, ls helps verify that its name appears in the directory."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Create the workspace",
+          "text": "Run mkdir workshop. This adds a new workshop directory under /home/hydra.",
+          "command": "mkdir workshop"
+        },
+        {
+          "title": "Enter the workspace",
+          "text": "Run cd workshop so new files are created inside that directory.",
+          "command": "cd workshop"
+        },
+        {
+          "title": "Create the file",
+          "text": "Run touch notes.txt. This creates an empty training notes file.",
+          "command": "touch notes.txt"
+        },
+        {
+          "title": "Verify the result",
+          "text": "Run ls. The output should include notes.txt.",
+          "command": "ls"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Create a directory named workshop, enter it, create notes.txt, and list the directory to verify the file.",
+        "steps": [
+          "Create a directory named workshop.",
+          "Enter the workshop directory.",
+          "Create an empty file named notes.txt.",
+          "List the directory to verify the file."
+        ],
+        "helpExamples": [
+          "mkdir workshop",
+          "cd workshop",
+          "touch notes.txt",
+          "ls"
+        ],
+        "successFeedback": "Guided practice complete. The workshop directory now contains notes.txt.",
+        "incorrectFeedback": "The simulated workspace does not yet match the mission.",
+        "retryHint": "Create workshop with mkdir, enter it with cd, create notes.txt with touch, and finish with ls.",
+        "goals": [
+          { "type": "directory-exists", "path": "/home/hydra/workshop" },
+          { "type": "file-exists", "path": "/home/hydra/workshop/notes.txt" },
+          { "type": "command-ran", "command": "ls" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Prepare a reports workspace containing an empty status.txt file, then verify that the workspace is complete.",
+        "steps": [
+          "Create a directory named reports.",
+          "Enter the reports directory.",
+          "Create an empty file named status.txt.",
+          "Verify that status.txt exists in the reports workspace."
+        ],
+        "helpExamples": [
+          "mkdir — create a directory",
+          "cd — enter a directory",
+          "touch — create an empty file",
+          "ls — verify directory contents"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Build the container first, enter it, create the file inside it, and then inspect the result."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Which commands make a directory, change your location, create an empty file, and list directory contents?"
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Try this sequence: mkdir reports, cd reports, touch status.txt, ls."
+          }
+        ],
+        "successFeedback": "Commander Challenge complete. /home/hydra/reports/status.txt exists and the result was verified with ls.",
+        "incorrectFeedback": "The reports workspace is not complete yet.",
+        "retryHint": "Use the same four-part pattern: mkdir, cd, touch, then ls.",
+        "goals": [
+          { "type": "directory-exists", "path": "/home/hydra/reports" },
+          { "type": "file-exists", "path": "/home/hydra/reports/status.txt" },
+          { "type": "cwd", "path": "/home/hydra/reports" },
+          { "type": "command-ran", "command": "ls" }
+        ]
+      },
+      "correctFeedback": "Workspace construction complete. You created and verified a directory-and-file structure using safe foundational commands.",
+      "incorrectFeedback": "Review the order: create the directory, enter it, create the file, and verify the result.",
+      "fenrirTip": "mkdir builds the room, cd enters it, touch places a blank scroll inside, and ls checks your work.",
+      "debrief": "You learned to create directories with mkdir, create empty files with touch, and verify results with ls. Linux tasks often depend on running simple commands in the correct location and order.",
+      "takeaway": "Build → mkdir. Enter → cd. Create a file → touch. Verify → ls."
+    }
+  ]
+}
