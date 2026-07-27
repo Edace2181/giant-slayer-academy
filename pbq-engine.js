@@ -14,6 +14,12 @@
       returnHref: "aplus-core2-final-dungeon.html",
       returnLabel: "Return to A+ Core 2 Final Dungeon"
     },
+    "network-plus": {
+      label: "CompTIA Network+ (N10-009)",
+      bank: "json/network-plus/pbq/production.json",
+      returnHref: "network-final-dungeon.html",
+      returnLabel: "Return to Network+ Final Dungeon"
+    },
     "security-plus": {
       label: "CompTIA Security+",
       bank: "json/security-plus/pbq/phase-1.json",

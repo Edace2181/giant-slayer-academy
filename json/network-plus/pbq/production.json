@@ -1,0 +1,2144 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "bankLabel": "CompTIA Network+ (N10-009) PBQ Arena Production Campaign",
+  "missions": [
+    {
+      "id": "network-plus-pbq-001",
+      "certification": "network-plus",
+      "type": "classification",
+      "title": "Trace the Seven-Layer Signal",
+      "objective": "N10-009 1.1 — OSI reference model",
+      "difficulty": 1,
+      "briefing": "A packet-analysis team must classify each observed function by its OSI layer.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Copper signaling and bit timing on an Ethernet link."
+        },
+        {
+          "id": "task-2",
+          "prompt": "MAC addressing and frame delivery on a local segment."
+        },
+        {
+          "id": "task-3",
+          "prompt": "IP forwarding between separate subnets."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Reliable application delivery using TCP acknowledgments."
+        }
+      ],
+      "options": [
+        {
+          "id": "physical",
+          "label": "Layer 1 — Physical",
+          "reusable": true
+        },
+        {
+          "id": "data-link",
+          "label": "Layer 2 — Data Link",
+          "reusable": true
+        },
+        {
+          "id": "network",
+          "label": "Layer 3 — Network",
+          "reusable": true
+        },
+        {
+          "id": "transport",
+          "label": "Layer 4 — Transport",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "physical",
+        "task-2": "data-link",
+        "task-3": "network",
+        "task-4": "transport"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Electrical signaling belongs to the Physical layer.",
+        "task-2": "MAC frames operate at the Data Link layer.",
+        "task-3": "IP routing is a Network-layer function.",
+        "task-4": "TCP reliability operates at the Transport layer."
+      }
+    },
+    {
+      "id": "network-plus-pbq-002",
+      "certification": "network-plus",
+      "type": "matching",
+      "title": "Staff the Network Citadel",
+      "objective": "N10-009 1.2 — Networking appliances, applications, and functions",
+      "difficulty": 1,
+      "briefing": "Match each infrastructure requirement to the appliance that fulfills it most directly.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Forward traffic between IP networks."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Distribute client sessions across multiple application servers."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Inspect traffic and actively block recognized malicious patterns."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Provide centralized file storage over the existing LAN."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Relay web requests while applying content policy."
+        }
+      ],
+      "options": [
+        {
+          "id": "router",
+          "label": "Router",
+          "reusable": false
+        },
+        {
+          "id": "load-balancer",
+          "label": "Load balancer",
+          "reusable": false
+        },
+        {
+          "id": "ips",
+          "label": "Intrusion prevention system",
+          "reusable": false
+        },
+        {
+          "id": "nas",
+          "label": "Network-attached storage",
+          "reusable": false
+        },
+        {
+          "id": "proxy",
+          "label": "Proxy server",
+          "reusable": false
+        },
+        {
+          "id": "switch",
+          "label": "Layer 2 switch",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "router",
+        "task-2": "load-balancer",
+        "task-3": "ips",
+        "task-4": "nas",
+        "task-5": "proxy"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Routers forward packets between networks.",
+        "task-2": "Load balancers distribute sessions among servers.",
+        "task-3": "An IPS can block malicious traffic inline.",
+        "task-4": "NAS provides file-level network storage.",
+        "task-5": "A proxy intermediates client web requests."
+      }
+    },
+    {
+      "id": "network-plus-pbq-003",
+      "certification": "network-plus",
+      "type": "categorization",
+      "title": "Map the Modern Cloud Roads",
+      "objective": "N10-009 1.3 and 1.8 — Cloud and modern networking concepts",
+      "difficulty": 2,
+      "briefing": "Categorize each new service by its primary architecture.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Employees use a complete browser-based collaboration suite."
+        },
+        {
+          "id": "task-2",
+          "prompt": "The network team deploys virtual routers as software on shared compute hosts."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Branches select application-aware paths across multiple WAN links."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A content service processes sensor data near the collection site."
+        }
+      ],
+      "options": [
+        {
+          "id": "saas",
+          "label": "Software as a service",
+          "reusable": true
+        },
+        {
+          "id": "nfv",
+          "label": "Network functions virtualization",
+          "reusable": true
+        },
+        {
+          "id": "sdwan",
+          "label": "Software-defined WAN",
+          "reusable": true
+        },
+        {
+          "id": "edge",
+          "label": "Edge computing",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "saas",
+        "task-2": "nfv",
+        "task-3": "sdwan",
+        "task-4": "edge"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "SaaS delivers the complete application.",
+        "task-2": "NFV runs network functions as software appliances.",
+        "task-3": "SD-WAN selects paths using centralized policy.",
+        "task-4": "Edge computing places processing near data sources."
+      }
+    },
+    {
+      "id": "network-plus-pbq-004",
+      "certification": "network-plus",
+      "type": "configuration-table",
+      "title": "Open the Approved Service Gates",
+      "objective": "N10-009 1.4 — Ports, protocols, services, and traffic types",
+      "difficulty": 2,
+      "briefing": "Configure the service, transport, port, and protected alternative for approved traffic flows.",
+      "instructions": [
+        "Review each network requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Secure shell",
+          "prompt": "Administrators need encrypted command-line management."
+        },
+        {
+          "id": "task-2",
+          "label": "Name service",
+          "prompt": "Clients need standard DNS queries."
+        },
+        {
+          "id": "task-3",
+          "label": "Web portal",
+          "prompt": "Users need encrypted browser access."
+        }
+      ],
+      "options": {
+        "service": [
+          "SSH",
+          "DNS",
+          "HTTPS"
+        ],
+        "transport": [
+          "TCP",
+          "UDP"
+        ],
+        "port": [
+          "22",
+          "53",
+          "443"
+        ],
+        "protected": [
+          "Encrypted",
+          "Not inherently encrypted"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "service": "SSH",
+          "transport": "TCP",
+          "port": "22",
+          "protected": "Encrypted"
+        },
+        "task-2": {
+          "service": "DNS",
+          "transport": "UDP",
+          "port": "53",
+          "protected": "Not inherently encrypted"
+        },
+        "task-3": {
+          "service": "HTTPS",
+          "transport": "TCP",
+          "port": "443",
+          "protected": "Encrypted"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "service",
+          "transport",
+          "port",
+          "protected"
+        ]
+      },
+      "explanations": {
+        "task-1": "SSH uses TCP 22 and provides encryption.",
+        "task-2": "Ordinary DNS queries commonly use UDP 53 without inherent encryption.",
+        "task-3": "HTTPS uses TCP 443 with TLS protection."
+      },
+      "tableLabel": "Approved infrastructure service flows",
+      "fieldLabels": {
+        "service": "Service",
+        "transport": "Transport",
+        "port": "Destination port",
+        "protected": "Protection"
+      }
+    },
+    {
+      "id": "network-plus-pbq-005",
+      "certification": "network-plus",
+      "type": "visual-labeling",
+      "title": "Identify the Cable Forge",
+      "objective": "N10-009 1.5 — Cabling, connectors, interfaces, and transceivers",
+      "difficulty": 2,
+      "briefing": "Identify four interfaces on an original product-neutral termination panel.",
+      "instructions": [
+        "Study the original Hydra diagram.",
+        "Select the best label for every callout.",
+        "Each correct callout earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Identify the twisted-pair Ethernet jack.",
+          "callout": {
+            "label": "A",
+            "x": 20,
+            "y": 38
+          }
+        },
+        {
+          "id": "task-2",
+          "prompt": "Identify the duplex fiber connector.",
+          "callout": {
+            "label": "B",
+            "x": 44,
+            "y": 38
+          }
+        },
+        {
+          "id": "task-3",
+          "prompt": "Identify the coaxial connector.",
+          "callout": {
+            "label": "C",
+            "x": 68,
+            "y": 38
+          }
+        },
+        {
+          "id": "task-4",
+          "prompt": "Identify the modular transceiver cage.",
+          "callout": {
+            "label": "D",
+            "x": 86,
+            "y": 66
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "rj45",
+          "label": "RJ45",
+          "reusable": false
+        },
+        {
+          "id": "lc",
+          "label": "LC fiber",
+          "reusable": false
+        },
+        {
+          "id": "f-type",
+          "label": "F-type coaxial",
+          "reusable": false
+        },
+        {
+          "id": "sfp",
+          "label": "SFP-family cage",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "rj45",
+        "task-2": "lc",
+        "task-3": "f-type",
+        "task-4": "sfp"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "The eight-position modular jack is RJ45.",
+        "task-2": "The paired compact optical ports represent LC fiber.",
+        "task-3": "The threaded round interface is an F-type connector.",
+        "task-4": "The rectangular removable-module bay is an SFP-family cage."
+      },
+      "visual": {
+        "src": "assets/pbq/network-plus/cabling-and-connectors.svg",
+        "alt": "Original termination-panel diagram showing an RJ45 jack, duplex LC fiber interface, threaded F-type coaxial connector, and SFP-family transceiver cage.",
+        "caption": "Hydra connection panel; shapes are simplified and vendor-neutral."
+      }
+    },
+    {
+      "id": "network-plus-pbq-006",
+      "certification": "network-plus",
+      "type": "configuration-table",
+      "title": "Address the Frontier Topology",
+      "objective": "N10-009 1.6–1.7 — Network topologies, architectures, and addressing",
+      "difficulty": 3,
+      "briefing": "Assign the correct address scope, prefix, gateway behavior, and segment role.",
+      "instructions": [
+        "Review each network requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "User VLAN",
+          "prompt": "10.42.10.0/24 is an internal client subnet routed through 10.42.10.1."
+        },
+        {
+          "id": "task-2",
+          "label": "IPv6 LAN",
+          "prompt": "2001:db8:42:20::/64 uses router advertisements for global addressing."
+        },
+        {
+          "id": "task-3",
+          "label": "Isolated host",
+          "prompt": "A disconnected IPv4 workstation self-assigns 169.254.18.7."
+        }
+      ],
+      "options": {
+        "scope": [
+          "Private IPv4",
+          "Documentation IPv6",
+          "Link-local IPv4"
+        ],
+        "prefix": [
+          "/24",
+          "/64",
+          "/16"
+        ],
+        "gateway": [
+          "10.42.10.1",
+          "Router advertisement",
+          "No usable routed gateway"
+        ],
+        "role": [
+          "Routed client segment",
+          "IPv6 client segment",
+          "Local-link fallback"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "scope": "Private IPv4",
+          "prefix": "/24",
+          "gateway": "10.42.10.1",
+          "role": "Routed client segment"
+        },
+        "task-2": {
+          "scope": "Documentation IPv6",
+          "prefix": "/64",
+          "gateway": "Router advertisement",
+          "role": "IPv6 client segment"
+        },
+        "task-3": {
+          "scope": "Link-local IPv4",
+          "prefix": "/16",
+          "gateway": "No usable routed gateway",
+          "role": "Local-link fallback"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "scope",
+          "prefix",
+          "gateway",
+          "role"
+        ]
+      },
+      "explanations": {
+        "task-1": "The 10.0.0.0/8 range is private and the stated /24 uses its local router.",
+        "task-2": "The documentation IPv6 prefix models a /64 SLAAC segment.",
+        "task-3": "169.254.0.0/16 is IPv4 link-local fallback and is not normally routed."
+      },
+      "tableLabel": "Frontier addressing plan",
+      "fieldLabels": {
+        "scope": "Address scope",
+        "prefix": "Prefix",
+        "gateway": "Gateway behavior",
+        "role": "Segment role"
+      }
+    },
+    {
+      "id": "network-plus-pbq-007",
+      "certification": "network-plus",
+      "type": "configuration-table",
+      "title": "Program the Border Routes",
+      "objective": "N10-009 2.1 — Routing technologies",
+      "difficulty": 3,
+      "briefing": "Complete the forwarding decision for three destination networks.",
+      "instructions": [
+        "Review each network requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Default",
+          "prompt": "Unknown destinations should leave through 192.0.2.1."
+        },
+        {
+          "id": "task-2",
+          "label": "Voice",
+          "prompt": "10.60.20.0/24 is directly connected."
+        },
+        {
+          "id": "task-3",
+          "label": "Remote lab",
+          "prompt": "10.70.0.0/16 is reached through 198.51.100.9 by a static route."
+        }
+      ],
+      "options": {
+        "destination": [
+          "0.0.0.0/0",
+          "10.60.20.0/24",
+          "10.70.0.0/16"
+        ],
+        "nextHop": [
+          "192.0.2.1",
+          "Directly connected",
+          "198.51.100.9"
+        ],
+        "source": [
+          "Default static",
+          "Connected",
+          "Static"
+        ],
+        "behavior": [
+          "Fallback path",
+          "Local delivery",
+          "Remote next hop"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "destination": "0.0.0.0/0",
+          "nextHop": "192.0.2.1",
+          "source": "Default static",
+          "behavior": "Fallback path"
+        },
+        "task-2": {
+          "destination": "10.60.20.0/24",
+          "nextHop": "Directly connected",
+          "source": "Connected",
+          "behavior": "Local delivery"
+        },
+        "task-3": {
+          "destination": "10.70.0.0/16",
+          "nextHop": "198.51.100.9",
+          "source": "Static",
+          "behavior": "Remote next hop"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "destination",
+          "nextHop",
+          "source",
+          "behavior"
+        ]
+      },
+      "explanations": {
+        "task-1": "A /0 static route supplies the fallback gateway.",
+        "task-2": "A connected subnet needs no next-hop router.",
+        "task-3": "The remote /16 uses the stated static next hop."
+      },
+      "tableLabel": "Border routing decisions",
+      "fieldLabels": {
+        "destination": "Destination",
+        "nextHop": "Next hop",
+        "source": "Route source",
+        "behavior": "Forwarding behavior"
+      }
+    },
+    {
+      "id": "network-plus-pbq-008",
+      "certification": "network-plus",
+      "type": "categorization",
+      "title": "Stabilize the Switch Fabric",
+      "objective": "N10-009 2.2 — Switching technologies and features",
+      "difficulty": 5,
+      "briefing": "Categorize each switch-port observation by the feature or fault it represents.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A user port carries one untagged workstation VLAN."
+        },
+        {
+          "id": "task-2",
+          "prompt": "An uplink carries tagged traffic for several VLANs."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Two physical uplinks operate as one logical bundle."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A redundant port is intentionally blocking to prevent a loop."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Frames enter one untagged VLAN but leave the trunk with an unexpected native VLAN."
+        }
+      ],
+      "options": [
+        {
+          "id": "access",
+          "label": "Access port",
+          "reusable": true
+        },
+        {
+          "id": "trunk",
+          "label": "Trunk port",
+          "reusable": true
+        },
+        {
+          "id": "lacp",
+          "label": "Link aggregation",
+          "reusable": true
+        },
+        {
+          "id": "stp",
+          "label": "Spanning Tree",
+          "reusable": true
+        },
+        {
+          "id": "native",
+          "label": "Native VLAN mismatch",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "access",
+        "task-2": "trunk",
+        "task-3": "lacp",
+        "task-4": "stp",
+        "task-5": "native"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "An access port carries one endpoint VLAN.",
+        "task-2": "A trunk transports multiple tagged VLANs.",
+        "task-3": "Link aggregation combines interfaces.",
+        "task-4": "STP blocks a redundant path to prevent loops.",
+        "task-5": "A native VLAN mismatch can misplace untagged traffic."
+      }
+    },
+    {
+      "id": "network-plus-pbq-009",
+      "certification": "network-plus",
+      "type": "configuration-table",
+      "title": "Coordinate the Wireless Airspace",
+      "objective": "N10-009 2.3 — Wireless devices and technologies",
+      "difficulty": 3,
+      "briefing": "Configure band, channel plan, channel width, and security for three coverage zones.",
+      "instructions": [
+        "Review each network requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Warehouse",
+          "prompt": "Longer reach for scanners; many neighboring 2.4 GHz networks; modest throughput."
+        },
+        {
+          "id": "task-2",
+          "label": "Office",
+          "prompt": "Modern clients; high density; several nearby APs."
+        },
+        {
+          "id": "task-3",
+          "label": "Studio",
+          "prompt": "Wi-Fi 6E clients; short range; maximum clean spectrum."
+        }
+      ],
+      "options": {
+        "band": [
+          "2.4 GHz",
+          "5 GHz",
+          "6 GHz"
+        ],
+        "channel": [
+          "Nonoverlapping 2.4 GHz plan",
+          "Coordinated 5 GHz plan",
+          "Coordinated 6 GHz plan"
+        ],
+        "width": [
+          "20 MHz",
+          "40 MHz",
+          "80 MHz"
+        ],
+        "security": [
+          "WPA3",
+          "WPA2"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "band": "2.4 GHz",
+          "channel": "Nonoverlapping 2.4 GHz plan",
+          "width": "20 MHz",
+          "security": "WPA3"
+        },
+        "task-2": {
+          "band": "5 GHz",
+          "channel": "Coordinated 5 GHz plan",
+          "width": "40 MHz",
+          "security": "WPA3"
+        },
+        "task-3": {
+          "band": "6 GHz",
+          "channel": "Coordinated 6 GHz plan",
+          "width": "80 MHz",
+          "security": "WPA3"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "band",
+          "channel",
+          "width",
+          "security"
+        ]
+      },
+      "explanations": {
+        "task-1": "A narrow nonoverlapping 2.4 GHz plan favors reach and coexistence.",
+        "task-2": "Coordinated 5 GHz channels balance density and throughput.",
+        "task-3": "6 GHz provides clean spectrum for compatible short-range clients."
+      },
+      "tableLabel": "Wireless airspace plan",
+      "fieldLabels": {
+        "band": "Band",
+        "channel": "Channel plan",
+        "width": "Channel width",
+        "security": "Security"
+      }
+    },
+    {
+      "id": "network-plus-pbq-010",
+      "certification": "network-plus",
+      "type": "visual-labeling",
+      "title": "Survey the Network Closet",
+      "objective": "N10-009 2.4 — Physical installations",
+      "difficulty": 1,
+      "briefing": "Identify four components in an original network-closet diagram.",
+      "instructions": [
+        "Study the original Hydra diagram.",
+        "Select the best label for every callout.",
+        "Each correct callout earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Identify the copper termination panel.",
+          "callout": {
+            "label": "A",
+            "x": 50,
+            "y": 20
+          }
+        },
+        {
+          "id": "task-2",
+          "prompt": "Identify the Ethernet switch.",
+          "callout": {
+            "label": "B",
+            "x": 50,
+            "y": 39
+          }
+        },
+        {
+          "id": "task-3",
+          "prompt": "Identify the horizontal cable manager.",
+          "callout": {
+            "label": "C",
+            "x": 50,
+            "y": 56
+          }
+        },
+        {
+          "id": "task-4",
+          "prompt": "Identify the rack-mounted UPS.",
+          "callout": {
+            "label": "D",
+            "x": 50,
+            "y": 79
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "patch",
+          "label": "Patch panel",
+          "reusable": false
+        },
+        {
+          "id": "switch",
+          "label": "Ethernet switch",
+          "reusable": false
+        },
+        {
+          "id": "manager",
+          "label": "Cable manager",
+          "reusable": false
+        },
+        {
+          "id": "ups",
+          "label": "UPS",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "patch",
+        "task-2": "switch",
+        "task-3": "manager",
+        "task-4": "ups"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "The upper row of passive jacks is the patch panel.",
+        "task-2": "The active port row with status indicators is the switch.",
+        "task-3": "The covered channel organizes patch cords.",
+        "task-4": "The heavy lower unit is the UPS."
+      },
+      "visual": {
+        "src": "assets/pbq/network-plus/network-closet-layout.svg",
+        "alt": "Original rack diagram with a top copper patch panel, Ethernet switch, horizontal cable manager, and lower uninterruptible power supply.",
+        "caption": "Simplified Hydra network closet layout."
+      }
+    },
+    {
+      "id": "network-plus-pbq-011",
+      "certification": "network-plus",
+      "type": "ordering",
+      "title": "Deploy the New Branch",
+      "objective": "N10-009 2.1–2.4 — Integrated network implementation",
+      "difficulty": 4,
+      "briefing": "Order the controlled deployment of a new branch network.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Validate requirements, site survey findings, diagrams, and rollback plan."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Install approved cabling, rack equipment, power, and environmental controls."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Configure VLANs, trunks, routing, and management access."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Deploy the coordinated wireless configuration."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Test physical links, segmentation, routes, roaming, security, and documentation."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Requirements and rollback planning precede changes.",
+        "task-2": "Physical infrastructure is installed before logical service.",
+        "task-3": "Switching and routing establish the wired foundation.",
+        "task-4": "Wireless follows the approved wired design.",
+        "task-5": "End-to-end validation closes deployment."
+      }
+    },
+    {
+      "id": "network-plus-pbq-012",
+      "certification": "network-plus",
+      "type": "categorization",
+      "title": "File the Network Chronicles",
+      "objective": "N10-009 3.1 — Organizational processes and documentation",
+      "difficulty": 1,
+      "briefing": "Categorize each artifact by its proper documentation type.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A drawing shows subnets, VLANs, and routed relationships."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A drawing shows rack units, patch panels, and cable paths."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A record stores device serial numbers, owners, and warranties."
+        },
+        {
+          "id": "task-4",
+          "prompt": "A planned switch upgrade includes risk, approval, and rollback."
+        }
+      ],
+      "options": [
+        {
+          "id": "logical",
+          "label": "Logical diagram",
+          "reusable": true
+        },
+        {
+          "id": "physical",
+          "label": "Physical diagram",
+          "reusable": true
+        },
+        {
+          "id": "asset",
+          "label": "Asset record",
+          "reusable": true
+        },
+        {
+          "id": "change",
+          "label": "Change request",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "logical",
+        "task-2": "physical",
+        "task-3": "asset",
+        "task-4": "change"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Logical diagrams represent network relationships.",
+        "task-2": "Physical diagrams show location and cabling.",
+        "task-3": "Asset records track lifecycle data.",
+        "task-4": "Change requests govern planned modifications."
+      }
+    },
+    {
+      "id": "network-plus-pbq-013",
+      "certification": "network-plus",
+      "type": "matching",
+      "title": "Read the Monitoring Beacons",
+      "objective": "N10-009 3.2 — Network monitoring technologies",
+      "difficulty": 2,
+      "briefing": "Match each monitoring question to the best telemetry source.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Which interfaces are reporting counters and link state over time?"
+        },
+        {
+          "id": "task-2",
+          "prompt": "Which conversations consume the most routed bandwidth?"
+        },
+        {
+          "id": "task-3",
+          "prompt": "What exact protocol fields appear in several suspicious packets?"
+        },
+        {
+          "id": "task-4",
+          "prompt": "Which devices reported authentication failures to the central collector?"
+        },
+        {
+          "id": "task-5",
+          "prompt": "Does the public service respond from an external probe?"
+        }
+      ],
+      "options": [
+        {
+          "id": "snmp",
+          "label": "SNMP",
+          "reusable": false
+        },
+        {
+          "id": "flow",
+          "label": "Flow telemetry",
+          "reusable": false
+        },
+        {
+          "id": "capture",
+          "label": "Packet capture",
+          "reusable": false
+        },
+        {
+          "id": "syslog",
+          "label": "Syslog",
+          "reusable": false
+        },
+        {
+          "id": "probe",
+          "label": "Availability probe",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "snmp",
+        "task-2": "flow",
+        "task-3": "capture",
+        "task-4": "syslog",
+        "task-5": "probe"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "SNMP supplies device and interface metrics.",
+        "task-2": "Flow telemetry summarizes communicating endpoints and volumes.",
+        "task-3": "Packet capture exposes protocol fields.",
+        "task-4": "Syslog centralizes device event messages.",
+        "task-5": "Availability probes test service reachability."
+      }
+    },
+    {
+      "id": "network-plus-pbq-014",
+      "certification": "network-plus",
+      "type": "ordering",
+      "title": "Restore the Flooded Data Hall",
+      "objective": "N10-009 3.3 — Disaster recovery concepts",
+      "difficulty": 3,
+      "briefing": "Order the network recovery after the primary site becomes unavailable.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Declare the incident, assess scope, and notify the recovery team."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Activate the approved alternate site and critical connectivity."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Restore required configurations and services from verified copies."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Validate routes, security controls, monitoring, and business applications."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Plan and approve the controlled return to the primary site."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Declaration and scope activate the plan.",
+        "task-2": "The alternate site supplies recovery capacity.",
+        "task-3": "Verified configurations restore network function.",
+        "task-4": "Technical and business validation precede use.",
+        "task-5": "Failback is a separate controlled change."
+      }
+    },
+    {
+      "id": "network-plus-pbq-015",
+      "certification": "network-plus",
+      "type": "matching",
+      "title": "Assign the Infrastructure Services",
+      "objective": "N10-009 3.4 — IPv4 and IPv6 network services",
+      "difficulty": 2,
+      "briefing": "Match each operational symptom to the infrastructure service that should be investigated first.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Clients receive no leases after connecting to a VLAN."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Hostnames fail while direct IP connections succeed."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Logs from different devices show inconsistent timestamps."
+        },
+        {
+          "id": "task-4",
+          "prompt": "IPv6 clients do not form global addresses from router advertisements."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Administrators cannot identify which addresses are allocated or reserved."
+        }
+      ],
+      "options": [
+        {
+          "id": "dhcp",
+          "label": "DHCP",
+          "reusable": false
+        },
+        {
+          "id": "dns",
+          "label": "DNS",
+          "reusable": false
+        },
+        {
+          "id": "ntp",
+          "label": "NTP",
+          "reusable": false
+        },
+        {
+          "id": "slaac",
+          "label": "SLAAC/router advertisements",
+          "reusable": false
+        },
+        {
+          "id": "ipam",
+          "label": "IPAM",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "dhcp",
+        "task-2": "dns",
+        "task-3": "ntp",
+        "task-4": "slaac",
+        "task-5": "ipam"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "DHCP distributes IPv4 leases.",
+        "task-2": "DNS resolves names to addresses.",
+        "task-3": "NTP synchronizes time.",
+        "task-4": "Router advertisements support SLAAC.",
+        "task-5": "IPAM tracks address usage and reservations."
+      }
+    },
+    {
+      "id": "network-plus-pbq-016",
+      "certification": "network-plus",
+      "type": "configuration-table",
+      "title": "Govern the Management Plane",
+      "objective": "N10-009 3.5 — Network access and management methods",
+      "difficulty": 4,
+      "briefing": "Choose the management channel, authentication, source restriction, and logging for each device class.",
+      "instructions": [
+        "Review each network requirement.",
+        "Select every configuration field.",
+        "Each correct field earns partial credit."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "label": "Core switches",
+          "prompt": "In-band encrypted CLI from the administration subnet; centralized identity and logs."
+        },
+        {
+          "id": "task-2",
+          "label": "Remote router",
+          "prompt": "Encrypted management through the approved VPN; centralized identity and logs."
+        },
+        {
+          "id": "task-3",
+          "label": "Recovery console",
+          "prompt": "Out-of-band serial access from the locked network operations room; local emergency account and session logging."
+        }
+      ],
+      "options": {
+        "channel": [
+          "SSH",
+          "HTTPS over VPN",
+          "Serial console"
+        ],
+        "authentication": [
+          "Centralized AAA",
+          "Local emergency account"
+        ],
+        "source": [
+          "Administration subnet",
+          "Approved VPN",
+          "Locked operations room"
+        ],
+        "logging": [
+          "Central syslog",
+          "Session logging"
+        ]
+      },
+      "solution": {
+        "task-1": {
+          "channel": "SSH",
+          "authentication": "Centralized AAA",
+          "source": "Administration subnet",
+          "logging": "Central syslog"
+        },
+        "task-2": {
+          "channel": "HTTPS over VPN",
+          "authentication": "Centralized AAA",
+          "source": "Approved VPN",
+          "logging": "Central syslog"
+        },
+        "task-3": {
+          "channel": "Serial console",
+          "authentication": "Local emergency account",
+          "source": "Locked operations room",
+          "logging": "Session logging"
+        }
+      },
+      "scoring": {
+        "method": "per-field",
+        "maxPoints": 12,
+        "partialCredit": true,
+        "fields": [
+          "channel",
+          "authentication",
+          "source",
+          "logging"
+        ]
+      },
+      "explanations": {
+        "task-1": "Core switches use restricted encrypted SSH with centralized accountability.",
+        "task-2": "The remote router is managed only through the approved encrypted path.",
+        "task-3": "Out-of-band console access supports recovery under physical control."
+      },
+      "tableLabel": "Management-plane access matrix",
+      "fieldLabels": {
+        "channel": "Management channel",
+        "authentication": "Authentication",
+        "source": "Allowed source",
+        "logging": "Logging"
+      }
+    },
+    {
+      "id": "network-plus-pbq-017",
+      "certification": "network-plus",
+      "type": "classification",
+      "title": "Classify the Security Boundaries",
+      "objective": "N10-009 4.1 — Basic network security concepts",
+      "difficulty": 1,
+      "briefing": "Classify each safeguard by its primary security purpose.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Separate guest devices from internal servers with VLANs and policy."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Require a second factor for network administrators."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Encrypt management traffic between the console and device."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Allow a service account only the permissions required for monitoring."
+        }
+      ],
+      "options": [
+        {
+          "id": "segmentation",
+          "label": "Segmentation",
+          "reusable": true
+        },
+        {
+          "id": "mfa",
+          "label": "Multifactor authentication",
+          "reusable": true
+        },
+        {
+          "id": "encryption",
+          "label": "Encryption",
+          "reusable": true
+        },
+        {
+          "id": "least",
+          "label": "Least privilege",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "segmentation",
+        "task-2": "mfa",
+        "task-3": "encryption",
+        "task-4": "least"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 4,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Segmentation limits communication paths.",
+        "task-2": "MFA requires another authentication factor.",
+        "task-3": "Encryption protects traffic confidentiality.",
+        "task-4": "Least privilege limits permissions."
+      }
+    },
+    {
+      "id": "network-plus-pbq-018",
+      "certification": "network-plus",
+      "type": "classification",
+      "title": "Identify the Attack Pattern",
+      "objective": "N10-009 4.2 — Common network attacks",
+      "difficulty": 2,
+      "briefing": "Review each evidence cluster and identify the network attack it represents.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A host sends forged ARP replies and becomes the gateway MAC for nearby clients."
+        },
+        {
+          "id": "task-2",
+          "prompt": "An unauthorized AP advertises the corporate SSID from a conference room."
+        },
+        {
+          "id": "task-3",
+          "prompt": "A switch receives double-tagged frames intended to reach another VLAN."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Resolvers return an attacker-controlled address for a legitimate name."
+        },
+        {
+          "id": "task-5",
+          "prompt": "A public service receives traffic volumes far beyond its capacity."
+        }
+      ],
+      "options": [
+        {
+          "id": "arp",
+          "label": "ARP poisoning",
+          "reusable": true
+        },
+        {
+          "id": "rogue",
+          "label": "Rogue access point",
+          "reusable": true
+        },
+        {
+          "id": "vlan",
+          "label": "VLAN hopping",
+          "reusable": true
+        },
+        {
+          "id": "dns",
+          "label": "DNS poisoning",
+          "reusable": true
+        },
+        {
+          "id": "dos",
+          "label": "Denial of service",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "arp",
+        "task-2": "rogue",
+        "task-3": "vlan",
+        "task-4": "dns",
+        "task-5": "dos"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Forged ARP mappings enable local interception.",
+        "task-2": "An unauthorized corporate-looking AP is rogue.",
+        "task-3": "Double tagging is associated with VLAN hopping.",
+        "task-4": "False resolver data indicates DNS poisoning.",
+        "task-5": "Resource exhaustion from excessive traffic is denial of service."
+      }
+    },
+    {
+      "id": "network-plus-pbq-019",
+      "certification": "network-plus",
+      "type": "matching",
+      "title": "Layer the Citadel Defenses",
+      "objective": "N10-009 4.3 — Network security features and defense techniques",
+      "difficulty": 3,
+      "briefing": "Match each exposure to the defense that most directly reduces it.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Unknown endpoints connect to wall jacks without validation."
+        },
+        {
+          "id": "task-2",
+          "prompt": "A user subnet can directly reach sensitive database interfaces."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Unapproved inbound management traffic reaches routers."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Known exploit traffic crosses an internet edge."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Clients are directed to known malicious domains."
+        }
+      ],
+      "options": [
+        {
+          "id": "nac",
+          "label": "Network access control",
+          "reusable": false
+        },
+        {
+          "id": "segmentation",
+          "label": "Segmentation",
+          "reusable": false
+        },
+        {
+          "id": "acl",
+          "label": "Access control list",
+          "reusable": false
+        },
+        {
+          "id": "ips",
+          "label": "Intrusion prevention system",
+          "reusable": false
+        },
+        {
+          "id": "dns-filter",
+          "label": "Protective DNS filtering",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "nac",
+        "task-2": "segmentation",
+        "task-3": "acl",
+        "task-4": "ips",
+        "task-5": "dns-filter"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "NAC validates endpoints before access.",
+        "task-2": "Segmentation restricts east-west paths.",
+        "task-3": "ACLs filter traffic by defined criteria.",
+        "task-4": "IPS can block recognized exploit patterns.",
+        "task-5": "Protective DNS blocks resolution of malicious destinations."
+      }
+    },
+    {
+      "id": "network-plus-pbq-020",
+      "certification": "network-plus",
+      "type": "ordering",
+      "title": "Follow the Troubleshooting Doctrine",
+      "objective": "N10-009 5.1 — Network troubleshooting methodology",
+      "difficulty": 2,
+      "briefing": "Order the structured troubleshooting lifecycle.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Identify the problem and gather information."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Establish a theory of probable cause."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Test the theory and determine the cause."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Create a plan of action and identify potential effects."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Implement the solution or escalate as necessary."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Verify full functionality, add preventive measures, and document findings."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        },
+        {
+          "id": "p6",
+          "label": "6th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5",
+        "task-6": "p6"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Evidence gathering defines the problem.",
+        "task-2": "A theory focuses testing.",
+        "task-3": "Testing confirms or rejects the theory.",
+        "task-4": "Planning considers impact before change.",
+        "task-5": "Implementation follows approval.",
+        "task-6": "Verification and documentation close the incident."
+      }
+    },
+    {
+      "id": "network-plus-pbq-021",
+      "certification": "network-plus",
+      "type": "classification",
+      "title": "Diagnose the Damaged Links",
+      "objective": "N10-009 5.2 — Physical interfaces and cabling",
+      "difficulty": 3,
+      "briefing": "Classify each tester or interface result.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "A time-domain test shows a conductor ending well before the far connector."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Two conductors contact each other inside the cable."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Continuity exists, but wire pairs are incorrectly combined across pins."
+        },
+        {
+          "id": "task-4",
+          "prompt": "An optical receive level is below the supported power budget."
+        },
+        {
+          "id": "task-5",
+          "prompt": "A switch port and installed fiber module support different wavelengths."
+        }
+      ],
+      "options": [
+        {
+          "id": "open",
+          "label": "Open conductor",
+          "reusable": true
+        },
+        {
+          "id": "short",
+          "label": "Short",
+          "reusable": true
+        },
+        {
+          "id": "split",
+          "label": "Split pair",
+          "reusable": true
+        },
+        {
+          "id": "attenuation",
+          "label": "Excessive attenuation",
+          "reusable": true
+        },
+        {
+          "id": "transceiver",
+          "label": "Transceiver mismatch",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "open",
+        "task-2": "short",
+        "task-3": "split",
+        "task-4": "attenuation",
+        "task-5": "transceiver"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "An early termination indicates an open.",
+        "task-2": "Contact between conductors creates a short.",
+        "task-3": "Incorrect pair composition is a split pair.",
+        "task-4": "Low optical power indicates excessive loss.",
+        "task-5": "Different supported wavelengths prevent the link."
+      }
+    },
+    {
+      "id": "network-plus-pbq-022",
+      "certification": "network-plus",
+      "type": "categorization",
+      "title": "Repair the Failing Network Services",
+      "objective": "N10-009 5.3 — Network services and switching issues",
+      "difficulty": 3,
+      "briefing": "Categorize each symptom set by its primary fault domain.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Clients in one VLAN receive addresses from the wrong scope."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Names fail but services work by IP address."
+        },
+        {
+          "id": "task-3",
+          "prompt": "One access VLAN cannot cross a trunk while others can."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Switch ports repeatedly transition because of a Layer 2 loop."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Hosts reach local peers but not remote networks after a router change."
+        }
+      ],
+      "options": [
+        {
+          "id": "dhcp",
+          "label": "DHCP",
+          "reusable": true
+        },
+        {
+          "id": "dns",
+          "label": "DNS",
+          "reusable": true
+        },
+        {
+          "id": "vlan",
+          "label": "VLAN/trunk",
+          "reusable": true
+        },
+        {
+          "id": "stp",
+          "label": "Spanning Tree",
+          "reusable": true
+        },
+        {
+          "id": "gateway",
+          "label": "Default gateway",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "dhcp",
+        "task-2": "dns",
+        "task-3": "vlan",
+        "task-4": "stp",
+        "task-5": "gateway"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Wrong-scope leases indicate DHCP configuration.",
+        "task-2": "Name-only failure points to DNS.",
+        "task-3": "One missing VLAN points to trunk allowance.",
+        "task-4": "Port transitions and loops implicate STP.",
+        "task-5": "Remote-only failure after router change points to the gateway."
+      }
+    },
+    {
+      "id": "network-plus-pbq-023",
+      "certification": "network-plus",
+      "type": "classification",
+      "title": "Resolve the Performance Storm",
+      "objective": "N10-009 5.4 — Network performance and wireless issues",
+      "difficulty": 4,
+      "briefing": "Classify each performance evidence set.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Uplink utilization remains near capacity during business hours and queues grow."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Nearby APs use overlapping channels and retransmission rates rise."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Round-trip time increases substantially while packet delivery remains reliable."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Interface counters show late collisions and negotiation differs at each end."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Wireless signal strength is high but many frames require retransmission near a microwave oven."
+        }
+      ],
+      "options": [
+        {
+          "id": "congestion",
+          "label": "Congestion",
+          "reusable": true
+        },
+        {
+          "id": "overlap",
+          "label": "Channel overlap",
+          "reusable": true
+        },
+        {
+          "id": "latency",
+          "label": "Latency",
+          "reusable": true
+        },
+        {
+          "id": "duplex",
+          "label": "Duplex mismatch",
+          "reusable": true
+        },
+        {
+          "id": "interference",
+          "label": "Radio interference",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "congestion",
+        "task-2": "overlap",
+        "task-3": "latency",
+        "task-4": "duplex",
+        "task-5": "interference"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 5,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Sustained saturation and queues indicate congestion.",
+        "task-2": "Overlapping channels cause contention and retries.",
+        "task-3": "High round-trip time is latency.",
+        "task-4": "Late collisions with negotiation differences indicate duplex mismatch.",
+        "task-5": "Retries near an RF source indicate interference."
+      }
+    },
+    {
+      "id": "network-plus-pbq-024",
+      "certification": "network-plus",
+      "type": "matching",
+      "title": "Choose the Diagnostic Instruments",
+      "objective": "N10-009 5.5 — Network troubleshooting tools and protocols",
+      "difficulty": 4,
+      "briefing": "Match each investigation goal to the best first tool.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Inspect exact protocol fields in a failed exchange."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Locate a break along a copper cable run."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Measure nearby wireless channels and signal levels."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Identify the routed hop where latency begins."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Query a specific DNS record type."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Discover listening TCP ports on an approved test host."
+        }
+      ],
+      "options": [
+        {
+          "id": "capture",
+          "label": "Packet capture",
+          "reusable": false
+        },
+        {
+          "id": "cable",
+          "label": "Cable tester/TDR",
+          "reusable": false
+        },
+        {
+          "id": "wifi",
+          "label": "Wi-Fi analyzer",
+          "reusable": false
+        },
+        {
+          "id": "trace",
+          "label": "traceroute",
+          "reusable": false
+        },
+        {
+          "id": "dig",
+          "label": "dig/nslookup",
+          "reusable": false
+        },
+        {
+          "id": "scanner",
+          "label": "Port scanner",
+          "reusable": false
+        }
+      ],
+      "solution": {
+        "task-1": "capture",
+        "task-2": "cable",
+        "task-3": "wifi",
+        "task-4": "trace",
+        "task-5": "dig",
+        "task-6": "scanner"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Packet capture reveals protocol fields.",
+        "task-2": "A cable tester locates physical faults.",
+        "task-3": "A Wi-Fi analyzer surveys channels and signal.",
+        "task-4": "Traceroute reveals the hop path.",
+        "task-5": "DIG or NSLOOKUP queries DNS.",
+        "task-6": "A port scanner tests listening services when authorized."
+      }
+    },
+    {
+      "id": "network-plus-pbq-025",
+      "certification": "network-plus",
+      "type": "ordering",
+      "title": "Recover the Divided Kingdom",
+      "objective": "N10-009 5.1–5.5 — Integrated network troubleshooting",
+      "difficulty": 5,
+      "briefing": "Order recovery of a multi-site outage with several independent faults.",
+      "instructions": [
+        "Review each task.",
+        "Select the best response.",
+        "Each correct task earns one point."
+      ],
+      "tasks": [
+        {
+          "id": "task-1",
+          "prompt": "Establish scope using user reports, monitoring, diagrams, and recent changes."
+        },
+        {
+          "id": "task-2",
+          "prompt": "Restore the failed physical uplink after confirming the cable fault."
+        },
+        {
+          "id": "task-3",
+          "prompt": "Correct the switch trunk VLAN mismatch revealed after link restoration."
+        },
+        {
+          "id": "task-4",
+          "prompt": "Repair the DHCP relay configuration affecting the recovered branch VLAN."
+        },
+        {
+          "id": "task-5",
+          "prompt": "Adjust the congested wireless channel plan using survey evidence."
+        },
+        {
+          "id": "task-6",
+          "prompt": "Verify wired, routed, service, and wireless operation; document each root cause."
+        }
+      ],
+      "options": [
+        {
+          "id": "p1",
+          "label": "1st",
+          "reusable": true
+        },
+        {
+          "id": "p2",
+          "label": "2nd",
+          "reusable": true
+        },
+        {
+          "id": "p3",
+          "label": "3rd",
+          "reusable": true
+        },
+        {
+          "id": "p4",
+          "label": "4th",
+          "reusable": true
+        },
+        {
+          "id": "p5",
+          "label": "5th",
+          "reusable": true
+        },
+        {
+          "id": "p6",
+          "label": "6th",
+          "reusable": true
+        }
+      ],
+      "solution": {
+        "task-1": "p1",
+        "task-2": "p2",
+        "task-3": "p3",
+        "task-4": "p4",
+        "task-5": "p5",
+        "task-6": "p6"
+      },
+      "scoring": {
+        "method": "per-task",
+        "maxPoints": 6,
+        "partialCredit": true
+      },
+      "explanations": {
+        "task-1": "Scope and evidence separate multiple faults.",
+        "task-2": "The physical path must function before higher-layer testing.",
+        "task-3": "Correct trunk transport restores the VLAN path.",
+        "task-4": "DHCP relay depends on the restored routed VLAN.",
+        "task-5": "Wireless optimization follows core service recovery.",
+        "task-6": "Layered validation confirms every repair."
+      }
+    }
+  ]
+}
