@@ -113,8 +113,8 @@
     if (!candidate || candidate.schemaVersion !== 1 || candidate.campaign !== "linux-labs") {
       throw new Error("Unsupported Linux Labs mission bank.");
     }
-    if (!Array.isArray(candidate.missions) || candidate.missions.length !== 16) {
-      throw new Error("Linux Labs Batch 3 requires exactly sixteen missions.");
+    if (!Array.isArray(candidate.missions) || candidate.missions.length !== 20) {
+      throw new Error("Linux Labs Batch 4 requires exactly twenty missions.");
     }
     const ids = new Set();
     candidate.missions.forEach((item, index) => {

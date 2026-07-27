@@ -38,6 +38,8 @@
           "LICENSE-GPL": file("GPL: source code and the same license must accompany distributed derivatives.\n"),
           "LICENSE-BSD": file("BSD: redistribution is permitted with attribution and disclaimer.\n"),
           "privacy-checklist.txt": file("verify identity\nconfirm trusted session\nuse a unique password\nprotect private project data\n"),
+          "server-requirements.txt": file("stable release\nlong support cycle\ncommand-line administration\n"),
+          "desktop-requirements.txt": file("graphical desktop\nfrequent feature updates\n"),
           empty: directory({}),
           unused: directory({}),
           ".academy": file("Hidden Hydra Academy configuration.\n")
@@ -49,8 +51,10 @@
         hosts: file("127.0.0.1 localhost\n")
       }),
       proc: directory({
-        cpuinfo: file("model name: Hydra Virtual CPU\n")
+        cpuinfo: file("model name: Hydra Virtual CPU\n"),
+        meminfo: file("MemTotal: 4096 MB\nMemAvailable: 3072 MB\n")
       }),
+      dev: directory({ sda: file("virtual block device\n") }),
       var: directory({
         log: directory({
           "hydra.log": file("Hydra Linux Simulator ready.\n")
@@ -196,6 +200,13 @@
         which: () => this.commandWhich(tokens),
         tty: () => this.commandTty(tokens),
         whoami: () => this.commandWhoami(tokens),
+        free: () => ({ output: "Mem: 4096 1024 3072", ok: true }),
+        ps: () => ({ output: "PID TTY CMD\n1 ? init\n42 pts/0 bash", ok: true }),
+        top: () => ({ output: "top - Hydra Linux\nTasks: 2 total\nMem: 4096 total", ok: true }),
+        dmesg: () => ({ output: "Linux initialized\nsda: virtual disk attached", ok: true }),
+        ip: () => this.commandIp(tokens),
+        ping: () => this.commandPing(tokens),
+        host: () => this.commandHost(tokens),
         clear: () => ({ output: "", ok: true, clear: true }),
         help: () => this.commandHelp()
       };
@@ -327,6 +338,21 @@
 
     commandWhoami(args) {
       return args.length ? { output: "whoami: no arguments are used.", ok: false } : { output: this.username, ok: true };
+    }
+
+    commandIp(args) {
+      const value = args.join(" ");
+      if (value === "addr" || value === "addr show") return { output: "eth0: inet 192.0.2.10/24", ok: true };
+      if (value === "route" || value === "route show") return { output: "default via 192.0.2.1 dev eth0", ok: true };
+      return { output: "ip: use addr or route.", ok: false };
+    }
+
+    commandPing(args) {
+      return args.length === 1 ? { output: `64 bytes from ${args[0]}: time=1 ms`, ok: true } : { output: "ping: provide one host.", ok: false };
+    }
+
+    commandHost(args) {
+      return args.length === 1 ? { output: `${args[0]} has address 192.0.2.20`, ok: true } : { output: "host: provide one name.", ok: false };
     }
 
     commandPwd(args) {
@@ -571,6 +597,8 @@
           "  cat              display a text file",
           "  uname, which     inspect the system and available tools",
           "  tty, whoami      verify the current session",
+          "  ps, top, free, dmesg  inspect processes, memory, and messages",
+          "  ip, ping, host   inspect and test networking",
           "  clear            clear the terminal display",
           "  help             show this guide",
           ...lessonExamples
