@@ -4,15 +4,15 @@
   const BANK_URL = "json/linux-essentials/labs/proof-of-concept.json";
   const PROGRESS_KEY = "hydra-linux-labs:v1:progress";
   const SESSION_PREFIX = "hydra-linux-labs:v1:mission:";
-  const PHASES = ["briefing", "learn", "walkthrough", "guided", "challenge", "feedback", "debrief"];
+  const PHASES = ["briefing", "learn", "walkthrough", "guided", "challenge", "debrief", "fenrir"];
   const PHASE_LABELS = {
     briefing: "Mission Briefing",
     learn: "Learn the Concept",
     walkthrough: "Step-by-Step Walkthrough",
     guided: "Guided Practice",
     challenge: "Commander Challenge",
-    feedback: "Immediate Feedback",
-    debrief: "Mission Debrief"
+    debrief: "Mission Debrief",
+    fenrir: "Fenrir's Tip"
   };
 
   const elements = {
@@ -229,11 +229,11 @@
     `;
   }
 
-  function renderFeedbackPhase() {
+  function renderFenrirTip() {
+    const nextMission = bank.missions[missionIndex + 1];
     elements.lessonPanel.innerHTML = `
-      <span class="linux-labs-label">IMMEDIATE FEEDBACK</span>
-      <h2>Mission objective achieved</h2>
-      <p>${escapeHtml(mission.correctFeedback)}</p>
+      <span class="linux-labs-label">FENRIR'S TIP</span>
+      <h2>Final guidance from the Academy Wolf</h2>
       <aside class="linux-wolf-tip">
         <strong class="linux-guide-name"><span aria-hidden="true">🐺</span> FENRIR</strong>
         <span class="linux-guide-title">The Academy Wolf</span>
@@ -242,14 +242,21 @@
           <p>${escapeHtml(mission.fenrirTip)}</p>
         </div>
       </aside>
+      <div class="linux-next-actions" aria-label="Next actions">
+        <button id="linuxReplayMission" class="linux-secondary-button" type="button">↻ Replay Mission</button>
+        ${nextMission ? `<a class="linux-action-button" href="linux-lab.html?mission=${encodeURIComponent(nextMission.id)}">Next Mission →</a>` : ""}
+        <a class="linux-secondary-button" href="linux-labs.html">Return to Linux Labs</a>
+        <a class="linux-secondary-button" href="linux-essentials-final-dungeon.html">Return to Linux Final Dungeon</a>
+      </div>
     `;
+    document.getElementById("linuxReplayMission").addEventListener("click", replayMission);
   }
 
   function renderDebrief() {
-    const nextMission = bank.missions[missionIndex + 1];
     elements.lessonPanel.innerHTML = `
       <span class="linux-labs-label">MISSION DEBRIEF</span>
-      <h2>Training complete</h2>
+      <h2>Mission objective achieved</h2>
+      <p>${escapeHtml(mission.correctFeedback)}</p>
       <p>${escapeHtml(mission.debrief)}</p>
       <div class="linux-big-idea">
         <strong>Big Idea</strong>
@@ -259,14 +266,7 @@
         <strong>Command-recognition takeaway</strong>
         <p>${escapeHtml(mission.takeaway)}</p>
       </div>
-      <div class="linux-next-actions" aria-label="Next actions">
-        <button id="linuxReplayMission" class="linux-secondary-button" type="button">↻ Replay Mission</button>
-        ${nextMission ? `<a class="linux-action-button" href="linux-lab.html?mission=${encodeURIComponent(nextMission.id)}">Next Mission →</a>` : ""}
-        <a class="linux-secondary-button" href="linux-labs.html">Return to Linux Labs</a>
-        <a class="linux-secondary-button" href="linux-essentials-final-dungeon.html">Return to Linux Final Dungeon</a>
-      </div>
     `;
-    document.getElementById("linuxReplayMission").addEventListener("click", replayMission);
   }
 
   function renderTerminal(mode) {
@@ -372,6 +372,13 @@
   function checkGoals(goals) {
     return goals.map(goal => {
       if (goal.type === "command-ran") return simulator.ranCommand(goal.command);
+      if (goal.type === "command-ran-at-path") {
+        return simulator.history.some(entry => (
+          entry.command === goal.command &&
+          entry.ok &&
+          entry.cwd === goal.path
+        ));
+      }
       if (goal.type === "cwd") return simulator.cwd === goal.path;
       if (goal.type === "directory-exists") return simulator.hasDirectory(goal.path);
       if (goal.type === "file-exists") return simulator.hasFile(goal.path);
@@ -411,7 +418,7 @@
       elements.terminalInput.disabled = true;
       elements.submitPractice.disabled = true;
       elements.next.disabled = false;
-      elements.next.textContent = "View Mission Feedback →";
+      elements.next.textContent = "Mission Debrief →";
       announce("Commander Challenge complete. Mission progress saved.");
     }
     saveState();
@@ -469,12 +476,12 @@
       elements.lessonPanel.classList.add("hidden");
       renderTerminal("challenge");
       elements.next.disabled = !state.challengeComplete;
-      elements.next.textContent = "View Mission Feedback →";
-    } else if (phase() === "feedback") {
-      renderFeedbackPhase();
       elements.next.textContent = "Mission Debrief →";
-    } else {
+    } else if (phase() === "debrief") {
       renderDebrief();
+      elements.next.textContent = "Fenrir's Tip →";
+    } else {
+      renderFenrirTip();
       elements.lessonControls.classList.add("hidden");
       elements.footer.classList.add("hidden");
     }
