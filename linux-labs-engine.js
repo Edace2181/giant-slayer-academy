@@ -113,8 +113,8 @@
     if (!candidate || candidate.schemaVersion !== 1 || candidate.campaign !== "linux-labs") {
       throw new Error("Unsupported Linux Labs mission bank.");
     }
-    if (!Array.isArray(candidate.missions) || candidate.missions.length !== 2) {
-      throw new Error("This proof of concept requires exactly two missions.");
+    if (!Array.isArray(candidate.missions) || candidate.missions.length !== 7) {
+      throw new Error("Linux Labs Batch 1 requires exactly seven missions.");
     }
     const ids = new Set();
     candidate.missions.forEach((item, index) => {
@@ -379,6 +379,11 @@
           entry.cwd === goal.path
         ));
       }
+      if (goal.type === "command-input") {
+        return simulator.history.some(entry => entry.ok && entry.input === goal.input);
+      }
+      if (goal.type === "file-missing") return !simulator.getNode(goal.path);
+      if (goal.type === "directory-missing") return !simulator.getNode(goal.path);
       if (goal.type === "cwd") return simulator.cwd === goal.path;
       if (goal.type === "directory-exists") return simulator.hasDirectory(goal.path);
       if (goal.type === "file-exists") return simulator.hasFile(goal.path);

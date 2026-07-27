@@ -240,6 +240,313 @@
       "fenrirTip": "mkdir builds the room, cd enters it, touch places a blank scroll inside, and ls checks your work.",
       "debrief": "You learned to create directories with mkdir, create empty files with touch, and verify results with ls. Linux tasks often depend on running simple commands in the correct location and order.",
       "takeaway": "Build → mkdir. Enter → cd. Create a file → touch. Verify → ls."
+    },
+    {
+      "id": "linux-lab-03",
+      "missionNumber": 3,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Command Anatomy",
+      "skill": "Build commands from a command name, options, and arguments",
+      "goal": "Use echo to send exact messages to the terminal and use history to verify the commands you entered.",
+      "bigIdea": "A shell command is a structured request: the command chooses the tool, while options and arguments tell it what to do.",
+      "objective": "2.1 Command Line Basics",
+      "difficulty": 1,
+      "briefing": "The command console is online, but the Commander will only accept precisely formatted status messages. You will learn how the shell separates a command name from the information that follows it.",
+      "learn": [
+        { "command": "echo Hydra", "badge": "Command + argument", "explanation": "echo is the command. Hydra is its argument, so the terminal displays Hydra." },
+        { "command": "echo \"mission ready\"", "badge": "Quoted argument", "explanation": "Quotation marks keep words together as one argument when the text contains spaces." },
+        { "command": "history", "badge": "Review command", "explanation": "history lists commands entered during the activity so you can review your work." }
+      ],
+      "walkthrough": [
+        { "title": "Send one word", "text": "Run echo Hydra. The terminal prints the argument Hydra.", "command": "echo Hydra" },
+        { "title": "Protect spaces", "text": "Run echo \"mission ready\". The quotes keep the two-word message together.", "command": "echo \"mission ready\"" },
+        { "title": "Review the session", "text": "Run history. The terminal lists the commands in the order you used them.", "command": "history" }
+      ],
+      "guidedPractice": {
+        "instructions": "Display Hydra, display the exact phrase mission ready with quotes, and review your command history.",
+        "steps": ["Type echo Hydra.", "Type echo \"mission ready\".", "Run history to review both commands."],
+        "helpExamples": ["echo Hydra", "echo \"mission ready\"", "history"],
+        "successFeedback": "Guided practice complete. You supplied arguments, protected a phrase with quotes, and reviewed the command history.",
+        "incorrectFeedback": "The required messages or history review are still missing.",
+        "retryHint": "Use echo for each message. Put quotation marks around mission ready, then run history.",
+        "goals": [
+          { "type": "command-input", "input": "echo Hydra" },
+          { "type": "command-input", "input": "echo \"mission ready\"" },
+          { "type": "command-ran", "command": "history" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Send the exact two-word status academy online, then prove the command is recorded in your history.",
+        "steps": ["Display academy online as one quoted phrase.", "Review the session history."],
+        "helpExamples": ["echo — display supplied text", "history — review commands entered"],
+        "hints": [
+          { "label": "Concept Hint", "text": "Choose a command that displays text, protect the phrase as one argument, and then inspect the session record." },
+          { "label": "Recognition Hint", "text": "echo displays arguments, quotation marks protect spaces, and history shows previous commands." },
+          { "label": "Command Reveal", "text": "Run echo \"academy online\", then run history." }
+        ],
+        "successFeedback": "Commander Challenge complete. The exact status message was displayed and recorded.",
+        "incorrectFeedback": "The exact quoted message and history review have not both been completed.",
+        "retryHint": "Display the required phrase with echo and quotes, then inspect history.",
+        "goals": [
+          { "type": "command-input", "input": "echo \"academy online\"" },
+          { "type": "command-ran", "command": "history" }
+        ]
+      },
+      "correctFeedback": "You correctly separated the command from its arguments and used quotes to preserve a phrase.",
+      "incorrectFeedback": "Review how commands, options, arguments, and quotation marks shape a shell request.",
+      "fenrirTip": "Read a command from left to right: tool first, instructions second, target last.",
+      "debrief": "You used echo with simple and quoted arguments, then checked history. This command structure appears throughout Linux, even when the commands become more powerful.",
+      "takeaway": "Command chooses the tool. Options adjust behavior. Arguments provide the target or data."
+    },
+    {
+      "id": "linux-lab-04",
+      "missionNumber": 4,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Expand the Shell",
+      "skill": "Recognize variables, quoting, and filename patterns",
+      "goal": "Use shell variables and wildcard patterns to produce predictable terminal results.",
+      "bigIdea": "Before a command runs, the shell can transform variables, quoted text, and wildcard patterns into usable values.",
+      "objective": "2.1 Command Line Basics",
+      "difficulty": 2,
+      "briefing": "A scout left instructions containing symbols instead of full paths and filenames. You must recognize how the shell expands those symbols before passing the result to a command.",
+      "learn": [
+        { "command": "echo $HOME", "badge": "Variable", "explanation": "$HOME expands to the current user's home directory, /home/hydra." },
+        { "command": "ls *.txt", "badge": "Wildcard", "explanation": "The asterisk matches any filename ending in .txt in the current directory." },
+        { "command": "echo \"shell ready\"", "badge": "Quoting review", "explanation": "Double quotes preserve spaces so the phrase is handled together." }
+      ],
+      "walkthrough": [
+        { "title": "Expand a variable", "text": "Run echo $HOME. The shell substitutes the home-directory value.", "command": "echo $HOME" },
+        { "title": "Match a group", "text": "Run ls *.txt. The wildcard selects visible names ending in .txt.", "command": "ls *.txt" },
+        { "title": "Protect a phrase", "text": "Run echo \"shell ready\" so the space remains part of one phrase.", "command": "echo \"shell ready\"" }
+      ],
+      "guidedPractice": {
+        "instructions": "Display your home directory variable, list the .txt files in your current directory with a wildcard, and display shell ready as a quoted phrase.",
+        "steps": ["Display $HOME.", "List names matching *.txt.", "Display shell ready with quotes."],
+        "helpExamples": ["echo $HOME", "ls *.txt", "echo \"shell ready\""],
+        "successFeedback": "Guided practice complete. Variables, wildcards, and quotes produced the expected values.",
+        "incorrectFeedback": "One or more shell expansions are still missing.",
+        "retryHint": "Use echo with $HOME, ls with *.txt, and echo with a quoted phrase.",
+        "goals": [
+          { "type": "command-input", "input": "echo $HOME" },
+          { "type": "command-input", "input": "ls *.txt" },
+          { "type": "command-input", "input": "echo \"shell ready\"" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Display the current username variable, find all .txt files with a wildcard, and send the quoted status expansion complete.",
+        "steps": ["Display the current username variable.", "List every visible .txt file.", "Display expansion complete as one quoted phrase."],
+        "helpExamples": ["echo — display expanded values", "ls — list matching names", "$NAME — reference a variable", "* — match filename characters"],
+        "hints": [
+          { "label": "Concept Hint", "text": "Use one variable, one filename wildcard, and one quoted phrase." },
+          { "label": "Recognition Hint", "text": "$USER identifies the current user, *.txt matches text files, and quotes preserve a spaced message." },
+          { "label": "Command Reveal", "text": "Run echo $USER, ls *.txt, and echo \"expansion complete\"." }
+        ],
+        "successFeedback": "Commander Challenge complete. All three shell expansion forms were used correctly.",
+        "incorrectFeedback": "The variable, wildcard, and quoted-message requirements are not all complete.",
+        "retryHint": "Use echo with a user variable, ls with a text-file wildcard, and echo with a quoted status.",
+        "goals": [
+          { "type": "command-input", "input": "echo $USER" },
+          { "type": "command-input", "input": "ls *.txt" },
+          { "type": "command-input", "input": "echo \"expansion complete\"" }
+        ]
+      },
+      "correctFeedback": "You recognized three transformations performed by the shell before a command completes.",
+      "incorrectFeedback": "Review variables, wildcard matching, and quotation marks as separate shell behaviors.",
+      "fenrirTip": "When symbols appear in a command, ask what the shell will replace or preserve before the tool receives them.",
+      "debrief": "You expanded $HOME and $USER, selected filenames with *.txt, and preserved phrases with quotes. These behaviors make short commands flexible and precise.",
+      "takeaway": "$ expands a variable. * matches names. Quotes protect text."
+    },
+    {
+      "id": "linux-lab-05",
+      "missionNumber": 5,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Ask Linux for Help",
+      "skill": "Choose an appropriate command-line help system",
+      "goal": "Open manual, option, and info documentation for unfamiliar commands.",
+      "bigIdea": "Linux does not expect you to memorize every option; skilled users know how to find authoritative help.",
+      "objective": "2.2 Using the Command Line to Get Help",
+      "difficulty": 2,
+      "briefing": "A new set of tools has arrived without a printed guide. Instead of guessing, you will use the documentation already available from the command line.",
+      "learn": [
+        { "command": "man ls", "badge": "Manual page", "explanation": "man opens the structured manual page for a command." },
+        { "command": "ls --help", "badge": "Quick option help", "explanation": "--help usually displays a concise usage summary and common options." },
+        { "command": "info mkdir", "badge": "Info document", "explanation": "info opens topic-oriented documentation that may contain connected sections." }
+      ],
+      "walkthrough": [
+        { "title": "Open a manual", "text": "Run man ls to inspect the command's name and synopsis.", "command": "man ls" },
+        { "title": "Request quick help", "text": "Run ls --help for a concise usage reference.", "command": "ls --help" },
+        { "title": "Open an info node", "text": "Run info mkdir for topic-oriented documentation.", "command": "info mkdir" }
+      ],
+      "guidedPractice": {
+        "instructions": "Open the ls manual, request ls option help, and open the mkdir info documentation.",
+        "steps": ["Run man ls.", "Run ls --help.", "Run info mkdir."],
+        "helpExamples": ["man ls", "ls --help", "info mkdir"],
+        "successFeedback": "Guided practice complete. You used three standard command-line help paths.",
+        "incorrectFeedback": "One or more documentation sources have not been opened.",
+        "retryHint": "Use man with ls, --help with ls, and info with mkdir.",
+        "goals": [
+          { "type": "command-input", "input": "man ls" },
+          { "type": "command-input", "input": "ls --help" },
+          { "type": "command-input", "input": "info mkdir" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Research file-copy and file-move commands using a manual page, quick option help, and an info document.",
+        "steps": ["Open the manual for the copy command.", "Request quick help from the copy command.", "Open info documentation for the move command."],
+        "helpExamples": ["man COMMAND — open a manual", "COMMAND --help — request quick usage", "info COMMAND — open an info node"],
+        "hints": [
+          { "label": "Concept Hint", "text": "Use the three documentation routes demonstrated in Guided Practice with the requested tools." },
+          { "label": "Recognition Hint", "text": "The copy command is cp and the move command is mv." },
+          { "label": "Command Reveal", "text": "Run man cp, cp --help, and info mv." }
+        ],
+        "successFeedback": "Commander Challenge complete. You researched unfamiliar commands instead of guessing.",
+        "incorrectFeedback": "All three requested documentation checks are not yet present.",
+        "retryHint": "Use a manual, a --help request, and an info node for the named tools.",
+        "goals": [
+          { "type": "command-input", "input": "man cp" },
+          { "type": "command-input", "input": "cp --help" },
+          { "type": "command-input", "input": "info mv" }
+        ]
+      },
+      "correctFeedback": "You selected appropriate built-in documentation sources for different help needs.",
+      "incorrectFeedback": "Review when to use man, --help, and info.",
+      "fenrirTip": "Experts do not avoid help; they reach the right help source quickly.",
+      "debrief": "You opened manual pages, requested concise option help, and used info documentation. These habits reduce errors and make unfamiliar commands safer.",
+      "takeaway": "Deep reference → man. Quick syntax → --help. Connected topics → info."
+    },
+    {
+      "id": "linux-lab-06",
+      "missionNumber": 6,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Paths You Cannot See",
+      "skill": "Navigate absolute and relative paths and inspect hidden entries",
+      "goal": "Reveal hidden entries, inspect detailed listings, navigate by path, and verify the final location.",
+      "bigIdea": "Linux paths describe location precisely, while listing options reveal information that ordinary output may hide.",
+      "objective": "2.3 Using Directories and Listing Files",
+      "difficulty": 2,
+      "briefing": "A hidden Academy record and a distant training directory must be inspected. You will combine listing options with absolute and relative navigation.",
+      "learn": [
+        { "command": "ls -a", "badge": "Hidden entries", "explanation": "-a includes names beginning with a dot, plus . and ..." },
+        { "command": "ls -l", "badge": "Detailed listing", "explanation": "-l displays a long format with entry type and permission information." },
+        { "command": "cd /home/hydra/training", "badge": "Absolute path", "explanation": "An absolute path begins at / and identifies the same destination from any current directory." },
+        { "command": "cd ..", "badge": "Relative path", "explanation": ".. means the parent directory relative to your current location." }
+      ],
+      "walkthrough": [
+        { "title": "Reveal hidden entries", "text": "Run ls -a. The output includes .academy.", "command": "ls -a" },
+        { "title": "Inspect details", "text": "Run ls -l to view entry types and permission-like details.", "command": "ls -l" },
+        { "title": "Use an absolute path", "text": "Run cd /home/hydra/training to move directly to training.", "command": "cd /home/hydra/training" },
+        { "title": "Move relatively", "text": "Run cd .., then pwd. You return to /home/hydra and verify it.", "command": "cd ..\npwd" }
+      ],
+      "guidedPractice": {
+        "instructions": "Reveal hidden entries, request a long listing, move directly to training with an absolute path, return with .., and verify /home/hydra.",
+        "steps": ["Run ls -a.", "Run ls -l.", "Enter /home/hydra/training.", "Return with cd ...", "Verify the final path."],
+        "helpExamples": ["ls -a", "ls -l", "cd /home/hydra/training", "cd ..", "pwd"],
+        "successFeedback": "Guided practice complete. You revealed hidden data and navigated with both path forms.",
+        "incorrectFeedback": "The listing or path-navigation requirements are not all complete.",
+        "retryHint": "Use both ls options, visit training by absolute path, return with .., and finish with pwd.",
+        "goals": [
+          { "type": "command-input", "input": "ls -a" },
+          { "type": "command-input", "input": "ls -l" },
+          { "type": "command-input", "input": "cd /home/hydra/training" },
+          { "type": "command-input", "input": "cd .." },
+          { "type": "command-ran-at-path", "command": "pwd", "path": "/home/hydra" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Inspect hidden and detailed entries, enter training using a relative path, return home using an absolute path, and prove your final location.",
+        "steps": ["Reveal hidden entries.", "Request a detailed listing.", "Enter training relatively.", "Return directly to /home/hydra.", "Confirm your location."],
+        "helpExamples": ["ls options change listing detail", "relative paths begin from the current directory", "absolute paths begin with /", "pwd confirms location"],
+        "hints": [
+          { "label": "Concept Hint", "text": "Combine two listing options, two different path styles, and a final location check." },
+          { "label": "Recognition Hint", "text": "-a reveals hidden names, -l shows detail, training is relative from home, and /home/hydra is absolute." },
+          { "label": "Command Reveal", "text": "Run ls -a, ls -l, cd training, cd /home/hydra, and pwd." }
+        ],
+        "successFeedback": "Commander Challenge complete. Hidden entries, details, and both path styles were handled correctly.",
+        "incorrectFeedback": "The required listings, navigation forms, or final verification are incomplete.",
+        "retryHint": "Use -a and -l, navigate once relatively and once absolutely, then verify with pwd.",
+        "goals": [
+          { "type": "command-input", "input": "ls -a" },
+          { "type": "command-input", "input": "ls -l" },
+          { "type": "command-input", "input": "cd training" },
+          { "type": "command-input", "input": "cd /home/hydra" },
+          { "type": "command-ran-at-path", "command": "pwd", "path": "/home/hydra" }
+        ]
+      },
+      "correctFeedback": "You combined listing options with absolute and relative navigation accurately.",
+      "incorrectFeedback": "Review hidden entries, long listings, and how path starting points differ.",
+      "fenrirTip": "A leading slash starts at the filesystem root; no leading slash starts where your paws already stand.",
+      "debrief": "You revealed hidden entries, inspected a detailed listing, and navigated using absolute and relative paths. You also verified the resulting location instead of assuming success.",
+      "takeaway": "Hidden → -a. Details → -l. Rooted path → absolute. Current-location path → relative."
+    },
+    {
+      "id": "linux-lab-07",
+      "missionNumber": 7,
+      "kingdom": "Kingdom I — Navigation and Commands",
+      "title": "Organize and Clean Up",
+      "skill": "Copy, move, rename, and safely remove files and empty directories",
+      "goal": "Transform a cluttered home directory into an exact required filesystem state.",
+      "bigIdea": "File-management commands are judged by the state they create, so verify destinations and remove only the intended targets.",
+      "objective": "2.4 Creating, Moving and Deleting Files",
+      "difficulty": 3,
+      "briefing": "The training account contains reports, drafts, temporary files, and empty directories. You must preserve needed data, rename unfinished work, and safely remove clutter.",
+      "learn": [
+        { "command": "cp report.txt archive/report.txt", "badge": "Copy", "explanation": "cp creates a second file while leaving the source in place." },
+        { "command": "mv draft.txt final.txt", "badge": "Move or rename", "explanation": "mv changes a file's path; in the same directory, that renames it." },
+        { "command": "rm temp.txt", "badge": "Remove file", "explanation": "rm removes the named file. Verify the target before running it." },
+        { "command": "rmdir empty", "badge": "Remove empty directory", "explanation": "rmdir removes a directory only when it contains nothing." }
+      ],
+      "walkthrough": [
+        { "title": "Create a destination", "text": "Run mkdir archive before copying a file into it.", "command": "mkdir archive" },
+        { "title": "Copy required data", "text": "Run cp report.txt archive/report.txt. Both copies now exist.", "command": "cp report.txt archive/report.txt" },
+        { "title": "Rename the draft", "text": "Run mv draft.txt final.txt.", "command": "mv draft.txt final.txt" },
+        { "title": "Remove clutter", "text": "Run rm temp.txt and rmdir empty, then list the result.", "command": "rm temp.txt\nrmdir empty\nls" }
+      ],
+      "guidedPractice": {
+        "instructions": "Create archive, copy report.txt into it, rename draft.txt to final.txt, remove temp.txt, remove the empty directory, and list the result.",
+        "steps": ["Create archive.", "Copy report.txt into archive.", "Rename draft.txt.", "Remove temp.txt.", "Remove empty.", "List the final state."],
+        "helpExamples": ["mkdir archive", "cp report.txt archive/report.txt", "mv draft.txt final.txt", "rm temp.txt", "rmdir empty", "ls"],
+        "successFeedback": "Guided practice complete. Required files were preserved and clutter was removed.",
+        "incorrectFeedback": "The filesystem does not yet match the required organized state.",
+        "retryHint": "Create the destination, copy the report, rename the draft, remove the file and empty directory, then list.",
+        "goals": [
+          { "type": "directory-exists", "path": "/home/hydra/archive" },
+          { "type": "file-exists", "path": "/home/hydra/report.txt" },
+          { "type": "file-exists", "path": "/home/hydra/archive/report.txt" },
+          { "type": "file-exists", "path": "/home/hydra/final.txt" },
+          { "type": "file-missing", "path": "/home/hydra/draft.txt" },
+          { "type": "file-missing", "path": "/home/hydra/temp.txt" },
+          { "type": "directory-missing", "path": "/home/hydra/empty" },
+          { "type": "command-ran", "command": "ls" }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Create completed, copy mission.txt into it, rename notes.txt to briefing.txt, remove scratch.txt and unused, then verify the final state.",
+        "steps": ["Create completed.", "Preserve mission.txt inside completed.", "Rename notes.txt.", "Remove scratch.txt.", "Remove unused.", "Inspect the result."],
+        "helpExamples": ["mkdir — create a destination", "cp — preserve a source while copying", "mv — move or rename", "rm — remove a file", "rmdir — remove an empty directory", "ls — verify"],
+        "hints": [
+          { "label": "Concept Hint", "text": "Create the container, preserve one file, rename another, remove two kinds of clutter, and verify the state." },
+          { "label": "Recognition Hint", "text": "Use mkdir, cp, mv, rm, rmdir, and ls with the names given in the mission." },
+          { "label": "Command Reveal", "text": "Run mkdir completed, cp mission.txt completed/mission.txt, mv notes.txt briefing.txt, rm scratch.txt, rmdir unused, and ls." }
+        ],
+        "successFeedback": "Commander Challenge complete. The home directory now matches the required organized state.",
+        "incorrectFeedback": "The required copied, renamed, or removed entries are not all correct.",
+        "retryHint": "Check that the source copy remains, the renamed source is gone, and both clutter targets were removed.",
+        "goals": [
+          { "type": "directory-exists", "path": "/home/hydra/completed" },
+          { "type": "file-exists", "path": "/home/hydra/mission.txt" },
+          { "type": "file-exists", "path": "/home/hydra/completed/mission.txt" },
+          { "type": "file-exists", "path": "/home/hydra/briefing.txt" },
+          { "type": "file-missing", "path": "/home/hydra/notes.txt" },
+          { "type": "file-missing", "path": "/home/hydra/scratch.txt" },
+          { "type": "directory-missing", "path": "/home/hydra/unused" },
+          { "type": "command-ran", "command": "ls" }
+        ]
+      },
+      "correctFeedback": "You organized the filesystem by its final state while preserving every required source.",
+      "incorrectFeedback": "Review the different effects of copy, move, file removal, and empty-directory removal.",
+      "fenrirTip": "Before removing anything, name the target, predict what will remain, and verify afterward.",
+      "debrief": "You copied files without losing their sources, renamed files with mv, removed files with rm, and removed empty directories with rmdir. State-based grading accepted the result rather than requiring one rigid order.",
+      "takeaway": "Preserve → cp. Relocate or rename → mv. Remove file → rm. Remove empty directory → rmdir."
     }
   ]
 }

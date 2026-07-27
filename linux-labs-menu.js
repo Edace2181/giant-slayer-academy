@@ -30,7 +30,7 @@
     progress.max = bank.missions.length;
     progress.value = completed;
     progressText.textContent = `${completed} of ${bank.missions.length} complete · ${percentage}%`;
-    kingdomProgress.textContent = `${completed} of ${bank.missions.length} proof-of-concept missions complete`;
+    kingdomProgress.textContent = `${completed} of ${bank.missions.length} Batch 1 missions complete`;
 
     grid.replaceChildren(...bank.missions.map(mission => {
       const card = document.createElement("article");
@@ -60,8 +60,8 @@
       return response.json();
     })
     .then(bank => {
-      if (!Array.isArray(bank.missions) || bank.missions.length !== 2) {
-        throw new Error("The proof-of-concept bank must contain exactly two missions.");
+      if (!Array.isArray(bank.missions) || bank.missions.length !== 7) {
+        throw new Error("Linux Labs Batch 1 must contain exactly seven missions.");
       }
       render(bank);
     })
