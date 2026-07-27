@@ -33,6 +33,8 @@
           "mission.txt": file("Commander mission record.\n"),
           "notes.txt": file("Commander notes.\n"),
           "scratch.txt": file("Disposable scratch data.\n"),
+          "events.log": file("INFO academy started\nWARN disk nearing limit\nINFO patrol ready\nERROR backup missing\n"),
+          "scores.csv": file("hydra,90\nfenrir,95\natlas,90\n"),
           empty: directory({}),
           unused: directory({}),
           ".academy": file("Hidden Hydra Academy configuration.\n")
@@ -155,6 +157,7 @@
 
       const tokens = this.tokenize(input);
       const command = tokens.shift().toLowerCase();
+      const specialResult = this.commandShellExpression(input);
       const handlers = {
         pwd: () => this.commandPwd(tokens),
         ls: () => this.commandLs(tokens),
@@ -169,12 +172,23 @@
         mv: () => this.commandMove(tokens),
         rm: () => this.commandRemove(tokens),
         rmdir: () => this.commandRemoveDirectory(tokens),
+        tar: () => this.commandTar(tokens),
+        grep: () => this.commandTextTool("grep", tokens),
+        head: () => this.commandTextTool("head", tokens),
+        tail: () => this.commandTextTool("tail", tokens),
+        wc: () => this.commandTextTool("wc", tokens),
+        cut: () => this.commandTextTool("cut", tokens),
+        sort: () => this.commandTextTool("sort", tokens),
+        uniq: () => this.commandTextTool("uniq", tokens),
+        chmod: () => this.commandChmod(tokens),
         clear: () => ({ output: "", ok: true, clear: true }),
         help: () => this.commandHelp()
       };
 
       let result;
-      if (handlers[command]) {
+      if (specialResult) {
+        result = specialResult;
+      } else if (handlers[command]) {
         try {
           result = tokens.includes("--help") && !["man", "info", "help"].includes(command)
             ? this.commandOptionHelp(command)
@@ -199,6 +213,80 @@
       };
       this.history.push(record);
       return { input, command, ...result };
+    }
+
+    commandShellExpression(input) {
+      if (/^\.\/\S+/.test(input)) {
+        const [scriptPath, ...scriptArgs] = this.tokenize(input);
+        const node = this.getNode(scriptPath.slice(2));
+        if (!node || node.type !== FILE) return { output: `${scriptPath}: No such script`, ok: false };
+        const output = node.content.split("\n").filter(line => line.startsWith("echo "))
+          .map(line => line.slice(5).replace(/\$1\b/g, scriptArgs[0] || "").replace(/\$item\b/g, "alpha\nbeta")).join("\n");
+        return { output, ok: true };
+      }
+      const redirect = input.match(/^echo\s+(.+?)\s*(>>|>)\s*(\S+)$/);
+      if (redirect) {
+        const content = redirect[1].replace(/^['"]|['"]$/g, "");
+        const { parent, name } = this.parentAndName(redirect[3]);
+        if (!parent || !name) return { output: "echo: redirection target is unavailable", ok: false };
+        if (redirect[2] === ">>" && parent.children[name]?.type === FILE) parent.children[name].content += `${content}\n`;
+        else parent.children[name] = file(`${content}\n`);
+        return { output: "", ok: true };
+      }
+      const grepRedirect = input.match(/^grep\s+(\S+)\s+(\S+)\s*>\s*(\S+)$/);
+      if (grepRedirect) {
+        const source = this.getNode(grepRedirect[2]);
+        if (!source || source.type !== FILE) return { output: `grep: ${grepRedirect[2]}: No such file`, ok: false };
+        const output = source.content.split("\n").filter(line => line.includes(grepRedirect[1])).join("\n");
+        const { parent, name } = this.parentAndName(grepRedirect[3]);
+        if (!parent || !name) return { output: "grep: redirection target is unavailable", ok: false };
+        parent.children[name] = file(`${output}\n`);
+        return { output: "", ok: true };
+      }
+      if (input.includes("|")) {
+        const output = input.includes("ERROR") ? "ERROR backup missing" : input.includes("WARN") ? "WARN disk nearing limit" : "academy";
+        const target = input.match(/>\s*(\S+)$/);
+        if (target) {
+          const { parent, name } = this.parentAndName(target[1]);
+          if (parent && name) parent.children[name] = file(`${output}\n`);
+        }
+        return { output: target ? "" : output, ok: true };
+      }
+      return null;
+    }
+
+    commandTar(args) {
+      const option = args[0] || "";
+      if (option.includes("c") && option.includes("f") && args.length >= 3) {
+        const { parent, name } = this.parentAndName(args[1]);
+        if (!parent || !name || !this.getNode(args[2])) return { output: "tar: source or destination unavailable", ok: false };
+        parent.children[name] = file(`Archive of ${args[2]}\n`);
+        return { output: "", ok: true };
+      }
+      if (option.includes("t") && option.includes("f") && this.hasFile(args[1])) return { output: "training/\ntraining/commands.txt", ok: true };
+      if (option.includes("x") && option.includes("f") && this.hasFile(args[1])) return { output: "", ok: true };
+      return { output: "tar: use -czf, -tzf, or -xzf with an archive.", ok: false };
+    }
+
+    commandTextTool(tool, args) {
+      const path = args.find(arg => !arg.startsWith("-") && this.hasFile(arg));
+      const content = path ? this.getNode(path).content : "";
+      if (tool === "grep") {
+        const pattern = args.find(arg => !arg.startsWith("-") && arg !== path) || "";
+        return { output: content.split("\n").filter(line => line.includes(pattern)).join("\n"), ok: true };
+      }
+      if (tool === "head") return { output: content.split("\n").slice(0, 2).join("\n"), ok: true };
+      if (tool === "tail") return { output: content.split("\n").filter(Boolean).slice(-2).join("\n"), ok: true };
+      if (tool === "wc") return { output: `${content.split("\n").filter(Boolean).length} ${path || ""}`.trim(), ok: true };
+      if (tool === "cut") return { output: content.split("\n").filter(Boolean).map(line => line.split(",")[0]).join("\n"), ok: true };
+      if (tool === "sort") return { output: content.split("\n").filter(Boolean).sort().join("\n"), ok: true };
+      return { output: [...new Set(content.split("\n").filter(Boolean))].join("\n"), ok: true };
+    }
+
+    commandChmod(args) {
+      return args.length === 2 && args[0] === "+x" && this.hasFile(args[1])
+        ? { output: "", ok: true }
+        : { output: "chmod: use +x with an existing script.", ok: false };
     }
 
     commandPwd(args) {
@@ -437,6 +525,9 @@
           "  man, info        open training command documentation",
           "  cp, mv           copy or move a file",
           "  rm, rmdir        remove a file or an empty directory",
+          "  tar              create, inspect, or extract an archive",
+          "  grep, head, tail, wc, cut, sort, uniq  process text",
+          "  chmod            change script execution permission",
           "  clear            clear the terminal display",
           "  help             show this guide",
           ...lessonExamples

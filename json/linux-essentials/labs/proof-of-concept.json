@@ -547,6 +547,153 @@
       "fenrirTip": "Before removing anything, name the target, predict what will remain, and verify afterward.",
       "debrief": "You copied files without losing their sources, renamed files with mv, removed files with rm, and removed empty directories with rmdir. State-based grading accepted the result rather than requiring one rigid order.",
       "takeaway": "Preserve → cp. Relocate or rename → mv. Remove file → rm. Remove empty directory → rmdir."
+    },
+    {
+      "id": "linux-lab-08", "missionNumber": 8, "kingdom": "Kingdom II — Data and Automation", "title": "Pack the Archive",
+      "skill": "Create, inspect, and extract compressed archives", "goal": "Protect the training directory in a compressed archive and verify its contents.", "bigIdea": "An archive groups files into one transportable unit, while compression reduces the space that unit requires.", "objective": "3.1 Archiving Files on the Command Line", "difficulty": 2,
+      "briefing": "Training records must cross the mountain intact. Create a compressed archive, inspect it before trusting it, and practice extraction.",
+      "learn": [
+        { "command": "tar -czf training.tar.gz training", "badge": "Create", "explanation": "tar collects training; z applies gzip compression; f names the archive." },
+        { "command": "tar -tzf training.tar.gz", "badge": "Inspect", "explanation": "t lists archive contents without extracting them." },
+        { "command": "tar -xzf training.tar.gz", "badge": "Extract", "explanation": "x extracts the compressed archive." }
+      ],
+      "walkthrough": [
+        { "title": "Create the archive", "text": "Run tar -czf training.tar.gz training.", "command": "tar -czf training.tar.gz training" },
+        { "title": "Inspect before extraction", "text": "Run tar -tzf training.tar.gz and confirm training appears.", "command": "tar -tzf training.tar.gz" },
+        { "title": "Extract safely", "text": "Run tar -xzf training.tar.gz.", "command": "tar -xzf training.tar.gz" }
+      ],
+      "guidedPractice": {
+        "instructions": "Create training.tar.gz from training, inspect it, and extract it.", "steps": ["Create the archive.", "List its contents.", "Extract it."],
+        "helpExamples": ["tar -czf training.tar.gz training", "tar -tzf training.tar.gz", "tar -xzf training.tar.gz"],
+        "successFeedback": "Archive creation, inspection, and extraction complete.", "incorrectFeedback": "The archive workflow is incomplete.", "retryHint": "Use tar with c, then t, then x; keep z and f in each command.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/training.tar.gz" }, { "type": "command-input", "input": "tar -tzf training.tar.gz" }, { "type": "command-input", "input": "tar -xzf training.tar.gz" }]
+      },
+      "commanderChallenge": {
+        "instructions": "Create records.tar.gz from Documents, inspect it, and extract it.", "steps": ["Archive Documents.", "Inspect the archive.", "Extract it."],
+        "helpExamples": ["tar c creates", "tar t lists", "tar x extracts", "z uses gzip", "f names the archive"],
+        "hints": [{ "label": "Concept Hint", "text": "Create, inspect, then extract." }, { "label": "Recognition Hint", "text": "Use the same c/t/x pattern with records.tar.gz and Documents." }, { "label": "Command Reveal", "text": "Run tar -czf records.tar.gz Documents, tar -tzf records.tar.gz, and tar -xzf records.tar.gz." }],
+        "successFeedback": "Commander archive verified and extracted.", "incorrectFeedback": "The records archive workflow is incomplete.", "retryHint": "Create the named archive from Documents before listing and extracting it.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/records.tar.gz" }, { "type": "command-input", "input": "tar -tzf records.tar.gz" }, { "type": "command-input", "input": "tar -xzf records.tar.gz" }]
+      },
+      "correctFeedback": "You treated inspection as part of the archive workflow.", "incorrectFeedback": "Review create, list, and extract modes.", "fenrirTip": "Never trust a sealed pack until you inspect what it contains.", "debrief": "You created gzip-compressed tar archives, listed their contents, and extracted them.", "takeaway": "Create → c. Inspect → t. Extract → x. gzip → z. Archive name → f."
+    },
+    {
+      "id": "linux-lab-09", "missionNumber": 9, "kingdom": "Kingdom II — Data and Automation", "title": "Find the Signal",
+      "skill": "Search, sample, count, and extract useful text", "goal": "Turn logs and delimited data into concise evidence.", "bigIdea": "Text tools answer different questions: which lines match, which lines matter first or last, how many exist, and which fields are needed.", "objective": "3.2 Searching and Extracting Data from Files", "difficulty": 2,
+      "briefing": "The patrol log is noisy and the score roster contains more data than the Commander needs. Extract only the evidence that answers each question.",
+      "learn": [
+        { "command": "grep ERROR events.log", "badge": "Search", "explanation": "grep prints lines containing ERROR." },
+        { "command": "head events.log", "badge": "Beginning", "explanation": "head samples the start of a file; tail samples its end." },
+        { "command": "wc -l events.log", "badge": "Count", "explanation": "wc -l counts lines." },
+        { "command": "cut -d, -f1 scores.csv", "badge": "Extract field", "explanation": "cut uses comma as the delimiter and returns field one." }
+      ],
+      "walkthrough": [
+        { "title": "Find an error", "text": "Search the log for ERROR.", "command": "grep ERROR events.log" },
+        { "title": "Inspect both edges", "text": "Sample the beginning and end.", "command": "head events.log\ntail events.log" },
+        { "title": "Count and extract", "text": "Count log lines and extract score names.", "command": "wc -l events.log\ncut -d, -f1 scores.csv" }
+      ],
+      "guidedPractice": {
+        "instructions": "Find ERROR, inspect the first and last log entries, count lines, and extract score names.", "steps": ["Search ERROR.", "Run head.", "Run tail.", "Count lines.", "Extract CSV field one."],
+        "helpExamples": ["grep ERROR events.log", "head events.log", "tail events.log", "wc -l events.log", "cut -d, -f1 scores.csv"],
+        "successFeedback": "Text evidence extracted.", "incorrectFeedback": "One or more text checks are missing.", "retryHint": "Use grep, head, tail, wc -l, and cut.",
+        "goals": [{ "type": "command-input", "input": "grep ERROR events.log" }, { "type": "command-input", "input": "head events.log" }, { "type": "command-input", "input": "tail events.log" }, { "type": "command-input", "input": "wc -l events.log" }, { "type": "command-input", "input": "cut -d, -f1 scores.csv" }]
+      },
+      "commanderChallenge": {
+        "instructions": "Find WARN, inspect the log edges, count it, and extract the score names.", "steps": ["Search WARN.", "Inspect first and last.", "Count.", "Extract names."],
+        "helpExamples": ["grep searches", "head/tail sample", "wc counts", "cut selects fields"],
+        "hints": [{ "label": "Concept Hint", "text": "Use one tool per question." }, { "label": "Recognition Hint", "text": "Search WARN, sample both ends, count lines, then select CSV field one." }, { "label": "Command Reveal", "text": "Run grep WARN events.log, head events.log, tail events.log, wc -l events.log, and cut -d, -f1 scores.csv." }],
+        "successFeedback": "Commander evidence extracted.", "incorrectFeedback": "The requested evidence set is incomplete.", "retryHint": "Match each question to grep, head/tail, wc, or cut.",
+        "goals": [{ "type": "command-input", "input": "grep WARN events.log" }, { "type": "command-input", "input": "head events.log" }, { "type": "command-input", "input": "tail events.log" }, { "type": "command-input", "input": "wc -l events.log" }, { "type": "command-input", "input": "cut -d, -f1 scores.csv" }]
+      },
+      "correctFeedback": "You selected tools by the question each tool answers.", "incorrectFeedback": "Review search, sampling, counting, and field extraction.", "fenrirTip": "Do not read the whole forest when one track answers the question.", "debrief": "You searched logs, sampled file edges, counted lines, and extracted CSV fields.", "takeaway": "Match → grep. Edges → head/tail. Count → wc. Field → cut."
+    },
+    {
+      "id": "linux-lab-10", "missionNumber": 10, "kingdom": "Kingdom II — Data and Automation", "title": "Build the Pipeline",
+      "skill": "Connect commands with pipes and save output with redirection", "goal": "Filter command output and route the result to the screen or a file.", "bigIdea": "A pipeline lets one command's output become the next command's input, while redirection chooses where the final result goes.", "objective": "3.2 Searching and Extracting Data from Files", "difficulty": 3,
+      "briefing": "The Commander wants compact reports without temporary manual work. Connect tools so data flows directly from source to filter to destination.",
+      "learn": [
+        { "command": "grep INFO events.log | wc -l", "badge": "Pipe", "explanation": "| sends matching lines from grep into wc." },
+        { "command": "grep ERROR events.log > errors.txt", "badge": "Overwrite redirect", "explanation": "> saves output to a file, replacing prior contents." },
+        { "command": "grep WARN events.log | head", "badge": "Pipeline", "explanation": "The second command receives only the first command's output." }
+      ],
+      "walkthrough": [
+        { "title": "Connect two tools", "text": "Count matching INFO lines through a pipe.", "command": "grep INFO events.log | wc -l" },
+        { "title": "Save a result", "text": "Redirect ERROR lines into errors.txt.", "command": "grep ERROR events.log > errors.txt" },
+        { "title": "Verify the artifact", "text": "List errors.txt to confirm it exists.", "command": "ls errors.txt" }
+      ],
+      "guidedPractice": {
+        "instructions": "Count INFO lines through a pipe, save ERROR lines to errors.txt, and verify the file.", "steps": ["Build the counting pipeline.", "Redirect ERROR output.", "Verify errors.txt."],
+        "helpExamples": ["grep INFO events.log | wc -l", "grep ERROR events.log > errors.txt", "ls errors.txt"],
+        "successFeedback": "Pipeline and redirection complete.", "incorrectFeedback": "The pipeline or saved result is missing.", "retryHint": "Use | to connect commands and > to create errors.txt.",
+        "goals": [{ "type": "command-input", "input": "grep INFO events.log | wc -l" }, { "type": "file-exists", "path": "/home/hydra/errors.txt" }, { "type": "command-input", "input": "ls errors.txt" }]
+      },
+      "commanderChallenge": {
+        "instructions": "Send WARN lines through head, save them to warnings.txt, and verify the file.", "steps": ["Build a WARN pipeline.", "Redirect the final result.", "Verify warnings.txt."],
+        "helpExamples": ["| connects output to input", "> saves final output", "ls verifies"],
+        "hints": [{ "label": "Concept Hint", "text": "Search, sample, save, verify." }, { "label": "Recognition Hint", "text": "Connect grep WARN to head, then redirect." }, { "label": "Command Reveal", "text": "Run grep WARN events.log | head > warnings.txt, then ls warnings.txt." }],
+        "successFeedback": "Commander pipeline saved and verified.", "incorrectFeedback": "warnings.txt has not been produced and verified.", "retryHint": "Pipe grep into head before redirecting to warnings.txt.",
+        "goals": [{ "type": "command-input", "input": "grep WARN events.log | head > warnings.txt" }, { "type": "file-exists", "path": "/home/hydra/warnings.txt" }, { "type": "command-input", "input": "ls warnings.txt" }]
+      },
+      "correctFeedback": "You treated output as a stream that can be transformed and routed.", "incorrectFeedback": "Review pipes versus redirection.", "fenrirTip": "A pipe passes the trail onward; redirection chooses where the trail ends.", "debrief": "You connected commands and saved final output to files.", "takeaway": "Connect → |. Save/replace → >. Verify → ls."
+    },
+    {
+      "id": "linux-lab-11", "missionNumber": 11, "kingdom": "Kingdom II — Data and Automation", "title": "Your First Script",
+      "skill": "Create and run a simple shell script with an argument", "goal": "Build an executable script that prints a supplied mission name.", "bigIdea": "A script turns tested command steps into a reusable tool whose arguments supply changing input.", "objective": "3.3 Turning Commands into a Script", "difficulty": 3,
+      "briefing": "The same status message must be produced for different missions. Store the command in a script and let its first argument provide the changing name.",
+      "learn": [
+        { "command": "echo '#!/bin/sh' > patrol.sh", "badge": "Shebang", "explanation": "The shebang identifies the shell used to interpret the script." },
+        { "command": "echo 'echo $1' >> patrol.sh", "badge": "Argument", "explanation": "$1 represents the first argument supplied when the script runs." },
+        { "command": "chmod +x patrol.sh", "badge": "Executable", "explanation": "chmod +x permits the script to run directly." },
+        { "command": "./patrol.sh north", "badge": "Execute", "explanation": "./ selects the script in the current directory and north becomes $1." }
+      ],
+      "walkthrough": [
+        { "title": "Write the interpreter line", "text": "Create patrol.sh with a shebang.", "command": "echo '#!/bin/sh' > patrol.sh" },
+        { "title": "Add the command", "text": "Append an echo command that uses $1.", "command": "echo 'echo $1' >> patrol.sh" },
+        { "title": "Permit and run", "text": "Make it executable, then pass north.", "command": "chmod +x patrol.sh\n./patrol.sh north" }
+      ],
+      "guidedPractice": {
+        "instructions": "Create patrol.sh with a shebang and echo $1, make it executable, and run it with north.", "steps": ["Write shebang.", "Append echo $1.", "Run chmod +x.", "Execute with north."],
+        "helpExamples": ["echo '#!/bin/sh' > patrol.sh", "echo 'echo $1' >> patrol.sh", "chmod +x patrol.sh", "./patrol.sh north"],
+        "successFeedback": "First script created and executed.", "incorrectFeedback": "The script workflow is incomplete.", "retryHint": "Create, append, permit, and execute in that order.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/patrol.sh" }, { "type": "command-input", "input": "chmod +x patrol.sh" }, { "type": "command-input", "input": "./patrol.sh north" }]
+      },
+      "commanderChallenge": {
+        "instructions": "Create report.sh with a shebang and echo $1, make it executable, and run it with academy.", "steps": ["Create.", "Append.", "Permit.", "Execute."],
+        "helpExamples": ["$1 receives the first argument", "chmod +x permits direct execution", "./ runs a local script"],
+        "hints": [{ "label": "Concept Hint", "text": "Repeat the four-part script pattern with new names." }, { "label": "Recognition Hint", "text": "Use report.sh and pass academy as argument one." }, { "label": "Command Reveal", "text": "Run echo '#!/bin/sh' > report.sh, echo 'echo $1' >> report.sh, chmod +x report.sh, and ./report.sh academy." }],
+        "successFeedback": "Commander script executed with its argument.", "incorrectFeedback": "report.sh is not fully created and executed.", "retryHint": "Build both lines, permit execution, then pass academy.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/report.sh" }, { "type": "command-input", "input": "chmod +x report.sh" }, { "type": "command-input", "input": "./report.sh academy" }]
+      },
+      "correctFeedback": "You converted a command into a reusable argument-driven script.", "incorrectFeedback": "Review shebang, script body, permission, and execution.", "fenrirTip": "Automate only what you can explain step by step.", "debrief": "You created scripts, used $1, enabled execution, and supplied arguments.", "takeaway": "Interpreter → shebang. Input → $1. Permission → chmod +x. Run → ./script."
+    },
+    {
+      "id": "linux-lab-12", "missionNumber": 12, "kingdom": "Kingdom II — Data and Automation", "title": "Automate the Patrol",
+      "skill": "Use a loop in a repeatable shell script", "goal": "Create and run a script that repeats one action for multiple patrol names.", "bigIdea": "A loop expresses repetition once, reducing duplicated commands and inconsistent results.", "objective": "3.3 Turning Commands into a Script", "difficulty": 3,
+      "briefing": "Two patrol names must be processed the same way. Replace duplicated commands with a single loop that applies one action to each item.",
+      "learn": [
+        { "command": "for item in alpha beta; do echo $item; done", "badge": "Loop anatomy", "explanation": "for assigns each word to item; do/done contain the repeated action." },
+        { "command": "echo 'echo $item' >> loop.sh", "badge": "Loop body", "explanation": "The body uses the current loop value." },
+        { "command": "./loop.sh", "badge": "Repeat", "explanation": "Running the script produces the repeated outputs." }
+      ],
+      "walkthrough": [
+        { "title": "Create the script", "text": "Write a shebang to loop.sh.", "command": "echo '#!/bin/sh' > loop.sh" },
+        { "title": "Add the loop", "text": "Append the one-line for loop.", "command": "echo 'for item in alpha beta; do echo $item; done' >> loop.sh" },
+        { "title": "Run the automation", "text": "Permit and execute the script.", "command": "chmod +x loop.sh\n./loop.sh" }
+      ],
+      "guidedPractice": {
+        "instructions": "Create loop.sh, append the alpha/beta loop, make it executable, and run it.", "steps": ["Write shebang.", "Append loop.", "Permit execution.", "Run script."],
+        "helpExamples": ["echo '#!/bin/sh' > loop.sh", "echo 'for item in alpha beta; do echo $item; done' >> loop.sh", "chmod +x loop.sh", "./loop.sh"],
+        "successFeedback": "Loop script executed.", "incorrectFeedback": "The loop script workflow is incomplete.", "retryHint": "Create the file, append the loop, permit it, then run it.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/loop.sh" }, { "type": "command-input", "input": "chmod +x loop.sh" }, { "type": "command-input", "input": "./loop.sh" }]
+      },
+      "commanderChallenge": {
+        "instructions": "Create sweep.sh with a north/south loop, make it executable, and run it.", "steps": ["Write shebang.", "Append north/south loop.", "Permit.", "Run."],
+        "helpExamples": ["for NAME in VALUES; do ACTION; done", "chmod +x", "./script"],
+        "hints": [{ "label": "Concept Hint", "text": "Reuse the loop pattern with two different values." }, { "label": "Recognition Hint", "text": "The values are north and south; the variable is zone." }, { "label": "Command Reveal", "text": "Run echo '#!/bin/sh' > sweep.sh, echo 'for zone in north south; do echo $zone; done' >> sweep.sh, chmod +x sweep.sh, and ./sweep.sh." }],
+        "successFeedback": "Commander patrol loop executed.", "incorrectFeedback": "sweep.sh is not fully created and run.", "retryHint": "Build the loop script, permit it, and execute it.",
+        "goals": [{ "type": "file-exists", "path": "/home/hydra/sweep.sh" }, { "type": "command-input", "input": "chmod +x sweep.sh" }, { "type": "command-input", "input": "./sweep.sh" }]
+      },
+      "correctFeedback": "You replaced repeated commands with a single controlled loop.", "incorrectFeedback": "Review the for/in/do/done structure.", "fenrirTip": "When only the target changes, a loop should carry the repeated work.", "debrief": "You stored loop logic in executable scripts and applied one command consistently to multiple values.", "takeaway": "Values → in. Repeated action → do/done. Current value → $variable."
     }
   ]
 }
