@@ -195,11 +195,21 @@
         sort: () => this.commandTextTool("sort", tokens),
         uniq: () => this.commandTextTool("uniq", tokens),
         chmod: () => this.commandChmod(tokens),
+        chown: () => this.commandOwnership("chown", tokens),
+        chgrp: () => this.commandOwnership("chgrp", tokens),
+        ln: () => this.commandLink(tokens),
         cat: () => this.commandCat(tokens),
         uname: () => this.commandUname(tokens),
         which: () => this.commandWhich(tokens),
         tty: () => this.commandTty(tokens),
         whoami: () => this.commandWhoami(tokens),
+        id: () => this.commandId(tokens),
+        who: () => ({ output: "hydra pts/0 2026-07-27 09:00", ok: true }),
+        w: () => ({ output: "USER TTY LOGIN IDLE WHAT\nhydra pts/0 09:00 0.00s bash", ok: true }),
+        last: () => ({ output: "hydra pts/0 192.0.2.10 Mon Jul 27 still logged in", ok: true }),
+        groupadd: () => this.commandAccountTool("groupadd", tokens),
+        useradd: () => this.commandAccountTool("useradd", tokens),
+        passwd: () => this.commandAccountTool("passwd", tokens),
         free: () => ({ output: "Mem: 4096 1024 3072", ok: true }),
         ps: () => ({ output: "PID TTY CMD\n1 ? init\n42 pts/0 bash", ok: true }),
         top: () => ({ output: "top - Hydra Linux\nTasks: 2 total\nMem: 4096 total", ok: true }),
@@ -310,9 +320,25 @@
     }
 
     commandChmod(args) {
-      return args.length === 2 && args[0] === "+x" && this.hasFile(args[1])
+      return args.length === 2 && /^(\+x|\+t|[0-7]{3}|[ugoa]*[+-][rwx]+)$/.test(args[0]) && Boolean(this.getNode(args[1]))
         ? { output: "", ok: true }
-        : { output: "chmod: use +x with an existing script.", ok: false };
+        : { output: "chmod: provide a valid mode and an existing target.", ok: false };
+    }
+
+    commandOwnership(command, args) {
+      return args.length === 2 && Boolean(this.getNode(args[1]))
+        ? { output: "", ok: true }
+        : { output: `${command}: provide an owner or group and an existing target.`, ok: false };
+    }
+
+    commandLink(args) {
+      if (args.length !== 3 || args[0] !== "-s" || !this.getNode(args[1])) {
+        return { output: "ln: use -s with an existing source and a new link name.", ok: false };
+      }
+      const { parent, name } = this.parentAndName(args[2]);
+      if (!parent || !name || parent.children[name]) return { output: "ln: link destination is unavailable.", ok: false };
+      parent.children[name] = file(`symbolic link to ${this.normalizePath(args[1])}\n`);
+      return { output: "", ok: true };
     }
 
     commandCat(args) {
@@ -340,6 +366,19 @@
       return args.length ? { output: "whoami: no arguments are used.", ok: false } : { output: this.username, ok: true };
     }
 
+    commandId(args) {
+      if (args.length > 1) return { output: "id: provide at most one user.", ok: false };
+      const user = args[0] || this.username;
+      const uid = user === "hydra" ? 1000 : user === "scout" ? 1001 : 1002;
+      return { output: `uid=${uid}(${user}) gid=${uid}(${user}) groups=${uid}(${user}),27(sudo)`, ok: true };
+    }
+
+    commandAccountTool(command, args) {
+      if (!args.length) return { output: `${command}: provide an account or group name.`, ok: false };
+      if (command === "passwd") return { output: "Password updated successfully.", ok: true };
+      return { output: "", ok: true };
+    }
+
     commandIp(args) {
       const value = args.join(" ");
       if (value === "addr" || value === "addr show") return { output: "eth0: inet 192.0.2.10/24", ok: true };
@@ -363,8 +402,8 @@
     commandLs(args) {
       const options = args.filter(item => item.startsWith("-"));
       const paths = args.filter(item => !item.startsWith("-"));
-      if (options.some(option => !/^-[alR]+$/.test(option))) {
-        return { output: "ls: supported lesson options are -a, -l, and -R.", ok: false };
+      if (options.some(option => !/^-[adlR]+$/.test(option))) {
+        return { output: "ls: supported lesson options are -a, -d, -l, and -R.", ok: false };
       }
       if (paths.length > 1) return { output: "ls: use one location at a time in this lesson.", ok: false };
       const targetPath = paths[0] || ".";
@@ -382,6 +421,7 @@
       const node = this.getNode(targetPath);
       if (!node) return { output: `ls: cannot access '${targetPath}': No such file or directory`, ok: false };
       if (node.type === FILE) return { output: targetPath.split("/").pop(), ok: true };
+      if (options.some(option => option.includes("d"))) return { output: targetPath.split("/").pop() || "/", ok: true };
 
       const showHidden = options.some(option => option.includes("a"));
       const long = options.some(option => option.includes("l"));
