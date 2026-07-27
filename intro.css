@@ -26,6 +26,43 @@ body {
     );
 }
 
+.intro-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.intro-sound-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 2px solid #00eaff;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.82);
+    color: #00eaff;
+    font: inherit;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.65);
+}
+
+.intro-sound-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
 /* Story Scenes */
 .story {
     position: absolute;

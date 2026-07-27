@@ -1,29 +1,39 @@
 const scenes = document.querySelectorAll(".story");
 let currentScene = 0;
+let sequenceStarted = false;
 
 const music = document.getElementById("introMusic");
+const soundButton = document.getElementById("enableIntroSound");
 
-document.addEventListener("click", startMusicOnce);
-document.addEventListener("keydown", startMusicOnce);
-
-function startMusicOnce() {
-  if (music) {
-    music.volume = 0.5;
-    music.play();
-  }
-
+function startSequence() {
+  if (sequenceStarted) return;
+  sequenceStarted = true;
   setTimeout(nextScene, 6000);
-
-  document.removeEventListener("click", startMusicOnce);
-  document.removeEventListener("keydown", startMusicOnce);
 }
+
+async function startMusic() {
+  if (!music) return;
+  music.volume = 0.5;
+  try {
+    await music.play();
+    soundButton.classList.add("hidden");
+  } catch {
+    soundButton.classList.remove("hidden");
+  }
+}
+
+soundButton.addEventListener("click", startMusic);
+document.addEventListener("keydown", startMusic, { once: true });
+
+startSequence();
+startMusic();
 
 function nextScene() {
   scenes[currentScene].classList.remove("active");
   const nextSceneIndex = currentScene + 1;
 
   if (nextSceneIndex >= scenes.length) {
-    window.location.href = "index.html";
+    window.location.href = "index.html?entered=1";
     return;
   }
 
@@ -37,7 +47,7 @@ function nextScene() {
       setTimeout(() => {
         scenes[currentScene].classList.remove("active");
         setTimeout(() => {
-          window.location.href = "index.html";
+          window.location.href = "index.html?entered=1";
         }, 1000);
       }, 5000);
     }, 1000);
@@ -48,5 +58,3 @@ function nextScene() {
   scenes[currentScene].classList.add("active");
   setTimeout(nextScene, 7000); // normal lines
 }
-
-// setTimeout(nextScene, 6000);
