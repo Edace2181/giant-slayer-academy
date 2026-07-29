@@ -30,7 +30,7 @@
       domains: { "1": "Linux Community and Open Source", "2": "Finding Your Way on Linux", "3": "Power of the Command Line", "4": "The Linux Operating System", "5": "Security and File Permissions" }
     },
     "hydra-aws-cloud-practitioner-progress-v1": {
-      name: "AWS Cloud Practitioner", campaign: "aws-cloud-practitioner-campaign.html", totalQuestions: 0,
+      name: "AWS Cloud Practitioner", campaign: "aws-cloud-practitioner-campaign.html", totalQuestions: 261,
       objectiveCounts: [4, 4, 4, 4, 3],
       domains: { "1": "Cloud Concepts", "2": "Security and Compliance", "3": "Cloud Technology and Services", "4": "Billing, Pricing, and Support" }
     }

@@ -48,6 +48,7 @@
     loading: document.getElementById("pbqLoading"),
     error: document.getElementById("pbqError"),
     errorMessage: document.getElementById("pbqErrorMessage"),
+    errorReturn: document.getElementById("pbqErrorReturn"),
     application: document.getElementById("pbqApplication"),
     certification: document.getElementById("pbqCertification"),
     missionNumber: document.getElementById("pbqMissionNumber"),
@@ -1005,6 +1006,8 @@
         elements.errorMessage.textContent = "This PBQ Arena certification is not enabled in Phase 1.";
         return;
       }
+      elements.errorReturn.href = configuration.returnHref;
+      elements.errorReturn.textContent = `← ${configuration.returnLabel}`;
 
       const response = await fetch(configuration.bank, { cache: "no-store" });
       if (!response.ok) throw new Error(`Unable to load PBQ bank (${response.status}).`);
