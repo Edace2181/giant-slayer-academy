@@ -517,7 +517,7 @@ AWS-specific labs or guided scenarios
 Immutable release snapshot under Releases/
 Updated AWS documentation reflecting current Git/GitHub status
 Story Mode
-Story Mode is the active local planning milestone. It has not been implemented, committed, pushed, or deployed.
+Story Mode is the active local planning milestone. Its blueprint exists only in the local working tree and is not part of the deployed Production Baseline. Story Mode has not been implemented, committed, pushed, or deployed. Production authorization has not been granted beyond planning and vertical-slice preparation.
 The blueprint defines:
 Player-facing Giant Slayer universe
 Certification kingdoms
