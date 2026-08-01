@@ -87,6 +87,18 @@
     display: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 #main-content {
     height: 100vh;
     display: flex;
@@ -122,9 +134,9 @@ Hydra Image
 ===============================*/
 
 .hydra-image {
-    width: 85vw;
-    max-width: 1100px;
-    max-height: 60vh;
+    width: 92vw;
+    max-width: 1200px;
+    max-height: 65vh;
     height: auto;
     object-fit: contain;
     display: block;
@@ -226,20 +238,77 @@ margin-top: 0;
     text-align: center;
 }
 
+body[data-certification="aplus-core1"],
+body[data-certification="A+ Core 1"] { --cert-icon-image: url("assets/aplus-core1-kingdom-icon.png"); }
+body[data-certification="aplus-core2"],
+body[data-certification="A+ Core 2"] { --cert-icon-image: url("assets/aplus-core2-kingdom-icon.png"); }
+body[data-certification="network-plus"],
+body[data-certification="Network+"] { --cert-icon-image: url("assets/network-plus-kingdom-icon.png"); }
+body[data-certification="security-plus"],
+body[data-certification="Security+"] { --cert-icon-image: url("assets/security-plus-kingdom-icon.png"); }
+body[data-certification="linux-essentials"] { --cert-icon-image: url("assets/linux-essentials-kingdom-icon.png"); }
+body[data-certification="aws-cloud-practitioner"] { --cert-icon-image: url("assets/aws-cloud-kingdom-icon.png"); }
+
+body.certification-cabinet[data-certification="aplus-core1"] { --kingdom-accent: #00eaff; }
+body.certification-cabinet[data-certification="aplus-core2"] { --kingdom-accent: #22d3ee; }
+body.certification-cabinet[data-certification="network-plus"] { --kingdom-accent: #8b5cf6; }
+body.certification-cabinet[data-certification="security-plus"] { --kingdom-accent: #c65cff; }
+body.certification-cabinet[data-certification="linux-essentials"] { --kingdom-accent: #39ff88; }
+body.certification-cabinet[data-certification="aws-cloud-practitioner"] { --kingdom-accent: #ff8a00; }
+
 .certification-cabinet-header {
+    position: relative;
+    overflow: hidden;
     margin-bottom: 26px;
     padding: clamp(20px, 5vw, 34px);
-    border: 2px solid #00eaff;
+    border: 2px solid #f3b33d;
     border-radius: 14px;
-    background: rgba(1, 12, 24, 0.9);
-    box-shadow: 0 0 22px rgba(0, 234, 255, 0.38);
+    background:
+        radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--kingdom-accent, #00eaff) 14%, transparent), transparent 52%),
+        linear-gradient(180deg, rgba(48, 25, 10, 0.96), rgba(9, 6, 12, 0.98));
+    box-shadow:
+        inset 0 0 0 2px rgba(255, 220, 130, 0.12),
+        inset 0 0 24px rgba(255, 128, 0, 0.1),
+        0 0 16px rgba(243, 179, 61, 0.48),
+        0 0 28px color-mix(in srgb, var(--kingdom-accent, #00eaff) 22%, transparent);
+}
+
+.certification-cabinet-header::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(255, 221, 137, 0.3);
+    border-radius: 9px;
+    pointer-events: none;
+}
+
+.certification-cabinet-header .campaign-kicker {
+    color: #ffd76a;
+    text-shadow: 0 0 8px rgba(255, 156, 32, 0.72);
 }
 
 .certification-cabinet-header h1 {
     margin: 12px 0 4px;
-    color: #00eaff;
+    color: var(--kingdom-accent, #00eaff);
     font-size: clamp(1.8rem, 6vw, 2.8rem);
-    text-shadow: 0 0 12px #00eaff;
+    text-shadow:
+        0 0 10px var(--kingdom-accent, #00eaff),
+        0 0 22px color-mix(in srgb, var(--kingdom-accent, #00eaff) 55%, transparent);
+}
+
+body.certification-cabinet[data-certification] .certification-cabinet-header h1::before {
+    content: "";
+    display: inline-block;
+    width: 3.4rem;
+    height: 3.4rem;
+    margin-right: 10px;
+    background: var(--cert-icon-image) center / contain no-repeat;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 8px var(--kingdom-accent, #00eaff));
+}
+
+.certification-cabinet-header .engine-credit {
+    color: #f4e6c0;
 }
 
 .certification-cabinet-header p:last-child {
@@ -256,9 +325,13 @@ margin-top: 0;
 
 body[data-certification]:not(.certification-cabinet)::before {
     display: block;
-    padding: 9px 14px;
+    padding: 9px 14px 9px 46px;
     border-bottom: 1px solid rgba(0, 234, 255, 0.7);
-    background: rgba(1, 8, 20, 0.94);
+    background-color: rgba(1, 8, 20, 0.94);
+    background-image: var(--cert-icon-image);
+    background-position: 14px center;
+    background-repeat: no-repeat;
+    background-size: 26px 26px;
     color: #aeefff;
     font-size: 0.76rem;
     font-weight: bold;
@@ -270,15 +343,45 @@ body[data-certification]:not(.certification-cabinet)::before {
 }
 
 body[data-certification="aplus-core1"]:not(.certification-cabinet)::before,
-body[data-certification="A+ Core 1"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · 🖥️ A+ CORE 1"; }
+body[data-certification="A+ Core 1"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · A+ CORE 1"; }
 body[data-certification="aplus-core2"]:not(.certification-cabinet)::before,
-body[data-certification="A+ Core 2"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · 🛠️ A+ CORE 2"; }
+body[data-certification="A+ Core 2"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · A+ CORE 2"; }
 body[data-certification="network-plus"]:not(.certification-cabinet)::before,
-body[data-certification="Network+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · 🌐 NETWORK+"; }
+body[data-certification="Network+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · NETWORK+"; }
 body[data-certification="security-plus"]:not(.certification-cabinet)::before,
-body[data-certification="Security+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · 🛡️ SECURITY+"; }
-body[data-certification="linux-essentials"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · 🐧 LINUX ESSENTIALS"; }
-body[data-certification="aws-cloud-practitioner"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · ☁️ AWS CLOUD PRACTITIONER"; }
+body[data-certification="Security+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · SECURITY+"; }
+body[data-certification="linux-essentials"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · LINUX ESSENTIALS"; }
+body[data-certification="aws-cloud-practitioner"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · AWS CLOUD PRACTITIONER"; }
+
+.games-links .certification-entry::before {
+    content: "";
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+.games-links a[href="aplus-core1.html"]::before { background-image: url("assets/aplus-core1-kingdom-icon.png"); }
+.games-links a[href="aplus-core2.html"]::before { background-image: url("assets/aplus-core2-kingdom-icon.png"); }
+.games-links a[href="network-plus.html"]::before { background-image: url("assets/network-plus-kingdom-icon.png"); }
+.games-links a[href="security-plus.html"]::before { background-image: url("assets/security-plus-kingdom-icon.png"); }
+.games-links a[href="linux-essentials.html"]::before { background-image: url("assets/linux-essentials-kingdom-icon.png"); }
+.games-links a[href="aws-cloud-practitioner.html"]::before { background-image: url("assets/aws-cloud-kingdom-icon.png"); }
+
+.certification-campaign-title::before {
+    content: "";
+    display: inline-block;
+    width: clamp(3rem, 7vw, 4.5rem);
+    height: clamp(3rem, 7vw, 4.5rem);
+    margin-right: 12px;
+    background: var(--cert-icon-image) center / contain no-repeat;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 10px currentColor);
+}
 
 .command-center-title-line {
     color: #ffd700;
@@ -1175,12 +1278,12 @@ HYDRA QUIZ
     box-shadow: 0 0 20px rgba(0, 234, 255, 0.24);
 }
 
-.dashboard-campaign-card:nth-child(1) { --cert-accent: #00eaff; }
-.dashboard-campaign-card:nth-child(2) { --cert-accent: #22d3ee; }
-.dashboard-campaign-card:nth-child(3) { --cert-accent: #8b5cf6; }
-.dashboard-campaign-card:nth-child(4) { --cert-accent: #c65cff; }
-.dashboard-campaign-card:nth-child(5) { --cert-accent: #00eaff; }
-.dashboard-campaign-card:nth-child(6) { --cert-accent: #ff8a00; }
+.dashboard-campaign-card:nth-child(1) { --cert-accent: #00eaff; --cert-icon-image: url("assets/aplus-core1-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(2) { --cert-accent: #22d3ee; --cert-icon-image: url("assets/aplus-core2-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(3) { --cert-accent: #8b5cf6; --cert-icon-image: url("assets/network-plus-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(4) { --cert-accent: #c65cff; --cert-icon-image: url("assets/security-plus-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(5) { --cert-accent: #00eaff; --cert-icon-image: url("assets/linux-essentials-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(6) { --cert-accent: #ff8a00; --cert-icon-image: url("assets/aws-cloud-kingdom-icon.png"); }
 
 .dashboard-campaign-card {
     border-color: var(--cert-accent, #00eaff);
@@ -1209,24 +1312,15 @@ HYDRA QUIZ
     margin: 4px 0 0;
 }
 
-.dashboard-campaign-card:nth-child(1) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(1) .dashboard-enter::before { content: "🖥️ "; }
-.dashboard-campaign-card:nth-child(2) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(2) .dashboard-enter::before { content: "🛠️ "; }
-.dashboard-campaign-card:nth-child(3) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(3) .dashboard-enter::before { content: "🌐 "; }
-.dashboard-campaign-card:nth-child(4) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(4) .dashboard-enter::before { content: "🛡️ "; }
-.dashboard-campaign-card:nth-child(5) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(5) .dashboard-enter::before { content: "🐧 "; }
-.dashboard-campaign-card:nth-child(6) .dashboard-card-header h3::before,
-.dashboard-campaign-card:nth-child(6) .dashboard-enter::before { content: "☁️ "; }
-
-.dashboard-card-header h3::before {
+.dashboard-card-header h3::before,
+.dashboard-enter::before {
+    content: "";
     display: inline-block;
+    width: 3.4rem;
+    height: 3.4rem;
+    flex: 0 0 auto;
     margin-right: 10px;
-    font-size: 2.35rem;
-    line-height: 1;
+    background: var(--cert-icon-image) center / contain no-repeat;
     vertical-align: middle;
     filter: drop-shadow(0 0 8px var(--cert-accent, #00eaff));
 }
@@ -1351,6 +1445,15 @@ HYDRA QUIZ
 .academy-metrics .dashboard-metric:nth-child(7) span::before { content: "🏆 "; }
 .academy-metrics .dashboard-metric:nth-child(8) span::before { content: "👑 "; }
 
+.academy-metrics .dashboard-metric span::before {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 1.65rem;
+    line-height: 1;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.42));
+}
+
 .dashboard-metric strong {
     color: #ffd700;
     font-size: 1.05rem;
@@ -1402,9 +1505,9 @@ HYDRA QUIZ
 }
 
 .dashboard-enter::before {
+    width: 2.75rem;
+    height: 2.75rem;
     margin-right: 10px;
-    font-size: 2rem;
-    line-height: 1;
     filter: drop-shadow(0 0 7px var(--cert-accent, #00eaff));
 }
 
@@ -1499,6 +1602,11 @@ HYDRA QUIZ
 
     .dashboard-metrics .dashboard-metric::before {
         font-size: 2.15rem;
+    }
+
+    .academy-metrics .dashboard-metric span::before {
+        margin-right: 4px;
+        font-size: 1.45rem;
     }
 
     .dashboard-enter {
