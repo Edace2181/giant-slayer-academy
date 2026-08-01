@@ -1121,29 +1121,31 @@ HYDRA QUIZ
 
 @media (max-width: 520px) {
     .command-center-hero {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "copy copy"
-            "warrior giant";
-        gap: 8px 18px;
-        align-items: end;
+        position: relative;
+        display: block;
+        min-height: 0;
+        margin-bottom: 18px;
     }
 
     .command-center-character {
-        max-width: 105px;
-        max-height: 135px;
+        position: absolute;
+        bottom: 0;
+        width: 64px;
+        height: 92px;
+        object-fit: contain;
+        pointer-events: none;
     }
 
     .command-center-hero-copy {
-        grid-area: copy;
+        min-height: 0;
     }
 
     .command-center-warrior {
-        grid-area: warrior;
+        left: 0;
     }
 
     .command-center-giant {
-        grid-area: giant;
+        right: 0;
     }
 
     .command-center-hero .campaign-kicker {
@@ -1157,6 +1159,11 @@ HYDRA QUIZ
     .command-center-hero .engine-credit,
     .command-center-hero .tagline {
         font-size: 0.72rem;
+    }
+
+    .command-center-hero .tagline {
+        min-height: 38px;
+        padding: 0 68px;
     }
 }
 
