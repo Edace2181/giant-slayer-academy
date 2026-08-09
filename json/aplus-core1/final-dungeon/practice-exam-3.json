@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Laptop display cable",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with laptop display cable. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A laptop display, webcam, and built-in microphone all disconnect when the lid is moved through a certain angle. The laptop continues running and an external monitor remains stable. Which component should a technician inspect FIRST?",
     "choices": [
-      "Replace the device system board before testing",
-      "Reseat or replace the hinge-area display cable",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "The system memory module",
+      "The display assembly cable routed through the hinge",
+      "The external monitor power supply",
+      "The wireless antenna in the base"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on laptop display cable. Reseat or replace the hinge-area display cable resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Several lid-mounted devices failing at the same hinge angle points to their shared cable bundle being pinched, loose, or damaged where it passes through the hinge. The stable external display confirms that the graphics subsystem is still operating."
   },
   {
     "id": "A1201-PE3-002",
@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Swollen mobile battery",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving swollen mobile battery. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "During an inventory inspection, a technician notices that a stored tablet has a bowed rear cover and its battery pouch is visibly expanded. What is the safest next action?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Shut down and isolate the device",
-      "Disable every wireless interface"
+      "Press the cover flat and run a battery calibration",
+      "Puncture the pouch outdoors to release the pressure",
+      "Power off the tablet, isolate it from use, and follow approved swollen-battery disposal procedures",
+      "Charge the tablet fully before evaluating battery health"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on swollen mobile battery. Shut down and isolate the device resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A swollen lithium-ion battery is a fire and chemical hazard. The device should be powered down, isolated, and handled under the organization’s hazardous-battery procedure without pressing, charging, or puncturing the cell."
   },
   {
     "id": "A1201-PE3-003",
@@ -37,15 +37,15 @@
     "objective": "1.1",
     "blueprint": "Laptop memory",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to laptop memory. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A compatible SO-DIMM was added to a laptop, but firmware reports only the original amount of memory. Which action should the technician perform FIRST?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface",
-      "Fit a compatible SODIMM"
+      "Power down the laptop and reseat the new SO-DIMM",
+      "Replace the laptop display cable",
+      "Format the internal storage drive",
+      "Disable the wireless adapter"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on laptop memory. Fit a compatible SODIMM resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "A newly installed, compatible memory module that is not detected is most commonly not fully seated. Reseating it is the appropriate first hardware check before replacing parts."
   },
   {
     "id": "A1201-PE3-004",
@@ -53,15 +53,15 @@
     "objective": "1.1",
     "blueprint": "Laptop storage",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for laptop storage is discovered. What should be implemented while preserving the user's data?",
+    "question": "A field laptop has only a 2.5-inch SATA drive bay and no M.2 slot. Its hard drive is slow, noisy, and nearly full. The user needs a faster, quieter replacement without changing the motherboard. Which upgrade is BEST?",
     "choices": [
-      "Fit an M.2 NVMe drive",
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "A PCIe add-in NVMe card",
+      "A 3.5-inch 15,000-rpm SAS drive",
+      "A second SO-DIMM used as permanent storage",
+      "A higher-capacity 2.5-inch SATA SSD"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on laptop storage. Fit an M.2 NVMe drive resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "A 2.5-inch SATA SSD matches the existing bay and interface while providing better speed, silence, and capacity. The other options do not fit or do not provide compatible laptop storage."
   },
   {
     "id": "A1201-PE3-005",
@@ -69,15 +69,15 @@
     "objective": "1.2",
     "blueprint": "USB-C docking",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to usb-c docking. Which response addresses the root cause while keeping other users online?",
+    "question": "A laptop USB-C port supports data and charging but not DisplayPort Alt Mode or Thunderbolt. A user needs to attach two office monitors through one dock. Which solution is MOST appropriate?",
     "choices": [
-      "Replace the device system board before testing",
-      "Deploy a USB-C dock with power delivery",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "Use a USB graphics dock that provides DisplayLink-compatible video output",
+      "Use a passive USB-C-to-HDMI cable",
+      "Enable DisplayPort Alt Mode in Windows power settings",
+      "Connect a Thunderbolt-only dock and install an Ethernet driver"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on usb-c docking. Deploy a USB-C dock with power delivery resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "A passive video adapter requires native video capability from the USB-C port. A USB graphics dock generates display output over ordinary USB data, so it can support monitors when Alt Mode and Thunderbolt are unavailable."
   },
   {
     "id": "A1201-PE3-006",
@@ -85,15 +85,15 @@
     "objective": "1.2",
     "blueprint": "Active stylus",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for active stylus. Which recommendation is BEST without weakening security controls?",
+    "question": "After a tablet operating-system reload, finger touch works and an active stylus pairs successfully, but the pen produces no ink in any application. The stylus works on an identical tablet. What should the technician do NEXT?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Pair a pressure-sensitive active stylus",
-      "Disable every wireless interface"
+      "Install the tablet manufacturer’s digitizer driver",
+      "Replace the tablet battery",
+      "Disable Bluetooth on the tablet",
+      "Change the wireless access point channel"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on active stylus. Pair a pressure-sensitive active stylus resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Finger touch and successful pairing show that the screen and stylus radio are functioning. The missing pen input after an OS reload indicates that the active digitizer driver is absent or incorrect."
   },
   {
     "id": "A1201-PE3-007",
@@ -101,15 +101,15 @@
     "objective": "1.2",
     "blueprint": "Mobile hotspot",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to mobile hotspot. What should the technician do FIRST before escalating to a vendor?",
+    "question": "At a crowded conference, a technician needs a stable Internet connection for one laptop using a company phone. The Wi-Fi bands are heavily congested, and policy permits a wired phone connection. Which method is BEST?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface",
-      "Turn on the phone's hotspot"
+      "Create an open Wi-Fi hotspot",
+      "Connect the phone by USB and enable USB tethering",
+      "Pair the devices only for audio over Bluetooth",
+      "Enable airplane mode on both devices"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on mobile hotspot. Turn on the phone's hotspot resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "USB tethering avoids congested wireless channels, provides a direct link, and can power the phone while it supplies cellular Internet access. An open hotspot adds exposure and still uses the congested spectrum."
   },
   {
     "id": "A1201-PE3-008",
@@ -117,15 +117,15 @@
     "objective": "1.2",
     "blueprint": "Mobile accessories",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with mobile accessories. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A warehouse tablet has one USB-C port. During a full shift it must remain charged while using a wired barcode scanner and Ethernet, and the tablet supports USB-C Power Delivery. Which accessory configuration BEST meets all requirements?",
     "choices": [
-      "Deploy the supported USB-C adapter",
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "A passive USB-C headphone adapter",
+      "A battery-only case with no data connection",
+      "A USB-A gender adapter connected directly to the scanner",
+      "A powered USB-C dock with Ethernet, USB data ports, and pass-through Power Delivery"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on mobile accessories. Deploy the supported USB-C adapter resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "The powered dock combines charging, Ethernet, and USB peripheral connectivity through the single port. Passive or single-purpose adapters cannot meet the simultaneous power and data requirements."
   },
   {
     "id": "A1201-PE3-009",
@@ -133,15 +133,15 @@
     "objective": "1.3",
     "blueprint": "Cloud synchronization",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for cloud synchronization. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A manager sees every new calendar event twice on a phone. Investigation shows that the same corporate calendar is synchronized through both the native account and a second calendar application. What is the BEST correction?",
     "choices": [
-      "Replace the device system board before testing",
-      "Turn on account-based cloud sync",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "Disable calendar synchronization in one of the two account paths",
+      "Factory-reset the phone without backing it up",
+      "Turn off screen rotation",
+      "Replace the phone’s cellular SIM"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on cloud synchronization. Turn on account-based cloud sync resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Two synchronization paths are importing the same records. Keeping one authoritative calendar sync eliminates the duplicate entries without destroying unrelated data or replacing hardware."
   },
   {
     "id": "A1201-PE3-010",
@@ -149,15 +149,15 @@
     "objective": "1.3",
     "blueprint": "Remote wipe",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving remote wipe. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "An employee leaves a company that uses personally owned phones with a managed work profile. Security must remove company email and documents without deleting personal photos or applications. Which action is BEST?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Enroll the device in MDM",
-      "Disable every wireless interface"
+      "Send a full-device factory reset",
+      "Issue a selective enterprise wipe to the managed work profile",
+      "Disable only the phone’s screen lock",
+      "Delete the user from the public cellular network"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on remote wipe. Enroll the device in MDM resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "A selective wipe removes the organization-controlled container while preserving personal content. A full wipe is unnecessarily destructive for a properly separated BYOD work profile."
   },
   {
     "id": "A1201-PE3-011",
@@ -165,15 +165,15 @@
     "objective": "1.3",
     "blueprint": "Mobile email",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with mobile email. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A phone can send company email but has stopped receiving new messages. Webmail works, and the account password is valid. Which setting should be checked FIRST?",
     "choices": [
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface",
-      "Repair the outgoing SMTP settings"
+      "The incoming mail or synchronization server settings",
+      "The screen brightness level",
+      "The camera resolution",
+      "The Bluetooth device name"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on mobile email. Repair the outgoing SMTP settings resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Sending confirms that the outgoing path and credentials work. Failure to receive points to the incoming IMAP, POP3, or Exchange synchronization configuration."
   },
   {
     "id": "A1201-PE3-012",
@@ -181,15 +181,15 @@
     "objective": "1.3",
     "blueprint": "Location services",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving location services. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "A navigation application reports that it cannot calculate the user’s current position, and the operating system shows that device location is turned off. Which setting should be enabled?",
     "choices": [
-      "Grant the application location permission",
-      "Replace the device system board before testing",
-      "Erase the device and create a local-only account",
-      "Disable every wireless interface"
+      "Near-field communication",
+      "Airplane mode",
+      "Location services",
+      "Screen mirroring"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on location services. Grant the application location permission resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Navigation applications require the operating system’s location services to use GPS and supporting location sources. The other settings do not provide geographic position."
   },
   {
     "id": "A1201-PE3-013",
@@ -197,15 +197,15 @@
     "objective": "2.1",
     "blueprint": "HTTPS access",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to https access. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A firewall log shows a workstation successfully establishing an encrypted web session to a customer portal on TCP port 443. Which protocol is being used?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Allow TCP port 443",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "HTTP",
+      "HTTPS",
+      "FTP",
+      "Telnet"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on https access. Allow TCP port 443 resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "HTTPS is encrypted web traffic that normally uses TCP port 443. Standard HTTP commonly uses port 80, while FTP and Telnet provide different services."
   },
   {
     "id": "A1201-PE3-014",
@@ -213,15 +213,15 @@
     "objective": "2.1",
     "blueprint": "Secure remote shell",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for secure remote shell is discovered. What should be implemented while preserving the user's data?",
+    "question": "A Linux server no longer permits password logins. An administrator has been given an approved private key and must open an encrypted command-line session from a support laptop. Which connection method should be used?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Deploy SSH",
-      "Increase monitor refresh rate"
+      "Telnet with anonymous access",
+      "SSH with public-key authentication",
+      "FTP in passive mode",
+      "HTTP over port 80"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on secure remote shell. Deploy SSH resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "SSH provides an encrypted remote shell and supports public-key authentication. Telnet is unencrypted, and FTP and HTTP do not provide the required secure shell session."
   },
   {
     "id": "A1201-PE3-015",
@@ -229,15 +229,15 @@
     "objective": "2.1",
     "blueprint": "Name resolution",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to name resolution. Which response addresses the root cause while keeping other users online?",
+    "question": "After a network migration, users can ping an intranet server by IP address but its hostname does not resolve. An nslookup query times out while using the retired DNS server address. What should be changed FIRST?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate",
-      "Evaluate the configured DNS server"
+      "Update clients to use the current DNS server address",
+      "Replace every client network cable",
+      "Disable the default gateway",
+      "Change the server’s monitor resolution"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on name resolution. Evaluate the configured DNS server resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Successful IP connectivity with failed name lookups and an obsolete resolver address identifies DNS configuration as the problem. Clients must query an active DNS server."
   },
   {
     "id": "A1201-PE3-016",
@@ -245,15 +245,15 @@
     "objective": "2.2",
     "blueprint": "SOHO routing",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for soho routing. Which recommendation is BEST without weakening security controls?",
+    "question": "A small office installs a new security router behind an ISP gateway. Users now experience double NAT, and inbound port mappings fail even though both devices are configured. What is the BEST correction?",
     "choices": [
-      "Deploy a SOHO router",
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Enable NAT on a third device",
+      "Place the ISP gateway in bridge mode and let the security router perform routing and NAT",
+      "Assign every workstation an APIPA address",
+      "Connect the router’s WAN and LAN ports to the same switch"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on soho routing. Deploy a SOHO router resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "Bridging the ISP gateway removes the extra routing and NAT layer, leaving the intended security router as the single edge device. Adding NAT or looping ports would worsen the design."
   },
   {
     "id": "A1201-PE3-017",
@@ -261,15 +261,15 @@
     "objective": "2.2",
     "blueprint": "Power over Ethernet",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to power over ethernet. What should the technician do FIRST before escalating to a vendor?",
+    "question": "Several new wireless access points repeatedly reboot after additional IP cameras are connected to the same PoE switch. Data links remain up, but the switch reports that its power budget is exhausted. What is the BEST solution?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Deploy a PoE-capable switch",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Shorten every SSID name",
+      "Move devices to a switch or injector with sufficient PoE power budget",
+      "Replace the Internet DNS server",
+      "Disable all switch VLANs"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on power over ethernet. Deploy a PoE-capable switch resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The switch has insufficient total PoE wattage for the attached powered devices. Increasing available PoE capacity addresses the reboots without changing unrelated network services."
   },
   {
     "id": "A1201-PE3-018",
@@ -277,15 +277,15 @@
     "objective": "2.2",
     "blueprint": "Cable internet",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with cable internet. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A cable modem worked with an old router. After the router is replaced, the modem remains online but the new router receives no WAN address. The ISP is known to cache the first connected device’s MAC address. What should the technician do FIRST?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Fit a DOCSIS cable modem",
-      "Increase monitor refresh rate"
+      "Configure a static APIPA address on the router",
+      "Change all wireless clients to ad hoc mode",
+      "Replace the coaxial drop without checking the modem",
+      "Power-cycle the cable modem after connecting the new router"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on cable internet. Fit a DOCSIS cable modem resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Power-cycling the modem commonly clears the learned customer-device association so it can register the new router’s MAC address. The online modem and prior operation do not support immediately replacing the coax."
   },
   {
     "id": "A1201-PE3-019",
@@ -293,15 +293,15 @@
     "objective": "2.3",
     "blueprint": "Wireless encryption",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for wireless encryption. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A company wants each employee to authenticate to Wi-Fi with individual credentials, and access must be revoked centrally when employment ends. Which configuration BEST satisfies the requirement?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate",
-      "Set up WPA3-Personal"
+      "WEP with one shared key",
+      "WPA2-Personal with the password posted at reception",
+      "An open SSID with MAC addresses written on paper",
+      "WPA2-Enterprise or WPA3-Enterprise with a RADIUS server"
     ],
     "answer": 3,
-    "explanation": "The evidence centers on wireless encryption. Set up WPA3-Personal resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Enterprise wireless authentication uses a centralized identity service such as RADIUS and supports individual accounts. Shared-key and open networks cannot provide centralized per-user revocation."
   },
   {
     "id": "A1201-PE3-020",
@@ -309,15 +309,15 @@
     "objective": "2.3",
     "blueprint": "2.4 GHz channels",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving 2.4 ghz channels. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "A 2.4 GHz survey shows nearby access points heavily occupying channels 6 and 11. Channel 1 has low utilization and no overlapping in-house access point. Which channel should the technician assign to the new AP?",
     "choices": [
-      "Select a nonoverlapping channel",
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Channel 1",
+      "Channel 4",
+      "Channel 8",
+      "Channel 10"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on 2.4 ghz channels. Select a nonoverlapping channel resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Channels 1, 6, and 11 are the common non-overlapping 2.4 GHz choices. With 6 and 11 congested, channel 1 provides the cleanest non-overlapping option."
   },
   {
     "id": "A1201-PE3-021",
@@ -325,15 +325,15 @@
     "objective": "2.3",
     "blueprint": "Guest wireless",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with guest wireless. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A café wants guest Wi-Fi users to reach the Internet but not communicate directly with one another. Which access-point feature should be enabled?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Turn on an isolated guest SSID",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Port mirroring",
+      "Link aggregation",
+      "Client isolation",
+      "Wake-on-LAN"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on guest wireless. Turn on an isolated guest SSID resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Client isolation prevents wireless guests on the same SSID from directly reaching each other while still allowing routed Internet access."
   },
   {
     "id": "A1201-PE3-022",
@@ -341,15 +341,15 @@
     "objective": "2.4",
     "blueprint": "APIPA addressing",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving apipa addressing. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "One laptop assigns itself 169.254.28.16 while other office computers receive normal addresses. What automated process did not complete successfully for that laptop?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Restore DHCP service",
-      "Increase monitor refresh rate"
+      "Resolving a hostname through DNS",
+      "Synchronizing time with NTP",
+      "Obtaining a DHCP lease",
+      "Negotiating an HTTPS certificate"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on apipa addressing. Restore DHCP service resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "An address in 169.254.0.0/16 is APIPA, which is self-assigned when a client cannot obtain an IPv4 lease from DHCP."
   },
   {
     "id": "A1201-PE3-023",
@@ -357,15 +357,15 @@
     "objective": "2.4",
     "blueprint": "Private IPv4",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to private ipv4. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "Which IPv4 address is within a private address range and may be used inside an organization without being routed on the public Internet?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate",
-      "Assign an RFC1918 address"
+      "8.8.8.8",
+      "198.51.100.42",
+      "224.0.0.5",
+      "172.20.14.8"
     ],
     "answer": 3,
-    "explanation": "The evidence centers on private ipv4. Assign an RFC1918 address resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The private 172.16.0.0/12 range includes 172.20.14.8. The other addresses are public documentation, multicast, or globally used address space rather than private host addressing."
   },
   {
     "id": "A1201-PE3-024",
@@ -373,15 +373,15 @@
     "objective": "2.4",
     "blueprint": "Default gateway",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for default gateway is discovered. What should be implemented while preserving the user's data?",
+    "question": "A branch replaces its router, but the DHCP server still supplies the retired router address in option 003. Newly leased clients reach local printers but not the Internet. Which configuration should the technician update?",
     "choices": [
-      "Repair the default gateway",
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "The DHCP default-gateway option so it contains the new router address",
+      "The clients’ display resolution",
+      "The DNS hostnames of the local printers",
+      "The switch port descriptions"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on default gateway. Repair the default gateway resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "DHCP option 003 supplies the client default gateway. Updating it to the replacement router allows off-subnet traffic while leaving working local communication and unrelated settings unchanged."
   },
   {
     "id": "A1201-PE3-025",
@@ -389,15 +389,15 @@
     "objective": "2.5",
     "blueprint": "Wide area networking",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to wide area networking. Which response addresses the root cause while keeping other users online?",
+    "question": "A company connects two offices in different cities through a carrier-managed circuit so their local networks can exchange traffic. What type of network does this connection create?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Deploy a WAN service",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "WAN",
+      "PAN",
+      "SAN",
+      "NFC"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on wide area networking. Deploy a WAN service resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "A wide area network connects geographically separated sites. PAN covers a person’s nearby devices, while SAN is dedicated to storage traffic."
   },
   {
     "id": "A1201-PE3-026",
@@ -405,15 +405,15 @@
     "objective": "2.5",
     "blueprint": "Personal area networking",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for personal area networking. Which recommendation is BEST without weakening security controls?",
+    "question": "A smartwatch exchanges notifications and fitness data with its owner’s phone over Bluetooth. Which network type BEST describes this connection?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Deploy a Bluetooth PAN",
-      "Increase monitor refresh rate"
+      "LAN",
+      "CAN",
+      "PAN",
+      "SAN"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on personal area networking. Deploy a Bluetooth PAN resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A Bluetooth link between a person’s wearable and phone is a personal area network. LAN and CAN cover larger local scopes, while SAN carries storage traffic."
   },
   {
     "id": "A1201-PE3-027",
@@ -421,15 +421,15 @@
     "objective": "2.5",
     "blueprint": "Storage networking",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to storage networking. What should the technician do FIRST before escalating to a vendor?",
+    "question": "Several virtualization hosts need shared block-level storage so that virtual-machine disks can move between hosts. Which network type is designed for this purpose?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate",
-      "Deploy a SAN"
+      "PAN",
+      "WLAN guest network",
+      "SAN",
+      "Bluetooth piconet"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on storage networking. Deploy a SAN resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "A storage area network supplies shared block-level storage to servers, using technologies such as Fibre Channel or iSCSI."
   },
   {
     "id": "A1201-PE3-028",
@@ -437,15 +437,15 @@
     "objective": "2.6",
     "blueprint": "Remote broadband",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with remote broadband. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A remote farm has no cable or telephone service. A provider tower is visible from the roof, and the business needs lower latency than satellite for video calls. Which broadband option is BEST?",
     "choices": [
-      "Deploy satellite internet",
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Fixed wireless Internet service",
+      "Geostationary satellite service",
+      "Dial-up over a nonexistent phone line",
+      "NFC tethering"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on remote broadband. Deploy satellite internet resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Fixed wireless uses a line-of-sight radio link to a provider tower and generally offers lower latency than geostationary satellite. The site conditions specifically support that option."
   },
   {
     "id": "A1201-PE3-029",
@@ -453,15 +453,15 @@
     "objective": "2.6",
     "blueprint": "Symmetrical broadband",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for symmetrical broadband. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "An architecture firm uploads very large project files to clients throughout the day. Management requires an Internet service whose upload capacity matches its download capacity. Which service is the BEST fit?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Order fiber service",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Symmetrical fiber service",
+      "Asymmetrical DSL",
+      "Receive-only satellite service",
+      "A Bluetooth PAN"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on symmetrical broadband. Order fiber service resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Symmetrical fiber provides comparable upstream and downstream bandwidth, which is suited to sustained large uploads. Typical DSL and many consumer services provide much less upstream capacity."
   },
   {
     "id": "A1201-PE3-030",
@@ -469,15 +469,15 @@
     "objective": "2.6",
     "blueprint": "Temporary connectivity",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving temporary connectivity. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "A disaster-response team must connect five laptops at a temporary field location for two days. Cellular coverage is strong, but no wired provider service is available. Which solution is MOST practical?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Deploy a 5G hotspot",
-      "Increase monitor refresh rate"
+      "A new underground fiber build",
+      "A local-only unmanaged switch with no uplink",
+      "A satellite dish that cannot see the sky",
+      "A managed cellular hotspot"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on temporary connectivity. Deploy a 5G hotspot resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "A cellular hotspot can be deployed immediately, supports multiple clients, and fits a short-lived location with strong mobile coverage. Permanent construction is disproportionate to the need."
   },
   {
     "id": "A1201-PE3-031",
@@ -485,15 +485,15 @@
     "objective": "2.7",
     "blueprint": "Copper validation",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with copper validation. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A technician must verify that a newly installed Cat 6A run meets its rated performance specification, not merely that all conductors are connected. Which tool should be used?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate",
-      "Deploy a cable tester"
+      "A loopback plug",
+      "A cable certifier",
+      "A toner probe",
+      "A Wi-Fi analyzer"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on copper validation. Deploy a cable tester resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "A cable certifier measures performance characteristics against a cabling standard. A basic continuity tester or toner cannot certify category-level performance."
   },
   {
     "id": "A1201-PE3-032",
@@ -501,15 +501,15 @@
     "objective": "2.7",
     "blueprint": "Cable tracing",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving cable tracing. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "Dozens of unlabeled copper cables terminate in a closet. A technician needs to identify which cable reaches a specific wall jack without disconnecting the active switch. Which tool pair is BEST?",
     "choices": [
-      "Deploy a tone generator and probe",
-      "Replace the endpoint CPU",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "Crimper and punchdown block",
+      "Multimeter and antistatic mat",
+      "Optical power meter and fusion splicer",
+      "Tone generator and probe"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on cable tracing. Deploy a tone generator and probe resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "A tone generator places a traceable signal on the target cable, and the probe identifies that signal in the bundle. The other tools install or test different components."
   },
   {
     "id": "A1201-PE3-033",
@@ -517,15 +517,15 @@
     "objective": "2.8",
     "blueprint": "Stable DHCP addressing",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to stable dhcp addressing. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A network printer should always receive the same address, but administrators want its addressing managed centrally rather than configured manually on the printer. What should be created?",
     "choices": [
-      "Replace the endpoint CPU",
-      "Establish a DHCP reservation",
-      "Reinstall all local applications",
-      "Increase monitor refresh rate"
+      "A public DNS root record",
+      "A DHCP reservation for the printer’s MAC address",
+      "A second APIPA range",
+      "A changing guest-network lease"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on stable dhcp addressing. Establish a DHCP reservation resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A DHCP reservation consistently assigns the same address to a known MAC address while retaining centralized DHCP management."
   },
   {
     "id": "A1201-PE3-034",
@@ -533,15 +533,15 @@
     "objective": "3.1",
     "blueprint": "Discrete graphics output",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for discrete graphics output is discovered. What should be implemented while preserving the user's data?",
+    "question": "After a discrete graphics card is installed, the card powers on but displays connected to it remain blank. The integrated video output still works, and firmware lists the integrated adapter as the primary display. What should the technician change?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Connect the monitor to the graphics card",
-      "Enable cellular roaming"
+      "Disable all system memory channels",
+      "Change the Ethernet duplex setting",
+      "Set the primary display adapter to PCIe or PEG in firmware",
+      "Format the operating-system drive"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on discrete graphics output. Connect the monitor to the graphics card resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The firmware is initializing integrated graphics as the primary adapter. Selecting the PCIe graphics option allows the discrete card to provide boot and operating-system display output."
   },
   {
     "id": "A1201-PE3-035",
@@ -549,15 +549,15 @@
     "objective": "3.1",
     "blueprint": "Display conversion",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to display conversion. Which response addresses the root cause while keeping other users online?",
+    "question": "A presenter must connect a laptop with HDMI output to an older projector that accepts only analog VGA input. Which device is required?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Deploy an active display adapter"
+      "A passive USB-A extension cable",
+      "An RJ45 loopback plug",
+      "A SATA power splitter",
+      "An active HDMI-to-VGA converter"
     ],
     "answer": 3,
-    "explanation": "The evidence centers on display conversion. Deploy an active display adapter resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "HDMI is digital and VGA is analog, so an active converter must translate the signal. A passive cable alone cannot perform that conversion."
   },
   {
     "id": "A1201-PE3-036",
@@ -565,15 +565,15 @@
     "objective": "3.2",
     "blueprint": "Motherboard form factor",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for motherboard form factor. Which recommendation is BEST without weakening security controls?",
+    "question": "A compact replacement case provides mounting points only for a 170 mm by 170 mm motherboard and has one expansion slot. Which motherboard form factor should be selected?",
     "choices": [
-      "Fit the case-supported motherboard size",
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "Full-size ATX",
+      "Extended ATX",
+      "SSI EEB",
+      "Mini-ITX"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on motherboard form factor. Fit the case-supported motherboard size resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Mini-ITX measures approximately 170 mm square and is designed for compact systems with a single expansion slot. The other boards are substantially larger."
   },
   {
     "id": "A1201-PE3-037",
@@ -581,15 +581,15 @@
     "objective": "3.2",
     "blueprint": "Graphics expansion",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to graphics expansion. What should the technician do FIRST before escalating to a vendor?",
+    "question": "A workstation motherboard has several different expansion slots. A high-performance graphics card must be installed with the full bandwidth intended by its design. Which slot should be used?",
     "choices": [
-      "Modify the public DNS zone",
-      "Deploy the PCIe x16 slot",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "PCIe x1",
+      "PCIe x16",
+      "A 240-pin DIMM socket",
+      "An M.2 Key E wireless socket"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on graphics expansion. Deploy the PCIe x16 slot resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Discrete graphics cards are designed for a PCI Express x16 slot. Memory and small peripheral sockets are physically and electrically unsuitable."
   },
   {
     "id": "A1201-PE3-038",
@@ -597,15 +597,15 @@
     "objective": "3.3",
     "blueprint": "Processor cooling",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with processor cooling. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A desktop with a liquid CPU cooler shuts down within minutes. Radiator fans spin, but monitoring shows a pump speed of 0 RPM, one coolant tube stays cool, and CPU temperature rises immediately. What is the BEST repair?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Apply thermal compound correctly",
-      "Enable cellular roaming"
+      "Add another case intake fan only",
+      "Replace the keyboard",
+      "Lower the monitor refresh rate",
+      "Replace the failed pump or liquid-cooler assembly"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on processor cooling. Apply thermal compound correctly resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "The zero pump reading, uneven tube temperatures, and immediate CPU heat rise show that coolant is not circulating. More case airflow cannot correct a failed pump."
   },
   {
     "id": "A1201-PE3-039",
@@ -613,15 +613,15 @@
     "objective": "3.3",
     "blueprint": "Secure Boot",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for secure boot. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A company imaging USB drive no longer boots on newly secured laptops. Secure Boot is enabled, and firmware reports that the media contains an untrusted bootloader. What is the BEST solution?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Turn on Secure Boot in UEFI"
+      "Permanently disable Secure Boot on every laptop",
+      "Convert the USB drive to an audio CD",
+      "Use organization-approved imaging media with a properly signed bootloader",
+      "Remove the TPM from each motherboard"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on secure boot. Turn on Secure Boot in UEFI resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Secure Boot is correctly rejecting an untrusted bootloader. Rebuilding or obtaining approved signed media preserves the security control while restoring the deployment workflow."
   },
   {
     "id": "A1201-PE3-040",
@@ -629,15 +629,15 @@
     "objective": "3.4",
     "blueprint": "Dual-channel memory",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving dual-channel memory. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "A motherboard has four DIMM slots labeled A1, A2, B1, and B2. Two identical modules were installed in A1 and A2, and diagnostics report single-channel operation. What should the technician do after consulting the manual?",
     "choices": [
-      "Populate the documented paired slots",
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "Install the modules in the CPU socket",
+      "Replace both modules with storage drives",
+      "Disable the memory controller in firmware",
+      "Move one module to the paired slot used for dual-channel operation"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on dual-channel memory. Populate the documented paired slots resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Two matched modules must occupy the motherboard’s designated paired channels, often A2 and B2. Adjacent slots can place both modules on the same channel."
   },
   {
     "id": "A1201-PE3-041",
@@ -645,15 +645,15 @@
     "objective": "3.4",
     "blueprint": "Memory instability",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with memory instability. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A desktop begins crashing after two memory modules are added. Which troubleshooting method BEST identifies whether one module is defective?",
     "choices": [
-      "Modify the public DNS zone",
-      "Perform a memory diagnostic",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "Replace the network switch",
+      "Calibrate the printer",
+      "Reset the monitor color profile",
+      "Test each module individually with a memory diagnostic"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on memory instability. Perform a memory diagnostic resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Testing one module at a time isolates the failing DIMM and slot. Unrelated network, printer, and display changes do not diagnose memory instability."
   },
   {
     "id": "A1201-PE3-042",
@@ -661,15 +661,15 @@
     "objective": "3.4",
     "blueprint": "Server memory protection",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving server memory protection. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "A server repeatedly logs corrected single-bit memory errors from the same DIMM, and the count is increasing. Which action is MOST appropriate?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Fit supported ECC memory",
-      "Enable cellular roaming"
+      "Disable all server logging",
+      "Schedule replacement of the identified ECC DIMM",
+      "Convert the DIMM into a storage drive",
+      "Replace the mouse batteries"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on server memory protection. Fit supported ECC memory resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "ECC can correct limited memory faults, but a rising error count from one module indicates deterioration. Planned replacement prevents an eventual uncorrectable failure."
   },
   {
     "id": "A1201-PE3-043",
@@ -677,15 +677,15 @@
     "objective": "3.5",
     "blueprint": "Drive redundancy",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to drive redundancy. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A four-drive workstation needs both improved disk performance and continued operation if any one drive fails. Which RAID level BEST meets the requirement?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Set up RAID 1"
+      "RAID 10",
+      "RAID 0",
+      "JBOD with no redundancy",
+      "A single unmirrored disk"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on drive redundancy. Set up RAID 1 resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "RAID 10 stripes across mirrored pairs, providing performance and single-drive fault tolerance with four drives. RAID 0 and the other choices do not provide redundancy."
   },
   {
     "id": "A1201-PE3-044",
@@ -693,15 +693,15 @@
     "objective": "3.5",
     "blueprint": "High-speed storage",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for high-speed storage is discovered. What should be implemented while preserving the user's data?",
+    "question": "A video-editing workstation needs the lowest-latency internal project drive. The motherboard provides an M.2 socket wired for four PCIe lanes. Which drive type should be selected?",
     "choices": [
-      "Fit a PCIe NVMe SSD",
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "A 5,400-rpm USB 2.0 hard drive",
+      "An optical DVD-ROM drive",
+      "An NVMe PCIe M.2 SSD",
+      "A CompactFlash card through a serial adapter"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on high-speed storage. Fit a PCIe NVMe SSD resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "An NVMe SSD uses the available PCIe lanes and provides far greater throughput and lower latency than the removable or legacy alternatives."
   },
   {
     "id": "A1201-PE3-045",
@@ -709,15 +709,15 @@
     "objective": "3.5",
     "blueprint": "Hot-swappable storage",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to hot-swappable storage. Which response addresses the root cause while keeping other users online?",
+    "question": "A storage array reports a predictive failure for drive bay 7 and supports hot swapping. Services must remain online during replacement. What should the technician do?",
     "choices": [
-      "Modify the public DNS zone",
-      "Deploy hot-swap bays and a supported controller",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "Pull several drives until the warning disappears",
+      "Power off the entire data center without checking the bay",
+      "Verify the bay indicator, replace that drive with a compatible unit while online, and monitor the rebuild",
+      "Replace the array network cable instead of the drive"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on hot-swappable storage. Deploy hot-swap bays and a supported controller resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Hot-swap support permits a correctly identified failed drive to be replaced while the array remains online. Confirming the bay and monitoring reconstruction prevents removal of the wrong disk."
   },
   {
     "id": "A1201-PE3-046",
@@ -725,15 +725,15 @@
     "objective": "3.6",
     "blueprint": "Power capacity",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for power capacity. Which recommendation is BEST without weakening security controls?",
+    "question": "A gaming workstation shuts off only when a newly installed graphics card is under heavy load. The card is connected correctly, temperatures are normal, and its vendor recommends a 750 W PSU while the system has a 500 W unit. What is the BEST fix?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Fit a correctly sized PSU",
-      "Enable cellular roaming"
+      "Reduce the amount of system storage",
+      "Replace the mouse with a wired model",
+      "Change the DNS suffix",
+      "Install a quality PSU with adequate wattage and required GPU connectors"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on power capacity. Fit a correctly sized PSU resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Load-related power loss with normal temperatures and an undersized PSU indicates insufficient power capacity. The replacement must supply both adequate wattage and the proper connectors."
   },
   {
     "id": "A1201-PE3-047",
@@ -741,15 +741,15 @@
     "objective": "3.6",
     "blueprint": "CPU auxiliary power",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to cpu auxiliary power. What should the technician do FIRST before escalating to a vendor?",
+    "question": "A newly assembled desktop powers its fans but never begins POST. The motherboard’s 24-pin connector is attached, but the 8-pin CPU power header is empty. Which connector should be installed there?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Connect the EPS power lead"
+      "The EPS 4+4 CPU power connector",
+      "A SATA data cable",
+      "An RJ45 patch cable",
+      "A USB 2.0 front-panel header cable"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on cpu auxiliary power. Connect the EPS power lead resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "The EPS 4+4 lead supplies dedicated processor power through the motherboard CPU power header. The system may spin fans from the 24-pin supply yet fail to initialize without it."
   },
   {
     "id": "A1201-PE3-048",
@@ -757,15 +757,15 @@
     "objective": "3.7",
     "blueprint": "Laser print defects",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with laser print defects. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "Pages from a laser printer look correct when they exit, but toner can be wiped off with a finger. The correct media type is selected, and a new toner cartridge does not help. Which component is MOST likely failing?",
     "choices": [
-      "Inspect the imaging drum",
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "The fuser assembly",
+      "The paper pickup tray",
+      "The Ethernet switch",
+      "The scanner document feeder"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on laser print defects. Inspect the imaging drum resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The fuser uses heat and pressure to bond toner to paper. Toner that remains loose despite correct media settings and a known-good cartridge indicates inadequate fusing."
   },
   {
     "id": "A1201-PE3-049",
@@ -773,15 +773,15 @@
     "objective": "3.7",
     "blueprint": "Inkjet streaking",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for inkjet streaking. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "An inkjet printer produces clean text on plain paper but smears ink across glossy photos. The photos are loaded print-side correctly, and the ink cartridges are genuine. What should be changed FIRST?",
     "choices": [
-      "Modify the public DNS zone",
-      "Perform printhead cleaning",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "Replace the office router",
+      "Install a laser-printer fuser",
+      "Select the correct glossy-photo media type and print-quality setting",
+      "Enable duplex on the network switch"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on inkjet streaking. Perform printhead cleaning resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Ink application and drying behavior depend on the selected media profile. Because plain-paper output is clean, matching the driver setting to glossy media is the appropriate first correction."
   },
   {
     "id": "A1201-PE3-050",
@@ -789,15 +789,15 @@
     "objective": "3.7",
     "blueprint": "Network printing",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving network printing. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "Users on VLAN 20 can print to a network printer, but users on VLAN 30 cannot. Both groups can reach their gateways, and the printer has the correct address. A firewall separates the VLANs. What should be checked NEXT?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Set up the printer's network interface",
-      "Enable cellular roaming"
+      "The toner cartridge color",
+      "The inter-VLAN firewall rule for the printer’s required print protocol",
+      "The monitor’s HDMI input",
+      "The workstation keyboard layout"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on network printing. Set up the printer's network interface resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "The problem follows a routed security boundary while local networking works. The firewall must permit the required printer traffic, such as TCP 9100 or the organization’s configured print service, from VLAN 30."
   },
   {
     "id": "A1201-PE3-051",
@@ -805,15 +805,15 @@
     "objective": "3.8",
     "blueprint": "External storage speed",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with external storage speed. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A 10 Gbps USB-C SSD enclosure transfers at USB 2.0 speed because it is connected through an older adapter. Which connection should be used to obtain the enclosure’s intended performance?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Deploy Thunderbolt"
+      "A PS/2 keyboard port",
+      "A VGA display cable",
+      "An analog telephone jack",
+      "A compatible USB 3.2 Gen 2 port and cable"
     ],
     "answer": 3,
-    "explanation": "The evidence centers on external storage speed. Deploy Thunderbolt resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The enclosure requires a SuperSpeed interface and suitable cable. A USB 2.0 adapter limits throughput regardless of the SSD’s capability."
   },
   {
     "id": "A1201-PE3-052",
@@ -821,15 +821,15 @@
     "objective": "3.8",
     "blueprint": "Barcode input",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving barcode input. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "A warehouse must scan both traditional one-dimensional product barcodes and square QR codes. Which input device should be purchased?",
     "choices": [
-      "Fit a barcode scanner",
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "A magnetic-stripe reader only",
+      "A flatbed printer",
+      "A 2D imaging barcode scanner",
+      "A KVM switch"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on barcode input. Fit a barcode scanner resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "A 2D imager can read QR codes and common 1D barcodes. A laser-only 1D reader or the unrelated devices cannot meet both requirements."
   },
   {
     "id": "A1201-PE3-053",
@@ -837,15 +837,15 @@
     "objective": "3.2",
     "blueprint": "Front-panel ports",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to front-panel ports. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "The rear audio jack works, but the front headphone jack on a newly built desktop does not appear in the operating system. Which internal connection should be inspected?",
     "choices": [
-      "Modify the public DNS zone",
-      "Connect the correct internal header",
-      "Reset every user's cloud password",
-      "Enable cellular roaming"
+      "The CPU EPS connector",
+      "The case HD Audio cable to the motherboard audio header",
+      "The SATA power lead to the SSD",
+      "The wireless antenna connector"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on front-panel ports. Connect the correct internal header resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Front audio ports depend on the case’s HD Audio lead being connected to the motherboard header. Working rear audio shows that the audio controller and driver are functioning."
   },
   {
     "id": "A1201-PE3-054",
@@ -853,15 +853,15 @@
     "objective": "3.3",
     "blueprint": "CPU compatibility",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for cpu compatibility is discovered. What should be implemented while preserving the user's data?",
+    "question": "A motherboard supports a new processor model only after a documented firmware revision. The system still has the older working processor installed. What should the technician do BEFORE swapping CPUs?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Confirm chipset and firmware support",
-      "Enable cellular roaming"
+      "Delete every user profile",
+      "Disable the storage controller",
+      "Remove all case fans",
+      "Update the motherboard firmware to the required revision"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on cpu compatibility. Confirm chipset and firmware support resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Updating firmware while the supported old CPU is still available ensures that the board can initialize the replacement processor. Installing first may leave the system unable to POST."
   },
   {
     "id": "A1201-PE3-055",
@@ -869,15 +869,15 @@
     "objective": "3.4",
     "blueprint": "DDR compatibility",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to ddr compatibility. Which response addresses the root cause while keeping other users online?",
+    "question": "A technician is upgrading a DDR5 laptop whose manual lists a maximum supported speed and capacity. Which memory should be installed?",
     "choices": [
-      "Modify the public DNS zone",
-      "Reset every user's cloud password",
-      "Enable cellular roaming",
-      "Fit the specified DDR generation"
+      "Desktop DDR4 DIMMs forced into the socket",
+      "DDR5 SO-DIMMs within the laptop’s supported capacity and speed specifications",
+      "ECC server RDIMMs without platform support",
+      "Any module that has the same number of stickers"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on ddr compatibility. Fit the specified DDR generation resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "Memory generation, form factor, capacity, and supported speed must match the laptop. DDR4 and registered server memory are electrically or physically incompatible."
   },
   {
     "id": "A1201-PE3-056",
@@ -885,15 +885,15 @@
     "objective": "4.1",
     "blueprint": "Guest isolation",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for guest isolation. Which recommendation is BEST without weakening security controls?",
+    "question": "A technician must analyze an untrusted application while preventing it from reaching the production network or accessing host folders. Which setup is BEST?",
     "choices": [
-      "Establish separate virtual machines",
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "Run it as administrator on a production file server",
+      "Run it in a VM on an isolated virtual network with host sharing disabled",
+      "Place it on the guest Wi-Fi with all shares mounted",
+      "Disable the VM snapshot feature but bridge it to production"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on guest isolation. Establish separate virtual machines resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "An isolated VM with host integrations disabled contains both network and file-system exposure. Bridged or production-host execution would unnecessarily expose real systems."
   },
   {
     "id": "A1201-PE3-057",
@@ -901,15 +901,15 @@
     "objective": "4.1",
     "blueprint": "Bare-metal virtualization",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to bare-metal virtualization. What should the technician do FIRST before escalating to a vendor?",
+    "question": "An organization wants a virtualization platform installed directly on server hardware with no general-purpose host operating system underneath it. Which platform type should be selected?",
     "choices": [
-      "Replace all laptop batteries",
-      "Deploy a type 1 hypervisor",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "A Type 2 hypervisor on a desktop OS",
+      "A browser bookmark",
+      "A Type 1 hypervisor",
+      "A print spooler"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on bare-metal virtualization. Deploy a type 1 hypervisor resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "A Type 1, or bare-metal, hypervisor runs directly on physical hardware. A Type 2 hypervisor depends on a host operating system."
   },
   {
     "id": "A1201-PE3-058",
@@ -917,15 +917,15 @@
     "objective": "4.1",
     "blueprint": "VM memory pressure",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with vm memory pressure. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A host with 64 GB of RAM runs four VMs. One development VM expands to 40 GB during builds, forcing the other VMs to swap and become unresponsive. The host cannot be upgraded this month. What is the BEST immediate correction?",
     "choices": [
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Increase host RAM",
-      "Change the switch VLAN"
+      "Assign all 64 GB permanently to the development VM",
+      "Disable storage on the other VMs",
+      "Set an appropriate memory limit or dynamic-memory policy for the development VM",
+      "Bridge every VM directly to the Internet"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on vm memory pressure. Increase host RAM resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Controlling the development VM’s memory consumption protects the shared host resources while respecting the no-upgrade constraint. Giving it more memory would increase contention."
   },
   {
     "id": "A1201-PE3-059",
@@ -933,15 +933,15 @@
     "objective": "4.1",
     "blueprint": "Isolated virtual networking",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for isolated virtual networking. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "Three lab VMs must communicate with one another, but neither the host nor any physical-network device may reach them. Which virtual switch type is BEST?",
     "choices": [
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Change the switch VLAN",
-      "Deploy a host-only virtual network"
+      "A bridged external switch",
+      "An internal switch that also connects the host",
+      "A public wireless guest SSID",
+      "A private VM-only virtual switch"
     ],
     "answer": 3,
-    "explanation": "The evidence centers on isolated virtual networking. Deploy a host-only virtual network resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A private virtual switch permits guest-to-guest traffic without host or external connectivity. Internal switches include the host, while bridged designs expose the physical network."
   },
   {
     "id": "A1201-PE3-060",
@@ -949,15 +949,15 @@
     "objective": "4.1",
     "blueprint": "Change rollback",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving change rollback. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "A test VM becomes unstable immediately after an application patch. A verified snapshot was created just before the patch, and no new data must be preserved. What is the fastest safe recovery?",
     "choices": [
-      "Take a VM snapshot",
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "Revert the VM to the pre-patch snapshot",
+      "Delete the hypervisor and every other VM",
+      "Replace the physical monitor",
+      "Create a new snapshot of the broken state and stop"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on change rollback. Take a VM snapshot resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "The known-good pre-change snapshot provides a direct rollback point and the scenario states that no post-patch data must be retained."
   },
   {
     "id": "A1201-PE3-061",
@@ -965,15 +965,15 @@
     "objective": "4.1",
     "blueprint": "Centralized desktops",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with centralized desktops. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A call center wants standardized desktops delivered from a central image. User sessions may run on different servers and should reset to a clean state after sign-out. Which solution BEST fits?",
     "choices": [
-      "Replace all laptop batteries",
-      "Deploy VDI",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "Individually maintained gaming PCs",
+      "A direct-attached tape library",
+      "Pooled nonpersistent VDI desktops",
+      "A Bluetooth PAN for every desk"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on centralized desktops. Deploy VDI resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Pooled nonpersistent virtual desktops provide centrally managed, repeatable sessions that return to a clean image. The alternatives do not deliver managed desktops."
   },
   {
     "id": "A1201-PE3-062",
@@ -981,15 +981,15 @@
     "objective": "4.2",
     "blueprint": "Hosted applications",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving hosted applications. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "Employees use a customer-management application entirely through a web browser. The provider maintains the application, operating system, and servers. Which cloud service model is this?",
     "choices": [
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Deploy SaaS",
-      "Change the switch VLAN"
+      "IaaS",
+      "SaaS",
+      "A local SAN",
+      "A PAN"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on hosted applications. Deploy SaaS resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "Software as a Service delivers a complete provider-managed application to the user. IaaS instead gives the customer control of virtual infrastructure and operating systems."
   },
   {
     "id": "A1201-PE3-063",
@@ -997,15 +997,15 @@
     "objective": "4.2",
     "blueprint": "Virtual infrastructure",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to virtual infrastructure. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A company rents virtual machines, storage, and virtual networks from a provider but installs and administers its own operating systems and applications. Which model is being used?",
     "choices": [
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Change the switch VLAN",
-      "Deploy IaaS"
+      "SaaS",
+      "NFC",
+      "IaaS",
+      "A local workgroup only"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on virtual infrastructure. Deploy IaaS resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Infrastructure as a Service supplies virtualized compute, storage, and networking while the customer manages the guest operating systems and applications."
   },
   {
     "id": "A1201-PE3-064",
@@ -1013,15 +1013,15 @@
     "objective": "4.2",
     "blueprint": "Demand scaling",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for demand scaling is discovered. What should be implemented while preserving the user's data?",
+    "question": "A ticket-processing function normally handles a few requests per minute but must automatically handle thousands during brief product launches without staff provisioning servers. Which cloud capability is MOST appropriate?",
     "choices": [
-      "Turn on rapid elasticity",
-      "Replace all laptop batteries",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "A fixed single desktop under a desk",
+      "A manually resized local swap file",
+      "An offline optical disc",
+      "An automatically scaling serverless function"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on demand scaling. Turn on rapid elasticity resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Serverless compute can scale execution with demand and removes routine server provisioning. The fixed local options cannot respond elastically to short traffic spikes."
   },
   {
     "id": "A1201-PE3-065",
@@ -1029,15 +1029,15 @@
     "objective": "4.2",
     "blueprint": "Shared cloud capacity",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to shared cloud capacity. Which response addresses the root cause while keeping other users online?",
+    "question": "A cloud provider assigns compute capacity from a large shared hardware pool to many customers while keeping each customer’s resources logically separated. Which cloud characteristic is illustrated?",
     "choices": [
-      "Replace all laptop batteries",
-      "Deploy resource pooling",
-      "Rebuild the print queue",
-      "Change the switch VLAN"
+      "Resource pooling with multitenancy",
+      "A dedicated air-gapped desktop for every request",
+      "Manual paper-based provisioning",
+      "A peer-to-peer Bluetooth transfer"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on shared cloud capacity. Deploy resource pooling resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Resource pooling lets a provider dynamically allocate shared physical capacity among isolated tenants. This is a core efficiency of cloud infrastructure."
   },
   {
     "id": "A1201-PE3-066",
@@ -1045,15 +1045,15 @@
     "objective": "5.1",
     "blueprint": "Battery-only failure",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for battery-only failure. Which recommendation is BEST without weakening security controls?",
+    "question": "A laptop battery report shows severe capacity loss, and the computer shuts off near 35% charge even after a successful calibration. The AC adapter powers the laptop normally. What should the technician do NEXT?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Evaluate and replace the battery",
-      "Disable endpoint encryption"
+      "Replace the degraded battery",
+      "Replace the external monitor",
+      "Reconfigure the DNS server",
+      "Install a second Ethernet switch"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on battery-only failure. Evaluate and replace the battery resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Normal AC operation plus confirmed battery capacity loss and premature shutdown identifies a worn battery. Calibration has already ruled out a simple gauge error."
   },
   {
     "id": "A1201-PE3-067",
@@ -1061,15 +1061,15 @@
     "objective": "5.1",
     "blueprint": "Dim laptop display",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to dim laptop display. What should the technician do FIRST before escalating to a vendor?",
+    "question": "A laptop display becomes very dim only when the charger is disconnected. The image remains visible, brightness keys work, and the screen returns to normal on AC power. What should be checked FIRST?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Service the backlight circuit"
+      "The printer transfer roller",
+      "The router DHCP scope",
+      "The battery-mode display brightness setting in the power plan",
+      "The desktop CPU socket"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on dim laptop display. Service the backlight circuit resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "The display hardware works normally on AC, and the symptom follows the power source. Battery-mode brightness or power-saving settings are the most likely cause."
   },
   {
     "id": "A1201-PE3-068",
@@ -1077,15 +1077,15 @@
     "objective": "5.1",
     "blueprint": "Failed laptop keys",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with failed laptop keys. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "After a laptop keyboard replacement, one entire column of built-in keys does not respond. An external USB keyboard works, firmware tests show the same missing column, and no liquid damage is present. What should the technician do FIRST?",
     "choices": [
-      "Substitute the internal keyboard",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Reinstall the wireless access-point firmware",
+      "Reseat the keyboard ribbon cable and secure its locking bar",
+      "Replace the external USB keyboard",
+      "Change the laptop’s DNS suffix"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on failed laptop keys. Substitute the internal keyboard resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "A grouped key failure immediately after replacement, present outside the OS, points to incomplete ribbon contact. Reseating and locking the connector is the least invasive relevant action."
   },
   {
     "id": "A1201-PE3-069",
@@ -1093,15 +1093,15 @@
     "objective": "5.1",
     "blueprint": "Intermittent charging",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for intermittent charging. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A workstation-class laptop requires a 90 W USB-C Power Delivery adapter. It charges when idle with a 45 W phone adapter but alternates between charging and discharging during heavy use. Which fix is BEST?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Clean and inspect the charging port",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Disable the internal SSD",
+      "Replace the Wi-Fi SSID",
+      "Use a compatible 90 W or higher USB-C PD adapter and rated cable",
+      "Connect a passive HDMI cable to the charging port"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on intermittent charging. Clean and inspect the charging port resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "The lower-wattage adapter cannot satisfy peak system demand. A properly rated Power Delivery adapter and cable provide stable charging under load."
   },
   {
     "id": "A1201-PE3-070",
@@ -1109,15 +1109,15 @@
     "objective": "5.1",
     "blueprint": "Weak mobile Wi-Fi",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving weak mobile wi-fi. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "After a laptop display assembly is replaced, its Wi-Fi signal is weak in every location while nearby devices remain strong. Bluetooth also has reduced range, and the wireless card passes diagnostics. What is the MOST likely repair?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Measure signal and interference",
-      "Disable endpoint encryption"
+      "Replace the office DNS zone",
+      "Reformat the internal SSD",
+      "Reseat the antenna leads and inspect their routing through the display assembly",
+      "Increase the printer fuser temperature"
     ],
     "answer": 2,
-    "explanation": "The evidence centers on weak mobile wi-fi. Measure signal and interference resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "Wi-Fi and Bluetooth range both deteriorated after work in the display assembly where antennas are routed. Loose or pinched antenna leads explain the timing and device-specific weakness."
   },
   {
     "id": "A1201-PE3-071",
@@ -1125,15 +1125,15 @@
     "objective": "5.2",
     "blueprint": "POST beep codes",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with post beep codes. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "At startup, a desktop emits one long beep followed by two short beeps and shows no image. What should the technician consult to interpret the code accurately?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Consult the motherboard code guide"
+      "The printer paper-size chart",
+      "The motherboard or system manufacturer’s beep-code documentation",
+      "The public DNS root-zone file",
+      "The monitor color-calibration profile"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on post beep codes. Consult the motherboard code guide resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "POST beep meanings vary by firmware vendor and system model. Manufacturer documentation provides the correct interpretation before parts are replaced."
   },
   {
     "id": "A1201-PE3-072",
@@ -1141,15 +1141,15 @@
     "objective": "5.2",
     "blueprint": "Thermal shutdown",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving thermal shutdown. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "A desktop begins shutting down from high CPU temperature after being transported. Inspection shows that one corner of the heat sink is no longer secured. What should the technician do?",
     "choices": [
-      "Clean cooling and verify fan operation",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Reseat the cooler correctly and renew thermal compound as required",
+      "Disable the CPU temperature sensor",
+      "Replace the Ethernet cable",
+      "Increase monitor brightness"
     ],
     "answer": 0,
-    "explanation": "The evidence centers on thermal shutdown. Clean cooling and verify fan operation resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A loose cooler cannot maintain even contact with the CPU heat spreader. Correct mounting and proper thermal compound restore heat transfer; disabling protection would risk damage."
   },
   {
     "id": "A1201-PE3-073",
@@ -1157,15 +1157,15 @@
     "objective": "5.2",
     "blueprint": "Lost firmware settings",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to lost firmware settings. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A new CMOS battery was installed, but a desktop still loses firmware settings at every shutdown. The maintenance guide shows that the clear-CMOS jumper is left in the reset position. What should be done?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Substitute the CMOS battery",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Remove all system memory",
+      "Return the clear-CMOS jumper to its normal operating position",
+      "Connect the jumper to a SATA data port",
+      "Disable the monitor input"
     ],
     "answer": 1,
-    "explanation": "The evidence centers on lost firmware settings. Substitute the CMOS battery resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "explanation": "A jumper left in the clear position continually resets firmware settings regardless of battery condition. Restoring the documented normal position resolves the cause."
   },
   {
     "id": "A1201-PE3-074",
@@ -1173,15 +1173,15 @@
     "objective": "5.2",
     "blueprint": "No-power desktop",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for no-power desktop is discovered. What should be implemented while preserving the user's data?",
+    "question": "After a desktop is moved into a new case, pressing the front power button does nothing. Standby LEDs are on, and briefly bridging the correct motherboard power-switch pins starts the system. What should be corrected?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Confirm the outlet, cord, and PSU switch",
-      "Disable endpoint encryption"
+      "Replace the CPU because the test booted",
+      "Reconnect the case power-switch lead to the proper front-panel header pins",
+      "Change the wireless encryption type",
+      "Format the storage array"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on no-power desktop. Confirm the outlet, cord, and PSU switch resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "The successful bridge test proves the motherboard and power supply can start. The front switch lead is disconnected, misplaced, or defective at the header."
   },
   {
     "id": "A1201-PE3-075",
@@ -1189,15 +1189,15 @@
     "objective": "5.2",
     "blueprint": "Missing boot device",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to missing boot device. Which response addresses the root cause while keeping other users online?",
+    "question": "A cloned replacement SSD is detected in firmware but does not appear as a boot option. The system is configured for UEFI, while the clone uses an MBR legacy boot layout. What is the BEST correction?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Confirm boot order and storage mode"
+      "Recreate or convert the clone to a GPT layout with a valid UEFI bootloader",
+      "Set the SSD as a wireless access point",
+      "Replace the display panel",
+      "Configure the printer with APIPA"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on missing boot device. Confirm boot order and storage mode resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "The firmware boot mode and disk boot structure do not match. A GPT disk with a valid UEFI bootloader restores compatibility without treating a detected drive as failed hardware."
   },
   {
     "id": "A1201-PE3-076",
@@ -1205,15 +1205,15 @@
     "objective": "5.3",
     "blueprint": "Clicking hard drive",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for clicking hard drive. Which recommendation is BEST without weakening security controls?",
+    "question": "A workstation hard drive clicks repeatedly, SMART reports pending sectors, and the user’s data is still readable. What should the technician do FIRST?",
     "choices": [
-      "Back up data and replace the drive",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Run a week-long defragmentation before backing up",
+      "Back up the data immediately and replace the drive",
+      "Strike the drive to free the heads",
+      "Increase the monitor refresh rate"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on clicking hard drive. Back up data and replace the drive resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "Mechanical clicking and pending sectors indicate imminent drive failure. Data preservation has priority; extended stress tests or physical impacts increase the risk of total loss."
   },
   {
     "id": "A1201-PE3-077",
@@ -1221,15 +1221,15 @@
     "objective": "5.3",
     "blueprint": "Degraded mirror",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to degraded mirror. What should the technician do FIRST before escalating to a vendor?",
+    "question": "A two-drive RAID 1 reports a failed member but remains online. A verified backup exists, and the controller supports hot replacement. What is the appropriate next action?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Substitute the failed member and rebuild",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Remove the healthy member first",
+      "Convert the array to RAID 0 during business hours",
+      "Replace the failed member with a compatible drive and monitor the mirror rebuild",
+      "Ignore the warning until both drives fail"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on degraded mirror. Substitute the failed member and rebuild resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "The surviving mirror member is carrying the workload. Replacing the failed disk and verifying reconstruction restores redundancy while preserving service."
   },
   {
     "id": "A1201-PE3-078",
@@ -1237,15 +1237,15 @@
     "objective": "5.3",
     "blueprint": "Nearly full SSD",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with nearly full ssd. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "A nearly full SSD hosts regulated project records that cannot be deleted. Performance has declined, and analysis shows that old completed projects consume most space. Which action BEST restores free capacity while preserving the records?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Free adequate storage space",
-      "Disable endpoint encryption"
+      "Move completed projects to approved archival storage and verify the transfer",
+      "Delete random system files",
+      "Disable all backups",
+      "Fill the remaining space with a swap file"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on nearly full ssd. Free adequate storage space resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Archiving inactive records to approved storage satisfies retention requirements and restores SSD free space. Random deletion or consuming more space creates additional risk."
   },
   {
     "id": "A1201-PE3-079",
@@ -1253,15 +1253,15 @@
     "objective": "5.4",
     "blueprint": "GPU artifacts",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for gpu artifacts. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A graphics card displays artifacts only during 3D workloads. Logs show its temperature rising rapidly, and inspection finds that one GPU fan is not spinning while case airflow is normal. What is the BEST repair?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Return the GPU to supported clock settings"
+      "Repair or replace the graphics-card cooling assembly",
+      "Replace the office access point",
+      "Change the printer paper type",
+      "Disable the boot drive"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on gpu artifacts. Return the GPU to supported clock settings resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Load-dependent artifacts, high GPU temperature, and a stopped on-board fan isolate the fault to graphics-card cooling. General case airflow cannot compensate for a failed GPU fan."
   },
   {
     "id": "A1201-PE3-080",
@@ -1269,15 +1269,15 @@
     "objective": "5.4",
     "blueprint": "Monitor flicker",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving monitor flicker. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "A 4K monitor flickers only at 144 Hz. It is stable at 60 Hz, the graphics card supports 144 Hz, and the current DisplayPort cable is an older low-bandwidth model. What should be tried FIRST?",
     "choices": [
-      "Select a supported refresh rate",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Replace the system battery",
+      "Replace the cable with a certified version that supports the required bandwidth",
+      "Clear the DHCP lease database",
+      "Install a laser-printer drum"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on monitor flicker. Select a supported refresh rate resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 1,
+    "explanation": "Stability at lower bandwidth and known endpoint support point to the cable. A certified cable rated for the resolution and refresh rate is the least invasive correction."
   },
   {
     "id": "A1201-PE3-081",
@@ -1285,15 +1285,15 @@
     "objective": "5.5",
     "blueprint": "Paused print jobs",
     "difficulty": "Level 2",
-    "question": "At an architecture firm, staff report a new issue associated with paused print jobs. Which action should the technician take NEXT without replacing unrelated equipment?",
+    "question": "A damaged document causes all printers shared by one Windows server to stop processing jobs. The queues remain paused even after the document is canceled. Which service should the technician restart?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Resume and clear the local print queue",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Windows Time",
+      "Bluetooth Support",
+      "Remote Registry",
+      "Print Spooler"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on paused print jobs. Resume and clear the local print queue resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "The Print Spooler manages queued print jobs. A hung job can stall the service and its shared queues, making a controlled spooler restart appropriate after clearing the job."
   },
   {
     "id": "A1201-PE3-082",
@@ -1301,15 +1301,15 @@
     "objective": "5.5",
     "blueprint": "Faint laser output",
     "difficulty": "Level 2",
-    "question": "a mobile repair van is planning a change involving faint laser output. Which solution BEST meets the requirement before making a broad configuration change?",
+    "question": "A laser printer produces uniformly faint pages, and its status panel reports that the toner cartridge is nearly empty. Which action should be taken?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Substitute the depleted toner cartridge",
-      "Disable endpoint encryption"
+      "Replace the toner cartridge",
+      "Replace the Ethernet switch",
+      "Increase the laptop battery capacity",
+      "Change the DNS server"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on faint laser output. Substitute the depleted toner cartridge resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Uniform faint output combined with a near-empty toner report indicates insufficient toner. Replacing the cartridge directly addresses the documented consumable condition."
   },
   {
     "id": "A1201-PE3-083",
@@ -1317,15 +1317,15 @@
     "objective": "5.5",
     "blueprint": "Pickup jams",
     "difficulty": "Level 2",
-    "question": "A technician supporting a hotel business center isolates a fault to pickup jams. What is the MOST appropriate corrective action after documenting the current configuration?",
+    "question": "A printer jams only from tray 2 immediately after paper was reloaded. The paper size is correct, but the stack shifts sideways when the tray moves. What should be adjusted?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Substitute the worn pickup roller"
+      "The tray’s paper guides",
+      "The network subnet mask",
+      "The monitor backlight",
+      "The CPU multiplier"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on pickup jams. Substitute the worn pickup roller resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 0,
+    "explanation": "Loose or incorrectly positioned paper guides allow sheets to enter the pickup path crooked, causing jams. The symptom is isolated to the recently loaded tray."
   },
   {
     "id": "A1201-PE3-084",
@@ -1333,15 +1333,15 @@
     "objective": "5.5",
     "blueprint": "Color misregistration",
     "difficulty": "Level 3",
-    "question": "During a maintenance window at a neighborhood pharmacy, a requirement for color misregistration is discovered. What should be implemented while preserving the user's data?",
+    "question": "A color laser printer produces sharp images, but cyan is consistently offset from the other colors after all four cartridges were replaced. Which maintenance action should be performed FIRST?",
     "choices": [
-      "Perform printer color calibration",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Replace the office router",
+      "Change every client to APIPA",
+      "Run the printer’s color registration or calibration routine",
+      "Remove the printer’s memory"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on color misregistration. Perform printer color calibration resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Consistent color-plane offset with otherwise sharp output is a registration issue. The built-in calibration routine realigns the color planes before hardware replacement is considered."
   },
   {
     "id": "A1201-PE3-085",
@@ -1349,15 +1349,15 @@
     "objective": "5.6",
     "blueprint": "APIPA connectivity",
     "difficulty": "Level 3",
-    "question": "Users at a regional warehouse experience a repeatable failure related to apipa connectivity. Which response addresses the root cause while keeping other users online?",
+    "question": "New office devices begin assigning themselves APIPA addresses while older devices retain valid leases. The DHCP server is online, and its scope shows no available addresses. What is the BEST fix?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Troubleshoot DHCP availability",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Configure the clients with multicast addresses",
+      "Disable the default gateway for all users",
+      "Replace every workstation monitor",
+      "Expand or redesign the DHCP scope to provide additional valid leases"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on apipa connectivity. Troubleshoot DHCP availability resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "An exhausted scope prevents new leases while existing clients continue using theirs. Adding appropriate address capacity resolves the APIPA assignments."
   },
   {
     "id": "A1201-PE3-086",
@@ -1365,15 +1365,15 @@
     "objective": "5.6",
     "blueprint": "IP works but names fail",
     "difficulty": "Level 3",
-    "question": "a video-production suite needs to improve reliability for ip works but names fail. Which recommendation is BEST without weakening security controls?",
+    "question": "One workstation opens a company site at the wrong server. nslookup returns the correct current address, but the workstation’s hosts file contains an old static entry for that name. What should the technician do?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Repair DNS configuration",
-      "Disable endpoint encryption"
+      "Replace the company DNS servers even though they answer correctly",
+      "Disable the workstation network adapter permanently",
+      "Change the printer toner",
+      "Remove or correct the obsolete hosts-file entry"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on ip works but names fail. Repair DNS configuration resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "The local hosts entry overrides normal DNS resolution on that workstation. Correcting it restores use of the valid DNS response without changing working infrastructure."
   },
   {
     "id": "A1201-PE3-087",
@@ -1381,15 +1381,15 @@
     "objective": "5.6",
     "blueprint": "Single-client Wi-Fi failure",
     "difficulty": "Level 3",
-    "question": "After completing initial diagnostics at a construction trailer, evidence points to single-client wi-fi failure. What should the technician do FIRST before escalating to a vendor?",
+    "question": "A company Wi-Fi network uses an allowlist of device MAC addresses. One phone connects only when its private-address feature is disabled; with the feature enabled, authentication is rejected. What is the BEST administrative response?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption",
-      "Forget and rejoin the wireless network"
+      "Replace every wireless access point",
+      "Publish the wireless password publicly",
+      "Register the phone’s intended private MAC or require the approved stable address for that SSID",
+      "Disable encryption for all users"
     ],
-    "answer": 3,
-    "explanation": "The evidence centers on single-client wi-fi failure. Forget and rejoin the wireless network resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "MAC randomization changes the address presented to the allowlist. The policy and client setting must use a known approved address; weakening the entire network is unnecessary."
   },
   {
     "id": "A1201-PE3-088",
@@ -1397,15 +1397,15 @@
     "objective": "5.6",
     "blueprint": "Movement-sensitive Ethernet",
     "difficulty": "Level 4",
-    "question": "A support ticket from a veterinary hospital describes a problem with movement-sensitive ethernet. Which resolution is MOST likely to succeed after reproducing the symptom?",
+    "question": "An Ethernet link drops whenever the patch cord near a wall jack is moved. Replacing the patch cord does not help, but holding the in-wall cable at a certain angle restores the link. What should the technician do NEXT?",
     "choices": [
-      "Substitute the damaged patch cable",
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Replace the Internet DNS records",
+      "Reinstall the laptop operating system",
+      "Increase the printer fuser temperature",
+      "Reterminate and test the wall-jack keystone connection"
     ],
-    "answer": 0,
-    "explanation": "The evidence centers on movement-sensitive ethernet. Substitute the damaged patch cable resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "The problem remains after the patch cord is replaced and changes with movement at the in-wall termination. Reterminating and testing the keystone addresses the localized intermittent contact."
   },
   {
     "id": "A1201-PE3-089",
@@ -1413,15 +1413,15 @@
     "objective": "5.6",
     "blueprint": "Reduced Ethernet speed",
     "difficulty": "Level 4",
-    "question": "a nonprofit office must configure a supported solution for reduced ethernet speed. Which choice satisfies the requirement using the existing supported hardware?",
+    "question": "A workstation and switch support 1 Gbps, but transfers are slow and interface counters show late collisions. The switch port is forced to full duplex while the workstation is forced to half duplex. What is the BEST correction?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Evaluate cable pairs and category",
-      "Replace every access point",
-      "Disable endpoint encryption"
+      "Assign the workstation a second DNS suffix",
+      "Replace the monitor cable",
+      "Configure both ends for compatible settings, preferably auto-negotiation",
+      "Enable APIPA on the switch"
     ],
-    "answer": 1,
-    "explanation": "The evidence centers on reduced ethernet speed. Evaluate cable pairs and category resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 2,
+    "explanation": "Mismatched duplex settings cause collisions and poor performance. Both ends must negotiate or be configured identically; unrelated addressing and display changes will not help."
   },
   {
     "id": "A1201-PE3-090",
@@ -1429,14 +1429,14 @@
     "objective": "5.6",
     "blueprint": "Intermittent packet loss",
     "difficulty": "Level 4",
-    "question": "A recent change at a school technology lab caused symptoms involving intermittent packet loss. Which rollback or repair step is BEST with the least service interruption?",
+    "question": "Users on a new VPN can open small web pages, but large uploads stall. Small pings succeed, pings with the do-not-fragment flag fail above a reduced size, and the physical Internet link is stable. What is the MOST likely correction?",
     "choices": [
-      "Migrate the user to a new SaaS tenant",
-      "Replace every access point",
-      "Check errors and replace the suspect cable",
-      "Disable endpoint encryption"
+      "Replace all client keyboards",
+      "Increase the DNS record TTL",
+      "Install a second toner cartridge",
+      "Adjust the VPN path MTU or TCP MSS to account for tunnel overhead"
     ],
-    "answer": 2,
-    "explanation": "The evidence centers on intermittent packet loss. Check errors and replace the suspect cable resolves that condition directly while limiting unnecessary changes; the alternatives target unrelated subsystems or introduce avoidable disruption."
+    "answer": 3,
+    "explanation": "Successful small packets with failure at larger nonfragmentable sizes identifies an MTU black-hole condition caused by tunnel overhead. Correct MTU or MSS settings prevent oversized packets from stalling."
   }
 ]
