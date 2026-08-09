@@ -59,6 +59,7 @@ let current = 0;
 let score = 0;
 let selected = null;
 let finished = false;
+let questionAnswered = false;
 
 function shuffle(items) {
   const copy = [...items];
@@ -141,6 +142,7 @@ async function loadQuiz() {
 function showQuestion() {
   const question = questions[current];
   selected = null;
+  questionAnswered = false;
   questionCount.textContent = `Question ${current + 1} of ${questions.length}`;
   questionEl.textContent = question.question;
   answersEl.replaceChildren();
@@ -178,15 +180,17 @@ function startQuizOrTimer() {
 function expirePracticeExam() {
   if (finished) return;
   const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-  if (selectedAnswer && !submitBtn.classList.contains("hidden")) submitBtn.click();
+  if (selectedAnswer && !questionAnswered) submitBtn.click();
   showResults({ timeExpired: true });
 }
 
 submitBtn.addEventListener("click", () => {
-  if (finished || selected === null) {
+  if (finished || questionAnswered) return;
+  if (selected === null) {
     feedback.textContent = "Select an answer first.";
     return;
   }
+  questionAnswered = true;
   const question = questions[current];
   const correct = selected === Number(question.answer);
   if (/^[1-5]$/.test(world) && objective) {
@@ -216,6 +220,7 @@ submitBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
+  if (finished || !questionAnswered) return;
   current += 1;
   if (current < questions.length) showQuestion();
   else showResults();
@@ -224,10 +229,13 @@ nextBtn.addEventListener("click", () => {
 function showResults(options = {}) {
   if (finished) return;
   finished = true;
+  score = Math.max(0, Math.min(questions.length, Number(score) || 0));
   const timingSummary = exam
     ? window.HydraExamTimer?.finish({ reason: options.timeExpired ? "expired" : "manual" })
     : null;
-  const percent = Math.round((score / questions.length) * 100);
+  const percent = questions.length
+    ? Math.max(0, Math.min(100, Math.round((score / questions.length) * 100)))
+    : 0;
   const passed = percent >= 85;
   const destination = resultDestination();
   if (/^[1-5]$/.test(world) && objective) {

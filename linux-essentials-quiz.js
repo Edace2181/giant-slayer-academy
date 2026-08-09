@@ -43,7 +43,7 @@ const quizInfo = el("quizInfo"), objectiveTitle = el("objectiveTitle"), objectiv
 const questionCount = el("questionCount"), questionEl = el("question"), answersEl = el("answers");
 const submitBtn = el("submitBtn"), nextBtn = el("nextBtn"), feedback = el("feedback");
 const scoreEl = el("score"), rankEl = el("rank"), modeDisplay = el("modeDisplay"), returnLink = el("returnLink");
-let questions = [], current = 0, score = 0, selected = null, finished = false;
+let questions = [], current = 0, score = 0, selected = null, finished = false, questionAnswered = false;
 
 function shuffle(items) {
   const copy = [...items];
@@ -125,6 +125,7 @@ async function loadQuiz() {
 function showQuestion() {
   const q = questions[current];
   selected = null;
+  questionAnswered = false;
   questionCount.textContent = `Question ${current + 1} of ${questions.length}`;
   questionEl.textContent = q.question;
   answersEl.innerHTML = "";
@@ -157,14 +158,16 @@ function startQuizOrTimer() {
 function expirePracticeExam() {
   if (finished) return;
   const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-  if (selectedAnswer && !submitBtn.classList.contains("hidden")) submitBtn.click();
+  if (selectedAnswer && !questionAnswered) submitBtn.click();
   showResults({ timeExpired: true });
 }
 submitBtn.addEventListener("click", () => {
-  if (finished || selected === null) {
+  if (finished || questionAnswered) return;
+  if (selected === null) {
     feedback.textContent = "Select an answer first.";
     return;
   }
+  questionAnswered = true;
   const q = questions[current];
   const correct = selected === q.answer;
   if (/^[1-5]$/.test(world) && objective) {
@@ -194,6 +197,7 @@ submitBtn.addEventListener("click", () => {
   nextBtn.classList.remove("hidden");
 });
 nextBtn.addEventListener("click", () => {
+  if (finished || !questionAnswered) return;
   current++;
   if (current < questions.length) showQuestion();
   else showResults();
@@ -201,10 +205,13 @@ nextBtn.addEventListener("click", () => {
 function showResults(options = {}) {
   if (finished) return;
   finished = true;
+  score = Math.max(0, Math.min(questions.length, Number(score) || 0));
   const timingSummary = exam
     ? window.HydraExamTimer?.finish({ reason: options.timeExpired ? "expired" : "manual" })
     : null;
-  const percent = Math.round((score / questions.length) * 100);
+  const percent = questions.length
+    ? Math.max(0, Math.min(100, Math.round((score / questions.length) * 100)))
+    : 0;
   const passed = percent >= 85;
   const destination = resultDestination();
   if (/^[1-5]$/.test(world) && objective && window.HydraCampaignUI) {

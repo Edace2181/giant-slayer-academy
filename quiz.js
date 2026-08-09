@@ -288,7 +288,7 @@ function startQuizOrTimer() {
 function expirePracticeExam() {
     if (finished) return;
     const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-    if (selectedAnswer && !submitBtn.classList.contains("hidden")) submitBtn.click();
+    if (selectedAnswer && !answered) submitBtn.click();
     showResults({ timeExpired: true });
 }
 
@@ -297,7 +297,7 @@ function expirePracticeExam() {
 // ============================================
 
 submitBtn.addEventListener("click", () => {
-    if (finished) return;
+    if (finished || answered) return;
     const selected =  document.querySelector('input[name="answer"]:checked');
 
     if (!selected) {
@@ -362,6 +362,8 @@ submitBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
 
+    if (finished || !answered) return;
+
     currentQuestion++;
 
     if (currentQuestion < questions.length) {
@@ -383,6 +385,7 @@ nextBtn.addEventListener("click", () => {
 function showResults(options = {}) {
     if (finished) return;
     finished = true;
+    score = Math.max(0, Math.min(questions.length, Number(score) || 0));
     const timingSummary = isFinalExam
         ? window.HydraExamTimer?.finish({ reason: options.timeExpired ? "expired" : "manual" })
         : null;
@@ -403,7 +406,9 @@ function showResults(options = {}) {
     submitBtn.classList.add("hidden");
     nextBtn.classList.add("hidden");
 
-    let percent = Math.round((score / questions.length) * 100);
+    let percent = questions.length
+        ? Math.max(0, Math.min(100, Math.round((score / questions.length) * 100)))
+        : 0;
     const passed = percent >= 85;
 
     if (isObjectiveMode && objective && window.HydraCampaignUI) {
