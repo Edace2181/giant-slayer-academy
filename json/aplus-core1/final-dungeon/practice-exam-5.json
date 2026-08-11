@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Laptop display cable",
     "difficulty": "Level 2",
-    "question": "A laptop has a bright backlight but no internal image after its battery was replaced. The panel self-test displays solid colors, external video works, and the motherboard end of the display cable was disturbed during service. What should be done FIRST?",
+    "question": "A laptop's internal display cable is fully seated, but its connector latch was broken during a prior repair. The cable gradually backs out after the laptop is carried, causing intermittent video. What is the BEST correction?",
     "choices": [
-      "Reseat the motherboard-side display cable connector",
-      "Replace the working LCD panel",
-      "Reinstall the printer driver",
-      "Change the wireless security mode"
+      "Replace the damaged cable or connector assembly using the supported service procedure",
+      "Glue the live connector permanently in place",
+      "Increase wireless transmit power",
+      "Reformat the storage drive"
     ],
     "answer": 0,
-    "explanation": "The panel self-test and backlight show that the panel can operate, while external video confirms graphics output. The recently disturbed motherboard-side cable is the most direct failure point."
+    "explanation": "A broken retention mechanism allows a correctly seated cable to move again, so the damaged serviceable assembly must be repaired or replaced. Adhesive and unrelated network or storage changes are not reliable hardware repairs."
   },
   {
     "id": "A1201-PE5-002",
@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Swollen mobile battery",
     "difficulty": "Level 2",
-    "question": "A laptop arrives with its trackpad pushed upward and the bottom cover no longer sitting flat. What should a technician do before any diagnostic testing?",
+    "question": "A user asks a technician to power on a phone with a visibly swollen battery long enough to copy unsynchronized photos. What should the technician do?",
     "choices": [
-      "Press the trackpad down to reseat it",
-      "Run repeated charge cycles",
-      "Disconnect external power, stop using the laptop, and isolate it under the swollen-battery procedure",
-      "Drill a vent hole in the battery compartment"
+      "Charge it to 100% before copying files",
+      "Press the display back into the case",
+      "Do not power or charge it; follow the approved damaged-battery service and data-recovery process",
+      "Puncture the battery to release pressure"
     ],
     "answer": 2,
-    "explanation": "A raised trackpad and distorted case indicate battery swelling. Applying pressure, charging, or puncturing the cell can cause fire, so the device must be safely isolated."
+    "explanation": "Powering or charging a swollen battery adds risk. Data recovery must be handled through an approved safe-service process rather than prioritizing access over battery safety."
   },
   {
     "id": "A1201-PE5-003",
@@ -197,15 +197,15 @@
     "objective": "2.1",
     "blueprint": "HTTPS access",
     "difficulty": "Level 2",
-    "question": "Which protocol provides TLS-protected web browsing and normally uses TCP port 443?",
+    "question": "Company HTTPS sites work on managed laptops but show an untrusted-issuer warning on one newly imaged device. The sites present certificates issued by the organization's inspection CA. What should be verified?",
     "choices": [
-      "HTTP",
-      "SNMP",
-      "Telnet",
-      "HTTPS"
+      "That Telnet is enabled",
+      "That HTTPS has been moved to UDP",
+      "That the private CA key is published to the user",
+      "That the approved organizational root certificate is installed in the device trust store"
     ],
     "answer": 3,
-    "explanation": "HTTPS combines HTTP with TLS encryption and normally uses TCP 443. The alternatives do not provide the standard secure browser service."
+    "explanation": "The device lacks trust for the issuer used by the managed HTTPS path. Installing the approved root through the organization's management process establishes trust without weakening transport security or exposing keys."
   },
   {
     "id": "A1201-PE5-014",
@@ -357,15 +357,15 @@
     "objective": "2.4",
     "blueprint": "Private IPv4",
     "difficulty": "Level 2",
-    "question": "Which address is part of the RFC 1918 private 192.168.0.0/16 range?",
+    "question": "A VPN split-tunnel rule should include the company's private 192.168.0.0 addresses, but it currently lists 192.0.2.0/24. Which block should replace it when the company uses the full RFC1918 192.168 range?",
     "choices": [
-      "192.0.2.44",
-      "198.51.100.20",
-      "224.0.0.20",
-      "192.168.44.20"
+      "192.0.2.0/24",
+      "198.51.100.0/24",
+      "224.0.0.0/4",
+      "192.168.0.0/16"
     ],
     "answer": 3,
-    "explanation": "Addresses beginning 192.168 are private. The alternatives are documentation or multicast addresses rather than RFC 1918 host space."
+    "explanation": "192.168.0.0/16 is the RFC1918 private block. The current documentation range and the other public or multicast choices do not represent the internal addresses that should enter the tunnel."
   },
   {
     "id": "A1201-PE5-024",
@@ -453,15 +453,15 @@
     "objective": "2.6",
     "blueprint": "Symmetrical broadband",
     "difficulty": "Level 4",
-    "question": "A broadcast studio must send and receive multiple live high-definition streams at the same time. Which Internet characteristic is MOST important?",
+    "question": "A site has both symmetrical fiber and an asymmetric backup circuit. Large uploads become slow after an SD-WAN policy begins preferring the backup link for bulk traffic. What should be changed?",
     "choices": [
-      "A large difference favoring downloads",
-      "High symmetrical upstream and downstream bandwidth",
-      "A Bluetooth-only uplink",
-      "A receive-only service"
+      "Prefer the low-upstream backup for all uploads",
+      "Route the upload workload over the symmetrical circuit unless failover is required",
+      "Disable both circuits",
+      "Replace the local display adapters"
     ],
     "answer": 1,
-    "explanation": "Simultaneous contribution and reception require strong upload as well as download capacity. Symmetrical service avoids an upstream bottleneck."
+    "explanation": "The application is being sent through the link with insufficient upstream capacity despite a suitable primary circuit. Correcting path policy uses the available symmetrical service without purchasing another connection."
   },
   {
     "id": "A1201-PE5-030",
@@ -565,15 +565,15 @@
     "objective": "3.2",
     "blueprint": "Motherboard form factor",
     "difficulty": "Level 3",
-    "question": "A replacement board must fit a microATX chassis and provide up to four expansion positions. Which motherboard form factor should be selected?",
+    "question": "A microATX motherboard is installed in a case that previously held ATX. One unused case standoff sits under the board where no mounting hole exists, and the system shorts when tightened. What should be done?",
     "choices": [
-      "Extended ATX",
-      "Mini-ITX with one slot",
-      "microATX",
-      "A proprietary server backplane"
+      "Add more unmatched standoffs",
+      "Place conductive foil under the board",
+      "Move or remove the extra standoff so it matches the microATX mounting pattern",
+      "Force the motherboard into an ATX-only hole"
     ],
     "answer": 2,
-    "explanation": "microATX is designed for the specified chassis and commonly supports as many as four expansion slots. Larger ATX variants will not fit."
+    "explanation": "Case standoffs must align with the installed board's mounting holes. An extra metal standoff can short traces on a smaller form factor, so the mounting pattern must be corrected before power is applied."
   },
   {
     "id": "A1201-PE5-037",
@@ -725,15 +725,15 @@
     "objective": "3.6",
     "blueprint": "Power capacity",
     "difficulty": "Level 3",
-    "question": "After a graphics upgrade, a workstation’s estimated peak draw is 670 W and the current 650 W PSU shuts down under load. Which replacement is BEST?",
+    "question": "A replacement PSU has a manual 115/230 V input selector. The site supplies 230 V, but the selector is set to 115 V and the unit has not yet been powered. What should the technician do?",
     "choices": [
-      "A generic 500 W PSU",
-      "The same 650 W unit with adapter chains",
-      "A laptop charger",
-      "A reputable 850 W PSU with the required GPU and CPU connectors"
+      "Power it on briefly to let it autodetect",
+      "Bridge the selector with a paper clip",
+      "Connect the PSU through a SATA data cable",
+      "Set the selector to the correct 230 V input before connecting power"
     ],
     "answer": 3,
-    "explanation": "An 850 W quality supply provides appropriate headroom and native connectors above the measured peak. Lower or improvised options remain undersized or unsafe."
+    "explanation": "A manual-input PSU must be set for the facility voltage before use. Applying 230 V while configured for 115 V can damage equipment; improvised bypasses are unsafe."
   },
   {
     "id": "A1201-PE5-047",
@@ -741,15 +741,15 @@
     "objective": "3.6",
     "blueprint": "CPU auxiliary power",
     "difficulty": "Level 3",
-    "question": "A motherboard can start with a 4-pin CPU power lead, but a newly installed high-power processor causes shutdowns under sustained load. The board provides an 8-pin EPS header. What should be done?",
+    "question": "A technician replaces a modular PSU and finds that the old unit's CPU cable physically fits the new unit. The manufacturers document different modular pinouts. Which cable should be used?",
     "choices": [
-      "Connect the full supported 8-pin EPS CPU power lead",
-      "Use a PCIe graphics cable in the CPU socket",
-      "Disconnect the 24-pin connector",
-      "Replace the monitor"
+      "The EPS/CPU cable supplied or explicitly approved for the new PSU",
+      "The old cable because the connector fits",
+      "A SATA data cable",
+      "Any 6+2 GPU lead forced into the socket"
     ],
     "answer": 0,
-    "explanation": "The upgraded CPU requires the current capacity of the full EPS connection. The correct CPU cable and populated header provide stable processor power."
+    "explanation": "Modular PSU-side pinouts are not universally interchangeable. Using the cable approved for the new unit prevents incorrect voltages from reaching the motherboard even when an older plug appears to fit."
   },
   {
     "id": "A1201-PE5-048",
@@ -933,15 +933,15 @@
     "objective": "4.1",
     "blueprint": "Isolated virtual networking",
     "difficulty": "Level 4",
-    "question": "Development VMs must communicate with the host for testing but must not reach the physical LAN or Internet. Which virtual network type is BEST?",
+    "question": "Several host-only lab VMs must reach a license service running on their host, but no other host service should be accessible. Which design BEST enforces that requirement?",
     "choices": [
-      "A bridged external network",
-      "A public cloud subnet",
-      "A host-only virtual network",
-      "An isolated VM-only network with no host access"
+      "Bridge the VMs directly to production",
+      "Disable the host firewall entirely",
+      "Keep the host-only network and allow only the license-service port on that interface's host firewall",
+      "Give every VM a public Internet address"
     ],
     "answer": 2,
-    "explanation": "Host-only networking connects guests to the host while excluding the physical network. A private VM-only network would not meet the host-communication requirement."
+    "explanation": "Host-only networking provides the required local path without a physical uplink. A narrowly scoped host firewall rule permits the license service while preserving isolation from other host services and production."
   },
   {
     "id": "A1201-PE5-060",
@@ -981,15 +981,15 @@
     "objective": "4.2",
     "blueprint": "Hosted applications",
     "difficulty": "Level 2",
-    "question": "A team uses a provider-managed online project application. The provider controls its servers, patches, and runtime. Which service model applies?",
+    "question": "A provider-operated SaaS application is unavailable in every office. The customer's network is healthy, and the provider status page confirms a regional incident. What should the customer's administrator do NEXT?",
     "choices": [
-      "SaaS",
-      "IaaS",
-      "Local DAS",
-      "PAN"
+      "Follow the provider escalation and continuity procedure defined by the service agreement",
+      "Patch the provider's physical hosts directly",
+      "Replace every local workstation",
+      "Attempt to enter the provider's data center"
     ],
     "answer": 0,
-    "explanation": "SaaS delivers the completed application as a managed service. The customer consumes it rather than managing infrastructure or the application stack."
+    "explanation": "The provider operates the SaaS platform, so a confirmed regional service incident should follow the contracted escalation and business-continuity process. Customers do not administer the provider's infrastructure."
   },
   {
     "id": "A1201-PE5-063",
@@ -997,15 +997,15 @@
     "objective": "4.2",
     "blueprint": "Virtual infrastructure",
     "difficulty": "Level 2",
-    "question": "A company deploys and administers its own operating systems on rented cloud virtual machines. Which model is this?",
+    "question": "A vendor application requires a custom kernel driver and administrative control of its operating system. The organization wants the underlying physical hosts managed by a cloud provider. Which model is the BEST fit?",
     "choices": [
-      "SaaS",
-      "NFC",
-      "IaaS",
-      "A local print service"
+      "A finished SaaS application with no OS access",
+      "A browser bookmark",
+      "IaaS virtual machines",
+      "A shared printer queue"
     ],
     "answer": 2,
-    "explanation": "IaaS supplies virtual compute and networking while the customer manages guest operating systems and software."
+    "explanation": "IaaS supplies virtualized infrastructure while preserving customer control of the guest operating system needed for the custom driver. A finished SaaS product does not normally expose that layer."
   },
   {
     "id": "A1201-PE5-064",
@@ -1029,15 +1029,15 @@
     "objective": "4.2",
     "blueprint": "Shared cloud capacity",
     "difficulty": "Level 3",
-    "question": "Several cloud customers use the same physical storage cluster while access controls keep their data logically separated. Which concept is demonstrated?",
+    "question": "A department must charge projects according to the compute and storage each project actually consumes from a shared cloud pool. Which cloud capability supplies the required usage evidence?",
     "choices": [
-      "A dedicated offline disk for every request",
-      "Local clipboard sharing",
-      "Cable tracing",
-      "Multitenancy within a shared resource pool"
+      "A single untracked shared account",
+      "Disabling billing telemetry",
+      "A local monitor refresh counter",
+      "Measured-service metering associated with each project's resource consumption"
     ],
     "answer": 3,
-    "explanation": "Multitenancy allows multiple isolated customers to consume shared provider infrastructure, which is allocated as a pooled resource."
+    "explanation": "Measured service records consumption so shared capacity can be attributed for chargeback or showback. Untracked accounts and disabled telemetry remove the evidence the department requires."
   },
   {
     "id": "A1201-PE5-066",
@@ -1157,15 +1157,15 @@
     "objective": "5.2",
     "blueprint": "Lost firmware settings",
     "difficulty": "Level 2",
-    "question": "A laptop’s firmware clock resets after the main battery and AC adapter are disconnected for service. Which small internal component is MOST likely depleted?",
+    "question": "A motherboard loses a custom fan curve after every cold start, but its clock remains accurate and the CMOS battery tests within specification. The vendor documents an NVRAM persistence defect fixed in newer firmware. What should be done?",
     "choices": [
-      "The Wi-Fi antenna",
-      "The RTC/CMOS battery",
-      "The display panel",
-      "The SSD controller"
+      "Replace the healthy battery solely because settings reset",
+      "Apply the approved firmware update and then save the required settings",
+      "Remove all cooling fans",
+      "Change the printer's network address"
     ],
     "answer": 1,
-    "explanation": "The RTC battery preserves the clock and firmware state when all primary power is removed. Resetting only under that condition indicates it is depleted."
+    "explanation": "A correct clock and healthy battery argue against battery depletion, while the vendor identifies a firmware persistence defect. Applying the approved fix targets the documented cause."
   },
   {
     "id": "A1201-PE5-074",

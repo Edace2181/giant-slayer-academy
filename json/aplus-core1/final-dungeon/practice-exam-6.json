@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Swollen mobile battery",
     "difficulty": "Level 2",
-    "question": "A phone screen is lifting away from its frame even though the device has not been dropped. Inspection shows the battery pouch expanding beneath the display. What is the safest response?",
+    "question": "During authorized service, a swollen phone battery begins hissing and releasing an odor before it can be removed. What should the technician do FIRST?",
     "choices": [
-      "Power off the phone, isolate it, and use the approved swollen-battery handling process",
-      "Press the screen back into place",
-      "Continue charging to confirm runtime",
-      "Pierce the battery to reduce pressure"
+      "Stop work, move away, and activate the site's damaged-battery emergency procedure",
+      "Continue prying until the battery comes free",
+      "Apply pressure to flatten the cell",
+      "Reconnect the charger to test it"
     ],
     "answer": 0,
-    "explanation": "An expanding lithium battery is a fire and chemical hazard. The device must be removed from service without pressure, charging, or puncture."
+    "explanation": "Hissing and odor indicate an escalating battery event. The technician should stop handling the device and initiate the site's emergency response rather than add mechanical or electrical stress."
   },
   {
     "id": "A1201-PE6-003",
@@ -37,15 +37,15 @@
     "objective": "1.1",
     "blueprint": "Laptop memory",
     "difficulty": "Level 2",
-    "question": "A laptop has 8 GB of soldered memory and one empty slot documented for DDR5 SO-DIMMs. Which component can be added to increase RAM?",
+    "question": "A laptop accepts a supported DDR5-5600 SO-DIMM but reports it operating at 4800 MT/s. The processor documentation lists 4800 MT/s as its maximum memory speed. What should the technician conclude?",
     "choices": [
-      "A desktop DDR4 DIMM",
-      "A compatible DDR5 SO-DIMM",
-      "An M.2 wireless module",
-      "A SATA hard drive"
+      "The SO-DIMM must be forced to 5600 MT/s",
+      "The module is operating normally at the memory-controller's supported speed",
+      "The memory belongs in an M.2 socket",
+      "The operating system should be deleted"
     ],
     "answer": 1,
-    "explanation": "The serviceable slot is designed for the compact DDR5 SO-DIMM form factor. Desktop memory and storage or radio modules are not compatible RAM upgrades."
+    "explanation": "Memory runs at the highest speed supported by the complete platform, including the processor's memory controller. A faster-rated module can downclock safely; forcing unsupported settings is unnecessary."
   },
   {
     "id": "A1201-PE6-004",
@@ -181,15 +181,15 @@
     "objective": "1.3",
     "blueprint": "Location services",
     "difficulty": "Level 2",
-    "question": "A camera application can take pictures but cannot attach coordinates. Maps locate the phone accurately, and the camera app’s location permission is denied. What should be changed?",
+    "question": "A mapping application has permission and device location services are enabled, but it consistently reports a test coordinate. Developer options show a mock-location application is active. What should be done?",
     "choices": [
-      "Disable GPS globally",
-      "Replace the camera module",
-      "Grant the camera application location permission",
-      "Change the wireless channel"
+      "Replace the display panel",
+      "Change the email server port",
+      "Disable the unauthorized mock-location provider and retest normal location sources",
+      "Format the printer queue"
     ],
     "answer": 2,
-    "explanation": "Location hardware works for Maps, so the missing geotags result from the camera’s application-specific permission."
+    "explanation": "A mock-location provider can override real GPS and network-derived positions even when permissions are correct. Disabling it restores normal location processing without unrelated hardware or service changes."
   },
   {
     "id": "A1201-PE6-013",
@@ -309,15 +309,15 @@
     "objective": "2.3",
     "blueprint": "2.4 GHz channels",
     "difficulty": "Level 4",
-    "question": "A 2.4 GHz survey finds several neighboring access points on channels 2, 4, 7, and 9, creating heavy overlap. Which in-house channel plan is BEST for three access points?",
+    "question": "A legacy handheld supports only 2.4 GHz channels 1 through 11. One access point was configured for channel 13 and is visible to newer devices but not the handheld. What is the BEST correction?",
     "choices": [
-      "Use channels 3, 5, and 8",
-      "Set all APs to channel 7 at maximum power",
-      "Disable wireless encryption",
-      "Use channels 1, 6, and 11 with appropriate power levels"
+      "Increase channel width to cover channels 1 through 13",
+      "Disable all wireless security",
+      "Replace the handheld's DHCP reservation",
+      "Move that cell to a permitted client-supported channel within the coordinated plan"
     ],
     "answer": 3,
-    "explanation": "Channels 1, 6, and 11 are the standard non-overlapping 20 MHz choices in 2.4 GHz. Proper power further limits unnecessary contention."
+    "explanation": "The client cannot use channel 13, so the AP must operate on a locally permitted channel supported by the device and coordinated with neighboring cells. Width and security changes do not add channel support."
   },
   {
     "id": "A1201-PE6-021",
@@ -341,15 +341,15 @@
     "objective": "2.4",
     "blueprint": "APIPA addressing",
     "difficulty": "Level 2",
-    "question": "A workstation displays 169.254.112.7 after startup. Which service should the technician investigate FIRST?",
+    "question": "A laptop receives an APIPA address only after resuming from sleep. DHCP logs show no request until the wireless adapter is disabled and reenabled, after which a valid lease arrives immediately. What should be investigated?",
     "choices": [
-      "DNS",
-      "NTP",
-      "HTTPS",
-      "DHCP"
+      "The printer's imaging drum",
+      "The monitor color profile",
+      "The office mail signature",
+      "The wireless driver and adapter power-management behavior during resume"
     ],
     "answer": 3,
-    "explanation": "A 169.254.0.0/16 address is self-assigned when the client cannot obtain a DHCP lease."
+    "explanation": "DHCP works once the adapter is reset, and the server receives no request beforehand. That sequence points to the resumed adapter or its driver rather than a DHCP scope or general network failure."
   },
   {
     "id": "A1201-PE6-023",
@@ -389,15 +389,15 @@
     "objective": "2.5",
     "blueprint": "Wide area networking",
     "difficulty": "Level 3",
-    "question": "A manufacturer leases a dedicated carrier circuit between two factories for predictable private site connectivity. What network scope does the circuit provide?",
+    "question": "A branch has both public broadband and a carrier-managed MPLS WAN. Business application traffic is taking broadband because its route has a lower metric, producing inconsistent latency. What should be changed?",
     "choices": [
-      "Personal area network",
-      "Wide area network",
-      "Storage area network",
-      "Near-field communication link"
+      "Convert the branch network to Bluetooth",
+      "Adjust routing policy so the application prefers the managed WAN path",
+      "Disable the MPLS circuit",
+      "Place the application on a printer USB port"
     ],
     "answer": 1,
-    "explanation": "A private carrier circuit joining geographically separated factories provides wide area network connectivity. The other choices cover personal, storage, or extremely short-range communication."
+    "explanation": "The intended low-latency WAN exists, but route preference sends traffic elsewhere. Correcting routing policy uses the managed path without replacing unrelated local technology."
   },
   {
     "id": "A1201-PE6-026",
@@ -405,15 +405,15 @@
     "objective": "2.5",
     "blueprint": "Personal area networking",
     "difficulty": "Level 3",
-    "question": "A tablet connects simultaneously to a Bluetooth keyboard, mouse, and headset around one user. What type of network is formed?",
+    "question": "A phone and laptop are paired for audio and file transfer, but the laptop cannot use the phone's cellular data through Bluetooth. Which additional feature must be enabled?",
     "choices": [
-      "Campus area network",
-      "Storage area network",
-      "Wide area network",
-      "Bluetooth personal area network"
+      "A Fibre Channel storage zone",
+      "A metropolitan leased line",
+      "A satellite dish on the laptop",
+      "Bluetooth tethering or the network-access PAN profile"
     ],
     "answer": 3,
-    "explanation": "Short-range peripherals grouped around one tablet form a Bluetooth personal area network. Campus, storage, and wide area networks serve broader or specialized scopes."
+    "explanation": "Pairing alone does not necessarily enable a Bluetooth network connection. The phone must offer tethering through the appropriate PAN profile for the laptop to use cellular data."
   },
   {
     "id": "A1201-PE6-027",
@@ -485,15 +485,15 @@
     "objective": "2.7",
     "blueprint": "Copper validation",
     "difficulty": "Level 2",
-    "question": "A cabling contractor must document that installed Cat 6 runs meet attenuation, crosstalk, and length requirements. Which instrument should be used?",
+    "question": "A newly installed Cat 6 run fails certification only when nearby fluorescent fixtures are active. Length and termination tests pass. What should the installer investigate?",
     "choices": [
-      "A basic continuity light",
-      "A Wi-Fi analyzer",
-      "A multimeter only",
-      "A cable certifier"
+      "The workstation wallpaper",
+      "The printer toner level",
+      "The DHCP lease duration",
+      "Excessive electromagnetic interference caused by the cable route or inadequate separation"
     ],
     "answer": 3,
-    "explanation": "A certifier measures standards-based performance characteristics and produces compliance results. Simple continuity tools cannot verify category performance."
+    "explanation": "A performance failure correlated with nearby electrical equipment points to induced interference rather than length or wire-map faults. Rerouting or applying the documented separation and shielding practices addresses that evidence."
   },
   {
     "id": "A1201-PE6-032",
@@ -501,15 +501,15 @@
     "objective": "2.7",
     "blueprint": "Cable tracing",
     "difficulty": "Level 2",
-    "question": "A technician needs to find the far end of an unused copper run hidden among wall cables. Which tool set should be used?",
+    "question": "A technician must identify which fiber strand in a disconnected bundle reaches a remote cabinet. Which tool can inject visible light so the far-end strand can be identified?",
     "choices": [
-      "A barcode scanner and printer",
-      "A CPU socket tester",
-      "An optical fusion splicer",
-      "A tone generator and inductive probe"
+      "A copper punchdown tool",
+      "A Wi-Fi analyzer",
+      "A SATA loopback plug",
+      "A visual fault locator used according to fiber-safety procedures"
     ],
     "answer": 3,
-    "explanation": "The generator places a traceable tone on the cable and the probe locates that signal without needing an active Ethernet link."
+    "explanation": "A visual fault locator injects visible light into fiber and can assist with continuity and endpoint identification. Copper termination, wireless analysis, and storage tools cannot trace an optical strand."
   },
   {
     "id": "A1201-PE6-033",
@@ -517,15 +517,15 @@
     "objective": "2.8",
     "blueprint": "Stable DHCP addressing",
     "difficulty": "Level 2",
-    "question": "A VoIP phone must keep a predictable address for call-management rules while remaining configured through DHCP. What should be created?",
+    "question": "A DHCP reservation is configured for 10.20.30.50, but the active scope now covers only 10.20.40.0/24. The server refuses to offer the reserved address. What should be corrected?",
     "choices": [
-      "A random lease on every restart",
-      "A DHCP reservation for the phone’s MAC address",
-      "An APIPA gateway",
-      "A public multicast record"
+      "Duplicate the client's MAC on another device",
+      "Move the reservation into the appropriate active scope or restore the intended subnet design",
+      "Assign the router's address to the client",
+      "Disable DHCP conflict detection"
     ],
     "answer": 1,
-    "explanation": "A reservation consistently assigns the approved address through DHCP, preserving centralized configuration."
+    "explanation": "A reservation must belong to the subnet and scope serving the client. Correcting the scope relationship restores valid DHCP behavior; duplicate identities and gateway conflicts create new problems."
   },
   {
     "id": "A1201-PE6-034",
@@ -565,15 +565,15 @@
     "objective": "3.2",
     "blueprint": "Motherboard form factor",
     "difficulty": "Level 3",
-    "question": "A small-form-factor case documents support for microATX and Mini-ITX. The replacement board needs three expansion slots and four DIMM sockets. Which is the BEST choice?",
+    "question": "A standard microATX board fits an OEM chassis mechanically, but the original system uses a proprietary 12 V-only power connector and undocumented front-panel block. What should be verified before proceeding?",
     "choices": [
-      "A compatible microATX motherboard",
-      "A Mini-ITX board with one expansion slot",
-      "An Extended ATX board",
-      "A proprietary rack-server board"
+      "Whether standard power and front-panel adapters are officially supported for that chassis",
+      "Whether the board can be forced onto the proprietary plug",
+      "Whether the case can be filled with conductive spacers",
+      "Whether a printer cable can power the motherboard"
     ],
     "answer": 0,
-    "explanation": "microATX can fit the stated case and provide the required slots and memory sockets. Mini-ITX lacks the expansion capacity, and larger boards will not fit."
+    "explanation": "Form-factor dimensions alone do not guarantee electrical or control compatibility in proprietary systems. Supported power and front-panel interfaces must be confirmed before installation."
   },
   {
     "id": "A1201-PE6-037",
@@ -581,15 +581,15 @@
     "objective": "3.2",
     "blueprint": "Graphics expansion",
     "difficulty": "Level 3",
-    "question": "A motherboard manual states that installing a GPU in the second x16-length slot limits it to four lanes. Where should one performance GPU be installed?",
+    "question": "A motherboard provides two x16-length GPU slots. With one card, it runs x16; after a second card is installed, both operate at x8 as documented. What should the technician conclude?",
     "choices": [
-      "The secondary x4-wired slot",
-      "The primary CPU-connected PCIe x16 slot",
-      "A DIMM socket",
-      "An M.2 Key E socket"
+      "Both cards have become SATA devices",
+      "The CPU lanes are being divided between the populated slots as designed",
+      "The memory modules must be removed",
+      "The slot labels should be ignored and connectors modified"
     ],
     "answer": 1,
-    "explanation": "The primary CPU-connected slot supplies the full lane count expected by a performance graphics card."
+    "explanation": "Many platforms bifurcate a fixed set of CPU PCIe lanes when two graphics slots are populated. The documented x8/x8 operation is expected, not evidence of a damaged slot."
   },
   {
     "id": "A1201-PE6-038",
@@ -661,15 +661,15 @@
     "objective": "3.4",
     "blueprint": "Server memory protection",
     "difficulty": "Level 2",
-    "question": "Why would a supported server use ECC memory instead of ordinary non-ECC RAM?",
+    "question": "A server manual requires registered ECC memory. After an upgrade with unbuffered ECC modules, firmware reports that the installed memory configuration is unsupported. What should the technician do?",
     "choices": [
-      "To provide permanent file storage",
-      "To supply network PoE",
-      "To reduce undetected data corruption by correcting certain memory errors",
-      "To increase monitor resolution"
+      "Disable all firmware memory checks",
+      "Increase memory voltage beyond specification",
+      "Install a matched set of supported registered ECC modules",
+      "Mix registered and unbuffered modules to enable correction"
     ],
     "answer": 2,
-    "explanation": "ECC adds error-detection and correction information that improves memory reliability on compatible platforms."
+    "explanation": "ECC capability does not make every module interchangeable. The server memory controller requires the documented registered ECC type, so the unsupported unbuffered set must be replaced with a compatible matched set."
   },
   {
     "id": "A1201-PE6-043",
@@ -693,15 +693,15 @@
     "objective": "3.5",
     "blueprint": "High-speed storage",
     "difficulty": "Level 3",
-    "question": "A workstation needs a scratch disk for high-resolution video and its motherboard supports PCIe Gen 4 x4 NVMe. Which storage choice is BEST?",
+    "question": "An NVMe SSD is visible to firmware but will not boot after a system is switched to legacy-only boot mode. The operating system was installed in UEFI mode on a GPT disk. What should be restored?",
     "choices": [
-      "A USB 2.0 hard disk",
-      "A PCIe Gen 4 NVMe SSD",
-      "A DVD-RW drive",
-      "A serial flash adapter"
+      "A 40-pin PATA cable",
+      "UEFI boot mode and the existing signed boot entry",
+      "A RAID 0 conversion",
+      "A printer maintenance kit"
     ],
     "answer": 1,
-    "explanation": "A Gen 4 x4 NVMe SSD uses the available high-bandwidth interface and low-latency command path suited to editing scratch workloads."
+    "explanation": "A UEFI/GPT installation requires compatible UEFI boot configuration. Restoring the correct mode and boot entry addresses startup without changing the healthy NVMe hardware or disk layout."
   },
   {
     "id": "A1201-PE6-045",
@@ -709,15 +709,15 @@
     "objective": "3.5",
     "blueprint": "Hot-swappable storage",
     "difficulty": "Level 3",
-    "question": "A SAS array identifies bay 12 as failed, illuminates its amber locator, and supports online replacement. What should the technician do?",
+    "question": "A RAID controller rejects a proposed replacement for a failed 900 GB member because the new drive provides only 600 GB. What should be installed?",
     "choices": [
-      "Confirm bay 12, replace it with a compatible hot-swap drive, and monitor reconstruction",
-      "Pull a different healthy disk first",
-      "Power off unrelated servers",
-      "Convert the array to RAID 0"
+      "A compatible replacement whose usable capacity is at least as large as the failed member",
+      "A smaller drive forced into the array",
+      "A USB flash drive used as parity",
+      "A printer storage tray"
     ],
     "answer": 0,
-    "explanation": "The controller and locator identify the failed member. A compatible online replacement followed by rebuild monitoring restores the array safely."
+    "explanation": "A replacement member must meet the controller's interface and capacity requirements. A smaller disk cannot contain the member's allocated data and therefore cannot participate in the rebuild."
   },
   {
     "id": "A1201-PE6-046",
@@ -725,15 +725,15 @@
     "objective": "3.6",
     "blueprint": "Power capacity",
     "difficulty": "Level 3",
-    "question": "A desktop configuration calculator estimates a 540 W peak load. Which PSU is the most reasonable selection for stable operation and modest expansion?",
+    "question": "A workstation uses a 1000 W PSU but draws about 250 W during normal operation. A user believes the PSU forces 1000 W into the computer continuously. Which explanation is correct?",
     "choices": [
-      "A generic 400 W unit",
-      "A quality 750 W unit with all required connectors",
-      "A 550 W unit with no GPU connectors",
-      "A phone charger"
+      "The PSU always delivers its full rating",
+      "The computer draws only the power its components require, subject to PSU efficiency and capacity",
+      "The extra wattage is sent through the Ethernet port",
+      "The PSU converts unused capacity into memory"
     ],
     "answer": 1,
-    "explanation": "A reputable 750 W supply provides practical overhead above peak demand and the proper native connectors."
+    "explanation": "A PSU rating describes available capacity, not mandatory continuous delivery. Components draw their required power; efficiency and load range matter, but the unit does not force its full rating into the system."
   },
   {
     "id": "A1201-PE6-047",
@@ -741,15 +741,15 @@
     "objective": "3.6",
     "blueprint": "CPU auxiliary power",
     "difficulty": "Level 3",
-    "question": "A newly built PC powers fans but shows a CPU power fault LED. The 24-pin connector is seated, while the motherboard’s 8-pin processor header is empty. Which cable is required?",
+    "question": "A high-current processor becomes unstable under load. The EPS connector is attached through a thin third-party extension that becomes warm, while the native PSU cable remains cool during testing. What should be done?",
     "choices": [
-      "A PCIe 6+2 graphics cable",
-      "A SATA data cable",
-      "The PSU’s EPS/CPU 4+4 power cable",
-      "A front USB lead"
+      "Add another unapproved extension",
+      "Power the CPU from a SATA connector",
+      "Remove the questionable extension and use the approved native EPS cable",
+      "Disable thermal protection"
     ],
     "answer": 2,
-    "explanation": "The EPS/CPU cable supplies dedicated processor power through the motherboard’s 8-pin header. Similar-looking graphics power uses a different pinout."
+    "explanation": "Heat and instability localized to the extension indicate excessive resistance or inadequate construction. The approved native EPS path should be used rather than stacking adapters or bypassing protection."
   },
   {
     "id": "A1201-PE6-048",
@@ -757,15 +757,15 @@
     "objective": "3.7",
     "blueprint": "Laser print defects",
     "difficulty": "Level 4",
-    "question": "A laser printer places black spots at a constant interval equal to one drum rotation. The spots remain after the paper path is cleaned. Which part should be inspected or replaced?",
+    "question": "A laser printer produces completely black pages after its drum cartridge is replaced. Inspection shows the cartridge's primary-charge contact is covered by its shipping protector. What should be done?",
     "choices": [
-      "The Ethernet switch",
-      "The fuser power cord",
-      "The imaging drum",
-      "The scanner glass"
+      "Change the network gateway",
+      "Replace the pickup tray",
+      "Remove the protector and reinstall the supported drum cartridge correctly",
+      "Increase the paper size setting"
     ],
     "answer": 2,
-    "explanation": "A defect repeating at the drum circumference indicates contamination or damage on that rotating imaging surface."
+    "explanation": "The covered charge contact prevents the drum from receiving the correct electrical conditioning, which can produce black output. Correct installation targets the immediate post-replacement cause."
   },
   {
     "id": "A1201-PE6-049",
@@ -837,15 +837,15 @@
     "objective": "3.2",
     "blueprint": "Front-panel ports",
     "difficulty": "Level 2",
-    "question": "A new case uses an HD Audio front-panel cable. Rear sound works, but the front microphone does not because the case lead is connected to a legacy AC’97 header position. What should be changed?",
+    "question": "A four-conductor headset is connected to a desktop's separate headphone and microphone jacks. Audio output works, but the microphone does not appear. What accessory is required?",
     "choices": [
-      "Replace the CPU",
-      "Move the SSD",
-      "Connect the HD Audio lead to the correct motherboard audio header",
-      "Change the wireless SSID"
+      "A SATA power splitter",
+      "A PCIe riser",
+      "A compatible TRRS headset splitter for separate headphone and microphone connections",
+      "A monitor-only HDMI adapter"
     ],
     "answer": 2,
-    "explanation": "The front audio assembly must use the matching HD Audio header and pinout. Working rear sound confirms the audio controller itself functions."
+    "explanation": "A combined TRRS headset carries output and microphone on one connector, while the desktop exposes separate jacks. A compatible splitter maps those contacts without changing motherboard headers."
   },
   {
     "id": "A1201-PE6-054",
@@ -901,15 +901,15 @@
     "objective": "4.1",
     "blueprint": "Bare-metal virtualization",
     "difficulty": "Level 3",
-    "question": "A virtualization appliance boots its management console before any general-purpose operating system and runs guests directly on server hardware. What platform type is this?",
+    "question": "A bare-metal hypervisor's management interface is reachable from ordinary user subnets. Guest traffic is already separated. Which improvement BEST protects hypervisor administration?",
     "choices": [
-      "A Type 2 desktop hypervisor",
-      "SaaS",
-      "A print server queue",
-      "A Type 1 hypervisor"
+      "Bridge management to every guest VLAN",
+      "Publish the console directly to the Internet",
+      "Share one administrator password with all users",
+      "Place management interfaces on a restricted management network with tightly controlled access"
     ],
     "answer": 3,
-    "explanation": "A virtualization layer that starts directly on hardware is a Type 1 or bare-metal hypervisor."
+    "explanation": "Hypervisor management should use a restricted administrative path separate from general users and guest traffic. Broad bridging and shared credentials expand exposure instead of reducing it."
   },
   {
     "id": "A1201-PE6-058",
@@ -933,15 +933,15 @@
     "objective": "4.1",
     "blueprint": "Isolated virtual networking",
     "difficulty": "Level 4",
-    "question": "A set of classroom VMs must communicate only with one another. Neither the host nor any external device should be able to join their network. Which virtual network is BEST?",
+    "question": "A forensic VM must ingest evidence from an approved USB device, but policy forbids all network communication and host-folder sharing. Which configuration is BEST?",
     "choices": [
-      "A bridged external switch",
-      "A host-only switch",
-      "A public cloud gateway",
-      "A private VM-only virtual switch"
+      "Bridge the VM to production",
+      "Enable shared folders with write access",
+      "Turn on Internet Connection Sharing",
+      "Remove or disconnect every virtual NIC and use controlled read-only USB passthrough"
     ],
     "answer": 3,
-    "explanation": "A private virtual switch permits guest-to-guest traffic while excluding the host and physical network."
+    "explanation": "Removing virtual network interfaces satisfies the no-network requirement, while controlled read-only passthrough provides the required evidence path. Bridging and shared write paths violate isolation."
   },
   {
     "id": "A1201-PE6-060",
@@ -965,15 +965,15 @@
     "objective": "4.1",
     "blueprint": "Centralized desktops",
     "difficulty": "Level 2",
-    "question": "Thin clients in a library display user desktops that run on centralized servers. Which technology is being used?",
+    "question": "A seasonal call center needs hundreds of identical desktops that can be created rapidly and reset after every shift. User files are stored separately. Which VDI design is BEST?",
     "choices": [
-      "VDI",
-      "NFC",
-      "RAID 6",
-      "Cable certification"
+      "A pooled nonpersistent desktop collection based on a managed master image",
+      "A unique unmanaged physical server for every call",
+      "A permanent local profile inside each disposable desktop",
+      "A public printer queue"
     ],
     "answer": 0,
-    "explanation": "Virtual desktop infrastructure centrally hosts desktop sessions and delivers their interfaces to endpoint clients."
+    "explanation": "A nonpersistent pool can provision standardized desktops efficiently and reset them between shifts while user data remains external. Persistent local state would conflict with the stated lifecycle."
   },
   {
     "id": "A1201-PE6-062",
@@ -981,15 +981,15 @@
     "objective": "4.2",
     "blueprint": "Hosted applications",
     "difficulty": "Level 2",
-    "question": "A provider operates an online email application, including its servers, updates, and storage. Customers use it through a browser. Which model is this?",
+    "question": "A company leaves a SaaS platform but must retain its business records for seven years. Which responsibility should have been planned by the customer?",
     "choices": [
-      "Customer-managed cloud infrastructure",
-      "An on-premises mail server",
-      "Provider-managed Software as a Service",
-      "A storage area network"
+      "Replacing disks in the provider's hosts",
+      "Maintaining the provider's cooling system",
+      "Exporting and retaining its data according to policy and the provider's supported tools",
+      "Patching the provider's hypervisor"
     ],
     "answer": 2,
-    "explanation": "The provider operates the complete browser-based email application, making it Software as a Service. The customer does not manage its infrastructure or application stack."
+    "explanation": "Although the provider operates the SaaS application, the customer remains accountable for its records and retention obligations. Supported export and archival planning is therefore essential."
   },
   {
     "id": "A1201-PE6-063",
@@ -997,15 +997,15 @@
     "objective": "4.2",
     "blueprint": "Virtual infrastructure",
     "difficulty": "Level 2",
-    "question": "A startup rents cloud virtual machines and configures their operating systems, firewalls, and applications itself. Which model applies?",
+    "question": "An IaaS VM stops booting after the customer deletes its guest bootloader. Provider diagnostics show the host, virtual disk, and hypervisor are healthy. Who must repair the boot environment?",
     "choices": [
-      "SaaS",
-      "NFC",
-      "A local printer share",
-      "IaaS"
+      "The building electrician",
+      "The provider's physical-disk vendor regardless of evidence",
+      "An unrelated SaaS customer",
+      "The customer, because the guest operating system is within its IaaS responsibility"
     ],
     "answer": 3,
-    "explanation": "Infrastructure as a Service provides the virtual infrastructure while the customer administers guest systems and software."
+    "explanation": "IaaS customers manage their guest operating systems and boot configuration. The provider has demonstrated that its infrastructure layers are healthy, so guest repair remains the customer's task."
   },
   {
     "id": "A1201-PE6-064",
@@ -1173,15 +1173,15 @@
     "objective": "5.2",
     "blueprint": "No-power desktop",
     "difficulty": "Level 3",
-    "question": "A desktop has standby power, and briefly bridging the motherboard power-switch pins starts it. Pressing the case button does nothing, and its cable is connected correctly. What should be replaced?",
+    "question": "A desktop starts normally, but it shuts down after four seconds whenever the front-panel power-switch lead is connected. With that lead disconnected, the system remains stable and the switch reads continuously closed on a meter without being pressed. What should be replaced?",
     "choices": [
-      "The faulty case power switch",
+      "The faulty case power-switch assembly",
       "The PSU",
       "The CPU",
       "The monitor"
     ],
     "answer": 0,
-    "explanation": "The board starts when the switch circuit is manually closed, proving the main power path. The physical case switch has failed."
+    "explanation": "A continuously closed case switch holds the soft-power signal active and triggers the forced-shutdown interval. Stable operation with the lead disconnected isolates the fault to the physical switch assembly."
   },
   {
     "id": "A1201-PE6-075",
@@ -1285,15 +1285,15 @@
     "objective": "5.5",
     "blueprint": "Paused print jobs",
     "difficulty": "Level 2",
-    "question": "A printer’s control panel shows Printing Paused after maintenance, and network queues remain connected. What should be done?",
+    "question": "A print job remains waiting for manual feed because it requests a specialty paper size that is not loaded. Other jobs use the normal tray successfully. What should the user do?",
     "choices": [
-      "Replace the workstation CPU",
-      "Change the wireless SSID",
-      "Format the print server",
-      "Resume printing from the printer control panel"
+      "Replace the network switch",
+      "Disable the printer's fuser",
+      "Change every user's password",
+      "Load the requested media in the manual tray or cancel and resubmit with the correct paper setting"
     ],
     "answer": 3,
-    "explanation": "The device itself is paused, so resuming it at the panel releases queued jobs without unrelated changes."
+    "explanation": "The job is waiting for a specific media condition rather than a paused queue. Supplying that media or correcting the job setting resolves it without disrupting working infrastructure."
   },
   {
     "id": "A1201-PE6-082",

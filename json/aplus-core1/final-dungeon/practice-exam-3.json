@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Laptop display cable",
     "difficulty": "Level 2",
-    "question": "A laptop display, webcam, and built-in microphone all disconnect when the lid is moved through a certain angle. The laptop continues running and an external monitor remains stable. Which component should a technician inspect FIRST?",
+    "question": "A replacement laptop panel displays video correctly, but the integrated touchscreen no longer appears in Device Manager. The replacement assembly requires a display harness with a separate digitizer branch that the installed harness lacks. What should be installed?",
     "choices": [
-      "The system memory module",
-      "The display assembly cable routed through the hinge",
-      "The external monitor power supply",
-      "The wireless antenna in the base"
+      "A desktop PCIe graphics card",
+      "The model-specific display and digitizer cable harness",
+      "A SATA power splitter",
+      "A different wireless antenna"
     ],
     "answer": 1,
-    "explanation": "Several lid-mounted devices failing at the same hinge angle points to their shared cable bundle being pinched, loose, or damaged where it passes through the hinge. The stable external display confirms that the graphics subsystem is still operating."
+    "explanation": "Video proves the display portion is connected, while the absent digitizer branch explains why touch hardware is not enumerated. Installing the correct model-specific harness addresses both interfaces without unrelated desktop components."
   },
   {
     "id": "A1201-PE3-002",
@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Swollen mobile battery",
     "difficulty": "Level 2",
-    "question": "During an inventory inspection, a technician notices that a stored tablet has a bowed rear cover and its battery pouch is visibly expanded. What is the safest next action?",
+    "question": "A damaged lithium battery has been isolated and documented. A technician is preparing it for disposal and learns that ordinary parcel shipping prohibits the damaged pack. What should happen NEXT?",
     "choices": [
-      "Press the cover flat and run a battery calibration",
-      "Puncture the pouch outdoors to release the pressure",
-      "Power off the tablet, isolate it from use, and follow approved swollen-battery disposal procedures",
-      "Charge the tablet fully before evaluating battery health"
+      "Place it in ordinary mail with no declaration",
+      "Hide it inside a laptop chassis",
+      "Transfer it through the organization's approved hazardous-battery recycler or carrier process",
+      "Puncture the pouch to reduce its size"
     ],
     "answer": 2,
-    "explanation": "A swollen lithium-ion battery is a fire and chemical hazard. The device should be powered down, isolated, and handled under the organization’s hazardous-battery procedure without pressing, charging, or puncturing the cell."
+    "explanation": "Damaged lithium batteries require an approved recycling and transport process. Ordinary undeclared shipping, concealment, and puncturing violate safe handling and can create fire or regulatory hazards."
   },
   {
     "id": "A1201-PE3-003",
@@ -101,15 +101,15 @@
     "objective": "1.2",
     "blueprint": "Mobile hotspot",
     "difficulty": "Level 3",
-    "question": "At a crowded conference, a technician needs a stable Internet connection for one laptop using a company phone. The Wi-Fi bands are heavily congested, and policy permits a wired phone connection. Which method is BEST?",
+    "question": "USB tethering is enabled on a phone, but a laptop sees only charging and no USB network interface. The current cable is labeled charge-only. What should be used?",
     "choices": [
-      "Create an open Wi-Fi hotspot",
-      "Connect the phone by USB and enable USB tethering",
-      "Pair the devices only for audio over Bluetooth",
-      "Enable airplane mode on both devices"
+      "A second charge-only cable",
+      "A compatible USB data cable that supports the phone's tethering interface",
+      "A VGA display cable",
+      "A printer fuser cable"
     ],
     "answer": 1,
-    "explanation": "USB tethering avoids congested wireless channels, provides a direct link, and can power the phone while it supplies cellular Internet access. An open hotspot adds exposure and still uses the congested spectrum."
+    "explanation": "USB tethering requires data conductors and interface negotiation. A charge-only cable can supply power while preventing the network adapter from appearing, so a supported data cable is required."
   },
   {
     "id": "A1201-PE3-008",
@@ -117,15 +117,15 @@
     "objective": "1.2",
     "blueprint": "Mobile accessories",
     "difficulty": "Level 4",
-    "question": "A warehouse tablet has one USB-C port. During a full shift it must remain charged while using a wired barcode scanner and Ethernet, and the tablet supports USB-C Power Delivery. Which accessory configuration BEST meets all requirements?",
+    "question": "A rugged tablet supports USB OTG, but a wired scanner draws more current than the tablet can provide and disconnects during scans. The tablet must also remain charged. Which accessory is BEST?",
     "choices": [
-      "A passive USB-C headphone adapter",
-      "A battery-only case with no data connection",
-      "A USB-A gender adapter connected directly to the scanner",
-      "A powered USB-C dock with Ethernet, USB data ports, and pass-through Power Delivery"
+      "An unpowered passive splitter",
+      "A display-only VGA adapter",
+      "A second scanner connected to the same unpowered port",
+      "A powered OTG adapter or dock with data support and charging pass-through"
     ],
     "answer": 3,
-    "explanation": "The powered dock combines charging, Ethernet, and USB peripheral connectivity through the single port. Passive or single-purpose adapters cannot meet the simultaneous power and data requirements."
+    "explanation": "A powered OTG solution supplies peripheral current while maintaining the tablet's data role and supported charging path. A passive splitter cannot create the missing power budget."
   },
   {
     "id": "A1201-PE3-009",
@@ -149,15 +149,15 @@
     "objective": "1.3",
     "blueprint": "Remote wipe",
     "difficulty": "Level 4",
-    "question": "An employee leaves a company that uses personally owned phones with a managed work profile. Security must remove company email and documents without deleting personal photos or applications. Which action is BEST?",
+    "question": "A company-owned phone is returned for reassignment. Required records are already archived, and policy requires removal of all prior-user data before enrollment to the next employee. Which MDM action is appropriate?",
     "choices": [
-      "Send a full-device factory reset",
-      "Issue a selective enterprise wipe to the managed work profile",
-      "Disable only the phone’s screen lock",
-      "Delete the user from the public cellular network"
+      "Perform only a selective work-profile wipe and leave personal data",
+      "Issue an authorized full device wipe or enterprise reset, then reenroll it",
+      "Share the previous user's passcode",
+      "Disable MDM and hand over the device unchanged"
     ],
     "answer": 1,
-    "explanation": "A selective wipe removes the organization-controlled container while preserving personal content. A full wipe is unnecessarily destructive for a properly separated BYOD work profile."
+    "explanation": "Because the organization owns and is reassigning the phone, policy calls for a complete managed reset after records are protected. A selective wipe is intended for preserving unrelated personal data on appropriate BYOD devices."
   },
   {
     "id": "A1201-PE3-011",
@@ -181,15 +181,15 @@
     "objective": "1.3",
     "blueprint": "Location services",
     "difficulty": "Level 2",
-    "question": "A navigation application reports that it cannot calculate the user’s current position, and the operating system shows that device location is turned off. Which setting should be enabled?",
+    "question": "A managed tablet shows location permission enabled for a mapping application, but the operating system reports that location services are disabled by organizational policy. Which layer must be corrected?",
     "choices": [
-      "Near-field communication",
-      "Airplane mode",
-      "Location services",
-      "Screen mirroring"
+      "The tablet's screen resolution",
+      "The email signature",
+      "The approved MDM policy controlling device-level location services",
+      "The printer's color profile"
     ],
     "answer": 2,
-    "explanation": "Navigation applications require the operating system’s location services to use GPS and supporting location sources. The other settings do not provide geographic position."
+    "explanation": "An application permission cannot override a device-level restriction enforced by management. The authorized MDM policy must permit the required location service; display, email, and printer settings are unrelated."
   },
   {
     "id": "A1201-PE3-013",
@@ -197,15 +197,15 @@
     "objective": "2.1",
     "blueprint": "HTTPS access",
     "difficulty": "Level 2",
-    "question": "A firewall log shows a workstation successfully establishing an encrypted web session to a customer portal on TCP port 443. Which protocol is being used?",
+    "question": "A new internal web server responds over HTTP, but connections to its HTTPS URL are refused. A scan shows nothing listening on TCP 443. What should the administrator configure?",
     "choices": [
-      "HTTP",
-      "HTTPS",
-      "FTP",
-      "Telnet"
+      "An FTP listener on TCP 21",
+      "A TLS-enabled web listener on TCP 443 using the approved certificate",
+      "A Telnet service on TCP 23",
+      "A DHCP scope on UDP 67"
     ],
     "answer": 1,
-    "explanation": "HTTPS is encrypted web traffic that normally uses TCP port 443. Standard HTTP commonly uses port 80, while FTP and Telnet provide different services."
+    "explanation": "The refusal occurs before certificate validation because no HTTPS service is listening. Configuring the approved TLS listener on TCP 443 supplies the required encrypted web endpoint; unrelated protocols do not."
   },
   {
     "id": "A1201-PE3-014",
@@ -309,15 +309,15 @@
     "objective": "2.3",
     "blueprint": "2.4 GHz channels",
     "difficulty": "Level 4",
-    "question": "A 2.4 GHz survey shows nearby access points heavily occupying channels 6 and 11. Channel 1 has low utilization and no overlapping in-house access point. Which channel should the technician assign to the new AP?",
+    "question": "A site survey finds every 2.4 GHz nonoverlapping channel heavily occupied by neighboring businesses. Nearly all company devices support 5 GHz, and coverage is adequate on that band. Which redesign is BEST?",
     "choices": [
-      "Channel 1",
-      "Channel 4",
-      "Channel 8",
-      "Channel 10"
+      "Steer capable clients to 5 GHz and reduce the number or power of 2.4 GHz radios",
+      "Add more 40 MHz 2.4 GHz radios",
+      "Force all access points onto the busiest channel",
+      "Disable authentication to shorten frames"
     ],
     "answer": 0,
-    "explanation": "Channels 1, 6, and 11 are the common non-overlapping 2.4 GHz choices. With 6 and 11 congested, channel 1 provides the cleanest non-overlapping option."
+    "explanation": "When external 2.4 GHz contention cannot be coordinated away, moving capable clients to the cleaner 5 GHz band and reducing the 2.4 GHz footprint improves airtime use. Wider channels and added radios worsen contention."
   },
   {
     "id": "A1201-PE3-021",
@@ -341,15 +341,15 @@
     "objective": "2.4",
     "blueprint": "APIPA addressing",
     "difficulty": "Level 2",
-    "question": "One laptop assigns itself 169.254.28.16 while other office computers receive normal addresses. What automated process did not complete successfully for that laptop?",
+    "question": "A workstation assigns itself a 169.254 address. Running a lease renewal returns 'media disconnected,' and the switch shows no link light. What should be corrected before investigating the DHCP server?",
     "choices": [
-      "Resolving a hostname through DNS",
-      "Synchronizing time with NTP",
-      "Obtaining a DHCP lease",
-      "Negotiating an HTTPS certificate"
+      "Delete every DNS record",
+      "Change the monitor input",
+      "Restore the physical Ethernet link and then request a new lease",
+      "Replace the DHCP scope with public addresses"
     ],
     "answer": 2,
-    "explanation": "An address in 169.254.0.0/16 is APIPA, which is self-assigned when a client cannot obtain an IPv4 lease from DHCP."
+    "explanation": "DHCP cannot succeed while the interface has no physical link. Restoring cabling or port connectivity is the required first step; server-side lease changes cannot reach a disconnected client."
   },
   {
     "id": "A1201-PE3-023",
@@ -357,15 +357,15 @@
     "objective": "2.4",
     "blueprint": "Private IPv4",
     "difficulty": "Level 2",
-    "question": "Which IPv4 address is within a private address range and may be used inside an organization without being routed on the public Internet?",
+    "question": "An ACL is intended to permit the entire RFC1918 172.16.0.0 range, but it permits only 172.16.0.0/16. Which larger private block should the rule cover?",
     "choices": [
-      "8.8.8.8",
-      "198.51.100.42",
-      "224.0.0.5",
-      "172.20.14.8"
+      "172.0.0.0/8",
+      "172.32.0.0/11",
+      "169.254.0.0/16",
+      "172.16.0.0/12"
     ],
     "answer": 3,
-    "explanation": "The private 172.16.0.0/12 range includes 172.20.14.8. The other addresses are public documentation, multicast, or globally used address space rather than private host addressing."
+    "explanation": "The RFC1918 block extends from 172.16.0.0 through 172.31.255.255, represented by /12. A /16 permits only one portion, while the other options include public or link-local space."
   },
   {
     "id": "A1201-PE3-024",
@@ -453,15 +453,15 @@
     "objective": "2.6",
     "blueprint": "Symmetrical broadband",
     "difficulty": "Level 4",
-    "question": "An architecture firm uploads very large project files to clients throughout the day. Management requires an Internet service whose upload capacity matches its download capacity. Which service is the BEST fit?",
+    "question": "A business has a verified 500 Mbps symmetrical fiber circuit, but uploads never exceed 100 Mbps. The edge router configuration contains an old 100 Mbps outbound traffic shaper. What should be done?",
     "choices": [
-      "Symmetrical fiber service",
-      "Asymmetrical DSL",
-      "Receive-only satellite service",
-      "A Bluetooth PAN"
+      "Correct the router's outbound shaping policy and retest the fiber service",
+      "Replace the symmetrical circuit with dial-up",
+      "Increase monitor brightness",
+      "Add a second DNS suffix"
     ],
     "answer": 0,
-    "explanation": "Symmetrical fiber provides comparable upstream and downstream bandwidth, which is suited to sustained large uploads. Typical DSL and many consumer services provide much less upstream capacity."
+    "explanation": "The service is already symmetrical, and the configured shaper precisely matches the observed ceiling. Correcting that policy removes the local constraint before the provider circuit is changed."
   },
   {
     "id": "A1201-PE3-030",
@@ -517,15 +517,15 @@
     "objective": "2.8",
     "blueprint": "Stable DHCP addressing",
     "difficulty": "Level 2",
-    "question": "A network printer should always receive the same address, but administrators want its addressing managed centrally rather than configured manually on the printer. What should be created?",
+    "question": "A phone has a DHCP reservation but receives different addresses because its private randomized MAC changes for the corporate SSID. Which correction preserves predictable addressing?",
     "choices": [
-      "A public DNS root record",
-      "A DHCP reservation for the printer’s MAC address",
-      "A second APIPA range",
-      "A changing guest-network lease"
+      "Create a new reservation for every randomized address each day",
+      "Use the approved stable device MAC for that SSID and reserve that identifier",
+      "Disable DHCP for all users",
+      "Assign the phone the router's own address"
     ],
     "answer": 1,
-    "explanation": "A DHCP reservation consistently assigns the same address to a known MAC address while retaining centralized DHCP management."
+    "explanation": "A reservation can remain stable only when the client presents a stable identifier. Using the approved per-network stable MAC and reserving it preserves predictable addressing without disabling DHCP."
   },
   {
     "id": "A1201-PE3-034",
@@ -581,15 +581,15 @@
     "objective": "3.2",
     "blueprint": "Graphics expansion",
     "difficulty": "Level 3",
-    "question": "A workstation motherboard has several different expansion slots. A high-performance graphics card must be installed with the full bandwidth intended by its design. Which slot should be used?",
+    "question": "A graphics card operates at x4 instead of x16 after a second NVMe drive is installed. The motherboard lane-sharing table shows that the selected M.2 slot borrows lanes from the GPU slot. What should the technician do?",
     "choices": [
-      "PCIe x1",
-      "PCIe x16",
-      "A 240-pin DIMM socket",
-      "An M.2 Key E wireless socket"
+      "Cut additional contacts into the graphics card",
+      "Move the NVMe drive to a nonconflicting supported slot or revise the expansion layout",
+      "Install the GPU in a memory socket",
+      "Disable the CPU cache"
     ],
     "answer": 1,
-    "explanation": "Discrete graphics cards are designed for a PCI Express x16 slot. Memory and small peripheral sockets are physically and electrically unsuitable."
+    "explanation": "The motherboard documentation identifies PCIe lane sharing as the cause. Relocating the conflicting device or choosing a supported layout restores lanes; physical modification and unrelated CPU or memory changes do not."
   },
   {
     "id": "A1201-PE3-038",
@@ -629,15 +629,15 @@
     "objective": "3.4",
     "blueprint": "Dual-channel memory",
     "difficulty": "Level 4",
-    "question": "A motherboard has four DIMM slots labeled A1, A2, B1, and B2. Two identical modules were installed in A1 and A2, and diagnostics report single-channel operation. What should the technician do after consulting the manual?",
+    "question": "Two different-capacity DIMMs are installed in the motherboard's correct paired slots. Firmware reports part of memory operating dual-channel and the unmatched remainder operating single-channel. What does this indicate?",
     "choices": [
-      "Install the modules in the CPU socket",
-      "Replace both modules with storage drives",
-      "Disable the memory controller in firmware",
-      "Move one module to the paired slot used for dual-channel operation"
+      "Both modules have become storage drives",
+      "The CPU has disabled all memory",
+      "The modules must be cut to equal physical size",
+      "The platform is using a supported flex-memory mode for the matched capacity"
     ],
     "answer": 3,
-    "explanation": "Two matched modules must occupy the motherboard’s designated paired channels, often A2 and B2. Adjacent slots can place both modules on the same channel."
+    "explanation": "Some supported platforms interleave the equal portion of mismatched-capacity modules and run the remaining capacity in single-channel mode. This differs from an incorrect slot-placement fault."
   },
   {
     "id": "A1201-PE3-041",
@@ -725,15 +725,15 @@
     "objective": "3.6",
     "blueprint": "Power capacity",
     "difficulty": "Level 3",
-    "question": "A gaming workstation shuts off only when a newly installed graphics card is under heavy load. The card is connected correctly, temperatures are normal, and its vendor recommends a 750 W PSU while the system has a 500 W unit. What is the BEST fix?",
+    "question": "A modern PSU's fan does not spin during light desktop use, but voltages are stable, temperatures are normal, and the manual documents a zero-RPM mode below 40% load. What should the technician conclude?",
     "choices": [
-      "Reduce the amount of system storage",
-      "Replace the mouse with a wired model",
-      "Change the DNS suffix",
-      "Install a quality PSU with adequate wattage and required GPU connectors"
+      "The PSU must be opened and its fan bypassed",
+      "The wall outlet needs a higher network address",
+      "The GPU should be powered through SATA data cables",
+      "The behavior is normal for the documented low-load fan mode"
     ],
     "answer": 3,
-    "explanation": "Load-related power loss with normal temperatures and an undersized PSU indicates insufficient power capacity. The replacement must supply both adequate wattage and the proper connectors."
+    "explanation": "Many efficient PSUs intentionally stop their fan at low load. Stable output, normal temperature, and matching documentation indicate expected operation rather than insufficient capacity or failure."
   },
   {
     "id": "A1201-PE3-047",
@@ -741,15 +741,15 @@
     "objective": "3.6",
     "blueprint": "CPU auxiliary power",
     "difficulty": "Level 3",
-    "question": "A newly assembled desktop powers its fans but never begins POST. The motherboard’s 24-pin connector is attached, but the 8-pin CPU power header is empty. Which connector should be installed there?",
+    "question": "A motherboard has its required 8-pin EPS CPU connector attached and an additional 4-pin CPU connector labeled optional for extreme overclocking. The system uses one stock processor and passes stress testing. What is the BEST action?",
     "choices": [
-      "The EPS 4+4 CPU power connector",
-      "A SATA data cable",
-      "An RJ45 patch cable",
-      "A USB 2.0 front-panel header cable"
+      "Leave the optional connector unused unless the motherboard documentation and workload require it",
+      "Connect a PCIe 6+2 cable to the optional socket",
+      "Disable the required 8-pin EPS connector",
+      "Power the socket with a SATA data cable"
     ],
     "answer": 0,
-    "explanation": "The EPS 4+4 lead supplies dedicated processor power through the motherboard CPU power header. The system may spin fans from the 24-pin supply yet fail to initialize without it."
+    "explanation": "The required processor input is connected and the optional input is not needed for the documented stock configuration. Substituting incompatible PCIe or data cables would be unsafe."
   },
   {
     "id": "A1201-PE3-048",
@@ -837,15 +837,15 @@
     "objective": "3.2",
     "blueprint": "Front-panel ports",
     "difficulty": "Level 2",
-    "question": "The rear audio jack works, but the front headphone jack on a newly built desktop does not appear in the operating system. Which internal connection should be inspected?",
+    "question": "A replacement case provides both AC'97 and HD AUDIO front-panel plugs. The motherboard supports jack detection through its HD Audio header, but the front headset is not detected. Which connection should the technician use?",
     "choices": [
-      "The CPU EPS connector",
-      "The case HD Audio cable to the motherboard audio header",
-      "The SATA power lead to the SSD",
-      "The wireless antenna connector"
+      "Connect the AC'97 plug to a USB header",
+      "Connect the HD AUDIO plug to the motherboard audio header",
+      "Connect the speaker plug to a SATA power connector",
+      "Connect both audio plugs to the same header"
     ],
     "answer": 1,
-    "explanation": "Front audio ports depend on the case’s HD Audio lead being connected to the motherboard header. Working rear audio shows that the audio controller and driver are functioning."
+    "explanation": "The board requires the case's HD AUDIO lead for its supported front-panel audio and jack-detection functions. AC'97 is a legacy alternative and the two case plugs should not be attached together."
   },
   {
     "id": "A1201-PE3-054",
@@ -901,15 +901,15 @@
     "objective": "4.1",
     "blueprint": "Bare-metal virtualization",
     "difficulty": "Level 3",
-    "question": "An organization wants a virtualization platform installed directly on server hardware with no general-purpose host operating system underneath it. Which platform type should be selected?",
+    "question": "A bare-metal virtualization server must assign a physical network adapter directly to a security appliance VM. The hypervisor supports passthrough, but the option is unavailable. Which firmware capability should be verified?",
     "choices": [
-      "A Type 2 hypervisor on a desktop OS",
-      "A browser bookmark",
-      "A Type 1 hypervisor",
-      "A print spooler"
+      "Legacy parallel-port mode",
+      "Printer toner save",
+      "IOMMU or VT-d/AMD-Vi device-remapping support",
+      "SaaS browser cookies"
     ],
     "answer": 2,
-    "explanation": "A Type 1, or bare-metal, hypervisor runs directly on physical hardware. A Type 2 hypervisor depends on a host operating system."
+    "explanation": "Direct device assignment depends on platform I/O memory remapping such as VT-d or AMD-Vi. Basic peripheral and application settings do not provide secure DMA remapping for passthrough."
   },
   {
     "id": "A1201-PE3-058",
@@ -965,15 +965,15 @@
     "objective": "4.1",
     "blueprint": "Centralized desktops",
     "difficulty": "Level 2",
-    "question": "A call center wants standardized desktops delivered from a central image. User sessions may run on different servers and should reset to a clean state after sign-out. Which solution BEST fits?",
+    "question": "A company uses nonpersistent pooled VDI desktops but wants users' approved settings and documents to follow them between sessions. Which addition BEST preserves that data without making every desktop persistent?",
     "choices": [
-      "Individually maintained gaming PCs",
-      "A direct-attached tape library",
-      "Pooled nonpersistent VDI desktops",
-      "A Bluetooth PAN for every desk"
+      "A local file saved only inside the disposable desktop",
+      "A Bluetooth pairing record",
+      "A managed profile container or redirected user-data store",
+      "A printer maintenance kit"
     ],
     "answer": 2,
-    "explanation": "Pooled nonpersistent virtual desktops provide centrally managed, repeatable sessions that return to a clean image. The alternatives do not deliver managed desktops."
+    "explanation": "Profile containers or redirected storage retain authorized user state outside disposable desktops. Saving only inside a nonpersistent VM loses the data at reset, while peripheral settings do not solve profile persistence."
   },
   {
     "id": "A1201-PE3-062",
@@ -997,15 +997,15 @@
     "objective": "4.2",
     "blueprint": "Virtual infrastructure",
     "difficulty": "Level 2",
-    "question": "A company rents virtual machines, storage, and virtual networks from a provider but installs and administers its own operating systems and applications. Which model is being used?",
+    "question": "A development team uses IaaS test servers only on weekdays. Storage must be retained, but compute charges should be reduced overnight. Which action is MOST appropriate?",
     "choices": [
-      "SaaS",
-      "NFC",
-      "IaaS",
-      "A local workgroup only"
+      "Delete all persistent disks each evening",
+      "Replace IaaS with a local printer",
+      "Stop or deallocate the virtual machines while retaining their persistent disks",
+      "Leave every instance running solely to preserve storage"
     ],
     "answer": 2,
-    "explanation": "Infrastructure as a Service supplies virtualized compute, storage, and networking while the customer manages the guest operating systems and applications."
+    "explanation": "IaaS separates persistent storage from running compute in supported configurations. Deallocating test VMs can reduce compute consumption while preserving disks; deleting storage loses data and leaving systems running defeats the cost goal."
   },
   {
     "id": "A1201-PE3-064",
@@ -1029,15 +1029,15 @@
     "objective": "4.2",
     "blueprint": "Shared cloud capacity",
     "difficulty": "Level 3",
-    "question": "A cloud provider assigns compute capacity from a large shared hardware pool to many customers while keeping each customer’s resources logically separated. Which cloud characteristic is illustrated?",
+    "question": "An auditor learns that multiple cloud customers use the same physical resource pool. Which controls are MOST important for protecting one tenant's data from another?",
     "choices": [
-      "Resource pooling with multitenancy",
-      "A dedicated air-gapped desktop for every request",
-      "Manual paper-based provisioning",
-      "A peer-to-peer Bluetooth transfer"
+      "Strong logical isolation, access control, and encryption appropriate to the workload",
+      "Shared administrator passwords for all tenants",
+      "Disabling tenant logging",
+      "Publishing storage keys in application code"
     ],
     "answer": 0,
-    "explanation": "Resource pooling lets a provider dynamically allocate shared physical capacity among isolated tenants. This is a core efficiency of cloud infrastructure."
+    "explanation": "Multitenant resource pooling depends on enforced logical isolation and sound identity and encryption controls. Shared credentials and exposed keys undermine separation rather than protect it."
   },
   {
     "id": "A1201-PE3-066",
@@ -1045,15 +1045,15 @@
     "objective": "5.1",
     "blueprint": "Battery-only failure",
     "difficulty": "Level 3",
-    "question": "A laptop battery report shows severe capacity loss, and the computer shuts off near 35% charge even after a successful calibration. The AC adapter powers the laptop normally. What should the technician do NEXT?",
+    "question": "A laptop reports that no battery is installed immediately after bottom-cover service. The battery tests normally in an approved test unit, and inspection shows its internal connector is not fully latched. What should be done?",
     "choices": [
-      "Replace the degraded battery",
-      "Replace the external monitor",
-      "Reconfigure the DNS server",
-      "Install a second Ethernet switch"
+      "Power down the laptop and correctly reseat the battery connector",
+      "Replace the known-good battery",
+      "Increase charger voltage",
+      "Delete the operating system"
     ],
     "answer": 0,
-    "explanation": "Normal AC operation plus confirmed battery capacity loss and premature shutdown identifies a worn battery. Calibration has already ruled out a simple gauge error."
+    "explanation": "The battery is known good and the fault began after service with an unlatched connector. Correctly reseating the internal connection addresses detection without unnecessary battery replacement."
   },
   {
     "id": "A1201-PE3-067",
@@ -1205,15 +1205,15 @@
     "objective": "5.3",
     "blueprint": "Clicking hard drive",
     "difficulty": "Level 3",
-    "question": "A workstation hard drive clicks repeatedly, SMART reports pending sectors, and the user’s data is still readable. What should the technician do FIRST?",
+    "question": "A hard drive begins clicking and stops mounting. It contains legally required data that is not backed up. Repeated power cycles make the noise worse. What is the BEST next action?",
     "choices": [
-      "Run a week-long defragmentation before backing up",
-      "Back up the data immediately and replace the drive",
-      "Strike the drive to free the heads",
-      "Increase the monitor refresh rate"
+      "Run repeated repair scans until it spins",
+      "Stop powering the drive and escalate it to the approved professional recovery process",
+      "Open the drive outside a clean room",
+      "Initialize it as a blank disk"
     ],
     "answer": 1,
-    "explanation": "Mechanical clicking and pending sectors indicate imminent drive failure. Data preservation has priority; extended stress tests or physical impacts increase the risk of total loss."
+    "explanation": "Clicking with irreplaceable inaccessible data indicates mechanical risk. Continued attempts can worsen damage, so the device should be powered down and handled through the approved recovery process."
   },
   {
     "id": "A1201-PE3-077",
@@ -1221,15 +1221,15 @@
     "objective": "5.3",
     "blueprint": "Degraded mirror",
     "difficulty": "Level 3",
-    "question": "A two-drive RAID 1 reports a failed member but remains online. A verified backup exists, and the controller supports hot replacement. What is the appropriate next action?",
+    "question": "After an unclean shutdown, a RAID 1 controller marks one healthy member out of sync. Both disks pass diagnostics, and the controller identifies which member contains the current data. What should be done?",
     "choices": [
-      "Remove the healthy member first",
-      "Convert the array to RAID 0 during business hours",
-      "Replace the failed member with a compatible drive and monitor the mirror rebuild",
-      "Ignore the warning until both drives fail"
+      "Initialize the current member as blank",
+      "Convert the array to RAID 0",
+      "Resynchronize the stale member from the verified current member and monitor the process",
+      "Remove both disks simultaneously"
     ],
     "answer": 2,
-    "explanation": "The surviving mirror member is carrying the workload. Replacing the failed disk and verifying reconstruction restores redundancy while preserving service."
+    "explanation": "An out-of-sync but healthy member can be rebuilt from the verified authoritative member. Initializing or converting the array risks destroying the valid source rather than restoring redundancy."
   },
   {
     "id": "A1201-PE3-078",
@@ -1333,15 +1333,15 @@
     "objective": "5.5",
     "blueprint": "Color misregistration",
     "difficulty": "Level 3",
-    "question": "A color laser printer produces sharp images, but cyan is consistently offset from the other colors after all four cartridges were replaced. Which maintenance action should be performed FIRST?",
+    "question": "A color printer misregisters the first page after waking from sleep, but later pages and manual calibration tests align correctly. The manufacturer lists this behavior as fixed by a current firmware release. What should be done?",
     "choices": [
-      "Replace the office router",
-      "Change every client to APIPA",
-      "Run the printer’s color registration or calibration routine",
-      "Remove the printer’s memory"
+      "Replace every toner cartridge",
+      "Change the workstation's default gateway",
+      "Install the approved printer firmware update and retest wake-from-sleep output",
+      "Disable all color printing permanently"
     ],
     "answer": 2,
-    "explanation": "Consistent color-plane offset with otherwise sharp output is a registration issue. The built-in calibration routine realigns the color planes before hardware replacement is considered."
+    "explanation": "The transient defect matches a documented firmware issue while mechanical calibration succeeds. Applying the approved fix targets the wake-state behavior without unnecessary supplies or network changes."
   },
   {
     "id": "A1201-PE3-085",

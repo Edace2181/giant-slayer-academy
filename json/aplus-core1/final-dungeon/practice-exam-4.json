@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Laptop display cable",
     "difficulty": "Level 2",
-    "question": "A laptop was recently serviced. Its internal display now shows colored lines from power-on, and pressing the bezel near the upper-left corner changes the pattern. An external monitor is clear. What should the technician inspect FIRST?",
+    "question": "After a laptop lid is rebuilt, the display works until the bezel screws are tightened. Removing one screw restores video, and inspection shows the display harness routed across that screw boss. What should be done?",
     "choices": [
-      "The external monitor cable",
-      "The laptop Ethernet adapter",
-      "The operating-system print queue",
-      "The eDP display cable connection at the panel"
+      "Tighten the screw farther until video returns",
+      "Replace the wireless router",
+      "Disable the laptop battery gauge",
+      "Power down the laptop, inspect the harness for damage, and reroute it through the documented channel"
     ],
     "answer": 3,
-    "explanation": "The artifact is present before the operating system, changes with pressure near the panel connector, and does not affect external video. Those clues isolate the panel-side display cable or connector."
+    "explanation": "The symptom changes with pressure at the harness route, identifying pinching or insulation damage rather than a software fault. The cable should be inspected and routed according to the service documentation before reassembly."
   },
   {
     "id": "A1201-PE4-002",
@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Swollen mobile battery",
     "difficulty": "Level 2",
-    "question": "A Chromebook in a charging cart feels unusually hot, has a separating bottom cover, and gives off a sweet chemical odor. What should staff do immediately?",
+    "question": "Several unused tablet batteries from the same lot begin swelling while stored near a heat source. After the affected packs are isolated, what should be done NEXT?",
     "choices": [
-      "Continue charging while monitoring the temperature",
-      "Disconnect charging, move people away, and follow the damaged-battery isolation procedure",
-      "Compress the cover with a clamp",
-      "Place the Chromebook in a freezer"
+      "Install the remaining packs without inspection",
+      "Quarantine the lot and investigate storage conditions and vendor guidance before using adjacent packs",
+      "Move them closer to the heat source",
+      "Compress the swollen packs for reuse"
     ],
     "answer": 1,
-    "explanation": "Heat, enclosure separation, and odor indicate a hazardous lithium battery failure. Charging must stop and the device must be isolated under the approved safety process without compression or extreme cooling."
+    "explanation": "Multiple affected packs indicate a possible lot or storage-condition problem. Quarantining and investigating the broader exposure prevents additional unsafe installations instead of treating each pack as an isolated event."
   },
   {
     "id": "A1201-PE4-003",
@@ -37,15 +37,15 @@
     "objective": "1.1",
     "blueprint": "Laptop memory",
     "difficulty": "Level 2",
-    "question": "Which memory form factor is normally installed in a serviceable laptop rather than a desktop motherboard?",
+    "question": "A laptop contains 8 GB of soldered memory and one slot. Its documentation supports 24 GB total. Which module provides the maximum supported capacity?",
     "choices": [
-      "Full-size DIMM",
-      "PCIe x16 card",
-      "M.2 2280 SSD",
-      "SO-DIMM"
+      "A 24 GB desktop DIMM",
+      "A 32 GB registered server DIMM",
+      "An 8 GB M.2 storage module",
+      "A compatible 16 GB SO-DIMM"
     ],
     "answer": 3,
-    "explanation": "SO-DIMMs are compact memory modules designed for laptops and other small systems. Full-size DIMMs are typically used in desktops and servers."
+    "explanation": "With 8 GB soldered and a 24 GB platform maximum, the open slot can add 16 GB using the supported laptop SO-DIMM type. Desktop, registered-server, and storage modules are incompatible."
   },
   {
     "id": "A1201-PE4-004",
@@ -197,15 +197,15 @@
     "objective": "2.1",
     "blueprint": "HTTPS access",
     "difficulty": "Level 2",
-    "question": "A packet capture shows an encrypted browser connection using the standard TCP port for secure web traffic. Which destination port should appear?",
+    "question": "Users receive an expired-certificate warning on an internal HTTPS portal. Client clocks are correct, the hostname matches, and the certificate's validity period ended yesterday. What should be done?",
     "choices": [
-      "21",
-      "443",
-      "23",
-      "110"
+      "Move the portal to Telnet",
+      "Renew and deploy an approved certificate with a valid date range",
+      "Disable all client time synchronization",
+      "Publish the private key to users"
     ],
     "answer": 1,
-    "explanation": "HTTPS normally uses TCP port 443. Ports 21, 23, and 110 are associated with FTP control, Telnet, and POP3."
+    "explanation": "The evidence isolates certificate expiration rather than hostname or clock errors. Replacing it through the approved certificate process preserves HTTPS identity and confidentiality."
   },
   {
     "id": "A1201-PE4-014",
@@ -341,15 +341,15 @@
     "objective": "2.4",
     "blueprint": "APIPA addressing",
     "difficulty": "Level 2",
-    "question": "Which address indicates that a Windows client self-assigned an APIPA address after failing to reach DHCP?",
+    "question": "A DHCP outage is resolved, but one connected workstation still shows a 169.254 address. Other clients now receive valid leases. What should be attempted FIRST on the affected workstation?",
     "choices": [
-      "10.20.30.40",
-      "172.20.1.5",
-      "192.168.8.12",
-      "169.254.73.9"
+      "Assign the DNS server's address as the workstation IP",
+      "Replace every access switch",
+      "Disable the network adapter permanently",
+      "Renew the adapter's DHCP configuration after verifying link connectivity"
     ],
     "answer": 3,
-    "explanation": "APIPA uses 169.254.0.0/16. The other choices are private addresses that are normally assigned manually or by DHCP."
+    "explanation": "The local APIPA address can remain until the client retries DHCP. With service restored and link verified, renewing the lease is the least disruptive correction before broader hardware changes."
   },
   {
     "id": "A1201-PE4-023",
@@ -357,15 +357,15 @@
     "objective": "2.4",
     "blueprint": "Private IPv4",
     "difficulty": "Level 2",
-    "question": "Which IPv4 address belongs to the private 10.0.0.0/8 range?",
+    "question": "A small router's LAN interface was accidentally configured as 198.51.100.1/24, causing conflicts with documentation and NAT policy. Which replacement is appropriate for an internal RFC1918 LAN?",
     "choices": [
-      "10.32.44.6",
-      "11.32.44.6",
-      "100.64.1.8",
-      "203.0.113.10"
+      "192.168.40.1/24",
+      "203.0.113.1/24",
+      "198.51.100.254/24",
+      "224.0.0.1/24"
     ],
     "answer": 0,
-    "explanation": "Every address beginning with 10 is within the RFC 1918 private 10.0.0.0/8 block. The other choices are not members of that block."
+    "explanation": "192.168.0.0/16 is an RFC1918 private range suitable for internal addressing. The other choices are documentation or multicast space rather than private LAN addressing."
   },
   {
     "id": "A1201-PE4-024",
@@ -405,15 +405,15 @@
     "objective": "2.5",
     "blueprint": "Personal area networking",
     "difficulty": "Level 3",
-    "question": "Wireless hearing aids exchange audio and control data with a user’s phone over Bluetooth. Which network category describes this relationship?",
+    "question": "A phone automatically unlocks a nearby laptop through a paired short-range radio. Security policy no longer permits proximity unlocking. Which connection should the technician disable for that feature?",
     "choices": [
-      "PAN",
-      "Campus area network",
-      "Storage area network",
-      "Wide area network"
+      "The Bluetooth personal-area pairing used by proximity unlock",
+      "The carrier's metropolitan Ethernet circuit",
+      "The storage-area Fibre Channel fabric",
+      "The building's satellite downlink"
     ],
     "answer": 0,
-    "explanation": "A Bluetooth link centered on one person’s nearby devices is a personal area network. Campus, storage, and wide area networks serve larger or specialized scopes."
+    "explanation": "Proximity unlock commonly uses a short-range Bluetooth PAN relationship between the user's devices. Disabling that approved feature pairing addresses the policy without affecting unrelated infrastructure networks."
   },
   {
     "id": "A1201-PE4-027",
@@ -453,15 +453,15 @@
     "objective": "2.6",
     "blueprint": "Symmetrical broadband",
     "difficulty": "Level 4",
-    "question": "A legal firm sends multi-gigabyte encrypted backups to an off-site repository every hour and cannot tolerate slower uploads than downloads. Which access service BEST meets the requirement?",
+    "question": "A 500 Mbps symmetrical Internet circuit tests correctly from the router, but one backup server uploads at only 60 Mbps while other systems reach full speed. The server CPU is saturated by software encryption. What is the BEST next step?",
     "choices": [
-      "Consumer ADSL",
-      "A business fiber circuit with symmetrical bandwidth",
-      "A receive-focused satellite plan",
-      "A Bluetooth PAN"
+      "Downgrade the circuit to asymmetric service",
+      "Correct the server-side processing bottleneck or enable supported acceleration before changing the circuit",
+      "Add more wireless SSIDs",
+      "Replace the DNS domain"
     ],
     "answer": 1,
-    "explanation": "Symmetrical fiber provides comparable upstream and downstream capacity, which is essential for frequent large uploads. Typical consumer asymmetrical services constrain upstream traffic."
+    "explanation": "Router testing and other systems prove the provider delivers symmetrical capacity. The affected server is limited by encryption processing, so endpoint performance must be corrected before purchasing different bandwidth."
   },
   {
     "id": "A1201-PE4-030",
@@ -517,15 +517,15 @@
     "objective": "2.8",
     "blueprint": "Stable DHCP addressing",
     "difficulty": "Level 2",
-    "question": "A security camera should retain one centrally managed address even after lease renewals. Which DHCP feature should be configured?",
+    "question": "A high-availability appliance alternates between two network interfaces during failover. Its DHCP reservation covers only the primary interface, so the management address changes after failover. What should be configured?",
     "choices": [
-      "A shorter monitor timeout",
-      "A public multicast lease",
-      "A random address on every reboot",
-      "A MAC-address reservation"
+      "The same MAC address on every device in the subnet",
+      "A public multicast address as the gateway",
+      "A different DNS suffix after each failover",
+      "Supported reservations for the interface identifiers used during either active state"
     ],
     "answer": 3,
-    "explanation": "A DHCP reservation maps the camera’s MAC address to a consistent address while keeping configuration under centralized DHCP control."
+    "explanation": "DHCP matches the identifier presented by the active interface. Covering the supported failover identifiers keeps management addressing predictable without duplicating identities across unrelated devices."
   },
   {
     "id": "A1201-PE4-034",
@@ -677,15 +677,15 @@
     "objective": "3.5",
     "blueprint": "Drive redundancy",
     "difficulty": "Level 2",
-    "question": "A two-drive system must continue operating if either one drive fails, and capacity equal to one drive is acceptable. Which RAID level should be used?",
+    "question": "A user deletes an important file from a healthy two-drive RAID 1 volume, and the deletion immediately appears on both members. Which protection was missing?",
     "choices": [
-      "RAID 0",
-      "RAID 1",
-      "JBOD without duplication",
-      "A single drive"
+      "A second mirror of the same live deletion",
+      "A separate versioned backup from which the deleted file can be restored",
+      "RAID 0 striping",
+      "A larger monitor"
     ],
     "answer": 1,
-    "explanation": "RAID 1 mirrors the same data across two drives, allowing operation after one member fails. RAID 0 and the other options provide no drive redundancy."
+    "explanation": "RAID 1 protects against a drive failure, not logical deletion or corruption, because changes are mirrored immediately. A separate versioned backup supplies recovery from user error."
   },
   {
     "id": "A1201-PE4-044",
@@ -725,15 +725,15 @@
     "objective": "3.6",
     "blueprint": "Power capacity",
     "difficulty": "Level 3",
-    "question": "A planned desktop build is estimated to draw 420 W at peak. It needs reasonable overhead for efficiency and future expansion. Which PSU choice is MOST appropriate?",
+    "question": "A storage workstation's PSU handles normal operation but trips during simultaneous startup of twelve hard drives. The controller supports staggered spin-up. Which solution BEST addresses the transient demand?",
     "choices": [
-      "A generic 300 W unit",
-      "A 420 W unit operated continuously at its rating",
-      "A quality 650 W unit with the required connectors",
-      "A laptop battery with no desktop outputs"
+      "Power the drives through data cables",
+      "Disable overcurrent protection",
+      "Enable supported staggered spin-up or use a PSU with adequate startup current capacity",
+      "Move the drives into DIMM slots"
     ],
     "answer": 2,
-    "explanation": "A reputable 650 W supply provides practical headroom above the estimated peak and can include the needed connectors. Undersized or zero-headroom choices reduce stability and upgrade capacity."
+    "explanation": "Drive spin-up can create a short current demand far above steady-state use. Supported staggered startup or a properly sized rail addresses that transient safely; bypasses and incompatible connections do not."
   },
   {
     "id": "A1201-PE4-047",
@@ -741,15 +741,15 @@
     "objective": "3.6",
     "blueprint": "CPU auxiliary power",
     "difficulty": "Level 3",
-    "question": "A modular PSU includes an 8-pin cable labeled CPU/EPS and an 8-pin cable labeled PCIe. Which cable belongs in the motherboard processor-power socket?",
+    "question": "A dual-socket motherboard has EPS1 and EPS2 inputs. Only one processor is installed, and the manual requires EPS1 for single-processor operation. The cable is connected only to EPS2 and the system will not POST. What should be done?",
     "choices": [
-      "The CPU/EPS cable",
-      "The PCIe graphics cable",
-      "A SATA data cable",
-      "A front-panel USB lead"
+      "Move the approved EPS cable to the required EPS1 connector",
+      "Connect a SATA data cable to EPS1",
+      "Install a printer fuser",
+      "Short both EPS inputs together"
     ],
     "answer": 0,
-    "explanation": "The motherboard processor header requires the EPS/CPU pinout. PCIe power may look similar but is wired for graphics devices and must not be substituted."
+    "explanation": "The board documentation identifies which processor-power input must be populated for the installed socket. Moving the proper EPS lead to EPS1 follows that requirement without unsafe adapters."
   },
   {
     "id": "A1201-PE4-048",
@@ -757,15 +757,15 @@
     "objective": "3.7",
     "blueprint": "Laser print defects",
     "difficulty": "Level 4",
-    "question": "A laser printer places a faint copy of text farther down every page at the same repeating interval. Cleaning the paper path does not help. Which component is MOST likely responsible?",
+    "question": "A laser printer creates a repeating crease whose interval matches the documented circumference of the fuser pressure roller, not the imaging drum. Toner is fully fused. Which assembly should be serviced?",
     "choices": [
-      "The imaging drum",
-      "The DHCP server",
-      "The monitor backlight",
-      "The keyboard controller"
+      "The fuser pressure-roller assembly",
+      "The network interface card",
+      "The paper tray size sensor",
+      "The imaging drum solely because the defect repeats"
     ],
     "answer": 0,
-    "explanation": "A repeating image defect at a fixed interval corresponds to the circumference of a rotating imaging component, commonly a worn or contaminated drum."
+    "explanation": "Periodic defects can be localized by matching their interval to component circumference. Here the interval identifies the fuser pressure roller, while fully fused toner and the mismatch to drum circumference rule out the common drum assumption."
   },
   {
     "id": "A1201-PE4-049",
@@ -805,15 +805,15 @@
     "objective": "3.8",
     "blueprint": "External storage speed",
     "difficulty": "Level 2",
-    "question": "A portable NVMe enclosure and laptop both display the Thunderbolt symbol. Which connection should be used for the highest supported external-storage performance?",
+    "question": "A Thunderbolt dock drives a high-resolution display and an external SSD in one chain. SSD throughput drops only while the display uses nearly all available link bandwidth. What is the BEST improvement?",
     "choices": [
-      "A USB 2.0 hub",
-      "A VGA cable",
-      "A certified Thunderbolt cable connected to the Thunderbolt port",
-      "An analog telephone cord"
+      "Replace the SSD with a dial-up modem",
+      "Disable the laptop battery",
+      "Place the SSD on a separate supported Thunderbolt path or reduce competing display bandwidth",
+      "Move the display to a printer USB port"
     ],
     "answer": 2,
-    "explanation": "Thunderbolt provides a high-bandwidth PCIe-based connection appropriate for fast NVMe storage. Legacy USB and display or telephone cables cannot deliver comparable storage throughput."
+    "explanation": "Thunderbolt devices in a chain share available link bandwidth. Separating the storage path or reducing the competing display load addresses contention rather than replacing healthy devices."
   },
   {
     "id": "A1201-PE4-052",
@@ -901,15 +901,15 @@
     "objective": "4.1",
     "blueprint": "Bare-metal virtualization",
     "difficulty": "Level 3",
-    "question": "A data center installs a hypervisor directly on server hardware and manages guest systems remotely. What type of hypervisor is this?",
+    "question": "A virtual machine can live-migrate between two bare-metal hosts until a newer CPU model is added to the cluster. The hypervisor reports incompatible processor features. What is the BEST supported correction?",
     "choices": [
-      "Type 2",
-      "Type 1",
-      "SaaS",
-      "A print driver"
+      "Convert the cluster to a word-processing SaaS subscription",
+      "Use the hypervisor's CPU compatibility mode or migrate only among compatible hosts",
+      "Disable all host networking",
+      "Replace guest storage with printer paper"
     ],
     "answer": 1,
-    "explanation": "A Type 1 hypervisor runs on bare metal. A Type 2 product runs as an application on a general-purpose host operating system."
+    "explanation": "Live migration requires a compatible CPU feature set visible to the guest. Supported compatibility masking or host grouping addresses that constraint without abandoning the bare-metal platform."
   },
   {
     "id": "A1201-PE4-058",
@@ -965,15 +965,15 @@
     "objective": "4.1",
     "blueprint": "Centralized desktops",
     "difficulty": "Level 2",
-    "question": "Employees use low-powered desk terminals to connect to centrally hosted Windows desktops. Which technology is being used?",
+    "question": "Engineers use VDI for 3D design, but their sessions perform poorly because the current pool has no graphics acceleration. Which pool change BEST supports the workload?",
     "choices": [
-      "NFC",
-      "Local RAID 0",
-      "A cable modem",
-      "VDI"
+      "Move their profiles to a DHCP scope",
+      "Replace the thin clients with unmanaged switches",
+      "Disable authentication on the VDI broker",
+      "Assign them to GPU-enabled VDI hosts or desktops sized for the graphics workload"
     ],
     "answer": 3,
-    "explanation": "Virtual desktop infrastructure hosts desktops centrally and delivers their interfaces to endpoint clients such as thin terminals."
+    "explanation": "Graphics-intensive VDI requires appropriate virtual or passed-through GPU resources. Correctly sizing the pool targets rendering demand; network addressing and authentication removal do not."
   },
   {
     "id": "A1201-PE4-062",
@@ -981,15 +981,15 @@
     "objective": "4.2",
     "blueprint": "Hosted applications",
     "difficulty": "Level 2",
-    "question": "A business subscribes to an online office suite that the provider patches and operates. Users access it through a browser. Which model is this?",
+    "question": "A company adopts a provider-operated browser payroll application. Under the SaaS responsibility model, which task still belongs primarily to the customer?",
     "choices": [
-      "SaaS",
-      "PaaS",
-      "An on-premises application managed by the customer",
-      "IaaS"
+      "Managing its user accounts, access assignments, and business data",
+      "Replacing failed disks in the provider's hosts",
+      "Patching the provider's hypervisor",
+      "Maintaining the provider's data-center cooling"
     ],
     "answer": 0,
-    "explanation": "Software as a Service provides a complete provider-operated application to end users. PaaS and IaaS expose platform or infrastructure responsibilities, while an on-premises application remains customer managed."
+    "explanation": "The SaaS provider operates the application and infrastructure, while the customer remains responsible for its identities, authorized access, and data use. Physical and platform maintenance remain provider duties."
   },
   {
     "id": "A1201-PE4-063",
@@ -997,15 +997,15 @@
     "objective": "4.2",
     "blueprint": "Virtual infrastructure",
     "difficulty": "Level 2",
-    "question": "A company leases virtual servers and networks from a cloud provider while retaining responsibility for guest operating systems. Which service model applies?",
+    "question": "An IaaS virtual machine is automatically restarted on another physical host after the original host fails. Which responsibility did the cloud provider fulfill?",
     "choices": [
-      "IaaS",
-      "SaaS",
-      "NFC",
-      "A workgroup printer"
+      "Maintaining the physical compute and virtualization infrastructure",
+      "Writing the customer's application code",
+      "Approving the customer's user accounts",
+      "Classifying the customer's business records"
     ],
     "answer": 0,
-    "explanation": "Infrastructure as a Service supplies virtualized infrastructure while the customer manages guest operating systems and applications."
+    "explanation": "In IaaS, the provider operates physical hosts and the virtualization layer, including host-failure recovery capabilities. Customer application, identity, and data-governance responsibilities remain with the customer."
   },
   {
     "id": "A1201-PE4-064",
@@ -1029,15 +1029,15 @@
     "objective": "4.2",
     "blueprint": "Shared cloud capacity",
     "difficulty": "Level 3",
-    "question": "A public cloud dynamically assigns compute and storage from a common infrastructure pool while keeping tenants logically separated. Which concept does this describe?",
+    "question": "A cloud tenant cannot deploy additional instances even though the provider has available shared capacity. The console reports that the tenant's regional vCPU quota has been reached. What should be done?",
     "choices": [
-      "Dedicated offline hardware for every transaction",
-      "Manual cable tracing",
-      "Local-only clipboard sharing",
-      "Resource pooling"
+      "Add unapproved customer accounts",
+      "Disable all cloud monitoring",
+      "Replace the local keyboard",
+      "Request an approved quota increase or release unused tenant allocations"
     ],
     "answer": 3,
-    "explanation": "Resource pooling allows provider capacity to be allocated among multiple isolated customers according to demand, a core characteristic of public cloud delivery."
+    "explanation": "Shared provider capacity does not override tenant-level service quotas. Managing unused allocations or requesting an approved increase addresses the actual control preventing deployment."
   },
   {
     "id": "A1201-PE4-066",
@@ -1061,15 +1061,15 @@
     "objective": "5.1",
     "blueprint": "Dim laptop display",
     "difficulty": "Level 3",
-    "question": "A laptop screen is almost black, but a flashlight reveals a normal desktop image. External video works and brightness controls do not change the internal screen. Which component area is MOST likely faulty?",
+    "question": "A laptop display is bright on the left but progressively dark toward the right at every brightness setting. External video is normal, and the pattern is present before the operating system loads. What is MOST likely required?",
     "choices": [
-      "The storage partition table",
-      "The display backlight or its power circuitry",
-      "The Wi-Fi password",
-      "The print spooler"
+      "Renew the DHCP lease",
+      "Service the panel's failed edge-light or replace the affected display assembly",
+      "Replace the printer toner",
+      "Change the operating-system power plan"
     ],
     "answer": 1,
-    "explanation": "A visible image under a flashlight proves that the panel is producing picture data but lacks illumination. External video further isolates the problem to the internal backlight path."
+    "explanation": "The spatial brightness gradient appears before software loads and does not affect external video, isolating the panel's illumination hardware. Network and power-plan changes cannot repair a failed edge-light region."
   },
   {
     "id": "A1201-PE4-068",
@@ -1125,15 +1125,15 @@
     "objective": "5.2",
     "blueprint": "POST beep codes",
     "difficulty": "Level 2",
-    "question": "A desktop begins emitting continuous memory-related POST beeps immediately after a RAM upgrade. What should be done FIRST?",
+    "question": "A desktop reports the documented memory-failure beep code. Each module works in slot A, but a known-good module fails in slot B after the slot is cleaned and firmware defaults are loaded. What is the MOST likely fault?",
     "choices": [
-      "Replace the printer toner",
-      "Change the DNS suffix",
-      "Disable the display adapter",
-      "Power down and reseat the memory modules"
+      "The network gateway",
+      "The printer spooler",
+      "Every tested memory module",
+      "The motherboard memory slot or its channel circuitry"
     ],
     "answer": 3,
-    "explanation": "The beep pattern began with the memory change, making incomplete seating the first relevant check before replacement or unrelated configuration changes."
+    "explanation": "The failure follows slot B rather than any module, including a known-good test part. That substitution isolates the motherboard slot or channel instead of the memory modules themselves."
   },
   {
     "id": "A1201-PE4-072",
@@ -1157,15 +1157,15 @@
     "objective": "5.2",
     "blueprint": "Lost firmware settings",
     "difficulty": "Level 2",
-    "question": "A kiosk motherboard retains firmware settings while connected to wall power, but after every overnight disconnect it reports a clock error and reloads defaults. A meter reads 0.4 V across its CR2032 cell. Which service action is indicated?",
+    "question": "A vendor firmware update intentionally resets several custom settings to defaults. The system clock remains correct and later power removals do not erase newly saved settings. What should the technician do?",
     "choices": [
-      "Replace the depleted CR2032 battery",
-      "Replace the kiosk display",
-      "Reconfigure the network VLAN",
-      "Install a printer pickup roller"
+      "Reapply the documented configuration and save it after the update",
+      "Replace the healthy CMOS battery",
+      "Downgrade the network to dial-up",
+      "Remove all storage permanently"
     ],
     "answer": 0,
-    "explanation": "The very low coin-cell voltage and failures only while external power is absent show that the RTC/CMOS battery can no longer maintain firmware state. Replacing it addresses the measured fault."
+    "explanation": "The one-time reset coincides with documented update behavior, while the clock and newly saved settings persist. Reapplying the approved configuration is appropriate; there is no evidence of battery failure."
   },
   {
     "id": "A1201-PE4-074",
@@ -1285,15 +1285,15 @@
     "objective": "5.5",
     "blueprint": "Paused print jobs",
     "difficulty": "Level 2",
-    "question": "A Windows printer queue shows a status of Paused and no jobs leave the workstation. What should the user do?",
+    "question": "A secure printer receives a job and labels it Held for authentication. The queue is active and other ordinary jobs print. What must the user do?",
     "choices": [
-      "Resume the printer queue",
-      "Replace the CPU",
-      "Reconfigure the wireless channel",
-      "Format the storage drive"
+      "Authenticate at the printer and release the held job",
+      "Replace the imaging drum",
+      "Restart every network switch",
+      "Disable secure printing"
     ],
     "answer": 0,
-    "explanation": "A manually paused queue will hold every job until it is resumed. Hardware replacement is unnecessary when the operating-system status identifies the cause."
+    "explanation": "The held state is an intentional secure-release workflow, not a paused queue or printer failure. The authorized user must authenticate at the device to release that job."
   },
   {
     "id": "A1201-PE4-082",

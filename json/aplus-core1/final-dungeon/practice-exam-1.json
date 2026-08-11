@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Mobile battery safety",
     "difficulty": "Level 2",
-    "question": "A tablet has a raised display and rocks when placed on a flat desk. What should the technician do FIRST?",
+    "question": "A sealed replacement battery for a tablet arrives with a deep crease along the cell pouch and damaged edge insulation, although it is not swollen. What should the technician do?",
     "choices": [
-      "Recalibrate the touchscreen",
-      "Press the display back into the frame",
-      "Discharge the battery by running a benchmark",
-      "Power off the tablet and isolate it for swollen-battery service"
+      "Install it and monitor the first charging cycle",
+      "Flatten the crease before installing the battery",
+      "Cover the damaged area with ordinary office tape",
+      "Reject the battery and place it in the approved damaged-battery quarantine process"
     ],
     "answer": 3,
-    "explanation": "A raised display and distorted case indicate a swollen battery. The device should be powered down, isolated from charging and heat, and serviced using approved battery-safety procedures."
+    "explanation": "Physical damage to a lithium battery pouch makes the part unsafe even before swelling appears. The technician should reject and quarantine it under the approved battery-handling process rather than install, reshape, or casually patch it."
   },
   {
     "id": "A1201-PE1-002",
@@ -53,15 +53,15 @@
     "objective": "4.1",
     "blueprint": "Hypervisor selection",
     "difficulty": "Level 2",
-    "question": "A company is building dedicated virtualization hosts and wants the hypervisor to run directly on server hardware. Which platform should it deploy?",
+    "question": "A training server currently runs guest machines through a hosted hypervisor on a desktop operating system. Host operating-system reboots interrupt every class. Which change BEST removes that dependency while retaining virtual machines?",
     "choices": [
-      "A container runtime inside a desktop operating system",
-      "A Type 2 hypervisor",
-      "A Type 1 hypervisor",
-      "A virtual desktop client"
+      "Add a second hosted hypervisor inside each guest",
+      "Convert every guest into a dual-boot partition",
+      "Migrate the guests to a Type 1 hypervisor installed directly on the server",
+      "Move the host operating system to a larger SSD"
     ],
     "answer": 2,
-    "explanation": "A Type 1 hypervisor runs directly on hardware and is designed for dedicated, centrally managed virtualization hosts."
+    "explanation": "A Type 1 hypervisor runs directly on the server hardware, so guest availability no longer depends on a general-purpose host operating system. Nested hosted hypervisors, dual booting, and larger storage do not remove the host reboot dependency."
   },
   {
     "id": "A1201-PE1-005",
@@ -197,15 +197,15 @@
     "objective": "3.3",
     "blueprint": "RAM compatibility",
     "difficulty": "Level 2",
-    "question": "A technician is replacing removable memory in a typical laptop. Which physical memory form factor is normally required?",
+    "question": "A laptop specifies DDR4-3200 memory. A technician attempts to install a same-capacity DDR5 SO-DIMM, but the module's notch does not align with the slot. What is the correct conclusion?",
     "choices": [
-      "SODIMM",
-      "DIMM",
-      "M.2 2280",
-      "PCIe x16"
+      "DDR4 and DDR5 SO-DIMMs are physically and electrically incompatible",
+      "The DDR5 module should be installed upside down",
+      "A firmware password is preventing the memory upgrade",
+      "The module will fit after its heat spreader is removed"
     ],
     "answer": 0,
-    "explanation": "Laptops commonly use compact SODIMM modules, while full-size DIMMs are normally used in desktop systems."
+    "explanation": "DDR generations use different keying and electrical signaling, so a DDR5 SO-DIMM cannot replace DDR4 merely because capacity and general form factor appear similar. Forcing or modifying the module would damage the memory or slot."
   },
   {
     "id": "A1201-PE1-014",
@@ -229,15 +229,15 @@
     "objective": "5.2",
     "blueprint": "Drive failure",
     "difficulty": "Level 2",
-    "question": "A laptop hard drive reports S.M.A.R.T. warnings and makes repeated clicking sounds. What should the technician do FIRST?",
+    "question": "A SATA hard drive intermittently disappears, but its SMART health values remain normal. The system log shows rising UDMA CRC errors, and the drive operates normally when connected with a known-good cable. What should be replaced?",
     "choices": [
-      "Defragment the drive repeatedly",
-      "Update the display driver",
-      "Run an extended write benchmark",
-      "Back up accessible data and replace the drive"
+      "The hard drive's controller board",
+      "The motherboard CMOS battery",
+      "The operating-system bootloader",
+      "The original SATA data cable"
     ],
     "answer": 3,
-    "explanation": "S.M.A.R.T. warnings and mechanical clicking indicate imminent drive failure. Protecting accessible data takes priority over stressful testing."
+    "explanation": "Increasing interface CRC errors combined with normal SMART media health and successful operation on a known-good cable isolate the fault to the original SATA data path. Replacing the cable addresses the evidence without unnecessarily replacing the drive."
   },
   {
     "id": "A1201-PE1-016",
@@ -373,15 +373,15 @@
     "objective": "4.2",
     "blueprint": "Cloud elasticity",
     "difficulty": "Level 2",
-    "question": "A cloud application automatically adds instances during demand spikes and removes them after demand falls. Which cloud characteristic is demonstrated?",
+    "question": "A retailer cannot predict flash-sale traffic and does not want to pay for permanently oversized capacity. Which cloud configuration BEST addresses both requirements?",
     "choices": [
-      "Measured service",
-      "Resource pooling",
-      "Elasticity",
-      "High availability"
+      "Reserve one fixed server for every possible customer",
+      "Disable workload monitoring",
+      "Configure policy-based autoscaling to add and release instances with demand",
+      "Move the application to an offline workstation"
     ],
     "answer": 2,
-    "explanation": "Elasticity is the ability to expand and contract cloud resources dynamically in response to changing demand."
+    "explanation": "Policy-based autoscaling applies cloud elasticity to match resources to changing workload demand. It supplies temporary capacity without requiring the retailer to maintain peak-size infrastructure continuously."
   },
   {
     "id": "A1201-PE1-025",
@@ -421,15 +421,15 @@
     "objective": "2.6",
     "blueprint": "SOHO addressing",
     "difficulty": "Level 2",
-    "question": "One wired computer assigns itself a 169.254.x.x address while other computers receive normal private addresses. What does this MOST likely indicate?",
+    "question": "Two office devices are manually configured with the same IPv4 address. Each works when the other is powered off, but connectivity becomes intermittent when both are online. What should be corrected?",
     "choices": [
-      "The DNS server rejected the computer's hostname",
-      "The router translated the address incorrectly",
-      "That computer could not obtain a DHCP lease",
-      "The switch assigned the computer to a public subnet"
+      "Configure both devices with the same MAC address",
+      "Change the DNS suffix on both devices",
+      "Assign one device a unique address or create nonconflicting DHCP reservations",
+      "Disable the default gateway on the router"
     ],
     "answer": 2,
-    "explanation": "An address in 169.254.0.0/16 is an APIPA address and commonly indicates that the client could not communicate with DHCP."
+    "explanation": "The alternating connectivity is evidence of an IPv4 address conflict. Each device needs a unique address, preferably managed through nonconflicting reservations; DNS suffixes and gateway settings do not resolve duplicate local addresses."
   },
   {
     "id": "A1201-PE1-028",
@@ -597,15 +597,15 @@
     "objective": "3.6",
     "blueprint": "Power supply sizing",
     "difficulty": "Level 3",
-    "question": "A workstation restarts only during GPU rendering. The new graphics card meets slot requirements, but the current power supply is below the card manufacturer's recommended capacity and lacks one native connector. Which solution is BEST?",
+    "question": "A dual-socket workstation is being upgraded. The replacement PSU meets the wattage estimate but provides only one EPS CPU connector, while the motherboard requires two independently powered EPS inputs. What should the technician select?",
     "choices": [
-      "Use a splitter on the existing undersized power cable",
-      "Reduce the monitor resolution to lower PSU load",
-      "Install a properly rated power supply with the required native GPU connectors",
-      "Move the graphics card to a shorter PCIe slot"
+      "A lower-wattage PSU with a higher efficiency label",
+      "A SATA-to-EPS adapter for the second processor socket",
+      "A properly rated PSU that includes both required native EPS CPU connectors",
+      "A second external laptop power adapter"
     ],
     "answer": 2,
-    "explanation": "A rendering-only restart combined with insufficient capacity and a missing connector points to the power supply. A correctly sized PSU with native connectors is safer than adapters or splitters."
+    "explanation": "Power-supply suitability includes connector support, not only total wattage. A unit with both required native EPS connectors is the safe choice; improvised peripheral-power adapters and unrelated external supplies are not appropriate for processor power."
   },
   {
     "id": "A1201-PE1-039",
@@ -965,15 +965,15 @@
     "objective": "5.2",
     "blueprint": "Drive failure",
     "difficulty": "Level 3",
-    "question": "An SSD-equipped laptop intermittently freezes. S.M.A.R.T. data shows a growing uncorrectable-error count, and the issue persists after the operating system is reimaged. What should the technician do NEXT?",
+    "question": "An NVMe SSD disappears only during long write workloads. Its media-error count remains zero, but monitoring shows the controller reaching its critical temperature immediately before each disconnect. What should the technician do NEXT?",
     "choices": [
-      "Disable S.M.A.R.T. reporting and monitor the laptop",
-      "Run repeated write benchmarks to force the error to recur",
-      "Back up the user's data and replace the SSD",
-      "Convert the disk from GPT to MBR"
+      "Replace the SSD solely because it disconnected",
+      "Disable SMART monitoring in firmware",
+      "Install the supported heat spreader or improve airflow, then retest the workload",
+      "Convert the drive to a dynamic disk"
     ],
     "answer": 2,
-    "explanation": "Increasing uncorrectable media errors that survive an operating-system reimage indicate a failing SSD. Data protection and drive replacement are more appropriate than additional write stress."
+    "explanation": "The disconnects correlate with controller temperature while media health remains clean, so thermal management should be corrected before condemning the SSD. Disabling monitoring or changing disk layout does not address overheating."
   },
   {
     "id": "A1201-PE1-062",
