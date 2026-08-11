@@ -242,7 +242,7 @@
   {
     "id": "A1201-PE3-016",
     "domain": "2",
-    "objective": "2.2",
+    "objective": "2.5",
     "blueprint": "SOHO routing",
     "difficulty": "Level 3",
     "question": "A small office installs a new security router behind an ISP gateway. Users now experience double NAT, and inbound port mappings fail even though both devices are configured. What is the BEST correction?",
@@ -258,7 +258,7 @@
   {
     "id": "A1201-PE3-017",
     "domain": "2",
-    "objective": "2.2",
+    "objective": "2.5",
     "blueprint": "Power over Ethernet",
     "difficulty": "Level 3",
     "question": "Several new wireless access points repeatedly reboot after additional IP cameras are connected to the same PoE switch. Data links remain up, but the switch reports that its power budget is exhausted. What is the BEST solution?",
@@ -274,7 +274,7 @@
   {
     "id": "A1201-PE3-018",
     "domain": "2",
-    "objective": "2.2",
+    "objective": "2.5",
     "blueprint": "Cable internet",
     "difficulty": "Level 4",
     "question": "A cable modem worked with an old router. After the router is replaced, the modem remains online but the new router receives no WAN address. The ISP is known to cache the first connected device’s MAC address. What should the technician do FIRST?",
@@ -290,7 +290,7 @@
   {
     "id": "A1201-PE3-019",
     "domain": "2",
-    "objective": "2.3",
+    "objective": "2.2",
     "blueprint": "Wireless encryption",
     "difficulty": "Level 4",
     "question": "A company wants each employee to authenticate to Wi-Fi with individual credentials, and access must be revoked centrally when employment ends. Which configuration BEST satisfies the requirement?",
@@ -306,7 +306,7 @@
   {
     "id": "A1201-PE3-020",
     "domain": "2",
-    "objective": "2.3",
+    "objective": "2.2",
     "blueprint": "2.4 GHz channels",
     "difficulty": "Level 4",
     "question": "A site survey finds every 2.4 GHz nonoverlapping channel heavily occupied by neighboring businesses. Nearly all company devices support 5 GHz, and coverage is adequate on that band. Which redesign is BEST?",
@@ -322,7 +322,7 @@
   {
     "id": "A1201-PE3-021",
     "domain": "2",
-    "objective": "2.3",
+    "objective": "2.2",
     "blueprint": "Guest wireless",
     "difficulty": "Level 2",
     "question": "A café wants guest Wi-Fi users to reach the Internet but not communicate directly with one another. Which access-point feature should be enabled?",
@@ -338,7 +338,7 @@
   {
     "id": "A1201-PE3-022",
     "domain": "2",
-    "objective": "2.4",
+    "objective": "2.6",
     "blueprint": "APIPA addressing",
     "difficulty": "Level 2",
     "question": "A workstation assigns itself a 169.254 address. Running a lease renewal returns 'media disconnected,' and the switch shows no link light. What should be corrected before investigating the DHCP server?",
@@ -354,7 +354,7 @@
   {
     "id": "A1201-PE3-023",
     "domain": "2",
-    "objective": "2.4",
+    "objective": "2.6",
     "blueprint": "Private IPv4",
     "difficulty": "Level 2",
     "question": "An ACL is intended to permit the entire RFC1918 172.16.0.0 range, but it permits only 172.16.0.0/16. Which larger private block should the rule cover?",
@@ -370,7 +370,7 @@
   {
     "id": "A1201-PE3-024",
     "domain": "2",
-    "objective": "2.4",
+    "objective": "2.6",
     "blueprint": "Default gateway",
     "difficulty": "Level 3",
     "question": "A branch replaces its router, but the DHCP server still supplies the retired router address in option 003. Newly leased clients reach local printers but not the Internet. Which configuration should the technician update?",
@@ -386,39 +386,39 @@
   {
     "id": "A1201-PE3-025",
     "domain": "2",
-    "objective": "2.5",
-    "blueprint": "Wide area networking",
+    "objective": "2.4",
+    "blueprint": "DNS alias records",
     "difficulty": "Level 3",
-    "question": "A company connects two offices in different cities through a carrier-managed circuit so their local networks can exchange traffic. What type of network does this connection create?",
+    "question": "The address portal.example.com should follow a web server whose canonical hostname may change. Administrators currently update two separate A records after every migration. What should be configured?",
     "choices": [
-      "WAN",
-      "PAN",
-      "SAN",
-      "NFC"
+      "A CNAME record from portal.example.com to the canonical server name",
+      "A DHCP exclusion for the portal",
+      "A loopback plug in the web server",
+      "A second default gateway on every client"
     ],
     "answer": 0,
-    "explanation": "A wide area network connects geographically separated sites. PAN covers a person’s nearby devices, while SAN is dedicated to storage traffic."
+    "explanation": "A CNAME provides an alias that follows the canonical hostname, reducing duplicate address-record maintenance during migrations."
   },
   {
     "id": "A1201-PE3-026",
     "domain": "2",
-    "objective": "2.5",
-    "blueprint": "Personal area networking",
+    "objective": "2.4",
+    "blueprint": "Remote-access VPN",
     "difficulty": "Level 3",
-    "question": "A smartwatch exchanges notifications and fitness data with its owner’s phone over Bluetooth. Which network type BEST describes this connection?",
+    "question": "Remote employees must securely reach internal file services through public Internet connections. Which network configuration provides the required protected path?",
     "choices": [
-      "LAN",
-      "CAN",
-      "PAN",
-      "SAN"
+      "An open guest SSID",
+      "A public SMB share with no encryption",
+      "A remote-access VPN with approved authentication",
+      "A local APIPA address"
     ],
     "answer": 2,
-    "explanation": "A Bluetooth link between a person’s wearable and phone is a personal area network. LAN and CAN cover larger local scopes, while SAN carries storage traffic."
+    "explanation": "A remote-access VPN encrypts traffic over the untrusted Internet and authenticates users before granting internal access."
   },
   {
     "id": "A1201-PE3-027",
     "domain": "2",
-    "objective": "2.5",
+    "objective": "2.7",
     "blueprint": "Storage networking",
     "difficulty": "Level 3",
     "question": "Several virtualization hosts need shared block-level storage so that virtual-machine disks can move between hosts. Which network type is designed for this purpose?",
@@ -434,23 +434,23 @@
   {
     "id": "A1201-PE3-028",
     "domain": "2",
-    "objective": "2.6",
-    "blueprint": "Remote broadband",
+    "objective": "2.3",
+    "blueprint": "DHCP server role",
     "difficulty": "Level 4",
-    "question": "A remote farm has no cable or telephone service. A provider tower is visible from the roof, and the business needs lower latency than satellite for video calls. Which broadband option is BEST?",
+    "question": "New clients on several subnets fail to receive addresses after one host is taken offline. Existing clients retain leases, and relay agents still forward requests to that host. Which server role should be restored?",
     "choices": [
-      "Fixed wireless Internet service",
-      "Geostationary satellite service",
-      "Dial-up over a nonexistent phone line",
-      "NFC tethering"
+      "The DHCP server role",
+      "The print server role",
+      "The web proxy role",
+      "The syslog viewer role"
     ],
     "answer": 0,
-    "explanation": "Fixed wireless uses a line-of-sight radio link to a provider tower and generally offers lower latency than geostationary satellite. The site conditions specifically support that option."
+    "explanation": "DHCP supplies dynamic addressing information. Existing leases can continue temporarily while new requests fail when the DHCP service is unavailable."
   },
   {
     "id": "A1201-PE3-029",
     "domain": "2",
-    "objective": "2.6",
+    "objective": "2.7",
     "blueprint": "Symmetrical broadband",
     "difficulty": "Level 4",
     "question": "A business has a verified 500 Mbps symmetrical fiber circuit, but uploads never exceed 100 Mbps. The edge router configuration contains an old 100 Mbps outbound traffic shaper. What should be done?",
@@ -466,23 +466,23 @@
   {
     "id": "A1201-PE3-030",
     "domain": "2",
-    "objective": "2.6",
-    "blueprint": "Temporary connectivity",
+    "objective": "2.3",
+    "blueprint": "Proxy server role",
     "difficulty": "Level 4",
-    "question": "A disaster-response team must connect five laptops at a temporary field location for two days. Cellular coverage is strong, but no wired provider service is available. Which solution is MOST practical?",
+    "question": "A school must enforce web-category policy and cache frequently downloaded public updates for student computers. Which networked host role BEST fits both requirements?",
     "choices": [
-      "A new underground fiber build",
-      "A local-only unmanaged switch with no uplink",
-      "A satellite dish that cannot see the sky",
-      "A managed cellular hotspot"
+      "A storage-area network",
+      "A public DNS root server",
+      "A passive patch panel",
+      "A forward proxy server"
     ],
     "answer": 3,
-    "explanation": "A cellular hotspot can be deployed immediately, supports multiple clients, and fits a short-lived location with strong mobile coverage. Permanent construction is disproportionate to the need."
+    "explanation": "A forward proxy can mediate outbound web requests, enforce browsing policy, and cache permitted content for reuse."
   },
   {
     "id": "A1201-PE3-031",
     "domain": "2",
-    "objective": "2.7",
+    "objective": "2.8",
     "blueprint": "Copper validation",
     "difficulty": "Level 2",
     "question": "A technician must verify that a newly installed Cat 6A run meets its rated performance specification, not merely that all conductors are connected. Which tool should be used?",
@@ -498,23 +498,23 @@
   {
     "id": "A1201-PE3-032",
     "domain": "2",
-    "objective": "2.7",
-    "blueprint": "Cable tracing",
+    "objective": "2.3",
+    "blueprint": "Load balancer role",
     "difficulty": "Level 2",
-    "question": "Dozens of unlabeled copper cables terminate in a closet. A technician needs to identify which cable reaches a specific wall jack without disconnecting the active switch. Which tool pair is BEST?",
+    "question": "Three web servers host the same application. Which appliance or server role distributes incoming client sessions among healthy members?",
     "choices": [
-      "Crimper and punchdown block",
-      "Multimeter and antistatic mat",
-      "Optical power meter and fusion splicer",
-      "Tone generator and probe"
+      "A punchdown tool",
+      "A DHCP exclusion",
+      "A toner probe",
+      "A load balancer"
     ],
     "answer": 3,
-    "explanation": "A tone generator places a traceable signal on the target cable, and the probe identifies that signal in the bundle. The other tools install or test different components."
+    "explanation": "A load balancer monitors service members and distributes client requests so no single web server receives all traffic."
   },
   {
     "id": "A1201-PE3-033",
     "domain": "2",
-    "objective": "2.8",
+    "objective": "2.4",
     "blueprint": "Stable DHCP addressing",
     "difficulty": "Level 2",
     "question": "A phone has a DHCP reservation but receives different addresses because its private randomized MAC changes for the corporate SSID. Which correction preserves predictable addressing?",
@@ -531,22 +531,22 @@
     "id": "A1201-PE3-034",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Discrete graphics output",
+    "blueprint": "Dead pixel diagnosis",
     "difficulty": "Level 3",
-    "question": "After a discrete graphics card is installed, the card powers on but displays connected to it remain blank. The integrated video output still works, and firmware lists the integrated adapter as the primary display. What should the technician change?",
+    "question": "A new monitor has a fixed cluster of black pixels visible in firmware screens, operating-system screens, and its built-in test pattern. What is the MOST likely resolution?",
     "choices": [
-      "Disable all system memory channels",
-      "Change the Ethernet duplex setting",
-      "Set the primary display adapter to PCIe or PEG in firmware",
-      "Format the operating-system drive"
+      "Change the DNS server",
+      "Install additional system RAM",
+      "Replace the panel under the manufacturer pixel-defect policy",
+      "Reformat the boot drive"
     ],
     "answer": 2,
-    "explanation": "The firmware is initializing integrated graphics as the primary adapter. Selecting the PCIe graphics option allows the discrete card to provide boot and operating-system display output."
+    "explanation": "A persistent cluster present in the monitor test pattern is a physical panel defect, independent of the source computer or software."
   },
   {
     "id": "A1201-PE3-035",
     "domain": "3",
-    "objective": "3.1",
+    "objective": "3.2",
     "blueprint": "Display conversion",
     "difficulty": "Level 3",
     "question": "A presenter must connect a laptop with HDMI output to an older projector that accepts only analog VGA input. Which device is required?",
@@ -562,7 +562,7 @@
   {
     "id": "A1201-PE3-036",
     "domain": "3",
-    "objective": "3.2",
+    "objective": "3.5",
     "blueprint": "Motherboard form factor",
     "difficulty": "Level 3",
     "question": "A compact replacement case provides mounting points only for a 170 mm by 170 mm motherboard and has one expansion slot. Which motherboard form factor should be selected?",
@@ -578,23 +578,23 @@
   {
     "id": "A1201-PE3-037",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Graphics expansion",
+    "objective": "3.1",
+    "blueprint": "Native display resolution",
     "difficulty": "Level 3",
-    "question": "A graphics card operates at x4 instead of x16 after a second NVMe drive is installed. The motherboard lane-sharing table shows that the selected M.2 slot borrows lanes from the GPU slot. What should the technician do?",
+    "question": "Text on an LCD looks blurred after its resolution is changed below the panel specification. Which setting should be restored for the sharpest image?",
     "choices": [
-      "Cut additional contacts into the graphics card",
-      "Move the NVMe drive to a nonconflicting supported slot or revise the expansion layout",
-      "Install the GPU in a memory socket",
-      "Disable the CPU cache"
+      "A lower DHCP lease time",
+      "The panel native resolution",
+      "The printer duplex mode",
+      "A different CPU socket"
     ],
     "answer": 1,
-    "explanation": "The motherboard documentation identifies PCIe lane sharing as the cause. Relocating the conflicting device or choosing a supported layout restores lanes; physical modification and unrelated CPU or memory changes do not."
+    "explanation": "Fixed-pixel displays are sharpest at their native resolution because each source pixel maps directly to a physical pixel."
   },
   {
     "id": "A1201-PE3-038",
     "domain": "3",
-    "objective": "3.3",
+    "objective": "3.5",
     "blueprint": "Processor cooling",
     "difficulty": "Level 4",
     "question": "A desktop with a liquid CPU cooler shuts down within minutes. Radiator fans spin, but monitoring shows a pump speed of 0 RPM, one coolant tube stays cool, and CPU temperature rises immediately. What is the BEST repair?",
@@ -610,7 +610,7 @@
   {
     "id": "A1201-PE3-039",
     "domain": "3",
-    "objective": "3.3",
+    "objective": "3.5",
     "blueprint": "Secure Boot",
     "difficulty": "Level 4",
     "question": "A company imaging USB drive no longer boots on newly secured laptops. Secure Boot is enabled, and firmware reports that the media contains an untrusted bootloader. What is the BEST solution?",
@@ -626,7 +626,7 @@
   {
     "id": "A1201-PE3-040",
     "domain": "3",
-    "objective": "3.4",
+    "objective": "3.3",
     "blueprint": "Dual-channel memory",
     "difficulty": "Level 4",
     "question": "Two different-capacity DIMMs are installed in the motherboard's correct paired slots. Firmware reports part of memory operating dual-channel and the unmatched remainder operating single-channel. What does this indicate?",
@@ -642,7 +642,7 @@
   {
     "id": "A1201-PE3-041",
     "domain": "3",
-    "objective": "3.4",
+    "objective": "3.3",
     "blueprint": "Memory instability",
     "difficulty": "Level 2",
     "question": "A desktop begins crashing after two memory modules are added. Which troubleshooting method BEST identifies whether one module is defective?",
@@ -658,7 +658,7 @@
   {
     "id": "A1201-PE3-042",
     "domain": "3",
-    "objective": "3.4",
+    "objective": "3.3",
     "blueprint": "Server memory protection",
     "difficulty": "Level 2",
     "question": "A server repeatedly logs corrected single-bit memory errors from the same DIMM, and the count is increasing. Which action is MOST appropriate?",
@@ -674,7 +674,7 @@
   {
     "id": "A1201-PE3-043",
     "domain": "3",
-    "objective": "3.5",
+    "objective": "3.4",
     "blueprint": "Drive redundancy",
     "difficulty": "Level 2",
     "question": "A four-drive workstation needs both improved disk performance and continued operation if any one drive fails. Which RAID level BEST meets the requirement?",
@@ -690,7 +690,7 @@
   {
     "id": "A1201-PE3-044",
     "domain": "3",
-    "objective": "3.5",
+    "objective": "3.4",
     "blueprint": "High-speed storage",
     "difficulty": "Level 3",
     "question": "A video-editing workstation needs the lowest-latency internal project drive. The motherboard provides an M.2 socket wired for four PCIe lanes. Which drive type should be selected?",
@@ -706,7 +706,7 @@
   {
     "id": "A1201-PE3-045",
     "domain": "3",
-    "objective": "3.5",
+    "objective": "3.4",
     "blueprint": "Hot-swappable storage",
     "difficulty": "Level 3",
     "question": "A storage array reports a predictive failure for drive bay 7 and supports hot swapping. Services must remain online during replacement. What should the technician do?",
@@ -754,7 +754,7 @@
   {
     "id": "A1201-PE3-048",
     "domain": "3",
-    "objective": "3.7",
+    "objective": "3.8",
     "blueprint": "Laser print defects",
     "difficulty": "Level 4",
     "question": "Pages from a laser printer look correct when they exit, but toner can be wiped off with a finger. The correct media type is selected, and a new toner cartridge does not help. Which component is MOST likely failing?",
@@ -770,7 +770,7 @@
   {
     "id": "A1201-PE3-049",
     "domain": "3",
-    "objective": "3.7",
+    "objective": "3.8",
     "blueprint": "Inkjet streaking",
     "difficulty": "Level 4",
     "question": "An inkjet printer produces clean text on plain paper but smears ink across glossy photos. The photos are loaded print-side correctly, and the ink cartridges are genuine. What should be changed FIRST?",
@@ -802,7 +802,7 @@
   {
     "id": "A1201-PE3-051",
     "domain": "3",
-    "objective": "3.8",
+    "objective": "3.2",
     "blueprint": "External storage speed",
     "difficulty": "Level 2",
     "question": "A 10 Gbps USB-C SSD enclosure transfers at USB 2.0 speed because it is connected through an older adapter. Which connection should be used to obtain the enclosure’s intended performance?",
@@ -818,66 +818,66 @@
   {
     "id": "A1201-PE3-052",
     "domain": "3",
-    "objective": "3.8",
-    "blueprint": "Barcode input",
+    "objective": "3.2",
+    "blueprint": "LC fiber connector",
     "difficulty": "Level 2",
-    "question": "A warehouse must scan both traditional one-dimensional product barcodes and square QR codes. Which input device should be purchased?",
+    "question": "A technician needs to connect a duplex multimode fiber patch cable to a modern high-density switch transceiver. Which connector is commonly used?",
     "choices": [
-      "A magnetic-stripe reader only",
-      "A flatbed printer",
-      "A 2D imaging barcode scanner",
-      "A KVM switch"
+      "An RJ11 connector",
+      "A Molex connector",
+      "An LC connector",
+      "An F-type connector"
     ],
     "answer": 2,
-    "explanation": "A 2D imager can read QR codes and common 1D barcodes. A laser-only 1D reader or the unrelated devices cannot meet both requirements."
+    "explanation": "LC connectors are compact fiber connectors commonly used in duplex patch leads and high-density transceiver installations."
   },
   {
     "id": "A1201-PE3-053",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Front-panel ports",
+    "objective": "3.7",
+    "blueprint": "Duplex printer configuration",
     "difficulty": "Level 2",
-    "question": "A replacement case provides both AC'97 and HD AUDIO front-panel plugs. The motherboard supports jack detection through its HD Audio header, but the front headset is not detected. Which connection should the technician use?",
+    "question": "A printer supports automatic duplexing, but every job prints single-sided after a new driver is installed. The internal configuration page confirms the duplex unit is present. What should be enabled?",
     "choices": [
-      "Connect the AC'97 plug to a USB header",
-      "Connect the HD AUDIO plug to the motherboard audio header",
-      "Connect the speaker plug to a SATA power connector",
-      "Connect both audio plugs to the same header"
+      "A static route to the Internet",
+      "The installed duplex unit and two-sided printing in the driver",
+      "The monitor HDR setting",
+      "A CPU overclock profile"
     ],
     "answer": 1,
-    "explanation": "The board requires the case's HD AUDIO lead for its supported front-panel audio and jack-detection functions. AC'97 is a legacy alternative and the two case plugs should not be attached together."
+    "explanation": "The hardware is detected by the printer, so the driver must be told that the duplex unit is installed and jobs should use it."
   },
   {
     "id": "A1201-PE3-054",
     "domain": "3",
-    "objective": "3.3",
-    "blueprint": "CPU compatibility",
+    "objective": "3.7",
+    "blueprint": "Scan to SMB configuration",
     "difficulty": "Level 3",
-    "question": "A motherboard supports a new processor model only after a documented firmware revision. The system still has the older working processor installed. What should the technician do BEFORE swapping CPUs?",
+    "question": "A multifunction printer can print but scan-to-folder fails after the destination server begins requiring authenticated SMB access. Which configuration should be updated?",
     "choices": [
-      "Delete every user profile",
-      "Disable the storage controller",
-      "Remove all case fans",
-      "Update the motherboard firmware to the required revision"
+      "The monitor color profile",
+      "The CPU thermal limit",
+      "The wireless antenna connector",
+      "The printer scan profile with a supported SMB path and authorized credentials"
     ],
     "answer": 3,
-    "explanation": "Updating firmware while the supported old CPU is still available ensures that the board can initialize the replacement processor. Installing first may leave the system unable to POST."
+    "explanation": "Scan-to-SMB requires a reachable share plus valid credentials and a supported SMB version. Updating the scan profile restores authenticated delivery."
   },
   {
     "id": "A1201-PE3-055",
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "DDR compatibility",
+    "blueprint": "RAID 10 selection",
     "difficulty": "Level 3",
-    "question": "A technician is upgrading a DDR5 laptop whose manual lists a maximum supported speed and capacity. Which memory should be installed?",
+    "question": "A four-drive workstation needs strong read/write performance and must remain available after one drive failure without a parity rebuild. Which configuration is BEST?",
     "choices": [
-      "Desktop DDR4 DIMMs forced into the socket",
-      "DDR5 SO-DIMMs within the laptop’s supported capacity and speed specifications",
-      "ECC server RDIMMs without platform support",
-      "Any module that has the same number of stickers"
+      "RAID 0",
+      "RAID 10",
+      "A single optical disc",
+      "A spanned volume with no redundancy"
     ],
     "answer": 1,
-    "explanation": "Memory generation, form factor, capacity, and supported speed must match the laptop. DDR4 and registered server memory are electrically or physically incompatible."
+    "explanation": "RAID 10 combines striping with mirrored pairs, providing performance and redundancy without parity-rebuild overhead."
   },
   {
     "id": "A1201-PE3-056",
@@ -1042,55 +1042,55 @@
   {
     "id": "A1201-PE3-066",
     "domain": "5",
-    "objective": "5.1",
-    "blueprint": "Battery-only failure",
+    "objective": "5.2",
+    "blueprint": "SATA cable errors",
     "difficulty": "Level 3",
-    "question": "A laptop reports that no battery is installed immediately after bottom-cover service. The battery tests normally in an approved test unit, and inspection shows its internal connector is not fully latched. What should be done?",
+    "question": "A SATA drive intermittently disappears, but SMART media-health values are normal. System logs show a rapidly increasing UDMA CRC error count, and the drive is stable with a known-good cable. What should be replaced?",
     "choices": [
-      "Power down the laptop and correctly reseat the battery connector",
-      "Replace the known-good battery",
-      "Increase charger voltage",
-      "Delete the operating system"
+      "The SATA data cable",
+      "The CPU heat sink",
+      "The printer toner cartridge",
+      "The wireless access point"
     ],
     "answer": 0,
-    "explanation": "The battery is known good and the fault began after service with an unlatched connector. Correctly reseating the internal connection addresses detection without unnecessary battery replacement."
+    "explanation": "CRC link errors that disappear with a known-good cable identify the SATA data path rather than failing drive media."
   },
   {
     "id": "A1201-PE3-067",
     "domain": "5",
-    "objective": "5.1",
-    "blueprint": "Dim laptop display",
+    "objective": "5.2",
+    "blueprint": "RAID member replacement",
     "difficulty": "Level 3",
-    "question": "A laptop display becomes very dim only when the charger is disconnected. The image remains visible, brightness keys work, and the screen returns to normal on AC power. What should be checked FIRST?",
+    "question": "A RAID 10 controller identifies one failed member while the array remains online. Backups are verified and the bay indicator matches the failed member. What should the technician do NEXT?",
     "choices": [
-      "The printer transfer roller",
-      "The router DHCP scope",
-      "The battery-mode display brightness setting in the power plan",
-      "The desktop CPU socket"
+      "Delete the healthy mirror pair",
+      "Disable the controller alarm permanently",
+      "Replace the identified member with a compatible drive and monitor the rebuild",
+      "Convert the array to a single disk"
     ],
     "answer": 2,
-    "explanation": "The display hardware works normally on AC, and the symptom follows the power source. Battery-mode brightness or power-saving settings are the most likely cause."
+    "explanation": "RAID 10 remains available after one member fails. Replacing the correctly identified drive restores redundancy through a controlled rebuild."
   },
   {
     "id": "A1201-PE3-068",
     "domain": "5",
-    "objective": "5.1",
-    "blueprint": "Failed laptop keys",
+    "objective": "5.3",
+    "blueprint": "Projector lamp aging",
     "difficulty": "Level 4",
-    "question": "After a laptop keyboard replacement, one entire column of built-in keys does not respond. An external USB keyboard works, firmware tests show the same missing column, and no liquid damage is present. What should the technician do FIRST?",
+    "question": "A projector image is uniformly dim at every source and brightness setting. Vents are clean, the lens is clear, and the lamp-hour counter exceeds the rated service life. What should be replaced?",
     "choices": [
-      "Reinstall the wireless access-point firmware",
-      "Reseat the keyboard ribbon cable and secure its locking bar",
-      "Replace the external USB keyboard",
-      "Change the laptop’s DNS suffix"
+      "The laptop keyboard",
+      "The projector lamp",
+      "The Ethernet switch",
+      "The printer fuser"
     ],
     "answer": 1,
-    "explanation": "A grouped key failure immediately after replacement, present outside the OS, points to incomplete ribbon contact. Reseating and locking the connector is the least invasive relevant action."
+    "explanation": "Uniform dimness with excessive lamp hours and no airflow or source problem points to an aging projector lamp."
   },
   {
     "id": "A1201-PE3-069",
     "domain": "5",
-    "objective": "5.1",
+    "objective": "5.4",
     "blueprint": "Intermittent charging",
     "difficulty": "Level 4",
     "question": "A workstation-class laptop requires a 90 W USB-C Power Delivery adapter. It charges when idle with a 45 W phone adapter but alternates between charging and discharging during heavy use. Which fix is BEST?",
@@ -1106,7 +1106,7 @@
   {
     "id": "A1201-PE3-070",
     "domain": "5",
-    "objective": "5.1",
+    "objective": "5.4",
     "blueprint": "Weak mobile Wi-Fi",
     "difficulty": "Level 4",
     "question": "After a laptop display assembly is replaced, its Wi-Fi signal is weak in every location while nearby devices remain strong. Bluetooth also has reduced range, and the wireless card passes diagnostics. What is the MOST likely repair?",
@@ -1122,7 +1122,7 @@
   {
     "id": "A1201-PE3-071",
     "domain": "5",
-    "objective": "5.2",
+    "objective": "5.1",
     "blueprint": "POST beep codes",
     "difficulty": "Level 2",
     "question": "At startup, a desktop emits one long beep followed by two short beeps and shows no image. What should the technician consult to interpret the code accurately?",
@@ -1138,7 +1138,7 @@
   {
     "id": "A1201-PE3-072",
     "domain": "5",
-    "objective": "5.2",
+    "objective": "5.1",
     "blueprint": "Thermal shutdown",
     "difficulty": "Level 2",
     "question": "A desktop begins shutting down from high CPU temperature after being transported. Inspection shows that one corner of the heat sink is no longer secured. What should the technician do?",
@@ -1154,7 +1154,7 @@
   {
     "id": "A1201-PE3-073",
     "domain": "5",
-    "objective": "5.2",
+    "objective": "5.1",
     "blueprint": "Lost firmware settings",
     "difficulty": "Level 2",
     "question": "A new CMOS battery was installed, but a desktop still loses firmware settings at every shutdown. The maintenance guide shows that the clear-CMOS jumper is left in the reset position. What should be done?",
@@ -1170,7 +1170,7 @@
   {
     "id": "A1201-PE3-074",
     "domain": "5",
-    "objective": "5.2",
+    "objective": "5.1",
     "blueprint": "No-power desktop",
     "difficulty": "Level 3",
     "question": "After a desktop is moved into a new case, pressing the front power button does nothing. Standby LEDs are on, and briefly bridging the correct motherboard power-switch pins starts the system. What should be corrected?",
@@ -1186,7 +1186,7 @@
   {
     "id": "A1201-PE3-075",
     "domain": "5",
-    "objective": "5.2",
+    "objective": "5.1",
     "blueprint": "Missing boot device",
     "difficulty": "Level 3",
     "question": "A cloned replacement SSD is detected in firmware but does not appear as a boot option. The system is configured for UEFI, while the clone uses an MBR legacy boot layout. What is the BEST correction?",
@@ -1202,7 +1202,7 @@
   {
     "id": "A1201-PE3-076",
     "domain": "5",
-    "objective": "5.3",
+    "objective": "5.2",
     "blueprint": "Clicking hard drive",
     "difficulty": "Level 3",
     "question": "A hard drive begins clicking and stops mounting. It contains legally required data that is not backed up. Repeated power cycles make the noise worse. What is the BEST next action?",
@@ -1218,7 +1218,7 @@
   {
     "id": "A1201-PE3-077",
     "domain": "5",
-    "objective": "5.3",
+    "objective": "5.2",
     "blueprint": "Degraded mirror",
     "difficulty": "Level 3",
     "question": "After an unclean shutdown, a RAID 1 controller marks one healthy member out of sync. Both disks pass diagnostics, and the controller identifies which member contains the current data. What should be done?",
@@ -1234,7 +1234,7 @@
   {
     "id": "A1201-PE3-078",
     "domain": "5",
-    "objective": "5.3",
+    "objective": "5.2",
     "blueprint": "Nearly full SSD",
     "difficulty": "Level 4",
     "question": "A nearly full SSD hosts regulated project records that cannot be deleted. Performance has declined, and analysis shows that old completed projects consume most space. Which action BEST restores free capacity while preserving the records?",
@@ -1250,7 +1250,7 @@
   {
     "id": "A1201-PE3-079",
     "domain": "5",
-    "objective": "5.4",
+    "objective": "5.3",
     "blueprint": "GPU artifacts",
     "difficulty": "Level 4",
     "question": "A graphics card displays artifacts only during 3D workloads. Logs show its temperature rising rapidly, and inspection finds that one GPU fan is not spinning while case airflow is normal. What is the BEST repair?",
@@ -1266,7 +1266,7 @@
   {
     "id": "A1201-PE3-080",
     "domain": "5",
-    "objective": "5.4",
+    "objective": "5.3",
     "blueprint": "Monitor flicker",
     "difficulty": "Level 4",
     "question": "A 4K monitor flickers only at 144 Hz. It is stable at 60 Hz, the graphics card supports 144 Hz, and the current DisplayPort cable is an older low-bandwidth model. What should be tried FIRST?",
@@ -1282,7 +1282,7 @@
   {
     "id": "A1201-PE3-081",
     "domain": "5",
-    "objective": "5.5",
+    "objective": "5.6",
     "blueprint": "Paused print jobs",
     "difficulty": "Level 2",
     "question": "A damaged document causes all printers shared by one Windows server to stop processing jobs. The queues remain paused even after the document is canceled. Which service should the technician restart?",
@@ -1298,7 +1298,7 @@
   {
     "id": "A1201-PE3-082",
     "domain": "5",
-    "objective": "5.5",
+    "objective": "5.6",
     "blueprint": "Faint laser output",
     "difficulty": "Level 2",
     "question": "A laser printer produces uniformly faint pages, and its status panel reports that the toner cartridge is nearly empty. Which action should be taken?",
@@ -1314,7 +1314,7 @@
   {
     "id": "A1201-PE3-083",
     "domain": "5",
-    "objective": "5.5",
+    "objective": "5.6",
     "blueprint": "Pickup jams",
     "difficulty": "Level 2",
     "question": "A printer jams only from tray 2 immediately after paper was reloaded. The paper size is correct, but the stack shifts sideways when the tray moves. What should be adjusted?",
@@ -1330,7 +1330,7 @@
   {
     "id": "A1201-PE3-084",
     "domain": "5",
-    "objective": "5.5",
+    "objective": "5.6",
     "blueprint": "Color misregistration",
     "difficulty": "Level 3",
     "question": "A color printer misregisters the first page after waking from sleep, but later pages and manual calibration tests align correctly. The manufacturer lists this behavior as fixed by a current firmware release. What should be done?",
@@ -1346,7 +1346,7 @@
   {
     "id": "A1201-PE3-085",
     "domain": "5",
-    "objective": "5.6",
+    "objective": "5.5",
     "blueprint": "APIPA connectivity",
     "difficulty": "Level 3",
     "question": "New office devices begin assigning themselves APIPA addresses while older devices retain valid leases. The DHCP server is online, and its scope shows no available addresses. What is the BEST fix?",
@@ -1363,22 +1363,22 @@
     "id": "A1201-PE3-086",
     "domain": "5",
     "objective": "5.6",
-    "blueprint": "IP works but names fail",
+    "blueprint": "Frozen print spooler",
     "difficulty": "Level 3",
-    "question": "One workstation opens a company site at the wrong server. nslookup returns the correct current address, but the workstation’s hosts file contains an old static entry for that name. What should the technician do?",
+    "question": "A malformed job was removed, but all queues on one Windows print server remain frozen while printers accept internal test pages. What should the technician do NEXT?",
     "choices": [
-      "Replace the company DNS servers even though they answer correctly",
-      "Disable the workstation network adapter permanently",
-      "Change the printer toner",
-      "Remove or correct the obsolete hosts-file entry"
+      "Replace every printer drum",
+      "Change the switch VLAN",
+      "Disable printer authentication",
+      "Restart the print spooler service after confirming the bad job is cleared"
     ],
     "answer": 3,
-    "explanation": "The local hosts entry overrides normal DNS resolution on that workstation. Correcting it restores use of the valid DNS response without changing working infrastructure."
+    "explanation": "The printers are operational and the blockage affects the shared Windows queues. Restarting the spooler restores queue processing after the corrupt job is removed."
   },
   {
     "id": "A1201-PE3-087",
     "domain": "5",
-    "objective": "5.6",
+    "objective": "5.5",
     "blueprint": "Single-client Wi-Fi failure",
     "difficulty": "Level 3",
     "question": "A company Wi-Fi network uses an allowlist of device MAC addresses. One phone connects only when its private-address feature is disabled; with the feature enabled, authentication is rejected. What is the BEST administrative response?",
@@ -1395,22 +1395,22 @@
     "id": "A1201-PE3-088",
     "domain": "5",
     "objective": "5.6",
-    "blueprint": "Movement-sensitive Ethernet",
+    "blueprint": "Laser ghost images",
     "difficulty": "Level 4",
-    "question": "An Ethernet link drops whenever the patch cord near a wall jack is moved. Replacing the patch cord does not help, but holding the in-wall cable at a certain angle restores the link. What should the technician do NEXT?",
+    "question": "A laser printer produces a faint copy of prior content farther down each page. Toner is correct, and the repeat interval matches the fuser roller. Which component should be serviced?",
     "choices": [
-      "Replace the Internet DNS records",
-      "Reinstall the laptop operating system",
-      "Increase the printer fuser temperature",
-      "Reterminate and test the wall-jack keystone connection"
+      "The wireless NIC",
+      "The DHCP server",
+      "The display inverter",
+      "The fuser assembly"
     ],
     "answer": 3,
-    "explanation": "The problem remains after the patch cord is replaced and changes with movement at the in-wall termination. Reterminating and testing the keystone addresses the localized intermittent contact."
+    "explanation": "A failing or contaminated fuser can retain toner and create repeating ghost images at its roller circumference."
   },
   {
     "id": "A1201-PE3-089",
     "domain": "5",
-    "objective": "5.6",
+    "objective": "5.5",
     "blueprint": "Reduced Ethernet speed",
     "difficulty": "Level 4",
     "question": "A workstation and switch support 1 Gbps, but transfers are slow and interface counters show late collisions. The switch port is forced to full duplex while the workstation is forced to half duplex. What is the BEST correction?",
@@ -1426,7 +1426,7 @@
   {
     "id": "A1201-PE3-090",
     "domain": "5",
-    "objective": "5.6",
+    "objective": "5.5",
     "blueprint": "Intermittent packet loss",
     "difficulty": "Level 4",
     "question": "Users on a new VPN can open small web pages, but large uploads stall. Small pings succeed, pings with the do-not-fragment flag fail above a reduced size, and the physical Internet link is stable. What is the MOST likely correction?",
