@@ -5,15 +5,15 @@
     "objective": "1.1",
     "blueprint": "Cross-platform storage",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a removable drive must carry files larger than 4 GB between Windows and macOS. Which action or technology is the BEST choice?",
+    "question": "A 64 GB USB drive will move individual 6.5 GB video files between Windows 11 and macOS computers. The users cannot install additional filesystem drivers. Which format meets both requirements?",
     "choices": [
-      "sfc /scannow",
+      "NTFS",
       "exFAT",
-      "chkdsk",
-      "Windows Pro"
+      "FAT32",
+      "APFS"
     ],
     "answer": 1,
-    "explanation": "exFAT directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "exFAT supports files larger than 4 GB and is natively readable and writable by both Windows and macOS. FAT32 has a 4 GB file-size limit, while NTFS and APFS do not provide the required native cross-platform write support."
   },
   {
     "id": "A1202-PE1-002",
@@ -21,15 +21,15 @@
     "objective": "1.1",
     "blueprint": "Lifecycle",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a payroll PC no longer receives vendor security patches. Which action or technology is the BEST choice?",
+    "question": "A payroll workstation still runs an operating system that no longer receives vendor security updates. Its hardware satisfies the requirements for the current supported release. What is the appropriate lifecycle action?",
     "choices": [
-      "NTFS",
-      "GPT",
-      "Task Manager",
-      "Upgrade the operating system"
+      "Install a second antivirus product",
+      "Extend update deferrals indefinitely",
+      "Disconnect it only during payroll processing",
+      "Upgrade it to a supported operating system"
     ],
     "answer": 3,
-    "explanation": "Upgrade the operating system directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Upgrading restores vendor security servicing while keeping the capable hardware in use. Additional antivirus software or intermittent isolation does not correct the risk created by an unsupported operating system."
   },
   {
     "id": "A1202-PE1-003",
@@ -37,15 +37,15 @@
     "objective": "1.2",
     "blueprint": "Windows editions",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a workstation must join a domain and host Remote Desktop. Which action or technology is the BEST choice?",
+    "question": "A small office is ordering a Windows workstation that must join its Active Directory domain and accept inbound Remote Desktop connections. Which edition provides those business features without requiring an enterprise agreement?",
     "choices": [
-      "apt update",
-      "exFAT",
-      "NTFS",
+      "Windows Home",
+      "Windows Home in S mode",
+      "Windows SE",
       "Windows Pro"
     ],
     "answer": 3,
-    "explanation": "Windows Pro directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Windows Pro supports domain join and can host Remote Desktop sessions. Home editions lack those business-management capabilities, and Windows SE is not the appropriate general-purpose desktop edition."
   },
   {
     "id": "A1202-PE1-004",
@@ -53,15 +53,15 @@
     "objective": "1.2",
     "blueprint": "Upgrade method",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where applications and settings must survive a supported Windows version change. Which action or technology is the BEST choice?",
+    "question": "Forty compatible Windows 10 sales laptops must move to Windows 11 over a weekend. Installed applications, user profiles, and local settings must remain intact. Which deployment method BEST satisfies the requirement?",
     "choices": [
-      "GPT",
-      "Task Manager",
-      "In-place upgrade",
-      "Reliability Monitor"
+      "Perform a clean installation on every laptop",
+      "Deploy a bare-metal image and restore user files only",
+      "Perform an in-place upgrade",
+      "Configure each laptop for dual boot"
     ],
     "answer": 2,
-    "explanation": "In-place upgrade directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "An in-place upgrade retains supported applications, profiles, and settings while moving each compatible device to the newer Windows version. Clean imaging would require application and profile restoration, and dual boot does not complete the required migration."
   },
   {
     "id": "A1202-PE1-005",
@@ -69,15 +69,15 @@
     "objective": "1.3",
     "blueprint": "Disk partitioning",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a new UEFI-only PC needs a Windows boot disk. Which action or technology is the BEST choice?",
+    "question": "During Windows installation on a new UEFI workstation, only 2 TB of a 4 TB boot drive is available. The drive was initialized using the older partition style. What should the technician change before continuing?",
     "choices": [
-      "GPT",
-      "Services console",
-      "sfc /scannow",
-      "chkdsk"
+      "Reinitialize the drive as GPT",
+      "Convert the disk to a dynamic disk",
+      "Format the existing partition as exFAT",
+      "Enable legacy BIOS compatibility mode"
     ],
     "answer": 0,
-    "explanation": "GPT directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "GPT supports UEFI booting and disks larger than 2 TB. MBR is causing the capacity limitation; changing the filesystem or enabling legacy boot does not remove that partition-table limit."
   },
   {
     "id": "A1202-PE1-006",
@@ -85,15 +85,15 @@
     "objective": "1.3",
     "blueprint": "Device drivers",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a clean installation shows an unknown network controller. Which action or technology is the BEST choice?",
+    "question": "After a clean Windows installation, Device Manager lists unknown Ethernet and wireless controllers. The PC is offline, and the manufacturer driver package is available on a USB drive. What should be installed FIRST?",
     "choices": [
-      "Windows Pro",
-      "In-place upgrade",
-      "Force Quit",
-      "Install vendor chipset and network drivers"
+      "A third-party driver-update utility",
+      "An optional feature update from another computer",
+      "A generic display driver",
+      "The manufacturer chipset package followed by the network drivers"
     ],
     "answer": 3,
-    "explanation": "Install vendor chipset and network drivers directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The chipset package establishes correct platform-device identification, after which the manufacturer network drivers can restore connectivity. A third-party updater is unnecessary and cannot help an offline system reliably."
   },
   {
     "id": "A1202-PE1-007",
@@ -101,15 +101,15 @@
     "objective": "1.4",
     "blueprint": "System repair",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where protected Windows files may be corrupted. Which action or technology is the BEST choice?",
+    "question": "Windows starts normally, but File Explorer and Settings began crashing after an interrupted update. A malware scan and the drive health test both pass. Which command is the most appropriate initial repair for protected Windows files?",
     "choices": [
-      "chkdsk",
-      "Windows Pro",
+      "format C:",
+      "chkdsk /r",
       "sfc /scannow",
-      "In-place upgrade"
+      "diskpart clean"
     ],
     "answer": 2,
-    "explanation": "sfc /scannow directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "System File Checker verifies protected Windows files and replaces corrupted copies, matching the post-update symptoms. Formatting or cleaning the disk is destructive, and a surface scan is not supported by the healthy-drive evidence."
   },
   {
     "id": "A1202-PE1-008",
@@ -117,15 +117,15 @@
     "objective": "1.4",
     "blueprint": "DHCP commands",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a repaired connection needs a fresh DHCP lease. Which action or technology is the BEST choice?",
+    "question": "A repaired office network is again providing DHCP service. One laptop still shows 169.254.44.18, while nearby systems receive valid leases. The adapter and cable test successfully. Which command sequence should the technician use to request a fresh lease without rebooting?",
     "choices": [
-      "chkdsk",
-      "Windows Pro",
-      "ipconfig /renew",
-      "In-place upgrade"
+      "ipconfig /flushdns followed by nslookup",
+      "netstat -ano followed by arp -a",
+      "ipconfig /release followed by ipconfig /renew",
+      "ipconfig /displaydns followed by route print"
     ],
     "answer": 2,
-    "explanation": "ipconfig /renew directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Releasing and renewing the DHCP configuration makes the client request a new lease now that the service is restored. DNS-cache and routing commands do not replace an APIPA address with a DHCP lease."
   },
   {
     "id": "A1202-PE1-009",
@@ -133,15 +133,15 @@
     "objective": "1.4",
     "blueprint": "Filesystem repair",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where an unsafe shutdown left logical disk errors. Which action or technology is the BEST choice?",
+    "question": "Following a power failure, Event Viewer reports NTFS metadata errors and one folder cannot be opened. SMART diagnostics and the manufacturer drive test report no physical failure. Which corrective action BEST matches the evidence?",
     "choices": [
-      "apt update",
-      "exFAT",
-      "NTFS",
-      "chkdsk"
+      "Run sfc /scannow against Windows files",
+      "Defragment the volume repeatedly",
+      "Quick-format the affected volume",
+      "Run chkdsk /f and allow the scheduled repair to complete"
     ],
     "answer": 3,
-    "explanation": "chkdsk directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "chkdsk /f repairs logical filesystem structures such as the directory and NTFS metadata implicated by the event logs. The healthy hardware evidence does not justify replacing or formatting the drive, and SFC addresses operating-system files rather than volume metadata."
   },
   {
     "id": "A1202-PE1-010",
@@ -149,15 +149,15 @@
     "objective": "1.5",
     "blueprint": "Process management",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where one frozen application must be ended without rebooting. Which action or technology is the BEST choice?",
+    "question": "A graphics workstation becomes unresponsive while rendering. Task Manager shows one third-party process consuming nearly all CPU and memory, but other open applications contain unsaved work. What is the BEST immediate action?",
     "choices": [
-      "apt update",
-      "exFAT",
-      "NTFS",
-      "Task Manager"
+      "Restart Windows from the power button",
+      "Stop the Print Spooler service",
+      "End every process owned by the user",
+      "End the offending process in Task Manager, then investigate why it started"
     ],
     "answer": 3,
-    "explanation": "Task Manager directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Ending only the runaway process restores resources while protecting work in unrelated applications. A forced restart or terminating every user process would create avoidable data loss and does not isolate the observed cause."
   },
   {
     "id": "A1202-PE1-011",
@@ -165,15 +165,15 @@
     "objective": "1.5",
     "blueprint": "Stability history",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where crashes and updates must be compared on a timeline. Which action or technology is the BEST choice?",
+    "question": "Which Windows utility presents application failures, Windows failures, and updates on a dated timeline with a system stability index?",
     "choices": [
-      "grep",
-      "apt update",
+      "Disk Cleanup",
+      "Device Manager",
       "Reliability Monitor",
-      "exFAT"
+      "Resource Monitor"
     ],
     "answer": 2,
-    "explanation": "Reliability Monitor directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Reliability Monitor organizes stability events on a timeline and calculates a stability index. Resource Monitor shows current resource use, while Device Manager and Disk Cleanup serve different purposes."
   },
   {
     "id": "A1202-PE1-012",
@@ -181,15 +181,15 @@
     "objective": "1.5",
     "blueprint": "Service configuration",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a disabled service must start automatically. Which action or technology is the BEST choice?",
+    "question": "The Print Spooler is disabled on a workstation. Which console allows a technician to set its startup type to Automatic and start it immediately?",
     "choices": [
-      "GPT",
-      "Task Manager",
-      "Services console",
-      "Reliability Monitor"
+      "Task Scheduler",
+      "Device Manager",
+      "Services",
+      "Local Users and Groups"
     ],
     "answer": 2,
-    "explanation": "Services console directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The Services console manages service startup types and current running state. Task Scheduler launches scheduled tasks, and Device Manager manages hardware and drivers."
   },
   {
     "id": "A1202-PE1-013",
@@ -197,15 +197,15 @@
     "objective": "1.6",
     "blueprint": "Firewall rules",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where an approved program needs access without opening a port for every process. Which action or technology is the BEST choice?",
+    "question": "An approved accounting application needs inbound communication through Windows Defender Firewall. The administrator wants to avoid opening a port for every executable. Which configuration is appropriate?",
     "choices": [
-      "Application-specific firewall rule",
-      "Reliability Monitor",
-      "Services console",
-      "sfc /scannow"
+      "Create an application-specific inbound allow rule",
+      "Disable the firewall on the private profile",
+      "Allow all high-numbered inbound ports",
+      "Enable network discovery for every profile"
     ],
     "answer": 0,
-    "explanation": "Application-specific firewall rule directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "An application-specific rule permits only the approved program to receive the required traffic. Broad port access or disabling the firewall exposes unrelated services and exceeds the stated requirement."
   },
   {
     "id": "A1202-PE1-014",
@@ -213,15 +213,15 @@
     "objective": "1.6",
     "blueprint": "Network profiles",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a laptop should be discoverable at work but hidden on public Wi-Fi. Which action or technology is the BEST choice?",
+    "question": "A laptop must discover shared printers on the corporate WLAN but must not be discoverable when connected to airport Wi-Fi. How should the two Windows network profiles be assigned?",
     "choices": [
-      "Task Manager",
-      "Enable discovery on Private only",
-      "Reliability Monitor",
-      "Services console"
+      "Public for both networks",
+      "Private for the corporate WLAN and Public for airport Wi-Fi",
+      "Private for both networks",
+      "Domain for the corporate WLAN and Private for airport Wi-Fi"
     ],
     "answer": 1,
-    "explanation": "Enable discovery on Private only directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The Private profile permits appropriate discovery on the trusted office network, while Public applies restrictive discovery settings on the untrusted airport network. Marking both as Private would expose the laptop unnecessarily."
   },
   {
     "id": "A1202-PE1-015",
@@ -229,15 +229,15 @@
     "objective": "1.6",
     "blueprint": "Least privilege",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where support needs accountable administrative access for one task. Which action or technology is the BEST choice?",
+    "question": "A standard user needs an approved printer driver installed once. Support policy requires individual accountability and prohibits permanent local administrators. What should support do?",
     "choices": [
-      "Reliability Monitor",
-      "Services console",
-      "sfc /scannow",
-      "Temporarily elevate a named technician account"
+      "Add the user to Administrators and remove access next month",
+      "Disable User Account Control during installation",
+      "Use a shared administrator account over Remote Desktop",
+      "Enter a named administrator credential at the UAC prompt for this installation"
     ],
     "answer": 3,
-    "explanation": "Temporarily elevate a named technician account directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Task-specific UAC elevation with a named administrator account provides accountability and preserves the user's standard access afterward. Permanent membership, disabling UAC, or sharing credentials violates least privilege."
   },
   {
     "id": "A1202-PE1-016",
@@ -245,15 +245,15 @@
     "objective": "1.7",
     "blueprint": "Application architecture",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a 32-bit application is installed on 64-bit Windows. Which action or technology is the BEST choice?",
+    "question": "A legacy accounting add-in loads only when the host application uses the same 32-bit architecture. The workstation runs 64-bit Windows, and the installer offers both application builds. After selecting the compatible build, which default directory should contain it?",
     "choices": [
-      "Program Files (x86)",
-      "exFAT",
-      "NTFS",
-      "GPT"
+      "C:\\Program Files (x86)",
+      "C:\\Program Files",
+      "C:\\Windows\\System32",
+      "C:\\Windows\\WinSxS"
     ],
     "answer": 0,
-    "explanation": "Program Files (x86) directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The add-in constraint requires the 32-bit build of the accounting application. On 64-bit Windows, that build installs by default under Program Files (x86); Program Files is normally reserved for 64-bit applications, and the Windows system directories are not application-install locations."
   },
   {
     "id": "A1202-PE1-017",
@@ -261,15 +261,15 @@
     "objective": "1.7",
     "blueprint": "Compatibility",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a legacy application fails only after a Windows upgrade. Which action or technology is the BEST choice?",
+    "question": "A vendor-approved legacy application worked on Windows 10 but now refuses to launch because it checks the operating-system version. What is the least disruptive FIRST troubleshooting action?",
     "choices": [
-      "Force Quit",
-      "Program Compatibility Troubleshooter",
-      "grep",
-      "apt update"
+      "Reinstall Windows 10 immediately",
+      "Run the Program Compatibility Troubleshooter",
+      "Replace the workstation with older hardware",
+      "Manually delete compatibility registry entries"
     ],
     "answer": 1,
-    "explanation": "Program Compatibility Troubleshooter directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The Program Compatibility Troubleshooter can apply supported compatibility settings without immediately downgrading or rebuilding the computer. It is the appropriate reversible first step for an OS-version compatibility problem."
   },
   {
     "id": "A1202-PE1-018",
@@ -277,15 +277,15 @@
     "objective": "1.8",
     "blueprint": "Cloud applications",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where webmail works but the desktop client fails after a password change. Which action or technology is the BEST choice?",
+    "question": "After a user changes a cloud-account password, webmail and MFA work, but the Windows desktop client repeatedly submits the old credential. A new device signs in successfully. Credential Manager still contains an entry dated before the password change. What should the technician do NEXT?",
     "choices": [
-      "In-place upgrade",
-      "Force Quit",
-      "grep",
-      "Update the client saved credentials"
+      "Reset the user's cloud mailbox",
+      "Reinstall the entire office suite",
+      "Change the workstation DNS server",
+      "Remove the stale saved credential and authenticate the client again"
     ],
     "answer": 3,
-    "explanation": "Update the client saved credentials directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The successful web and new-device sign-ins show that the account and service are healthy. Removing the stale local credential forces the desktop client to request and store the new password; reinstalling the suite would not target that evidence."
   },
   {
     "id": "A1202-PE1-019",
@@ -293,15 +293,15 @@
     "objective": "1.8",
     "blueprint": "Browser repair",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where one web application fails in one browser after an update. Which action or technology is the BEST choice?",
+    "question": "An internal web application was upgraded yesterday. One user still sees the retired page and an obsolete certificate warning in a normal browser window, but the application works in a private window and in another browser. Which repair should be attempted first?",
     "choices": [
-      "Clear site cache and data",
-      "apt update",
-      "exFAT",
-      "NTFS"
+      "Clear that site's cached data and cookies, then reload it",
+      "Disable the endpoint firewall",
+      "Reinstall the operating system",
+      "Reset the office router"
     ],
     "answer": 0,
-    "explanation": "Clear site cache and data directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The private-window and alternate-browser results isolate the problem to stored data in the normal browser profile. Clearing the affected site data is targeted; network and operating-system changes are unsupported by the evidence."
   },
   {
     "id": "A1202-PE1-020",
@@ -309,15 +309,15 @@
     "objective": "1.9",
     "blueprint": "macOS backup",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a Mac needs versioned and encrypted file recovery. Which action or technology is the BEST choice?",
+    "question": "A designer needs hourly version history for a Mac, an encrypted local backup disk, and the ability to restore the entire computer after a drive replacement. Which configuration BEST meets all three requirements?",
     "choices": [
-      "Encrypted Time Machine backup",
-      "Services console",
-      "sfc /scannow",
-      "chkdsk"
+      "Configure Time Machine and enable encryption for its backup disk",
+      "Use iCloud Drive synchronization as the only backup",
+      "Copy the home folder manually every Friday",
+      "Enable FileVault without creating a backup"
     ],
     "answer": 0,
-    "explanation": "Encrypted Time Machine backup directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Encrypted Time Machine backups provide automatic versioned copies and support full-system recovery. File synchronization and disk encryption are useful controls, but neither alone provides the requested recoverable backup history."
   },
   {
     "id": "A1202-PE1-021",
@@ -325,15 +325,15 @@
     "objective": "1.9",
     "blueprint": "macOS process control",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where one Mac application is unresponsive while the OS remains stable. Which action or technology is the BEST choice?",
+    "question": "A single macOS application shows a spinning wait cursor, while the Finder and other applications remain responsive. Which built-in action ends only the failed application?",
     "choices": [
-      "grep",
-      "apt update",
-      "Force Quit",
-      "exFAT"
+      "Erase the application container",
+      "Restart in macOS Recovery",
+      "Use Force Quit",
+      "Reset NVRAM"
     ],
     "answer": 2,
-    "explanation": "Force Quit directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Force Quit terminates the unresponsive application without restarting the otherwise stable Mac. Recovery and NVRAM procedures are disproportionate to an isolated application hang."
   },
   {
     "id": "A1202-PE1-022",
@@ -341,15 +341,15 @@
     "objective": "1.10",
     "blueprint": "Linux text search",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where failed entries must be located in a large Linux log. Which action or technology is the BEST choice?",
+    "question": "Which command displays every line containing the word failed, regardless of capitalization, in /var/log/auth.log?",
     "choices": [
-      "grep",
-      "Windows Pro",
-      "In-place upgrade",
-      "Force Quit"
+      "grep -i \"failed\" /var/log/auth.log",
+      "chmod 755 /var/log/auth.log",
+      "apt update /var/log/auth.log",
+      "pwd /var/log/auth.log"
     ],
     "answer": 0,
-    "explanation": "grep directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "grep searches text, and -i makes the comparison case-insensitive. chmod changes permissions, apt manages packages, and pwd displays the current directory."
   },
   {
     "id": "A1202-PE1-023",
@@ -357,15 +357,15 @@
     "objective": "1.10",
     "blueprint": "Linux permissions",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a script owner needs write access while others need read and execute. Which action or technology is the BEST choice?",
+    "question": "A Linux script must allow its owner to read, write, and execute it while the group and others may only read and execute it. Which numeric permission is required?",
     "choices": [
-      "In-place upgrade",
-      "chmod 755",
-      "Force Quit",
-      "grep"
+      "777",
+      "755",
+      "644",
+      "700"
     ],
     "answer": 1,
-    "explanation": "chmod 755 directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "755 represents rwx for the owner and r-x for both group and others. 777 grants excessive write access, 644 removes execution, and 700 denies all access to group and others."
   },
   {
     "id": "A1202-PE1-024",
@@ -373,15 +373,15 @@
     "objective": "1.10",
     "blueprint": "Linux packages",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a Debian system must refresh repository metadata. Which action or technology is the BEST choice?",
+    "question": "A Debian workstation reports that its repository package list is stale. The technician wants to refresh package metadata before installing one application without upgrading every installed package. Which command should be run?",
     "choices": [
-      "GPT",
-      "Task Manager",
-      "apt update",
-      "Reliability Monitor"
+      "sudo apt upgrade",
+      "sudo dpkg -r",
+      "sudo apt update",
+      "sudo yum update"
     ],
     "answer": 2,
-    "explanation": "apt update directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "apt update refreshes Debian repository metadata without installing all available upgrades. apt upgrade changes installed packages, and yum is associated with different Linux distributions."
   },
   {
     "id": "A1202-PE1-025",
@@ -389,15 +389,15 @@
     "objective": "1.11",
     "blueprint": "Application requirements",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where software requires Windows 11 and 16 GB RAM but the PC has Windows 10 and 8 GB. Which action or technology is the BEST choice?",
+    "question": "A vendor application requires Windows 11, 16 GB of RAM, and TPM 2.0. A workstation has Windows 10, 8 GB of RAM, and an enabled TPM 2.0 module. What should be completed before deploying the application?",
     "choices": [
-      "grep",
-      "apt update",
-      "Upgrade the PC before installation",
-      "exFAT"
+      "Force the installer to ignore its checks",
+      "Run the application in compatibility mode on the current hardware",
+      "Upgrade the RAM and operating system, then install the application",
+      "Disable TPM so the installer sees fewer restrictions"
     ],
     "answer": 2,
-    "explanation": "Upgrade the PC before installation directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The computer already meets the TPM requirement but lacks the required operating system and memory. Upgrading those two components satisfies the documented prerequisites; bypassing checks would create an unsupported deployment."
   },
   {
     "id": "A1202-PE1-026",
@@ -405,15 +405,15 @@
     "objective": "2.1",
     "blueprint": "Authentication factors",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a server room requires both a badge and a PIN. Which action or technology is the BEST choice?",
+    "question": "A server-room door must require two different authentication factors. Which pairing satisfies that requirement?",
     "choices": [
-      "BitLocker",
-      "Multifactor authentication",
-      "MDM",
-      "Approved secure erase"
+      "A password and a PIN",
+      "A company badge and a PIN",
+      "A fingerprint and facial recognition",
+      "A badge and a hardware token"
     ],
     "answer": 1,
-    "explanation": "Multifactor authentication directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A badge is something the user has and a PIN is something the user knows, producing two distinct factor types. The other pairs use two credentials from the same factor category."
   },
   {
     "id": "A1202-PE1-027",
@@ -421,15 +421,15 @@
     "objective": "2.1",
     "blueprint": "Physical access",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where visitors must be admitted without enabling tailgating. Which action or technology is the BEST choice?",
+    "question": "Badge logs show authorized employees entering a restricted room, but video reveals an unauthorized person following closely behind each employee. Which physical control most directly prevents this behavior?",
     "choices": [
-      "SSH",
-      "Ransomware",
-      "BitLocker",
-      "Access-controlled vestibule"
+      "Add another camera facing the door",
+      "Require visitors to sign a paper log",
+      "Provide annual security-awareness training only",
+      "Install an access-controlled vestibule that admits one person at a time"
     ],
     "answer": 3,
-    "explanation": "Access-controlled vestibule directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "An access-controlled vestibule, or mantrap, physically limits passage to one authenticated person at a time and directly blocks tailgating. Cameras and training may deter or document the event but do not prevent entry."
   },
   {
     "id": "A1202-PE1-028",
@@ -437,15 +437,15 @@
     "objective": "2.2",
     "blueprint": "Wireless security",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a modern small-office WLAN must resist offline password guessing. Which action or technology is the BEST choice?",
+    "question": "A small business uses one wireless passphrase and has no RADIUS service. An assessment shows that captured WPA2 handshakes can be tested offline. Every client supports SAE. Which security change BEST addresses the demonstrated risk?",
     "choices": [
-      "WPA3-Personal",
-      "Multifactor authentication",
-      "SSH",
-      "Ransomware"
+      "Migrate the WLAN to WPA3-Personal",
+      "Keep WPA2-AES and hide the SSID",
+      "Configure WPA3-Enterprise without an authentication server",
+      "Enable WPS and rotate its PIN monthly"
     ],
     "answer": 0,
-    "explanation": "WPA3-Personal directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "WPA3-Personal uses SAE, which resists the captured-handshake offline guessing weakness described. Hiding the SSID does not strengthen authentication, and Enterprise mode requires infrastructure the business does not have."
   },
   {
     "id": "A1202-PE1-029",
@@ -453,15 +453,15 @@
     "objective": "2.2",
     "blueprint": "Router hardening",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a new router is being secured before internet use. Which action or technology is the BEST choice?",
+    "question": "A new SOHO router still has its published factory administrator password. A firmware update is available only after the router reaches the internet. What should the technician do before connecting its WAN interface?",
     "choices": [
-      "Isolate the workstation",
-      "Change default administrator credentials",
-      "NTFS Modify",
-      "Multifactor authentication"
+      "Create a guest wireless network",
+      "Replace the default administrator credentials",
+      "Enable WPS for easier setup",
+      "Create a remote-management port forward"
     ],
     "answer": 1,
-    "explanation": "Change default administrator credentials directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Changing the known default administrator credential removes the immediate management compromise risk before the device is exposed. Firmware should follow promptly, but the scenario states that download requires the later WAN connection."
   },
   {
     "id": "A1202-PE1-030",
@@ -469,15 +469,15 @@
     "objective": "2.2",
     "blueprint": "Secure remote shell",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where Linux command-line administration crosses an untrusted network. Which action or technology is the BEST choice?",
+    "question": "An administrator must run shell commands on a Linux server across an untrusted network. The session must encrypt credentials and command output, and the server should expose only the required management service. Which solution is MOST appropriate?",
     "choices": [
-      "Approved secure erase",
-      "Browser hijacker",
-      "Locked-down standard account",
-      "SSH"
+      "Use the server's unencrypted HTTP status page",
+      "Transfer commands through SFTP files",
+      "Enable Telnet with a complex password",
+      "Use SSH with key-based authentication"
     ],
     "answer": 3,
-    "explanation": "SSH directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "SSH provides an encrypted interactive shell, and key authentication avoids transmitting or relying on a reusable password. SFTP is intended for file transfer, while HTTP and Telnet do not satisfy the secure-shell requirement."
   },
   {
     "id": "A1202-PE1-031",
@@ -485,15 +485,15 @@
     "objective": "2.3",
     "blueprint": "Malware identification",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where documents and mapped-drive files are encrypted for payment. Which action or technology is the BEST choice?",
+    "question": "A workstation displays a payment demand after documents and mapped-drive files are renamed with unfamiliar extensions and can no longer be opened. Which malware category matches these symptoms?",
     "choices": [
-      "BitLocker",
+      "Spyware",
       "Ransomware",
-      "MDM",
-      "Approved secure erase"
+      "Rootkit",
+      "Adware"
     ],
     "answer": 1,
-    "explanation": "Ransomware directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Ransomware commonly encrypts accessible files and demands payment for recovery. Spyware steals information, rootkits conceal privileged access, and adware does not normally encrypt business data."
   },
   {
     "id": "A1202-PE1-032",
@@ -501,15 +501,15 @@
     "objective": "2.3",
     "blueprint": "Social engineering",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where an urgent caller claiming executive authority requests a password reset. Which action or technology is the BEST choice?",
+    "question": "A caller claims to be the CFO, creates urgency, and asks the help desk to reset an account while refusing the required identity check. Which social-engineering method is being used?",
     "choices": [
-      "NTFS Modify",
-      "Verify identity through the approved process",
-      "Multifactor authentication",
-      "WPA3-Personal"
+      "Shoulder surfing",
+      "Vishing",
+      "Tailgating",
+      "Evil twin"
     ],
     "answer": 1,
-    "explanation": "Verify identity through the approved process directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Vishing is voice-based social engineering conducted by telephone. The caller is using authority and urgency to bypass identity verification; the other options describe visual observation, physical access, or a rogue wireless network."
   },
   {
     "id": "A1202-PE1-033",
@@ -517,15 +517,15 @@
     "objective": "2.3",
     "blueprint": "Browser threats",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where searches redirect and the homepage changes repeatedly. Which action or technology is the BEST choice?",
+    "question": "After a user installs a free browser extension, searches redirect to unfamiliar sites, new toolbars appear, and the homepage repeatedly changes back after correction. What type of threat is MOST likely present?",
     "choices": [
-      "BitLocker",
-      "MDM",
+      "Ransomware",
+      "Keylogger",
       "Browser hijacker",
-      "Approved secure erase"
+      "Boot-sector rootkit"
     ],
     "answer": 2,
-    "explanation": "Browser hijacker directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A browser hijacker alters search, toolbar, and homepage behavior, often through an unwanted extension. The symptoms do not indicate file encryption, keystroke capture, or a boot-level compromise."
   },
   {
     "id": "A1202-PE1-034",
@@ -533,15 +533,15 @@
     "objective": "2.4",
     "blueprint": "Least privilege",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a standard user needs one administrative operation. Which action or technology is the BEST choice?",
+    "question": "A standard user must install one approved application that requires administrative rights. Policy prohibits permanent privilege changes and shared administrator accounts. Which action follows least privilege?",
     "choices": [
-      "SSH",
-      "Ransomware",
-      "BitLocker",
-      "Elevate only the approved task"
+      "Add the user to the local Administrators group",
+      "Disable UAC until the application is installed",
+      "Sign in using a shared administrator profile",
+      "Elevate the approved installer with a named administrator credential"
     ],
     "answer": 3,
-    "explanation": "Elevate only the approved task directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Elevating only the approved installer grants the minimum privilege for the minimum time while preserving individual accountability. Permanent membership, disabling UAC, or sharing an administrator profile creates broader risk."
   },
   {
     "id": "A1202-PE1-035",
@@ -549,15 +549,15 @@
     "objective": "2.4",
     "blueprint": "Account protection",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where account takeover must be reduced without predictable password rotations. Which action or technology is the BEST choice?",
+    "question": "Users respond to mandatory 60-day password changes by selecting predictable variations. The organization wants to reduce account takeover without encouraging that behavior. Which policy improvement is BEST?",
     "choices": [
-      "SSH",
-      "Ransomware",
-      "BitLocker",
-      "MFA and compromised-password screening"
+      "Require a new eight-character password every 30 days",
+      "Replace passwords with security questions",
+      "Allow departments to share one complex password",
+      "Require MFA, longer passphrases, and compromised-password screening"
     ],
     "answer": 3,
-    "explanation": "MFA and compromised-password screening directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "MFA adds another factor, while long passphrases and compromised-password screening improve password quality without predictable forced rotations. Shorter rotation cycles and shared credentials worsen the observed behavior."
   },
   {
     "id": "A1202-PE1-036",
@@ -565,15 +565,15 @@
     "objective": "2.4",
     "blueprint": "Data at rest",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a traveling Windows laptop stores customer records. Which action or technology is the BEST choice?",
+    "question": "Customer records are stored locally on Windows laptops used by traveling employees. Management requires the data to remain unreadable if a powered-off laptop or its drive is stolen. Which control directly protects the data at rest?",
     "choices": [
-      "BitLocker",
-      "SSH",
-      "Ransomware",
-      "MDM"
+      "Enable BitLocker with TPM protection and escrow the recovery key",
+      "Require MFA for the company web portal",
+      "Connect the laptop through a VPN",
+      "Configure a five-minute screen timeout"
     ],
     "answer": 0,
-    "explanation": "BitLocker directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "BitLocker encrypts the local volume, protecting stored data when the device is powered off or the drive is removed. MFA, VPN, and screen-lock policies protect other stages of access but do not encrypt the drive."
   },
   {
     "id": "A1202-PE1-037",
@@ -581,15 +581,15 @@
     "objective": "2.5",
     "blueprint": "Kiosk security",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where public users must not install software or change settings. Which action or technology is the BEST choice?",
+    "question": "A public check-in PC should run only the registration browser. Visitors must not open Settings, browse local files, or install software. Which Windows configuration BEST enforces these restrictions?",
     "choices": [
-      "MDM",
-      "Locked-down standard account",
-      "Approved secure erase",
-      "Browser hijacker"
+      "Increase the screen-lock timeout",
+      "Configure Assigned Access kiosk mode with a standard account",
+      "Enable the built-in Guest account with no password",
+      "Rely only on full-disk encryption"
     ],
     "answer": 1,
-    "explanation": "Locked-down standard account directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Assigned Access restricts a standard account to the designated application and blocks normal desktop access. A guest account or BitLocker does not create the required application-only experience."
   },
   {
     "id": "A1202-PE1-038",
@@ -597,15 +597,15 @@
     "objective": "2.5",
     "blueprint": "Endpoint detection",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where an unknown executable is blocked because of suspicious behavior. Which action or technology is the BEST choice?",
+    "question": "An unsigned process has no known malicious signature, but it injects code into the browser, creates persistence keys, and begins contacting newly registered domains. Which detection capability is identifying the threat?",
     "choices": [
-      "Multifactor authentication",
-      "Heuristic detection",
-      "WPA3-Personal",
-      "SSH"
+      "Signature matching only",
+      "Heuristic and behavioral analysis",
+      "A password complexity policy",
+      "File compression"
     ],
     "answer": 1,
-    "explanation": "Heuristic detection directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Behavioral and heuristic analysis can identify suspicious actions even when a file has no known signature. The observed injection, persistence, and network behavior are the evidence supporting that method."
   },
   {
     "id": "A1202-PE1-039",
@@ -613,15 +613,15 @@
     "objective": "2.5",
     "blueprint": "Firewall scope",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a database may accept traffic only from an application subnet. Which action or technology is the BEST choice?",
+    "question": "A database server should accept TCP 1433 only from application servers on 10.20.30.0/24. Administrative traffic uses a different approved rule. Which new firewall rule most precisely enforces the database requirement?",
     "choices": [
-      "Approved secure erase",
-      "Browser hijacker",
-      "Source-scoped inbound rule",
-      "Locked-down standard account"
+      "Allow TCP 1433 from any remote address",
+      "Allow every protocol from 10.20.30.0/24",
+      "Allow inbound TCP 1433 with source 10.20.30.0/24",
+      "Create an outbound TCP 1433 rule on employee laptops"
     ],
     "answer": 2,
-    "explanation": "Source-scoped inbound rule directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The source-scoped inbound rule permits the required database traffic while limiting both protocol and origin. Allowing any source or every protocol would be broader than necessary."
   },
   {
     "id": "A1202-PE1-040",
@@ -629,15 +629,15 @@
     "objective": "2.6",
     "blueprint": "Lost device",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a missing online phone contains cached corporate email. Which action or technology is the BEST choice?",
+    "question": "MDM reports that a company phone lost in transit is online in an unfamiliar city. It contains cached customer email, and the employee confirms it cannot be recovered. What should the administrator do FIRST under the lost-device procedure?",
     "choices": [
-      "Remote lock or wipe through MDM",
-      "NTFS Modify",
-      "Multifactor authentication",
-      "WPA3-Personal"
+      "Use MDM to lock and remotely wipe the phone, then document the incident",
+      "Change the office wireless password",
+      "Wait for the battery to expire before acting",
+      "Remove only the employee's email signature"
     ],
     "answer": 0,
-    "explanation": "Remote lock or wipe through MDM directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The online MDM connection provides an immediate way to contain exposure by locking and wiping the unrecoverable device. Changing office Wi-Fi or waiting does not protect the cached data already on the phone."
   },
   {
     "id": "A1202-PE1-041",
@@ -645,15 +645,15 @@
     "objective": "2.6",
     "blueprint": "App permissions",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a barcode app requests contacts microphone location and SMS. Which action or technology is the BEST choice?",
+    "question": "A basic flashlight application requests contacts, SMS, microphone, and precise location access even though none is required for its function. What should the user do?",
     "choices": [
-      "Deny unnecessary permissions",
-      "Multifactor authentication",
-      "WPA3-Personal",
-      "SSH"
+      "Deny the unnecessary permissions and remove the app if it will not function safely",
+      "Grant every permission so updates complete",
+      "Disable the phone screen lock",
+      "Pair the phone with a trusted Bluetooth device"
     ],
     "answer": 0,
-    "explanation": "Deny unnecessary permissions directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Denying permissions that are unrelated to the application follows least privilege and limits data exposure. Granting broad access merely to make the app run accepts an unnecessary privacy risk."
   },
   {
     "id": "A1202-PE1-042",
@@ -661,15 +661,15 @@
     "objective": "2.6",
     "blueprint": "Mobile management",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where tablets need uniform passcodes encryption and remote wipe. Which action or technology is the BEST choice?",
+    "question": "An organization needs to enforce passcode length, device encryption, approved applications, and remote wipe on hundreds of company tablets from one console. Which technology provides these controls?",
     "choices": [
-      "Approved secure erase",
-      "Browser hijacker",
-      "Locked-down standard account",
-      "MDM"
+      "NFC",
+      "VPN",
+      "MFA",
+      "Mobile device management"
     ],
     "answer": 3,
-    "explanation": "MDM directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Mobile device management centrally applies security and configuration policies and supports remote actions such as locking or wiping. The other technologies do not provide fleet configuration management."
   },
   {
     "id": "A1202-PE1-043",
@@ -677,15 +677,15 @@
     "objective": "2.7",
     "blueprint": "SSD disposal",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a failed regulated SSD cannot be overwritten. Which action or technology is the BEST choice?",
+    "question": "A failed SSD contains regulated records and is no longer recognized by any approved sanitization tool. The media will not be reused. Which disposal method is appropriate?",
     "choices": [
-      "Approved physical destruction",
-      "SSH",
-      "Ransomware",
-      "BitLocker"
+      "Send it to an approved vendor for physical destruction",
+      "Delete its partition table",
+      "Perform a quick format",
+      "Degauss it and return it to inventory"
     ],
     "answer": 0,
-    "explanation": "Approved physical destruction directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Physical destruction is appropriate when solid-state media containing regulated data cannot be electronically sanitized and will not be reused. Formatting cannot be verified on the failed drive, and degaussing is ineffective for flash storage."
   },
   {
     "id": "A1202-PE1-044",
@@ -693,15 +693,15 @@
     "objective": "2.7",
     "blueprint": "Reusable media",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a working drive will be reassigned internally. Which action or technology is the BEST choice?",
+    "question": "A functioning self-encrypting SSD will be reassigned inside the company. Policy requires existing data to be purged while keeping the drive usable. Which method BEST meets both requirements?",
     "choices": [
-      "Browser hijacker",
-      "Locked-down standard account",
-      "Approved secure erase",
-      "Isolate the workstation"
+      "Delete the user folders",
+      "Quick-format the volume",
+      "Run the manufacturer-approved secure or cryptographic erase and verify completion",
+      "Shred the drive"
     ],
     "answer": 2,
-    "explanation": "Approved secure erase directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A verified secure or cryptographic erase purges the media while preserving it for reuse. File deletion and quick formatting are insufficient, while physical destruction conflicts with the reuse requirement."
   },
   {
     "id": "A1202-PE1-045",
@@ -709,15 +709,15 @@
     "objective": "2.8",
     "blueprint": "Certificate warning",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where the payroll site presents an unexpected certificate warning. Which action or technology is the BEST choice?",
+    "question": "The payroll site suddenly presents a certificate-name mismatch after an announced DNS migration. Other secure sites work normally. What should the technician instruct the user to do FIRST?",
     "choices": [
-      "BitLocker",
-      "MDM",
-      "Stop and verify the certificate and URL",
-      "Approved secure erase"
+      "Bypass the warning because payroll is internal",
+      "Disable certificate validation in the browser",
+      "Stop and verify the URL and certificate details with the site administrator",
+      "Clear the DNS cache and immediately enter credentials"
     ],
     "answer": 2,
-    "explanation": "Stop and verify the certificate and URL directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A name mismatch could indicate a migration error or interception, so credentials should not be submitted until the URL and certificate are verified. Bypassing validation treats an unresolved identity warning as trusted."
   },
   {
     "id": "A1202-PE1-046",
@@ -725,15 +725,15 @@
     "objective": "2.8",
     "blueprint": "Suspicious attachment",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where an unexpected macro invoice arrives from a familiar vendor. Which action or technology is the BEST choice?",
+    "question": "A familiar supplier unexpectedly sends a macro-enabled invoice from its normal email domain. The purchasing team did not request it, and opening macros is prohibited. What is the safest NEXT action?",
     "choices": [
-      "Locked-down standard account",
-      "Isolate the workstation",
-      "NTFS Modify",
-      "Verify with the sender out of band"
+      "Enable macros in a disposable user profile",
+      "Preview the attachment on a personal phone",
+      "Upload the document to an unapproved public scanner",
+      "Confirm the message with the supplier through a known phone number or separate channel"
     ],
     "answer": 3,
-    "explanation": "Verify with the sender out of band directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Out-of-band confirmation determines whether the supplier account was abused without executing the attachment. The familiar domain alone is not sufficient evidence that the unexpected macro file is safe."
   },
   {
     "id": "A1202-PE1-047",
@@ -741,15 +741,15 @@
     "objective": "2.9",
     "blueprint": "Incident containment",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where active malware is connected to shared storage. Which action or technology is the BEST choice?",
+    "question": "An endpoint begins encrypting files on a shared drive while EDR displays an active malware alert. What should the technician do FIRST?",
     "choices": [
-      "MDM",
-      "Approved secure erase",
-      "Browser hijacker",
-      "Isolate the workstation"
+      "Reboot the endpoint and reconnect it to the share",
+      "Delete the encrypted files before notifying anyone",
+      "Run a lengthy full scan while it remains connected",
+      "Isolate the endpoint from the network and begin the incident process"
     ],
     "answer": 3,
-    "explanation": "Isolate the workstation directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Network isolation stops the endpoint from reaching additional shared data and containment takes priority during active compromise. Scanning while connected allows the damaging activity to continue."
   },
   {
     "id": "A1202-PE1-048",
@@ -757,15 +757,15 @@
     "objective": "2.9",
     "blueprint": "Evidence records",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where responders need an accurate incident and custody trail. Which action or technology is the BEST choice?",
+    "question": "A powered-off laptop is placed under legal hold after a suspected insider incident. Security must send it to a forensic analyst while preserving the original device and proving that the forensic image was not altered. Which handling plan is defensible?",
     "choices": [
-      "Document timestamps and actions",
-      "WPA3-Personal",
-      "SSH",
-      "Ransomware"
+      "Assign an evidence identifier, record every handler and transfer time, create the forensic image under policy, record its verification hash, and preserve the original",
+      "Start the laptop, browse the files, and email screenshots without recording custody",
+      "Let each technician copy selected files and document only the final recipient",
+      "Edit the original event logs to highlight suspicious entries before imaging the drive"
     ],
     "answer": 0,
-    "explanation": "Document timestamps and actions directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The complete plan preserves the original, documents continuous custody, and uses a verification hash to demonstrate that the forensic image remained unchanged. Informal copies, undocumented transfers, or modification of the source would undermine evidentiary integrity."
   },
   {
     "id": "A1202-PE1-049",
@@ -773,15 +773,15 @@
     "objective": "2.10",
     "blueprint": "Departing employee",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where an employee leaves unexpectedly with company access. Which action or technology is the BEST choice?",
+    "question": "HR schedules an involuntary termination for 3:00 p.m. The employee has an active laptop session, VPN access, and several SaaS sessions. Which action BEST balances access containment and evidence preservation?",
     "choices": [
-      "Multifactor authentication",
-      "WPA3-Personal",
-      "Initiate off-boarding",
-      "SSH"
+      "Erase the employee's cloud files before the meeting",
+      "Disable the account the previous morning without coordinating with HR",
+      "Coordinate account disablement, session revocation, and device collection for the approved separation time",
+      "Change the company wireless password for every employee"
     ],
     "answer": 2,
-    "explanation": "Initiate off-boarding directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Coordinated offboarding removes access at the authorized time while allowing the organization to preserve the account and device data. Premature or destructive actions can disrupt the process and destroy needed records."
   },
   {
     "id": "A1202-PE1-050",
@@ -789,15 +789,15 @@
     "objective": "2.11",
     "blueprint": "File permissions",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where team members must edit files without changing permissions. Which action or technology is the BEST choice?",
+    "question": "Members of Project Atlas must create, edit, and delete files in its NTFS folder but must not change permissions or take ownership. Managers require full administrative control. Which permission design is correct?",
     "choices": [
-      "MDM",
-      "Approved secure erase",
-      "Browser hijacker",
-      "NTFS Modify"
+      "Give the project group Read and Execute",
+      "Give Everyone Full Control through the share",
+      "Give the project group Full Control and managers Modify",
+      "Give the project group Modify and managers Full Control"
     ],
     "answer": 3,
-    "explanation": "NTFS Modify directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "NTFS Modify allows normal file work without permission or ownership changes, while Full Control provides managers the required administrative capabilities. Read and Execute is insufficient, and broad Everyone access violates least privilege."
   },
   {
     "id": "A1202-PE1-051",
@@ -805,15 +805,15 @@
     "objective": "3.1",
     "blueprint": "Startup recovery",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where Windows stops booting immediately after a storage-driver update. Which action or technology is the BEST choice?",
+    "question": "Windows enters a boot loop immediately after a storage-controller driver update. Startup Repair does not resolve it, and the drive is still detected in firmware. Which targeted recovery action should be attempted?",
     "choices": [
-      "Remove extensions and reset the browser",
-      "Review per-app battery usage",
-      "Safe Mode and driver rollback",
-      "Identify and reproduce the problem"
+      "Reset the PC and remove all user data",
+      "Replace the detected storage drive",
+      "Start Safe Mode or Windows Recovery and roll back the storage driver",
+      "Repartition the drive"
     ],
     "answer": 2,
-    "explanation": "Safe Mode and driver rollback directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The timing and firmware detection point to the new storage driver rather than missing hardware. Rolling back the driver from a recovery environment directly reverses the triggering change without destroying user data."
   },
   {
     "id": "A1202-PE1-052",
@@ -821,15 +821,15 @@
     "objective": "3.1",
     "blueprint": "Performance",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where disk usage reaches 100 percent by the same process every morning. Which action or technology is the BEST choice?",
+    "question": "Every morning at 9:00, a workstation becomes slow and Task Manager shows SearchIndexer.exe using nearly all disk time. Performance returns after indexing finishes. Which change addresses the cause with the least disruption?",
     "choices": [
-      "Verify full functionality",
-      "Escalate with complete documentation",
-      "Safe Mode and driver rollback",
-      "Reschedule the indexing task"
+      "Replace the network adapter",
+      "Disable endpoint protection permanently",
+      "Add the user to Administrators",
+      "Adjust indexed locations or schedule indexing outside peak hours"
     ],
     "answer": 3,
-    "explanation": "Reschedule the indexing task directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The repeated timing and identified process show that indexing is saturating the disk. Limiting or rescheduling that task targets the cause; unrelated hardware and security changes do not."
   },
   {
     "id": "A1202-PE1-053",
@@ -837,15 +837,15 @@
     "objective": "3.1",
     "blueprint": "Application failure",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where one application crashes for every user while other software is stable. Which action or technology is the BEST choice?",
+    "question": "One line-of-business application closes with the same error for every user, while Windows and other applications remain stable. What should support examine FIRST?",
     "choices": [
-      "Identify and reproduce the problem",
-      "Check application logs and updates",
-      "Verify full functionality",
-      "Escalate with complete documentation"
+      "Reimage every workstation",
+      "The application logs, recent application changes, and available vendor update",
+      "Replace system memory in every computer",
+      "Reset the network infrastructure"
     ],
     "answer": 1,
-    "explanation": "Check application logs and updates directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The failure follows one application across users, so its logs, version, and recent changes provide the most relevant evidence. A system-wide rebuild or hardware replacement ignores the isolated scope."
   },
   {
     "id": "A1202-PE1-054",
@@ -853,15 +853,15 @@
     "objective": "3.1",
     "blueprint": "User profiles",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where one user loses settings while files and other accounts remain normal. Which action or technology is the BEST choice?",
+    "question": "One domain user signs in to a temporary Windows profile and loses personalized settings. The original profile folder and files remain present, and other users sign in normally. What is the BEST repair approach?",
     "choices": [
-      "Verify full functionality",
-      "Escalate with complete documentation",
-      "Repair or replace the corrupted profile",
-      "Safe Mode and driver rollback"
+      "Remove and rejoin the computer to the domain",
+      "Reinstall Windows for all users",
+      "Create or repair the affected profile and migrate the user data safely",
+      "Replace the system drive immediately"
     ],
     "answer": 2,
-    "explanation": "Repair or replace the corrupted profile directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The symptoms isolate corruption to one user profile. Repairing it or creating a clean profile and migrating data is targeted, while domain, operating-system, and drive-wide actions are unsupported."
   },
   {
     "id": "A1202-PE1-055",
@@ -869,15 +869,15 @@
     "objective": "3.1",
     "blueprint": "Authentication time",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where domain sign-in fails with a twenty-minute clock difference. Which action or technology is the BEST choice?",
+    "question": "A domain workstation reaches network resources but Kerberos sign-in fails. Its clock is 18 minutes ahead of the domain controller. What should the technician do NEXT?",
     "choices": [
-      "Disconnect the workstation",
-      "Remove extensions and reset the browser",
-      "Restore domain time synchronization",
-      "Review per-app battery usage"
+      "Reset the user password",
+      "Remove the workstation from the domain",
+      "Restore domain time synchronization and retry authentication",
+      "Disable the workstation firewall"
     ],
     "answer": 2,
-    "explanation": "Restore domain time synchronization directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Kerberos rejects authentication when clock skew exceeds its tolerance. Restoring time synchronization corrects the evidence-based cause without changing the account or domain membership."
   },
   {
     "id": "A1202-PE1-056",
@@ -885,15 +885,15 @@
     "objective": "3.2",
     "blueprint": "Compromise response",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where antivirus is disabled and unexplained outbound sessions appear. Which action or technology is the BEST choice?",
+    "question": "A workstation unexpectedly loses endpoint-protection services and begins opening outbound connections to unknown hosts. It is still connected to shared storage. What is the FIRST response?",
     "choices": [
-      "Safe Mode and driver rollback",
-      "Disconnect the workstation",
-      "Reschedule the indexing task",
-      "Remove extensions and reset the browser"
+      "Wipe the drive before collecting evidence",
+      "Disconnect or quarantine the workstation from the network",
+      "Ask the user to continue working while monitoring it",
+      "Clear the security logs"
     ],
     "answer": 1,
-    "explanation": "Disconnect the workstation directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Isolation contains possible compromise and protects shared resources while preserving the system for investigation. Wiping immediately destroys evidence, and leaving the host connected permits further activity."
   },
   {
     "id": "A1202-PE1-057",
@@ -901,15 +901,15 @@
     "objective": "3.2",
     "blueprint": "Browser remediation",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where one browser alone has unwanted toolbars and redirected searches. Which action or technology is the BEST choice?",
+    "question": "Searches redirect only in one browser. A recently installed extension has broad page permissions, while another browser and DNS resolution work normally. Which remediation is most appropriate?",
     "choices": [
-      "Verify full functionality",
-      "Remove extensions and reset the browser",
-      "Escalate with complete documentation",
-      "Safe Mode and driver rollback"
+      "Reinstall the operating system",
+      "Remove the extension, reset the affected browser, and run an approved malware scan",
+      "Flush DNS on every company computer",
+      "Replace the office router"
     ],
     "answer": 1,
-    "explanation": "Remove extensions and reset the browser directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The issue follows the browser profile and suspicious extension, so removing it and resetting the browser targets the source. An approved scan checks for associated unwanted software; network-wide changes are not supported."
   },
   {
     "id": "A1202-PE1-058",
@@ -917,15 +917,15 @@
     "objective": "3.2",
     "blueprint": "MFA attack",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a user receives authentication approvals they did not initiate. Which action or technology is the BEST choice?",
+    "question": "A user reports repeated MFA prompts for a foreign sign-in and admits approving one by mistake. The identity console now shows an unfamiliar active session. Which response BEST contains the incident while preserving the account for investigation?",
     "choices": [
-      "Reschedule the indexing task",
-      "Deny and report the prompts",
-      "Disconnect the workstation",
-      "Remove extensions and reset the browser"
+      "Tell the user to deny future prompts but leave the current session active",
+      "Disable the account temporarily, revoke active sessions, reset the credential through the approved process, and re-enroll MFA after review",
+      "Uninstall the authenticator while keeping the same password and sessions",
+      "Disable MFA permanently so no additional prompts appear"
     ],
     "answer": 1,
-    "explanation": "Deny and report the prompts directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Because one request was approved and an unfamiliar session is active, denying later prompts alone is insufficient. Temporarily disabling the account, revoking sessions, resetting the credential, and securely re-establishing MFA contains both the current access and the compromised authentication path."
   },
   {
     "id": "A1202-PE1-059",
@@ -933,15 +933,15 @@
     "objective": "3.2",
     "blueprint": "Quarantine decision",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where antimalware quarantines a file required by a business app. Which action or technology is the BEST choice?",
+    "question": "Endpoint protection quarantines a DLL immediately after an approved business application update. The file is vendor-signed and its hash matches the vendor release, but behavioral detection still flags it. Production is affected. What should support do NEXT?",
     "choices": [
-      "Remove extensions and reset the browser",
-      "Review per-app battery usage",
-      "Identify and reproduce the problem",
-      "Validate with security before restoration"
+      "Restore it immediately because the signature is valid",
+      "Exclude the entire application folder permanently",
+      "Disable endpoint protection on all affected systems",
+      "Keep it quarantined while security and the vendor validate the detection before any controlled restoration"
     ],
     "answer": 3,
-    "explanation": "Validate with security before restoration directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The signature and matching hash support a possible false positive, but the behavioral alert still requires security validation. Controlled review protects production without bypassing security based on one reassuring clue."
   },
   {
     "id": "A1202-PE1-060",
@@ -949,15 +949,15 @@
     "objective": "3.2",
     "blueprint": "Scareware",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a full-screen infection warning provides a support phone number. Which action or technology is the BEST choice?",
+    "question": "A full-screen browser warning claims the computer is infected and directs the user to call a support number. No system alerts exist, and Task Manager shows the message is confined to a browser tab opened by an advertisement. What is the appropriate response?",
     "choices": [
-      "Remove extensions and reset the browser",
-      "Review per-app battery usage",
-      "Identify and reproduce the problem",
-      "Close the browser and run an approved scan"
+      "Call the displayed number for removal instructions",
+      "Purchase the offered cleanup subscription",
+      "Reinstall Windows before closing the page",
+      "Terminate the browser, clear its site data, and run an approved security scan"
     ],
     "answer": 3,
-    "explanation": "Close the browser and run an approved scan directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The browser-only advertisement and fraudulent phone number indicate scareware. Closing the browser and scanning verifies the system without engaging the attacker or performing a destructive rebuild."
   },
   {
     "id": "A1202-PE1-061",
@@ -965,15 +965,15 @@
     "objective": "3.3",
     "blueprint": "Mobile app failure",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where one phone app closes immediately after its update. Which action or technology is the BEST choice?",
+    "question": "A mobile banking application closes immediately after its update, while every other application remains stable. Which action is the most appropriate initial remediation?",
     "choices": [
-      "Escalate with complete documentation",
-      "Safe Mode and driver rollback",
-      "Reschedule the indexing task",
-      "Clear app cache or reinstall"
+      "Factory-reset the phone",
+      "Replace the phone battery",
+      "Forget every saved wireless network",
+      "Clear the application cache and, if needed, reinstall the application"
     ],
     "answer": 3,
-    "explanation": "Clear app cache or reinstall directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The failure began with one application update and is isolated to that app, so clearing its cache or reinstalling it is appropriately scoped. A factory reset or hardware replacement is disproportionate."
   },
   {
     "id": "A1202-PE1-062",
@@ -981,15 +981,15 @@
     "objective": "3.3",
     "blueprint": "Mobile Wi-Fi",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where one phone fails on a WLAN that works for other devices. Which action or technology is the BEST choice?",
+    "question": "One phone cannot join the office WLAN after its passphrase changed. Other devices connect normally, and the phone still has the old network saved. What should the technician do?",
     "choices": [
-      "Verify full functionality",
-      "Escalate with complete documentation",
-      "Forget and rejoin the network",
-      "Safe Mode and driver rollback"
+      "Reset the access point to factory defaults",
+      "Replace the phone",
+      "Forget the saved network and join again using the new passphrase",
+      "Disable DHCP on the WLAN"
     ],
     "answer": 2,
-    "explanation": "Forget and rejoin the network directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Removing the stale wireless profile allows the phone to negotiate with the new credentials. Other devices connecting successfully rules out an access-point or DHCP-wide failure."
   },
   {
     "id": "A1202-PE1-063",
@@ -997,15 +997,15 @@
     "objective": "3.3",
     "blueprint": "Battery drain",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where battery life collapses after a new app installation. Which action or technology is the BEST choice?",
+    "question": "Battery runtime dropped sharply after a social-media application was installed. Battery health reports normal capacity, and the new app is permitted to run continuously in the background. Which evidence should be reviewed first?",
     "choices": [
-      "Remove extensions and reset the browser",
-      "Review per-app battery usage",
-      "Identify and reproduce the problem",
-      "Verify full functionality"
+      "The phone's physical battery connector",
+      "Per-application battery usage and background activity",
+      "The wireless access point firmware",
+      "The user's cloud-storage quota"
     ],
     "answer": 1,
-    "explanation": "Review per-app battery usage directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Per-application usage can confirm whether the newly installed app is consuming power in the background. Normal battery health and the timing make immediate battery replacement less appropriate."
   },
   {
     "id": "A1202-PE1-064",
@@ -1013,15 +1013,15 @@
     "objective": "3.3",
     "blueprint": "Synchronization",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where email sync works but calendar changes do not. Which action or technology is the BEST choice?",
+    "question": "A phone receives new email from a cloud account, but calendar changes never appear. Account settings show that mail synchronization is enabled and calendar synchronization is disabled. What should be changed?",
     "choices": [
-      "Identify and reproduce the problem",
-      "Enable calendar sync for the account",
-      "Verify full functionality",
-      "Escalate with complete documentation"
+      "Delete every synchronized email",
+      "Enable calendar synchronization for that account",
+      "Reset all network settings",
+      "Replace the phone"
     ],
     "answer": 1,
-    "explanation": "Enable calendar sync for the account directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The working mail connection proves the account can synchronize, while the disabled calendar toggle explains the isolated failure. Enabling that data type is the direct, least-disruptive correction."
   },
   {
     "id": "A1202-PE1-065",
@@ -1029,15 +1029,15 @@
     "objective": "3.3",
     "blueprint": "Sideloaded malware",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a sideloaded app displays advertisements outside itself. Which action or technology is the BEST choice?",
+    "question": "After installing an application from an unofficial source, a phone displays advertisements outside the application and the app gains an unexpected accessibility permission. What should the technician do?",
     "choices": [
-      "Remove extensions and reset the browser",
-      "Review per-app battery usage",
-      "Identify and reproduce the problem",
-      "Remove the app and run security checks"
+      "Dismiss only the visible advertisement",
+      "Reset the mobile browser homepage",
+      "Allow the permission so the app can update",
+      "Remove the sideloaded app, revoke its permissions, and run the approved mobile security checks"
     ],
     "answer": 3,
-    "explanation": "Remove the app and run security checks directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Advertisements outside the app plus an excessive accessibility permission indicate unwanted or malicious behavior from the sideloaded app. Removing it and checking the device addresses both the source and possible persistence."
   },
   {
     "id": "A1202-PE1-066",
@@ -1045,15 +1045,15 @@
     "objective": "3.4",
     "blueprint": "Problem scope",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a user calls the network broken although only one cloud app fails. Which action or technology is the BEST choice?",
+    "question": "A user reports that “the network is down,” but only one cloud application fails. Other websites work, and coworkers can reach the cloud application. What should the technician do FIRST?",
     "choices": [
-      "Review per-app battery usage",
-      "Verify full functionality",
-      "Identify and reproduce the problem",
-      "Escalate with complete documentation"
+      "Reboot every network switch",
+      "Replace the user's Ethernet adapter",
+      "Reproduce the failure and compare the affected account, browser, and device with a working session",
+      "Clear DNS caches on every workstation"
     ],
     "answer": 2,
-    "explanation": "Identify and reproduce the problem directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The evidence already narrows the issue below the network level. Reproducing and comparing a working session identifies whether the scope follows the account, browser, or device before broad changes are attempted."
   },
   {
     "id": "A1202-PE1-067",
@@ -1061,15 +1061,15 @@
     "objective": "3.4",
     "blueprint": "Change safety",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a registry edit is proposed for a startup fault. Which action or technology is the BEST choice?",
+    "question": "A knowledge article recommends a registry change for a startup problem, but the workstation has no current restore point and contains locally stored work. What should happen before the edit?",
     "choices": [
-      "Escalate with complete documentation",
-      "Safe Mode and driver rollback",
-      "Reschedule the indexing task",
-      "Back up data and configuration"
+      "Apply several registry changes at once",
+      "Disable endpoint protection",
+      "Delete old event logs",
+      "Back up the relevant data and configuration and establish a rollback method"
     ],
     "answer": 3,
-    "explanation": "Back up data and configuration directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A registry change can affect startup, so protecting data and creating a rollback path must precede the modification. Applying multiple unprotected changes makes recovery and cause isolation more difficult."
   },
   {
     "id": "A1202-PE1-068",
@@ -1077,15 +1077,15 @@
     "objective": "3.4",
     "blueprint": "Verification",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where connectivity returns immediately after a cable replacement. Which action or technology is the BEST choice?",
+    "question": "Replacing a damaged cable restores a workstation's link, but the original symptom was intermittent. Before closing the ticket, which verification provides the strongest evidence that the repair is complete?",
     "choices": [
-      "Verify full functionality",
-      "Escalate with complete documentation",
-      "Safe Mode and driver rollback",
-      "Reschedule the indexing task"
+      "Sustain a network transfer, review link stability, confirm application access, and obtain user confirmation",
+      "Close the ticket as soon as the link light appears",
+      "Replace the switch without further testing",
+      "Document that verification was unnecessary"
     ],
     "answer": 0,
-    "explanation": "Verify full functionality directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Testing under use, reviewing stability, and confirming the affected service verifies the fix beyond a momentary link light. The intermittent history makes immediate closure insufficient."
   },
   {
     "id": "A1202-PE1-069",
@@ -1093,15 +1093,15 @@
     "objective": "3.4",
     "blueprint": "Escalation",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a production-data issue exceeds technician authority. Which action or technology is the BEST choice?",
+    "question": "A fault affects a regulated production database. The likely repair requires a change outside the technician's authority, and no approved maintenance window exists. What is the MOST appropriate action?",
     "choices": [
-      "Escalate with complete documentation",
-      "Verify full functionality",
-      "Safe Mode and driver rollback",
-      "Reschedule the indexing task"
+      "Preserve the current evidence and escalate with impact, diagnostics, and the proposed next step",
+      "Experiment with the production database until one change works",
+      "Reboot it without notifying stakeholders",
+      "Grant the technician additional permissions temporarily"
     ],
     "answer": 0,
-    "explanation": "Escalate with complete documentation directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Escalation preserves control and gives authorized personnel the evidence needed to act. Making an unauthorized production change would increase operational and compliance risk."
   },
   {
     "id": "A1202-PE1-070",
@@ -1109,15 +1109,15 @@
     "objective": "3.4",
     "blueprint": "Theory testing",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where the first evidence-based theory is disproven. Which action or technology is the BEST choice?",
+    "question": "A technician suspects DNS because a remote service will not open. Testing shows that both the hostname and the service's known IP address fail, while the local gateway responds normally. What should happen NEXT in the troubleshooting process?",
     "choices": [
-      "Reschedule the indexing task",
-      "Form a new probable-cause theory",
-      "Disconnect the workstation",
-      "Remove extensions and reset the browser"
+      "Repeat only the same DNS-cache flush",
+      "Form a new evidence-based theory, such as remote-service or path filtering, and test one variable",
+      "Replace the workstation network adapter immediately",
+      "Apply several unrelated fixes simultaneously"
     ],
     "answer": 1,
-    "explanation": "Form a new probable-cause theory directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Failure by both name and known IP disproves a DNS-only theory. The next step is to use the new evidence to form and test another probable cause rather than repeating or combining unsupported changes."
   },
   {
     "id": "A1202-PE1-071",
@@ -1125,15 +1125,15 @@
     "objective": "3.4",
     "blueprint": "Resolution records",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where intermittent crashes have been resolved and future support needs a record. Which action or technology is the BEST choice?",
+    "question": "Which information belongs in the resolution section of a support ticket after an intermittent crash is fixed?",
     "choices": [
-      "Document symptoms cause actions and verification",
-      "Review per-app battery usage",
-      "Identify and reproduce the problem",
-      "Verify full functionality"
+      "The observed symptoms, confirmed cause, corrective actions, and verification results",
+      "The technician's personal password",
+      "Only the word “fixed”",
+      "Unlabeled screenshots with no description"
     ],
     "answer": 0,
-    "explanation": "Document symptoms cause actions and verification directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Complete resolution records let future technicians understand what failed, what corrected it, and how success was verified. A one-word closure does not preserve usable support knowledge."
   },
   {
     "id": "A1202-PE1-072",
@@ -1141,15 +1141,15 @@
     "objective": "4.1",
     "blueprint": "Ticket details",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a ticket says only computer broken. Which action or technology is the BEST choice?",
+    "question": "A new ticket contains only the statement “computer broken.” What information should the help desk obtain before assigning a technical cause?",
     "choices": [
-      "Execute the rollback plan",
-      "Keep an immutable off-site copy",
-      "Perform a test restoration",
-      "Record symptoms impact and reproduction steps"
+      "The user's account password",
+      "A replacement-computer purchase order",
+      "The entire building network diagram",
+      "Specific symptoms, business impact, scope, timing, and reproducible steps"
     ],
     "answer": 3,
-    "explanation": "Record symptoms impact and reproduction steps directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Symptoms, impact, scope, timing, and reproduction details turn the vague report into actionable diagnostic information. Credentials and premature replacement decisions are unnecessary."
   },
   {
     "id": "A1202-PE1-073",
@@ -1157,15 +1157,15 @@
     "objective": "4.1",
     "blueprint": "Priority",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where order processing is down while one local printer also fails. Which action or technology is the BEST choice?",
+    "question": "Two tickets arrive together: the company-wide order-processing service is unavailable, and one employee cannot print to a local desktop printer. Which ticket should receive the higher priority?",
     "choices": [
-      "Execute the rollback plan",
-      "Prioritize the company-wide outage",
-      "Keep an immutable off-site copy",
-      "Perform a test restoration"
+      "The printer ticket because it affects hardware",
+      "The order-processing outage because its scope and business impact are greater",
+      "Whichever user called first regardless of impact",
+      "Both must receive identical priority"
     ],
     "answer": 1,
-    "explanation": "Prioritize the company-wide outage directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A company-wide revenue-related outage has broader scope and business impact than one local printer failure. Ticket priority should reflect impact and urgency rather than arrival order or device type."
   },
   {
     "id": "A1202-PE1-074",
@@ -1173,15 +1173,15 @@
     "objective": "4.1",
     "blueprint": "Asset custody",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a repaired laptop is issued to a different employee. Which action or technology is the BEST choice?",
+    "question": "A repaired laptop is reassigned from Sales to a new Finance employee. Before delivery, which record should the technician update?",
     "choices": [
-      "Prioritize the company-wide outage",
-      "Update the asset assignment record",
-      "Execute the rollback plan",
-      "Keep an immutable off-site copy"
+      "Only the former user's email signature",
+      "The asset record with serial number, new custodian, location, and assignment date",
+      "The public website inventory",
+      "The workstation wallpaper"
     ],
     "answer": 1,
-    "explanation": "Update the asset assignment record directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Updating the asset record maintains accountable custody and location history for the device. Cosmetic or unrelated records do not document the transfer."
   },
   {
     "id": "A1202-PE1-075",
@@ -1189,15 +1189,15 @@
     "objective": "4.2",
     "blueprint": "Change control",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a firewall update is planned during business hours. Which action or technology is the BEST choice?",
+    "question": "A firewall firmware update is proposed during business hours. It could interrupt all remote offices, and the vendor provides a rollback image. What should occur before implementation?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Obtain approval with test and rollback plans",
-      "Record symptoms impact and reproduction steps"
+      "Install it immediately because the vendor published it",
+      "Ask one user whether the outage is acceptable",
+      "Submit the change for approval with impact, testing, maintenance, communication, and rollback plans",
+      "Disable monitoring so alerts do not interrupt the update"
     ],
     "answer": 2,
-    "explanation": "Obtain approval with test and rollback plans directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The broad impact and available rollback require controlled change approval and communication before implementation. Vendor publication does not replace organizational testing or authorization."
   },
   {
     "id": "A1202-PE1-076",
@@ -1205,15 +1205,15 @@
     "objective": "4.2",
     "blueprint": "Rollback",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a deployed configuration causes unexpected outages. Which action or technology is the BEST choice?",
+    "question": "An approved configuration deployment immediately causes authentication failures. The success criteria fail, and the documented backout plan has been verified. What should the change owner do NEXT?",
     "choices": [
-      "Execute the rollback plan",
-      "Prioritize the company-wide outage",
-      "Keep an immutable off-site copy",
-      "Perform a test restoration"
+      "Execute the approved rollback plan and verify restored service",
+      "Leave the failed configuration in place until the next week",
+      "Delete the monitoring records",
+      "Introduce another untested configuration change"
     ],
     "answer": 0,
-    "explanation": "Execute the rollback plan directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Once the change fails its success criteria, the approved rollback returns the environment to a known state. Layering another untested change would increase uncertainty and outage duration."
   },
   {
     "id": "A1202-PE1-077",
@@ -1221,15 +1221,15 @@
     "objective": "4.3",
     "blueprint": "Backup design",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where backups must survive both ransomware and a site disaster. Which action or technology is the BEST choice?",
+    "question": "An organization needs backups that can recover from both ransomware that encrypts connected storage and a fire that destroys the primary site. Which design BEST addresses both risks?",
     "choices": [
-      "Use a consent-based assistance session",
-      "Record symptoms impact and reproduction steps",
-      "Keep an immutable off-site copy",
-      "Prioritize the company-wide outage"
+      "Keep one writable backup share permanently mounted",
+      "Store the only backup beside the production server",
+      "Maintain versioned backups with an immutable or offline copy at a separate location",
+      "Synchronize deletions immediately to every backup copy"
     ],
     "answer": 2,
-    "explanation": "Keep an immutable off-site copy directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "An immutable or offline copy resists ransomware modification, while separate-location storage protects against site loss. Permanently writable or colocated copies can fail with the primary environment."
   },
   {
     "id": "A1202-PE1-078",
@@ -1237,15 +1237,15 @@
     "objective": "4.3",
     "blueprint": "Restore testing",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where jobs report success but recovery has never been attempted. Which action or technology is the BEST choice?",
+    "question": "Backup jobs have reported success for months, but no restoration has been attempted. Before management declares the disaster-recovery requirement satisfied, what must the team do?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Record symptoms impact and reproduction steps",
-      "Perform a test restoration"
+      "Review only the green job icons",
+      "Increase retention without testing data",
+      "Assume the backup vendor guarantees recovery",
+      "Perform an isolated test restore and verify data, application operation, and recovery targets"
     ],
     "answer": 3,
-    "explanation": "Perform a test restoration directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A test restore proves that the stored data is usable and that the recovery procedure meets operational targets. Successful backup-job status alone cannot demonstrate recoverability."
   },
   {
     "id": "A1202-PE1-079",
@@ -1253,15 +1253,15 @@
     "objective": "4.4",
     "blueprint": "Printer safety",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a heavily used laser printer needs internal maintenance. Which action or technology is the BEST choice?",
+    "question": "A sheet is jammed around the fuser in a heavily used laser printer. The fuser-temperature warning is active, and the maintenance guide requires cooldown before access. What should the technician do FIRST?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Power down and cool the fuser",
-      "Record symptoms impact and reproduction steps"
+      "Pull the paper immediately while the printer is powered",
+      "Spray compressed air into the hot fuser",
+      "Power down and unplug the printer, allow the fuser to cool, and follow the service procedure",
+      "Bypass the cover interlock to rotate the rollers"
     ],
     "answer": 2,
-    "explanation": "Power down and cool the fuser directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Laser-printer fusers operate at burn temperatures. Powering down, unplugging, and allowing the specified cooldown protects the technician before the jam is serviced."
   },
   {
     "id": "A1202-PE1-080",
@@ -1269,15 +1269,15 @@
     "objective": "4.4",
     "blueprint": "Battery safety",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where a laptop battery is visibly swollen. Which action or technology is the BEST choice?",
+    "question": "A plugged-in laptop has a visibly swollen battery, a lifted trackpad, and increasing heat. The user wants to finish copying files before surrendering it. What is the safest response?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Stop use and follow battery procedures",
-      "Record symptoms impact and reproduction steps"
+      "Continue the copy while monitoring temperature",
+      "Press the battery flat so the case closes",
+      "Disconnect power, stop using the laptop, isolate it safely, and follow approved battery handling procedures",
+      "Place the laptop in a freezer"
     ],
     "answer": 2,
-    "explanation": "Stop use and follow battery procedures directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Swelling and heat indicate a hazardous lithium battery. Continued use, pressure, or extreme cooling can trigger failure; power should be removed and approved isolation and disposal procedures followed."
   },
   {
     "id": "A1202-PE1-081",
@@ -1285,15 +1285,15 @@
     "objective": "4.5",
     "blueprint": "Cooling",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where boxes obstruct airflow in an overheating server closet. Which action or technology is the BEST choice?",
+    "question": "A server closet temperature rises after storage boxes are placed in front of the return-air vent. Which action addresses the immediate environmental cause?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Clear the blocked return vent",
-      "Record symptoms impact and reproduction steps"
+      "Increase user password length",
+      "Reboot every server",
+      "Remove the obstruction and restore the designed airflow",
+      "Disable thermal monitoring"
     ],
     "answer": 2,
-    "explanation": "Clear the blocked return vent directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The boxes are directly blocking return airflow, so clearing them restores cooling circulation. Reboots and monitoring changes do not remove the environmental cause."
   },
   {
     "id": "A1202-PE1-082",
@@ -1301,15 +1301,15 @@
     "objective": "4.5",
     "blueprint": "Waste handling",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where a spent toner cartridge must be discarded. Which action or technology is the BEST choice?",
+    "question": "Used toner cartridges have accumulated after printer maintenance. Which disposal method follows normal environmental and vendor handling practices?",
     "choices": [
-      "Keep an immutable off-site copy",
-      "Perform a test restoration",
-      "Access only data required for the task",
-      "Use approved toner recycling"
+      "Place them in ordinary paper recycling",
+      "Open them and empty toner into a sink",
+      "Store them indefinitely beside the printer",
+      "Use the manufacturer or approved toner-cartridge recycling program"
     ],
     "answer": 3,
-    "explanation": "Use approved toner recycling directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Approved cartridge-recycling programs handle toner and reusable components safely. Opening cartridges or placing them in general waste can release toner and violate disposal guidance."
   },
   {
     "id": "A1202-PE1-083",
@@ -1317,15 +1317,15 @@
     "objective": "4.6",
     "blueprint": "Privacy",
     "difficulty": "Level 2",
-    "question": "A technician is supporting an organization where troubleshooting could expose a user personal files. Which action or technology is the BEST choice?",
+    "question": "Troubleshooting a user-profile problem could expose personal files unrelated to the ticket. What privacy practice should the technician follow?",
     "choices": [
-      "Record symptoms impact and reproduction steps",
-      "Prioritize the company-wide outage",
-      "Access only data required for the task",
-      "Execute the rollback plan"
+      "Copy the files for later review",
+      "Browse every folder to rule out user error",
+      "Access only information necessary for the authorized task and maintain confidentiality",
+      "Share interesting files with the support team"
     ],
     "answer": 2,
-    "explanation": "Access only data required for the task directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Minimum-necessary access limits privacy exposure while still allowing the approved troubleshooting work. Unrelated browsing, copying, or sharing exceeds the technician's authorization."
   },
   {
     "id": "A1202-PE1-084",
@@ -1333,15 +1333,15 @@
     "objective": "4.6",
     "blueprint": "Incident reporting",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where sensitive information is emailed to the wrong recipient. Which action or technology is the BEST choice?",
+    "question": "A technician discovers that a message containing customer information was sent to an unintended external recipient. What should the technician do FIRST?",
     "choices": [
-      "Prioritize the company-wide outage",
-      "Report through the approved channel",
-      "Execute the rollback plan",
-      "Keep an immutable off-site copy"
+      "Delete the local sent copy and take no further action",
+      "Report the exposure immediately through the approved incident channel and preserve relevant details",
+      "Contact the recipient from a personal account",
+      "Alter the mail logs to remove the address"
     ],
     "answer": 1,
-    "explanation": "Report through the approved channel directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Prompt reporting activates the organization's privacy and incident procedures and preserves information needed for response. Deleting or altering evidence hides rather than manages the exposure."
   },
   {
     "id": "A1202-PE1-085",
@@ -1349,15 +1349,15 @@
     "objective": "4.7",
     "blueprint": "Communication",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where an upset user repeatedly interrupts during outage reporting. Which action or technology is the BEST choice?",
+    "question": "During a major outage, an upset user repeatedly interrupts while describing the problem. Which response is most professional and most likely to improve the interaction?",
     "choices": [
-      "Test on a controlled sample",
-      "Use a consent-based assistance session",
-      "Listen calmly and restate the issue",
-      "Record symptoms impact and reproduction steps"
+      "Interrupt the user and recite the service-level agreement",
+      "Promise a repair time that has not been confirmed",
+      "Listen, acknowledge the impact, restate the issue, and explain the next update point",
+      "End the call because the user is frustrated"
     ],
     "answer": 2,
-    "explanation": "Listen calmly and restate the issue directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Active listening and restating the issue confirms understanding while a realistic update point sets expectations. Unsupported promises or dismissive behavior undermine trust."
   },
   {
     "id": "A1202-PE1-086",
@@ -1365,15 +1365,15 @@
     "objective": "4.7",
     "blueprint": "Licensing",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a user requests pirated software as a favor. Which action or technology is the BEST choice?",
+    "question": "A project team needs a file viewer today. A manager asks the technician to copy a commercial application from another workstation, but its license permits only one installation. An approved open-source viewer and a vendor trial are available. What should the technician do?",
     "choices": [
-      "Keep an immutable off-site copy",
-      "Perform a test restoration",
-      "Access only data required for the task",
-      "Decline the unlicensed installation"
+      "Copy the licensed installation because both computers belong to the company",
+      "Install the copied software and remove it after the project",
+      "Use the same activation key and document the manager's approval",
+      "Decline the unauthorized copy and provide an approved licensed, trial, or open-source option"
     ],
     "answer": 3,
-    "explanation": "Decline the unlicensed installation directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Manager approval does not override the software license. Selecting an approved trial, properly licensed product, or open-source viewer meets the urgent business need without creating a licensing violation."
   },
   {
     "id": "A1202-PE1-087",
@@ -1381,15 +1381,15 @@
     "objective": "4.8",
     "blueprint": "Script deployment",
     "difficulty": "Level 3",
-    "question": "A technician is supporting an organization where a cleanup script will delete files on hundreds of PCs. Which action or technology is the BEST choice?",
+    "question": "A cleanup script will delete temporary files on 600 computers. It has been tested only on the author's laptop, and no rollback has been documented. What should occur before broad deployment?",
     "choices": [
-      "Keep an immutable off-site copy",
-      "Test on a controlled sample",
-      "Perform a test restoration",
-      "Access only data required for the task"
+      "Deploy it to all computers simultaneously",
+      "Test it in a controlled environment and pilot group with backups, logging, and rollback steps",
+      "Disable error handling so the script runs faster",
+      "Run it with a domain administrator password embedded in the file"
     ],
     "answer": 1,
-    "explanation": "Test on a controlled sample directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Controlled testing and a limited pilot expose unexpected behavior before enterprise-wide impact, while backups and rollback provide recovery. A destructive script should not move directly from one laptop to full deployment."
   },
   {
     "id": "A1202-PE1-088",
@@ -1397,15 +1397,15 @@
     "objective": "4.8",
     "blueprint": "Secrets",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where an automation script contains a plaintext administrator password. Which action or technology is the BEST choice?",
+    "question": "An automation script contains a plaintext domain-administrator password and runs from a share readable by all employees. Which redesign BEST reduces the risk while preserving automation?",
     "choices": [
-      "Execute the rollback plan",
-      "Keep an immutable off-site copy",
-      "Use a protected credential store",
-      "Perform a test restoration"
+      "Obscure the password by renaming the variable",
+      "Move the same plaintext script to another readable share",
+      "Use a protected credential store and a least-privileged service account",
+      "Email the password separately to script users"
     ],
     "answer": 2,
-    "explanation": "Use a protected credential store directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "A protected credential store prevents the secret from being embedded in readable code, and a least-privileged service account limits impact. Renaming or relocating plaintext does not protect it."
   },
   {
     "id": "A1202-PE1-089",
@@ -1413,15 +1413,15 @@
     "objective": "4.9",
     "blueprint": "Remote support",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where an employee must watch and approve remote support. Which action or technology is the BEST choice?",
+    "question": "A regulated support process requires the employee to approve and observe every remote session, and the connection must end when the task is complete. Which method meets these constraints?",
     "choices": [
-      "Use a consent-based assistance session",
-      "Test on a controlled sample",
-      "Record symptoms impact and reproduction steps",
-      "Prioritize the company-wide outage"
+      "Use an attended remote-assistance session with explicit consent and session logging",
+      "Install an unattended hidden remote-control service",
+      "Request the employee's password and sign in later",
+      "Expose Remote Desktop directly to the internet"
     ],
     "answer": 0,
-    "explanation": "Use a consent-based assistance session directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "Attended remote assistance provides explicit user consent, visibility, and a controlled end to the session. Unattended or credential-sharing methods violate the stated oversight requirements."
   },
   {
     "id": "A1202-PE1-090",
@@ -1429,14 +1429,14 @@
     "objective": "4.10",
     "blueprint": "Generative AI",
     "difficulty": "Level 4",
-    "question": "A technician is supporting an organization where AI will summarize a ticket containing personal data. Which action or technology is the BEST choice?",
+    "question": "A technician must summarize a ticket containing customer identifiers, account numbers, and internal hostnames. The public AI tool preferred by the team retains prompts, while an approved internal AI service enforces access controls and does not train on submitted data. Which workflow BEST meets the business need and data-handling requirements?",
     "choices": [
-      "Remove confidential information",
-      "Perform a test restoration",
-      "Access only data required for the task",
-      "Test on a controlled sample"
+      "Minimize or anonymize the ticket data, then use the approved internal service under the organization's AI policy",
+      "Remove customer names only and submit the remaining account numbers and hostnames to the public tool",
+      "Use the public tool's private-browsing window and request prompt deletion afterward",
+      "Paste screenshots into the public tool because image content is not subject to data policy"
     ],
     "answer": 0,
-    "explanation": "Remove confidential information directly addresses this scenario. It satisfies the stated operational or technical requirement without introducing an unnecessary change."
+    "explanation": "The approved internal service supplies the required access and retention controls, and data minimization further limits exposure. Partial redaction, private browsing, or a later deletion request does not authorize confidential information for an unapproved public service."
   }
 ]
