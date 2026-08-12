@@ -21,15 +21,15 @@
     "objective": "2.3",
     "blueprint": "Authentication > Remote Authentication Dialin User Service (RADIUS)",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to centralize wireless network authentication and accounting for enterprise access points using the existing directory on the lab system; shared infrastructure remains healthy. The change must remain inside the approved scope. Which control BEST meets the requirement?",
+    "question": "A new wireless controller sends authentication requests to RADIUS, but every request is rejected as coming from an unknown client. Existing controllers continue to authenticate users. What should be added?",
     "choices": [
-      "Use TACACS+ for end-user wireless sessions",
-      "Use RADIUS",
-      "Configure local accounts independently on every access point",
-      "Use Kerberos without an 802.1X authentication service"
+      "A local user profile on every wireless laptop",
+      "A RADIUS client entry for the new controller with the correct shared secret",
+      "A browser extension on the controller",
+      "A printer share on the RADIUS server"
     ],
     "answer": 1,
-    "explanation": "Use RADIUS best reconciles the symptoms and the business constraint by enabling support to centralize wireless network authentication and accounting for enterprise access points using the existing directory. Choosing Use TACACS+ for end-user wireless sessions would not resolve the case because TACACS+ is optimized for network-device administration rather than the required 802.1X user authentication and accounting."
+    "explanation": "RADIUS accepts requests only from configured clients. Adding the controller address and matching secret resolves the unknown-client rejection without changing working user accounts."
   },
   {
     "id": "A1202-PE5-003",
@@ -37,15 +37,15 @@
     "objective": "4.8",
     "blueprint": "Use cases for scripting > Automated backups",
     "difficulty": "Level 3",
-    "question": "To copy a defined folder to approved storage nightly and alert support when the operation fails, the technician reproduces the condition on the engineering notebook and compares it with a known-good baseline. The solution must use vendor-supported methods. What should occur FIRST?",
+    "question": "A backup script copies its folder correctly when run manually but never runs overnight. Task Scheduler shows the service account password expired and the last result is a logon failure. What should the technician fix?",
     "choices": [
-      "Use a script that deletes source files first",
-      "Suppress every error",
-      "Embed plaintext administrator passwords",
-      "Use a tested backup script with logging and error handling"
+      "Rewrite the copy command even though it succeeds manually",
+      "Delete the destination backup",
+      "Disable Task Scheduler",
+      "Update the task credentials using an approved service account and rerun the schedule"
     ],
     "answer": 3,
-    "explanation": "The incident-triage clues favor Use a tested backup script with logging and error handling: the observed evidence requires the team to copy a defined folder to approved storage nightly and alert support when the operation fails. Use a script that deletes source files first addresses a different condition and is inferior here because a controlled backup job must preserve the source, report failures, and avoid exposed credentials."
+    "explanation": "The command itself works; the scheduler cannot authenticate. Correcting the approved task credentials addresses the recorded logon failure without changing a proven backup operation."
   },
   {
     "id": "A1202-PE5-004",
@@ -101,15 +101,15 @@
     "objective": "3.4",
     "blueprint": "Common symptoms > False alerts regarding antivirus protection",
     "difficulty": "Level 2",
-    "question": "During a controlled support session at an architectural studio, a technician evaluates a managed desktop: it must handle a pop-up claiming antivirus is disabled while the managed endpoint console shows current protection and no matching system notification. Which action addresses the verified cause?",
+    "question": "Windows Security reports that real-time protection is off, but the organization intentionally installed a centrally managed third-party endpoint suite whose console reports healthy. What should the technician verify before treating the alert as malware?",
     "choices": [
-      "Clear the browser notification but skip the approved scan",
-      "Update the managed antivirus and review only its console",
-      "Close the false alert and run the approved security scan",
-      "Allow the alert to run in a sandbox without removing its source"
+      "Install several additional antivirus products simultaneously",
+      "Delete all security logs",
+      "Confirm that the approved security suite is registered and actively protecting the endpoint",
+      "Disable the organization endpoint suite"
     ],
     "answer": 2,
-    "explanation": "The incident-triage clues favor Close the false alert and run the approved security scan: the observed evidence requires the team to handle a pop-up claiming antivirus is disabled while the managed endpoint console shows current protection and no matching system notification. Clear the browser notification but skip the approved scan addresses a different condition and is inferior here because clearing the visible notification without scanning leaves the responsible browser or unwanted software unexamined."
+    "explanation": "Windows may defer real-time protection to a registered third-party product. Confirming registration and health distinguishes an expected status from a false or actionable protection alert."
   },
   {
     "id": "A1202-PE5-008",
@@ -149,15 +149,15 @@
     "objective": "2.1",
     "blueprint": "Logical security > Multifactor authentication (MFA) > Authenticator application",
     "difficulty": "Level 4",
-    "question": "Support must prevent a stolen password alone from granting access while avoiding dependence on cellular SMS delivery. Three findings guide incident triage: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. Unrelated users must remain online; existing access controls must remain effective. Which choice satisfies the documented need?",
+    "question": "A privileged administrator needs phishing-resistant MFA for cloud administration. The organization permits authenticator applications but prohibits SMS and does not issue hardware tokens. Which configuration is BEST?",
     "choices": [
-      "Require an authenticator application as the second factor",
-      "Require a longer password only",
-      "Send an SMS code",
-      "Add a shared account"
+      "Use an authenticator application with number matching and approved push controls",
+      "Use SMS because administrators always have phones",
+      "Ask the administrator to enter the password twice",
+      "Share one recovery code among the entire team"
     ],
     "answer": 0,
-    "explanation": "Require an authenticator application as the second factor best reconciles the symptoms and the business constraint by enabling support to prevent a stolen password alone from granting access while avoiding dependence on cellular SMS delivery. Choosing Require a longer password only would not resolve the case because a longer password remains one factor, and SMS does not meet the stated offline and number-porting constraints."
+    "explanation": "An approved authenticator with number matching strengthens push verification and avoids prohibited SMS. Repeating a password is not a second factor, and shared recovery codes destroy accountability."
   },
   {
     "id": "A1202-PE5-011",
@@ -165,15 +165,15 @@
     "objective": "1.9",
     "blueprint": "OS components > systemd",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the Linux workstation enable a Linux service to start at boot and inspect its current service state? Which tool should the technician use?",
+    "question": "A newly installed Linux agent starts correctly when launched manually but must also start now and after every reboot. Which command meets both requirements?",
     "choices": [
-      "apt",
-      "systemctl",
-      "chmod",
-      "traceroute"
+      "systemctl mask agent.service",
+      "systemctl enable --now agent.service",
+      "journalctl --vacuum-time=1d",
+      "grep agent /etc/passwd"
     ],
     "answer": 1,
-    "explanation": "The incident-triage clues favor systemctl: the observed evidence requires the team to enable a Linux service to start at boot and inspect its current service state. apt addresses a different condition and is inferior here because package and file tools cannot manage the systemd unit startup state."
+    "explanation": "The enable option configures future boot activation, and --now starts the unit immediately. Masking prevents the service from starting, while journal and text-search commands do not enable it."
   },
   {
     "id": "A1202-PE5-012",
@@ -229,15 +229,15 @@
     "objective": "3.4",
     "blueprint": "Browser-related symptoms > Redirection",
     "difficulty": "Level 3",
-    "question": "To stop searches from being sent to an unfamiliar site after an unsigned extension appeared in the browser profile, the technician reproduces the condition on the support laptop and compares it with a known-good baseline. A tested recovery path must remain available. What should support do NEXT?",
+    "question": "A browser goes to the correct hostname but displays a cloned sign-in page only when a PAC file from an unknown source is active. Other devices resolve the hostname correctly. What should the technician remove?",
     "choices": [
-      "Replace the network cable",
-      "Remove the malicious extension and restore approved browser settings",
-      "Run Disk Defragmenter",
-      "Change the monitor input"
+      "The workstation TPM",
+      "The unauthorized proxy auto-configuration entry",
+      "The company DNS zone",
+      "The monitor color profile"
     ],
     "answer": 1,
-    "explanation": "The incident-triage clues favor Remove the malicious extension and restore approved browser settings: the observed evidence requires the team to stop searches from being sent to an unfamiliar site after an unsigned extension appeared in the browser profile. Replace the network cable addresses a different condition and is inferior here because the extension timeline and browser-only behavior do not support hardware or system-capacity causes."
+    "explanation": "The unknown PAC file controls this browser network path and explains the isolated redirection despite correct DNS. Removing it addresses the local proxy manipulation without changing shared DNS."
   },
   {
     "id": "A1202-PE5-016",
@@ -533,15 +533,15 @@
     "objective": "2.1",
     "blueprint": "Logical security > Data loss prevention (DLP)",
     "difficulty": "Level 2",
-    "question": "A transportation depot documents a requirement to block regulated identifiers from leaving through approved email and cloud channels while logging the attempted transfer on a support laptop. Which choice satisfies the documented need?",
+    "question": "A finance department must prevent tax-identification numbers from being copied into personal webmail while allowing ordinary messages. Which control should inspect the content and enforce that rule?",
     "choices": [
-      "Enable full-disk encryption only",
-      "Apply a DLP rule",
-      "Use a screen saver password",
-      "Disable all outbound networking"
+      "A monitor privacy filter",
+      "A data loss prevention policy",
+      "A wireless signal booster",
+      "A local print-spooler restart"
     ],
     "answer": 1,
-    "explanation": "Apply a DLP rule best reconciles the symptoms and the business constraint by enabling support to block regulated identifiers from leaving through approved email and cloud channels while logging the attempted transfer. Choosing Enable full-disk encryption only would not resolve the case because disk encryption protects stored data but does not inspect and control the attempted outbound content."
+    "explanation": "DLP can recognize sensitive identifiers in outbound content and block or warn on the personal-mail transfer. Physical display and network-signal controls cannot evaluate message data."
   },
   {
     "id": "A1202-PE5-035",
@@ -549,15 +549,15 @@
     "objective": "4.3",
     "blueprint": "Backup rotation schemes > 3-2-1 backup rule",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the company tablet protect business data from both local hardware failure and a site-level incident? Which procedural response is appropriate?",
+    "question": "A department stores production data on one server, replicates it to a second onsite appliance, and calls that 3-2-1 protection. What requirement is still missing?",
     "choices": [
-      "Keep one copy on the same disk",
-      "Rely only on RAID",
-      "Store every copy in the server room",
-      "Maintain three copies on two media types with one copy offsite"
+      "A shared administrator password on both systems",
+      "A fourth copy in the same server chassis",
+      "Deletion of the production copy after each backup",
+      "A third copy on different media with one copy kept offsite"
     ],
     "answer": 3,
-    "explanation": "The incident-triage clues favor Maintain three copies on two media types with one copy offsite: the observed evidence requires the team to protect business data from both local hardware failure and a site-level incident. Keep one copy on the same disk addresses a different condition and is inferior here because RAID and same-site copies do not provide the independent offsite recovery required by the rule."
+    "explanation": "The 3-2-1 rule requires three copies, two media types, and one offsite copy. Two onsite systems do not meet either the third-copy or offsite requirement."
   },
   {
     "id": "A1202-PE5-036",
@@ -565,15 +565,15 @@
     "objective": "3.3",
     "blueprint": "Security concerns > Root access/jailbreak",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to respond when integrity attestation shows system protections were bypassed and the device can load unsigned privileged code. The company tablet is the only affected endpoint, and the final state must be verified before handoff. What should support do NEXT?",
+    "question": "MDM detects a rooted phone used only for a public kiosk. The kiosk app contains no local business data, but policy prohibits rooted devices from receiving management tokens. What is the BEST remediation?",
     "choices": [
-      "Reimage or replace the jailbroken device before restoring managed access",
-      "Remove one jailbreak utility without restoring the trusted OS",
-      "Revoke one application certificate only",
-      "Clear user data without replacing the modified system image"
+      "Restore the device to a supported non-rooted image before reenrollment",
+      "Grant a permanent policy exception because the app is public",
+      "Hide the root-management icon and continue using it",
+      "Copy the management token into the kiosk application"
     ],
     "answer": 0,
-    "explanation": "Reimage or replace the jailbroken device before restoring managed access best reconciles the symptoms and the business constraint by enabling support to respond when integrity attestation shows system protections were bypassed and the device can load unsigned privileged code. Choosing Remove one jailbreak utility without restoring the trusted OS would not resolve the case because deleting one utility does not restore the platform trust boundary or make integrity attestation reliable."
+    "explanation": "The policy controls device trust, not only local data sensitivity. Restoring a supported image removes root access before MDM issues new credentials; hiding indicators does not restore integrity."
   },
   {
     "id": "A1202-PE5-037",
@@ -629,15 +629,15 @@
     "objective": "4.1",
     "blueprint": "Ticketing systems > Severity",
     "difficulty": "Level 2",
-    "question": "A manufacturing plant documents a requirement to prioritize a payroll outage affecting every employee above a cosmetic issue reported by one user while recording both tickets on a remote endpoint. Which action preserves the required control?",
+    "question": "A hospital help desk receives a failed medication-label printer ticket and a delayed monthly inventory report ticket. The severity matrix assigns patient-safety interruption the highest impact. What should the coordinator do?",
     "choices": [
-      "Close the cosmetic ticket without documentation",
-      "Assign every request critical severity",
-      "Wait for a manager to rewrite both tickets",
-      "Assign severity from documented business impact and urgency"
+      "Prioritize the inventory report because it was submitted first",
+      "Close both tickets and ask the users to resubmit them",
+      "Assign severity by alphabetical order of the departments",
+      "Prioritize the medication-label printer under the safety-impact rule"
     ],
     "answer": 3,
-    "explanation": "Assign severity from documented business impact and urgency best reconciles the symptoms and the business constraint by enabling support to prioritize a payroll outage affecting every employee above a cosmetic issue reported by one user while recording both tickets. Choosing Close the cosmetic ticket without documentation would not resolve the case because arrival time alone ignores impact and urgency, while making every ticket critical destroys useful prioritization."
+    "explanation": "The approved matrix makes patient-safety impact the controlling factor, so the medication-label failure receives priority. Submission order cannot override the documented severity rule."
   },
   {
     "id": "A1202-PE5-041",
@@ -917,15 +917,15 @@
     "objective": "3.2",
     "blueprint": "Application fails to close/crashes",
     "difficulty": "Level 3",
-    "question": "The affected enrolled mobile device must correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect. A previous attempt treated only the visible symptom, so a municipal library requires a root-cause response. Which action addresses the verified cause?",
+    "question": "A mobile application closes immediately after its local data was restored from an interrupted backup. Clearing the cache has no effect, the vendor service is online, and a fresh installation works on another device. What should support do NEXT?",
     "choices": [
-      "Reinstall the application before preserving its settings",
-      "Clear the affected application cache and install its supported update",
-      "Update the mobile OS without reviewing the vendor defect",
-      "Clear general OS temporary files rather than the affected app cache"
+      "Reset the company wireless password",
+      "Remove the corrupted installation data and reinstall the approved application",
+      "Disable all application updates",
+      "Replace the mobile carrier SIM"
     ],
     "answer": 1,
-    "explanation": "Clear the affected application cache and install its supported update best reconciles the symptoms and the business constraint by enabling support to correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect. Choosing Reinstall the application before preserving its settings would not resolve the case because reinstallation is more disruptive and ignores the vendor-documented cache and version condition that can be corrected first."
+    "explanation": "The failure began with interrupted local data and persists after a cache clear, while the service and a clean installation are healthy. Reinstalling removes the corrupted application state; network and SIM changes do not address the local crash."
   },
   {
     "id": "A1202-PE5-059",
@@ -949,15 +949,15 @@
     "objective": "3.1",
     "blueprint": "Time drift",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown. The production workstation is the only affected endpoint, and the business service cannot tolerate an unnecessary restart. What should support do NEXT?",
+    "question": "A newly promoted domain controller obtains time from an ordinary member server, and clients alternate between the two systems after every restart. Hardware clocks are stable. What configuration should the administrator correct?",
     "choices": [
-      "Replace the CMOS battery after confirming firmware time also drifts",
-      "Replace the SSD",
-      "Reinstall the browser",
-      "Clear event logs"
+      "Restore the domain time hierarchy so the authoritative controller uses an approved external source",
+      "Increase every client clock manually by one minute",
+      "Replace the member server network adapter",
+      "Turn off time synchronization on the domain controller"
     ],
     "answer": 0,
-    "explanation": "Replace the CMOS battery after confirming firmware time also drifts best reconciles the symptoms and the business constraint by enabling support to correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown. Choosing Replace the SSD would not resolve the case because firmware time loss across power-off isolates the RTC power source rather than Windows synchronization or storage."
+    "explanation": "The topology is misconfigured: the authoritative domain role should obtain trusted external time and supply the domain hierarchy. Manual changes and disabling synchronization would allow the inconsistency to return."
   },
   {
     "id": "A1202-PE5-061",
@@ -1269,15 +1269,15 @@
     "objective": "1.9",
     "blueprint": "File management > grep",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to search a large Linux log for every line containing a specific service error token without opening the file interactively on the Linux workstation; shared infrastructure remains healthy. Unrelated users must remain online. Which control BEST meets the requirement?",
+    "question": "A Linux incident responder needs every line containing \"denied\" in the current audit log plus two lines of context before and after each match. Which command is MOST appropriate?",
     "choices": [
-      "cp",
-      "chmod",
-      "pwd",
-      "grep"
+      "df -h /var/log/audit/audit.log",
+      "chmod 777 /var/log/audit/audit.log",
+      "systemctl enable audit.log",
+      "grep -B 2 -A 2 \"denied\" /var/log/audit/audit.log"
     ],
     "answer": 3,
-    "explanation": "grep best reconciles the symptoms and the business constraint by enabling support to search a large Linux log for every line containing a specific service error token without opening the file interactively. Choosing cp would not resolve the case because the other commands manage files, capacity, permissions, or services rather than filtering matching text."
+    "explanation": "grep searches for the requested text, and -B/-A add the surrounding context needed for analysis. Disk-space and permission commands do not extract matching log events."
   },
   {
     "id": "A1202-PE5-081",

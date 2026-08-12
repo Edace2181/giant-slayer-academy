@@ -53,15 +53,15 @@
     "objective": "3.4",
     "blueprint": "Common symptoms > Altered system or personal files > Missing/renamed files",
     "difficulty": "Level 2",
-    "question": "A pharmacy network documents a requirement to respond when many documents are renamed, cannot be opened, and a payment note appears on the desktop on a support laptop. What should support do NEXT?",
+    "question": "After malware eradication, a team must recover documents whose names and contents were altered. A verified offline backup predates the infection, and endpoint scans are now clean. What is the BEST recovery action?",
     "choices": [
-      "Rebuild the search index",
-      "Change file associations",
-      "Isolate the computer and begin the malware incident procedure",
-      "Enable automatic logon"
+      "Reconnect the infected snapshot without scanning it",
+      "Pay an unknown recovery service for an unverified decryptor",
+      "Restore the affected data from the verified clean backup and monitor for recurrence",
+      "Rename the damaged files manually and assume their contents are intact"
     ],
     "answer": 2,
-    "explanation": "Isolate the computer and begin the malware incident procedure resolves the root requirement without relying on the rejected shortcut. It permits the team to respond when many documents are renamed, cannot be opened, and a payment note appears on the desktop; Rebuild the search index is not suitable because the broad file changes and payment demand indicate an active compromise, so routine file-index or association repairs are unsafe."
+    "explanation": "With eradication verified, the clean offline backup is the trusted recovery source. Renaming damaged files does not repair altered content, and unverified tools could reintroduce malware."
   },
   {
     "id": "A1202-PE4-005",
@@ -133,15 +133,15 @@
     "objective": "2.10",
     "blueprint": "Router settings > Universal Plug and Play (UPnP)",
     "difficulty": "Level 2",
-    "question": "A media-production team requires support to stop internal devices from automatically creating unsolicited router port mappings when no approved application requires them. The requirement was confirmed during a known-good comparison. Which control BEST meets the requirement?",
+    "question": "A router audit shows an old gaming application repeatedly recreating inbound port mappings after administrators delete them. The application no longer has a business use. Which setting should be disabled?",
     "choices": [
-      "Delete the current automatic port mappings only",
-      "Disable UPnP",
-      "Disable WAN-side administration",
-      "Disable WPS"
+      "Quality of Service (QoS)",
+      "Universal Plug and Play (UPnP)",
+      "Dynamic DNS (DDNS)",
+      "Wireless Protected Setup (WPS)"
     ],
     "answer": 1,
-    "explanation": "During controlled change review, Disable UPnP is the defensible choice because it provides a supported way to stop internal devices from automatically creating unsolicited router port mappings when no approved application requires them. Delete the current automatic port mappings only cannot satisfy the same scope because removing current mappings does not prevent internal devices from automatically recreating them."
+    "explanation": "UPnP permits internal applications to request automatic port mappings, which explains why the entries return. Disabling it prevents unapproved automatic recreation; QoS and DDNS do not create these mappings."
   },
   {
     "id": "A1202-PE4-010",
@@ -181,15 +181,15 @@
     "objective": "2.1",
     "blueprint": "Physical security > Access control vestibule",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to allow one authenticated person at a time into a restricted room and reduce tailgating. The lab system is the only affected endpoint, and the solution must use vendor-supported methods. Which control BEST meets the requirement?",
+    "question": "A loading dock must admit rolling equipment but prevent two employees from entering together behind one badge. Which added control BEST supports the physical requirement?",
     "choices": [
-      "Add bollards",
-      "Install a cable lock",
-      "Place an alarm sticker",
-      "Install an access control vestibule"
+      "A larger unlocked doorway",
+      "A desktop password policy",
+      "A privacy filter on the badge reader display",
+      "A staffed access control vestibule sized for the equipment"
     ],
     "answer": 3,
-    "explanation": "Install an access control vestibule resolves the root requirement without relying on the rejected shortcut. It permits the team to allow one authenticated person at a time into a restricted room and reduce tailgating; Add bollards is not suitable because bollards stop vehicles and cable locks secure equipment; neither enforces single-person entry."
+    "explanation": "A suitably sized, staffed vestibule preserves controlled single-entry validation while accommodating equipment. An unlocked door increases tailgating risk, and logical controls do not govern the physical passage."
   },
   {
     "id": "A1202-PE4-013",
@@ -245,15 +245,15 @@
     "objective": "4.1",
     "blueprint": "Types of documents > Knowledge base/articles",
     "difficulty": "Level 2",
-    "question": "A manufacturing plant documents a requirement to make a verified solution for a recurring supported issue searchable to other technicians with prerequisites and rollback notes on a remote endpoint. What should occur FIRST?",
+    "question": "A vendor update makes an existing knowledge article unsafe because its registry path no longer applies. Search analytics show technicians still opening the article. What is the BEST documentation action?",
     "choices": [
-      "Send the fix in a private chat only",
-      "Leave undocumented registry changes",
-      "Remove the original incident history",
-      "Publish a reviewed knowledge-base article"
+      "Leave the obsolete article active with no warning",
+      "Delete the entire knowledge base",
+      "Change only the article title while preserving the unsafe steps",
+      "Retire or revise the article and link the current supported procedure"
     ],
     "answer": 3,
-    "explanation": "Publish a reviewed knowledge-base article resolves the root requirement without relying on the rejected shortcut. It permits the team to make a verified solution for a recurring supported issue searchable to other technicians with prerequisites and rollback notes; Send the fix in a private chat only is not suitable because private or device-local notes cannot provide a controlled reusable support reference."
+    "explanation": "The obsolete procedure must be removed from normal use or corrected, with a link to the supported replacement. Leaving it searchable risks repeated harmful changes."
   },
   {
     "id": "A1202-PE4-017",
@@ -261,15 +261,15 @@
     "objective": "4.6",
     "blueprint": "Incident response > Chain of custody",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the field technician laptop document every collection, transfer, handler, time, and storage location for a drive that may become legal evidence? Which action preserves the required control?",
+    "question": "An external drive containing suspected evidence is handed from a technician to a forensic analyst. Which action preserves chain of custody?",
     "choices": [
-      "Start and maintain a chain-of-custody record",
-      "Hash the drive but omit handler transfers",
-      "Create a forensic image before recording who collected the device",
-      "Store the evidence securely but leave collection time undocumented"
+      "Record the transfer time, identities, evidence identifier, and signatures",
+      "Allow the analyst to take it without documenting the handoff",
+      "Rename the evidence drive so users cannot recognize it",
+      "Copy the files to a personal drive and discard the original"
     ],
     "answer": 0,
-    "explanation": "During controlled change review, Start and maintain a chain-of-custody record is the defensible choice because it provides a supported way to document every collection, transfer, handler, time, and storage location for a drive that may become legal evidence. Hash the drive but omit handler transfers cannot satisfy the same scope because a hash proves data integrity at one point but does not document possession and transfer of the physical evidence."
+    "explanation": "A documented transfer establishes who controlled the evidence and when. An undocumented handoff creates a custody gap that can undermine integrity and admissibility."
   },
   {
     "id": "A1202-PE4-018",
@@ -277,15 +277,15 @@
     "objective": "3.3",
     "blueprint": "Security concerns > Unauthorized/malicious application",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to respond after an unknown accessibility-service application begins reading notifications and sending background traffic. The managed smartphone is the only affected endpoint, and the result must be auditable. Which response follows the evidence?",
+    "question": "MDM reports that an unapproved VPN application installed its own trusted root certificate on a company tablet. Network captures show the application intercepting test traffic. Which response BEST removes the established trust?",
     "choices": [
-      "Enable more notifications",
-      "Disable backups",
-      "Remove the unauthorized application and rotate exposed credentials",
-      "Turn off automatic time"
+      "Clear the browser history but retain the root certificate",
+      "Change the tablet wallpaper and restart it",
+      "Uninstall the application and remove its unapproved root certificate",
+      "Allow the certificate because the VPN application installed it"
     ],
     "answer": 2,
-    "explanation": "Remove the unauthorized application and rotate exposed credentials resolves the root requirement without relying on the rejected shortcut. It permits the team to respond after an unknown accessibility-service application begins reading notifications and sending background traffic; Enable more notifications is not suitable because the granted accessibility rights and outbound traffic indicate malicious application access, not a display or charging defect."
+    "explanation": "The root certificate is what enables the application to impersonate trusted services, so both the app and certificate must be removed. Clearing browser data leaves the interception trust in place."
   },
   {
     "id": "A1202-PE4-019",
@@ -357,15 +357,15 @@
     "objective": "3.3",
     "blueprint": "Common symptoms > Leaked personal files/data",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the enrolled mobile device contain a cloud-sharing application that published private mobile photos through an unintended public link? Which action addresses the verified cause?",
+    "question": "A project folder in a mobile collaboration app is visible to every contractor because its group permission inherited from a parent workspace. Audit logs show no suspicious download and the intended project team still needs access. Which correction is MOST appropriate?",
     "choices": [
-      "Revoke the application access token and investigate the exposed files",
-      "Clear only the browser history",
-      "Replace the SIM card",
-      "Turn off Bluetooth pairing"
+      "Remove the inherited broad group and assign the approved project group",
+      "Revoke every user account in the collaboration tenant",
+      "Erase the project folder and recreate all files locally",
+      "Disable mobile data on each contractor device"
     ],
     "answer": 0,
-    "explanation": "During controlled change review, Revoke the application access token and investigate the exposed files is the defensible choice because it provides a supported way to contain a cloud-sharing application that published private mobile photos through an unintended public link. Clear only the browser history cannot satisfy the same scope because local cosmetic and radio changes do not revoke the cloud authorization or remove the exposed sharing link."
+    "explanation": "The exposure comes from an inherited access group, so replacing it with the approved project group corrects least-privilege access without destroying data or interrupting unrelated users. Tenant-wide revocation and device network changes do not repair the folder permission."
   },
   {
     "id": "A1202-PE4-024",
@@ -469,15 +469,15 @@
     "objective": "4.1",
     "blueprint": "Asset management > Configuration management database (CMDB)",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to record that a replaced server now supports a specific business service and uses a new storage component. The engineering notebook is the only affected endpoint, and only the affected component may be interrupted. Which control BEST meets the requirement?",
+    "question": "Automated discovery reports that a workstation now has twice the approved memory, but its CMDB configuration item still shows the original modules and no change ticket is linked. What is the BEST administrative response?",
     "choices": [
-      "Update only the flat hardware inventory",
-      "Update the CMDB relationship and asset record",
-      "Record the replacement solely in the incident ticket",
-      "Create a knowledge-base article instead of an asset relationship"
+      "Accept discovery as automatic approval of the hardware change",
+      "Reconcile the discovered hardware with an authorized change before updating the configuration item",
+      "Disable inventory discovery to prevent future mismatches",
+      "Delete and recreate the workstation configuration item"
     ],
     "answer": 1,
-    "explanation": "Update the CMDB relationship and asset record resolves the root requirement without relying on the rejected shortcut. It permits the team to record that a replaced server now supports a specific business service and uses a new storage component; Update only the flat hardware inventory is not suitable because a flat inventory records the device but not the required relationship between configuration items and business services."
+    "explanation": "The mismatch may represent an undocumented change, so authorization must be verified before the CMDB baseline is updated. Discovery proves the current hardware state but does not replace change approval."
   },
   {
     "id": "A1202-PE4-031",
@@ -485,15 +485,15 @@
     "objective": "1.7",
     "blueprint": "Local OS firewall settings > Application restrictions and exceptions",
     "difficulty": "Level 2",
-    "question": "A technician compares the current state of a service-desk computer with its approved baseline at a two-campus college: it must allow one approved support application to receive traffic on the private profile without opening the same access on public networks. What should the technician implement?",
+    "question": "A host firewall blocks an approved inventory agent after the agent update changed its executable path. Other inbound rules must remain intact. What should support modify?",
     "choices": [
-      "Open the application port on every network profile",
-      "Create a port-only rule usable by any process",
-      "Create a scoped firewall application exception",
-      "Disable inbound filtering during application use"
+      "Disable the firewall for all profiles",
+      "Open every inbound TCP port",
+      "Update the scoped firewall application exception for the signed agent",
+      "Add the user to local Administrators"
     ],
     "answer": 2,
-    "explanation": "During controlled change review, Create a scoped firewall application exception is the defensible choice because it provides a supported way to allow one approved support application to receive traffic on the private profile without opening the same access on public networks. Open the application port on every network profile cannot satisfy the same scope because a broad port rule can expose the same listener to unrelated processes and network profiles."
+    "explanation": "A path-specific application rule can be updated for the approved signed executable while preserving other protections. Disabling the firewall or opening all ports is unnecessarily broad."
   },
   {
     "id": "A1202-PE4-032",
@@ -821,15 +821,15 @@
     "objective": "2.9",
     "blueprint": "Outsourcing concepts > Certification of destruction/recycling",
     "difficulty": "Level 2",
-    "question": "A distribution warehouse documents a requirement to prove that a contracted recycler destroyed retired drives containing regulated data according to policy on a reception system. What should the technician implement?",
+    "question": "A recycler certificate lists ten destroyed drives, but the signed pickup record shows twelve drives left the office. What should the coordinator do?",
     "choices": [
-      "Request a verbal assurance",
-      "Perform a quick format only",
-      "Store the drives indefinitely in an unlocked room",
-      "Obtain and retain a certificate of destruction"
+      "Alter the pickup record to show ten drives",
+      "Assume the certificate covers every drive",
+      "Delete both records and begin a new inventory",
+      "Hold closure and reconcile the two missing drive serial numbers with the recycler"
     ],
     "answer": 3,
-    "explanation": "Obtain and retain a certificate of destruction resolves the root requirement without relying on the rejected shortcut. It permits the team to prove that a contracted recycler destroyed retired drives containing regulated data according to policy; Request a verbal assurance is not suitable because a verbal statement or quick format does not provide auditable proof of destruction or reliably eliminate recoverable data."
+    "explanation": "The mismatch means two assets lack documented final disposition. Reconciliation using serial numbers is required before closure; changing or discarding evidence would conceal the custody gap."
   },
   {
     "id": "A1202-PE4-053",
@@ -837,15 +837,15 @@
     "objective": "1.11",
     "blueprint": "Identity synchronization",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the production workstation give users one centrally managed cloud identity across email, storage, and collaboration services while preserving account lifecycle control? Which choice satisfies the documented need?",
+    "question": "A company disables an employee in its on-premises directory, but the employee can still access a cloud application because synchronization has been failing for twelve hours. What should the administrator restore?",
     "choices": [
-      "Configure SSO without provisioning or deprovisioning",
-      "Enable approved identity synchronization",
-      "Create separate cloud identities manually",
-      "Synchronize passwords but leave disabled users active"
+      "A separate unmanaged cloud password for the employee",
+      "Directory synchronization and verification of the cloud-account disablement",
+      "Guest access for the disabled account",
+      "A manual desktop wallpaper update"
     ],
     "answer": 1,
-    "explanation": "During controlled change review, Enable approved identity synchronization is the defensible choice because it provides a supported way to give users one centrally managed cloud identity across email, storage, and collaboration services while preserving account lifecycle control. Configure SSO without provisioning or deprovisioning cannot satisfy the same scope because authentication federation alone does not provision, disable, and reconcile the cloud identities through their lifecycle."
+    "explanation": "The lifecycle change has not reached the cloud service because synchronization failed. Restoring synchronization and verifying disablement closes the access gap; creating another credential would worsen it."
   },
   {
     "id": "A1202-PE4-054",
@@ -885,15 +885,15 @@
     "objective": "4.5",
     "blueprint": "Material safety data sheet (MSDS) documentation for handling and disposal > Proper battery disposal",
     "difficulty": "Level 2",
-    "question": "To handle a swollen lithium battery without placing it in normal trash or shipping it as ordinary equipment, a community bank needs one supported choice for its managed workstation. Which action preserves the required control?",
+    "question": "A swollen lithium-ion laptop battery has been removed and placed in a fire-resistant container. Which source should the technician consult for approved handling and disposal instructions?",
     "choices": [
-      "Place the battery with ordinary electronic recycling",
-      "Return it through an undocumented shipping method",
-      "Follow the documented hazardous-battery disposal process",
-      "Follow the toner-cartridge process instead of the battery procedure"
+      "A general printer user guide",
+      "The employee vacation calendar",
+      "The battery safety data sheet and organization hazardous-material procedure",
+      "A public social-media poll"
     ],
     "answer": 2,
-    "explanation": "Follow the documented hazardous-battery disposal process resolves the root requirement without relying on the rejected shortcut. It permits the team to handle a swollen lithium battery without placing it in normal trash or shipping it as ordinary equipment; Place the battery with ordinary electronic recycling is not suitable because ordinary electronics recycling may not provide the handling controls required for a swollen lithium battery."
+    "explanation": "The safety data sheet and organizational procedure define hazards, storage, transport, and disposal for the battery chemistry. General product or informal sources do not establish approved handling."
   },
   {
     "id": "A1202-PE4-057",
@@ -949,15 +949,15 @@
     "objective": "4.7",
     "blueprint": "Appropriately handle customers’ confidential and private materials.",
     "difficulty": "Level 4",
-    "question": "The executive notebook cannot pass acceptance until support can limit access to the files named in the ticket after a personal record unexpectedly opens during recovery. General hardware tests pass and the timeline contains conflicting symptoms, but a quick workaround would violate the approved scope. The result must be auditable. Which procedural response is appropriate?",
+    "question": "A legal client authorizes recovery of three named case files. During imaging, the technician discovers a readable folder marked for a different client, and the audit log records every opened file. Which action BEST preserves professional and audit requirements?",
     "choices": [
-      "Continue browsing the folder to determine whether other private files exist",
-      "Copy the full user profile to simplify recovery",
-      "Stop viewing unrelated private content and limit work to the authorized data",
-      "Include the document in a general diagnostic upload"
+      "Open the folder to verify whether its contents are relevant",
+      "Upload the unrelated folder with the diagnostic package",
+      "Do not open the unrelated folder; record only that work stayed within the authorized file list",
+      "Remove the audit log entry so the discovery is not visible"
     ],
     "answer": 2,
-    "explanation": "Stop viewing unrelated private content and limit work to the authorized data resolves the root requirement without relying on the rejected shortcut. It permits the team to limit access to the files named in the ticket after a personal record unexpectedly opens during recovery; Continue browsing the folder to determine whether other private files exist is not suitable because examining additional private files exceeds the authorization and increases the confidentiality exposure."
+    "explanation": "The explicit file list defines the authorized scope, and the audit trail should accurately show that the unrelated folder was not accessed. Opening or uploading it would violate confidentiality, while altering the log would destroy accountability."
   },
   {
     "id": "A1202-PE4-061",
@@ -1029,15 +1029,15 @@
     "objective": "1.9",
     "blueprint": "OS components > systemd",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the Linux support laptop enable a Linux service to start at boot and inspect its current service state? Which utility produces the required evidence?",
+    "question": "A Linux service fails immediately after startup, and systemctl reports a dependency failure without the underlying error detail. Which command provides the service-specific systemd journal entries needed for diagnosis?",
     "choices": [
-      "apt",
-      "nano",
-      "find",
-      "systemctl"
+      "chmod 777 /etc",
+      "ipconfig /all",
+      "format /q",
+      "journalctl -u servicename"
     ],
     "answer": 3,
-    "explanation": "During controlled change review, systemctl is the defensible choice because it provides a supported way to enable a Linux service to start at boot and inspect its current service state. apt cannot satisfy the same scope because package and file tools cannot manage the systemd unit startup state."
+    "explanation": "journalctl with the service unit filter displays systemd journal events for that unit, including dependency and startup errors. Permission broadening and Windows networking commands do not provide the required Linux service evidence."
   },
   {
     "id": "A1202-PE4-066",
@@ -1285,15 +1285,15 @@
     "objective": "4.9",
     "blueprint": "Methods/tools > Secure Shell (SSH)",
     "difficulty": "Level 4",
-    "question": "Evidence from the remote Windows host establishes a requirement to administer a Linux server through an encrypted command-line session with key-based authentication. The prior workaround introduced a second control failure, so a county administration office needs a supported, scoped response. The change must remain inside the approved scope. Which tool should the technician use?",
+    "question": "An administrator must run one approved maintenance command on fifty Linux servers. Policy requires encrypted transport, access only through a hardened jump host, individual attribution, and privileged-command logging. Which design BEST satisfies all four controls?",
     "choices": [
-      "Use SSH",
-      "Use Telnet",
-      "Use an open file share",
-      "Use RDP without a gateway"
+      "Use SSH through the jump host with individual keys and logged sudo elevation",
+      "Enable Telnet from the jump host with one shared root password",
+      "Allow direct SSH from the internet using one team key",
+      "Copy the command through anonymous FTP and run it as root locally"
     ],
     "answer": 0,
-    "explanation": "During controlled change review, Use SSH is the defensible choice because it provides a supported way to administer a Linux server through an encrypted command-line session with key-based authentication. Use Telnet cannot satisfy the same scope because Telnet and anonymous services lack the encrypted authenticated shell required for administration."
+    "explanation": "SSH through the approved jump host protects transport and limits the management path; individual keys identify the administrator, and sudo logging records elevation and commands. Shared credentials or direct internet access would break accountability or network-control requirements."
   },
   {
     "id": "A1202-PE4-082",
@@ -1333,15 +1333,15 @@
     "objective": "3.2",
     "blueprint": "Application fails to close/crashes",
     "difficulty": "Level 2",
-    "question": "A technician must correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect for an insurance branch. The technician must preserve available evidence. Which response follows the evidence?",
+    "question": "One mobile application is frozen on a loading screen, but it worked earlier today and all other applications respond normally. No update or storage warning is present. What should the technician try FIRST?",
     "choices": [
-      "Reinstall the application before preserving its settings",
-      "Factory-reset the device before app-level troubleshooting",
-      "Force-stop the app without installing the documented correction",
-      "Clear the affected application cache and install its supported update"
+      "Erase the entire phone immediately",
+      "Replace the wireless access point",
+      "Remove the user from the identity directory",
+      "Force-stop the affected application and reopen it"
     ],
     "answer": 3,
-    "explanation": "Clear the affected application cache and install its supported update resolves the root requirement without relying on the rejected shortcut. It permits the team to correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect; Reinstall the application before preserving its settings is not suitable because reinstallation is more disruptive and ignores the vendor-documented cache and version condition that can be corrected first."
+    "explanation": "A single currently hung application should first be force-stopped and relaunched. That minimally disruptive step clears its process state; wiping the phone is disproportionate without evidence of wider corruption."
   },
   {
     "id": "A1202-PE4-085",
@@ -1365,15 +1365,15 @@
     "objective": "3.1",
     "blueprint": "Blue screen of death (BSOD)",
     "difficulty": "Level 2",
-    "question": "To isolate a repeatable blue-screen failure that began immediately after a storage-controller driver update while hardware diagnostics pass, a transportation depot needs one supported choice for its reception system. Which action addresses the verified cause?",
+    "question": "A workstation blue-screens only after resuming from sleep. The dump consistently identifies the wireless driver, and installing the vendor-supported newer driver resolves the issue in testing. What should support implement?",
     "choices": [
-      "Roll back the storage driver before reviewing the dump",
-      "Run a memory test despite no memory-related evidence",
-      "Run SFC even though the crash dump identifies a third-party module",
-      "Analyze the stop code and the recently changed driver"
+      "Replace the keyboard",
+      "Change the user desktop background",
+      "Disable all security updates",
+      "Deploy the tested wireless driver update and verify several sleep/resume cycles"
     ],
     "answer": 3,
-    "explanation": "Analyze the stop code and the recently changed driver resolves the root requirement without relying on the rejected shortcut. It permits the team to isolate a repeatable blue-screen failure that began immediately after a storage-controller driver update while hardware diagnostics pass; Roll back the storage driver before reviewing the dump is not suitable because rolling back before correlating the stop code can reverse the wrong change when more than one recent component changed."
+    "explanation": "The dump and successful controlled update isolate the wireless resume driver. Deploying that tested version and repeating the triggering sequence verifies the correction."
   },
   {
     "id": "A1202-PE4-087",

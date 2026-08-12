@@ -341,15 +341,15 @@
     "objective": "4.6",
     "blueprint": "Regulated data > PII",
     "difficulty": "Level 2",
-    "question": "A two-campus college documents a requirement to apply the organization retention and access controls to a file that can identify specific individuals on a branch computer. Which procedural response is appropriate?",
+    "question": "A spreadsheet exported for a school fundraiser contains student names, home addresses, and guardian phone numbers. Which handling decision is appropriate?",
     "choices": [
-      "Publish it as anonymous data",
-      "Treat the exported names and government identifiers as PII",
-      "Remove file extensions",
-      "Store it in a shared guest folder"
+      "Treat it as public because it does not contain passwords",
+      "Classify the file as PII and restrict it according to the privacy policy",
+      "Upload it to an unrestricted personal drive",
+      "Remove the column headings and treat the remaining data as anonymous"
     ],
     "answer": 1,
-    "explanation": "For the policy-controlled outcome, Treat the exported names and government identifiers as PII is appropriate: it enables support to apply the organization retention and access controls to a file that can identify specific individuals. Publish it as anonymous data cannot produce the required verified result because the identifiers remain personally identifying regardless of filename or application source."
+    "explanation": "The combined fields identify specific individuals and therefore constitute PII. Removing headings does not de-identify the records, so approved access and retention controls are required."
   },
   {
     "id": "A1202-PE6-023",
@@ -357,15 +357,15 @@
     "objective": "1.5",
     "blueprint": "Network > pathping",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the executive notebook measure packet loss at the individual hops along a route to an intermittently reachable remote service? What is the BEST diagnostic or administrative choice?",
+    "question": "A Windows user can reach a remote host, but an application connection slows at one intermediate network segment. The technician needs hop-by-hop latency and packet-loss measurements over time. Which utility should be used?",
     "choices": [
-      "ping",
-      "ipconfig /all",
+      "hostname",
+      "whoami",
       "pathping",
-      "hostname"
+      "format"
     ],
     "answer": 2,
-    "explanation": "The acceptance criteria are met by pathping, which gives the organization a verifiable way to measure packet loss at the individual hops along a route to an intermittently reachable remote service. ping would fail final validation because ping confirms reachability but cannot identify which routed hop is contributing packet loss."
+    "explanation": "pathping combines route discovery with repeated measurements to estimate latency and loss at each hop. The other commands identify the local system or alter storage rather than test the network path."
   },
   {
     "id": "A1202-PE6-024",
@@ -373,15 +373,15 @@
     "objective": "3.3",
     "blueprint": "Security concerns > Unauthorized/malicious application",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to respond after an unknown accessibility-service application begins reading notifications and sending background traffic. The enrolled mobile device is the only affected endpoint, and the technician must preserve available evidence. Which action addresses the verified cause?",
+    "question": "An unknown Android application cannot be uninstalled because it was granted device-administrator privileges. MDM did not authorize the application, and no other compromise indicator is present. What should the technician do NEXT?",
     "choices": [
-      "Remove the unauthorized application and rotate exposed credentials",
-      "Enable more notifications",
-      "Replace the charger",
-      "Turn off automatic time"
+      "Revoke the application device-administrator privilege and then remove it",
+      "Factory-reset every enrolled device in the organization",
+      "Disable the approved MDM administrator profile",
+      "Move the application to external storage"
     ],
     "answer": 0,
-    "explanation": "For the policy-controlled outcome, Remove the unauthorized application and rotate exposed credentials is appropriate: it enables support to respond after an unknown accessibility-service application begins reading notifications and sending background traffic. Enable more notifications cannot produce the required verified result because the granted accessibility rights and outbound traffic indicate malicious application access, not a display or charging defect."
+    "explanation": "Android blocks ordinary removal while device-administrator rights are active. Revoking only the rogue application privilege allows supported removal without damaging the approved MDM control."
   },
   {
     "id": "A1202-PE6-025",
@@ -405,15 +405,15 @@
     "objective": "2.5",
     "blueprint": "Social engineering > Phishing > Smishing",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to recognize a text message that creates urgency and directs an employee to a counterfeit benefits sign-in link on the lab system; shared infrastructure remains healthy. Only the affected component may be interrupted. What should support do NEXT?",
+    "question": "An employee follows a parcel-delivery link from an SMS message and enters company credentials before the carrier confirms the text was fraudulent. The phone shows no malicious application installation. What should support do FIRST?",
     "choices": [
-      "Vishing",
-      "Smishing",
-      "Dumpster diving",
-      "Shoulder surfing"
+      "Call the number in the fraudulent text to request deletion",
+      "Reset the exposed credentials from a trusted device, revoke active sessions, and report the smishing incident",
+      "Factory-reset the phone before protecting the compromised account",
+      "Ignore the incident because no application was installed"
     ],
     "answer": 1,
-    "explanation": "For the policy-controlled outcome, Smishing is appropriate: it enables support to recognize a text message that creates urgency and directs an employee to a counterfeit benefits sign-in link. Vishing cannot produce the required verified result because vishing uses voice calls, while the deceptive SMS link is specifically smishing."
+    "explanation": "The successful smishing attempt exposed account credentials, so account containment—resetting the secret and revoking sessions from a trusted device—comes before destructive phone actions. Lack of an installed app does not remove the credential risk."
   },
   {
     "id": "A1202-PE6-027",
@@ -501,15 +501,15 @@
     "objective": "2.5",
     "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to classify a message from a look-alike executive account directing finance staff to change a supplier payment destination on the reception system; shared infrastructure remains healthy. The action must be reversible. What should support do NEXT?",
+    "question": "A payroll employee receives a message from the CEO account requesting gift-card purchases, but mail headers show a lookalike external domain and the CEO confirms no account compromise. Which attack is MOST likely?",
     "choices": [
-      "Business email compromise",
-      "Smishing",
-      "Evil twin",
-      "Tailgating"
+      "A spoofed phishing attempt using executive impersonation",
+      "Business email compromise of the CEO mailbox",
+      "Shoulder surfing",
+      "An access control vestibule failure"
     ],
     "answer": 0,
-    "explanation": "For the policy-controlled outcome, Business email compromise is appropriate: it enables support to classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. Smishing cannot produce the required verified result because smishing uses text messages, while the impersonated executive and fraudulent payment request match business email compromise."
+    "explanation": "The lookalike external domain shows impersonation rather than use of the real compromised mailbox. BEC would require actual account or business communication compromise, which the evidence rules out."
   },
   {
     "id": "A1202-PE6-033",
@@ -661,15 +661,15 @@
     "objective": "3.2",
     "blueprint": "Application fails to close/crashes",
     "difficulty": "Level 2",
-    "question": "A technician must correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect for a legal-services office. The result must be auditable. Which action addresses the verified cause?",
+    "question": "A banking application began crashing after the phone upgraded to a new OS release. The vendor lists the installed app version as unsupported on that release and publishes a compatible version. Which action should support take?",
     "choices": [
-      "Reinstall the application before preserving its settings",
-      "Update the mobile OS without reviewing the vendor defect",
-      "Clear the affected application cache and install its supported update",
-      "Force-stop the app without installing the documented correction"
+      "Downgrade the phone firmware from an unofficial source",
+      "Clear every saved Wi-Fi network",
+      "Install the vendor-supported application update",
+      "Disable the device screen lock"
     ],
     "answer": 2,
-    "explanation": "For the policy-controlled outcome, Clear the affected application cache and install its supported update is appropriate: it enables support to correct one mobile application that crashes on launch while other applications and the OS remain stable and its vendor documents a cache defect. Reinstall the application before preserving its settings cannot produce the required verified result because reinstallation is more disruptive and ignores the vendor-documented cache and version condition that can be corrected first."
+    "explanation": "The documented compatibility mismatch directly explains the crash. Installing the supported version resolves that mismatch, whereas an unofficial OS downgrade introduces security and support risk."
   },
   {
     "id": "A1202-PE6-043",
@@ -677,15 +677,15 @@
     "objective": "2.10",
     "blueprint": "Router settings > Universal Plug and Play (UPnP)",
     "difficulty": "Level 2",
-    "question": "Support receives an escalated case from a distribution warehouse concerning a small-office router: it must stop internal devices from automatically creating unsolicited router port mappings when no approved application requires them. Which control BEST meets the requirement?",
+    "question": "An internet scan finds a conference-room camera reachable through a consumer router. The firewall entry was created automatically and no approved remote-viewing requirement exists. What should support do?",
     "choices": [
-      "Delete the current automatic port mappings only",
-      "Disable UPnP",
-      "Enable a stricter inbound firewall policy",
-      "Disable WPS"
+      "Enable remote administration from every source address",
+      "Remove the mapping and disable UPnP on the router",
+      "Place the camera in the router DMZ",
+      "Publish the camera password in the support wiki"
     ],
     "answer": 1,
-    "explanation": "The acceptance criteria are met by Disable UPnP, which gives the organization a verifiable way to stop internal devices from automatically creating unsolicited router port mappings when no approved application requires them. Delete the current automatic port mappings only would fail final validation because removing current mappings does not prevent internal devices from automatically recreating them."
+    "explanation": "The unapproved exposure came from an automatic UPnP mapping. Removing it and disabling UPnP closes the path and prevents recurrence; a DMZ would increase exposure."
   },
   {
     "id": "A1202-PE6-044",
@@ -693,15 +693,15 @@
     "objective": "3.3",
     "blueprint": "Common symptoms > Leaked personal files/data",
     "difficulty": "Level 2",
-    "question": "To contain a cloud-sharing application that published private mobile photos through an unintended public link, a municipal library needs one supported choice for its company tablet. What should support do NEXT?",
+    "question": "A user approved an unfamiliar OAuth request in a mobile storage app. The app now appears in the account security page with permission to read all files, although no public link exists. What should the technician do NEXT?",
     "choices": [
-      "Clear only the browser history",
-      "Disable vibration",
-      "Turn off Bluetooth pairing",
-      "Revoke the application access token and investigate the exposed files"
+      "Change the screen-lock timeout and leave the OAuth grant active",
+      "Rename the storage folders so the application cannot find them",
+      "Uninstall the local storage app without changing account permissions",
+      "Revoke the OAuth grant and review account activity for accessed files"
     ],
     "answer": 3,
-    "explanation": "For the policy-controlled outcome, Revoke the application access token and investigate the exposed files is appropriate: it enables support to contain a cloud-sharing application that published private mobile photos through an unintended public link. Clear only the browser history cannot produce the required verified result because local cosmetic and radio changes do not revoke the cloud authorization or remove the exposed sharing link."
+    "explanation": "The OAuth grant remains valid independently of the local application, so it must be revoked at the account and followed by an activity review to determine exposure. Uninstalling the client alone leaves the third-party token usable."
   },
   {
     "id": "A1202-PE6-045",
@@ -757,15 +757,15 @@
     "objective": "4.1",
     "blueprint": "Asset management > Configuration management database (CMDB)",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to record that a replaced server now supports a specific business service and uses a new storage component. The field technician laptop is the only affected endpoint, and a tested recovery path must remain available. Which choice satisfies the documented need?",
+    "question": "A core switch replacement is complete and its serial number is recorded, but an outage simulation shows the CMDB still maps two business applications to the retired switch. What should be corrected?",
     "choices": [
-      "Update only the flat hardware inventory",
-      "Revise the network diagram without the service relationship",
-      "Update the CMDB relationship and asset record",
-      "Create a knowledge-base article instead of an asset relationship"
+      "Change the application owners to the network team",
+      "Reopen the hardware purchase request",
+      "Update the service-dependency relationships to reference the replacement switch",
+      "Remove the applications from the service catalog"
     ],
     "answer": 2,
-    "explanation": "For the policy-controlled outcome, Update the CMDB relationship and asset record is appropriate: it enables support to record that a replaced server now supports a specific business service and uses a new storage component. Update only the flat hardware inventory cannot produce the required verified result because a flat inventory records the device but not the required relationship between configuration items and business services."
+    "explanation": "Impact analysis depends on accurate relationships between services and infrastructure. Updating those dependency links fixes the stale topology; changing ownership or deleting catalog entries would hide rather than correct the relationship."
   },
   {
     "id": "A1202-PE6-049",
@@ -917,15 +917,15 @@
     "objective": "1.6",
     "blueprint": "File Explorer Options > View hidden files",
     "difficulty": "Level 2",
-    "question": "A transportation depot documents a requirement to inspect a known hidden application-data folder without changing file permissions or removing its hidden attribute on a support laptop. Which control BEST meets the requirement?",
+    "question": "A support engineer must examine a hidden configuration folder in Windows without changing file attributes or exposing hidden items for every user. What should be enabled?",
     "choices": [
-      "Disable file extensions",
-      "Enable Show hidden files in File Explorer Options",
-      "Turn off indexing",
-      "Enable public-folder sharing"
+      "Delete the hidden attribute from the entire system drive",
+      "Show hidden files for the current File Explorer session or profile",
+      "Disable NTFS permissions",
+      "Turn off Windows Defender Firewall"
     ],
     "answer": 1,
-    "explanation": "For the policy-controlled outcome, Enable Show hidden files in File Explorer Options is appropriate: it enables support to inspect a known hidden application-data folder without changing file permissions or removing its hidden attribute. Disable file extensions cannot produce the required verified result because taking ownership changes access control, while the requirement is only to make an already accessible hidden folder visible."
+    "explanation": "File Explorer can display hidden items without altering the files themselves or weakening access controls. Removing attributes globally would make an unnecessary persistent change."
   },
   {
     "id": "A1202-PE6-059",
@@ -1125,15 +1125,15 @@
     "objective": "3.2",
     "blueprint": "Connectivity issues > Wi-Fi",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the company tablet repair one phone that retains an obsolete saved Wi-Fi configuration while nearby devices connect successfully? What should support do NEXT?",
+    "question": "A tablet connects to a new office SSID but cannot reach the gateway. Its Wi-Fi settings still contain a static address from a different subnet, while nearby devices receive valid DHCP leases. What should the technician change?",
     "choices": [
-      "Factory-reset the access point",
-      "Forget and rejoin the wireless network after verifying the access point works",
-      "Disable cellular service",
-      "Enable developer mode"
+      "Change the access point encryption for every user",
+      "Return the tablet IPv4 setting to DHCP and renew its address",
+      "Remove the tablet screen lock",
+      "Configure the old gateway on the new office router"
     ],
     "answer": 1,
-    "explanation": "The acceptance criteria are met by Forget and rejoin the wireless network after verifying the access point works, which gives the organization a verifiable way to repair one phone that retains an obsolete saved Wi-Fi configuration while nearby devices connect successfully. Factory-reset the access point would fail final validation because the known-good access point and single-device scope favor refreshing that saved network rather than changing shared infrastructure."
+    "explanation": "The stale static address belongs to another subnet and explains why only this tablet fails. Restoring DHCP gives it the correct local address, gateway, and DNS settings."
   },
   {
     "id": "A1202-PE6-072",
@@ -1173,15 +1173,15 @@
     "objective": "1.2",
     "blueprint": "Types of installations > Zero-touch deployment",
     "difficulty": "Level 2",
-    "question": "To provision a large shipment of identical remote laptops without asking users to step through installation prompts, a retail support center needs one supported choice for its executive notebook. What should the technician implement?",
+    "question": "A company is replacing 400 employee laptops. Devices should enroll, receive approved applications, and apply security policy when each user first signs in without technicians imaging them individually. Which installation approach is BEST?",
     "choices": [
-      "Perform individual USB installations",
-      "Configure multiboot manually",
-      "Use a zero-touch deployment",
-      "Create local accounts by telephone"
+      "Manual installation from optical media at every desk",
+      "An in-place repair of the retired laptops",
+      "Zero-touch deployment",
+      "A multiboot menu with no management enrollment"
     ],
     "answer": 2,
-    "explanation": "For the policy-controlled outcome, Use a zero-touch deployment is appropriate: it enables support to provision a large shipment of identical remote laptops without asking users to step through installation prompts. Perform individual USB installations cannot produce the required verified result because manual media and user-driven setup do not scale or enforce the required standardized configuration."
+    "explanation": "Zero-touch deployment uses enrollment and cloud/device management to configure new systems during first-use provisioning. Manual imaging would not meet the scale or hands-off requirement."
   },
   {
     "id": "A1202-PE6-075",
@@ -1269,15 +1269,15 @@
     "objective": "3.1",
     "blueprint": "Blue screen of death (BSOD)",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can isolate a repeatable blue-screen failure that began immediately after a storage-controller driver update while hardware diagnostics pass after baseline testing clears the shared services. For the shared desktop, the technician must preserve available evidence and the change must remain inside the approved scope. What should support do NEXT?",
+    "question": "A laptop begins crashing only when a newly installed VPN filter loads. A memory dump names that filter, Safe Mode remains stable, and hardware diagnostics pass. What should support do NEXT?",
     "choices": [
-      "Roll back the storage driver before reviewing the dump",
-      "Use System Restore without identifying which recent change failed",
-      "Analyze the stop code and the recently changed driver",
-      "Run SFC even though the crash dump identifies a third-party module"
+      "Replace the display panel",
+      "Clear browser cookies",
+      "Roll back or remove the VPN filter driver and verify normal startup",
+      "Increase the user mailbox quota"
     ],
     "answer": 2,
-    "explanation": "For the policy-controlled outcome, Analyze the stop code and the recently changed driver is appropriate: it enables support to isolate a repeatable blue-screen failure that began immediately after a storage-controller driver update while hardware diagnostics pass. Roll back the storage driver before reviewing the dump cannot produce the required verified result because rolling back before correlating the stop code can reverse the wrong change when more than one recent component changed."
+    "explanation": "The dump and Safe Mode comparison isolate the new filter driver as the trigger. Rolling it back is a targeted, reversible correction; unrelated hardware and application settings do not match the evidence."
   },
   {
     "id": "A1202-PE6-081",
@@ -1285,15 +1285,15 @@
     "objective": "1.6",
     "blueprint": "Apps",
     "difficulty": "Level 3",
-    "question": "To remove an installed desktop application and review its optional components from the supported Windows settings interface, the technician reproduces the condition on the remote endpoint and compares it with a known-good baseline. The user data cannot be discarded. Which choice satisfies the documented need?",
+    "question": "A Windows user needs to revoke camera permission from one conferencing application while keeping the camera available to an approved telehealth app. Where should support make the change?",
     "choices": [
-      "Open Settings > Apps",
-      "Open Personalization",
-      "Edit the registry uninstall key",
-      "Clear the Microsoft Store cache"
+      "Privacy and security application permissions",
+      "Disk Management",
+      "Windows Memory Diagnostic",
+      "Device Manager by uninstalling the camera for all apps"
     ],
     "answer": 0,
-    "explanation": "The acceptance criteria are met by Open Settings > Apps, which gives the organization a verifiable way to remove an installed desktop application and review its optional components from the supported Windows settings interface. Open Personalization would fail final validation because Device Manager handles hardware drivers, not normal application removal and optional application components."
+    "explanation": "Per-application privacy permissions can remove camera access from only the unapproved app. Uninstalling the camera disables it globally and would violate the requirement."
   },
   {
     "id": "A1202-PE6-082",
@@ -1317,15 +1317,15 @@
     "objective": "2.2",
     "blueprint": "NTFS vs. share permissions",
     "difficulty": "Level 4",
-    "question": "To restore access when the share grants Change but the user is denied by a more restrictive NTFS permission on the folder, the response must satisfy two competing constraints at a manufacturing plant: the final state must be verified before handoff and the solution must use vendor-supported methods. A partial workaround failed verification. What should the technician implement?",
+    "question": "A user can modify a project folder locally. Over the network, NTFS still grants Modify and the share grants Full Control to Employees, but the user also belongs to a Contractors group with an explicit share-level Deny Change entry. Other Employees can write normally. What explains the user result?",
     "choices": [
-      "Grant Full Control on the share to Everyone",
-      "Correct the restrictive NTFS permission",
-      "Convert the volume to FAT32",
-      "Clear browser credentials"
+      "The NTFS Modify permission is ignored for every network connection",
+      "The explicit share-level Deny overrides the share Allow entries before NTFS access is combined",
+      "The file extension makes the folder read-only for contractors",
+      "DHCP applies different file permissions to contractor devices"
     ],
     "answer": 1,
-    "explanation": "The acceptance criteria are met by Correct the restrictive NTFS permission, which gives the organization a verifiable way to restore access when the share grants Change but the user is denied by a more restrictive NTFS permission on the folder. Grant Full Control on the share to Everyone would fail final validation because effective network access is constrained by both share and NTFS permissions, so broadening only the share cannot override the NTFS denial."
+    "explanation": "Share permissions combine group memberships before they are evaluated with NTFS, and an explicit Deny overrides the applicable Allow entries. Therefore this user is blocked at the share layer despite NTFS Modify and the Employees Allow; the other employees lack the denying membership."
   },
   {
     "id": "A1202-PE6-084",
@@ -1333,15 +1333,15 @@
     "objective": "3.1",
     "blueprint": "Degraded performance",
     "difficulty": "Level 2",
-    "question": "A technician must restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal for a remote engineering firm. The result must be auditable. Which action addresses the verified cause?",
+    "question": "A workstation pauses whenever document search indexing runs. Resource Monitor shows a sustained disk queue during indexing, while CPU, memory, and SMART health remain normal. Which change is MOST appropriate?",
     "choices": [
-      "Replace the keyboard",
-      "Disable BitLocker",
-      "Identify the process causing sustained resource exhaustion",
-      "Create another local profile"
+      "Disable the system drive write cache permanently",
+      "Replace the processor with a faster model",
+      "Reschedule indexing for an off-hours maintenance window",
+      "Delete the search database while users are working"
     ],
     "answer": 2,
-    "explanation": "For the policy-controlled outcome, Identify the process causing sustained resource exhaustion is appropriate: it enables support to restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal. Replace the keyboard cannot produce the required verified result because the measured resource consumption points to a process problem rather than storage, encryption, or profile configuration."
+    "explanation": "The evidence ties the slowdown to predictable storage contention from indexing rather than failing hardware. Moving that workload outside active hours reduces interference without discarding the search function or changing unrelated components."
   },
   {
     "id": "A1202-PE6-085",
@@ -1349,15 +1349,15 @@
     "objective": "1.8",
     "blueprint": "Features > Keychain",
     "difficulty": "Level 4",
-    "question": "A community bank must synchronize and securely retrieve saved website and wireless credentials for an authorized Mac user. One proposed response would correct a visible symptom but leave the verified cause unresolved. Unrelated users must remain online, and the action must be reversible. Which control BEST meets the requirement?",
+    "question": "A managed Mac automatically joins the company WLAN, and an authorized technician must provision a replacement phone with the current password. Keychain Access shows two items for the same SSID: a login-keychain item changed last year and a System-keychain AirPort network password changed after last month’s rotation. Which action retrieves the valid credential without resetting it?",
     "choices": [
-      "Finder",
-      "Mission Control",
-      "Disk Utility",
-      "Keychain"
+      "Reveal the older login-keychain item because it belongs to the signed-in user",
+      "Delete both items and disable wireless security",
+      "Use Disk Utility to extract the password from the network adapter",
+      "Open the current System-keychain AirPort network password item and reveal it after administrator authorization"
     ],
     "answer": 3,
-    "explanation": "The acceptance criteria are met by Keychain, which gives the organization a verifiable way to synchronize and securely retrieve saved website and wireless credentials for an authorized Mac user. Finder would fail final validation because FileVault encrypts the disk but does not supply the requested credential-management function."
+    "explanation": "The recent System-keychain AirPort item corresponds to the machine-wide WLAN credential updated during rotation. Revealing that specific item with authorization retrieves the active secret; the older login item is stale, and resetting security is unnecessary."
   },
   {
     "id": "A1202-PE6-086",
@@ -1413,15 +1413,15 @@
     "objective": "2.2",
     "blueprint": "Defender Antivirus > Update definitions",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the enrolled smartphone ensure an online Windows workstation uses current signatures after it failed to recognize a newly documented threat? What should the technician implement?",
+    "question": "A disconnected laptop has antivirus definitions that are three weeks old. Before scanning a suspicious removable drive, what should support do?",
     "choices": [
-      "Run a full scan with the stale definitions",
-      "Update the Defender platform but not its signatures",
-      "Restore the previously quarantined sample",
-      "Update the Defender security intelligence before rescanning"
+      "Scan immediately with the stale signatures and assume a clean result is final",
+      "Disable the antivirus so the drive opens faster",
+      "Copy the suspicious files to a shared server first",
+      "Reconnect through the approved network and update the antivirus definitions"
     ],
     "answer": 3,
-    "explanation": "The acceptance criteria are met by Update the Defender security intelligence before rescanning, which gives the organization a verifiable way to ensure an online Windows workstation uses current signatures after it failed to recognize a newly documented threat. Run a full scan with the stale definitions would fail final validation because a scan using stale signatures still lacks the newly published detection information."
+    "explanation": "Updated definitions give the scanner current detection knowledge before potentially hostile media is opened. A stale scan can miss newer threats, and copying files first increases exposure."
   },
   {
     "id": "A1202-PE6-090",
@@ -1429,14 +1429,14 @@
     "objective": "4.7",
     "blueprint": "Appropriately deal with difficult customers or situations. > Clarify customer statements (i.e., ask open-ended questions to narrow the scope of the issue, restate the issue, or question to verify understanding).",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to narrow an angry caller description without interrupting or assuming the cause. The branch computer is the only affected endpoint, and a tested recovery path must remain available. Which action preserves the required control?",
+    "question": "A caller says, \"The computer lost everything,\" but cannot describe what is missing. What should the technician do FIRST?",
     "choices": [
-      "Ask an open-ended question and restate the issue for confirmation",
-      "Argue that the user caused it",
-      "Use unexplained acronyms",
-      "Ignore the reported business impact"
+      "Ask open-ended questions, then restate the specific symptoms for confirmation",
+      "Assume the drive failed and order a replacement",
+      "Tell the caller that the description is incorrect",
+      "End the call until the user knows the technical cause"
     ],
     "answer": 0,
-    "explanation": "For the policy-controlled outcome, Ask an open-ended question and restate the issue for confirmation is appropriate: it enables support to narrow an angry caller description without interrupting or assuming the cause. Argue that the user caused it cannot produce the required verified result because defensiveness and premature promises damage trust and do not establish an accurate problem statement."
+    "explanation": "Open-ended questions uncover what changed, and restating the issue confirms shared understanding before troubleshooting. Assuming a failure from vague wording risks an unnecessary and incorrect action."
   }
 ]

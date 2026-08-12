@@ -101,15 +101,15 @@
     "objective": "2.3",
     "blueprint": "Authentication > Remote Authentication Dialin User Service (RADIUS)",
     "difficulty": "Level 2",
-    "question": "A technician compares the current state of a service-desk computer with its approved baseline at a two-campus college: it must centralize wireless network authentication and accounting for enterprise access points using the existing directory. Which control BEST meets the requirement?",
+    "question": "Remote employees authenticate successfully to the VPN, but the VPN concentrator cannot validate them after its shared secret was changed on the RADIUS server. Local RADIUS tests succeed. What should the administrator compare FIRST?",
     "choices": [
-      "Use TACACS+ for end-user wireless sessions",
-      "Use one WPA3-Personal key for all employees",
-      "Use RADIUS",
-      "Use Kerberos without an 802.1X authentication service"
+      "The employee desktop wallpaper policy",
+      "The printer paper size on the VPN concentrator",
+      "The RADIUS shared secret and client definition on both systems",
+      "The public website TLS certificate"
     ],
     "answer": 2,
-    "explanation": "The failure evidence points to Use RADIUS. That response corrects the condition by allowing support to centralize wireless network authentication and accounting for enterprise access points using the existing directory. Trying Use TACACS+ for end-user wireless sessions would leave the verified cause in place because TACACS+ is optimized for network-device administration rather than the required 802.1X user authentication and accounting."
+    "explanation": "The concentrator is a RADIUS client and must use the same shared secret and client definition configured on the server. Successful local tests show the identity store works, isolating the inter-system RADIUS trust."
   },
   {
     "id": "A1202-PE3-008",
@@ -229,15 +229,15 @@
     "objective": "2.4",
     "blueprint": "Malware > Rootkit",
     "difficulty": "Level 2",
-    "question": "A nonprofit agency requires support to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. The requirement was confirmed during a known-good comparison. Which action addresses the verified cause?",
+    "question": "Security software finds nothing, but an offline integrity check shows a boot component has been modified and the process hiding network connections loads before the OS. Which malware type BEST matches the evidence?",
     "choices": [
-      "Spyware",
       "Adware",
+      "Spam",
       "Rootkit",
-      "Trojan"
+      "Cookie"
     ],
     "answer": 2,
-    "explanation": "The failure evidence points to Rootkit. That response corrects the condition by allowing support to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. Trying Spyware would leave the verified cause in place because spyware collects information, but it does not specifically explain concealed privileged components and tampered low-level visibility."
+    "explanation": "Boot-level modification and concealment before normal OS defenses are hallmarks of a rootkit. Adware and browser cookies do not normally hide kernel activity or alter boot components."
   },
   {
     "id": "A1202-PE3-016",
@@ -309,15 +309,15 @@
     "objective": "2.1",
     "blueprint": "Physical security > Access control vestibule",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to allow one authenticated person at a time into a restricted room and reduce tailgating on the support laptop; shared infrastructure remains healthy. The change must remain inside the approved scope. What should the technician implement?",
+    "question": "A research facility needs an entrance that prevents the second door from opening until the first door closes and security validates the single occupant. Which physical control BEST enforces that workflow?",
     "choices": [
-      "Add bollards",
-      "Install a cable lock",
-      "Use a privacy filter",
-      "Install an access control vestibule"
+      "A visitor sign-in sheet without controlled doors",
+      "A privacy screen on the receptionist monitor",
+      "A cable lock attached to the door handle",
+      "An access control vestibule with interlocked doors"
     ],
     "answer": 3,
-    "explanation": "The known-good comparison makes Install an access control vestibule the next logical step; it enables the technician to allow one authenticated person at a time into a restricted room and reduce tailgating. Add bollards does not follow the failure pattern because bollards stop vehicles and cable locks secure equipment; neither enforces single-person entry."
+    "explanation": "An access control vestibule uses interlocked doors to admit one validated person at a time and reduce tailgating. Logging visitors alone does not physically enforce the sequence."
   },
   {
     "id": "A1202-PE3-021",
@@ -325,15 +325,15 @@
     "objective": "2.4",
     "blueprint": "Tools and methods > Endpoint detection and response (EDR)",
     "difficulty": "Level 2",
-    "question": "A retail support center requires support to collect endpoint telemetry, isolate a compromised host, and trace the process chain during an active incident. The requirement was confirmed during a known-good comparison. Which choice satisfies the documented need?",
+    "question": "A security team needs to isolate an endpoint, collect its process tree, and search other hosts for the same malicious hash from one console. Which platform BEST supports those actions?",
     "choices": [
-      "Use the EDR platform",
-      "Run Disk Cleanup",
-      "Use a password manager",
-      "Deploy only a packet-filtering router"
+      "Endpoint detection and response (EDR)",
+      "A standalone screen magnifier",
+      "A basic unmanaged USB hub",
+      "A local printer queue"
     ],
     "answer": 0,
-    "explanation": "The failure evidence points to Use the EDR platform. That response corrects the condition by allowing support to collect endpoint telemetry, isolate a compromised host, and trace the process chain during an active incident. Trying Run Disk Cleanup would leave the verified cause in place because the router and browser controls lack the endpoint process telemetry and containment capability required by responders."
+    "explanation": "EDR provides centralized endpoint telemetry, investigation, hunting, and response actions such as isolation. A basic local utility cannot correlate or contain activity across hosts."
   },
   {
     "id": "A1202-PE3-022",
@@ -373,15 +373,15 @@
     "objective": "2.10",
     "blueprint": "Router settings > Firmware updates",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to remediate a documented router vulnerability after backing up configuration and confirming the exact hardware revision. The managed SOHO gateway is the only affected endpoint, and the user data cannot be discarded. Which choice satisfies the documented need?",
+    "question": "A router is running a firmware version with a known remote-management vulnerability. The vendor supplies a signed update, configuration export, and rollback image. What should the technician do FIRST?",
     "choices": [
-      "Hide the SSID",
-      "Change only the DHCP lease time",
-      "Add an unverified third-party image",
-      "Install the vendor-supported firmware update"
+      "Install firmware from an unofficial mirror without verification",
+      "Expose remote management so the update can download faster",
+      "Factory-reset the router and discard the configuration",
+      "Back up the configuration and verify the signed firmware before the maintenance update"
     ],
     "answer": 3,
-    "explanation": "The known-good comparison makes Install the vendor-supported firmware update the next logical step; it enables the technician to remediate a documented router vulnerability after backing up configuration and confirming the exact hardware revision. Hide the SSID does not follow the failure pattern because SSID and DHCP changes do not correct vulnerable router code, and an unverified image violates the support requirement."
+    "explanation": "A verified backup and authentic signed image provide recovery and supply-chain protection before the controlled update. Unofficial firmware or an unnecessary reset introduces avoidable risk."
   },
   {
     "id": "A1202-PE3-025",
@@ -597,15 +597,15 @@
     "objective": "3.2",
     "blueprint": "Connectivity issues > Wi-Fi",
     "difficulty": "Level 2",
-    "question": "To repair one phone that retains an obsolete saved Wi-Fi configuration while nearby devices connect successfully, a county administration office needs one supported choice for its company tablet. What should support do NEXT?",
+    "question": "A managed phone joins a certificate-based corporate WLAN but NAC places it in the guest VLAN because its private randomized MAC differs from the enrolled hardware address. Other enrolled phones work normally. What should support verify?",
     "choices": [
-      "Factory-reset the access point",
-      "Forget and rejoin the wireless network after verifying the access point works",
-      "Replace the phone display",
-      "Clear all photos"
+      "Restart every access point in the building",
+      "Apply the organization policy for the phone MAC identity and update NAC registration as authorized",
+      "Disable certificate authentication for all wireless users",
+      "Replace the phone battery"
     ],
     "answer": 1,
-    "explanation": "The known-good comparison makes Forget and rejoin the wireless network after verifying the access point works the next logical step; it enables the technician to repair one phone that retains an obsolete saved Wi-Fi configuration while nearby devices connect successfully. Factory-reset the access point does not follow the failure pattern because the known-good access point and single-device scope favor refreshing that saved network rather than changing shared infrastructure."
+    "explanation": "The WLAN association succeeds, but NAC sees an identity that does not match enrollment. Correcting the managed private-MAC policy or authorized registration addresses that identity mismatch without weakening authentication globally."
   },
   {
     "id": "A1202-PE3-039",
@@ -629,15 +629,15 @@
     "objective": "2.4",
     "blueprint": "Malware > Ransomware",
     "difficulty": "Level 4",
-    "question": "Support must identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable. Three findings guide failure analysis: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. The final state must be verified before handoff; the user data cannot be discarded. Which response follows the evidence?",
+    "question": "A workstation is rapidly renaming local and mapped-drive files, EDR identifies the responsible process under the signed-in user, and the backup repository is still reachable but unchanged. The business wants recovery started immediately. What should the technician do FIRST?",
     "choices": [
-      "Ransomware",
-      "Rootkit",
-      "Keylogger",
-      "Boot sector virus"
+      "Isolate the workstation and terminate its access to shared storage before beginning recovery",
+      "Restore the mapped drive while the active workstation remains connected",
+      "Delete the EDR evidence and reboot every file server",
+      "Pay the note before containing the process"
     ],
     "answer": 0,
-    "explanation": "The known-good comparison makes Ransomware the next logical step; it enables the technician to identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable. Rootkit does not follow the failure pattern because a rootkit hides privileged persistence, while the encryption and payment demand are characteristic of ransomware."
+    "explanation": "The active ransomware process can continue damaging reachable storage, so containment must precede restoration. Isolating the endpoint and ending its share access stops further writes while retaining EDR evidence; restoring first would expose recovered files to the same process."
   },
   {
     "id": "A1202-PE3-041",
@@ -757,15 +757,15 @@
     "objective": "3.1",
     "blueprint": "Degraded performance",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal. The training-room PC is the only affected endpoint, and the change must remain inside the approved scope. Which action addresses the verified cause?",
+    "question": "A desktop becomes progressively slower during the day. One approved application grows from 400 MB to 9 GB of memory, performance returns after that application is restarted, and malware scans are clean. What should support do NEXT?",
     "choices": [
-      "Replace the keyboard",
-      "Reset the wireless password",
-      "Change the time zone",
-      "Identify the process causing sustained resource exhaustion"
+      "Replace the SSD because memory usage increased",
+      "Disable Windows Update for the entire workstation",
+      "Add every available user to the local Administrators group",
+      "Update or repair the application and document the suspected memory leak"
     ],
     "answer": 3,
-    "explanation": "The known-good comparison makes Identify the process causing sustained resource exhaustion the next logical step; it enables the technician to restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal. Replace the keyboard does not follow the failure pattern because the measured resource consumption points to a process problem rather than storage, encryption, or profile configuration."
+    "explanation": "The repeatable growth within one process and temporary recovery after restarting it indicate an application memory leak. Updating or repairing that application targets the cause and provides useful vendor evidence; storage replacement does not address process memory consumption."
   },
   {
     "id": "A1202-PE3-049",
@@ -805,15 +805,15 @@
     "objective": "3.3",
     "blueprint": "Security concerns > Unauthorized/malicious application",
     "difficulty": "Level 3",
-    "question": "To respond after an unknown accessibility-service application begins reading notifications and sending background traffic, the technician reproduces the condition on the enrolled mobile device and compares it with a known-good baseline. The technician must preserve available evidence. Which action addresses the verified cause?",
+    "question": "A free flashlight app installed from an unknown package requests microphone, contact, and location access and transmits data while the screen is off. The user has not entered credentials since installation. What should support do FIRST?",
     "choices": [
-      "Enable more notifications",
-      "Remove the unauthorized application and rotate exposed credentials",
-      "Disable backups",
-      "Change the text size"
+      "Grant every requested permission so the app stops prompting",
+      "Remove the sideloaded application and run the approved mobile security scan",
+      "Reset only the wireless network profile",
+      "Move the application icon into a hidden folder"
     ],
     "answer": 1,
-    "explanation": "The failure evidence points to Remove the unauthorized application and rotate exposed credentials. That response corrects the condition by allowing support to respond after an unknown accessibility-service application begins reading notifications and sending background traffic. Trying Enable more notifications would leave the verified cause in place because the granted accessibility rights and outbound traffic indicate malicious application access, not a display or charging defect."
+    "explanation": "The excessive permissions and background transfer identify the sideloaded app as the immediate threat. Removing it and scanning checks for related artifacts; credential rotation is not the first step when no credential exposure is indicated."
   },
   {
     "id": "A1202-PE3-052",
@@ -949,15 +949,15 @@
     "objective": "3.3",
     "blueprint": "Common symptoms > Leaked personal files/data",
     "difficulty": "Level 2",
-    "question": "A technician must contain a cloud-sharing application that published private mobile photos through an unintended public link for an insurance branch. Existing access controls must remain effective. Which action addresses the verified cause?",
+    "question": "A managed phone containing downloaded personnel files is reported lost. MDM shows the phone has not checked in since leaving the office, and the owner confirms that no cloud-sharing link was created. What should support do FIRST?",
     "choices": [
-      "Clear only the browser history",
-      "Replace the SIM card",
-      "Revoke the application access token and investigate the exposed files",
-      "Change the home screen"
+      "Reset the employee password and close the ticket",
+      "Remove the device record from MDM before it reconnects",
+      "Issue the approved remote-lock command and begin the lost-device procedure",
+      "Publish replacement copies of the personnel files"
     ],
     "answer": 2,
-    "explanation": "The known-good comparison makes Revoke the application access token and investigate the exposed files the next logical step; it enables the technician to contain a cloud-sharing application that published private mobile photos through an unintended public link. Clear only the browser history does not follow the failure pattern because local cosmetic and radio changes do not revoke the cloud authorization or remove the exposed sharing link."
+    "explanation": "The evidence identifies a lost endpoint rather than a public-sharing error. Remote locking through MDM protects the cached data if the phone reconnects, and the lost-device procedure preserves escalation and possible wipe decisions; deleting the MDM record would remove that control channel."
   },
   {
     "id": "A1202-PE3-061",
@@ -1285,15 +1285,15 @@
     "objective": "1.8",
     "blueprint": "Force Quit",
     "difficulty": "Level 4",
-    "question": "Evidence from the Mac desktop establishes a requirement to close one frozen macOS application while preserving unsaved work in the other responsive applications. The prior workaround introduced a second control failure, so a transportation depot needs a supported, scoped response. Only the affected component may be interrupted. Which choice satisfies the documented need?",
+    "question": "A macOS publishing application is unresponsive with an unsaved document. Other applications work, storage is healthy, the application created an Auto Save snapshot five minutes ago, and a normal Quit attempt fails. Which recovery sequence is LEAST disruptive?",
     "choices": [
-      "Wait for the beachball to clear without setting a limit",
-      "Restart the entire Mac from the power button",
-      "Force Quit",
-      "Force-quit Finder instead of the affected application"
+      "Restart the Mac immediately without attempting application recovery",
+      "Erase the startup volume and restore the entire computer",
+      "Force Quit only the affected application, reopen it, and recover the Auto Save version",
+      "Disable FileVault before terminating the application"
     ],
     "answer": 2,
-    "explanation": "The failure evidence points to Force Quit. That response corrects the condition by allowing support to close one frozen macOS application while preserving unsaved work in the other responsive applications. Trying Wait for the beachball to clear without setting a limit would leave the verified cause in place because waiting does not recover a persistently hung process, while restarting the whole Mac risks unrelated unsaved work."
+    "explanation": "Force Quit targets only the hung process, after which the recent Auto Save snapshot provides the best recovery path. A full restart may be unnecessary and can complicate recovery, while disk erasure and encryption changes do not address the application state."
   },
   {
     "id": "A1202-PE3-082",
@@ -1317,15 +1317,15 @@
     "objective": "2.5",
     "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 3",
-    "question": "A two-campus college must classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. The evidence was reproduced during failure analysis, and the technician must avoid a destructive shortcut. What should support do NEXT?",
+    "question": "An accounts-payable employee receives a payment-change request from a real supplier mailbox. The message matches an open invoice, but the supplier confirms its mailbox was compromised and did not authorize the bank change. What should the employee do FIRST?",
     "choices": [
-      "Smishing",
-      "Business email compromise",
-      "Shoulder surfing",
-      "SQL injection"
+      "Send the payment because the message came from the supplier’s real mailbox",
+      "Stop the payment and escalate the verified business email compromise using the fraud procedure",
+      "Reply to the compromised mailbox asking whether the request is genuine",
+      "Delete the message without preserving its headers or reporting it"
     ],
     "answer": 1,
-    "explanation": "The failure evidence points to Business email compromise. That response corrects the condition by allowing support to classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. Trying Smishing would leave the verified cause in place because smishing uses text messages, while the impersonated executive and fraudulent payment request match business email compromise."
+    "explanation": "Use of the real compromised mailbox and invoice context establishes BEC, so the immediate priority is stopping the fraudulent transaction and escalating through the approved channel. Replying inside the compromised thread does not provide independent verification."
   },
   {
     "id": "A1202-PE3-084",
@@ -1365,15 +1365,15 @@
     "objective": "3.1",
     "blueprint": "Time drift",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown after baseline testing clears the shared services. For the branch computer, the technician cannot weaken an existing security control and a tested recovery path must remain available. What should support do NEXT?",
+    "question": "Five domain workstations drift by several minutes, and each reports that the domain time source is unreachable. The domain controller has correct time, DNS works, and a new host firewall rule blocks the Windows Time service only on those clients. Which action BEST restores the trusted hierarchy without weakening other controls?",
     "choices": [
-      "Replace the SSD",
-      "Disable NTP",
-      "Replace the CMOS battery after confirming firmware time also drifts",
-      "Clear event logs"
+      "Point each client permanently to a different public time server",
+      "Replace the CMOS batteries in all five clients",
+      "Correct the scoped firewall rule so the clients can reach the domain time service",
+      "Disable the host firewalls until the next maintenance cycle"
     ],
     "answer": 2,
-    "explanation": "The known-good comparison makes Replace the CMOS battery after confirming firmware time also drifts the next logical step; it enables the technician to correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown. Replace the SSD does not follow the failure pattern because firmware time loss across power-off isolates the RTC power source rather than Windows synchronization or storage."
+    "explanation": "The common failure is a scoped rule blocking access to the valid domain time source. Correcting that rule restores authenticated domain synchronization; public sources would bypass the hierarchy, and battery replacement does not explain the reachability error."
   },
   {
     "id": "A1202-PE3-087",
@@ -1413,15 +1413,15 @@
     "objective": "1.8",
     "blueprint": "System Preferences > Time Machine",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the macOS workstation restore an earlier version of a user document from the Mac backup history without reverting the entire computer? What should the technician implement?",
+    "question": "A Mac backup disk has been disconnected for two weeks. The user now needs a document version from yesterday, and local snapshots are enabled. Where should the technician look FIRST?",
     "choices": [
-      "FileVault",
-      "Time Machine",
-      "Disk Utility",
-      "Spotlight"
+      "Boot Camp Assistant",
+      "Time Machine local snapshots",
+      "Keychain certificate settings",
+      "The Windows Registry"
     ],
     "answer": 1,
-    "explanation": "The failure evidence points to Time Machine. That response corrects the condition by allowing support to restore an earlier version of a user document from the Mac backup history without reverting the entire computer. Trying FileVault would leave the verified cause in place because FileVault protects stored data and Disk Utility manages volumes; neither provides versioned file recovery."
+    "explanation": "Time Machine can retain local snapshots while the normal backup destination is unavailable, making it the appropriate first place to recover a recent version. The other tools do not provide versioned file recovery."
   },
   {
     "id": "A1202-PE3-090",

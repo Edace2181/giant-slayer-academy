@@ -21,15 +21,15 @@
     "objective": "3.4",
     "blueprint": "Browser-related symptoms > Redirection",
     "difficulty": "Level 2",
-    "question": "To stop searches from being sent to an unfamiliar site after an unsigned extension appeared in the browser profile, a two-campus college needs one supported choice for its Windows workstation. Which response follows the evidence?",
+    "question": "Only one Windows browser redirects secure sites, and its proxy setting points to localhost after adware was removed. DNS responses and other browsers are normal. What should the technician do NEXT?",
     "choices": [
-      "Remove the malicious extension and restore approved browser settings",
-      "Replace the network cable",
-      "Increase page-file size",
-      "Run Disk Defragmenter"
+      "Remove the unauthorized proxy setting and complete the approved malware cleanup",
+      "Replace the network switch",
+      "Change the public DNS records for the company",
+      "Disable TLS certificate validation"
     ],
     "answer": 0,
-    "explanation": "Remove the malicious extension and restore approved browser settings is the supported selection for the planned environment: it allows the team to stop searches from being sent to an unfamiliar site after an unsigned extension appeared in the browser profile. The proposal based on Replace the network cable is weaker because the extension timeline and browser-only behavior do not support hardware or system-capacity causes."
+    "explanation": "The browser-specific localhost proxy explains the redirection after the adware incident. Removing that setting and finishing cleanup corrects the local cause; changing public DNS would affect unrelated systems."
   },
   {
     "id": "A1202-PE2-003",
@@ -53,15 +53,15 @@
     "objective": "2.1",
     "blueprint": "Logical security > Multifactor authentication (MFA) > Authenticator application",
     "difficulty": "Level 2",
-    "question": "A distribution warehouse documents a requirement to prevent a stolen password alone from granting access while avoiding dependence on cellular SMS delivery on a reception system. Which choice satisfies the documented need?",
+    "question": "A field engineer must approve sign-ins where cellular service is unavailable but the phone clock and encrypted application storage remain available. Which second factor is MOST appropriate?",
     "choices": [
-      "Require a longer password only",
-      "Require an authenticator application as the second factor",
-      "Use security questions",
-      "Send an SMS code"
+      "An SMS code delivered over the unavailable carrier network",
+      "A time-based code from an authenticator application",
+      "A reusable answer written on the laptop",
+      "The same account password entered a second time"
     ],
     "answer": 1,
-    "explanation": "Require an authenticator application as the second factor is the supported selection for the planned environment: it allows the team to prevent a stolen password alone from granting access while avoiding dependence on cellular SMS delivery. The proposal based on Require a longer password only is weaker because a longer password remains one factor, and SMS does not meet the stated offline and number-porting constraints."
+    "explanation": "A time-based authenticator code can be generated offline and remains a distinct possession factor. SMS depends on unavailable carrier service, and reusing knowledge-based secrets does not provide the required independent factor."
   },
   {
     "id": "A1202-PE2-005",
@@ -165,15 +165,15 @@
     "objective": "3.4",
     "blueprint": "Common symptoms > Altered system or personal files > Missing/renamed files",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the Windows workstation respond when many documents are renamed, cannot be opened, and a payment note appears on the desktop? Which response follows the evidence?",
+    "question": "An endpoint monitoring alert reports rapid file-extension changes on a workstation and new modifications on a mapped department share. No ransom note has appeared yet. What should the technician do FIRST?",
     "choices": [
-      "Rebuild the search index",
-      "Change file associations",
-      "Isolate the computer and begin the malware incident procedure",
-      "Run Disk Cleanup"
+      "Open several changed files to see whether the process continues",
+      "Delete the monitoring alert and wait for a user report",
+      "Disconnect the workstation from the network to stop additional share changes",
+      "Restore the share while the workstation remains connected"
     ],
     "answer": 2,
-    "explanation": "For this deployment decision, Isolate the computer and begin the malware incident procedure meets the operational requirement to respond when many documents are renamed, cannot be opened, and a payment note appears on the desktop. Rebuild the search index fails the stated acceptance criteria because the broad file changes and payment demand indicate an active compromise, so routine file-index or association repairs are unsafe."
+    "explanation": "The active modifications have reached a mapped share, so immediate network isolation limits additional damage. Restoration should wait until the source is contained and the affected scope is known."
   },
   {
     "id": "A1202-PE2-012",
@@ -181,15 +181,15 @@
     "objective": "4.1",
     "blueprint": "Ticketing systems > Severity",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to prioritize a payroll outage affecting every employee above a cosmetic issue reported by one user while recording both tickets. The executive notebook is the only affected endpoint, and the action must be reversible. What should occur FIRST?",
+    "question": "A company president reports a misspelled desktop shortcut while twelve shipping stations cannot print required carrier labels. Both incidents arrived together. Which ticket should receive the higher severity?",
     "choices": [
-      "Assign severity from documented business impact and urgency",
-      "Close the cosmetic ticket without documentation",
-      "Use ticket arrival time as the only priority",
-      "Assign every request critical severity"
+      "The shipping-label outage because its business impact and affected-user count are greater",
+      "The president shortcut because executive titles always override impact",
+      "Both tickets must receive identical severity regardless of scope",
+      "Neither ticket should be recorded until a technician is available"
     ],
     "answer": 0,
-    "explanation": "Assign severity from documented business impact and urgency is the supported selection for the planned environment: it allows the team to prioritize a payroll outage affecting every employee above a cosmetic issue reported by one user while recording both tickets. The proposal based on Close the cosmetic ticket without documentation is weaker because arrival time alone ignores impact and urgency, while making every ticket critical destroys useful prioritization."
+    "explanation": "Severity follows documented impact and urgency, not job title alone. The multi-station shipping outage blocks business operations for many users, while the shortcut spelling issue is cosmetic."
   },
   {
     "id": "A1202-PE2-013",
@@ -309,15 +309,15 @@
     "objective": "4.1",
     "blueprint": "Asset management > Configuration management database (CMDB)",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to record that a replaced server now supports a specific business service and uses a new storage component on the field technician laptop; shared infrastructure remains healthy. Only the affected component may be interrupted. Which control BEST meets the requirement?",
+    "question": "A retired laptop has been wiped and transferred to an approved recycler, but the CMDB still lists it as assigned and in service. Which update should the technician make before closing the disposal ticket?",
     "choices": [
-      "Update only the flat hardware inventory",
-      "Record the replacement solely in the incident ticket",
-      "Revise the network diagram without the service relationship",
-      "Update the CMDB relationship and asset record"
+      "Delete the user record associated with the laptop",
+      "Create a software incident for the retired operating system",
+      "Leave the asset active until the recycler resells it",
+      "Change the asset lifecycle state and record the recycler disposition"
     ],
     "answer": 3,
-    "explanation": "Update the CMDB relationship and asset record is the supported selection for the planned environment: it allows the team to record that a replaced server now supports a specific business service and uses a new storage component. The proposal based on Update only the flat hardware inventory is weaker because a flat inventory records the device but not the required relationship between configuration items and business services."
+    "explanation": "The CMDB should reflect the laptop lifecycle and final disposition so inventory, ownership, and audit records agree with the disposal evidence. Removing a user or creating an unrelated incident would not reconcile the asset record."
   },
   {
     "id": "A1202-PE2-021",
@@ -357,15 +357,15 @@
     "objective": "1.1",
     "blueprint": "Vendor life-cycle limitations > End-of-life (EOL)",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the mobile device eliminate the risk created by an operating system that no longer receives vendor security fixes? Which control BEST meets the requirement?",
+    "question": "A legacy workstation controls a supported instrument, but its operating system is past end of life and cannot receive security updates. The vendor now certifies the instrument software on a current OS. What should the technician recommend?",
     "choices": [
-      "Purchase extended security updates after confirming the vendor no longer offers them",
-      "Migrate the workstation to a supported operating system",
-      "Run the unsupported OS in a segmented legacy network indefinitely",
-      "Use application allowlisting as a permanent substitute for OS patches"
+      "Keep the unsupported OS permanently because the instrument still runs",
+      "Test and migrate the workstation to the vendor-supported current OS",
+      "Expose the workstation directly to the internet for easier patching",
+      "Disable logging so the legacy system uses fewer resources"
     ],
     "answer": 1,
-    "explanation": "For this deployment decision, Migrate the workstation to a supported operating system meets the operational requirement to eliminate the risk created by an operating system that no longer receives vendor security fixes. Purchase extended security updates after confirming the vendor no longer offers them fails the stated acceptance criteria because the premise confirms that the vendor no longer provides the extended fixes required to make that option viable."
+    "explanation": "Vendor certification removes the compatibility reason to remain on an unsupported platform. A tested migration restores security support while preserving the instrument workflow."
   },
   {
     "id": "A1202-PE2-024",
@@ -517,15 +517,15 @@
     "objective": "4.1",
     "blueprint": "Types of documents > Knowledge base/articles",
     "difficulty": "Level 2",
-    "question": "A county administration office requires support to make a verified solution for a recurring supported issue searchable to other technicians with prerequisites and rollback notes. The requirement was confirmed during a known-good comparison. What should occur FIRST?",
+    "question": "A technician has documented a repeatable fix, required permissions, verification steps, and rollback procedure for a supported application. What must occur before the draft becomes a searchable knowledge article?",
     "choices": [
-      "Publish a reviewed knowledge-base article",
-      "Send the fix in a private chat only",
-      "Leave undocumented registry changes",
-      "Close future tickets automatically"
+      "Have the article technically reviewed and approved through the publishing process",
+      "Publish it anonymously without review",
+      "Remove the rollback section to make it shorter",
+      "Attach customer passwords as proof that the fix works"
     ],
     "answer": 0,
-    "explanation": "For this deployment decision, Publish a reviewed knowledge-base article meets the operational requirement to make a verified solution for a recurring supported issue searchable to other technicians with prerequisites and rollback notes. Send the fix in a private chat only fails the stated acceptance criteria because private or device-local notes cannot provide a controlled reusable support reference."
+    "explanation": "Peer or technical review validates accuracy and safety before broad reuse. A complete draft is not automatically authoritative, and sensitive credentials must never be included."
   },
   {
     "id": "A1202-PE2-034",
@@ -725,15 +725,15 @@
     "objective": "1.3",
     "blueprint": "Hardware requirements > Trusted Platform Module (TPM)",
     "difficulty": "Level 2",
-    "question": "A community bank documents a requirement to satisfy the Windows 11 measured-boot requirement after compatibility testing reports that the processor, memory, and storage already pass on an executive notebook. Which choice satisfies the documented need?",
+    "question": "A Windows 11 readiness check passes CPU, memory, storage, and Secure Boot but reports that TPM 2.0 is unavailable. Firmware setup shows a supported firmware TPM that is disabled. What should the technician do?",
     "choices": [
-      "Enable legacy BIOS mode",
-      "Enable TPM 2.0 in firmware",
-      "Disable Secure Boot",
-      "Convert GPT to MBR"
+      "Replace the SSD with a larger model",
+      "Enable the firmware TPM and rerun the readiness check",
+      "Turn off Secure Boot",
+      "Install an unsupported operating-system bypass"
     ],
     "answer": 1,
-    "explanation": "Enable TPM 2.0 in firmware is the supported selection for the planned environment: it allows the team to satisfy the Windows 11 measured-boot requirement after compatibility testing reports that the processor, memory, and storage already pass. The proposal based on Enable legacy BIOS mode is weaker because legacy boot and MBR move the system away from the Windows 11 security requirements and do not provide the missing hardware trust function."
+    "explanation": "The hardware provides the required TPM but firmware has disabled it. Enabling that feature addresses the one failed requirement without bypassing supported installation controls."
   },
   {
     "id": "A1202-PE2-047",
@@ -789,15 +789,15 @@
     "objective": "2.9",
     "blueprint": "Outsourcing concepts > Certification of destruction/recycling",
     "difficulty": "Level 2",
-    "question": "To prove that a contracted recycler destroyed retired drives containing regulated data according to policy, a field-services company needs one supported choice for its engineering notebook. Which control BEST meets the requirement?",
+    "question": "A disposal vendor returns a destruction certificate listing a drive quantity but no serial numbers, even though the custody manifest identifies each drive individually. What should the asset manager require before closing the records?",
     "choices": [
-      "Obtain and retain a certificate of destruction",
-      "Request a verbal assurance",
-      "Perform a quick format only",
-      "Remove the drive labels"
+      "A corrected certificate that ties each serialized drive to its destruction",
+      "A verbal statement that the drives were probably destroyed",
+      "Deletion of the original custody manifest",
+      "A new purchase order for unrelated storage"
     ],
     "answer": 0,
-    "explanation": "Obtain and retain a certificate of destruction is the supported selection for the planned environment: it allows the team to prove that a contracted recycler destroyed retired drives containing regulated data according to policy. The proposal based on Request a verbal assurance is weaker because a verbal statement or quick format does not provide auditable proof of destruction or reliably eliminate recoverable data."
+    "explanation": "The certificate must reconcile the serialized assets transferred to the vendor so the organization can prove each one was destroyed. An unsigned or nonspecific assurance cannot close the custody gap."
   },
   {
     "id": "A1202-PE2-051",
@@ -869,15 +869,15 @@
     "objective": "2.7",
     "blueprint": "Account management > Use failed attempts lockout",
     "difficulty": "Level 4",
-    "question": "An insurance branch must slow repeated online password guessing against local workstation accounts without permanently disabling valid users. One proposed response would correct a visible symptom but leave the verified cause unresolved. Existing access controls must remain effective, and the result must be auditable. Which choice satisfies the documented need?",
+    "question": "A password-spray campaign is causing thousands of attempts against many accounts. The business requires temporary blocking of repeated failures without letting an attacker lock an account indefinitely with one request stream. Which policy design is BEST?",
     "choices": [
-      "Remove password complexity",
-      "Configure a failed-attempt lockout policy",
-      "Enable automatic logon",
-      "Create a shared account"
+      "Disable all lockout controls",
+      "Configure a documented failed-attempt threshold with a limited lockout duration",
+      "Set the threshold to one failure and require manual unlock only",
+      "Allow unlimited attempts when they originate outside the office"
     ],
     "answer": 1,
-    "explanation": "For this deployment decision, Configure a failed-attempt lockout policy meets the operational requirement to slow repeated online password guessing against local workstation accounts without permanently disabling valid users. Remove password complexity fails the stated acceptance criteria because automatic logon and shared accounts weaken accountability; a measured lockout directly addresses repeated attempts."
+    "explanation": "A threshold and timed lockout slow automated guessing while allowing recovery after the defined period. A one-attempt permanent lockout creates an easy denial-of-service condition, and unlimited attempts remove protection."
   },
   {
     "id": "A1202-PE2-056",
@@ -949,15 +949,15 @@
     "objective": "3.3",
     "blueprint": "Common symptoms > Fake security warnings",
     "difficulty": "Level 2",
-    "question": "A technician must handle repeated urgent infection notices that demand payment even though the managed security console reports no detection for a legal-services office. The technician must preserve available evidence. What should support do NEXT?",
+    "question": "A browser displays a full-screen warning claiming hundreds of infections and demands a credit-card payment, but approved endpoint protection reports no detections and closing the tab removes the message. What is the BEST response?",
     "choices": [
-      "Reset browser notifications but leave the malicious application",
-      "Install a second cleaner advertised by the warning",
-      "Call the displayed support provider",
-      "Close the deceptive page and remove the responsible malicious application or browser data"
+      "Pay the displayed fee to activate the unknown scanner",
+      "Replace the workstation power supply",
+      "Disable the approved endpoint protection",
+      "Close the deceptive page, clear its site data, and scan with approved security tools"
     ],
     "answer": 3,
-    "explanation": "Close the deceptive page and remove the responsible malicious application or browser data is the supported selection for the planned environment: it allows the team to handle repeated urgent infection notices that demand payment even though the managed security console reports no detection. The proposal based on Reset browser notifications but leave the malicious application is weaker because notification reset alone leaves the malicious source able to recreate the deceptive warning."
+    "explanation": "The warning is browser-delivered scareware rather than evidence from the approved security product. Closing it, removing its stored browser data, and scanning safely addresses the deception without rewarding it."
   },
   {
     "id": "A1202-PE2-061",
@@ -1125,15 +1125,15 @@
     "objective": "3.1",
     "blueprint": "Degraded performance",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the field technician laptop restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal? Which response follows the evidence?",
+    "question": "A Windows laptop is slow for several minutes after every sign-in. Task Manager shows six nonessential vendor utilities launching at startup, but CPU and memory return to normal after they finish. What is the MOST appropriate correction?",
     "choices": [
-      "Replace the keyboard",
-      "Reset the wireless password",
-      "Identify the process causing sustained resource exhaustion",
-      "Disable BitLocker"
+      "Replace the system board because startup is slow",
+      "Format the user profile without reviewing startup items",
+      "Disable the unnecessary startup applications and retest sign-in performance",
+      "Increase the page-file size while leaving every startup utility enabled"
     ],
     "answer": 2,
-    "explanation": "For this deployment decision, Identify the process causing sustained resource exhaustion meets the operational requirement to restore responsiveness when one background application holds nearly all CPU and memory while disk health and temperatures are normal. Replace the keyboard fails the stated acceptance criteria because the measured resource consumption points to a process problem rather than storage, encryption, or profile configuration."
+    "explanation": "The slowdown is tied to unnecessary startup programs and disappears after they finish, so disabling those entries addresses the measured cause. Hardware replacement and profile removal are unsupported by the evidence."
   },
   {
     "id": "A1202-PE2-072",
@@ -1269,15 +1269,15 @@
     "objective": "4.7",
     "blueprint": "Set and meet expectations/ timeline and communicate status with the customer.",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can manage a repair that will miss its original estimate because a required part is delayed after baseline testing clears the shared services. For the executive notebook, the maintenance window permits only one controlled change and the final state must be verified before handoff. Which procedural response is appropriate?",
+    "question": "A failed encrypted drive requires a vendor-matched replacement that will arrive in three business days. The customer expected same-day recovery, an approved loaner can restore limited access today, and an untested substitute could invalidate support. Which response BEST balances service continuity and professional expectations?",
     "choices": [
-      "Give a realistic timeline and proactive status updates",
-      "Wait until the original deadline passes before reporting the delay",
-      "Promise the original completion time despite the unavailable part",
-      "Close the ticket and open a new one when the part arrives"
+      "Explain the verified delay, offer the approved loaner, and schedule documented status updates",
+      "Promise same-day completion and install the untested substitute",
+      "Wait for the matched drive without notifying the customer or offering the loaner",
+      "Blame the vendor and close the incident until the shipment arrives"
     ],
     "answer": 0,
-    "explanation": "Give a realistic timeline and proactive status updates is the supported selection for the planned environment: it allows the team to manage a repair that will miss its original estimate because a required part is delayed. The proposal based on Wait until the original deadline passes before reporting the delay is weaker because silence until after the deadline prevents the customer from planning around the known delay."
+    "explanation": "The supported plan communicates the constraint honestly, provides the approved partial-continuity option, and establishes a timeline for follow-up. Installing an untested part risks the recovery and support status, while silence leaves the customer unable to plan."
   },
   {
     "id": "A1202-PE2-081",
@@ -1301,15 +1301,15 @@
     "objective": "3.3",
     "blueprint": "Common symptoms > Leaked personal files/data",
     "difficulty": "Level 3",
-    "question": "The affected enrolled mobile device must contain a cloud-sharing application that published private mobile photos through an unintended public link. A previous attempt treated only the visible symptom, so a manufacturing plant requires a root-cause response. Which action addresses the verified cause?",
+    "question": "An employee used a personal cloud-sync account to move company photographs between a managed phone and a home computer. The employee has signed out, but the synced copies remain outside company control. Which response BEST limits continued exposure while preserving evidence for the privacy investigation?",
     "choices": [
-      "Revoke the application access token and investigate the exposed files",
-      "Clear only the browser history",
-      "Replace the SIM card",
-      "Disable vibration"
+      "Revoke the personal sync authorization and document the external copies for incident response",
+      "Delete every photograph from the managed phone immediately",
+      "Reset the phone network settings and reconnect it to Wi-Fi",
+      "Disable the phone camera without examining the cloud account"
     ],
     "answer": 0,
-    "explanation": "Revoke the application access token and investigate the exposed files is the supported selection for the planned environment: it allows the team to contain a cloud-sharing application that published private mobile photos through an unintended public link. The proposal based on Clear only the browser history is weaker because local cosmetic and radio changes do not revoke the cloud authorization or remove the exposed sharing link."
+    "explanation": "Revoking the sync authorization stops additional transfers, while documenting the external copies preserves the evidence needed to determine notification and recovery obligations. Deleting the local files first could destroy evidence without removing the copies already stored in the personal account."
   },
   {
     "id": "A1202-PE2-083",
@@ -1333,15 +1333,15 @@
     "objective": "3.1",
     "blueprint": "Time drift",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown. The engineering notebook is the only affected endpoint, and a tested recovery path must remain available. What should support do NEXT?",
+    "question": "A traveling laptop shows meeting times two hours early, but its clock remains accurate to the second and time synchronization reports success. The location changed yesterday. What should the technician correct?",
     "choices": [
-      "Replace the SSD",
-      "Disable NTP",
-      "Reinstall the browser",
-      "Replace the CMOS battery after confirming firmware time also drifts"
+      "Replace the CMOS battery",
+      "Reinstall the calendar application",
+      "Disable synchronization with the time source",
+      "Set the proper time zone and confirm automatic zone detection"
     ],
     "answer": 3,
-    "explanation": "Replace the CMOS battery after confirming firmware time also drifts is the supported selection for the planned environment: it allows the team to correct repeated clock loss on a powered-off desktop when network time synchronization succeeds only until the next shutdown. The proposal based on Replace the SSD is weaker because firmware time loss across power-off isolates the RTC power source rather than Windows synchronization or storage."
+    "explanation": "An accurate clock with a consistent two-hour display offset after travel indicates a time-zone problem, not oscillator drift. Correcting the zone preserves synchronization while displaying local meeting times properly."
   },
   {
     "id": "A1202-PE2-085",
@@ -1429,14 +1429,14 @@
     "objective": "4.7",
     "blueprint": "Appropriately handle customers’ confidential and private materials.",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to continue an authorized file recovery without inspecting an unrelated confidential document exposed on screen. The production workstation is the only affected endpoint, and only the affected component may be interrupted. What should occur FIRST?",
+    "question": "During an approved photo recovery, a personal tax return opens from a different folder. The ticket authorizes recovery of photographs only. What should the technician do?",
     "choices": [
-      "Continue browsing the folder to determine whether other private files exist",
-      "Copy the full user profile to simplify recovery",
-      "Stop viewing unrelated private content and limit work to the authorized data",
-      "Discuss the unexpected content in the ticket notes"
+      "Search the remaining folders for other private records",
+      "Copy the entire profile into a technician-owned account",
+      "Close the tax document and continue only with the authorized photograph folder",
+      "Describe the tax figures in the service ticket"
     ],
     "answer": 2,
-    "explanation": "Stop viewing unrelated private content and limit work to the authorized data is the supported selection for the planned environment: it allows the team to continue an authorized file recovery without inspecting an unrelated confidential document exposed on screen. The proposal based on Continue browsing the folder to determine whether other private files exist is weaker because examining additional private files exceeds the authorization and increases the confidentiality exposure."
+    "explanation": "The technician should immediately close the unrelated private material and stay within the ticket scope. Searching or copying more content expands the confidentiality exposure, while documenting the private details would disclose them unnecessarily."
   }
 ]
