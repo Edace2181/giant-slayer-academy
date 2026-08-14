@@ -213,7 +213,7 @@
     "objective": "2.1",
     "blueprint": "Physical security > Access control vestibule",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to allow one authenticated person at a time into a restricted room and reduce tailgating on the company tablet; shared infrastructure remains healthy. A tested recovery path must remain available. Which control BEST meets the requirement?",
+    "question": "Badge logs show valid credentials for each employee entering a restricted server room, but video confirms that several employees hold the door open for coworkers. The organization requires each person to authenticate separately without blocking authorized access. Which control BEST reduces tailgating?",
     "choices": [
       "Add bollards",
       "Install an access control vestibule",
@@ -221,7 +221,7 @@
       "Increase exterior lighting"
     ],
     "answer": 1,
-    "explanation": "Install an access control vestibule is the supported selection for the planned environment: it allows the team to allow one authenticated person at a time into a restricted room and reduce tailgating. The proposal based on Add bollards is weaker because bollards stop vehicles and cable locks secure equipment; neither enforces single-person entry."
+    "explanation": "An access control vestibule uses interlocking doors to admit one authenticated person at a time, directly addressing the observed tailgating. Bollards restrict vehicles, a cable lock protects equipment, and exterior lighting does not enforce individual entry."
   },
   {
     "id": "A1202-PE2-015",
@@ -341,15 +341,15 @@
     "objective": "3.4",
     "blueprint": "Common symptoms > Unable to access the network",
     "difficulty": "Level 2",
-    "question": "A legal-services office documents a requirement to remove an unauthorized proxy after a suspicious download leaves gateway access intact but redirects all web traffic on a managed desktop. Which action addresses the verified cause?",
+    "question": "A managed Windows desktop can reach its local gateway, but all web requests are redirected through an unauthorized proxy that appeared after a suspicious download. Which action BEST restores the approved client configuration?",
     "choices": [
-      "Inspect unauthorized proxy and DNS changes",
+      "Remove the unauthorized proxy setting and verify the approved DNS configuration",
       "Reset all network settings before preserving the proxy evidence",
       "Replace the office switch despite healthy peer systems",
       "Change the approved DNS servers without inspecting the injected proxy"
     ],
     "answer": 0,
-    "explanation": "Inspect unauthorized proxy and DNS changes is the supported selection for the planned environment: it allows the team to remove an unauthorized proxy after a suspicious download leaves gateway access intact but redirects all web traffic. The proposal based on Reset all network settings before preserving the proxy evidence is weaker because resetting everything destroys useful evidence and is broader than correcting the confirmed client-side proxy change."
+    "explanation": "Removing the unauthorized proxy corrects the verified client-side cause, and verifying the approved DNS configuration checks for a related malicious change. Resetting every network setting is unnecessarily broad and could destroy evidence, while replacing the switch cannot explain why healthy peer systems still work."
   },
   {
     "id": "A1202-PE2-023",
@@ -533,7 +533,7 @@
     "objective": "2.5",
     "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 4",
-    "question": "Support must classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. Three findings guide deployment planning: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. Only the affected component may be interrupted; the change must remain inside the approved scope. Which action addresses the verified cause?",
+    "question": "A finance employee receives an email that displays the chief executive's name, uses a look-alike external domain, and requests an urgent change to a supplier's bank account while bypassing the normal callback process. Which threat BEST describes this incident?",
     "choices": [
       "Smishing",
       "Shoulder surfing",
@@ -541,7 +541,7 @@
       "Business email compromise"
     ],
     "answer": 3,
-    "explanation": "Business email compromise is the supported selection for the planned environment: it allows the team to classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. The proposal based on Smishing is weaker because smishing uses text messages, while the impersonated executive and fraudulent payment request match business email compromise."
+    "explanation": "Business email compromise uses trusted business identities or look-alike accounts to manipulate payment activity. Smishing uses SMS, shoulder surfing requires observing a person directly, and an evil twin is a rogue wireless access point."
   },
   {
     "id": "A1202-PE2-035",
@@ -917,7 +917,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Ransomware",
     "difficulty": "Level 4",
-    "question": "Support must identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable. Three findings guide deployment planning: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. The solution must use vendor-supported methods; unrelated users must remain online. Which action addresses the verified cause?",
+    "question": "A workstation begins renaming local and mapped-drive files with unfamiliar extensions. The files are unreadable, and a note demands cryptocurrency for a decryption key. Which malware type BEST explains all three findings?",
     "choices": [
       "Rootkit",
       "Keylogger",
@@ -925,7 +925,7 @@
       "Adware"
     ],
     "answer": 2,
-    "explanation": "Ransomware is the supported selection for the planned environment: it allows the team to identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable. The proposal based on Rootkit is weaker because a rootkit hides privileged persistence, while the encryption and payment demand are characteristic of ransomware."
+    "explanation": "Ransomware commonly encrypts accessible files, changes their names or extensions, and demands payment for recovery. A rootkit hides privileged persistence, a keylogger captures input, and adware primarily displays unwanted advertising."
   },
   {
     "id": "A1202-PE2-059",
@@ -1045,7 +1045,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Rootkit",
     "difficulty": "Level 2",
-    "question": "A technician must classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results for a hotel operations team. The maintenance window permits only one controlled change. What should support do NEXT?",
+    "question": "Security tools report inconsistent kernel-level results, and an offline scan finds concealed privileged components that load before ordinary user applications. Which malware type matches these characteristics?",
     "choices": [
       "Spyware",
       "Boot sector virus",
@@ -1053,7 +1053,7 @@
       "Rootkit"
     ],
     "answer": 3,
-    "explanation": "Rootkit is the supported selection for the planned environment: it allows the team to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. The proposal based on Spyware is weaker because spyware collects information, but it does not specifically explain concealed privileged components and tampered low-level visibility."
+    "explanation": "A rootkit conceals privileged components and can manipulate low-level system visibility to maintain persistence. Spyware collects information, ransomware encrypts data, and a boot sector virus targets boot code without necessarily hiding kernel-level components."
   },
   {
     "id": "A1202-PE2-067",
@@ -1237,7 +1237,7 @@
     "objective": "4.3",
     "blueprint": "Backup > Differential",
     "difficulty": "Level 4",
-    "question": "The enrolled smartphone cannot pass acceptance until support can capture every change since the last full backup so restoration needs the full backup plus one later set. General hardware tests pass and the timeline contains conflicting symptoms, but a quick workaround would violate the approved scope. The result must be auditable. What should occur FIRST?",
+    "question": "A file server receives a full backup every Sunday. Administrators want each nightly backup to contain every change made since Sunday so recovery requires only the Sunday full backup and one nightly set. Which backup type should they schedule?",
     "choices": [
       "Use an incremental backup",
       "Use a differential backup",
@@ -1245,7 +1245,7 @@
       "Copy only open files manually"
     ],
     "answer": 1,
-    "explanation": "Use a differential backup is the supported selection for the planned environment: it allows the team to capture every change since the last full backup so restoration needs the full backup plus one later set. The proposal based on Use an incremental backup is weaker because incremental backups contain changes since the previous backup and would require a longer chain during recovery."
+    "explanation": "A differential backup stores all changes made since the most recent full backup, so restoration uses the full backup plus the latest differential set. Incremental backups store changes since the previous backup and require the intervening chain during recovery."
   },
   {
     "id": "A1202-PE2-079",

@@ -37,7 +37,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Rootkit",
     "difficulty": "Level 3",
-    "question": "To classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results, the technician reproduces the condition on the administrator console and compares it with a known-good baseline. The technician cannot weaken an existing security control. Which action addresses the verified cause?",
+    "question": "A trusted offline scanner detects concealed privileged components, while security tools running inside the operating system report inconsistent kernel-level results. Which malware type BEST explains these findings?",
     "choices": [
       "Spyware",
       "Ransomware",
@@ -45,7 +45,7 @@
       "PUP"
     ],
     "answer": 2,
-    "explanation": "The acceptance criteria are met by Rootkit, which gives the organization a verifiable way to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. Spyware would fail final validation because spyware collects information, but it does not specifically explain concealed privileged components and tampered low-level visibility."
+    "explanation": "A rootkit hides privileged components and can manipulate low-level system reporting to maintain persistence. Spyware gathers information, ransomware encrypts data, and a potentially unwanted program does not inherently explain concealed kernel-level activity."
   },
   {
     "id": "A1202-PE6-004",
@@ -53,7 +53,7 @@
     "objective": "1.5",
     "blueprint": "OS management > sfc",
     "difficulty": "Level 2",
-    "question": "A legal-services office documents a requirement to verify and repair protected Windows system files after an interrupted update while the storage-device diagnostics remain healthy on an enrolled smartphone. Which tool should the technician use?",
+    "question": "A Windows 11 workstation reports corrupted protected system files after an interrupted update, but its storage diagnostics are healthy. Which command should the technician use to verify and repair those protected files?",
     "choices": [
       "chkdsk /r",
       "format C:",
@@ -61,7 +61,7 @@
       "sfc /scannow"
     ],
     "answer": 3,
-    "explanation": "For the policy-controlled outcome, sfc /scannow is appropriate: it enables support to verify and repair protected Windows system files after an interrupted update while the storage-device diagnostics remain healthy. chkdsk /r cannot produce the required verified result because chkdsk targets filesystem or disk errors; the evidence instead isolates corruption in protected Windows files."
+    "explanation": "sfc /scannow verifies protected Windows system files and replaces corrupted copies when possible. chkdsk /r targets filesystem and disk-sector problems, netstat displays network connections, and formatting the system volume would destroy data rather than perform a scoped repair."
   },
   {
     "id": "A1202-PE6-005",
@@ -69,7 +69,7 @@
     "objective": "2.5",
     "blueprint": "Threats > Evil twin",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the branch computer distinguish a malicious duplicate access point from a legitimate guest network after captured credentials appear? What should support do NEXT?",
+    "question": "A branch office discovers an unauthorized access point using the same SSID as its legitimate wireless network. Employees who connect to the stronger signal receive a credential-capture portal. Which threat is this?",
     "choices": [
       "A DNS round-robin record",
       "A brute-force attack",
@@ -77,7 +77,7 @@
       "A screen-lock policy"
     ],
     "answer": 2,
-    "explanation": "The acceptance criteria are met by An evil twin access point, which gives the organization a verifiable way to distinguish a malicious duplicate access point from a legitimate guest network after captured credentials appear. A DNS round-robin record would fail final validation because the rogue look-alike access point accounts for both the familiar SSID and credential-capture portal."
+    "explanation": "An evil twin is a rogue access point that imitates a trusted SSID to lure users and capture credentials or traffic. A DNS round-robin record, brute-force attack, and screen-lock policy do not create a malicious duplicate wireless network."
   },
   {
     "id": "A1202-PE6-006",
@@ -469,7 +469,7 @@
     "objective": "2.1",
     "blueprint": "Physical security > Access control vestibule",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to allow one authenticated person at a time into a restricted room and reduce tailgating. The remote endpoint is the only affected endpoint, and the maintenance window permits only one controlled change. Which choice satisfies the documented need?",
+    "question": "A restricted data-center room requires each entrant to authenticate separately. Camera footage shows authorized employees allowing coworkers to follow them through the same open door. Which physical control BEST reduces this tailgating risk?",
     "choices": [
       "Add bollards",
       "Install an access control vestibule",
@@ -477,7 +477,7 @@
       "Place an alarm sticker"
     ],
     "answer": 1,
-    "explanation": "For the policy-controlled outcome, Install an access control vestibule is appropriate: it enables support to allow one authenticated person at a time into a restricted room and reduce tailgating. Add bollards cannot produce the required verified result because bollards stop vehicles and cable locks secure equipment; neither enforces single-person entry."
+    "explanation": "An access control vestibule uses interlocking doors to enforce one authenticated entrant at a time. Bollards stop vehicles, exterior lighting improves visibility, and an alarm sticker does not physically prevent another person from following an authorized user."
   },
   {
     "id": "A1202-PE6-031",
@@ -501,15 +501,15 @@
     "objective": "2.5",
     "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 3",
-    "question": "A payroll employee receives a message from the CEO account requesting gift-card purchases, but mail headers show a lookalike external domain and the CEO confirms no account compromise. Which attack is MOST likely?",
+    "question": "A payroll employee receives an urgent gift-card request displaying the CEO's name. Message headers reveal a look-alike external domain, and the CEO confirms that no request was sent. Which threat BEST describes this financially motivated impersonation?",
     "choices": [
-      "A spoofed phishing attempt using executive impersonation",
-      "Business email compromise of the CEO mailbox",
+      "Business email compromise using a spoofed executive identity",
+      "A verified takeover of the CEO's real mailbox",
       "Shoulder surfing",
       "An access control vestibule failure"
     ],
     "answer": 0,
-    "explanation": "The lookalike external domain shows impersonation rather than use of the real compromised mailbox. BEC would require actual account or business communication compromise, which the evidence rules out."
+    "explanation": "Business email compromise can use a spoofed or look-alike executive identity to induce fraudulent payments; takeover of the real mailbox is not required. The external domain and the CEO's denial specifically rule out a verified takeover of the CEO's actual mailbox."
   },
   {
     "id": "A1202-PE6-033",
@@ -597,7 +597,7 @@
     "objective": "4.4",
     "blueprint": "Personal safety > Disconnect power before repairing PC",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can open a desktop power area for approved repair without exposing the technician to energized components after baseline testing clears the shared services. For the enrolled smartphone, the technician must preserve available evidence and the change must remain inside the approved scope. What should occur FIRST?",
+    "question": "Before opening a desktop computer's power-supply area for an approved repair, a technician must ensure that the components are not energized. What should occur FIRST?",
     "choices": [
       "Disconnect external power and follow the device service procedure",
       "Use lockout procedures without unplugging the desktop",
@@ -605,7 +605,7 @@
       "Rely on insulated tools instead of isolating power"
     ],
     "answer": 0,
-    "explanation": "For the policy-controlled outcome, Disconnect external power and follow the device service procedure is appropriate: it enables support to open a desktop power area for approved repair without exposing the technician to energized components. Use lockout procedures without unplugging the desktop cannot produce the required verified result because administrative lockout does not remove electrical energy from the component the technician will physically access."
+    "explanation": "Disconnecting external power and following the manufacturer's service procedure removes the primary energy source before the case is opened. A Windows shutdown or administrative lockout alone does not physically isolate power, and insulated tools are not a substitute for de-energizing the equipment."
   },
   {
     "id": "A1202-PE6-039",
@@ -1029,7 +1029,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Ransomware",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the field technician laptop identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable? What should support do NEXT?",
+    "question": "Files on a laptop and its mapped share become unreadable, their extensions change, and a note demands payment for a decryption key. Which malware type BEST matches the evidence?",
     "choices": [
       "Rootkit",
       "Ransomware",
@@ -1037,7 +1037,7 @@
       "Cryptominer"
     ],
     "answer": 1,
-    "explanation": "The acceptance criteria are met by Ransomware, which gives the organization a verifiable way to identify malware after files acquire unfamiliar extensions, users receive a payment demand, and shared data becomes unreadable. Rootkit would fail final validation because a rootkit hides privileged persistence, while the encryption and payment demand are characteristic of ransomware."
+    "explanation": "Ransomware encrypts accessible data and commonly displays a payment demand for supposed recovery. Rootkits conceal privileged persistence, adware displays unwanted advertising, and cryptominers consume resources without normally encrypting documents."
   },
   {
     "id": "A1202-PE6-066",
@@ -1141,7 +1141,7 @@
     "objective": "2.7",
     "blueprint": "Disable AutoRun",
     "difficulty": "Level 4",
-    "question": "The enrolled smartphone cannot pass acceptance until support can prevent automatically launched content from untrusted removable media while still permitting authorized USB storage use. General hardware tests pass and the timeline contains conflicting symptoms, but a quick workaround would violate the approved scope. The maintenance window permits only one controlled change. Which choice satisfies the documented need?",
+    "question": "A Windows workstation must continue reading authorized USB storage, but policy requires that content from removable media never launch automatically when a drive is inserted. Which hardening setting satisfies both requirements?",
     "choices": [
       "Disable AutoPlay notifications only",
       "Require an antivirus scan after files already launch",
@@ -1149,7 +1149,7 @@
       "Disable AutoRun"
     ],
     "answer": 3,
-    "explanation": "For the policy-controlled outcome, Disable AutoRun is appropriate: it enables support to prevent automatically launched content from untrusted removable media while still permitting authorized USB storage use. Disable AutoPlay notifications only cannot produce the required verified result because AutoPlay presentation controls do not reliably remove the automatic-execution behavior addressed by the hardening requirement."
+    "explanation": "Disabling AutoRun prevents removable-media content from executing automatically while still allowing authorized storage devices to be opened manually. Hiding AutoPlay notifications or relying on users does not enforce the execution restriction, and scanning only after launch is too late."
   },
   {
     "id": "A1202-PE6-073",

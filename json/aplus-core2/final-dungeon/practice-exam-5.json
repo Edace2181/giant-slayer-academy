@@ -485,7 +485,7 @@
     "objective": "1.7",
     "blueprint": "Client network configuration > Static vs. dynamic",
     "difficulty": "Level 3",
-    "question": "A retail support center needs the enrolled smartphone to keep a workstation at the documented address required by a legacy access-control list while using the correct subnet, gateway, and DNS values. During incident triage, a broad workaround is rejected because it changes unrelated settings. The solution must use vendor-supported methods. Which choice satisfies the documented need?",
+    "question": "A workstation runs a legacy licensing client whose server permits connections only from one documented IPv4 address. DHCP has assigned the workstation different addresses after recent reboots, and no reservation can be created. Which configuration should the technician use?",
     "choices": [
       "Enable APIPA",
       "Set only a static DNS server",
@@ -493,7 +493,7 @@
       "Join a workgroup"
     ],
     "answer": 2,
-    "explanation": "The incident-triage clues favor Configure a static IP address: the observed evidence requires the team to keep a workstation at the documented address required by a legacy access-control list while using the correct subnet, gateway, and DNS values. Enable APIPA addresses a different condition and is inferior here because ordinary DHCP can assign a different address and break the address-based rule unless a reservation is separately configured."
+    "explanation": "A static IP address keeps the workstation at the value required by the licensing server when a DHCP reservation is unavailable. APIPA does not provide the documented routed address, setting only DNS does not control the client address, and joining a workgroup does not change IPv4 assignment."
   },
   {
     "id": "A1202-PE5-032",
@@ -661,7 +661,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Rootkit",
     "difficulty": "Level 4",
-    "question": "The reception system cannot pass acceptance until support can classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. General hardware tests pass and the timeline contains conflicting symptoms, but a quick workaround would violate the approved scope. Existing access controls must remain effective. What should support do NEXT?",
+    "question": "A security scan started from trusted external media detects hidden privileged components that the running operating system and installed scanner cannot see. Which malware type BEST explains the inconsistent low-level results?",
     "choices": [
       "Rootkit",
       "Spyware",
@@ -669,7 +669,7 @@
       "Trojan"
     ],
     "answer": 0,
-    "explanation": "Rootkit best reconciles the symptoms and the business constraint by enabling support to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. Choosing Spyware would not resolve the case because spyware collects information, but it does not specifically explain concealed privileged components and tampered low-level visibility."
+    "explanation": "A rootkit conceals privileged components and can alter the operating system's view of files, processes, or drivers. Spyware collects information, ransomware encrypts data, and a Trojan disguises its purpose without necessarily hiding kernel-level persistence."
   },
   {
     "id": "A1202-PE5-043",
@@ -677,7 +677,7 @@
     "objective": "2.5",
     "blueprint": "Threats > Evil twin",
     "difficulty": "Level 4",
-    "question": "A hotel operations team must diagnose why only users associated with the highest-signal version of a familiar SSID receive a fake portal. One proposed response would correct a visible symptom but leave the verified cause unresolved. A tested recovery path must remain available, and the maintenance window permits only one controlled change. Which action addresses the verified cause?",
+    "question": "Guests who connect to the strongest signal for a familiar hotel SSID receive a counterfeit sign-in portal. Wireless scans reveal an unauthorized access point using the same SSID near the lobby. Which threat BEST explains the evidence?",
     "choices": [
       "A DNS round-robin record",
       "An evil twin access point",
@@ -685,7 +685,7 @@
       "A cable loop"
     ],
     "answer": 1,
-    "explanation": "The incident-triage clues favor An evil twin access point: the observed evidence requires the team to diagnose why only users associated with the highest-signal version of a familiar SSID receive a fake portal. A DNS round-robin record addresses a different condition and is inferior here because the rogue look-alike access point accounts for both the familiar SSID and credential-capture portal."
+    "explanation": "An evil twin access point copies a legitimate SSID and attracts users with a stronger signal so it can present a fake portal or intercept traffic. DNS round robin, brute-force authentication, and a cable loop do not explain the unauthorized duplicate wireless network."
   },
   {
     "id": "A1202-PE5-044",
@@ -693,7 +693,7 @@
     "objective": "2.6",
     "blueprint": "Step 2: Quarantine infected system.",
     "difficulty": "Level 3",
-    "question": "Initial testing confirms a requirement to limit propagation immediately after the technician verifies active malware symptoms on a connected workstation on the mobile device; shared infrastructure remains healthy. The change must remain inside the approved scope. Which procedural response is appropriate?",
+    "question": "A technician confirms that a workstation is actively infected and attempting to modify files on network shares. Which action should be taken FIRST to limit propagation?",
     "choices": [
       "Disable System Restore first",
       "Reimage every computer",
@@ -701,7 +701,7 @@
       "Quarantine the infected system"
     ],
     "answer": 3,
-    "explanation": "Quarantine the infected system best reconciles the symptoms and the business constraint by enabling support to limit propagation immediately after the technician verifies active malware symptoms on a connected workstation. Choosing Disable System Restore first would not resolve the case because later remediation and education steps should not occur while the verified infected host can continue communicating on the network."
+    "explanation": "Quarantining the infected workstation immediately restricts its network communication and limits further spread. Disabling System Restore, creating a restore point, or reimaging every computer does not provide the required scoped containment of the verified host."
   },
   {
     "id": "A1202-PE5-045",
@@ -1301,7 +1301,7 @@
     "objective": "1.6",
     "blueprint": "File Explorer Options > View hidden files",
     "difficulty": "Level 2",
-    "question": "A nonprofit agency documents a requirement to inspect a known hidden application-data folder without changing file permissions or removing its hidden attribute on an enrolled smartphone. Which choice satisfies the documented need?",
+    "question": "A technician must inspect a known hidden application-data folder on a Windows workstation without changing its NTFS permissions or removing the folder's hidden attribute. Which setting should the technician enable?",
     "choices": [
       "Disable file extensions",
       "Turn off indexing",
@@ -1309,7 +1309,7 @@
       "Enable Show hidden files in File Explorer Options"
     ],
     "answer": 3,
-    "explanation": "Enable Show hidden files in File Explorer Options best reconciles the symptoms and the business constraint by enabling support to inspect a known hidden application-data folder without changing file permissions or removing its hidden attribute. Choosing Disable file extensions would not resolve the case because taking ownership changes access control, while the requirement is only to make an already accessible hidden folder visible."
+    "explanation": "Enabling Show hidden files in File Explorer Options makes the already accessible hidden folder visible without changing its permissions or attributes. Disabling file extensions, turning off indexing, and running Disk Cleanup do not reveal hidden folders."
   },
   {
     "id": "A1202-PE5-083",

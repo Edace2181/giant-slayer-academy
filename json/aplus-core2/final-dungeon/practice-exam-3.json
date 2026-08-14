@@ -469,7 +469,7 @@
     "objective": "2.6",
     "blueprint": "Step 2: Quarantine infected system.",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to limit propagation immediately after the technician verifies active malware symptoms on a connected workstation. The mobile device is the only affected endpoint, and the technician cannot weaken an existing security control. Which action preserves the required control?",
+    "question": "Endpoint telemetry confirms that malware is actively modifying files on a workstation and attempting connections to shared storage. Before eradication begins, which action should the technician take FIRST to limit propagation?",
     "choices": [
       "Disable System Restore first",
       "Begin end-user training",
@@ -477,7 +477,7 @@
       "Quarantine the infected system"
     ],
     "answer": 3,
-    "explanation": "The known-good comparison makes Quarantine the infected system the next logical step; it enables the technician to limit propagation immediately after the technician verifies active malware symptoms on a connected workstation. Disable System Restore first does not follow the failure pattern because later remediation and education steps should not occur while the verified infected host can continue communicating on the network."
+    "explanation": "Quarantining the infected workstation immediately limits its ability to reach shared storage or other hosts while preserving it for remediation. Disabling System Restore, training users, or creating a restore point does not stop the active system from propagating malware."
   },
   {
     "id": "A1202-PE3-031",
@@ -1077,7 +1077,7 @@
     "objective": "3.1",
     "blueprint": "Services not starting",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can recover an automatic Windows service that logs a dependency failure after its service account password changed after baseline testing clears the shared services. For the enrolled smartphone, the final state must be verified before handoff and the user data cannot be discarded. What should support do NEXT?",
+    "question": "An automatic Windows service stopped starting immediately after its service-account password was rotated. Service Control Manager records a logon failure followed by a dependency failure, while the dependent services are otherwise healthy. What should support check NEXT?",
     "choices": [
       "Check the service dependencies and account credentials",
       "Reinstall the display driver",
@@ -1085,7 +1085,7 @@
       "Replace the CMOS battery"
     ],
     "answer": 0,
-    "explanation": "The known-good comparison makes Check the service dependencies and account credentials the next logical step; it enables the technician to recover an automatic Windows service that logs a dependency failure after its service account password changed. Reinstall the display driver does not follow the failure pattern because disk and network maintenance do not correct a dependency or service-logon failure recorded by Service Control Manager."
+    "explanation": "The timing and Service Control Manager entries point to stale service-account credentials, and the dependency report should also be verified before restarting the service. Display, disk, and CMOS-battery changes do not address a Windows service logon or dependency failure."
   },
   {
     "id": "A1202-PE3-069",

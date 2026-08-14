@@ -149,7 +149,7 @@
     "objective": "2.5",
     "blueprint": "Social engineering > Phishing > Smishing",
     "difficulty": "Level 4",
-    "question": "Support must recognize a text message that creates urgency and directs an employee to a counterfeit benefits sign-in link. Three findings guide controlled change review: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. A tested recovery path must remain available; the technician cannot weaken an existing security control. What should support do NEXT?",
+    "question": "An employee receives an urgent SMS claiming that benefits will be suspended unless the employee signs in through a shortened link. The link opens a counterfeit benefits portal. Which social-engineering technique is being used?",
     "choices": [
       "Smishing",
       "Vishing",
@@ -157,7 +157,7 @@
       "Shoulder surfing"
     ],
     "answer": 0,
-    "explanation": "Smishing resolves the root requirement without relying on the rejected shortcut. It permits the team to recognize a text message that creates urgency and directs an employee to a counterfeit benefits sign-in link; Vishing is not suitable because vishing uses voice calls, while the deceptive SMS link is specifically smishing."
+    "explanation": "Smishing is phishing delivered through SMS or another text-messaging channel. Vishing uses voice calls, whaling targets high-profile individuals, and shoulder surfing relies on physically observing sensitive information."
   },
   {
     "id": "A1202-PE4-011",
@@ -373,7 +373,7 @@
     "objective": "4.8",
     "blueprint": "Script file types > .ps1",
     "difficulty": "Level 3",
-    "question": "A support escalation asks how to apply a documented Windows administrative action to many managed computers with logging and approved PowerShell controls. The enrolled smartphone is the only affected endpoint, and a tested recovery path must remain available. Which procedural response is appropriate?",
+    "question": "Administrators must apply a documented Windows configuration change to many managed computers. Policy requires PowerShell execution controls, code signing, logging, and a repeatable rollback path. Which implementation is MOST appropriate?",
     "choices": [
       "Use an unsigned macro",
       "Rename a text file to .exe",
@@ -381,7 +381,7 @@
       "Disable script execution policy globally"
     ],
     "answer": 2,
-    "explanation": "Use a signed PowerShell script (.ps1) resolves the root requirement without relying on the rejected shortcut. It permits the team to apply a documented Windows administrative action to many managed computers with logging and approved PowerShell controls; Use an unsigned macro is not suitable because an approved signed PowerShell script supports repeatable Windows administration without removing organization-wide execution safeguards."
+    "explanation": "A signed .ps1 file supports repeatable Windows administration while retaining approved PowerShell execution controls and logging. An unsigned macro or unknown executable bypasses those safeguards, and disabling execution policy globally would weaken every managed computer."
   },
   {
     "id": "A1202-PE4-025",
@@ -453,7 +453,7 @@
     "objective": "2.5",
     "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 3",
-    "question": "A transportation depot must classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. The evidence was reproduced during controlled change review, and the technician must avoid a destructive shortcut. Which action addresses the verified cause?",
+    "question": "Finance receives an email from a look-alike executive address directing staff to replace a supplier's verified payment destination. The request also insists that normal voice confirmation be skipped. Which threat BEST describes the message?",
     "choices": [
       "Smishing",
       "Shoulder surfing",
@@ -461,7 +461,7 @@
       "Business email compromise"
     ],
     "answer": 3,
-    "explanation": "During controlled change review, Business email compromise is the defensible choice because it provides a supported way to classify a message from a look-alike executive account directing finance staff to change a supplier payment destination. Smishing cannot satisfy the same scope because smishing uses text messages, while the impersonated executive and fraudulent payment request match business email compromise."
+    "explanation": "Business email compromise uses impersonated or compromised business identities to redirect payments or obtain other financial value. Smishing is delivered by text message, while shoulder surfing and tailgating are physical techniques."
   },
   {
     "id": "A1202-PE4-030",
@@ -645,7 +645,7 @@
     "objective": "2.6",
     "blueprint": "Step 2: Quarantine infected system.",
     "difficulty": "Level 2",
-    "question": "The acceptance check is simple: can the enrolled smartphone limit propagation immediately after the technician verifies active malware symptoms on a connected workstation? Which action preserves the required control?",
+    "question": "A technician verifies active malware on a workstation that is still communicating with internal hosts. Which action should be taken immediately to limit propagation before eradication begins?",
     "choices": [
       "Disable System Restore first",
       "Quarantine the infected system",
@@ -653,7 +653,7 @@
       "Reconnect the host for updates"
     ],
     "answer": 1,
-    "explanation": "During controlled change review, Quarantine the infected system is the defensible choice because it provides a supported way to limit propagation immediately after the technician verifies active malware symptoms on a connected workstation. Disable System Restore first cannot satisfy the same scope because later remediation and education steps should not occur while the verified infected host can continue communicating on the network."
+    "explanation": "Quarantining the infected workstation stops or restricts its network communication, reducing the chance of propagation while incident response continues. Disabling System Restore, training users, or reconnecting the host does not provide immediate containment."
   },
   {
     "id": "A1202-PE4-042",
@@ -853,7 +853,7 @@
     "objective": "4.4",
     "blueprint": "Personal safety > Lifting techniques",
     "difficulty": "Level 4",
-    "question": "The mobile device cannot pass acceptance until support can move a heavy rack-mounted UPS whose weight exceeds the safe single-person limit. General hardware tests pass and the timeline contains conflicting symptoms, but a quick workaround would violate the approved scope. The solution must use vendor-supported methods. Which procedural response is appropriate?",
+    "question": "Two technicians must remove a rack-mounted UPS whose service label lists a weight above the organization's single-person lifting limit. Which procedure is MOST appropriate?",
     "choices": [
       "Lift while twisting at the waist",
       "Pull it by connected cables",
@@ -861,7 +861,7 @@
       "Use a team lift or rated lifting aid"
     ],
     "answer": 3,
-    "explanation": "Use a team lift or rated lifting aid resolves the root requirement without relying on the rejected shortcut. It permits the team to move a heavy rack-mounted UPS whose weight exceeds the safe single-person limit; Lift while twisting at the waist is not suitable because the weight and rack position require controlled assistance rather than unsafe body mechanics."
+    "explanation": "A team lift or a lifting aid rated for the UPS keeps the load within the documented safety limit. Twisting while lifting, pulling connected cables, or carrying an overweight device alone creates unnecessary injury and equipment risks."
   },
   {
     "id": "A1202-PE4-055",
@@ -869,7 +869,7 @@
     "objective": "2.4",
     "blueprint": "Malware > Rootkit",
     "difficulty": "Level 4",
-    "question": "A remote engineering firm must classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. One proposed response would correct a visible symptom but leave the verified cause unresolved. The business service cannot tolerate an unnecessary restart, and the action must be reversible. What should support do NEXT?",
+    "question": "An offline security scan finds concealed privileged components, while scans performed from the running operating system return inconsistent kernel-level results. Which malware type BEST matches this behavior?",
     "choices": [
       "Rootkit",
       "Spyware",
@@ -877,7 +877,7 @@
       "PUP"
     ],
     "answer": 0,
-    "explanation": "During controlled change review, Rootkit is the defensible choice because it provides a supported way to classify malware that hides privileged persistence and causes security tools to report inconsistent low-level system results. Spyware cannot satisfy the same scope because spyware collects information, but it does not specifically explain concealed privileged components and tampered low-level visibility."
+    "explanation": "A rootkit is designed to conceal privileged persistence and can manipulate what the running operating system or security tools report. Spyware gathers information, adware displays advertising, and a potentially unwanted program does not inherently explain hidden kernel-level components."
   },
   {
     "id": "A1202-PE4-056",
@@ -917,7 +917,7 @@
     "objective": "2.5",
     "blueprint": "Threats > Evil twin",
     "difficulty": "Level 4",
-    "question": "Support must classify a rogue wireless service that copies the office network name and intercepts users before normal authentication. Three findings guide controlled change review: the condition is repeatable, unrelated endpoints are healthy, and the earlier shortcut failed. Only the affected component may be interrupted; existing access controls must remain effective. What should support do NEXT?",
+    "question": "Wireless monitoring detects a rogue access point broadcasting the office SSID at a stronger signal. Users who associate with it receive a counterfeit authentication portal before reaching company resources. Which threat is MOST likely?",
     "choices": [
       "A DNS round-robin record",
       "A legitimate guest VLAN",
@@ -925,7 +925,7 @@
       "An evil twin access point"
     ],
     "answer": 3,
-    "explanation": "An evil twin access point resolves the root requirement without relying on the rejected shortcut. It permits the team to classify a rogue wireless service that copies the office network name and intercepts users before normal authentication; A DNS round-robin record is not suitable because the rogue look-alike access point accounts for both the familiar SSID and credential-capture portal."
+    "explanation": "An evil twin is a rogue access point that imitates a legitimate wireless network to attract users and capture traffic or credentials. DNS round robin, a legitimate guest VLAN, and a screen-lock policy do not explain the duplicate SSID and counterfeit portal."
   },
   {
     "id": "A1202-PE4-059",
@@ -981,7 +981,7 @@
     "objective": "1.7",
     "blueprint": "Client network configuration > Static vs. dynamic",
     "difficulty": "Level 4",
-    "question": "Only one remaining option can keep a workstation at the documented address required by a legacy access-control list while using the correct subnet, gateway, and DNS values after baseline testing clears the shared services. For the company tablet, the maintenance window permits only one controlled change and the user data cannot be discarded. Which choice satisfies the documented need?",
+    "question": "A legacy access-control list permits a workstation only when it uses a documented IPv4 address. No DHCP reservation is available, and the subnet mask, gateway, and DNS values are known. Which client configuration satisfies the requirement?",
     "choices": [
       "Enable APIPA",
       "Configure a static IP address",
@@ -989,7 +989,7 @@
       "Mark the connection as metered"
     ],
     "answer": 1,
-    "explanation": "Configure a static IP address resolves the root requirement without relying on the rejected shortcut. It permits the team to keep a workstation at the documented address required by a legacy access-control list while using the correct subnet, gateway, and DNS values; Enable APIPA is not suitable because ordinary DHCP can assign a different address and break the address-based rule unless a reservation is separately configured."
+    "explanation": "A static IP configuration keeps the workstation at the documented address while allowing the required subnet, gateway, and DNS values to be entered. APIPA is nonroutable outside its local segment, and ordinary DHCP without a reservation cannot guarantee the required address."
   },
   {
     "id": "A1202-PE4-063",

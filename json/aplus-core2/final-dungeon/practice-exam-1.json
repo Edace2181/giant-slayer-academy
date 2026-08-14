@@ -3,7 +3,7 @@
     "id": "A1202-PE1-001",
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Cross-platform storage",
+    "blueprint": "Various filesystem types > Extensible File Allocation Table (exFAT)",
     "difficulty": "Level 2",
     "question": "A 64 GB USB drive will move individual 6.5 GB video files between Windows 11 and macOS computers. The users cannot install additional filesystem drivers. Which format meets both requirements?",
     "choices": [
@@ -19,7 +19,7 @@
     "id": "A1202-PE1-002",
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Lifecycle",
+    "blueprint": "Vendor life-cycle limitations > End-of-life (EOL)",
     "difficulty": "Level 2",
     "question": "A payroll workstation still runs an operating system that no longer receives vendor security updates. Its hardware satisfies the requirements for the current supported release. What is the appropriate lifecycle action?",
     "choices": [
@@ -34,8 +34,8 @@
   {
     "id": "A1202-PE1-003",
     "domain": "1",
-    "objective": "1.2",
-    "blueprint": "Windows editions",
+    "objective": "1.3",
+    "blueprint": "Feature differences > Domain vs. workgroup",
     "difficulty": "Level 2",
     "question": "A small office is ordering a Windows workstation that must join its Active Directory domain and accept inbound Remote Desktop connections. Which edition provides those business features without requiring an enterprise agreement?",
     "choices": [
@@ -51,7 +51,7 @@
     "id": "A1202-PE1-004",
     "domain": "1",
     "objective": "1.2",
-    "blueprint": "Upgrade method",
+    "blueprint": "Types of installations > Upgrade",
     "difficulty": "Level 3",
     "question": "Forty compatible Windows 10 sales laptops must move to Windows 11 over a weekend. Installed applications, user profiles, and local settings must remain intact. Which deployment method BEST satisfies the requirement?",
     "choices": [
@@ -66,8 +66,8 @@
   {
     "id": "A1202-PE1-005",
     "domain": "1",
-    "objective": "1.3",
-    "blueprint": "Disk partitioning",
+    "objective": "1.2",
+    "blueprint": "Partitioning > GUID [globally unique identifier] Partition Table (GPT)",
     "difficulty": "Level 3",
     "question": "During Windows installation on a new UEFI workstation, only 2 TB of a 4 TB boot drive is available. The drive was initialized using the older partition style. What should the technician change before continuing?",
     "choices": [
@@ -82,8 +82,8 @@
   {
     "id": "A1202-PE1-006",
     "domain": "1",
-    "objective": "1.3",
-    "blueprint": "Device drivers",
+    "objective": "1.2",
+    "blueprint": "Types of installations > Other considerations > Third-party drivers",
     "difficulty": "Level 3",
     "question": "After a clean Windows installation, Device Manager lists unknown Ethernet and wireless controllers. The PC is offline, and the manufacturer driver package is available on a USB drive. What should be installed FIRST?",
     "choices": [
@@ -98,8 +98,8 @@
   {
     "id": "A1202-PE1-007",
     "domain": "1",
-    "objective": "1.4",
-    "blueprint": "System repair",
+    "objective": "1.5",
+    "blueprint": "OS management > sfc",
     "difficulty": "Level 3",
     "question": "Windows starts normally, but File Explorer and Settings began crashing after an interrupted update. A malware scan and the drive health test both pass. Which command is the most appropriate initial repair for protected Windows files?",
     "choices": [
@@ -114,8 +114,8 @@
   {
     "id": "A1202-PE1-008",
     "domain": "1",
-    "objective": "1.4",
-    "blueprint": "DHCP commands",
+    "objective": "1.5",
+    "blueprint": "Network > ipconfig",
     "difficulty": "Level 4",
     "question": "A repaired office network is again providing DHCP service. One laptop still shows 169.254.44.18, while nearby systems receive valid leases. The adapter and cable test successfully. Which command sequence should the technician use to request a fresh lease without rebooting?",
     "choices": [
@@ -130,8 +130,8 @@
   {
     "id": "A1202-PE1-009",
     "domain": "1",
-    "objective": "1.4",
-    "blueprint": "Filesystem repair",
+    "objective": "1.5",
+    "blueprint": "Disk management > chkdsk",
     "difficulty": "Level 4",
     "question": "Following a power failure, Event Viewer reports NTFS metadata errors and one folder cannot be opened. SMART diagnostics and the manufacturer drive test report no physical failure. Which corrective action BEST matches the evidence?",
     "choices": [
@@ -146,8 +146,8 @@
   {
     "id": "A1202-PE1-010",
     "domain": "1",
-    "objective": "1.5",
-    "blueprint": "Process management",
+    "objective": "1.4",
+    "blueprint": "Task Manager > Processes",
     "difficulty": "Level 4",
     "question": "A graphics workstation becomes unresponsive while rendering. Task Manager shows one third-party process consuming nearly all CPU and memory, but other open applications contain unsaved work. What is the BEST immediate action?",
     "choices": [
@@ -162,24 +162,24 @@
   {
     "id": "A1202-PE1-011",
     "domain": "1",
-    "objective": "1.5",
-    "blueprint": "Stability history",
+    "objective": "1.4",
+    "blueprint": "Microsoft Management Console (MMC) snap-in > Performance Monitor (perfmon.msc)",
     "difficulty": "Level 2",
-    "question": "Which Windows utility presents application failures, Windows failures, and updates on a dated timeline with a system stability index?",
+    "question": "A workstation slows down at irregular times. Support must record processor, memory, disk, and network counters for several hours and compare them after the event. Which Windows tool provides the required data collection?",
     "choices": [
       "Disk Cleanup",
       "Device Manager",
-      "Reliability Monitor",
+      "Performance Monitor",
       "Resource Monitor"
     ],
     "answer": 2,
-    "explanation": "Reliability Monitor organizes stability events on a timeline and calculates a stability index. Resource Monitor shows current resource use, while Device Manager and Disk Cleanup serve different purposes."
+    "explanation": "Performance Monitor can collect selected performance counters over time for later comparison. Resource Monitor is useful for a live view, but it does not provide the requested scheduled counter log."
   },
   {
     "id": "A1202-PE1-012",
     "domain": "1",
-    "objective": "1.5",
-    "blueprint": "Service configuration",
+    "objective": "1.4",
+    "blueprint": "Task Manager > Services",
     "difficulty": "Level 2",
     "question": "The Print Spooler is disabled on a workstation. Which console allows a technician to set its startup type to Automatic and start it immediately?",
     "choices": [
@@ -194,8 +194,8 @@
   {
     "id": "A1202-PE1-013",
     "domain": "1",
-    "objective": "1.6",
-    "blueprint": "Firewall rules",
+    "objective": "1.7",
+    "blueprint": "Local OS firewall settings > Application restrictions and exceptions",
     "difficulty": "Level 2",
     "question": "An approved accounting application needs inbound communication through Windows Defender Firewall. The administrator wants to avoid opening a port for every executable. Which configuration is appropriate?",
     "choices": [
@@ -210,8 +210,8 @@
   {
     "id": "A1202-PE1-014",
     "domain": "1",
-    "objective": "1.6",
-    "blueprint": "Network profiles",
+    "objective": "1.7",
+    "blueprint": "Public network vs. private network",
     "difficulty": "Level 3",
     "question": "A laptop must discover shared printers on the corporate WLAN but must not be discoverable when connected to airport Wi-Fi. How should the two Windows network profiles be assigned?",
     "choices": [
@@ -227,39 +227,39 @@
     "id": "A1202-PE1-015",
     "domain": "1",
     "objective": "1.6",
-    "blueprint": "Least privilege",
+    "blueprint": "Power Options > Choose what closing the lid does",
     "difficulty": "Level 3",
-    "question": "A standard user needs an approved printer driver installed once. Support policy requires individual accountability and prohibits permanent local administrators. What should support do?",
+    "question": "A docked Windows laptop must keep driving two external monitors when its lid is closed, but it should still sleep when the lid is closed while running on battery. Which setting should the technician configure?",
     "choices": [
-      "Add the user to Administrators and remove access next month",
-      "Disable User Account Control during installation",
-      "Use a shared administrator account over Remote Desktop",
-      "Enter a named administrator credential at the UAC prompt for this installation"
+      "Disable the internal display adapter",
+      "Turn off fast startup",
+      "Change the screen-saver timeout",
+      "Set the lid-close action separately for plugged-in and battery power"
     ],
     "answer": 3,
-    "explanation": "Task-specific UAC elevation with a named administrator account provides accountability and preserves the user's standard access afterward. Permanent membership, disabling UAC, or sharing credentials violates least privilege."
+    "explanation": "Windows Power Options can assign different lid-close actions for plugged-in and battery operation. Display, startup, and screen-saver settings do not control the power event generated by closing the lid."
   },
   {
     "id": "A1202-PE1-016",
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Application architecture",
+    "objective": "1.6",
+    "blueprint": "Apps",
     "difficulty": "Level 3",
-    "question": "A legacy accounting add-in loads only when the host application uses the same 32-bit architecture. The workstation runs 64-bit Windows, and the installer offers both application builds. After selecting the compatible build, which default directory should contain it?",
+    "question": "A Windows user no longer needs a locally installed application. Policy requires removing it through the supported graphical interface while preserving the user profile. Where should the technician perform the removal?",
     "choices": [
-      "C:\\Program Files (x86)",
-      "C:\\Program Files",
-      "C:\\Windows\\System32",
-      "C:\\Windows\\WinSxS"
+      "Apps > Installed apps",
+      "Device Manager driver properties",
+      "System Configuration startup options",
+      "Windows Defender Firewall"
     ],
     "answer": 0,
-    "explanation": "The add-in constraint requires the 32-bit build of the accounting application. On 64-bit Windows, that build installs by default under Program Files (x86); Program Files is normally reserved for 64-bit applications, and the Windows system directories are not application-install locations."
+    "explanation": "Apps > Installed apps provides the supported Windows interface for uninstalling a locally installed application without deleting the user profile. Device Manager removes device drivers, and the other choices do not uninstall applications."
   },
   {
     "id": "A1202-PE1-017",
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Compatibility",
+    "objective": "1.10",
+    "blueprint": "System requirements for applications > Application to OS compatibility",
     "difficulty": "Level 3",
     "question": "A vendor-approved legacy application worked on Windows 10 but now refuses to launch because it checks the operating-system version. What is the least disruptive FIRST troubleshooting action?",
     "choices": [
@@ -274,40 +274,40 @@
   {
     "id": "A1202-PE1-018",
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Cloud applications",
+    "objective": "1.11",
+    "blueprint": "Identity synchronization",
     "difficulty": "Level 4",
-    "question": "After a user changes a cloud-account password, webmail and MFA work, but the Windows desktop client repeatedly submits the old credential. A new device signs in successfully. Credential Manager still contains an entry dated before the password change. What should the technician do NEXT?",
+    "question": "A company assigns a new employee a cloud-productivity license, but the collaboration suite still rejects sign-in because the cloud directory has not received the new on-premises identity. What should the administrator verify NEXT?",
     "choices": [
-      "Reset the user's cloud mailbox",
-      "Reinstall the entire office suite",
-      "Change the workstation DNS server",
-      "Remove the stale saved credential and authenticate the client again"
+      "The workstation disk format",
+      "The office printer queue",
+      "The public website certificate",
+      "The identity-synchronization service and its most recent sync result"
     ],
     "answer": 3,
-    "explanation": "The successful web and new-device sign-ins show that the account and service are healthy. Removing the stale local credential forces the desktop client to request and store the new password; reinstalling the suite would not target that evidence."
+    "explanation": "Identity synchronization must publish the new directory identity to the cloud service before the assigned user can authenticate. Storage, printing, and public-site certificates do not explain why the cloud directory lacks the account."
   },
   {
     "id": "A1202-PE1-019",
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Browser repair",
+    "objective": "1.11",
+    "blueprint": "Storage > Sync/folder settings",
     "difficulty": "Level 4",
-    "question": "An internal web application was upgraded yesterday. One user still sees the retired page and an obsolete certificate warning in a normal browser window, but the application works in a private window and in another browser. Which repair should be attempted first?",
+    "question": "A user can open files in the cloud portal, but a newly configured workstation does not download the team folder. The sync client is signed in, and no folder is selected for local synchronization. What should the technician configure?",
     "choices": [
-      "Clear that site's cached data and cookies, then reload it",
+      "Select the required cloud folder in the sync client",
       "Disable the endpoint firewall",
       "Reinstall the operating system",
       "Reset the office router"
     ],
     "answer": 0,
-    "explanation": "The private-window and alternate-browser results isolate the problem to stored data in the normal browser profile. Clearing the affected site data is targeted; network and operating-system changes are unsupported by the evidence."
+    "explanation": "The signed-in client needs the required folder selected in its synchronization settings. Network-wide or operating-system repairs are not justified when portal access works and the missing selection explains the symptom."
   },
   {
     "id": "A1202-PE1-020",
     "domain": "1",
-    "objective": "1.9",
-    "blueprint": "macOS backup",
+    "objective": "1.8",
+    "blueprint": "System Preferences > Time Machine",
     "difficulty": "Level 4",
     "question": "A designer needs hourly version history for a Mac, an encrypted local backup disk, and the ability to restore the entire computer after a drive replacement. Which configuration BEST meets all three requirements?",
     "choices": [
@@ -322,8 +322,8 @@
   {
     "id": "A1202-PE1-021",
     "domain": "1",
-    "objective": "1.9",
-    "blueprint": "macOS process control",
+    "objective": "1.8",
+    "blueprint": "Force Quit",
     "difficulty": "Level 2",
     "question": "A single macOS application shows a spinning wait cursor, while the Finder and other applications remain responsive. Which built-in action ends only the failed application?",
     "choices": [
@@ -338,8 +338,8 @@
   {
     "id": "A1202-PE1-022",
     "domain": "1",
-    "objective": "1.10",
-    "blueprint": "Linux text search",
+    "objective": "1.9",
+    "blueprint": "File management > grep",
     "difficulty": "Level 2",
     "question": "Which command displays every line containing the word failed, regardless of capitalization, in /var/log/auth.log?",
     "choices": [
@@ -354,8 +354,8 @@
   {
     "id": "A1202-PE1-023",
     "domain": "1",
-    "objective": "1.10",
-    "blueprint": "Linux permissions",
+    "objective": "1.9",
+    "blueprint": "File management > chmod",
     "difficulty": "Level 2",
     "question": "A Linux script must allow its owner to read, write, and execute it while the group and others may only read and execute it. Which numeric permission is required?",
     "choices": [
@@ -370,8 +370,8 @@
   {
     "id": "A1202-PE1-024",
     "domain": "1",
-    "objective": "1.10",
-    "blueprint": "Linux packages",
+    "objective": "1.9",
+    "blueprint": "Package management > apt",
     "difficulty": "Level 3",
     "question": "A Debian workstation reports that its repository package list is stale. The technician wants to refresh package metadata before installing one application without upgrading every installed package. Which command should be run?",
     "choices": [
@@ -386,8 +386,8 @@
   {
     "id": "A1202-PE1-025",
     "domain": "1",
-    "objective": "1.11",
-    "blueprint": "Application requirements",
+    "objective": "1.10",
+    "blueprint": "System requirements for applications",
     "difficulty": "Level 3",
     "question": "A vendor application requires Windows 11, 16 GB of RAM, and TPM 2.0. A workstation has Windows 10, 8 GB of RAM, and an enabled TPM 2.0 module. What should be completed before deploying the application?",
     "choices": [
@@ -403,7 +403,7 @@
     "id": "A1202-PE1-026",
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Authentication factors",
+    "blueprint": "Logical security > Multifactor authentication (MFA)",
     "difficulty": "Level 3",
     "question": "A server-room door must require two different authentication factors. Which pairing satisfies that requirement?",
     "choices": [
@@ -419,7 +419,7 @@
     "id": "A1202-PE1-027",
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Physical access",
+    "blueprint": "Physical security > Access control vestibule",
     "difficulty": "Level 3",
     "question": "Badge logs show authorized employees entering a restricted room, but video reveals an unauthorized person following closely behind each employee. Which physical control most directly prevents this behavior?",
     "choices": [
@@ -434,8 +434,8 @@
   {
     "id": "A1202-PE1-028",
     "domain": "2",
-    "objective": "2.2",
-    "blueprint": "Wireless security",
+    "objective": "2.3",
+    "blueprint": "Protocols and encryption > WPA3",
     "difficulty": "Level 4",
     "question": "A small business uses one wireless passphrase and has no RADIUS service. An assessment shows that captured WPA2 handshakes can be tested offline. Every client supports SAE. Which security change BEST addresses the demonstrated risk?",
     "choices": [
@@ -450,8 +450,8 @@
   {
     "id": "A1202-PE1-029",
     "domain": "2",
-    "objective": "2.2",
-    "blueprint": "Router hardening",
+    "objective": "2.10",
+    "blueprint": "Router settings > Change default passwords",
     "difficulty": "Level 4",
     "question": "A new SOHO router still has its published factory administrator password. A firmware update is available only after the router reaches the internet. What should the technician do before connecting its WAN interface?",
     "choices": [
@@ -466,24 +466,24 @@
   {
     "id": "A1202-PE1-030",
     "domain": "2",
-    "objective": "2.2",
-    "blueprint": "Secure remote shell",
+    "objective": "2.3",
+    "blueprint": "Authentication > Remote Authentication Dialin User Service (RADIUS)",
     "difficulty": "Level 4",
-    "question": "An administrator must run shell commands on a Linux server across an untrusted network. The session must encrypt credentials and command output, and the server should expose only the required management service. Which solution is MOST appropriate?",
+    "question": "A new wireless controller sends authentication requests to the organization’s RADIUS server, but the server rejects them as coming from an unknown client. Existing controllers continue to authenticate users. What should the administrator configure?",
     "choices": [
-      "Use the server's unencrypted HTTP status page",
-      "Transfer commands through SFTP files",
-      "Enable Telnet with a complex password",
-      "Use SSH with key-based authentication"
+      "An HTTP status page on the controller",
+      "A file-transfer job for authentication records",
+      "Telnet access with a complex password",
+      "A RADIUS client entry for the controller with the matching shared secret"
     ],
     "answer": 3,
-    "explanation": "SSH provides an encrypted interactive shell, and key authentication avoids transmitting or relying on a reusable password. SFTP is intended for file transfer, while HTTP and Telnet do not satisfy the secure-shell requirement."
+    "explanation": "RADIUS accepts requests only from configured network access clients using the expected shared secret. Web, file-transfer, and Telnet settings do not register the controller as an authorized RADIUS client."
   },
   {
     "id": "A1202-PE1-031",
     "domain": "2",
-    "objective": "2.3",
-    "blueprint": "Malware identification",
+    "objective": "2.4",
+    "blueprint": "Malware > Ransomware",
     "difficulty": "Level 2",
     "question": "A workstation displays a payment demand after documents and mapped-drive files are renamed with unfamiliar extensions and can no longer be opened. Which malware category matches these symptoms?",
     "choices": [
@@ -498,8 +498,8 @@
   {
     "id": "A1202-PE1-032",
     "domain": "2",
-    "objective": "2.3",
-    "blueprint": "Social engineering",
+    "objective": "2.5",
+    "blueprint": "Social engineering > Phishing > Vishing",
     "difficulty": "Level 2",
     "question": "A caller claims to be the CFO, creates urgency, and asks the help desk to reset an account while refusing the required identity check. Which social-engineering method is being used?",
     "choices": [
@@ -514,24 +514,24 @@
   {
     "id": "A1202-PE1-033",
     "domain": "2",
-    "objective": "2.3",
-    "blueprint": "Browser threats",
+    "objective": "2.4",
+    "blueprint": "Tools and methods > Email security gateway",
     "difficulty": "Level 2",
-    "question": "After a user installs a free browser extension, searches redirect to unfamiliar sites, new toolbars appear, and the homepage repeatedly changes back after correction. What type of threat is MOST likely present?",
+    "question": "A company wants malicious attachments and known phishing URLs blocked before messages reach employee mailboxes. Which security control should be placed in the mail flow?",
     "choices": [
-      "Ransomware",
-      "Keylogger",
-      "Browser hijacker",
-      "Boot-sector rootkit"
+      "A wireless site survey",
+      "A disk-defragmentation schedule",
+      "An email security gateway",
+      "A local printer queue"
     ],
     "answer": 2,
-    "explanation": "A browser hijacker alters search, toolbar, and homepage behavior, often through an unwanted extension. The symptoms do not indicate file encryption, keystroke capture, or a boot-level compromise."
+    "explanation": "An email security gateway inspects inbound messages and can block malicious attachments and phishing links before delivery. The other controls do not inspect or filter email traffic."
   },
   {
     "id": "A1202-PE1-034",
     "domain": "2",
-    "objective": "2.4",
-    "blueprint": "Least privilege",
+    "objective": "2.2",
+    "blueprint": "User Account Control (UAC)",
     "difficulty": "Level 3",
     "question": "A standard user must install one approved application that requires administrative rights. Policy prohibits permanent privilege changes and shared administrator accounts. Which action follows least privilege?",
     "choices": [
@@ -546,8 +546,8 @@
   {
     "id": "A1202-PE1-035",
     "domain": "2",
-    "objective": "2.4",
-    "blueprint": "Account protection",
+    "objective": "2.7",
+    "blueprint": "Password considerations > Expiration",
     "difficulty": "Level 3",
     "question": "Users respond to mandatory 60-day password changes by selecting predictable variations. The organization wants to reduce account takeover without encouraging that behavior. Which policy improvement is BEST?",
     "choices": [
@@ -562,8 +562,8 @@
   {
     "id": "A1202-PE1-036",
     "domain": "2",
-    "objective": "2.4",
-    "blueprint": "Data at rest",
+    "objective": "2.2",
+    "blueprint": "BitLocker",
     "difficulty": "Level 3",
     "question": "Customer records are stored locally on Windows laptops used by traveling employees. Management requires the data to remain unreadable if a powered-off laptop or its drive is stolen. Which control directly protects the data at rest?",
     "choices": [
@@ -579,23 +579,23 @@
     "id": "A1202-PE1-037",
     "domain": "2",
     "objective": "2.5",
-    "blueprint": "Kiosk security",
+    "blueprint": "Threats > Business email compromise (BEC)",
     "difficulty": "Level 3",
-    "question": "A public check-in PC should run only the registration browser. Visitors must not open Settings, browse local files, or install software. Which Windows configuration BEST enforces these restrictions?",
+    "question": "An accounts-payable employee receives a message that appears to come from the CEO and requests an urgent change to a vendor’s bank account. The request bypasses the normal approval process. Which threat is MOST likely?",
     "choices": [
-      "Increase the screen-lock timeout",
-      "Configure Assigned Access kiosk mode with a standard account",
-      "Enable the built-in Guest account with no password",
-      "Rely only on full-disk encryption"
+      "Shoulder surfing",
+      "Business email compromise",
+      "A distributed denial-of-service attack",
+      "An evil-twin wireless network"
     ],
     "answer": 1,
-    "explanation": "Assigned Access restricts a standard account to the designated application and blocks normal desktop access. A guest account or BitLocker does not create the required application-only experience."
+    "explanation": "Business email compromise impersonates a trusted executive or business contact to induce fraudulent financial action. The urgency and request to bypass payment controls are characteristic evidence."
   },
   {
     "id": "A1202-PE1-038",
     "domain": "2",
-    "objective": "2.5",
-    "blueprint": "Endpoint detection",
+    "objective": "2.4",
+    "blueprint": "Tools and methods > Endpoint detection and response (EDR)",
     "difficulty": "Level 4",
     "question": "An unsigned process has no known malicious signature, but it injects code into the browser, creates persistence keys, and begins contacting newly registered domains. Which detection capability is identifying the threat?",
     "choices": [
@@ -610,8 +610,8 @@
   {
     "id": "A1202-PE1-039",
     "domain": "2",
-    "objective": "2.5",
-    "blueprint": "Firewall scope",
+    "objective": "2.2",
+    "blueprint": "Firewall > Port security",
     "difficulty": "Level 4",
     "question": "A database server should accept TCP 1433 only from application servers on 10.20.30.0/24. Administrative traffic uses a different approved rule. Which new firewall rule most precisely enforces the database requirement?",
     "choices": [
@@ -627,39 +627,39 @@
     "id": "A1202-PE1-040",
     "domain": "2",
     "objective": "2.6",
-    "blueprint": "Lost device",
+    "blueprint": "Step 1: Investigate and verify malware symptoms.",
     "difficulty": "Level 4",
-    "question": "MDM reports that a company phone lost in transit is online in an unfamiliar city. It contains cached customer email, and the employee confirms it cannot be recovered. What should the administrator do FIRST under the lost-device procedure?",
+    "question": "A user reports unexpected pop-ups and browser redirection after installing freeware. Before selecting removal tools, what should the technician do FIRST under the malware-removal process?",
     "choices": [
-      "Use MDM to lock and remotely wipe the phone, then document the incident",
-      "Change the office wireless password",
-      "Wait for the battery to expire before acting",
-      "Remove only the employee's email signature"
+      "Investigate and verify the malware symptoms",
+      "Disable System Restore permanently",
+      "Reimage the computer immediately",
+      "Educate the user before examining the system"
     ],
     "answer": 0,
-    "explanation": "The online MDM connection provides an immediate way to contain exposure by locking and wiping the unrecoverable device. Changing office Wi-Fi or waiting does not protect the cached data already on the phone."
+    "explanation": "The malware-removal process begins by investigating and verifying the reported symptoms. Quarantine and remediation decisions should follow evidence collection rather than assumptions."
   },
   {
     "id": "A1202-PE1-041",
     "domain": "2",
     "objective": "2.6",
-    "blueprint": "App permissions",
+    "blueprint": "Step 6: Scan and removal techniques (e.g., safe mode, preinstallation environment)",
     "difficulty": "Level 2",
-    "question": "A basic flashlight application requests contacts, SMS, microphone, and precise location access even though none is required for its function. What should the user do?",
+    "question": "Approved anti-malware cannot remove a persistent threat while Windows is running normally because the malicious process relaunches itself. Which removal approach should the technician try NEXT?",
     "choices": [
-      "Deny the unnecessary permissions and remove the app if it will not function safely",
-      "Grant every permission so updates complete",
-      "Disable the phone screen lock",
-      "Pair the phone with a trusted Bluetooth device"
+      "Boot into Safe Mode or an approved preinstallation environment and rescan",
+      "Grant the application more permissions",
+      "Disable all future security updates",
+      "Continue using the infected profile"
     ],
     "answer": 0,
-    "explanation": "Denying permissions that are unrelated to the application follows least privilege and limits data exposure. Granting broad access merely to make the app run accepts an unnecessary privacy risk."
+    "explanation": "Safe Mode or an approved preinstallation environment can prevent the persistent process from loading, allowing updated security tools to scan and remove it. Increasing permissions or abandoning updates would increase risk."
   },
   {
     "id": "A1202-PE1-042",
     "domain": "2",
-    "objective": "2.6",
-    "blueprint": "Mobile management",
+    "objective": "2.8",
+    "blueprint": "Policies and procedures > MDM",
     "difficulty": "Level 2",
     "question": "An organization needs to enforce passcode length, device encryption, approved applications, and remote wipe on hundreds of company tablets from one console. Which technology provides these controls?",
     "choices": [
@@ -674,8 +674,8 @@
   {
     "id": "A1202-PE1-043",
     "domain": "2",
-    "objective": "2.7",
-    "blueprint": "SSD disposal",
+    "objective": "2.9",
+    "blueprint": "Physical destruction of hard drives > Shredding",
     "difficulty": "Level 2",
     "question": "A failed SSD contains regulated records and is no longer recognized by any approved sanitization tool. The media will not be reused. Which disposal method is appropriate?",
     "choices": [
@@ -690,8 +690,8 @@
   {
     "id": "A1202-PE1-044",
     "domain": "2",
-    "objective": "2.7",
-    "blueprint": "Reusable media",
+    "objective": "2.9",
+    "blueprint": "Recycling or repurposing best practices > Erasing/wiping",
     "difficulty": "Level 3",
     "question": "A functioning self-encrypting SSD will be reassigned inside the company. Policy requires existing data to be purged while keeping the drive usable. Which method BEST meets both requirements?",
     "choices": [
@@ -706,8 +706,8 @@
   {
     "id": "A1202-PE1-045",
     "domain": "2",
-    "objective": "2.8",
-    "blueprint": "Certificate warning",
+    "objective": "2.11",
+    "blueprint": "Secure connections/ sites–valid certificates",
     "difficulty": "Level 3",
     "question": "The payroll site suddenly presents a certificate-name mismatch after an announced DNS migration. Other secure sites work normally. What should the technician instruct the user to do FIRST?",
     "choices": [
@@ -722,8 +722,8 @@
   {
     "id": "A1202-PE1-046",
     "domain": "2",
-    "objective": "2.8",
-    "blueprint": "Suspicious attachment",
+    "objective": "2.5",
+    "blueprint": "Social engineering > Phishing > Spear phishing",
     "difficulty": "Level 3",
     "question": "A familiar supplier unexpectedly sends a macro-enabled invoice from its normal email domain. The purchasing team did not request it, and opening macros is prohibited. What is the safest NEXT action?",
     "choices": [
@@ -738,8 +738,8 @@
   {
     "id": "A1202-PE1-047",
     "domain": "2",
-    "objective": "2.9",
-    "blueprint": "Incident containment",
+    "objective": "2.6",
+    "blueprint": "Step 2: Quarantine infected system.",
     "difficulty": "Level 3",
     "question": "An endpoint begins encrypting files on a shared drive while EDR displays an active malware alert. What should the technician do FIRST?",
     "choices": [
@@ -754,56 +754,56 @@
   {
     "id": "A1202-PE1-048",
     "domain": "2",
-    "objective": "2.9",
-    "blueprint": "Evidence records",
+    "objective": "2.8",
+    "blueprint": "Remote wipes",
     "difficulty": "Level 4",
-    "question": "A powered-off laptop is placed under legal hold after a suspected insider incident. Security must send it to a forensic analyst while preserving the original device and proving that the forensic image was not altered. Which handling plan is defensible?",
+    "question": "MDM reports that a company phone containing cached customer email was lost and is online in an unfamiliar city. The employee confirms it cannot be recovered. Which control should the administrator use?",
     "choices": [
-      "Assign an evidence identifier, record every handler and transfer time, create the forensic image under policy, record its verification hash, and preserve the original",
-      "Start the laptop, browse the files, and email screenshots without recording custody",
-      "Let each technician copy selected files and document only the final recipient",
-      "Edit the original event logs to highlight suspicious entries before imaging the drive"
+      "Issue an MDM remote wipe and document the action",
+      "Remove the device from inventory without action",
+      "Publish the device location to all employees",
+      "Disable screen locking"
     ],
     "answer": 0,
-    "explanation": "The complete plan preserves the original, documents continuous custody, and uses a verification hash to demonstrate that the forensic image remained unchanged. Informal copies, undocumented transfers, or modification of the source would undermine evidentiary integrity."
+    "explanation": "An MDM remote wipe removes corporate data from an unrecoverable device. Inventory changes alone do not protect cached customer information, and weakening screen controls would increase exposure."
   },
   {
     "id": "A1202-PE1-049",
     "domain": "2",
     "objective": "2.10",
-    "blueprint": "Departing employee",
+    "blueprint": "Router settings > Firmware updates",
     "difficulty": "Level 4",
-    "question": "HR schedules an involuntary termination for 3:00 p.m. The employee has an active laptop session, VPN access, and several SaaS sessions. Which action BEST balances access containment and evidence preservation?",
+    "question": "A SOHO router has a vendor-confirmed remote-management vulnerability. The corrected firmware is available, and configuration backups have been verified. What should the technician do?",
     "choices": [
-      "Erase the employee's cloud files before the meeting",
-      "Disable the account the previous morning without coordinating with HR",
-      "Coordinate account disablement, session revocation, and device collection for the approved separation time",
-      "Change the company wireless password for every employee"
+      "Disable all LAN encryption",
+      "Replace every client network adapter",
+      "Apply the approved firmware update and verify the router configuration",
+      "Open remote administration to the internet for testing"
     ],
     "answer": 2,
-    "explanation": "Coordinated offboarding removes access at the authorized time while allowing the organization to preserve the account and device data. Premature or destructive actions can disrupt the process and destroy needed records."
+    "explanation": "Applying the vendor firmware corrects the known router vulnerability; verifying the configuration confirms that the controlled update preserved service. The other actions do not remediate the vulnerable firmware."
   },
   {
     "id": "A1202-PE1-050",
     "domain": "2",
-    "objective": "2.11",
-    "blueprint": "File permissions",
+    "objective": "2.7",
+    "blueprint": "Disable AutoRun",
     "difficulty": "Level 4",
-    "question": "Members of Project Atlas must create, edit, and delete files in its NTFS folder but must not change permissions or take ownership. Managers require full administrative control. Which permission design is correct?",
+    "question": "Policy requires removable media to be scanned before any program can run from it. Which Windows hardening action directly prevents automatic execution when a USB drive is inserted?",
     "choices": [
-      "Give the project group Read and Execute",
-      "Give Everyone Full Control through the share",
-      "Give the project group Full Control and managers Modify",
-      "Give the project group Modify and managers Full Control"
+      "Increase password age",
+      "Enable the Guest account",
+      "Allow anonymous share access",
+      "Disable AutoRun"
     ],
     "answer": 3,
-    "explanation": "NTFS Modify allows normal file work without permission or ownership changes, while Full Control provides managers the required administrative capabilities. Read and Execute is insufficient, and broad Everyone access violates least privilege."
+    "explanation": "Disabling AutoRun prevents removable media from automatically launching content before it can be inspected. Account and share settings do not control automatic execution from inserted media."
   },
   {
     "id": "A1202-PE1-051",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Startup recovery",
+    "blueprint": "Boot issues",
     "difficulty": "Level 2",
     "question": "Windows enters a boot loop immediately after a storage-controller driver update. Startup Repair does not resolve it, and the drive is still detected in firmware. Which targeted recovery action should be attempted?",
     "choices": [
@@ -819,7 +819,7 @@
     "id": "A1202-PE1-052",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Performance",
+    "blueprint": "Degraded performance",
     "difficulty": "Level 2",
     "question": "Every morning at 9:00, a workstation becomes slow and Task Manager shows SearchIndexer.exe using nearly all disk time. Performance returns after indexing finishes. Which change addresses the cause with the least disruption?",
     "choices": [
@@ -835,7 +835,7 @@
     "id": "A1202-PE1-053",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Application failure",
+    "blueprint": "Applications crashing",
     "difficulty": "Level 2",
     "question": "One line-of-business application closes with the same error for every user, while Windows and other applications remain stable. What should support examine FIRST?",
     "choices": [
@@ -851,7 +851,7 @@
     "id": "A1202-PE1-054",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "User profiles",
+    "blueprint": "Slow profile load",
     "difficulty": "Level 3",
     "question": "One domain user signs in to a temporary Windows profile and loses personalized settings. The original profile folder and files remain present, and other users sign in normally. What is the BEST repair approach?",
     "choices": [
@@ -867,7 +867,7 @@
     "id": "A1202-PE1-055",
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Authentication time",
+    "blueprint": "Time drift",
     "difficulty": "Level 3",
     "question": "A domain workstation reaches network resources but Kerberos sign-in fails. Its clock is 18 minutes ahead of the domain controller. What should the technician do NEXT?",
     "choices": [
@@ -882,24 +882,24 @@
   {
     "id": "A1202-PE1-056",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Compromise response",
+    "objective": "3.4",
+    "blueprint": "Common symptoms > Altered system or personal files > Inability to access files",
     "difficulty": "Level 3",
-    "question": "A workstation unexpectedly loses endpoint-protection services and begins opening outbound connections to unknown hosts. It is still connected to shared storage. What is the FIRST response?",
+    "question": "A user can open ordinary documents, but files in one folder have unfamiliar extensions and produce access errors after a suspicious process ran. Which symptom should the technician investigate as the strongest indicator of compromise?",
     "choices": [
-      "Wipe the drive before collecting evidence",
-      "Disconnect or quarantine the workstation from the network",
-      "Ask the user to continue working while monitoring it",
-      "Clear the security logs"
+      "The monitor refresh rate",
+      "The altered and inaccessible files",
+      "The keyboard layout",
+      "The default printer"
     ],
     "answer": 1,
-    "explanation": "Isolation contains possible compromise and protects shared resources while preserving the system for investigation. Wiping immediately destroys evidence, and leaving the host connected permits further activity."
+    "explanation": "Altered filenames and loss of access to previously usable files are recognized PC security symptoms. Display, keyboard, and printer settings do not explain the evidence concentrated in the affected folder."
   },
   {
     "id": "A1202-PE1-057",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Browser remediation",
+    "objective": "3.4",
+    "blueprint": "Browser-related symptoms > Redirection",
     "difficulty": "Level 3",
     "question": "Searches redirect only in one browser. A recently installed extension has broad page permissions, while another browser and DNS resolution work normally. Which remediation is most appropriate?",
     "choices": [
@@ -914,40 +914,40 @@
   {
     "id": "A1202-PE1-058",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "MFA attack",
+    "objective": "3.3",
+    "blueprint": "Security concerns > Root access/jailbreak",
     "difficulty": "Level 4",
-    "question": "A user reports repeated MFA prompts for a foreign sign-in and admits approving one by mistake. The identity console now shows an unfamiliar active session. Which response BEST contains the incident while preserving the account for investigation?",
+    "question": "An enrolled phone can install system-level packages from outside the approved store, and the security console reports that operating-system protections were bypassed. Which condition should the technician investigate?",
     "choices": [
-      "Tell the user to deny future prompts but leave the current session active",
-      "Disable the account temporarily, revoke active sessions, reset the credential through the approved process, and re-enroll MFA after review",
-      "Uninstall the authenticator while keeping the same password and sessions",
-      "Disable MFA permanently so no additional prompts appear"
+      "A normal carrier update",
+      "Root access or jailbreaking",
+      "A disabled calendar sync option",
+      "A low screen-brightness setting"
     ],
     "answer": 1,
-    "explanation": "Because one request was approved and an unfamiliar session is active, denying later prompts alone is insufficient. Temporarily disabling the account, revoking sessions, resetting the credential, and securely re-establishing MFA contains both the current access and the compromised authentication path."
+    "explanation": "Rooting or jailbreaking bypasses normal mobile operating-system protections and enables unauthorized system-level changes. The other conditions do not explain the security console finding."
   },
   {
     "id": "A1202-PE1-059",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Quarantine decision",
+    "objective": "3.4",
+    "blueprint": "Browser-related symptoms > Certificate warnings",
     "difficulty": "Level 4",
-    "question": "Endpoint protection quarantines a DLL immediately after an approved business application update. The file is vendor-signed and its hash matches the vendor release, but behavioral detection still flags it. Production is affected. What should support do NEXT?",
+    "question": "A browser displays a certificate-name mismatch only for the payroll site after an unexpected redirect. Other secure sites validate normally. What should the technician investigate FIRST?",
     "choices": [
-      "Restore it immediately because the signature is valid",
-      "Exclude the entire application folder permanently",
-      "Disable endpoint protection on all affected systems",
-      "Keep it quarantined while security and the vendor validate the detection before any controlled restoration"
+      "Replace the monitor cable",
+      "Disable certificate validation",
+      "Reformat the workstation immediately",
+      "Verify the destination URL and certificate details"
     ],
     "answer": 3,
-    "explanation": "The signature and matching hash support a possible false positive, but the behavioral alert still requires security validation. Controlled review protects production without bypassing security based on one reassuring clue."
+    "explanation": "A site-specific name mismatch following a redirect requires verification of the URL and presented certificate before proceeding. Disabling validation would hide the security warning rather than diagnose it."
   },
   {
     "id": "A1202-PE1-060",
     "domain": "3",
-    "objective": "3.2",
-    "blueprint": "Scareware",
+    "objective": "3.4",
+    "blueprint": "Common symptoms > False alerts regarding antivirus protection",
     "difficulty": "Level 4",
     "question": "A full-screen browser warning claims the computer is infected and directs the user to call a support number. No system alerts exist, and Task Manager shows the message is confined to a browser tab opened by an advertisement. What is the appropriate response?",
     "choices": [
@@ -962,8 +962,8 @@
   {
     "id": "A1202-PE1-061",
     "domain": "3",
-    "objective": "3.3",
-    "blueprint": "Mobile app failure",
+    "objective": "3.2",
+    "blueprint": "Application fails to close/crashes",
     "difficulty": "Level 2",
     "question": "A mobile banking application closes immediately after its update, while every other application remains stable. Which action is the most appropriate initial remediation?",
     "choices": [
@@ -978,8 +978,8 @@
   {
     "id": "A1202-PE1-062",
     "domain": "3",
-    "objective": "3.3",
-    "blueprint": "Mobile Wi-Fi",
+    "objective": "3.2",
+    "blueprint": "Connectivity issues > Wi-Fi",
     "difficulty": "Level 2",
     "question": "One phone cannot join the office WLAN after its passphrase changed. Other devices connect normally, and the phone still has the old network saved. What should the technician do?",
     "choices": [
@@ -994,8 +994,8 @@
   {
     "id": "A1202-PE1-063",
     "domain": "3",
-    "objective": "3.3",
-    "blueprint": "Battery drain",
+    "objective": "3.2",
+    "blueprint": "Battery life issues",
     "difficulty": "Level 2",
     "question": "Battery runtime dropped sharply after a social-media application was installed. Battery health reports normal capacity, and the new app is permitted to run continuously in the background. Which evidence should be reviewed first?",
     "choices": [
@@ -1010,24 +1010,24 @@
   {
     "id": "A1202-PE1-064",
     "domain": "3",
-    "objective": "3.3",
-    "blueprint": "Synchronization",
+    "objective": "3.2",
+    "blueprint": "Screen does not autorotate",
     "difficulty": "Level 3",
-    "question": "A phone receives new email from a cloud account, but calendar changes never appear. Account settings show that mail synchronization is enabled and calendar synchronization is disabled. What should be changed?",
+    "question": "A tablet’s display remains in portrait orientation after rotation. Rotation lock is off, the application supports landscape mode, and restarting the application does not help. What should the technician check NEXT?",
     "choices": [
       "Delete every synchronized email",
-      "Enable calendar synchronization for that account",
+      "Test the orientation sensor and operating-system autorotate function",
       "Reset all network settings",
-      "Replace the phone"
+      "Replace the charging cable"
     ],
     "answer": 1,
-    "explanation": "The working mail connection proves the account can synchronize, while the disabled calendar toggle explains the isolated failure. Enabling that data type is the direct, least-disruptive correction."
+    "explanation": "With rotation lock disabled and application support confirmed, the orientation sensor or operating-system autorotate function is the next logical diagnostic target. Email, network, and charging settings do not control screen rotation."
   },
   {
     "id": "A1202-PE1-065",
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Sideloaded malware",
+    "blueprint": "Security concerns > Application source/unofficial application stores",
     "difficulty": "Level 3",
     "question": "After installing an application from an unofficial source, a phone displays advertisements outside the application and the app gains an unexpected accessibility permission. What should the technician do?",
     "choices": [
@@ -1042,104 +1042,104 @@
   {
     "id": "A1202-PE1-066",
     "domain": "3",
-    "objective": "3.4",
-    "blueprint": "Problem scope",
+    "objective": "3.2",
+    "blueprint": "Connectivity issues > Bluetooth",
     "difficulty": "Level 3",
-    "question": "A user reports that “the network is down,” but only one cloud application fails. Other websites work, and coworkers can reach the cloud application. What should the technician do FIRST?",
+    "question": "A phone pairs with a vehicle but disconnects whenever audio playback begins. Other phones stream normally, and the affected phone uses an outdated Bluetooth stack. What should the technician do FIRST?",
     "choices": [
-      "Reboot every network switch",
-      "Replace the user's Ethernet adapter",
-      "Reproduce the failure and compare the affected account, browser, and device with a working session",
-      "Clear DNS caches on every workstation"
+      "Disable the office wireless network",
+      "Replace the cellular SIM",
+      "Update the phone, forget the vehicle pairing, and pair it again",
+      "Factory-reset the vehicle without testing"
     ],
     "answer": 2,
-    "explanation": "The evidence already narrows the issue below the network level. Reproducing and comparing a working session identifies whether the scope follows the account, browser, or device before broad changes are attempted."
+    "explanation": "Updating the affected phone and rebuilding the Bluetooth pairing addresses the isolated software and pairing evidence. Cellular and Wi-Fi changes do not explain a Bluetooth-only failure."
   },
   {
     "id": "A1202-PE1-067",
     "domain": "3",
-    "objective": "3.4",
-    "blueprint": "Change safety",
+    "objective": "3.3",
+    "blueprint": "Common symptoms > High network traffic",
     "difficulty": "Level 3",
-    "question": "A knowledge article recommends a registry change for a startup problem, but the workstation has no current restore point and contains locally stored work. What should happen before the edit?",
+    "question": "A managed phone’s data usage triples overnight even though the user was not streaming. One recently installed application transmitted continuously in the background. Which symptom supports investigating that application as malicious?",
     "choices": [
-      "Apply several registry changes at once",
-      "Disable endpoint protection",
-      "Delete old event logs",
-      "Back up the relevant data and configuration and establish a rollback method"
+      "A normal screen timeout",
+      "A new wallpaper",
+      "A fully charged battery",
+      "The application’s unusually high network traffic"
     ],
     "answer": 3,
-    "explanation": "A registry change can affect startup, so protecting data and creating a rollback path must precede the modification. Applying multiple unprotected changes makes recovery and cause isolation more difficult."
+    "explanation": "Unexpected high network traffic from one application is a recognized mobile security symptom and directly explains the unexplained data consumption. Cosmetic and power-state observations do not."
   },
   {
     "id": "A1202-PE1-068",
     "domain": "3",
-    "objective": "3.4",
-    "blueprint": "Verification",
+    "objective": "3.3",
+    "blueprint": "Common symptoms > Leaked personal files/data",
     "difficulty": "Level 4",
-    "question": "Replacing a damaged cable restores a workstation's link, but the original symptom was intermittent. Before closing the ticket, which verification provides the strongest evidence that the repair is complete?",
+    "question": "Private photos from a managed tablet appear on an unauthorized public account shortly after an unofficial application received storage permission. Which finding is MOST significant?",
     "choices": [
-      "Sustain a network transfer, review link stability, confirm application access, and obtain user confirmation",
-      "Close the ticket as soon as the link light appears",
-      "Replace the switch without further testing",
-      "Document that verification was unnecessary"
+      "Leaked personal files or data",
+      "A changed ringtone",
+      "An available operating-system update",
+      "A dim display"
     ],
     "answer": 0,
-    "explanation": "Testing under use, reviewing stability, and confirming the affected service verifies the fix beyond a momentary link light. The intermittent history makes immediate closure insufficient."
+    "explanation": "The unauthorized publication of private files is direct evidence of leaked personal data, especially after an untrusted application gained storage access. The other observations do not explain the disclosure."
   },
   {
     "id": "A1202-PE1-069",
     "domain": "3",
-    "objective": "3.4",
-    "blueprint": "Escalation",
+    "objective": "3.3",
+    "blueprint": "Security concerns > Developer mode",
     "difficulty": "Level 4",
-    "question": "A fault affects a regulated production database. The likely repair requires a change outside the technician's authority, and no approved maintenance window exists. What is the MOST appropriate action?",
+    "question": "A corporate phone has developer mode and USB debugging enabled even though policy prohibits both. The user cannot explain the change. What should the technician do?",
     "choices": [
-      "Preserve the current evidence and escalate with impact, diagnostics, and the proposed next step",
-      "Experiment with the production database until one change works",
-      "Reboot it without notifying stakeholders",
-      "Grant the technician additional permissions temporarily"
+      "Treat the setting as a mobile security concern and follow the approved investigation process",
+      "Ignore it because developer mode cannot affect security",
+      "Publish the debugging key",
+      "Disable the screen lock instead"
     ],
     "answer": 0,
-    "explanation": "Escalation preserves control and gives authorized personnel the evidence needed to act. Making an unauthorized production change would increase operational and compliance risk."
+    "explanation": "Unexpected developer mode and USB debugging weaken the managed security baseline and require investigation. Ignoring or weakening additional controls would increase the device’s exposure."
   },
   {
     "id": "A1202-PE1-070",
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "Theory testing",
+    "blueprint": "Common symptoms > OS updates failures",
     "difficulty": "Level 4",
-    "question": "A technician suspects DNS because a remote service will not open. Testing shows that both the hostname and the service's known IP address fail, while the local gateway responds normally. What should happen NEXT in the troubleshooting process?",
+    "question": "A Windows feature update repeatedly fails at the same percentage. The device has sufficient storage, stable power, and a supported release. Which evidence should the technician review NEXT?",
     "choices": [
-      "Repeat only the same DNS-cache flush",
-      "Form a new evidence-based theory, such as remote-service or path filtering, and test one variable",
-      "Replace the workstation network adapter immediately",
-      "Apply several unrelated fixes simultaneously"
+      "The wallpaper history",
+      "Windows Update error details and related event logs",
+      "The mouse double-click speed",
+      "The printer toner level"
     ],
     "answer": 1,
-    "explanation": "Failure by both name and known IP disproves a DNS-only theory. The next step is to use the new evidence to form and test another probable cause rather than repeating or combining unsupported changes."
+    "explanation": "Update error details and event logs provide evidence about a repeatable operating-system update failure after basic prerequisites have been verified. Peripheral and personalization settings are unrelated."
   },
   {
     "id": "A1202-PE1-071",
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "Resolution records",
+    "blueprint": "Common symptoms > Altered system or personal files > Missing/renamed files",
     "difficulty": "Level 2",
-    "question": "Which information belongs in the resolution section of a support ticket after an intermittent crash is fixed?",
+    "question": "Several documents are suddenly renamed with unfamiliar extensions and their original names are missing. Which security symptom does this represent?",
     "choices": [
-      "The observed symptoms, confirmed cause, corrective actions, and verification results",
-      "The technician's personal password",
-      "Only the word “fixed”",
-      "Unlabeled screenshots with no description"
+      "Missing or renamed personal files",
+      "A normal search-index update",
+      "A display calibration issue",
+      "A successful printer installation"
     ],
     "answer": 0,
-    "explanation": "Complete resolution records let future technicians understand what failed, what corrected it, and how success was verified. A one-word closure does not preserve usable support knowledge."
+    "explanation": "Unexpectedly missing or renamed files are recognized indicators of a PC security problem. The other choices do not account for the altered user data."
   },
   {
     "id": "A1202-PE1-072",
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Ticket details",
+    "blueprint": "Ticketing systems > Description of issues",
     "difficulty": "Level 2",
     "question": "A new ticket contains only the statement “computer broken.” What information should the help desk obtain before assigning a technical cause?",
     "choices": [
@@ -1155,7 +1155,7 @@
     "id": "A1202-PE1-073",
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Priority",
+    "blueprint": "Ticketing systems > Severity",
     "difficulty": "Level 2",
     "question": "Two tickets arrive together: the company-wide order-processing service is unavailable, and one employee cannot print to a local desktop printer. Which ticket should receive the higher priority?",
     "choices": [
@@ -1171,7 +1171,7 @@
     "id": "A1202-PE1-074",
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Asset custody",
+    "blueprint": "Asset management > Assigned users",
     "difficulty": "Level 3",
     "question": "A repaired laptop is reassigned from Sales to a new Finance employee. Before delivery, which record should the technician update?",
     "choices": [
@@ -1187,7 +1187,7 @@
     "id": "A1202-PE1-075",
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Change control",
+    "blueprint": "Change management > Change board approvals",
     "difficulty": "Level 3",
     "question": "A firewall firmware update is proposed during business hours. It could interrupt all remote offices, and the vendor provides a rollback image. What should occur before implementation?",
     "choices": [
@@ -1203,7 +1203,7 @@
     "id": "A1202-PE1-076",
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Rollback",
+    "blueprint": "Documented business processes > Rollback plan",
     "difficulty": "Level 3",
     "question": "An approved configuration deployment immediately causes authentication failures. The success criteria fail, and the documented backout plan has been verified. What should the change owner do NEXT?",
     "choices": [
@@ -1219,7 +1219,7 @@
     "id": "A1202-PE1-077",
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Backup design",
+    "blueprint": "Backup rotation schemes > 3-2-1 backup rule",
     "difficulty": "Level 3",
     "question": "An organization needs backups that can recover from both ransomware that encrypts connected storage and a fire that destroys the primary site. Which design BEST addresses both risks?",
     "choices": [
@@ -1235,7 +1235,7 @@
     "id": "A1202-PE1-078",
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Restore testing",
+    "blueprint": "Backup testing",
     "difficulty": "Level 4",
     "question": "Backup jobs have reported success for months, but no restoration has been attempted. Before management declares the disaster-recovery requirement satisfied, what must the team do?",
     "choices": [
@@ -1251,7 +1251,7 @@
     "id": "A1202-PE1-079",
     "domain": "4",
     "objective": "4.4",
-    "blueprint": "Printer safety",
+    "blueprint": "Personal safety > Disconnect power before repairing PC",
     "difficulty": "Level 4",
     "question": "A sheet is jammed around the fuser in a heavily used laser printer. The fuser-temperature warning is active, and the maintenance guide requires cooldown before access. What should the technician do FIRST?",
     "choices": [
@@ -1266,8 +1266,8 @@
   {
     "id": "A1202-PE1-080",
     "domain": "4",
-    "objective": "4.4",
-    "blueprint": "Battery safety",
+    "objective": "4.5",
+    "blueprint": "Material safety data sheet (MSDS) documentation for handling and disposal > Proper battery disposal",
     "difficulty": "Level 4",
     "question": "A plugged-in laptop has a visibly swollen battery, a lifted trackpad, and increasing heat. The user wants to finish copying files before surrendering it. What is the safest response?",
     "choices": [
@@ -1283,7 +1283,7 @@
     "id": "A1202-PE1-081",
     "domain": "4",
     "objective": "4.5",
-    "blueprint": "Cooling",
+    "blueprint": "Temperature, humidity-level awareness, and proper ventilation > Location/equipment placement",
     "difficulty": "Level 2",
     "question": "A server closet temperature rises after storage boxes are placed in front of the return-air vent. Which action addresses the immediate environmental cause?",
     "choices": [
@@ -1299,7 +1299,7 @@
     "id": "A1202-PE1-082",
     "domain": "4",
     "objective": "4.5",
-    "blueprint": "Waste handling",
+    "blueprint": "Material safety data sheet (MSDS) documentation for handling and disposal > Proper toner disposal",
     "difficulty": "Level 2",
     "question": "Used toner cartridges have accumulated after printer maintenance. Which disposal method follows normal environmental and vendor handling practices?",
     "choices": [
@@ -1315,7 +1315,7 @@
     "id": "A1202-PE1-083",
     "domain": "4",
     "objective": "4.6",
-    "blueprint": "Privacy",
+    "blueprint": "Regulated data > PII",
     "difficulty": "Level 2",
     "question": "Troubleshooting a user-profile problem could expose personal files unrelated to the ticket. What privacy practice should the technician follow?",
     "choices": [
@@ -1331,7 +1331,7 @@
     "id": "A1202-PE1-084",
     "domain": "4",
     "objective": "4.6",
-    "blueprint": "Incident reporting",
+    "blueprint": "Incident response > Incident documentation",
     "difficulty": "Level 3",
     "question": "A technician discovers that a message containing customer information was sent to an unintended external recipient. What should the technician do FIRST?",
     "choices": [
@@ -1347,7 +1347,7 @@
     "id": "A1202-PE1-085",
     "domain": "4",
     "objective": "4.7",
-    "blueprint": "Communication",
+    "blueprint": "Actively listen and avoid interrupting the customer.",
     "difficulty": "Level 3",
     "question": "During a major outage, an upset user repeatedly interrupts while describing the problem. Which response is most professional and most likely to improve the interaction?",
     "choices": [
@@ -1362,8 +1362,8 @@
   {
     "id": "A1202-PE1-086",
     "domain": "4",
-    "objective": "4.7",
-    "blueprint": "Licensing",
+    "objective": "4.6",
+    "blueprint": "Licensing/digital rights management (DRM)/ end-user license agreement (EULA) > Valid licenses",
     "difficulty": "Level 3",
     "question": "A project team needs a file viewer today. A manager asks the technician to copy a commercial application from another workstation, but its license permits only one installation. An approved open-source viewer and a vendor trial are available. What should the technician do?",
     "choices": [
@@ -1379,7 +1379,7 @@
     "id": "A1202-PE1-087",
     "domain": "4",
     "objective": "4.8",
-    "blueprint": "Script deployment",
+    "blueprint": "Other considerations when using scripts > Inadvertently changing system settings",
     "difficulty": "Level 3",
     "question": "A cleanup script will delete temporary files on 600 computers. It has been tested only on the author's laptop, and no rollback has been documented. What should occur before broad deployment?",
     "choices": [
@@ -1395,23 +1395,23 @@
     "id": "A1202-PE1-088",
     "domain": "4",
     "objective": "4.8",
-    "blueprint": "Secrets",
+    "blueprint": "Other considerations when using scripts > Inadvertently changing system settings",
     "difficulty": "Level 4",
-    "question": "An automation script contains a plaintext domain-administrator password and runs from a share readable by all employees. Which redesign BEST reduces the risk while preserving automation?",
+    "question": "A PowerShell cleanup script was intended to remove temporary files, but a broad path variable could also delete a shared application folder. What should the technician do before deployment?",
     "choices": [
-      "Obscure the password by renaming the variable",
-      "Move the same plaintext script to another readable share",
-      "Use a protected credential store and a least-privileged service account",
-      "Email the password separately to script users"
+      "Hide the script filename",
+      "Run it immediately on every production computer",
+      "Correct the scope, test it in a sandbox, and pilot it with logging and rollback available",
+      "Disable script logging"
     ],
     "answer": 2,
-    "explanation": "A protected credential store prevents the secret from being embedded in readable code, and a least-privileged service account limits impact. Renaming or relocating plaintext does not protect it."
+    "explanation": "The broad path could inadvertently change or remove production resources. Correcting the scope and validating the script in a sandbox and pilot limits impact while preserving evidence and rollback options."
   },
   {
     "id": "A1202-PE1-089",
     "domain": "4",
     "objective": "4.9",
-    "blueprint": "Remote support",
+    "blueprint": "Security considerations of each access method",
     "difficulty": "Level 4",
     "question": "A regulated support process requires the employee to approve and observe every remote session, and the connection must end when the task is complete. Which method meets these constraints?",
     "choices": [
@@ -1427,7 +1427,7 @@
     "id": "A1202-PE1-090",
     "domain": "4",
     "objective": "4.10",
-    "blueprint": "Generative AI",
+    "blueprint": "Private vs. public > Data privacy",
     "difficulty": "Level 4",
     "question": "A technician must summarize a ticket containing customer identifiers, account numbers, and internal hostnames. The public AI tool preferred by the team retains prompts, while an approved internal AI service enforces access controls and does not train on submitted data. Which workflow BEST meets the business need and data-handling requirements?",
     "choices": [
