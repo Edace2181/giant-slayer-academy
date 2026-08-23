@@ -246,6 +246,8 @@ body[data-certification="network-plus"],
 body[data-certification="Network+"] { --cert-icon-image: url("assets/network-plus-kingdom-icon.png"); }
 body[data-certification="security-plus"],
 body[data-certification="Security+"] { --cert-icon-image: url("assets/security-plus-kingdom-icon.png"); }
+body[data-certification="cloud-plus"],
+body[data-certification="Cloud+"] { --cert-icon-image: url("assets/cloud-plus-kingdom-castle.png"); }
 body[data-certification="linux-essentials"] { --cert-icon-image: url("assets/linux-essentials-kingdom-icon.png"); }
 body[data-certification="aws-cloud-practitioner"] { --cert-icon-image: url("assets/aws-cloud-kingdom-icon.png"); }
 
@@ -253,6 +255,7 @@ body.certification-cabinet[data-certification="aplus-core1"] { --kingdom-accent:
 body.certification-cabinet[data-certification="aplus-core2"] { --kingdom-accent: #22d3ee; }
 body.certification-cabinet[data-certification="network-plus"] { --kingdom-accent: #8b5cf6; }
 body.certification-cabinet[data-certification="security-plus"] { --kingdom-accent: #c65cff; }
+body.certification-cabinet[data-certification="cloud-plus"] { --kingdom-accent: #65e8ff; }
 body.certification-cabinet[data-certification="linux-essentials"] { --kingdom-accent: #39ff88; }
 body.certification-cabinet[data-certification="aws-cloud-practitioner"] { --kingdom-accent: #ff8a00; }
 
@@ -350,6 +353,8 @@ body[data-certification="network-plus"]:not(.certification-cabinet)::before,
 body[data-certification="Network+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · NETWORK+"; }
 body[data-certification="security-plus"]:not(.certification-cabinet)::before,
 body[data-certification="Security+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · SECURITY+"; }
+body[data-certification="cloud-plus"]:not(.certification-cabinet)::before,
+body[data-certification="Cloud+"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · CLOUD+"; }
 body[data-certification="linux-essentials"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · LINUX ESSENTIALS"; }
 body[data-certification="aws-cloud-practitioner"]:not(.certification-cabinet)::before { content: "🏰 GIANT SLAYER ACADEMY · AWS CLOUD PRACTITIONER"; }
 
@@ -369,6 +374,7 @@ body[data-certification="aws-cloud-practitioner"]:not(.certification-cabinet)::b
 .games-links a[href="aplus-core2.html"]::before { background-image: url("assets/aplus-core2-kingdom-icon.png"); }
 .games-links a[href="network-plus.html"]::before { background-image: url("assets/network-plus-kingdom-icon.png"); }
 .games-links a[href="security-plus.html"]::before { background-image: url("assets/security-plus-kingdom-icon.png"); }
+.games-links a[href="cloud-plus.html"]::before { background-image: url("assets/cloud-plus-kingdom-castle.png"); }
 .games-links a[href="linux-essentials.html"]::before { background-image: url("assets/linux-essentials-kingdom-icon.png"); }
 .games-links a[href="aws-cloud-practitioner.html"]::before { background-image: url("assets/aws-cloud-kingdom-icon.png"); }
 
@@ -1282,8 +1288,9 @@ HYDRA QUIZ
 .dashboard-campaign-card:nth-child(2) { --cert-accent: #22d3ee; --cert-icon-image: url("assets/aplus-core2-kingdom-icon.png"); }
 .dashboard-campaign-card:nth-child(3) { --cert-accent: #8b5cf6; --cert-icon-image: url("assets/network-plus-kingdom-icon.png"); }
 .dashboard-campaign-card:nth-child(4) { --cert-accent: #c65cff; --cert-icon-image: url("assets/security-plus-kingdom-icon.png"); }
-.dashboard-campaign-card:nth-child(5) { --cert-accent: #00eaff; --cert-icon-image: url("assets/linux-essentials-kingdom-icon.png"); }
-.dashboard-campaign-card:nth-child(6) { --cert-accent: #ff8a00; --cert-icon-image: url("assets/aws-cloud-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(5) { --cert-accent: #65e8ff; --cert-icon-image: url("assets/cloud-plus-kingdom-castle.png"); }
+.dashboard-campaign-card:nth-child(6) { --cert-accent: #00eaff; --cert-icon-image: url("assets/linux-essentials-kingdom-icon.png"); }
+.dashboard-campaign-card:nth-child(7) { --cert-accent: #ff8a00; --cert-icon-image: url("assets/aws-cloud-kingdom-icon.png"); }
 
 .dashboard-campaign-card {
     border-color: var(--cert-accent, #00eaff);

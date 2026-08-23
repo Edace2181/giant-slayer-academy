@@ -1,0 +1,210 @@
+[
+  {
+    "id": "CV0004-1.2-R001",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability",
+    "difficulty": "Level 2",
+    "question": "Which topic includes regions, availability zones, cloud bursting, edge computing, and availability monitoring?",
+    "choices": [
+      "Resource metering",
+      "Identity federation",
+      "Resource availability",
+      "Source control"
+    ],
+    "answer": 2,
+    "explanation": "These technologies and practices determine where resources operate and how their availability is maintained."
+  },
+  {
+    "id": "CV0004-1.2-R002",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability > Region",
+    "difficulty": "Level 2",
+    "question": "What cloud term describes a provider's distinct geographic operating area?",
+    "choices": [
+      "Availability zone",
+      "Edge gateway",
+      "Transit route",
+      "Region"
+    ],
+    "answer": 3,
+    "explanation": "A region is a separate geographic area in which a cloud provider operates infrastructure."
+  },
+  {
+    "id": "CV0004-1.2-R003",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability > Availability Zone",
+    "difficulty": "Level 2",
+    "question": "What is an isolated infrastructure location within a cloud region called?",
+    "choices": [
+      "Availability zone",
+      "Community cloud",
+      "Cold site",
+      "Dedicated host"
+    ],
+    "answer": 0,
+    "explanation": "An availability zone is an isolated location within a region that supports resilient deployments."
+  },
+  {
+    "id": "CV0004-1.2-R004",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability > Cloud Bursting",
+    "difficulty": "Level 2",
+    "question": "A private environment temporarily sends excess demand to public-cloud resources. Which availability technique is being used?",
+    "choices": [
+      "Vertical scaling",
+      "Cloud bursting",
+      "Cold recovery",
+      "Host affinity"
+    ],
+    "answer": 1,
+    "explanation": "Cloud bursting extends a private workload into public-cloud capacity when local demand exceeds available resources."
+  },
+  {
+    "id": "CV0004-1.2-R005",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability > Edge Computing",
+    "difficulty": "Level 2",
+    "question": "Which approach places processing closer to users or data sources to reduce latency?",
+    "choices": [
+      "Archive storage",
+      "Cloud peering",
+      "Edge computing",
+      "Differential backup"
+    ],
+    "answer": 2,
+    "explanation": "Edge computing moves processing nearer to where data is generated or consumed."
+  },
+  {
+    "id": "CV0004-1.2-R006",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Resource Availability > Availability Monitoring",
+    "difficulty": "Level 2",
+    "question": "Which activity continuously checks whether a cloud service is reachable and operating as expected?",
+    "choices": [
+      "Resource tagging",
+      "Code merging",
+      "Storage tiering",
+      "Availability monitoring"
+    ],
+    "answer": 3,
+    "explanation": "Availability monitoring observes service health and reachability so outages can be detected."
+  },
+  {
+    "id": "CV0004-1.2-R007",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery (DR)",
+    "difficulty": "Level 2",
+    "question": "Which discipline includes recovery objectives and hot, warm, and cold recovery sites?",
+    "choices": [
+      "Disaster recovery (DR)",
+      "Continuous integration",
+      "Container orchestration",
+      "Cost optimization"
+    ],
+    "answer": 0,
+    "explanation": "Disaster recovery prepares an organization to restore services and data after a disruptive event."
+  },
+  {
+    "id": "CV0004-1.2-R008",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Recovery Time Objective (RTO)",
+    "difficulty": "Level 2",
+    "question": "Which metric defines the maximum acceptable time for restoring a service after disruption?",
+    "choices": [
+      "Recovery point objective (RPO)",
+      "Recovery time objective (RTO)",
+      "Input/output operations per second (IOPS)",
+      "Mean storage latency"
+    ],
+    "answer": 1,
+    "explanation": "RTO expresses how quickly service must be restored after an outage."
+  },
+  {
+    "id": "CV0004-1.2-R009",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Recovery Point Objective (RPO)",
+    "difficulty": "Level 2",
+    "question": "Which disaster-recovery objective expresses acceptable data loss as an interval before an outage?",
+    "choices": [
+      "Recovery time objective (RTO)",
+      "Service-level availability",
+      "Recovery point objective (RPO)",
+      "Network throughput"
+    ],
+    "answer": 2,
+    "explanation": "RPO identifies how far back recovered data may be relative to the disruption."
+  },
+  {
+    "id": "CV0004-1.2-R010",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Hot Site",
+    "difficulty": "Level 2",
+    "question": "Which recovery site is fully equipped and ready to assume operations with minimal delay?",
+    "choices": [
+      "Cold site",
+      "Archive tier",
+      "Community cloud",
+      "Hot site"
+    ],
+    "answer": 3,
+    "explanation": "A hot site maintains operational infrastructure and current resources for rapid recovery."
+  },
+  {
+    "id": "CV0004-1.2-R011",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Warm Site",
+    "difficulty": "Level 2",
+    "question": "Which recovery site has some prepared infrastructure but still requires configuration or data restoration before use?",
+    "choices": [
+      "Warm site",
+      "Hot site",
+      "Cold site",
+      "Edge location"
+    ],
+    "answer": 0,
+    "explanation": "A warm site is partially prepared and needs additional work before it can support production."
+  },
+  {
+    "id": "CV0004-1.2-R012",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Cold Site",
+    "difficulty": "Level 2",
+    "question": "Which recovery option supplies basic facilities but requires systems and data to be installed after a disaster?",
+    "choices": [
+      "Hot site",
+      "Cold site",
+      "Warm site",
+      "Availability zone"
+    ],
+    "answer": 1,
+    "explanation": "A cold site provides space and supporting facilities but little immediately operational technology."
+  },
+  {
+    "id": "CV0004-1.2-R013",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Multicloud Tenancy",
+    "difficulty": "Level 2",
+    "question": "An organization deliberately operates workloads across services from multiple cloud providers. Which concept does this illustrate?",
+    "choices": [
+      "Single-region clustering",
+      "Cloud bursting",
+      "Multicloud tenancy",
+      "Local virtualization"
+    ],
+    "answer": 2,
+    "explanation": "Multicloud tenancy uses resources or services from more than one cloud provider."
+  }
+]

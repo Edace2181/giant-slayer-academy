@@ -12,6 +12,7 @@
     "hydra-aplus-core2-progress-v1",
     "hydra-network-plus-progress-v1",
     "hydra-security-plus-progress-v1",
+    "hydra-cloud-plus-progress-v1",
     "hydra-linux-essentials-progress-v1",
     "hydra-aws-cloud-practitioner-progress-v1"
   ];

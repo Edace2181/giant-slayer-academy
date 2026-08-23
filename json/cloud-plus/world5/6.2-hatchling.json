@@ -1,0 +1,354 @@
+[
+  {
+    "id": "CV0004-6.2-R001",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Service Unavailability",
+    "difficulty": "Level 2",
+    "question": "A cloud workload loses access to address assignment, name resolution, time synchronization, translation, and web services. Which troubleshooting category includes these failures?",
+    "choices": [
+      "Network service unavailability",
+      "Storage tier mismatch",
+      "Hypervisor oversubscription",
+      "Image deprecation"
+    ],
+    "answer": 0,
+    "explanation": "Network service unavailability covers failures involving services such as DHCP, DNS, NTP, NAT, and HTTP."
+  },
+  {
+    "id": "CV0004-6.2-R002",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Dynamic Host Configuration Protocol (DHCP)",
+    "difficulty": "Level 2",
+    "question": "New cloud instances start without automatically assigned IP configuration. Which network service should an administrator check first?",
+    "choices": [
+      "DNS",
+      "DHCP",
+      "NTP",
+      "HTTP"
+    ],
+    "answer": 1,
+    "explanation": "DHCP automatically supplies clients with IP addressing information such as an address, gateway, and DNS servers."
+  },
+  {
+    "id": "CV0004-6.2-R003",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Domain Name System (DNS)",
+    "difficulty": "Level 2",
+    "question": "A service is reachable by IP address but not by its hostname. Which service is MOST likely failing?",
+    "choices": [
+      "NAT",
+      "NTP",
+      "DNS",
+      "DHCP"
+    ],
+    "answer": 2,
+    "explanation": "DNS translates hostnames into IP addresses, so successful IP connectivity with failed hostname access points to name resolution."
+  },
+  {
+    "id": "CV0004-6.2-R004",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Time Protocol (NTP)",
+    "difficulty": "Level 2",
+    "question": "Logs from several cloud servers show different timestamps for the same event. Which service should be examined?",
+    "choices": [
+      "NTP",
+      "DNS",
+      "HTTP",
+      "NAT"
+    ],
+    "answer": 0,
+    "explanation": "NTP synchronizes system clocks, allowing events recorded by different systems to use consistent timestamps."
+  },
+  {
+    "id": "CV0004-6.2-R005",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Address Translation (NAT)",
+    "difficulty": "Level 2",
+    "question": "Private cloud instances can communicate internally but cannot reach public internet services through their configured gateway. Which function should be checked?",
+    "choices": [
+      "DNS zone transfer",
+      "NAT",
+      "NTP peering",
+      "VLAN tagging"
+    ],
+    "answer": 1,
+    "explanation": "NAT translates private addresses for communication with public networks, so a failed translation path can block outbound internet access."
+  },
+  {
+    "id": "CV0004-6.2-R006",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Hypertext Transfer Protocol (HTTP)",
+    "difficulty": "Level 2",
+    "question": "Which application-layer protocol should be investigated when a cloud-hosted website cannot exchange web requests and responses?",
+    "choices": [
+      "NTP",
+      "DHCP",
+      "HTTP",
+      "ARP"
+    ],
+    "answer": 2,
+    "explanation": "HTTP is the application-layer protocol used for web requests and responses."
+  },
+  {
+    "id": "CV0004-6.2-R007",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "HTTP Status Codes",
+    "difficulty": "Level 2",
+    "question": "A cloud application returns an HTTP 503 response. What does the first digit indicate?",
+    "choices": [
+      "A successful request",
+      "A client redirection",
+      "A client-side request error",
+      "A server-side error"
+    ],
+    "answer": 3,
+    "explanation": "HTTP status codes in the 500 range identify server-side errors; 503 specifically indicates that the service is unavailable."
+  },
+  {
+    "id": "CV0004-6.2-R008",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Latency",
+    "difficulty": "Level 2",
+    "question": "Users report a long delay before each response even though only a small amount of data is transferred. Which network measurement is MOST relevant?",
+    "choices": [
+      "Latency",
+      "Storage capacity",
+      "Address scope size",
+      "VLAN count"
+    ],
+    "answer": 0,
+    "explanation": "Latency measures the delay in network communication and can make small exchanges feel slow even when bandwidth is sufficient."
+  },
+  {
+    "id": "CV0004-6.2-R009",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Bandwidth and Throughput Issues",
+    "difficulty": "Level 2",
+    "question": "A link has a high advertised capacity, but monitoring shows a much lower rate of successfully delivered data. What is the lower measured rate called?",
+    "choices": [
+      "Latency",
+      "Throughput",
+      "Jitter",
+      "Hop count"
+    ],
+    "answer": 1,
+    "explanation": "Throughput is the actual rate of successful data transfer, while bandwidth describes the link's theoretical capacity."
+  },
+  {
+    "id": "CV0004-6.2-R010",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Device Misconfiguration",
+    "difficulty": "Level 2",
+    "question": "A virtual router stops forwarding traffic immediately after an administrator changes an interface setting. Which cause should be investigated first?",
+    "choices": [
+      "Network device misconfiguration",
+      "Expired storage snapshot",
+      "Image sizing issue",
+      "Database schema drift"
+    ],
+    "answer": 0,
+    "explanation": "A forwarding failure that begins immediately after a router interface change strongly indicates a network device misconfiguration."
+  },
+  {
+    "id": "CV0004-6.2-R011",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Protocol Incompatibility",
+    "difficulty": "Level 2",
+    "question": "Two connected services cannot establish a session because each supports a different, noninteroperable protocol version. What is this condition?",
+    "choices": [
+      "Scope exhaustion",
+      "Protocol incompatibility",
+      "Route summarization",
+      "Resource oversubscription"
+    ],
+    "answer": 1,
+    "explanation": "Protocol incompatibility occurs when communicating systems do not share a compatible protocol or supported version."
+  },
+  {
+    "id": "CV0004-6.2-R012",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Protocol Deprecations",
+    "difficulty": "Level 2",
+    "question": "A provider announces that an older network protocol will no longer be accepted after a specified date. What lifecycle event is being announced?",
+    "choices": [
+      "Protocol deprecation",
+      "Network overlap",
+      "Address reservation",
+      "Route convergence"
+    ],
+    "answer": 0,
+    "explanation": "Protocol deprecation identifies a protocol or version that is being withdrawn from supported use."
+  },
+  {
+    "id": "CV0004-6.2-R013",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "IP Addressing Issues",
+    "difficulty": "Level 2",
+    "question": "Which troubleshooting category includes exhausted address pools and overlapping network ranges?",
+    "choices": [
+      "Switching issues",
+      "HTTP issues",
+      "IP addressing issues",
+      "Time synchronization issues"
+    ],
+    "answer": 2,
+    "explanation": "Scope exhaustion and overlapping networks are both IP addressing issues."
+  },
+  {
+    "id": "CV0004-6.2-R014",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Address Scope Exhaustion",
+    "difficulty": "Level 2",
+    "question": "A subnet's dynamic address pool has assigned every available address, preventing a new instance from receiving one. What has occurred?",
+    "choices": [
+      "Protocol deprecation",
+      "Scope exhaustion",
+      "Route flapping",
+      "Trunk negotiation"
+    ],
+    "answer": 1,
+    "explanation": "Scope exhaustion occurs when an address pool has no available addresses left to assign to new clients."
+  },
+  {
+    "id": "CV0004-6.2-R015",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Network Overlap",
+    "difficulty": "Level 2",
+    "question": "A newly connected cloud network uses the same CIDR range as an existing site, creating ambiguous destinations. What is the problem?",
+    "choices": [
+      "Network overlap",
+      "API throttling",
+      "Clock drift",
+      "Full outage"
+    ],
+    "answer": 0,
+    "explanation": "Network overlap occurs when connected environments use conflicting IP ranges, making routing decisions ambiguous."
+  },
+  {
+    "id": "CV0004-6.2-R016",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Routing Issues",
+    "difficulty": "Level 2",
+    "question": "Which troubleshooting category includes both missing routes and routes configured with an incorrect destination or next hop?",
+    "choices": [
+      "Routing issues",
+      "Authentication issues",
+      "Storage issues",
+      "Cipher issues"
+    ],
+    "answer": 0,
+    "explanation": "Missing and misconfigured routes are both routing issues that prevent traffic from following the intended path."
+  },
+  {
+    "id": "CV0004-6.2-R017",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Missing Routes",
+    "difficulty": "Level 2",
+    "question": "A routing table contains no entry that matches a remote subnet and has no usable default route. Which problem is present?",
+    "choices": [
+      "Misconfigured VLAN tag",
+      "Missing route",
+      "Scope exhaustion",
+      "HTTP redirection"
+    ],
+    "answer": 1,
+    "explanation": "A missing route leaves the router without a path for traffic destined for the remote subnet."
+  },
+  {
+    "id": "CV0004-6.2-R018",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Misconfigured Routes",
+    "difficulty": "Level 2",
+    "question": "A route exists for the correct destination prefix but sends packets to the wrong next-hop address. How should this be classified?",
+    "choices": [
+      "A missing route",
+      "A misconfigured route",
+      "A depleted scope",
+      "A deprecated cipher"
+    ],
+    "answer": 1,
+    "explanation": "The route is present but contains an incorrect next hop, making it a misconfigured route."
+  },
+  {
+    "id": "CV0004-6.2-R019",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Switching Issues",
+    "difficulty": "Level 2",
+    "question": "Which troubleshooting category includes VLAN assignment, tagging, and access-versus-trunk port problems?",
+    "choices": [
+      "Switching issues",
+      "Identity issues",
+      "Compute sizing issues",
+      "Web service issues"
+    ],
+    "answer": 0,
+    "explanation": "VLANs and port modes are Layer 2 switching functions, so their failures are categorized as switching issues."
+  },
+  {
+    "id": "CV0004-6.2-R020",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "VLAN Issues",
+    "difficulty": "Level 2",
+    "question": "Two virtual machines on the same physical switching infrastructure cannot communicate because they were assigned to different logical Layer 2 segments. What should be checked?",
+    "choices": [
+      "VLAN configuration",
+      "NTP stratum",
+      "HTTP status code",
+      "Storage replication"
+    ],
+    "answer": 0,
+    "explanation": "VLANs create logical Layer 2 segments, and an incorrect VLAN assignment can isolate systems that should communicate."
+  },
+  {
+    "id": "CV0004-6.2-R021",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Misconfigured VLAN Tags",
+    "difficulty": "Level 2",
+    "question": "Frames crossing a trunk are assigned the wrong VLAN identifier and reach the wrong logical segment. Which setting is misconfigured?",
+    "choices": [
+      "The DNS suffix",
+      "The VLAN tag",
+      "The DHCP lease time",
+      "The HTTP method"
+    ],
+    "answer": 1,
+    "explanation": "A VLAN tag identifies the logical network associated with a frame; the wrong tag places traffic in the wrong VLAN."
+  },
+  {
+    "id": "CV0004-6.2-R022",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Access vs. Trunk Ports",
+    "difficulty": "Level 2",
+    "question": "Which port mode is designed to carry traffic for multiple tagged VLANs between network devices?",
+    "choices": [
+      "Access",
+      "Trunk",
+      "Loopback",
+      "Routed"
+    ],
+    "answer": 1,
+    "explanation": "A trunk port carries traffic for multiple VLANs, typically using tags, while an access port normally carries one VLAN for an endpoint."
+  }
+]

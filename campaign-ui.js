@@ -24,6 +24,11 @@
       objectiveCounts: [4, 5, 4, 9, 6],
       domains: { "1": "General Security Concepts", "2": "Threats, Vulnerabilities, and Mitigations", "3": "Security Architecture", "4": "Security Operations", "5": "Security Program Management and Oversight" }
     },
+    "hydra-cloud-plus-progress-v1": {
+      name: "Cloud+", campaign: "cloud-plus-campaign.html", totalQuestions: 402,
+      objectiveCounts: [11, 5, 4, 6, 7],
+      domains: { "1": "Cloud Architecture", "2": "Deployment", "3": "Operations", "4": "Security", "5": "DevOps Fundamentals", "6": "Troubleshooting" }
+    },
     "hydra-linux-essentials-progress-v1": {
       name: "Linux Essentials", campaign: "linux-essentials-campaign.html", totalQuestions: 235,
       objectiveCounts: [4, 4, 3, 4, 4],
@@ -84,6 +89,7 @@
     if (page.includes("aplus-core1-")) return "hydra-aplus-core1-progress-v1";
     if (page.includes("aplus-core2-")) return "hydra-aplus-core2-progress-v1";
     if (page.includes("security-plus-")) return "hydra-security-plus-progress-v1";
+    if (page.includes("cloud-plus-")) return "hydra-cloud-plus-progress-v1";
     if (page.includes("network-world")) return "hydra-network-plus-progress-v1";
     if (page.includes("linux-essentials-")) return "hydra-linux-essentials-progress-v1";
     if (page.includes("aws-cloud-practitioner-")) return "hydra-aws-cloud-practitioner-progress-v1";
@@ -144,6 +150,7 @@
       "aplus-core1": "hydra-aplus-core1-progress-v1",
       "aplus-core2": "hydra-aplus-core2-progress-v1",
       "security-plus": "hydra-security-plus-progress-v1",
+      "cloud-plus": "hydra-cloud-plus-progress-v1",
       "linux-essentials": "hydra-linux-essentials-progress-v1",
       "aws-cloud-practitioner": "hydra-aws-cloud-practitioner-progress-v1"
     };
@@ -398,6 +405,7 @@
     if (page.includes("aplus-core1-")) return `json/aplus-core1/world${world}/${objective}-hatchling.json`;
     if (page.includes("aplus-core2-")) return `json/aplus-core2/world${world}/${objective}-hatchling.json`;
     if (page.includes("security-plus-")) return `json/security-plus/world${world}/${objective}-hatchling.json`;
+    if (page.includes("cloud-plus-")) return `json/cloud-plus/world${world}/${objective}-hatchling.json`;
     if (page.includes("aws-cloud-practitioner-")) return `json/aws-cloud-practitioner/world${world}/${objective}-hatchling.json`;
     if (page.includes("network-world")) return `json/world${world}/${objective}-hatchling.json`;
     return "";

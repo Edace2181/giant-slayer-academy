@@ -27,7 +27,7 @@ node tools/validate-practice-exams.js --all --strict-warnings
 node tools/validate-practice-exams.js --cert cloud-plus
 ```
 
-Cloud+ Practice Exam files are recognized but are excluded from the default batch while they remain intentional empty placeholders. Explicitly selecting `cloud-plus`, or using `--include-placeholders`, audits those files and reports their incomplete question counts.
+Cloud+ Practice Exam files are active and validated against the approved CV0-004 domain, objective, and difficulty targets.
 
 ## Checks performed
 

@@ -29,6 +29,12 @@
       questions: 90,
       minutes: 90
     },
+    "cloud-plus-quiz.html": {
+      id: "cloud-plus",
+      name: "CompTIA Cloud+",
+      questions: 90,
+      minutes: 90
+    },
     "linux-essentials-quiz.html": {
       id: "linux-essentials",
       name: "LPI Linux Essentials",

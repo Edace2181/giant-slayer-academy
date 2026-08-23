@@ -1,0 +1,1622 @@
+[
+  {
+    "id": "CV0004-PE6-001",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Cloud Service Models > Software as a Service (SaaS)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A sales department subscribes to a browser-based customer relationship platform. Users manage records and settings, while the vendor operates the application and every underlying layer. Which service model is this?",
+    "choices": [
+      "Infrastructure as a service (IaaS)",
+      "Software as a service (SaaS)",
+      "Platform as a service (PaaS)",
+      "Customer-operated colocation"
+    ],
+    "answer": 1,
+    "explanation": "SaaS provides a complete provider-operated application. Customers configure and use the service without administering its runtime, operating system, or infrastructure."
+  },
+  {
+    "id": "CV0004-PE6-002",
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Shared Responsibility Model > Function as a Service (FaaS)",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A provider-operated function runtime is fully patched, but a function fails because its customer-defined execution role permits no read access to the input bucket. Who is responsible for correcting the permission?",
+    "choices": [
+      "The provider's runtime team because it patches the function platform",
+      "The customer team that defines the function role and application configuration",
+      "The storage provider because the bucket contains the input",
+      "The uploading users because they triggered the function"
+    ],
+    "answer": 1,
+    "explanation": "The provider secures the FaaS platform, while the customer controls its code, configuration, data access, and execution identity. The customer must correct the role permission."
+  },
+  {
+    "id": "CV0004-PE6-003",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Hot, Warm, and Cold Sites",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A dispatch platform has a ten-minute RTO and cannot lose acknowledged jobs. A hot site is affordable only for the dispatch database, while worker capacity can start within five minutes. Which recovery architecture best meets the targets without duplicating all production compute?",
+    "choices": [
+      "Use monthly offline backups and an empty cold site",
+      "Keep all recovery resources unconfigured until an incident",
+      "Archive completed reports in the primary region only",
+      "Keep the database synchronously available at a hot site and maintain rapidly scalable warm worker capacity"
+    ],
+    "answer": 3,
+    "explanation": "The zero-loss database requirement needs continuously available data, while rapidly scalable warm workers can fit the ten-minute RTO. This avoids paying for full duplicate compute while meeting both constraints."
+  },
+  {
+    "id": "CV0004-PE6-004",
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Disaster Recovery > Recovery Point Objective (RPO)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Backups are scheduled every four hours because the business accepts losing up to four hours of new data after a failure. Which recovery target drove that schedule?",
+    "choices": [
+      "Recovery time objective (RTO)",
+      "Recovery point objective (RPO)",
+      "Mean time to acknowledge",
+      "Service request latency"
+    ],
+    "answer": 1,
+    "explanation": "RPO defines the acceptable data-loss interval and therefore influences backup or replication frequency."
+  },
+  {
+    "id": "CV0004-PE6-005",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Network Services > Network Load Balancer",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A telemetry collector receives millions of TCP connections and must preserve transport performance without inspecting application requests. What cloud component should distribute these sessions?",
+    "choices": [
+      "An application gateway with URL rewriting",
+      "An archive-storage lifecycle policy",
+      "A recursive DNS cache only",
+      "A network load balancer"
+    ],
+    "answer": 3,
+    "explanation": "A network load balancer distributes high-volume transport-layer traffic without needing application-aware routing. An application gateway adds features the workload does not require."
+  },
+  {
+    "id": "CV0004-PE6-006",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Virtual Private Cloud > Peering and Transit",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Six VPCs use nonoverlapping ranges and need controlled any-to-any connectivity. The provider's peering is nontransitive, and a full mesh would require 15 peerings. Which design is most maintainable?",
+    "choices": [
+      "Chain ordinary peerings and assume transit through intermediate VPCs",
+      "Add public IP addresses to every private resource",
+      "Place all workloads in one unrestricted subnet",
+      "Connect the VPCs through a managed transit hub with explicit route and security domains"
+    ],
+    "answer": 3,
+    "explanation": "A transit hub provides scalable central routing where ordinary peering is nontransitive. Chained peerings would not create the assumed paths, and broad public exposure would weaken security."
+  },
+  {
+    "id": "CV0004-PE6-007",
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Public and Private Connections > Virtual Private Network (VPN)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which connection encrypts traffic between an office gateway and a cloud network across the public internet?",
+    "choices": [
+      "A storage snapshot",
+      "A container image layer",
+      "A site-to-site VPN",
+      "A billing reservation"
+    ],
+    "answer": 2,
+    "explanation": "A site-to-site VPN creates an encrypted tunnel between networks over an internet path."
+  },
+  {
+    "id": "CV0004-PE6-008",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Storage Types > Object Storage",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An application stores immutable medical images by unique key, retrieves them through HTTPS, and does not need mounted directories. Which storage type is most appropriate?",
+    "choices": [
+      "A VM boot disk",
+      "A shared swap partition",
+      "Local ephemeral memory",
+      "Object storage"
+    ],
+    "answer": 3,
+    "explanation": "Object storage is designed for durable API-accessed objects addressed by keys. The workload does not require filesystem or raw block semantics."
+  },
+  {
+    "id": "CV0004-PE6-009",
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Tiered Storage and Retrieval Cost",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An audit archive is retained for ten years. Ninety-nine percent of records are never read, but a legal request may require a known set within twelve hours. Which policy best minimizes cost?",
+    "choices": [
+      "Place records in an archive tier whose documented retrieval time meets twelve hours and test the restoration procedure",
+      "Keep the entire archive on premium low-latency block storage",
+      "Delete records after one year",
+      "Use an archive tier with an unknown multiday retrieval process"
+    ],
+    "answer": 0,
+    "explanation": "A qualifying archive tier reduces long-term storage cost while meeting the legal retrieval window. Tested restoration confirms that fees, staging, and timing are understood."
+  },
+  {
+    "id": "CV0004-PE6-010",
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Microservices",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An application is separated into independently deployable billing, profile, and notification services. Which architecture is described?",
+    "choices": [
+      "Microservices",
+      "A single-process monolith",
+      "Cold-site recovery",
+      "Physical desktop hosting"
+    ],
+    "answer": 0,
+    "explanation": "Microservices divide an application into independently deployed capabilities that can evolve and scale separately."
+  },
+  {
+    "id": "CV0004-PE6-011",
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Cloud-Provided Managed Services and Fan-Out",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A managed event bus receives an account-creation event. Compliance, welcome-email, and analytics consumers must process it separately and retry without affecting one another. Which configuration should be used?",
+    "choices": [
+      "Call all consumers synchronously in one database transaction",
+      "Send the event to one nonpersistent local file",
+      "Require the email consumer to invoke every other service",
+      "Create independent durable subscriptions to fan out the event to each consumer"
+    ],
+    "answer": 3,
+    "explanation": "Independent durable subscriptions provide fan-out and isolate consumer failures. Each service can retry its own work without coupling the account-creation path."
+  },
+  {
+    "id": "CV0004-PE6-012",
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Workload Orchestration > Health Checks and Rolling Updates",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A container service must update 30 replicas without downtime. New replicas occasionally fail readiness because a dependency starts slowly. Which orchestration settings best protect availability?",
+    "choices": [
+      "Use readiness probes, a limited rolling batch, minimum healthy capacity, and automatic rollback on failed health gates",
+      "Replace every replica together and use readiness only after the rollout finishes",
+      "Use a rolling update but route traffic before slow dependencies are ready",
+      "Preserve minimum capacity but disable rollback when the readiness gate fails"
+    ],
+    "answer": 0,
+    "explanation": "Readiness prevents premature traffic, bounded rolling batches preserve healthy capacity, and rollback stops a defective update from spreading."
+  },
+  {
+    "id": "CV0004-PE6-013",
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Container Networking > Port Mapping",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A containerized service listens on port 8080 internally, but clients must reach it through port 443 on the published endpoint. Which container-network setting connects those ports?",
+    "choices": [
+      "Storage tiering",
+      "Host anti-affinity",
+      "Backup retention",
+      "Port mapping"
+    ],
+    "answer": 3,
+    "explanation": "Port mapping associates a container listening port with a host or service endpoint so traffic arriving on the published port reaches the application."
+  },
+  {
+    "id": "CV0004-PE6-014",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Networks > Overlay Networks",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "VMs on different physical hosts must communicate through the same logical network without extending the physical VLAN to every rack. Which technology supports this?",
+    "choices": [
+      "A local-only loopback interface",
+      "An archive-storage gateway",
+      "An overlay network",
+      "A reserved billing plan"
+    ],
+    "answer": 2,
+    "explanation": "Overlay networks encapsulate logical tenant traffic across the physical underlay, allowing consistent virtual networks across hosts."
+  },
+  {
+    "id": "CV0004-PE6-015",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Storage > Local and Shared Storage",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A virtualization cluster stores VM disks on local drives. Maintenance requires live migration, but the destination cannot access the source disk. Which redesign best enables host maintenance without copying full disks during each move?",
+    "choices": [
+      "Place VM disks on resilient shared storage accessible to all cluster hosts",
+      "Increase the DNS TTL for each VM",
+      "Add host affinity to the current server",
+      "Store VM disks in volatile host memory"
+    ],
+    "answer": 0,
+    "explanation": "Shared storage lets source and destination hosts access the same virtual disk, enabling efficient live migration. Local-only storage binds the VM to one host unless storage is copied."
+  },
+  {
+    "id": "CV0004-PE6-016",
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "Billing Models > Reserved Resources",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which pricing option is typically appropriate for a stable, continuously required baseline when the organization can commit to a defined term?",
+    "choices": [
+      "Interruptible spot capacity only",
+      "Unplanned premium on-demand use only",
+      "Reserved resources",
+      "Temporary trial credits"
+    ],
+    "answer": 2,
+    "explanation": "A term commitment can reduce the cost of predictable steady capacity. Interruptible capacity is unsuitable for a continuously required baseline."
+  },
+  {
+    "id": "CV0004-PE6-017",
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "Billing Models > Spot Instance and Checkpointing",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A genomics job can resume from checkpoints every ten minutes. Its deadline allows several restarts, and compute cost is the primary concern. Which capacity choice is most economical?",
+    "choices": [
+      "Use dedicated hosts with no checkpointing",
+      "Run the job on one permanent premium instance",
+      "Use spot instances with durable checkpoints and interruption handling",
+      "Store checkpoints only on ephemeral instance disks"
+    ],
+    "answer": 2,
+    "explanation": "Fault-tolerant batch work can use discounted spot capacity when checkpoints survive interruption. Durable checkpoint storage is necessary for real savings."
+  },
+  {
+    "id": "CV0004-PE6-018",
+    "domain": "1",
+    "objective": "1.9",
+    "blueprint": "Database Types > Relational and Non-Relational",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A banking ledger needs serializable transactions, while a fraud service needs rapid traversal of relationships among accounts, devices, and transfers. Which combination is most suitable?",
+    "choices": [
+      "A graph database as the sole authoritative ledger without transaction analysis",
+      "A relational database for the ledger and a graph database for fraud relationships",
+      "A flat object bucket for all ledger updates",
+      "An in-memory cache as the only durable store"
+    ],
+    "answer": 1,
+    "explanation": "A relational database provides strong transactional ledger semantics, while a graph database supports relationship traversal for fraud analysis. Different models serve the distinct workloads."
+  },
+  {
+    "id": "CV0004-PE6-019",
+    "domain": "1",
+    "objective": "1.10",
+    "blueprint": "Compute Resources > Serverless",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which compute option executes event-driven code without the customer provisioning or maintaining persistent servers?",
+    "choices": [
+      "Dedicated hosts",
+      "Serverless functions",
+      "Colocation racks",
+      "Manually managed hypervisors"
+    ],
+    "answer": 1,
+    "explanation": "Serverless functions execute code on a provider-managed runtime that allocates resources in response to events."
+  },
+  {
+    "id": "CV0004-PE6-020",
+    "domain": "1",
+    "objective": "1.10",
+    "blueprint": "Network Optimization > Latency",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An interactive gaming service runs in one distant region and has adequate bandwidth, but players experience 180-ms round trips. Which change most directly improves responsiveness?",
+    "choices": [
+      "Increase archive retention",
+      "Add more storage IOPS to the log volume",
+      "Deploy latency-sensitive services closer to players and use regional or edge routing",
+      "Purchase a longer billing commitment"
+    ],
+    "answer": 2,
+    "explanation": "The problem is propagation delay, not throughput. Regional or edge placement shortens the network path to users."
+  },
+  {
+    "id": "CV0004-PE6-021",
+    "domain": "1",
+    "objective": "1.11",
+    "blueprint": "Machine Learning and AI > Generative AI Governance",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A support team wants a generative model to draft answers from private manuals. Responses must cite approved sources, avoid exposing customer records, and escalate uncertain output. Which design is most responsible?",
+    "choices": [
+      "Train on unrestricted production records and publish every response automatically",
+      "Use retrieval from approved content, redact sensitive input, enforce access controls, and route low-confidence drafts for human review",
+      "Disable logging and source attribution",
+      "Allow the model to invent answers when retrieval finds nothing"
+    ],
+    "answer": 1,
+    "explanation": "Grounded retrieval, privacy controls, authorization, and human review address accuracy and data risk. Automatic ungrounded publication would be unsafe."
+  },
+  {
+    "id": "CV0004-PE6-022",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "On-Premises Private Cloud",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A company provides self-service cloud resources on hardware in its own facility for exclusive internal use. Which deployment model is this?",
+    "choices": [
+      "On-premises private cloud",
+      "Public cloud",
+      "Community cloud",
+      "Consumer SaaS"
+    ],
+    "answer": 0,
+    "explanation": "An on-premises private cloud offers cloud operating capabilities on infrastructure dedicated to one organization in its own facility."
+  },
+  {
+    "id": "CV0004-PE6-023",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Public Cloud Deployment Model",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A seasonal retailer needs global infrastructure for three months and has no requirement for dedicated hardware. Which deployment model offers the fastest elastic capacity?",
+    "choices": [
+      "A newly built on-premises private cloud",
+      "Public cloud",
+      "A closed community cloud for another industry",
+      "A single physical server purchased for the peak"
+    ],
+    "answer": 1,
+    "explanation": "Public cloud provides rapidly provisioned global capacity without the lead time of building dedicated infrastructure."
+  },
+  {
+    "id": "CV0004-PE6-024",
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Hybrid Cloud Deployment Model",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A laboratory keeps regulated instruments and raw data on premises, but sends de-identified result sets to public-cloud analytics. A private link and federated identity connect the environments. Which model is being implemented?",
+    "choices": [
+      "Public cloud only",
+      "Private cloud with no outside service",
+      "Unmanaged desktop virtualization",
+      "Hybrid cloud"
+    ],
+    "answer": 3,
+    "explanation": "The design integrates on-premises resources with public-cloud services under coordinated connectivity and identity, which is hybrid cloud."
+  },
+  {
+    "id": "CV0004-PE6-025",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Rolling Deployment Strategy",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An orchestrator advances version 8 through batches of three pods and waits for readiness before touching the next group. What deployment method does this describe?",
+    "choices": [
+      "Rolling deployment",
+      "Blue-green deployment",
+      "Cold recovery",
+      "Complete in-place outage"
+    ],
+    "answer": 0,
+    "explanation": "A rolling deployment updates a fleet in controlled batches and uses health gates before continuing through the remaining workload."
+  },
+  {
+    "id": "CV0004-PE6-026",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Canary Deployment Strategy and Feature Controls",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A revised query optimizer has uncertain behavior under live demand. Operators will route one low-risk region to the revision, compare tail latency and result accuracy, and expand only when both remain inside limits. Which rollout method is being planned?",
+    "choices": [
+      "Replace every production instance at once",
+      "Deploy in place with no telemetry",
+      "Use a canary release with audience controls, measured success criteria, and automatic rollback",
+      "Enable the feature for all users before testing"
+    ],
+    "answer": 2,
+    "explanation": "A canary limits exposure and uses production evidence to decide expansion. Audience controls and rollback criteria make the experiment safe."
+  },
+  {
+    "id": "CV0004-PE6-027",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Blue-Green Deployment Strategy",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A green environment passes application tests, but its network policy cannot reach a required payment endpoint. The release window is open. What should the team do?",
+    "choices": [
+      "Switch all traffic to green and troubleshoot afterward",
+      "Keep traffic on blue, correct and retest green connectivity, then perform a reversible cutover",
+      "Delete blue to force the release",
+      "Disable the payment dependency in production"
+    ],
+    "answer": 1,
+    "explanation": "Blue-green deployment permits validation before traffic changes. The failed dependency is a release blocker, and blue preserves the safe production state."
+  },
+  {
+    "id": "CV0004-PE6-028",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Application Migration Strategies > Rehost",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A supported virtual appliance is exported from an on-premises hypervisor and imported into a compatible cloud VM service. Its operating system, middleware, and application configuration remain intact; only network addressing changes. How should this migration be classified?",
+    "choices": [
+      "Retain",
+      "Refactor into cloud-native services",
+      "Rehost",
+      "Repurchase as a SaaS product"
+    ],
+    "answer": 2,
+    "explanation": "The appliance moves to new infrastructure while its software stack and architecture remain unchanged. Updating environmental details such as network addressing does not turn this lift-and-shift migration into refactoring or repurchasing."
+  },
+  {
+    "id": "CV0004-PE6-029",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Application Migration Strategies > Retain",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A factory controller depends on proprietary hardware and cannot move until the equipment is replaced in 18 months. What should the current migration portfolio record?",
+    "choices": [
+      "Rehost it without the required hardware",
+      "Retire it while the factory still depends on it",
+      "Retain the controller with a documented review and retirement date",
+      "Refactor it during production with no vendor support"
+    ],
+    "answer": 2,
+    "explanation": "The hardware dependency makes immediate migration impractical. Retention should be deliberate, time-bound, and revisited when the replacement is ready."
+  },
+  {
+    "id": "CV0004-PE6-030",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Cloud-to-Cloud Migration > Service Portability",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A serverless application uses a provider-specific event format and identity service. The target provider supports functions but not those interfaces. Which migration approach minimizes failed cutover risk?",
+    "choices": [
+      "Introduce portable adapters, test target identity and events end to end, synchronize state, and cut over only after validation",
+      "Copy function source and postpone interface testing until after source shutdown",
+      "Translate events but keep the target configured to call the unavailable source identity service",
+      "Change DNS before synchronizing state or validating the target event contract"
+    ],
+    "answer": 0,
+    "explanation": "Function runtimes alone do not provide service portability. Adapters and end-to-end validation address proprietary events, identity, and state before cutover."
+  },
+  {
+    "id": "CV0004-PE6-031",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Migration Compliance Considerations",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A backup set contains export-controlled technical data. The selected migration appliance is operated by a subcontractor not approved for that data. What should the project manager do?",
+    "choices": [
+      "Proceed because the appliance is encrypted",
+      "Pause the transfer and use an approved operator and handling process with documented custody",
+      "Remove the dataset from the asset inventory",
+      "Ask the subcontractor to avoid reading file names"
+    ],
+    "answer": 1,
+    "explanation": "Export controls and approved-custodian requirements apply throughout transfer. Encryption does not automatically authorize an unapproved operator."
+  },
+  {
+    "id": "CV0004-PE6-032",
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Application Migration Strategies > Replatform",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A team migrates PostgreSQL from a database installed on its own VM to a compatible managed relational database service. The schema and application SQL remain unchanged, while connection settings, backups, patching, and monitoring move to the managed service. Which strategy BEST describes the migration?",
+    "choices": [
+      "Retire the database",
+      "Rehost the unchanged database VM",
+      "Replatform",
+      "Refactor the application into event-driven services"
+    ],
+    "answer": 2,
+    "explanation": "The workload adopts a managed database platform without redesigning its schema or application logic. That limited platform optimization is replatforming; rehosting would keep the self-managed VM, while refactoring would change the application's architecture."
+  },
+  {
+    "id": "CV0004-PE6-033",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Infrastructure as Code > Idempotency and State",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A deployment job is rerun after a timeout and creates duplicate networks because the script never checks current state. Which improvement is most important?",
+    "choices": [
+      "Use idempotent desired-state logic backed by consistent state and resource identifiers",
+      "Add more comments without changing execution",
+      "Generate random names on every run",
+      "Ignore all provider responses"
+    ],
+    "answer": 0,
+    "explanation": "Idempotent desired-state automation converges on the intended resources instead of duplicating them after retries."
+  },
+  {
+    "id": "CV0004-PE6-034",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Deployment Data Formats > Extensible Markup Language (XML)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A service definition uses nested angle-bracket tags and closing elements around its values. Which data format is shown?",
+    "choices": [
+      "JSON",
+      "A binary disk image",
+      "XML",
+      "A packet capture"
+    ],
+    "answer": 2,
+    "explanation": "XML represents structured data with nested opening and closing tags enclosed in angle brackets."
+  },
+  {
+    "id": "CV0004-PE6-035",
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Deployment Code Testing and Variables",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "One infrastructure template deploys development and production. Engineers currently edit hard-coded values before each run, causing accidental production changes. Which redesign is best?",
+    "choices": [
+      "Keep editing the template manually before every run",
+      "Parameterize environment differences, validate allowed values, and test generated plans in the pipeline",
+      "Store production secrets as hard-coded defaults",
+      "Disable plan review to reduce delay"
+    ],
+    "answer": 1,
+    "explanation": "Validated parameters separate environment data from reusable logic, while plan tests catch unsafe substitutions before deployment."
+  },
+  {
+    "id": "CV0004-PE6-036",
+    "domain": "2",
+    "objective": "2.5",
+    "blueprint": "Compute and Performance Provisioning Requirements",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A rendering queue must complete 10,000 frames within two hours, and benchmark data shows one GPU worker completes 100 frames per hour. What should capacity planning include?",
+    "choices": [
+      "One worker because the queue is asynchronous",
+      "Storage capacity only",
+      "A DNS change instead of compute sizing",
+      "At least 50 concurrent equivalent workers plus measured headroom for queue and startup overhead"
+    ],
+    "answer": 3,
+    "explanation": "The throughput target requires 100 worker-hours total, or 50 concurrent equivalent workers for two hours before adding headroom and overhead."
+  },
+  {
+    "id": "CV0004-PE6-037",
+    "domain": "2",
+    "objective": "2.5",
+    "blueprint": "Security Provisioning Requirements",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A design requires private endpoints, managed identities, customer-controlled keys, and immutable audit logs. Which requirement category do these controls represent?",
+    "choices": [
+      "User-interface design",
+      "Code formatting",
+      "Security",
+      "Billing cycle length"
+    ],
+    "answer": 2,
+    "explanation": "Private connectivity, identity, encryption keys, and audit protection are security requirements that must be designed before provisioning."
+  },
+  {
+    "id": "CV0004-PE6-038",
+    "domain": "2",
+    "objective": "2.5",
+    "blueprint": "Availability and Cost Provisioning Requirements",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A service needs zone redundancy, but the initial design triples every component even where managed services already provide zone resilience. What should the architect do?",
+    "choices": [
+      "Remove zone redundancy and accept the resulting single-zone failure risk",
+      "Triple all components without checking managed-service guarantees or required capacity",
+      "Keep one instance per tier and count provider-region availability as application redundancy",
+      "Verify each service's built-in resilience and add only the capacity required to meet the availability target and cost constraint"
+    ],
+    "answer": 3,
+    "explanation": "Availability design should follow actual failure behavior and service guarantees. Duplicating already resilient components may add cost without improving the target."
+  },
+  {
+    "id": "CV0004-PE6-039",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Monitoring Metrics and Alerting",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "CPU is normal, but a queue backlog grows continuously and message age exceeds the service objective. Which alert should be treated as the primary workload signal?",
+    "choices": [
+      "The number of dashboard viewers",
+      "Backlog depth and oldest-message age",
+      "Object name length",
+      "Monthly reservation term"
+    ],
+    "answer": 1,
+    "explanation": "Queue depth and message age directly measure whether consumers are keeping up. Normal CPU does not disprove a processing bottleneck."
+  },
+  {
+    "id": "CV0004-PE6-040",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Log Collection",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which operational process gathers log records from cloud resources for later analysis?",
+    "choices": [
+      "Disk striping",
+      "Autoscaling",
+      "Network peering",
+      "Log collection"
+    ],
+    "answer": 3,
+    "explanation": "Log collection acquires records from applications, hosts, and services so they can be centralized and analyzed."
+  },
+  {
+    "id": "CV0004-PE6-041",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Distributed Tracing and Log Correlation",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A request crosses an API gateway, three services, and a database. Operators can see separate logs but cannot connect them to one user transaction. What should be added?",
+    "choices": [
+      "Use unrelated request identifiers in each service and correlate only by approximate time",
+      "Propagate a trace or correlation identifier through every component and include it in centralized logs",
+      "Centralize logs without carrying an identifier across the service boundaries",
+      "Increase log volume while retaining no transaction context"
+    ],
+    "answer": 1,
+    "explanation": "A shared trace context connects events across components and allows the transaction path to be reconstructed."
+  },
+  {
+    "id": "CV0004-PE6-042",
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Alert Response",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A certificate-expiration alert shows seven days remaining for a public gateway. Automatic renewal failed because the validation record was deleted. What should the responder do?",
+    "choices": [
+      "Restore domain validation, renew and deploy the certificate, verify the chain, and investigate why the record was removed",
+      "Request renewal repeatedly without restoring the required validation record",
+      "Disable TLS until the normal certificate expires",
+      "Install a self-signed public certificate without updating client trust"
+    ],
+    "answer": 0,
+    "explanation": "The known renewal blocker must be corrected before expiry, followed by validation and root-cause work to prevent recurrence."
+  },
+  {
+    "id": "CV0004-PE6-043",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Manual Scaling",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An administrator changes a database instance size after reviewing a capacity report and receiving change approval. Which scaling approach is this?",
+    "choices": [
+      "Manual scaling",
+      "Scheduled scaling",
+      "Event-triggered scaling",
+      "Storage lifecycle scaling"
+    ],
+    "answer": 0,
+    "explanation": "Manual scaling occurs when an operator explicitly changes capacity rather than an automated policy doing so."
+  },
+  {
+    "id": "CV0004-PE6-044",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Scheduled Scaling and Load-Triggered Scaling",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A ticketing site sees a predictable surge when sales open at noon, followed by unpredictable demand during popular events. Which scaling plan handles both patterns?",
+    "choices": [
+      "Use only a yearly manual capacity change",
+      "Schedule baseline capacity before noon and add metric-triggered scaling for unexpected load",
+      "Wait for overload before starting every instance by hand",
+      "Scale storage retention instead of compute"
+    ],
+    "answer": 1,
+    "explanation": "Scheduled scaling covers the known start time, while metric triggers respond to variation beyond the forecast."
+  },
+  {
+    "id": "CV0004-PE6-045",
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Horizontal Scaling and State Management",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A web tier stores user sessions in each instance's memory. Autoscaling adds instances, but users are logged out when requests reach a different server. Which redesign best supports horizontal scaling?",
+    "choices": [
+      "Disable load balancing and send all users to one server",
+      "Copy memory manually between instances",
+      "Move session state to a shared resilient store or use appropriately secured stateless tokens",
+      "Increase DNS TTL so clients never change servers"
+    ],
+    "answer": 2,
+    "explanation": "Externalized or stateless session management lets any instance handle a request. Local memory creates hidden affinity that breaks elastic scaling."
+  },
+  {
+    "id": "CV0004-PE6-046",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Schedule",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which backup characteristic defines when and how often backup jobs run?",
+    "choices": [
+      "Host affinity",
+      "API throttling",
+      "Source-code branch",
+      "Backup schedule"
+    ],
+    "answer": 3,
+    "explanation": "A backup schedule establishes execution times and frequency, which influence the achievable recovery point objective."
+  },
+  {
+    "id": "CV0004-PE6-047",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Integrity Testing",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Backup jobs report success, but a quarterly restore reveals corrupted archive segments. What control should be added?",
+    "choices": [
+      "Trust successful job status and stop performing restore exercises",
+      "Add more backup copies without verifying whether the same corruption exists",
+      "Check file names and timestamps but not contents or restorability",
+      "Automated integrity verification plus regular end-to-end restore tests"
+    ],
+    "answer": 3,
+    "explanation": "Job completion proves that data was written, not that it is intact and recoverable. Integrity checks and real restores validate the recovery chain."
+  },
+  {
+    "id": "CV0004-PE6-048",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Replication and Recovery Dependencies",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A secondary-region backup contains application data but not encryption keys, IAM configuration, or network definitions. During a drill, data restores but the application cannot start. What should be corrected?",
+    "choices": [
+      "Protect and test the complete recovery dependency set, including keys, identities, network configuration, and deployment definitions",
+      "Replicate more application data while omitting the same dependencies",
+      "Disable encryption on future backups",
+      "Declare the data restore a complete success"
+    ],
+    "answer": 0,
+    "explanation": "Recoverability includes every dependency required to run the service. Data alone is insufficient when keys, identity, networking, and deployment configuration are missing."
+  },
+  {
+    "id": "CV0004-PE6-049",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Retention",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A backup administrator configures daily copies to expire after 45 days while quarterly copies remain for five years. What type of backup control is being configured?",
+    "choices": [
+      "A retention policy",
+      "An autoscaling policy",
+      "A network routing policy",
+      "A source-control branch policy"
+    ],
+    "answer": 0,
+    "explanation": "Retention settings determine how long each class of recovery copy remains available before expiration."
+  },
+  {
+    "id": "CV0004-PE6-050",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Encryption and Key Availability",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A company encrypts every backup with one key stored only in the failed primary region. What is the most important improvement?",
+    "choices": [
+      "Store another copy of the only key in the same failed region",
+      "Disable backup encryption so future regional recovery needs no key",
+      "Export the key to an administrator's unmanaged workstation",
+      "Protect recoverable key material under separated control in approved recovery locations and test decryption"
+    ],
+    "answer": 3,
+    "explanation": "Encrypted backups are unusable without available key material. Separated, recoverable keys and tested decryption preserve both confidentiality and recoverability."
+  },
+  {
+    "id": "CV0004-PE6-051",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Major Updates and Life-Cycle Change Testing",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A managed database major-version upgrade changes query behavior and cannot be downgraded in place. Which release plan is safest?",
+    "choices": [
+      "Upgrade production in place and depend on an untested snapshot for rollback",
+      "Run only a syntax check without exercising application queries or integrations",
+      "Test workloads on a restored copy, verify compatibility and performance, create a rollback path, then perform a controlled cutover",
+      "Operate old and new schemas against production simultaneously without a migration plan"
+    ],
+    "answer": 2,
+    "explanation": "Major irreversible changes require representative testing and an alternate rollback path before production cutover."
+  },
+  {
+    "id": "CV0004-PE6-052",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "Persistent Data",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A database pod is deleted and recreated on another node, then reattaches a volume containing the original records. What kind of data is stored on that volume?",
+    "choices": [
+      "Persistent data",
+      "Ephemeral cache entries",
+      "Temporary process memory",
+      "Container scratch data"
+    ],
+    "answer": 0,
+    "explanation": "Persistent data is stored independently of the short-lived pod or compute instance and remains available when that workload is replaced."
+  },
+  {
+    "id": "CV0004-PE6-053",
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "End of Life and Decommissioning",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A provider will remove an obsolete service in 90 days. The application has an approved replacement, but old snapshots and service identities remain. What should the owner plan?",
+    "choices": [
+      "Migrate and validate the replacement, preserve required data, revoke identities, and remove old resources before service retirement",
+      "Wait for forced provider deletion and then determine whether required data survived",
+      "Move workloads but leave old identities and snapshots unmanaged after retirement",
+      "Copy snapshots to a new location without validating the replacement service or ownership"
+    ],
+    "answer": 0,
+    "explanation": "A complete life-cycle plan handles migration, data retention, access revocation, and decommissioning before the service disappears."
+  },
+  {
+    "id": "CV0004-PE6-054",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Vulnerability Scanning Scope and Asset Inventory",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An incident begins in a container launched from an old registry image. The asset inventory lists running VMs only; serverless packages, registry images, and encrypted dormant snapshots are absent from scanning. Which remediation plan BEST corrects the program?",
+    "choices": [
+      "Add registry scanning but continue omitting serverless packages and restorable snapshots",
+      "Scan every stored artifact but leave findings without owners or promotion controls",
+      "Build an authoritative inventory spanning runtime and deployable artifacts, assign owners and exposure, scan each supported asset type, and gate promotion or restoration on remediation policy",
+      "Block all image promotion while retaining the incomplete asset inventory"
+    ],
+    "answer": 2,
+    "explanation": "The program's scope omits artifacts that can introduce vulnerable code when deployed or restored. Inventory-driven scanning, ownership, risk context, and release or restore gates close that lifecycle gap."
+  },
+  {
+    "id": "CV0004-PE6-055",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Vulnerability Remediation",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A critical library flaw affects a public API, and a patched build has passed tests. Which next action is appropriate?",
+    "choices": [
+      "Keep the vulnerable release active until the next routine maintenance window regardless of exposure",
+      "Deploy the patched build through the controlled release process and verify the exposed instances are replaced",
+      "Patch one test instance but leave the public fleet on the known-vulnerable build",
+      "Suppress the finding after tests pass without deploying or verifying the replacement"
+    ],
+    "answer": 1,
+    "explanation": "A tested fix must be deployed and verified across the exposed fleet. Renaming or suppressing the finding does not remediate the vulnerability."
+  },
+  {
+    "id": "CV0004-PE6-056",
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Vulnerability Management > Compensating Controls and Exceptions",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A vendor cannot patch a critical appliance for 30 days. The appliance is required, but its management port is publicly reachable. Which temporary plan is most defensible?",
+    "choices": [
+      "Leave public management access open and document only the vendor delay",
+      "Apply a WAF to the user interface while the management port remains public",
+      "Remove public reachability, restrict access through monitored administration controls, document the exception, and apply the vendor fix when available",
+      "Disable scanning until the patch is available so the exception no longer alerts"
+    ],
+    "answer": 2,
+    "explanation": "A time-bound exception with strong compensating controls reduces exposure while preserving accountability and a required remediation date."
+  },
+  {
+    "id": "CV0004-PE6-057",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Data Classification",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "One data lake contains public product sheets, employee tax records, and regulated customer identifiers under the same broad access policy. The team wants to add encryption but has not documented owners, retention, or allowed users. What should happen FIRST?",
+    "choices": [
+      "Scale the storage tier before identifying the data",
+      "Apply one public-read policy so every dataset is handled consistently",
+      "Replicate all objects to another country before governance review",
+      "Classify the datasets by sensitivity and obligation, assign ownership, then apply access, encryption, retention, and locality controls to each class"
+    ],
+    "answer": 3,
+    "explanation": "Classification establishes what each dataset is and which handling requirements apply. That evidence must drive differentiated access, encryption, retention, and location controls rather than one blanket policy."
+  },
+  {
+    "id": "CV0004-PE6-058",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Data Sovereignty and Ownership",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A provider contract says the provider may analyze customer content for its own purposes, while local law requires the customer to retain exclusive control of regulated records. What should happen before adoption?",
+    "choices": [
+      "Accept the terms because storage is encrypted",
+      "Remove the records from governance reports",
+      "Assume geographic location alone grants exclusive control",
+      "Resolve ownership and processing rights contractually and verify that the service can meet the legal obligation"
+    ],
+    "answer": 3,
+    "explanation": "Sovereignty and ownership include legal processing rights, not just physical location. Contract and service behavior must align with the obligation."
+  },
+  {
+    "id": "CV0004-PE6-059",
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Data Retention and Secure Disposal",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A retention period expires for encrypted customer archives, but replicated copies and encryption-key backups still exist. What constitutes complete disposal?",
+    "choices": [
+      "Delete all authorized copies according to policy and retire applicable key material while preserving auditable deletion evidence",
+      "Delete the primary object while leaving replicas and recovery copies usable",
+      "Revoke user access but retain every encrypted copy and its recovery keys indefinitely",
+      "Destroy only the active encryption key without confirming which copies use recoverable key backups"
+    ],
+    "answer": 0,
+    "explanation": "Complete disposal covers replicas and relevant keys, with evidence that policy was followed. Removing only the primary reference can leave recoverable data."
+  },
+  {
+    "id": "CV0004-PE6-060",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Directory-Based Authentication",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Human administrators can sign in through the corporate directory, but a legacy automation service starts failing LDAP binds after the directory certificate and service-account password are rotated. Network tests to the directory port succeed. Which troubleshooting sequence is BEST?",
+    "choices": [
+      "Update only the bind password and ignore the rotated certificate trust chain",
+      "Import the new directory certificate but keep using the expired bind credential",
+      "Route the bind through a new proxy while preserving both stale trust and credential configuration",
+      "Verify the configured directory endpoint and certificate trust, update the protected bind credential, test the restricted account, and review directory logs before restoring service"
+    ],
+    "answer": 3,
+    "explanation": "Reachable directory ports plus failure after certificate and password rotation point to trust or bind-credential configuration. Verifying those elements and directory logs isolates the fault without weakening centralized authentication."
+  },
+  {
+    "id": "CV0004-PE6-061",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Least Privilege and Role Separation",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A backup operator can create backups, change retention locks, and delete audit logs. Which redesign best follows least privilege?",
+    "choices": [
+      "Give the operator tenant ownership and depend on audit policy for restraint",
+      "Separate backup operation, retention administration, and audit roles with narrowly scoped permissions",
+      "Split duties between two users who both retain permission to delete audit logs",
+      "Keep one shared privileged account but require a longer password"
+    ],
+    "answer": 1,
+    "explanation": "Role separation prevents one account from both altering recovery controls and erasing evidence, reducing insider and credential-compromise risk."
+  },
+  {
+    "id": "CV0004-PE6-062",
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Cloud Management Web Portal > MFA and Conditional Access",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Administrators access a management portal from approved corporate devices. A stolen password is used from an unmanaged foreign endpoint. Which control combination best blocks the attempt?",
+    "choices": [
+      "Rely on the password alone",
+      "Require MFA and conditional access based on device trust, location, and risk",
+      "Disable sign-in logs",
+      "Allow the attempt because the username is valid"
+    ],
+    "answer": 1,
+    "explanation": "MFA and contextual access policy prevent a password alone from granting management access and can block anomalous devices or locations."
+  },
+  {
+    "id": "CV0004-PE6-063",
+    "domain": "4",
+    "objective": "4.4",
+    "blueprint": "Cloud Resource Hardening > Center for Internet Security Benchmarks",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A golden image meets an internal checklist, but a compliance scan reports 24 deviations from the applicable CIS profile. Five deviations support a documented application requirement; the rest have no owner. What should the release team do?",
+    "choices": [
+      "Approve the image because the internal checklist is sufficient",
+      "Disable the compliance scan and rely on the image name",
+      "Apply every benchmark setting blindly, including settings that break the application",
+      "Assess each CIS finding, remediate unexplained drift, document and approve necessary exceptions with compensating controls, then rescan the candidate image"
+    ],
+    "answer": 3,
+    "explanation": "CIS Benchmarks provide the recognized baseline, but findings still require risk-based review. Unjustified drift should be corrected, while necessary exceptions require documented approval and compensating controls before validation."
+  },
+  {
+    "id": "CV0004-PE6-064",
+    "domain": "4",
+    "objective": "4.4",
+    "blueprint": "Encryption of Data at Rest > Key Rotation",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A database uses a customer-managed key that has never been rotated. Policy requires annual rotation without re-encrypting every record immediately. Which feature should be used?",
+    "choices": [
+      "Managed key rotation or a new key version referenced through the stable key identifier",
+      "Disable encryption during rotation",
+      "Publish the old key in source control",
+      "Delete all key versions before updating the database"
+    ],
+    "answer": 0,
+    "explanation": "Managed rotation or versioning changes cryptographic key material while services continue using a stable key reference under controlled policy."
+  },
+  {
+    "id": "CV0004-PE6-065",
+    "domain": "4",
+    "objective": "4.4",
+    "blueprint": "Container File Access Permissions",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A container needs read-only access to one configuration directory but currently mounts the entire host filesystem read-write. What should be changed?",
+    "choices": [
+      "Keep the host root mount and add more CPU",
+      "Enable privileged mode",
+      "Mount only the required directory read-only and run with a restricted identity",
+      "Share the host administrator account"
+    ],
+    "answer": 2,
+    "explanation": "A narrow read-only mount and restricted identity minimize exposed host data and prevent unnecessary modification."
+  },
+  {
+    "id": "CV0004-PE6-066",
+    "domain": "4",
+    "objective": "4.4",
+    "blueprint": "API Security > Input Validation and Authorization",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An authenticated API lets users request any invoice by changing a numeric ID in the URL. The server never verifies invoice ownership. Which control is missing?",
+    "choices": [
+      "Additional storage IOPS",
+      "Longer DNS TTL",
+      "Object-level authorization on every invoice request",
+      "A larger TLS certificate"
+    ],
+    "answer": 2,
+    "explanation": "Authentication identifies the caller, but object-level authorization must verify that the caller may access the requested invoice."
+  },
+  {
+    "id": "CV0004-PE6-067",
+    "domain": "4",
+    "objective": "4.5",
+    "blueprint": "Network Access Control List (ACL)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which stateless cloud network control applies ordered allow or deny rules at a subnet boundary?",
+    "choices": [
+      "A network ACL",
+      "A source-code branch",
+      "A storage lifecycle rule",
+      "A container image registry"
+    ],
+    "answer": 0,
+    "explanation": "A network ACL is commonly a stateless subnet-level filter that evaluates ordered traffic rules."
+  },
+  {
+    "id": "CV0004-PE6-068",
+    "domain": "4",
+    "objective": "4.5",
+    "blueprint": "Data Loss Prevention (DLP)",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Employees are uploading documents containing customer identifiers to unapproved personal storage. Which control can detect and block the sensitive data movement?",
+    "choices": [
+      "Block known personal-storage IP addresses without inspecting content or new destinations",
+      "Data loss prevention with content inspection and approved-destination policy",
+      "Encrypt approved corporate storage but leave unauthorized uploads unmonitored",
+      "Rely on user awareness training without an enforcement or detection control"
+    ],
+    "answer": 1,
+    "explanation": "DLP inspects content and enforces handling rules to stop sensitive information from leaving through unauthorized channels."
+  },
+  {
+    "id": "CV0004-PE6-069",
+    "domain": "4",
+    "objective": "4.6",
+    "blueprint": "Phishing and Leaked Credentials",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A user enters cloud credentials into a fake sign-in page. Minutes later, a valid session creates access keys. Which response is most appropriate?",
+    "choices": [
+      "Wait for the access keys to expire",
+      "Delete the audit logs",
+      "Approve the new keys because sign-in succeeded",
+      "Revoke sessions and keys, reset credentials, review activity, contain changes, and strengthen phishing-resistant authentication"
+    ],
+    "answer": 3,
+    "explanation": "The phishing event compromised authentication material. Revocation, investigation, containment, and stronger authentication address both immediate and future risk."
+  },
+  {
+    "id": "CV0004-PE6-070",
+    "domain": "4",
+    "objective": "4.6",
+    "blueprint": "Human Error and Security Event Monitoring",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An administrator accidentally makes a database snapshot public. A configuration monitor alerts within one minute, and access logs show no downloads. What should happen next?",
+    "choices": [
+      "Remove public access, preserve evidence, confirm exposure scope, and improve preventive policy or guardrails",
+      "Ignore the event because no download is visible",
+      "Delete the access logs",
+      "Leave the snapshot public for testing"
+    ],
+    "answer": 0,
+    "explanation": "The exposure must be corrected and investigated even when current logs show no access. Preventive guardrails reduce recurrence."
+  },
+  {
+    "id": "CV0004-PE6-071",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Code Commit",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A developer notices that a staged change includes a cloud API secret alongside the intended configuration update. No commit has been created or pushed. What should the developer do?",
+    "choices": [
+      "Commit both files and remove the secret in a later revision",
+      "Move the secret into the commit message so reviewers can find it",
+      "Create a backup branch containing the staged secret",
+      "Unstage and remove the secret, place it in approved secret storage, stage only the intended change, and create a descriptive commit after validation"
+    ],
+    "answer": 3,
+    "explanation": "The secret should not enter repository history. Removing it before the commit, using approved secret storage, and committing only validated intended changes preserves clean source-control history."
+  },
+  {
+    "id": "CV0004-PE6-072",
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Pull Request, Code Review, and Branch Protection",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A deployment change has one approval, but branch policy requires two independent reviews and a successful security scan. The release is urgent. What should the maintainer do?",
+    "choices": [
+      "Bypass branch policy with a shared administrator token",
+      "Satisfy the required reviews and scan or use the formally governed emergency process",
+      "Delete the failed scan result",
+      "Merge directly because the release is urgent"
+    ],
+    "answer": 1,
+    "explanation": "Protected-branch gates exist to manage release risk. An emergency exception must use the authorized process rather than an undocumented bypass."
+  },
+  {
+    "id": "CV0004-PE6-073",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "CI/CD Build",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A pipeline checks out source code, resolves dependencies, compiles the application, and packages a versioned binary for later testing. Which stage is performing this work?",
+    "choices": [
+      "Network peering",
+      "Backup retention",
+      "Build",
+      "DNS recursion"
+    ],
+    "answer": 2,
+    "explanation": "The build stage transforms source and dependencies into a versioned deployable artifact. Testing and deployment consume that output in later stages."
+  },
+  {
+    "id": "CV0004-PE6-074",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Artifact Repositories and Retention",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A repository allows released packages to be overwritten, and deployments reference only the mutable label `current`. What should be changed?",
+    "choices": [
+      "Make released artifacts immutable, reference digests or fixed versions, and retain promotion metadata",
+      "Allow every developer to replace `current` silently",
+      "Delete provenance records after release",
+      "Rebuild old versions from changing dependencies"
+    ],
+    "answer": 0,
+    "explanation": "Immutable versioned artifacts and provenance make deployments reproducible and auditable. Mutable labels alone cannot prove what was deployed."
+  },
+  {
+    "id": "CV0004-PE6-075",
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "CI/CD Security > Secrets and Pipeline Isolation",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A pull-request build from an external contributor can read production deployment secrets. Which pipeline redesign is safest?",
+    "choices": [
+      "Mask the production secrets in logs while still injecting them into untrusted builds",
+      "Run untrusted builds without production secrets and permit privileged deployment only from reviewed protected contexts",
+      "Give external contributors short-lived production secrets during pull-request tests",
+      "Disable pull-request validation and merge untested external code into the protected context"
+    ],
+    "answer": 1,
+    "explanation": "Untrusted code must be isolated from sensitive credentials. Privileged stages should run only after review in protected contexts."
+  },
+  {
+    "id": "CV0004-PE6-076",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Remote Procedure Call (RPC)",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A generated client stub serializes parameters, invokes `GetInventory` on another service, and deserializes the returned value as though it were a local method call. Which integration style is being used?",
+    "choices": [
+      "Object lifecycle management",
+      "Storage striping",
+      "DNS delegation",
+      "Remote procedure call (RPC)"
+    ],
+    "answer": 3,
+    "explanation": "RPC frameworks expose named remote operations and use client stubs to marshal requests and responses, creating a function-call style interaction across services."
+  },
+  {
+    "id": "CV0004-PE6-077",
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Event-Driven Architectures",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An order service should notify shipping without knowing its endpoint, and shipping must process events after temporary downtime. Which design best fits?",
+    "choices": [
+      "Embed the shipping IP in every order record",
+      "Call shipping synchronously with no retry",
+      "Publish durable order events to a broker for asynchronous consumption",
+      "Share one process and database lock across both services"
+    ],
+    "answer": 2,
+    "explanation": "Durable asynchronous events decouple endpoint knowledge and availability while preserving work during consumer downtime."
+  },
+  {
+    "id": "CV0004-PE6-078",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Docker and Kubernetes",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A team builds containers with mutable tags. During a rollout, cluster nodes pull different image contents, and pods without readiness probes receive traffic before initialization. Which redesign BEST uses Docker-compatible images and Kubernetes controls?",
+    "choices": [
+      "Build and scan an immutable image, publish it by digest, deploy that digest through Kubernetes, and configure readiness plus rollout health controls",
+      "Use Grafana to build images and Git to schedule containers",
+      "Use DNS to package the application and Terraform as the log index",
+      "Use Jenkins as block storage and ELK as the pod scheduler"
+    ],
+    "answer": 0,
+    "explanation": "Immutable signed or scanned images identified by digest provide consistent packaging, while Kubernetes deployment and readiness controls coordinate safe scheduling and traffic admission."
+  },
+  {
+    "id": "CV0004-PE6-079",
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Elasticsearch Logstash Kibana (ELK) Stack",
+    "difficulty": "Level 2",
+    "captainLevel": 2,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "Which toolset is commonly used to ingest, index, search, and visualize centralized logs?",
+    "choices": [
+      "A RAID controller",
+      "A DHCP relay",
+      "The ELK stack",
+      "A reserved billing plan"
+    ],
+    "answer": 2,
+    "explanation": "Elasticsearch, Logstash, and Kibana form a common stack for collecting, indexing, searching, and visualizing logs."
+  },
+  {
+    "id": "CV0004-PE6-080",
+    "domain": "6",
+    "objective": "6.1",
+    "blueprint": "Deployment Misconfigurations",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An application deploys successfully but writes production data to the test database because an environment variable contains the wrong endpoint. What should be corrected?",
+    "choices": [
+      "The deployment configuration and its environment-specific validation",
+      "The physical host fan speed",
+      "The archive retention period",
+      "The source-code font"
+    ],
+    "answer": 0,
+    "explanation": "The workload is using a misconfigured endpoint. Environment validation should prevent test and production destinations from being confused."
+  },
+  {
+    "id": "CV0004-PE6-081",
+    "domain": "6",
+    "objective": "6.1",
+    "blueprint": "API Throttling",
+    "difficulty": "Level 4",
+    "captainLevel": 4,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A cleanup workflow runs in three regions. Each worker receives 429 responses with different `Retry-After` values, and blind retries occasionally repeat a deletion after a timeout. Which design BEST handles both throttling and uncertain outcomes?",
+    "choices": [
+      "Run unlimited parallel retries and ignore provider response headers",
+      "Use idempotent operations, region-aware concurrency limits, `Retry-After` handling, exponential backoff with jitter, and state checks before retrying uncertain deletions",
+      "Increase DNS-label length so requests are distributed",
+      "Create more encryption keys for every retry"
+    ],
+    "answer": 1,
+    "explanation": "The workflow must respect each endpoint's rate feedback and avoid duplicating work after ambiguous timeouts. Bounded regional concurrency, idempotency, state verification, and jittered backoff address both risks."
+  },
+  {
+    "id": "CV0004-PE6-082",
+    "domain": "6",
+    "objective": "6.1",
+    "blueprint": "Deployment Permission Issues",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A pipeline creates compute and storage but fails to attach a customer-managed key with an access-denied error. What should be inspected first?",
+    "choices": [
+      "Grant the pipeline account-wide administrator access instead of the required key operation",
+      "Change the key alias while leaving the failing permission and trust policies unchanged",
+      "Substitute a provider-managed key without checking the customer-key requirement",
+      "Whether the pipeline identity has key-use permission and the key policy trusts it"
+    ],
+    "answer": 3,
+    "explanation": "The resource-specific denial points to missing IAM or key-policy authorization, not to compute or storage provisioning."
+  },
+  {
+    "id": "CV0004-PE6-083",
+    "domain": "6",
+    "objective": "6.1",
+    "blueprint": "Deprecation of Functionality",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A provider marks a legacy load-balancer type deprecated and stops allowing new instances, though existing ones still run. What should the owner do?",
+    "choices": [
+      "Ignore the notice because current traffic still works",
+      "Delete monitoring for the load balancer",
+      "Plan and test migration to the supported replacement before existing service is retired",
+      "Create more deprecated instances"
+    ],
+    "answer": 2,
+    "explanation": "Deprecation is advance notice to migrate. Waiting until retirement turns planned work into an outage risk."
+  },
+  {
+    "id": "CV0004-PE6-084",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Access vs. Trunk Ports",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A virtualization host must carry several tagged tenant VLANs to its virtual switch, but the physical switch port accepts only one untagged VLAN. What should be changed?",
+    "choices": [
+      "Configure the physical link as an approved trunk carrying the required VLANs",
+      "Increase VM disk size",
+      "Change the backup RPO",
+      "Disable VLAN tags on every tenant network"
+    ],
+    "answer": 0,
+    "explanation": "A trunk carries multiple tagged VLANs between the physical and virtual switches. An access port supports only one untagged VLAN."
+  },
+  {
+    "id": "CV0004-PE6-085",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Domain Name System (DNS)",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "An application name returns `NXDOMAIN` externally but resolves inside the VPC. The public zone contains no record, while a private zone does. What is the cause?",
+    "choices": [
+      "Add another record to the private zone that external resolvers cannot query",
+      "The name exists only in private DNS and is not published in the public zone",
+      "Increase the private record's TTL and wait for public propagation",
+      "Expose the private resolver publicly instead of publishing the intended public record"
+    ],
+    "answer": 1,
+    "explanation": "Private DNS records are visible only within associated networks. External resolvers return NXDOMAIN because the public zone lacks the name."
+  },
+  {
+    "id": "CV0004-PE6-086",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Misconfigured Routes",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A peered VPC can send traffic to another VPC, but return packets follow a default route to a firewall that does not know the source network. What should be fixed?",
+    "choices": [
+      "Add a forward route again while the return firewall still lacks the source-network path",
+      "Change application credentials even though packets fail on their return route",
+      "Permit broader ingress without correcting the asymmetric routing path",
+      "Add the correct return route and verify symmetric security policy"
+    ],
+    "answer": 3,
+    "explanation": "Connectivity requires a valid path in both directions. The missing return route creates asymmetric traffic that the firewall cannot deliver correctly."
+  },
+  {
+    "id": "CV0004-PE6-087",
+    "domain": "6",
+    "objective": "6.2",
+    "blueprint": "Bandwidth and Throughput Issues",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A storage transfer has 5-ms latency but reaches only 80 Mbps on a 1-Gbps link. Monitoring shows one TCP stream constrained by a small window across a long-distance path. What should be evaluated?",
+    "choices": [
+      "Increase link bandwidth without checking the single-stream window limitation",
+      "Add database roles even though storage and authorization are not involved",
+      "Parallel transfer streams or TCP window tuning appropriate to the path",
+      "Reduce the TCP receive window further to limit in-flight data"
+    ],
+    "answer": 2,
+    "explanation": "A single stream may underuse a high-bandwidth long-distance path because of window and flow limits. Parallelism or tuning can improve throughput."
+  },
+  {
+    "id": "CV0004-PE6-088",
+    "domain": "6",
+    "objective": "6.3",
+    "blueprint": "Authentication Issues",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A service account password is correct, but login fails because the account is disabled after repeated attempts. Which problem is present?",
+    "choices": [
+      "Authentication failure caused by account lockout",
+      "Authorization to a specific object",
+      "Storage latency",
+      "Route overlap"
+    ],
+    "answer": 0,
+    "explanation": "The account cannot complete authentication while locked, even with the correct credential."
+  },
+  {
+    "id": "CV0004-PE6-089",
+    "domain": "6",
+    "objective": "6.3",
+    "blueprint": "Software Vulnerability Issues",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A security update fixes an exploited web-framework flaw, but the application still loads the old library from a bundled deployment directory. What should be done?",
+    "choices": [
+      "Patch only the unused system-library copy and leave the bundled dependency in place",
+      "Update the bundled dependency, rebuild and redeploy the application, and verify the running version",
+      "Change the WAF signature so the old library version is no longer reported",
+      "Retain the vulnerable bundle and rely only on a temporary compensating rule"
+    ],
+    "answer": 1,
+    "explanation": "The running application uses its bundled library, so that artifact must be updated and redeployed. Patching an unused system copy does not remediate the active flaw."
+  },
+  {
+    "id": "CV0004-PE6-090",
+    "domain": "6",
+    "objective": "6.3",
+    "blueprint": "Cipher Suite Deprecations",
+    "difficulty": "Level 3",
+    "captainLevel": 3,
+    "sourceType": "Original Giant Slayer Cloud+ Practice Exam Question",
+    "question": "A legacy integration fails after the cloud endpoint enforces modern TLS. Packet evidence shows the client offers only deprecated ciphers. What is the appropriate resolution?",
+    "choices": [
+      "Restore deprecated ciphers for every client and endpoint",
+      "Exempt the legacy client from certificate validation while retaining its obsolete stack",
+      "Upgrade the client TLS stack or place it behind an approved modernizing gateway with a retirement plan",
+      "Use an unmanaged protocol-translation proxy with no monitoring or retirement date"
+    ],
+    "answer": 2,
+    "explanation": "The legacy client must be modernized or isolated behind a controlled compatibility gateway. Re-enabling weak cryptography for everyone would reduce security."
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "CV0004-2.2-R001",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Blue-Green Deployment Strategy",
+    "difficulty": "Level 2",
+    "question": "Which deployment strategy maintains two equivalent environments and redirects traffic to the new one after validation?",
+    "choices": ["Rolling", "In-place", "Blue-green", "Canary"],
+    "answer": 2,
+    "explanation": "Blue-green deployment keeps the current and replacement environments side by side so traffic can switch between them."
+  },
+  {
+    "id": "CV0004-2.2-R002",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Canary Deployment Strategy",
+    "difficulty": "Level 2",
+    "question": "Which strategy initially exposes a new application version to a small percentage of users?",
+    "choices": ["Canary", "In-place", "Blue-green", "Cold migration"],
+    "answer": 0,
+    "explanation": "A canary deployment limits early exposure to a small user group before expanding the rollout."
+  },
+  {
+    "id": "CV0004-2.2-R003",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Rolling Deployment Strategy",
+    "difficulty": "Level 2",
+    "question": "Which deployment approach updates instances in successive groups until the entire fleet runs the new version?",
+    "choices": ["Blue-green", "Rolling", "In-place", "Canary"],
+    "answer": 1,
+    "explanation": "A rolling deployment replaces or updates portions of the environment in stages rather than all at once."
+  },
+  {
+    "id": "CV0004-2.2-R004",
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "In-Place Deployment Strategy",
+    "difficulty": "Level 2",
+    "question": "Which deployment strategy updates the application directly on its existing resources without creating a parallel environment?",
+    "choices": ["Canary", "Rolling", "Blue-green", "In-place"],
+    "answer": 3,
+    "explanation": "An in-place deployment changes the software on the resources already serving the workload."
+  }
+]

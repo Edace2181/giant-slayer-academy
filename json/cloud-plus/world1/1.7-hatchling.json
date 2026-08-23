@@ -1,0 +1,194 @@
+[
+  {
+    "id": "CV0004-1.7-R001",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Stand-Alone Virtualization",
+    "difficulty": "Level 2",
+    "question": "Which virtualization arrangement runs virtual machines on one independent host without a coordinated host cluster?",
+    "choices": [
+      "Clustered virtualization",
+      "Container orchestration",
+      "Cloud bursting",
+      "Stand-alone virtualization"
+    ],
+    "answer": 3,
+    "explanation": "A stand-alone virtualization host operates independently rather than as a member of a cluster."
+  },
+  {
+    "id": "CV0004-1.7-R002",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Clustering",
+    "difficulty": "Level 2",
+    "question": "Which virtualization design groups hosts so workloads can be managed or recovered across multiple systems?",
+    "choices": [
+      "Cloning",
+      "Port mapping",
+      "Clustering",
+      "Storage tiering"
+    ],
+    "answer": 2,
+    "explanation": "Virtualization clustering coordinates multiple hosts for availability and workload management."
+  },
+  {
+    "id": "CV0004-1.7-R003",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Cloning",
+    "difficulty": "Level 2",
+    "question": "Which process creates a new virtual machine from a copy of an existing virtual machine?",
+    "choices": [
+      "Cloud bursting",
+      "Cloning",
+      "Peering",
+      "Rightsizing"
+    ],
+    "answer": 1,
+    "explanation": "Cloning duplicates a VM's configuration and disks to produce another VM."
+  },
+  {
+    "id": "CV0004-1.7-R004",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Host Affinity",
+    "difficulty": "Level 2",
+    "question": "Which policy intentionally places a virtual machine on a preferred host or near selected workloads?",
+    "choices": [
+      "Host affinity",
+      "Route affinity",
+      "Storage retention",
+      "Code branching"
+    ],
+    "answer": 0,
+    "explanation": "Host affinity influences VM placement based on a defined relationship with a host or another workload."
+  },
+  {
+    "id": "CV0004-1.7-R005",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Hardware Pass-Through",
+    "difficulty": "Level 2",
+    "question": "Which feature gives a virtual machine direct access to a physical device such as a GPU or network adapter?",
+    "choices": [
+      "Overlay routing",
+      "Image registration",
+      "Object versioning",
+      "Hardware pass-through"
+    ],
+    "answer": 3,
+    "explanation": "Hardware pass-through assigns a physical device directly to a VM for near-native access."
+  },
+  {
+    "id": "CV0004-1.7-R006",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Network Types",
+    "difficulty": "Level 2",
+    "question": "Overlay networks and VM networks belong to which virtualization category?",
+    "choices": [
+      "Storage locations",
+      "Billing models",
+      "Network types",
+      "Recovery options"
+    ],
+    "answer": 2,
+    "explanation": "The objective lists overlay networks and VM networks as virtualization network types."
+  },
+  {
+    "id": "CV0004-1.7-R007",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Networks > Overlay Networks",
+    "difficulty": "Level 2",
+    "question": "Which virtual network creates logical connectivity over an existing physical network using encapsulation?",
+    "choices": [
+      "Static underlay route",
+      "Overlay network",
+      "Dedicated circuit",
+      "Storage area network"
+    ],
+    "answer": 1,
+    "explanation": "An overlay builds logical network paths on top of the underlying physical network."
+  },
+  {
+    "id": "CV0004-1.7-R008",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Networks > VM Networks",
+    "difficulty": "Level 2",
+    "question": "Which logical network connects virtual machine interfaces to one another or to external networks?",
+    "choices": [
+      "Virtual machine network",
+      "Container image registry",
+      "Archive tier",
+      "Database cluster"
+    ],
+    "answer": 0,
+    "explanation": "A VM network supplies connectivity for virtual machine network adapters."
+  },
+  {
+    "id": "CV0004-1.7-R009",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Storage",
+    "difficulty": "Level 2",
+    "question": "Local, SAN, and NAS resources belong to which virtualization concept?",
+    "choices": [
+      "Virtualization authentication",
+      "Virtualization billing",
+      "Virtualization source control",
+      "Virtualization storage"
+    ],
+    "answer": 3,
+    "explanation": "Local storage, SAN, and NAS are the listed storage choices for virtualized workloads."
+  },
+  {
+    "id": "CV0004-1.7-R010",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Storage > Local",
+    "difficulty": "Level 2",
+    "question": "Which storage location is physically attached to or directly controlled by the virtualization host?",
+    "choices": [
+      "Storage area network",
+      "Network-attached storage",
+      "Local storage",
+      "Object archive"
+    ],
+    "answer": 2,
+    "explanation": "Local storage resides with the host and is not inherently shared across the network."
+  },
+  {
+    "id": "CV0004-1.7-R011",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Storage > Storage Area Network (SAN)",
+    "difficulty": "Level 2",
+    "question": "Which shared storage system provides block-level access across a dedicated storage network?",
+    "choices": [
+      "Network-attached storage (NAS)",
+      "Storage area network (SAN)",
+      "Content delivery network (CDN)",
+      "Virtual private cloud (VPC)"
+    ],
+    "answer": 1,
+    "explanation": "A SAN provides networked block storage to hosts."
+  },
+  {
+    "id": "CV0004-1.7-R012",
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "Virtualization Storage > Network-Attached Storage (NAS)",
+    "difficulty": "Level 2",
+    "question": "Which shared storage device commonly presents file-level access across an IP network?",
+    "choices": [
+      "Network-attached storage (NAS)",
+      "Storage area network (SAN)",
+      "Local disk",
+      "Ephemeral volume"
+    ],
+    "answer": 0,
+    "explanation": "NAS provides shared file storage over a network."
+  }
+]

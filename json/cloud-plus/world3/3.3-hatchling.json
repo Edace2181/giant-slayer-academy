@@ -1,0 +1,222 @@
+[
+  {
+    "id": "CV0004-3.3-R001",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Cloud Backup Types",
+    "difficulty": "Level 2",
+    "question": "Incremental, full, and differential are categories of what?",
+    "choices": ["Backup types", "Recovery locations", "Scaling methods", "Deployment models"],
+    "answer": 0,
+    "explanation": "Backup types define how much data each backup operation copies relative to earlier backups."
+  },
+  {
+    "id": "CV0004-3.3-R002",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Incremental Backup",
+    "difficulty": "Level 2",
+    "question": "Which backup type copies only data changed since the most recent backup of any type?",
+    "choices": ["Full", "Differential", "Incremental", "Replica"],
+    "answer": 2,
+    "explanation": "An incremental backup stores data modified since the previous successful backup, whether that backup was full or incremental."
+  },
+  {
+    "id": "CV0004-3.3-R003",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Full Backup",
+    "difficulty": "Level 2",
+    "question": "Which backup type copies the entire selected data set during each run?",
+    "choices": ["Incremental", "Full", "Differential", "Granular"],
+    "answer": 1,
+    "explanation": "A full backup creates a complete copy of all selected data."
+  },
+  {
+    "id": "CV0004-3.3-R004",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Differential Backup",
+    "difficulty": "Level 2",
+    "question": "Which backup type copies all data changed since the last full backup?",
+    "choices": ["Differential", "Incremental", "Full", "Parallel"],
+    "answer": 0,
+    "explanation": "A differential backup accumulates every change made after the most recent full backup."
+  },
+  {
+    "id": "CV0004-3.3-R005",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Cloud Backup Locations",
+    "difficulty": "Level 2",
+    "question": "On-site and off-site describe which aspect of a backup design?",
+    "choices": ["Backup locations", "Recovery options", "Backup schedules", "Encryption algorithms"],
+    "answer": 0,
+    "explanation": "Backup locations identify where backup copies are stored in relation to the protected environment."
+  },
+  {
+    "id": "CV0004-3.3-R006",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "On-Site Backup Location",
+    "difficulty": "Level 2",
+    "question": "A backup copy stored in the same facility as the protected workload uses which location?",
+    "choices": ["Off site", "On site", "Parallel", "Granular"],
+    "answer": 1,
+    "explanation": "An on-site backup remains at the same physical location as the source systems."
+  },
+  {
+    "id": "CV0004-3.3-R007",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Off-Site Backup Location",
+    "difficulty": "Level 2",
+    "question": "Which backup location protects a copy from a disaster affecting the workload's primary facility?",
+    "choices": ["On site", "In-place", "Off site", "Bulk"],
+    "answer": 2,
+    "explanation": "An off-site backup is stored away from the primary facility so one local event is less likely to destroy both copies."
+  },
+  {
+    "id": "CV0004-3.3-R008",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Schedule",
+    "difficulty": "Level 2",
+    "question": "Which backup setting determines when and how frequently protection jobs run?",
+    "choices": ["Schedule", "Retention", "Integrity", "Replication"],
+    "answer": 0,
+    "explanation": "The backup schedule defines the timing and frequency of backup operations."
+  },
+  {
+    "id": "CV0004-3.3-R009",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Retention",
+    "difficulty": "Level 2",
+    "question": "Which backup policy controls how long recovery copies are preserved?",
+    "choices": ["Replication", "Retention", "Recoverability", "Schedule"],
+    "answer": 1,
+    "explanation": "Retention specifies the age or number of backup copies kept before expiration."
+  },
+  {
+    "id": "CV0004-3.3-R010",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Replication",
+    "difficulty": "Level 2",
+    "question": "Which method maintains additional copies of protected data in another system or location?",
+    "choices": ["Replication", "Triage", "Aggregation", "Refactoring"],
+    "answer": 0,
+    "explanation": "Replication copies data to another target to improve resilience and recovery availability."
+  },
+  {
+    "id": "CV0004-3.3-R011",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Encryption",
+    "difficulty": "Level 2",
+    "question": "Which backup control protects copied data from unauthorized reading?",
+    "choices": ["Retention", "Encryption", "Scheduling", "Aggregation"],
+    "answer": 1,
+    "explanation": "Encryption transforms backup data so it cannot be read without the required cryptographic key."
+  },
+  {
+    "id": "CV0004-3.3-R012",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Testing",
+    "difficulty": "Level 2",
+    "question": "Which activity verifies that backup and recovery procedures work before an actual outage?",
+    "choices": ["Testing", "Retention", "Scheduling", "Versioning"],
+    "answer": 0,
+    "explanation": "Testing exercises backup restoration and recovery procedures to reveal failures before they are urgently needed."
+  },
+  {
+    "id": "CV0004-3.3-R013",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Recoverability Testing",
+    "difficulty": "Level 2",
+    "question": "Which testing concern confirms that protected data can actually be restored into a usable state?",
+    "choices": ["Recoverability", "Aggregation", "Retention", "Encryption"],
+    "answer": 0,
+    "explanation": "Recoverability testing proves that backup data and procedures can successfully restore service or information."
+  },
+  {
+    "id": "CV0004-3.3-R014",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Backup Integrity Testing",
+    "difficulty": "Level 2",
+    "question": "Which testing concern verifies that backup data has not been corrupted or altered?",
+    "choices": ["Availability", "Integrity", "Scalability", "Portability"],
+    "answer": 1,
+    "explanation": "Integrity testing confirms that a backup remains complete, consistent, and unchanged from its expected state."
+  },
+  {
+    "id": "CV0004-3.3-R015",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Cloud Recovery Types",
+    "difficulty": "Level 2",
+    "question": "In-place and parallel are categories of which recovery concept?",
+    "choices": ["Recovery types", "Backup locations", "Scaling triggers", "Migration models"],
+    "answer": 0,
+    "explanation": "Recovery types describe whether restoration occurs in the original environment or alongside it."
+  },
+  {
+    "id": "CV0004-3.3-R016",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "In-Place Recovery",
+    "difficulty": "Level 2",
+    "question": "Which recovery type restores data or service directly into the original environment?",
+    "choices": ["Parallel", "Granular", "In-place", "Off-site"],
+    "answer": 2,
+    "explanation": "In-place recovery restores the protected resource at its original location or over its current state."
+  },
+  {
+    "id": "CV0004-3.3-R017",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Parallel Recovery",
+    "difficulty": "Level 2",
+    "question": "Which recovery type restores a separate environment while the original remains available for comparison or fallback?",
+    "choices": ["In-place", "Parallel", "Bulk", "Incremental"],
+    "answer": 1,
+    "explanation": "Parallel recovery builds the restored workload beside the original rather than overwriting it."
+  },
+  {
+    "id": "CV0004-3.3-R018",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Cloud Recovery Options",
+    "difficulty": "Level 2",
+    "question": "Bulk and granular are categories of which restore decision?",
+    "choices": ["Recovery options", "Backup schedules", "Deployment types", "Scaling approaches"],
+    "answer": 0,
+    "explanation": "Recovery options describe the scope of information or resources selected for restoration."
+  },
+  {
+    "id": "CV0004-3.3-R019",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Bulk Recovery",
+    "difficulty": "Level 2",
+    "question": "Which recovery option restores a large collection of data or an entire protected workload at once?",
+    "choices": ["Granular", "Bulk", "In-place", "Differential"],
+    "answer": 1,
+    "explanation": "Bulk recovery restores a broad data set or complete resource rather than selected individual items."
+  },
+  {
+    "id": "CV0004-3.3-R020",
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Granular Recovery",
+    "difficulty": "Level 2",
+    "question": "Which recovery option restores a selected file, object, or record instead of the complete backup set?",
+    "choices": ["Bulk", "Parallel", "Granular", "Full"],
+    "answer": 2,
+    "explanation": "Granular recovery restores specific items while leaving the rest of the protected data unchanged."
+  }
+]
