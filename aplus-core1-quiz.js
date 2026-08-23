@@ -63,6 +63,40 @@ function shuffle(items) {
   return copy;
 }
 
+function buildWeaknessMix(allQuestions, count, certificationSlug) {
+  const config = window.HydraFlags?.configFor(certificationSlug);
+  const weaknessState = window.HydraFlags?.readWeaknessState(config) || { objectives: {} };
+  const incorrectState = window.HydraFlags?.readIncorrectState(config) || { active: [] };
+  const activeByObjective = incorrectState.active.reduce((totals, record) => {
+    const key = String(record.objective || "");
+    if (key) totals[key] = (totals[key] || 0) + 1;
+    return totals;
+  }, {});
+  const ranked = Object.entries(weaknessState.objectives || {}).map(([objectiveId, record]) => {
+    const attempts = Math.max(0, Number(record.attempts) || 0);
+    const correct = Math.max(0, Math.min(attempts, Number(record.correct) || 0));
+    const misses = Math.max(0, Number(record.misses) || (attempts - correct));
+    const activeIncorrect = activeByObjective[objectiveId] || 0;
+    const missRate = attempts ? (attempts - correct) / attempts : 0;
+    return { objectiveId, attempts, score: (activeIncorrect * 5) + (missRate * 3) + Math.log2(misses + 1) };
+  }).filter(record => record.attempts > 0 || activeByObjective[record.objectiveId] > 0)
+    .sort((left, right) => right.score - left.score || right.attempts - left.attempts || left.objectiveId.localeCompare(right.objectiveId));
+
+  if (!ranked.length) {
+    return { questions: shuffle(allQuestions).slice(0, count), prioritized: 0, objectives: [] };
+  }
+
+  const focusCount = Math.min(5, Math.max(1, Math.ceil(ranked.length / 3)));
+  const focusObjectives = ranked.slice(0, focusCount).map(record => record.objectiveId);
+  const focusSet = new Set(focusObjectives);
+  const focusPool = shuffle(allQuestions.filter(question => focusSet.has(String(question.objective))));
+  const priorityTarget = Math.min(focusPool.length, Math.ceil(count * 0.72));
+  const selected = focusPool.slice(0, priorityTarget);
+  const selectedIds = new Set(selected.map(question => question.id));
+  const remainder = shuffle(allQuestions.filter(question => !selectedIds.has(question.id))).slice(0, count - selected.length);
+  return { questions: shuffle([...selected, ...remainder]), prioritized: selected.length, objectives: focusObjectives };
+}
+
 async function fetchBank(file) {
   const response = await fetch(file);
   if (!response.ok) throw new Error(`Unable to load ${file}`);
@@ -100,11 +134,16 @@ async function loadQuiz() {
     } else if (world === "6" && world6Modes[mode]) {
       const banks = await Promise.all(objectiveFiles.map(fetchBank));
       const unique = [...new Map(banks.flat().map(q => [q.id, q])).values()];
-      const selection = shuffle(unique);
+      const weaknessMix = mode === "weakness-mix"
+        ? buildWeaknessMix(unique, world6Modes[mode].count, "aplus-core1")
+        : null;
+      const selection = weaknessMix ? weaknessMix.questions : shuffle(unique);
       questions = selection.slice(0, Math.min(world6Modes[mode].count, selection.length));
       quizInfo.textContent = `❄️ A+ Core 1 World 6 • ${world6Modes[mode].name}`;
       objectiveTitle.textContent = world6Modes[mode].name;
-      objectiveName.textContent = `${questions.length} mixed Objective Sweep questions`;
+      objectiveName.textContent = weaknessMix?.prioritized
+        ? `${questions.length} questions with ${weaknessMix.prioritized} prioritized from Objective${weaknessMix.objectives.length === 1 ? "" : "s"} ${weaknessMix.objectives.join(", ")}`
+        : `${questions.length} mixed Objective Sweep questions${weaknessMix ? " (random baseline until weakness evidence is available)" : ""}`;
       modeDisplay.textContent = world6Modes[mode].name;
     } else if (/^[1-5]$/.test(world) && objective) {
       questions = await fetchBank(`json/aplus-core1/world${world}/${objective}-hatchling.json`);

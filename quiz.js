@@ -132,6 +132,7 @@ const returnLink = document.getElementById("returnLink");
 // ============================================
 
 async function loadQuestions() {
+    let weaknessMix = null;
 
     try {
         if (isWorld7Mode && !world7Modes[mode]) {
@@ -164,8 +165,12 @@ async function loadQuestions() {
                 throw new Error(`Only ${uniqueQuestions.length} unique questions are available.`);
             }
 
-            shuffle(uniqueQuestions);
-            questions = uniqueQuestions.slice(0, selectedMode.count);
+            weaknessMix = mode === "weakness-mix"
+                ? buildWeaknessMix(uniqueQuestions, selectedMode.count, "network-plus")
+                : null;
+            questions = weaknessMix
+                ? weaknessMix.questions
+                : shuffle(uniqueQuestions).slice(0, selectedMode.count);
         } else {
             console.log("Loading:", questionFile);
             const response = await fetch(questionFile);
@@ -202,9 +207,11 @@ async function loadQuestions() {
         }
     }
         if (objectiveName) {
-            objectiveName.textContent = isWorld6Mode
-                ? `${questions.length} mixed questions from Worlds 1–5`
-                : questions[0].blueprint;
+            objectiveName.textContent = isWorld6Mode && weaknessMix?.prioritized
+                ? `${questions.length} questions with ${weaknessMix.prioritized} prioritized from Objective${weaknessMix.objectives.length === 1 ? "" : "s"} ${weaknessMix.objectives.join(", ")}`
+                : isWorld6Mode
+                    ? `${questions.length} mixed questions from Worlds 1–5${mode === "weakness-mix" ? " (random baseline until weakness evidence is available)" : ""}`
+                    : questions[0].blueprint;
             }
 
         if (isWorld7Mode) {
@@ -231,6 +238,40 @@ function shuffle(items) {
         [items[index], items[randomIndex]] = [items[randomIndex], items[index]];
     }
     return items;
+}
+
+function buildWeaknessMix(allQuestions, count, certificationSlug) {
+    const config = window.HydraFlags?.configFor(certificationSlug);
+    const weaknessState = window.HydraFlags?.readWeaknessState(config) || { objectives: {} };
+    const incorrectState = window.HydraFlags?.readIncorrectState(config) || { active: [] };
+    const activeByObjective = incorrectState.active.reduce((totals, record) => {
+        const key = String(record.objective || "");
+        if (key) totals[key] = (totals[key] || 0) + 1;
+        return totals;
+    }, {});
+    const ranked = Object.entries(weaknessState.objectives || {}).map(([objectiveId, record]) => {
+        const attempts = Math.max(0, Number(record.attempts) || 0);
+        const correct = Math.max(0, Math.min(attempts, Number(record.correct) || 0));
+        const misses = Math.max(0, Number(record.misses) || (attempts - correct));
+        const activeIncorrect = activeByObjective[objectiveId] || 0;
+        const missRate = attempts ? (attempts - correct) / attempts : 0;
+        return { objectiveId, attempts, score: (activeIncorrect * 5) + (missRate * 3) + Math.log2(misses + 1) };
+    }).filter(record => record.attempts > 0 || activeByObjective[record.objectiveId] > 0)
+        .sort((left, right) => right.score - left.score || right.attempts - left.attempts || left.objectiveId.localeCompare(right.objectiveId));
+
+    if (!ranked.length) {
+        return { questions: shuffle([...allQuestions]).slice(0, count), prioritized: 0, objectives: [] };
+    }
+
+    const focusCount = Math.min(5, Math.max(1, Math.ceil(ranked.length / 3)));
+    const focusObjectives = ranked.slice(0, focusCount).map(record => record.objectiveId);
+    const focusSet = new Set(focusObjectives);
+    const focusPool = shuffle(allQuestions.filter(question => focusSet.has(String(question.objective))));
+    const priorityTarget = Math.min(focusPool.length, Math.ceil(count * 0.72));
+    const selected = focusPool.slice(0, priorityTarget);
+    const selectedIds = new Set(selected.map(question => question.id));
+    const remainder = shuffle(allQuestions.filter(question => !selectedIds.has(question.id))).slice(0, count - selected.length);
+    return { questions: shuffle([...selected, ...remainder]), prioritized: selected.length, objectives: focusObjectives };
 }
 
 // ============================================
