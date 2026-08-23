@@ -53,15 +53,15 @@
     "objective": "1.3",
     "blueprint": "Rollback plan",
     "difficulty": "Level 3",
-    "question": "A payroll update has passed testing but could alter tax calculations. Which artifact must specify how to return to the verified prior version?",
+    "question": "A payroll update passes testing, but incorrect tax tables could affect every employee. The change cannot proceed unless the team knows the exact triggers, commands, data restore steps, and decision authority for returning to the verified prior release. Which artifact supplies this information?",
     "choices": [
       "Rollback plan",
-      "Acceptable use policy",
-      "Certificate policy",
-      "Threat feed"
+      "Post-implementation review",
+      "Business-impact analysis",
+      "Change communication plan"
     ],
     "answer": 0,
-    "explanation": "Rollback plan is correct because the rollback plan defines restoration of the previous known-good state."
+    "explanation": "A rollback plan defines the conditions, responsibilities, and technical steps for restoring the known-good version if the payroll validation fails."
   },
   {
     "id": "S701-PE6-005",
@@ -69,15 +69,15 @@
     "objective": "1.2",
     "blueprint": "Single sign-on",
     "difficulty": "Level 3",
-    "question": "An employee authenticates once to a company portal and then opens several connected applications without new prompts. Which concept is used?",
+    "question": "An employee authenticates to an identity portal once, then opens payroll, benefits, and ticketing applications without entering credentials again. Each application relies on the same trusted session. Which access concept is demonstrated?",
     "choices": [
-      "Password spraying",
+      "Federation",
       "Single sign-on",
-      "Data masking",
-      "Risk transfer"
+      "Multifactor authentication",
+      "Continuous authorization"
     ],
     "answer": 1,
-    "explanation": "Single sign-on is correct because SSO reuses one trusted authentication session across integrated services."
+    "explanation": "Single sign-on allows one trusted authentication session to provide access to multiple integrated applications without repeated credential prompts."
   },
   {
     "id": "S701-PE6-006",
@@ -85,15 +85,15 @@
     "objective": "1.4",
     "blueprint": "Hardware security module",
     "difficulty": "Level 3",
-    "question": "A payment processor needs tamper-resistant generation and use of transaction-signing keys. Which device is BEST?",
+    "question": "A payment processor must generate transaction-signing keys, keep private material nonexportable, and perform signatures inside a tamper-resistant boundary with audited administration. Which device BEST meets these requirements?",
     "choices": [
-      "Layer 2 switch",
-      "Web proxy",
+      "A network-attached key file",
+      "A software password vault",
       "Hardware security module",
-      "UPS"
+      "A certificate transparency service"
     ],
     "answer": 2,
-    "explanation": "Hardware security module is correct because an HSM protects cryptographic keys and operations inside hardened hardware."
+    "explanation": "A hardware security module protects keys and cryptographic operations inside hardened hardware designed to resist extraction and tampering."
   },
   {
     "id": "S701-PE6-007",
@@ -101,7 +101,7 @@
     "objective": "1.1",
     "blueprint": "Operational control",
     "difficulty": "Level 3",
-    "question": "Security guards verify delivery drivers against an approved list at a loading dock. Which control category BEST fits?",
+    "question": "Security guards compare delivery drivers with an approved schedule, inspect identification, and record entry at a loading dock. The safeguard depends on people executing a daily process rather than software or a barrier alone. Which control category BEST fits?",
     "choices": [
       "Cryptographic control",
       "Recovery control",
@@ -109,7 +109,7 @@
       "Operational control"
     ],
     "answer": 3,
-    "explanation": "Operational control is correct because people perform a repeatable security process during daily operations."
+    "explanation": "An operational control is performed by people through a repeatable security process during normal operations."
   },
   {
     "id": "S701-PE6-008",
@@ -120,9 +120,9 @@
     "question": "A database patch succeeds, but replication delay rises beyond the approved limit. What should the team use to determine whether the change remains deployed?",
     "choices": [
       "Documented success criteria and rollback thresholds",
-      "The employee handbook",
-      "A public certificate list",
-      "The annual risk appetite alone"
+      "The number of administrators assigned to the patch",
+      "Whether the vendor labels the installation successful",
+      "A post-change meeting scheduled for next month"
     ],
     "answer": 0,
     "explanation": "Documented success criteria and rollback thresholds is correct because objective validation thresholds determine whether the implementation meets approved conditions."
@@ -133,15 +133,15 @@
     "objective": "1.4",
     "blueprint": "Digital envelope",
     "difficulty": "Level 4",
-    "question": "A case archive encrypts each large file with a random data key and encrypts that data key to several authorized recipients. What design is this?",
+    "question": "A case archive encrypts each large file with a new symmetric content key. That key is then encrypted separately for every authorized recipient, and recipients use their private keys to recover it. Which cryptographic design is this?",
     "choices": [
-      "One global plaintext password",
+      "A shared symmetric-key archive",
       "A digital-envelope hybrid encryption design",
-      "Unkeyed hashing only",
-      "Data masking without encryption"
+      "Unkeyed hashing with recipient identifiers",
+      "Tokenization through one mapping database"
     ],
     "answer": 1,
-    "explanation": "A digital-envelope hybrid encryption design is correct because the data uses efficient symmetric encryption while recipient public keys protect the data key."
+    "explanation": "A digital-envelope hybrid design uses efficient symmetric encryption for bulk data and asymmetric encryption to protect the content key for each recipient."
   },
   {
     "id": "S701-PE6-010",
@@ -151,10 +151,10 @@
     "difficulty": "Level 4",
     "question": "One treasury employee can create a vendor, approve it, and release payment. Which control change BEST reduces fraud risk?",
     "choices": [
-      "Give the employee a longer password",
-      "Disable payment logging",
+      "Authorization",
+      "Accounting",
       "Split creation, approval, and payment among independent roles",
-      "Permit anonymous vendor creation"
+      "Federation"
     ],
     "answer": 2,
     "explanation": "Split creation, approval, and payment among independent roles is correct because separating critical steps prevents one person from completing a fraudulent transaction alone."
@@ -167,9 +167,9 @@
     "difficulty": "Level 4",
     "question": "An attacker modifies a production cloud template outside the normal pipeline. Which combination BEST identifies and corrects the change?",
     "choices": [
-      "Annual policy acknowledgment only",
-      "A shared administrator token",
-      "Disabling audit trails",
+      "A weekly manual screenshot of the cloud console",
+      "A one-time penetration test before deployment",
+      "A broader administrator role for the deployment team",
       "Versioned desired state, drift detection, alerting, and controlled reconciliation"
     ],
     "answer": 3,
@@ -213,15 +213,15 @@
     "objective": "2.3",
     "blueprint": "End-of-life device",
     "difficulty": "Level 2",
-    "question": "A router model is no longer supported and cannot receive fixes. Which condition applies?",
+    "question": "An inventory review finds that a router’s manufacturer ended support last year. No current exploit is known, but new firmware and security corrections will never be issued, and the device cannot meet the replacement baseline. Which lifecycle condition should be recorded?",
     "choices": [
-      "A secure baseline",
-      "A zero-day only",
+      "A currently exploited zero-day",
+      "A temporary configuration drift",
       "End-of-life technology",
-      "A hot site"
+      "A certificate-chain failure"
     ],
     "answer": 2,
-    "explanation": "End-of-life technology is correct because unsupported end-of-life equipment cannot receive vendor remediation."
+    "explanation": "End-of-life technology is no longer supported by its manufacturer and therefore cannot receive future fixes, creating a lifecycle risk even before a specific exploit is observed."
   },
   {
     "id": "S701-PE6-015",
@@ -277,15 +277,15 @@
     "objective": "2.1",
     "blueprint": "Financially motivated insider",
     "difficulty": "Level 3",
-    "question": "An employee secretly sells unreleased product photos to an online publication. Which motivation is clearest?",
+    "question": "An employee secretly copies unreleased product photos, negotiates payment with an online publication, and stops after receiving the money. Which motivation is most directly supported by the evidence?",
     "choices": [
-      "Ideological disruption",
-      "Unintentional error",
+      "Authorized red team",
+      "Financially motivated organized crime",
       "Financial gain",
-      "Authorized testing"
+      "State-sponsored espionage"
     ],
     "answer": 2,
-    "explanation": "Financial gain is correct because the employee deliberately monetizes confidential access."
+    "explanation": "Financial gain is the clearest motivation because the employee deliberately monetized confidential access in exchange for payment."
   },
   {
     "id": "S701-PE6-019",
@@ -293,15 +293,15 @@
     "objective": "2.2",
     "blueprint": "Look-alike Unicode domain",
     "difficulty": "Level 3",
-    "question": "A login page uses a domain containing a Cyrillic character that appears identical to a Latin letter. Which technique is used?",
+    "question": "A credential page uses a domain containing a Cyrillic character visually identical to a Latin letter in the real brand. The TLS certificate is valid for the deceptive domain. Which technique makes the URL appear legitimate?",
     "choices": [
-      "RFID cloning",
-      "ARP inspection",
-      "Password aging",
+      "Baiting",
+      "MFA push fatigue",
+      "QR-code phishing",
       "Homograph domain attack"
     ],
     "answer": 3,
-    "explanation": "Homograph domain attack is correct because visually confusable Unicode characters create a deceptive look-alike domain."
+    "explanation": "A homograph domain attack uses visually confusable characters to create a look-alike name that can still obtain a valid certificate for the attacker’s domain."
   },
   {
     "id": "S701-PE6-020",
@@ -309,15 +309,15 @@
     "objective": "2.3",
     "blueprint": "XML external entity",
     "difficulty": "Level 3",
-    "question": "An XML upload references a local system file and the parser returns the file contents. Which flaw is present?",
+    "question": "An XML upload declares an external entity that references a local password file. The server-side parser resolves the entity and returns the file contents in an error response. Which vulnerability is present?",
     "choices": [
       "XML external entity injection",
-      "SQL injection",
-      "Session fixation",
-      "Buffer overflow"
+      "Path traversal through a user-controlled filename",
+      "Server-side request forgery through an HTTP callback field",
+      "Insecure deserialization of an object payload"
     ],
     "answer": 0,
-    "explanation": "XML external entity injection is correct because the parser resolves an attacker-controlled external entity with local resource access."
+    "explanation": "XML external entity injection abuses unsafe entity resolution to make the parser access local or remote resources selected by the attacker."
   },
   {
     "id": "S701-PE6-021",
@@ -325,7 +325,7 @@
     "objective": "2.4",
     "blueprint": "Ransomware",
     "difficulty": "Level 3",
-    "question": "A workstation encrypts shared documents and displays a cryptocurrency demand for a recovery key. Which malware is indicated?",
+    "question": "Shared documents become unreadable, filenames receive a new extension, and a note demands cryptocurrency for a recovery key. The malware does not merely monitor activity or display advertising. Which category is indicated?",
     "choices": [
       "Adware",
       "Ransomware",
@@ -333,7 +333,7 @@
       "Logic bomb only"
     ],
     "answer": 1,
-    "explanation": "Ransomware is correct because the attacker denies access through encryption and demands payment."
+    "explanation": "Ransomware denies access—commonly through encryption—and demands payment for restoration, matching the encrypted files and recovery demand."
   },
   {
     "id": "S701-PE6-022",
@@ -341,7 +341,7 @@
     "objective": "2.4",
     "blueprint": "Session fixation",
     "difficulty": "Level 3",
-    "question": "An attacker sends a victim a login link containing a session ID known to the attacker. The application keeps that ID after authentication. Which attack is this?",
+    "question": "An attacker sends a victim a login URL containing a session identifier already known to the attacker. The victim authenticates, and the application continues using that same identifier instead of issuing a new one. Which attack succeeds?",
     "choices": [
       "Password spraying",
       "DNS tunneling",
@@ -349,7 +349,7 @@
       "Kerberoasting"
     ],
     "answer": 2,
-    "explanation": "Session fixation is correct because the attacker predetermines the session token later associated with the victim’s login."
+    "explanation": "Session fixation succeeds because the application associates the victim’s authenticated state with a session token predetermined by the attacker."
   },
   {
     "id": "S701-PE6-023",
@@ -359,9 +359,9 @@
     "difficulty": "Level 3",
     "question": "A laptop begins scanning internal file servers after opening a suspicious document. What should EDR do FIRST?",
     "choices": [
-      "Delete every organizational backup",
-      "Disable SOC alerts",
-      "Grant the user administrator rights",
+      "Identity-aware microsegmentation",
+      "Automated baseline enforcement",
+      "Monitored deception service",
       "Network-isolate the laptop while preserving management access"
     ],
     "answer": 3,
@@ -373,15 +373,15 @@
     "objective": "2.3",
     "blueprint": "Weak permissions",
     "difficulty": "Level 3",
-    "question": "Any authenticated user can modify a system startup script owned by an administrator. Which weakness is MOST direct?",
+    "question": "A low-privilege user can modify a startup script executed by the system service at boot. The script owner is an administrator, but its write permissions include all authenticated users. Which weakness MOST directly enables privilege escalation?",
     "choices": [
       "Improper file permissions",
-      "A certificate collision",
-      "Wireless interference",
-      "A race condition"
+      "An unquoted service path requiring a space in the executable path",
+      "DLL search-order hijacking through a writable library directory",
+      "Command injection in the startup script arguments"
     ],
     "answer": 0,
-    "explanation": "Improper file permissions is correct because excessive write access lets low-privilege users alter privileged execution."
+    "explanation": "Improper file permissions allow unauthorized users to alter code later executed with greater privilege."
   },
   {
     "id": "S701-PE6-025",
@@ -389,15 +389,15 @@
     "objective": "2.4",
     "blueprint": "Evil-maid attack",
     "difficulty": "Level 3",
-    "question": "A person with brief hotel-room access modifies a powered-off executive laptop to capture the next boot secret. Which attack class is this?",
+    "question": "A powered-off executive laptop is left unattended in a hotel room. A person with brief physical access modifies the boot path so the next unlock secret is captured before the normal operating system loads. Which attack class is this?",
     "choices": [
-      "DNS poisoning",
+      "Living-off-the-land activity",
       "Evil-maid physical tampering",
-      "Credential stuffing",
-      "Malvertising"
+      "Rootkit",
+      "Ransomware"
     ],
     "answer": 1,
-    "explanation": "Evil-maid physical tampering is correct because temporary unsupervised physical access is used to alter the device."
+    "explanation": "Evil-maid physical tampering uses temporary unsupervised physical access to alter a device and capture secrets or compromise a later boot."
   },
   {
     "id": "S701-PE6-026",
@@ -407,10 +407,10 @@
     "difficulty": "Level 4",
     "question": "A group maintains access through multiple infrastructure changes, rotates custom malware, and returns after remediation for strategic collection. Which attribute is MOST significant?",
     "choices": [
-      "Low motivation",
-      "Accidental access",
+      "Low motivation and temporary access",
+      "A common public toolset",
       "High resources and persistent capability",
-      "Public authorization"
+      "A publicly documented authorization"
     ],
     "answer": 2,
     "explanation": "High resources and persistent capability is correct because sustained adaptive operations indicate a capable persistent adversary."
@@ -423,9 +423,9 @@
     "difficulty": "Level 4",
     "question": "A caller knows an employee ID and recent ticket number, but cannot satisfy the approved identity-verification process and pressures staff to bypass it. What should support do?",
     "choices": [
-      "Reset the account because ticket details are known",
-      "Ask for the employee password",
-      "Disable call recording",
+      "Reset the account because the caller knows ticket details",
+      "Ask the caller to provide the current password",
+      "Send a bypass code to the requested new number",
       "Refuse the bypass, document the attempt, and escalate through the security process"
     ],
     "answer": 3,
@@ -437,15 +437,15 @@
     "objective": "2.3",
     "blueprint": "Cache poisoning",
     "difficulty": "Level 4",
-    "question": "A shared reverse proxy stores an attacker-controlled response and serves it to later users because cache keys omit a security-relevant header. Which weakness is exploited?",
+    "question": "A shared reverse proxy stores a response influenced by an attacker-controlled header. Because the cache key omits that header, later users receive the attacker’s response even though their requests are benign. Which weakness was exploited?",
     "choices": [
       "Web cache poisoning",
-      "Cross-site request forgery",
-      "Integer overflow",
-      "Password reuse"
+      "HTTP request smuggling between proxy and origin",
+      "Stored cross-site scripting in an uncached page",
+      "DNS cache poisoning at the resolver"
     ],
     "answer": 0,
-    "explanation": "Web cache poisoning is correct because the attacker manipulates cache behavior so malicious content is delivered to other clients."
+    "explanation": "Web cache poisoning manipulates cached content or cache-key differences so a malicious response is served to other users."
   },
   {
     "id": "S701-PE6-029",
@@ -453,15 +453,15 @@
     "objective": "2.4",
     "blueprint": "Lateral movement",
     "difficulty": "Level 4",
-    "question": "After compromising one workstation, an intruder queries directory groups, authenticates to a file server, and launches a remote service. Which phase is MOST evident?",
+    "question": "After compromising one workstation, an intruder queries directory groups, authenticates to a file server with harvested credentials, and creates a remote service on that second host. Which adversary phase is MOST evident?",
     "choices": [
-      "Initial reconnaissance only",
+      "Initial access through phishing",
       "Lateral movement",
-      "Data destruction",
-      "Certificate enrollment"
+      "Persistence on the original workstation",
+      "Command-and-control establishment to an external host"
     ],
     "answer": 1,
-    "explanation": "Lateral movement is correct because the attacker is using the first foothold to reach additional internal systems."
+    "explanation": "Lateral movement uses an established foothold and credentials to reach and execute on additional internal systems."
   },
   {
     "id": "S701-PE6-030",
@@ -471,10 +471,10 @@
     "difficulty": "Level 4",
     "question": "A legacy service account has domain-admin rights, an unrotated password, and interactive login. Which remediation is BEST?",
     "choices": [
-      "Keep the account and only rename it",
-      "Share its password with more operators",
+      "Keep domain-admin rights but shorten password age",
+      "Convert the account to a shared administrator identity",
       "Create a scoped managed identity, deny interactive use, rotate secrets, and monitor behavior",
-      "Disable all identity logs"
+      "Disable interactive logins while retaining the unrotated domain-admin secret"
     ],
     "answer": 2,
     "explanation": "Create a scoped managed identity, deny interactive use, rotate secrets, and monitor behavior is correct because scoped managed service identity removes unnecessary privilege and reusable credentials."
@@ -487,9 +487,9 @@
     "difficulty": "Level 4",
     "question": "A server sends large TLS sessions to a legitimate collaboration platform. Payload inspection is unavailable. Which evidence BEST helps distinguish exfiltration from normal use?",
     "choices": [
-      "Certificate validity alone",
-      "The server wallpaper",
-      "UPS battery age",
+      "TLS certificate validity and destination IP alone",
+      "The server’s normal daily byte count only",
+      "A packet payload signature from the encrypted session",
       "Endpoint file-access telemetry, user context, destination tenant, volume, and timing"
     ],
     "answer": 3,
@@ -581,15 +581,15 @@
     "objective": "3.1",
     "blueprint": "Decentralized architecture",
     "difficulty": "Level 3",
-    "question": "Regional offices make local authorization decisions and continue operating when headquarters is offline. Which design is this?",
+    "question": "Regional offices retain local policy engines and can authorize transactions when headquarters is offline. Headquarters publishes standards, but day-to-day decisions and continuity do not depend on one central service. Which architecture is described?",
     "choices": [
       "Centralized architecture",
       "Decentralized architecture",
-      "Single-cloud dependency",
-      "Cold-site architecture"
+      "Single-region failover",
+      "Federated authentication"
     ],
     "answer": 1,
-    "explanation": "Decentralized architecture is correct because decision authority and operational capability are distributed among locations."
+    "explanation": "Decentralized architecture distributes decision-making and operating capability among locations, allowing local operation during a headquarters outage."
   },
   {
     "id": "S701-PE6-038",
@@ -597,15 +597,15 @@
     "objective": "3.2",
     "blueprint": "Layer 7 load balancing",
     "difficulty": "Level 3",
-    "question": "A traffic manager routes `/images` and `/api` requests to different server pools. Which inspection capability is required?",
+    "question": "A traffic manager reads HTTP paths and sends `/images` to a static-content pool while routing `/api` to application servers. Port and IP information alone cannot distinguish the requests. Which capability is required?",
     "choices": [
-      "Layer 1 signaling",
-      "Layer 2 port security",
+      "Layer 2 switching",
+      "Layer 4 port-based balancing",
       "Layer 7 application-aware load balancing",
-      "IPSec tunnel mode only"
+      "Layer 3 route selection"
     ],
     "answer": 2,
-    "explanation": "Layer 7 application-aware load balancing is correct because URL-path routing requires understanding HTTP application content."
+    "explanation": "Layer 7 application-aware load balancing understands HTTP content such as URL paths and can route requests to different application pools."
   },
   {
     "id": "S701-PE6-039",
@@ -613,15 +613,15 @@
     "objective": "3.3",
     "blueprint": "Legal information",
     "difficulty": "Level 3",
-    "question": "Attorney-client communications and litigation strategy should be recognized as which data type?",
+    "question": "A repository contains attorney-client advice, litigation strategy, and privileged case correspondence. Which data type should drive its handling requirements?",
     "choices": [
-      "Public marketing data",
-      "Network metadata only",
-      "Unclassified telemetry",
+      "Dataset-specific access identity",
+      "Encryption at rest",
+      "Tokenization",
       "Legal information"
     ],
     "answer": 3,
-    "explanation": "Legal information is correct because the records concern legal advice and proceedings and require appropriate protection."
+    "explanation": "Legal information is the relevant data type because the records concern legal advice, privilege, and active proceedings."
   },
   {
     "id": "S701-PE6-040",
@@ -629,15 +629,15 @@
     "objective": "3.4",
     "blueprint": "Simulation exercise",
     "difficulty": "Level 3",
-    "question": "A response team uses a controlled cyber range that imitates a destructive attack without touching production. Which test type is this?",
+    "question": "A response team enters a controlled cyber range that recreates a destructive attack with working systems and simulated telemetry. No production services are touched, but participants execute technical response actions. Which exercise type is this?",
     "choices": [
       "Simulation",
-      "Tabletop discussion only",
-      "Actual production failover",
-      "Passive audit"
+      "A tabletop discussion using written injects only",
+      "A parallel production failover test",
+      "A checklist review of response documentation"
     ],
     "answer": 0,
-    "explanation": "Simulation is correct because a simulation recreates realistic conditions in a controlled environment."
+    "explanation": "A simulation recreates realistic operating conditions and permits participants to practice actions safely without causing a production incident."
   },
   {
     "id": "S701-PE6-041",
@@ -645,15 +645,15 @@
     "objective": "3.1",
     "blueprint": "Compute consideration",
     "difficulty": "Level 3",
-    "question": "A new encryption gateway meets security needs but cannot process peak transaction volume. Which architecture consideration was underestimated?",
+    "question": "A new encryption gateway passes functional tests but queues transactions during peak demand and causes availability failures. Network bandwidth is adequate, and policy configuration is correct. Which architecture consideration was underestimated?",
     "choices": [
-      "Data classification",
+      "Network latency between clients and the gateway",
       "Compute capacity",
-      "Certificate subject naming",
-      "Risk transfer"
+      "Insufficient cryptographic-key rotation frequency",
+      "A missing data-classification policy"
     ],
     "answer": 1,
-    "explanation": "Compute capacity is correct because insufficient processing resources prevent the control from meeting workload demand."
+    "explanation": "Compute capacity was underestimated because the gateway lacks sufficient processing resources for peak cryptographic workload despite correct networking and policy."
   },
   {
     "id": "S701-PE6-042",
@@ -661,15 +661,15 @@
     "objective": "3.2",
     "blueprint": "Software-defined networking",
     "difficulty": "Level 3",
-    "question": "A controller programs switch forwarding rules through APIs rather than configuring each device manually. Which architecture is this?",
+    "question": "A controller programs forwarding rules on many switches through APIs and maintains centralized network policy instead of configuring each device independently. Which architecture is being used?",
     "choices": [
-      "Physical air gap",
-      "Cold-site recovery",
+      "Software-defined WAN optimizing branch paths",
+      "Network function virtualization hosting virtual appliances",
       "Software-defined networking",
-      "Passwordless identity"
+      "A traditional distributed routing protocol"
     ],
     "answer": 2,
-    "explanation": "Software-defined networking is correct because SDN separates and centralizes programmable network control."
+    "explanation": "Software-defined networking separates programmable control from individual forwarding devices and centralizes network policy through a controller."
   },
   {
     "id": "S701-PE6-043",
@@ -679,9 +679,9 @@
     "difficulty": "Level 4",
     "question": "Thousands of sensors cannot support enterprise agents or certificates individually. Which architecture BEST reduces direct exposure?",
     "choices": [
-      "Give every sensor a public address",
-      "Use one vendor password for all devices",
-      "Allow unrestricted east-west traffic",
+      "Expose each sensor directly behind a shared password",
+      "Place every sensor on the corporate user VLAN",
+      "Rely on obscurity and disable monitoring to reduce load",
       "Place them behind authenticated gateways, segment by function, restrict protocols, and monitor behavior"
     ],
     "answer": 3,
@@ -696,9 +696,9 @@
     "question": "A vendor needs emergency access to industrial controllers. Which design BEST balances support and security?",
     "choices": [
       "Approved time-bound access through a monitored jump host with MFA and session recording",
-      "Permanent internet-facing controller ports",
-      "A shared vendor root password",
-      "Unlogged direct dial-in access"
+      "A permanent vendor VPN to the controller subnet",
+      "A shared controller administrator account sent by email",
+      "Direct internet exposure protected only by an IP allowlist"
     ],
     "answer": 0,
     "explanation": "Approved time-bound access through a monitored jump host with MFA and session recording is correct because brokered temporary monitored access limits exposure and creates accountability."
@@ -709,15 +709,15 @@
     "objective": "3.3",
     "blueprint": "Encryption and deletion",
     "difficulty": "Level 4",
-    "question": "A cloud service cannot guarantee immediate physical destruction of every replicated block. Which design BEST supports rapid logical deletion of customer data?",
+    "question": "A cloud provider cannot immediately overwrite every replicated storage block. Each customer’s data is encrypted with separable keys, and the provider can destroy one customer’s keys without affecting others. Which deletion design does this enable?",
     "choices": [
-      "Use one global plaintext storage pool",
+      "Use one global encryption key and delete the customer record",
       "Encrypt each customer with separable keys and securely destroy the relevant keys",
-      "Keep all keys forever",
-      "Rely on filename changes"
+      "Rename replicated objects and remove index entries",
+      "Expire access tokens while retaining the data key"
     ],
     "answer": 1,
-    "explanation": "Encrypt each customer with separable keys and securely destroy the relevant keys is correct because cryptographic erasure makes protected copies unreadable when their unique keys are destroyed."
+    "explanation": "Encrypting each customer with separable keys and securely destroying the relevant keys supports cryptographic erasure, making remaining replicated ciphertext unreadable."
   },
   {
     "id": "S701-PE6-046",
@@ -725,15 +725,15 @@
     "objective": "3.4",
     "blueprint": "Continuity staffing",
     "difficulty": "Level 4",
-    "question": "A recovery site has adequate technology, but only one employee knows how to activate it and that employee is unavailable. Which planning category failed?",
+    "question": "A recovery site has current data, tested equipment, and working connectivity, but activation fails because the sole trained coordinator is unavailable and no alternate understands the runbook. Which continuity category was deficient?",
     "choices": [
-      "Backup encryption",
-      "Wireless authentication",
+      "Backup-media capacity",
+      "Network-route diversity",
       "People capacity and cross-training",
-      "Data masking"
+      "Encryption-key rotation"
     ],
     "answer": 2,
-    "explanation": "People capacity and cross-training is correct because continuity requires sufficient trained personnel, not only infrastructure."
+    "explanation": "People capacity and cross-training were deficient because recovery depends on sufficient trained personnel as well as functioning technology."
   },
   {
     "id": "S701-PE6-047",
@@ -743,9 +743,9 @@
     "difficulty": "Level 4",
     "question": "A managed provider contract assigns specified outage penalties, but the customer has no alternate service and would still lose revenue beyond the penalty. Which statement is BEST?",
     "choices": [
-      "All business risk has been eliminated",
-      "The provider now owns every customer obligation",
-      "No resilience planning is needed",
+      "Decentralized architecture",
+      "Hybrid deployment",
+      "Multi-cloud deployment",
       "Some financial risk is transferred, but operational dependency and residual risk remain"
     ],
     "answer": 3,
@@ -761,8 +761,8 @@
     "choices": [
       "Deployment",
       "Establishment",
-      "Disposal",
-      "Attestation"
+      "Maintenance",
+      "Assessment"
     ],
     "answer": 0,
     "explanation": "Deployment is correct because deployment places the approved configuration onto target systems."
@@ -775,10 +775,10 @@
     "difficulty": "Level 2",
     "question": "A laptop record is updated to show which employee received it. Which asset activity occurred?",
     "choices": [
-      "Sanitization",
+      "Classification",
       "Assignment accounting",
-      "Destruction",
-      "Enumeration only"
+      "Enumeration",
+      "Decommissioning"
     ],
     "answer": 1,
     "explanation": "Assignment accounting is correct because assignment records custody and responsibility for the asset."
@@ -791,10 +791,10 @@
     "difficulty": "Level 2",
     "question": "Running the vulnerability tool again after patching is called what?",
     "choices": [
-      "Risk transfer",
-      "Tokenization",
+      "Risk acceptance",
+      "Compensating control validation",
       "Rescanning",
-      "Federation"
+      "Asset reclassification"
     ],
     "answer": 2,
     "explanation": "Rescanning is correct because rescanning tests whether the prior finding remains detectable."
@@ -807,9 +807,9 @@
     "difficulty": "Level 2",
     "question": "Which reference provides recommended hardened settings for comparing a server configuration?",
     "choices": [
-      "Risk appetite",
-      "NDA",
-      "Packet capture",
+      "Threat-intelligence feed",
+      "Vulnerability identifier",
+      "Asset inventory",
       "Security benchmark"
     ],
     "answer": 3,
@@ -824,9 +824,9 @@
     "question": "A public web server is placed in an isolated network between the internet and internal systems. What is this network commonly called?",
     "choices": [
       "Screened subnet",
-      "Flat trust zone",
-      "Cold site",
-      "Private key vault"
+      "Flat internal network",
+      "Management VLAN",
+      "Air-gapped recovery network"
     ],
     "answer": 0,
     "explanation": "Screened subnet is correct because a screened subnet separates public services from the trusted internal network."
@@ -871,9 +871,9 @@
     "difficulty": "Level 2",
     "question": "Which source visually summarizes security metrics and trends for quick review?",
     "choices": [
-      "Raw disk image",
-      "NDA",
-      "Certificate request",
+      "Raw event log",
+      "Packet capture",
+      "Incident ticket",
       "Dashboard"
     ],
     "answer": 3,
@@ -885,15 +885,15 @@
     "objective": "4.1",
     "blueprint": "Heat map",
     "difficulty": "Level 3",
-    "question": "A color-coded floor plan displays strong, weak, and leaking wireless signal areas. What artifact is this?",
+    "question": "A color-coded floor plan shows measured wireless signal strength, interference, dead zones, and leakage outside the building. Which assessment artifact is this?",
     "choices": [
       "Wireless heat map",
-      "Risk matrix",
-      "Certificate chain",
-      "Asset register"
+      "Mobile work-container enforcement",
+      "Server-side input validation",
+      "Output encoding"
     ],
     "answer": 0,
-    "explanation": "Wireless heat map is correct because a heat map visualizes measured radio coverage and strength."
+    "explanation": "A wireless heat map visualizes measured radio coverage and strength across a physical area."
   },
   {
     "id": "S701-PE6-057",
@@ -901,15 +901,15 @@
     "objective": "4.2",
     "blueprint": "Certification of disposal",
     "difficulty": "Level 3",
-    "question": "A destruction vendor provides a signed record listing media serial numbers and destruction methods. Which asset-management requirement is satisfied?",
+    "question": "A media-destruction vendor returns a signed record that lists drive serial numbers, destruction dates, approved methods, and the responsible operator. Which asset-management requirement does the record satisfy?",
     "choices": [
-      "Identity federation",
+      "Decommissioning",
       "Disposal certification",
-      "Password aging",
-      "Threat hunting"
+      "Retention-aware disposal",
+      "Destruction certification"
     ],
     "answer": 1,
-    "explanation": "Disposal certification is correct because the record documents that specified assets received approved destruction."
+    "explanation": "Disposal certification provides attributable evidence that specified assets received the approved destruction or sanitization process."
   },
   {
     "id": "S701-PE6-058",
@@ -917,15 +917,15 @@
     "objective": "4.3",
     "blueprint": "Responsible remediation",
     "difficulty": "Level 3",
-    "question": "A researcher reports a critical flaw privately and agrees to delay publication while a fix is prepared. Which process is demonstrated?",
+    "question": "A researcher privately reports a critical flaw, follows the vendor’s safe channel, and delays publication while a correction is tested. Which vulnerability-handling process is demonstrated?",
     "choices": [
-      "Credential stuffing",
-      "Public data classification",
+      "Public vulnerability announcement",
+      "Private bug-bounty payment only",
       "Coordinated responsible disclosure",
-      "Risk avoidance"
+      "Uncoordinated full disclosure"
     ],
     "answer": 2,
-    "explanation": "Coordinated responsible disclosure is correct because researcher and vendor coordinate remediation before broad disclosure."
+    "explanation": "Coordinated responsible disclosure aligns researcher and vendor actions so remediation can occur before broad public release."
   },
   {
     "id": "S701-PE6-059",
@@ -933,15 +933,15 @@
     "objective": "4.4",
     "blueprint": "Log aggregation",
     "difficulty": "Level 3",
-    "question": "A collector receives events from firewalls, servers, and applications in one searchable repository. Which activity is this?",
+    "question": "A collector receives firewall, server, identity, and application events in one searchable repository while preserving each source and timestamp. Which monitoring activity is being performed?",
     "choices": [
-      "Data masking",
-      "Certificate stapling",
-      "Cold-site activation",
+      "Packet capture at one firewall interface",
+      "File-integrity monitoring of log directories",
+      "Long-term archival without centralized search",
       "Log aggregation"
     ],
     "answer": 3,
-    "explanation": "Log aggregation is correct because aggregation centralizes records from multiple sources."
+    "explanation": "Log aggregation centralizes records from multiple sources so analysts can search and correlate them together."
   },
   {
     "id": "S701-PE6-060",
@@ -949,15 +949,15 @@
     "objective": "4.5",
     "blueprint": "Firewall access list",
     "difficulty": "Level 3",
-    "question": "A router permits management traffic only from two administration subnets. Which configuration implements the restriction?",
+    "question": "A router must accept SSH management only when the source belongs to two administration subnets. User and guest networks must be rejected before authentication. Which configuration directly enforces the source restriction?",
     "choices": [
       "A source-based access list",
-      "An email SPF record",
-      "A data-retention schedule",
-      "A password manager"
+      "A destination-port rule allowing SSH from every internal subnet",
+      "A URL-category rule for administrative websites",
+      "A user-identity policy applied after SSH authentication"
     ],
     "answer": 0,
-    "explanation": "A source-based access list is correct because the ACL permits traffic only from explicitly approved source networks."
+    "explanation": "A source-based access list evaluates the originating network and permits management traffic only from the approved administration subnets."
   },
   {
     "id": "S701-PE6-061",
@@ -965,15 +965,15 @@
     "objective": "4.6",
     "blueprint": "Identity de-provisioning",
     "difficulty": "Level 3",
-    "question": "A contractor engagement ends today. Which IAM action should occur promptly?",
+    "question": "A contractor’s engagement ends today. Tokens issued earlier remain valid for another week, and the account still belongs to two administrator groups. Which IAM action should occur promptly?",
     "choices": [
-      "Extend all credentials indefinitely",
+      "Time-based access restriction",
       "Disable accounts, revoke tokens, and remove assigned access",
-      "Convert the account to shared use",
-      "Delete audit records"
+      "Federation",
+      "Passwordless authentication"
     ],
     "answer": 1,
-    "explanation": "Disable accounts, revoke tokens, and remove assigned access is correct because de-provisioning removes access when authorization ends."
+    "explanation": "Disabling accounts, revoking tokens, and removing assigned access completes de-provisioning when the contractor’s authorization ends."
   },
   {
     "id": "S701-PE6-062",
@@ -981,15 +981,15 @@
     "objective": "4.7",
     "blueprint": "Continuous integration security",
     "difficulty": "Level 3",
-    "question": "A pipeline runs dependency, secret, and code checks on every commit. Which automation use case is this?",
+    "question": "Every code commit triggers dependency, secret, and static-code checks before the build can advance. Findings are returned to the developer while the change is still in the integration pipeline. Which automation use case is this?",
     "choices": [
-      "Data sovereignty",
-      "Certificate revocation",
+      "Scoped service identity",
+      "Ticket creation and assignment",
       "Continuous integration security testing",
-      "Physical access control"
+      "Automated account disabling"
     ],
     "answer": 2,
-    "explanation": "Continuous integration security testing is correct because automated checks evaluate changes throughout frequent software integration."
+    "explanation": "Continuous integration security testing embeds repeatable security checks into frequent code integration so defects are identified before release."
   },
   {
     "id": "S701-PE6-063",
@@ -997,15 +997,15 @@
     "objective": "4.8",
     "blueprint": "Threat-hunting hypothesis",
     "difficulty": "Level 3",
-    "question": "Analysts search for unusual use of remote management tools after learning an adversary favors them. What guides the hunt?",
+    "question": "Threat intelligence reports that an adversary favors remote-management tools. Analysts search historical telemetry for unusual executions and connections even though no alert has fired. What should guide the hunt?",
     "choices": [
-      "A backup retention label",
-      "A vendor invoice",
-      "A cold-site checklist",
+      "Recovery",
+      "Lessons learned",
+      "Volatile evidence acquisition",
       "A threat-informed hypothesis"
     ],
     "answer": 3,
-    "explanation": "A threat-informed hypothesis is correct because the hunt begins from an evidence-based expectation of adversary behavior."
+    "explanation": "A threat-informed hypothesis converts intelligence about expected adversary behavior into a focused proactive search across telemetry."
   },
   {
     "id": "S701-PE6-064",
@@ -1013,15 +1013,15 @@
     "objective": "4.9",
     "blueprint": "OS security logs",
     "difficulty": "Level 3",
-    "question": "Which source is MOST likely to record local privilege assignment and audit-policy changes?",
+    "question": "Investigators need evidence that a local administrator privilege was assigned and that audit policy was changed on a Windows server. Which source is MOST likely to record both host-security events?",
     "choices": [
       "Operating-system security logs",
-      "Marketing analytics",
-      "DNS zone file",
-      "Certificate transparency only"
+      "Firewall connection logs",
+      "Network flow records",
+      "Endpoint process telemetry"
     ],
     "answer": 0,
-    "explanation": "Operating-system security logs is correct because the operating system audits local security and privilege events."
+    "explanation": "Operating-system security logs record local privilege, policy, authentication, and other security-relevant events generated by the host."
   },
   {
     "id": "S701-PE6-065",
@@ -1029,15 +1029,15 @@
     "objective": "4.4",
     "blueprint": "Alert escalation",
     "difficulty": "Level 3",
-    "question": "A monitoring analyst confirms an alert exceeds their authority and affects regulated data. What should happen NEXT?",
+    "question": "An analyst confirms an alert affects regulated data, but containment authority belongs to the incident commander. Which action should occur NEXT without losing investigative context?",
     "choices": [
-      "Close it because another team owns the data",
+      "Contain the system without incident-command authorization",
       "Escalate through the defined incident path with preserved evidence",
-      "Delete the alert details",
-      "Notify the public directly"
+      "Close the alert after documenting the regulated-data impact",
+      "Wait for the next shift to transfer responsibility informally"
     ],
     "answer": 1,
-    "explanation": "Escalate through the defined incident path with preserved evidence is correct because defined escalation transfers responsibility while retaining context and evidence."
+    "explanation": "Escalating through the defined incident path with preserved evidence transfers responsibility to the authorized role while maintaining the facts needed for response."
   },
   {
     "id": "S701-PE6-066",
@@ -1047,10 +1047,10 @@
     "difficulty": "Level 4",
     "question": "A service validates user input at the browser but accepts direct API calls that bypass the browser checks. What is the BEST correction?",
     "choices": [
-      "Add more client-side JavaScript only",
-      "Trust all API clients on the internal network",
+      "Mobile work-container enforcement",
+      "Server-side input validation",
       "Enforce canonical validation and authorization at the server trust boundary",
-      "Disable API logging"
+      "Output encoding"
     ],
     "answer": 2,
     "explanation": "Enforce canonical validation and authorization at the server trust boundary is correct because server-side enforcement is required because clients and client-side controls are untrusted."
@@ -1063,9 +1063,9 @@
     "difficulty": "Level 4",
     "question": "A critical finding has remained open because application, platform, and vendor teams each deny responsibility. Which process change is MOST important?",
     "choices": [
-      "Create three duplicate tickets with no owner",
-      "Lower severity until someone volunteers",
-      "Remove the finding from reports",
+      "Recalculate CVSS without assigning remediation",
+      "Create separate duplicate tickets for every team",
+      "Accept the risk indefinitely until ownership is volunteered",
       "Assign one accountable remediation owner with dependencies, deadline, and escalation"
     ],
     "answer": 3,
@@ -1080,9 +1080,9 @@
     "question": "A ransomware event encrypts endpoint logs before they reach the SOC. Which logging design BEST preserves evidence?",
     "choices": [
       "Authenticated near-real-time forwarding to restricted append-only centralized storage",
-      "Local logs only with user write access",
-      "Weekly screenshots stored on endpoints",
-      "No time synchronization"
+      "Store logs locally with stronger endpoint permissions",
+      "Export logs manually after incident containment",
+      "Send weekly log summaries to a writable file share"
     ],
     "answer": 0,
     "explanation": "Authenticated near-real-time forwarding to restricted append-only centralized storage is correct because remote append-only collection prevents compromised endpoints from altering the authoritative copy."
@@ -1095,10 +1095,10 @@
     "difficulty": "Level 4",
     "question": "A NAC server outage currently disconnects every clinical device, including life-safety monitors. Which redesign BEST balances safety and access control?",
     "choices": [
-      "Disable NAC permanently",
+      "Configure fail-open access for every unknown device",
       "Use redundant NAC and a narrowly defined failover policy for preapproved medical devices",
-      "Allow every unknown endpoint during outages",
-      "Give devices shared administrator credentials"
+      "Disable NAC permanently on clinical networks",
+      "Keep fail-closed behavior and accept loss of life-safety connectivity"
     ],
     "answer": 1,
     "explanation": "Use redundant NAC and a narrowly defined failover policy for preapproved medical devices is correct because redundancy preserves control while scoped fallback protects essential known devices."
@@ -1109,15 +1109,15 @@
     "objective": "4.6",
     "blueprint": "MFA factor independence",
     "difficulty": "Level 4",
-    "question": "A login uses a password and a security question. Why does it not provide true multifactor authentication?",
+    "question": "A login asks for a password and the answer to a personal security question. Both values are correct, but policy requires two different authentication-factor categories. Why does this login fail the policy?",
     "choices": [
-      "One factor is biometric",
-      "Both are possession factors",
+      "One factor is possession and the other is knowledge",
+      "The security question is an inherence factor",
       "Both are knowledge factors",
-      "Security questions provide non-repudiation"
+      "The password provides authorization rather than authentication"
     ],
     "answer": 2,
-    "explanation": "Both are knowledge factors is correct because two pieces of evidence from the same category do not create factor diversity."
+    "explanation": "Both are knowledge factors, so using two memorized secrets does not provide the factor diversity required for true multifactor authentication."
   },
   {
     "id": "S701-PE6-071",
@@ -1127,9 +1127,9 @@
     "difficulty": "Level 4",
     "question": "Restored web servers pass health checks, but responders are unsure whether the original vulnerable path remains. What should occur before full traffic returns?",
     "choices": [
-      "Return all traffic immediately",
-      "Remove forensic records",
-      "Reuse compromised credentials",
+      "Root-cause analysis",
+      "Preparation",
+      "Detection",
       "Validate remediation, hardening, monitoring, and controlled behavior under limited traffic"
     ],
     "answer": 3,
@@ -1144,9 +1144,9 @@
     "question": "A script with global privileges changes every cloud account when only one test account was intended. Which redesign BEST limits recurrence?",
     "choices": [
       "Use scoped identities, explicit target allowlists, dry runs, staged rollout, and approvals",
-      "Keep global privilege and remove logs",
-      "Run scripts only from personal laptops",
-      "Make changes irreversible"
+      "Configuration-drift remediation",
+      "Staged orchestration with rollback",
+      "Scoped service identity"
     ],
     "answer": 0,
     "explanation": "Use scoped identities, explicit target allowlists, dry runs, staged rollout, and approvals is correct because scope and staged safety checks constrain automation impact."
@@ -1161,8 +1161,8 @@
     "choices": [
       "Acceptable use policy",
       "Disaster recovery policy",
-      "Password standard",
-      "NDA"
+      "Incident classification standard",
+      "Business continuity procedure"
     ],
     "answer": 1,
     "explanation": "Disaster recovery policy is correct because the DR policy defines requirements and authority for technology restoration."
@@ -1191,9 +1191,9 @@
     "difficulty": "Level 2",
     "question": "Two companies formalize security and operating responsibilities for a continuing partnership. Which agreement may be used?",
     "choices": [
-      "Certificate signing request",
-      "Incident log",
-      "Password history",
+      "Service-level agreement",
+      "Memorandum of understanding",
+      "Master service agreement",
       "Business partners agreement"
     ],
     "answer": 3,
@@ -1208,9 +1208,9 @@
     "question": "Customers leave after widely reported compliance failures. Which consequence is demonstrated?",
     "choices": [
       "Reputational damage",
-      "Risk avoidance",
-      "Data masking",
-      "Tokenization"
+      "Regulatory fine",
+      "Contractual service credit",
+      "Direct remediation cost"
     ],
     "answer": 0,
     "explanation": "Reputational damage is correct because loss of public trust produced business harm."
@@ -1223,10 +1223,10 @@
     "difficulty": "Level 2",
     "question": "An employee suddenly downloads thousands of files outside normal duties. Which awareness topic should help coworkers report this?",
     "choices": [
-      "Generator maintenance",
+      "Removable-media handling",
       "Anomalous behavior recognition",
-      "Certificate pinning",
-      "Load balancing"
+      "Phishing-link verification",
+      "Clean-desk practice"
     ],
     "answer": 1,
     "explanation": "Anomalous behavior recognition is correct because the activity is a marked deviation from expected work behavior."
@@ -1237,15 +1237,15 @@
     "objective": "5.1",
     "blueprint": "Onboarding procedure",
     "difficulty": "Level 3",
-    "question": "HR, IT, and management need consistent steps for creating accounts, issuing equipment, and acknowledging policy. Which artifact is needed?",
+    "question": "HR, IT, facilities, and management need consistent steps for account creation, equipment issue, policy acknowledgement, and approval before a new employee starts. Which artifact should coordinate these repeatable tasks?",
     "choices": [
-      "Risk appetite statement",
-      "Threat feed",
+      "Security policy",
+      "Risk register",
       "Onboarding procedure",
-      "Certificate chain"
+      "Service-level agreement"
     ],
     "answer": 2,
-    "explanation": "Onboarding procedure is correct because a procedure coordinates the repeatable onboarding actions."
+    "explanation": "An onboarding procedure defines the ordered responsibilities and evidence required to provision a new employee consistently."
   },
   {
     "id": "S701-PE6-079",
@@ -1253,7 +1253,7 @@
     "objective": "5.2",
     "blueprint": "Quantitative analysis",
     "difficulty": "Level 3",
-    "question": "A risk team expresses expected losses in dollars using SLE and ARO. Which analysis type is this?",
+    "question": "A risk team calculates single loss expectancy, annualized rate of occurrence, and expected annual loss in dollars. Which analysis method is being used?",
     "choices": [
       "Qualitative risk analysis",
       "Passive reconnaissance",
@@ -1261,7 +1261,7 @@
       "Quantitative risk analysis"
     ],
     "answer": 3,
-    "explanation": "Quantitative risk analysis is correct because numeric monetary inputs characterize quantitative analysis."
+    "explanation": "Quantitative risk analysis uses numeric frequency and monetary impact values to express expected exposure."
   },
   {
     "id": "S701-PE6-080",
@@ -1269,15 +1269,15 @@
     "objective": "5.2",
     "blueprint": "Risk exception",
     "difficulty": "Level 3",
-    "question": "A product receives a six-month approved deviation from a standard with an expiration date and compensating controls. What was granted?",
+    "question": "A product receives a six-month authorized deviation from a security standard. The approval names compensating controls, an owner, and an expiration review. What governance action was granted?",
     "choices": [
       "Risk exception",
-      "Permanent exemption",
-      "Risk elimination",
-      "Certificate waiver"
+      "Risk acceptance without conditions",
+      "Permanent policy exemption",
+      "Risk avoidance"
     ],
     "answer": 0,
-    "explanation": "Risk exception is correct because an exception is a time-bound authorized deviation."
+    "explanation": "A risk exception is a documented, scoped, time-bound deviation from a requirement rather than permanent removal or elimination of the underlying risk."
   },
   {
     "id": "S701-PE6-081",
@@ -1285,15 +1285,15 @@
     "objective": "5.3",
     "blueprint": "Independent assessment",
     "difficulty": "Level 3",
-    "question": "A vendor submits a current audit performed by an unaffiliated licensed firm. What type of evidence is this?",
+    "question": "A vendor submits a current controls audit performed by an unaffiliated licensed firm. The vendor did not select or supervise the audit team. What type of assurance evidence is this?",
     "choices": [
-      "Vendor self-attestation only",
+      "Vendor self-attestation",
       "Independent third-party assessment",
-      "Internal questionnaire only",
-      "Password policy"
+      "Internal audit performed by the vendor",
+      "Customer questionnaire"
     ],
     "answer": 1,
-    "explanation": "Independent third-party assessment is correct because an outside objective assessor performed the evaluation."
+    "explanation": "An independent third-party assessment is performed by an external objective assessor rather than by the vendor evaluating itself."
   },
   {
     "id": "S701-PE6-082",
@@ -1301,15 +1301,15 @@
     "objective": "5.4",
     "blueprint": "Global privacy",
     "difficulty": "Level 3",
-    "question": "An online service processes residents’ data from many countries. Which compliance consideration is MOST important?",
+    "question": "An online service processes residents’ personal data from multiple countries and stores replicas in two regions. Which compliance analysis should occur before assuming only headquarters law applies?",
     "choices": [
-      "Only the headquarters city ordinance",
-      "Wireless channel selection",
+      "Only the law where headquarters is located",
+      "Only the law where the primary server resides",
       "Applicable global and national privacy obligations",
-      "UPS runtime"
+      "Only contractual uptime requirements"
     ],
     "answer": 2,
-    "explanation": "Applicable global and national privacy obligations is correct because multiple jurisdictions may impose requirements based on people and processing locations."
+    "explanation": "Applicable global and national privacy obligations must be evaluated because requirements can follow data subjects and processing locations across jurisdictions."
   },
   {
     "id": "S701-PE6-083",
@@ -1317,15 +1317,15 @@
     "objective": "5.5",
     "blueprint": "Defensive test",
     "difficulty": "Level 3",
-    "question": "A blue team practices detecting and containing authorized simulated attacks. Which assessment emphasis is this?",
+    "question": "A blue team practices identifying, investigating, and containing authorized simulated attacks while a separate team generates realistic adversary activity. Which assessment emphasis is being exercised?",
     "choices": [
-      "Passive vendor review",
-      "Data classification",
-      "Certificate audit only",
+      "Compliance attestation",
+      "Passive vulnerability scanning",
+      "Policy tabletop discussion",
       "Defensive penetration exercise"
     ],
     "answer": 3,
-    "explanation": "Defensive penetration exercise is correct because the defenders are evaluating monitoring and response against controlled attack activity."
+    "explanation": "A defensive penetration exercise evaluates monitoring and response performance against controlled offensive activity."
   },
   {
     "id": "S701-PE6-084",
@@ -1333,15 +1333,15 @@
     "objective": "5.6",
     "blueprint": "Removable cable risk",
     "difficulty": "Level 3",
-    "question": "A free charging cable contains hidden electronics that emulate a keyboard. Which awareness guidance BEST reduces risk?",
+    "question": "A free charging cable contains hidden electronics that enumerate as a keyboard and inject commands when connected. Which awareness guidance MOST directly reduces the risk?",
     "choices": [
       "Use only approved cables and charging equipment",
-      "Disable screen locks",
-      "Share device PINs",
-      "Connect unknown cables to test them"
+      "Disable the device screen lock while charging",
+      "Connect unknown cables only to nonproduction laptops",
+      "Permit cables after visual inspection alone"
     ],
     "answer": 0,
-    "explanation": "Use only approved cables and charging equipment is correct because malicious cables can inject commands or create untrusted connections."
+    "explanation": "Using only approved cables and charging equipment avoids untrusted accessories that can create data connections or emulate input devices."
   },
   {
     "id": "S701-PE6-085",
@@ -1349,15 +1349,15 @@
     "objective": "5.2",
     "blueprint": "Residual risk",
     "difficulty": "Level 4",
-    "question": "A control reduces expected annual loss from $500,000 to $80,000. What does the remaining $80,000 represent?",
+    "question": "Before controls, expected annual exposure is $500,000. After controls are implemented and validated, the remaining expected exposure is $80,000. What does the $80,000 represent?",
     "choices": [
       "Inherent risk before controls",
       "Residual risk exposure",
-      "Asset purchase cost",
-      "Recovery time objective"
+      "Risk transferred to the control owner",
+      "Annual control cost"
     ],
     "answer": 1,
-    "explanation": "Residual risk exposure is correct because residual risk remains after safeguards are applied."
+    "explanation": "Residual risk exposure is the risk that remains after safeguards reduce the original inherent risk."
   },
   {
     "id": "S701-PE6-086",
@@ -1367,10 +1367,10 @@
     "difficulty": "Level 4",
     "question": "A processor waits weeks to mention a breach because the contract contains no reporting deadline. Which future term is MOST important?",
     "choices": [
-      "A larger marketing discount",
-      "An optional uptime goal",
+      "A larger service-credit schedule for delayed breach reporting",
+      "A general confidentiality clause without a deadline",
       "Time-bound incident notification, cooperation, evidence, and escalation obligations",
-      "A public password list"
+      "An annual vendor questionnaire about incident handling"
     ],
     "answer": 2,
     "explanation": "Time-bound incident notification, cooperation, evidence, and escalation obligations is correct because explicit notification duties enable timely customer response and compliance."
@@ -1383,9 +1383,9 @@
     "difficulty": "Level 4",
     "question": "A cloud compliance dashboard reports all resources compliant, but it examines only accounts registered manually. Which improvement is BEST?",
     "choices": [
-      "Trust the dashboard percentage",
-      "Remove unmanaged accounts from inventory",
-      "Stop evidence collection",
+      "Increase the dashboard compliance threshold",
+      "Require each account owner to self-report missing resources",
+      "Export the existing incomplete dashboard more frequently",
       "Discover the complete population independently and reconcile monitoring coverage"
     ],
     "answer": 3,
@@ -1400,9 +1400,9 @@
     "question": "An audit opinion covers one application, but executives present it as assurance for the entire enterprise. What is the PRIMARY issue?",
     "choices": [
       "The conclusion exceeds the documented audit scope",
-      "The application uses encryption",
-      "The report contains findings",
-      "The auditor used samples"
+      "Known-environment assessment",
+      "Unknown-environment assessment",
+      "Physical penetration test"
     ],
     "answer": 0,
     "explanation": "The conclusion exceeds the documented audit scope is correct because assurance applies only to the systems, period, and controls actually examined."
@@ -1415,10 +1415,10 @@
     "difficulty": "Level 4",
     "question": "A team improves immediately after training but returns to risky behavior within three months. Which program design BEST addresses this?",
     "choices": [
-      "One longer course every five years",
+      "Repeat the same annual course with a higher passing score",
       "Frequent short reinforcement, role-based practice, and longitudinal behavior metrics",
-      "Completion tracking only",
-      "Removal of all reporting channels"
+      "Send one reminder immediately after the next incident",
+      "Measure attendance rather than behavior over time"
     ],
     "answer": 1,
     "explanation": "Frequent short reinforcement, role-based practice, and longitudinal behavior metrics is correct because spaced reinforcement and repeated measurement counter skill decay."
@@ -1431,10 +1431,10 @@
     "difficulty": "Level 4",
     "question": "A component fails rarely but causes a costly eight-hour outage each time. Which analysis BEST supports choosing redundancy?",
     "choices": [
-      "Use MTBF alone and ignore outage duration",
-      "Use password length as the deciding metric",
+      "Risk transfer",
+      "Risk mitigation",
       "Combine failure frequency, repair time, business impact, and control cost",
-      "Ignore business impact"
+      "Risk appetite"
     ],
     "answer": 2,
     "explanation": "Combine failure frequency, repair time, business impact, and control cost is correct because resilience investment requires both likelihood and consequence information."

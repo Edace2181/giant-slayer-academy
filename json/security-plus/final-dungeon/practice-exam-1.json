@@ -53,15 +53,15 @@
     "objective": "1.3",
     "blueprint": "Change approval",
     "difficulty": "Level 3",
-    "question": "A developer wants to deploy a firewall rule directly to production to meet a deadline. Testing is complete, but no manager has authorized the risk. What should happen NEXT?",
+    "question": "A firewall rule passed technical testing, but its production change record has no business-impact assessment or authorized approver. The release deadline is tonight, and the request does not meet the emergency-change criteria. What should the engineer do NEXT?",
     "choices": [
-      "Deploy it and request approval afterward",
-      "Disable logging during the deployment",
-      "Replace the firewall instead",
-      "Obtain the required change approval before deployment"
+      "Deploy the tested rule and obtain retroactive approval tomorrow",
+      "Have the requesting developer approve the rule as its technical owner",
+      "Treat the approaching deadline as an emergency-change justification",
+      "Pause deployment until impact review and the required approval are complete"
     ],
     "answer": 3,
-    "explanation": "Testing does not replace required authorization; approval must precede a normal production change."
+    "explanation": "Because the request does not qualify as an emergency, technical testing cannot replace impact review and authorization. Pausing for the required approval preserves change governance; deadline pressure alone does not justify a bypass."
   },
   {
     "id": "S701-PE1-005",
@@ -69,15 +69,15 @@
     "objective": "1.2",
     "blueprint": "Zero trust",
     "difficulty": "Level 3",
-    "question": "A remote employee passes MFA, but access is denied because the laptop is unmanaged and the request originates from an unusual region. Which model BEST explains the decision?",
+    "question": "A remote employee passes MFA from a personal laptop. The identity is valid, but the device lacks endpoint management and the connection originates from a region not associated with the employee. The access policy denies the request and asks for device enrollment. Which security approach produced this decision?",
     "choices": [
-      "Zero trust using identity, device, and context",
-      "Implicit trust after authentication",
-      "Discretionary access based only on ownership",
-      "High availability through redundancy"
+      "Zero trust that evaluates identity, device posture, and request context",
+      "Perimeter trust that grants access after successful remote authentication",
+      "Discretionary access controlled solely by the resource owner",
+      "Role-based access that ignores device and location signals"
     ],
     "answer": 0,
-    "explanation": "Zero trust evaluates multiple contextual signals for each request rather than trusting authentication alone."
+    "explanation": "Zero trust continuously evaluates the user, device posture, and contextual risk for each request. MFA proves an authentication factor but does not require the system to trust an unmanaged device or anomalous location."
   },
   {
     "id": "S701-PE1-006",
@@ -85,15 +85,15 @@
     "objective": "1.4",
     "blueprint": "Digital signatures",
     "difficulty": "Level 3",
-    "question": "A software publisher wants customers to verify both the origin of a package and that it has not changed. What should the publisher do?",
+    "question": "A software publisher distributes the same public update through several third-party mirrors. Customers must be able to detect a modified package and verify that the publisher authorized it, but the package does not need to be confidential. Which implementation meets both requirements?",
     "choices": [
-      "Encrypt the package with its private key",
-      "Sign the package hash with its private key",
-      "Publish a shared symmetric key",
-      "Mask the publisher name"
+      "Encrypt the entire package with the publisher's private key",
+      "Sign the package digest with the publisher's private key and provide the verifiable certificate",
+      "Publish an unsigned digest on each third-party mirror",
+      "Give every customer the same HMAC secret for package validation"
     ],
     "answer": 1,
-    "explanation": "A private-key signature lets recipients verify publisher identity and package integrity."
+    "explanation": "A signature over the digest provides integrity and authenticates the publisher through its public certificate. An unsigned digest on the same mirror could also be replaced, while a shared HMAC secret would not provide public attribution."
   },
   {
     "id": "S701-PE1-007",
@@ -101,15 +101,15 @@
     "objective": "1.3",
     "blueprint": "Maintenance window",
     "difficulty": "Level 3",
-    "question": "A storage firmware update requires a restart and may interrupt a customer portal. Which change-management element BEST reduces unexpected business impact?",
+    "question": "A storage firmware update requires a 20-minute restart of the array supporting an online ordering portal. Testing and rollback preparation are complete, but operations reports that deploying during business hours would violate an availability commitment. Which change action BEST controls the remaining risk?",
     "choices": [
-      "Use a shared administrator account",
-      "Remove the rollback image",
-      "Schedule an approved maintenance window with stakeholder notification",
-      "Skip impact analysis because firmware is vendor supplied"
+      "Apply the update immediately because the rollback image is available",
+      "Move the change to a technician's personal maintenance calendar",
+      "Schedule an approved low-impact maintenance window and notify affected stakeholders",
+      "Classify the vendor update as routine so outage coordination is unnecessary"
     ],
     "answer": 2,
-    "explanation": "An approved, communicated maintenance window coordinates the expected interruption."
+    "explanation": "The outstanding risk is the planned service interruption, not technical readiness. An approved low-impact window with stakeholder notice coordinates the outage and protects the availability commitment."
   },
   {
     "id": "S701-PE1-008",
@@ -117,15 +117,15 @@
     "objective": "1.4",
     "blueprint": "Certificate chain",
     "difficulty": "Level 3",
-    "question": "A browser trusts a site certificate only after validating an intermediate certificate and a preinstalled root. What is the browser validating?",
+    "question": "A web server presents its leaf certificate but omits the issuing intermediate. Browsers that previously cached the intermediate connect successfully, while newly provisioned devices report an untrusted issuer even though the root CA is installed. Which remediation is MOST appropriate?",
     "choices": [
-      "A symmetric key escrow",
-      "A password hash collision",
-      "A tokenization vault",
-      "The certificate chain of trust"
+      "Replace the public certificate with a self-signed server certificate",
+      "Disable certificate validation on newly provisioned browsers",
+      "Install the leaf certificate as a trusted root on every client",
+      "Configure the server to present the complete certificate chain through the intermediate"
     ],
     "answer": 3,
-    "explanation": "The chain links the site certificate through an intermediate to a trusted root."
+    "explanation": "The server must provide the missing intermediate so clients can build a chain from the leaf certificate to their trusted root. Cached clients working does not make client-side validation bypasses an acceptable remedy."
   },
   {
     "id": "S701-PE1-009",
@@ -133,15 +133,15 @@
     "objective": "1.2",
     "blueprint": "Non-repudiation",
     "difficulty": "Level 4",
-    "question": "Four administrators share one privileged account. A destructive command is logged under that account, but each administrator denies issuing it. Which redesign BEST provides non-repudiation?",
+    "question": "Four administrators retrieve one shared root password from a vault. The vault records who checked it out, but overlapping checkout periods and a server log containing only the root identity prevent investigators from attributing a destructive command. Which redesign BEST satisfies the requirement for non-repudiation?",
     "choices": [
       "Individual privileged identities with signed, tamper-resistant audit records",
-      "A longer shared password stored in a vault",
-      "Full-disk encryption on the server",
-      "Weekly availability testing"
+      "A longer shared root password with shorter checkout periods",
+      "MFA on the shared vault account while retaining the common root identity",
+      "Encrypted server logs that continue to record only the shared root identity"
     ],
     "answer": 0,
-    "explanation": "Individual attribution plus protected records prevents credible denial of an action."
+    "explanation": "Individual privileged identities establish who acted, and signed tamper-resistant records preserve trustworthy attribution. Stronger protection around a shared identity cannot prove which administrator issued a specific command."
   },
   {
     "id": "S701-PE1-010",
@@ -149,15 +149,15 @@
     "objective": "1.4",
     "blueprint": "Perfect forward secrecy",
     "difficulty": "Level 4",
-    "question": "An investigator captures encrypted VPN sessions today and steals the gateway private key next month. The organization wants the captured sessions to remain unreadable. Which property is required?",
+    "question": "A threat model assumes an adversary can archive years of encrypted remote-access traffic and may eventually compromise a VPN gateway's long-term private key. Security architects require each historical session to remain confidential even after that later compromise and do not want recovery of one session key to expose another. Which design meets the requirement?",
     "choices": [
-      "Certificate pinning with a static key",
-      "Perfect forward secrecy using ephemeral session keys",
-      "A longer-lived gateway certificate",
-      "Key escrow for every session key"
+      "Certificate pinning while reusing the same static key exchange secret",
+      "Perfect forward secrecy with independently generated ephemeral session keys",
+      "A longer-lived gateway certificate protected by a stronger signature algorithm",
+      "Central escrow of every negotiated session key for later recovery"
     ],
     "answer": 1,
-    "explanation": "Ephemeral key exchange prevents later private-key compromise from decrypting prior sessions."
+    "explanation": "Perfect forward secrecy uses ephemeral key agreement so the long-term private key cannot reconstruct previously captured sessions. Static key reuse or session-key escrow would preserve exactly the retrospective-decryption risk the architects are trying to remove."
   },
   {
     "id": "S701-PE1-011",
@@ -165,15 +165,15 @@
     "objective": "1.3",
     "blueprint": "Rollback validation",
     "difficulty": "Level 4",
-    "question": "A failed identity-platform update is rolled back, but users still receive inconsistent authorization decisions. What should the change owner do FIRST after rollback?",
+    "question": "An identity-platform update fails and is rolled back. The service responds to health checks, but one node still uses the new policy schema and users receive different authorization results depending on which node handles the request. Before attempting another deployment, what should the change owner do FIRST?",
     "choices": [
-      "Attempt the failed update again immediately",
-      "Close the change because rollback completed",
-      "Validate restored configuration, dependencies, and service health against the baseline",
-      "Delete the change record"
+      "Rerun the update on every node to make their schemas consistent",
+      "Close the change because the service-level health check is successful",
+      "Compare every node and dependency with the approved baseline, restore the inconsistent state, and test authorization paths",
+      "Route all users to the node with the newer schema and document the rollback as complete"
     ],
     "answer": 2,
-    "explanation": "Rollback must be verified because configuration or dependent services may not have returned to the approved state."
+    "explanation": "The rollback is not complete merely because the service answers a health check. Baseline comparison across nodes and dependencies, followed by authorization testing, confirms that the previous known-good state was actually restored."
   },
   {
     "id": "S701-PE1-012",
@@ -247,13 +247,13 @@
     "difficulty": "Level 2",
     "question": "A company wants to detect suspicious process injection and automatically isolate affected laptops. Which mitigation is MOST appropriate?",
     "choices": [
-      "A cold recovery site",
-      "A privacy notice",
-      "A DNS MX record",
+      "Network detection and response at the perimeter",
+      "A data loss prevention gateway for outbound files",
+      "Signature-only antivirus without host isolation",
       "Endpoint detection and response"
     ],
     "answer": 3,
-    "explanation": "EDR observes endpoint behavior and can isolate compromised devices."
+    "explanation": "EDR monitors process behavior on the laptop and can automatically isolate the affected endpoint. Network monitoring and DLP may add useful evidence, but they do not provide the requested host-level process visibility and containment."
   },
   {
     "id": "S701-PE1-017",
@@ -277,15 +277,15 @@
     "objective": "2.1",
     "blueprint": "Insider threat motivation",
     "difficulty": "Level 3",
-    "question": "A departing salesperson downloads the customer list and offers it to a competitor. Which combination BEST characterizes the incident?",
+    "question": "A departing salesperson uses still-valid access to export a customer list, copies it to personal storage, and later offers the data to a competitor for payment. Logs show no stolen credentials or accidental sharing. Which threat characterization BEST fits the evidence?",
     "choices": [
-      "Nation-state motivated by ideology",
-      "Malicious insider motivated by financial gain",
-      "Unintentional insider motivated by revenge",
-      "Hacktivist motivated by espionage"
+      "An external competitor using compromised credentials for espionage",
+      "A malicious insider abusing authorized access for financial gain",
+      "An unintentional insider causing disclosure through negligence",
+      "An ideological insider attempting public disruption"
     ],
     "answer": 1,
-    "explanation": "The employee deliberately misuses authorized access for expected financial benefit."
+    "explanation": "The salesperson intentionally abused legitimate access and sought payment, which identifies both an insider threat and financial motivation. There is no evidence of credential theft, accident, or ideological purpose."
   },
   {
     "id": "S701-PE1-019",
@@ -293,15 +293,15 @@
     "objective": "2.2",
     "blueprint": "Business email compromise",
     "difficulty": "Level 3",
-    "question": "An accounts-payable clerk receives a message in an existing vendor thread requesting a new bank account. The vendor mailbox was compromised. What attack is MOST likely?",
+    "question": "An accounts-payable clerk receives a bank-change request inside a genuine vendor email thread. SPF and DKIM pass, no malicious attachment is present, and the vendor later confirms that its mailbox was taken over. What should the clerk classify the event as and do FIRST?",
     "choices": [
-      "Password spraying",
-      "DNS amplification",
-      "Business email compromise",
-      "Bluejacking"
+      "Credential stuffing; reset only the clerk's corporate password",
+      "Domain spoofing; add the vendor domain to the email blocklist",
+      "Business email compromise; halt the payment change and verify it through a known out-of-band contact",
+      "Malware delivery; reimage the clerk's workstation before contacting the vendor"
     ],
     "answer": 2,
-    "explanation": "Use of a compromised business mailbox to redirect payment is BEC."
+    "explanation": "A trusted mailbox was compromised to redirect a business payment, which is BEC. The safest immediate action is to stop the financial change and verify it through an independently known channel; valid email authentication does not prove the sender still controls the account safely."
   },
   {
     "id": "S701-PE1-020",
@@ -325,15 +325,15 @@
     "objective": "2.4",
     "blueprint": "Fileless malware",
     "difficulty": "Level 3",
-    "question": "A malicious PowerShell command runs from a document macro, stores payload code in memory, and leaves no executable on disk. What technique is demonstrated?",
+    "question": "Endpoint telemetry shows a document application spawning an encoded PowerShell command that loads code directly into memory and injects it into another process. A disk-based antivirus scan finds no executable, but the suspicious process remains active. Which assessment and immediate action are MOST appropriate?",
     "choices": [
-      "Fileless malware execution",
-      "Boot-sector ransomware",
-      "Firmware rootkit installation",
-      "Physical skimming"
+      "Fileless malware execution; isolate the endpoint and preserve volatile evidence",
+      "Boot-sector ransomware; rebuild only the master boot record",
+      "Firmware rootkit installation; replace the system board immediately",
+      "A benign administrative script; allow the process because no file was detected"
     ],
     "answer": 0,
-    "explanation": "The attack relies on trusted interpreters and memory rather than a conventional disk executable."
+    "explanation": "The trusted interpreter, memory-resident payload, and process injection indicate fileless execution. Isolation limits spread, and volatile collection preserves evidence that would disappear on shutdown; a clean disk scan does not make the activity benign."
   },
   {
     "id": "S701-PE1-022",
@@ -341,15 +341,15 @@
     "objective": "2.4",
     "blueprint": "Password spraying",
     "difficulty": "Level 3",
-    "question": "The same seasonal password is attempted once against hundreds of usernames every few hours. Which attack is occurring?",
+    "question": "Identity logs show one failed attempt using `Winter2026!` against 600 different accounts, followed several hours later by one attempt using `Spring2026!` against the same population. No account receives enough rapid failures to trigger its individual lockout threshold. Which attack pattern BEST explains the activity?",
     "choices": [
-      "Credential stuffing",
-      "Password spraying",
-      "Brute-force attack against one account",
-      "Pass-the-ticket"
+      "Credential stuffing with a different breached password for every username",
+      "Password spraying that distributes a few common passwords across many accounts",
+      "Online brute force concentrated against a single privileged account",
+      "Pass-the-ticket using captured Kerberos service tickets"
     ],
     "answer": 1,
-    "explanation": "A small set of likely passwords spread across many accounts is password spraying."
+    "explanation": "The actor rotates a small number of likely passwords across many identities and spaces attempts to avoid per-account lockouts. Credential stuffing instead pairs usernames with previously breached credentials, while conventional brute force concentrates attempts on fewer accounts."
   },
   {
     "id": "S701-PE1-023",
@@ -357,15 +357,15 @@
     "objective": "2.5",
     "blueprint": "Network segmentation",
     "difficulty": "Level 3",
-    "question": "A compromised guest device can directly reach building controllers. Which change BEST limits similar lateral movement?",
+    "question": "A guest wireless client is compromised and scans building controllers because both networks share routing rules that permit unrestricted east-west traffic. The controllers require management only from two maintenance servers and telemetry access from one monitoring service. Which redesign BEST limits lateral movement without interrupting those functions?",
     "choices": [
-      "Increase the guest DHCP lease time",
-      "Use the same wireless key on both networks",
-      "Place guest and controller networks in separate filtered segments",
-      "Disable controller logging"
+      "Enable wireless client isolation while leaving guest-to-controller routing unrestricted",
+      "Move the controllers onto the guest SSID and require WPA3 for both groups",
+      "Place guests and controllers in separate security zones and allow only the documented maintenance and telemetry flows",
+      "Install host firewalls on the maintenance servers but keep all controller network paths open"
     ],
     "answer": 2,
-    "explanation": "Filtered segmentation restricts communication between differently trusted device groups."
+    "explanation": "Separate zones with explicit allowlisted flows preserve required management and telemetry while denying guest-to-controller access. Wireless client isolation alone does not correct permissive routing between the networks."
   },
   {
     "id": "S701-PE1-024",
@@ -373,15 +373,15 @@
     "objective": "2.3",
     "blueprint": "Supply-chain vulnerability",
     "difficulty": "Level 3",
-    "question": "A signed accounting update from a trusted vendor installs a backdoor because the vendor build system was compromised. Which risk is illustrated?",
+    "question": "A malicious accounting update carries a valid vendor signature and arrives through the normal update channel. Investigation shows attackers altered source in the vendor's build environment before the vendor signed and published the package. Which finding and response BEST fit the incident?",
     "choices": [
-      "Typosquatting",
-      "Evil-twin wireless access",
-      "Tailgating",
-      "Software supply-chain compromise"
+      "Typosquatting; register domains similar to the vendor's name",
+      "Repository spoofing; trust the update because its signature remains valid",
+      "A customer-side zero-day; patch only the first affected workstation",
+      "A software supply-chain compromise; suspend the package, obtain a verified clean build, and reestablish release trust"
     ],
     "answer": 3,
-    "explanation": "The attacker corrupted a trusted vendor’s build and distribution process."
+    "explanation": "The attacker compromised the trusted development and signing process, so the valid signature proves publication by the compromised pipeline, not package safety. Distribution should stop until a clean build and trustworthy release process are established."
   },
   {
     "id": "S701-PE1-025",
@@ -391,13 +391,13 @@
     "difficulty": "Level 3",
     "question": "A server creates a new scheduled task, contacts a rare domain every 60 seconds, and launches a shell as a service account. What should an analyst conclude FIRST?",
     "choices": [
-      "The combined indicators warrant containment and investigation",
-      "Each event is harmless because no antivirus alert fired",
-      "The system only needs additional storage",
-      "The service account should receive administrator rights"
+      "The correlated persistence, beaconing, and shell activity justify containment and investigation",
+      "The scheduled task should be removed while the server stays online without further collection",
+      "The rare domain should be blocked, but the shell can be treated as normal service-account behavior",
+      "The service-account password should be reset and the case closed without examining persistence"
     ],
     "answer": 0,
-    "explanation": "Persistence, beaconing, and unexpected shell activity collectively indicate likely compromise."
+    "explanation": "No single event is conclusive, but persistence, periodic beaconing, and an unexpected service-account shell form a coherent compromise pattern. Addressing only one indicator risks leaving the attacker's other access mechanisms intact."
   },
   {
     "id": "S701-PE1-026",
@@ -405,15 +405,15 @@
     "objective": "2.2",
     "blueprint": "Pretexting",
     "difficulty": "Level 4",
-    "question": "An attacker studies an executive’s travel schedule, calls the service desk as the executive’s assistant, and uses trip details to request an MFA reset. Which social-engineering technique is central to the attack?",
+    "question": "A caller spoofs an executive-office number, accurately describes the executive's current itinerary, claims to be the executive's assistant, and pressures support to reset MFA outside the approved identity-verification process. Which analysis BEST explains how the attacker made the request credible and why it should fail?",
     "choices": [
-      "Shoulder surfing",
-      "Pretexting supported by reconnaissance",
-      "Dumpster diving only",
-      "Watering-hole exploitation"
+      "Shoulder surfing supplied the authentication factor, so the reset may proceed",
+      "Reconnaissance supported a pretext, but contextual knowledge does not replace identity proofing",
+      "Dumpster diving established possession of the executive's identity",
+      "A watering-hole compromise authenticated the caller through the spoofed number"
     ],
     "answer": 1,
-    "explanation": "The attacker constructs a believable identity and story using researched details."
+    "explanation": "The caller used researched details to build a convincing pretext and create urgency. Public or stolen contextual knowledge and caller ID can be spoofed, so support must still enforce the approved identity-proofing process."
   },
   {
     "id": "S701-PE1-027",
@@ -421,15 +421,15 @@
     "objective": "2.3",
     "blueprint": "Time-of-check/time-of-use",
     "difficulty": "Level 4",
-    "question": "A privileged installer verifies a temporary file, pauses, and then executes it. An attacker replaces the file during the pause. Which weakness was exploited?",
+    "question": "A privileged installer verifies the hash of `/tmp/update.pkg`, closes the file, waits for user confirmation, and then reopens the same path for execution. Audit data shows the path referenced a different inode after validation. Which vulnerability-and-remediation pair BEST addresses the evidence?",
     "choices": [
-      "A heap buffer overflow",
-      "Cross-site request forgery",
-      "A time-of-check/time-of-use race condition",
-      "Hard-coded encryption"
+      "Heap overflow; add bounds checking to the package manifest parser",
+      "Cross-site request forgery; require a per-request web token",
+      "TOC/TOU race; validate and execute through the same protected file handle or atomic operation",
+      "Hard-coded key exposure; move the package hash into a configuration file"
     ],
     "answer": 2,
-    "explanation": "The object changed between validation and use, which is a TOC/TOU race."
+    "explanation": "The installer checked one object and later used another object reached through the same path, which is a TOC/TOU race. Keeping a protected handle or using an atomic validation-and-use operation prevents path replacement between those steps."
   },
   {
     "id": "S701-PE1-028",
@@ -437,15 +437,15 @@
     "objective": "2.4",
     "blueprint": "DNS tunneling",
     "difficulty": "Level 4",
-    "question": "A host sends thousands of unusually long TXT queries to one external domain. The subdomain labels resemble encoded chunks, and little web traffic exists. Which activity is MOST likely?",
+    "question": "A workstation sends long, high-entropy TXT queries to one newly registered domain at fixed intervals. Proxy logs show no corresponding web uploads, DNS replies are small, and endpoint telemetry identifies an unknown process generating the labels. Which response BEST addresses the MOST likely activity?",
     "choices": [
-      "Normal DNSSEC validation",
-      "ARP cache poisoning",
-      "SMTP relay abuse",
-      "Data exfiltration through DNS tunneling"
+      "Treat the traffic as DNSSEC validation and add the domain to the resolver cache",
+      "Flush the workstation's ARP table and leave it connected for observation",
+      "Block outbound SMTP because the host is acting as an open mail relay",
+      "Isolate the workstation, block the domain at controlled resolvers, and investigate DNS tunneling"
     ],
     "answer": 3,
-    "explanation": "Encoded data carried in repeated DNS queries is characteristic of DNS tunneling."
+    "explanation": "High-entropy labels, repeated TXT queries, minimal response data, and a generating endpoint process indicate outbound data encoded in DNS. Isolation and resolver-level blocking contain the likely tunnel while preserving evidence for investigation."
   },
   {
     "id": "S701-PE1-029",
@@ -456,12 +456,12 @@
     "question": "A vendor will not patch a laboratory analyzer for six months, and replacing it would invalidate research. Which control set BEST reduces risk meanwhile?",
     "choices": [
       "Isolate it, allow only required peers, monitor traffic, and restrict administration",
-      "Publish it through a reverse proxy for convenient access",
-      "Disable its host firewall and increase password age",
-      "Accept all risk without documenting the decision"
+      "Apply an unapproved third-party patch and repeat validation after the research cycle",
+      "Place it behind a reverse proxy while retaining unrestricted internal administration",
+      "Disconnect it from the network but permit unmanaged USB transfers for all updates and exports"
     ],
     "answer": 0,
-    "explanation": "Layered isolation, allowlisting, monitoring, and restricted management compensate for the unavailable patch."
+    "explanation": "The layered control set reduces exposure and limits accessible paths without altering the validated device. An unapproved patch risks the research, while partial network or removable-media measures leave significant unmonitored access."
   },
   {
     "id": "S701-PE1-030",
@@ -469,15 +469,15 @@
     "objective": "2.4",
     "blueprint": "Kerberoasting",
     "difficulty": "Level 4",
-    "question": "A domain user requests service tickets for several SPNs and performs offline password cracking against the ticket material. Which attack is occurring?",
+    "question": "A standard domain account requests TGS tickets for dozens of service principal names, with several tickets using legacy encryption. Hours later, one service account begins authenticating from the user's workstation. Which attack-and-hardening response BEST fits the evidence?",
     "choices": [
-      "Pass-the-hash",
-      "Kerberoasting",
-      "Golden-ticket creation",
-      "LDAP injection"
+      "Pass-the-hash; disable NTLM only on the requesting workstation",
+      "Kerberoasting; rotate service secrets to long random values or managed service accounts and remove legacy encryption",
+      "Golden-ticket creation; reset only the requesting user's password",
+      "Pass-the-ticket; renew every user's interactive Kerberos ticket without changing service secrets"
     ],
     "answer": 1,
-    "explanation": "Kerberoasting obtains service-ticket material for offline cracking of service-account secrets."
+    "explanation": "Kerberoasting requests service tickets and cracks their encrypted material offline to recover weak service-account secrets. Strong managed service credentials and modern encryption address the exposed service accounts; resetting only the requesting user does not."
   },
   {
     "id": "S701-PE1-031",
@@ -487,13 +487,13 @@
     "difficulty": "Level 4",
     "question": "Thousands of consumer devices send valid-looking HTTPS requests that exhaust an application tier while network bandwidth remains available. Which response is BEST?",
     "choices": [
-      "Block only ICMP at the local router",
-      "Increase password complexity",
+      "Add application servers behind the same saturated origin without filtering requests",
+      "Block the currently observed source addresses only at the local firewall",
       "Use upstream application-aware DDoS scrubbing and rate controls",
-      "Revoke the web certificate"
+      "Enable volumetric filtering that evaluates bandwidth but not HTTP request behavior"
     ],
     "answer": 2,
-    "explanation": "Distributed Layer 7 requests require upstream capacity and application-aware filtering."
+    "explanation": "The attack consumes application resources with valid-looking Layer 7 requests rather than exhausting bandwidth. Upstream application-aware scrubbing and rate controls can distinguish and absorb distributed request floods before they reach the origin."
   },
   {
     "id": "S701-PE1-032",
@@ -520,12 +520,12 @@
     "question": "A traveling employee needs an encrypted connection to internal resources across hotel Wi-Fi. Which technology is MOST appropriate?",
     "choices": [
       "A remote-access VPN",
-      "A passive network tap",
-      "A public proxy without authentication",
-      "A DNS zone transfer"
+      "A site-to-site VPN negotiated between the hotel and the company",
+      "An authenticated forward proxy that protects only browser traffic",
+      "Split-horizon DNS without transport encryption"
     ],
     "answer": 0,
-    "explanation": "A VPN protects traffic across the untrusted wireless network."
+    "explanation": "A remote-access VPN creates an encrypted tunnel from the employee's device to the organization for internal-resource access. A web proxy protects only supported application traffic, and the employee cannot establish a site-to-site tunnel on behalf of the hotel."
   },
   {
     "id": "S701-PE1-034",
@@ -551,13 +551,13 @@
     "difficulty": "Level 2",
     "question": "A server must continue operating for several minutes after utility power fails so it can shut down cleanly. Which device is BEST?",
     "choices": [
-      "A load balancer",
-      "A network tap",
+      "A surge protector",
+      "A standby generator that requires startup time",
       "An uninterruptible power supply",
-      "A cold site"
+      "A rack power distribution unit without batteries"
     ],
     "answer": 2,
-    "explanation": "A UPS supplies immediate short-term battery power."
+    "explanation": "A UPS provides immediate battery power during the interval before shutdown or generator availability. Surge protection and a basic PDU do not supply power, while a generator may not bridge the first seconds of an outage."
   },
   {
     "id": "S701-PE1-036",
@@ -581,15 +581,15 @@
     "objective": "3.1",
     "blueprint": "Serverless architecture",
     "difficulty": "Level 3",
-    "question": "A team deploys event-triggered functions and does not administer operating systems or persistent application servers. Which model is this?",
+    "question": "A team moves an image-processing job to event-triggered functions. The provider manages hosts and runtime infrastructure, but a vulnerable third-party library remains packaged with the function. Which architecture-and-responsibility statement is MOST accurate?",
     "choices": [
-      "Serverless computing",
-      "On-premises virtualization",
-      "Air-gapped processing",
-      "A warm site"
+      "This is serverless computing, and the customer must still patch or replace its application dependency",
+      "This is container hosting, so the provider owns every library inside the image",
+      "This is IaaS, and the customer must patch the physical hypervisor",
+      "This is an air-gapped workload because no persistent server is administered"
     ],
     "answer": 0,
-    "explanation": "In a serverless model, the provider manages the underlying execution infrastructure."
+    "explanation": "Event-triggered functions with provider-managed infrastructure are serverless, but the customer remains responsible for its function code and packaged dependencies. Provider management of the runtime does not transfer ownership of vulnerable application libraries."
   },
   {
     "id": "S701-PE1-038",
@@ -613,15 +613,15 @@
     "objective": "3.3",
     "blueprint": "Tokenization",
     "difficulty": "Level 3",
-    "question": "A hotel replaces card numbers in its reservation database with random references. A separate secured service maintains the mapping. Which method is used?",
+    "question": "A hotel wants reservation agents to retrieve customer records without storing card numbers in the reservation database. Random references must remain usable for later authorized charges through a separately protected mapping service. Which method BEST satisfies the requirement?",
     "choices": [
-      "Unkeyed hashing",
-      "Data replication",
-      "Tokenization",
-      "Code obfuscation"
+      "One-way hashing of each card number without retaining a mapping",
+      "Encryption using a key stored alongside the reservation database",
+      "Tokenization backed by a separately protected token vault",
+      "Display masking while retaining full card numbers in every reservation row"
     ],
     "answer": 2,
-    "explanation": "Tokenization substitutes a non-sensitive reference backed by a protected mapping."
+    "explanation": "Tokenization replaces the card number with a non-sensitive reference while a secured vault retains the authorized mapping. Hashing cannot support later retrieval, and display masking does not remove the underlying card data from the database."
   },
   {
     "id": "S701-PE1-040",
@@ -629,15 +629,15 @@
     "objective": "3.4",
     "blueprint": "Warm site",
     "difficulty": "Level 3",
-    "question": "An alternate facility has network connectivity and some servers, but current data must be restored before operations begin. What type of site is it?",
+    "question": "A continuity plan requires an alternate location that can resume a billing service within several hours. The facility already has connectivity and compatible servers, but teams must restore current data and finish application configuration after declaring a disaster. Which site classification matches the plan?",
     "choices": [
-      "Hot site",
-      "Cold site",
-      "Mobile site",
-      "Warm site"
+      "A hot site with continuously synchronized production data",
+      "A cold site containing workspace but no prepared computing equipment",
+      "A mobile site used only as a temporary office facility",
+      "A warm site with prepared infrastructure that still requires restoration and configuration"
     ],
     "answer": 3,
-    "explanation": "A warm site is partially equipped and requires additional restoration before use."
+    "explanation": "The prepared connectivity and servers reduce recovery time, but restoration and configuration are still necessary, which defines a warm site. A hot site would normally be ready much sooner with current systems or data already available."
   },
   {
     "id": "S701-PE1-041",
@@ -645,15 +645,15 @@
     "objective": "3.2",
     "blueprint": "SASE",
     "difficulty": "Level 3",
-    "question": "A global company wants remote users and small branches to receive cloud-delivered access control, web filtering, and WAN connectivity from one service. Which architecture BEST fits?",
+    "question": "A global organization is replacing separate branch firewalls, web proxies, remote-access concentrators, and WAN appliances. It needs identity-aware access, cloud-delivered web security, and optimized branch connectivity under one policy plane. Which architecture BEST meets the combined requirement?",
     "choices": [
-      "Secure access service edge",
-      "A local Layer 2 switch at every home",
-      "An isolated cold site",
-      "A standalone UPS"
+      "Secure access service edge combining cloud security services with WAN capabilities",
+      "Independent VPN concentrators and local proxies managed through separate policies",
+      "A traditional hub-and-spoke WAN with security enforced only at headquarters",
+      "Software-defined networking that provides connectivity but no cloud security controls"
     ],
     "answer": 0,
-    "explanation": "SASE combines cloud-delivered network and security services near users."
+    "explanation": "SASE combines WAN functions with identity-aware, cloud-delivered security such as secure web access and zero-trust access. The alternatives either preserve fragmented controls or provide connectivity without the requested integrated security plane."
   },
   {
     "id": "S701-PE1-042",
@@ -663,13 +663,13 @@
     "difficulty": "Level 3",
     "question": "A business impact analysis permits no more than four hours of data loss. Which backup consideration is MOST directly determined?",
     "choices": [
-      "The password complexity standard",
+      "A four-hour recovery time objective for restoring the service",
       "Backup frequency sufficient to meet a four-hour RPO",
-      "The web-filter category list",
-      "The certificate subject name"
+      "A four-hour retention period for every backup set",
+      "A four-hour maintenance window for testing restoration"
     ],
     "answer": 1,
-    "explanation": "The permitted loss interval defines how frequently recoverable copies or replication points are needed."
+    "explanation": "The maximum tolerable data loss is the RPO, so recoverable copies or replication points must be created at least frequently enough to meet four hours. RTO measures restoration time, not acceptable data loss."
   },
   {
     "id": "S701-PE1-043",
@@ -677,15 +677,15 @@
     "objective": "3.1",
     "blueprint": "Shared responsibility",
     "difficulty": "Level 4",
-    "question": "A company runs databases on IaaS virtual machines. The provider patches the hypervisor, but the guest operating systems remain vulnerable. Who is responsible for the guest patches?",
+    "question": "A company operates a database on an IaaS virtual machine. A scan finds an unpatched guest operating system, while provider evidence confirms that the physical host and hypervisor are current. The managed database team assumed the provider patched every layer. Which responsibility assignment should the security lead enforce?",
     "choices": [
-      "Only the cloud provider",
-      "The internet registrar",
-      "The company using the IaaS service",
-      "The customer’s external auditor"
+      "The provider must patch both the hypervisor and every customer-managed guest",
+      "The database software vendor must patch the guest because its application is installed",
+      "The company must patch the guest operating system while the provider maintains the underlying infrastructure",
+      "The external auditor must apply the guest patch after verifying provider evidence"
     ],
     "answer": 2,
-    "explanation": "In IaaS, customers normally manage and patch guest operating systems."
+    "explanation": "Under IaaS, the provider secures the physical infrastructure and hypervisor, while the customer administers and patches the guest operating system. Audit evidence can verify responsibilities but does not transfer operational ownership to an auditor."
   },
   {
     "id": "S701-PE1-044",
@@ -695,13 +695,13 @@
     "difficulty": "Level 4",
     "question": "An organization must stop SQL injection against a public application and restrict outbound traffic by application identity. Which pair BEST addresses both needs?",
     "choices": [
-      "A Layer 2 hub and a UPS",
-      "A packet tap and a cold site",
-      "A password manager and a file hash",
+      "A reverse proxy for inbound TLS and stateless ACLs for outbound ports",
+      "An IDS for inbound alerts and DLP limited to email attachments",
+      "An API gateway for documented endpoints and a proxy limited to URL categories",
       "A WAF for inbound HTTP and an NGFW for application-aware egress"
     ],
     "answer": 3,
-    "explanation": "A WAF protects web requests, while an NGFW can control outbound applications."
+    "explanation": "A WAF inspects HTTP requests for application attacks such as SQL injection, while an NGFW can identify and control outbound traffic by application. Port-only ACLs and URL-only filtering do not satisfy both application-layer requirements."
   },
   {
     "id": "S701-PE1-045",
@@ -709,15 +709,15 @@
     "objective": "3.3",
     "blueprint": "Data sovereignty",
     "difficulty": "Level 4",
-    "question": "A cloud service automatically replicates regulated records to a region where local authorities can compel disclosure. Which concern should be addressed FIRST?",
+    "question": "A cloud service replicates regulated customer records into a second country for resilience. Encryption remains enabled, but counsel reports that the destination's laws allow authorities to compel the provider to disclose stored records and may prohibit that category of data from leaving its original jurisdiction. What should the organization address FIRST?",
     "choices": [
       "Data sovereignty and jurisdictional requirements",
-      "Password reuse",
-      "Wireless channel overlap",
-      "Printer availability"
+      "Stronger encryption while continuing replication to the prohibited region",
+      "A shorter retention period without changing the replication destination",
+      "Additional data loss prevention alerts after cross-border copies are created"
     ],
     "answer": 0,
-    "explanation": "Storage location determines which laws and governmental authorities apply."
+    "explanation": "Data location determines the governing legal jurisdiction and whether cross-border storage is permitted. Encryption and monitoring remain useful safeguards, but neither overrides residency restrictions or lawful disclosure authority."
   },
   {
     "id": "S701-PE1-046",
@@ -743,13 +743,13 @@
     "difficulty": "Level 4",
     "question": "A legacy safety controller cannot tolerate conventional scanning or unscheduled restarts. What is the BEST security approach?",
     "choices": [
-      "Run aggressive credentialed scans every hour",
-      "Expose it to the internet for vendor troubleshooting",
+      "Schedule authenticated active scans during production and suppress resulting alarms",
+      "Provide the vendor permanent remote access through the standard user VPN",
       "Use passive discovery, strict segmentation, allowlisted communications, and vendor-approved maintenance",
-      "Install untested endpoint software immediately"
+      "Install the organization's standard endpoint agent before obtaining controller-vendor approval"
     ],
     "answer": 2,
-    "explanation": "Fragile industrial systems need passive visibility and tightly controlled, vendor-coordinated changes."
+    "explanation": "The controller's safety and availability constraints require passive visibility and tightly controlled communications, with intrusive work limited to vendor-approved maintenance. Standard active scanning or untested agents could disrupt the process."
   },
   {
     "id": "S701-PE1-048",
@@ -807,13 +807,13 @@
     "difficulty": "Level 2",
     "question": "A SOC wants one platform to collect logs, correlate events, and generate security alerts. Which tool is BEST?",
     "choices": [
-      "A UPS",
-      "An HSM",
+      "A network detection and response sensor",
+      "A security orchestration, automation, and response platform",
       "A SIEM",
-      "A password manager"
+      "A centralized syslog relay without analytics"
     ],
     "answer": 2,
-    "explanation": "A SIEM centralizes event collection, correlation, and alerting."
+    "explanation": "A SIEM is designed to centralize diverse logs, correlate events, and generate alerts. A syslog relay collects records without necessarily analyzing them, while SOAR generally automates responses to detections produced by systems such as a SIEM."
   },
   {
     "id": "S701-PE1-052",
@@ -840,12 +840,12 @@
     "question": "A help-desk role can reset user passwords but cannot create administrators. Which principle is being applied?",
     "choices": [
       "Least privilege",
-      "Open authorization",
-      "Risk transfer",
-      "High availability"
+      "Separation of duties",
+      "Need to know",
+      "Job rotation"
     ],
     "answer": 0,
-    "explanation": "The role receives only the permissions necessary for its duties."
+    "explanation": "The help-desk role has only the permissions required for password-reset duties, which is least privilege. Separation of duties divides a sensitive process among people, while need to know limits information rather than administrative capability."
   },
   {
     "id": "S701-PE1-054",
@@ -871,13 +871,13 @@
     "difficulty": "Level 2",
     "question": "An investigator needs to determine whether a perimeter device allowed a connection from a suspicious IP. Which source should be checked FIRST?",
     "choices": [
-      "Employee handbook",
-      "Password standard",
+      "DNS resolver logs showing hostname lookups",
+      "Web-proxy logs showing permitted HTTP requests",
       "Firewall logs",
-      "Asset purchase order"
+      "Router flow summaries that omit the firewall's allow-or-deny decision"
     ],
     "answer": 2,
-    "explanation": "Firewall records show permitted and denied network connections."
+    "explanation": "The firewall made the perimeter allow-or-deny decision, so its logs are the authoritative first source. DNS, proxy, and flow data can add context but may not show the security device's final disposition."
   },
   {
     "id": "S701-PE1-056",
@@ -887,13 +887,13 @@
     "difficulty": "Level 3",
     "question": "Corporate tablets must require encryption, block rooted devices, and support remote wipe. Which implementation BEST meets these needs?",
     "choices": [
-      "Rely on users to configure devices voluntarily",
-      "Use a web application firewall",
-      "Publish an acceptable use policy without enforcement",
+      "Use mobile application management for one corporate application only",
+      "Require MFA through the identity provider without checking device posture",
+      "Install endpoint detection software that cannot enforce tablet configuration",
       "Enroll the tablets in MDM with a compliance policy"
     ],
     "answer": 3,
-    "explanation": "MDM centrally enforces mobile posture and provides remote security actions."
+    "explanation": "MDM enrollment can enforce device-wide encryption and root-detection policies and can issue a remote wipe. Application-only management and identity controls do not provide all three requested device-level capabilities."
   },
   {
     "id": "S701-PE1-057",
@@ -904,12 +904,12 @@
     "question": "Solid-state drives containing regulated data are leaving organizational control and cannot be reliably overwritten. What is the BEST disposition?",
     "choices": [
       "Physically destroy them and retain destruction records",
-      "Quick-format them and donate them",
-      "Delete their asset tags",
-      "Store them indefinitely in an unlocked room"
+      "Run a standard file-deletion utility and document successful deletion",
+      "Degauss the solid-state drives and return them to general inventory",
+      "Quick-format the drives and donate them with the original asset records"
     ],
     "answer": 0,
-    "explanation": "Physical destruction with evidence is appropriate when reliable sanitization is unavailable."
+    "explanation": "When reliable sanitization cannot be verified and regulated drives are leaving control, physical destruction with retained evidence is the defensible disposition. File deletion and formatting do not sanitize the media, and degaussing is not dependable for flash storage."
   },
   {
     "id": "S701-PE1-058",
@@ -935,13 +935,13 @@
     "difficulty": "Level 3",
     "question": "A detection rule fires whenever the approved backup service reads many files, producing hundreds of known false alerts. What should the analyst do?",
     "choices": [
-      "Disable all file-access monitoring",
-      "Delete the backup service",
+      "Raise the high-volume-read threshold globally for every process",
+      "Suppress all alerts originating from the backup service account",
       "Tune the rule using verified backup context while retaining detection elsewhere",
-      "Ignore every future high-volume read alert"
+      "Whitelist all high-volume file activity during the backup window"
     ],
     "answer": 2,
-    "explanation": "Context-aware tuning reduces known noise without removing useful coverage."
+    "explanation": "Using verified service, schedule, host, and expected-path context removes the known backup pattern while retaining detection for anomalous reads. Broad threshold changes or account-wide suppression could hide abuse of the backup identity."
   },
   {
     "id": "S701-PE1-060",
@@ -949,15 +949,15 @@
     "objective": "4.5",
     "blueprint": "NAC",
     "difficulty": "Level 3",
-    "question": "A contractor laptop should enter a remediation VLAN until antivirus and patch checks pass. Which capability should enforce this?",
+    "question": "Contractor laptops connect through wired and wireless access. Devices that fail antivirus or patch posture checks must receive only remediation-service access, then move automatically to the contractor network after compliance. Which control BEST enforces this workflow?",
     "choices": [
-      "DNS round robin",
-      "A public web proxy",
-      "A cold recovery site",
-      "Network access control with posture assessment"
+      "A captive portal that records acceptance but performs no posture check",
+      "Mobile device management limited to organization-owned tablets",
+      "A remote-access VPN that authenticates users but assigns one shared network",
+      "Network access control with posture assessment and dynamic network assignment"
     ],
     "answer": 3,
-    "explanation": "NAC can evaluate posture and assign restricted network access."
+    "explanation": "NAC can inspect endpoint posture and dynamically place noncompliant devices into a restricted remediation network before granting normal access. Authentication alone or ownership-limited management does not enforce the required network transition."
   },
   {
     "id": "S701-PE1-061",
@@ -965,15 +965,15 @@
     "objective": "4.6",
     "blueprint": "Identity proofing",
     "difficulty": "Level 3",
-    "question": "Before issuing a remote employee a first authentication credential, support verifies government identification through an approved process. Which IAM activity is occurring?",
+    "question": "A remote applicant has no existing corporate credential. Before activating the account, support validates a government ID, performs an approved liveness check, and compares the applicant with the HR record. Which IAM control prevents an attacker from obtaining the first credential under a stolen identity?",
     "choices": [
-      "Identity proofing",
-      "Authorization attestation",
-      "Password vaulting",
-      "Federated logout"
+      "Identity proofing before credential issuance",
+      "Reauthentication of an already established identity",
+      "Authorization review for the permissions assigned after enrollment",
+      "Federation that accepts an external session without applicant verification"
     ],
     "answer": 0,
-    "explanation": "Identity proofing establishes that the applicant is the claimed person."
+    "explanation": "Identity proofing establishes that an applicant is the claimed person before the first credential is issued. Authentication and authorization occur after an identity has already been established and therefore cannot replace enrollment proofing."
   },
   {
     "id": "S701-PE1-062",
@@ -981,15 +981,15 @@
     "objective": "4.7",
     "blueprint": "Automation guard rails",
     "difficulty": "Level 3",
-    "question": "A deployment pipeline automatically rejects cloud templates that expose administrative ports to the internet. What automation concept is demonstrated?",
+    "question": "Cloud templates are scanned before deployment. A template exposing SSH to `0.0.0.0/0` must be rejected automatically, while approved management ranges may proceed without waiting for a manual review. Which implementation BEST enforces this requirement?",
     "choices": [
-      "Risk acceptance",
-      "Security guard rails",
-      "Manual attestation",
-      "Data masking"
+      "Document a standing risk acceptance for every internet-exposed management port",
+      "Apply a policy-as-code security guard rail that blocks prohibited templates in the pipeline",
+      "Run a manual vulnerability scan after each exposed template reaches production",
+      "Place a web application firewall in front of every administrative protocol"
     ],
     "answer": 1,
-    "explanation": "Guard rails prevent disallowed configurations before deployment."
+    "explanation": "A policy-as-code guard rail evaluates the template and prevents a prohibited configuration before deployment while allowing compliant ranges automatically. Post-deployment scanning detects the issue too late, and a WAF does not govern SSH exposure."
   },
   {
     "id": "S701-PE1-063",
@@ -999,13 +999,13 @@
     "difficulty": "Level 3",
     "question": "An evidence drive moves from an analyst to legal counsel. Which action is MOST important at transfer?",
     "choices": [
-      "Rename the evidence files",
-      "Remove the original hash",
+      "Recalculate a hash but omit the identities of the handlers",
+      "Email counsel that the drive was delivered without updating the evidence record",
       "Record the date, handler, purpose, and receiving party",
-      "Connect the drive to an unmanaged laptop"
+      "Create a working copy for counsel and record only the copy's filename"
     ],
     "answer": 2,
-    "explanation": "Documented transfers preserve the evidence chain of custody."
+    "explanation": "Chain of custody requires a traceable record of every transfer, including when, why, and between whom custody changed. Hashes support integrity, but they do not document possession or accountability for the transfer."
   },
   {
     "id": "S701-PE1-064",
@@ -1013,15 +1013,15 @@
     "objective": "4.9",
     "blueprint": "Packet capture",
     "difficulty": "Level 3",
-    "question": "Logs show a suspicious connection, but analysts must inspect the exact protocol fields and payload sequence. Which data source is MOST useful?",
+    "question": "Firewall and flow logs confirm a connection to an internal service, but they do not explain why the proprietary unencrypted protocol entered an invalid state. Analysts need to reconstruct flags, field values, packet order, and payload exchanges from the incident window. Which evidence source is MOST useful?",
     "choices": [
-      "A policy handbook",
-      "A vendor SLA",
-      "A risk register",
-      "A packet capture"
+      "DNS query logs showing how the service hostname was resolved",
+      "NetFlow records containing endpoints, ports, byte counts, and duration",
+      "Endpoint authentication logs showing the identity that opened the session",
+      "A packet capture containing the full protocol exchange"
     ],
     "answer": 3,
-    "explanation": "Packet captures preserve detailed frames and protocol content."
+    "explanation": "A packet capture preserves packet order, headers, protocol fields, and—because this protocol is unencrypted—the payload needed for reconstruction. Flow and authentication logs add useful context but do not contain the full exchange."
   },
   {
     "id": "S701-PE1-065",
@@ -1032,12 +1032,12 @@
     "question": "A team applies a configuration change for a scanner finding. Which action BEST proves remediation?",
     "choices": [
       "Rescan the asset and manually verify the corrected setting",
-      "Close the ticket based only on the change request",
-      "Lower the finding severity",
-      "Delete the original report"
+      "Confirm that the approved change ticket reached its completed state",
+      "Accept a screenshot supplied by the system owner without independent testing",
+      "Wait for the next annual scan because the configuration command succeeded"
     ],
     "answer": 0,
-    "explanation": "A rescan plus direct verification confirms the weakness is resolved."
+    "explanation": "A successful change record proves that work was attempted, not that the exposure is gone. Independent rescanning plus direct configuration verification demonstrates that the finding no longer exists and the intended setting is active."
   },
   {
     "id": "S701-PE1-066",
@@ -1045,15 +1045,15 @@
     "objective": "4.4",
     "blueprint": "Correlation and time synchronization",
     "difficulty": "Level 4",
-    "question": "Authentication, endpoint, and firewall events appear to describe one intrusion, but their timestamps differ by several minutes. What should the SOC fix FIRST to support reliable correlation?",
+    "question": "During incident reconstruction, an identity provider places a login at 02:14 UTC, an endpoint records process creation at 02:10 local time, and a firewall logs the connection at 02:18 with no timezone field. All three events appear related, but the sequence changes depending on manual conversion. What should the SOC correct FIRST for defensible correlation?",
     "choices": [
-      "Increase password length",
-      "Synchronize all sources to trusted time and preserve timezone context",
-      "Disable firewall logging",
-      "Replace the SIEM correlation engine"
+      "Increase the SIEM correlation window until every event is treated as simultaneous",
+      "Synchronize sources to trusted time and normalize timestamps while retaining original timezone context",
+      "Use only the identity-provider timeline because it already records UTC",
+      "Replace the correlation rules before correcting the source clocks"
     ],
     "answer": 1,
-    "explanation": "Consistent trusted timestamps are necessary to reconstruct and correlate events accurately."
+    "explanation": "Reliable sequencing requires synchronized clocks and explicit timezone normalization while preserving original evidence. A wider correlation window may group events but cannot establish their true order or cure inconsistent source time."
   },
   {
     "id": "S701-PE1-067",
@@ -1061,15 +1061,15 @@
     "objective": "4.5",
     "blueprint": "DMARC enforcement",
     "difficulty": "Level 4",
-    "question": "A company has valid SPF and DKIM but attackers still send look-alike messages using the exact company domain to recipients that do not enforce alignment. What should the domain owner publish?",
+    "question": "Attackers send mail with the company's exact domain in the visible From field, but their infrastructure is not authorized by SPF and their signatures do not align with that domain. The company already publishes SPF and signs legitimate mail with DKIM, yet receiving systems have no instruction for handling alignment failures. Which DNS control should be implemented?",
     "choices": [
-      "An additional A record for the mail server",
-      "An SNMP community string",
-      "A DMARC policy requiring aligned mail to pass and directing failures to quarantine or reject",
-      "A wildcard TLS certificate"
+      "A BIMI record that displays the company logo without enforcing authentication",
+      "An MTA-STS policy that requires TLS but does not validate the visible From domain",
+      "A DMARC policy requiring aligned SPF or DKIM and directing failed messages to quarantine or reject",
+      "A DNSSEC signature that authenticates DNS records but does not define email-alignment policy"
     ],
     "answer": 2,
-    "explanation": "DMARC tells receivers how to handle mail that fails aligned SPF or DKIM checks."
+    "explanation": "DMARC evaluates alignment between the visible From domain and authenticated SPF or DKIM identities and publishes receiver handling for failures. TLS, DNSSEC, and BIMI serve different purposes and do not provide this anti-spoofing enforcement."
   },
   {
     "id": "S701-PE1-068",
@@ -1079,13 +1079,13 @@
     "difficulty": "Level 4",
     "question": "System administrators currently know permanent root passwords. The organization needs approval, session recording, automatic rotation, and time-limited access. Which solution BEST satisfies the requirement?",
     "choices": [
-      "A spreadsheet of shared passwords",
-      "A standard user password manager only",
-      "Longer permanent root passwords",
+      "A shared password vault that permits indefinite checkout and records no sessions",
+      "Identity-provider MFA without root-secret rotation or privileged-session monitoring",
+      "Endpoint privilege management limited to local workstation elevation",
       "A PAM platform with vaulting and just-in-time checkout"
     ],
     "answer": 3,
-    "explanation": "PAM provides controlled checkout, approvals, recording, rotation, and limited privilege duration."
+    "explanation": "A PAM platform can combine approval workflows, vaulted and rotated secrets, recorded privileged sessions, and just-in-time access. MFA or a basic password vault addresses only part of the requirement and leaves permanent privilege or weak accountability."
   },
   {
     "id": "S701-PE1-069",
@@ -1096,12 +1096,12 @@
     "question": "A new playbook automatically disables accounts after one impossible-travel alert. During testing, legitimate travelers are locked out. What is the BEST redesign?",
     "choices": [
       "Require corroborating evidence and human approval for high-impact actions",
-      "Disable all impossible-travel detection",
-      "Automatically delete the identity logs",
-      "Make the playbook disable every related account"
+      "Require two impossible-travel alerts but still disable accounts without contextual validation",
+      "Change the playbook to notification-only for every event, including confirmed compromise",
+      "Raise the travel threshold until the rule no longer generates alerts"
     ],
     "answer": 0,
-    "explanation": "High-impact automation should use reliable conditions and approval gates to limit harmful false positives."
+    "explanation": "Corroborating device, VPN, session, or user context and requiring approval before a disruptive action reduces false-positive harm while preserving rapid response. Simply adding another identical alert does not improve the evidence quality."
   },
   {
     "id": "S701-PE1-070",
@@ -1109,15 +1109,15 @@
     "objective": "4.8",
     "blueprint": "Incident eradication",
     "difficulty": "Level 4",
-    "question": "Responders isolate compromised hosts and block command-and-control traffic. Forensic analysis identifies a stolen service credential and a persistence task. What should occur during eradication?",
+    "question": "Responders have isolated compromised application servers and blocked known command-and-control destinations. Forensics identifies a scheduled persistence task, a stolen service credential used on three systems, and an exploited web component. Which eradication plan is MOST complete before restoration?",
     "choices": [
-      "Reconnect hosts before changing anything",
-      "Remove persistence, reset the credential, and eliminate the attacker’s access path",
-      "Destroy all evidence immediately",
-      "Announce lessons learned before removing the threat"
+      "Reconnect the least affected server first and monitor whether the attacker returns",
+      "Remove persistence, rotate the credential everywhere, remediate the exploited component, and verify no alternate access remains",
+      "Keep the command-and-control block but restore systems with the persistence task disabled",
+      "Reimage the servers immediately without preserving evidence or correcting the stolen credential"
     ],
     "answer": 1,
-    "explanation": "Eradication removes malicious artifacts and the compromised access mechanisms."
+    "explanation": "Complete eradication removes persistence, invalidates the compromised credential across its scope, and closes the exploited entry path before recovery. Blocking command and control or disabling one artifact alone leaves viable attacker access."
   },
   {
     "id": "S701-PE1-071",
@@ -1143,13 +1143,13 @@
     "difficulty": "Level 4",
     "question": "A warehouse adds WPA3 access points using a floor-plan estimate. Devices roam poorly and signals leak into a public parking area. What should be done FIRST?",
     "choices": [
-      "Downgrade to WEP",
-      "Broadcast one shared administrator password",
-      "Disable wireless encryption",
+      "Lower transmit power on every access point before collecting measurements",
+      "Add access points wherever the floor plan predicts weak coverage",
+      "Disable roaming so devices remain associated with their first access point",
       "Perform an onsite survey and heat-map coverage before adjusting placement and power"
     ],
     "answer": 3,
-    "explanation": "Measured coverage and interference data should guide secure placement and power settings."
+    "explanation": "Poor roaming and signal leakage can result from placement, power, interference, or building materials. An onsite survey provides measured evidence for targeted adjustments; changing every radio or adding equipment first may worsen overlap and leakage."
   },
   {
     "id": "S701-PE1-073",
@@ -1237,15 +1237,15 @@
     "objective": "5.1",
     "blueprint": "Standard versus guideline",
     "difficulty": "Level 3",
-    "question": "A policy requires secure passwords. One document mandates a minimum length; another recommends using memorable passphrases. What are the two documents respectively?",
+    "question": "An auditor reviews two documents supporting a password policy. Document X requires all systems to enforce a 14-character minimum and creates a compliance finding when they do not. Document Y suggests memorable passphrases but permits teams to use another approved method. How should X and Y be classified?",
     "choices": [
-      "A procedure and a policy",
-      "A standard and a guideline",
-      "An SLA and an NDA",
-      "A risk register and a playbook"
+      "X is a procedure and Y is a policy",
+      "X is a mandatory standard and Y is a flexible guideline",
+      "X is a guideline and Y is a mandatory standard",
+      "X is a playbook and Y is an acceptable use policy"
     ],
     "answer": 1,
-    "explanation": "Mandatory detailed requirements are standards; flexible recommendations are guidelines."
+    "explanation": "Document X establishes a mandatory, testable requirement and is therefore a standard. Document Y recommends an approach while allowing alternatives, which makes it a guideline rather than an enforceable standard."
   },
   {
     "id": "S701-PE1-079",
@@ -1285,15 +1285,15 @@
     "objective": "5.3",
     "blueprint": "Due diligence",
     "difficulty": "Level 3",
-    "question": "Before selecting a payroll provider, procurement reviews audit reports, breach history, subcontractors, and financial stability. What activity is this?",
+    "question": "Two payroll vendors meet functional requirements. Before contract award, procurement compares independent audit reports, breach history, subcontractor controls, financial stability, and data-location commitments. Which governance activity is being performed?",
     "choices": [
-      "Vendor due diligence",
-      "Incident eradication",
-      "Identity proofing",
-      "Data masking"
+      "Vendor due diligence performed before selection",
+      "Continuous vendor monitoring after onboarding",
+      "A business impact analysis of internal recovery processes",
+      "Formal risk acceptance without reviewing supplier evidence"
     ],
     "answer": 0,
-    "explanation": "Due diligence investigates a vendor’s suitability and risk before selection."
+    "explanation": "The organization is evaluating supplier risk and suitability before entering the relationship, which is vendor due diligence. Continuous monitoring follows onboarding, while risk acceptance would require an informed decision after—not instead of—reviewing evidence."
   },
   {
     "id": "S701-PE1-082",
@@ -1301,15 +1301,15 @@
     "objective": "5.4",
     "blueprint": "Compliance consequences",
     "difficulty": "Level 3",
-    "question": "A regulator prohibits an organization from processing payments after repeated violations. Which consequence of non-compliance occurred?",
+    "question": "After repeated control violations, a regulator suspends an organization's authorization to process card payments. The company may continue other operations but must stop its primary revenue transaction until remediation is verified. Which consequence is MOST directly demonstrated?",
     "choices": [
-      "A false positive",
-      "Loss of license or authorization",
-      "Risk transference",
-      "A recovery-point failure"
+      "A civil monetary penalty that permits payment processing to continue",
+      "Loss of regulatory license or authorization required for the business activity",
+      "Contractual risk transfer to a third-party processor",
+      "Reputational damage without a formal operating restriction"
     ],
     "answer": 1,
-    "explanation": "The authority removed permission required to conduct the regulated activity."
+    "explanation": "The regulator removed the authorization required to perform payment processing, directly restricting the business activity. A fine or reputational impact may accompany the action, but neither describes the stated suspension."
   },
   {
     "id": "S701-PE1-083",
@@ -1335,13 +1335,13 @@
     "difficulty": "Level 3",
     "question": "Simulation click rates improve, but employees rarely report suspicious messages. Which metric and action should the program emphasize next?",
     "choices": [
-      "Password age and forced monthly changes",
-      "Server uptime and capacity",
-      "The number of issued laptops",
+      "Additional click-rate targets without teaching the reporting process",
+      "Annual training-completion rates as the only success measure",
+      "The number of phishing messages blocked before employees see them",
       "Time-to-report and correct use of the reporting channel"
     ],
     "answer": 3,
-    "explanation": "The remaining behavior gap is recognition followed by prompt reporting."
+    "explanation": "The observed gap is not merely clicking; employees are failing to escalate suspicious messages. Measuring time-to-report and correct channel use directly evaluates and reinforces the response behavior the program needs to improve."
   },
   {
     "id": "S701-PE1-085",
@@ -1349,15 +1349,15 @@
     "objective": "5.1",
     "blueprint": "Data ownership",
     "difficulty": "Level 4",
-    "question": "A department head decides data classification and approves who may access a dataset, while IT performs backups. Which role does the department head hold?",
+    "question": "IT, acting as custodian, receives a request to lower a sensitive dataset's classification so a new vendor can access it. The department head originally defined the business purpose, classification, retention, and approved users for that dataset. Who must make the risk-based classification and access decision?",
     "choices": [
-      "Data owner",
-      "Data custodian",
-      "Data processor",
-      "Data subject"
+      "The data owner, because that role determines classification and authorized use",
+      "The data custodian, because operating backups transfers business ownership",
+      "The external processor, because the requested access is for its service",
+      "The data subject, because personal data always grants operational approval authority"
     ],
     "answer": 0,
-    "explanation": "The owner makes classification and access decisions; custodians implement them."
+    "explanation": "The department head is the data owner and therefore decides classification and approved use. IT custodians implement and protect those decisions, but operational control such as backups does not authorize them to lower the business classification."
   },
   {
     "id": "S701-PE1-086",
@@ -1381,15 +1381,15 @@
     "objective": "5.3",
     "blueprint": "Contract hierarchy",
     "difficulty": "Level 4",
-    "question": "A vendor relationship needs general legal terms for future projects, while the current project needs exact deliverables and dates. Which documents BEST fit?",
+    "question": "A company is establishing a multiyear vendor relationship. Legal needs reusable terms for liability, confidentiality, and dispute handling, while the first migration project needs defined deliverables, responsibilities, dates, and acceptance criteria. Which document pair BEST separates those needs?",
     "choices": [
-      "An NDA for uptime and an AUP for deliverables",
-      "A risk register and a playbook",
-      "An MSA for overarching terms and an SOW for the project",
-      "A policy and a certificate"
+      "An SLA for overarching legal terms and an NDA for project deliverables",
+      "An AUP for the vendor relationship and a risk register for contractual dates",
+      "An MSA for the continuing legal relationship and an SOW for the specific project",
+      "An SOW for all future legal terms and an SLA as the complete project definition"
     ],
     "answer": 2,
-    "explanation": "An MSA governs the broader relationship, while an SOW defines specific work."
+    "explanation": "The MSA establishes reusable legal terms for the ongoing relationship, while the SOW defines the work, schedule, responsibilities, and acceptance criteria for one project. An SLA may define performance levels but does not replace either document's broader purpose."
   },
   {
     "id": "S701-PE1-088",
@@ -1397,15 +1397,15 @@
     "objective": "5.4",
     "blueprint": "Privacy roles",
     "difficulty": "Level 4",
-    "question": "A retailer determines why customer profiles are created. An analytics provider processes them only under contract, while a hosting company stores encrypted copies. Which party remains responsible for determining processing purpose?",
+    "question": "A retailer defines why customer profiles are collected, which attributes are required, how long they are retained, and how access requests are answered. An analytics company processes the profiles only under the retailer's instructions, and a hosting provider stores encrypted copies. After a customer challenges the processing purpose, which party remains accountable for that decision?",
     "choices": [
-      "The analytics provider as data subject",
-      "The hosting company as regulator",
-      "The customer as data processor",
-      "The retailer as data controller"
+      "The analytics company, because processing data automatically makes it the controller",
+      "The hosting provider, because physical storage determines the purpose of processing",
+      "The customer, because a data subject approves the controller's business purpose",
+      "The retailer, because the data controller determines the purpose and means of processing"
     ],
     "answer": 3,
-    "explanation": "The controller determines purposes and means even when processors perform operations."
+    "explanation": "The retailer determines why and how the profiles are processed, so it is the controller and remains accountable for those decisions. Contracted analytics and hosting companies are processors when they act only on the retailer's instructions."
   },
   {
     "id": "S701-PE1-089",
@@ -1413,15 +1413,15 @@
     "objective": "5.5",
     "blueprint": "Audit independence",
     "difficulty": "Level 4",
-    "question": "A system owner selects evidence, performs testing, and approves the resulting audit opinion. What is the PRIMARY concern?",
+    "question": "A system owner defines an audit's sample, selects the evidence, performs the control tests, resolves exceptions, and signs the final assurance opinion. Management argues that the owner's technical expertise makes outside review unnecessary. What is the PRIMARY assurance defect?",
     "choices": [
-      "Lack of auditor independence and objectivity",
-      "Insufficient password complexity",
-      "Excessive recovery capacity",
-      "Missing wireless encryption"
+      "The audit lacks independence and objectivity because the control owner evaluates and approves the owner's own work",
+      "The audit scope is too broad because technical specialists should never supply evidence",
+      "The evidence is invalid unless every control is tested continuously rather than sampled",
+      "The final opinion is objective as long as the system owner documents all exceptions"
     ],
     "answer": 0,
-    "explanation": "Allowing the control owner to judge their own work creates a conflict and weakens assurance."
+    "explanation": "A control owner may explain systems and supply evidence, but controlling the sample, testing, exception disposition, and final opinion creates a self-review conflict. Independent judgment is necessary for credible assurance."
   },
   {
     "id": "S701-PE1-090",
@@ -1431,12 +1431,12 @@
     "difficulty": "Level 4",
     "question": "A global awareness program uses identical examples for every employee, produces no behavioral measurements, and is delivered only at hiring. Which redesign is BEST?",
     "choices": [
-      "Send the same annual slide deck to more people",
+      "Deliver a quarterly generic presentation and measure only attendance",
       "Provide recurring role- and region-relevant training with simulations, reporting metrics, and targeted follow-up",
-      "Eliminate training and rely only on policy",
-      "Measure completion without testing behavior"
+      "Provide role-specific content once at hiring without simulations or later reinforcement",
+      "Run monthly phishing simulations but omit reporting instruction and follow-up for repeat behavior"
     ],
     "answer": 1,
-    "explanation": "Effective awareness is recurring, relevant, measurable, and adjusted using observed behavior."
+    "explanation": "The approved redesign addresses all three deficiencies: relevance, recurring reinforcement, and measurable behavior with targeted follow-up. Attendance-only training or simulations without reporting instruction leaves important program gaps unresolved."
   }
 ]
