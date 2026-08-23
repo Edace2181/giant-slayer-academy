@@ -7,93 +7,93 @@
     "difficulty": "Level 2",
     "question": "Capture X1 shows an Ethernet frame carrying an IPv4 packet that contains a UDP datagram. Which item is removed first when the receiving host decapsulates it?",
     "choices": [
-      "Ethernet header and trailer",
       "UDP header",
       "IPv4 header",
+      "Ethernet header and trailer",
       "Application data"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "The receiving interface for X1 removes the outer Ethernet framing before higher-layer processing."
   },
   {
     "id": 22002,
     "domain": "5",
     "objective": "5.1",
-    "blueprint": "Troubleshooting scope",
+    "blueprint": "Troubleshooting scope and baselines",
     "difficulty": "Level 3",
-    "question": "Outage X1 affects one application across every site, while other services work. What should be examined FIRST?",
+    "question": "Users at every branch report failures in one payroll application, while DNS, internet access, and other hosted applications work. What should the technician compare first?",
     "choices": [
-      "Dependencies unique to that application",
-      "Every access cable",
-      "All user passwords",
-      "Building power everywhere"
+      "The cabling type at every user desk",
+      "The payroll application dependencies and recent changes against a working service baseline",
+      "The STP root bridge in each branch",
+      "The Wi-Fi channel used by guest devices"
     ],
-    "answer": 0,
-    "explanation": "The cross-site, single-application scope points to shared dependencies unique to Outage X1."
+    "answer": 1,
+    "explanation": "The shared failure is isolated to one application across otherwise healthy sites. Its unique dependencies, service health, and changes provide the narrowest starting scope."
   },
   {
     "id": 22003,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Policy-based routing",
+    "blueprint": "Policy-based routing and failover",
     "difficulty": "Level 4",
-    "question": "Branch X1 must send video through a low-latency circuit while all other traffic follows the routing table. Which feature is BEST?",
+    "question": "A branch routes voice through MPLS and all other traffic through broadband. When MPLS fails, voice is discarded even though broadband remains available. The policy route always names the MPLS next hop. Which design best restores automatic failover?",
     "choices": [
-      "Policy-based routing",
-      "STP portfast",
-      "DNS recursion",
-      "DHCP snooping"
+      "Track MPLS reachability and apply the policy next hop only while the tracked path is healthy",
+      "Add a permanent discard route for the voice subnet",
+      "Make the broadband interface an STP root port",
+      "Configure the voice DNS records with a shorter TTL"
     ],
     "answer": 0,
-    "explanation": "Policy-based routing can select Branch X1's next hop according to traffic characteristics."
+    "explanation": "Policy routing must track the preferred next hop so the rule is withdrawn or falls back when MPLS becomes unusable. A static policy without tracking can black-hole matching traffic."
   },
   {
     "id": 22004,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Standard procedures",
+    "blueprint": "Standard operating procedures",
     "difficulty": "Level 3",
-    "question": "Team X1 performs the same switch replacement differently each time. Which document should standardize the steps?",
+    "question": "Technicians replace failed access switches using different VLAN and validation steps, creating inconsistent recoveries. Which document should define the repeatable replacement workflow?",
     "choices": [
-      "Standard operating procedure",
-      "DNS zone file",
-      "Certificate request",
-      "Heat map"
+      "A DNS zone-transfer file",
+      "A standard operating procedure",
+      "An ad hoc packet-capture filter",
+      "A wireless site-survey heat map"
     ],
-    "answer": 0,
-    "explanation": "An SOP gives Team X1 a repeatable approved replacement workflow."
+    "answer": 1,
+    "explanation": "An SOP establishes a consistent, repeatable operational process. The other artifacts support specific technical tasks but do not standardize the replacement workflow."
   },
   {
     "id": 22005,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Data protection",
+    "blueprint": "Data-at-rest protection",
     "difficulty": "Level 2",
-    "question": "Backup X1 leaves the facility with a courier. Which control protects its contents if the media is lost?",
+    "question": "Backup media is transported by a third-party courier. Which control protects the stored information if the media is lost in transit?",
     "choices": [
-      "Strong encryption with managed keys",
-      "A descriptive label",
-      "A longer retention period alone",
-      "A public checksum only"
+      "A longer DHCP lease",
+      "Encryption at rest with securely managed keys",
+      "A lower routing metric",
+      "Additional wireless beacons"
     ],
-    "answer": 0,
-    "explanation": "Encryption keeps Backup X1's contents confidential even when physical custody is lost."
+    "answer": 1,
+    "explanation": "Encryption at rest prevents disclosure if physical custody is lost, provided the decryption keys are protected separately. Network settings do not protect stored backup contents."
   },
   {
     "id": 22006,
     "domain": "1",
     "objective": "1.2",
-    "blueprint": "Content delivery",
+    "blueprint": "Content delivery networks",
     "difficulty": "Level 4",
-    "question": "Global site X2 needs cached static objects served near users while its origin remains centralized. Which service is BEST?",
+    "question": "An online publisher serves large immutable images worldwide. The origin link saturates during releases, and distant users have high latency. Dynamic account pages must continue reaching the origin. Which design best meets both requirements?",
     "choices": [
-      "Content delivery network",
-      "DHCP relay",
-      "Console server",
-      "Layer 1 tap"
+      "Move all users onto the origin server's local VLAN",
+      "Replace the origin default route with a host route",
+      "Place static objects on a CDN while forwarding dynamic requests to the origin",
+      "Disable browser caching and increase object size"
     ],
-    "answer": 0,
-    "explanation": "A CDN places cached objects for site X2 at distributed edge locations."
+    "answer": 2,
+    "explanation": "A CDN caches static content near users, reducing origin bandwidth and latency, while dynamic authenticated requests can remain origin-served."
   },
   {
     "id": 22007,
@@ -103,12 +103,12 @@
     "difficulty": "Level 3",
     "question": "Patch lead X2 works only when pressure is applied to its plug, and the latch no longer holds. What is the BEST action?",
     "choices": [
-      "Replace the damaged patch lead",
       "Increase switch power",
       "Flush DNS",
+      "Replace the damaged patch lead",
       "Add a static route"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Mechanical plug failure makes replacement safer and more reliable for Patch lead X2."
   },
   {
@@ -131,17 +131,17 @@
     "id": 22009,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Lifecycle management",
+    "blueprint": "Technology lifecycle management",
     "difficulty": "Level 4",
-    "question": "Firewall X2 is approaching vendor end-of-support. What should operations do before that date?",
+    "question": "A firewall reaches vendor end-of-support in four months. It currently enforces rules that are undocumented, and the replacement model uses a different syntax. What should operations do first?",
     "choices": [
-      "Plan migration and record the lifecycle risk",
-      "Hide the asset record",
-      "Disable backups",
-      "Expose management publicly"
+      "Wait for the device to fail before selecting a replacement",
+      "Delete unused-looking rules directly in production",
+      "Disable logging to extend the appliance lifetime",
+      "Inventory dependencies, export and review policy, then plan and test a supported migration"
     ],
-    "answer": 0,
-    "explanation": "Proactive lifecycle planning prevents Firewall X2 from remaining unsupported in production."
+    "answer": 3,
+    "explanation": "Lifecycle management requires understanding dependencies and policy, selecting a supported platform, testing conversion, and scheduling migration before support ends."
   },
   {
     "id": 22010,
@@ -151,109 +151,109 @@
     "difficulty": "Level 3",
     "question": "Analyst X2 changes departments but retains old network privileges. Which process failed?",
     "choices": [
-      "Access recertification and deprovisioning",
       "Route aggregation",
       "Channel planning",
+      "Access recertification and deprovisioning",
       "Cable certification"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Periodic recertification should remove Analyst X2's privileges when job responsibilities change."
   },
   {
     "id": 22011,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud networking",
+    "blueprint": "Cloud virtual-network peering",
     "difficulty": "Level 2",
-    "question": "Cloud network X3 must privately connect two isolated virtual networks owned by the same company. Which construct is MOST appropriate?",
+    "question": "Two isolated virtual networks in the same cloud organization require private IP communication without routing through the public internet. Which construct is most appropriate?",
     "choices": [
       "Virtual network peering",
-      "Public DNS delegation",
-      "Consumer NAT-PMP",
-      "Local port mirroring"
+      "A public recursive DNS server",
+      "A clientless web portal",
+      "A physical Ethernet crossover cable"
     ],
     "answer": 0,
-    "explanation": "Peering provides private routed connectivity between Cloud network X3's virtual networks."
+    "explanation": "Virtual network peering provides private routed connectivity between cloud virtual networks. The other options do not establish private network-to-network routing."
   },
   {
     "id": 22012,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Fiber compatibility",
+    "blueprint": "Fiber polarity troubleshooting",
     "difficulty": "Level 3",
-    "question": "Uplink X3 has normal receive power but errors after one endpoint received an optic with a different wavelength. What should be corrected?",
+    "question": "A new duplex fiber link shows no receive light at either end. Optical modules and wavelengths match, and each transmitter emits normal power. What should be checked next?",
     "choices": [
-      "Install a wavelength-matched optic pair",
-      "Increase DHCP scope size",
-      "Change STP priority",
-      "Disable syslog"
+      "The DNS suffix assigned to the switches",
+      "The native VLAN on unrelated copper ports",
+      "The NTP stratum of the management server",
+      "Whether transmit on each end is crossed to receive on the other end"
     ],
-    "answer": 0,
-    "explanation": "Both ends of Uplink X3 require compatible transmit and receive wavelengths."
+    "answer": 3,
+    "explanation": "Matched optics with working transmitters but no received light strongly suggests incorrect fiber polarity. Each TX strand must terminate on the opposite RX."
   },
   {
     "id": 22013,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Switching tables",
+    "blueprint": "Layer 2 loop analysis",
     "difficulty": "Level 4",
-    "question": "Switch X3 repeatedly relearns one MAC address on two different ports. Which condition is MOST likely?",
+    "question": "A switch log shows the same source MAC alternating rapidly between two trunk ports. Broadcast traffic spikes, CPU utilization rises, and users lose connectivity. Which fault best fits all three observations?",
     "choices": [
-      "A Layer 2 loop or moving endpoint",
-      "A missing DNS record",
-      "An expired certificate",
-      "A depleted UPS battery"
+      "A Layer 2 loop causing MAC flapping and a broadcast storm",
+      "A DHCP scope with too few addresses",
+      "An expired web-server certificate",
+      "A BGP route missing from the WAN edge"
     ],
     "answer": 0,
-    "explanation": "Rapid MAC movement between ports at Switch X3 commonly indicates a loop or unstable physical path."
+    "explanation": "Rapid MAC movement between trunks plus a broadcast surge and switch CPU load are classic evidence of a switching loop, not an addressing or application fault."
   },
   {
     "id": 22014,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Capacity planning",
+    "blueprint": "Capacity forecasting",
     "difficulty": "Level 3",
-    "question": "Uplink X3 grows roughly 8% each month and will exceed safe utilization next quarter. What should be done NEXT?",
+    "question": "A WAN link averages 62% utilization and increases about 8 percentage points each month. Business policy requires upgrades before sustained utilization reaches 80%. What is the best action?",
     "choices": [
-      "Schedule capacity expansion before saturation",
-      "Delete historical metrics",
-      "Raise alert thresholds above 100%",
-      "Disable QoS"
+      "Schedule capacity expansion before the projected threshold is reached",
+      "Wait until packet loss becomes continuous",
+      "Reduce the DHCP lease interval",
+      "Replace the internal DNS domain"
     ],
     "answer": 0,
-    "explanation": "Trend-based planning allows Uplink X3 to be expanded before congestion becomes chronic."
+    "explanation": "Trend data predicts the policy threshold will be exceeded soon. Proactive capacity planning prevents congestion instead of waiting for an outage."
   },
   {
     "id": 22015,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Rogue services",
+    "blueprint": "Rogue DHCP attacks",
     "difficulty": "Level 2",
-    "question": "Clients at X3 suddenly receive a malicious gateway from an unauthorized laptop. Which threat is present?",
+    "question": "Clients suddenly receive leases naming an attacker-controlled default gateway. Switch captures show DHCP offers arriving from an unauthorized access port. Which threat is present?",
     "choices": [
-      "Rogue DHCP server",
-      "DNSSEC validation",
-      "Link aggregation",
-      "Port mirroring"
+      "A DNS zone-transfer attack",
+      "A rogue DHCP server",
+      "A VLAN pruning error",
+      "A wireless channel conflict"
     ],
-    "answer": 0,
-    "explanation": "An unauthorized DHCP service can assign the malicious gateway observed at X3."
+    "answer": 1,
+    "explanation": "Unauthorized DHCP offers can redirect clients through a malicious gateway or resolver. The capture directly identifies a rogue DHCP service."
   },
   {
     "id": 22016,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Application protocols",
+    "blueprint": "Secure LDAP connectivity",
     "difficulty": "Level 4",
-    "question": "Directory X4 must accept encrypted LDAP from clients without an unprotected negotiation. Which standard port is expected?",
+    "question": "A directory migration requires clients to establish TLS before sending any LDAP data. Tests to TCP 389 succeed, but policy rejects StartTLS negotiation. The firewall currently blocks TCP 636. What should be changed?",
     "choices": [
-      "TCP 636",
-      "UDP 161",
-      "TCP 143",
-      "UDP 514"
+      "Permit UDP 69 and configure TFTP",
+      "Permit TCP 23 and configure Telnet",
+      "Permit TCP 636 and configure clients for LDAPS",
+      "Permit UDP 161 and configure SNMPv2c"
     ],
-    "answer": 0,
-    "explanation": "LDAPS uses TCP 636 for encrypted directory sessions at Directory X4."
+    "answer": 2,
+    "explanation": "LDAPS starts TLS immediately on TCP 636, satisfying the requirement. TCP 389 with StartTLS begins as LDAP and is explicitly excluded by policy."
   },
   {
     "id": 22017,
@@ -263,45 +263,45 @@
     "difficulty": "Level 3",
     "question": "Table X4 has 10.80.0.0/16 via R1 and 10.80.24.0/21 via R2. Which next hop handles 10.80.26.7?",
     "choices": [
-      "R2 through the /21",
       "R1 through the /16",
       "The default route",
-      "Both with equal specificity"
+      "Both with equal specificity",
+      "R2 through the /21"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "Longest-prefix selection uses Table X4's /21 route through R2."
   },
   {
     "id": 22018,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Quality of service",
+    "blueprint": "QoS trust boundaries",
     "difficulty": "Level 2",
-    "question": "Access switch X4 must trust voice markings from managed phones but not from attached PCs. Which boundary is BEST?",
+    "question": "An IP phone marks voice correctly, but a connected PC can send arbitrary high-priority markings through the phone. Which switch configuration best protects the QoS policy?",
     "choices": [
-      "Conditional trust at the phone-facing port",
-      "Trust every user packet globally",
-      "Remove all DSCP values",
-      "Prioritize broadcasts"
+      "Trust every marking on the access port",
+      "Disable classification on the uplink",
+      "Trust the phone conditionally and remark traffic received from the PC",
+      "Place voice and data into one untagged broadcast domain"
     ],
-    "answer": 0,
-    "explanation": "A conditional trust boundary preserves managed phone markings while preventing PC abuse at switch X4."
+    "answer": 2,
+    "explanation": "A conditional trust boundary accepts markings from the managed phone while preventing the attached PC from claiming unauthorized priority."
   },
   {
     "id": 22019,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Log severity",
+    "blueprint": "Log severity and incident correlation",
     "difficulty": "Level 4",
-    "question": "Collector X4 receives emergency, alert, and informational syslog messages. Which class requires the most immediate response?",
+    "question": "A collector receives an emergency message from a core router, an alert from its redundant peer, and informational interface logs from access switches at the same timestamp. The default gateway is unreachable. Which event should drive the immediate response?",
     "choices": [
-      "Emergency",
-      "Informational",
-      "Debug",
-      "Notice"
+      "The core-router emergency indicating the system is unusable",
+      "The informational access-switch messages",
+      "The oldest successful login record",
+      "A debug entry from yesterday"
     ],
     "answer": 0,
-    "explanation": "Syslog emergency events indicate an unusable system and carry the highest urgency at Collector X4."
+    "explanation": "Syslog emergency severity is the highest urgency and aligns with the observed gateway outage. Lower-severity contextual messages can support analysis afterward."
   },
   {
     "id": 22020,
@@ -322,50 +322,50 @@
   {
     "id": 22021,
     "domain": "1",
-    "objective": "1.6",
-    "blueprint": "Connector selection",
+    "objective": "1.5",
+    "blueprint": "Legacy fiber connectors",
     "difficulty": "Level 2",
-    "question": "Panel X5 requires a push-and-twist bayonet connector for legacy multimode fiber. Which connector matches?",
+    "question": "Which fiber connector uses a round bayonet-style push-and-twist coupling?",
     "choices": [
-      "ST",
       "LC",
-      "MPO",
-      "F-type"
+      "SC",
+      "ST",
+      "MTRJ"
     ],
-    "answer": 0,
-    "explanation": "ST fiber connectors use the bayonet-style coupling required at Panel X5."
+    "answer": 2,
+    "explanation": "ST uses a round bayonet coupling. LC, SC, and MTRJ use different push-pull connector designs."
   },
   {
     "id": 22022,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Resolver policy",
+    "blueprint": "Server response-time analysis",
     "difficulty": "Level 3",
-    "question": "Resolver X5 answers internal zones but refuses every internet query although its forwarder is reachable. Which setting should be checked?",
+    "question": "Users report that a website is slow. Network RTT remains 18ms, packet loss is zero, and the TCP handshake completes immediately, but the server waits four seconds before sending the first application byte. Where is the delay most likely occurring?",
     "choices": [
-      "Recursion or query-access policy",
-      "PoE allocation",
-      "Fiber polarity",
-      "Switch root priority"
+      "On the physical link before the TCP handshake",
+      "In the server or application processing path",
+      "In ARP resolution after the response is sent",
+      "In a switching loop that produces no packet loss"
     ],
-    "answer": 0,
-    "explanation": "A restrictive recursion or access policy can make Resolver X5 refuse external-name requests."
+    "answer": 1,
+    "explanation": "Fast connection establishment with a long time-to-first-byte isolates the delay after transport setup, pointing to application or server processing rather than the network path."
   },
   {
     "id": 22023,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Wireless bridging",
+    "blueprint": "Point-to-point wireless design",
     "difficulty": "Level 4",
-    "question": "Building X5 needs a dedicated wireless link to another roof with clear line of sight and no client associations. Which mode is BEST?",
+    "question": "A point-to-point bridge has clear line of sight, adequate Fresnel clearance, matching channels, and normal transmit power. Both ends still report weak receive levels. Inspection finds one directional antenna mounted vertically and the other horizontally. What should be corrected first?",
     "choices": [
-      "Point-to-point bridge",
-      "Omnidirectional hotspot",
-      "Ad hoc client mode",
-      "Captive portal"
+      "Increase transmit power even though both radios already report normal output",
+      "Align the antenna polarization at both ends",
+      "Replace both directional antennas with omnidirectional models",
+      "Widen the channel while leaving the antennas cross-polarized"
     ],
-    "answer": 0,
-    "explanation": "A directional point-to-point bridge provides dedicated building connectivity for X5."
+    "answer": 1,
+    "explanation": "Cross-polarized directional antennas can introduce severe signal loss even when path clearance and radio settings are correct. Matching the antenna orientation addresses the isolated physical-design defect."
   },
   {
     "id": 22024,
@@ -375,45 +375,45 @@
     "difficulty": "Level 3",
     "question": "Core X5 has two supervisors, but a software defect crashes both simultaneously. What type of risk remains?",
     "choices": [
-      "Common-mode failure",
       "Loss of DNS recursion only",
       "Wireless attenuation",
-      "Cable split pair"
+      "Cable split pair",
+      "Common-mode failure"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "Identical components can share a defect, creating a common-mode failure despite Core X5's hardware redundancy."
   },
   {
     "id": 22025,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Secure administration",
+    "blueprint": "Secure management protocols",
     "difficulty": "Level 2",
-    "question": "Device X5 still permits Telnet and HTTP management. Which hardening action is BEST?",
+    "question": "A switch permits administrative access through Telnet and unencrypted HTTP. Which hardening action is appropriate?",
     "choices": [
-      "Disable them and require SSH plus HTTPS",
-      "Expose them through port forwarding",
-      "Use one shared password",
-      "Disable audit logs"
+      "Disable both services and require SSH and HTTPS",
+      "Keep Telnet but use a longer username",
+      "Expose HTTP only to the public internet",
+      "Replace authentication with SNMP traps"
     ],
     "answer": 0,
-    "explanation": "SSH and HTTPS protect management credentials and traffic for Device X5."
+    "explanation": "SSH and HTTPS protect management credentials and sessions in transit. Stronger usernames do not make plaintext protocols secure."
   },
   {
     "id": 22026,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Network topology",
+    "objective": "1.6",
+    "blueprint": "WAN topology resilience",
     "difficulty": "Level 4",
-    "question": "WAN X6 lets every branch reach every other branch through direct logical tunnels. Which topology is represented?",
+    "question": "A company uses direct logical tunnels between every branch. Adding one location requires tunnels to every existing branch, and no central hub is required for transit. Which topology is deployed?",
     "choices": [
+      "Hub-and-spoke",
       "Full mesh",
-      "Hub and spoke",
       "Bus",
-      "Single star LAN"
+      "Single point-to-point chain"
     ],
-    "answer": 0,
-    "explanation": "A full mesh provides direct branch-to-branch logical paths throughout WAN X6."
+    "answer": 1,
+    "explanation": "A full mesh directly interconnects every site, providing alternate paths but increasing connection count as sites are added."
   },
   {
     "id": 22027,
@@ -435,33 +435,33 @@
     "id": 22028,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Wireless roaming",
+    "blueprint": "Fast wireless roaming",
     "difficulty": "Level 2",
-    "question": "Handsets at X6 pause during AP transitions because each roam repeats full authentication. Which feature should be evaluated?",
+    "question": "Which 802.11 feature reduces authentication delay when a client roams between access points in the same mobility domain?",
     "choices": [
-      "Fast BSS transition",
-      "Longer DHCP leases",
-      "Wider 2.4GHz channels",
-      "Static ARP"
+      "802.11h dynamic frequency selection",
+      "802.11r fast BSS transition",
+      "802.11b direct-sequence spread spectrum",
+      "802.3ad link aggregation"
     ],
-    "answer": 0,
-    "explanation": "Fast BSS transition reduces authentication delay when handsets roam at X6."
+    "answer": 1,
+    "explanation": "802.11r accelerates key transition during roaming. The other standards address radio regulation, legacy modulation, or wired aggregation."
   },
   {
     "id": 22029,
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "Service records",
+    "blueprint": "DNS service discovery",
     "difficulty": "Level 4",
-    "question": "Voice platform X6 needs clients to discover service host, port, and priority through DNS. Which record type is required?",
+    "question": "A DNS zone lists the intended primary call server with SRV priority 20 and the backup with priority 10. Clients consistently select the backup even though both targets are healthy. What should the administrator correct?",
     "choices": [
-      "SRV",
-      "PTR",
-      "AAAA only",
-      "TXT only"
+      "Increase the zone’s negative-cache timer",
+      "Replace both target A records with PTR records",
+      "Assign the intended primary a lower SRV priority value than the backup",
+      "Set the backup SRV weight to zero while keeping the priorities reversed"
     ],
-    "answer": 0,
-    "explanation": "An SRV record publishes service location, port, priority, and weight for Voice platform X6."
+    "answer": 2,
+    "explanation": "SRV clients prefer the lowest numeric priority. The backup currently has priority 10 and is therefore preferred over the intended primary at 20; correcting the priority order fixes server selection."
   },
   {
     "id": 22030,
@@ -469,79 +469,79 @@
     "objective": "4.3",
     "blueprint": "Microsegmentation",
     "difficulty": "Level 3",
-    "question": "Virtual workloads at X6 share a subnet but require per-workload east-west policy. Which control BEST fits?",
+    "question": "A three-tier application shares one virtual subnet. Security policy should permit frontend-to-API TCP 443 and API-to-database TCP 5432 while denying all other lateral paths. Which implementation best enforces the requirement?",
     "choices": [
-      "Distributed microsegmentation firewall",
-      "One perimeter ACL only",
-      "Shared hub",
-      "Public DNS filtering"
+      "A single VLAN ACL that treats every workload in the subnet as equally trusted",
+      "A perimeter firewall rule that inspects only traffic entering or leaving the subnet",
+      "Separately maintained host-firewall rules with no centralized workload identity",
+      "Identity- or tag-based microsegmentation rules between the workload tiers"
     ],
-    "answer": 0,
-    "explanation": "Distributed policy can enforce workload-level east-west controls inside X6's virtual network."
+    "answer": 3,
+    "explanation": "Microsegmentation can enforce specific east-west flows between workload identities even when the systems share an underlying subnet. A perimeter-only rule cannot express the required internal tier boundaries."
   },
   {
     "id": 22031,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Address planning",
+    "objective": "1.7",
+    "blueprint": "IPv4 subnet boundaries",
     "difficulty": "Level 2",
-    "question": "Subnet X7 uses 192.0.2.64/27. Which address is its directed broadcast?",
+    "question": "A subnet is 192.0.2.64/27. What is its directed broadcast address?",
     "choices": [
       "192.0.2.95",
+      "192.0.2.63",
       "192.0.2.94",
-      "192.0.2.96",
-      "192.0.2.63"
+      "192.0.2.96"
     ],
     "answer": 0,
-    "explanation": "The /27 beginning at 192.0.2.64 ends at .95, making that Subnet X7's broadcast address."
+    "explanation": "A /27 contains blocks of 32 addresses. The block beginning at .64 ends at .95, making .95 the broadcast address."
   },
   {
     "id": 22032,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Application reachability",
+    "blueprint": "Application path troubleshooting",
     "difficulty": "Level 3",
-    "question": "Server X7 accepts local TCP connections, but remote SYN packets never arrive. Which comparison BEST narrows the fault?",
+    "question": "Remote clients time out connecting to a server, but local clients succeed. A gateway capture shows remote SYN packets forwarded toward the server, while the server capture shows none. What should be investigated next?",
     "choices": [
-      "Capture at the gateway and server simultaneously",
-      "Replace the server keyboard",
-      "Change the DNS display name",
-      "Increase UPS runtime"
+      "The remote client DNS cache",
+      "The server application password policy",
+      "The path or filtering between the gateway capture point and the server",
+      "The local clients' browser history"
     ],
-    "answer": 0,
-    "explanation": "Paired captures show where Server X7's inbound packets disappear along the path."
+    "answer": 2,
+    "explanation": "The simultaneous captures bound the loss to the segment after the gateway and before the server. Investigating outside that proven interval would ignore the evidence."
   },
   {
     "id": 22033,
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Rack design",
+    "blueprint": "Rack stability and safety",
     "difficulty": "Level 4",
-    "question": "Cabinet X7 has heavy devices mounted above light switches and is becoming unstable. What is the BEST correction?",
+    "question": "A freestanding rack is top-heavy, not anchored, and begins rocking when a technician removes a server rail. What is the safest remediation before installing more equipment?",
     "choices": [
-      "Move heavy equipment lower and secure the rack",
-      "Raise the cabinet on blocks",
-      "Remove grounding",
-      "Bundle power and data tightly"
+      "Add heavier devices to the top to balance airflow",
+      "Remove blanking panels from the bottom",
+      "Increase switch port speed",
+      "Anchor the rack and relocate heavy equipment to its lower positions"
     ],
-    "answer": 0,
-    "explanation": "Low placement of heavy equipment lowers Cabinet X7's center of gravity and improves stability."
+    "answer": 3,
+    "explanation": "Anchoring and placing heavy equipment low reduce the center of gravity and tip risk. Adding top weight creates a more dangerous installation."
   },
   {
     "id": 22034,
     "domain": "3",
     "objective": "3.5",
-    "blueprint": "Privileged access",
+    "blueprint": "Privileged access gateways",
     "difficulty": "Level 3",
-    "question": "Admins at X7 must use a controlled intermediary before reaching protected device interfaces. Which system should be deployed?",
+    "question": "Administrators must authenticate to a monitored intermediary before reaching management interfaces on protected routers. Which system provides this control point?",
     "choices": [
-      "Jump server",
-      "Open relay",
-      "Unmanaged bridge",
-      "Public file share"
+      "A public recursive resolver",
+      "A passive patch panel",
+      "A jump server",
+      "A DHCP relay"
     ],
-    "answer": 0,
-    "explanation": "A hardened jump server centralizes and controls administrative access at X7."
+    "answer": 2,
+    "explanation": "A jump server centralizes and monitors privileged administrative access to protected systems. The other devices do not mediate management sessions."
   },
   {
     "id": 22035,
@@ -551,892 +551,892 @@
     "difficulty": "Level 2",
     "question": "Automation X7 currently stores device passwords in plaintext scripts. What is the BEST replacement?",
     "choices": [
-      "A secrets vault with scoped retrieval",
       "A shared spreadsheet",
+      "A secrets vault with scoped retrieval",
       "Hard-coded stronger passwords",
       "Anonymous API access"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "A secrets vault protects credentials and provides controlled retrieval for Automation X7."
   },
   {
     "id": 22036,
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Encapsulation",
+    "blueprint": "OSI fault isolation",
     "difficulty": "Level 4",
-    "question": "Capture X8 shows an Ethernet frame carrying an IPv4 packet that contains a UDP datagram. Which item is removed first when the receiving host decapsulates it?",
+    "question": "A workstation has link, a valid address, and the correct gateway configured, but ARP for that gateway remains incomplete. The switch learns the workstation MAC in VLAN 30 while the gateway SVI belongs to VLAN 20. At which OSI layer is the decisive fault?",
     "choices": [
-      "Ethernet header and trailer",
-      "UDP header",
-      "IPv4 header",
-      "Application data"
+      "Layer 2, because the endpoint and gateway are in different broadcast domains",
+      "Layer 1, because the workstation has no physical link",
+      "Layer 4, because TCP rejected the session",
+      "Layer 7, because DNS translated the wrong name"
     ],
     "answer": 0,
-    "explanation": "The receiving interface for X8 removes the outer Ethernet framing before higher-layer processing."
+    "explanation": "The physical link is working, but the VLAN mismatch prevents the Layer 2 ARP broadcast from reaching the gateway’s broadcast domain. Higher-layer testing cannot succeed until the data-link segmentation is corrected."
   },
   {
     "id": 22037,
     "domain": "5",
     "objective": "5.1",
-    "blueprint": "Troubleshooting scope",
+    "blueprint": "Problem identification and scope",
     "difficulty": "Level 3",
-    "question": "Outage X8 affects one application across every site, while other services work. What should be examined FIRST?",
+    "question": "Only devices connected to one access switch lose connectivity after a maintenance window; neighboring switches and upstream services remain normal. What should the technician establish next?",
     "choices": [
-      "Dependencies unique to that application",
-      "Every access cable",
-      "All user passwords",
-      "Building power everywhere"
+      "The global cloud provider's service catalog",
+      "The public website's certificate renewal date",
+      "The company-wide wireless channel plan",
+      "What changed on that switch and whether the fault affects every VLAN or selected ports"
     ],
-    "answer": 0,
-    "explanation": "The cross-site, single-application scope points to shared dependencies unique to Outage X8."
+    "answer": 3,
+    "explanation": "The evidence already narrows scope to one switch. Confirming the exact port/VLAN impact and recent change supports a focused theory before corrective action."
   },
   {
     "id": 22038,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Policy-based routing",
+    "blueprint": "Policy-based routing recognition",
     "difficulty": "Level 2",
-    "question": "Branch X8 must send video through a low-latency circuit while all other traffic follows the routing table. Which feature is BEST?",
+    "question": "Which routing feature selects a next hop using criteria such as source subnet or application class rather than destination prefix alone?",
     "choices": [
-      "Policy-based routing",
-      "STP portfast",
-      "DNS recursion",
-      "DHCP snooping"
+      "Spanning-tree PortFast",
+      "Dynamic ARP inspection",
+      "Link aggregation control protocol",
+      "Policy-based routing"
     ],
-    "answer": 0,
-    "explanation": "Policy-based routing can select Branch X8's next hop according to traffic characteristics."
+    "answer": 3,
+    "explanation": "Policy-based routing applies match conditions beyond the normal destination-based routing table. The other features address switching, ARP security, or link bundles."
   },
   {
     "id": 22039,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Standard procedures",
+    "blueprint": "Change validation and rollback",
     "difficulty": "Level 4",
-    "question": "Team X8 performs the same switch replacement differently each time. Which document should standardize the steps?",
+    "question": "A firewall-rule deployment affects hundreds of remote sites. The proposed rule passed syntax checks but has not been tested with production traffic patterns. Which plan best controls risk?",
     "choices": [
-      "Standard operating procedure",
-      "DNS zone file",
-      "Certificate request",
-      "Heat map"
+      "Deploy everywhere simultaneously and remove backups",
+      "Disable monitoring until users report failures",
+      "Pilot the rule at a representative site, validate required flows, and retain a timed rollback",
+      "Skip business approval because the syntax is valid"
     ],
-    "answer": 0,
-    "explanation": "An SOP gives Team X8 a repeatable approved replacement workflow."
+    "answer": 2,
+    "explanation": "A representative pilot, explicit validation, and rollback limit blast radius and verify real behavior. Syntax validation alone cannot prove policy correctness."
   },
   {
     "id": 22040,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Data protection",
+    "blueprint": "Encryption-key availability",
     "difficulty": "Level 3",
-    "question": "Backup X8 leaves the facility with a courier. Which control protects its contents if the media is lost?",
+    "question": "Archived backups are strongly encrypted, but the only key-encryption key is stored on the primary server destroyed in a fire. Which design weakness prevents recovery?",
     "choices": [
-      "Strong encryption with managed keys",
-      "A descriptive label",
-      "A longer retention period alone",
-      "A public checksum only"
+      "The backups used too short a DNS TTL",
+      "The encryption keys were not escrowed or backed up independently",
+      "The archive network used a default route",
+      "The switches retained MAC addresses too long"
     ],
-    "answer": 0,
-    "explanation": "Encryption keeps Backup X8's contents confidential even when physical custody is lost."
+    "answer": 1,
+    "explanation": "Encryption protects confidentiality but makes data unrecoverable if required keys are lost. Keys must be securely protected in an independent recovery location."
   },
   {
     "id": 22041,
     "domain": "1",
     "objective": "1.2",
-    "blueprint": "Content delivery",
+    "blueprint": "Proxy functions",
     "difficulty": "Level 2",
-    "question": "Global site X9 needs cached static objects served near users while its origin remains centralized. Which service is BEST?",
+    "question": "A company wants employee web requests to pass through a service that enforces URL policy and hides internal client addresses from external sites. Which appliance function is required?",
     "choices": [
-      "Content delivery network",
-      "DHCP relay",
-      "Console server",
-      "Layer 1 tap"
+      "A forward proxy",
+      "A reverse proxy for inbound application publishing",
+      "A passive network tap",
+      "A DHCP authoritative server"
     ],
     "answer": 0,
-    "explanation": "A CDN places cached objects for site X9 at distributed edge locations."
+    "explanation": "A forward proxy acts on behalf of internal clients and can enforce web-access policy. A reverse proxy represents servers to inbound clients."
   },
   {
     "id": 22042,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Connector faults",
+    "blueprint": "Copper termination faults",
     "difficulty": "Level 3",
-    "question": "Patch lead X9 works only when pressure is applied to its plug, and the latch no longer holds. What is the BEST action?",
+    "question": "A new Cat 6 run passes continuity but negotiates only 100Mbps. The wire map shows pairs 4-5 and 7-8 open at the far jack. What should be corrected?",
     "choices": [
-      "Replace the damaged patch lead",
-      "Increase switch power",
-      "Flush DNS",
-      "Add a static route"
+      "Increase the interface MTU",
+      "Add an optical attenuator",
+      "Change the DHCP gateway option",
+      "Re-terminate the far jack so all four pairs are connected correctly"
     ],
-    "answer": 0,
-    "explanation": "Mechanical plug failure makes replacement safer and more reliable for Patch lead X9."
+    "answer": 3,
+    "explanation": "Gigabit Ethernet requires all four pairs. Open conductors on the far termination can still allow 100Mbps over two pairs, matching the symptom."
   },
   {
     "id": 22043,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Routing convergence",
+    "blueprint": "BGP route filtering",
     "difficulty": "Level 4",
-    "question": "Router X9 has an OSPF adjacency stuck in EXSTART after an MTU change. Which setting should be compared first?",
+    "question": "A branch BGP router should accept only a provider default route, but it installs thousands of internet prefixes after a policy change. What is the smallest safe correction?",
     "choices": [
-      "Interface MTU on both neighbors",
-      "DNS search suffix",
-      "PoE priority",
-      "Wireless country code"
+      "Disable the branch LAN interfaces",
+      "Apply an inbound prefix filter permitting only 0.0.0.0/0 from that neighbor",
+      "Advertise a more specific route for every internet prefix",
+      "Lower the STP bridge priority"
     ],
-    "answer": 0,
-    "explanation": "An MTU mismatch can prevent OSPF database exchange from progressing beyond EXSTART at Router X9."
+    "answer": 1,
+    "explanation": "An inbound prefix policy enforces the intended default-only routing design. Disabling LAN links or manipulating unrelated routes does not correct accepted advertisements."
   },
   {
     "id": 22044,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Lifecycle management",
+    "blueprint": "End-of-life risk management",
     "difficulty": "Level 3",
-    "question": "Firewall X9 is approaching vendor end-of-support. What should operations do before that date?",
+    "question": "A wireless controller will no longer receive security updates after its end-of-life date. Which response best manages the operational risk?",
     "choices": [
-      "Plan migration and record the lifecycle risk",
-      "Hide the asset record",
-      "Disable backups",
-      "Expose management publicly"
+      "Continue indefinitely because the device still powers on",
+      "Remove it from the asset inventory",
+      "Disable its audit logs",
+      "Document the risk, select a supported replacement, test migration, and schedule deployment"
     ],
-    "answer": 0,
-    "explanation": "Proactive lifecycle planning prevents Firewall X9 from remaining unsupported in production."
+    "answer": 3,
+    "explanation": "Lifecycle management plans replacement before support and security coverage end. Ignoring or hiding the asset leaves an unmanaged risk."
   },
   {
     "id": 22045,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Authorization",
+    "blueprint": "Role-based access control",
     "difficulty": "Level 2",
-    "question": "Analyst X9 changes departments but retains old network privileges. Which process failed?",
+    "question": "A technician moves from network operations to help desk but retains router-configuration privileges. Which control should have removed the unneeded permission?",
     "choices": [
-      "Access recertification and deprovisioning",
-      "Route aggregation",
-      "Channel planning",
-      "Cable certification"
+      "Role-based access recertification",
+      "Wireless channel bonding",
+      "DNS cache aging",
+      "Ethernet flow control"
     ],
     "answer": 0,
-    "explanation": "Periodic recertification should remove Analyst X9's privileges when job responsibilities change."
+    "explanation": "Access recertification aligns authorization with the user's current role and removes accumulated privilege. The other controls do not govern identity permissions."
   },
   {
     "id": 22046,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud networking",
+    "blueprint": "Private cloud service access",
     "difficulty": "Level 4",
-    "question": "Cloud network X10 must privately connect two isolated virtual networks owned by the same company. Which construct is MOST appropriate?",
+    "question": "Cloud virtual machines need to reach an object-storage service without public IP addresses or internet NAT. Security also wants traffic to remain on the provider network. Which design is best?",
     "choices": [
-      "Virtual network peering",
-      "Public DNS delegation",
-      "Consumer NAT-PMP",
-      "Local port mirroring"
+      "A private service endpoint in the virtual network",
+      "A public web proxy with anonymous access",
+      "A DNS MX record",
+      "A consumer internet circuit"
     ],
     "answer": 0,
-    "explanation": "Peering provides private routed connectivity between Cloud network X10's virtual networks."
+    "explanation": "A private service endpoint exposes the managed service through private addressing and provider infrastructure, avoiding public internet egress."
   },
   {
     "id": 22047,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Fiber compatibility",
+    "blueprint": "Fiber bend-loss troubleshooting",
     "difficulty": "Level 3",
-    "question": "Uplink X10 has normal receive power but errors after one endpoint received an optic with a different wavelength. What should be corrected?",
+    "question": "An optical link loses 7dB whenever a cable tray cover is installed. Removing the cover restores normal power, and connectors are clean. What is the most likely cause?",
     "choices": [
-      "Install a wavelength-matched optic pair",
-      "Increase DHCP scope size",
-      "Change STP priority",
-      "Disable syslog"
+      "A duplicate DNS A record",
+      "An OSPF area mismatch",
+      "A DHCP lease conflict",
+      "A bend radius violation under the tray cover"
     ],
-    "answer": 0,
-    "explanation": "Both ends of Uplink X10 require compatible transmit and receive wavelengths."
+    "answer": 3,
+    "explanation": "Power changes with physical cable pressure indicate macrobending or microbending. Clean connectors and the repeatable tray condition support bend loss."
   },
   {
     "id": 22048,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Switching tables",
+    "blueprint": "MAC address tables",
     "difficulty": "Level 2",
-    "question": "Switch X10 repeatedly relearns one MAC address on two different ports. Which condition is MOST likely?",
+    "question": "What does an Ethernet switch use to decide the outgoing port for a known unicast frame?",
     "choices": [
-      "A Layer 2 loop or moving endpoint",
-      "A missing DNS record",
-      "An expired certificate",
-      "A depleted UPS battery"
+      "The source TCP port only",
+      "The DNS resolver cache",
+      "The DHCP lease expiration time",
+      "The destination MAC address and its forwarding table"
     ],
-    "answer": 0,
-    "explanation": "Rapid MAC movement between ports at Switch X10 commonly indicates a loop or unstable physical path."
+    "answer": 3,
+    "explanation": "A switch looks up the destination MAC in its forwarding table. TCP ports and application records are not used for ordinary Layer 2 forwarding."
   },
   {
     "id": 22049,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Capacity planning",
+    "blueprint": "Capacity planning from percentiles",
     "difficulty": "Level 4",
-    "question": "Uplink X10 grows roughly 8% each month and will exceed safe utilization next quarter. What should be done NEXT?",
+    "question": "A WAN averages only 35% utilization, but its 95th-percentile usage is 92% and output drops align with business peaks. Which planning conclusion is best?",
     "choices": [
-      "Schedule capacity expansion before saturation",
-      "Delete historical metrics",
-      "Raise alert thresholds above 100%",
-      "Disable QoS"
+      "The link has ample capacity because the average is below 50%",
+      "Packet drops prove DNS recursion is disabled",
+      "Average utilization hides peak congestion, so capacity or traffic scheduling should be addressed",
+      "The circuit should be downgraded to reduce cost"
     ],
-    "answer": 0,
-    "explanation": "Trend-based planning allows Uplink X10 to be expanded before congestion becomes chronic."
+    "answer": 2,
+    "explanation": "High percentile usage and peak-aligned drops show that averages obscure service-impacting congestion. Planning must consider sustained peaks and queues."
   },
   {
     "id": 22050,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Rogue services",
+    "blueprint": "Unauthorized network services",
     "difficulty": "Level 3",
-    "question": "Clients at X10 suddenly receive a malicious gateway from an unauthorized laptop. Which threat is present?",
+    "question": "A malicious device provides clients with a valid local address but substitutes its own DNS server. Which switch evidence would most directly confirm the attack?",
     "choices": [
-      "Rogue DHCP server",
-      "DNSSEC validation",
-      "Link aggregation",
-      "Port mirroring"
+      "DHCP offer messages sourced from an untrusted access port",
+      "STP BPDUs from the authorized distribution switch",
+      "NTP replies from the approved time server",
+      "HTTPS sessions to the company portal"
     ],
     "answer": 0,
-    "explanation": "An unauthorized DHCP service can assign the malicious gateway observed at X10."
+    "explanation": "Unauthorized DHCP offers directly explain malicious DNS settings in otherwise valid leases. Capturing the server replies and ingress port confirms the rogue service."
   },
   {
     "id": 22051,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Application protocols",
+    "blueprint": "SNMP ports",
     "difficulty": "Level 2",
-    "question": "Directory X11 must accept encrypted LDAP from clients without an unprotected negotiation. Which standard port is expected?",
+    "question": "Which destination normally receives SNMP trap notifications on UDP port 162?",
     "choices": [
-      "TCP 636",
-      "UDP 161",
-      "TCP 143",
-      "UDP 514"
+      "The DHCP relay agent",
+      "The DNS authoritative server",
+      "The network management station",
+      "The Ethernet patch panel"
     ],
-    "answer": 0,
-    "explanation": "LDAPS uses TCP 636 for encrypted directory sessions at Directory X11."
+    "answer": 2,
+    "explanation": "SNMP agents send traps or informs to a management station on UDP 162. Polling requests commonly use UDP 161."
   },
   {
     "id": 22052,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Routing specificity",
+    "blueprint": "Duplicate IPv4 address diagnosis",
     "difficulty": "Level 3",
-    "question": "Table X11 has 10.80.0.0/16 via R1 and 10.80.24.0/21 via R2. Which next hop handles 10.80.26.7?",
+    "question": "A printer uses a static address that is also assigned by a DHCP reservation to a conference-room appliance. Connectivity fails only when both devices are powered on, and the lease database confirms the reservation. What should be corrected?",
     "choices": [
-      "R2 through the /21",
-      "R1 through the /16",
-      "The default route",
-      "Both with equal specificity"
+      "Reduce the DHCP lease duration while keeping the overlapping assignments",
+      "The collision between the printer’s static address and the DHCP-managed assignment",
+      "Clear ARP caches without changing either address assignment",
+      "Create a second reservation for the same IPv4 address"
     ],
-    "answer": 0,
-    "explanation": "Longest-prefix selection uses Table X11's /21 route through R2."
+    "answer": 1,
+    "explanation": "The same address is assigned through two management methods, so the conflict appears only when both endpoints are active. Moving the static device outside the pool or changing the reservation removes the duplicate assignment."
   },
   {
     "id": 22053,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Quality of service",
+    "blueprint": "Voice VLAN and QoS trust",
     "difficulty": "Level 4",
-    "question": "Access switch X11 must trust voice markings from managed phones but not from attached PCs. Which boundary is BEST?",
+    "question": "A switch port connects an IP phone with a workstation behind it. The phone marks voice EF, but the workstation is sending EF-marked backups. Which configuration best protects voice quality?",
     "choices": [
-      "Conditional trust at the phone-facing port",
-      "Trust every user packet globally",
-      "Remove all DSCP values",
-      "Prioritize broadcasts"
+      "Trust all incoming DSCP values on the port",
+      "Remove the voice VLAN and combine all traffic",
+      "Disable QoS on every uplink",
+      "Trust markings from the authenticated phone and remark workstation traffic at the access edge"
     ],
-    "answer": 0,
-    "explanation": "A conditional trust boundary preserves managed phone markings while preventing PC abuse at switch X11."
+    "answer": 3,
+    "explanation": "The access edge should establish a controlled trust boundary so only authorized voice markings retain priority. Blind trust lets the workstation abuse the queue."
   },
   {
     "id": 22054,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Log severity",
+    "blueprint": "Syslog prioritization",
     "difficulty": "Level 3",
-    "question": "Collector X11 receives emergency, alert, and informational syslog messages. Which class requires the most immediate response?",
+    "question": "A router sends severity 0, 3, and 6 messages during an outage. In what order should operations prioritize them?",
     "choices": [
-      "Emergency",
-      "Informational",
-      "Debug",
-      "Notice"
+      "Severity 6 first because its number is highest",
+      "Severity 3 first and ignore severity 0",
+      "Treat all severities as equal",
+      "Severity 0 first, then 3, then 6"
     ],
-    "answer": 0,
-    "explanation": "Syslog emergency events indicate an unusable system and carry the highest urgency at Collector X11."
+    "answer": 3,
+    "explanation": "Lower syslog numbers indicate greater severity: 0 is Emergency, 3 is Error, and 6 is Informational."
   },
   {
     "id": 22055,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "VLAN attacks",
+    "blueprint": "Double-tagging attacks",
     "difficulty": "Level 2",
-    "question": "An attacker sends double-tagged frames to reach another VLAN through a trunk's untagged network. Which mitigation is BEST?",
+    "question": "An attacker sends double-tagged Ethernet frames to cross a trunk's native VLAN boundary. Which configuration most directly reduces this risk?",
     "choices": [
-      "Use an unused native VLAN and restrict trunk VLANs",
-      "Enable every VLAN on all trunks",
-      "Place users in the native VLAN",
-      "Disable frame tagging globally"
+      "Make the user VLAN native on every trunk",
+      "Use an unused native VLAN and restrict the trunk's allowed VLAN list",
+      "Enable Telnet management on switches",
+      "Increase the DHCP lease duration"
     ],
-    "answer": 0,
-    "explanation": "Removing users from the native VLAN and pruning trunks reduces double-tagging exposure."
+    "answer": 1,
+    "explanation": "Double tagging exploits native-VLAN handling. An unused native VLAN plus explicit allowed lists reduces unintended traversal."
   },
   {
     "id": 22056,
     "domain": "1",
-    "objective": "1.6",
-    "blueprint": "Connector selection",
+    "objective": "1.5",
+    "blueprint": "Optical power budgets",
     "difficulty": "Level 4",
-    "question": "Panel X12 requires a push-and-twist bayonet connector for legacy multimode fiber. Which connector matches?",
+    "question": "A fiber transmitter outputs -3dBm. The receiver requires at least -14dBm, and documented path loss is 9dB before adding a required 3dB safety margin. Is the design acceptable?",
     "choices": [
-      "ST",
-      "LC",
-      "MPO",
-      "F-type"
+      "Yes; any negative dBm value guarantees operation",
+      "Yes; the margin should be subtracted from path loss",
+      "No; the 12dB loss including margin exceeds the 11dB available budget",
+      "No; fiber links cannot exceed 3dB total loss"
     ],
-    "answer": 0,
-    "explanation": "ST fiber connectors use the bayonet-style coupling required at Panel X12."
+    "answer": 2,
+    "explanation": "The available budget is 11dB from -3 to -14dBm. Path loss plus margin is 12dB, leaving the receiver below its required level."
   },
   {
     "id": 22057,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Resolver policy",
+    "blueprint": "DNS performance analysis",
     "difficulty": "Level 3",
-    "question": "Resolver X12 answers internal zones but refuses every internet query although its forwarder is reachable. Which setting should be checked?",
+    "question": "Users report slow page starts. Packet capture shows DNS responses take three seconds, while TCP and TLS complete in under 100ms once an address is returned. What should be investigated?",
     "choices": [
-      "Recursion or query-access policy",
-      "PoE allocation",
-      "Fiber polarity",
-      "Switch root priority"
+      "Resolver latency and its upstream query path",
+      "The server's Ethernet duplex after TLS completes",
+      "The access-switch PoE budget",
+      "The client display resolution"
     ],
     "answer": 0,
-    "explanation": "A restrictive recursion or access policy can make Resolver X12 refuse external-name requests."
+    "explanation": "The timing isolates delay to name resolution before transport setup. Fast TCP/TLS afterward rules out the application path as the primary cause."
   },
   {
     "id": 22058,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Wireless bridging",
+    "blueprint": "Wireless bridge modes",
     "difficulty": "Level 2",
-    "question": "Building X12 needs a dedicated wireless link to another roof with clear line of sight and no client associations. Which mode is BEST?",
+    "question": "Two warehouses need a dedicated wireless Ethernet link with directional antennas and no client associations. Which mode should the devices use?",
     "choices": [
+      "Infrastructure client mode",
       "Point-to-point bridge",
-      "Omnidirectional hotspot",
-      "Ad hoc client mode",
-      "Captive portal"
+      "Ad hoc client mesh",
+      "Captive portal mode"
     ],
-    "answer": 0,
-    "explanation": "A directional point-to-point bridge provides dedicated building connectivity for X12."
+    "answer": 1,
+    "explanation": "Point-to-point bridge mode extends a network between two fixed endpoints. Client and portal modes do not provide the requested building-to-building bridge."
   },
   {
     "id": 22059,
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Redundant systems",
+    "blueprint": "Backup resilience and immutability",
     "difficulty": "Level 4",
-    "question": "Core X12 has two supervisors, but a software defect crashes both simultaneously. What type of risk remains?",
+    "question": "Production data and online backups are encrypted by the same ransomware event. The organization meets its backup schedule but cannot restore clean data. Which improvement most directly addresses the failure?",
     "choices": [
-      "Common-mode failure",
-      "Loss of DNS recursion only",
-      "Wireless attenuation",
-      "Cable split pair"
+      "Increase the production DNS TTL",
+      "Store additional writable backups in the same domain",
+      "Maintain tested offline or immutable backup copies with separate administrative control",
+      "Disable backup verification"
     ],
-    "answer": 0,
-    "explanation": "Identical components can share a defect, creating a common-mode failure despite Core X12's hardware redundancy."
+    "answer": 2,
+    "explanation": "Offline or immutable copies under separate control resist alteration by compromised production credentials. More writable copies in the same trust boundary repeat the failure."
   },
   {
     "id": 22060,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Secure administration",
+    "blueprint": "Secure administrative access",
     "difficulty": "Level 3",
-    "question": "Device X12 still permits Telnet and HTTP management. Which hardening action is BEST?",
+    "question": "Network devices must be managed remotely with encrypted sessions, centralized authentication, and command accounting. Which design best fits?",
     "choices": [
-      "Disable them and require SSH plus HTTPS",
-      "Expose them through port forwarding",
-      "Use one shared password",
-      "Disable audit logs"
+      "Telnet with a shared local password",
+      "SSH using centralized AAA with accounting enabled",
+      "HTTP management from any source",
+      "TFTP with anonymous access"
     ],
-    "answer": 0,
-    "explanation": "SSH and HTTPS protect management credentials and traffic for Device X12."
+    "answer": 1,
+    "explanation": "SSH protects the session, while centralized AAA provides identity, authorization, and command records. The other protocols expose or lack required controls."
   },
   {
     "id": 22061,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Network topology",
+    "objective": "1.6",
+    "blueprint": "Campus topology recognition",
     "difficulty": "Level 2",
-    "question": "WAN X13 lets every branch reach every other branch through direct logical tunnels. Which topology is represented?",
+    "question": "Every access switch connects to two distribution switches, and the distribution layer connects to a redundant core. Which hierarchical design is this?",
     "choices": [
-      "Full mesh",
-      "Hub and spoke",
-      "Bus",
-      "Single star LAN"
+      "Bus topology",
+      "Three-tier campus topology",
+      "Single point-to-point chain",
+      "Peer-to-peer wireless ad hoc network"
     ],
-    "answer": 0,
-    "explanation": "A full mesh provides direct branch-to-branch logical paths throughout WAN X13."
+    "answer": 1,
+    "explanation": "Access, distribution, and core layers form the traditional three-tier campus design. The redundant uplinks do not change that hierarchy."
   },
   {
     "id": 22062,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Path testing",
+    "blueprint": "Windows path diagnostics",
     "difficulty": "Level 3",
-    "question": "Users at X13 report intermittent loss. Which command combines repeated probes with hop-by-hop loss statistics on Windows?",
+    "question": "Which Windows command sends repeated probes and reports hop-by-hop packet-loss statistics over time?",
     "choices": [
-      "pathping",
       "hostname",
-      "nslookup -type=mx",
-      "arp -a only"
+      "arp -a",
+      "pathping",
+      "net use"
     ],
-    "answer": 0,
-    "explanation": "pathping measures latency and loss across successive hops for users at X13."
+    "answer": 2,
+    "explanation": "Pathping combines route discovery with repeated measurements to estimate loss at each hop. The other commands display identity, neighbor mappings, or shares."
   },
   {
     "id": 22063,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Wireless roaming",
+    "blueprint": "Wireless roaming analysis",
     "difficulty": "Level 4",
-    "question": "Handsets at X13 pause during AP transitions because each roam repeats full authentication. Which feature should be evaluated?",
+    "question": "Mobile scanners remain associated with a distant access point even after moving beside a nearer AP. Authentication completes quickly, channels are clean, and both APs use the same SSID, but the cells overlap heavily because transmit power is set to maximum. Which adjustment should be evaluated?",
     "choices": [
-      "Fast BSS transition",
-      "Longer DHCP leases",
-      "Wider 2.4GHz channels",
-      "Static ARP"
+      "Use a unique SSID for every access point",
+      "Increase transmit power beyond the regulatory limit",
+      "Reduce and balance cell power, then tune roaming thresholds and minimum data rates",
+      "Disable the wired uplinks while clients roam"
     ],
-    "answer": 0,
-    "explanation": "Fast BSS transition reduces authentication delay when handsets roam at X13."
+    "answer": 2,
+    "explanation": "Excessive cell overlap encourages sticky-client behavior because the distant AP remains usable for too long. Balanced cell sizing and appropriate roaming-related thresholds create cleaner handoff boundaries."
   },
   {
     "id": 22064,
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "Service records",
+    "blueprint": "DHCP scope and relay operations",
     "difficulty": "Level 3",
-    "question": "Voice platform X13 needs clients to discover service host, port, and priority through DNS. Which record type is required?",
+    "question": "A new subnet has a configured relay and reaches the DHCP server, but the server logs report no matching scope for the relay address. What should be added?",
     "choices": [
-      "SRV",
-      "PTR",
-      "AAAA only",
-      "TXT only"
+      "A DHCP scope for the new subnet",
+      "A DNS MX record for the clients",
+      "A spanning-tree root for the DHCP server",
+      "A wireless captive portal"
     ],
     "answer": 0,
-    "explanation": "An SRV record publishes service location, port, priority, and weight for Voice platform X13."
+    "explanation": "The relay identifies the client subnet to the server. Without a matching scope, the server has no valid address pool from which to offer a lease."
   },
   {
     "id": 22065,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Microsegmentation",
+    "blueprint": "Workload microsegmentation",
     "difficulty": "Level 2",
-    "question": "Virtual workloads at X13 share a subnet but require per-workload east-west policy. Which control BEST fits?",
+    "question": "A policy follows a payment workload when its virtual machine moves to another hypervisor, continuing to restrict lateral connections without relying on the VM’s changing IP address. Which control provides this behavior?",
     "choices": [
-      "Distributed microsegmentation firewall",
-      "One perimeter ACL only",
-      "Shared hub",
-      "Public DNS filtering"
+      "A subnet-based VLAN ACL that must be rewritten after the workload moves",
+      "A perimeter firewall that sees only north-south traffic",
+      "Identity-based distributed microsegmentation",
+      "A NAT gateway that translates the workload’s address"
     ],
-    "answer": 0,
-    "explanation": "Distributed policy can enforce workload-level east-west controls inside X13's virtual network."
+    "answer": 2,
+    "explanation": "Distributed microsegmentation can bind policy to workload identity or tags, allowing enforcement to follow a virtual machine across hosts. Perimeter and Layer 1 mechanisms cannot provide that workload-aware control."
   },
   {
     "id": 22066,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Address planning",
+    "objective": "1.7",
+    "blueprint": "VLSM subnet selection",
     "difficulty": "Level 4",
-    "question": "Subnet X14 uses 192.0.2.64/27. Which address is its directed broadcast?",
+    "question": "A VLSM plan assigns voice 10.60.4.0/26, cameras 10.60.4.32/27, and management 10.60.4.64/28. The camera subnet overlaps the voice block. Which replacement camera subnet is a correctly aligned /27 that avoids both existing allocations?",
     "choices": [
-      "192.0.2.95",
-      "192.0.2.94",
-      "192.0.2.96",
-      "192.0.2.63"
+      "10.60.4.48/27",
+      "10.60.4.64/27",
+      "10.60.4.80/27",
+      "10.60.4.96/27"
     ],
-    "answer": 0,
-    "explanation": "The /27 beginning at 192.0.2.64 ends at .95, making that Subnet X14's broadcast address."
+    "answer": 3,
+    "explanation": "The /26 occupies .0 through .63 and management occupies .64 through .79. /27 networks begin on multiples of 32, making .96/27 the first listed aligned block that overlaps neither allocation."
   },
   {
     "id": 22067,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Application reachability",
+    "blueprint": "Application port troubleshooting",
     "difficulty": "Level 3",
-    "question": "Server X14 accepts local TCP connections, but remote SYN packets never arrive. Which comparison BEST narrows the fault?",
+    "question": "A server responds to ping and accepts SSH, but clients cannot open its HTTPS service. A local socket check shows nothing listening on TCP 443. What should be corrected first?",
     "choices": [
-      "Capture at the gateway and server simultaneously",
-      "Replace the server keyboard",
-      "Change the DNS display name",
-      "Increase UPS runtime"
+      "Replace the server network cable",
+      "Change the client default gateway",
+      "Start or repair the HTTPS service and verify its listener",
+      "Increase the switch STP priority"
     ],
-    "answer": 0,
-    "explanation": "Paired captures show where Server X14's inbound packets disappear along the path."
+    "answer": 2,
+    "explanation": "Layer 3 reachability and another TCP service work, while no local HTTPS listener exists. The application service must be restored before network filtering is suspected."
   },
   {
     "id": 22068,
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Rack design",
+    "blueprint": "Environmental installation controls",
     "difficulty": "Level 2",
-    "question": "Cabinet X14 has heavy devices mounted above light switches and is becoming unstable. What is the BEST correction?",
+    "question": "A wiring closet repeatedly exceeds equipment temperature limits because its ventilation intake is blocked by stored boxes. What is the appropriate first correction?",
     "choices": [
-      "Move heavy equipment lower and secure the rack",
-      "Raise the cabinet on blocks",
-      "Remove grounding",
-      "Bundle power and data tightly"
+      "Increase switch MTU values",
+      "Change every VLAN ID",
+      "Clear the airflow path and restore environmental cooling",
+      "Disable device temperature alarms"
     ],
-    "answer": 0,
-    "explanation": "Low placement of heavy equipment lowers Cabinet X14's center of gravity and improves stability."
+    "answer": 2,
+    "explanation": "The confirmed environmental obstruction should be corrected before equipment is damaged. Disabling alarms or changing network settings does not remove the heat source."
   },
   {
     "id": 22069,
     "domain": "3",
     "objective": "3.5",
-    "blueprint": "Privileged access",
+    "blueprint": "Full-tunnel remote-access VPN",
     "difficulty": "Level 4",
-    "question": "Admins at X14 must use a controlled intermediary before reaching protected device interfaces. Which system should be deployed?",
+    "question": "A network administrator must manage routers from an untrusted hotel network. Policy requires every packet from the administrator's laptop to pass through corporate inspection controls and prohibits access to devices on the hotel's local LAN while the session is active. Which remote-access design BEST enforces both requirements?",
     "choices": [
-      "Jump server",
-      "Open relay",
-      "Unmanaged bridge",
-      "Public file share"
+      "A split-tunnel VPN that sends only router-management subnets through the tunnel",
+      "A full-tunnel client-to-site VPN that disables local-LAN access while connected",
+      "A clientless web portal that leaves all other laptop traffic on the hotel network",
+      "A site-to-site tunnel configured between the hotel gateway and the corporate edge"
     ],
-    "answer": 0,
-    "explanation": "A hardened jump server centralizes and controls administrative access at X14."
+    "answer": 1,
+    "explanation": "A full-tunnel client-to-site VPN routes all laptop traffic through corporate controls, and local-LAN blocking prevents direct access to the untrusted hotel segment. Split tunneling and a clientless portal leave other traffic outside inspection, while the traveler cannot administer the hotel's gateway for a site-to-site tunnel."
   },
   {
     "id": 22070,
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Encapsulation",
+    "blueprint": "Encapsulation and protocol data units",
     "difficulty": "Level 3",
-    "question": "Capture X15 shows an Ethernet frame carrying an IPv4 packet that contains a UDP datagram. Which item is removed first when the receiving host decapsulates it?",
+    "question": "At which step does a sending host add source and destination TCP port numbers to application data?",
     "choices": [
-      "Ethernet header and trailer",
-      "UDP header",
-      "IPv4 header",
-      "Application data"
+      "When the data link layer builds an Ethernet frame",
+      "When the physical layer transmits bits",
+      "When ARP records a MAC address",
+      "When the transport layer creates a TCP segment"
     ],
-    "answer": 0,
-    "explanation": "The receiving interface for X15 removes the outer Ethernet framing before higher-layer processing."
+    "answer": 3,
+    "explanation": "TCP port numbers are transport-layer fields added when creating a segment. Ethernet and physical encapsulation occur later."
   },
   {
     "id": 22071,
     "domain": "5",
     "objective": "5.1",
-    "blueprint": "Troubleshooting scope",
+    "blueprint": "Troubleshooting methodology sequence",
     "difficulty": "Level 2",
-    "question": "Outage X15 affects one application across every site, while other services work. What should be examined FIRST?",
+    "question": "After a theory of probable cause has been tested and confirmed, what is the next standard troubleshooting step?",
     "choices": [
-      "Dependencies unique to that application",
-      "Every access cable",
-      "All user passwords",
-      "Building power everywhere"
+      "Close the incident without changing anything",
+      "Establish a plan of action and identify potential effects",
+      "Restart all network devices simultaneously",
+      "Skip directly to documenting an unimplemented solution"
     ],
-    "answer": 0,
-    "explanation": "The cross-site, single-application scope points to shared dependencies unique to Outage X15."
+    "answer": 1,
+    "explanation": "Once the cause is confirmed, the technician plans the correction and considers impact before implementation."
   },
   {
     "id": 22072,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Policy-based routing",
+    "blueprint": "Floating static routes",
     "difficulty": "Level 3",
-    "question": "Branch X15 must send video through a low-latency circuit while all other traffic follows the routing table. Which feature is BEST?",
+    "question": "A router should use OSPF normally and a static route only if OSPF disappears. How should the static route be configured?",
     "choices": [
-      "Policy-based routing",
-      "STP portfast",
-      "DNS recursion",
-      "DHCP snooping"
+      "With an administrative distance higher than OSPF",
+      "With a more specific destination prefix than the OSPF route",
+      "As an STP alternate port",
+      "With no next hop or exit interface"
     ],
     "answer": 0,
-    "explanation": "Policy-based routing can select Branch X15's next hop according to traffic characteristics."
+    "explanation": "A floating static route has a less-preferred administrative distance so it enters the table only when the dynamic route is unavailable."
   },
   {
     "id": 22073,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Standard procedures",
+    "blueprint": "Operational runbooks",
     "difficulty": "Level 4",
-    "question": "Team X15 performs the same switch replacement differently each time. Which document should standardize the steps?",
+    "question": "During a multi-site outage, technicians improvise failover steps and restore sites in the wrong priority order. Which preparedness improvement best addresses this?",
     "choices": [
-      "Standard operating procedure",
-      "DNS zone file",
-      "Certificate request",
-      "Heat map"
+      "Delete historical incident records",
+      "Allow every technician to use a different procedure",
+      "Create and exercise an incident runbook with roles, dependencies, and restoration order",
+      "Disable monitoring during recovery"
     ],
-    "answer": 0,
-    "explanation": "An SOP gives Team X15 a repeatable approved replacement workflow."
+    "answer": 2,
+    "explanation": "A tested runbook coordinates responsibilities and restoration sequencing under pressure. Improvisation and missing telemetry increase recovery risk."
   },
   {
     "id": 22074,
     "domain": "1",
     "objective": "1.2",
-    "blueprint": "Content delivery",
+    "blueprint": "Load balancer persistence and health",
     "difficulty": "Level 3",
-    "question": "Global site X16 needs cached static objects served near users while its origin remains centralized. Which service is BEST?",
+    "question": "A load balancer removes healthy application nodes because its health check requests a URL that now requires authentication. Client traffic would succeed with a valid session. What should be changed?",
     "choices": [
-      "Content delivery network",
-      "DHCP relay",
-      "Console server",
-      "Layer 1 tap"
+      "Disable every health check permanently",
+      "Use a dedicated unauthenticated health endpoint that verifies required dependencies",
+      "Increase the public DNS TTL",
+      "Send health probes to an unrelated network printer"
     ],
-    "answer": 0,
-    "explanation": "A CDN places cached objects for site X16 at distributed edge locations."
+    "answer": 1,
+    "explanation": "A purpose-built health endpoint provides a stable, meaningful test without requiring user authentication. Disabling health checks would retain genuinely failed nodes."
   },
   {
     "id": 22075,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Connector faults",
+    "blueprint": "Damaged copper patch leads",
     "difficulty": "Level 2",
-    "question": "Patch lead X16 works only when pressure is applied to its plug, and the latch no longer holds. What is the BEST action?",
+    "question": "A switch link drops whenever the RJ45 plug is touched, and the latch no longer holds the plug securely. What is the appropriate repair?",
     "choices": [
-      "Replace the damaged patch lead",
-      "Increase switch power",
-      "Flush DNS",
-      "Add a static route"
+      "Increase the DNS cache lifetime",
+      "Enable jumbo frames",
+      "Change the routing protocol",
+      "Replace the damaged patch lead"
     ],
-    "answer": 0,
-    "explanation": "Mechanical plug failure makes replacement safer and more reliable for Patch lead X16."
+    "answer": 3,
+    "explanation": "A mechanically damaged plug and reproducible movement-related failure justify replacing the patch lead rather than changing network settings."
   },
   {
     "id": 13076,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Policy-based routing",
+    "blueprint": "Route redistribution loop prevention",
     "difficulty": "Level 4",
-    "question": "A branch normally sends internet traffic over broadband, but voice traffic must use an MPLS circuit regardless of the preferred default route. Which configuration BEST meets this requirement?",
+    "question": "Two routing domains redistribute routes into each other. A prefix is repeatedly reintroduced with increasing metrics, causing instability. Which design best prevents the feedback loop?",
     "choices": [
-      "Policy-based routing that matches voice traffic",
-      "A lower STP priority",
-      "DHCP reservations",
-      "A DNS forwarder"
+      "Disable TTL processing on all routers",
+      "Make every switch the STP root",
+      "Increase DHCP lease duration",
+      "Tag redistributed routes and filter them from being redistributed back into the source domain"
     ],
-    "answer": 0,
-    "explanation": "Policy-based routing can select a next hop using traffic characteristics."
+    "answer": 3,
+    "explanation": "Route tagging and policy filters identify imported prefixes and prevent them from returning to their source protocol, breaking the redistribution loop."
   },
   {
     "id": 22076,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Lifecycle management",
+    "blueprint": "Supported-platform migration",
     "difficulty": "Level 3",
-    "question": "Firewall X16 is approaching vendor end-of-support. What should operations do before that date?",
+    "question": "A controller replacement must preserve wireless policy while moving to a new supported release. Which validation should occur before the production cutover?",
     "choices": [
-      "Plan migration and record the lifecycle risk",
-      "Hide the asset record",
-      "Disable backups",
-      "Expose management publicly"
+      "Test configuration conversion, AP compatibility, rollback, and client authentication in a representative environment",
+      "Assume exported configuration syntax is identical",
+      "Delete the existing controller backup",
+      "Disable authentication during migration"
     ],
     "answer": 0,
-    "explanation": "Proactive lifecycle planning prevents Firewall X16 from remaining unsupported in production."
+    "explanation": "A representative compatibility and rollback test addresses policy conversion, hardware support, and client access before production risk is accepted."
   },
   {
     "id": 22077,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud networking",
+    "blueprint": "Hybrid cloud connectivity",
     "difficulty": "Level 2",
-    "question": "Cloud network X17 must privately connect two isolated virtual networks owned by the same company. Which construct is MOST appropriate?",
+    "question": "A small office needs encrypted connectivity to a cloud network within hours and can tolerate performance that varies with the public internet. Which option is most practical?",
     "choices": [
-      "Virtual network peering",
-      "Public DNS delegation",
-      "Consumer NAT-PMP",
-      "Local port mirroring"
+      "A newly constructed dedicated private circuit",
+      "A Layer 2 bus across the internet",
+      "A site-to-site VPN",
+      "A public DNS CNAME without a tunnel"
     ],
-    "answer": 0,
-    "explanation": "Peering provides private routed connectivity between Cloud network X17's virtual networks."
+    "answer": 2,
+    "explanation": "A site-to-site VPN can be deployed quickly over existing internet access and provides encryption. A dedicated circuit offers more predictability but not the required rapid deployment."
   },
   {
     "id": 22078,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Fiber compatibility",
+    "blueprint": "OTDR fault localization",
     "difficulty": "Level 4",
-    "question": "Uplink X17 has normal receive power but errors after one endpoint received an optic with a different wavelength. What should be corrected?",
+    "question": "A 12km fiber link has excessive loss. An OTDR trace shows a large reflective event 4.2km from the near end followed by no usable backscatter. What is the most likely interpretation?",
     "choices": [
-      "Install a wavelength-matched optic pair",
-      "Increase DHCP scope size",
-      "Change STP priority",
-      "Disable syslog"
+      "A DNS timeout at the far switch",
+      "An OSPF metric mismatch",
+      "A severe connector fault or fiber break approximately 4.2km from the test point",
+      "A duplicate DHCP reservation"
     ],
-    "answer": 0,
-    "explanation": "Both ends of Uplink X17 require compatible transmit and receive wavelengths."
+    "answer": 2,
+    "explanation": "A strong reflective event followed by the end of the trace indicates a discontinuity such as a bad connector or break at the measured distance."
   },
   {
     "id": 13080,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Private VLANs",
+    "blueprint": "Private VLAN configuration",
     "difficulty": "Level 3",
-    "question": "Customer servers share one subnet and gateway but must not communicate directly. Which feature is BEST?",
+    "question": "Customer servers share an IP subnet and gateway. They must reach the gateway and shared services but must not initiate Layer 2 traffic directly to one another. Which switch design fits?",
     "choices": [
-      "Private VLAN isolated ports",
-      "An unrestricted access VLAN",
-      "Port mirroring",
-      "Link aggregation"
+      "Private VLAN isolated ports with an appropriate promiscuous gateway port",
+      "One unrestricted access VLAN",
+      "A shared Ethernet hub",
+      "PortFast on every trunk"
     ],
     "answer": 0,
-    "explanation": "Private VLAN isolation blocks peer traffic while preserving gateway access."
+    "explanation": "PVLAN isolated ports prevent peer communication while the promiscuous port permits gateway and shared-service access."
   },
   {
     "id": 22079,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Capacity planning",
+    "blueprint": "Capacity threshold monitoring",
     "difficulty": "Level 2",
-    "question": "Uplink X17 grows roughly 8% each month and will exceed safe utilization next quarter. What should be done NEXT?",
+    "question": "Which monitoring practice best warns that a WAN circuit is approaching its planned utilization limit?",
     "choices": [
-      "Schedule capacity expansion before saturation",
-      "Delete historical metrics",
-      "Raise alert thresholds above 100%",
-      "Disable QoS"
+      "Trend utilization and alert on sustained threshold crossings",
+      "Review a single ping once per year",
+      "Disable interface counters",
+      "Track only DNS record changes"
     ],
     "answer": 0,
-    "explanation": "Trend-based planning allows Uplink X17 to be expanded before congestion becomes chronic."
+    "explanation": "Trend and sustained-threshold monitoring reveal growth and capacity risk. Isolated pings and unrelated DNS data do not measure circuit demand."
   },
   {
     "id": 22080,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Application protocols",
+    "blueprint": "RDP connectivity",
     "difficulty": "Level 3",
-    "question": "Directory X18 must accept encrypted LDAP from clients without an unprotected negotiation. Which standard port is expected?",
+    "question": "A support team must permit standard Remote Desktop Protocol access through a firewall. Which destination port is normally required?",
     "choices": [
-      "TCP 636",
-      "UDP 161",
-      "TCP 143",
-      "UDP 514"
+      "TCP 25",
+      "UDP 69",
+      "TCP 110",
+      "TCP 3389"
     ],
-    "answer": 0,
-    "explanation": "LDAPS uses TCP 636 for encrypted directory sessions at Directory X18."
+    "answer": 3,
+    "explanation": "RDP commonly uses TCP and UDP 3389; TCP 3389 is the standard expected answer for basic firewall access."
   },
   {
     "id": 13083,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Connector damage",
+    "blueprint": "TDR cable-fault interpretation",
     "difficulty": "Level 4",
-    "question": "A copper link drops whenever its patch cable is bumped, and the RJ45 plug moves in the jack. What is the BEST action?",
+    "question": "A copper link is open. A time-domain reflectometer reports the fault 18 meters from the test endpoint on a 30-meter run. What should the technician inspect first?",
     "choices": [
-      "Replace the damaged patch cable",
-      "Increase MTU",
-      "Add DNS",
-      "Disable security"
+      "The DNS server at the far site",
+      "The BGP neighbor configuration",
+      "The wireless controller channel plan",
+      "The cable and termination near the measured 18-meter point"
     ],
-    "answer": 0,
-    "explanation": "A damaged plug cannot maintain a stable physical connection."
+    "answer": 3,
+    "explanation": "A TDR estimates distance to an impedance discontinuity. The measured 18-meter location should be inspected for damage or a bad termination."
   },
   {
     "id": 13084,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Wireless bridging",
+    "blueprint": "Directional antenna alignment",
     "difficulty": "Level 3",
-    "question": "Two warehouses need connectivity without trenching, and the link will carry no client access. Which design is BEST?",
+    "question": "A point-to-point wireless bridge has adequate transmit power but weak, unstable receive signal after one rooftop antenna shifted in a storm. What should be done first?",
     "choices": [
-      "A directional point-to-point bridge",
-      "Two guest APs",
-      "A captive portal mesh",
-      "Bluetooth tethering"
+      "Replace both bridges with omnidirectional indoor antennas",
+      "Realign the directional antennas and verify polarization",
+      "Change the wired DHCP lease",
+      "Disable line-of-sight requirements"
     ],
-    "answer": 0,
-    "explanation": "A directional point-to-point bridge provides a focused interbuilding link."
+    "answer": 1,
+    "explanation": "A shifted directional antenna or polarization mismatch directly reduces received signal and link stability. Realignment is the evidence-based first action."
   },
   {
     "id": 22081,
     "domain": "1",
-    "objective": "1.6",
-    "blueprint": "Connector selection",
+    "objective": "1.5",
+    "blueprint": "Twisted-pair connectors",
     "difficulty": "Level 2",
-    "question": "Panel X19 requires a push-and-twist bayonet connector for legacy multimode fiber. Which connector matches?",
+    "question": "Which connector is normally terminated on four-pair Ethernet twisted-pair cabling?",
     "choices": [
+      "BNC",
+      "8P8C modular connector commonly called RJ45",
       "ST",
-      "LC",
-      "MPO",
-      "F-type"
+      "MPO"
     ],
-    "answer": 0,
-    "explanation": "ST fiber connectors use the bayonet-style coupling required at Panel X19."
+    "answer": 1,
+    "explanation": "Ethernet twisted-pair patch cables use an 8P8C modular connector commonly called RJ45. BNC is coaxial, while ST and MPO are fiber connectors."
   },
   {
     "id": 13086,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "DNS recursion",
+    "blueprint": "DNS recursion policy troubleshooting",
     "difficulty": "Level 4",
-    "question": "An internal resolver answers corporate zones but returns REFUSED for public names although forwarders are reachable. What should be checked FIRST?",
+    "question": "An internal resolver answers authoritative corporate zones and can reach its forwarders, but client queries for public names return REFUSED. Server-originated tests succeed. Which setting should be checked first?",
     "choices": [
-      "Recursion permission for the client subnet",
-      "PoE budget",
-      "STP priority",
-      "Channel width"
+      "Whether recursion is permitted for the client subnet",
+      "The access switch PoE allocation",
+      "The fiber connector polish type",
+      "The STP port priority"
     ],
     "answer": 0,
-    "explanation": "A resolver that denies recursion rejects external lookups."
+    "explanation": "REFUSED for clients while the resolver and forwarders function indicates an access policy denying recursion to that client network."
   },
   {
     "id": 22082,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Network topology",
+    "objective": "1.6",
+    "blueprint": "Spine-and-leaf topology",
     "difficulty": "Level 3",
-    "question": "WAN X20 lets every branch reach every other branch through direct logical tunnels. Which topology is represented?",
+    "question": "A data center connects every leaf switch to every spine switch and places servers only on leaves. Which topology is this?",
     "choices": [
-      "Full mesh",
-      "Hub and spoke",
+      "Spine-and-leaf",
       "Bus",
-      "Single star LAN"
+      "Hub-and-spoke WAN",
+      "Single ring"
     ],
     "answer": 0,
-    "explanation": "A full mesh provides direct branch-to-branch logical paths throughout WAN X20."
+    "explanation": "Spine-and-leaf provides consistent east-west paths by connecting each leaf to every spine without direct leaf-to-leaf links."
   },
   {
     "id": 13088,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Optical errors",
+    "blueprint": "Throughput versus bandwidth",
     "difficulty": "Level 2",
-    "question": "A fiber uplink develops CRC errors after an optic replacement; receive power is normal but endpoint wavelengths differ. What is MOST likely?",
+    "question": "A 1Gbps link transfers application data at 620Mbps after protocol overhead and retransmissions. What does 620Mbps represent?",
     "choices": [
-      "Mismatched optical transceivers",
-      "DHCP exhaustion",
-      "Duplicate DNS",
-      "Incorrect NTP"
+      "Theoretical bandwidth",
+      "Propagation distance",
+      "DNS recursion depth",
+      "Throughput"
     ],
-    "answer": 0,
-    "explanation": "Optical endpoints require compatible wavelengths and signaling."
+    "answer": 3,
+    "explanation": "Throughput is the amount of useful data successfully transferred over time. The link's nominal 1Gbps is its theoretical bandwidth."
   },
   {
     "id": 22083,
     "domain": "1",
     "objective": "1.8",
-    "blueprint": "Address planning",
+    "blueprint": "Infrastructure as code drift",
     "difficulty": "Level 4",
-    "question": "Subnet X21 uses 192.0.2.64/27. Which address is its directed broadcast?",
+    "question": "A controller declares standard router policy from version-controlled templates. One engineer makes an emergency CLI change, and the next automated run removes it. What caused the reversal?",
     "choices": [
-      "192.0.2.95",
-      "192.0.2.94",
-      "192.0.2.96",
-      "192.0.2.63"
+      "A DNS cache hit",
+      "Configuration drift from a manual change outside the authoritative infrastructure-as-code source",
+      "An Ethernet collision domain",
+      "A DHCP scope exhaustion"
     ],
-    "answer": 0,
-    "explanation": "The /27 beginning at 192.0.2.64 ends at .95, making that Subnet X21's broadcast address."
+    "answer": 1,
+    "explanation": "Infrastructure as code treats version-controlled declarations as authoritative. Unrecorded manual changes create drift and are overwritten during reconciliation."
   },
   {
     "id": 13090,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Route interpretation",
+    "blueprint": "Route-table interpretation",
     "difficulty": "Level 3",
-    "question": "Routes include 10.50.0.0/16 via A and 10.50.12.0/24 via B. Which gateway carries traffic to 10.50.12.40?",
+    "question": "A route table contains 10.50.0.0/16 via gateway A, 10.50.12.0/24 via gateway B, and a default via gateway C. Which gateway carries traffic to 10.50.12.40?",
     "choices": [
-      "Gateway B",
       "Gateway A",
-      "Both equally",
-      "Default only"
+      "Gateway C",
+      "No gateway because both prefixes match",
+      "Gateway B"
     ],
-    "answer": 0,
-    "explanation": "Longest-prefix matching selects the /24 route through B."
+    "answer": 3,
+    "explanation": "Longest-prefix matching chooses the /24 route through gateway B over the broader /16 and default routes."
   }
 ]

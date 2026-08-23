@@ -7,77 +7,77 @@
     "difficulty": "Level 4",
     "question": "Firewall F1 sees outbound SYN packets, but return traffic uses another firewall and sessions fail. What is the BEST fix?",
     "choices": [
-      "Restore a symmetric stateful path",
       "Disable TCP flags",
+      "Restore a symmetric stateful path",
       "Change DNS aliases",
       "Increase PoE budget"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "Both directions must traverse compatible state for Firewall F1 to validate the session."
   },
   {
     "id": 21002,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Automatic addressing",
+    "objective": "1.7",
+    "blueprint": "Private IPv4 addressing",
     "difficulty": "Level 3",
-    "question": "Laptop F1 has 169.254.88.12/16 after boot but its cable link is active. Which exchange most likely failed?",
+    "question": "A technician configures 172.20.44.18/24 directly on an internet-facing router interface even though the provider assigned a separate public block. The link is up, but the provider does not route traffic to that address. Which property of 172.20.44.18 explains the failure?",
     "choices": [
-      "DHCP discovery and offer",
-      "DNS recursion",
-      "NTP synchronization",
-      "TCP three-way handshake"
+      "It is an IPv4 loopback address",
+      "It is an IPv4 link-local address",
+      "It belongs to an RFC1918 private range and is not publicly routable",
+      "It belongs to the IPv4 multicast range"
     ],
-    "answer": 0,
-    "explanation": "An IPv4 link-local address indicates Laptop F1 could not obtain a DHCP lease."
+    "answer": 2,
+    "explanation": "172.20.44.18 falls within the RFC1918 172.16.0.0/12 private range. An ISP does not route that address as a public interface address; the router must use the assigned public addressing or an appropriate translation design."
   },
   {
     "id": 21003,
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "IP address management",
+    "blueprint": "Network Time Security (NTS)",
     "difficulty": "Level 2",
-    "question": "Team F1 needs searchable ownership, utilization, and reservation history for every subnet. Which platform is BEST?",
+    "question": "Which network-service extension authenticates a time source and protects NTP synchronization exchanges from manipulation?",
     "choices": [
-      "IPAM",
-      "Packet broker",
-      "RADIUS proxy",
-      "Wireless controller"
+      "Precision Time Protocol (PTP)",
+      "Domain Name System Security Extensions (DNSSEC)",
+      "Network Time Security (NTS)",
+      "Service-level agreement (SLA) monitoring"
     ],
-    "answer": 0,
-    "explanation": "IPAM centralizes subnet inventory and address-assignment history for Team F1."
+    "answer": 2,
+    "explanation": "Network Time Security adds authenticated, protected exchanges to network time synchronization. PTP improves precision, while DNSSEC protects DNS data rather than NTP traffic."
   },
   {
     "id": 21004,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "BGP policy",
+    "blueprint": "Route selection and administrative distance",
     "difficulty": "Level 3",
-    "question": "Enterprise F1 wants outbound traffic to prefer ISP-A without changing advertised prefixes. Which local BGP attribute is commonly raised?",
+    "question": "A router learns 10.40.0.0/16 through OSPF and also has a floating static route to the same prefix. The OSPF path fails, but the static route never enters the table. What should be corrected?",
     "choices": [
-      "Local preference",
-      "MED received by customers",
-      "STP cost",
-      "VLAN priority"
+      "Lower the static route prefix length to /8",
+      "Configure the static route as an OSPF designated router",
+      "Replace the next-hop address with the local loopback address",
+      "Set the static route administrative distance higher than OSPF but low enough to be eligible"
     ],
-    "answer": 0,
-    "explanation": "Higher local preference makes routers inside Enterprise F1 favor ISP-A for outbound paths."
+    "answer": 3,
+    "explanation": "A floating static route must be less preferred than OSPF during normal operation yet valid when OSPF disappears. Its administrative distance controls that preference; changing prefix length or DR status does not create the intended backup."
   },
   {
     "id": 21005,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Credential attacks",
+    "blueprint": "Wireless impersonation attacks",
     "difficulty": "Level 2",
-    "question": "Login logs at F1 show one common password tried against 800 accounts, then a long pause. Which attack is this?",
+    "question": "Employees connect to an SSID named Corp-WiFi in the parking lot and are shown a counterfeit sign-in page. Which attack is occurring?",
     "choices": [
-      "Password spraying",
-      "Credential stuffing against one account",
-      "Tailgating",
-      "MAC flooding"
+      "MAC flooding",
+      "Evil twin",
+      "VLAN hopping",
+      "Password spraying"
     ],
-    "answer": 0,
-    "explanation": "Password spraying distributes a few common guesses across many accounts at F1."
+    "answer": 1,
+    "explanation": "An evil twin impersonates a legitimate wireless network to attract clients and capture traffic or credentials. The other attacks target switches, VLAN boundaries, or authentication systems differently."
   },
   {
     "id": 21006,
@@ -87,92 +87,92 @@
     "difficulty": "Level 4",
     "question": "Small requests through VPN F2 work, but large HTTPS responses stall with no fragmentation messages returned. Which fault is MOST likely?",
     "choices": [
-      "Path-MTU black hole",
       "Duplicate DNS A record",
       "Wireless deauthentication",
+      "Path-MTU black hole",
       "Expired DHCP lease"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Blocked PMTUD feedback can make oversized packets disappear through VPN F2."
   },
   {
     "id": 21007,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "IPv6 configuration",
+    "objective": "1.7",
+    "blueprint": "IPv4 loopback addressing",
     "difficulty": "Level 3",
-    "question": "Router advertisement F2 supplies a prefix, and hosts build addresses without a DHCPv6 server. Which process is operating?",
+    "question": "A new monitoring service responds to requests made locally to 127.0.0.1:8080. Remote clients cannot connect even though the host firewall permits TCP 8080, and the socket listing shows the service bound only to 127.0.0.1. Which correction addresses the cause?",
     "choices": [
-      "SLAAC",
-      "PAT",
-      "ARP",
-      "Split DNS"
+      "Add a public MX record for the monitoring host",
+      "Assign the client an address from 127.0.0.0/8",
+      "Bind the service to the host's intended network interface address",
+      "Replace the host's default route with 255.255.255.255"
     ],
-    "answer": 0,
-    "explanation": "SLAAC uses Router advertisement F2 to let IPv6 hosts form their own addresses."
+    "answer": 2,
+    "explanation": "127.0.0.1 is a loopback address, so a service listening only there accepts local connections and is not reachable through a physical network interface. Binding it to the approved interface address exposes the listener to permitted remote clients."
   },
   {
     "id": 21008,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Configuration management",
+    "blueprint": "Change management and rollback",
     "difficulty": "Level 4",
-    "question": "Switch F2 fails after an upgrade, and its replacement must be restored quickly. Which preparation is MOST valuable?",
+    "question": "A core-switch upgrade is scheduled during a short maintenance window. The image passed lab testing, but the switch has no out-of-band management. Which preparation most reduces the risk of an extended outage?",
     "choices": [
-      "Versioned configuration backups",
-      "A longer DNS TTL",
-      "A public guest SSID",
-      "Disabled syslog"
+      "Record a rollback trigger, preserve the current image and configuration, and verify console access",
+      "Increase every interface speed before the upgrade",
+      "Delete old configurations to create maximum storage space",
+      "Wait until the window begins to identify business owners"
     ],
     "answer": 0,
-    "explanation": "A current versioned backup lets the replacement for Switch F2 recover known settings quickly."
+    "explanation": "A defined rollback point, recoverable software/configuration, and independent console access address the major upgrade risks. The other actions either add risk or defer required planning."
   },
   {
     "id": 21009,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Gateway redundancy",
+    "blueprint": "First-hop redundancy tracking",
     "difficulty": "Level 3",
-    "question": "Hosts at F2 use one virtual gateway backed by two routers. Which event should trigger the standby to assume forwarding?",
+    "question": "Two routers provide a virtual default gateway. Router A remains active after its WAN uplink fails, so clients send traffic to a dead path even though Router B is healthy. What configuration is missing?",
     "choices": [
-      "Loss of the active router or tracked uplink",
-      "A DNS cache hit",
-      "A successful DHCP renewal",
-      "An AP channel change"
+      "A longer DHCP lease on the client subnet",
+      "Uplink tracking that lowers Router A priority when the WAN path fails",
+      "A lower STP cost on Router A access ports",
+      "A DNS conditional forwarder on Router B"
     ],
-    "answer": 0,
-    "explanation": "First-hop redundancy allows the standby at F2 to take over after active-path failure."
+    "answer": 1,
+    "explanation": "First-hop redundancy must track the routed uplink so the active router relinquishes the virtual gateway when its forwarding path fails. Client leases, STP cost, and DNS forwarding do not change gateway ownership."
   },
   {
     "id": 21010,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "ARP protection",
+    "blueprint": "DHCP snooping",
     "difficulty": "Level 2",
-    "question": "Switch F2 must reject ARP replies that conflict with trusted DHCP bindings. Which feature should be enabled?",
+    "question": "A rogue device is answering DHCP requests on an access port. Which switch control should classify only the uplink toward the authorized DHCP server as trusted?",
     "choices": [
-      "Dynamic ARP inspection",
-      "LLDP",
-      "LACP",
-      "Root guard"
+      "DHCP snooping",
+      "BPDU guard",
+      "Storm control",
+      "Port mirroring"
     ],
     "answer": 0,
-    "explanation": "Dynamic ARP inspection validates ARP messages against trusted bindings on Switch F2."
+    "explanation": "DHCP snooping permits server replies only on trusted ports and can build a binding table. BPDU guard protects spanning tree, storm control limits traffic rates, and mirroring only copies traffic."
   },
   {
     "id": 21011,
     "domain": "5",
-    "objective": "5.4",
-    "blueprint": "DNS delegation",
+    "objective": "5.3",
+    "blueprint": "DNS delegation troubleshooting",
     "difficulty": "Level 4",
     "question": "Resolver F3 can answer parent-zone names but returns delegation failure for a new child zone. Which records should be checked?",
     "choices": [
-      "Parent NS records and glue",
       "Switch MAC entries",
       "NTP peers",
+      "Parent NS records and glue",
       "PoE classes"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Correct NS delegation and required glue direct Resolver F3 to the child-zone servers."
   },
   {
@@ -195,17 +195,17 @@
     "id": 21013,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Event correlation",
+    "blueprint": "Flow monitoring",
     "difficulty": "Level 2",
-    "question": "Analysts at F3 must correlate VPN logins, firewall blocks, and endpoint alerts. Which system BEST supports this?",
+    "question": "Operations needs to identify which source and destination pairs consumed the most WAN bandwidth during yesterday's slowdown without retaining full packet payloads. Which telemetry is most appropriate?",
     "choices": [
-      "SIEM",
-      "Cable tester",
-      "DHCP relay",
-      "Media converter"
+      "NetFlow or IPFIX records",
+      "A cable qualification report",
+      "A DNS hosts file",
+      "An LLDP neighbor table"
     ],
     "answer": 0,
-    "explanation": "A SIEM aggregates and correlates security events for analysts at F3."
+    "explanation": "NetFlow/IPFIX summarizes conversations, endpoints, ports, and byte counts with much less storage than packet capture. Cable, hosts-file, and LLDP data cannot identify historical traffic consumers."
   },
   {
     "id": 21014,
@@ -215,77 +215,77 @@
     "difficulty": "Level 3",
     "question": "Trunk F3 reports native-VLAN mismatch messages at both ends. What is the BEST correction?",
     "choices": [
-      "Configure the same native VLAN on each endpoint",
       "Convert both ends to monitor ports",
       "Disable tagging for every VLAN",
+      "Configure the same native VLAN on each endpoint",
       "Add a DHCP relay"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Matching native VLAN settings prevents untagged traffic from entering different VLANs on Trunk F3."
   },
   {
     "id": 21015,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Private VLANs",
+    "blueprint": "Microsegmentation",
     "difficulty": "Level 2",
-    "question": "Hosting segment F3 requires customer servers to reach the gateway but not one another. Which control is BEST?",
+    "question": "Virtual machines on the same subnet host workloads with different trust levels. Security requires policy enforcement between those east-west workloads without creating a VLAN for every VM. Which control best fits?",
     "choices": [
-      "Private VLAN isolation",
-      "One unrestricted access VLAN",
-      "Proxy ARP alone",
-      "A shared hub"
+      "Microsegmentation with workload-level policy",
+      "A shared unmanaged switch",
+      "A single perimeter ACL only",
+      "Disabling host firewalls"
     ],
     "answer": 0,
-    "explanation": "Private VLAN isolation prevents peer communication while retaining gateway access in segment F3."
+    "explanation": "Microsegmentation applies granular policy between workloads even when they share underlying network segments. A perimeter-only control cannot govern same-subnet east-west traffic."
   },
   {
     "id": 21016,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Time synchronization",
+    "blueprint": "Performance baselines and capacity",
     "difficulty": "Level 4",
-    "question": "Authentication at F4 fails every afternoon as server clocks drift beyond policy. Which correction is BEST?",
+    "question": "A branch reports slow SaaS performance at 2 p.m. Packet loss is zero, but WAN utilization reaches 98%, queue drops rise, and latency triples only during backups. What is the best corrective action?",
     "choices": [
-      "Repair the NTP hierarchy and reachability",
-      "Increase VLAN count",
-      "Replace fiber connectors",
-      "Disable logging"
+      "Replace the branch DNS suffix",
+      "Disable spanning tree on the access switches",
+      "Shorten the DHCP lease to five minutes",
+      "Reschedule or rate-limit backups and apply QoS based on the measured baseline"
     ],
-    "answer": 0,
-    "explanation": "Reliable NTP sources prevent clock drift from breaking time-sensitive authentication at F4."
+    "answer": 3,
+    "explanation": "The correlated utilization, queue drops, and backup schedule identify congestion. Moving or shaping backup traffic and protecting interactive traffic with QoS addresses the measured bottleneck."
   },
   {
     "id": 21017,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Ports and protocols",
+    "blueprint": "Secure directory protocols",
     "difficulty": "Level 3",
-    "question": "Firewall F4 must permit clients to synchronize time with an external source. Which traffic is required?",
+    "question": "A directory client reaches the server on TCP 389, but policy requires encryption from the first packet rather than a later StartTLS upgrade. Which destination should the firewall permit?",
     "choices": [
-      "UDP 123",
-      "TCP 110",
-      "UDP 69",
-      "TCP 636"
+      "TCP 636 for LDAPS",
+      "TCP 445 for SMB",
+      "UDP 161 for SNMP",
+      "TCP 25 for SMTP"
     ],
     "answer": 0,
-    "explanation": "NTP normally uses UDP port 123 for time synchronization through Firewall F4."
+    "explanation": "LDAPS uses TCP 636 and begins with TLS. TCP 389 is standard LDAP and may use StartTLS, while the other ports serve unrelated protocols."
   },
   {
     "id": 21018,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Event notification",
+    "blueprint": "Monitoring thresholds and event correlation",
     "difficulty": "Level 4",
-    "question": "UPS F4 must immediately notify monitoring when battery health falls below threshold. Which mechanism is BEST?",
+    "question": "A monitoring platform receives high interface-utilization alerts from ten switches, but only one uplink shows rising discards and application latency. Which response provides the most useful diagnosis?",
     "choices": [
-      "SNMP trap or inform",
-      "Monthly manual ping",
-      "DNS zone transfer",
-      "Static ARP"
+      "Treat every utilization alert as an independent outage",
+      "Suppress all interface alerts permanently",
+      "Replace every switch reporting more than 70% utilization",
+      "Correlate utilization, discard counters, and application latency for the affected uplink"
     ],
-    "answer": 0,
-    "explanation": "An SNMP notification proactively reports UPS F4's threshold event."
+    "answer": 3,
+    "explanation": "Correlating multiple measurements identifies whether utilization is harmful and isolates the uplink with actual congestion evidence. Acting on a single threshold alone creates noise or unnecessary replacement."
   },
   {
     "id": 21019,
@@ -307,17 +307,17 @@
     "id": 21020,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "ACL behavior",
+    "blueprint": "ACL ordering and implicit deny",
     "difficulty": "Level 2",
-    "question": "ACL F4 contains permits for required services but no final statement. What happens to unmatched traffic?",
+    "question": "An ACL permits HTTPS from the support subnet, then denies that subnet, then contains a broad permit. SSH from support is blocked while HTTPS works. Which ACL behavior explains the result?",
     "choices": [
-      "It is denied by the implicit rule",
-      "It is always permitted",
-      "It is sent to DNS",
-      "It becomes multicast"
+      "The broad permit is automatically evaluated first",
+      "HTTPS bypasses ACL evaluation because it is encrypted",
+      "Rules are processed top-down, and the subnet deny matches SSH before the broad permit",
+      "The implicit deny is inserted before every explicit rule"
     ],
-    "answer": 0,
-    "explanation": "Unmatched traffic encounters ACL F4's implicit deny."
+    "answer": 2,
+    "explanation": "ACLs use first-match, top-down processing. HTTPS matches the first permit, while SSH reaches the subnet deny and never reaches the later broad permit."
   },
   {
     "id": 21021,
@@ -327,45 +327,45 @@
     "difficulty": "Level 4",
     "question": "Fiber F5 works with a short jumper but fails through the building run; received power is below budget. What should be measured NEXT?",
     "choices": [
-      "Insertion loss across each segment and connector",
       "DNS response time",
       "Route preference",
-      "Wireless airtime"
+      "Wireless airtime",
+      "Insertion loss across each segment and connector"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "Segment-by-segment loss testing localizes excessive attenuation on Fiber F5."
   },
   {
     "id": 21022,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Data-center topology",
+    "objective": "1.6",
+    "blueprint": "Network topology selection",
     "difficulty": "Level 3",
-    "question": "Fabric F5 connects every leaf switch to every spine switch, with no leaf-to-leaf links. Which topology is this?",
+    "question": "A distribution company needs every remote warehouse to connect through headquarters, with no direct branch-to-branch circuits. Which WAN topology matches this requirement?",
     "choices": [
-      "Spine-and-leaf",
+      "Full mesh",
+      "Hub-and-spoke",
       "Bus",
-      "Collapsed ring",
-      "Hub-and-spoke WAN"
+      "Spine-and-leaf"
     ],
-    "answer": 0,
-    "explanation": "Fabric F5 follows a spine-and-leaf topology that provides predictable east-west paths."
+    "answer": 1,
+    "explanation": "Hub-and-spoke places headquarters at the hub and branches at the spokes. A full mesh creates branch-to-branch paths, while bus and spine-and-leaf describe different environments."
   },
   {
     "id": 21023,
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Recovery sites",
+    "blueprint": "Recovery objectives",
     "difficulty": "Level 2",
-    "question": "Business F5 needs a recovery facility with network and hardware installed, but applications may require restoration before use. Which site fits?",
+    "question": "A business can tolerate losing at most 15 minutes of order data after an outage. Which recovery metric defines this requirement?",
     "choices": [
-      "Warm site",
-      "Hot site with live workloads",
-      "Empty cold office",
-      "Tape vault only"
+      "Recovery time objective (RTO)",
+      "Mean time between failures (MTBF)",
+      "Recovery point objective (RPO)",
+      "Mean time to repair (MTTR)"
     ],
-    "answer": 0,
-    "explanation": "A warm site provides prepared infrastructure for Business F5 without fully live production systems."
+    "answer": 2,
+    "explanation": "RPO defines the maximum acceptable data-loss interval. RTO defines restoration time, while MTBF and MTTR measure reliability and repair behavior."
   },
   {
     "id": 21024,
@@ -375,61 +375,61 @@
     "difficulty": "Level 3",
     "question": "WLAN F5 requires per-user certificates and dynamic authorization attributes. Which design is BEST?",
     "choices": [
-      "802.1X with EAP-TLS and RADIUS",
       "WPA-Personal with one key",
       "Open authentication",
-      "WEP with MAC filtering"
+      "WEP with MAC filtering",
+      "802.1X with EAP-TLS and RADIUS"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "EAP-TLS and RADIUS provide certificate-based identity and centralized authorization for WLAN F5."
   },
   {
     "id": 21025,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Certificates",
+    "blueprint": "Public key infrastructure",
     "difficulty": "Level 2",
-    "question": "Portal F5's certificate names app.example, but users browse portal.example and receive warnings. Which field is missing the used name?",
+    "question": "A signed software package must prove who published it and detect modification after signing. Which security property does the digital signature primarily provide?",
     "choices": [
-      "Subject alternative name",
-      "Certificate serial only",
-      "Key usage for signing code",
-      "CRL distribution timer"
+      "Availability and load balancing",
+      "Confidentiality of all package contents",
+      "Integrity and non-repudiation",
+      "Network segmentation"
     ],
-    "answer": 0,
-    "explanation": "The accessed hostname must appear in Portal F5's subject alternative names."
+    "answer": 2,
+    "explanation": "A digital signature verifies that signed content has not changed and links the signature to the publisher. It does not automatically encrypt the package or provide availability."
   },
   {
     "id": 21026,
     "domain": "5",
-    "objective": "5.3",
-    "blueprint": "Wireless hidden nodes",
+    "objective": "5.4",
+    "blueprint": "Wireless hidden-node interference",
     "difficulty": "Level 4",
     "question": "Two clients at F6 cannot hear each other but both hear the AP, causing collisions. Which mechanism helps coordinate their transmissions?",
     "choices": [
-      "RTS/CTS",
       "Proxy ARP",
+      "RTS/CTS",
       "STP root guard",
       "DNSSEC"
     ],
-    "answer": 0,
+    "answer": 1,
     "explanation": "RTS/CTS can reduce hidden-node collisions among clients at F6."
   },
   {
     "id": 21027,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud services",
+    "blueprint": "Cloud connectivity options",
     "difficulty": "Level 3",
-    "question": "Company F6 subscribes to a complete browser-based ticketing application and manages no runtime or servers. Which model applies?",
+    "question": "A company needs predictable private connectivity from its data center to a cloud provider and does not want production traffic crossing the public internet. Which option best meets the requirement?",
     "choices": [
-      "SaaS",
-      "IaaS",
-      "PaaS",
-      "Private colocation"
+      "A clientless SSL portal",
+      "A public DNS alias",
+      "A dedicated private cloud connection",
+      "A consumer broadband link with PAT"
     ],
-    "answer": 0,
-    "explanation": "SaaS delivers Company F6 a complete managed application."
+    "answer": 2,
+    "explanation": "A provider dedicated connection offers private, predictable cloud connectivity. A VPN could encrypt public-internet traffic, but the requirement specifically avoids that path."
   },
   {
     "id": 21028,
@@ -451,992 +451,992 @@
     "id": 21029,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Channel planning",
+    "blueprint": "Wireless channel planning",
     "difficulty": "Level 3",
-    "question": "Dense office F6 uses 160MHz channels and suffers contention. Which change is MOST likely to increase reuse?",
+    "question": "A three-AP 2.4GHz deployment uses channels 1, 4, and 8. Clients experience adjacent-channel interference even at moderate utilization. Which plan is most appropriate?",
     "choices": [
-      "Use narrower channels and a coordinated plan",
-      "Put all APs on one 160MHz channel",
-      "Increase every radio to maximum power",
-      "Disable 5GHz service"
+      "Place all APs on channel 6 at maximum power",
+      "Use nonoverlapping channels 1, 6, and 11 with suitable power levels",
+      "Use channels 2, 7, and 10 because they are farther apart",
+      "Disable all 5GHz radios to reduce contention"
     ],
-    "answer": 0,
-    "explanation": "Narrower coordinated channels create more reusable cells in dense office F6."
+    "answer": 1,
+    "explanation": "In a 20MHz 2.4GHz design, channels 1, 6, and 11 avoid overlap. The other plans increase co-channel or adjacent-channel interference."
   },
   {
     "id": 21030,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Deception systems",
+    "blueprint": "ARP spoofing",
     "difficulty": "Level 2",
-    "question": "Security team F6 deploys an instrumented fake server to observe attacker techniques. What is it?",
+    "question": "Users intermittently send traffic to an attacker's MAC address even though the default gateway IP has not changed. Which attack best matches the evidence?",
     "choices": [
-      "Honeypot",
-      "Load balancer",
-      "DHCP server",
-      "Jump box"
+      "DNS zone transfer",
+      "Password spraying",
+      "VLAN pruning",
+      "ARP spoofing"
     ],
-    "answer": 0,
-    "explanation": "A honeypot attracts and records hostile interaction for Security team F6."
+    "answer": 3,
+    "explanation": "ARP spoofing poisons local address-to-MAC mappings so traffic for the gateway is delivered to the attacker. The gateway IP can remain unchanged throughout the attack."
   },
   {
     "id": 21031,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Packet capture",
+    "blueprint": "Packet capture interpretation",
     "difficulty": "Level 4",
-    "question": "Capture F7 shows SYN, SYN-ACK, ACK, followed immediately by a client reset. Which conclusion is BEST?",
+    "question": "A capture shows repeated TCP SYN transmissions from a client, no SYN-ACK or RST responses, and successful ARP resolution for the default gateway. Other destinations work. What should be investigated next?",
     "choices": [
-      "TCP established before the client terminated it",
-      "The server never answered",
-      "DNS definitely failed",
-      "The cable is open"
+      "The client NIC failing to learn its gateway MAC",
+      "A completed TCP connection being closed normally",
+      "A firewall or service path silently dropping the destination TCP port",
+      "The DNS resolver returning an IPv6 address"
     ],
-    "answer": 0,
-    "explanation": "The three handshake packets prove establishment before the client reset Capture F7's session."
+    "answer": 2,
+    "explanation": "ARP and general connectivity work, but the TCP handshake receives no response. A silent firewall drop or filtered service path is more consistent than a Layer 2 failure or normal close."
   },
   {
     "id": 21032,
     "domain": "1",
     "objective": "1.5",
-    "blueprint": "Multicast",
+    "blueprint": "Fiber transceivers and wavelength compatibility",
     "difficulty": "Level 3",
-    "question": "Switch F7 should forward a multicast stream only toward ports with interested receivers. Which feature learns those memberships?",
+    "question": "A new single-mode fiber link remains down. Both ends use LC connectors and receive power is within range, but one optic operates at 1310nm and the other at 1550nm. What is the best correction?",
     "choices": [
-      "IGMP snooping",
-      "Proxy ARP",
-      "Portfast",
-      "DNSSEC"
+      "Install a matched transceiver pair using compatible wavelengths",
+      "Replace the single-mode fiber with Cat 6 cable",
+      "Enable PoE on both switch ports",
+      "Configure the two interfaces with different speeds"
     ],
     "answer": 0,
-    "explanation": "IGMP snooping lets Switch F7 constrain multicast forwarding according to receiver membership."
+    "explanation": "Optical endpoints must transmit and receive on compatible wavelengths. Good connector type and power readings do not overcome an incompatible transceiver pair."
   },
   {
     "id": 21033,
     "domain": "3",
     "objective": "3.5",
-    "blueprint": "Automation",
+    "blueprint": "API data validation",
     "difficulty": "Level 2",
-    "question": "Controller F7 pushes configurations through an API. What safeguard should precede deployment to hundreds of devices?",
+    "question": "An automation job rejects a device response because a field expected to be a number arrives as text. Which data-description mechanism would help validate the structure before processing?",
     "choices": [
-      "Schema validation and a staged canary rollout",
-      "Immediate global deployment",
-      "Removal of rollback data",
-      "Shared plaintext credentials"
+      "A spanning-tree root election",
+      "A DHCP exclusion",
+      "An optical power budget",
+      "A schema"
     ],
-    "answer": 0,
-    "explanation": "Validation and a canary stage limit the impact of faulty automation from Controller F7."
+    "answer": 3,
+    "explanation": "A schema defines expected fields and data types for structured API data. The other choices do not validate automation payloads."
   },
   {
     "id": 21034,
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Electrical safety",
+    "blueprint": "Data-center airflow",
     "difficulty": "Level 3",
-    "question": "Rack F7 shows a voltage difference between equipment chassis and building ground. What should happen FIRST?",
+    "question": "Servers in the top of one rack overheat although room temperature is normal. Blank panels are missing, and hot exhaust can circulate to the rack front. What should be corrected first?",
     "choices": [
-      "Have qualified personnel correct bonding and grounding",
-      "Connect an extra data cable",
-      "Disable DNSSEC",
-      "Increase PoE priority"
+      "Increase DHCP scope size",
+      "Restore blanking panels and proper hot-aisle/cold-aisle airflow",
+      "Lower the STP bridge priority",
+      "Change server DNS records"
     ],
-    "answer": 0,
-    "explanation": "Unsafe potential differences at Rack F7 require proper electrical bonding and grounding correction."
+    "answer": 1,
+    "explanation": "Missing blanking panels permit hot-air recirculation and create rack hot spots. Correct airflow containment addresses the physical installation evidence."
   },
   {
     "id": 21035,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Security architecture",
+    "blueprint": "AAA principles",
     "difficulty": "Level 2",
-    "question": "Remote workforce F7 needs cloud-delivered web filtering, identity-aware access, and WAN security. Which architecture BEST combines them?",
+    "question": "A network device records that administrator Lee changed an interface at 14:05. Which AAA function produced this evidence?",
     "choices": [
-      "SASE",
-      "Standalone unmanaged hub",
-      "Local-only DNS",
-      "Layer 2 loop"
+      "Authentication",
+      "Accounting",
+      "Authorization",
+      "Identity federation"
     ],
-    "answer": 0,
-    "explanation": "SASE combines network and security services for distributed workforce F7."
+    "answer": 1,
+    "explanation": "Accounting records user activity and changes. Authentication verifies identity, while authorization determines what an authenticated user may do."
   },
   {
     "id": 21036,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Asymmetric routing",
+    "blueprint": "Routing and application reachability",
     "difficulty": "Level 4",
-    "question": "Firewall F8 sees outbound SYN packets, but return traffic uses another firewall and sessions fail. What is the BEST fix?",
+    "question": "Users reach a web server from its local subnet but not from remote networks. The server has the correct IP and mask, and local clients succeed. A packet capture shows remote SYN packets arriving but replies sent to an old router. What should be corrected?",
     "choices": [
-      "Restore a symmetric stateful path",
-      "Disable TCP flags",
-      "Change DNS aliases",
-      "Increase PoE budget"
+      "The web server DNS TTL",
+      "The access-switch native VLAN",
+      "The server default gateway",
+      "The remote clients' NTP source"
     ],
-    "answer": 0,
-    "explanation": "Both directions must traverse compatible state for Firewall F8 to validate the session."
+    "answer": 2,
+    "explanation": "The server receives remote traffic but returns it through the wrong router, directly implicating its default gateway. Local traffic does not require that gateway, which explains the split behavior."
   },
   {
     "id": 21037,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Automatic addressing",
+    "objective": "1.2",
+    "blueprint": "Load balancer health checks",
     "difficulty": "Level 3",
-    "question": "Laptop F8 has 169.254.88.12/16 after boot but its cable link is active. Which exchange most likely failed?",
+    "question": "A load balancer continues sending clients to an application node whose operating system responds to ping but whose web service is hung. What change best prevents this?",
     "choices": [
-      "DHCP discovery and offer",
-      "DNS recursion",
-      "NTP synchronization",
-      "TCP three-way handshake"
+      "Use only an ICMP echo health check",
+      "Use an application-layer HTTPS health check",
+      "Disable health checks and rely on round robin",
+      "Increase the DNS TTL for the virtual address"
     ],
-    "answer": 0,
-    "explanation": "An IPv4 link-local address indicates Laptop F8 could not obtain a DHCP lease."
+    "answer": 1,
+    "explanation": "An HTTPS health check verifies the service clients actually need. ICMP only proves the host network stack is reachable and can leave a failed application in rotation."
   },
   {
     "id": 21038,
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "IP address management",
+    "blueprint": "DHCP reservations and IPAM reconciliation",
     "difficulty": "Level 4",
-    "question": "Team F8 needs searchable ownership, utilization, and reservation history for every subnet. Which platform is BEST?",
+    "question": "IPAM lists a printer address as reserved, but DHCP assigns the same address to a laptop after the printer is powered off. The DHCP server and IPAM database are not synchronized. What is the best remediation?",
     "choices": [
-      "IPAM",
-      "Packet broker",
-      "RADIUS proxy",
-      "Wireless controller"
+      "Add a second default gateway to the printer",
+      "Clear the DNS resolver cache on the laptop",
+      "Disable ARP on the access switch",
+      "Create the reservation or exclusion on the authoritative DHCP server and reconcile IPAM"
     ],
-    "answer": 0,
-    "explanation": "IPAM centralizes subnet inventory and address-assignment history for Team F8."
+    "answer": 3,
+    "explanation": "A record in IPAM alone does not prevent DHCP allocation. The authoritative DHCP configuration must reserve or exclude the address, then IPAM should reflect that state."
   },
   {
     "id": 21039,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "BGP policy",
+    "blueprint": "OSPF path selection",
     "difficulty": "Level 3",
-    "question": "Enterprise F8 wants outbound traffic to prefer ISP-A without changing advertised prefixes. Which local BGP attribute is commonly raised?",
+    "question": "Two OSPF routes reach the same prefix. Path A has two 10Gbps links; Path B has one 100Mbps link. With default reference bandwidth, both appear with an unexpectedly similar metric. What should be adjusted consistently on all routers?",
     "choices": [
-      "Local preference",
-      "MED received by customers",
-      "STP cost",
-      "VLAN priority"
+      "The Ethernet native VLAN",
+      "The OSPF reference bandwidth",
+      "The DHCP lease duration",
+      "The DNS negative-cache TTL"
     ],
-    "answer": 0,
-    "explanation": "Higher local preference makes routers inside Enterprise F8 favor ISP-A for outbound paths."
+    "answer": 1,
+    "explanation": "OSPF interface cost is derived from reference bandwidth. Modern high-speed links can collapse to the same cost unless the reference is raised consistently throughout the routing domain."
   },
   {
     "id": 21040,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Credential attacks",
+    "blueprint": "Credential stuffing",
     "difficulty": "Level 2",
-    "question": "Login logs at F8 show one common password tried against 800 accounts, then a long pause. Which attack is this?",
+    "question": "Authentication logs show successful and failed sign-ins using many different username-password pairs previously exposed in an unrelated breach. Which attack is this?",
     "choices": [
       "Password spraying",
-      "Credential stuffing against one account",
+      "ARP poisoning",
       "Tailgating",
-      "MAC flooding"
+      "Credential stuffing"
     ],
-    "answer": 0,
-    "explanation": "Password spraying distributes a few common guesses across many accounts at F8."
+    "answer": 3,
+    "explanation": "Credential stuffing tests known username-password pairs from another breach. Password spraying instead tries a small set of common passwords across many accounts."
   },
   {
     "id": 21041,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Path MTU",
+    "blueprint": "DHCP relay troubleshooting",
     "difficulty": "Level 4",
-    "question": "Small requests through VPN F9 work, but large HTTPS responses stall with no fragmentation messages returned. Which fault is MOST likely?",
+    "question": "Clients in VLAN 30 receive no leases. The relay sends requests to the DHCP server, but a firewall capture shows server offers returning to the relay are denied. Which change should be made?",
     "choices": [
-      "Path-MTU black hole",
-      "Duplicate DNS A record",
-      "Wireless deauthentication",
-      "Expired DHCP lease"
+      "Permit the required DHCP reply traffic between the server and relay",
+      "Add an MX record for VLAN 30",
+      "Disable the relay and enable APIPA",
+      "Change the access ports to trunk mode"
     ],
     "answer": 0,
-    "explanation": "Blocked PMTUD feedback can make oversized packets disappear through VPN F9."
+    "explanation": "The capture proves requests reach the server and offers are generated, but the firewall blocks the return exchange. Permitting the required DHCP traffic fixes the demonstrated failure."
   },
   {
     "id": 21042,
     "domain": "1",
     "objective": "1.8",
-    "blueprint": "IPv6 configuration",
+    "blueprint": "SD-WAN application policy",
     "difficulty": "Level 3",
-    "question": "Router advertisement F9 supplies a prefix, and hosts build addresses without a DHCPv6 server. Which process is operating?",
+    "question": "An SD-WAN policy mistakenly classifies nightly replication as business-critical and sends it over the low-latency MPLS path, starving transactional traffic. Broadband has ample capacity. What should the administrator change?",
     "choices": [
-      "SLAAC",
-      "PAT",
-      "ARP",
-      "Split DNS"
+      "Disable application identification and load-balance all flows without policy",
+      "Move every application to MPLS and increase that circuit’s bandwidth",
+      "Correct the application policy so replication uses broadband while transactional traffic retains the preferred low-latency path",
+      "Install a static broadband default route that moves every application off MPLS"
     ],
-    "answer": 0,
-    "explanation": "SLAAC uses Router advertisement F9 to let IPv6 hosts form their own addresses."
+    "answer": 2,
+    "explanation": "The transports are healthy; the application classification and steering policy are wrong. Reclassifying replication and assigning it to broadband preserves the constrained low-latency path for transactional traffic."
   },
   {
     "id": 21043,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Configuration management",
+    "blueprint": "Maintenance windows and change records",
     "difficulty": "Level 2",
-    "question": "Switch F9 fails after an upgrade, and its replacement must be restored quickly. Which preparation is MOST valuable?",
+    "question": "Which document should state the approved implementation time, affected services, responsible staff, validation steps, and rollback plan for a router change?",
     "choices": [
-      "Versioned configuration backups",
-      "A longer DNS TTL",
-      "A public guest SSID",
-      "Disabled syslog"
+      "A DNS zone file",
+      "A change record",
+      "A packet-capture filter",
+      "A wireless heat map"
     ],
-    "answer": 0,
-    "explanation": "A current versioned backup lets the replacement for Switch F9 recover known settings quickly."
+    "answer": 1,
+    "explanation": "A change record documents authorization, scope, scheduling, validation, ownership, and rollback. The other artifacts serve technical functions but do not govern the change."
   },
   {
     "id": 21044,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Gateway redundancy",
+    "blueprint": "Policy-based routing",
     "difficulty": "Level 3",
-    "question": "Hosts at F9 use one virtual gateway backed by two routers. Which event should trigger the standby to assume forwarding?",
+    "question": "A branch must send guest-internet traffic through ISP-B while corporate traffic continues through the normal routing table to ISP-A. Both traffic classes use the same destination prefixes. Which feature is most appropriate?",
     "choices": [
-      "Loss of the active router or tracked uplink",
-      "A DNS cache hit",
-      "A successful DHCP renewal",
-      "An AP channel change"
+      "A more specific destination route for every internet site",
+      "STP root guard on the guest access ports",
+      "A longer DHCP lease for corporate clients",
+      "Policy-based routing that matches the guest source subnet"
     ],
-    "answer": 0,
-    "explanation": "First-hop redundancy allows the standby at F9 to take over after active-path failure."
+    "answer": 3,
+    "explanation": "Because path selection depends on source/class rather than destination prefix alone, policy-based routing can match guest traffic and select ISP-B."
   },
   {
     "id": 21045,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "ARP protection",
+    "blueprint": "BPDU guard",
     "difficulty": "Level 2",
-    "question": "Switch F9 must reject ARP replies that conflict with trusted DHCP bindings. Which feature should be enabled?",
+    "question": "An edge port is error-disabled because BPDU guard detected a small unauthorized switch. After removing that switch, what is the safest recovery action?",
     "choices": [
-      "Dynamic ARP inspection",
-      "LLDP",
-      "LACP",
-      "Root guard"
+      "Verify the port is intended to remain an edge port, then restore it using the approved recovery procedure",
+      "Disable BPDU guard globally before re-enabling the port",
+      "Configure the user port as the spanning-tree root",
+      "Convert every access port into an unrestricted trunk"
     ],
     "answer": 0,
-    "explanation": "Dynamic ARP inspection validates ARP messages against trusted bindings on Switch F9."
+    "explanation": "The unauthorized switch must be removed and the edge-port role verified before the port is recovered. Disabling BPDU guard globally or turning the port into a trunk would remove the protection that detected the problem."
   },
   {
     "id": 21046,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "DNS delegation",
+    "blueprint": "Wireless co-channel contention",
     "difficulty": "Level 4",
-    "question": "Resolver F10 can answer parent-zone names but returns delegation failure for a new child zone. Which records should be checked?",
+    "question": "A conference hall has strong Wi-Fi signal everywhere, but throughput collapses when crowded. All six nearby APs use the same channel, retries and airtime utilization are high, and WAN utilization is low. What is the best correction?",
     "choices": [
-      "Parent NS records and glue",
-      "Switch MAC entries",
-      "NTP peers",
-      "PoE classes"
+      "Increase every AP to maximum transmit power",
+      "Replace the internet DNS resolver",
+      "Configure all clients with static IP addresses",
+      "Create a coordinated channel and power plan that reduces co-channel contention"
     ],
-    "answer": 0,
-    "explanation": "Correct NS delegation and required glue direct Resolver F10 to the child-zone servers."
+    "answer": 3,
+    "explanation": "High retries and airtime on one shared channel with an uncongested WAN identify RF contention. Coordinated channels and cell sizes increase spatial reuse."
   },
   {
     "id": 21047,
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Packet handling",
+    "blueprint": "OSI layer troubleshooting",
     "difficulty": "Level 3",
-    "question": "Tunnel F10 adds 60 bytes of overhead to a 1500-byte path. Which payload adjustment prevents fragmentation?",
+    "question": "A workstation resolves the server name and completes ARP for its gateway, but a TCP connection receives an immediate RST from the server. Which layer has demonstrably rejected the connection?",
     "choices": [
-      "Reduce the inner MTU to 1440",
-      "Raise the inner MTU to 1560",
-      "Disable TTL",
-      "Change the DNS suffix"
+      "Layer 4, the transport layer",
+      "Layer 1, the physical layer",
+      "Layer 2, the data link layer",
+      "Layer 3, the network layer"
     ],
     "answer": 0,
-    "explanation": "Reducing Tunnel F10's inner MTU by its 60-byte overhead keeps outer packets within 1500 bytes."
+    "explanation": "A TCP RST is a transport-layer response. Successful name resolution, ARP, and IP delivery show lower-layer communication occurred before the server rejected the TCP session."
   },
   {
     "id": 21048,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Event correlation",
+    "blueprint": "Interface counters and flow analysis",
     "difficulty": "Level 4",
-    "question": "Analysts at F10 must correlate VPN logins, firewall blocks, and endpoint alerts. Which system BEST supports this?",
+    "question": "Monitoring reports packet loss on a WAN circuit. Interface CRC errors remain zero, output drops rise during peaks, and flow records show one backup host consuming most bytes. What conclusion is best supported?",
     "choices": [
-      "SIEM",
-      "Cable tester",
-      "DHCP relay",
-      "Media converter"
+      "A damaged receive fiber causing CRC errors",
+      "A duplicate IP address on the management VLAN",
+      "Egress congestion caused by the backup flow",
+      "An expired certificate on the monitoring server"
     ],
-    "answer": 0,
-    "explanation": "A SIEM aggregates and correlates security events for analysts at F10."
+    "answer": 2,
+    "explanation": "Rising output drops during high utilization with a dominant backup flow indicates an egress queue bottleneck. The absence of CRC errors argues against physical corruption."
   },
   {
     "id": 21049,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Trunk troubleshooting",
+    "blueprint": "Spanning-tree root placement",
     "difficulty": "Level 3",
-    "question": "Trunk F10 reports native-VLAN mismatch messages at both ends. What is the BEST correction?",
+    "question": "Traffic between two access switches takes an indirect path through a backup building. The spanning-tree root is an old edge switch there. What is the best design correction?",
     "choices": [
-      "Configure the same native VLAN on each endpoint",
-      "Convert both ends to monitor ports",
-      "Disable tagging for every VLAN",
-      "Add a DHCP relay"
+      "Set the intended distribution switches to the lowest STP bridge priority",
+      "Disable STP on every trunk",
+      "Enable PortFast on switch-to-switch links",
+      "Make every switch use the same bridge MAC address"
     ],
     "answer": 0,
-    "explanation": "Matching native VLAN settings prevents untagged traffic from entering different VLANs on Trunk F10."
+    "explanation": "Root bridge placement controls the active Layer 2 topology. Lowering bridge priority on the distribution pair makes root selection intentional without disabling loop protection."
   },
   {
     "id": 21050,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Private VLANs",
+    "blueprint": "Least privilege",
     "difficulty": "Level 2",
-    "question": "Hosting segment F10 requires customer servers to reach the gateway but not one another. Which control is BEST?",
+    "question": "A monitoring account needs read-only access to interface counters but can currently change routing configuration. Which remediation best follows least privilege?",
     "choices": [
-      "Private VLAN isolation",
-      "One unrestricted access VLAN",
-      "Proxy ARP alone",
-      "A shared hub"
+      "Assign a role limited to monitoring commands and remove configuration rights",
+      "Share the administrator account with the monitoring team",
+      "Disable command logging for the account",
+      "Grant full rights but rotate the password monthly"
     ],
     "answer": 0,
-    "explanation": "Private VLAN isolation prevents peer communication while retaining gateway access in segment F10."
+    "explanation": "Least privilege restricts the account to its required read-only task. Password rotation and logging do not correct excessive authorization."
   },
   {
     "id": 21051,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Time synchronization",
+    "blueprint": "QoS and jitter troubleshooting",
     "difficulty": "Level 4",
-    "question": "Authentication at F11 fails every afternoon as server clocks drift beyond policy. Which correction is BEST?",
+    "question": "Voice packets enter a branch router marked DSCP EF, but captures on the provider-facing link show DSCP 0. Bandwidth is available, yet voice experiences jitter whenever mixed traffic crosses the provider edge. Which correction best addresses the evidence?",
     "choices": [
-      "Repair the NTP hierarchy and reachability",
-      "Increase VLAN count",
-      "Replace fiber connectors",
-      "Disable logging"
+      "Increase WAN bandwidth even though utilization is below the congestion threshold",
+      "Apply EF only on the LAN ingress while allowing the edge to reset it to zero",
+      "Correct the trust and remarking policy so voice retains EF treatment into the provider queue",
+      "Move the phones to another VLAN without correcting the DSCP trust boundary"
     ],
-    "answer": 0,
-    "explanation": "Reliable NTP sources prevent clock drift from breaking time-sensitive authentication at F11."
+    "answer": 2,
+    "explanation": "The marking disappears at the trust boundary, so the provider cannot place voice in the intended low-latency queue. Correcting the classification and remarking policy addresses the measured QoS failure."
   },
   {
     "id": 21052,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Ports and protocols",
+    "blueprint": "DNS transport behavior",
     "difficulty": "Level 3",
-    "question": "Firewall F11 must permit clients to synchronize time with an external source. Which traffic is required?",
+    "question": "Normal DNS lookups work, but a zone transfer fails through a firewall that permits only UDP 53. Which additional traffic is required?",
     "choices": [
-      "UDP 123",
-      "TCP 110",
-      "UDP 69",
-      "TCP 636"
+      "TCP 22",
+      "TCP 53",
+      "UDP 67",
+      "TCP 3389"
     ],
-    "answer": 0,
-    "explanation": "NTP normally uses UDP port 123 for time synchronization through Firewall F11."
+    "answer": 1,
+    "explanation": "DNS zone transfers use TCP 53, and DNS can also fall back to TCP for large responses. Permitting only UDP 53 does not support that exchange."
   },
   {
     "id": 21053,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Event notification",
+    "blueprint": "Packet broker function",
     "difficulty": "Level 2",
-    "question": "UPS F11 must immediately notify monitoring when battery health falls below threshold. Which mechanism is BEST?",
+    "question": "Several analysis tools need copies of selected traffic from many links, but direct SPAN connections are exhausted. Which device can aggregate, filter, and distribute those copies?",
     "choices": [
-      "SNMP trap or inform",
-      "Monthly manual ping",
-      "DNS zone transfer",
-      "Static ARP"
+      "A DHCP relay",
+      "A media converter",
+      "A wireless bridge",
+      "A network packet broker"
     ],
-    "answer": 0,
-    "explanation": "An SNMP notification proactively reports UPS F11's threshold event."
+    "answer": 3,
+    "explanation": "A network packet broker consolidates tapped or mirrored traffic and delivers filtered streams to monitoring tools. The other devices do not perform monitoring-feed aggregation."
   },
   {
     "id": 21054,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Link aggregation",
+    "blueprint": "LACP negotiation",
     "difficulty": "Level 3",
-    "question": "A four-link bundle at F11 carries one large flow on only one member while aggregate traffic uses all links. Is this expected?",
+    "question": "Two switches have four physical links configured as one bundle. One side uses LACP active while the other side is configured as a static on-group. The bundle does not form. What should be corrected?",
     "choices": [
-      "Yes, hashing normally keeps one flow on one member",
-      "No, every packet must round-robin",
-      "No, LACP disables hashing",
-      "Yes, because three links are blocked by STP"
+      "Give every member a different native VLAN",
+      "Configure compatible LACP modes on both ends",
+      "Enable routing on only one member link",
+      "Assign a unique STP root bridge to each member"
     ],
-    "answer": 0,
-    "explanation": "Per-flow hashing preserves packet order, so one flow at F11 normally stays on one member."
+    "answer": 1,
+    "explanation": "A static bundle does not exchange LACP negotiation frames. Both endpoints must use compatible aggregation modes and matching member parameters."
   },
   {
     "id": 21055,
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "ACL behavior",
+    "blueprint": "Firewall rule ordering",
     "difficulty": "Level 2",
-    "question": "ACL F11 contains permits for required services but no final statement. What happens to unmatched traffic?",
+    "question": "A firewall rule permits a partner subnet to TCP 443, but an earlier broad deny for external networks matches first. Partner connections fail. What is the smallest safe correction?",
     "choices": [
-      "It is denied by the implicit rule",
-      "It is always permitted",
-      "It is sent to DNS",
-      "It becomes multicast"
+      "Remove the broad deny entirely",
+      "Move a narrowly scoped partner HTTPS permit above the broad deny",
+      "Permit all ports from every external network",
+      "Disable stateful inspection"
     ],
-    "answer": 0,
-    "explanation": "Unmatched traffic encounters ACL F11's implicit deny."
+    "answer": 1,
+    "explanation": "A specific permit placed before the broad deny allows only the required partner service. Removing the deny or broadly permitting traffic expands exposure unnecessarily."
   },
   {
     "id": 21056,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Optical loss",
+    "blueprint": "Copper split-pair fault",
     "difficulty": "Level 4",
-    "question": "Fiber F12 works with a short jumper but fails through the building run; received power is below budget. What should be measured NEXT?",
+    "question": "A new copper run links at 1Gbps but has severe errors. A wire-map tester reports continuity on all eight conductors, while a qualification test reports split pairs. What must be corrected?",
     "choices": [
-      "Insertion loss across each segment and connector",
-      "DNS response time",
-      "Route preference",
-      "Wireless airtime"
+      "Increase the switch MTU",
+      "Add an optical attenuator",
+      "Re-terminate the conductors using the same T568 pair assignments at both ends",
+      "Change the DNS suffix"
     ],
-    "answer": 0,
-    "explanation": "Segment-by-segment loss testing localizes excessive attenuation on Fiber F12."
+    "answer": 2,
+    "explanation": "A split pair can pass simple continuity while destroying the twisting relationships needed to reject crosstalk. Correct pair termination resolves the physical fault."
   },
   {
     "id": 21057,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Data-center topology",
+    "objective": "1.6",
+    "blueprint": "Resilient topology design",
     "difficulty": "Level 3",
-    "question": "Fabric F12 connects every leaf switch to every spine switch, with no leaf-to-leaf links. Which topology is this?",
+    "question": "A financial site requires two independent paths between every core location so any single WAN circuit can fail without isolating a site. Which topology best meets this requirement?",
     "choices": [
-      "Spine-and-leaf",
+      "Full mesh",
+      "Single hub-and-spoke",
       "Bus",
-      "Collapsed ring",
-      "Hub-and-spoke WAN"
+      "Single point-to-point chain"
     ],
     "answer": 0,
-    "explanation": "Fabric F12 follows a spine-and-leaf topology that provides predictable east-west paths."
+    "explanation": "A full mesh provides direct redundant paths between all sites and removes a single hub dependency. The alternatives contain central or serial points of failure."
   },
   {
     "id": 21058,
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Recovery sites",
+    "blueprint": "Disaster-recovery strategy",
     "difficulty": "Level 4",
-    "question": "Business F12 needs a recovery facility with network and hardware installed, but applications may require restoration before use. Which site fits?",
+    "question": "A service has a 30-minute RTO and a 5-minute RPO. Nightly backups are stored offsite, and an empty recovery location can be equipped within three days. Which change is necessary?",
     "choices": [
-      "Warm site",
-      "Hot site with live workloads",
-      "Empty cold office",
-      "Tape vault only"
+      "Keep the cold site and test it once per year",
+      "Increase the DNS TTL to 24 hours",
+      "Store one additional monthly tape at the primary site",
+      "Use frequent replication to a ready hot or appropriately provisioned warm site"
     ],
-    "answer": 0,
-    "explanation": "A warm site provides prepared infrastructure for Business F12 without fully live production systems."
+    "answer": 3,
+    "explanation": "The current cold-site and nightly-backup design cannot meet either the 30-minute restoration target or 5-minute data-loss target. Frequent replication and ready infrastructure are required."
   },
   {
     "id": 21059,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Enterprise wireless",
+    "blueprint": "Enterprise wireless authentication",
     "difficulty": "Level 3",
-    "question": "WLAN F12 requires per-user certificates and dynamic authorization attributes. Which design is BEST?",
+    "question": "A company requires unique user credentials, certificate-based authentication, and immediate access revocation without changing a shared wireless password. Which design is best?",
     "choices": [
-      "802.1X with EAP-TLS and RADIUS",
-      "WPA-Personal with one key",
-      "Open authentication",
-      "WEP with MAC filtering"
+      "WPA2-Personal with one long preshared key",
+      "Open authentication with a captive portal only",
+      "WPA3-Enterprise with 802.1X, EAP-TLS, and RADIUS",
+      "WEP with MAC address filtering"
     ],
-    "answer": 0,
-    "explanation": "EAP-TLS and RADIUS provide certificate-based identity and centralized authorization for WLAN F12."
+    "answer": 2,
+    "explanation": "Enterprise 802.1X with EAP-TLS provides per-user/device certificates and centralized authorization. Shared-key and open designs cannot provide the required identity lifecycle."
   },
   {
     "id": 21060,
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Certificates",
+    "blueprint": "Certificate revocation checking",
     "difficulty": "Level 2",
-    "question": "Portal F12's certificate names app.example, but users browse portal.example and receive warnings. Which field is missing the used name?",
+    "question": "A browser needs to determine whether a certificate was revoked without downloading an entire revocation list. Which service can provide a current status response?",
     "choices": [
-      "Subject alternative name",
-      "Certificate serial only",
-      "Key usage for signing code",
-      "CRL distribution timer"
+      "Online Certificate Status Protocol (OCSP)",
+      "Network Time Protocol (NTP)",
+      "Trivial File Transfer Protocol (TFTP)",
+      "Simple Network Management Protocol (SNMP)"
     ],
     "answer": 0,
-    "explanation": "The accessed hostname must appear in Portal F12's subject alternative names."
+    "explanation": "OCSP provides certificate-status responses for individual certificates. CRLs are downloaded lists, while the other protocols do not report certificate revocation."
   },
   {
     "id": 21061,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Wireless hidden nodes",
+    "blueprint": "DNS record troubleshooting",
     "difficulty": "Level 4",
-    "question": "Two clients at F13 cannot hear each other but both hear the AP, causing collisions. Which mechanism helps coordinate their transmissions?",
+    "question": "A service was moved to a new IPv4 address. Internal clients reach the new server, but external clients still receive the old address after the published TTL has expired. Authoritative DNS queries return the old value. What should be corrected?",
     "choices": [
-      "RTS/CTS",
-      "Proxy ARP",
-      "STP root guard",
-      "DNSSEC"
+      "Clear only the internal clients' ARP caches",
+      "Increase the switch CAM-table aging timer",
+      "Change the server default gateway metric",
+      "Update the public authoritative A record"
     ],
-    "answer": 0,
-    "explanation": "RTS/CTS can reduce hidden-node collisions among clients at F13."
+    "answer": 3,
+    "explanation": "The authoritative response itself is stale, so recursive-cache clearing will not solve the source of the error. The public A record must be updated."
   },
   {
     "id": 21062,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud services",
+    "blueprint": "Cloud shared responsibility",
     "difficulty": "Level 3",
-    "question": "Company F13 subscribes to a complete browser-based ticketing application and manages no runtime or servers. Which model applies?",
+    "question": "A team deploys virtual machines in an IaaS cloud. The provider secures the physical data center, but an internet-facing VM is compromised through an unpatched operating system. Who was responsible for that patch?",
     "choices": [
-      "SaaS",
-      "IaaS",
-      "PaaS",
-      "Private colocation"
+      "Only the cloud provider",
+      "The customer's internet service provider",
+      "The customer operating the guest OS",
+      "The certificate authority"
     ],
-    "answer": 0,
-    "explanation": "SaaS delivers Company F13 a complete managed application."
+    "answer": 2,
+    "explanation": "In IaaS, the provider protects underlying facilities and infrastructure, while the customer manages guest operating systems and applications. The unpatched VM therefore remains the customer's responsibility."
   },
   {
     "id": 21063,
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Resilience testing",
+    "blueprint": "Recovery-site types",
     "difficulty": "Level 2",
-    "question": "Generator F13 has never carried the full data-center load. Which action BEST validates readiness?",
+    "question": "A recovery facility has networking, servers, and storage installed, but the systems are not continuously synchronized and the latest backups must be restored before service resumes. Which site type is described?",
     "choices": [
-      "Perform a controlled load-bank or transfer test",
-      "Assume the nameplate rating is sufficient",
-      "Disable facility alarms",
-      "Shorten DHCP leases"
+      "Active-active production site",
+      "Cold site with only space and utilities",
+      "Warm site",
+      "Reciprocal workspace with no installed infrastructure"
     ],
-    "answer": 0,
-    "explanation": "A controlled test verifies Generator F13, transfer equipment, and fuel systems under realistic demand."
+    "answer": 2,
+    "explanation": "A warm site has meaningful infrastructure prepared but still requires data restoration and final configuration. A cold site lacks the installed systems, while active-active capacity is already serving synchronized workloads."
   },
   {
     "id": 21064,
     "domain": "2",
     "objective": "2.3",
-    "blueprint": "Channel planning",
+    "blueprint": "Wireless roaming design",
     "difficulty": "Level 3",
-    "question": "Dense office F13 uses 160MHz channels and suffers contention. Which change is MOST likely to increase reuse?",
+    "question": "Voice handsets drop calls while roaming between APs even though coverage overlaps. The APs use different SSIDs and authentication policies. What should be standardized first?",
     "choices": [
-      "Use narrower channels and a coordinated plan",
-      "Put all APs on one 160MHz channel",
-      "Increase every radio to maximum power",
-      "Disable 5GHz service"
+      "The SSID and security configuration across the roaming domain",
+      "The AP management IP subnet mask only",
+      "The DNS TTL for the voice server",
+      "The Ethernet duplex setting on the handsets"
     ],
     "answer": 0,
-    "explanation": "Narrower coordinated channels create more reusable cells in dense office F13."
+    "explanation": "Seamless roaming requires a consistent WLAN identity and compatible security across APs. Overlapping signal alone cannot maintain a session between differently defined WLANs."
   },
   {
     "id": 21065,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Deception systems",
+    "blueprint": "Rogue DHCP attack",
     "difficulty": "Level 2",
-    "question": "Security team F13 deploys an instrumented fake server to observe attacker techniques. What is it?",
+    "question": "A client capture contains two DHCP OFFER messages for one request. One server identifier belongs to the approved DHCP cluster; the other belongs to an access-port MAC and supplies an unfamiliar DNS address. Which evidence confirms the rogue-service condition?",
     "choices": [
-      "Honeypot",
-      "Load balancer",
-      "DHCP server",
-      "Jump box"
+      "The client sent its request as a broadcast",
+      "The approved server returned a valid lease duration",
+      "An unapproved server identifier supplied competing network options",
+      "The switch forwarded ARP within the local VLAN"
     ],
-    "answer": 0,
-    "explanation": "A honeypot attracts and records hostile interaction for Security team F13."
+    "answer": 2,
+    "explanation": "The competing offer from an unapproved server identifier proves that another device is providing DHCP service. Broadcast discovery and local ARP forwarding are normal client-network behaviors."
   },
   {
     "id": 21066,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Packet capture",
+    "blueprint": "TCP window analysis",
     "difficulty": "Level 4",
-    "question": "Capture F14 shows SYN, SYN-ACK, ACK, followed immediately by a client reset. Which conclusion is BEST?",
+    "question": "A packet capture of a slow file transfer shows no loss or retransmissions, but the receiver repeatedly advertises a near-zero TCP window and pauses the sender. What is the most likely bottleneck?",
     "choices": [
-      "TCP established before the client terminated it",
-      "The server never answered",
-      "DNS definitely failed",
-      "The cable is open"
+      "The sender cannot resolve the receiver's hostname",
+      "The receiving host is not processing buffered data quickly enough",
+      "A switch is creating a Layer 2 loop",
+      "The path has an open fiber strand"
     ],
-    "answer": 0,
-    "explanation": "The three handshake packets prove establishment before the client reset Capture F14's session."
+    "answer": 1,
+    "explanation": "The receive window advertises available buffer space. A persistently tiny window without loss means the receiver or its application is constraining throughput."
   },
   {
     "id": 21067,
     "domain": "1",
     "objective": "1.5",
-    "blueprint": "Multicast",
+    "blueprint": "Ethernet transceiver selection",
     "difficulty": "Level 3",
-    "question": "Switch F14 should forward a multicast stream only toward ports with interested receivers. Which feature learns those memberships?",
+    "question": "A switch must connect over 10km of existing single-mode fiber at 10Gbps. Which transceiver characteristic is required?",
     "choices": [
-      "IGMP snooping",
-      "Proxy ARP",
-      "Portfast",
-      "DNSSEC"
+      "A 10Gbps long-reach optic rated for single-mode fiber and the link distance",
+      "A short-reach multimode optic",
+      "A copper direct-attach cable",
+      "A 1Gbps multimode media converter"
     ],
     "answer": 0,
-    "explanation": "IGMP snooping lets Switch F14 constrain multicast forwarding according to receiver membership."
+    "explanation": "The optic must match speed, single-mode media, wavelength/link budget, and distance. Short-reach multimode and copper options cannot support the installed 10km path."
   },
   {
     "id": 21068,
     "domain": "3",
     "objective": "3.5",
-    "blueprint": "Automation",
+    "blueprint": "API-based network management",
     "difficulty": "Level 4",
-    "question": "Controller F14 pushes configurations through an API. What safeguard should precede deployment to hundreds of devices?",
+    "question": "A monitoring platform must retrieve interface state and routing summaries from 300 devices every minute. Security policy forbids interactive shell access and shared administrator credentials, requires structured responses, and limits the integration to read-only operations. Which design BEST meets all requirements?",
     "choices": [
-      "Schema validation and a staged canary rollout",
-      "Immediate global deployment",
-      "Removal of rollback data",
-      "Shared plaintext credentials"
+      "Connect through each device's console port using one shared administrator account",
+      "Enable Telnet and scrape human-readable command output with stored passwords",
+      "Permit SNMPv1 polling with the default public community string",
+      "Use the devices' HTTPS management APIs with individually scoped read-only credentials"
     ],
-    "answer": 0,
-    "explanation": "Validation and a canary stage limit the impact of faulty automation from Controller F14."
+    "answer": 3,
+    "explanation": "A management API returns structured data without granting an interactive shell, and scoped credentials can enforce read-only access with individual accountability. The alternatives use insecure protocols, shared secrets, or unnecessary administrative privilege."
   },
   {
     "id": 21069,
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Electrical safety",
+    "blueprint": "PoE capacity planning",
     "difficulty": "Level 3",
-    "question": "Rack F14 shows a voltage difference between equipment chassis and building ground. What should happen FIRST?",
+    "question": "A switch supports PoE+, but newly added cameras reboot when all infrared lights activate at night. The switch log reports power-denied events and the aggregate requested wattage exceeds its budget. What should be changed?",
     "choices": [
-      "Have qualified personnel correct bonding and grounding",
-      "Connect an extra data cable",
-      "Disable DNSSEC",
-      "Increase PoE priority"
+      "Increase camera DNS TTL values",
+      "Increase available PoE budget or move devices to an adequately powered switch",
+      "Enable jumbo frames on camera ports",
+      "Lower the STP priority of the access switch"
     ],
-    "answer": 0,
-    "explanation": "Unsafe potential differences at Rack F14 require proper electrical bonding and grounding correction."
+    "answer": 1,
+    "explanation": "The nighttime load exceeds the switch's total PoE capacity even though individual ports support PoE+. More power budget or redistributed load directly resolves the logged condition."
   },
   {
     "id": 21070,
     "domain": "5",
-    "objective": "5.3",
-    "blueprint": "Asymmetric routing",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
     "difficulty": "Level 2",
-    "question": "Firewall F15 sees outbound SYN packets, but return traffic uses another firewall and sessions fail. What is the BEST fix?",
+    "question": "After gathering symptoms and confirming the scope of an outage, what should a technician do before implementing a fix?",
     "choices": [
-      "Restore a symmetric stateful path",
-      "Disable TCP flags",
-      "Change DNS aliases",
-      "Increase PoE budget"
+      "Document lessons learned before testing",
+      "Establish and test a theory of probable cause",
+      "Replace every device in the affected path",
+      "Escalate without collecting any evidence"
     ],
-    "answer": 0,
-    "explanation": "Both directions must traverse compatible state for Firewall F15 to validate the session."
+    "answer": 1,
+    "explanation": "The structured troubleshooting process moves from identifying the problem to establishing and testing a probable cause before planning and implementing a solution."
   },
   {
     "id": 21071,
     "domain": "1",
-    "objective": "1.8",
-    "blueprint": "Automatic addressing",
+    "objective": "1.7",
+    "blueprint": "IPv4 subnetting",
     "difficulty": "Level 4",
-    "question": "Laptop F15 has 169.254.88.12/16 after boot but its cable link is active. Which exchange most likely failed?",
+    "question": "Site A already uses 10.20.32.0/20. A new site needs an aligned /21 that must not overlap Site A. Which proposed subnet is the first valid block after the existing allocation?",
     "choices": [
-      "DHCP discovery and offer",
-      "DNS recursion",
-      "NTP synchronization",
-      "TCP three-way handshake"
+      "10.20.40.0/21",
+      "10.20.44.0/21",
+      "10.20.48.0/22",
+      "10.20.48.0/21"
     ],
-    "answer": 0,
-    "explanation": "An IPv4 link-local address indicates Laptop F15 could not obtain a DHCP lease."
+    "answer": 3,
+    "explanation": "10.20.32.0/20 spans third-octet values 32 through 47. The next /21 boundary is 48, so 10.20.48.0/21 is the first aligned, nonoverlapping block of the required size."
   },
   {
     "id": 21072,
     "domain": "3",
     "objective": "3.4",
-    "blueprint": "IP address management",
+    "blueprint": "DHCP option management",
     "difficulty": "Level 3",
-    "question": "Team F15 needs searchable ownership, utilization, and reservation history for every subnet. Which platform is BEST?",
+    "question": "New VoIP phones receive valid IP addresses but cannot find the call-control server. Existing phones work, and packet captures show no attempt to contact the controller. Which DHCP configuration should be compared?",
     "choices": [
-      "IPAM",
-      "Packet broker",
-      "RADIUS proxy",
-      "Wireless controller"
+      "The switch STP hello timer",
+      "The vendor-specific or provisioning option supplied to the phones",
+      "The DNS server's MX preference",
+      "The WAN interface duplex setting"
     ],
-    "answer": 0,
-    "explanation": "IPAM centralizes subnet inventory and address-assignment history for Team F15."
+    "answer": 1,
+    "explanation": "Many phones use a DHCP provisioning option to locate a controller or configuration service. Valid addressing with no controller attempt points to missing discovery information."
   },
   {
     "id": 21073,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "BGP policy",
+    "blueprint": "Default routes",
     "difficulty": "Level 2",
-    "question": "Enterprise F15 wants outbound traffic to prefer ISP-A without changing advertised prefixes. Which local BGP attribute is commonly raised?",
+    "question": "A router needs an IPv6 catch-all route toward its upstream provider. Which prefix represents the IPv6 default route?",
     "choices": [
-      "Local preference",
-      "MED received by customers",
-      "STP cost",
-      "VLAN priority"
+      "0.0.0.0/0",
+      "fe80::/10",
+      "::1/128",
+      "::/0"
     ],
-    "answer": 0,
-    "explanation": "Higher local preference makes routers inside Enterprise F15 favor ISP-A for outbound paths."
+    "answer": 3,
+    "explanation": "The IPv6 default route is ::/0 and matches destinations for which no more-specific IPv6 route exists. 0.0.0.0/0 is the IPv4 equivalent, while the other IPv6 prefixes have narrower purposes."
   },
   {
     "id": 21074,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Path MTU",
+    "blueprint": "NTP service troubleshooting",
     "difficulty": "Level 3",
-    "question": "Small requests through VPN F16 work, but large HTTPS responses stall with no fragmentation messages returned. Which fault is MOST likely?",
+    "question": "Kerberos authentication fails on one subnet because client clocks are seven minutes behind. Clients can resolve the NTP server name, but UDP 123 probes are blocked at the subnet firewall. What is the best correction?",
     "choices": [
-      "Path-MTU black hole",
-      "Duplicate DNS A record",
-      "Wireless deauthentication",
-      "Expired DHCP lease"
+      "Replace the clients' Ethernet cables",
+      "Permit NTP between the clients and the approved time source",
+      "Add a second DNS MX record",
+      "Increase the wireless beacon interval"
     ],
-    "answer": 0,
-    "explanation": "Blocked PMTUD feedback can make oversized packets disappear through VPN F16."
+    "answer": 1,
+    "explanation": "The time skew exceeds Kerberos tolerance, and the evidence shows NTP traffic is blocked. Restoring approved NTP reachability corrects the cause."
   },
   {
     "id": 21075,
     "domain": "1",
     "objective": "1.8",
-    "blueprint": "IPv6 configuration",
+    "blueprint": "Software-defined networking",
     "difficulty": "Level 2",
-    "question": "Router advertisement F16 supplies a prefix, and hosts build addresses without a DHCPv6 server. Which process is operating?",
+    "question": "In an SDN architecture, which component makes centralized forwarding-policy decisions?",
     "choices": [
-      "SLAAC",
-      "PAT",
-      "ARP",
-      "Split DNS"
+      "The data-plane forwarding table alone",
+      "A passive copper patch panel",
+      "A DNS recursive resolver",
+      "The control plane controller"
     ],
-    "answer": 0,
-    "explanation": "SLAAC uses Router advertisement F16 to let IPv6 hosts form their own addresses."
+    "answer": 3,
+    "explanation": "SDN separates centralized control-plane decisions from data-plane forwarding. Patch panels and DNS resolvers do not program network forwarding policy."
   },
   {
     "id": 21076,
     "domain": "3",
     "objective": "3.1",
-    "blueprint": "Configuration management",
+    "blueprint": "Configuration recovery validation",
     "difficulty": "Level 4",
-    "question": "Switch F16 fails after an upgrade, and its replacement must be restored quickly. Which preparation is MOST valuable?",
+    "question": "A team backs up router configurations nightly, but a restore exercise fails because encrypted secrets require a missing key. What should be added to the recovery process?",
     "choices": [
-      "Versioned configuration backups",
-      "A longer DNS TTL",
-      "A public guest SSID",
-      "Disabled syslog"
+      "Stop versioning configurations",
+      "Test restores regularly and protect all dependent keys and credentials with the backups",
+      "Store only screenshots of the running configuration",
+      "Disable encryption on all network devices"
     ],
-    "answer": 0,
-    "explanation": "A current versioned backup lets the replacement for Switch F16 recover known settings quickly."
+    "answer": 1,
+    "explanation": "A backup is useful only when all dependencies are protected and restoration is tested. Removing security or keeping screenshots does not create a reliable recovery process."
   },
   {
     "id": 21077,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Gateway redundancy",
+    "blueprint": "OSPF adjacency troubleshooting",
     "difficulty": "Level 3",
-    "question": "Hosts at F16 use one virtual gateway backed by two routers. Which event should trigger the standby to assume forwarding?",
+    "question": "Two directly connected OSPF routers remain in EXSTART. Their area, timers, and authentication match, but interface logs report an MTU mismatch. What should be corrected?",
     "choices": [
-      "Loss of the active router or tracked uplink",
-      "A DNS cache hit",
-      "A successful DHCP renewal",
-      "An AP channel change"
+      "Configure compatible interface MTUs on both routers",
+      "Assign different OSPF process IDs across the link",
+      "Change both interfaces to access switch ports",
+      "Disable IP routing on the neighbor"
     ],
     "answer": 0,
-    "explanation": "First-hop redundancy allows the standby at F16 to take over after active-path failure."
+    "explanation": "An MTU mismatch commonly prevents OSPF neighbors from completing database exchange and leaves them in EXSTART/EXCHANGE. The other changes would not solve the adjacency."
   },
   {
     "id": 21078,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "DNS delegation",
+    "blueprint": "Latency-path analysis",
     "difficulty": "Level 4",
-    "question": "Resolver F17 can answer parent-zone names but returns delegation failure for a new child zone. Which records should be checked?",
+    "question": "Users report an application is slow only from one branch. DNS timing is normal, WAN utilization is 30%, and traceroute shows an added 140ms beginning at the provider edge. Packet loss inside the branch is zero. What should be escalated?",
     "choices": [
-      "Parent NS records and glue",
-      "Switch MAC entries",
-      "NTP peers",
-      "PoE classes"
+      "The branch DHCP scope size",
+      "The application server certificate name",
+      "The local switch MAC-table aging time",
+      "The provider path latency beginning at its edge"
     ],
-    "answer": 0,
-    "explanation": "Correct NS delegation and required glue direct Resolver F17 to the child-zone servers."
+    "answer": 3,
+    "explanation": "The measurements isolate the delay to the provider path while ruling out branch congestion, loss, and DNS. Escalation should include the hop-by-hop latency evidence."
   },
   {
     "id": 21079,
     "domain": "1",
     "objective": "1.1",
-    "blueprint": "Packet handling",
+    "blueprint": "Encapsulation and MTU",
     "difficulty": "Level 3",
-    "question": "Tunnel F17 adds 60 bytes of overhead to a 1500-byte path. Which payload adjustment prevents fragmentation?",
+    "question": "A router receives a 1500-byte IPv4 packet for a 1400-byte outgoing interface with DF set. What should the router do?",
     "choices": [
-      "Reduce the inner MTU to 1440",
-      "Raise the inner MTU to 1560",
-      "Disable TTL",
-      "Change the DNS suffix"
+      "Fragment the packet despite DF",
+      "Convert the packet into an Ethernet broadcast",
+      "Remove the IP header and forward only the TCP segment",
+      "Drop the packet and return an ICMP fragmentation-needed message"
     ],
-    "answer": 0,
-    "explanation": "Reducing Tunnel F17's inner MTU by its 60-byte overhead keeps outer packets within 1500 bytes."
+    "answer": 3,
+    "explanation": "The DF bit prevents IPv4 fragmentation. The router drops the oversized packet and signals the sender so path-MTU discovery can reduce packet size."
   },
   {
     "id": 21080,
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Event correlation",
+    "blueprint": "Syslog severity",
     "difficulty": "Level 2",
-    "question": "Analysts at F17 must correlate VPN logins, firewall blocks, and endpoint alerts. Which system BEST supports this?",
+    "question": "Which syslog severity represents a condition requiring immediate action but is less severe than an unusable system?",
     "choices": [
-      "SIEM",
-      "Cable tester",
-      "DHCP relay",
-      "Media converter"
+      "Alert (1)",
+      "Emergency (0)",
+      "Debug (7)",
+      "Informational (6)"
     ],
     "answer": 0,
-    "explanation": "A SIEM aggregates and correlates security events for analysts at F17."
+    "explanation": "Alert severity 1 requires immediate action, while Emergency 0 means the system is unusable. Informational and Debug are much less urgent."
   },
   {
     "id": 21081,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Trunk troubleshooting",
+    "blueprint": "VLAN trunk and pruning analysis",
     "difficulty": "Level 4",
-    "question": "Trunk F17 reports native-VLAN mismatch messages at both ends. What is the BEST correction?",
+    "question": "VLAN 40 works between two access switches but not across the distribution trunk. Both trunk endpoints use the same native VLAN, and VLAN 40 exists on every switch. The trunk allowed lists show VLAN 40 on one end but not the other. What is the best correction?",
     "choices": [
-      "Configure the same native VLAN on each endpoint",
-      "Convert both ends to monitor ports",
-      "Disable tagging for every VLAN",
-      "Add a DHCP relay"
+      "Change VLAN 40 access ports into routed ports",
+      "Disable STP for VLAN 40",
+      "Add VLAN 40 to the allowed list consistently on both trunk endpoints",
+      "Make VLAN 40 the native VLAN everywhere"
     ],
-    "answer": 0,
-    "explanation": "Matching native VLAN settings prevents untagged traffic from entering different VLANs on Trunk F17."
+    "answer": 2,
+    "explanation": "The asymmetric allowed list prunes VLAN 40 from the trunk despite correct VLAN creation and native-VLAN settings. Adding it consistently restores tagged forwarding."
   },
   {
     "id": 21082,
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Time synchronization",
+    "blueprint": "Wireless cell-size tuning",
     "difficulty": "Level 3",
-    "question": "Authentication at F18 fails every afternoon as server clocks drift beyond policy. Which correction is BEST?",
+    "question": "Clients remain associated with a distant AP at very low data rates even while standing near another AP. All APs share the correct SSID and security. Which tuning change is most appropriate?",
     "choices": [
-      "Repair the NTP hierarchy and reachability",
-      "Increase VLAN count",
-      "Replace fiber connectors",
-      "Disable logging"
+      "Increase every AP to maximum transmit power",
+      "Use the same 2.4GHz channel on every AP",
+      "Reduce excessive transmit power and review minimum data-rate or roaming thresholds",
+      "Increase the DHCP lease to one week"
     ],
-    "answer": 0,
-    "explanation": "Reliable NTP sources prevent clock drift from breaking time-sensitive authentication at F18."
+    "answer": 2,
+    "explanation": "Oversized cells encourage sticky clients. Reasonable power and data-rate/roaming thresholds create clearer cell boundaries without changing the common WLAN identity."
   },
   {
     "id": 21083,
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "Ports and protocols",
+    "blueprint": "Common ports and protocols",
     "difficulty": "Level 2",
-    "question": "Firewall F18 must permit clients to synchronize time with an external source. Which traffic is required?",
+    "question": "Which protocol normally uses TCP port 22 for secure remote command-line administration?",
     "choices": [
-      "UDP 123",
-      "TCP 110",
-      "UDP 69",
-      "TCP 636"
+      "SSH",
+      "Telnet",
+      "RDP",
+      "TFTP"
     ],
     "answer": 0,
-    "explanation": "NTP normally uses UDP port 123 for time synchronization through Firewall F18."
+    "explanation": "SSH provides encrypted remote shell access over TCP 22. Telnet uses TCP 23, RDP commonly uses TCP/UDP 3389, and TFTP uses UDP 69."
   },
   {
     "id": 21084,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Link aggregation",
+    "blueprint": "Link-aggregation hashing",
     "difficulty": "Level 3",
-    "question": "A four-link bundle at F18 carries one large flow on only one member while aggregate traffic uses all links. Is this expected?",
+    "question": "A four-link LACP bundle carries many user flows across all members, but one single high-volume TCP session never exceeds one member's capacity. What is the best explanation?",
     "choices": [
-      "Yes, hashing normally keeps one flow on one member",
-      "No, every packet must round-robin",
-      "No, LACP disables hashing",
-      "Yes, because three links are blocked by STP"
+      "STP blocks three links inside every LACP bundle",
+      "LACP requires each packet to use the next member in sequence",
+      "The hashing algorithm keeps a flow on one member to preserve packet order",
+      "The switch converts the TCP session into a broadcast"
     ],
-    "answer": 0,
-    "explanation": "Per-flow hashing preserves packet order, so one flow at F18 normally stays on one member."
+    "answer": 2,
+    "explanation": "Link aggregation usually balances per flow, not per packet, so one flow stays on one member and cannot exceed that member's bandwidth while aggregate traffic uses the full bundle."
   },
   {
     "id": 21085,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Optical loss",
+    "blueprint": "Fiber connector inspection",
     "difficulty": "Level 2",
-    "question": "Fiber F19 works with a short jumper but fails through the building run; received power is below budget. What should be measured NEXT?",
+    "question": "Which tool allows a technician to inspect a fiber end face for contamination or damage before cleaning and reconnecting it?",
     "choices": [
-      "Insertion loss across each segment and connector",
-      "DNS response time",
-      "Route preference",
-      "Wireless airtime"
+      "A tone generator",
+      "A punchdown tool",
+      "A Wi-Fi spectrum analyzer",
+      "A fiber inspection scope"
     ],
-    "answer": 0,
-    "explanation": "Segment-by-segment loss testing localizes excessive attenuation on Fiber F19."
+    "answer": 3,
+    "explanation": "A fiber inspection scope safely magnifies the connector end face. The other tools serve copper tracing, termination, or radio-frequency analysis."
   },
   {
     "id": 21086,
     "domain": "1",
-    "objective": "1.7",
-    "blueprint": "Data-center topology",
+    "objective": "1.6",
+    "blueprint": "Highly available campus topology",
     "difficulty": "Level 4",
-    "question": "Fabric F19 connects every leaf switch to every spine switch, with no leaf-to-leaf links. Which topology is this?",
+    "question": "A campus design uses two distribution switches. Every access switch has one uplink to each distribution switch, and first-hop gateway service survives either distribution failure. Which design goal is primarily achieved?",
     "choices": [
-      "Spine-and-leaf",
-      "Bus",
-      "Collapsed ring",
-      "Hub-and-spoke WAN"
+      "Broadcasting every frame to all access ports",
+      "Replacing routing with a physical bus",
+      "Ensuring only one total uplink exists per access switch",
+      "Redundancy by eliminating a single distribution-path failure"
     ],
-    "answer": 0,
-    "explanation": "Fabric F19 follows a spine-and-leaf topology that provides predictable east-west paths."
+    "answer": 3,
+    "explanation": "Dual-homing access switches to a redundant distribution pair preserves connectivity through a single device or link failure. The topology intentionally adds alternate paths rather than a bus or single uplink."
   },
   {
     "id": 21087,
     "domain": "5",
     "objective": "5.3",
-    "blueprint": "Wireless hidden nodes",
+    "blueprint": "DNS resolver troubleshooting",
     "difficulty": "Level 3",
-    "question": "Two clients at F20 cannot hear each other but both hear the AP, causing collisions. Which mechanism helps coordinate their transmissions?",
+    "question": "A workstation reaches an internal application by IP but not by hostname. It can resolve public names, and another subnet resolves the internal name correctly. Which check is most useful next?",
     "choices": [
-      "RTS/CTS",
-      "Proxy ARP",
-      "STP root guard",
-      "DNSSEC"
+      "Replace the application server power supply",
+      "Compare the workstation's DNS suffix and assigned resolver with a working client",
+      "Increase the switch PoE budget",
+      "Change the WAN routing protocol"
     ],
-    "answer": 0,
-    "explanation": "RTS/CTS can reduce hidden-node collisions among clients at F20."
+    "answer": 1,
+    "explanation": "IP reachability and public DNS work, while only internal-name resolution differs by subnet. Comparing resolver and suffix configuration targets the split-DNS path."
   },
   {
     "id": 21088,
     "domain": "1",
-    "objective": "1.3",
-    "blueprint": "Cloud services",
+    "objective": "1.2",
+    "blueprint": "Network appliance placement",
     "difficulty": "Level 4",
-    "question": "Company F20 subscribes to a complete browser-based ticketing application and manages no runtime or servers. Which model applies?",
+    "question": "A security team must inspect east-west traffic between server VLANs without making the sensor a forwarding dependency. The switches can copy selected traffic, and an analysis stack needs one filtered feed. Which design best meets the requirement?",
     "choices": [
-      "SaaS",
-      "IaaS",
-      "PaaS",
-      "Private colocation"
+      "Mirror the VLAN traffic to a packet broker feeding an out-of-band IDS",
+      "Place an IPS inline without bypass capability",
+      "Use a passive patch panel as the detection engine",
+      "Send only DNS logs to a wireless controller"
     ],
     "answer": 0,
-    "explanation": "SaaS delivers Company F20 a complete managed application."
+    "explanation": "Mirroring to a packet broker and out-of-band IDS provides visibility without placing the sensor in the forwarding path. An inline IPS changes availability risk and the other devices cannot perform the inspection."
   },
   {
     "id": 21089,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Packet capture",
+    "blueprint": "Command-line diagnostic tools",
     "difficulty": "Level 3",
-    "question": "Capture F21 shows SYN, SYN-ACK, ACK, followed immediately by a client reset. Which conclusion is BEST?",
+    "question": "A host resolves a service name to the expected address, but connections take an unexpected network path. Which command should be used to display the sequence of routed hops?",
     "choices": [
-      "TCP established before the client terminated it",
-      "The server never answered",
-      "DNS definitely failed",
-      "The cable is open"
+      "nslookup",
+      "traceroute or tracert",
+      "arp -a",
+      "hostname"
     ],
-    "answer": 0,
-    "explanation": "The three handshake packets prove establishment before the client reset Capture F21's session."
+    "answer": 1,
+    "explanation": "Traceroute/tracert reveals the routed hop sequence. Nslookup tests DNS, arp displays local neighbor mappings, and hostname reports the local system name."
   },
   {
     "id": 21090,
     "domain": "1",
     "objective": "1.5",
-    "blueprint": "Multicast",
+    "blueprint": "Copper cabling categories",
     "difficulty": "Level 2",
-    "question": "Switch F21 should forward a multicast stream only toward ports with interested receivers. Which feature learns those memberships?",
+    "question": "Which copper cabling category supports 10GBASE-T at the full 100-meter channel distance?",
     "choices": [
-      "IGMP snooping",
-      "Proxy ARP",
-      "Portfast",
-      "DNSSEC"
+      "Category 6A",
+      "Category 3",
+      "Category 5",
+      "Category 5e"
     ],
     "answer": 0,
-    "explanation": "IGMP snooping lets Switch F21 constrain multicast forwarding according to receiver membership."
+    "explanation": "Cat 6A is specified for 10GBASE-T over a full 100-meter channel. Lower categories do not provide that full-distance 10Gbps capability."
   }
 ]

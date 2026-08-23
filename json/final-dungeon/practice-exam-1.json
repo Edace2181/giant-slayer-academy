@@ -1,92 +1,1442 @@
 [
-  {"id":18001,"domain":"1","objective":"1.1","blueprint":"OSI model","difficulty":"Level 2","question":"A monitoring dashboard shows Ethernet framing errors, while IP addressing and routes are correct. Which OSI layer should the technician investigate first?","choices":["Physical","Data Link","Network","Transport"],"answer":1,"explanation":"Ethernet frames and frame-error detection operate at the Data Link layer; valid addressing and routes do not explain malformed frames."},
-  {"id":18002,"domain":"2","objective":"2.1","blueprint":"Route selection","difficulty":"Level 3","question":"A router learns 172.20.8.0/24 through OSPF and 172.20.8.0/25 through a static route. Which route will it use for 172.20.8.40?","choices":["The OSPF /24 route","The static /25 route","Both routes equally","The default route"],"answer":1,"explanation":"Longest-prefix matching is evaluated before route source or metric, so the more-specific /25 static route wins."},
-  {"id":18003,"domain":"3","objective":"3.1","blueprint":"Change management","difficulty":"Level 4","question":"An emergency firewall change restores a customer portal but bypasses the normal approval meeting. What should the engineer do NEXT to preserve operational governance?","choices":["Leave the rule undocumented","Perform retrospective approval and document the change","Replace the firewall immediately","Extend the rule to every segment"],"answer":1,"explanation":"Emergency changes should be documented and reviewed retrospectively so the configuration, justification, risk, and rollback information remain controlled."},
-  {"id":18004,"domain":"4","objective":"4.1","blueprint":"Zero trust","difficulty":"Level 2","question":"Which principle requires a user to be evaluated each time access to a protected application is requested?","choices":["Implicit trust","Continuous verification","Open federation","Route redistribution"],"answer":1,"explanation":"Continuous verification is central to zero trust and avoids granting permanent trust merely because a user is already connected."},
-  {"id":18005,"domain":"5","objective":"5.1","blueprint":"Troubleshooting methodology","difficulty":"Level 3","question":"A technician forms a theory that a recently installed ACL blocks payroll traffic. What should the technician do before changing the ACL?","choices":["Test the theory safely","Escalate without evidence","Replace the core switch","Close the ticket"],"answer":0,"explanation":"After establishing a probable cause, the troubleshooting methodology calls for testing the theory before implementing a corrective plan."},
-  {"id":18006,"domain":"1","objective":"1.4","blueprint":"Ports and protocols","difficulty":"Level 4","question":"A packet capture shows a client sending UDP queries to port 53, receiving no reply, then successfully sending TCP to the same port. Which condition BEST explains the behavior?","choices":["The DNS response required TCP or UDP 53 is filtered","The client is using HTTPS","The server is offering DHCP","The switch is blocking ARP"],"answer":0,"explanation":"DNS normally starts with UDP 53 but can use TCP 53 for large responses or retries; filtering or response size can produce this pattern."},
-  {"id":18007,"domain":"2","objective":"2.2","blueprint":"VLAN trunks","difficulty":"Level 2","question":"A switch link must carry traffic for VLANs 10, 20, and 30 to another switch. Which port mode is required?","choices":["Access","Trunk","Routed host","Monitor"],"answer":1,"explanation":"An 802.1Q trunk transports multiple tagged VLANs across one physical switch link."},
-  {"id":18008,"domain":"3","objective":"3.2","blueprint":"SNMP monitoring","difficulty":"Level 3","question":"A monitoring server must receive immediate notification when a switch power supply fails. Which mechanism is BEST?","choices":["SNMP trap","Weekly syslog export","DNS zone transfer","Manual ping"],"answer":0,"explanation":"An SNMP trap is an unsolicited event notification, making it appropriate for immediate hardware-failure alerts."},
-  {"id":18009,"domain":"4","objective":"4.2","blueprint":"On-path attacks","difficulty":"Level 4","question":"Users receive certificate warnings only on a guest WLAN, and packet captures show the gateway answering ARP requests for many unrelated hosts. Which attack is MOST likely?","choices":["VLAN hopping","ARP poisoning","DNSSEC validation","MAC filtering"],"answer":1,"explanation":"Fraudulent ARP replies can redirect local traffic through an attacker, enabling interception and producing certificate warnings."},
-  {"id":18010,"domain":"5","objective":"5.2","blueprint":"Fiber troubleshooting","difficulty":"Level 2","question":"Which tool measures optical power arriving at the end of a fiber link?","choices":["Tone generator","Optical power meter","Loopback plug","Wi-Fi analyzer"],"answer":1,"explanation":"An optical power meter measures received light levels and helps identify excessive loss on fiber links."},
-  {"id":18011,"domain":"1","objective":"1.8","blueprint":"IPv4 subnetting","difficulty":"Level 3","question":"A point-to-point IPv4 link needs exactly two usable addresses while minimizing waste. Which prefix is the conventional choice?","choices":["/24","/28","/30","/32"],"answer":2,"explanation":"A /30 contains four addresses and traditionally provides two usable host addresses for a point-to-point link."},
-  {"id":18012,"domain":"2","objective":"2.3","blueprint":"Wireless channels","difficulty":"Level 4","question":"Three neighboring 2.4GHz access points use channels 1, 4, and 8. Clients report interference despite strong signals. Which redesign is BEST?","choices":["Use channels 1, 6, and 11","Set every AP to channel 6","Increase every transmitter to maximum power","Disable channel bonding only on wired ports"],"answer":0,"explanation":"Channels 1, 6, and 11 are the standard nonoverlapping 2.4GHz set and reduce adjacent-channel interference."},
-  {"id":18013,"domain":"3","objective":"3.3","blueprint":"Recovery objectives","difficulty":"Level 2","question":"Which metric defines the maximum acceptable amount of data loss measured in time?","choices":["MTTR","RPO","RTO","SLA availability"],"answer":1,"explanation":"Recovery point objective identifies how far back data restoration may go, expressing tolerable data loss as time."},
-  {"id":18014,"domain":"4","objective":"4.3","blueprint":"Port security","difficulty":"Level 3","question":"A company wants an access switch port to shut down if a second unauthorized MAC address appears. Which control should be configured?","choices":["Port security","Dynamic routing","Jumbo frames","Link aggregation"],"answer":0,"explanation":"Switch port security can restrict learned MAC addresses and place a port into a violation state when the limit is exceeded."},
-  {"id":18015,"domain":"5","objective":"5.3","blueprint":"Interface errors","difficulty":"Level 4","question":"One end of a copper link is forced to full duplex and the other negotiates half duplex. Which counters are MOST likely to increase?","choices":["Late collisions and FCS errors","DNS failures and TTL expirations","Optical loss and dispersion","Successful jumbo frames only"],"answer":0,"explanation":"A duplex mismatch commonly produces late collisions on the half-duplex side and frame-check errors or poor throughput."},
-  {"id":18016,"domain":"1","objective":"1.2","blueprint":"Network appliances","difficulty":"Level 2","question":"Which device distributes client requests among multiple application servers?","choices":["Load balancer","Patch panel","Media converter","CSU/DSU"],"answer":0,"explanation":"A load balancer spreads requests across servers and can use health checks to avoid failed instances."},
-  {"id":18017,"domain":"2","objective":"2.4","blueprint":"Power and environment","difficulty":"Level 3","question":"New PoE cameras reboot when infrared lighting activates at night. The switch reports that its available PoE capacity is exhausted. What is the BEST correction?","choices":["Increase the switch PoE budget or add an appropriate injector","Shorten the DHCP lease","Change the camera DNS suffix","Disable spanning tree"],"answer":0,"explanation":"Infrared illumination raises power demand; adequate PoE budget or properly rated injectors address the actual constraint."},
-  {"id":18018,"domain":"3","objective":"3.4","blueprint":"DHCP services","difficulty":"Level 4","question":"Clients in a new VLAN send DHCP discoveries, but the DHCP server resides across a router and sees no requests. Other routed traffic works. What should be configured FIRST?","choices":["A DHCP relay on the VLAN gateway","A static ARP entry on every client","A second DNS MX record","A lower switch MTU"],"answer":0,"explanation":"DHCP broadcasts do not cross routers; a relay on the client VLAN forwards them to the remote DHCP server."},
-  {"id":18019,"domain":"4","objective":"4.1","blueprint":"Least privilege","difficulty":"Level 2","question":"A help-desk employee needs permission to reset passwords but not create domain administrators. Which security concept applies?","choices":["Least privilege","Open access","Nonrepudiation","Load balancing"],"answer":0,"explanation":"Least privilege grants only the permissions necessary for assigned duties and no broader administrative authority."},
-  {"id":18020,"domain":"5","objective":"5.4","blueprint":"DNS troubleshooting","difficulty":"Level 3","question":"Users can reach an internal web server by IP address but not by its hostname. Which service should be tested first?","choices":["DNS","NTP","TFTP","STP"],"answer":0,"explanation":"Successful IP access with failed name access isolates the likely problem to hostname resolution, normally DNS."},
-  {"id":18021,"domain":"1","objective":"1.3","blueprint":"Cloud connectivity","difficulty":"Level 4","question":"An organization extends a private subnet into a cloud provider and needs predictable bandwidth without traversing the public internet. Which option is BEST?","choices":["Dedicated private cloud connection","Consumer broadband with UPnP","Public DNS round robin","A local crossover cable"],"answer":0,"explanation":"A dedicated private connection provides controlled private transport and more predictable performance than internet VPN access."},
-  {"id":18022,"domain":"2","objective":"2.1","blueprint":"Dynamic routing","difficulty":"Level 2","question":"Which protocol is primarily used to exchange routes between autonomous systems?","choices":["BGP","STP","LACP","LLDP"],"answer":0,"explanation":"Border Gateway Protocol exchanges reachability information between autonomous systems on the internet and large multihomed networks."},
-  {"id":18023,"domain":"3","objective":"3.5","blueprint":"Secure administration","difficulty":"Level 3","question":"A network team is replacing Telnet for switch administration. Which protocol provides encrypted interactive command-line access?","choices":["SSH","FTP","SNMPv1","HTTP"],"answer":0,"explanation":"SSH encrypts administrative authentication and terminal traffic, unlike Telnet."},
-  {"id":18024,"domain":"4","objective":"4.2","blueprint":"Password attacks","difficulty":"Level 4","question":"Authentication logs show one password attempt against thousands of accounts, followed hours later by another common password against the same accounts. Which attack is occurring?","choices":["Password spraying","Tailgating","VLAN pruning","Evil twin"],"answer":0,"explanation":"Password spraying tries a small number of common passwords across many accounts to avoid per-account lockouts."},
-  {"id":18025,"domain":"5","objective":"5.5","blueprint":"Command-line tools","difficulty":"Level 2","question":"Which command displays the route taken by packets toward a remote destination?","choices":["tracert","nslookup","arp","netstat"],"answer":0,"explanation":"tracert on Windows, or traceroute on many other systems, reveals successive Layer 3 hops toward a destination."},
-  {"id":18026,"domain":"1","objective":"1.5","blueprint":"Traffic types","difficulty":"Level 3","question":"A video server sends one stream that is delivered only to hosts that joined a specific group. What traffic type is this?","choices":["Broadcast","Anycast","Multicast","Unicast flooding"],"answer":2,"explanation":"Multicast delivers a stream to subscribed group members without creating a separate unicast copy for every receiver."},
-  {"id":18027,"domain":"2","objective":"2.2","blueprint":"Spanning tree","difficulty":"Level 4","question":"After a redundant switch link is connected, the entire access layer experiences a broadcast storm. Which protocol was MOST likely absent or misconfigured?","choices":["STP","NAT","DNSSEC","NTP"],"answer":0,"explanation":"Spanning Tree Protocol blocks redundant Layer 2 paths to prevent switching loops and broadcast storms."},
-  {"id":18028,"domain":"3","objective":"3.1","blueprint":"Network documentation","difficulty":"Level 2","question":"Which document should show switch-to-switch links, port relationships, and VLAN connections?","choices":["Logical network diagram","Employee directory","Data-retention policy","Certificate revocation list"],"answer":0,"explanation":"A logical network diagram records connectivity and network relationships without focusing on building-scale placement."},
-  {"id":18029,"domain":"4","objective":"4.3","blueprint":"Access control lists","difficulty":"Level 3","question":"A server VLAN should accept HTTPS from users but reject all direct SSH access. Which control BEST enforces this requirement at the gateway?","choices":["An ACL permitting TCP 443 and denying TCP 22","A DHCP reservation","A longer WPA passphrase","A loopback adapter"],"answer":0,"explanation":"A gateway ACL can permit the required HTTPS port while explicitly blocking SSH traffic."},
-  {"id":18030,"domain":"5","objective":"5.2","blueprint":"Copper cabling","difficulty":"Level 4","question":"A newly terminated cable maps pins 1 through 8 correctly, yet certification reports split pairs and high crosstalk. What is the MOST likely cause?","choices":["Conductors were paired incorrectly while preserving pin continuity","The cable has an excessive optical wavelength","The DNS server lacks a PTR record","The switch elected the wrong root bridge"],"answer":0,"explanation":"A split pair can pass a basic wiremap because every pin connects, but incorrect twisted-pair grouping causes excessive crosstalk."},
-  {"id":18031,"domain":"1","objective":"1.6","blueprint":"Fiber media","difficulty":"Level 2","question":"Which fiber type is generally selected for the longest campus links?","choices":["Single-mode fiber","Multimode fiber","RG-6 coaxial","Cat 3 UTP"],"answer":0,"explanation":"Single-mode fiber supports longer distances and higher-bandwidth long-haul links than typical multimode deployments."},
-  {"id":18032,"domain":"2","objective":"2.3","blueprint":"Wireless security","difficulty":"Level 3","question":"A company wants individual employee credentials and centralized authentication for Wi-Fi. Which deployment is BEST?","choices":["WPA3-Enterprise with RADIUS","Open authentication with a hidden SSID","WEP with a shared key","WPA2-Personal with one posted password"],"answer":0,"explanation":"WPA3-Enterprise integrates 802.1X with RADIUS so users authenticate individually and access can be centrally controlled."},
-  {"id":18033,"domain":"3","objective":"3.2","blueprint":"Flow monitoring","difficulty":"Level 4","question":"A WAN link is saturated, and the team needs to identify which source-destination conversations consume the most bandwidth without retaining packet payloads. What should be enabled?","choices":["Flow records such as NetFlow","A cable toner","Port security sticky learning","A DNS hosts file"],"answer":0,"explanation":"Flow telemetry summarizes communicating endpoints, ports, and byte counts without requiring full payload capture."},
-  {"id":18034,"domain":"4","objective":"4.1","blueprint":"Physical security","difficulty":"Level 2","question":"Which control BEST prevents an unauthorized person from following an employee into a data center?","choices":["Mantrap","Proxy server","Route filter","DHCP snooping"],"answer":0,"explanation":"A mantrap controls entry so one door must close and identity can be validated before the next door opens."},
-  {"id":18035,"domain":"5","objective":"5.3","blueprint":"Wireless performance","difficulty":"Level 3","question":"Users near an access point have strong signal strength but poor throughput during meetings. Channel utilization is 95%. What is the MOST likely issue?","choices":["RF contention","Incorrect fiber polarity","Duplicate DNS zone","BGP route leak"],"answer":0,"explanation":"High channel utilization with strong signal indicates contention for shared airtime rather than weak coverage."},
-  {"id":18036,"domain":"1","objective":"1.7","blueprint":"Network topologies","difficulty":"Level 4","question":"A warehouse requires resilient switch connectivity so a single uplink failure does not isolate an access switch, while Layer 2 loops must be avoided. Which design is BEST?","choices":["Redundant uplinks governed by STP","One unmanaged hub per aisle","Two parallel links with STP disabled","A bus topology using terminators"],"answer":0,"explanation":"Redundant uplinks provide alternate paths, while STP prevents both paths from forming an active Layer 2 loop."},
-  {"id":18037,"domain":"2","objective":"2.4","blueprint":"Rack installation","difficulty":"Level 2","question":"Which rack component organizes and supports horizontal copper patch cords?","choices":["Cable manager","Wireless controller","Load balancer","DNS resolver"],"answer":0,"explanation":"Horizontal and vertical cable managers route patch cords cleanly and reduce strain around rack-mounted equipment."},
-  {"id":18038,"domain":"3","objective":"3.3","blueprint":"High availability","difficulty":"Level 3","question":"Two firewalls share a virtual gateway address, and the standby takes over when the active unit fails. What capability is being provided?","choices":["First-hop redundancy","Port mirroring","Split tunneling","Domain delegation"],"answer":0,"explanation":"A shared virtual gateway with active-standby failover provides first-hop redundancy for connected clients."},
-  {"id":18039,"domain":"4","objective":"4.2","blueprint":"Denial of service","difficulty":"Level 4","question":"A server receives a flood of TCP SYN packets with spoofed sources and exhausts its half-open connection table. Which mitigation is MOST directly relevant?","choices":["SYN cookies","Disabling NTP","Adding a hosts-file entry","Changing the native VLAN"],"answer":0,"explanation":"SYN cookies reduce resource allocation for unverified half-open sessions and directly mitigate SYN-flood exhaustion."},
-  {"id":18040,"domain":"5","objective":"5.4","blueprint":"DHCP troubleshooting","difficulty":"Level 2","question":"A workstation assigns itself an address beginning with 169.254 after startup. Which service did it most likely fail to reach?","choices":["DHCP","NTP","LDAP","SFTP"],"answer":0,"explanation":"An APIPA 169.254/16 address usually indicates that the client could not obtain a DHCP lease."},
-  {"id":18041,"domain":"1","objective":"1.8","blueprint":"IPv6 addressing","difficulty":"Level 3","question":"Which IPv6 prefix identifies link-local addresses used for communication on the local segment?","choices":["FE80::/10","2001:db8::/32","FF00::/8","::1/128"],"answer":0,"explanation":"IPv6 link-local unicast addresses use FE80::/10 and are not routed beyond the local link."},
-  {"id":18042,"domain":"2","objective":"2.1","blueprint":"NAT","difficulty":"Level 4","question":"Hundreds of private clients share one public IPv4 address while maintaining simultaneous internet sessions. Which translation feature distinguishes the flows?","choices":["Source port translation","Spanning-tree cost","DNS recursion","VLAN tagging"],"answer":0,"explanation":"Port address translation tracks sessions using translated transport-layer port numbers so many clients can share one public address."},
-  {"id":18043,"domain":"3","objective":"3.4","blueprint":"DNS records","difficulty":"Level 2","question":"A dual-stack administrator needs the name files6.corp.example to resolve directly to 2001:db8:44::20. Which DNS record type should be created?","choices":["AAAA","MX","PTR","TXT"],"answer":0,"explanation":"An AAAA record stores an IPv6 address for a hostname."},
-  {"id":18044,"domain":"4","objective":"4.3","blueprint":"Network access control","difficulty":"Level 3","question":"A laptop missing endpoint protection should be placed into remediation before receiving production access. Which technology BEST supports this decision?","choices":["NAC posture assessment","Static routing","Link aggregation","Port mirroring"],"answer":0,"explanation":"Network access control can evaluate device posture and assign noncompliant endpoints to restricted remediation access."},
-  {"id":18045,"domain":"5","objective":"5.5","blueprint":"Packet capture tools","difficulty":"Level 4","question":"A client sends repeated TCP SYN packets but receives no SYN-ACK or reset. Which conclusion is BEST supported by the capture alone?","choices":["The handshake is not completing","DNS resolution definitely failed","The client certificate expired","The switch has a duplex mismatch"],"answer":0,"explanation":"Repeated unanswered SYN packets directly show that TCP connection establishment is not completing; the capture alone does not prove why."},
-  {"id":18046,"domain":"1","objective":"1.2","blueprint":"Software-defined networking","difficulty":"Level 2","question":"In software-defined networking, which plane makes forwarding decisions and programs network behavior?","choices":["Control plane","Data plane","Power plane","Patch plane"],"answer":0,"explanation":"The control plane determines network behavior, while the data plane forwards traffic according to those decisions."},
-  {"id":18047,"domain":"2","objective":"2.2","blueprint":"Link aggregation","difficulty":"Level 3","question":"Two switches need more uplink bandwidth and link redundancy using four Ethernet connections as one logical interface. Which protocol should be used?","choices":["LACP","RDP","SIP","GRE"],"answer":0,"explanation":"LACP negotiates an Ethernet link aggregation group that combines compatible physical links into one logical channel."},
-  {"id":18048,"domain":"3","objective":"3.5","blueprint":"Out-of-band management","difficulty":"Level 4","question":"Administrators must reach router consoles when production routing and switching are unavailable. Which architecture BEST satisfies the requirement?","choices":["A separate out-of-band management network","An in-band management VLAN on the failed core","A public guest SSID","A larger production broadcast domain"],"answer":0,"explanation":"Out-of-band management uses an independent path, preserving administrative access during production-network failures."},
-  {"id":18049,"domain":"1","objective":"1.1","blueprint":"Encapsulation","difficulty":"Level 2","question":"As application data travels down the TCP/IP stack, which information is added by the transport layer to identify communicating processes?","choices":["Source and destination port numbers","Wireless channel widths","Switch port VLAN names","Fiber wavelengths"],"answer":0,"explanation":"TCP and UDP add source and destination port numbers so receiving hosts can deliver data to the correct application processes."},
-  {"id":18050,"domain":"5","objective":"5.1","blueprint":"Troubleshooting methodology","difficulty":"Level 3","question":"After replacing a failed transceiver, traffic passes normally. What should the technician do NEXT?","choices":["Verify full functionality and document the resolution","Introduce another fault","Erase monitoring history","Disable the redundant path"],"answer":0,"explanation":"Once a fix is implemented, the technician should verify service and preventive measures, then document the findings and actions."},
-  {"id":18051,"domain":"1","objective":"1.4","blueprint":"Network services","difficulty":"Level 4","question":"A security policy permits encrypted mail submission from clients but blocks legacy unencrypted SMTP submission. Which destination port should be allowed?","choices":["TCP 587 with STARTTLS policy","UDP 69","TCP 23","UDP 161"],"answer":0,"explanation":"TCP 587 is the standard message-submission port and is commonly protected using STARTTLS according to policy."},
-  {"id":18052,"domain":"2","objective":"2.3","blueprint":"Wireless roaming","difficulty":"Level 2","question":"Which WLAN design element allows users to roam between access points while staying on the same corporate wireless network?","choices":["A consistent SSID and security profile","Different encryption on every AP","Overlapping 2.4GHz channels","Unique captive portals per room"],"answer":0,"explanation":"A consistent SSID and authentication profile lets clients recognize and roam within one WLAN service."},
-  {"id":18053,"domain":"3","objective":"3.1","blueprint":"Configuration management","difficulty":"Level 3","question":"A switch replacement must be configured identically to the failed device. Which operational practice most directly speeds recovery?","choices":["Maintaining versioned configuration backups","Increasing DNS TTL values","Disabling syslog","Using unmanaged switches"],"answer":0,"explanation":"Current versioned backups allow the known configuration to be restored quickly to replacement hardware."},
-  {"id":18054,"domain":"4","objective":"4.2","blueprint":"Wireless attacks","difficulty":"Level 4","question":"Employees connect to an access point using the corporate SSID, but its BSSID is unfamiliar and credentials are later abused. Which threat is MOST likely?","choices":["Evil twin","MAC flooding","Route poisoning","Blue-green deployment"],"answer":0,"explanation":"An evil twin imitates a trusted SSID to attract users and capture credentials or intercept their sessions."},
-  {"id":18055,"domain":"5","objective":"5.2","blueprint":"Cable distance","difficulty":"Level 2","question":"A copper Ethernet run measures 130 meters between the patch panel and workstation. What is the BEST initial correction?","choices":["Shorten the permanent link or add an intermediate switch","Replace DNS with mDNS","Increase the VLAN ID","Configure a loopback address"],"answer":0,"explanation":"Standard twisted-pair Ethernet channels are generally limited to 100 meters; the run must be shortened or regenerated by an intermediary."},
-  {"id":18056,"domain":"1","objective":"1.3","blueprint":"Cloud service models","difficulty":"Level 3","question":"A developer deploys code to a managed runtime while the provider maintains the operating system and infrastructure. Which service model is being used?","choices":["PaaS","IaaS","Colocation","On-premises virtualization"],"answer":0,"explanation":"Platform as a service provides a managed application platform while customers deploy and manage their code and data."},
-  {"id":18057,"domain":"2","objective":"2.4","blueprint":"Environmental monitoring","difficulty":"Level 4","question":"A top-of-rack switch repeatedly shuts down on summer afternoons. Logs show thermal alarms, and cold-aisle temperature is normal. What should be checked FIRST?","choices":["Blocked exhaust airflow or hot-air recirculation","The DHCP exclusion range","DNSSEC trust anchors","Wireless pre-shared keys"],"answer":0,"explanation":"Normal inlet temperature with device thermal alarms points to poor exhaust, obstruction, or hot-air recirculation around the rack."},
-  {"id":18058,"domain":"3","objective":"3.2","blueprint":"Baselines","difficulty":"Level 2","question":"Why should administrators establish a normal network-performance baseline?","choices":["To recognize meaningful deviations","To eliminate all logging","To replace access controls","To assign public addresses"],"answer":0,"explanation":"A baseline defines expected utilization and behavior, allowing monitoring systems and technicians to identify anomalies."},
-  {"id":18059,"domain":"4","objective":"4.3","blueprint":"DHCP snooping","difficulty":"Level 3","question":"Clients receive incorrect gateways from an unauthorized DHCP server connected to an access port. Which switch feature should be enabled?","choices":["DHCP snooping","LLDP","LACP","Port mirroring"],"answer":0,"explanation":"DHCP snooping permits server responses only from trusted ports and blocks rogue DHCP offers on access ports."},
-  {"id":18060,"domain":"5","objective":"5.3","blueprint":"Routing symptoms","difficulty":"Level 4","question":"A host reaches every subnet except 10.44.16.0/20. Its gateway has routes for 10.44.0.0/16 and 10.44.16.0/24 through different next hops. Which route will affect the failed destination most specifically?","choices":["10.44.16.0/24","10.44.0.0/16","The default route","Both prefixes are equally specific"],"answer":0,"explanation":"The /24 route is more specific than the /16 and will be selected for addresses within 10.44.16.0/24."},
-  {"id":18061,"domain":"1","objective":"1.5","blueprint":"Anycast","difficulty":"Level 2","question":"Multiple servers advertise the same service address, and routing directs a client toward the nearest instance. Which traffic method is this?","choices":["Anycast","Broadcast","Flooding","Port forwarding"],"answer":0,"explanation":"Anycast uses the same destination address at multiple locations and routing selects an appropriate nearby instance."},
-  {"id":18062,"domain":"2","objective":"2.1","blueprint":"First-hop redundancy","difficulty":"Level 3","question":"Clients use a virtual default-gateway address shared by two routers. What should happen when the active router fails?","choices":["The standby assumes the virtual address","Every client must receive a new subnet mask","The access switches disable all trunks","DNS converts the address to IPv6"],"answer":0,"explanation":"First-hop redundancy protocols let a standby router take ownership of the virtual gateway after active-device failure."},
-  {"id":18063,"domain":"3","objective":"3.3","blueprint":"Disaster recovery sites","difficulty":"Level 4","question":"A company requires service restoration within minutes but can accept the cost of continuously replicated systems at another location. Which recovery facility is BEST?","choices":["Hot site","Cold site","Mobile office trailer without equipment","Off-site tape vault only"],"answer":0,"explanation":"A hot site maintains operating infrastructure and current replicated data, supporting the shortest recovery time."},
-  {"id":18064,"domain":"5","objective":"5.4","blueprint":"Certificate troubleshooting","difficulty":"Level 2","question":"A browser rejects an internal portal certificate even though its hostname and validity dates are correct. The issuing CA was replaced last week. What should be checked FIRST?","choices":["Whether clients trust the new CA chain","Whether the switch uses LACP","Whether DHCP option 3 is present","Whether the server supports jumbo frames"],"answer":0,"explanation":"A valid server certificate is still rejected when the client lacks trust for an issuing or intermediate CA in its certificate chain."},
-  {"id":18065,"domain":"5","objective":"5.4","blueprint":"NTP troubleshooting","difficulty":"Level 3","question":"Kerberos authentication intermittently fails, and servers differ by eight minutes. Which service should be corrected?","choices":["NTP","TFTP","SIP","SMB"],"answer":0,"explanation":"Kerberos relies on closely synchronized clocks; correcting NTP restores consistent time across authentication participants."},
-  {"id":18066,"domain":"1","objective":"1.6","blueprint":"Transceivers","difficulty":"Level 4","question":"A new fiber connection remains down. Both devices use 10GBASE-LR optics, received power is acceptable, and each transmitter is patched to the other transmitter. What is the BEST fix?","choices":["Reverse one fiber pair to establish Tx-to-Rx polarity","Replace the optics with copper SFPs","Enable DHCP relay","Change the native VLAN"],"answer":0,"explanation":"Duplex fiber requires each transmitter to connect to the remote receiver; reversing the pair corrects crossed polarity."},
-  {"id":18067,"domain":"2","objective":"2.2","blueprint":"Native VLAN","difficulty":"Level 2","question":"On an 802.1Q trunk, which traffic is normally sent without a VLAN tag?","choices":["Native VLAN traffic","Every allowed VLAN","Only voice VLAN traffic","All routed traffic"],"answer":0,"explanation":"By default, frames belonging to the trunk's native VLAN are transmitted untagged."},
-  {"id":18068,"domain":"3","objective":"3.4","blueprint":"IP address management","difficulty":"Level 3","question":"An enterprise frequently assigns duplicate static addresses because spreadsheets are outdated. Which solution BEST centralizes address ownership and allocation history?","choices":["IPAM","A packet broker","A wireless heat map","A certificate authority"],"answer":0,"explanation":"IP address management tracks subnets, assignments, reservations, and address utilization in a centralized system."},
-  {"id":18069,"domain":"4","objective":"4.3","blueprint":"Segmentation","difficulty":"Level 4","question":"A compromised guest device must not initiate sessions toward corporate servers, but both networks require internet access. Which design is BEST?","choices":["Separate VLANs with an inter-VLAN deny policy","One shared VLAN with proxy ARP","A hub connecting both networks","The same unrestricted wireless key"],"answer":0,"explanation":"Separate VLANs establish isolation, and a gateway policy can deny guest-to-corporate traffic while permitting each segment to reach the internet."},
-  {"id":18070,"domain":"5","objective":"5.5","blueprint":"DNS command tools","difficulty":"Level 2","question":"Which tool queries a DNS server for a specific record and displays the returned answer?","choices":["nslookup","pathping","arp","route"],"answer":0,"explanation":"nslookup performs DNS queries and displays the records returned by a selected resolver."},
-  {"id":18071,"domain":"1","objective":"1.7","blueprint":"WAN technologies","difficulty":"Level 3","question":"A branch requires encrypted connectivity over commodity internet with no dedicated carrier circuit. Which solution is MOST appropriate?","choices":["Site-to-site VPN","Dark fiber","Local loopback","Console rollover cable"],"answer":0,"explanation":"A site-to-site VPN encrypts routed branch traffic across an untrusted public internet connection."},
-  {"id":18072,"domain":"2","objective":"2.3","blueprint":"Wireless design","difficulty":"Level 4","question":"A voice-over-Wi-Fi survey finds adequate coverage but excessive roaming delays between access points. Which capability should be evaluated FIRST?","choices":["Fast roaming support and consistent authentication configuration","Increasing DNS record TTL","Disabling all 5GHz radios","Replacing access switches with hubs"],"answer":0,"explanation":"Fast-roaming mechanisms and consistent WLAN authentication reduce handoff delays that interrupt real-time voice sessions."},
-  {"id":18073,"domain":"2","objective":"2.2","blueprint":"Voice VLANs","difficulty":"Level 2","question":"A switch port connects an IP phone with a workstation attached through the phone. Which configuration keeps voice and workstation traffic logically separated?","choices":["A voice VLAN plus a data access VLAN","One untagged management VLAN for both","A disabled trunk with no access VLAN","A port mirror directed to the phone"],"answer":0,"explanation":"A voice VLAN carries tagged phone traffic while the access VLAN carries workstation data, separating the two services on one physical port."},
-  {"id":18074,"domain":"4","objective":"4.2","blueprint":"Social engineering","difficulty":"Level 3","question":"An attacker calls the help desk, claims to be an executive, and demands an urgent MFA reset. Which attack technique is being used?","choices":["Pretexting","ARP inspection","Route summarization","Channel bonding"],"answer":0,"explanation":"Pretexting uses a fabricated identity and scenario to persuade a target to perform an unauthorized action."},
-  {"id":18075,"domain":"5","objective":"5.1","blueprint":"Troubleshooting scope","difficulty":"Level 4","question":"Several users report intermittent application failures after a WAN change. Before altering configurations, what information should the technician establish FIRST?","choices":["The scope, symptoms, and time of the failures","A permanent replacement budget","A new domain name","The final root cause"],"answer":0,"explanation":"Identifying the problem begins by gathering symptoms, affected systems, timing, and recent changes so later theories are evidence based."},
-  {"id":18076,"domain":"1","objective":"1.8","blueprint":"Subnetting","difficulty":"Level 3","question":"How many usable host addresses are available in a conventional IPv4 /27 subnet?","choices":["14","30","32","62"],"answer":1,"explanation":"A /27 leaves five host bits, yielding 32 total addresses and 30 conventional usable host addresses after network and broadcast."},
-  {"id":18077,"domain":"2","objective":"2.4","blueprint":"UPS capacity","difficulty":"Level 3","question":"A UPS is rated for 1500VA, but attached equipment exceeds its supported load during testing. What should the administrator do?","choices":["Reduce the load or deploy a correctly sized UPS","Increase switch broadcast traffic","Shorten DHCP leases","Disable equipment grounding"],"answer":0,"explanation":"The protected load must remain within the UPS power rating; equipment should be redistributed or the UPS properly upsized."},
-  {"id":18078,"domain":"3","objective":"3.1","blueprint":"Maintenance windows","difficulty":"Level 3","question":"A router upgrade requires a 20-minute outage, but the business has a contractual no-outage period. What should occur before scheduling the work?","choices":["Obtain an approved exception or choose a permitted window","Perform the upgrade secretly","Delete the rollback image","Disable incident notifications"],"answer":0,"explanation":"Change governance requires alignment with business restrictions through an approved exception or an authorized maintenance window."},
-  {"id":18079,"domain":"5","objective":"5.2","blueprint":"Fiber inspection","difficulty":"Level 3","question":"Before connecting a fiber jumper, which action helps prevent contamination-related loss?","choices":["Inspect and clean the connector end face","Apply dielectric grease","Untwist the fiber strands","Attach an RJ45 coupler"],"answer":0,"explanation":"Fiber end faces should be inspected and cleaned because microscopic contamination can cause substantial insertion loss or reflection."},
-  {"id":18080,"domain":"1","objective":"1.2","blueprint":"Virtual networking","difficulty":"Level 3","question":"Two virtual machines on the same host and VLAN exchange traffic without reaching the physical switch. Which component forwards their frames?","choices":["Virtual switch","CSU/DSU","Optical splitter","Wireless controller"],"answer":0,"explanation":"A hypervisor virtual switch forwards frames among connected virtual interfaces locally when external forwarding is unnecessary."},
-  {"id":18081,"domain":"3","objective":"3.2","blueprint":"Log aggregation","difficulty":"Level 3","question":"Investigators need to correlate firewall denies, VPN authentication, and switch events using one timeline. Which implementation is BEST?","choices":["Centralized logging with synchronized time","Independent local logs with unsynchronized clocks","Disabling verbose events","A shared unmanaged hub"],"answer":0,"explanation":"Central aggregation plus time synchronization allows events from different platforms to be searched and correlated accurately."},
-  {"id":18082,"domain":"5","objective":"5.3","blueprint":"MTU issues","difficulty":"Level 3","question":"Small pings succeed across a tunnel, but large packets with the don't-fragment bit fail. Which mismatch is MOST likely?","choices":["MTU","DNS suffix","VLAN name","NTP stratum"],"answer":0,"explanation":"Encapsulation reduces usable packet size; oversized packets that cannot fragment expose an MTU or path-MTU problem."},
-  {"id":18083,"domain":"1","objective":"1.4","blueprint":"Secure protocols","difficulty":"Level 3","question":"A file-transfer workflow must protect credentials and data using an SSH-based protocol. Which service should be selected?","choices":["SFTP","TFTP","FTP","SNMP"],"answer":0,"explanation":"SFTP runs over SSH and encrypts both authentication and transferred data."},
-  {"id":18084,"domain":"3","objective":"3.3","blueprint":"Redundancy","difficulty":"Level 3","question":"A data center has two internet circuits, but both enter through the same underground conduit. Which risk remains?","choices":["A shared physical single point of failure","Excessive DNS recursion","A duplicate private VLAN ID","Too many certificate authorities"],"answer":0,"explanation":"A single conduit can be cut or damaged, taking down both circuits despite logical carrier redundancy."},
-  {"id":18085,"domain":"5","objective":"5.4","blueprint":"AAA troubleshooting","difficulty":"Level 2","question":"A switch can reach a RADIUS server, but every login fails after the server's shared secret was changed. What should be updated?","choices":["The matching RADIUS secret on the switch","The switch's STP priority","The DNS MX record","The access port speed"],"answer":0,"explanation":"RADIUS client and server shared secrets must match for request authentication and processing."},
-  {"id":18086,"domain":"1","objective":"1.6","blueprint":"Ethernet cabling","difficulty":"Level 3","question":"A new 10GBASE-T installation must run 90 meters through an office. Which medium is the BEST choice?","choices":["Cat 6A","Cat 3","RG-59","Multimode fiber with RJ45 ends"],"answer":0,"explanation":"Cat 6A is designed to support 10GBASE-T through the full 100-meter copper channel under proper installation conditions."},
-  {"id":18087,"domain":"2","objective":"2.1","blueprint":"Route summarization","difficulty":"Level 4","question":"A branch advertises sixteen contiguous /24 networks from 10.72.0.0 through 10.72.15.0. Which single summary route is MOST precise?","choices":["10.72.0.0/20","10.72.0.0/16","10.72.0.0/24","10.72.8.0/21"],"answer":0,"explanation":"Sixteen aligned /24 networks combine into one /20, covering 10.72.0.0 through 10.72.15.255 without including unnecessary ranges."},
-  {"id":18088,"domain":"5","objective":"5.5","blueprint":"Packet capture placement","difficulty":"Level 2","question":"A technician needs to capture traffic entering and leaving one switch port without interrupting the user. Which switch feature should be configured?","choices":["Port mirroring","Root guard","DHCP reservation","Link-local addressing"],"answer":0,"explanation":"Port mirroring copies selected switch traffic to an analyzer port without placing the capture device inline."},
-  {"id":18089,"domain":"1","objective":"1.3","blueprint":"Cloud scaling","difficulty":"Level 3","question":"A cloud application automatically adds instances when request latency rises and removes them after demand falls. Which characteristic is demonstrated?","choices":["Elasticity","Data remanence","Static routing","Physical segmentation"],"answer":0,"explanation":"Elasticity dynamically expands and contracts resources in response to workload demand."},
-  {"id":18090,"domain":"5","objective":"5.3","blueprint":"Asymmetric routing","difficulty":"Level 4","question":"A stateful firewall sees outbound TCP SYN packets, but return SYN-ACK packets follow a different path and bypass it. Users cannot establish sessions. What is the BEST correction?","choices":["Make routing symmetric through the same firewall state path","Disable TCP acknowledgments","Replace DNS A records with TXT records","Increase access-switch PoE power"],"answer":0,"explanation":"Stateful inspection requires both directions of a flow to traverse a device that holds the session state; symmetric routing restores that visibility."}
+  {
+    "id": 18001,
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "OSI model",
+    "difficulty": "Level 2",
+    "question": "A monitoring dashboard shows Ethernet framing errors, while IP addressing and routes are correct. Which OSI layer should the technician investigate first?",
+    "choices": [
+      "Physical",
+      "Network",
+      "Transport",
+      "Data Link"
+    ],
+    "answer": 3,
+    "explanation": "Ethernet frames and frame-error detection operate at the Data Link layer; valid addressing and routes do not explain malformed frames."
+  },
+  {
+    "id": 18002,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Route selection",
+    "difficulty": "Level 3",
+    "question": "A router learns 172.20.8.0/24 through OSPF and 172.20.8.0/25 through a static route. Which route will it use for 172.20.8.40?",
+    "choices": [
+      "The OSPF /24 route",
+      "The static /25 route",
+      "Both routes equally",
+      "The default route"
+    ],
+    "answer": 1,
+    "explanation": "Longest-prefix matching is evaluated before route source or metric, so the more-specific /25 static route wins."
+  },
+  {
+    "id": 18003,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Change management",
+    "difficulty": "Level 4",
+    "question": "An emergency firewall rule restored a public portal, but the engineer bypassed the normal approval window. Service is stable, the temporary rule is broader than intended, and the original configuration can be restored. What should the engineer do NEXT to preserve governance while minimizing risk?",
+    "choices": [
+      "Leave the successful rule unchanged until the next quarterly review",
+      "Roll back immediately without notifying the application owner",
+      "Restrict the rule to the required traffic, open an emergency change record, and obtain retrospective approval",
+      "Convert the temporary rule into a permanent standard change before documenting it"
+    ],
+    "answer": 2,
+    "explanation": "The restored service should not remain exposed by an undocumented broad rule. Narrowing the exception and completing the emergency-change review preserves availability while restoring approval, risk, and rollback accountability."
+  },
+  {
+    "id": 18004,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Zero trust",
+    "difficulty": "Level 2",
+    "question": "A protected application re-evaluates a user's identity, device posture, and authorization whenever a sensitive resource is requested. Which security principle does this behavior demonstrate?",
+    "choices": [
+      "Implicit trust",
+      "Separation of duties",
+      "Role inheritance",
+      "Continuous verification"
+    ],
+    "answer": 3,
+    "explanation": "Continuous verification repeatedly evaluates identity and context instead of trusting a session merely because it originated inside the network. Least privilege limits permissions, but it does not by itself require a new evaluation for each request."
+  },
+  {
+    "id": 18005,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
+    "difficulty": "Level 3",
+    "question": "Payroll traffic stopped immediately after an ACL change. A technician confirms other applications on the same subnet still work and forms the theory that the new deny entry matches payroll traffic. What should the technician do before editing the production ACL?",
+    "choices": [
+      "Roll back every network change made that day",
+      "Escalate the ticket without collecting additional evidence",
+      "Test the theory with ACL counters or a safe temporary validation",
+      "Replace the gateway because it enforces the ACL"
+    ],
+    "answer": 2,
+    "explanation": "The evidence supports an ACL theory, but the troubleshooting process requires validating the suspected cause before implementing a correction. Counters or a controlled test can confirm the match without creating another unverified production change."
+  },
+  {
+    "id": 18006,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Ports and protocols",
+    "difficulty": "Level 4",
+    "question": "A client can reach a DNS server's IP address. Packet captures show repeated UDP queries to destination port 53 with no replies, while a manual TCP port 53 query succeeds. The intervening firewall permits TCP 53 but has no UDP 53 rule. Which correction BEST restores normal DNS resolution without changing the resolver?",
+    "choices": [
+      "Permit UDP 53 to the resolver while retaining TCP 53 for fallback and large responses",
+      "Increase the resolver's DNS record TTL values",
+      "Require every client to use TCP for all DNS queries",
+      "Enable DNSSEC validation on the client subnet"
+    ],
+    "answer": 0,
+    "explanation": "The capture and firewall policy isolate the failure to blocked UDP 53, which clients normally use for DNS queries. TCP 53 should remain available for fallback and larger exchanges, but forcing all clients to TCP does not correct the missing rule."
+  },
+  {
+    "id": 18007,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "VLAN trunks",
+    "difficulty": "Level 2",
+    "question": "A switch link must carry traffic for VLANs 10, 20, and 30 to another switch. Which port mode is required?",
+    "choices": [
+      "Trunk",
+      "Access",
+      "Routed host",
+      "Monitor"
+    ],
+    "answer": 0,
+    "explanation": "An 802.1Q trunk transports multiple tagged VLANs across one physical switch link."
+  },
+  {
+    "id": 18008,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "SNMP monitoring",
+    "difficulty": "Level 3",
+    "question": "A switch power supply failed and recovered between five-minute monitoring polls, so the operations team did not learn about it until users reported an outage. The monitoring platform already accepts SNMP event messages. Which change BEST provides immediate notification of another power-supply state change?",
+    "choices": [
+      "Reduce the interface-counter polling interval to four minutes",
+      "Configure authenticated SNMP traps or informs to the monitoring platform",
+      "Enable NetFlow exports on every access port",
+      "Mirror the switch uplink to a packet analyzer"
+    ],
+    "answer": 1,
+    "explanation": "An SNMP trap or inform is sent when the hardware event occurs and does not depend on the next polling cycle. Faster polling can reduce delay, but it can still miss a short failure and adds recurring management traffic."
+  },
+  {
+    "id": 18009,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "On-path attacks",
+    "difficulty": "Level 4",
+    "question": "On a guest WLAN, users receive certificate warnings for several unrelated HTTPS sites. During the same periods, client ARP tables repeatedly show the default gateway IP changing to an unfamiliar MAC address, although the authorized gateway never reboots. Which attack BEST explains both observations?",
+    "choices": [
+      "ARP poisoning that redirects client traffic through an interceptor",
+      "An evil twin using a second BSSID for the guest SSID",
+      "DNS cache poisoning on the public recursive resolver",
+      "VLAN hopping from the guest segment into the server VLAN"
+    ],
+    "answer": 0,
+    "explanation": "The changing MAC mapping for the legitimate gateway is direct evidence of forged ARP information. Redirecting traffic through the attacker can then cause interception and certificate warnings; an evil twin would be indicated by an unauthorized access point rather than a poisoned gateway entry."
+  },
+  {
+    "id": 18010,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Fiber troubleshooting",
+    "difficulty": "Level 2",
+    "question": "Which tool measures optical power arriving at the end of a fiber link?",
+    "choices": [
+      "Tone generator",
+      "Optical power meter",
+      "Loopback plug",
+      "Wi-Fi analyzer"
+    ],
+    "answer": 1,
+    "explanation": "An optical power meter measures received light levels and helps identify excessive loss on fiber links."
+  },
+  {
+    "id": 18011,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "Software-defined networking",
+    "difficulty": "Level 3",
+    "question": "A campus wants switches to continue forwarding frames locally while a central system calculates policy and programs forwarding behavior across the fabric. Which architecture provides this separation?",
+    "choices": [
+      "A Layer 1 passive optical splitter",
+      "A standalone unmanaged switch at every building",
+      "A hub-and-spoke WAN with static routes only",
+      "Software-defined networking with centralized control and distributed forwarding"
+    ],
+    "answer": 3,
+    "explanation": "Software-defined networking separates centralized control-plane decisions from data-plane forwarding on network devices. Static, unmanaged, and purely physical designs do not provide centralized programmable policy."
+  },
+  {
+    "id": 18012,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless channels",
+    "difficulty": "Level 4",
+    "question": "Three adjacent warehouse access points must support legacy 2.4 GHz scanners that cannot use 5 GHz. A survey shows strong coverage, but the APs use channels 1, 4, and 8 and clients experience retries near cell boundaries. Which redesign BEST reduces interference while preserving coverage?",
+    "choices": [
+      "Place all three APs on channel 6 and lower their beacon intervals",
+      "Assign channels 1, 6, and 11 and tune transmit power to limit excessive overlap",
+      "Keep channels 1, 4, and 8 but increase transmit power on every AP",
+      "Enable 40 MHz channels on all three 2.4 GHz radios"
+    ],
+    "answer": 1,
+    "explanation": "Channels 1, 6, and 11 avoid adjacent-channel overlap in 2.4 GHz, while measured power tuning preserves coverage without creating oversized cells. Wider channels or maximum power would increase contention rather than solve it."
+  },
+  {
+    "id": 18013,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Recovery objectives",
+    "difficulty": "Level 2",
+    "question": "Which metric defines the maximum acceptable amount of data loss measured in time?",
+    "choices": [
+      "MTTR",
+      "RPO",
+      "RTO",
+      "SLA availability"
+    ],
+    "answer": 1,
+    "explanation": "Recovery point objective identifies how far back data restoration may go, expressing tolerable data loss as time."
+  },
+  {
+    "id": 18014,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Port security",
+    "difficulty": "Level 3",
+    "question": "A wall-mounted environmental sensor is the only authorized device on an access-switch port. Security requires the port to disable itself if a different device is connected after the sensor is learned. Which configuration BEST meets the requirement?",
+    "choices": [
+      "DHCP snooping with the sensor port marked as trusted",
+      "Dynamic ARP inspection with no DHCP snooping bindings",
+      "Port security with one sticky MAC address and shutdown on violation",
+      "A voice VLAN configured in addition to the access VLAN"
+    ],
+    "answer": 2,
+    "explanation": "A one-address sticky port-security policy binds the authorized sensor and can shut the port when another MAC appears. DHCP snooping and ARP inspection address address-assignment attacks, not replacement of the authorized endpoint."
+  },
+  {
+    "id": 18015,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Interface errors",
+    "difficulty": "Level 4",
+    "question": "A server NIC is forced to full duplex, but the connected switch port has negotiated half duplex. Throughput collapses under load, and there is no evidence of a bad cable. Which pair of interface observations would BEST confirm the mismatch?",
+    "choices": [
+      "Late collisions on the half-duplex side and FCS errors on received frames",
+      "Rising input discards on both sides with no collision counters",
+      "Increasing giants caused only by jumbo-frame traffic",
+      "High optical loss accompanied by loss-of-signal alarms"
+    ],
+    "answer": 0,
+    "explanation": "The half-duplex side can record late collisions while the full-duplex peer sees damaged frames and FCS errors. Queue discards indicate congestion, whereas optical alarms do not apply to a copper duplex negotiation problem."
+  },
+  {
+    "id": 18016,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Network appliances",
+    "difficulty": "Level 2",
+    "question": "Which device distributes client requests among multiple application servers?",
+    "choices": [
+      "Patch panel",
+      "Media converter",
+      "CSU/DSU",
+      "Load balancer"
+    ],
+    "answer": 3,
+    "explanation": "A load balancer spreads requests across servers and can use health checks to avoid failed instances."
+  },
+  {
+    "id": 18017,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Power and environment",
+    "difficulty": "Level 3",
+    "question": "New PoE cameras operate during the day but reboot when infrared illuminators activate. LLDP reports that each camera requests its expected power class, and the switch log shows the chassis PoE budget is exhausted. Which correction BEST addresses the cause?",
+    "choices": [
+      "Disable LLDP so the cameras cannot request additional power",
+      "Configure longer DHCP leases for the camera VLAN",
+      "Lower the switch-port speed from 1 Gbps to 100 Mbps",
+      "Move cameras to a switch with sufficient PoE budget or install correctly rated injectors"
+    ],
+    "answer": 3,
+    "explanation": "Infrared operation raises the cameras' valid power demand, and the switch explicitly reports an exhausted budget. More available PoE capacity resolves that constraint; suppressing negotiation can cause underpowering rather than provide power."
+  },
+  {
+    "id": 18018,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DHCP services",
+    "difficulty": "Level 4",
+    "question": "Clients in a new VLAN broadcast DHCP discoveries, but the DHCP server is on a routed services subnet. The VLAN interface is up, other routed traffic succeeds, and a capture on the server shows no discoveries arriving. Which configuration should be added FIRST?",
+    "choices": [
+      "A larger DHCP scope on the server for the existing client VLAN",
+      "A DHCP relay address on the new VLAN's Layer 3 gateway",
+      "A static default route on every new client",
+      "A native-VLAN change on the server's access port"
+    ],
+    "answer": 1,
+    "explanation": "The discoveries remain broadcasts and are not forwarded by the router even though ordinary routed traffic works. A relay on the client VLAN gateway converts and forwards those requests to the remote DHCP server."
+  },
+  {
+    "id": 18019,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Least privilege",
+    "difficulty": "Level 2",
+    "question": "A help-desk role can reset ordinary user passwords but cannot create privileged accounts or change domain-wide policy. Which security principle is being enforced?",
+    "choices": [
+      "Separation of duties",
+      "Implicit deny",
+      "Nonrepudiation",
+      "Least privilege"
+    ],
+    "answer": 3,
+    "explanation": "Least privilege limits the role to the permissions required for password-reset duties. Separation of duties divides a sensitive process among people, but the scenario primarily describes restricting the scope of one role."
+  },
+  {
+    "id": 18020,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "DNS troubleshooting",
+    "difficulty": "Level 3",
+    "question": "After a gateway ACL change, users in one subnet can open an internal application by IP address but not by hostname. They can ping the configured DNS resolver, but queries to it time out. Which action should the technician take FIRST?",
+    "choices": [
+      "Verify the ACL permits the clients' UDP and TCP port 53 traffic to the resolver",
+      "Replace the clients' default gateway with the application server address",
+      "Clear the switch MAC-address table for the affected VLAN",
+      "Change the application's HTTPS certificate"
+    ],
+    "answer": 0,
+    "explanation": "IP connectivity and reachability to the resolver remain intact, while DNS queries began failing after an ACL change. Checking the resolver's UDP and TCP 53 permissions follows the strongest evidence before changing unrelated Layer 2 or application settings."
+  },
+  {
+    "id": 18021,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud connectivity",
+    "difficulty": "Level 4",
+    "question": "A financial application must extend an on-premises private network into a cloud VPC. The connection requires predictable throughput, private addressing, and no transport across the public internet; higher recurring cost is acceptable. Which connectivity option BEST satisfies all requirements?",
+    "choices": [
+      "A site-to-site IPsec VPN over the existing internet connection",
+      "A dedicated private circuit from the organization to the cloud provider",
+      "A client VPN installed on each application server",
+      "Public application endpoints protected only by TLS"
+    ],
+    "answer": 1,
+    "explanation": "A dedicated private cloud connection supplies private transport and more predictable capacity without relying on the public internet. An IPsec VPN provides encryption but still depends on internet paths and their variable performance."
+  },
+  {
+    "id": 18022,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Dynamic routing",
+    "difficulty": "Level 2",
+    "question": "Which protocol is primarily used to exchange routes between autonomous systems?",
+    "choices": [
+      "BGP",
+      "STP",
+      "LACP",
+      "LLDP"
+    ],
+    "answer": 0,
+    "explanation": "Border Gateway Protocol exchanges reachability information between autonomous systems on the internet and large multihomed networks."
+  },
+  {
+    "id": 18023,
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Secure administration",
+    "difficulty": "Level 3",
+    "question": "The network team is replacing Telnet on managed switches. Administrators need encrypted interactive command-line sessions and support for centralized AAA authentication. Which management protocol should be enabled?",
+    "choices": [
+      "SSH",
+      "SNMPv3",
+      "HTTPS",
+      "SFTP"
+    ],
+    "answer": 0,
+    "explanation": "SSH supplies an encrypted interactive terminal and can integrate with centralized AAA. SNMPv3 securely manages and monitors objects, but it is not the normal interactive command-line replacement for Telnet."
+  },
+  {
+    "id": 18024,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Password attacks",
+    "difficulty": "Level 4",
+    "question": "Authentication logs show the same common password attempted once against 4,000 accounts. Six hours later, a second common password is attempted once against the same accounts. Which attack is MOST consistent with this timing and distribution?",
+    "choices": [
+      "Online brute force against one account",
+      "Password spraying",
+      "Credential stuffing with known username-password pairs",
+      "Offline hash cracking"
+    ],
+    "answer": 1,
+    "explanation": "Password spraying spreads a small set of likely passwords across many accounts and spaces attempts to reduce lockouts. Credential stuffing instead reuses known credential pairs rather than applying the same password broadly."
+  },
+  {
+    "id": 18025,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Command-line tools",
+    "difficulty": "Level 2",
+    "question": "Which command displays the route taken by packets toward a remote destination?",
+    "choices": [
+      "nslookup",
+      "arp",
+      "netstat",
+      "tracert"
+    ],
+    "answer": 3,
+    "explanation": "tracert on Windows, or traceroute on many other systems, reveals successive Layer 3 hops toward a destination."
+  },
+  {
+    "id": 18026,
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "Direct Attach Copper (DAC)",
+    "difficulty": "Level 3",
+    "question": "Two switches in adjacent racks need a 100Gbps link across two meters. Their QSFP ports support passive direct-attach cables, and the design prioritizes low power, low cost, and no separate optics. Which medium best fits?",
+    "choices": [
+      "A 100Gbps active optical cable with replaceable LC optics",
+      "A passive QSFP direct-attach copper cable",
+      "Single-mode fiber terminated with SC connectors",
+      "RG-6 coaxial cable with F-type connectors"
+    ],
+    "answer": 1,
+    "explanation": "A passive QSFP DAC is designed for very short high-speed switch connections and includes the attached transceiver ends. It consumes less power and costs less than separate optical modules for a two-meter run."
+  },
+  {
+    "id": 18027,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Spanning tree",
+    "difficulty": "Level 4",
+    "question": "Immediately after a second link is connected between two access switches, users lose connectivity, switch CPUs spike, MAC addresses flap between ports, and broadcast counters rise rapidly. Which condition is the MOST likely root cause?",
+    "choices": [
+      "A Layer 2 loop because STP is disabled or not processing the redundant path",
+      "An LACP mismatch that left the new link in an individual forwarding state",
+      "A native-VLAN mismatch that affects only untagged trunk traffic",
+      "BPDU guard correctly placing the newly connected port into an error-disabled state"
+    ],
+    "answer": 0,
+    "explanation": "MAC flapping, rising broadcasts, and a CPU spike immediately after adding a redundant path are the classic combined evidence of a switching loop. An error-disabled port would stop forwarding and therefore would not create the storm."
+  },
+  {
+    "id": 18028,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Network documentation",
+    "difficulty": "Level 2",
+    "question": "Which document should show VLAN relationships, routed adjacencies, IP subnets, and switch-to-switch logical links without emphasizing rack positions or cable pathways?",
+    "choices": [
+      "A physical network diagram",
+      "A rack elevation",
+      "A logical network diagram",
+      "A cable plant map"
+    ],
+    "answer": 2,
+    "explanation": "A logical diagram represents Layer 2 and Layer 3 relationships such as VLANs, subnets, and adjacencies. Physical diagrams and rack elevations focus on placement, ports, and cabling."
+  },
+  {
+    "id": 18029,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Access control lists",
+    "difficulty": "Level 3",
+    "question": "A server VLAN must accept HTTPS from the user VLAN and must reject SSH initiated from every user subnet. Which gateway ACL policy BEST implements the requirement without exposing additional services?",
+    "choices": [
+      "Permit user-VLAN TCP traffic to the server VLAN on 443, deny user TCP traffic on 22, and retain the existing policy for other traffic",
+      "Permit all TCP traffic from the user VLAN and rely on the server to reject port 22",
+      "Deny TCP 22 after a broad permit-any rule that is evaluated first",
+      "Permit destination port 443 from any source and remove all later ACL entries"
+    ],
+    "answer": 0,
+    "explanation": "A source-scoped 443 permit and effective 22 deny enforce the stated access without broadening exposure. An ACL processes entries in order, so a deny placed after an earlier broad permit would not block SSH."
+  },
+  {
+    "id": 18030,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Copper cabling",
+    "difficulty": "Level 4",
+    "question": "A newly terminated copper run passes a simple pin-to-pin continuity test, but a certifier reports split pairs, high near-end crosstalk, and failure at 1 Gbps. Which installation error BEST explains all three results?",
+    "choices": [
+      "The cable exceeds its maximum channel length while pair assignments remain correct",
+      "The patch panel and jack use the same T568B termination standard",
+      "The cable shield is bonded at only one end",
+      "Conductors were placed on the correct pins but were taken from the wrong twisted pairs"
+    ],
+    "answer": 3,
+    "explanation": "A split pair preserves end-to-end pin continuity while breaking the intended twisted-pair grouping, which produces excessive crosstalk at higher signaling rates. Excessive length can add attenuation but does not itself create a split-pair result."
+  },
+  {
+    "id": 18031,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Collapsed-core topology",
+    "difficulty": "Level 2",
+    "question": "A small campus connects every access switch to a redundant pair of multilayer switches. That pair performs both inter-VLAN policy and backbone forwarding; there is no separate core tier. Which architecture is described?",
+    "choices": [
+      "Spine-and-leaf fabric",
+      "Full-mesh WAN",
+      "Collapsed-core design",
+      "Point-to-point topology"
+    ],
+    "answer": 2,
+    "explanation": "A collapsed-core design combines the core and distribution functions in the same switching tier. The access layer remains separate, but a distinct core layer is unnecessary for this smaller campus."
+  },
+  {
+    "id": 18032,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless security",
+    "difficulty": "Level 3",
+    "question": "A company wants individual employee credentials and centralized authentication for Wi-Fi. Which deployment is BEST?",
+    "choices": [
+      "WPA3-Enterprise with RADIUS",
+      "Open authentication with a hidden SSID",
+      "WEP with a shared key",
+      "WPA2-Personal with one posted password"
+    ],
+    "answer": 0,
+    "explanation": "WPA3-Enterprise integrates 802.1X with RADIUS so users authenticate individually and access can be centrally controlled."
+  },
+  {
+    "id": 18033,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Flow monitoring",
+    "difficulty": "Level 4",
+    "question": "A WAN circuit is saturated for several hours each afternoon. Engineers need source, destination, port, protocol, byte count, and conversation duration data, but policy prohibits retaining packet payloads. Which telemetry should they enable?",
+    "choices": [
+      "Continuous full-packet capture on the WAN interface",
+      "SNMP interface-octet polling only",
+      "NetFlow or IPFIX flow records",
+      "Syslog severity filtering on the edge router"
+    ],
+    "answer": 2,
+    "explanation": "Flow records provide per-conversation endpoints, ports, timing, and volume without storing payload content. SNMP can confirm aggregate utilization but cannot identify the conversations responsible for it."
+  },
+  {
+    "id": 18034,
+    "domain": "4",
+    "objective": "4.1",
+    "blueprint": "Physical security",
+    "difficulty": "Level 2",
+    "question": "Which physical control most directly prevents an unauthorized person from following an authenticated employee through the same data-center entrance cycle?",
+    "choices": [
+      "A proximity badge reader mounted beside a single unlocked door",
+      "A mantrap that permits only one person through the controlled space at a time",
+      "A camera that records the doorway for later review",
+      "A visitor log maintained at the reception desk"
+    ],
+    "answer": 1,
+    "explanation": "A properly operated mantrap controls the sequence of entry and can prevent two people from passing on one authorization. Cameras and logs improve detection and accountability but do not directly stop tailgating."
+  },
+  {
+    "id": 18035,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Wireless performance",
+    "difficulty": "Level 3",
+    "question": "Conference-room clients show RSSI values around -50 dBm but experience high latency whenever meetings begin. The WLAN controller reports 95% channel utilization and many retries without authentication failures. What is the MOST likely cause?",
+    "choices": [
+      "RF airtime contention on the shared channel",
+      "Insufficient signal strength at the client devices",
+      "A depleted DHCP address pool",
+      "An incorrect WPA-Enterprise certificate chain"
+    ],
+    "answer": 0,
+    "explanation": "Strong signal rules out a coverage problem, while high utilization and retries during busy periods indicate contention for shared airtime. DHCP or certificate failures would prevent addressing or authentication rather than create load-correlated latency."
+  },
+  {
+    "id": 18036,
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "VLSM subnet allocation",
+    "difficulty": "Level 4",
+    "question": "A network architect must divide 10.44.8.0/24 among VLANs requiring 110, 50, 25, and 10 usable host addresses. Address space should be conserved, and no subnets may overlap. Which VLSM plan satisfies every requirement?",
+    "choices": [
+      "10.44.8.0/25, 10.44.8.128/26, 10.44.8.192/27, and 10.44.8.224/28",
+      "10.44.8.0/26, 10.44.8.64/26, 10.44.8.128/27, and 10.44.8.160/28",
+      "10.44.8.0/25, 10.44.8.64/26, 10.44.8.128/27, and 10.44.8.160/28",
+      "10.44.8.0/25, 10.44.8.128/27, 10.44.8.160/28, and 10.44.8.176/29"
+    ],
+    "answer": 0,
+    "explanation": "The /25, /26, /27, and /28 networks provide 126, 62, 30, and 14 usable addresses on valid nonoverlapping boundaries. The other plans either undersize a VLAN or place a subnet inside space already consumed by a larger allocation."
+  },
+  {
+    "id": 18037,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Rack installation",
+    "difficulty": "Level 2",
+    "question": "Which rack component is specifically designed to route and support patch cords so they do not obstruct equipment or place strain on switch ports?",
+    "choices": [
+      "A patch panel",
+      "A rack-mounted PDU",
+      "A sliding equipment shelf",
+      "A horizontal or vertical cable manager"
+    ],
+    "answer": 3,
+    "explanation": "Cable managers guide and support patch cords around rack equipment. A patch panel terminates permanent cabling, while a PDU distributes power and a shelf supports hardware."
+  },
+  {
+    "id": 18038,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Disaster-recovery validation and RTO",
+    "difficulty": "Level 3",
+    "question": "A recovery exercise uses 15-minute data replication for a service with a 15-minute RPO and a two-hour RTO. No committed transactions are lost, but the restored application does not become usable until three hours and twenty minutes after failover begins. Which improvement directly addresses the failed recovery target?",
+    "choices": [
+      "Replicate data every five minutes instead of every fifteen minutes",
+      "Automate restoration steps and pre-stage enough recovery capacity to restore service within two hours",
+      "Replace production hardware to increase its mean time between failures",
+      "Extend backup retention so older recovery points remain available"
+    ],
+    "answer": 1,
+    "explanation": "The exercise met the RPO because no more than the permitted data interval was lost, but it missed the two-hour RTO. Faster restoration and ready recovery capacity address service recovery time; increasing replication frequency would improve an RPO that already passed."
+  },
+  {
+    "id": 18039,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Denial of service",
+    "difficulty": "Level 4",
+    "question": "A public server's half-open TCP connection table is exhausted by SYN packets with spoofed source addresses. The server supports stateless validation of the final handshake acknowledgment. Which mitigation MOST directly reduces memory allocated before the client is validated?",
+    "choices": [
+      "Enable SYN cookies",
+      "Increase the half-open connection timeout",
+      "Block one observed spoofed source address",
+      "Move the service to a different TCP port"
+    ],
+    "answer": 0,
+    "explanation": "SYN cookies encode state into the initial response and postpone allocation until a valid acknowledgment returns. A longer timeout consumes resources for more time, and blocking one spoofed source does not address the distributed attack."
+  },
+  {
+    "id": 18040,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "DHCP troubleshooting",
+    "difficulty": "Level 2",
+    "question": "A workstation assigns itself an address beginning with 169.254 after startup. Which service did it most likely fail to reach?",
+    "choices": [
+      "NTP",
+      "LDAP",
+      "SFTP",
+      "DHCP"
+    ],
+    "answer": 3,
+    "explanation": "An APIPA 169.254/16 address usually indicates that the client could not obtain a DHCP lease."
+  },
+  {
+    "id": 18041,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "IPv6 addressing",
+    "difficulty": "Level 3",
+    "question": "An IPv6 host can communicate with neighbors on its Ethernet segment but cannot reach routed IPv6 networks. Its only assigned address begins with FE80. Which condition BEST explains the behavior?",
+    "choices": [
+      "The host has a global unicast address but lacks a multicast group membership",
+      "The host has only a link-local address, which routers do not forward beyond the local link",
+      "The host has a unique-local address that is being translated by NAT64",
+      "The host is using the IPv6 loopback prefix"
+    ],
+    "answer": 1,
+    "explanation": "FE80::/10 identifies link-local addressing, which supports communication on the directly connected link but is not routed. A global or suitable unique-local address is needed for routed IPv6 communication."
+  },
+  {
+    "id": 18042,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "NAT",
+    "difficulty": "Level 4",
+    "question": "A branch has one public IPv4 address for 600 private clients. Translation logs show multiple clients using the same public address at the same time, with unique translated source-port values maintaining each return path. Which mechanism is providing this behavior?",
+    "choices": [
+      "Dynamic NAT using a pool containing one address per active client",
+      "Port address translation using source address and port mappings",
+      "Static one-to-one NAT for every private workstation",
+      "Destination NAT forwarding one public port to an internal server"
+    ],
+    "answer": 1,
+    "explanation": "PAT distinguishes simultaneous outbound sessions by translating transport-layer ports while sharing one public address. Dynamic or static one-to-one NAT would require additional public mappings and does not match the translation log."
+  },
+  {
+    "id": 18043,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DNS records",
+    "difficulty": "Level 2",
+    "question": "A dual-stack administrator needs the name files6.corp.example to resolve directly to 2001:db8:44::20. Which DNS record type should be created?",
+    "choices": [
+      "MX",
+      "PTR",
+      "AAAA",
+      "TXT"
+    ],
+    "answer": 2,
+    "explanation": "An AAAA record stores an IPv6 address for a hostname."
+  },
+  {
+    "id": 18044,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Network access control",
+    "difficulty": "Level 3",
+    "question": "A contractor authenticates successfully to a wired port, but the laptop lacks the required endpoint agent and current patches. Policy requires automatic placement into a remediation network before production access. Which control BEST performs that decision?",
+    "choices": [
+      "802.1X authentication without any posture checks",
+      "A static ACL that permits every authenticated endpoint",
+      "NAC with posture assessment and dynamic quarantine assignment",
+      "Port mirroring to the security operations center"
+    ],
+    "answer": 2,
+    "explanation": "NAC can combine identity with endpoint-posture evidence and dynamically assign noncompliant devices to remediation. Authentication alone proves identity but does not evaluate the required software and patch state."
+  },
+  {
+    "id": 18045,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Packet capture tools",
+    "difficulty": "Level 4",
+    "question": "A client capture shows SYN retransmissions with no response. A simultaneous server capture shows each SYN arriving and a SYN-ACK leaving through a different gateway; the client-side gateway never records the SYN-ACK. What should the technician investigate NEXT?",
+    "choices": [
+      "The server's return route and any stateful control on the asymmetric path",
+      "The client's DNS resolver because TCP establishment depends on a PTR record",
+      "The access switch duplex setting because the server received every SYN",
+      "The server certificate because TLS validation occurs before the TCP handshake"
+    ],
+    "answer": 0,
+    "explanation": "The paired captures prove the request reaches the server and the reply leaves on a path that does not reach the client's gateway. The return route and stateful devices on that asymmetric path are the next evidence-based targets; DNS and TLS occur outside this failed handshake."
+  },
+  {
+    "id": 18046,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Load-balancer health checks",
+    "difficulty": "Level 2",
+    "question": "A web service keeps one virtual address while a failed application server is automatically removed from the pool after health checks stop succeeding. Which network function is providing this behavior?",
+    "choices": [
+      "Forward proxy",
+      "Intrusion prevention system",
+      "Wireless LAN controller",
+      "Load balancer"
+    ],
+    "answer": 3,
+    "explanation": "A load balancer presents a virtual service address, monitors pool-member health, and stops directing requests to an unhealthy server. The other appliances do not distribute application sessions across a monitored server pool."
+  },
+  {
+    "id": 18047,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Link aggregation",
+    "difficulty": "Level 3",
+    "question": "Two switches must combine four compatible Ethernet links into one logical uplink. The bundle should negotiate membership dynamically and continue operating if one link fails. Which protocol should be configured?",
+    "choices": [
+      "STP with four independent forwarding ports",
+      "LACP",
+      "VRRP",
+      "LLDP"
+    ],
+    "answer": 1,
+    "explanation": "LACP negotiates a link-aggregation group and treats the member links as one logical interface with capacity and link redundancy. STP prevents loops but normally blocks redundant independent paths rather than creating the requested bundle."
+  },
+  {
+    "id": 18048,
+    "domain": "3",
+    "objective": "3.5",
+    "blueprint": "Out-of-band management",
+    "difficulty": "Level 4",
+    "question": "Administrators must reach router and firewall console ports during a complete production-core outage. The access path must not depend on the organization's normal switches, routing, or primary ISP. Which design BEST meets the requirement?",
+    "choices": [
+      "A management VLAN carried across the production core",
+      "A VPN concentrator reached through the primary internet circuit",
+      "A SPAN session from each production uplink",
+      "A dedicated console server on an independent out-of-band connection"
+    ],
+    "answer": 3,
+    "explanation": "A separate console server and independent transport remain available when production forwarding and the primary ISP fail. An in-band VLAN or production VPN still depends on the infrastructure the administrators need to repair."
+  },
+  {
+    "id": 18049,
+    "domain": "1",
+    "objective": "1.1",
+    "blueprint": "Encapsulation",
+    "difficulty": "Level 2",
+    "question": "During encapsulation, which fields does the transport layer add so the destination host can deliver data to the correct application process?",
+    "choices": [
+      "Source and destination IP addresses",
+      "Source and destination MAC addresses",
+      "Source and destination port numbers",
+      "A preamble and frame-check sequence"
+    ],
+    "answer": 2,
+    "explanation": "TCP and UDP use port numbers to identify application processes. IP addresses are added at the network layer, while MAC addresses and the frame-check sequence belong to the data-link frame."
+  },
+  {
+    "id": 18050,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting methodology",
+    "difficulty": "Level 3",
+    "question": "A technician replaces a failed transceiver and traffic immediately returns. Before closing the incident, which action should occur NEXT?",
+    "choices": [
+      "Remove monitoring so the recovered interface cannot generate another alert",
+      "Verify the affected services and redundancy, then document the cause and corrective action",
+      "Change an unrelated configuration to prove administrative access",
+      "Close the ticket as soon as the interface state changes to up"
+    ],
+    "answer": 1,
+    "explanation": "An up interface is not sufficient proof that all dependent services and redundancy have recovered. Verification followed by documentation completes the troubleshooting process and leaves useful evidence for future incidents."
+  },
+  {
+    "id": 18051,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Network services",
+    "difficulty": "Level 4",
+    "question": "A mail gateway must continue accepting server-to-server relay on TCP 25, but users in the client VLAN may submit mail only through authenticated SMTP with STARTTLS. They must not use implicit-TLS submission or connect to the relay service. Which firewall rule BEST enforces the client requirement?",
+    "choices": [
+      "Permit the client VLAN to TCP 25 and rely on the gateway to distinguish users from relay servers",
+      "Permit the client VLAN to TCP 587 on the gateway while keeping TCP 25 and TCP 465 blocked from that VLAN",
+      "Permit the client VLAN to TCP 465 because implicit TLS and STARTTLS use the same listener",
+      "Permit the client VLAN to TCP 993 so the same encrypted session can submit and retrieve mail"
+    ],
+    "answer": 1,
+    "explanation": "TCP 587 is the standard authenticated message-submission service and can enforce STARTTLS, while source-scoping the rule prevents clients from using the TCP 25 relay listener. TCP 465 uses implicit TLS rather than the required STARTTLS behavior, and TCP 993 is for IMAP retrieval."
+  },
+  {
+    "id": 18052,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless roaming",
+    "difficulty": "Level 2",
+    "question": "Which WLAN design element allows users to roam between access points while staying on the same corporate wireless network?",
+    "choices": [
+      "A consistent SSID and security profile",
+      "Different encryption on every AP",
+      "Overlapping 2.4GHz channels",
+      "Unique captive portals per room"
+    ],
+    "answer": 0,
+    "explanation": "A consistent SSID and authentication profile lets clients recognize and roam within one WLAN service."
+  },
+  {
+    "id": 18053,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Configuration management",
+    "difficulty": "Level 3",
+    "question": "A failed access switch is replaced with the same model. The team must restore VLANs, trunks, management settings, and port-security policies with minimal manual reconstruction. Which operational practice most directly enables that recovery?",
+    "choices": [
+      "Keeping only a physical rack diagram",
+      "Maintaining current, versioned configuration backups",
+      "Retaining the last month of interface utilization graphs",
+      "Documenting the switch's purchase date and warranty"
+    ],
+    "answer": 1,
+    "explanation": "A current configuration backup can be restored to compatible replacement hardware and contains the required logical settings. Diagrams and monitoring history help operations but cannot recreate the switch configuration."
+  },
+  {
+    "id": 18054,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Wireless attacks",
+    "difficulty": "Level 4",
+    "question": "Employees associate with the familiar corporate SSID, but wireless monitoring identifies an unauthorized BSSID with a stronger signal. Affected users receive a fake captive portal and later report stolen credentials. Which threat BEST fits the evidence?",
+    "choices": [
+      "ARP poisoning performed through the authorized access point",
+      "A deauthentication attack with no replacement access point",
+      "VLAN hopping on a wired switch trunk",
+      "An evil twin access point"
+    ],
+    "answer": 3,
+    "explanation": "The unauthorized radio impersonates the trusted SSID and presents a credential-capture portal, which defines an evil twin. Deauthentication may be used to steer clients, but it does not by itself explain the fraudulent BSSID and portal."
+  },
+  {
+    "id": 18055,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Cable distance",
+    "difficulty": "Level 2",
+    "question": "A permanent copper run from the patch panel to a workstation is 130 meters and fails certification because the channel exceeds Ethernet distance limits. Which correction is MOST appropriate?",
+    "choices": [
+      "Replace the run with Cat 6A while keeping the same 130-meter channel",
+      "Add a passive RJ45 coupler midway through the existing cable",
+      "Relocate the termination or add an intermediate active switch so each copper channel is within specification",
+      "Force the switch and workstation to full duplex"
+    ],
+    "answer": 2,
+    "explanation": "Twisted-pair Ethernet channels are generally limited to 100 meters, so the design must shorten or actively regenerate the link. Higher-category copper does not make a 130-meter standards-compliant channel."
+  },
+  {
+    "id": 18056,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud service models",
+    "difficulty": "Level 3",
+    "question": "A development team needs to deploy custom application code but has no staff to patch operating systems or maintain the runtime and middleware. The provider should manage those layers while the team manages its application and data. Which service model BEST fits?",
+    "choices": [
+      "IaaS virtual machines managed by the customer",
+      "A PaaS managed application platform",
+      "A finished SaaS application",
+      "Colocation space and power for customer-owned servers"
+    ],
+    "answer": 1,
+    "explanation": "PaaS lets the customer deploy code while the provider manages the operating system, runtime, and supporting platform. IaaS would leave operating-system maintenance with the customer, while SaaS would not normally permit deployment of the customer's custom application stack."
+  },
+  {
+    "id": 18057,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "Environmental monitoring",
+    "difficulty": "Level 4",
+    "question": "A top-of-rack switch reports thermal shutdowns only on hot afternoons. Cold-aisle inlet temperature is within specification, PSU load is normal, and inspection shows warm exhaust air returning around an empty rack gap. What should be corrected FIRST?",
+    "choices": [
+      "Replace the normal-load power supplies with higher-wattage models",
+      "Lower the room humidity below the equipment specification",
+      "Block hot-air recirculation and restore an unobstructed exhaust path",
+      "Increase the switch's Layer 3 routing-table capacity"
+    ],
+    "answer": 2,
+    "explanation": "Normal inlet temperature and power load rule against inadequate cooling supply or PSU overload, while visible exhaust recirculation explains the local thermal condition. Blank panels and proper airflow containment address that evidence directly."
+  },
+  {
+    "id": 18058,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Baselines",
+    "difficulty": "Level 2",
+    "question": "Which operational measurement establishes normal latency, utilization, and error rates so future deviations can be recognized?",
+    "choices": [
+      "A fault threshold",
+      "An asset inventory",
+      "A performance baseline",
+      "A service-level penalty"
+    ],
+    "answer": 2,
+    "explanation": "A baseline records normal behavior for later comparison. A threshold may trigger an alert, but it should be selected using baseline data rather than replacing that data."
+  },
+  {
+    "id": 18059,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "DHCP snooping",
+    "difficulty": "Level 3",
+    "question": "An unauthorized DHCP server on an access port offers clients an incorrect default gateway. Which switch configuration BEST blocks those offers while still allowing replies from the legitimate server uplink?",
+    "choices": [
+      "Enable DHCP snooping, trust only the legitimate server uplink, and leave access ports untrusted",
+      "Enable dynamic ARP inspection without creating DHCP bindings",
+      "Configure port security with an unlimited MAC-address maximum",
+      "Enable BPDU guard on the legitimate DHCP server uplink"
+    ],
+    "answer": 0,
+    "explanation": "DHCP snooping filters server messages received on untrusted ports while allowing them on explicitly trusted infrastructure ports. Dynamic ARP inspection uses binding information to validate ARP and is not the primary control for rogue DHCP offers."
+  },
+  {
+    "id": 18060,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Routing symptoms",
+    "difficulty": "Level 4",
+    "question": "Voice calls break up only during ten-second storage-backup bursts. Five-minute utilization averages remain below 30%, interface error counters stay at zero, but subsecond telemetry shows output-queue drops during each burst. Which condition BEST explains the symptoms?",
+    "choices": [
+      "A duplex mismatch corrupts frames throughout the day",
+      "An MTU mismatch blocks every packet larger than the path permits",
+      "Microbursts temporarily exceed egress capacity and overflow the queue",
+      "DNS latency delays the RTP media packets after sessions are established"
+    ],
+    "answer": 2,
+    "explanation": "Short traffic bursts can overflow an egress queue while long averaging intervals hide the peak. The synchronized queue drops and clean error counters support microburst congestion rather than a duplex or physical-layer problem."
+  },
+  {
+    "id": 18061,
+    "domain": "1",
+    "objective": "1.5",
+    "blueprint": "APC fiber connector polish",
+    "difficulty": "Level 2",
+    "question": "A carrier handoff requires green fiber connectors with an angled end face to reduce back reflection on a sensitive optical link. Which connector polish should the technician select?",
+    "choices": [
+      "APC",
+      "UPC",
+      "BNC",
+      "RJ45"
+    ],
+    "answer": 0,
+    "explanation": "Angled physical contact (APC) fiber connectors use an angled polished face and are commonly identified by green housings. UPC uses a flat ultra-polished face, while BNC and RJ45 are not fiber-polish types."
+  },
+  {
+    "id": 18062,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "First-hop redundancy",
+    "difficulty": "Level 3",
+    "question": "A router has an OSPF route to 10.90.0.0/16 with administrative distance 110 and a static route to the same prefix configured with distance 200. Both next hops are reachable. Which route should appear in the forwarding table during normal operation?",
+    "choices": [
+      "The static route because static routes always override dynamic routes",
+      "The OSPF route; the higher-distance static route acts as a floating backup",
+      "Both routes because equal prefixes are always load balanced",
+      "Neither route until the OSPF neighbor fails"
+    ],
+    "answer": 1,
+    "explanation": "For identical prefixes, the lower administrative distance is preferred, so OSPF distance 110 wins. The distance-200 static route remains a floating backup and becomes eligible if the preferred route disappears."
+  },
+  {
+    "id": 18063,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Disaster recovery sites",
+    "difficulty": "Level 4",
+    "question": "A payment platform requires an RTO of five minutes and an RPO measured in seconds. The organization accepts the cost of continuously running infrastructure and replicated data at another location. Which recovery facility BEST meets both objectives?",
+    "choices": [
+      "A hot site",
+      "A warm site that requires application restoration before use",
+      "A cold site containing space and utilities only",
+      "An off-site backup vault with no computing infrastructure"
+    ],
+    "answer": 0,
+    "explanation": "A hot site maintains active infrastructure and current replicated data, matching the very short recovery time and recovery point requirements. A warm site still requires restoration and activation work that may exceed the five-minute RTO."
+  },
+  {
+    "id": 18064,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "Certificate troubleshooting",
+    "difficulty": "Level 2",
+    "question": "A browser rejects an internal portal certificate even though the hostname and validity dates are correct. The organization replaced its issuing CA last week, and affected clients do not contain the new intermediate certificate. What should be corrected?",
+    "choices": [
+      "Change the portal hostname so it no longer matches the certificate",
+      "Extend the already-valid certificate's expiration date",
+      "Install the required trusted CA chain on the affected clients or serve the missing intermediate",
+      "Replace the server's private key without reissuing its certificate"
+    ],
+    "answer": 2,
+    "explanation": "The clients cannot build a trusted path to the new issuing CA because the intermediate is absent. Correcting the chain resolves trust; changing a valid hostname or unrelated private key would create additional certificate problems."
+  },
+  {
+    "id": 18065,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "NTP troubleshooting",
+    "difficulty": "Level 3",
+    "question": "Kerberos logins fail intermittently after several servers drift eight minutes from the domain controllers. DNS service records resolve correctly and the user accounts are not locked. Which service should be repaired FIRST?",
+    "choices": [
+      "LDAP directory replication",
+      "RADIUS shared-secret distribution",
+      "DHCP address leasing",
+      "NTP time synchronization"
+    ],
+    "answer": 3,
+    "explanation": "Kerberos rejects authentication when clock skew exceeds its tolerance, and the measured eight-minute drift directly identifies failed time synchronization. Correct DNS resolution makes a service-location problem less likely."
+  },
+  {
+    "id": 18066,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Mesh topology resilience",
+    "difficulty": "Level 4",
+    "question": "Four emergency-response sites require direct site-to-site paths. The remaining sites must continue exchanging traffic even if any one site and one unrelated intersite circuit fail at the same time. Cost is secondary to eliminating a central transit dependency. Which topology BEST satisfies the requirement?",
+    "choices": [
+      "A star topology with one headquarters hub",
+      "A point-to-point chain joining the four sites",
+      "A full-mesh WAN with a circuit between every pair of sites",
+      "A collapsed-core campus design at the largest site"
+    ],
+    "answer": 2,
+    "explanation": "A full mesh gives each surviving pair of sites a direct path and avoids dependence on a central hub. A star fails with its hub, a chain can partition after a circuit loss, and collapsed core describes a campus hierarchy rather than an intersite topology."
+  },
+  {
+    "id": 18067,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Native VLAN",
+    "difficulty": "Level 2",
+    "question": "On an 802.1Q trunk, which traffic is normally sent without a VLAN tag?",
+    "choices": [
+      "Every allowed VLAN",
+      "Only voice VLAN traffic",
+      "All routed traffic",
+      "Native VLAN traffic"
+    ],
+    "answer": 3,
+    "explanation": "By default, frames belonging to the trunk's native VLAN are transmitted untagged."
+  },
+  {
+    "id": 18068,
+    "domain": "3",
+    "objective": "3.4",
+    "blueprint": "DNS over TLS (DoT)",
+    "difficulty": "Level 3",
+    "question": "A compliance policy requires workstation queries to the approved recursive DNS resolver to be encrypted over a dedicated TLS service on TCP port 853. The organization wants to retain the normal DNS message format rather than encapsulating queries in HTTPS. Which client configuration meets the policy?",
+    "choices": [
+      "Enable DNSSEC validation only",
+      "Send DNS over HTTPS on TCP port 443",
+      "Configure DNS over TLS to the approved resolver",
+      "Permit unauthenticated zone transfers over TCP port 53"
+    ],
+    "answer": 2,
+    "explanation": "DNS over TLS encrypts DNS traffic to a resolver using the dedicated TCP 853 service and preserves DNS framing. DNSSEC authenticates DNS data but does not encrypt the client query, while DoH uses HTTPS on port 443."
+  },
+  {
+    "id": 18069,
+    "domain": "4",
+    "objective": "4.3",
+    "blueprint": "Segmentation",
+    "difficulty": "Level 4",
+    "question": "Guest clients and corporate servers must use the same internet edge, but a compromised guest must never initiate a session toward the corporate network. Corporate administrators do not need to initiate sessions toward guests. Which design BEST satisfies the requirements?",
+    "choices": [
+      "Place both groups in one subnet and depend on host firewalls for isolation",
+      "Use a shared SSID and enable proxy ARP between all clients",
+      "Allow inter-VLAN routing and block only guest broadcast traffic",
+      "Place guests and servers in separate VLANs and enforce a gateway deny policy between them while permitting each VLAN to the internet"
+    ],
+    "answer": 3,
+    "explanation": "Separate VLANs create enforceable boundaries, and a gateway policy can deny guest-to-corporate sessions while independently permitting internet access. Blocking broadcasts does not stop routed unicast attacks."
+  },
+  {
+    "id": 18070,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "DNS command tools",
+    "difficulty": "Level 2",
+    "question": "Which tool queries a DNS server for a specific record and displays the returned answer?",
+    "choices": [
+      "nslookup",
+      "pathping",
+      "arp",
+      "route"
+    ],
+    "answer": 0,
+    "explanation": "nslookup performs DNS queries and displays the records returned by a selected resolver."
+  },
+  {
+    "id": 18071,
+    "domain": "1",
+    "objective": "1.7",
+    "blueprint": "IPv4 subnet membership",
+    "difficulty": "Level 3",
+    "question": "A server is configured as 10.44.18.130/26 with default gateway 10.44.18.65. The switch port and VLAN are correct, but the server cannot reach any off-subnet destination. Which change corrects the addressing defect without changing the server's subnet?",
+    "choices": [
+      "Change the mask to /24 while leaving the addressing plan undocumented",
+      "Use 10.44.18.127 as the default gateway",
+      "Set the gateway to a router address within 10.44.18.128/26",
+      "Replace the gateway with an address from 169.254.0.0/16"
+    ],
+    "answer": 2,
+    "explanation": "With a /26 mask, 10.44.18.130 belongs to the 10.44.18.128-191 subnet, while 10.44.18.65 belongs to 10.44.18.64-127. The server needs a usable gateway address inside its own /26; .127 is the broadcast address of the neighboring subnet."
+  },
+  {
+    "id": 18072,
+    "domain": "2",
+    "objective": "2.3",
+    "blueprint": "Wireless design",
+    "difficulty": "Level 4",
+    "question": "Voice-over-Wi-Fi calls pause for several seconds when users roam between access points. Coverage and channel design are healthy, all APs use the same SSID, and logs show a full 802.1X authentication during every handoff. Which improvement should be evaluated FIRST?",
+    "choices": [
+      "A wider 2.4 GHz channel on every access point",
+      "Higher transmit power so clients never attempt to roam",
+      "A different SSID and RADIUS server for each access point",
+      "Fast-transition roaming with a consistent enterprise authentication configuration"
+    ],
+    "answer": 3,
+    "explanation": "The delay occurs during repeated authentication rather than RF discovery or coverage loss. Fast-transition mechanisms reduce the authentication work during handoff; wider channels or oversized cells can worsen wireless performance."
+  },
+  {
+    "id": 18073,
+    "domain": "2",
+    "objective": "2.2",
+    "blueprint": "Voice VLANs",
+    "difficulty": "Level 2",
+    "question": "A switch port connects an IP phone with a workstation attached through the phone. Which configuration keeps voice and workstation traffic logically separated?",
+    "choices": [
+      "One untagged management VLAN for both",
+      "A voice VLAN plus a data access VLAN",
+      "A disabled trunk with no access VLAN",
+      "A port mirror directed to the phone"
+    ],
+    "answer": 1,
+    "explanation": "A voice VLAN carries tagged phone traffic while the access VLAN carries workstation data, separating the two services on one physical port."
+  },
+  {
+    "id": 18074,
+    "domain": "4",
+    "objective": "4.2",
+    "blueprint": "Social engineering",
+    "difficulty": "Level 3",
+    "question": "A caller invents a detailed identity as a newly hired executive, cites public information to sound credible, and pressures the help desk to reset MFA. Which social-engineering technique is primarily defined by the fabricated identity and story?",
+    "choices": [
+      "Tailgating",
+      "Shoulder surfing",
+      "Dumpster diving",
+      "Pretexting"
+    ],
+    "answer": 3,
+    "explanation": "Pretexting builds a believable false identity and narrative to persuade the target to act. The telephone is the delivery channel, but the defining evidence in the question is the constructed pretext."
+  },
+  {
+    "id": 18075,
+    "domain": "5",
+    "objective": "5.1",
+    "blueprint": "Troubleshooting scope",
+    "difficulty": "Level 4",
+    "question": "After a WAN change, several teams report intermittent application failures, but the ticket does not identify affected sites, protocols, timing, or whether unaffected applications use the same path. What should the technician do FIRST?",
+    "choices": [
+      "Roll back the WAN change before determining whether all reports share one cause",
+      "Test a path-MTU theory before identifying which applications are affected",
+      "Establish the scope and collect symptoms, timing, and recent-change evidence",
+      "Escalate to the carrier without documenting local observations"
+    ],
+    "answer": 2,
+    "explanation": "The report lacks enough evidence to form or test a defensible theory. Establishing scope and collecting symptoms first prevents an unrelated rollback or escalation from obscuring the actual cause."
+  },
+  {
+    "id": 18076,
+    "domain": "1",
+    "objective": "1.8",
+    "blueprint": "Zero-touch provisioning",
+    "difficulty": "Level 3",
+    "question": "A company is opening 100 small branches. Staff should connect each new edge appliance to power and broadband, after which the device must authenticate and obtain its approved configuration automatically. Which capability meets the requirement?",
+    "choices": [
+      "Zero-touch provisioning through the central controller",
+      "Manual console configuration at every branch",
+      "A locally copied startup configuration with no controller enrollment",
+      "DHCP address assignment without configuration authentication"
+    ],
+    "answer": 0,
+    "explanation": "Zero-touch provisioning lets a new appliance securely contact its controller and download the assigned configuration with minimal local intervention. Manual console work would defeat the stated deployment requirement."
+  },
+  {
+    "id": 18077,
+    "domain": "2",
+    "objective": "2.4",
+    "blueprint": "UPS capacity",
+    "difficulty": "Level 3",
+    "question": "A 1500 VA UPS reports an overload whenever all attached network devices start simultaneously. Runtime calculations and the equipment nameplates confirm the protected load exceeds the UPS rating. What should the administrator do?",
+    "choices": [
+      "Attach a larger passive power strip to the same UPS outlet",
+      "Disable grounding so less apparent power is measured",
+      "Reduce switch logging to lower the electrical load",
+      "Redistribute the equipment or replace the UPS with a correctly sized unit"
+    ],
+    "answer": 3,
+    "explanation": "The measured startup demand exceeds the unit's supported capacity, so the load must be reduced or the UPS properly upsized. A power strip changes outlet count, not available UPS capacity."
+  },
+  {
+    "id": 18078,
+    "domain": "3",
+    "objective": "3.1",
+    "blueprint": "Maintenance windows",
+    "difficulty": "Level 3",
+    "question": "A router upgrade requires a 20-minute outage, but the current business calendar prohibits outages and the change is not an emergency. Which action should the engineer take before scheduling it?",
+    "choices": [
+      "Proceed during the prohibited period because a rollback image exists",
+      "Divide the outage into two unapproved ten-minute changes",
+      "Obtain an approved exception or select an authorized maintenance window",
+      "Classify the planned upgrade as an incident response action"
+    ],
+    "answer": 2,
+    "explanation": "A rollback plan reduces technical risk but does not override an approved no-outage period. Governance requires an authorized exception or a permitted window before the work is scheduled."
+  },
+  {
+    "id": 18079,
+    "domain": "5",
+    "objective": "5.2",
+    "blueprint": "Fiber inspection",
+    "difficulty": "Level 3",
+    "question": "Before connecting a fiber jumper, a technician sees dust on the end face through an inspection scope. Which procedure BEST prevents contamination-related insertion loss?",
+    "choices": [
+      "Clean the connector with an approved method and inspect it again before connection",
+      "Connect it first and clean only if the link fails completely",
+      "Wipe the end face with clothing to remove visible debris",
+      "Use unfiltered canned air while leaving the protective cap off"
+    ],
+    "answer": 0,
+    "explanation": "The inspect-clean-inspect process confirms that contamination is removed before mating surfaces can be damaged or contaminated. Clothing and uncontrolled air can add debris or residue."
+  },
+  {
+    "id": 18080,
+    "domain": "1",
+    "objective": "1.2",
+    "blueprint": "Virtual networking",
+    "difficulty": "Level 3",
+    "question": "Two virtual machines on the same hypervisor and VLAN exchange traffic successfully, but a capture on the physical switch uplink sees none of their frames. Which component is forwarding the traffic?",
+    "choices": [
+      "The physical access switch",
+      "The upstream default gateway",
+      "The hypervisor's virtual switch",
+      "The hypervisor's out-of-band management controller"
+    ],
+    "answer": 2,
+    "explanation": "A virtual switch can forward frames locally between virtual interfaces on the same host, so the traffic never needs the physical uplink. The router is unnecessary because both VMs share a VLAN."
+  },
+  {
+    "id": 18081,
+    "domain": "3",
+    "objective": "3.2",
+    "blueprint": "Log aggregation",
+    "difficulty": "Level 3",
+    "question": "Investigators must correlate firewall denies, VPN authentication, and switch-port changes to the same second. Which implementation BEST creates a reliable shared timeline?",
+    "choices": [
+      "Keep logs only on each device and compare their unsynchronized timestamps",
+      "Centralize the logs and synchronize every source to approved NTP servers",
+      "Collect NetFlow records without retaining authentication or configuration events",
+      "Poll interface counters more frequently instead of collecting event logs"
+    ],
+    "answer": 1,
+    "explanation": "Central collection makes the events searchable together, and synchronized clocks make timestamps comparable. Flow records and interface counters do not contain all of the security and configuration events required."
+  },
+  {
+    "id": 18082,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "MTU issues",
+    "difficulty": "Level 3",
+    "question": "Small pings cross an encrypted tunnel, but larger packets with the don't-fragment bit set fail. Both endpoints resolve names correctly and interface error counters remain at zero. Which condition is MOST likely?",
+    "choices": [
+      "A duplex mismatch on the access switch",
+      "An incorrect DNS suffix on the endpoints",
+      "A failed NTP synchronization source",
+      "A path-MTU problem caused by encapsulation overhead"
+    ],
+    "answer": 3,
+    "explanation": "Tunnel encapsulation reduces the payload size that fits within the path MTU. Large packets that cannot fragment expose that limit, while successful small packets and clean physical counters argue against a duplex failure."
+  },
+  {
+    "id": 18083,
+    "domain": "1",
+    "objective": "1.4",
+    "blueprint": "Secure protocols",
+    "difficulty": "Level 3",
+    "question": "An automation workflow needs an interactive file-transfer service that runs as an SSH subsystem and protects both credentials and file contents. Which protocol should be selected?",
+    "choices": [
+      "FTPS",
+      "SCP",
+      "SFTP",
+      "TFTP"
+    ],
+    "answer": 2,
+    "explanation": "SFTP is an SSH subsystem designed for managed file-transfer operations. FTPS uses TLS rather than SSH, SCP performs secure copies without the same interactive transfer interface, and TFTP is unencrypted."
+  },
+  {
+    "id": 18084,
+    "domain": "3",
+    "objective": "3.3",
+    "blueprint": "Redundancy",
+    "difficulty": "Level 3",
+    "question": "A data center purchases internet circuits from two carriers, but both fibers enter the building through the same underground conduit. Which resilience risk remains despite the carrier diversity?",
+    "choices": [
+      "A routing-loop risk caused solely by using two autonomous systems",
+      "A DNS failure because each circuit has a different public address",
+      "A certificate-chain failure during BGP convergence",
+      "A common-path physical single point of failure"
+    ],
+    "answer": 3,
+    "explanation": "One excavation or conduit failure can sever both carrier fibers, so the physical path remains shared. Carrier diversity does not provide resilience when the last-mile pathways are not diverse."
+  },
+  {
+    "id": 18085,
+    "domain": "5",
+    "objective": "5.4",
+    "blueprint": "AAA troubleshooting",
+    "difficulty": "Level 2",
+    "question": "A switch can reach its RADIUS server, but every administrative login fails immediately after the server's shared secret is changed. Time synchronization and the administrator account are valid. What should be updated?",
+    "choices": [
+      "The corresponding RADIUS shared secret on the switch",
+      "The switch's spanning-tree bridge priority",
+      "The administrator's DNS search suffix",
+      "The access VLAN's DHCP lease duration"
+    ],
+    "answer": 0,
+    "explanation": "A RADIUS client and server authenticate requests with the same shared secret. Reachability, valid time, and a valid account do not compensate for a secret mismatch."
+  },
+  {
+    "id": 18086,
+    "domain": "1",
+    "objective": "1.6",
+    "blueprint": "Ethernet cabling",
+    "difficulty": "Level 3",
+    "question": "A new office run must support 10GBASE-T over a 90-meter permanent copper link, and the existing endpoints require RJ45 connectors. Which medium is the BEST standards-based choice?",
+    "choices": [
+      "Cat 6 intended only for shorter 10GBASE-T distances",
+      "Cat 6A",
+      "OM4 multimode fiber terminated directly with RJ45 plugs",
+      "RG-6 coaxial cable"
+    ],
+    "answer": 1,
+    "explanation": "Cat 6A supports 10GBASE-T across the full copper channel distance and retains RJ45 connectivity. Cat 6 can support 10 GbE only at shorter distances, while fiber cannot be terminated as an RJ45 copper link."
+  },
+  {
+    "id": 18087,
+    "domain": "2",
+    "objective": "2.1",
+    "blueprint": "Route summarization",
+    "difficulty": "Level 4",
+    "question": "A branch owns sixteen aligned networks from 10.72.0.0/24 through 10.72.15.0/24. It must advertise one summary while excluding the partner-owned 10.72.16.0/24 network. Which route is the most precise valid summary?",
+    "choices": [
+      "10.72.0.0/19",
+      "10.72.0.0/16",
+      "10.72.0.0/20",
+      "10.72.8.0/21"
+    ],
+    "answer": 2,
+    "explanation": "An aligned /20 covers exactly 10.72.0.0 through 10.72.15.255. A /19 or /16 would also include the partner network, while 10.72.8.0/21 covers only half of the branch ranges."
+  },
+  {
+    "id": 18088,
+    "domain": "5",
+    "objective": "5.5",
+    "blueprint": "Packet capture placement",
+    "difficulty": "Level 2",
+    "question": "A switch is already configured to copy both directions of a server's traffic. Where should the technician connect the protocol analyzer so the server remains online and the analyzer receives the copied frames?",
+    "choices": [
+      "Inline between the server and its access port",
+      "To an unused LACP member port",
+      "To the dedicated SPAN destination port",
+      "To the trunk's native-VLAN interface"
+    ],
+    "answer": 2,
+    "explanation": "A SPAN destination port receives copies from the configured source without placing the analyzer in the production path. Connecting the analyzer inline could interrupt service and is unnecessary when the switch is already mirroring traffic."
+  },
+  {
+    "id": 18089,
+    "domain": "1",
+    "objective": "1.3",
+    "blueprint": "Cloud scaling",
+    "difficulty": "Level 3",
+    "question": "A cloud storefront has unpredictable traffic peaks. The team wants capacity added automatically when latency rises and removed after demand falls so it does not pay for permanently idle instances. Which cloud behavior should it configure?",
+    "choices": [
+      "Elastic scaling",
+      "Static capacity planning",
+      "Resource pooling without scaling policies",
+      "Data remanence controls"
+    ],
+    "answer": 0,
+    "explanation": "Elasticity expands and contracts resources with demand, meeting the performance and cost constraints in the scenario. Resource pooling supplies shared capacity but does not by itself add and remove instances automatically."
+  },
+  {
+    "id": 18090,
+    "domain": "5",
+    "objective": "5.3",
+    "blueprint": "Asymmetric routing",
+    "difficulty": "Level 4",
+    "question": "A stateful firewall sees outbound SYN packets and creates session entries, but routing sends the returning SYN-ACK packets through an unrelated router that bypasses the firewall. Packet filters otherwise permit the traffic. Which correction BEST restores reliable sessions?",
+    "choices": [
+      "Disable TCP acknowledgments so the firewall no longer expects a return packet",
+      "Increase the firewall's incomplete-session timeout",
+      "Replace the application's DNS A record with a CNAME",
+      "Make the forward and return routes traverse the same stateful firewall path"
+    ],
+    "answer": 3,
+    "explanation": "Stateful inspection must observe both directions of the flow to validate the session. Symmetric routing restores that visibility; longer timeouts cannot help when the returning packets never cross the device."
+  }
 ]
