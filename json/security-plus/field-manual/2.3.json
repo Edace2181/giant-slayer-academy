@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Explain Various Types of Vulnerabilities",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A vulnerability is a weakness that can be exploited by a threat actor.",
+        "Security+ expects you to recognize vulnerabilities across applications, operating systems, web applications, hardware, virtualization, cloud environments, supply chains, cryptography, and mobile devices.",
+        "Use this sequence: identify where the weakness exists, determine what type of vulnerability it is, and find the clue that gives it away."
+      ],
+      "callout": "Vulnerability = the weakness · Exploit = the method used to take advantage of it"
+    },
+    {
+      "id": "application-vulnerabilities",
+      "title": "Application Vulnerabilities",
+      "paragraphs": [
+        "Applications can contain weaknesses in their code, memory handling, timing, or update process. Security+ specifically calls out memory injection, buffer overflow, race conditions, and malicious updates."
+      ],
+      "callout": "Ask which part of the application's behavior contains the weakness."
+    },
+    {
+      "id": "memory-injection-and-buffer-overflow",
+      "title": "Memory Injection and Buffer Overflow",
+      "paragraphs": [
+        "Both vulnerabilities involve memory, but the defining problem is different."
+      ],
+      "entries": [
+        {
+          "title": "Memory Injection",
+          "paragraphs": [
+            "Memory injection occurs when malicious code or instructions are inserted into the memory space of a running process. The attacker may try to make a legitimate process execute malicious activity."
+          ],
+          "memoryHook": "Put malicious code inside a running process.",
+          "recognitionCue": "Malicious code inserted into process memory → Memory injection"
+        },
+        {
+          "title": "Buffer Overflow",
+          "paragraphs": [
+            "A buffer temporarily holds data. A buffer overflow occurs when an application writes more data into a buffer than it was designed to hold. Excess data can overwrite nearby memory and cause crashes, corruption, unexpected behavior, or malicious code execution."
+          ],
+          "memoryHook": "Too much data for the container.",
+          "recognitionCue": "Input exceeds allocated memory space → Buffer overflow"
+        }
+      ],
+      "table": {
+        "caption": "Memory vulnerability comparison",
+        "headers": [
+          "Vulnerability",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Memory injection",
+            "Malicious code is placed into process memory"
+          ],
+          [
+            "Buffer overflow",
+            "Too much data crosses a memory boundary"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "race-conditions-and-toc-tou",
+      "title": "Race Conditions and TOC/TOU",
+      "paragraphs": [
+        "A race condition occurs when the result of an operation depends on the timing or order of multiple actions. An attacker tries to take advantage of a small timing window."
+      ],
+      "entries": [
+        {
+          "title": "Race Condition",
+          "paragraphs": [
+            "Security depends on which of two competing actions happens first."
+          ],
+          "memoryHook": "The attacker wins the race between two operations.",
+          "recognitionCue": "Security depends on timing or operation order → Race condition"
+        },
+        {
+          "title": "Time-of-Check (TOC)",
+          "paragraphs": [
+            "Time-of-check is the moment the system verifies that an object, condition, or permission is valid."
+          ],
+          "examples": [
+            "The system checks whether a user has permission to access a file."
+          ],
+          "recognitionCue": "System validates the condition → TOC"
+        },
+        {
+          "title": "Time-of-Use (TOU)",
+          "paragraphs": [
+            "Time-of-use is the later moment when the system uses the object or performs the operation."
+          ],
+          "examples": [
+            "After checking permission, the system opens the file."
+          ],
+          "recognitionCue": "System performs the action after the check → TOU"
+        },
+        {
+          "title": "TOC/TOU Vulnerability",
+          "paragraphs": [
+            "The vulnerability appears when something changes after the system checks it but before the system uses it."
+          ],
+          "memoryHook": "Check says safe → something changes → system uses the changed object.",
+          "recognitionCue": "Object changes between validation and use → TOC/TOU race condition"
+        }
+      ]
+    },
+    {
+      "id": "malicious-updates",
+      "title": "Malicious Updates",
+      "paragraphs": [
+        "A malicious update occurs when software that appears to be a trusted update contains malicious code. An attacker may compromise the software vendor, build process, update infrastructure, or update package itself."
+      ],
+      "entries": [
+        {
+          "title": "Malicious Update",
+          "paragraphs": [
+            "The trusted delivery mechanism becomes the way malicious code reaches the customer."
+          ],
+          "memoryHook": "The trusted update became the attack.",
+          "recognitionCue": "Malware delivered through a trusted update process → Malicious update"
+        }
+      ]
+    },
+    {
+      "id": "operating-system-based-vulnerabilities",
+      "title": "Operating System-Based Vulnerabilities",
+      "paragraphs": [
+        "An operating system controls processes, files, memory, users, permissions, hardware access, and network services. A weakness in the OS can therefore affect a large portion of the system.",
+        "OS-based vulnerabilities can result from unpatched flaws, weak security settings, vulnerable services, or unsupported versions."
+      ],
+      "entries": [
+        {
+          "title": "Operating System-Based",
+          "paragraphs": [
+            "The weakness exists in Windows, Linux, macOS, or another operating-system component rather than only in an individual application."
+          ],
+          "recognitionCue": "Security flaw in an operating-system component → OS-based vulnerability"
+        }
+      ]
+    },
+    {
+      "id": "web-based-vulnerabilities",
+      "title": "Web-Based Vulnerabilities",
+      "paragraphs": [
+        "Web applications constantly accept user input. If that input is handled insecurely, an attacker may make the application perform actions the developer never intended.",
+        "Security+ specifically includes SQL injection and cross-site scripting."
+      ]
+    },
+    {
+      "id": "sqli-and-xss",
+      "title": "SQL Injection and Cross-Site Scripting",
+      "paragraphs": [
+        "SQL injection and XSS both begin with unsafe input handling, but they affect different destinations."
+      ],
+      "entries": [
+        {
+          "title": "Structured Query Language Injection (SQLi)",
+          "paragraphs": [
+            "SQL injection occurs when malicious SQL commands are supplied as input and the application improperly passes them to a database. An attacker may read or change records, delete data, or bypass authentication."
+          ],
+          "memoryHook": "User input becomes a database command.",
+          "recognitionCue": "Malicious input manipulates database queries → SQL injection"
+        },
+        {
+          "title": "Cross-Site Scripting (XSS)",
+          "paragraphs": [
+            "Cross-site scripting occurs when malicious script content is delivered through a trusted web application and executes in another user's browser. It may steal session information, manipulate content, redirect users, or act through the victim's session."
+          ],
+          "memoryHook": "The website causes malicious script to run in the victim's browser.",
+          "recognitionCue": "Malicious script executes in another user's browser → XSS"
+        }
+      ],
+      "table": {
+        "caption": "SQLi and XSS comparison",
+        "headers": [
+          "Vulnerability",
+          "Primary target"
+        ],
+        "rows": [
+          [
+            "SQL injection",
+            "Database interaction"
+          ],
+          [
+            "Cross-site scripting",
+            "Another user's browser"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "hardware-vulnerabilities",
+      "title": "Hardware Vulnerabilities",
+      "paragraphs": [
+        "Security weaknesses can exist in physical devices and the software embedded inside them. Security+ includes firmware, end-of-life status, and legacy technology."
+      ],
+      "entries": [
+        {
+          "title": "Firmware",
+          "paragraphs": [
+            "Firmware is software embedded in hardware such as routers, motherboards, storage devices, and IoT equipment. Firmware can contain security flaws just like ordinary software."
+          ],
+          "memoryHook": "Software living inside the hardware.",
+          "recognitionCue": "Weakness in embedded device software → Firmware vulnerability"
+        }
+      ]
+    },
+    {
+      "id": "end-of-life-and-legacy",
+      "title": "End-of-Life and Legacy",
+      "paragraphs": [
+        "These terms can overlap, but they describe different problems."
+      ],
+      "entries": [
+        {
+          "title": "End-of-Life",
+          "paragraphs": [
+            "End-of-life means a product has reached the point where the manufacturer no longer provides normal support, patches, firmware updates, or vulnerability fixes. The product may still function even though new weaknesses can remain permanently unpatched."
+          ],
+          "memoryHook": "Still functioning does not mean still supported.",
+          "recognitionCue": "Vendor support and security fixes have ended → End-of-life"
+        },
+        {
+          "title": "Legacy",
+          "paragraphs": [
+            "A legacy system is older technology an organization still depends on. It may require old applications, use outdated protocols, lack modern security features, or be difficult to replace."
+          ],
+          "memoryHook": "Old, but the business still needs it.",
+          "recognitionCue": "Older technology still required for operations → Legacy"
+        }
+      ],
+      "callout": "End-of-life = vendor support ended · Legacy = older technology remains in use"
+    },
+    {
+      "id": "virtualization-vulnerabilities",
+      "title": "Virtualization Vulnerabilities",
+      "paragraphs": [
+        "Virtualization lets multiple virtual machines share physical infrastructure. That flexibility creates security concerns involving isolation and shared resources."
+      ],
+      "entries": [
+        {
+          "title": "Virtual Machine (VM) Escape",
+          "paragraphs": [
+            "A VM escape occurs when an attacker breaks out of a guest virtual machine and reaches the hypervisor, host system, or other virtual machines."
+          ],
+          "memoryHook": "Escape the VM cage.",
+          "recognitionCue": "Compromised guest reaches host or hypervisor → VM escape"
+        },
+        {
+          "title": "Resource Reuse",
+          "paragraphs": [
+            "Virtual environments repeatedly assign memory, storage, and compute resources. If a resource is not properly cleared before reassignment, remnants of the previous user's data may remain."
+          ],
+          "memoryHook": "The new user receives traces of the previous user's data.",
+          "recognitionCue": "Residual information remains in a reassigned resource → Resource reuse"
+        }
+      ]
+    },
+    {
+      "id": "cloud-specific-vulnerabilities",
+      "title": "Cloud-Specific Vulnerabilities",
+      "paragraphs": [
+        "Cloud environments introduce vulnerabilities related to how resources are shared, configured, accessed, and managed. Weaknesses may involve cloud permissions, APIs, storage configuration, identity controls, or multi-tenant environments."
+      ],
+      "entries": [
+        {
+          "title": "Cloud-Specific",
+          "paragraphs": [
+            "The weakness arises from the architecture, configuration, or services of the cloud environment."
+          ],
+          "recognitionCue": "Weakness tied specifically to cloud architecture or services → Cloud-specific vulnerability"
+        }
+      ]
+    },
+    {
+      "id": "supply-chain-vulnerabilities",
+      "title": "Supply-Chain Vulnerabilities",
+      "paragraphs": [
+        "An organization can inherit vulnerabilities through a company or product it already trusts. Security+ divides these into service-provider, hardware-provider, and software-provider vulnerabilities."
+      ],
+      "entries": [
+        {
+          "title": "Service Provider",
+          "paragraphs": [
+            "A service provider may have privileged access or connectivity to customer systems. If that provider is compromised, its customers may also be exposed."
+          ],
+          "recognitionCue": "Trusted external service becomes the weakness → Service-provider vulnerability"
+        },
+        {
+          "title": "Hardware Provider",
+          "paragraphs": [
+            "A hardware provider may introduce risk through compromised components, firmware, manufacturing, or distribution."
+          ],
+          "memoryHook": "The problem was introduced through the physical product.",
+          "recognitionCue": "Compromised hardware or component source → Hardware-provider vulnerability"
+        },
+        {
+          "title": "Software Provider",
+          "paragraphs": [
+            "A software provider may be compromised through development systems, software packages, updates, or distribution infrastructure. Customers may then receive malicious or vulnerable software from a trusted source."
+          ],
+          "recognitionCue": "Trusted software or update source becomes compromised → Software-provider vulnerability"
+        }
+      ],
+      "table": {
+        "caption": "Supply-chain vulnerability recognition sheet",
+        "headers": [
+          "Provider",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Service provider",
+            "Compromise enters through a trusted external service"
+          ],
+          [
+            "Hardware provider",
+            "Compromise enters through a physical component or device"
+          ],
+          [
+            "Software provider",
+            "Compromise enters through trusted software or an update"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "cryptographic-vulnerabilities",
+      "title": "Cryptographic Vulnerabilities",
+      "paragraphs": [
+        "Cryptography can fail when weak algorithms are used, keys are too weak or poorly protected, implementations are flawed, or outdated methods remain in use."
+      ],
+      "entries": [
+        {
+          "title": "Cryptographic Vulnerabilities",
+          "paragraphs": [
+            "Using cryptography does not automatically mean the algorithm, key, or implementation is strong."
+          ],
+          "recognitionCue": "Weakness in an algorithm, key, or cryptographic implementation → Cryptographic vulnerability"
+        }
+      ]
+    },
+    {
+      "id": "misconfiguration",
+      "title": "Misconfiguration",
+      "paragraphs": [
+        "A misconfiguration occurs when a system or application is configured insecurely. Examples include excessive permissions, open services, publicly accessible storage, weak firewall rules, and unsafe settings.",
+        "The technology may work exactly as designed; the weakness exists because it was set up incorrectly."
+      ],
+      "entries": [
+        {
+          "title": "Misconfiguration",
+          "paragraphs": [
+            "The security problem comes from incorrect settings rather than a broken feature."
+          ],
+          "memoryHook": "Nothing is broken. It was simply set up wrong.",
+          "recognitionCue": "Security weakness caused by incorrect settings → Misconfiguration"
+        }
+      ]
+    },
+    {
+      "id": "mobile-device-vulnerabilities",
+      "title": "Mobile Device Vulnerabilities",
+      "paragraphs": [
+        "Mobile devices become more vulnerable when users bypass security controls built into the platform. Security+ specifically includes side loading and jailbreaking."
+      ],
+      "entries": [
+        {
+          "title": "Side Loading",
+          "paragraphs": [
+            "Side loading means installing an application from outside the normal approved application store or distribution method. The application may not have passed the platform's normal review process."
+          ],
+          "memoryHook": "Install the app from somewhere else.",
+          "recognitionCue": "Application installed outside an approved app source → Side loading"
+        },
+        {
+          "title": "Jailbreaking",
+          "paragraphs": [
+            "Jailbreaking removes or bypasses restrictions imposed by the device manufacturer or operating system. It provides greater control but can weaken built-in security protections."
+          ],
+          "memoryHook": "Break out of the manufacturer's restrictions.",
+          "recognitionCue": "Bypass built-in mobile operating-system restrictions → Jailbreaking"
+        }
+      ],
+      "callout": "Side loading = where the application came from · Jailbreaking = bypassing device restrictions"
+    },
+    {
+      "id": "zero-day",
+      "title": "Zero-Day",
+      "paragraphs": [
+        "A zero-day vulnerability is newly discovered and may not yet have an effective vendor fix or sufficient defensive preparation. Attackers may exploit it before a patch is available, detection is ready, or organizations can deploy mitigations."
+      ],
+      "entries": [
+        {
+          "title": "Zero-Day",
+          "paragraphs": [
+            "The zero-day vulnerability is the weakness. A zero-day exploit is the code or method used to attack that weakness.",
+            "A known vulnerability with an available patch is not zero-day simply because an organization failed to install the patch."
+          ],
+          "memoryHook": "The defenders had zero days to prepare.",
+          "recognitionCue": "Newly discovered vulnerability exploited before an effective fix is available → Zero-day"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "First identify where the weakness exists, then use the scenario clue to name the vulnerability."
+      ],
+      "bullets": [
+        "Malicious code placed into running memory → Memory injection",
+        "Too much data written into memory → Buffer overflow",
+        "Timing or order flaw → Race condition",
+        "Object changes after validation but before use → TOC/TOU",
+        "Trusted update contains malware → Malicious update",
+        "Weakness in the operating system → OS-based",
+        "Malicious database command through input → SQLi",
+        "Malicious script runs in a victim's browser → XSS",
+        "Weakness in embedded device software → Firmware",
+        "Vendor support ended → End-of-life",
+        "Old technology still required → Legacy",
+        "Guest VM reaches host or hypervisor → VM escape",
+        "Old data remains in a reused resource → Resource reuse",
+        "Weakness tied to a cloud environment → Cloud-specific",
+        "Trusted external service compromised → Service provider",
+        "Compromised physical component → Hardware provider",
+        "Compromised software or update source → Software provider",
+        "Weak algorithm, key, or implementation → Cryptographic",
+        "Incorrect system settings → Misconfiguration",
+        "App installed outside an approved store → Side loading",
+        "Device restrictions bypassed → Jailbreaking",
+        "Newly discovered weakness without an effective fix → Zero-day"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Buffer overflow means too much data exceeds a memory boundary. Memory injection means malicious code is deliberately placed into process memory.",
+        "A race condition is a timing or order problem. A buffer overflow is a memory-boundary problem.",
+        "SQL injection targets database interaction. Cross-site scripting executes in a browser.",
+        "Legacy means old technology remains in use. End-of-life means vendor support has ended.",
+        "VM escape breaks out of the guest environment. Resource reuse exposes leftover data in reassigned resources.",
+        "Side loading installs from an unofficial source. Jailbreaking bypasses platform restrictions.",
+        "Zero-day means newly discovered with no effective fix yet. A known vulnerability with an available but uninstalled patch is simply unpatched."
+      ],
+      "callout": "First identify WHERE the weakness exists. Then use the clue to identify WHAT vulnerability it is."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to connect each clue to its most direct vulnerability type."
+      ],
+      "bullets": [
+        "Malicious code in process memory → Memory injection",
+        "Too much data for a buffer → Buffer overflow",
+        "Timing flaw → Race condition",
+        "Changed between check and use → TOC/TOU",
+        "Trusted update contains malware → Malicious update",
+        "Weakness in operating system → OS-based",
+        "Database command through input → SQLi",
+        "Malicious browser script → XSS",
+        "Embedded software weakness → Firmware",
+        "Vendor stopped support → End-of-life",
+        "Old but still required → Legacy",
+        "VM reaches host or hypervisor → VM escape",
+        "Residual data in a reassigned resource → Resource reuse",
+        "Cloud-specific weakness → Cloud vulnerability",
+        "Trusted external service compromised → Service provider",
+        "Compromised physical component → Hardware provider",
+        "Compromised software or update source → Software provider",
+        "Weak crypto algorithm, key, or implementation → Cryptographic vulnerability",
+        "Set up incorrectly → Misconfiguration",
+        "Install app outside approved source → Side loading",
+        "Bypass mobile restrictions → Jailbreaking",
+        "New vulnerability with no effective fix yet → Zero-day"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Identify where each web weakness has its main effect.",
+    "prompt": "During testing, one input changes the records returned from the application's database. In a separate test, a stored comment causes JavaScript to run in another visitor's browser.",
+    "fields": [
+      {
+        "id": "database-vulnerability",
+        "label": "Database-focused vulnerability",
+        "choices": [
+          "SQL injection (SQLi)",
+          "Cross-site scripting (XSS)",
+          "Buffer overflow",
+          "Misconfiguration"
+        ],
+        "answer": "SQL injection (SQLi)"
+      },
+      {
+        "id": "browser-vulnerability",
+        "label": "Browser-execution vulnerability",
+        "choices": [
+          "Cross-site scripting (XSS)",
+          "SQL injection (SQLi)",
+          "Memory injection",
+          "Malicious update"
+        ],
+        "answer": "Cross-site scripting (XSS)"
+      }
+    ],
+    "correctFeedback": "Correct. SQL injection turns unsafe input into a database command, while cross-site scripting causes malicious script to execute in another user's browser.",
+    "retryFeedback": "Not quite. Separate the database effect from the browser effect. Review SQL Injection and Cross-Site Scripting, then try again."
+  }
+}

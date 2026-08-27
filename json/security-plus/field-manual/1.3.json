@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Explain the Importance of Change Management Processes and the Impact to Security",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Organizations regularly change systems, applications, networks, and security controls. Even a necessary change can introduce a vulnerability, interrupt a service, or break something that depends on the component being changed.",
+        "Change management provides a controlled way to plan, approve, test, implement, document, and—when necessary—reverse a change.",
+        "The central sequence is: plan the change, understand its impact, test it, implement it safely, and document what changed."
+      ],
+      "callout": "Recognition: Approving, testing, scheduling, documenting, or reversing a system change points to change management."
+    },
+    {
+      "id": "business-processes",
+      "title": "Business Processes Impacting Security Operations",
+      "paragraphs": [
+        "A security change is not only a technical decision. The organization must decide who may authorize it, who owns it, who could be affected, what could go wrong, when work may occur, and how the previous working state will be restored if the change fails.",
+        "These business processes create accountability and reduce the chance that an otherwise useful technical change will cause an avoidable security or operational problem."
+      ],
+      "callout": "Ask what must happen before, during, and after the change—not only what command or configuration will be used."
+    },
+    {
+      "id": "approval-process",
+      "title": "Approval Process",
+      "paragraphs": [
+        "The approval process ensures that a proposed change is reviewed and formally authorized before implementation.",
+        "Approval helps prevent unauthorized or poorly planned changes, unexpected security problems, and work that conflicts with business requirements."
+      ],
+      "entries": [
+        {
+          "title": "Approval Process",
+          "paragraphs": [
+            "Use the approval process when the scenario asks whether the organization has permission to make the change."
+          ],
+          "recognitionCue": "Formal authorization before implementation means approval process."
+        }
+      ]
+    },
+    {
+      "id": "ownership-and-stakeholders",
+      "title": "Ownership and Stakeholders",
+      "paragraphs": [
+        "Ownership and stakeholders answer two different accountability questions: who is responsible for the change, and who needs to know about it or could be affected by it?"
+      ],
+      "entries": [
+        {
+          "title": "Ownership",
+          "paragraphs": [
+            "Ownership identifies the person or team accountable for coordinating the planning, testing, implementation, documentation, and follow-up work."
+          ],
+          "recognitionCue": "The person or team responsible for the change is the owner."
+        },
+        {
+          "title": "Stakeholders",
+          "paragraphs": [
+            "Stakeholders are people or groups affected by the change or interested in its outcome. They may include IT, security, management, application owners, business departments, and users."
+          ],
+          "recognitionCue": "People or groups affected by or involved in the change are stakeholders."
+        }
+      ]
+    },
+    {
+      "id": "impact-analysis-and-testing",
+      "title": "Impact Analysis and Test Results",
+      "paragraphs": [
+        "Impact analysis predicts possible consequences before implementation. Test results report what actually happened when the proposed change was tested."
+      ],
+      "entries": [
+        {
+          "title": "Impact Analysis",
+          "paragraphs": [
+            "An impact analysis examines what the change could affect. It considers service availability, security controls, connected applications, user access, and dependencies."
+          ],
+          "recognitionCue": "What else could this change affect? That is impact analysis."
+        },
+        {
+          "title": "Test Results",
+          "paragraphs": [
+            "Test results provide evidence about whether the change works as expected before it reaches production. Testing can reveal compatibility problems, security issues, application failures, and unexpected behavior."
+          ],
+          "recognitionCue": "Evidence showing how the proposed change performed during testing means test results."
+        }
+      ],
+      "table": {
+        "caption": "Impact analysis compared with test results",
+        "headers": [
+          "Concept",
+          "Question it answers"
+        ],
+        "rows": [
+          [
+            "Impact analysis",
+            "What could this change affect?"
+          ],
+          [
+            "Test results",
+            "What happened when the proposed change was tested?"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "backout-plan",
+      "title": "Backout Plan",
+      "paragraphs": [
+        "A backout plan explains how to reverse a change if implementation causes a problem. It should identify the steps and resources needed to restore the previous working state.",
+        "For example, if a software upgrade causes a critical application to fail, the backout plan may restore the earlier version and configuration."
+      ],
+      "callout": "Recognition: The change failed—put it back the way it was. That is a backout plan."
+    },
+    {
+      "id": "maintenance-window-and-sop",
+      "title": "Maintenance Window and Standard Operating Procedure",
+      "paragraphs": [
+        "A maintenance window controls when work may occur. A standard operating procedure controls how a recurring task should be performed."
+      ],
+      "entries": [
+        {
+          "title": "Maintenance Window",
+          "paragraphs": [
+            "A maintenance window is the approved period for changes or maintenance. Organizations normally schedule it when disruption will have the least business impact."
+          ],
+          "recognitionCue": "When are we allowed to make the change? Think maintenance window."
+        },
+        {
+          "title": "Standard Operating Procedure",
+          "paragraphs": [
+            "A standard operating procedure (SOP) documents the approved steps for performing a recurring task consistently, even when different administrators perform it."
+          ],
+          "recognitionCue": "A documented, repeatable process means standard operating procedure."
+        }
+      ]
+    },
+    {
+      "id": "technical-implications",
+      "title": "Technical Implications",
+      "paragraphs": [
+        "Approval does not eliminate technical risk. Administrators must still determine how a change could affect access-control rules, restricted activities, applications, services, dependencies, and availability.",
+        "The safest plan identifies the smallest component that must change or restart and recognizes any older systems that may not tolerate the new configuration."
+      ],
+      "callout": "Recognition: Business approval answers whether work is authorized; technical analysis answers what the change will do to the environment."
+    },
+    {
+      "id": "access-rules-and-restrictions",
+      "title": "Access Rules and Restricted Activities",
+      "paragraphs": [
+        "A change may require access-control rules to be updated or certain activity to be temporarily limited while maintenance is underway."
+      ],
+      "entries": [
+        {
+          "title": "Allow List",
+          "paragraphs": [
+            "An allow list identifies what is explicitly permitted. A new server, application, address, or service may need to be added before it can communicate."
+          ],
+          "recognitionCue": "Only approved items are allowed."
+        },
+        {
+          "title": "Deny List",
+          "paragraphs": [
+            "A deny list identifies what is explicitly blocked. A change can require a denied address, service, action, or application to be added or removed."
+          ],
+          "recognitionCue": "These identified items are not allowed."
+        },
+        {
+          "title": "Restricted Activities",
+          "paragraphs": [
+            "Some activities may be temporarily restricted during a change to prevent conflicting changes, user interference, data corruption, or additional security problems."
+          ],
+          "recognitionCue": "Do not perform this activity while maintenance is occurring."
+        }
+      ]
+    },
+    {
+      "id": "downtime-and-restarts",
+      "title": "Downtime and Restart Requirements",
+      "paragraphs": [
+        "Changes can affect availability in different ways. The entire system may be unavailable, one operating-system service may need to restart, or only the affected application may need to restart."
+      ],
+      "entries": [
+        {
+          "title": "Downtime",
+          "paragraphs": [
+            "Downtime is the period when a service or system is temporarily unavailable. The organization should consider how much downtime the business can tolerate before scheduling the work."
+          ],
+          "recognitionCue": "A service or system is temporarily unavailable."
+        },
+        {
+          "title": "Service Restart",
+          "paragraphs": [
+            "A configuration change may require a particular operating-system service to restart before the new setting takes effect. The whole computer may not need to reboot."
+          ],
+          "recognitionCue": "Restart only the affected system service."
+        },
+        {
+          "title": "Application Restart",
+          "paragraphs": [
+            "Some changes require the affected application itself to restart. This is different from restarting an operating-system service or rebooting the computer."
+          ],
+          "recognitionCue": "The application itself must restart."
+        }
+      ]
+    },
+    {
+      "id": "legacy-applications-and-dependencies",
+      "title": "Legacy Applications and Dependencies",
+      "paragraphs": [
+        "Older software and connected systems can turn a small change into a larger operational risk. Identify both the limitations of the component being changed and the systems that rely on it."
+      ],
+      "entries": [
+        {
+          "title": "Legacy Applications",
+          "paragraphs": [
+            "A legacy application is older software the organization still needs. It may depend on older technologies, have compatibility limits, lack modern security features, or be difficult to replace."
+          ],
+          "recognitionCue": "Old, but still required for business operations."
+        },
+        {
+          "title": "Dependencies",
+          "paragraphs": [
+            "A dependency exists when one system, application, or service relies on another. Common dependencies include databases, DNS, authentication services, APIs, servers, and network connectivity."
+          ],
+          "recognitionCue": "What else needs this component in order to work?"
+        }
+      ]
+    },
+    {
+      "id": "documentation-updates",
+      "title": "Documentation Updates",
+      "paragraphs": [
+        "Change management continues after the technical work is complete. Documentation must reflect the new environment so future troubleshooting, operations, and security decisions are based on accurate information."
+      ],
+      "entries": [
+        {
+          "title": "Updating Diagrams",
+          "paragraphs": [
+            "Update architecture or network diagrams when a change adds or removes a server, firewall, VLAN, connection, or system relationship."
+          ],
+          "recognitionCue": "The infrastructure or network layout changed, so update the diagrams."
+        },
+        {
+          "title": "Updating Policies and Procedures",
+          "paragraphs": [
+            "Update policies and procedures when a change alters how users, administrators, or systems are expected to operate."
+          ],
+          "recognitionCue": "A security rule or operating process changed, so update the applicable policy or procedure."
+        }
+      ]
+    },
+    {
+      "id": "version-control",
+      "title": "Version Control",
+      "paragraphs": [
+        "Version control tracks changes to files, configurations, documentation, or code over time. It can show what changed, who changed it, when it changed, what the previous version contained, and whether an earlier version can be restored.",
+        "A backout plan describes the recovery procedure for a failed change. Version control preserves the historical versions that may help make restoration possible."
+      ],
+      "callout": "Recognition: Keep the history of changes and previous versions—think version control."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "When a Security+ scenario describes change management, identify which stage, responsibility, technical effect, or documentation duty the evidence points to."
+      ],
+      "bullets": [
+        "Permission before making the change → Approval process",
+        "Person responsible for the change → Ownership",
+        "People affected by the change → Stakeholders",
+        "Determine what could be affected → Impact analysis",
+        "Evidence from testing → Test results",
+        "Undo a failed change → Backout plan",
+        "Approved time for the work → Maintenance window",
+        "Repeatable documented process → SOP",
+        "Explicitly permitted or blocked → Allow list or deny list",
+        "Activities temporarily limited during maintenance → Restricted activities",
+        "Temporarily unavailable service → Downtime",
+        "Restart only the relevant service or application → Service restart or application restart",
+        "Older required software → Legacy application",
+        "One component relies on another → Dependency",
+        "Architecture changed → Update diagrams",
+        "Security process changed → Update policies or procedures",
+        "Keep the history of changes → Version control"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Impact analysis predicts what a change could affect. Test results show what happened during a test. A backout plan explains how to undo a failed change. Version control preserves the history and prior versions.",
+        "A maintenance window is the approved period when work may occur. Downtime is the period when the service is actually unavailable. A maintenance window can be longer than the actual downtime.",
+        "A service restart restarts one operating-system service. An application restart restarts the application. Neither automatically means the entire computer must reboot."
+      ],
+      "callout": "Predict the effect → Impact analysis · Verify the result → Test results · Undo the failure → Backout plan · Track the history → Version control"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use the scenario's central question to identify the change-management concept being tested."
+      ],
+      "table": {
+        "caption": "Objective 1.3 change-management recognition sheet",
+        "headers": [
+          "Scenario question or clue",
+          "Security+ concept"
+        ],
+        "rows": [
+          [
+            "Can we make the change?",
+            "Approval process"
+          ],
+          [
+            "Who owns it?",
+            "Ownership"
+          ],
+          [
+            "Who is affected?",
+            "Stakeholders"
+          ],
+          [
+            "What could it affect?",
+            "Impact analysis"
+          ],
+          [
+            "Did the test work?",
+            "Test results"
+          ],
+          [
+            "How do we undo it?",
+            "Backout plan"
+          ],
+          [
+            "When can we do it?",
+            "Maintenance window"
+          ],
+          [
+            "How do we perform it consistently?",
+            "Standard operating procedure"
+          ],
+          [
+            "What is explicitly allowed or blocked?",
+            "Allow list or deny list"
+          ],
+          [
+            "Why is the service unavailable?",
+            "Downtime"
+          ],
+          [
+            "What older software must remain compatible?",
+            "Legacy application"
+          ],
+          [
+            "What other component relies on this one?",
+            "Dependency"
+          ],
+          [
+            "What documentation must reflect the new environment?",
+            "Diagrams, policies, or procedures"
+          ],
+          [
+            "How do we track change history?",
+            "Version control"
+          ]
+        ]
+      }
+    }
+  ],
+  "miniCheck": {
+    "intro": "Separate the planning evidence from the recovery safeguard described in the scenario.",
+    "prompt": "A team is preparing a firewall rule change. Before implementation, it identifies the applications and services that depend on the current rule. It also documents how to restore the previous configuration if the new rule disrupts production.",
+    "fields": [
+      {
+        "id": "planning-activity",
+        "label": "Planning activity",
+        "choices": [
+          "Approval process",
+          "Impact analysis",
+          "Test results",
+          "Maintenance window"
+        ],
+        "answer": "Impact analysis"
+      },
+      {
+        "id": "recovery-safeguard",
+        "label": "Recovery safeguard",
+        "choices": [
+          "Version control",
+          "Service restart",
+          "Backout plan",
+          "Standard operating procedure"
+        ],
+        "answer": "Backout plan"
+      }
+    ],
+    "correctFeedback": "Correct. Identifying dependent applications and services is impact analysis because the team is predicting what the change could affect. Documenting how to restore the previous configuration is the backout plan because it defines how to reverse a failed change.",
+    "retryFeedback": "Not quite. Ask two separate questions: what is the team evaluating before implementation, and what will it use to reverse the change if production is disrupted? Review Impact Analysis and Backout Plan, then try again."
+  }
+}

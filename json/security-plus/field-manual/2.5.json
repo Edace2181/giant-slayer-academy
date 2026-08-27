@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "2",
+  "objective": "2.5",
+  "title": "Explain the Purpose of Mitigation Techniques Used to Secure the Enterprise",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "After an organization identifies threats and vulnerabilities, it needs controls that reduce the likelihood or impact of an attack. A mitigation is a safeguard used to reduce risk.",
+        "Mitigations can prevent attacks, limit how far an attacker can move, reduce exposure, protect data, detect activity, or remove vulnerabilities.",
+        "Use this decision path: identify the risk first, then choose the mitigation that most directly reduces that risk."
+      ],
+      "callout": "Find the weakness or threat first, then choose the control that directly reduces it."
+    },
+    {
+      "id": "segmentation",
+      "title": "Segmentation",
+      "paragraphs": [
+        "Segmentation divides a network or environment into smaller sections based on function, trust, sensitivity, or business need.",
+        "A compromise in one segment should not automatically provide access to every other part of the environment. Segmentation limits lateral movement, contains incidents, and reduces exposure."
+      ],
+      "entries": [
+        {
+          "title": "Segmentation",
+          "paragraphs": [
+            "Use segmentation when the organization needs planned boundaries between groups of systems or networks."
+          ],
+          "memoryHook": "One compromised neighborhood should not open the whole kingdom.",
+          "recognitionCue": "Separate networks or systems to limit movement and incident spread -> Segmentation"
+        }
+      ]
+    },
+    {
+      "id": "access-control",
+      "title": "Access Control",
+      "paragraphs": [
+        "Access control determines who or what may use a resource and which actions are allowed. Objective 2.5 specifically distinguishes access control lists from permissions."
+      ],
+      "entries": [
+        {
+          "title": "Access Control",
+          "paragraphs": [
+            "Access control is the broad mitigation used to restrict access to resources."
+          ],
+          "memoryHook": "Who or what may enter, and what may happen after entry?",
+          "recognitionCue": "Restrict subjects and allowed resource use -> Access control"
+        },
+        {
+          "title": "Access Control List (ACL)",
+          "paragraphs": [
+            "An ACL is an ordered set of rules that permits or denies access. ACLs can control network traffic, file access, and other system resources."
+          ],
+          "memoryHook": "A rule list decides who or what gets through.",
+          "recognitionCue": "Ordered permit-and-deny rules -> ACL"
+        },
+        {
+          "title": "Permissions",
+          "paragraphs": [
+            "Permissions define the actions an authorized user or process may perform, such as read, write, modify, execute, or delete."
+          ],
+          "memoryHook": "You are allowed in, but what are you allowed to do?",
+          "recognitionCue": "Assigned rights define allowed operations -> Permissions"
+        }
+      ],
+      "table": {
+        "caption": "Access-control distinction",
+        "headers": [
+          "Term",
+          "Main question"
+        ],
+        "rows": [
+          [
+            "ACL",
+            "Which rule permits or denies access?"
+          ],
+          [
+            "Permissions",
+            "What may an authorized subject do?"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "application-allow-list",
+      "title": "Application Allow List",
+      "paragraphs": [
+        "An application allow list identifies the applications approved to run. Software that is not on the approved list is blocked."
+      ],
+      "entries": [
+        {
+          "title": "Application Allow List",
+          "paragraphs": [
+            "Use an allow list when the requirement is to restrict execution to explicitly approved software."
+          ],
+          "memoryHook": "Only invited software gets to run.",
+          "recognitionCue": "Only specifically approved applications may execute -> Application allow list"
+        }
+      ]
+    },
+    {
+      "id": "isolation",
+      "title": "Isolation",
+      "paragraphs": [
+        "Isolation strongly separates a particular system or resource from the rest of the environment. Organizations may isolate infected endpoints, vulnerable systems, suspicious devices, or sensitive workloads."
+      ],
+      "entries": [
+        {
+          "title": "Isolation",
+          "paragraphs": [
+            "Use isolation when a specific system must be quarantined so it cannot affect other resources."
+          ],
+          "memoryHook": "Segmentation creates neighborhoods; isolation creates quarantine.",
+          "recognitionCue": "Separate a suspicious or compromised system from others -> Isolation"
+        }
+      ],
+      "table": {
+        "caption": "Segmentation and isolation",
+        "headers": [
+          "Mitigation",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Segmentation",
+            "Planned division of an environment into controlled areas"
+          ],
+          [
+            "Isolation",
+            "Strong separation of one particular system or resource"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "patching",
+      "title": "Patching",
+      "paragraphs": [
+        "Patching applies vendor fixes to applications, operating systems, firmware, and other software. Security patches commonly correct known vulnerabilities."
+      ],
+      "entries": [
+        {
+          "title": "Patching",
+          "paragraphs": [
+            "Use patching when a known vulnerability has an available vendor fix."
+          ],
+          "memoryHook": "Known vulnerability plus available vendor fix means patch it.",
+          "recognitionCue": "Install an available fix for a known vulnerability -> Patching"
+        }
+      ]
+    },
+    {
+      "id": "encryption",
+      "title": "Encryption",
+      "paragraphs": [
+        "Encryption protects data from unauthorized disclosure by converting it into unreadable ciphertext. It can protect information at rest and in transit."
+      ],
+      "entries": [
+        {
+          "title": "Encryption",
+          "paragraphs": [
+            "Choose encryption when the risk is unauthorized reading or disclosure of sensitive information."
+          ],
+          "memoryHook": "Stolen data should still be unreadable.",
+          "recognitionCue": "Protect the confidentiality of data -> Encryption"
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Monitoring observes systems and activity for suspicious or unexpected behavior. It can cover logs, network traffic, endpoints, authentication, and resource usage."
+      ],
+      "entries": [
+        {
+          "title": "Monitoring",
+          "paragraphs": [
+            "Monitoring primarily provides visibility and detection. It does not necessarily block the activity it observes."
+          ],
+          "memoryHook": "See what is happening.",
+          "recognitionCue": "Observe systems or events to identify suspicious activity -> Monitoring"
+        }
+      ]
+    },
+    {
+      "id": "least-privilege",
+      "title": "Least Privilege",
+      "paragraphs": [
+        "Least privilege gives a user, application, or process only the access required to perform its job. Unnecessary privileges increase the damage an account or process can cause if compromised."
+      ],
+      "entries": [
+        {
+          "title": "Least Privilege",
+          "paragraphs": [
+            "A help-desk employee may need permission to reset passwords without receiving full domain-administrator access."
+          ],
+          "memoryHook": "Only what you need, nothing extra.",
+          "recognitionCue": "Grant only the minimum required permissions -> Least privilege"
+        }
+      ]
+    },
+    {
+      "id": "configuration-enforcement",
+      "title": "Configuration Enforcement",
+      "paragraphs": [
+        "Configuration enforcement keeps systems aligned with approved security settings and secure baselines. It helps prevent configuration drift, unauthorized settings, and inconsistent controls."
+      ],
+      "entries": [
+        {
+          "title": "Configuration Enforcement",
+          "paragraphs": [
+            "Use configuration enforcement when approved settings must remain applied over time."
+          ],
+          "memoryHook": "These are the approved settings, and they stay that way.",
+          "recognitionCue": "Require systems to maintain approved secure settings -> Configuration enforcement"
+        }
+      ]
+    },
+    {
+      "id": "decommissioning",
+      "title": "Decommissioning",
+      "paragraphs": [
+        "Decommissioning securely removes systems, devices, applications, or services that are no longer needed. It can include removing accounts and network access, sanitizing data, updating documentation, and retiring hardware or software."
+      ],
+      "entries": [
+        {
+          "title": "Decommissioning",
+          "paragraphs": [
+            "Isolation leaves a system in place but separated. Decommissioning permanently retires it."
+          ],
+          "memoryHook": "If the organization is finished with it, remove it safely.",
+          "recognitionCue": "Securely retire an unneeded system, account, or service -> Decommissioning"
+        }
+      ]
+    },
+    {
+      "id": "hardening-techniques",
+      "title": "Hardening Techniques",
+      "paragraphs": [
+        "Hardening reduces a system's attack surface by strengthening its configuration and removing unnecessary exposure. Leave only the access, software, services, and functions that the system actually needs."
+      ],
+      "entries": [
+        {
+          "title": "Hardening Techniques",
+          "paragraphs": [
+            "Hardening is the broad group of configuration and protection steps used to make a system more resistant to attack."
+          ],
+          "recognitionCue": "Strengthen configuration and remove unnecessary exposure -> Hardening"
+        },
+        {
+          "title": "Encryption as Hardening",
+          "paragraphs": [
+            "Encryption can be part of a hardening plan when sensitive data must be protected from unauthorized disclosure."
+          ],
+          "recognitionCue": "Use cryptography to harden sensitive data against disclosure -> Encryption"
+        }
+      ]
+    },
+    {
+      "id": "endpoint-protection",
+      "title": "Endpoint Protection",
+      "paragraphs": [
+        "Endpoint protection places security directly on a workstation, laptop, or server. It can detect malware, block malicious behavior, and remove threats."
+      ],
+      "entries": [
+        {
+          "title": "Endpoint Protection",
+          "paragraphs": [
+            "Use endpoint protection when the control must detect or block threats directly on the host."
+          ],
+          "memoryHook": "Put protection directly on the endpoint.",
+          "recognitionCue": "Install security software that detects or blocks endpoint threats -> Endpoint protection"
+        }
+      ]
+    },
+    {
+      "id": "host-firewall-and-hips",
+      "title": "Host-Based Firewall and HIPS",
+      "paragraphs": [
+        "Both controls protect an individual host, but they focus on different activity."
+      ],
+      "entries": [
+        {
+          "title": "Host-Based Firewall",
+          "paragraphs": [
+            "A host-based firewall filters network traffic entering or leaving one computer or server."
+          ],
+          "memoryHook": "One firewall guards one machine.",
+          "recognitionCue": "Filter network traffic directly on an endpoint -> Host-based firewall"
+        },
+        {
+          "title": "Host-Based Intrusion Prevention System (HIPS)",
+          "paragraphs": [
+            "A HIPS monitors activity on an individual host and can actively block suspicious behavior based on rules or behavior."
+          ],
+          "memoryHook": "Watch the host and stop suspicious actions.",
+          "recognitionCue": "Host-level monitoring plus active prevention -> HIPS"
+        }
+      ],
+      "table": {
+        "caption": "Host-level protection comparison",
+        "headers": [
+          "Control",
+          "Primary focus"
+        ],
+        "rows": [
+          [
+            "Host-based firewall",
+            "Network traffic entering and leaving one host"
+          ],
+          [
+            "HIPS",
+            "Host activity with active prevention of suspicious behavior"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "disable-unused-access",
+      "title": "Disable Unused Ports and Protocols",
+      "paragraphs": [
+        "Unused ports, services, and protocols create unnecessary communication paths and increase the attack surface. If the organization does not need them, disable them."
+      ],
+      "entries": [
+        {
+          "title": "Disabling Ports and Protocols",
+          "paragraphs": [
+            "This hardening step removes communication paths that have no approved business purpose."
+          ],
+          "memoryHook": "Do not leave an unused door open.",
+          "recognitionCue": "Turn off unnecessary communication paths and services -> Disable ports and protocols"
+        }
+      ]
+    },
+    {
+      "id": "default-passwords-and-software",
+      "title": "Default Passwords and Unnecessary Software",
+      "paragraphs": [
+        "Default credentials and unneeded applications create avoidable exposure. Both should be removed before they become an attack path."
+      ],
+      "entries": [
+        {
+          "title": "Default Password Changes",
+          "paragraphs": [
+            "Vendor-supplied credentials may be publicly documented, shared across devices, and known to attackers. Replace them before production use."
+          ],
+          "memoryHook": "Factory credential means change it.",
+          "recognitionCue": "Replace vendor-supplied credentials before deployment -> Default password changes"
+        },
+        {
+          "title": "Removal of Unnecessary Software",
+          "paragraphs": [
+            "Every installed application can introduce vulnerabilities, services, and dependencies. Removing software the system does not need reduces its attack surface."
+          ],
+          "memoryHook": "Attackers cannot exploit software that is not installed.",
+          "recognitionCue": "Uninstall unused applications to reduce attack surface -> Remove unnecessary software"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Identify the risk in the scenario first, then select the control that most directly addresses it."
+      ],
+      "bullets": [
+        "Limit lateral movement -> Segmentation",
+        "Permit or deny access through ordered rules -> ACL",
+        "Control what an authorized user may do -> Permissions",
+        "Only approved programs may run -> Application allow list",
+        "Quarantine a compromised device -> Isolation",
+        "Fix a known vulnerability with an available vendor update -> Patching",
+        "Protect data confidentiality -> Encryption",
+        "Detect suspicious activity -> Monitoring",
+        "Grant minimum access -> Least privilege",
+        "Keep systems on an approved baseline -> Configuration enforcement",
+        "Retire an old system securely -> Decommissioning",
+        "Reduce attack surface -> Hardening",
+        "Protect a host directly -> Endpoint protection",
+        "Control traffic on one host -> Host-based firewall",
+        "Actively block suspicious host behavior -> HIPS",
+        "Unused service or protocol -> Disable it",
+        "Factory credential -> Change it",
+        "Unneeded application -> Remove it"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Several mitigations may reduce risk, but choose the one that most directly addresses the problem described.",
+        "Segmentation creates planned boundaries across the environment. Isolation quarantines a particular system or resource.",
+        "An ACL applies permit-and-deny rules. Permissions define what an authorized subject may do.",
+        "An application allow list controls which software may execute. Access control is the broader restriction of resource use.",
+        "Monitoring observes and detects. A HIPS observes host activity and can actively prevent suspicious behavior.",
+        "Patching fixes known software vulnerabilities. Configuration enforcement maintains approved settings.",
+        "If no patch exists yet, patching is not immediately available. Temporary mitigation may require isolation, disabling vulnerable functionality, configuration changes, or additional monitoring."
+      ],
+      "callout": "The best mitigation is the control that most directly satisfies the scenario's security requirement."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to connect each requirement to its most direct mitigation."
+      ],
+      "bullets": [
+        "Separate networks -> Segmentation",
+        "Permit or deny through rules -> ACL",
+        "Control allowed actions -> Permissions",
+        "Run only approved software -> Application allow list",
+        "Quarantine one system -> Isolation",
+        "Apply a vendor fix -> Patching",
+        "Protect confidentiality -> Encryption",
+        "Watch for suspicious activity -> Monitoring",
+        "Provide minimum permissions -> Least privilege",
+        "Maintain a secure baseline -> Configuration enforcement",
+        "Retire a system securely -> Decommissioning",
+        "Reduce exposed functionality -> Hardening",
+        "Protect an endpoint -> Endpoint protection",
+        "Filter traffic on one host -> Host-based firewall",
+        "Prevent suspicious host activity -> HIPS",
+        "Unused port or protocol -> Disable it",
+        "Default credential -> Change it",
+        "Unused application -> Remove it"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the mitigation that most directly addresses each risk.",
+    "prompt": "A workstation shows signs of active malware and must be prevented from communicating with other systems. A newly installed network appliance still uses the vendor-supplied administrator credential.",
+    "fields": [
+      {
+        "id": "compromised-workstation",
+        "label": "Immediate workstation containment",
+        "choices": [
+          "Isolation",
+          "Segmentation",
+          "Monitoring",
+          "Patching"
+        ],
+        "answer": "Isolation"
+      },
+      {
+        "id": "network-appliance",
+        "label": "Network-appliance hardening action",
+        "choices": [
+          "Default password changes",
+          "Application allow list",
+          "Decommissioning",
+          "Encryption"
+        ],
+        "answer": "Default password changes"
+      }
+    ],
+    "correctFeedback": "Correct. Isolation immediately quarantines the compromised workstation, while replacing the vendor-supplied credential removes a known default-access weakness from the appliance.",
+    "retryFeedback": "Not quite. Identify the control that quarantines one affected device, then identify the hardening step that removes a publicly known factory credential. Review Isolation and Default Passwords, then try again."
+  }
+}

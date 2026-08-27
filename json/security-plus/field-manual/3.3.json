@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "3",
+  "objective": "3.3",
+  "title": "Compare and Contrast Concepts and Strategies to Protect Data",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Protecting data begins with identifying what kind of data it is, how sensitive or important it is, where it is located, what state it is in, and which protection method fits the requirement.",
+        "Security+ expects you to connect the data to the correct protection strategy.",
+        "Use this sequence: What data is this? How should it be classified? Where is it? How should it be protected?"
+      ],
+      "entries": [
+        {
+          "title": "Data Types",
+          "paragraphs": [
+            "A data type describes the nature or purpose of information. Security+ includes regulated data, trade secrets, intellectual property, legal information, financial information, and human- or non-human-readable data."
+          ],
+          "recognitionCue": "Data type identifies what the information is."
+        }
+      ],
+      "callout": "Data type is what it is. Classification is how sensitive or important it is. State is what it is doing. Security method is how it is protected."
+    },
+    {
+      "id": "regulated-data",
+      "title": "Regulated Data",
+      "paragraphs": [
+        "Regulated data must be handled according to laws, regulations, or industry requirements. Those requirements may govern storage, access, transmission, retention, and destruction."
+      ],
+      "entries": [
+        {
+          "title": "Regulated",
+          "paragraphs": [
+            "An outside authority establishes rules for how the information must be protected."
+          ],
+          "memoryHook": "Someone outside the organization has rules about this data.",
+          "recognitionCue": "Data governed by laws or regulations -> Regulated"
+        }
+      ]
+    },
+    {
+      "id": "trade-secrets-and-intellectual-property",
+      "title": "Trade Secrets and Intellectual Property",
+      "paragraphs": [
+        "These categories can overlap, but their recognition cues are different."
+      ],
+      "entries": [
+        {
+          "title": "Trade Secret",
+          "paragraphs": [
+            "A trade secret is confidential business information—such as a formula, manufacturing method, business strategy, or proprietary process—that provides value because competitors do not know it."
+          ],
+          "memoryHook": "Its value depends on keeping it secret.",
+          "recognitionCue": "Secret business knowledge that provides competitive advantage -> Trade secret"
+        },
+        {
+          "title": "Intellectual Property",
+          "paragraphs": [
+            "Intellectual property is creative or proprietary work owned by an individual or organization, including software, designs, research, inventions, and proprietary documentation."
+          ],
+          "memoryHook": "The organization created it and owns it.",
+          "recognitionCue": "Owned creative or proprietary work -> Intellectual property"
+        }
+      ],
+      "table": {
+        "caption": "Trade secrets and intellectual property",
+        "headers": ["Data type", "Primary recognition cue"],
+        "rows": [
+          ["Trade secret", "Competitive value depends on secrecy"],
+          ["Intellectual property", "Broader category of owned creation or proprietary work"]
+        ]
+      }
+    },
+    {
+      "id": "legal-and-financial-information",
+      "title": "Legal and Financial Information",
+      "paragraphs": [
+        "Identify these types from the business purpose of the records."
+      ],
+      "entries": [
+        {
+          "title": "Legal Information",
+          "paragraphs": [
+            "Legal information relates to legal rights, disputes, or obligations. Examples include contracts, litigation records, legal correspondence, and case information."
+          ],
+          "recognitionCue": "Contracts, litigation, or legal matters -> Legal information"
+        },
+        {
+          "title": "Financial Information",
+          "paragraphs": [
+            "Financial information concerns money, accounts, transactions, or financial activity, including account records, financial statements, payment information, and transaction records."
+          ],
+          "recognitionCue": "Money, accounts, or transactions -> Financial information"
+        }
+      ]
+    },
+    {
+      "id": "human-and-machine-readable",
+      "title": "Human- and Non-Human-Readable Data",
+      "paragraphs": [
+        "The distinction is whether a person can directly interpret the information or requires a system or application to do so."
+      ],
+      "entries": [
+        {
+          "title": "Human- and Non-Human-Readable",
+          "paragraphs": [
+            "Human-readable data includes text documents, spreadsheets, printed reports, and plain-text files. Non-human-readable data includes binary information, machine-formatted data, and application-specific formats intended primarily for system processing."
+          ],
+          "memoryHook": "A person reads human-readable data; a computer or application interprets non-human-readable data.",
+          "recognitionCue": "Directly understandable by a person -> Human-readable; requires a system or application -> Non-human-readable"
+        }
+      ],
+      "table": {
+        "caption": "Human and machine interpretation",
+        "headers": ["Form", "Recognition"],
+        "rows": [
+          ["Human-readable", "A person can directly understand it"],
+          ["Non-human-readable", "A system or application must interpret it"]
+        ]
+      }
+    },
+    {
+      "id": "data-classifications",
+      "title": "Data Classifications",
+      "paragraphs": [
+        "A classification indicates how strongly information should be protected and who should be allowed access. Organizations may define labels differently, so use the scenario's description rather than assuming one universal ranking."
+      ],
+      "entries": [
+        {
+          "title": "Data Classifications",
+          "paragraphs": [
+            "Security+ includes sensitive, confidential, public, restricted, private, and critical classifications."
+          ],
+          "recognitionCue": "Label describing protection strength, access limits, or business importance -> Data classifications"
+        }
+      ]
+    },
+    {
+      "id": "sensitive-and-confidential",
+      "title": "Sensitive and Confidential Data",
+      "paragraphs": [
+        "Both require protection, but confidential data emphasizes access limited to specifically authorized people or groups."
+      ],
+      "entries": [
+        {
+          "title": "Sensitive",
+          "paragraphs": [
+            "Sensitive data requires protection because unauthorized access, disclosure, or modification could cause harm."
+          ],
+          "memoryHook": "This should not be casually exposed.",
+          "recognitionCue": "Information that requires protection -> Sensitive"
+        },
+        {
+          "title": "Confidential",
+          "paragraphs": [
+            "Confidential data should be available only to specifically authorized people or groups because unauthorized disclosure could cause significant harm."
+          ],
+          "memoryHook": "Only approved people should see this.",
+          "recognitionCue": "Access limited because disclosure would be harmful -> Confidential"
+        }
+      ]
+    },
+    {
+      "id": "public-and-private",
+      "title": "Public and Private Data",
+      "paragraphs": [
+        "These labels distinguish information approved for general release from information not intended for public access."
+      ],
+      "entries": [
+        {
+          "title": "Public",
+          "paragraphs": [
+            "Public data is approved for general release, such as public website content, press releases, and published product information."
+          ],
+          "recognitionCue": "Approved for anyone to access -> Public"
+        },
+        {
+          "title": "Private",
+          "paragraphs": [
+            "Private data is not intended for general public access and may concern personal or internal information."
+          ],
+          "memoryHook": "Not public.",
+          "recognitionCue": "Information intended to remain outside general public access -> Private"
+        }
+      ]
+    },
+    {
+      "id": "restricted-and-critical",
+      "title": "Restricted and Critical Data",
+      "paragraphs": [
+        "Restricted describes especially tight access. Critical describes importance to continued operations."
+      ],
+      "entries": [
+        {
+          "title": "Restricted",
+          "paragraphs": [
+            "Restricted data requires very tight access controls and may represent the organization's most closely controlled information."
+          ],
+          "memoryHook": "Very few people should be able to touch this.",
+          "recognitionCue": "Highly limited access -> Restricted"
+        },
+        {
+          "title": "Critical",
+          "paragraphs": [
+            "Critical data is essential to important business or operational functions. Its loss, corruption, or unavailability could seriously affect operations."
+          ],
+          "memoryHook": "The business needs this to keep functioning.",
+          "recognitionCue": "Essential to continued operations -> Critical"
+        }
+      ],
+      "table": {
+        "caption": "Access and operational importance",
+        "headers": ["Classification", "Primary concern"],
+        "rows": [
+          ["Restricted", "Very tightly limited access"],
+          ["Critical", "Continued business or operational function"]
+        ]
+      }
+    },
+    {
+      "id": "general-data-considerations",
+      "title": "General Data Considerations",
+      "paragraphs": [
+        "After identifying type and classification, determine the data's state and location."
+      ],
+      "entries": [
+        {
+          "title": "General Data Considerations",
+          "paragraphs": [
+            "Security+ includes data states, data sovereignty, and geolocation as general considerations that influence protection requirements."
+          ],
+          "recognitionCue": "State, jurisdiction, and physical location of information -> General data considerations"
+        }
+      ]
+    },
+    {
+      "id": "data-states",
+      "title": "Data States",
+      "paragraphs": [
+        "Data exists in three primary states: stored, moving, or actively being processed."
+      ],
+      "entries": [
+        {
+          "title": "Data States",
+          "paragraphs": [
+            "The state identifies what the data is doing at a particular moment: resting in storage, traveling between locations, or being used by a system."
+          ],
+          "recognitionCue": "Stored, moving, or processing -> Data states"
+        },
+        {
+          "title": "Data at Rest",
+          "paragraphs": [
+            "Data at rest is stored and not currently moving across a network, such as a hard-drive file, database record, backup, or mobile-device data."
+          ],
+          "memoryHook": "The data is sitting somewhere.",
+          "recognitionCue": "Stored data -> Data at rest"
+        },
+        {
+          "title": "Data in Transit",
+          "paragraphs": [
+            "Data in transit is moving between systems or locations, such as web traffic, email transmission, file transfer, or VPN traffic."
+          ],
+          "memoryHook": "The data is traveling.",
+          "recognitionCue": "Data moving across a network -> Data in transit"
+        },
+        {
+          "title": "Data in Use",
+          "paragraphs": [
+            "Data in use is actively being processed—for example, open in an application, loaded into memory, calculated, or modified."
+          ],
+          "memoryHook": "The system is working with it right now.",
+          "recognitionCue": "Data actively being processed -> Data in use"
+        }
+      ],
+      "table": {
+        "caption": "The three primary data states",
+        "headers": ["State", "Recognition cue"],
+        "rows": [
+          ["At rest", "Stored"],
+          ["In transit", "Moving"],
+          ["In use", "Processing"]
+        ]
+      }
+    },
+    {
+      "id": "sovereignty-and-geolocation",
+      "title": "Data Sovereignty and Geolocation",
+      "paragraphs": [
+        "Geolocation tells you where data or a system is. Data sovereignty explains why that location matters legally."
+      ],
+      "entries": [
+        {
+          "title": "Data Sovereignty",
+          "paragraphs": [
+            "Data sovereignty means data is subject to the legal requirements of the jurisdiction where it is stored or processed. This matters with international cloud providers, global data centers, and international backups."
+          ],
+          "memoryHook": "Where the data lives can determine which laws apply.",
+          "recognitionCue": "Jurisdiction determines legal requirements -> Data sovereignty"
+        },
+        {
+          "title": "Geolocation",
+          "paragraphs": [
+            "Geolocation identifies the physical or geographic location associated with users, devices, systems, or data. It can influence storage decisions, access decisions, and applicable legal requirements."
+          ],
+          "recognitionCue": "Physical or geographic location -> Geolocation"
+        }
+      ],
+      "table": {
+        "caption": "Location and legal jurisdiction",
+        "headers": ["Concept", "Question answered"],
+        "rows": [
+          ["Geolocation", "Where is it?"],
+          ["Data sovereignty", "Which jurisdiction's laws apply there?"]
+        ]
+      }
+    },
+    {
+      "id": "methods-to-secure-data",
+      "title": "Methods to Secure Data",
+      "paragraphs": [
+        "The best protection method depends on the security problem that must be solved."
+      ],
+      "entries": [
+        {
+          "title": "Methods to Secure Data",
+          "paragraphs": [
+            "Security+ includes geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, and permission restrictions."
+          ],
+          "recognitionCue": "Technique chosen according to the required data-security outcome -> Methods to secure data"
+        }
+      ]
+    },
+    {
+      "id": "geographic-restrictions",
+      "title": "Geographic Restrictions",
+      "paragraphs": [
+        "Organizations may limit where data is stored, processed, or accessed."
+      ],
+      "entries": [
+        {
+          "title": "Geographic Restrictions",
+          "paragraphs": [
+            "Examples include requiring data to remain in one country, denying access from an unapproved region, or preventing backups from being stored outside a particular jurisdiction."
+          ],
+          "recognitionCue": "Restrict data or access according to location -> Geographic restrictions"
+        }
+      ]
+    },
+    {
+      "id": "encryption-and-hashing",
+      "title": "Encryption and Hashing",
+      "paragraphs": [
+        "Encryption protects confidentiality. Hashing helps verify integrity."
+      ],
+      "entries": [
+        {
+          "title": "Encryption",
+          "paragraphs": [
+            "Encryption converts data into an unreadable form without the correct key. It can protect data at rest and data in transit from unauthorized disclosure."
+          ],
+          "memoryHook": "They may steal it, but they should not be able to read it.",
+          "recognitionCue": "Protect confidentiality -> Encryption"
+        },
+        {
+          "title": "Hashing",
+          "paragraphs": [
+            "Hashing produces a fixed-size value derived from data and is commonly used to determine whether the information has changed. It is designed as a one-way operation."
+          ],
+          "memoryHook": "Is this still the same data?",
+          "recognitionCue": "Verify integrity -> Hashing"
+        }
+      ],
+      "table": {
+        "caption": "Encryption and hashing",
+        "headers": ["Method", "Primary security goal", "Operation"],
+        "rows": [
+          ["Encryption", "Confidentiality", "Reversible with the correct key"],
+          ["Hashing", "Integrity", "Designed to be one-way"]
+        ]
+      }
+    },
+    {
+      "id": "masking-and-tokenization",
+      "title": "Masking and Tokenization",
+      "paragraphs": [
+        "Masking hides a value from view. Tokenization replaces the sensitive value with a substitute."
+      ],
+      "entries": [
+        {
+          "title": "Masking",
+          "paragraphs": [
+            "Masking hides some or all sensitive information from a viewer while the real information continues to exist, such as displaying only the final four digits of an account number."
+          ],
+          "memoryHook": "Mask means cover.",
+          "recognitionCue": "Hide displayed sensitive data -> Masking"
+        },
+        {
+          "title": "Tokenization",
+          "paragraphs": [
+            "Tokenization replaces sensitive information with a substitute value. Systems use the token instead of repeatedly exposing the original data."
+          ],
+          "memoryHook": "Token means substitute.",
+          "recognitionCue": "Replace sensitive data with a substitute value -> Tokenization"
+        }
+      ],
+      "table": {
+        "caption": "Masking and tokenization",
+        "headers": ["Method", "What happens to the visible value"],
+        "rows": [
+          ["Masking", "The real value is hidden or partially covered"],
+          ["Tokenization", "The real value is replaced by a substitute"]
+        ]
+      }
+    },
+    {
+      "id": "obfuscation",
+      "title": "Obfuscation",
+      "paragraphs": [
+        "Obfuscation makes data or code more difficult to interpret, but it does not automatically provide the cryptographic protection of encryption."
+      ],
+      "entries": [
+        {
+          "title": "Obfuscation",
+          "paragraphs": [
+            "Obfuscation rearranges or obscures information so it is harder to understand. Do not treat it as an automatic replacement for encryption."
+          ],
+          "memoryHook": "Make it confusing.",
+          "recognitionCue": "Make data or code harder to interpret -> Obfuscation"
+        }
+      ]
+    },
+    {
+      "id": "segmentation-and-permissions",
+      "title": "Segmentation and Permission Restrictions",
+      "paragraphs": [
+        "Segmentation reduces exposure between environments. Permission restrictions limit which identities can access data and what actions they can perform."
+      ],
+      "entries": [
+        {
+          "title": "Segmentation",
+          "paragraphs": [
+            "Segmentation places systems or environments containing sensitive data into protected areas separate from ordinary systems. It can reduce exposure, restrict access, and limit lateral movement."
+          ],
+          "recognitionCue": "Separate sensitive systems or data into protected areas -> Segmentation"
+        },
+        {
+          "title": "Permission Restrictions",
+          "paragraphs": [
+            "Permission restrictions determine which users or systems can read, write, modify, or delete data."
+          ],
+          "memoryHook": "Only the right people get the right access.",
+          "recognitionCue": "Limit who can access data and what they can do -> Permission restrictions"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Governed by law -> Regulated. Secret business advantage -> Trade secret. Owned proprietary work -> Intellectual property.",
+        "Contracts or litigation -> Legal information. Money or accounts -> Financial information. Person can read it -> Human-readable. Application interprets it -> Non-human-readable.",
+        "Approved for everyone -> Public. Requires protection -> Sensitive. Limited authorized access -> Confidential. Very tightly controlled -> Restricted. Not for public access -> Private. Essential to operations -> Critical.",
+        "Stored -> At rest. Moving -> In transit. Being processed -> In use.",
+        "Laws depend on location -> Data sovereignty. Identify the location -> Geolocation. Limit storage or access by location -> Geographic restrictions.",
+        "Keep data secret -> Encryption. Verify it has not changed -> Hashing. Hide the visible value -> Masking. Replace the value -> Tokenization.",
+        "Make information harder to understand -> Obfuscation. Separate sensitive environments -> Segmentation. Limit access -> Permission restrictions."
+      ],
+      "entries": [
+        {
+          "title": "Identify the Question Category",
+          "paragraphs": [
+            "Before choosing an answer, determine whether the question is asking for a data type, classification, state, location issue, or protection method."
+          ],
+          "recognitionCue": "Type, classification, state, location, or protection method?"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "One piece of information can have several simultaneous descriptions. A financial database could be financial information as its type, restricted as its classification, at rest as its state, and encrypted as its protection method. Those answers describe different characteristics and do not compete unless the question asks for the same characteristic.",
+        "Trade secret means competitive value depends on secrecy; intellectual property is the broader category of owned creation or proprietary information.",
+        "Geolocation tells where the data is; data sovereignty identifies which jurisdiction's laws apply there.",
+        "Encryption supports confidentiality; hashing supports integrity.",
+        "Masking hides the real value from view; tokenization replaces it with a substitute."
+      ],
+      "callout": "Ask what the question is actually requesting: type, classification, state, location, or protection method."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Law applies -> Regulated | Secret competitive information -> Trade secret | Owned creation -> Intellectual property",
+        "Legal matter -> Legal information | Money or accounts -> Financial information | Person reads it -> Human-readable | Machine interprets it -> Non-human-readable",
+        "Anyone may see it -> Public | Needs protection -> Sensitive | Authorized users only -> Confidential | Very limited access -> Restricted",
+        "Not publicly accessible -> Private | Business depends on it -> Critical",
+        "Stored -> At rest | Traveling -> In transit | Processing -> In use",
+        "Jurisdiction matters -> Data sovereignty | Where is it? -> Geolocation | Keep it in an approved region -> Geographic restriction",
+        "Keep it secret -> Encryption | Did it change? -> Hashing | Cover the value -> Masking | Replace the value -> Tokenization",
+        "Make it confusing -> Obfuscation | Separate it -> Segmentation | Limit access -> Permission restrictions"
+      ],
+      "entries": [
+        {
+          "title": "Maestro's Five-Part Check",
+          "paragraphs": [
+            "Identify the data's type, classification, state, location requirements, and required protection outcome."
+          ],
+          "recognitionCue": "What is it? How sensitive is it? What is it doing? Where is it? How should it be protected?"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Identify both the data type and its current state.",
+    "prompt": "A manufacturer stores its secret product formula in an encrypted file on an offline server. The formula provides business value because competitors do not know it, and the file is not currently moving or being processed.",
+    "fields": [
+      {
+        "id": "data-type",
+        "label": "Data type described by the formula's competitive value",
+        "choices": [
+          "Trade secret",
+          "Legal information",
+          "Financial information",
+          "Public data"
+        ],
+        "answer": "Trade secret"
+      },
+      {
+        "id": "data-state",
+        "label": "Current data state",
+        "choices": [
+          "Data at rest",
+          "Data in transit",
+          "Data in use",
+          "Geolocation"
+        ],
+        "answer": "Data at rest"
+      }
+    ],
+    "correctFeedback": "Correct. The formula is a trade secret because its competitive value depends on secrecy. The stored file is data at rest because it is not moving or being actively processed.",
+    "retryFeedback": "Not quite. First identify the data type whose value depends on competitors not knowing it. Then identify the state of data that is stored rather than moving or processing. Review Trade Secrets and Intellectual Property plus Data States, then try again."
+  }
+}

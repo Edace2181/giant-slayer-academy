@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Compare and Contrast Common Threat Actors and Motivations",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A threat actor is a person, group, or entity that can create risk to an organization.",
+        "Security+ expects you to identify threat actors from clues about where they operate, how many resources they have, how technically capable they are, and what they are trying to accomplish.",
+        "Use this sequence: identify who is attacking, determine what the actor is capable of, and then identify why the actor is taking action."
+      ],
+      "callout": "Actor = WHO · Attributes = CAPABILITY · Motivation = WHY"
+    },
+    {
+      "id": "threat-actors",
+      "title": "Threat Actors",
+      "paragraphs": [
+        "Different threat actors may use similar attack techniques. Access, resources, skill level, and motivation are the clues that help separate them."
+      ],
+      "entries": [
+        {
+          "title": "Nation-State",
+          "paragraphs": [
+            "A nation-state threat actor operates on behalf of, or in support of, a government or national interest. These actors may have significant funding, skilled personnel, advanced tools, intelligence resources, and long-term objectives.",
+            "Common goals include espionage, disruption, and warfare."
+          ],
+          "memoryHook": "Government-backed and playing the long game.",
+          "recognitionCue": "Government or national objective → Nation-state"
+        },
+        {
+          "title": "Unskilled Attacker",
+          "paragraphs": [
+            "An unskilled attacker has limited technical knowledge and relies heavily on public exploits, automated attack tools, scripts, or online instructions created by others.",
+            "An effective tool can still cause serious damage even when the person using it has limited skill."
+          ],
+          "memoryHook": "The tool may be advanced even if the attacker is not.",
+          "recognitionCue": "Low skill plus readily available attack tools → Unskilled attacker"
+        },
+        {
+          "title": "Hacktivist",
+          "paragraphs": [
+            "A hacktivist uses cyber activity to support a philosophical, political, or social cause. The goal may be to draw attention to an issue, embarrass an organization, disrupt services, publish stolen information, or promote a message."
+          ],
+          "memoryHook": "Hacking for a cause.",
+          "recognitionCue": "Political, philosophical, or social cause → Hacktivist"
+        },
+        {
+          "title": "Insider Threat",
+          "paragraphs": [
+            "An insider threat comes from someone who already has authorized access or a trusted relationship with the organization, such as an employee, contractor, administrator, or business partner.",
+            "An insider may misuse access intentionally or create risk through inappropriate actions."
+          ],
+          "memoryHook": "The threat already has a way inside.",
+          "recognitionCue": "Existing authorized or trusted access → Insider threat"
+        },
+        {
+          "title": "Organized Crime",
+          "paragraphs": [
+            "Organized crime uses cyberattacks as part of coordinated criminal activity. These groups may have skilled attackers, dedicated infrastructure, significant funding, and organized operations.",
+            "Their motivation is commonly financial."
+          ],
+          "memoryHook": "Cybercrime operating like a business.",
+          "recognitionCue": "Coordinated criminal organization seeking profit → Organized crime"
+        },
+        {
+          "title": "Shadow IT",
+          "paragraphs": [
+            "Shadow IT is hardware, software, applications, or services used without proper organizational approval or security oversight.",
+            "It is not necessarily malicious, but unapproved technology may not be monitored, patched, securely configured, or covered by security policies."
+          ],
+          "examples": [
+            "An employee uses an unapproved cloud-storage service.",
+            "A department installs software without IT approval.",
+            "An employee connects an unauthorized device."
+          ],
+          "recognitionCue": "Unapproved technology operating outside normal IT oversight → Shadow IT"
+        }
+      ],
+      "table": {
+        "caption": "Threat actor recognition sheet",
+        "headers": ["Threat actor", "Plain-English meaning", "Common clue"],
+        "rows": [
+          ["Nation-state", "Government-backed or state-aligned actor", "Espionage, warfare, major funding"],
+          ["Unskilled attacker", "Limited expertise using existing tools", "Public scripts or tools, low sophistication"],
+          ["Hacktivist", "Attacks to support a cause", "Political or philosophical beliefs"],
+          ["Insider threat", "Trusted person with existing access", "Employee, contractor, administrator"],
+          ["Organized crime", "Coordinated criminal operation", "Financial gain"],
+          ["Shadow IT", "Unapproved technology outside IT control", "Unsanctioned applications, services, or devices"]
+        ]
+      }
+    },
+    {
+      "id": "attributes-of-threat-actors",
+      "title": "Attributes of Threat Actors",
+      "paragraphs": [
+        "After identifying a possible threat actor, use the actor's location, resources, and technical capability to build a more complete profile.",
+        "These attributes describe what the actor can bring to the attack. They do not automatically reveal the actor's motivation."
+      ],
+      "table": {
+        "caption": "Questions that reveal threat-actor attributes",
+        "headers": ["Attribute", "Question to ask"],
+        "rows": [
+          ["Internal or external", "Where is the actor operating from?"],
+          ["Resources and funding", "How much money, infrastructure, and personnel do they have?"],
+          ["Sophistication and capability", "How technically advanced are they?"]
+        ]
+      }
+    },
+    {
+      "id": "internal-versus-external",
+      "title": "Internal vs. External",
+      "paragraphs": [
+        "An internal actor already has some form of organizational access or trusted relationship. An external actor operates from outside the organization.",
+        "An insider threat is usually internal. Nation-state actors, hacktivists, organized crime groups, and unskilled attackers are commonly external."
+      ],
+      "entries": [
+        {
+          "title": "Internal vs. External",
+          "paragraphs": [
+            "Internal describes an actor with a foothold through legitimate organizational access. External describes an actor attacking from outside that trusted environment."
+          ],
+          "recognitionCue": "Existing organizational access → Internal · Outside the organization → External"
+        }
+      ]
+    },
+    {
+      "id": "resources-and-funding",
+      "title": "Resources and Funding",
+      "paragraphs": [
+        "Threat actors differ greatly in the money, infrastructure, personnel, intelligence, and time available to them.",
+        "A highly funded actor may use skilled specialists, custom malware, large infrastructure, intelligence, and long-running campaigns. A poorly funded actor may depend mainly on freely available tools."
+      ],
+      "entries": [
+        {
+          "title": "Resources and Funding",
+          "paragraphs": [
+            "This attribute asks how much money, infrastructure, personnel, and time the actor can bring to the fight."
+          ],
+          "recognitionCue": "Large budget, infrastructure, and personnel → High resources and funding"
+        }
+      ]
+    },
+    {
+      "id": "sophistication-and-capability",
+      "title": "Level of Sophistication and Capability",
+      "paragraphs": [
+        "Sophistication describes the attacker's technical ability and how advanced the methods are.",
+        "A highly sophisticated actor may create custom tools, discover new attack techniques, remain hidden for long periods, or coordinate complex attacks. A less sophisticated actor may rely on existing exploits, automated tools, and public scripts."
+      ],
+      "entries": [
+        {
+          "title": "Level of Sophistication and Capability",
+          "paragraphs": [
+            "This attribute measures the actor's technical skill and ability to develop or execute advanced attacks."
+          ],
+          "recognitionCue": "Custom, advanced, or stealthy techniques → Higher sophistication"
+        }
+      ]
+    },
+    {
+      "id": "motivations",
+      "title": "Motivations",
+      "paragraphs": [
+        "Motivation explains why the attack is happening. The same type of threat actor can have different motivations, so identify the actor and the motivation separately before connecting them.",
+        "Security+ may describe what the attacker wants and expect you to recognize the goal behind the activity."
+      ],
+      "callout": "Actor tells you WHO. Motivation tells you WHY."
+    },
+    {
+      "id": "data-exfiltration-and-espionage",
+      "title": "Data Exfiltration and Espionage",
+      "paragraphs": [
+        "These concepts often appear together, but they describe different parts of an incident. Exfiltration describes information leaving; espionage describes the intelligence goal."
+      ],
+      "entries": [
+        {
+          "title": "Data Exfiltration",
+          "paragraphs": [
+            "Data exfiltration is the unauthorized removal of information from an organization. Attackers may remove credentials, customer data, financial records, intellectual property, or other sensitive business information."
+          ],
+          "memoryHook": "Get the data out.",
+          "recognitionCue": "Unauthorized removal of information → Data exfiltration"
+        },
+        {
+          "title": "Espionage",
+          "paragraphs": [
+            "Espionage involves secretly obtaining sensitive information for intelligence or strategic advantage. Targets may include government or military information, research, business secrets, or intellectual property."
+          ],
+          "memoryHook": "Steal information so we can learn something valuable.",
+          "recognitionCue": "Secret intelligence gathering → Espionage"
+        }
+      ]
+    },
+    {
+      "id": "service-disruption-and-blackmail",
+      "title": "Service Disruption and Blackmail",
+      "paragraphs": [
+        "One motivation targets availability. The other uses a threat to force a victim to comply with a demand."
+      ],
+      "entries": [
+        {
+          "title": "Service Disruption",
+          "paragraphs": [
+            "An attacker motivated by service disruption wants to interrupt or prevent normal operation of a system or service. The goal may be to take a website offline, stop business operations, interrupt communications, or prevent user access."
+          ],
+          "recognitionCue": "Make a service unavailable → Service disruption"
+        },
+        {
+          "title": "Blackmail",
+          "paragraphs": [
+            "Blackmail uses a threat to pressure a victim into doing something. The attacker may threaten to release private information, expose embarrassing information, or cause additional harm unless a demand is met."
+          ],
+          "memoryHook": "Do what I want or I will use this against you.",
+          "recognitionCue": "Threat used to force compliance → Blackmail"
+        }
+      ]
+    },
+    {
+      "id": "financial-gain-and-beliefs",
+      "title": "Financial Gain and Philosophical or Political Beliefs",
+      "paragraphs": [
+        "Money and ideology are two common motivations that help distinguish organized crime from cause-driven actors."
+      ],
+      "entries": [
+        {
+          "title": "Financial Gain",
+          "paragraphs": [
+            "Financial gain may come from theft, fraud, extortion, selling stolen information, or ransom payments. Organized crime is strongly associated with financial motivation."
+          ],
+          "recognitionCue": "Money is the goal → Financial gain"
+        },
+        {
+          "title": "Philosophical or Political Beliefs",
+          "paragraphs": [
+            "An attacker may act to promote a political position, protest an organization, support a social cause, or influence public opinion. Hacktivists commonly fit this motivation."
+          ],
+          "recognitionCue": "Cause, ideology, or political message → Philosophical or political beliefs"
+        }
+      ]
+    },
+    {
+      "id": "ethical-and-revenge",
+      "title": "Ethical and Revenge Motivations",
+      "paragraphs": [
+        "Authorization and personal retaliation separate these two very different motivations."
+      ],
+      "entries": [
+        {
+          "title": "Ethical",
+          "paragraphs": [
+            "An ethical motivation means security activity is performed for a legitimate protective purpose, such as authorized security testing, vulnerability research, or penetration testing."
+          ],
+          "memoryHook": "Find the weakness so it can be fixed.",
+          "recognitionCue": "Authorized security activity intended to improve protection → Ethical"
+        },
+        {
+          "title": "Revenge",
+          "paragraphs": [
+            "An attacker motivated by revenge wants to retaliate against a person or organization. A disgruntled employee might act after being disciplined, denied a promotion, losing a job, or experiencing a personal conflict."
+          ],
+          "memoryHook": "I want to get back at them.",
+          "recognitionCue": "Personal retaliation → Revenge"
+        }
+      ]
+    },
+    {
+      "id": "disruption-chaos-and-war",
+      "title": "Disruption, Chaos, and War",
+      "paragraphs": [
+        "Some attacks seek disorder as the goal, while others support a conflict between nations."
+      ],
+      "entries": [
+        {
+          "title": "Disruption / Chaos",
+          "paragraphs": [
+            "An attacker motivated by disruption or chaos wants to damage systems, create confusion, interrupt operations, or cause widespread problems without necessarily seeking money or intelligence."
+          ],
+          "memoryHook": "Break things because causing chaos is the objective.",
+          "recognitionCue": "Disorder and destruction as the goal → Disruption or chaos"
+        },
+        {
+          "title": "War",
+          "paragraphs": [
+            "Cyber operations can support conflict between nations. Targets may include critical infrastructure, military systems, government networks, communications, or utilities."
+          ],
+          "memoryHook": "Cyber operations supporting national conflict.",
+          "recognitionCue": "Attack associated with conflict between nations → War"
+        }
+      ]
+    },
+    {
+      "id": "actor-and-motivation-relationships",
+      "title": "Actor and Motivation Relationships",
+      "paragraphs": [
+        "A threat actor does not automatically have only one motivation. Identify the actor and motivation separately, then use all the scenario clues to connect them.",
+        "Nation-state actors may pursue espionage, war, or service disruption. Organized crime may pursue financial gain, blackmail, or data exfiltration. Hacktivists may pursue philosophical or political goals, service disruption, or chaos. Insider threats may pursue revenge, financial gain, or data exfiltration."
+      ],
+      "callout": "Do not assume the motivation from the actor label alone."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Build the attacker profile from all the clues in the scenario."
+      ],
+      "bullets": [
+        "Government-backed operation → Nation-state",
+        "Low-skilled attacker using existing tools → Unskilled attacker",
+        "Political or philosophical cause → Hacktivist",
+        "Existing trusted access → Insider threat",
+        "Coordinated criminals seeking money → Organized crime",
+        "Unapproved application or device → Shadow IT",
+        "Actor already inside the organization → Internal",
+        "Actor operating from outside → External",
+        "Major budget and infrastructure → High resources and funding",
+        "Custom or advanced techniques → High sophistication",
+        "Steal information from the environment → Data exfiltration",
+        "Gather intelligence → Espionage",
+        "Take a system or service offline → Service disruption",
+        "Threaten the victim into complying → Blackmail",
+        "Make money → Financial gain",
+        "Support an ideology or cause → Philosophical or political beliefs",
+        "Authorized security testing → Ethical",
+        "Get even → Revenge",
+        "Cause disorder → Disruption or chaos",
+        "Support national conflict → War"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Threat actors and motivations are not the same thing. An external, highly funded, highly sophisticated actor gathering government intelligence points to a nation-state actor with an espionage motivation.",
+        "Nation-state and organized crime groups can both be skilled and well funded. A government or strategic objective points to nation-state; profit points to organized crime.",
+        "A cause or public ideological message points to a hacktivist. Government-backed strategic activity points to a nation-state.",
+        "Data exfiltration means information is being removed. Espionage means the attacker wants intelligence. Espionage can use data exfiltration to reach its goal.",
+        "Service disruption targets a specific service. Disruption or chaos describes the broader goal of creating disorder."
+      ],
+      "callout": "Do not identify the attacker from one clue. Combine WHO + ATTRIBUTES + WHY."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use these short cues to identify the intended actor, attribute, or motivation quickly."
+      ],
+      "bullets": [
+        "Government-backed → Nation-state",
+        "Low skill plus existing tools → Unskilled attacker",
+        "Attack for a cause → Hacktivist",
+        "Already has trusted access → Insider threat",
+        "Cybercrime for profit → Organized crime",
+        "Unapproved technology → Shadow IT",
+        "Already inside → Internal",
+        "Attacking from outside → External",
+        "Money, infrastructure, and personnel → Resources and funding",
+        "Technical ability → Sophistication and capability",
+        "Get data out → Data exfiltration",
+        "Gather intelligence → Espionage",
+        "Take a service offline → Service disruption",
+        "Threat plus demand → Blackmail",
+        "Make money → Financial gain",
+        "Support an ideology → Philosophical or political beliefs",
+        "Authorized protective purpose → Ethical",
+        "Get even → Revenge",
+        "Create disorder → Disruption or chaos",
+        "National conflict → War"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Identify the actor and the motivation as two separate parts of the scenario.",
+    "prompt": "After being denied a promotion, an employee uses existing authorized access to delete important company records as retaliation.",
+    "fields": [
+      {
+        "id": "threat-actor",
+        "label": "Threat actor",
+        "choices": [
+          "Insider threat",
+          "Nation-state",
+          "Hacktivist",
+          "Organized crime"
+        ],
+        "answer": "Insider threat"
+      },
+      {
+        "id": "primary-motivation",
+        "label": "Primary motivation",
+        "choices": [
+          "Revenge",
+          "Financial gain",
+          "Espionage",
+          "Ethical"
+        ],
+        "answer": "Revenge"
+      }
+    ],
+    "correctFeedback": "Correct. The employee is an insider threat because the person already has authorized access. The denied promotion and retaliatory damage identify revenge as the motivation.",
+    "retryFeedback": "Not quite. Separate who has access from why the action occurred. Review Insider Threat and Ethical and Revenge Motivations, then try again."
+  }
+}

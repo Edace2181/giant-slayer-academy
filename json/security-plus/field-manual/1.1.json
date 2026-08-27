@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "1",
+  "objective": "1.1",
+  "title": "Compare and Contrast Various Types of Security Controls",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security controls are safeguards used to reduce risk. CompTIA wants you to recognize them in two different ways:",
+        "Category = what kind of control it is and how it is implemented.",
+        "Type = what the control is trying to accomplish.",
+        "That distinction is the heart of Objective 1.1."
+      ],
+      "callout": "Recognition: Category = HOW · Type = WHY"
+    },
+    {
+      "id": "category-versus-type",
+      "title": "Category vs. Type",
+      "paragraphs": [
+        "A single security control can have both a category and a type because those labels answer different questions.",
+        "For example, a firewall is a Technical control because technology implements it. It can also be a Preventive control because its purpose is to stop unauthorized traffic."
+      ],
+      "callout": "First ask HOW the control is implemented. Then ask WHY the control exists."
+    },
+    {
+      "id": "security-control-categories",
+      "title": "Security Control Categories",
+      "paragraphs": [
+        "A category describes what kind of control you are looking at and how it is carried out."
+      ],
+      "entries": [
+        {
+          "title": "Technical",
+          "paragraphs": [
+            "A technical control uses hardware, software, or another technology to enforce security.",
+            "Think: “The computer or system is doing the protecting.”"
+          ],
+          "examples": [
+            "Firewalls",
+            "Authentication systems",
+            "Encryption",
+            "Endpoint protection",
+            "Access-control software"
+          ],
+          "recognitionCue": "If technology enforces it → Technical"
+        },
+        {
+          "title": "Managerial",
+          "paragraphs": [
+            "A managerial control deals with governance and decision-making.",
+            "Think: “Management decided what security should look like.”"
+          ],
+          "examples": [
+            "Planning",
+            "Security policies",
+            "Risk assessments",
+            "Security oversight"
+          ],
+          "recognitionCue": "Policy, risk, or governance → Managerial"
+        },
+        {
+          "title": "Operational",
+          "paragraphs": [
+            "An operational control depends primarily on people and processes.",
+            "Think: “A person or team carries this out.”"
+          ],
+          "examples": [
+            "Security awareness training",
+            "Incident handling",
+            "Following defined procedures"
+          ],
+          "recognitionCue": "People or process → Operational"
+        },
+        {
+          "title": "Physical",
+          "paragraphs": [
+            "A physical control protects facilities, equipment, people, or physical access."
+          ],
+          "examples": [
+            "A fence keeps people away",
+            "A badge reader controls building access",
+            "A security guard watches and controls entry"
+          ],
+          "recognitionCue": "If it protects or controls something you can physically touch → Physical"
+        }
+      ],
+      "table": {
+        "caption": "Security control category recognition sheet",
+        "headers": [
+          "Category",
+          "GSA plain-English meaning",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Technical",
+            "Technology enforces the security control",
+            "Firewall, MFA, encryption"
+          ],
+          [
+            "Managerial",
+            "Leadership, planning, policy, and risk-management controls",
+            "Risk assessment, security policy"
+          ],
+          [
+            "Operational",
+            "People and day-to-day procedures carry out the control",
+            "Security awareness training, incident procedures"
+          ],
+          [
+            "Physical",
+            "Protects physical locations, equipment, or people",
+            "Locks, fences, guards"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "security-control-types",
+      "title": "Security Control Types",
+      "paragraphs": [
+        "Now CompTIA changes the question. Instead of asking what category it is, the exam may ask: “What is the control trying to accomplish?”",
+        "A type describes the main purpose of the control."
+      ],
+      "entries": [
+        {
+          "title": "Preventive",
+          "paragraphs": [
+            "Preventive controls try to stop the incident before it succeeds."
+          ],
+          "memoryHook": "STOP",
+          "examples": [
+            "Blocking unauthorized access before an attacker succeeds"
+          ],
+          "recognitionCue": "Before the attack succeeds → Preventive"
+        },
+        {
+          "title": "Deterrent",
+          "paragraphs": [
+            "A deterrent control tries to make someone decide, “I probably should not try that.” It may not physically stop the person, but it discourages the behavior."
+          ],
+          "memoryHook": "DISCOURAGE",
+          "recognitionCue": "Discourage the attempt → Deterrent"
+        },
+        {
+          "title": "Detective",
+          "paragraphs": [
+            "A detective control identifies activity that has happened or is happening."
+          ],
+          "memoryHook": "SEE IT",
+          "examples": [
+            "Monitoring systems",
+            "Alerting systems"
+          ],
+          "recognitionCue": "Find or alert → Detective"
+        },
+        {
+          "title": "Corrective",
+          "paragraphs": [
+            "A corrective control helps repair damage or restore the environment after a problem occurs."
+          ],
+          "memoryHook": "FIX IT",
+          "recognitionCue": "After the incident → Corrective"
+        },
+        {
+          "title": "Compensating",
+          "paragraphs": [
+            "A compensating control is an alternative safeguard used when the preferred control is not practical or possible."
+          ],
+          "examples": [
+            "The preferred security measure cannot be deployed on a legacy system, so another control is placed around it to reduce risk"
+          ],
+          "recognitionCue": "Cannot use the normal control, so use another one → Compensating"
+        },
+        {
+          "title": "Directive",
+          "paragraphs": [
+            "A directive control tells users what they must or should do. Policies, instructions, and required procedures can serve this purpose."
+          ],
+          "memoryHook": "YOU MUST DO THIS",
+          "recognitionCue": "Required behavior or instruction → Directive"
+        }
+      ],
+      "table": {
+        "caption": "Security control type recognition sheet",
+        "headers": [
+          "Type",
+          "Main purpose"
+        ],
+        "rows": [
+          [
+            "Preventive",
+            "Stop something before it happens"
+          ],
+          [
+            "Deterrent",
+            "Discourage someone from trying"
+          ],
+          [
+            "Detective",
+            "Discover that something happened"
+          ],
+          [
+            "Corrective",
+            "Fix or recover after something happened"
+          ],
+          [
+            "Compensating",
+            "Use an alternative when the preferred control cannot be used"
+          ],
+          [
+            "Directive",
+            "Tell people what they are expected to do"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "When you read a Security+ scenario, first identify whether the question is asking about category or type."
+      ],
+      "bullets": [
+        "Technology enforces the safeguard → Technical",
+        "Policy, governance, or risk decision → Managerial",
+        "People or day-to-day process → Operational",
+        "Facility, equipment, or physical access → Physical",
+        "Stops an incident → Preventive",
+        "Discourages an attempt → Deterrent",
+        "Finds or alerts → Detective",
+        "Repairs or restores → Corrective",
+        "Alternative because the preferred control cannot be used → Compensating",
+        "Tells people what they must do → Directive"
+      ],
+      "callout": "Category asks HOW. Type asks WHY."
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "A control can belong to a category and a type at the same time.",
+        "A security camera can be in the Physical category and have a Detective type.",
+        "A firewall can be in the Technical category and have a Preventive type.",
+        "Those classifications are answering different questions, so they are not competing answers."
+      ],
+      "callout": "Do not force category and type to compete. Classify the same control once by HOW and once by WHY."
+    }
+  ],
+  "miniCheck": {
+    "intro": "Use the two-question method: first identify HOW the control is implemented, then identify WHY it is being used.",
+    "prompt": "A company installs a security camera to identify unauthorized entry after hours.",
+    "fields": [
+      {
+        "id": "category",
+        "label": "Category",
+        "choices": [
+          "Technical",
+          "Managerial",
+          "Operational",
+          "Physical"
+        ],
+        "answer": "Physical"
+      },
+      {
+        "id": "type",
+        "label": "Type",
+        "choices": [
+          "Preventive",
+          "Deterrent",
+          "Detective",
+          "Corrective",
+          "Compensating",
+          "Directive"
+        ],
+        "answer": "Detective"
+      }
+    ],
+    "correctFeedback": "Correct. The camera is Physical because it is a physical security device. Its purpose is Detective because it identifies and records unauthorized activity.",
+    "retryFeedback": "Not quite. Ask two separate questions: HOW is the control implemented, and WHY was it installed? Review the recognition cues and try again."
+  }
+}

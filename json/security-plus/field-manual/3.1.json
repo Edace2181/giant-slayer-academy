@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "3",
+  "objective": "3.1",
+  "title": "Compare and Contrast Security Implications of Different Architecture Models",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Organizations can build technology environments with cloud services, on-premises infrastructure, virtual machines, containers, serverless applications, industrial systems, and embedded devices.",
+        "Each architecture creates different advantages, limitations, responsibilities, and security concerns. Security+ expects you to recognize both the architecture and the tradeoff created by choosing it.",
+        "Use this sequence: architecture model, security implication, then business tradeoff."
+      ],
+      "entries": [
+        {
+          "title": "Architecture and Infrastructure Concepts",
+          "paragraphs": [
+            "Architecture describes how computing environments and their supporting systems are designed and connected. Infrastructure is the collection of resources that makes that design operate."
+          ],
+          "recognitionCue": "Identify the design first, then identify the security consequence of using it."
+        }
+      ],
+      "callout": "Do not ask only, 'What architecture is this?' Also ask, 'What security consequence comes with choosing it?'"
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud",
+      "paragraphs": [
+        "Cloud computing provides servers, storage, applications, networking, databases, and other computing resources through an external cloud environment.",
+        "Cloud can improve scalability and deployment speed, but moving a workload does not make security responsibility disappear."
+      ],
+      "entries": [
+        {
+          "title": "Cloud",
+          "paragraphs": [
+            "The provider hosts the computing resources and delivers them as services over a network."
+          ],
+          "memoryHook": "The infrastructure moved; responsibility did not vanish.",
+          "recognitionCue": "Provider-hosted computing resources delivered as services -> Cloud"
+        }
+      ]
+    },
+    {
+      "id": "responsibility-matrix",
+      "title": "Responsibility Matrix",
+      "paragraphs": [
+        "A responsibility matrix identifies which cloud security duties belong to the provider and which belong to the customer. The division changes with the service model."
+      ],
+      "entries": [
+        {
+          "title": "Responsibility Matrix",
+          "paragraphs": [
+            "The matrix may assign responsibility for physical infrastructure, operating systems, applications, data, identities, and configuration."
+          ],
+          "memoryHook": "Who secures what?",
+          "recognitionCue": "Determine whether provider or customer owns a security duty -> Responsibility matrix"
+        }
+      ]
+    },
+    {
+      "id": "hybrid-and-third-party",
+      "title": "Hybrid and Third-Party Considerations",
+      "paragraphs": [
+        "Cloud decisions can connect the organization to both its own infrastructure and outside providers. Security must cover those boundaries and dependencies."
+      ],
+      "entries": [
+        {
+          "title": "Hybrid Considerations",
+          "paragraphs": [
+            "A hybrid environment combines cloud resources with infrastructure that remains on premises. Identity, connectivity, access controls, monitoring, and data movement must work securely across both environments."
+          ],
+          "memoryHook": "Two environments must behave like one secure environment.",
+          "recognitionCue": "Cloud plus on-premises infrastructure -> Hybrid considerations"
+        },
+        {
+          "title": "Third-Party Vendors",
+          "paragraphs": [
+            "Outside vendors may store data, operate infrastructure, provide applications, or manage services. The organization becomes dependent on the vendor's security, availability, recovery, patching, and continuity."
+          ],
+          "recognitionCue": "Security or availability depends on an outside provider -> Third-party vendor consideration"
+        }
+      ]
+    },
+    {
+      "id": "iac-and-serverless",
+      "title": "Infrastructure as Code and Serverless",
+      "paragraphs": [
+        "Both models increase automation, but neither removes the need for secure configuration, permissions, application code, and data protection."
+      ],
+      "entries": [
+        {
+          "title": "Infrastructure as Code (IaC)",
+          "paragraphs": [
+            "IaC uses machine-readable code or configuration files to define and deploy infrastructure consistently. It supports automation and reduces drift, but one insecure template can reproduce the same weakness many times."
+          ],
+          "memoryHook": "Automate the infrastructure, but secure the template.",
+          "recognitionCue": "Infrastructure created and configured through code -> IaC"
+        },
+        {
+          "title": "Serverless",
+          "paragraphs": [
+            "Serverless computing lets customers run applications or event-driven functions without directly managing the underlying servers. Servers still exist; the provider manages much of that infrastructure while the customer remains responsible for code, permissions, data, and APIs."
+          ],
+          "memoryHook": "No server management does not mean no servers.",
+          "recognitionCue": "Provider manages the servers while the customer runs code -> Serverless"
+        }
+      ]
+    },
+    {
+      "id": "microservices",
+      "title": "Microservices",
+      "paragraphs": [
+        "A microservices architecture divides an application into smaller independent services. Each service performs a function and communicates with other services."
+      ],
+      "entries": [
+        {
+          "title": "Microservices",
+          "paragraphs": [
+            "Independent deployment and scaling can improve flexibility, but more services also create more APIs, authentication relationships, and service-to-service communication to secure."
+          ],
+          "memoryHook": "One large application becomes many smaller services.",
+          "recognitionCue": "Application divided into small independently deployable services -> Microservices"
+        }
+      ]
+    },
+    {
+      "id": "network-infrastructure",
+      "title": "Network Infrastructure",
+      "paragraphs": [
+        "Network infrastructure includes the routers, switches, links, and supporting systems that provide connectivity. Its design controls how systems communicate and how strongly they are separated."
+      ],
+      "entries": [
+        {
+          "title": "Network Infrastructure",
+          "paragraphs": [
+            "Security implications include physical isolation, air gaps, logical segmentation, and software-defined networking."
+          ],
+          "recognitionCue": "Connectivity and separation provided by network systems -> Network infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "physical-isolation-and-air-gaps",
+      "title": "Physical Isolation and Air Gaps",
+      "paragraphs": [
+        "Physical separation removes a direct physical connection between environments. An air-gapped system has no normal network path to other networks."
+      ],
+      "entries": [
+        {
+          "title": "Physical Isolation",
+          "paragraphs": [
+            "Physical isolation separates systems by preventing them from sharing a direct physical connection."
+          ],
+          "recognitionCue": "Separation created by physical infrastructure -> Physical isolation"
+        },
+        {
+          "title": "Air-Gapped",
+          "paragraphs": [
+            "An air gap reduces remote attack exposure, but removable media and physical access can still introduce risk."
+          ],
+          "memoryHook": "No cable, no Wi-Fi, no normal network path.",
+          "recognitionCue": "Deliberately disconnected from normal networks -> Air-gapped"
+        }
+      ]
+    },
+    {
+      "id": "logical-segmentation-and-sdn",
+      "title": "Logical Segmentation and SDN",
+      "paragraphs": [
+        "Logical controls can separate traffic and centrally direct network behavior while still using shared physical infrastructure."
+      ],
+      "entries": [
+        {
+          "title": "Logical Segmentation",
+          "paragraphs": [
+            "Logical segmentation uses VLANs, network zones, access-control rules, or similar configuration to separate traffic."
+          ],
+          "memoryHook": "Same infrastructure, different logical neighborhoods.",
+          "recognitionCue": "Network separated through configuration -> Logical segmentation"
+        },
+        {
+          "title": "Software-Defined Networking (SDN)",
+          "paragraphs": [
+            "SDN uses centralized software-based control to manage network policies and forwarding behavior. It can improve automation and change speed, while making the control plane an important security dependency."
+          ],
+          "memoryHook": "Software tells the network how to behave.",
+          "recognitionCue": "Programmable centralized control of network behavior -> SDN"
+        }
+      ],
+      "table": {
+        "caption": "Physical and logical network separation",
+        "headers": [
+          "Model",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Air gap",
+            "No normal network path"
+          ],
+          [
+            "Logical segmentation",
+            "Controlled network paths on shared infrastructure"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "on-premises",
+      "title": "On-Premises",
+      "paragraphs": [
+        "On-premises infrastructure is owned or directly operated by the organization in its own environment."
+      ],
+      "entries": [
+        {
+          "title": "On-Premises",
+          "paragraphs": [
+            "The organization gains direct control while also accepting direct responsibility for servers, networking, storage, physical security, power, cooling, and patching."
+          ],
+          "memoryHook": "More direct control means more direct responsibility.",
+          "recognitionCue": "Organization directly operates infrastructure in its facilities -> On-premises"
+        }
+      ]
+    },
+    {
+      "id": "centralized-and-decentralized",
+      "title": "Centralized and Decentralized Architecture",
+      "paragraphs": [
+        "The placement of control changes management consistency, independence, and dependence on individual components."
+      ],
+      "entries": [
+        {
+          "title": "Centralized vs. Decentralized",
+          "paragraphs": [
+            "A centralized architecture concentrates control or resources in one location or management system. This can simplify policy and monitoring but increases dependence on the central component.",
+            "A decentralized architecture distributes control across systems or locations. This reduces reliance on one central point but can make policy consistency, management, and monitoring more difficult."
+          ],
+          "memoryHook": "Centralized means one brain; decentralized means many brains.",
+          "recognitionCue": "One control point versus distributed control -> Centralized vs. decentralized"
+        }
+      ],
+      "table": {
+        "caption": "Centralized and decentralized tradeoffs",
+        "headers": [
+          "Architecture",
+          "Typical implication"
+        ],
+        "rows": [
+          [
+            "Centralized",
+            "Consistent management with greater dependence on the central system"
+          ],
+          [
+            "Decentralized",
+            "Greater local independence with more complex coordination"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "containers-and-virtual-machines",
+      "title": "Containers and Virtual Machines",
+      "paragraphs": [
+        "Containers and virtual machines both isolate workloads, but they provide that isolation differently."
+      ],
+      "entries": [
+        {
+          "title": "Containerization",
+          "paragraphs": [
+            "Containers package applications into lightweight isolated environments that generally share the host operating-system kernel. Security depends on images, configuration, permissions, and the host kernel."
+          ],
+          "memoryHook": "A lightweight isolated application environment.",
+          "recognitionCue": "Isolated application package sharing host OS resources -> Containerization"
+        },
+        {
+          "title": "Virtualization",
+          "paragraphs": [
+            "Virtualization uses a hypervisor to run multiple virtual machines on one physical host. Each VM commonly includes its own guest operating system, applications, and virtual hardware."
+          ],
+          "memoryHook": "Several virtual computers on one physical machine.",
+          "recognitionCue": "Multiple guest systems managed through a hypervisor -> Virtualization"
+        }
+      ],
+      "table": {
+        "caption": "Container and virtual-machine distinction",
+        "headers": [
+          "Model",
+          "Operating-system relationship"
+        ],
+        "rows": [
+          [
+            "Container",
+            "Generally shares the host OS kernel"
+          ],
+          [
+            "Virtual machine",
+            "Generally has its own guest operating system"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iot",
+      "title": "Internet of Things",
+      "paragraphs": [
+        "Internet of Things devices are network-connected, purpose-built devices such as cameras, sensors, smart devices, and building controllers."
+      ],
+      "entries": [
+        {
+          "title": "Internet of Things (IoT)",
+          "paragraphs": [
+            "IoT devices may have limited computing power, weak default configurations, long lifecycles, and limited patch support."
+          ],
+          "recognitionCue": "Specialized network-connected device -> IoT"
+        }
+      ]
+    },
+    {
+      "id": "industrial-systems",
+      "title": "ICS and SCADA",
+      "paragraphs": [
+        "Industrial systems can affect manufacturing, utilities, energy, and physical processes, so a cybersecurity incident may create physical consequences."
+      ],
+      "entries": [
+        {
+          "title": "Industrial Control Systems (ICS)/SCADA",
+          "paragraphs": [
+            "ICS controls or monitors industrial processes. SCADA provides central supervision, data collection, and operator control over industrial equipment."
+          ],
+          "memoryHook": "ICS controls the process; SCADA supervises the industrial environment.",
+          "recognitionCue": "Technology monitoring or controlling industrial processes -> ICS/SCADA"
+        }
+      ]
+    },
+    {
+      "id": "rtos-and-embedded",
+      "title": "RTOS and Embedded Systems",
+      "paragraphs": [
+        "Specialized systems often operate with limited resources, long lifecycles, difficult patching, or strict timing requirements."
+      ],
+      "entries": [
+        {
+          "title": "Real-Time Operating System (RTOS)",
+          "paragraphs": [
+            "An RTOS responds to events within predictable timing requirements. In these environments, an answer must be correct and arrive on time."
+          ],
+          "recognitionCue": "Strict, predictable response timing -> RTOS"
+        },
+        {
+          "title": "Embedded Systems",
+          "paragraphs": [
+            "An embedded system is a computer built into another device for a specific function, such as a vehicle, appliance, medical device, or industrial machine. An IoT device may contain an embedded system, but embedded does not automatically mean network-connected."
+          ],
+          "recognitionCue": "Computer built into another device for a specific function -> Embedded system"
+        }
+      ]
+    },
+    {
+      "id": "high-availability",
+      "title": "High Availability",
+      "paragraphs": [
+        "High availability is designed to keep systems and services accessible with minimal interruption."
+      ],
+      "entries": [
+        {
+          "title": "High Availability",
+          "paragraphs": [
+            "Redundancy, failover, clustering, and load balancing can allow service to continue when a component fails."
+          ],
+          "memoryHook": "One component fails, but the service keeps going.",
+          "recognitionCue": "Redundancy designed to minimize downtime -> High availability"
+        }
+      ]
+    },
+    {
+      "id": "architecture-considerations",
+      "title": "Architecture Considerations",
+      "paragraphs": [
+        "Security+ may describe an architecture and ask about its operational or business tradeoff rather than asking for the technology name."
+      ],
+      "entries": [
+        {
+          "title": "Considerations",
+          "paragraphs": [
+            "Architecture decisions must balance security, availability, resilience, cost, responsiveness, scalability, deployment, risk, recovery, patching, power, and compute."
+          ],
+          "recognitionCue": "Collective operational and business factors used to choose an architecture -> Considerations"
+        }
+      ]
+    },
+    {
+      "id": "availability-and-resilience",
+      "title": "Availability and Resilience",
+      "paragraphs": [
+        "Availability and resilience are related, but they answer different questions."
+      ],
+      "entries": [
+        {
+          "title": "Availability",
+          "paragraphs": [
+            "Availability means authorized users can access systems and data when needed."
+          ],
+          "recognitionCue": "Can authorized users access the service? -> Availability"
+        },
+        {
+          "title": "Resilience",
+          "paragraphs": [
+            "Resilience is the ability to withstand disruption and continue operating or recover."
+          ],
+          "memoryHook": "Take the hit and recover.",
+          "recognitionCue": "Withstand or recover from disruption -> Resilience"
+        }
+      ]
+    },
+    {
+      "id": "cost-performance-and-growth",
+      "title": "Cost, Responsiveness, Scalability, and Deployment",
+      "paragraphs": [
+        "An architecture must satisfy business requirements as well as technical security requirements."
+      ],
+      "entries": [
+        {
+          "title": "Cost",
+          "paragraphs": [
+            "Cost includes the financial impact of hardware, licensing, staffing, cloud charges, maintenance, and support."
+          ],
+          "recognitionCue": "Financial impact of an architecture -> Cost"
+        },
+        {
+          "title": "Responsiveness",
+          "paragraphs": [
+            "Responsiveness describes how quickly a system reacts to requests or events. Latency can reduce responsiveness."
+          ],
+          "recognitionCue": "How quickly the system reacts -> Responsiveness"
+        },
+        {
+          "title": "Scalability",
+          "paragraphs": [
+            "Scalability is the ability to increase or decrease capacity as demand changes."
+          ],
+          "memoryHook": "Can it grow when demand grows?",
+          "recognitionCue": "Add or remove capacity as demand changes -> Scalability"
+        },
+        {
+          "title": "Ease of Deployment",
+          "paragraphs": [
+            "Cloud platforms, IaC, containers, and other models can make systems faster or more consistent to deploy."
+          ],
+          "recognitionCue": "How simply and quickly a solution can be placed into service -> Ease of deployment"
+        }
+      ]
+    },
+    {
+      "id": "risk-recovery-and-patching",
+      "title": "Risk, Recovery, and Patching",
+      "paragraphs": [
+        "Architecture choices affect who accepts risk, how easily systems recover, and whether security fixes can be used."
+      ],
+      "entries": [
+        {
+          "title": "Risk Transference",
+          "paragraphs": [
+            "Risk transference moves some financial or operational risk to another party through contracts, insurance, or third-party services. The risk does not disappear."
+          ],
+          "memoryHook": "Someone else accepts part of the risk.",
+          "recognitionCue": "Shift specified risk to another party -> Risk transference"
+        },
+        {
+          "title": "Ease of Recovery",
+          "paragraphs": [
+            "Redundancy, backups, replicas, and automated deployment can make an environment easier to restore after disruption."
+          ],
+          "recognitionCue": "How readily a system can be restored -> Ease of recovery"
+        },
+        {
+          "title": "Patch Availability",
+          "paragraphs": [
+            "Patch availability asks whether a vendor or provider has released a fix for a discovered weakness."
+          ],
+          "recognitionCue": "A vendor security fix exists -> Patch availability"
+        },
+        {
+          "title": "Inability to Patch",
+          "paragraphs": [
+            "A patch may exist but be unsafe to apply because of legacy dependencies, compatibility, industrial requirements, or downtime restrictions. Compensating controls may be necessary."
+          ],
+          "memoryHook": "The fix exists, but the environment cannot safely install it.",
+          "recognitionCue": "Update cannot be applied without unacceptable impact -> Inability to patch"
+        }
+      ]
+    },
+    {
+      "id": "power-and-compute",
+      "title": "Power and Compute",
+      "paragraphs": [
+        "Architecture planning must provide the physical and processing resources required by the workload."
+      ],
+      "entries": [
+        {
+          "title": "Power",
+          "paragraphs": [
+            "Power considerations include electrical capacity, redundancy, and backup power."
+          ],
+          "recognitionCue": "Electrical capacity and continuity requirements -> Power"
+        },
+        {
+          "title": "Compute",
+          "paragraphs": [
+            "Compute refers to processing resources such as CPU and memory. The architecture must provide enough compute capacity for its workloads."
+          ],
+          "recognitionCue": "Processing and memory capacity required by workloads -> Compute"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Identify the architecture first, then identify the responsibility, limitation, or business tradeoff the scenario is testing."
+      ],
+      "bullets": [
+        "Provider and customer duty split -> Responsibility matrix",
+        "Cloud plus local infrastructure -> Hybrid",
+        "Outside provider dependency -> Third-party vendor",
+        "Infrastructure deployed through code -> IaC",
+        "Provider manages servers beneath customer code -> Serverless",
+        "Application divided into smaller services -> Microservices",
+        "No normal network path -> Air gap",
+        "Configuration-based network separation -> Logical segmentation",
+        "Software-controlled network -> SDN",
+        "Organization operates local infrastructure -> On-premises",
+        "One central control point -> Centralized",
+        "Distributed control -> Decentralized",
+        "Shared host-kernel environment -> Container",
+        "Complete guest operating system -> Virtual machine",
+        "Connected specialized device -> IoT",
+        "Industrial process control -> ICS/SCADA",
+        "Strict predictable timing -> RTOS",
+        "Computer inside another device -> Embedded system",
+        "Redundancy keeps service operating -> High availability",
+        "Authorized access when needed -> Availability",
+        "Withstand or recover from disruption -> Resilience",
+        "Capacity grows with demand -> Scalability",
+        "Risk shifted to another party -> Risk transference",
+        "Vendor fix exists -> Patch availability",
+        "Fix cannot safely be installed -> Inability to patch"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Serverless does not mean no servers exist. It means the customer does not directly manage the underlying servers.",
+        "Containers generally share the host OS kernel. Virtual machines generally have their own guest operating systems.",
+        "An air gap is physical separation with no normal network path. Logical segmentation creates controlled separation through configuration.",
+        "Hybrid means cloud plus on-premises infrastructure. Multi-cloud means using multiple cloud providers and is a different concept.",
+        "Patch availability asks whether a fix exists. Inability to patch means the fix may exist but cannot be safely applied.",
+        "Availability asks whether the service is accessible. Resilience asks whether it can withstand disruption or recover."
+      ],
+      "callout": "Choose the architecture that fits the requirement, then verify that its security and business tradeoff also fits."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to connect each clue to its most direct architecture model or consideration."
+      ],
+      "bullets": [
+        "Who secures what? -> Responsibility matrix",
+        "Cloud plus local -> Hybrid",
+        "Outside provider dependency -> Third party",
+        "Infrastructure through code -> IaC",
+        "Provider manages servers -> Serverless",
+        "Small independent application services -> Microservices",
+        "Physically disconnected -> Air gap",
+        "Configuration-based separation -> Logical segmentation",
+        "Software-controlled network -> SDN",
+        "Organization runs local infrastructure -> On-premises",
+        "One central brain -> Centralized",
+        "Distributed control -> Decentralized",
+        "Shared OS environment -> Container",
+        "Full virtual computer -> Virtual machine",
+        "Connected specialized device -> IoT",
+        "Industrial control and supervision -> ICS/SCADA",
+        "Strict timing -> RTOS",
+        "Computer inside another device -> Embedded system",
+        "Redundant operation -> High availability",
+        "Keep the service accessible -> Availability",
+        "Survive or recover -> Resilience",
+        "Grow capacity -> Scalability",
+        "Shift risk -> Risk transference",
+        "Fix exists -> Patch availability",
+        "Cannot apply the fix -> Inability to patch"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Identify both the architecture and the cloud-governance tool described by the scenario.",
+    "prompt": "An organization keeps a regulated database in its own data center but runs a customer application in a public cloud. Its design document separately identifies which security duties belong to the cloud provider and which belong to the customer.",
+    "fields": [
+      {
+        "id": "architecture-model",
+        "label": "Combined environment architecture",
+        "choices": [
+          "Hybrid considerations",
+          "On-premises",
+          "Serverless",
+          "Decentralized architecture"
+        ],
+        "answer": "Hybrid considerations"
+      },
+      {
+        "id": "cloud-governance-tool",
+        "label": "Provider/customer duty document",
+        "choices": [
+          "Responsibility matrix",
+          "Infrastructure as code (IaC)",
+          "Risk transference",
+          "Logical segmentation"
+        ],
+        "answer": "Responsibility matrix"
+      }
+    ],
+    "correctFeedback": "Correct. Combining an on-premises database with a public-cloud application creates a hybrid environment, while the responsibility matrix identifies which security duties belong to the provider and the customer.",
+    "retryFeedback": "Not quite. First identify the model that combines cloud and on-premises resources. Then identify the document that answers, 'Who secures what?' Review Hybrid Considerations and the Responsibility Matrix, then try again."
+  }
+}

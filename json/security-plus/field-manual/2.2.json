@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Explain Common Threat Vectors and Attack Surfaces",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Attackers need a way to reach their target. A threat vector is the path or method an attacker uses to deliver an attack or gain access.",
+        "An attack surface is the collection of exposed points an attacker could potentially target.",
+        "Use two questions: How does the attack reach the target, and what exposed weakness or entry point can the attacker use?"
+      ],
+      "callout": "Vector = HOW the attack reaches you · Attack surface = WHERE the attacker can target you"
+    },
+    {
+      "id": "message-based-threat-vectors",
+      "title": "Message-Based Threat Vectors",
+      "paragraphs": [
+        "Attackers commonly use communication systems to deliver malicious links, attachments, fake login requests, fraudulent instructions, and other social-engineering messages. The message platform becomes the threat vector."
+      ],
+      "entries": [
+        {
+          "title": "Email",
+          "paragraphs": [
+            "Email is one of the most common ways attackers reach users. A malicious email may contain a dangerous attachment, a link to a fake website, a credential-stealing request, or manipulative instructions."
+          ],
+          "memoryHook": "The attack arrived in the inbox.",
+          "recognitionCue": "Malicious content delivered through email → Email vector"
+        },
+        {
+          "title": "Short Message Service (SMS)",
+          "paragraphs": [
+            "Attackers may send text messages that try to make users click a malicious link, call a fraudulent number, reveal credentials, or provide sensitive information."
+          ],
+          "memoryHook": "The attack arrived as a text.",
+          "recognitionCue": "Attack delivered through a text message → SMS vector"
+        },
+        {
+          "title": "Instant Messaging (IM)",
+          "paragraphs": [
+            "Attackers can use chat or collaboration platforms. A malicious message may appear to come from a coworker, manager, friend, or another trusted account."
+          ],
+          "memoryHook": "The attack arrived through chat.",
+          "recognitionCue": "Attack delivered through a chat or messaging platform → Instant messaging"
+        }
+      ],
+      "table": {
+        "caption": "Message vector recognition sheet",
+        "headers": [
+          "Message vector",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Email",
+            "Arrives in an email inbox"
+          ],
+          [
+            "SMS",
+            "Arrives as a text message"
+          ],
+          [
+            "IM",
+            "Arrives through chat or instant messaging"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "image-based-threats",
+      "title": "Image-Based Threats",
+      "paragraphs": [
+        "An attacker may use an image to display a malicious QR code, hide information, direct a victim to a malicious resource, or exploit vulnerable software that processes image files."
+      ],
+      "entries": [
+        {
+          "title": "Image-Based",
+          "paragraphs": [
+            "In this vector, the image or visual content is part of the attack path rather than merely decoration."
+          ],
+          "memoryHook": "The image itself is part of the attack path.",
+          "recognitionCue": "Image or visual content delivers or triggers the attack → Image-based vector"
+        }
+      ]
+    },
+    {
+      "id": "file-based-threats",
+      "title": "File-Based Threats",
+      "paragraphs": [
+        "A file-based threat vector uses a file to deliver malicious content. Attackers may disguise dangerous documents, PDFs, archives, executables, or scripts as legitimate files.",
+        "The attack may begin when the victim opens the file, executes it, or enables malicious content."
+      ],
+      "entries": [
+        {
+          "title": "File-Based",
+          "paragraphs": [
+            "The file carries the malicious content and becomes the delivery path."
+          ],
+          "memoryHook": "Open the file → trigger the attack.",
+          "recognitionCue": "Malicious content delivered through a file → File-based vector"
+        }
+      ]
+    },
+    {
+      "id": "voice-call",
+      "title": "Voice Call",
+      "paragraphs": [
+        "Attackers may use telephone or voice communication to manipulate users. The caller might pretend to be technical support, a bank, a manager, a vendor, or a government agency."
+      ],
+      "entries": [
+        {
+          "title": "Voice Call",
+          "paragraphs": [
+            "The spoken conversation is the path the attacker uses to reach the victim."
+          ],
+          "memoryHook": "The attacker is talking directly to the victim.",
+          "recognitionCue": "Attack delivered through spoken communication → Voice-call vector"
+        }
+      ]
+    },
+    {
+      "id": "removable-devices",
+      "title": "Removable Devices",
+      "paragraphs": [
+        "A removable device can physically carry malicious content into an environment. Examples include USB flash drives, external drives, and other removable media.",
+        "An attacker might intentionally leave a device where someone is likely to find it and connect it to a computer."
+      ],
+      "entries": [
+        {
+          "title": "Removable Device",
+          "paragraphs": [
+            "The physical media crosses the boundary and introduces the threat."
+          ],
+          "memoryHook": "The physical device carries the attack inside.",
+          "recognitionCue": "USB or removable media introduces the threat → Removable-device vector"
+        }
+      ]
+    },
+    {
+      "id": "vulnerable-software",
+      "title": "Vulnerable Software",
+      "paragraphs": [
+        "Software with exploitable weaknesses increases the attack surface. A vulnerability may exist because of programming flaws, missing patches, poor configuration, or outdated components."
+      ],
+      "entries": [
+        {
+          "title": "Vulnerable Software",
+          "paragraphs": [
+            "The attacker targets a weakness in software that the system already runs."
+          ],
+          "memoryHook": "The attacker found a weakness in something already running.",
+          "recognitionCue": "Exploitable weakness in software → Vulnerable software"
+        }
+      ]
+    },
+    {
+      "id": "client-based-and-agentless",
+      "title": "Client-Based and Agentless",
+      "paragraphs": [
+        "Client-based and agentless describe whether a dedicated software component must be installed on an endpoint. Both designs still expose components that must be secured."
+      ],
+      "entries": [
+        {
+          "title": "Client-Based",
+          "paragraphs": [
+            "A client-based solution installs software or an agent directly on an endpoint. The local client must be maintained, patched, and configured correctly, and every installed component can add to the attack surface."
+          ],
+          "memoryHook": "The software lives on the endpoint.",
+          "recognitionCue": "Dedicated software or agent installed locally → Client-based"
+        },
+        {
+          "title": "Agentless",
+          "paragraphs": [
+            "An agentless solution does not install a dedicated software agent on every endpoint. It may use existing network services, APIs, or remote-management protocols instead. Those interfaces still need to be secured."
+          ],
+          "memoryHook": "No dedicated local agent.",
+          "recognitionCue": "Existing interfaces used without a dedicated endpoint agent → Agentless"
+        }
+      ]
+    },
+    {
+      "id": "unsupported-systems-and-applications",
+      "title": "Unsupported Systems and Applications",
+      "paragraphs": [
+        "An unsupported system or application no longer receives normal vendor support. That may mean no security patches, bug fixes, or updates for newly discovered vulnerabilities.",
+        "The system may continue to work normally, but attackers can keep exploiting weaknesses the vendor will no longer fix."
+      ],
+      "entries": [
+        {
+          "title": "Unsupported Systems and Applications",
+          "paragraphs": [
+            "Working normally does not mean the system remains secure after vendor support ends."
+          ],
+          "memoryHook": "Still works ≠ still secure.",
+          "recognitionCue": "Vendor no longer provides security fixes → Unsupported system or application"
+        }
+      ]
+    },
+    {
+      "id": "unsecure-networks",
+      "title": "Unsecure Networks",
+      "paragraphs": [
+        "Network connections can create attack paths. Security+ identifies wireless, wired, and Bluetooth connections as network surfaces that require appropriate protection."
+      ],
+      "entries": [
+        {
+          "title": "Wireless",
+          "paragraphs": [
+            "Wireless networks communicate through radio signals. Poor encryption, weak authentication, rogue access points, and misconfiguration can expose the network."
+          ],
+          "memoryHook": "The network travels through the air.",
+          "recognitionCue": "Wi-Fi or radio-based network exposure → Wireless"
+        },
+        {
+          "title": "Wired",
+          "paragraphs": [
+            "A person with access to an Ethernet connection may connect an unauthorized device, reach internal resources, or capture network traffic. A cable does not automatically make a network secure."
+          ],
+          "memoryHook": "Physical network access still requires protection.",
+          "recognitionCue": "Physical wired network connection becomes the attack path → Wired"
+        },
+        {
+          "title": "Bluetooth",
+          "paragraphs": [
+            "Bluetooth provides short-range wireless communication. Insecure configuration or vulnerable implementations can expose phones, computers, headsets, IoT devices, and other nearby systems."
+          ],
+          "memoryHook": "Short-range wireless between devices.",
+          "recognitionCue": "Nearby device-to-device wireless communication → Bluetooth"
+        }
+      ]
+    },
+    {
+      "id": "open-service-ports",
+      "title": "Open Service Ports",
+      "paragraphs": [
+        "Network services communicate through ports. An open port means a service is accepting network communication, but an open port is not automatically a vulnerability.",
+        "Risk increases when the service is unnecessary, vulnerable, misconfigured, or exposed to systems that should not reach it."
+      ],
+      "entries": [
+        {
+          "title": "Open Service Ports",
+          "paragraphs": [
+            "Every unnecessary reachable service adds another possible entry point to the attack surface."
+          ],
+          "memoryHook": "Every unnecessary open door increases exposure.",
+          "recognitionCue": "Reachable network service increases attack surface → Open service port"
+        }
+      ]
+    },
+    {
+      "id": "default-credentials",
+      "title": "Default Credentials",
+      "paragraphs": [
+        "Many devices and applications ship with default usernames, passwords, or administrator accounts. Attackers may already know those defaults.",
+        "If the organization never changes them, an attacker may log in without exploiting a software vulnerability."
+      ],
+      "entries": [
+        {
+          "title": "Default Credentials",
+          "paragraphs": [
+            "Manufacturer-provided credentials are predictable and must not remain active."
+          ],
+          "memoryHook": "The factory password is not a secret.",
+          "recognitionCue": "Manufacturer-provided credentials remain unchanged → Default credentials"
+        }
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "title": "Supply Chain",
+      "paragraphs": [
+        "A supply-chain attack reaches an organization through a trusted third party, product, service, or supplier. Instead of attacking the target directly, the attacker compromises a relationship the target already trusts."
+      ],
+      "entries": [
+        {
+          "title": "Managed Service Providers (MSPs)",
+          "paragraphs": [
+            "An MSP manages technology or IT services for customers and may hold administrative access, remote-management tools, privileged credentials, and connections to multiple customers. Compromising one MSP may provide paths into several organizations."
+          ],
+          "recognitionCue": "Third-party IT management company becomes the attack path → MSP"
+        },
+        {
+          "title": "Vendors",
+          "paragraphs": [
+            "A vendor provides products or services. Attackers may compromise vendor accounts, software, updates, remote access, or support systems."
+          ],
+          "recognitionCue": "Product or service provider becomes the attack path → Vendor"
+        },
+        {
+          "title": "Suppliers",
+          "paragraphs": [
+            "A supplier provides goods, components, or resources. A compromised component or upstream supplier may introduce risk before the final organization receives the product."
+          ],
+          "recognitionCue": "Upstream provider introduces the threat → Supplier"
+        }
+      ],
+      "table": {
+        "caption": "Supply-chain recognition sheet",
+        "headers": [
+          "Relationship",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "MSP",
+            "Third party manages IT or services"
+          ],
+          [
+            "Vendor",
+            "Provides a product or service"
+          ],
+          [
+            "Supplier",
+            "Provides upstream goods, components, or resources"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "human-vectors-and-social-engineering",
+      "title": "Human Vectors and Social Engineering",
+      "paragraphs": [
+        "Social engineering manipulates people into actions that benefit an attacker. A victim may be persuaded to reveal credentials, open a file, click a link, transfer money, provide sensitive information, or grant access."
+      ],
+      "entries": [
+        {
+          "title": "Human Vectors and Social Engineering",
+          "paragraphs": [
+            "The attacker targets human trust and decision-making instead of directly defeating a technical control."
+          ],
+          "memoryHook": "Attack the person instead of the technology.",
+          "recognitionCue": "Manipulation of a human being → Social engineering"
+        }
+      ]
+    },
+    {
+      "id": "phishing-vishing-and-smishing",
+      "title": "Phishing, Vishing, and Smishing",
+      "paragraphs": [
+        "These techniques use deceptive communications to manipulate victims. The communication channel helps identify the specific form."
+      ],
+      "entries": [
+        {
+          "title": "Phishing",
+          "paragraphs": [
+            "Phishing uses deceptive electronic communications to steal credentials, deliver malware, obtain sensitive information, or redirect a victim to a fake website."
+          ],
+          "memoryHook": "The message is bait.",
+          "recognitionCue": "Deceptive electronic message designed to trick a victim → Phishing"
+        },
+        {
+          "title": "Vishing",
+          "paragraphs": [
+            "Vishing is phishing conducted through voice communication. The caller may pretend to be technical support, a financial institution, management, or another trusted person."
+          ],
+          "memoryHook": "Voice + phishing = Vishing",
+          "recognitionCue": "Voice or phone phishing → Vishing"
+        },
+        {
+          "title": "Smishing",
+          "paragraphs": [
+            "Smishing is phishing conducted through SMS or text messages."
+          ],
+          "memoryHook": "SMS + phishing = Smishing",
+          "recognitionCue": "Text-message phishing → Smishing"
+        }
+      ]
+    },
+    {
+      "id": "vector-versus-technique",
+      "title": "Message Vector vs. Social-Engineering Technique",
+      "paragraphs": [
+        "A vector describes how the communication arrived. A social-engineering technique describes what the attacker is doing through that path.",
+        "SMS is the delivery vector, while smishing is the phishing technique. A voice call is the delivery vector, while vishing is the phishing technique."
+      ],
+      "callout": "Vector = delivery path · Technique = what the attacker is doing through that path"
+    },
+    {
+      "id": "misinformation-and-disinformation",
+      "title": "Misinformation and Disinformation",
+      "paragraphs": [
+        "Both terms involve false or inaccurate information. The difference is whether deception is intentional."
+      ],
+      "entries": [
+        {
+          "title": "Misinformation",
+          "paragraphs": [
+            "Misinformation is incorrect or false information spread without necessarily intending to deceive."
+          ],
+          "memoryHook": "Wrong information.",
+          "recognitionCue": "False or inaccurate information without deliberate deception → Misinformation"
+        },
+        {
+          "title": "Disinformation",
+          "paragraphs": [
+            "Disinformation is deliberately false information created or spread to deceive."
+          ],
+          "memoryHook": "The lie is intentional.",
+          "recognitionCue": "False information intentionally used to deceive → Disinformation"
+        }
+      ]
+    },
+    {
+      "id": "impersonation-bec-and-pretexting",
+      "title": "Impersonation, BEC, and Pretexting",
+      "paragraphs": [
+        "These social-engineering techniques create trust by using a false identity, a business context, or a believable story."
+      ],
+      "entries": [
+        {
+          "title": "Impersonation",
+          "paragraphs": [
+            "Impersonation occurs when an attacker pretends to be a trusted person or organization, such as an employee, executive, help-desk technician, vendor, or trusted company."
+          ],
+          "memoryHook": "Trust me. I am someone you know.",
+          "recognitionCue": "Pretending to be a trusted identity → Impersonation"
+        },
+        {
+          "title": "Business Email Compromise (BEC)",
+          "paragraphs": [
+            "BEC uses a business email account or convincing business identity to trick someone into sending money, releasing sensitive records, or disclosing credentials."
+          ],
+          "examples": [
+            "A message appears to come from the CEO and urgently requests a wire transfer to a new account."
+          ],
+          "memoryHook": "Trusted business identity plus fraudulent request.",
+          "recognitionCue": "Business or executive email impersonation used for fraud → BEC"
+        },
+        {
+          "title": "Pretexting",
+          "paragraphs": [
+            "Pretexting uses a fabricated story or scenario to gain the victim's trust and make a request appear legitimate."
+          ],
+          "examples": [
+            "A caller claims to be from IT, invents an account problem, and asks for the user's password to fix it."
+          ],
+          "memoryHook": "Invent the story first, then ask for what you want.",
+          "recognitionCue": "Fake scenario used to gain trust → Pretexting"
+        }
+      ]
+    },
+    {
+      "id": "watering-hole-brand-impersonation-and-typosquatting",
+      "title": "Watering Hole, Brand Impersonation, and Typosquatting",
+      "paragraphs": [
+        "These techniques place deception where a target already expects to find something familiar or trusted."
+      ],
+      "entries": [
+        {
+          "title": "Watering Hole",
+          "paragraphs": [
+            "A watering-hole attack compromises a legitimate website or resource that a specific target group is already likely to visit. The attacker waits at a place the intended victims naturally use."
+          ],
+          "memoryHook": "Poison the place where the targets already gather.",
+          "recognitionCue": "Compromise a legitimate site frequently visited by the target group → Watering hole"
+        },
+        {
+          "title": "Brand Impersonation",
+          "paragraphs": [
+            "Brand impersonation copies or imitates a trusted company's logos, websites, emails, social-media accounts, or login pages so victims believe they are dealing with the real company."
+          ],
+          "memoryHook": "Make the fake look like the trusted brand.",
+          "recognitionCue": "Pretend to be a legitimate company or brand → Brand impersonation"
+        },
+        {
+          "title": "Typosquatting",
+          "paragraphs": [
+            "Typosquatting uses a domain name that resembles a legitimate one through misspellings, missing or extra letters, or similar-looking characters."
+          ],
+          "examples": [
+            "A fake domain substitutes a capital I for a lowercase l so the address looks correct at a glance."
+          ],
+          "memoryHook": "Looks right at first glance.",
+          "recognitionCue": "Look-alike or misspelled domain → Typosquatting"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "First identify how the attack arrived. Then identify the technique or exposed attack surface involved."
+      ],
+      "bullets": [
+        "Inbox → Email",
+        "Text message → SMS",
+        "Chat application → Instant messaging",
+        "Image or QR content → Image-based",
+        "Document or download → File-based",
+        "Telephone conversation → Voice call",
+        "USB or removable media → Removable device",
+        "Exploitable program → Vulnerable software",
+        "Local installed agent → Client-based",
+        "No dedicated local agent → Agentless",
+        "Vendor stopped providing fixes → Unsupported system or application",
+        "Wi-Fi → Wireless",
+        "Ethernet or network jack → Wired",
+        "Short-range device communication → Bluetooth",
+        "Reachable unnecessary service → Open service port",
+        "Factory login still active → Default credentials",
+        "Compromised third party → Supply chain",
+        "Third-party IT administrator → MSP",
+        "Manipulate a person → Social engineering",
+        "Deceptive electronic message → Phishing",
+        "Voice phishing → Vishing",
+        "SMS phishing → Smishing",
+        "Incorrect information → Misinformation",
+        "Deliberately deceptive false information → Disinformation",
+        "Pretend to be a trusted person → Impersonation",
+        "Business email fraud → BEC",
+        "Fabricated believable story → Pretexting",
+        "Compromise a site the targets already visit → Watering hole",
+        "Pretend to be a trusted company → Brand impersonation",
+        "Look-alike domain → Typosquatting"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Several terms can describe different parts of the same attack. A fraudulent text with a link to a fake banking site may involve SMS as the delivery vector, smishing as the social-engineering technique, brand impersonation as the copied identity, and typosquatting as the look-alike domain.",
+        "Misinformation is false information without required intent to deceive. Disinformation is deliberately false information created or spread to deceive.",
+        "Email is a communication vector. BEC is a specific business-email fraud technique.",
+        "A voice call is a communication vector. Vishing is phishing performed through voice.",
+        "An open port is not automatically vulnerable. It becomes a security concern when it unnecessarily exposes a vulnerable or improperly secured service."
+      ],
+      "callout": "Ask what the question wants: DELIVERY PATH, ATTACK TECHNIQUE, or EXPOSED ATTACK SURFACE."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to connect each clue to the concept it most directly identifies."
+      ],
+      "bullets": [
+        "How did it reach me? → Threat vector",
+        "Where can the attacker target me? → Attack surface",
+        "Inbox → Email",
+        "Text → SMS",
+        "Chat → IM",
+        "Image or QR → Image-based",
+        "Document or download → File-based",
+        "Phone → Voice call",
+        "USB → Removable device",
+        "Exploitable application → Vulnerable software",
+        "Installed endpoint agent → Client-based",
+        "No dedicated endpoint agent → Agentless",
+        "No more vendor patches → Unsupported system or application",
+        "Wi-Fi → Wireless",
+        "Ethernet → Wired",
+        "Short-range wireless → Bluetooth",
+        "Exposed network service → Open port",
+        "Factory username or password → Default credentials",
+        "Trusted third party compromised → Supply chain",
+        "Third-party IT provider → MSP",
+        "Manipulate a person → Social engineering",
+        "Deceptive message → Phishing",
+        "Voice phishing → Vishing",
+        "Text phishing → Smishing",
+        "Wrong information → Misinformation",
+        "Intentional false information → Disinformation",
+        "Pretend to be somebody trusted → Impersonation",
+        "Business email fraud → BEC",
+        "Invent a believable story → Pretexting",
+        "Poison a site the targets already visit → Watering hole",
+        "Copy a trusted company → Brand impersonation",
+        "Look-alike URL → Typosquatting"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Separate the communication path from the social-engineering technique used through that path.",
+    "prompt": "An attacker sends a fraudulent text message containing a link to a fake sign-in page.",
+    "fields": [
+      {
+        "id": "delivery-vector",
+        "label": "Delivery vector",
+        "choices": [
+          "SMS",
+          "Email",
+          "Voice call",
+          "Instant messaging"
+        ],
+        "answer": "SMS"
+      },
+      {
+        "id": "social-engineering-technique",
+        "label": "Social-engineering technique",
+        "choices": [
+          "Smishing",
+          "Vishing",
+          "Pretexting",
+          "Watering hole"
+        ],
+        "answer": "Smishing"
+      }
+    ],
+    "correctFeedback": "Correct. SMS identifies how the message reached the victim, while smishing identifies the phishing technique performed through that text-message channel.",
+    "retryFeedback": "Not quite. Identify the delivery path first, then name the phishing technique associated with that channel. Review Message Vector vs. Social-Engineering Technique and try again."
+  }
+}

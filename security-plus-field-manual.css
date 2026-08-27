@@ -1,0 +1,398 @@
+.security-objective-hub .world-intro-card {
+  box-sizing: border-box;
+  width: min(780px, calc(100% - 20px));
+}
+
+.security-objective-path-card {
+  margin: 28px auto;
+  padding: 22px;
+  border: 2px solid #00eaff;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(2, 25, 44, 0.96), rgba(11, 5, 28, 0.96));
+  box-shadow: inset 0 0 18px rgba(0, 234, 255, 0.09), 0 0 22px rgba(0, 234, 255, 0.5);
+  text-align: left;
+}
+
+.security-objective-path-heading span {
+  color: #00eaff;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.security-objective-path-heading h3 {
+  margin: 8px 0 18px;
+  color: #fff;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.security-objective-path-status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.security-objective-path-status p {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(0, 234, 255, 0.48);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.security-objective-path-status strong {
+  color: #ffd700;
+}
+
+.security-status-complete {
+  color: #00ff66;
+  font-weight: 700;
+}
+
+.security-objective-path-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.security-objective-path-actions .link-btn {
+  width: min(290px, 100%);
+}
+
+.security-manual-primary {
+  border-color: #00eaff;
+  box-shadow: inset 0 0 0 2px rgba(0, 234, 255, 0.1), inset 0 0 14px rgba(0, 234, 255, 0.13), 0 0 13px rgba(0, 234, 255, 0.7);
+}
+
+.security-objective-existing {
+  margin-top: 34px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.security-objective-existing h3 {
+  color: #ffd700;
+}
+
+.security-objective-existing > p {
+  line-height: 1.55;
+}
+
+.security-field-manual-page {
+  text-align: left;
+}
+
+.security-field-manual-shell {
+  box-sizing: border-box;
+  width: min(920px, calc(100% - 24px));
+  margin: 24px auto 48px;
+  padding: clamp(18px, 4vw, 36px);
+  border: 2px solid #00eaff;
+  border-radius: 14px;
+  background: radial-gradient(circle at top, rgba(0, 74, 112, 0.28), transparent 38%), rgba(2, 5, 18, 0.96);
+  box-shadow: inset 0 0 28px rgba(0, 234, 255, 0.08), 0 0 28px rgba(0, 234, 255, 0.46);
+}
+
+.security-field-manual-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.security-field-manual-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: #00eaff;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.security-field-manual-header h1 {
+  margin: 0 auto 12px;
+  color: #ffd76a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1.08;
+  text-align: center;
+  text-shadow: 0 0 16px rgba(255, 160, 0, 0.68);
+}
+
+.security-field-manual-objective {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1rem, 2.6vw, 1.28rem);
+  line-height: 1.45;
+}
+
+.security-manual-completion-note {
+  margin: 18px auto 0;
+  padding: 10px 14px;
+  border: 1px solid #00ff66;
+  border-radius: 999px;
+  color: #00ff66;
+  text-align: center;
+}
+
+.security-manual-navigation {
+  margin: 0 0 30px;
+  padding: 18px;
+  border: 1px solid rgba(182, 92, 255, 0.72);
+  border-radius: 12px;
+  background: rgba(19, 7, 38, 0.78);
+  box-shadow: inset 0 0 16px rgba(182, 92, 255, 0.12);
+}
+
+.security-manual-navigation.hidden {
+  display: none;
+}
+
+.security-manual-navigation > p {
+  margin: 0 0 14px;
+  color: #ffd700;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.security-manual-navigation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.security-manual-navigation-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 234, 255, 0.62);
+  border-radius: 999px;
+  color: #d8fbff;
+  text-decoration: none;
+}
+
+.security-manual-navigation-link:hover,
+.security-manual-navigation-link:focus-visible {
+  border-color: #ffd700;
+  color: #fff4a8;
+  outline: 0;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.security-field-section {
+  margin: 26px 0;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgba(0, 234, 255, 0.42);
+  border-radius: 12px;
+  background: rgba(5, 13, 28, 0.86);
+  scroll-margin-top: 16px;
+}
+
+.security-field-section h2 {
+  margin: 0 0 16px;
+  color: #00eaff;
+  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+}
+
+.security-field-section > p,
+.security-field-entry p {
+  line-height: 1.7;
+}
+
+.security-field-entry {
+  margin: 18px 0 0;
+  padding: 16px;
+  border-left: 4px solid #b65cff;
+  border-radius: 6px;
+  background: rgba(15, 5, 31, 0.64);
+}
+
+.security-field-entry h3 {
+  margin: 0 0 9px;
+  color: #ffd700;
+}
+
+.security-field-entry ul,
+.security-field-section ul {
+  padding-left: 24px;
+  line-height: 1.7;
+}
+
+.security-recognition-cue {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  background: rgba(55, 39, 0, 0.35);
+  color: #fff2a8;
+  font-weight: 700;
+}
+
+.security-manual-table-wrap {
+  overflow-x: auto;
+  margin-top: 18px;
+}
+
+.security-manual-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.security-manual-table caption {
+  margin-bottom: 10px;
+  color: #ffd700;
+  font-weight: 700;
+  text-align: left;
+}
+
+.security-manual-table th,
+.security-manual-table td {
+  padding: 12px;
+  border: 1px solid rgba(0, 234, 255, 0.52);
+  text-align: left;
+  vertical-align: top;
+}
+
+.security-manual-table th {
+  background: rgba(0, 95, 130, 0.35);
+  color: #00eaff;
+}
+
+.security-exam-trap {
+  border-color: #ff8a3d;
+  background: rgba(67, 18, 4, 0.52);
+  box-shadow: 0 0 16px rgba(255, 105, 45, 0.24);
+}
+
+.security-exam-trap h2 {
+  color: #ffb06b;
+}
+
+.security-mini-check {
+  border-color: #b65cff;
+  box-shadow: 0 0 20px rgba(182, 92, 255, 0.34);
+}
+
+.security-mini-check fieldset {
+  margin: 18px 0;
+  padding: 0;
+  border: 0;
+}
+
+.security-mini-check legend {
+  margin-bottom: 14px;
+  color: #ffd700;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.security-mini-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.security-mini-check label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.security-mini-check select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px;
+  border: 2px solid #00eaff;
+  border-radius: 6px;
+  background: #080816;
+  color: #fff;
+  font: inherit;
+}
+
+.security-mini-check select:focus-visible,
+.security-mini-check button:focus-visible {
+  outline: 3px solid #ffd700;
+  outline-offset: 3px;
+}
+
+.security-mini-check-feedback {
+  min-height: 28px;
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  line-height: 1.55;
+}
+
+.security-mini-check-feedback.is-correct {
+  border: 1px solid #00ff66;
+  color: #b7ffc9;
+}
+
+.security-mini-check-feedback.is-incorrect {
+  border: 1px solid #ff8a3d;
+  color: #ffd1b7;
+}
+
+.security-field-manual-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.security-field-manual-actions .link-btn {
+  width: min(360px, 100%);
+}
+
+.security-field-manual-actions .hidden {
+  display: none;
+}
+
+.security-field-error {
+  padding: 18px;
+  border: 2px solid #ff6b6b;
+  border-radius: 10px;
+  background: rgba(65, 0, 0, 0.55);
+  color: #ffd6d6;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .security-objective-path-status,
+  .security-mini-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-objective-path-card,
+  .security-field-section {
+    padding: 16px;
+  }
+
+  .security-objective-path-actions .link-btn,
+  .security-field-manual-actions .link-btn {
+    width: 100%;
+  }
+
+  .security-manual-navigation-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .security-manual-navigation-link {
+    border-radius: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .security-objective-path-card *,
+  .security-field-manual-shell * {
+    scroll-behavior: auto;
+  }
+}

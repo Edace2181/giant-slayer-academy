@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "3",
+  "objective": "3.4",
+  "title": "Explain the Importance of Resilience and Recovery in Security Architecture",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security controls cannot prevent every failure, attack, outage, or disaster. Organizations also need to keep critical services operating, recover systems, restore data, survive site failures, maintain power, and verify that recovery plans work.",
+        "Resilience is the ability to withstand a problem and continue operating. Recovery is the ability to restore normal operation after a disruption.",
+        "Use this sequence: keep operating when possible, recover when necessary, and verify the plan before a real disaster occurs."
+      ],
+      "entries": [
+        {
+          "title": "Resilience and Recovery",
+          "paragraphs": [
+            "Resilience reduces the effect of a disruption. Recovery restores systems, services, or data after the disruption has occurred."
+          ],
+          "recognitionCue": "Withstand the problem -> Resilience; restore normal operation -> Recovery"
+        }
+      ],
+      "callout": "If a system fails or a disaster occurs, how will the organization keep operating and recover?"
+    },
+    {
+      "id": "high-availability",
+      "title": "High Availability",
+      "paragraphs": [
+        "High availability is designed to keep systems and services accessible with minimal interruption. Redundant components allow service to continue when one component fails."
+      ],
+      "entries": [
+        {
+          "title": "High Availability",
+          "paragraphs": [
+            "High availability uses redundancy and rapid failover to reduce downtime for important services."
+          ],
+          "memoryHook": "One failure should not automatically stop the service.",
+          "recognitionCue": "Keep a service accessible with minimal interruption -> High availability"
+        }
+      ]
+    },
+    {
+      "id": "load-balancing-and-clustering",
+      "title": "Load Balancing and Clustering",
+      "paragraphs": [
+        "Load balancing and clustering both support availability, but they solve different parts of the problem."
+      ],
+      "entries": [
+        {
+          "title": "Load Balancing vs. Clustering",
+          "paragraphs": [
+            "Load balancing distributes requests or workloads across multiple systems to improve performance, scalability, and availability. A cluster is a coordinated group of systems that provides a service so another member can continue or take over when one system fails."
+          ],
+          "memoryHook": "Load balancing spreads the work. Clustering helps the service survive component failure.",
+          "recognitionCue": "Distribute requests -> Load balancing; coordinated redundancy or failover -> Clustering"
+        }
+      ],
+      "table": {
+        "caption": "Load balancing and clustering",
+        "headers": ["Technology", "Primary purpose"],
+        "rows": [
+          ["Load balancing", "Spread requests or workload across systems"],
+          ["Clustering", "Coordinate redundant systems so the service can continue"]
+        ]
+      }
+    },
+    {
+      "id": "site-considerations",
+      "title": "Site Considerations",
+      "paragraphs": [
+        "An organization may maintain an alternate location so operations can continue when the primary site is unavailable. The readiness, cost, and recovery speed of that location vary."
+      ],
+      "entries": [
+        {
+          "title": "Site Considerations",
+          "paragraphs": [
+            "Security+ compares hot, warm, and cold sites and expects geographic dispersion to protect against regional events."
+          ],
+          "recognitionCue": "Recovery location readiness and distance from the primary site -> Site considerations"
+        }
+      ]
+    },
+    {
+      "id": "hot-warm-cold-sites",
+      "title": "Hot, Warm, and Cold Sites",
+      "paragraphs": [
+        "Recovery sites trade cost for readiness and recovery speed."
+      ],
+      "entries": [
+        {
+          "title": "Hot Site",
+          "paragraphs": [
+            "A hot site is highly prepared and can become operational quickly. It may already contain hardware, networking, systems, applications, and current or near-current data."
+          ],
+          "memoryHook": "Ready almost immediately.",
+          "recognitionCue": "Most prepared, fastest, and most expensive recovery site -> Hot site"
+        },
+        {
+          "title": "Warm Site",
+          "paragraphs": [
+            "A warm site has some infrastructure and equipment available but requires additional setup before operations can resume."
+          ],
+          "memoryHook": "Partly ready.",
+          "recognitionCue": "Some resources ready but more preparation required -> Warm site"
+        },
+        {
+          "title": "Cold Site",
+          "paragraphs": [
+            "A cold site supplies a location and basic infrastructure but requires substantial setup. The organization may need to bring servers, networking equipment, applications, and data."
+          ],
+          "memoryHook": "The building is available, but the IT environment must be brought in.",
+          "recognitionCue": "Least prepared, slowest, and least expensive recovery site -> Cold site"
+        }
+      ],
+      "table": {
+        "caption": "Alternate-site readiness",
+        "headers": ["Site", "Readiness", "Recovery speed", "Relative cost"],
+        "rows": [
+          ["Hot", "Most prepared", "Fastest", "Highest"],
+          ["Warm", "Partially prepared", "Moderate", "Moderate"],
+          ["Cold", "Basic location and infrastructure", "Slowest", "Lowest"]
+        ]
+      }
+    },
+    {
+      "id": "geographic-dispersion",
+      "title": "Geographic Dispersion",
+      "paragraphs": [
+        "Geographic dispersion places critical systems, sites, or backups in different geographic locations so one regional event is less likely to affect everything."
+      ],
+      "entries": [
+        {
+          "title": "Geographic Dispersion",
+          "paragraphs": [
+            "Hurricanes, floods, wildfires, and regional power outages can affect nearby facilities at the same time. A recovery site should be far enough away to avoid the same regional hazard."
+          ],
+          "memoryHook": "Do not place the primary and recovery sites next door to each other.",
+          "recognitionCue": "Separate resources so they can survive a regional disaster -> Geographic dispersion"
+        }
+      ]
+    },
+    {
+      "id": "platform-diversity",
+      "title": "Platform Diversity",
+      "paragraphs": [
+        "Platform diversity uses different technologies or platforms instead of making every critical system identical."
+      ],
+      "entries": [
+        {
+          "title": "Platform Diversity",
+          "paragraphs": [
+            "Different platforms can reduce the chance that one vulnerability or failure affects the entire environment. The tradeoffs include greater complexity, additional training, and more management effort."
+          ],
+          "memoryHook": "One common weakness should not automatically affect everything.",
+          "recognitionCue": "Use different platforms to reduce common-mode failure -> Platform diversity"
+        }
+      ]
+    },
+    {
+      "id": "multi-cloud-systems",
+      "title": "Multi-Cloud Systems",
+      "paragraphs": [
+        "A multi-cloud environment uses services from more than one cloud provider."
+      ],
+      "entries": [
+        {
+          "title": "Multi-Cloud Systems",
+          "paragraphs": [
+            "Multi-cloud can reduce dependence on one provider, improve resilience, and provide flexibility, but it also creates more complex security management, operations, and cost. Multi-cloud means multiple cloud providers; hybrid means cloud plus on-premises infrastructure."
+          ],
+          "recognitionCue": "Use more than one cloud provider -> Multi-cloud"
+        }
+      ],
+      "table": {
+        "caption": "Multi-cloud and hybrid environments",
+        "headers": ["Model", "Recognition cue"],
+        "rows": [
+          ["Multi-cloud", "More than one cloud provider"],
+          ["Hybrid", "Cloud and on-premises infrastructure"]
+        ]
+      }
+    },
+    {
+      "id": "continuity-of-operations",
+      "title": "Continuity of Operations",
+      "paragraphs": [
+        "Continuity of operations focuses on keeping essential business functions running during and after a disruption. It is broader than restoring one server."
+      ],
+      "entries": [
+        {
+          "title": "Continuity of Operations",
+          "paragraphs": [
+            "Continuity may require alternate sites, trained backup personnel, communication plans, prioritized services, and redundant technology."
+          ],
+          "memoryHook": "Can the organization continue performing its critical mission?",
+          "recognitionCue": "Maintain essential business functions during disruption -> Continuity of operations"
+        }
+      ]
+    },
+    {
+      "id": "capacity-planning",
+      "title": "Capacity Planning",
+      "paragraphs": [
+        "Capacity planning ensures the organization has enough resources for normal operations, future growth, and emergencies."
+      ],
+      "entries": [
+        {
+          "title": "Capacity Planning",
+          "paragraphs": [
+            "Security+ divides capacity into people, technology, and infrastructure. Each category must be sufficient for the organization to continue operating."
+          ],
+          "recognitionCue": "Plan sufficient staffing, computing resources, and supporting facilities -> Capacity planning"
+        }
+      ]
+    },
+    {
+      "id": "people-technology-infrastructure",
+      "title": "People, Technology, and Infrastructure Capacity",
+      "paragraphs": [
+        "Capacity questions identify which kind of resource may become a bottleneck."
+      ],
+      "entries": [
+        {
+          "title": "People",
+          "paragraphs": [
+            "People capacity concerns staffing and skills: enough trained personnel, prepared backups, and protection against relying on one person who alone understands a critical system."
+          ],
+          "recognitionCue": "Staffing and skills -> People capacity"
+        },
+        {
+          "title": "Technology",
+          "paragraphs": [
+            "Technology capacity includes processing, storage, applications, systems, and licensing needed to handle the workload."
+          ],
+          "recognitionCue": "Computing resources required to operate -> Technology capacity"
+        },
+        {
+          "title": "Infrastructure",
+          "paragraphs": [
+            "Infrastructure capacity includes network bandwidth, facilities, power, cooling, and physical space that support operations."
+          ],
+          "recognitionCue": "Network, facilities, power, cooling, and space -> Infrastructure capacity"
+        }
+      ],
+      "table": {
+        "caption": "Capacity-planning categories",
+        "headers": ["Category", "Question to ask"],
+        "rows": [
+          ["People", "Do we have enough trained staff?"],
+          ["Technology", "Can the computing resources handle the workload?"],
+          ["Infrastructure", "Can the network, facility, power, and cooling support operations?"]
+        ]
+      }
+    },
+    {
+      "id": "testing",
+      "title": "Testing Recovery Plans",
+      "paragraphs": [
+        "A recovery plan that has never been tested may fail during a real incident. Testing exposes missing resources, unclear responsibilities, and technical or procedural gaps."
+      ],
+      "entries": [
+        {
+          "title": "Testing",
+          "paragraphs": [
+            "Security+ compares tabletop exercises, failover, simulation, and parallel processing. Each method provides a different level of realism and operational impact."
+          ],
+          "recognitionCue": "Verify that recovery procedures and technology actually work -> Testing"
+        }
+      ]
+    },
+    {
+      "id": "recovery-testing-methods",
+      "title": "Recovery Testing Methods",
+      "paragraphs": [
+        "Identify the method by what participants and systems actually do during the test."
+      ],
+      "entries": [
+        {
+          "title": "Tabletop Exercises",
+          "paragraphs": [
+            "A tabletop exercise is a discussion-based test. Participants walk through a hypothetical event and explain how they would respond without disrupting production."
+          ],
+          "memoryHook": "Talk through the disaster.",
+          "recognitionCue": "Discuss response to a hypothetical event -> Tabletop exercise"
+        },
+        {
+          "title": "Failover",
+          "paragraphs": [
+            "Failover moves operations from an unavailable primary system to a backup system."
+          ],
+          "memoryHook": "Primary fails, backup takes over.",
+          "recognitionCue": "Backup system takes over from the primary -> Failover"
+        },
+        {
+          "title": "Simulation",
+          "paragraphs": [
+            "A simulation creates a realistic practice event. Participants respond as though the incident were occurring without necessarily causing the real disaster."
+          ],
+          "memoryHook": "Act it out.",
+          "recognitionCue": "Realistic practice of an incident or disaster -> Simulation"
+        },
+        {
+          "title": "Parallel Processing",
+          "paragraphs": [
+            "Parallel processing runs the normal and alternate systems at the same time so the organization can compare results while production continues."
+          ],
+          "memoryHook": "Run both systems side by side.",
+          "recognitionCue": "Primary and alternate systems operate simultaneously -> Parallel processing"
+        }
+      ],
+      "table": {
+        "caption": "Recovery testing methods",
+        "headers": ["Method", "What happens"],
+        "rows": [
+          ["Tabletop", "Discuss the response"],
+          ["Simulation", "Practice a realistic event"],
+          ["Failover", "Switch to the backup"],
+          ["Parallel processing", "Run both environments"]
+        ]
+      }
+    },
+    {
+      "id": "backups",
+      "title": "Backups",
+      "paragraphs": [
+        "A backup is a copy of data maintained so information can be restored after hardware failure, accidental deletion, malware, ransomware, or disaster."
+      ],
+      "entries": [
+        {
+          "title": "Backups",
+          "paragraphs": [
+            "A useful backup must be available, protected, current, and recoverable. Creating a copy is not enough if the organization cannot restore it."
+          ],
+          "recognitionCue": "Preserved copy maintained for restoration -> Backup"
+        }
+      ]
+    },
+    {
+      "id": "onsite-offsite-and-frequency",
+      "title": "Backup Location and Frequency",
+      "paragraphs": [
+        "Where a backup is kept affects disaster resilience. How often it is created affects how much recent work may be lost."
+      ],
+      "entries": [
+        {
+          "title": "Onsite/offsite",
+          "paragraphs": [
+            "An onsite backup is stored at or near the primary environment and is usually quick to access, but the same site-wide disaster may affect production and the backup. An offsite backup is stored elsewhere and provides protection from a primary-site disaster."
+          ],
+          "recognitionCue": "Stored locally -> Onsite; stored away from the primary location -> Offsite"
+        },
+        {
+          "title": "Frequency",
+          "paragraphs": [
+            "Backup frequency describes how often recovery copies are created. More frequent backups can reduce the amount of recent data lost after an incident."
+          ],
+          "memoryHook": "How much work can the organization afford to lose?",
+          "recognitionCue": "How often recovery copies are created -> Backup frequency"
+        }
+      ]
+    },
+    {
+      "id": "backup-encryption-and-snapshots",
+      "title": "Backup Encryption and Snapshots",
+      "paragraphs": [
+        "Recovery copies need confidentiality protection, and point-in-time states provide another useful recovery tool."
+      ],
+      "entries": [
+        {
+          "title": "Backup Encryption",
+          "paragraphs": [
+            "Backups may contain the same sensitive information as production systems. Encryption protects backup confidentiality if the media or storage is accessed or stolen."
+          ],
+          "memoryHook": "A stolen backup is still stolen data.",
+          "recognitionCue": "Protect the confidentiality of recovery copies -> Backup encryption"
+        },
+        {
+          "title": "Snapshots",
+          "paragraphs": [
+            "A snapshot captures the state of a system, volume, or data at a particular point in time."
+          ],
+          "memoryHook": "A picture of the system at that moment.",
+          "recognitionCue": "Point-in-time system or data state -> Snapshot"
+        }
+      ]
+    },
+    {
+      "id": "recovery-replication-and-journaling",
+      "title": "Recovery, Replication, and Journaling",
+      "paragraphs": [
+        "These mechanisms support restoration in different ways and should not be treated as interchangeable."
+      ],
+      "entries": [
+        {
+          "title": "Recovery",
+          "paragraphs": [
+            "Recovery restores systems, services, or data after disruption. Backups must be tested to verify that usable restoration is possible."
+          ],
+          "recognitionCue": "Restore usable data or service -> Recovery"
+        },
+        {
+          "title": "Replication",
+          "paragraphs": [
+            "Replication copies data to another system or location continuously, near real time, or on a schedule. It can improve availability and geographic resilience, but it may also copy ransomware-encrypted or otherwise harmful changes."
+          ],
+          "memoryHook": "Keep another copy synchronized somewhere else.",
+          "recognitionCue": "Copy data to another system or location -> Replication"
+        },
+        {
+          "title": "Journaling",
+          "paragraphs": [
+            "Journaling records changes or transactions so they can later be replayed or used during recovery."
+          ],
+          "memoryHook": "Keep a record of what changed.",
+          "recognitionCue": "Record transactions or changes for recovery -> Journaling"
+        }
+      ],
+      "table": {
+        "caption": "Recovery data mechanisms",
+        "headers": ["Mechanism", "Primary recognition cue"],
+        "rows": [
+          ["Snapshot", "Point-in-time state"],
+          ["Backup", "Protected recovery copy"],
+          ["Replication", "Synchronized copy elsewhere"],
+          ["Journaling", "Recorded changes or transactions"]
+        ]
+      }
+    },
+    {
+      "id": "power",
+      "title": "Power Resilience",
+      "paragraphs": [
+        "Resilient systems also require electrical power. An organization needs both immediate protection and a plan for longer outages."
+      ],
+      "entries": [
+        {
+          "title": "Power",
+          "paragraphs": [
+            "Security+ compares generators and uninterruptible power supplies as complementary controls for electrical outages."
+          ],
+          "recognitionCue": "Maintain systems through an electrical outage -> Power resilience"
+        }
+      ]
+    },
+    {
+      "id": "generators-and-ups",
+      "title": "Generators and Uninterruptible Power Supplies",
+      "paragraphs": [
+        "A UPS responds immediately, while a generator supports a longer outage after it starts."
+      ],
+      "entries": [
+        {
+          "title": "Generators",
+          "paragraphs": [
+            "A generator supplies longer-term emergency electricity. It normally requires startup time but can support operations much longer than battery power alone."
+          ],
+          "memoryHook": "The generator handles the longer outage.",
+          "recognitionCue": "Longer-duration emergency power -> Generator"
+        },
+        {
+          "title": "Uninterruptible Power Supply (UPS)",
+          "paragraphs": [
+            "A UPS supplies immediate temporary battery power when utility electricity fails. It can keep systems running briefly, permit safe shutdown, or bridge the time until a generator starts."
+          ],
+          "memoryHook": "The UPS handles now.",
+          "recognitionCue": "Immediate short-term battery power -> UPS"
+        }
+      ],
+      "table": {
+        "caption": "Emergency power controls",
+        "headers": ["Control", "Response", "Duration"],
+        "rows": [
+          ["UPS", "Immediate battery power", "Short term"],
+          ["Generator", "Starts after a delay", "Longer term"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Spread requests -> Load balancing. Coordinated redundancy -> Clustering. Most ready site -> Hot. Partly ready -> Warm. Basic location -> Cold.",
+        "Separate regions -> Geographic dispersion. Different platforms -> Platform diversity. Multiple cloud providers -> Multi-cloud. Keep essential operations running -> Continuity of operations.",
+        "Staffing -> People capacity. Computing resources -> Technology capacity. Facilities, network, and power -> Infrastructure capacity.",
+        "Discuss the disaster -> Tabletop. Backup takes over -> Failover. Realistic practice event -> Simulation. Run both environments -> Parallel processing.",
+        "Local backup -> Onsite. Remote backup -> Offsite. How often -> Frequency. Protect backup data -> Encryption. Point-in-time state -> Snapshot.",
+        "Bring it back -> Recovery. Copy it elsewhere -> Replication. Record the changes -> Journaling. Immediate power -> UPS. Longer emergency power -> Generator."
+      ],
+      "entries": [
+        {
+          "title": "Availability, Continuity, and Recovery",
+          "paragraphs": [
+            "First determine whether the scenario is asking to keep a service available, continue a business mission, test a plan, recover data, recover a site, or maintain electrical power."
+          ],
+          "recognitionCue": "Identify the recovery goal before choosing the technology."
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Load balancing distributes work; clustering coordinates redundant systems.",
+        "Hot is most ready and expensive, warm is partially ready, and cold requires the most setup.",
+        "Multi-cloud uses multiple cloud providers; hybrid combines cloud and on-premises infrastructure.",
+        "A tabletop discusses an event; a simulation practices it realistically.",
+        "Failover switches to the backup; parallel processing runs both environments together.",
+        "A backup is a protected recovery copy; replication is a synchronized copy that may also reproduce harmful changes.",
+        "A snapshot records a point-in-time state; it is not automatically a complete independent backup.",
+        "A UPS supplies immediate short-term power; a generator supplies longer-term power after startup."
+      ],
+      "callout": "Ask whether the scenario needs availability, continuity, testing, data recovery, site recovery, or power resilience."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Spread workload -> Load balancing | Survive node failure -> Clustering",
+        "Ready now -> Hot site | Partly ready -> Warm site | Basic infrastructure only -> Cold site",
+        "Separate regions -> Geographic dispersion | Different platforms -> Platform diversity | Multiple cloud providers -> Multi-cloud",
+        "Keep essential operations running -> Continuity of operations",
+        "Enough staff -> People | Enough computing resources -> Technology | Enough facility, network, or power -> Infrastructure",
+        "Talk through disaster -> Tabletop | Backup takes over -> Failover | Practice the event -> Simulation | Run both environments -> Parallel processing",
+        "Local backup -> Onsite | Remote backup -> Offsite | Backup interval -> Frequency | Protect recovery copies -> Encryption",
+        "Point-in-time state -> Snapshot | Restore service or data -> Recovery | Synchronized copy -> Replication | Record changes -> Journaling",
+        "Immediate backup electricity -> UPS | Longer backup electricity -> Generator"
+      ],
+      "entries": [
+        {
+          "title": "Final Decision Cue",
+          "paragraphs": [
+            "Define the disruption, identify what must continue or be restored, and choose the control whose timing and purpose match that requirement."
+          ],
+          "recognitionCue": "Problem -> continuity or recovery requirement -> matching resilience control"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the recovery and power controls that match both requirements.",
+    "prompt": "A regional disaster makes the primary facility unavailable. The organization needs an alternate location that already has systems, applications, and current data so operations can resume quickly. During any brief utility interruption, production equipment must receive power immediately while the emergency generator starts.",
+    "fields": [
+      {
+        "id": "recovery-site",
+        "label": "Alternate recovery site",
+        "choices": [
+          "Hot site",
+          "Warm site",
+          "Cold site",
+          "Geographic dispersion"
+        ],
+        "answer": "Hot site"
+      },
+      {
+        "id": "immediate-power",
+        "label": "Immediate temporary power control",
+        "choices": [
+          "Uninterruptible power supply (UPS)",
+          "Generator",
+          "Replication",
+          "Parallel processing"
+        ],
+        "answer": "Uninterruptible power supply (UPS)"
+      }
+    ],
+    "correctFeedback": "Correct. A hot site already contains the systems, applications, and current data needed for rapid recovery. A UPS supplies immediate battery power and bridges the short delay while the generator starts.",
+    "retryFeedback": "Not quite. Choose the alternate site with the highest readiness, then choose the power control that responds immediately rather than after startup. Review Hot, Warm, and Cold Sites plus Generators and Uninterruptible Power Supplies, then try again."
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.6",
+  "title": "Given a Scenario, Implement and Maintain Identity and Access Management",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Identity and Access Management (IAM) controls who receives an identity, how that identity is verified, what the identity may access, and how long the access should remain.",
+        "Objective 4.6 asks you to manage identity through the account lifecycle and select the authentication, authorization, password, and privileged-access control that fits a scenario.",
+        "Use this lifecycle: identify, authenticate, authorize, review, and remove access when it is no longer required."
+      ],
+      "entries": [
+        {
+          "title": "IAM Decision Pattern",
+          "paragraphs": [
+            "Ask four questions: Who is the user? How is the identity proven? What is the minimum access required? For how long should that access exist?"
+          ],
+          "recognitionCue": "Authentication proves who you are; authorization determines what you may do."
+        }
+      ],
+      "callout": "Identity -> authentication -> authorization -> review -> removal"
+    },
+    {
+      "id": "account-lifecycle",
+      "title": "Account Lifecycle and Identity Proofing",
+      "paragraphs": [
+        "Secure IAM begins before a user signs in. The organization must verify the person, create the right account, assign only required permissions, and remove access promptly when circumstances change."
+      ],
+      "entries": [
+        {
+          "title": "Provisioning/De-provisioning User Accounts",
+          "paragraphs": [
+            "Provisioning creates an identity and grants the access needed for a new user or role. De-provisioning disables or removes access when a person leaves, changes roles, or finishes a contract."
+          ],
+          "memoryHook": "Join -> provision. Leave or change roles -> de-provision.",
+          "recognitionCue": "Create appropriate access or remove access that is no longer authorized -> Provisioning/de-provisioning"
+        },
+        {
+          "title": "Permission Assignments and Implications",
+          "paragraphs": [
+            "Permissions define actions such as read, write, execute, modify, delete, or administer. Every unnecessary permission increases the possible harm from mistakes, insider misuse, or a compromised account."
+          ],
+          "recognitionCue": "Grant the rights required for the role while considering what those rights enable -> Permission assignment"
+        },
+        {
+          "title": "Identity Proofing",
+          "paragraphs": [
+            "Identity proofing verifies that an applicant really is the person they claim to be before the organization creates or trusts the digital identity. It commonly occurs during enrollment, credential issuance, or a high-value access request."
+          ],
+          "memoryHook": "Before issuing the identity, prove the real person behind it.",
+          "recognitionCue": "Validate a real-world identity before account trust -> Identity proofing"
+        }
+      ]
+    },
+    {
+      "id": "federation-and-sso",
+      "title": "Federation and Single Sign-On",
+      "paragraphs": [
+        "Federation and single sign-on can work together, but they solve different IAM problems."
+      ],
+      "entries": [
+        {
+          "title": "Federation",
+          "paragraphs": [
+            "Federation creates trust between separate identity domains. A service accepts identity information from an identity provider that already knows the user."
+          ],
+          "recognitionCue": "Trust an identity issued by another organization or domain -> Federation"
+        },
+        {
+          "title": "Single Sign-On (SSO)",
+          "paragraphs": [
+            "Single sign-on lets a user authenticate once and reach multiple authorized services without entering credentials for each service again."
+          ],
+          "recognitionCue": "One authentication session reaches several authorized services -> SSO"
+        }
+      ],
+      "table": {
+        "caption": "Federation and SSO",
+        "headers": ["Concept", "Question it answers"],
+        "rows": [
+          ["Federation", "Will one identity domain trust another?"],
+          ["SSO", "Can one sign-in reach multiple resources?"]
+        ]
+      }
+    },
+    {
+      "id": "identity-protocols",
+      "title": "LDAP, OAuth, and SAML",
+      "paragraphs": [
+        "The scenario's purpose usually reveals which identity technology is required: directory access, delegated permission, or a federated assertion."
+      ],
+      "entries": [
+        {
+          "title": "Lightweight Directory Access Protocol (LDAP)",
+          "paragraphs": [
+            "LDAP is a protocol for accessing and managing directory information such as users, groups, organizational data, and authentication-related records."
+          ],
+          "recognitionCue": "Query or manage directory information -> LDAP"
+        },
+        {
+          "title": "Open Authorization (OAuth)",
+          "paragraphs": [
+            "OAuth provides delegated authorization. It lets one service receive limited permission to act on a user's behalf without receiving the user's password."
+          ],
+          "memoryHook": "You may access this resource on my behalf.",
+          "recognitionCue": "Delegated authorization without sharing the user's password -> OAuth"
+        },
+        {
+          "title": "Security Assertion Markup Language (SAML)",
+          "paragraphs": [
+            "SAML exchanges XML-based authentication and authorization assertions between an identity provider and a service provider. It is commonly used for enterprise federation and SSO."
+          ],
+          "recognitionCue": "Federated identity assertion used for enterprise SSO -> SAML"
+        }
+      ],
+      "table": {
+        "caption": "Identity protocol recognition",
+        "headers": ["Technology", "Primary clue"],
+        "rows": [
+          ["LDAP", "Directory access"],
+          ["OAuth", "Delegated authorization"],
+          ["SAML", "Federated authentication assertion / SSO"]
+        ]
+      }
+    },
+    {
+      "id": "interoperability-and-attestation",
+      "title": "Interoperability and Attestation",
+      "paragraphs": [
+        "IAM systems must work together, and access must remain justified after it is granted."
+      ],
+      "entries": [
+        {
+          "title": "Interoperability",
+          "paragraphs": [
+            "Interoperability allows identity technologies, applications, and platforms from different vendors or environments to communicate and function together."
+          ],
+          "recognitionCue": "Different IAM technologies exchange and use identity information successfully -> Interoperability"
+        },
+        {
+          "title": "Attestation",
+          "paragraphs": [
+            "Attestation is a formal review or confirmation that an identity, entitlement, or access assignment is still accurate and appropriate."
+          ],
+          "memoryHook": "Does this user still need this access?",
+          "recognitionCue": "A manager or owner periodically confirms access remains justified -> Attestation"
+        }
+      ]
+    },
+    {
+      "id": "access-control-foundations",
+      "title": "Access-Control Foundations",
+      "paragraphs": [
+        "Access controls determine who may use a resource and what actions are allowed. The model identifies how the decision is made."
+      ],
+      "entries": [
+        {
+          "title": "Access Controls",
+          "paragraphs": [
+            "Access-control mechanisms enforce authorization policy for systems, data, applications, and physical or logical resources."
+          ],
+          "recognitionCue": "Determine who may use a resource and which actions are permitted -> Access controls"
+        }
+      ]
+    },
+    {
+      "id": "mac-and-dac",
+      "title": "Mandatory and Discretionary Access Control",
+      "paragraphs": [
+        "Mandatory and discretionary models differ mainly in who controls the permissions."
+      ],
+      "entries": [
+        {
+          "title": "Mandatory Access Control",
+          "paragraphs": [
+            "Mandatory access control (MAC) uses centrally enforced labels, classifications, and clearances. A resource owner cannot simply change the security policy."
+          ],
+          "recognitionCue": "Central labels and classifications enforce access -> MAC"
+        },
+        {
+          "title": "Discretionary Access Control",
+          "paragraphs": [
+            "Discretionary access control (DAC) lets the resource owner decide who receives access."
+          ],
+          "recognitionCue": "The owner of the file or resource assigns permissions -> DAC"
+        }
+      ],
+      "table": {
+        "caption": "MAC and DAC",
+        "headers": ["Model", "Who decides?"],
+        "rows": [
+          ["MAC", "Central security policy using labels/classifications"],
+          ["DAC", "The resource owner"]
+        ]
+      }
+    },
+    {
+      "id": "role-rule-and-attribute",
+      "title": "Role-, Rule-, and Attribute-Based Access",
+      "paragraphs": [
+        "These models can sound similar. Focus on whether the decision is driven by a job, a defined rule, or a combination of characteristics."
+      ],
+      "entries": [
+        {
+          "title": "Role-Based Access Control",
+          "paragraphs": [
+            "Role-based access control (RBAC) grants permissions according to job function, such as Help Desk, Payroll, or Network Administrator."
+          ],
+          "recognitionCue": "A person's job determines permissions -> RBAC"
+        },
+        {
+          "title": "Rule-Based Access Control",
+          "paragraphs": [
+            "Rule-based access control applies predefined rules or conditions, such as allowing access only during business hours."
+          ],
+          "recognitionCue": "A defined condition determines access -> Rule-based access control"
+        },
+        {
+          "title": "Attribute-Based Access Control",
+          "paragraphs": [
+            "Attribute-based access control (ABAC) evaluates characteristics of the user, resource, device, and environment. A policy might require a Finance user on a managed device in an approved location."
+          ],
+          "recognitionCue": "A combination of user, resource, device, or environmental characteristics determines access -> ABAC"
+        }
+      ],
+      "table": {
+        "caption": "RBAC, rule-based access, and ABAC",
+        "headers": ["Model", "Decision clue"],
+        "rows": [
+          ["Role-based", "Job function"],
+          ["Rule-based", "Predefined condition"],
+          ["Attribute-based", "Characteristics and context"]
+        ]
+      }
+    },
+    {
+      "id": "time-and-least-privilege",
+      "title": "Time Restrictions and Least Privilege",
+      "paragraphs": [
+        "Authorization should be limited by both scope and, when appropriate, time."
+      ],
+      "entries": [
+        {
+          "title": "Time-of-Day Restrictions",
+          "paragraphs": [
+            "Time-of-day restrictions permit access only during approved hours, even when the user otherwise has permission."
+          ],
+          "recognitionCue": "Access is permitted only during an approved schedule -> Time-of-day restriction"
+        },
+        {
+          "title": "Least Privilege",
+          "paragraphs": [
+            "Least privilege grants only the minimum permissions required to perform the assigned task."
+          ],
+          "memoryHook": "Enough to do the job, and nothing extra.",
+          "recognitionCue": "Minimum necessary permissions -> Least privilege"
+        }
+      ]
+    },
+    {
+      "id": "mfa-foundations",
+      "title": "Multifactor Authentication Foundations",
+      "paragraphs": [
+        "Multifactor authentication requires evidence from two or more different factor categories. Two credentials from the same category do not become MFA."
+      ],
+      "entries": [
+        {
+          "title": "Multifactor Authentication",
+          "paragraphs": [
+            "MFA strengthens authentication by combining different kinds of evidence, such as a password and a security key. A password plus a PIN uses two knowledge items and is not true MFA."
+          ],
+          "recognitionCue": "Two or more different authentication factor categories -> MFA"
+        },
+        {
+          "title": "MFA Implementations",
+          "paragraphs": [
+            "MFA can be implemented through biometrics, physical or software tokens, security keys, and other mechanisms that present evidence from different factor categories."
+          ],
+          "recognitionCue": "Mechanisms used to present multiple authentication factors -> MFA implementation"
+        }
+      ]
+    },
+    {
+      "id": "mfa-implementations",
+      "title": "Biometrics, Tokens, and Security Keys",
+      "paragraphs": [
+        "The implementation tells you how the authentication evidence is produced or presented."
+      ],
+      "entries": [
+        {
+          "title": "Biometrics",
+          "paragraphs": [
+            "Biometrics use measurable physical or behavioral traits such as a fingerprint, face, or iris."
+          ],
+          "recognitionCue": "A measurable human characteristic authenticates the user -> Biometrics"
+        },
+        {
+          "title": "Hard/Soft Authentication Tokens",
+          "paragraphs": [
+            "A hard token is a separate physical authenticator. A soft token is software on a phone or computer that generates or provides authentication information."
+          ],
+          "recognitionCue": "Dedicated physical device -> Hard token; software authenticator -> Soft token"
+        },
+        {
+          "title": "Security Keys",
+          "paragraphs": [
+            "A security key is a physical cryptographic authentication device that proves possession through interfaces such as USB or NFC."
+          ],
+          "recognitionCue": "Physical cryptographic authenticator -> Security key"
+        }
+      ]
+    },
+    {
+      "id": "mfa-factors",
+      "title": "Authentication Factor Categories",
+      "paragraphs": [
+        "MFA factors classify what kind of evidence proves the identity. The category—not the number of prompts—determines whether factors are different."
+      ],
+      "entries": [
+        {
+          "title": "MFA Factors",
+          "paragraphs": [
+            "Security+ emphasizes knowledge, possession, inherence, and location as factor categories."
+          ],
+          "recognitionCue": "Categories of evidence used to verify identity -> MFA factors"
+        },
+        {
+          "title": "Something You Know",
+          "paragraphs": [
+            "A password or PIN is knowledge held by the user."
+          ],
+          "recognitionCue": "Password or PIN -> Something you know"
+        },
+        {
+          "title": "Something You Have",
+          "paragraphs": [
+            "A token, smartphone, smart card, or security key is a possession factor."
+          ],
+          "recognitionCue": "A possessed authenticator -> Something you have"
+        },
+        {
+          "title": "Something You Are",
+          "paragraphs": [
+            "A fingerprint, facial characteristic, or iris pattern is an inherence factor."
+          ],
+          "recognitionCue": "A biometric characteristic -> Something you are"
+        },
+        {
+          "title": "Somewhere You Are",
+          "paragraphs": [
+            "Location evidence can evaluate an approved office, expected country, or known network location."
+          ],
+          "recognitionCue": "Geographic or network location -> Somewhere you are"
+        }
+      ],
+      "table": {
+        "caption": "Authentication factors",
+        "headers": ["Factor", "Example"],
+        "rows": [
+          ["Know", "Password or PIN"],
+          ["Have", "Token, phone, or security key"],
+          ["Are", "Fingerprint, face, or iris"],
+          ["Somewhere", "Approved geographic or network location"]
+        ]
+      }
+    },
+    {
+      "id": "password-controls",
+      "title": "Password Concepts and Best Practices",
+      "paragraphs": [
+        "Password policy should make credentials harder to guess, limit the value of a stolen password, and help users maintain unique secrets."
+      ],
+      "entries": [
+        {
+          "title": "Password Concepts",
+          "paragraphs": [
+            "Password concepts include the policy and technology decisions that govern password authentication."
+          ],
+          "recognitionCue": "Policies and technologies governing passwords -> Password concepts"
+        },
+        {
+          "title": "Password Best Practices",
+          "paragraphs": [
+            "Good practice favors long, unique credentials, avoids reuse, protects stored secrets, and applies change requirements according to organizational risk."
+          ],
+          "recognitionCue": "Recommended controls for securely creating and managing passwords -> Password best practices"
+        },
+        {
+          "title": "Length",
+          "paragraphs": [
+            "Length is the number of characters in a password. Longer passwords generally expand the guessing space."
+          ],
+          "recognitionCue": "Number of password characters -> Length"
+        },
+        {
+          "title": "Complexity",
+          "paragraphs": [
+            "Complexity requires character variety such as uppercase, lowercase, numbers, or symbols."
+          ],
+          "recognitionCue": "Required variety of character types -> Complexity"
+        },
+        {
+          "title": "Reuse",
+          "paragraphs": [
+            "Password reuse means using the same credential across accounts or password cycles. One compromise may then expose several systems."
+          ],
+          "recognitionCue": "The same password appears on multiple accounts or cycles -> Reuse"
+        },
+        {
+          "title": "Expiration",
+          "paragraphs": [
+            "Expiration defines the point when a password must be replaced according to policy."
+          ],
+          "recognitionCue": "When a password must be changed -> Expiration"
+        },
+        {
+          "title": "Age",
+          "paragraphs": [
+            "Password age tracks how long a credential has existed and supports minimum-age or maximum-age rules."
+          ],
+          "recognitionCue": "How long a password has been in use -> Password age"
+        }
+      ]
+    },
+    {
+      "id": "password-tools",
+      "title": "Password Managers and Passwordless Authentication",
+      "paragraphs": [
+        "Tools can reduce password reuse or remove the traditional password from authentication entirely."
+      ],
+      "entries": [
+        {
+          "title": "Password Managers",
+          "paragraphs": [
+            "A password manager securely stores and manages credentials, helping users maintain long, unique passwords instead of reusing one memorable secret."
+          ],
+          "recognitionCue": "Secure vault for generating and storing unique account credentials -> Password manager"
+        },
+        {
+          "title": "Passwordless",
+          "paragraphs": [
+            "Passwordless authentication avoids a traditional memorized password and may use a security key, biometric, or device-based cryptographic credential."
+          ],
+          "recognitionCue": "Authenticate without a reusable memorized password -> Passwordless"
+        }
+      ]
+    },
+    {
+      "id": "privileged-access-management",
+      "title": "Privileged Access Management",
+      "paragraphs": [
+        "Privileged identities can make high-impact changes, so their permissions and credentials require stronger controls than ordinary user access."
+      ],
+      "entries": [
+        {
+          "title": "Privileged Access Management Tools",
+          "paragraphs": [
+            "Privileged access management (PAM) tools control, monitor, and audit elevated accounts such as administrator, root, and service identities."
+          ],
+          "recognitionCue": "Secure and control elevated identities -> PAM"
+        },
+        {
+          "title": "Just-in-Time Permissions",
+          "paragraphs": [
+            "Just-in-time (JIT) permissions grant elevated access only when needed and only for a limited approved period."
+          ],
+          "recognitionCue": "Temporary privilege is granted on demand -> JIT permissions"
+        },
+        {
+          "title": "Password Vaulting",
+          "paragraphs": [
+            "Password vaulting stores privileged credentials in a protected central repository and can control retrieval, use, and rotation."
+          ],
+          "recognitionCue": "Privileged credentials are protected in a controlled repository -> Password vaulting"
+        },
+        {
+          "title": "Ephemeral Credentials",
+          "paragraphs": [
+            "Ephemeral credentials are created for a short session or task and then expire, reducing how long a stolen credential remains useful."
+          ],
+          "recognitionCue": "Short-lived credential disappears after its task or session -> Ephemeral credential"
+        }
+      ],
+      "table": {
+        "caption": "Privileged-access controls",
+        "headers": ["Control", "Primary purpose"],
+        "rows": [
+          ["PAM", "Govern privileged identities and activity"],
+          ["JIT", "Limit when elevated permission is granted"],
+          ["Vaulting", "Protect and control privileged passwords"],
+          ["Ephemeral credential", "Limit how long the credential exists"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Use the scenario's strongest clue to identify the IAM concept before comparing the answer choices."
+      ],
+      "bullets": [
+        "Create or remove user access -> Provisioning / de-provisioning",
+        "Verify the real person during enrollment -> Identity proofing",
+        "Trust an identity across domains -> Federation",
+        "One sign-in reaches many services -> SSO",
+        "Directory access -> LDAP",
+        "Delegated permission -> OAuth",
+        "Federated identity assertion -> SAML",
+        "Review whether access is still needed -> Attestation",
+        "Central labels -> MAC; owner decides -> DAC",
+        "Job -> RBAC; condition -> rule-based; characteristics -> ABAC",
+        "Minimum permissions -> Least privilege",
+        "Different factor categories -> MFA",
+        "Physical token -> hard token; app token -> soft token",
+        "Protect elevated identities -> PAM",
+        "Temporary elevation -> JIT; protected repository -> vaulting; short-lived credential -> ephemeral"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.6 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Authentication proves identity; authorization determines permissions. Identity proofing validates the real person during enrollment, while authentication verifies a returning user during access.",
+        "Federation establishes trust between identity domains; SSO lets one authentication reach multiple resources. LDAP accesses directories, OAuth delegates authorization, and SAML carries federated assertions.",
+        "MAC is centrally enforced; DAC lets the owner decide. RBAC follows job roles, rule-based access follows defined conditions, and ABAC evaluates attributes and context.",
+        "A password plus a PIN is still one factor category. A password plus a security key combines knowledge and possession and is MFA.",
+        "JIT controls when privilege is granted, vaulting protects privileged passwords, and ephemeral credentials limit how long the credential exists."
+      ],
+      "callout": "For IAM scenarios, ask: Who is the user? How do we prove it? What should they access? For how long?"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Keep these final pairings ready for fast recognition."
+      ],
+      "bullets": [
+        "Create account -> Provision; remove account -> De-provision",
+        "Prove real identity -> Identity proofing",
+        "Trust another identity provider -> Federation",
+        "One login, many services -> SSO",
+        "Directory -> LDAP; delegated permission -> OAuth; federated assertion -> SAML",
+        "Systems work together -> Interoperability; review access -> Attestation",
+        "System labels -> MAC; owner -> DAC; job -> RBAC; rule -> rule-based; characteristics -> ABAC",
+        "Approved hours -> Time-of-day; minimum access -> Least privilege",
+        "Password/PIN -> know; token/key -> have; fingerprint/face -> are; location -> somewhere",
+        "Physical token -> hard; software token -> soft; physical cryptographic authenticator -> security key",
+        "Unique credential storage -> Password manager; no traditional password -> Passwordless",
+        "Protect admin power -> PAM; temporary elevation -> JIT; lock admin credentials -> Vaulting; short-lived credential -> Ephemeral"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the IAM technology that fits each part of the scenario.",
+    "prompt": "A scheduling application asks a user to grant it limited access to the user's contacts without revealing the user's password. Separately, an employee opens a vendor portal after the corporate identity provider sends the portal a signed federated assertion confirming the employee's authentication.",
+    "fields": [
+      {
+        "id": "delegated-access",
+        "label": "Technology for the scheduling application's limited delegated access",
+        "choices": [
+          "Open Authorization (OAuth)",
+          "Lightweight Directory Access Protocol (LDAP)",
+          "Security Assertion Markup Language (SAML)",
+          "Password vaulting"
+        ],
+        "answer": "Open Authorization (OAuth)"
+      },
+      {
+        "id": "federated-assertion",
+        "label": "Technology carrying the corporate identity assertion to the vendor portal",
+        "choices": [
+          "Security Assertion Markup Language (SAML)",
+          "Open Authorization (OAuth)",
+          "Lightweight Directory Access Protocol (LDAP)",
+          "Just-in-time permissions"
+        ],
+        "answer": "Security Assertion Markup Language (SAML)"
+      }
+    ],
+    "correctFeedback": "Correct. OAuth delegates limited authorization without sharing the user's password. SAML carries the federated authentication assertion from the identity provider to the service provider.",
+    "retryFeedback": "Not quite. Look for delegated permission without password sharing in the first clue and a federated identity assertion in the second. Review LDAP, OAuth, and SAML, then try again."
+  }
+}

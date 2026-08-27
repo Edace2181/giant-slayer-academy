@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.2",
+  "title": "Explain the Security Implications of Proper Hardware, Software, and Data Asset Management",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Organizations cannot properly secure assets they do not know they own or cannot account for. Asset management follows hardware, software, and data throughout their lifecycle.",
+        "Security begins before an asset is deployed and continues until the asset or its data is securely removed.",
+        "Use this sequence: acquire it, assign responsibility, track it, and retire it securely."
+      ],
+      "entries": [
+        {
+          "title": "Asset Lifecycle Security",
+          "paragraphs": [
+            "At every stage, ask where the asset is in its lifecycle, who is responsible for it, and what must happen to keep it secure."
+          ],
+          "recognitionCue": "Asset security begins at acquisition and ends only after disposal and retention requirements are satisfied."
+        }
+      ],
+      "callout": "You cannot secure what you do not know exists."
+    },
+    {
+      "id": "acquisition-and-procurement",
+      "title": "Acquisition and Procurement",
+      "paragraphs": [
+        "Security considerations begin when an organization obtains hardware, software, or services. The procurement process determines what is purchased and from whom."
+      ],
+      "entries": [
+        {
+          "title": "Acquisition/Procurement Process",
+          "paragraphs": [
+            "Acquisition decisions can consider vendor trust, security requirements, support availability, compatibility, and the expected product lifecycle."
+          ],
+          "memoryHook": "Security starts before the organization buys it.",
+          "recognitionCue": "Evaluate and obtain an asset securely -> Acquisition/procurement"
+        }
+      ]
+    },
+    {
+      "id": "assignment-and-accounting",
+      "title": "Assignment and Accounting",
+      "paragraphs": [
+        "Once an asset enters the organization, it must be assigned and accounted for so responsibility and handling requirements are clear."
+      ],
+      "entries": [
+        {
+          "title": "Assignment/Accounting",
+          "paragraphs": [
+            "Assignment connects an asset to an accountable owner. Accounting records the asset and its status so it remains visible throughout its operational life."
+          ],
+          "recognitionCue": "Assign responsibility and maintain accountability for an organizational asset -> Assignment/accounting"
+        }
+      ]
+    },
+    {
+      "id": "ownership-and-classification",
+      "title": "Ownership and Classification",
+      "paragraphs": [
+        "Ownership identifies who is responsible. Classification determines how carefully the asset or its information must be protected."
+      ],
+      "entries": [
+        {
+          "title": "Ownership",
+          "paragraphs": [
+            "An asset owner may make or approve decisions concerning access, protection, use, retention, and disposal."
+          ],
+          "memoryHook": "Who is accountable for this asset?",
+          "recognitionCue": "Person or group responsible for an asset -> Ownership"
+        },
+        {
+          "title": "Classification",
+          "paragraphs": [
+            "Classification identifies how sensitive, valuable, or important an asset or its information is. It guides access controls, handling, storage, protection, and disposal."
+          ],
+          "memoryHook": "How carefully must this be handled?",
+          "recognitionCue": "Determine the required protection level -> Classification"
+        }
+      ],
+      "table": {
+        "caption": "Ownership and classification",
+        "headers": ["Concept", "Question answered"],
+        "rows": [
+          ["Ownership", "Who is responsible?"],
+          ["Classification", "How must it be protected?"]
+        ]
+      }
+    },
+    {
+      "id": "monitoring-and-asset-tracking",
+      "title": "Monitoring and Asset Tracking",
+      "paragraphs": [
+        "Assets should remain visible throughout their operational life. Unknown or unmanaged assets may miss patches, monitoring, approved configurations, access controls, and proper decommissioning."
+      ],
+      "entries": [
+        {
+          "title": "Monitoring/Asset Tracking",
+          "paragraphs": [
+            "Asset tracking follows the identity, location, owner, status, and type of hardware, software, data, or other managed resources."
+          ],
+          "recognitionCue": "Keep assets visible and accountable throughout their operational life -> Monitoring/asset tracking"
+        }
+      ]
+    },
+    {
+      "id": "inventory-and-enumeration",
+      "title": "Inventory and Enumeration",
+      "paragraphs": [
+        "Inventory is the maintained record. Enumeration is the process of discovering what belongs in that record."
+      ],
+      "entries": [
+        {
+          "title": "Inventory",
+          "paragraphs": [
+            "An asset inventory records resources owned or managed by the organization, including identity, location, owner, status, and type."
+          ],
+          "memoryHook": "What assets do we have?",
+          "recognitionCue": "Maintain a record of organizational assets -> Inventory"
+        },
+        {
+          "title": "Enumeration",
+          "paragraphs": [
+            "Enumeration gathers detailed information about assets that actually exist, including devices, installed software, running services, and resources requiring management."
+          ],
+          "memoryHook": "Find and identify what is actually there.",
+          "recognitionCue": "Discover and identify assets or resources -> Enumeration"
+        }
+      ],
+      "table": {
+        "caption": "Inventory and enumeration",
+        "headers": ["Concept", "Primary role"],
+        "rows": [
+          ["Inventory", "Maintain the known asset list"],
+          ["Enumeration", "Discover assets and their details"]
+        ]
+      }
+    },
+    {
+      "id": "disposal-and-decommissioning",
+      "title": "Disposal and Decommissioning",
+      "paragraphs": [
+        "When an asset is no longer needed, it must be securely removed from service. Simply discarding hardware or deleting a file may leave sensitive information recoverable."
+      ],
+      "entries": [
+        {
+          "title": "Disposal/Decommissioning",
+          "paragraphs": [
+            "Decommissioning removes an asset from service. Disposal is the final handling of the retired asset. An asset may be decommissioned before it is physically disposed of."
+          ],
+          "recognitionCue": "Securely retire and finally handle an asset -> Disposal/decommissioning"
+        }
+      ]
+    },
+    {
+      "id": "sanitization-and-destruction",
+      "title": "Sanitization and Destruction",
+      "paragraphs": [
+        "Both methods protect retired media, but one may preserve the media for reuse while the other makes it unusable."
+      ],
+      "entries": [
+        {
+          "title": "Sanitization",
+          "paragraphs": [
+            "Sanitization removes data from media so it cannot be easily recovered. The correct method depends on the media type, data sensitivity, and organizational requirements."
+          ],
+          "memoryHook": "Make the data unrecoverable before reuse or disposal.",
+          "recognitionCue": "Securely remove recoverable data while media may remain usable -> Sanitization"
+        },
+        {
+          "title": "Destruction",
+          "paragraphs": [
+            "Destruction physically destroys storage media or hardware so it cannot be reused normally. It may be required for highly sensitive data, media that cannot be safely sanitized, or policy requirements."
+          ],
+          "memoryHook": "The media itself is permanently removed from use.",
+          "recognitionCue": "Physically render storage media unusable -> Destruction"
+        }
+      ],
+      "table": {
+        "caption": "Sanitization and destruction",
+        "headers": ["Method", "Result"],
+        "rows": [
+          ["Sanitization", "Data becomes unrecoverable while media may remain usable"],
+          ["Destruction", "The media is physically rendered unusable"]
+        ]
+      }
+    },
+    {
+      "id": "certification-and-data-retention",
+      "title": "Certification and Data Retention",
+      "paragraphs": [
+        "Secure disposal requires evidence that the process occurred and confirmation that information is not destroyed before required retention periods end."
+      ],
+      "entries": [
+        {
+          "title": "Certification",
+          "paragraphs": [
+            "Certification provides documented evidence that the required sanitization or disposal process was completed. It supports auditing, accountability, and regulatory requirements."
+          ],
+          "memoryHook": "Prove that the asset or data was disposed of correctly.",
+          "recognitionCue": "Documented proof of proper disposal or sanitization -> Certification"
+        },
+        {
+          "title": "Data Retention",
+          "paragraphs": [
+            "Data retention defines how long information must be preserved because of business, legal, regulatory, or policy requirements. Data may need to be retained elsewhere even when its original hardware is retired."
+          ],
+          "memoryHook": "Before deleting it, ask whether the organization must keep it.",
+          "recognitionCue": "Required period that information must be preserved -> Data retention"
+        }
+      ]
+    },
+    {
+      "id": "asset-lifecycle",
+      "title": "The Complete Asset Lifecycle",
+      "paragraphs": [
+        "Asset security follows a continuous sequence: acquire, assign, classify, track, monitor, decommission, sanitize or destroy, and document—while respecting data-retention requirements."
+      ],
+      "entries": [
+        {
+          "title": "Lifecycle Decision",
+          "paragraphs": [
+            "Do not jump directly from an old asset to destruction. Confirm ownership, classification, retention requirements, and the approved disposal method first."
+          ],
+          "recognitionCue": "Lifecycle stage determines the next security action."
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Evaluate the purchase or vendor -> Acquisition/procurement. Assign accountability -> Assignment/accounting.",
+        "Who is responsible -> Ownership. Required protection level -> Classification.",
+        "Maintain the asset list -> Inventory. Discover what actually exists -> Enumeration.",
+        "Securely retire an asset -> Decommissioning. Remove recoverable information -> Sanitization. Physically eliminate media -> Destruction.",
+        "Prove the disposal process occurred -> Certification. Determine how long information must remain -> Data retention."
+      ],
+      "entries": [
+        {
+          "title": "Lifecycle Question",
+          "paragraphs": [
+            "Ask where the asset is in its lifecycle and what security responsibility applies at that stage."
+          ],
+          "recognitionCue": "Acquire -> assign -> track -> retire securely"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Ownership identifies who is responsible; inventory identifies which assets exist.",
+        "Inventory is the maintained record; enumeration discovers and identifies assets.",
+        "Sanitization makes data unrecoverable while media may remain usable; destruction physically renders the media unusable.",
+        "Decommissioning removes an asset from service; disposal is its final handling.",
+        "Sanitization performs secure data removal; certification documents that the required process was completed.",
+        "A device may be destroyed while its information must still be preserved elsewhere because of retention requirements."
+      ],
+      "callout": "Before destroying an old asset, determine ownership, retention requirements, and the required disposal method."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Before the purchase -> Acquisition/procurement",
+        "Who owns it -> Ownership | How sensitive or important is it -> Classification",
+        "What assets are recorded -> Inventory | What assets can be discovered -> Enumeration",
+        "Take it out of service -> Decommissioning",
+        "Remove its data securely -> Sanitization | Destroy the media -> Destruction",
+        "Prove disposal was completed -> Certification",
+        "How long must the information remain -> Data retention"
+      ],
+      "entries": [
+        {
+          "title": "Final Decision Cue",
+          "paragraphs": [
+            "Identify the asset's current lifecycle stage, confirm responsibility and protection requirements, then select the action that secures that stage."
+          ],
+          "recognitionCue": "Lifecycle stage -> accountable party -> required protection or disposition"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the media-handling action and evidence that satisfy both requirements.",
+    "prompt": "An organization retires storage media containing sensitive data. The media is approved for reuse, but its prior contents must be made unrecoverable. An auditor also requires documented proof that the approved process was completed.",
+    "fields": [
+      {
+        "id": "media-action",
+        "label": "Secure media-handling action",
+        "choices": [
+          "Sanitization",
+          "Destruction",
+          "Enumeration",
+          "Data retention"
+        ],
+        "answer": "Sanitization"
+      },
+      {
+        "id": "disposal-evidence",
+        "label": "Documented disposal evidence",
+        "choices": [
+          "Certification",
+          "Classification",
+          "Inventory",
+          "Ownership"
+        ],
+        "answer": "Certification"
+      }
+    ],
+    "correctFeedback": "Correct. Sanitization makes the previous data unrecoverable while allowing the media to remain usable. Certification provides documented evidence that the approved sanitization process was completed.",
+    "retryFeedback": "Not quite. Choose the action that securely removes data without physically destroying reusable media, then choose the record that proves the approved process occurred. Review Sanitization and Destruction plus Certification and Data Retention, then try again."
+  }
+}

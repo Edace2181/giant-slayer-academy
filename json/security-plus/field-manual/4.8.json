@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.8",
+  "title": "Explain Appropriate Incident Response Activities",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Even a strong security program cannot guarantee that incidents will never happen. Organizations need a repeatable process for preparing, detecting, analyzing, limiting damage, removing threats, restoring operations, and improving future response.",
+        "Objective 4.8 asks you to locate the organization within the incident response process, identify the appropriate next activity, recognize how teams prepare and test, and protect digital evidence correctly."
+      ],
+      "entries": [
+        {
+          "title": "Incident Response Decision Pattern",
+          "paragraphs": [
+            "Ask where the team currently is in the response process, what outcome is needed next, and whether the scenario concerns response operations, proactive hunting, root cause, or forensic evidence."
+          ],
+          "recognitionCue": "Locate the current phase before choosing the next incident response action."
+        }
+      ],
+      "callout": "Prepare -> detect -> analyze -> contain -> eradicate -> recover -> learn"
+    },
+    {
+      "id": "incident-response-process",
+      "title": "The Incident Response Process",
+      "paragraphs": [
+        "Security+ presents incident response as an ordered lifecycle. The order matters because each phase produces the conditions needed for the next phase."
+      ],
+      "entries": [
+        {
+          "title": "Process",
+          "paragraphs": [
+            "The incident response process is Preparation, Detection, Analysis, Containment, Eradication, Recovery, and Lessons learned."
+          ],
+          "memoryHook": "Ready -> See -> Understand -> Stop -> Remove -> Restore -> Improve.",
+          "recognitionCue": "An ordered incident response lifecycle -> Process"
+        }
+      ],
+      "table": {
+        "caption": "Incident response lifecycle",
+        "headers": ["Phase", "Primary outcome"],
+        "rows": [
+          ["Preparation", "People, plans, tools, and communication are ready"],
+          ["Detection", "Possible incident activity is identified"],
+          ["Analysis", "Scope, cause, severity, and impact are determined"],
+          ["Containment", "Spread and additional damage are limited"],
+          ["Eradication", "The threat and its underlying cause are removed"],
+          ["Recovery", "Systems and services return safely to operation"],
+          ["Lessons learned", "The response and prevention program improve"]
+        ]
+      }
+    },
+    {
+      "id": "preparation",
+      "title": "Preparation",
+      "paragraphs": [
+        "Preparation happens before an incident. The organization establishes the capabilities responders will need instead of improvising during a crisis."
+      ],
+      "entries": [
+        {
+          "title": "Preparation",
+          "paragraphs": [
+            "Preparation includes procedures, communication plans, response teams, tools, training, documentation, and clearly assigned responsibilities."
+          ],
+          "memoryHook": "Prepare before the dragon shows up.",
+          "recognitionCue": "Get people, plans, and tools ready before an incident -> Preparation"
+        }
+      ]
+    },
+    {
+      "id": "detection-and-analysis",
+      "title": "Detection and Analysis",
+      "paragraphs": [
+        "Detection recognizes that something suspicious may be happening. Analysis determines what that evidence means and how serious the incident is."
+      ],
+      "entries": [
+        {
+          "title": "Detection",
+          "paragraphs": [
+            "Alerts, logs, IDS/IPS tools, endpoint tools, and user reports may reveal evidence that a security event has occurred."
+          ],
+          "recognitionCue": "Recognize a possible incident -> Detection"
+        },
+        {
+          "title": "Analysis",
+          "paragraphs": [
+            "Analysis confirms whether the event is a real incident and determines affected systems, cause, scope, severity, and possible data impact."
+          ],
+          "recognitionCue": "Determine scope, cause, severity, and impact -> Analysis"
+        }
+      ],
+      "table": {
+        "caption": "Detection and analysis",
+        "headers": ["Phase", "Question answered"],
+        "rows": [
+          ["Detection", "Did something suspicious happen?"],
+          ["Analysis", "What happened, how serious is it, and what is affected?"]
+        ]
+      }
+    },
+    {
+      "id": "containment-eradication-recovery",
+      "title": "Containment, Eradication, and Recovery",
+      "paragraphs": [
+        "These phases stop the damage, remove the problem, and return operations safely to normal."
+      ],
+      "entries": [
+        {
+          "title": "Containment",
+          "paragraphs": [
+            "Containment limits additional damage and spread. Actions can include isolating a host, blocking an address, disabling an account, or segmenting affected systems."
+          ],
+          "recognitionCue": "Limit incident damage and spread -> Containment"
+        },
+        {
+          "title": "Eradication",
+          "paragraphs": [
+            "Eradication removes the threat and underlying cause by eliminating malware, malicious accounts, persistence mechanisms, and exploited vulnerabilities."
+          ],
+          "recognitionCue": "Remove the threat and its cause -> Eradication"
+        },
+        {
+          "title": "Recovery",
+          "paragraphs": [
+            "Recovery safely returns systems and services to normal by rebuilding or restoring systems, reconnecting hosts, restoring data, and monitoring for recurrence."
+          ],
+          "recognitionCue": "Restore normal operations safely -> Recovery"
+        }
+      ],
+      "table": {
+        "caption": "Stop, remove, and restore",
+        "headers": ["Phase", "Recognition clue"],
+        "rows": [
+          ["Containment", "Stop the spread"],
+          ["Eradication", "Remove the threat"],
+          ["Recovery", "Bring operations back safely"]
+        ]
+      }
+    },
+    {
+      "id": "lessons-learned",
+      "title": "Lessons Learned",
+      "paragraphs": [
+        "After an incident, the organization reviews what happened, what worked, what failed, and what should change."
+      ],
+      "entries": [
+        {
+          "title": "Lessons Learned",
+          "paragraphs": [
+            "The lessons-learned review improves future prevention and response by turning incident experience into updated plans, controls, training, and procedures."
+          ],
+          "recognitionCue": "Post-incident improvement review -> Lessons learned"
+        }
+      ]
+    },
+    {
+      "id": "training-and-testing",
+      "title": "Training and Testing",
+      "paragraphs": [
+        "Responders should learn their responsibilities before an incident, and the organization should exercise the plan to reveal gaps."
+      ],
+      "entries": [
+        {
+          "title": "Training",
+          "paragraphs": [
+            "Training teaches incident response personnel their roles, procedures, communication requirements, and security tools."
+          ],
+          "recognitionCue": "Teach responders their roles before an incident -> Training"
+        },
+        {
+          "title": "Testing",
+          "paragraphs": [
+            "Testing exercises the incident response plan so weaknesses can be discovered before a real event. Security+ includes tabletop exercises and simulations."
+          ],
+          "recognitionCue": "Exercise the response plan to reveal gaps -> Testing"
+        }
+      ]
+    },
+    {
+      "id": "tabletop-and-simulation",
+      "title": "Tabletop Exercises and Simulations",
+      "paragraphs": [
+        "Both activities test incident response, but they demand different levels of action from participants."
+      ],
+      "entries": [
+        {
+          "title": "Tabletop Exercise",
+          "paragraphs": [
+            "A tabletop exercise is a discussion-based walkthrough. Participants receive a hypothetical incident and explain what they would do."
+          ],
+          "recognitionCue": "Talk through a hypothetical incident -> Tabletop exercise"
+        },
+        {
+          "title": "Simulation",
+          "paragraphs": [
+            "A simulation creates a more realistic practice incident, and participants actively respond as though the event were occurring."
+          ],
+          "recognitionCue": "Actively practice a realistic incident -> Simulation"
+        }
+      ],
+      "table": {
+        "caption": "Tabletop and simulation",
+        "headers": ["Exercise", "How participants respond"],
+        "rows": [
+          ["Tabletop", "Discuss the response"],
+          ["Simulation", "Perform and practice the response"]
+        ]
+      }
+    },
+    {
+      "id": "root-cause-analysis",
+      "title": "Root Cause Analysis",
+      "paragraphs": [
+        "Removing an immediate symptom does not prevent recurrence if the underlying weakness remains."
+      ],
+      "entries": [
+        {
+          "title": "Root Cause Analysis",
+          "paragraphs": [
+            "Root cause analysis identifies the fundamental reason the incident was able to occur. Malware execution may be the immediate event, while an unpatched vulnerability may be the underlying root cause."
+          ],
+          "memoryHook": "Fix the disease, not only the symptom.",
+          "recognitionCue": "Find the underlying reason an incident occurred -> Root cause analysis"
+        }
+      ]
+    },
+    {
+      "id": "threat-hunting",
+      "title": "Threat Hunting",
+      "paragraphs": [
+        "Automated controls cannot guarantee that every malicious action produces an alert."
+      ],
+      "entries": [
+        {
+          "title": "Threat Hunting",
+          "paragraphs": [
+            "Threat hunting proactively searches logs, endpoint activity, network behavior, and indicators of compromise for malicious activity that existing automated controls may not have detected."
+          ],
+          "memoryHook": "Do not wait for the alert; go looking for the attacker.",
+          "recognitionCue": "Proactively search for hidden threats -> Threat hunting"
+        }
+      ]
+    },
+    {
+      "id": "digital-forensics",
+      "title": "Digital Forensics",
+      "paragraphs": [
+        "Digital evidence must be collected and handled in a way that supports reliable technical findings and possible legal use."
+      ],
+      "entries": [
+        {
+          "title": "Digital Forensics",
+          "paragraphs": [
+            "Digital forensics is the collection, preservation, examination, and reporting of digital evidence. Its activities include legal holds, chain of custody, acquisition, preservation, reporting, and e-discovery."
+          ],
+          "recognitionCue": "Collect, preserve, examine, and report digital evidence -> Digital forensics"
+        }
+      ]
+    },
+    {
+      "id": "legal-hold",
+      "title": "Legal Hold",
+      "paragraphs": [
+        "Legal obligations can require the organization to suspend normal deletion or retention schedules for relevant information."
+      ],
+      "entries": [
+        {
+          "title": "Legal Hold",
+          "paragraphs": [
+            "A legal hold requires relevant information to be retained because it may be needed for anticipated or active legal proceedings."
+          ],
+          "memoryHook": "Do not delete this; legal needs it preserved.",
+          "recognitionCue": "Retain relevant information for a legal matter -> Legal hold"
+        }
+      ]
+    },
+    {
+      "id": "evidence-acquisition-and-preservation",
+      "title": "Evidence Handling",
+      "paragraphs": [
+        "Investigators must collect evidence appropriately, protect its integrity, and document its handling."
+      ],
+      "entries": [
+        {
+          "title": "Chain of Custody",
+          "paragraphs": [
+            "Chain of custody documents who possessed or handled evidence, when it was handled, and what happened to it from collection onward."
+          ],
+          "recognitionCue": "Document possession and handling of evidence -> Chain of custody"
+        },
+        {
+          "title": "Acquisition",
+          "paragraphs": [
+            "Acquisition is the process of collecting evidence or creating an appropriate forensic copy for analysis."
+          ],
+          "recognitionCue": "Collect or create a forensic copy of evidence -> Acquisition"
+        },
+        {
+          "title": "Preservation",
+          "paragraphs": [
+            "Preservation protects evidence from modification, destruction, and contamination."
+          ],
+          "recognitionCue": "Protect evidence integrity -> Preservation"
+        }
+      ],
+      "table": {
+        "caption": "Evidence handling responsibilities",
+        "headers": ["Concept", "Primary purpose"],
+        "rows": [
+          ["Chain of custody", "Track who handled the evidence"],
+          ["Acquisition", "Collect the evidence"],
+          ["Preservation", "Protect the evidence from change or destruction"]
+        ]
+      }
+    },
+    {
+      "id": "reporting-and-ediscovery",
+      "title": "Forensic Reporting and E-Discovery",
+      "paragraphs": [
+        "Evidence must be documented clearly, and electronically stored information may need to be identified and produced for legal proceedings."
+      ],
+      "entries": [
+        {
+          "title": "Forensic Reporting",
+          "paragraphs": [
+            "Forensic reporting documents what was examined, the methods used, what was discovered, and the resulting findings or conclusions."
+          ],
+          "recognitionCue": "Document forensic methods and results -> Forensic reporting"
+        },
+        {
+          "title": "E-Discovery",
+          "paragraphs": [
+            "Electronic discovery identifies, collects, and produces electronically stored information required for legal proceedings."
+          ],
+          "recognitionCue": "Find and produce electronic information for legal use -> E-discovery"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Identify whether the scenario concerns an incident phase, response readiness, proactive searching, root cause, or evidence handling."
+      ],
+      "bullets": [
+        "Plans, tools, teams, and roles -> Preparation",
+        "Possible incident identified -> Detection",
+        "Scope, cause, and impact determined -> Analysis",
+        "Stop spread -> Containment; remove threat -> Eradication; restore service -> Recovery",
+        "Improve after the incident -> Lessons learned",
+        "Teach the team -> Training; exercise the plan -> Testing",
+        "Talk through the event -> Tabletop; actively practice it -> Simulation",
+        "Underlying reason -> Root cause analysis; proactive search -> Threat hunting",
+        "Retain information for litigation -> Legal hold",
+        "Track handlers -> Chain of custody; collect evidence -> Acquisition; protect integrity -> Preservation",
+        "Document findings -> Forensic reporting; produce electronic legal evidence -> E-discovery"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.8 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Containment stops spread; eradication removes the threat; recovery returns systems to normal operation.",
+        "Detection identifies suspicious activity; analysis determines what it means, how serious it is, and what is affected.",
+        "Threat hunting proactively searches for hidden activity; ordinary detection begins when an alert or event reveals suspicious activity.",
+        "A legal hold is the requirement to retain relevant information; preservation protects evidence integrity.",
+        "Acquisition collects evidence; chain of custody documents who handled it."
+      ],
+      "callout": "For incident response questions, locate yourself in the process before selecting the next action."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use these pairings for fast recognition."
+      ],
+      "bullets": [
+        "Get ready -> Preparation; something happened -> Detection; what happened? -> Analysis",
+        "Stop spread -> Containment; remove threat -> Eradication; restore operations -> Recovery",
+        "Improve the process -> Lessons learned",
+        "Teach responders -> Training; talk it through -> Tabletop; practice it -> Simulation",
+        "Why did it happen? -> Root cause analysis; search for hidden threats -> Threat hunting",
+        "Do not delete legal evidence -> Legal hold; who touched it? -> Chain of custody",
+        "Collect evidence -> Acquisition; protect integrity -> Preservation",
+        "Document findings -> Forensic reporting; find electronic legal evidence -> E-discovery"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Classify each response activity by its incident response phase.",
+    "prompt": "An incident team first disconnects an infected server from the network to stop lateral movement. After acquiring the required evidence, the team removes the malware and its persistence mechanisms from the server.",
+    "fields": [
+      {
+        "id": "spread-limiting-action",
+        "label": "Phase represented by disconnecting the server to stop lateral movement",
+        "choices": ["Containment", "Eradication", "Recovery", "Analysis"],
+        "answer": "Containment"
+      },
+      {
+        "id": "threat-removal-action",
+        "label": "Phase represented by removing malware and persistence mechanisms",
+        "choices": ["Eradication", "Containment", "Preparation", "Lessons learned"],
+        "answer": "Eradication"
+      }
+    ],
+    "correctFeedback": "Correct. Disconnecting the server limits spread, so it is containment. Removing malware and persistence removes the threat, so it is eradication.",
+    "retryFeedback": "Not quite. First identify the action that stops additional spread, then identify the action that removes the threat. Review Containment, Eradication, and Recovery and try again."
+  }
+}

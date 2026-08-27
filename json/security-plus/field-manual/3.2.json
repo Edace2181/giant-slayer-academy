@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "3",
+  "objective": "3.2",
+  "title": "Apply Security Principles to Secure Enterprise Infrastructure",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Enterprise security controls provide value only when they are placed and configured where they can see or stop the traffic they are meant to protect.",
+        "Security+ expects you to connect a requirement to the correct placement, control, and behavior.",
+        "Use this sequence: requirement, placement, control, then behavior. Ask what the control must see, what it must stop, and where the traffic flows."
+      ],
+      "entries": [
+        {
+          "title": "Infrastructure Considerations",
+          "paragraphs": [
+            "Secure infrastructure design considers device placement, zones, attack surface, connectivity, failure behavior, monitoring method, appliance purpose, access control, firewall capability, and protected communications together."
+          ],
+          "recognitionCue": "Choose the control based on the requirement, where the traffic flows, and whether it must watch or block -> Infrastructure considerations"
+        }
+      ],
+      "callout": "A correct security product in the wrong location may provide little protection."
+    },
+    {
+      "id": "placement-zones-and-exposure",
+      "title": "Placement, Zones, and Exposure",
+      "paragraphs": [
+        "Begin by determining where the control can observe the relevant activity and what trust boundary it must enforce."
+      ],
+      "entries": [
+        {
+          "title": "Device Placement",
+          "paragraphs": [
+            "Device placement determines where a security appliance or control should be located. A boundary firewall belongs where boundary traffic passes, a WAF belongs in front of the protected web application, and a monitoring sensor belongs where it can observe important traffic."
+          ],
+          "memoryHook": "Put the control where the traffic must pass or where it can see what matters.",
+          "recognitionCue": "Question asks where a security control should be located -> Device placement"
+        },
+        {
+          "title": "Security Zones",
+          "paragraphs": [
+            "A security zone groups systems with similar trust levels, functions, or access requirements. User, server, guest, management, and public-facing systems can occupy different zones so traffic between them can be tightly controlled."
+          ],
+          "memoryHook": "Different trust levels belong in different neighborhoods.",
+          "recognitionCue": "Group systems according to trust or security requirements -> Security zones"
+        },
+        {
+          "title": "Attack Surface",
+          "paragraphs": [
+            "The attack surface is the total collection of exposed points an attacker could target, including ports, services, interfaces, applications, accounts, APIs, and network connections. Removing unnecessary exposure reduces opportunities for attack."
+          ],
+          "memoryHook": "Every unnecessary door is another place to attack.",
+          "recognitionCue": "Total exposed entry points -> Attack surface"
+        },
+        {
+          "title": "Connectivity",
+          "paragraphs": [
+            "Connectivity describes how systems communicate through wired, wireless, Internet, cloud, branch, or remote-access links. Every connection can introduce new attack paths plus authentication, encryption, and availability requirements."
+          ],
+          "recognitionCue": "How systems connect and communicate -> Connectivity"
+        }
+      ]
+    },
+    {
+      "id": "failure-modes",
+      "title": "Failure Modes",
+      "paragraphs": [
+        "A security appliance can fail. Architecture must deliberately choose what happens to traffic when that control can no longer operate normally."
+      ],
+      "entries": [
+        {
+          "title": "Failure Modes",
+          "paragraphs": [
+            "Failure mode is the planned behavior of a control during an outage or malfunction. The choice balances availability against continued security enforcement."
+          ],
+          "recognitionCue": "Question asks what happens when the control fails -> Failure modes"
+        },
+        {
+          "title": "Fail-Open",
+          "paragraphs": [
+            "A fail-open control allows traffic to continue when the security device fails. Availability remains higher, but traffic may pass without normal inspection or enforcement."
+          ],
+          "memoryHook": "The guard falls down, but the door stays open.",
+          "recognitionCue": "Keep traffic flowing during security-device failure -> Fail-open"
+        },
+        {
+          "title": "Fail-Closed",
+          "paragraphs": [
+            "A fail-closed control blocks traffic when it cannot enforce policy. Security enforcement remains stronger, but legitimate users may lose access."
+          ],
+          "memoryHook": "The guard falls down, and the door locks.",
+          "recognitionCue": "Block traffic when the control cannot enforce security -> Fail-closed"
+        }
+      ],
+      "table": {
+        "caption": "Security-control failure behavior",
+        "headers": ["Mode", "Priority", "Result when the control fails"],
+        "rows": [
+          ["Fail-open", "Availability", "Traffic continues without normal enforcement"],
+          ["Fail-closed", "Security enforcement", "Traffic is blocked"]
+        ]
+      }
+    },
+    {
+      "id": "device-attributes",
+      "title": "Device Attributes",
+      "paragraphs": [
+        "Security devices are described both by what they do and by how they connect to traffic."
+      ],
+      "entries": [
+        {
+          "title": "Device Attribute",
+          "paragraphs": [
+            "A device attribute describes operational characteristics such as active or passive behavior and inline or monitoring placement. These attributes determine whether a control can only observe traffic or can directly affect it."
+          ],
+          "recognitionCue": "Operational behavior or traffic-path relationship of a security device -> Device attribute"
+        }
+      ]
+    },
+    {
+      "id": "active-and-passive",
+      "title": "Active and Passive Controls",
+      "paragraphs": [
+        "The key distinction is whether the device can directly change the traffic it observes."
+      ],
+      "entries": [
+        {
+          "title": "Active vs. Passive",
+          "paragraphs": [
+            "An active device can block, drop, reset, or redirect traffic. A passive device analyzes, logs, or alerts without directly changing the traffic."
+          ],
+          "memoryHook": "Active takes action. Passive watches without interfering.",
+          "recognitionCue": "Can change or stop traffic -> Active; observes without blocking -> Passive"
+        }
+      ],
+      "table": {
+        "caption": "Active and passive security behavior",
+        "headers": ["Attribute", "Typical behavior"],
+        "rows": [
+          ["Active", "Detects and can take action"],
+          ["Passive", "Detects or observes only"]
+        ]
+      }
+    },
+    {
+      "id": "inline-and-monitoring",
+      "title": "Inline and TAP/Monitor Placement",
+      "paragraphs": [
+        "Placement in relation to the traffic path affects both visibility and the ability to enforce a decision."
+      ],
+      "entries": [
+        {
+          "title": "Inline vs. TAP/Monitor",
+          "paragraphs": [
+            "An inline device sits directly in the traffic path, so traffic passes through it. A TAP or monitoring connection sends a copy of traffic to a sensor that is not directly in the communication path."
+          ],
+          "memoryHook": "Inline: traffic must go through me. TAP: give me a copy so I can watch.",
+          "recognitionCue": "Traffic passes through control -> Inline; copied traffic reaches sensor -> TAP/monitor"
+        }
+      ],
+      "table": {
+        "caption": "Traffic-path placement",
+        "headers": ["Placement", "Traffic relationship", "Direct blocking"],
+        "rows": [
+          ["Inline", "Production traffic passes through the device", "Possible"],
+          ["TAP/monitor", "Device receives a copy", "Not directly"]
+        ]
+      }
+    },
+    {
+      "id": "network-appliances",
+      "title": "Network Appliances",
+      "paragraphs": [
+        "Security+ expects you to identify appliances by the requirement they satisfy rather than by product branding."
+      ],
+      "entries": [
+        {
+          "title": "Network Appliances",
+          "paragraphs": [
+            "Network appliances include controlled access systems, proxies, detection and prevention systems, load balancers, and sensors. Select the appliance whose purpose most directly matches the requirement."
+          ],
+          "recognitionCue": "Purpose-built device providing a network or security function -> Network appliances"
+        }
+      ]
+    },
+    {
+      "id": "administrative-access-and-proxies",
+      "title": "Administrative Access and Proxies",
+      "paragraphs": [
+        "Both controls stand between users and another system, but they serve different purposes."
+      ],
+      "entries": [
+        {
+          "title": "Jump Server",
+          "paragraphs": [
+            "A jump server is a controlled intermediate system used to reach protected systems. Administrators connect to the jump server first and then access sensitive resources from that guarded entry point."
+          ],
+          "memoryHook": "One guarded doorway for administrators.",
+          "recognitionCue": "Controlled administrative entry point -> Jump server"
+        },
+        {
+          "title": "Proxy Server",
+          "paragraphs": [
+            "A proxy communicates on behalf of another system and can provide filtering, logging, content inspection, or access control."
+          ],
+          "memoryHook": "The proxy talks to the other side for you.",
+          "recognitionCue": "Intermediate server communicates on behalf of another system -> Proxy server"
+        }
+      ]
+    },
+    {
+      "id": "ids-and-ips",
+      "title": "IDS and IPS",
+      "paragraphs": [
+        "Intrusion detection and intrusion prevention identify suspicious activity, but only prevention is expected to stop it directly."
+      ],
+      "entries": [
+        {
+          "title": "Intrusion Prevention System (IPS)/Intrusion Detection System (IDS)",
+          "paragraphs": [
+            "An IDS generally monitors passively and logs or alerts: it sees the attack. An IPS commonly sits inline and can drop traffic, block connections, or reset sessions: it sees and stops the attack."
+          ],
+          "memoryHook": "IDS sees. IPS stops.",
+          "recognitionCue": "Detect and alert -> IDS; detect and actively block -> IPS"
+        }
+      ],
+      "table": {
+        "caption": "Intrusion detection and prevention",
+        "headers": ["Control", "Primary role", "Common behavior"],
+        "rows": [
+          ["IDS", "Detect", "Passive alerting"],
+          ["IPS", "Prevent", "Active inline blocking"]
+        ]
+      }
+    },
+    {
+      "id": "balancing-and-sensing",
+      "title": "Load Balancing and Sensors",
+      "paragraphs": [
+        "One control spreads work; the other collects information for monitoring and detection."
+      ],
+      "entries": [
+        {
+          "title": "Load Balancer",
+          "paragraphs": [
+            "A load balancer distributes requests across multiple backend systems to improve availability, scalability, fault tolerance, and resistance to server overload."
+          ],
+          "memoryHook": "Spread the work.",
+          "recognitionCue": "Distribute traffic across multiple servers -> Load balancer"
+        },
+        {
+          "title": "Sensors",
+          "paragraphs": [
+            "Sensors collect network traffic, system activity, security events, or physical conditions for detection and monitoring."
+          ],
+          "memoryHook": "The eyes and ears of the monitoring system.",
+          "recognitionCue": "Collect information for detection or monitoring -> Sensors"
+        }
+      ]
+    },
+    {
+      "id": "port-security",
+      "title": "Port Security",
+      "paragraphs": [
+        "Port security controls whether a user or device is allowed to connect through a network access point."
+      ],
+      "entries": [
+        {
+          "title": "Port Security",
+          "paragraphs": [
+            "Port-security mechanisms can restrict network connectivity until a user or device satisfies the access policy. Security+ specifically expects recognition of 802.1X and EAP in this context."
+          ],
+          "recognitionCue": "Control whether a user or device may connect to the network -> Port security"
+        }
+      ]
+    },
+    {
+      "id": "8021x-and-eap",
+      "title": "802.1X and EAP",
+      "paragraphs": [
+        "802.1X controls access to the network, while EAP provides a framework for carrying supported authentication methods."
+      ],
+      "entries": [
+        {
+          "title": "802.1X",
+          "paragraphs": [
+            "802.1X provides port-based network access control. The supplicant requests access, the authenticator—usually a switch or access point—controls the port, and an authentication server such as RADIUS validates the authentication."
+          ],
+          "memoryHook": "Endpoint asks, switch or AP controls, authentication server verifies.",
+          "recognitionCue": "Authenticate before receiving normal network access -> 802.1X"
+        },
+        {
+          "title": "Extensible Authentication Protocol (EAP)",
+          "paragraphs": [
+            "EAP is an authentication framework that supports multiple authentication methods and is commonly used during 802.1X access control."
+          ],
+          "memoryHook": "802.1X controls access; EAP helps carry the authentication.",
+          "recognitionCue": "Authentication framework commonly used with 802.1X -> EAP"
+        }
+      ],
+      "table": {
+        "caption": "Port-based authentication roles",
+        "headers": ["Component", "Role"],
+        "rows": [
+          ["Supplicant", "Requests access"],
+          ["Authenticator", "Switch or access point controls access"],
+          ["Authentication server", "Validates authentication, commonly with RADIUS"]
+        ]
+      }
+    },
+    {
+      "id": "firewall-types",
+      "title": "Firewall Types",
+      "paragraphs": [
+        "Different firewalls protect different traffic and provide different inspection depth."
+      ],
+      "entries": [
+        {
+          "title": "Firewall Types",
+          "paragraphs": [
+            "Security+ compares WAF, UTM, NGFW, Layer 4, and Layer 7 controls. First identify what traffic must be protected and how deeply the firewall must understand it."
+          ],
+          "recognitionCue": "Firewall selected according to protected traffic and inspection capability -> Firewall types"
+        }
+      ]
+    },
+    {
+      "id": "waf-utm-and-ngfw",
+      "title": "WAF, UTM, and NGFW",
+      "paragraphs": [
+        "These devices overlap in capability, so focus on the feature emphasized by the requirement."
+      ],
+      "entries": [
+        {
+          "title": "Web Application Firewall (WAF)",
+          "paragraphs": [
+            "A WAF protects web applications by inspecting HTTP and HTTPS requests for application-layer attacks. It belongs in front of the web application it protects."
+          ],
+          "memoryHook": "A firewall specifically guarding the web application.",
+          "recognitionCue": "Protect HTTP/HTTPS web-application traffic -> WAF"
+        },
+        {
+          "title": "Unified Threat Management (UTM)",
+          "paragraphs": [
+            "A UTM combines several security functions—such as firewall, IDS/IPS, antivirus, content filtering, and VPN—into one platform."
+          ],
+          "memoryHook": "Many security tools in one box.",
+          "recognitionCue": "Multiple security functions combined -> UTM"
+        },
+        {
+          "title": "Next-Generation Firewall (NGFW)",
+          "paragraphs": [
+            "A NGFW adds advanced capabilities such as application awareness, deep inspection, identity awareness, and often IDS/IPS functionality beyond traditional port and address filtering."
+          ],
+          "memoryHook": "A firewall that understands more than IP addresses and ports.",
+          "recognitionCue": "Advanced application-aware firewall -> NGFW"
+        }
+      ],
+      "table": {
+        "caption": "Common firewall emphasis",
+        "headers": ["Control", "Primary recognition cue"],
+        "rows": [
+          ["WAF", "Protect a web application"],
+          ["UTM", "Combine many security tools"],
+          ["NGFW", "Advanced application-aware inspection"]
+        ]
+      }
+    },
+    {
+      "id": "layer4-and-layer7",
+      "title": "Layer 4 and Layer 7 Inspection",
+      "paragraphs": [
+        "The layer determines whether the firewall primarily understands transport information or application behavior."
+      ],
+      "entries": [
+        {
+          "title": "Layer 4/Layer 7",
+          "paragraphs": [
+            "A Layer 4 firewall makes decisions using transport information such as TCP, UDP, port numbers, and connection state. A Layer 7 firewall understands application protocols, commands, content, and behavior."
+          ],
+          "memoryHook": "Layer 4 asks which protocol and port. Layer 7 asks what the application is doing.",
+          "recognitionCue": "TCP/UDP, ports, or sessions -> Layer 4; application or content inspection -> Layer 7"
+        }
+      ],
+      "table": {
+        "caption": "Layer 4 and Layer 7 firewall inspection",
+        "headers": ["Layer", "Typical inspection"],
+        "rows": [
+          ["Layer 4", "TCP, UDP, ports, and connection state"],
+          ["Layer 7", "Application protocols, content, commands, and behavior"]
+        ]
+      }
+    },
+    {
+      "id": "secure-communications",
+      "title": "Secure Communication and Access",
+      "paragraphs": [
+        "Remote and network communications require controls that authenticate access and protect traffic across untrusted connections."
+      ],
+      "entries": [
+        {
+          "title": "Secure Communication/Access",
+          "paragraphs": [
+            "Secure communication and access may require VPNs, strong remote-access authentication, encrypted tunnels, or newer managed connectivity services. Choose the technology that operates at the required layer and meets the access need."
+          ],
+          "recognitionCue": "Controls that protect network communication or remote connectivity -> Secure communication/access"
+        }
+      ]
+    },
+    {
+      "id": "vpn-remote-access-and-tunneling",
+      "title": "VPN, Remote Access, and Tunneling",
+      "paragraphs": [
+        "These concepts are related but describe different parts of protected connectivity."
+      ],
+      "entries": [
+        {
+          "title": "Virtual Private Network (VPN)",
+          "paragraphs": [
+            "A VPN creates a protected private communication path across an untrusted network for remote users, site-to-site connections, or other secure communications."
+          ],
+          "memoryHook": "A private encrypted path across a public network.",
+          "recognitionCue": "Secure private connection across an untrusted network -> VPN"
+        },
+        {
+          "title": "Remote Access",
+          "paragraphs": [
+            "Remote access allows a user or administrator to reach organizational resources from another location. Security design should consider authentication, MFA, encryption, device trust, and access restrictions."
+          ],
+          "recognitionCue": "Connect to organizational resources from another location -> Remote access"
+        },
+        {
+          "title": "Tunneling",
+          "paragraphs": [
+            "Tunneling encapsulates traffic inside another communication channel. TLS and IPsec can protect different layers of the communication."
+          ],
+          "recognitionCue": "Encapsulate traffic inside another protected channel -> Tunneling"
+        }
+      ]
+    },
+    {
+      "id": "tls-and-ipsec",
+      "title": "TLS and IPsec",
+      "paragraphs": [
+        "Choose between these technologies by identifying the layer and type of communication that needs protection."
+      ],
+      "entries": [
+        {
+          "title": "Transport Layer Security (TLS)",
+          "paragraphs": [
+            "TLS protects communications between applications and commonly provides encryption, integrity, and authentication for an application session."
+          ],
+          "memoryHook": "Protect the application session.",
+          "recognitionCue": "Secure application communication -> TLS"
+        },
+        {
+          "title": "Internet Protocol Security (IPsec)",
+          "paragraphs": [
+            "IPsec protects IP communications at the network layer and is commonly associated with site-to-site VPNs and secure IP tunnels."
+          ],
+          "memoryHook": "Protect the IP packets.",
+          "recognitionCue": "Network-layer protected tunnel -> IPsec"
+        }
+      ],
+      "table": {
+        "caption": "TLS and IPsec",
+        "headers": ["Technology", "Typical protection"],
+        "rows": [
+          ["TLS", "Application or session communication"],
+          ["IPsec", "Network-layer IP communication"]
+        ]
+      }
+    },
+    {
+      "id": "sdwan-and-sase",
+      "title": "SD-WAN and SASE",
+      "paragraphs": [
+        "Both can support distributed organizations, but their central emphasis differs."
+      ],
+      "entries": [
+        {
+          "title": "Software-Defined Wide Area Network (SD-WAN)",
+          "paragraphs": [
+            "SD-WAN uses software-based centralized control to manage WAN connectivity and choose communication paths according to performance, policy, availability, or cost."
+          ],
+          "memoryHook": "Software decides how branch traffic should travel.",
+          "recognitionCue": "Software-controlled WAN connectivity -> SD-WAN"
+        },
+        {
+          "title": "Secure Access Service Edge (SASE)",
+          "paragraphs": [
+            "SASE combines networking and security capabilities in a cloud-delivered architecture for remote users, branches, cloud environments, and distributed applications."
+          ],
+          "memoryHook": "SD-WAN connects. SASE connects and secures.",
+          "recognitionCue": "Cloud-delivered networking plus security -> SASE"
+        }
+      ],
+      "table": {
+        "caption": "SD-WAN and SASE",
+        "headers": ["Technology", "Primary emphasis"],
+        "rows": [
+          ["SD-WAN", "WAN connectivity and path selection"],
+          ["SASE", "Cloud-delivered connectivity and security"]
+        ]
+      }
+    },
+    {
+      "id": "selecting-effective-controls",
+      "title": "Selecting Effective Controls",
+      "paragraphs": [
+        "The exam may give a requirement and ask for the control that most directly satisfies it. Avoid choosing a control merely because it is generally useful."
+      ],
+      "entries": [
+        {
+          "title": "Selection of Effective Controls",
+          "paragraphs": [
+            "Monitor suspicious traffic without interruption with an IDS or passive monitor. Stop malicious traffic with an IPS. Protect a public web application with a WAF. Use a jump server for one controlled administrative path, 802.1X for authentication before port access, IPsec for site-to-site protection, and a load balancer to distribute requests."
+          ],
+          "recognitionCue": "The best control is the one that most directly satisfies the stated requirement."
+        }
+      ],
+      "callout": "Ask three questions: What must the control protect? Where should it sit? Must it watch or must it block?"
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Different trust levels -> Security zones. Exposed entry points -> Attack surface. Keep traffic flowing on failure -> Fail-open. Block traffic on failure -> Fail-closed.",
+        "Take action -> Active. Observe only -> Passive. Traffic passes through -> Inline. Receive a copy -> TAP/monitor.",
+        "Controlled admin doorway -> Jump server. Acts for another system -> Proxy. Detect -> IDS. Detect and stop -> IPS.",
+        "Authenticate before port access -> 802.1X. Authentication framework -> EAP. Protect a web app -> WAF. Many security tools together -> UTM.",
+        "Ports and protocols -> Layer 4. Application content -> Layer 7. Protect an application session -> TLS. Protect IP traffic -> IPsec.",
+        "Software-controlled WAN -> SD-WAN. Cloud networking plus security -> SASE."
+      ],
+      "entries": [
+        {
+          "title": "Requirement to Control",
+          "paragraphs": [
+            "Translate the requirement into the control's purpose, then verify its placement and behavior."
+          ],
+          "recognitionCue": "Requirement -> placement -> control -> behavior"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "IDS and IPS both detect malicious activity, but IDS normally alerts while IPS can block.",
+        "Active and passive describe whether a device can affect traffic. Inline and TAP describe its relationship to the traffic path.",
+        "Fail-open favors availability; fail-closed favors continued security enforcement.",
+        "WAF specifically protects web applications. NGFW provides broader advanced application-aware firewall inspection.",
+        "802.1X controls network access; EAP is the authentication framework used during that process.",
+        "TLS typically protects application communication; IPsec protects network-layer IP communication.",
+        "SD-WAN focuses on WAN connectivity; SASE combines connectivity with cloud-delivered security."
+      ],
+      "callout": "Related technologies are not interchangeable. Choose the one whose role exactly matches the requirement."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Where does it go? -> Device placement | Different trust level -> Security zone | All exposed entry points -> Attack surface",
+        "Keep traffic flowing -> Fail-open | Shut traffic down -> Fail-closed | Take action -> Active | Just watch -> Passive",
+        "Traffic passes through -> Inline | Copy of traffic -> TAP | Admin doorway -> Jump server | Acts for another system -> Proxy",
+        "Detect -> IDS | Detect and stop -> IPS | Spread traffic -> Load balancer | Collect data -> Sensor",
+        "Authenticate before port access -> 802.1X | Authentication framework -> EAP",
+        "Protect web app -> WAF | Many security tools together -> UTM | Advanced app-aware firewall -> NGFW",
+        "Ports and protocols -> Layer 4 | Applications and content -> Layer 7",
+        "Protected tunnel -> VPN | Connect from elsewhere -> Remote access | Protect application session -> TLS | Protect IP traffic -> IPsec",
+        "Software-controlled WAN -> SD-WAN | Cloud networking plus security -> SASE"
+      ],
+      "entries": [
+        {
+          "title": "Three Final Questions",
+          "paragraphs": [
+            "What must the control protect? Where should it sit? Must it watch or must it block?"
+          ],
+          "recognitionCue": "Answer those three questions before choosing the control."
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose both controls that satisfy the placement and protection requirements.",
+    "prompt": "A security team must inspect a copy of production network traffic without interrupting it. The same team must protect a public web application by inspecting HTTP and HTTPS requests before they reach the application.",
+    "fields": [
+      {
+        "id": "monitoring-placement",
+        "label": "Non-disruptive network monitoring placement",
+        "choices": [
+          "TAP/monitor",
+          "Inline",
+          "Fail-closed",
+          "Jump server"
+        ],
+        "answer": "TAP/monitor"
+      },
+      {
+        "id": "web-application-control",
+        "label": "Control placed in front of the web application",
+        "choices": [
+          "Web application firewall (WAF)",
+          "Layer 4 firewall",
+          "Load balancer",
+          "802.1X"
+        ],
+        "answer": "Web application firewall (WAF)"
+      }
+    ],
+    "correctFeedback": "Correct. A TAP or monitoring connection supplies a traffic copy without entering the production path, while a WAF inspects HTTP and HTTPS requests before they reach the protected web application.",
+    "retryFeedback": "Not quite. First choose the placement that receives a copy instead of sitting inline. Then choose the firewall designed specifically for web-application traffic. Review Inline and TAP/Monitor plus WAF, UTM, and NGFW, then try again."
+  }
+}

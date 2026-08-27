@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | Security+ | Field Manual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="security-plus-field-manual.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body security-field-manual-page" data-certification="security-plus">
+  <div class="crt-overlay"></div>
+  <main class="security-field-manual-shell">
+    <p id="securityManualLoading" role="status">Opening the Giant Slayer's Field Manual…</p>
+
+    <section id="securityManualError" class="security-field-error hidden" role="alert">
+      <h1>Unable to Open This Field Manual</h1>
+      <p id="securityManualErrorMessage">The requested lesson could not be loaded.</p>
+      <a id="securityManualErrorReturn" href="security-plus-campaign.html" class="back-link">← Return to Security+ Campaign Map</a>
+    </section>
+
+    <div id="securityManualApplication" class="hidden">
+      <header class="security-field-manual-header">
+        <span id="securityManualKicker" class="security-field-manual-kicker"></span>
+        <h1>📖 Giant Slayer's Field Manual</h1>
+        <p id="securityManualObjective" class="security-field-manual-objective"></p>
+        <p id="securityManualCompletionNote" class="security-manual-completion-note hidden"></p>
+      </header>
+
+      <nav id="securityManualNavigation" class="security-manual-navigation hidden" aria-label="Field Manual mini-lessons">
+        <p>Jump to a Mini-Lesson</p>
+        <div id="securityManualNavigationLinks" class="security-manual-navigation-links"></div>
+      </nav>
+
+      <div id="securityManualSections"></div>
+
+      <section class="security-field-section security-mini-check" aria-labelledby="securityMiniCheckHeading">
+        <h2 id="securityMiniCheckHeading">Recognition Check · Mini Check</h2>
+        <p id="securityMiniCheckIntro"></p>
+        <form id="securityMiniCheckForm">
+          <fieldset>
+            <legend id="securityMiniCheckPrompt"></legend>
+            <div id="securityMiniCheckFields" class="security-mini-check-grid"></div>
+          </fieldset>
+          <button type="submit" class="link-btn">Check My Answer</button>
+        </form>
+        <p id="securityMiniCheckFeedback" class="security-mini-check-feedback" role="status" aria-live="polite" aria-atomic="true">Complete both selections, then check your answer.</p>
+        <div class="security-field-manual-actions">
+          <button id="securityManualComplete" type="button" class="link-btn security-manual-primary hidden">⚔️ Complete Manual and Begin Objective 1.1 Sweep</button>
+          <a id="securityManualReturn" href="security-plus-world1-objectives.html" class="back-link">← Return to World 1 Objective Hub</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="security-plus-field-manual.js"></script>
+</body>
+</html>

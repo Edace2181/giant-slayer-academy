@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "1",
+  "objective": "1.4",
+  "title": "Explain the Importance of Using Appropriate Cryptographic Solutions",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cryptography helps organizations protect data, verify integrity, establish trust, prove identity, and secure communications.",
+        "Security+ expects you to do more than recognize cryptographic terms. You must identify which cryptographic solution fits the security requirement in the scenario.",
+        "Use this sequence: identify what needs protection, determine which security goal matters, and then choose the cryptographic solution that satisfies that goal."
+      ],
+      "callout": "Recognition: Confidentiality often points to encryption · Integrity often points to hashing · Identity and proof often point to certificates or digital signatures."
+    },
+    {
+      "id": "public-key-infrastructure",
+      "title": "Public Key Infrastructure",
+      "paragraphs": [
+        "Public Key Infrastructure (PKI) is the framework used to create, manage, distribute, validate, and revoke digital certificates and public/private key relationships.",
+        "PKI helps a system decide whether a public key can be trusted as belonging to the claimed person, system, or organization."
+      ],
+      "entries": [
+        {
+          "title": "Public Key",
+          "paragraphs": [
+            "A public key is designed to be shared. It can encrypt information for the key owner or verify a digital signature created with the matching private key."
+          ],
+          "recognitionCue": "A cryptographic key intended for distribution is a public key."
+        },
+        {
+          "title": "Private Key",
+          "paragraphs": [
+            "A private key must remain protected by its owner. It can decrypt information intended for the owner or create a digital signature."
+          ],
+          "recognitionCue": "The secret key belonging to the owner is the private key."
+        },
+        {
+          "title": "Key Escrow",
+          "paragraphs": [
+            "Key escrow stores a protected recovery copy of a cryptographic key. Authorized recovery may be needed when a key is lost, an employee leaves, or encrypted business information must remain accessible."
+          ],
+          "recognitionCue": "A protected recovery copy of a cryptographic key means key escrow."
+        }
+      ],
+      "callout": "PKI is the trust framework. Public keys are shared, private keys are protected, and escrow provides authorized recovery."
+    },
+    {
+      "id": "encryption",
+      "title": "Encryption",
+      "paragraphs": [
+        "Encryption converts readable information into a protected form that should be unreadable without the correct key. Its primary security goal is confidentiality.",
+        "If a scenario says an unauthorized person might obtain the data but must not be able to read it, encryption is the central requirement."
+      ],
+      "callout": "Recognition: Prevent unauthorized disclosure—think encryption."
+    },
+    {
+      "id": "encryption-levels",
+      "title": "Encryption Levels",
+      "paragraphs": [
+        "Encryption can protect different amounts of stored data. Choose the level that matches exactly what the scenario needs to protect."
+      ],
+      "entries": [
+        {
+          "title": "Full-Disk Encryption",
+          "paragraphs": [
+            "Full-disk encryption protects the entire storage device and is especially useful when a laptop or drive could be lost or stolen."
+          ],
+          "recognitionCue": "Protect the whole disk."
+        },
+        {
+          "title": "Partition Encryption",
+          "paragraphs": [
+            "Partition encryption protects one partition rather than the entire physical disk."
+          ],
+          "recognitionCue": "Protect one disk partition."
+        },
+        {
+          "title": "File Encryption",
+          "paragraphs": [
+            "File encryption protects one or more individual files."
+          ],
+          "recognitionCue": "Protect this specific file."
+        },
+        {
+          "title": "Volume Encryption",
+          "paragraphs": [
+            "Volume encryption protects an entire logical storage volume."
+          ],
+          "recognitionCue": "Protect the logical storage area."
+        },
+        {
+          "title": "Database Encryption",
+          "paragraphs": [
+            "Database encryption protects information stored within a database."
+          ],
+          "recognitionCue": "Protect the database contents."
+        },
+        {
+          "title": "Record Encryption",
+          "paragraphs": [
+            "Record encryption protects a specific entry or record inside a database rather than the whole database."
+          ],
+          "recognitionCue": "Protect this particular database record."
+        }
+      ],
+      "table": {
+        "caption": "Match the encryption level to the protected scope",
+        "headers": [
+          "Encryption level",
+          "Protected scope"
+        ],
+        "rows": [
+          [
+            "Full-disk",
+            "Entire storage device"
+          ],
+          [
+            "Partition",
+            "One disk partition"
+          ],
+          [
+            "File",
+            "Individual files"
+          ],
+          [
+            "Volume",
+            "Logical storage volume"
+          ],
+          [
+            "Database",
+            "Database information"
+          ],
+          [
+            "Record",
+            "One database record or entry"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "transport-and-encryption-types",
+      "title": "Transport and Encryption Types",
+      "paragraphs": [
+        "Data in transit needs protection while moving between systems. Transport or communication encryption helps prevent unauthorized parties from reading or altering information as it crosses a network.",
+        "Symmetric and asymmetric encryption solve different parts of the problem and are often used together."
+      ],
+      "entries": [
+        {
+          "title": "Transport and Communication Encryption",
+          "paragraphs": [
+            "Use transport or communication encryption when the scenario focuses on protecting data while it moves between systems."
+          ],
+          "recognitionCue": "Protect data while it is moving."
+        },
+        {
+          "title": "Symmetric Encryption",
+          "paragraphs": [
+            "Symmetric encryption uses the same shared secret key for encryption and decryption. It is generally efficient and well suited to protecting large amounts of data, but both parties must obtain the secret securely."
+          ],
+          "recognitionCue": "One shared secret key encrypts and decrypts."
+        },
+        {
+          "title": "Asymmetric Encryption",
+          "paragraphs": [
+            "Asymmetric encryption uses a related public/private key pair. It supports secure key establishment, digital signatures, certificates, and authentication, but is generally more computationally expensive than symmetric encryption."
+          ],
+          "recognitionCue": "A public/private key pair means asymmetric encryption."
+        }
+      ],
+      "table": {
+        "caption": "Symmetric compared with asymmetric encryption",
+        "headers": [
+          "Characteristic",
+          "Symmetric",
+          "Asymmetric"
+        ],
+        "rows": [
+          [
+            "Keys",
+            "One shared secret",
+            "Public/private pair"
+          ],
+          [
+            "Performance",
+            "Generally faster",
+            "Generally slower"
+          ],
+          [
+            "Common strength",
+            "Bulk data encryption",
+            "Key exchange, signatures, and certificates"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "key-exchange-algorithms-length",
+      "title": "Key Exchange, Algorithms, and Key Length",
+      "paragraphs": [
+        "Cryptographic systems need a method for establishing key material, a mathematical operation that performs the protection, and keys of an appropriate size for that algorithm."
+      ],
+      "entries": [
+        {
+          "title": "Key Exchange",
+          "paragraphs": [
+            "Key exchange allows systems to establish or exchange cryptographic key material securely without exposing the shared secret."
+          ],
+          "recognitionCue": "Securely establish shared cryptographic key material."
+        },
+        {
+          "title": "Algorithms",
+          "paragraphs": [
+            "A cryptographic algorithm is the mathematical process used for encryption, hashing, signing, key exchange, or another cryptographic operation."
+          ],
+          "recognitionCue": "The mathematical method performing the cryptographic operation is the algorithm."
+        },
+        {
+          "title": "Key Length",
+          "paragraphs": [
+            "Key length is the size of a cryptographic key, usually measured in bits. It is one factor in cryptographic strength, but key sizes should not be compared blindly across different algorithms."
+          ],
+          "recognitionCue": "The number of bits in a cryptographic key is its key length."
+        }
+      ]
+    },
+    {
+      "id": "cryptographic-tools",
+      "title": "Cryptographic Tools",
+      "paragraphs": [
+        "Cryptographic tools protect keys and sensitive operations at different scales. Match the tool to where the keys are used and how broadly they must be managed."
+      ],
+      "entries": [
+        {
+          "title": "Trusted Platform Module (TPM)",
+          "paragraphs": [
+            "A Trusted Platform Module is a hardware security component commonly tied to one computer or endpoint. It can store keys securely and support cryptographic operations for that machine."
+          ],
+          "recognitionCue": "Endpoint hardware protecting cryptographic material means TPM."
+        },
+        {
+          "title": "Hardware Security Module (HSM)",
+          "paragraphs": [
+            "A Hardware Security Module is dedicated hardware designed to create, store, and use cryptographic keys securely. HSMs commonly protect centralized or high-value cryptographic operations."
+          ],
+          "recognitionCue": "Dedicated high-security hardware protecting important keys means HSM."
+        },
+        {
+          "title": "Key Management System",
+          "paragraphs": [
+            "A key management system manages cryptographic keys throughout their lifecycle, including generation, storage, distribution, rotation, revocation, recovery, and eventual retirement."
+          ],
+          "recognitionCue": "Manage cryptographic keys across their lifecycle."
+        },
+        {
+          "title": "Secure Enclave",
+          "paragraphs": [
+            "A secure enclave provides an isolated, protected environment for sensitive processing so those operations remain separated from the main operating environment."
+          ],
+          "recognitionCue": "Sensitive work occurs inside an isolated protected execution area."
+        }
+      ]
+    },
+    {
+      "id": "obfuscation",
+      "title": "Obfuscation",
+      "paragraphs": [
+        "Obfuscation makes information more difficult to understand or use. It does not automatically provide the same cryptographic protection as encryption."
+      ],
+      "entries": [
+        {
+          "title": "Steganography",
+          "paragraphs": [
+            "Steganography hides information inside another object or medium, such as a secret message embedded in an image. Encryption hides the meaning; steganography hides the existence of the message."
+          ],
+          "recognitionCue": "Hide information inside another file or medium."
+        },
+        {
+          "title": "Tokenization",
+          "paragraphs": [
+            "Tokenization replaces sensitive information with a substitute value called a token. The token does not directly reveal the original value."
+          ],
+          "recognitionCue": "Replace the real sensitive value with a safe stand-in."
+        },
+        {
+          "title": "Data Masking",
+          "paragraphs": [
+            "Data masking hides some or all sensitive information from view while the real value continues to exist, such as displaying only the final digits of a payment-card number."
+          ],
+          "recognitionCue": "Hide the displayed sensitive value."
+        }
+      ]
+    },
+    {
+      "id": "hashing-and-salting",
+      "title": "Hashing and Salting",
+      "paragraphs": [
+        "Hashing and salting are related, but they perform different jobs. Hashing produces a fixed-size result used to detect changes. Salting changes the input before hashing."
+      ],
+      "entries": [
+        {
+          "title": "Hashing",
+          "paragraphs": [
+            "Hashing converts input into a fixed-size hash value. If the original information changes, its hash should also change, making hashing primarily associated with integrity."
+          ],
+          "recognitionCue": "Has the data been altered? Think hashing."
+        },
+        {
+          "title": "Salting",
+          "paragraphs": [
+            "A salt is random data added to an input before hashing. It helps prevent identical passwords from automatically producing identical stored hashes and makes precomputed attacks more difficult."
+          ],
+          "recognitionCue": "Add a random value before hashing."
+        }
+      ]
+    },
+    {
+      "id": "signatures-and-key-stretching",
+      "title": "Digital Signatures and Key Stretching",
+      "paragraphs": [
+        "Digital signatures provide evidence about a signer and the signed data. Key stretching increases the work required for password guessing."
+      ],
+      "entries": [
+        {
+          "title": "Digital Signatures",
+          "paragraphs": [
+            "A digital signature supports authentication, integrity, and non-repudiation. The signer creates the signature with a private key, and the matching public key verifies it."
+          ],
+          "memoryHook": "Private key signs · Public key verifies",
+          "recognitionCue": "Verify who signed the data and whether it changed."
+        },
+        {
+          "title": "Key Stretching",
+          "paragraphs": [
+            "Key stretching deliberately makes password-based cryptographic operations more computationally expensive, increasing the time and work required for large numbers of password guesses."
+          ],
+          "recognitionCue": "Make every password guess cost more time and work."
+        }
+      ]
+    },
+    {
+      "id": "blockchain-and-public-ledger",
+      "title": "Blockchain and Open Public Ledger",
+      "paragraphs": [
+        "Blockchain and an open public ledger are related concepts, but one describes the cryptographically linked record structure while the other describes public visibility and verification."
+      ],
+      "entries": [
+        {
+          "title": "Blockchain",
+          "paragraphs": [
+            "A blockchain stores information in blocks that are cryptographically linked. Altering earlier information can affect the chain, supporting integrity, tamper evidence, and distributed record keeping."
+          ],
+          "recognitionCue": "A cryptographically linked sequence of records means blockchain."
+        },
+        {
+          "title": "Open Public Ledger",
+          "paragraphs": [
+            "An open public ledger allows records or transactions to be publicly visible and independently verified. A blockchain can provide this kind of ledger."
+          ],
+          "recognitionCue": "A publicly visible and verifiable transaction record means open public ledger."
+        }
+      ]
+    },
+    {
+      "id": "certificates",
+      "title": "Certificates",
+      "paragraphs": [
+        "A digital certificate associates an identity with a public key. It provides the information and trust relationships needed to say that a particular public key belongs to the identified subject.",
+        "Certificates are a central part of PKI and depend on issuers, trust chains, status checking, and protected private keys."
+      ],
+      "callout": "Recognition: This public key belongs to this identity—think digital certificate."
+    },
+    {
+      "id": "certificate-authorities-and-status",
+      "title": "Certificate Authorities and Status Checking",
+      "paragraphs": [
+        "A Certificate Authority issues certificates. CRL and OCSP help determine whether an issued certificate has been revoked."
+      ],
+      "entries": [
+        {
+          "title": "Certificate Authority (CA)",
+          "paragraphs": [
+            "A Certificate Authority is a trusted entity that issues and signs digital certificates."
+          ],
+          "recognitionCue": "The trusted organization vouches for the certificate."
+        },
+        {
+          "title": "Certificate Revocation List (CRL)",
+          "paragraphs": [
+            "A Certificate Revocation List is a published list of certificates that have been revoked and should no longer be trusted."
+          ],
+          "recognitionCue": "Show me the list of revoked certificates."
+        },
+        {
+          "title": "Online Certificate Status Protocol (OCSP)",
+          "paragraphs": [
+            "OCSP allows a system to check the current status of one specific certificate."
+          ],
+          "recognitionCue": "Is this particular certificate still valid?"
+        }
+      ],
+      "table": {
+        "caption": "CRL compared with OCSP",
+        "headers": [
+          "Method",
+          "Recognition question"
+        ],
+        "rows": [
+          [
+            "CRL",
+            "Which certificates appear on the revoked list?"
+          ],
+          [
+            "OCSP",
+            "What is the status of this specific certificate?"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "certificate-trust-and-requests",
+      "title": "Certificate Trust, Requests, and Coverage",
+      "paragraphs": [
+        "Certificates differ in who signs them, where their trust begins, how they are requested, and which names they can protect."
+      ],
+      "entries": [
+        {
+          "title": "Self-Signed Certificate",
+          "paragraphs": [
+            "A self-signed certificate is signed by the same entity identified in the certificate rather than by an external trusted CA. It can support encryption, but outside systems may not automatically trust the identity."
+          ],
+          "recognitionCue": "The certificate is signed by its own owner."
+        },
+        {
+          "title": "Third-Party Certificate",
+          "paragraphs": [
+            "A third-party certificate is issued or signed through an external trusted Certificate Authority."
+          ],
+          "recognitionCue": "An outside trusted CA validates and signs the certificate."
+        },
+        {
+          "title": "Root of Trust",
+          "paragraphs": [
+            "A root of trust is the trusted foundation used to establish trust in other certificates or cryptographic relationships. Trusted root CA certificates begin certificate trust chains."
+          ],
+          "recognitionCue": "Trust has to start somewhere."
+        },
+        {
+          "title": "Certificate Signing Request (CSR)",
+          "paragraphs": [
+            "A Certificate Signing Request is sent to a CA when an organization or system requests a certificate. The requester creates the key material and certificate information while keeping the private key protected."
+          ],
+          "recognitionCue": "Please issue a certificate for this identity and public key."
+        },
+        {
+          "title": "Wildcard Certificate",
+          "paragraphs": [
+            "A wildcard certificate can protect multiple subdomains that match a common domain pattern, such as *.giantslayeracademy.com."
+          ],
+          "recognitionCue": "One certificate covers multiple matching subdomains."
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Start every cryptography scenario by identifying the security goal and the scope of the protection."
+      ],
+      "bullets": [
+        "Shareable cryptographic key → Public key",
+        "Secret owner key → Private key",
+        "Recover a lost encryption key → Key escrow",
+        "Protect an entire drive → Full-disk encryption",
+        "Protect one file → File encryption",
+        "Protect moving data → Transport or communication encryption",
+        "Same key encrypts and decrypts → Symmetric encryption",
+        "Public/private key pair → Asymmetric encryption",
+        "Establish shared key material → Key exchange",
+        "Protect keys on one endpoint → TPM",
+        "Dedicated centralized cryptographic hardware → HSM",
+        "Manage the key lifecycle → Key management system",
+        "Isolated sensitive processing → Secure enclave",
+        "Hide data inside another object → Steganography",
+        "Replace a sensitive value → Tokenization",
+        "Hide a displayed value → Data masking",
+        "Verify integrity → Hashing",
+        "Add random data before hashing → Salting",
+        "Prove origin and integrity → Digital signature",
+        "Slow password guessing → Key stretching",
+        "Linked tamper-evident records → Blockchain",
+        "Publicly verifiable records → Open public ledger",
+        "Issue or sign a certificate → Certificate Authority",
+        "List revoked certificates → CRL",
+        "Check one certificate's status → OCSP",
+        "Certificate signs itself → Self-signed certificate",
+        "Trusted external CA signs it → Third-party certificate",
+        "Beginning of a trust chain → Root of trust",
+        "Request a certificate from a CA → CSR",
+        "Protect multiple matching subdomains → Wildcard certificate"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Encryption protects confidentiality. Hashing verifies integrity. A digital signature helps verify identity, integrity, and non-repudiation.",
+        "Salting changes the input before hashing. Key stretching increases the computational cost of repeated password guesses.",
+        "CRL provides a list of revoked certificates. OCSP checks the status of one certificate.",
+        "A TPM is generally tied to one endpoint. An HSM is dedicated cryptographic hardware commonly used for centralized or high-value keys."
+      ],
+      "callout": "Do not choose a cryptographic tool because its name sounds secure. Choose it because it solves the security problem described in the scenario."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use these short cues to identify the intended cryptographic solution quickly."
+      ],
+      "bullets": [
+        "Share it → Public key · Protect it → Private key · Recover it → Key escrow",
+        "Keep data secret → Encryption · Did the data change? → Hashing",
+        "Same secret key → Symmetric · Public/private pair → Asymmetric",
+        "Establish a shared secret → Key exchange",
+        "Endpoint hardware security → TPM · Dedicated cryptographic hardware → HSM",
+        "Manage keys centrally → Key management system · Isolate sensitive processing → Secure enclave",
+        "Hide a message inside something else → Steganography",
+        "Replace a sensitive value → Tokenization · Hide the visible value → Data masking",
+        "Randomize before hashing → Salting · Make password guessing slower → Key stretching",
+        "Who signed it, and did it change? → Digital signature",
+        "Linked tamper-evident records → Blockchain · Publicly verifiable ledger → Open public ledger",
+        "Who issues certificates? → CA",
+        "Which certificates were revoked? → CRL · Is this certificate valid now? → OCSP",
+        "Signed by itself → Self-signed · Signed by a trusted outside CA → Third-party",
+        "Where does certificate trust begin? → Root of trust",
+        "Ask a CA for a certificate → CSR · Protect many subdomains → Wildcard certificate"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Match each requirement to the cryptographic solution that directly satisfies it.",
+    "prompt": "A software publisher sends a signed release to customers over an untrusted network. Customers must verify who signed the release and whether it was altered, while the release must remain confidential as it travels.",
+    "fields": [
+      {
+        "id": "origin-and-integrity",
+        "label": "Origin and integrity proof",
+        "choices": [
+          "Digital signature",
+          "Hashing",
+          "Data masking",
+          "Tokenization"
+        ],
+        "answer": "Digital signature"
+      },
+      {
+        "id": "in-transit-confidentiality",
+        "label": "In-transit confidentiality",
+        "choices": [
+          "Transport and communication encryption",
+          "Salting",
+          "Key stretching",
+          "Open public ledger"
+        ],
+        "answer": "Transport and communication encryption"
+      }
+    ],
+    "correctFeedback": "Correct. The digital signature lets customers verify the signer and detect changes to the release. Transport and communication encryption protects the release from unauthorized disclosure while it moves across the untrusted network.",
+    "retryFeedback": "Not quite. Separate the two requirements: which solution proves the signer and integrity, and which solution protects confidentiality while data is moving? Review Digital Signatures and Transport and Encryption Types, then try again."
+  }
+}

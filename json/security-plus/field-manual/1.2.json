@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "1",
+  "objective": "1.2",
+  "title": "Summarize Fundamental Security Concepts",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "This objective is bigger. Instead of one concept, CompTIA is giving us several security foundations that show up everywhere else in Security+.",
+        "GSA breaks Objective 1.2 into separate mini-lessons under the same objective rather than throwing one giant wall of text at the student."
+      ],
+      "callout": "Move through one mini-lesson at a time, then use the Maestro Recognition Sheet before the Mini Check."
+    },
+    {
+      "id": "cia-triad",
+      "title": "CIA Triad",
+      "paragraphs": [
+        "The CIA triad describes three fundamental goals of information security."
+      ],
+      "entries": [
+        {
+          "title": "Confidentiality",
+          "paragraphs": [
+            "Think: “Who is allowed to see this?”",
+            "Controls such as encryption and access restrictions can help protect confidentiality."
+          ],
+          "recognitionCue": "Unauthorized disclosure → Confidentiality problem"
+        },
+        {
+          "title": "Integrity",
+          "paragraphs": [
+            "Think: “Can I trust that this has not been changed?”",
+            "Integrity protects against unauthorized modification."
+          ],
+          "recognitionCue": "Unauthorized alteration → Integrity problem"
+        },
+        {
+          "title": "Availability",
+          "paragraphs": [
+            "Think: “Can I get to it when I need it?”",
+            "Availability concerns uptime and reliable access."
+          ],
+          "recognitionCue": "Outage or unavailable service → Availability problem"
+        }
+      ],
+      "table": {
+        "caption": "CIA triad recognition sheet",
+        "headers": [
+          "Goal",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "Confidentiality",
+            "Only authorized users can see the information"
+          ],
+          [
+            "Integrity",
+            "Information remains accurate and unauthorized changes are prevented or detected"
+          ],
+          [
+            "Availability",
+            "Authorized users can access systems and data when needed"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "non-repudiation",
+      "title": "Non-Repudiation",
+      "paragraphs": [
+        "Non-repudiation provides evidence that someone performed an action so they cannot credibly deny it later.",
+        "Think: “We can prove YOU did this.”",
+        "Digital signatures can help provide non-repudiation."
+      ],
+      "callout": "Cannot deny having performed an action → Non-repudiation"
+    },
+    {
+      "id": "aaa",
+      "title": "AAA",
+      "paragraphs": [
+        "AAA means Authentication, Authorization, and Accounting."
+      ],
+      "entries": [
+        {
+          "title": "Authentication",
+          "paragraphs": [
+            "Who are you?",
+            "The system verifies the identity of a person or system.",
+            "A human might authenticate with credentials or MFA. A system or service may authenticate using machine credentials such as certificates or keys."
+          ],
+          "recognitionCue": "Authentication proves identity for people and systems"
+        },
+        {
+          "title": "Authorization",
+          "paragraphs": [
+            "What are you allowed to do?",
+            "Authentication proves identity. Authorization determines permissions after identity has been established."
+          ],
+          "recognitionCue": "Authenticate first → Authorize second"
+        },
+        {
+          "title": "Accounting",
+          "paragraphs": [
+            "What did you do?",
+            "Accounting records activity for logging, auditing, usage tracking, and investigations."
+          ],
+          "recognitionCue": "Recorded activity → Accounting"
+        }
+      ],
+      "callout": "Who are you? → Authentication · What can you do? → Authorization · What did you do? → Accounting"
+    },
+    {
+      "id": "authorization-models",
+      "title": "Authorization Models",
+      "paragraphs": [
+        "The objective requires students to understand authorization models, so GSA connects this foundation to models seen later in more depth, such as role-based or attribute-based access.",
+        "Authentication identifies the subject. The authorization model determines which resources and actions that subject can access.",
+        "We do not have to dump every later IAM lesson into Objective 1.2. The goal here is to establish the foundation and link forward."
+      ],
+      "callout": "Identity is established first; the authorization model then determines permitted access."
+    },
+    {
+      "id": "gap-analysis",
+      "title": "Gap Analysis",
+      "paragraphs": [
+        "Gap analysis compares where security is now with where security should be. The difference is the gap.",
+        "Example: The current state uses password-only authentication. The desired state uses MFA. The gap is that MFA has not yet been implemented."
+      ],
+      "callout": "Current state versus desired state → Gap analysis"
+    },
+    {
+      "id": "zero-trust",
+      "title": "Zero Trust",
+      "paragraphs": [
+        "Traditional security often assumes that something inside a trusted network is safer.",
+        "Zero Trust changes the mindset: do not automatically trust a user, device, or system simply because of where it is located.",
+        "Access should be continuously evaluated according to policy.",
+        "The objective divides Zero Trust into two major pieces: the control plane and the data plane."
+      ],
+      "callout": "Never automatically trust because of location → Zero Trust"
+    },
+    {
+      "id": "zero-trust-control-plane",
+      "title": "Zero Trust — Control Plane",
+      "paragraphs": [
+        "Think of the control plane as the decision-making brain."
+      ],
+      "entries": [
+        {
+          "title": "Adaptive Identity",
+          "paragraphs": [
+            "Identity decisions can change based on context and risk."
+          ],
+          "recognitionCue": "Identity decision changes with context or risk → Adaptive identity"
+        },
+        {
+          "title": "Threat Scope Reduction",
+          "paragraphs": [
+            "Limit how far an attacker can move or how much damage a compromise can cause."
+          ],
+          "recognitionCue": "Reduce movement and potential damage → Threat scope reduction"
+        },
+        {
+          "title": "Policy-Driven Access Control",
+          "paragraphs": [
+            "Access is granted according to defined policies rather than assumptions of trust."
+          ],
+          "recognitionCue": "Defined policy determines access → Policy-driven access control"
+        },
+        {
+          "title": "Policy Engine",
+          "paragraphs": [
+            "The Policy Engine makes the access decision.",
+            "Think: “Should this request be allowed?”"
+          ],
+          "memoryHook": "DECIDES"
+        },
+        {
+          "title": "Policy Administrator",
+          "paragraphs": [
+            "The Policy Administrator carries out or coordinates the decision made by the Policy Engine."
+          ],
+          "memoryHook": "ACTS ON THE DECISION"
+        }
+      ],
+      "callout": "Policy Engine = decides · Policy Administrator = acts on the decision"
+    },
+    {
+      "id": "zero-trust-data-plane",
+      "title": "Zero Trust — Data Plane",
+      "paragraphs": [
+        "The data plane is where the actual communication and access happen."
+      ],
+      "entries": [
+        {
+          "title": "Implicit Trust Zones",
+          "paragraphs": [
+            "Zero Trust aims to reduce reliance on automatically trusted areas."
+          ],
+          "recognitionCue": "Location alone should not create automatic trust"
+        },
+        {
+          "title": "Subject/System",
+          "paragraphs": [
+            "The subject or system is the user, device, application, or system attempting access."
+          ]
+        },
+        {
+          "title": "Policy Enforcement Point",
+          "paragraphs": [
+            "The Policy Enforcement Point, or PEP, enforces the access decision."
+          ],
+          "memoryHook": "THE GATE",
+          "recognitionCue": "Allows or blocks the request → Policy Enforcement Point"
+        },
+        {
+          "title": "Zero Trust Flow",
+          "paragraphs": [
+            "Subject requests access → Policy Engine decides → Policy Administrator coordinates → Policy Enforcement Point allows or blocks."
+          ]
+        }
+      ],
+      "callout": "PEP = the gate"
+    },
+    {
+      "id": "physical-security",
+      "title": "Physical Security",
+      "paragraphs": [
+        "Every item from the official objective becomes a recognition lesson."
+      ],
+      "table": {
+        "caption": "Physical security recognition sheet",
+        "headers": [
+          "Control",
+          "Recognition"
+        ],
+        "rows": [
+          [
+            "Bollards",
+            "Stop vehicles from reaching protected areas"
+          ],
+          [
+            "Access control vestibule",
+            "Controlled entry area with sequential doors"
+          ],
+          [
+            "Fencing",
+            "Establishes a physical boundary"
+          ],
+          [
+            "Video surveillance",
+            "Monitors and records activity"
+          ],
+          [
+            "Security guard",
+            "Human physical-security control"
+          ],
+          [
+            "Access badge",
+            "Identifies and allows authorized personnel"
+          ],
+          [
+            "Lighting",
+            "Improves visibility and discourages intrusion"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sensors",
+      "title": "Sensors",
+      "entries": [
+        {
+          "title": "Infrared",
+          "paragraphs": [
+            "Detects heat or infrared energy."
+          ]
+        },
+        {
+          "title": "Pressure",
+          "paragraphs": [
+            "Detects weight or physical pressure."
+          ]
+        },
+        {
+          "title": "Microwave",
+          "paragraphs": [
+            "Uses microwave energy to detect movement."
+          ]
+        },
+        {
+          "title": "Ultrasonic",
+          "paragraphs": [
+            "Uses high-frequency sound waves to detect movement."
+          ]
+        }
+      ],
+      "callout": "Exam trick: Security+ may describe how the sensor detects movement instead of naming it directly."
+    },
+    {
+      "id": "deception-disruption",
+      "title": "Deception and Disruption Technology",
+      "paragraphs": [
+        "These technologies intentionally give attackers something fake or monitored to interact with."
+      ],
+      "entries": [
+        {
+          "title": "Honeypot",
+          "paragraphs": [
+            "A honeypot is a decoy system designed to attract attackers."
+          ],
+          "memoryHook": "ONE FAKE TARGET",
+          "recognitionCue": "Fake machine → Honeypot"
+        },
+        {
+          "title": "Honeynet",
+          "paragraphs": [
+            "A honeynet is a network of honeypots or decoy systems."
+          ],
+          "memoryHook": "FAKE NETWORK",
+          "recognitionCue": "Fake network → Honeynet"
+        },
+        {
+          "title": "Honeyfile",
+          "paragraphs": [
+            "A honeyfile is a decoy file intended to attract unauthorized access.",
+            "Example: An attacker opens a tempting file named Executive_Salaries_2026.xlsx and security receives an alert."
+          ],
+          "recognitionCue": "Fake file → Honeyfile"
+        },
+        {
+          "title": "Honeytoken",
+          "paragraphs": [
+            "A honeytoken is fake digital information designed to reveal misuse."
+          ],
+          "examples": [
+            "Fake credentials",
+            "Fake API tokens",
+            "Fake records",
+            "Fake identifiers"
+          ],
+          "recognitionCue": "Fake data, credential, or token → Honeytoken"
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to recognize the objective's major clues quickly."
+      ],
+      "bullets": [
+        "CIA → Confidentiality / Integrity / Availability",
+        "Prove who → Authentication",
+        "Decide permission → Authorization",
+        "Record activity → Accounting",
+        "Cannot deny action → Non-repudiation",
+        "Current state vs. desired state → Gap analysis",
+        "Never automatically trust → Zero Trust",
+        "Policy Engine → decides",
+        "Policy Enforcement Point → enforces",
+        "Fake system → Honeypot",
+        "Fake network → Honeynet",
+        "Fake file → Honeyfile",
+        "Fake data → Honeytoken"
+      ],
+      "callout": "Recognition first. Mastery follows."
+    }
+  ],
+  "miniCheck": {
+    "intro": "Use the Zero Trust flow: identify the component that makes the decision, then identify the component that enforces it.",
+    "prompt": "A Zero Trust access request is evaluated by one component that decides whether access should be allowed. The final decision is then applied at the access gate.",
+    "fields": [
+      {
+        "id": "decision-component",
+        "label": "Decision-making component",
+        "choices": [
+          "Policy Engine",
+          "Policy Administrator",
+          "Policy Enforcement Point",
+          "Subject/System"
+        ],
+        "answer": "Policy Engine"
+      },
+      {
+        "id": "enforcement-component",
+        "label": "Enforcement component",
+        "choices": [
+          "Policy Engine",
+          "Policy Administrator",
+          "Policy Enforcement Point",
+          "Subject/System"
+        ],
+        "answer": "Policy Enforcement Point"
+      }
+    ],
+    "correctFeedback": "Correct. The Policy Engine decides whether the request should be allowed. The Policy Enforcement Point is the gate that applies the decision by allowing or blocking access.",
+    "retryFeedback": "Not quite. Follow the Zero Trust flow again: the Policy Engine decides, the Policy Administrator coordinates, and the Policy Enforcement Point enforces at the gate."
+  }
+}

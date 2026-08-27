@@ -1,0 +1,680 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.1",
+  "title": "Given a Scenario, Apply Common Security Techniques to Computing Resources",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security operations includes the day-to-day work of keeping computing resources secure. Organizations create secure configurations, harden systems, secure wireless and mobile devices, protect applications, isolate risky activity, and monitor for problems.",
+        "Security+ expects you to identify the technique that fits the resource and the security requirement.",
+        "Use this sequence: establish a secure starting point, harden the resource, control access and communication, and monitor it."
+      ],
+      "entries": [
+        {
+          "title": "Computing Resource Security",
+          "paragraphs": [
+            "The correct technique depends on what the device does, how it connects, what it protects, and which operational limits must be preserved."
+          ],
+          "recognitionCue": "Identify the resource, then choose the technique that reduces its attack surface or keeps its secure configuration effective."
+        }
+      ],
+      "callout": "Baseline is the approved starting configuration. Hardening reduces unnecessary exposure. Monitoring verifies that security remains effective."
+    },
+    {
+      "id": "secure-baselines",
+      "title": "Secure Baselines",
+      "paragraphs": [
+        "A secure baseline is an approved set of security settings that systems should follow. It creates a known standard instead of allowing every device to be configured differently."
+      ],
+      "entries": [
+        {
+          "title": "Secure Baselines",
+          "paragraphs": [
+            "A baseline may define required settings for accounts, passwords, services, applications, network connections, logging, and security controls."
+          ],
+          "memoryHook": "This is what a properly secured system should look like.",
+          "recognitionCue": "Approved standard configuration for a computing resource -> Secure baseline"
+        }
+      ]
+    },
+    {
+      "id": "establish-deploy-maintain",
+      "title": "Establish, Deploy, and Maintain",
+      "paragraphs": [
+        "The baseline lifecycle moves from defining the standard to applying it and keeping it current."
+      ],
+      "entries": [
+        {
+          "title": "Establish",
+          "paragraphs": [
+            "To establish a baseline, the organization decides which security settings are required."
+          ],
+          "memoryHook": "Define the secure standard.",
+          "recognitionCue": "Create the approved security configuration -> Establish"
+        },
+        {
+          "title": "Deploy",
+          "paragraphs": [
+            "To deploy a baseline, the approved configuration is applied to systems. Automation can distribute consistent settings to many devices."
+          ],
+          "memoryHook": "Put the standard on the systems.",
+          "recognitionCue": "Apply the approved baseline to computing resources -> Deploy"
+        },
+        {
+          "title": "Maintain",
+          "paragraphs": [
+            "A baseline must be updated as threats, software, systems, and business requirements change. Maintenance also identifies configuration drift away from the approved standard."
+          ],
+          "memoryHook": "Keep the secure standard current and enforced.",
+          "recognitionCue": "Update and preserve the approved configuration over time -> Maintain"
+        }
+      ],
+      "table": {
+        "caption": "Secure-baseline lifecycle",
+        "headers": ["Stage", "Primary action"],
+        "rows": [
+          ["Establish", "Define the approved standard"],
+          ["Deploy", "Apply the standard to systems"],
+          ["Maintain", "Keep the standard current and detect drift"]
+        ]
+      }
+    },
+    {
+      "id": "hardening-targets",
+      "title": "Hardening Targets",
+      "paragraphs": [
+        "Hardening reduces a system's attack surface by removing unnecessary functionality and strengthening security settings. Different resources require different hardening decisions."
+      ],
+      "entries": [
+        {
+          "title": "Hardening Targets",
+          "paragraphs": [
+            "Security+ includes mobile devices, workstations, switches, routers, cloud infrastructure, servers, industrial systems, embedded systems, real-time operating systems, IoT devices, and wireless devices."
+          ],
+          "memoryHook": "Secure what the device actually is and what it actually does.",
+          "recognitionCue": "Reduce unnecessary exposure for a specific resource -> Hardening target"
+        }
+      ]
+    },
+    {
+      "id": "mobile-devices-and-workstations",
+      "title": "Mobile Devices and Workstations",
+      "paragraphs": [
+        "User-facing endpoints commonly hold business data, credentials, applications, and network access."
+      ],
+      "entries": [
+        {
+          "title": "Mobile Devices",
+          "paragraphs": [
+            "Mobile-device hardening can include strong authentication, encryption, approved applications, secure configuration, device restrictions, and remote-management controls."
+          ],
+          "recognitionCue": "Smartphone or tablet security configuration -> Mobile-device hardening"
+        },
+        {
+          "title": "Workstations",
+          "paragraphs": [
+            "Workstation hardening can include endpoint protection, patching, restricted privileges, removal of unnecessary software, and secure configurations."
+          ],
+          "memoryHook": "Protect the user's everyday computer.",
+          "recognitionCue": "Secure an employee endpoint -> Workstation hardening"
+        }
+      ]
+    },
+    {
+      "id": "switches-and-routers",
+      "title": "Switches and Routers",
+      "paragraphs": [
+        "Network devices control connectivity and traffic paths, so their management and unnecessary services must be protected."
+      ],
+      "entries": [
+        {
+          "title": "Switches",
+          "paragraphs": [
+            "Switch hardening can restrict administrative access, secure management interfaces, disable unused ports, and enforce approved configurations."
+          ],
+          "recognitionCue": "Protect network-switch access, ports, and configuration -> Switch hardening"
+        },
+        {
+          "title": "Routers",
+          "paragraphs": [
+            "Router hardening can secure administrator access, restrict unnecessary services, preserve approved configuration, and keep software or firmware current."
+          ],
+          "recognitionCue": "Secure the device routing traffic between networks -> Router hardening"
+        }
+      ]
+    },
+    {
+      "id": "cloud-infrastructure-and-servers",
+      "title": "Cloud Infrastructure and Servers",
+      "paragraphs": [
+        "Cloud and server systems often host critical services and data, but their hardening responsibilities differ."
+      ],
+      "entries": [
+        {
+          "title": "Cloud Infrastructure",
+          "paragraphs": [
+            "Cloud hardening protects permissions, identities, configuration, network access, and logging. The provider may secure underlying infrastructure, but the customer still has security responsibilities."
+          ],
+          "memoryHook": "Cloud does not remove configuration responsibility.",
+          "recognitionCue": "Secure cloud resources and their access or configuration -> Cloud hardening"
+        },
+        {
+          "title": "Servers",
+          "paragraphs": [
+            "Server hardening can remove unnecessary services, restrict administrator access, apply patches, and configure host security controls around critical applications, databases, and services."
+          ],
+          "recognitionCue": "Reduce exposure on a system providing services -> Server hardening"
+        }
+      ]
+    },
+    {
+      "id": "ics-scada",
+      "title": "ICS and SCADA",
+      "paragraphs": [
+        "Industrial systems can control physical processes, so hardening must preserve availability, safety, compatibility, and limited maintenance windows."
+      ],
+      "entries": [
+        {
+          "title": "ICS/SCADA",
+          "paragraphs": [
+            "Industrial systems may be difficult to patch or replace. A security change must be evaluated for its effect on physical operations and safety."
+          ],
+          "memoryHook": "Security matters, but shutting the system down may affect the physical world.",
+          "recognitionCue": "Industrial-control environment with safety and availability constraints -> ICS/SCADA hardening"
+        }
+      ]
+    },
+    {
+      "id": "embedded-rtos-and-iot",
+      "title": "Embedded Systems, RTOS, and IoT",
+      "paragraphs": [
+        "Specialized devices may have limited resources, long lifecycles, difficult patching, or strict operational requirements."
+      ],
+      "entries": [
+        {
+          "title": "Embedded Systems",
+          "paragraphs": [
+            "An embedded system is a computer built into another device. It may use specialized software, have limited resources, and remain deployed for a long time."
+          ],
+          "recognitionCue": "Computer built into specialized equipment -> Embedded-system hardening"
+        },
+        {
+          "title": "RTOS",
+          "paragraphs": [
+            "A real-time operating system must perform tasks within predictable timing requirements. Security changes must not disrupt required timing or system operation."
+          ],
+          "recognitionCue": "Strict and predictable timing requirement -> RTOS hardening"
+        },
+        {
+          "title": "IoT Devices",
+          "paragraphs": [
+            "IoT devices can introduce default credentials, weak configurations, limited update support, and unnecessary network connectivity."
+          ],
+          "memoryHook": "A small connected device is still part of the attack surface.",
+          "recognitionCue": "Connected specialized smart device -> IoT hardening"
+        }
+      ]
+    },
+    {
+      "id": "wireless-devices",
+      "title": "Wireless Devices and Installation",
+      "paragraphs": [
+        "Wireless security begins with understanding the physical environment before access points are installed."
+      ],
+      "entries": [
+        {
+          "title": "Wireless Devices",
+          "paragraphs": [
+            "Wireless-device hardening requires secure configuration, appropriate placement, protected access, and awareness of signal coverage beyond physical walls."
+          ],
+          "recognitionCue": "Secure devices that transmit and receive without physical cabling -> Wireless-device hardening"
+        },
+        {
+          "title": "Installation Considerations",
+          "paragraphs": [
+            "Installation should account for coverage, interference, obstacles, access-point placement, and unwanted signal exposure. Site surveys and heat maps support these decisions."
+          ],
+          "recognitionCue": "Plan wireless placement and coverage before deployment -> Installation considerations"
+        }
+      ]
+    },
+    {
+      "id": "site-surveys-and-heat-maps",
+      "title": "Site Surveys and Heat Maps",
+      "paragraphs": [
+        "A site survey evaluates the environment. A heat map displays the resulting signal coverage."
+      ],
+      "entries": [
+        {
+          "title": "Site Surveys",
+          "paragraphs": [
+            "A site survey examines the physical environment to identify coverage requirements, interference, obstacles, and suitable access-point placement."
+          ],
+          "memoryHook": "Walk and evaluate the environment before placing wireless equipment.",
+          "recognitionCue": "Evaluate the physical environment for wireless deployment -> Site survey"
+        },
+        {
+          "title": "Heat Maps",
+          "paragraphs": [
+            "A heat map visually represents wireless signal strength and coverage, revealing strong areas, weak areas, dead zones, and overlap."
+          ],
+          "memoryHook": "See where the signal is strong or weak.",
+          "recognitionCue": "Visual representation of wireless coverage -> Heat map"
+        }
+      ],
+      "table": {
+        "caption": "Wireless deployment planning",
+        "headers": ["Tool", "Primary role"],
+        "rows": [
+          ["Site survey", "Examine and plan the physical environment"],
+          ["Heat map", "Visualize wireless signal coverage"]
+        ]
+      }
+    },
+    {
+      "id": "mobile-solutions",
+      "title": "Mobile Solutions",
+      "paragraphs": [
+        "Organizations need a way to enforce mobile security and decide who owns and controls each device."
+      ],
+      "entries": [
+        {
+          "title": "Mobile Solutions",
+          "paragraphs": [
+            "Security+ includes mobile device management plus BYOD, COPE, and CYOD deployment models."
+          ],
+          "recognitionCue": "Management and ownership choices for organizational mobile use -> Mobile solutions"
+        }
+      ]
+    },
+    {
+      "id": "mobile-device-management",
+      "title": "Mobile Device Management",
+      "paragraphs": [
+        "Mobile device management provides centralized control over mobile-device security."
+      ],
+      "entries": [
+        {
+          "title": "Mobile Device Management (MDM)",
+          "paragraphs": [
+            "MDM can enforce security policies, approved configurations, application requirements, and device restrictions across managed mobile devices."
+          ],
+          "memoryHook": "Centrally control mobile security.",
+          "recognitionCue": "Centralized mobile-device policy and configuration management -> MDM"
+        }
+      ]
+    },
+    {
+      "id": "deployment-models",
+      "title": "Mobile Deployment Models",
+      "paragraphs": [
+        "Mobile deployment models define device ownership and how much choice or personal use the employee receives."
+      ],
+      "entries": [
+        {
+          "title": "Deployment Models",
+          "paragraphs": [
+            "BYOD, COPE, and CYOD balance employee convenience, organizational control, privacy, and device consistency differently."
+          ],
+          "recognitionCue": "Determine who owns the device and who chooses it -> Deployment model"
+        }
+      ]
+    },
+    {
+      "id": "byod-cope-and-cyod",
+      "title": "BYOD, COPE, and CYOD",
+      "paragraphs": [
+        "Ownership and selection provide the fastest recognition cues for these three models."
+      ],
+      "entries": [
+        {
+          "title": "Bring Your Own Device (BYOD)",
+          "paragraphs": [
+            "BYOD allows employees to use personally owned devices for organizational work, creating challenges around personal and business data separation, privacy, consistency, and control."
+          ],
+          "memoryHook": "The employee owns it.",
+          "recognitionCue": "Employee-owned device used for work -> BYOD"
+        },
+        {
+          "title": "Corporate-Owned, Personally Enabled (COPE)",
+          "paragraphs": [
+            "With COPE, the organization owns the device but permits some personal use."
+          ],
+          "memoryHook": "The company owns it, and the employee may use it personally.",
+          "recognitionCue": "Organization-owned device with personal use permitted -> COPE"
+        },
+        {
+          "title": "Choose Your Own Device (CYOD)",
+          "paragraphs": [
+            "With CYOD, the employee selects a device from a list approved by the organization."
+          ],
+          "memoryHook": "Choose, but only from approved options.",
+          "recognitionCue": "Employee selects from organization-approved devices -> CYOD"
+        }
+      ],
+      "table": {
+        "caption": "Mobile deployment models",
+        "headers": ["Model", "Ownership and choice"],
+        "rows": [
+          ["BYOD", "Employee owns the device"],
+          ["COPE", "Organization owns it and permits personal use"],
+          ["CYOD", "Employee chooses from an approved list"]
+        ]
+      }
+    },
+    {
+      "id": "connection-methods",
+      "title": "Connection Methods",
+      "paragraphs": [
+        "Mobile devices commonly connect through cellular, Wi-Fi, and Bluetooth. Each method has a different range and network relationship."
+      ],
+      "entries": [
+        {
+          "title": "Connection Methods",
+          "paragraphs": [
+            "Identify the connection by whether it uses a mobile carrier, a wireless local network, or a short-range nearby-device link."
+          ],
+          "recognitionCue": "Carrier, local wireless network, or nearby device-to-device link -> Connection method"
+        }
+      ]
+    },
+    {
+      "id": "cellular-wifi-and-bluetooth",
+      "title": "Cellular, Wi-Fi, and Bluetooth",
+      "paragraphs": [
+        "The surrounding network and expected communication range distinguish these technologies."
+      ],
+      "entries": [
+        {
+          "title": "Cellular",
+          "paragraphs": [
+            "A cellular connection uses a mobile provider's network."
+          ],
+          "memoryHook": "Connect through the carrier.",
+          "recognitionCue": "Mobile-provider network -> Cellular"
+        },
+        {
+          "title": "Wi-Fi",
+          "paragraphs": [
+            "Wi-Fi provides wireless local-area network connectivity and depends on appropriate encryption, authentication, and configuration."
+          ],
+          "recognitionCue": "Wireless local network connection -> Wi-Fi"
+        },
+        {
+          "title": "Bluetooth",
+          "paragraphs": [
+            "Bluetooth provides short-range wireless communication between nearby devices."
+          ],
+          "memoryHook": "A nearby device-to-device connection.",
+          "recognitionCue": "Short-range nearby wireless connection -> Bluetooth"
+        }
+      ]
+    },
+    {
+      "id": "wireless-security-settings",
+      "title": "Wireless Security Settings",
+      "paragraphs": [
+        "Wireless access requires appropriate encryption, authentication, and centralized access-control settings."
+      ],
+      "entries": [
+        {
+          "title": "Wireless Security Settings",
+          "paragraphs": [
+            "Security+ expects recognition of WPA3, centralized AAA with RADIUS, cryptographic protocols, and authentication protocols."
+          ],
+          "recognitionCue": "Configuration that protects wireless access and communication -> Wireless security settings"
+        }
+      ]
+    },
+    {
+      "id": "wpa3-and-aaa-radius",
+      "title": "WPA3 and AAA/RADIUS",
+      "paragraphs": [
+        "WPA3 protects Wi-Fi communication, while RADIUS can centralize identity and access decisions."
+      ],
+      "entries": [
+        {
+          "title": "Wi-Fi Protected Access 3 (WPA3)",
+          "paragraphs": [
+            "WPA3 is a modern wireless security standard that provides stronger Wi-Fi protections than older standards."
+          ],
+          "recognitionCue": "Modern Wi-Fi security standard -> WPA3"
+        },
+        {
+          "title": "AAA/RADIUS",
+          "paragraphs": [
+            "AAA means authentication, authorization, and accounting. A RADIUS server can provide centralized AAA services for network access."
+          ],
+          "memoryHook": "Who are you? What may you do? What did you do?",
+          "recognitionCue": "Centralized network authentication and AAA -> RADIUS"
+        }
+      ]
+    },
+    {
+      "id": "cryptographic-and-authentication-protocols",
+      "title": "Cryptographic and Authentication Protocols",
+      "paragraphs": [
+        "One protocol category protects wireless communication; the other determines how identities prove who they are."
+      ],
+      "entries": [
+        {
+          "title": "Cryptographic Protocols",
+          "paragraphs": [
+            "Wireless cryptographic protocols protect transmitted information from unauthorized reading or modification."
+          ],
+          "recognitionCue": "Encrypt and protect wireless communication -> Cryptographic protocol"
+        },
+        {
+          "title": "Authentication Protocols",
+          "paragraphs": [
+            "Authentication protocols define how users or devices prove their identity before receiving wireless access."
+          ],
+          "recognitionCue": "Verify identity before wireless access -> Authentication protocol"
+        }
+      ]
+    },
+    {
+      "id": "application-security",
+      "title": "Application Security",
+      "paragraphs": [
+        "Applications require protections against unsafe input, exposed sessions, programming errors, and unauthorized code modification."
+      ],
+      "entries": [
+        {
+          "title": "Application Security",
+          "paragraphs": [
+            "Security+ includes input validation, secure cookies, static code analysis, and code signing as techniques that address different application risks."
+          ],
+          "recognitionCue": "Protect application input, sessions, source code, or software integrity -> Application security"
+        }
+      ]
+    },
+    {
+      "id": "input-validation-and-secure-cookies",
+      "title": "Input Validation and Secure Cookies",
+      "paragraphs": [
+        "Input validation protects processing boundaries. Secure cookies protect web-session information."
+      ],
+      "entries": [
+        {
+          "title": "Input Validation",
+          "paragraphs": [
+            "Input validation checks data supplied to an application before processing it, reducing the risk from unexpected or malicious input."
+          ],
+          "memoryHook": "Do not trust user input automatically.",
+          "recognitionCue": "Verify input before processing -> Input validation"
+        },
+        {
+          "title": "Secure Cookies",
+          "paragraphs": [
+            "Secure cookie settings reduce the risk that browser-session information is exposed or misused."
+          ],
+          "memoryHook": "Protect the browser's session information.",
+          "recognitionCue": "Protect web-session cookie data -> Secure cookies"
+        }
+      ]
+    },
+    {
+      "id": "static-analysis-and-code-signing",
+      "title": "Static Code Analysis and Code Signing",
+      "paragraphs": [
+        "Static analysis looks for weaknesses in source code. Code signing verifies the software's source and integrity."
+      ],
+      "entries": [
+        {
+          "title": "Static Code Analysis",
+          "paragraphs": [
+            "Static code analysis examines source code without running the application to find vulnerabilities, programming errors, and insecure coding patterns."
+          ],
+          "memoryHook": "Inspect the code without executing it.",
+          "recognitionCue": "Analyze source code without running the application -> Static code analysis"
+        },
+        {
+          "title": "Code Signing",
+          "paragraphs": [
+            "Code signing uses cryptography to help verify who produced software and whether the code has been altered."
+          ],
+          "memoryHook": "Is this from the expected developer, and is it unchanged?",
+          "recognitionCue": "Verify software publisher and integrity -> Code signing"
+        }
+      ],
+      "table": {
+        "caption": "Static analysis and code signing",
+        "headers": ["Technique", "Question answered"],
+        "rows": [
+          ["Static code analysis", "Does the source contain security weaknesses?"],
+          ["Code signing", "Who produced this software, and has it changed?"]
+        ]
+      }
+    },
+    {
+      "id": "sandboxing",
+      "title": "Sandboxing",
+      "paragraphs": [
+        "A sandbox isolates an application, process, or file so it can operate with limited access to the rest of the system."
+      ],
+      "entries": [
+        {
+          "title": "Sandboxing",
+          "paragraphs": [
+            "Organizations can use a sandbox to examine suspicious content without giving it unrestricted access to production resources."
+          ],
+          "memoryHook": "Let it run inside a controlled box.",
+          "recognitionCue": "Isolate activity in a restricted environment -> Sandboxing"
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring",
+      "paragraphs": [
+        "Hardening is not a one-time event. Systems must be observed for suspicious activity, configuration changes, performance problems, and security events."
+      ],
+      "entries": [
+        {
+          "title": "Monitoring",
+          "paragraphs": [
+            "Monitoring helps determine whether the system remains secure after deployment and whether controls continue working as intended."
+          ],
+          "memoryHook": "Secure it, then keep watching it.",
+          "recognitionCue": "Continuously observe computing resources for security issues -> Monitoring"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Define the approved configuration -> Establish. Apply it -> Deploy. Keep it current and detect drift -> Maintain. Reduce attack surface -> Hardening.",
+        "Evaluate the wireless environment -> Site survey. Visualize signal coverage -> Heat map. Centrally manage mobile security -> MDM.",
+        "Employee owns it -> BYOD. Company owns it and permits personal use -> COPE. Employee chooses from an approved list -> CYOD.",
+        "Carrier network -> Cellular. Wireless LAN -> Wi-Fi. Nearby device-to-device connection -> Bluetooth.",
+        "Modern Wi-Fi protection -> WPA3. Centralized AAA -> RADIUS. Verify input -> Input validation. Protect browser session information -> Secure cookies.",
+        "Inspect code without execution -> Static analysis. Verify software origin and integrity -> Code signing. Isolate suspicious activity -> Sandboxing. Watch systems over time -> Monitoring."
+      ],
+      "entries": [
+        {
+          "title": "Resource First",
+          "paragraphs": [
+            "Identify the computing resource before choosing its hardening, access, application-security, isolation, or monitoring technique."
+          ],
+          "recognitionCue": "Resource -> security requirement -> matching technique"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "A baseline is the approved secure configuration; hardening is the work used to reduce exposure and strengthen the system.",
+        "Establish defines the baseline, deploy applies it, and maintain keeps it current.",
+        "A site survey evaluates the wireless environment; a heat map visualizes signal coverage.",
+        "BYOD means the employee owns the device, COPE means the organization owns it and permits personal use, and CYOD means the employee chooses from approved options.",
+        "Static analysis finds weaknesses in source code; code signing verifies software origin and integrity.",
+        "Sandboxing isolates something; monitoring observes something over time."
+      ],
+      "callout": "First identify the resource, then determine whether the question asks for baselining, hardening, access, application security, isolation, or monitoring."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Define secure standard -> Establish | Apply secure standard -> Deploy | Keep standard current -> Maintain | Reduce attack surface -> Hardening",
+        "Plan wireless deployment -> Site survey | See wireless coverage -> Heat map | Manage mobile security centrally -> MDM",
+        "My device -> BYOD | Company device plus personal use -> COPE | Pick from approved list -> CYOD",
+        "Carrier network -> Cellular | Wireless LAN -> Wi-Fi | Nearby wireless -> Bluetooth",
+        "Modern Wi-Fi security -> WPA3 | Central AAA -> RADIUS",
+        "Check user input -> Input validation | Protect browser session -> Secure cookies",
+        "Inspect code without execution -> Static code analysis | Verify publisher and integrity -> Code signing",
+        "Run it in isolation -> Sandbox | Keep watching -> Monitoring"
+      ],
+      "entries": [
+        {
+          "title": "Final Decision Cue",
+          "paragraphs": [
+            "Name the resource, identify the exposure or control goal, and select the technique that most directly satisfies it without disrupting the resource's required operation."
+          ],
+          "recognitionCue": "Resource -> risk -> appropriate security technique"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the baseline stage and application-security technique that satisfy both requirements.",
+    "prompt": "A security team has already approved a hardened workstation configuration and now uses automation to apply it to hundreds of laptops. Separately, users need to verify that downloaded client software came from the approved developer and has not been altered.",
+    "fields": [
+      {
+        "id": "baseline-stage",
+        "label": "Current secure-baseline stage",
+        "choices": [
+          "Deploy",
+          "Establish",
+          "Maintain",
+          "Monitoring"
+        ],
+        "answer": "Deploy"
+      },
+      {
+        "id": "software-assurance",
+        "label": "Software origin and integrity technique",
+        "choices": [
+          "Code signing",
+          "Static code analysis",
+          "Input validation",
+          "Sandboxing"
+        ],
+        "answer": "Code signing"
+      }
+    ],
+    "correctFeedback": "Correct. The approved configuration already exists, so applying it to the laptops is deployment. Code signing lets users verify the expected software publisher and detect unauthorized modification.",
+    "retryFeedback": "Not quite. First identify the baseline stage that applies an already approved configuration. Then choose the application-security technique that verifies publisher identity and code integrity. Review Establish, Deploy, and Maintain plus Static Code Analysis and Code Signing, then try again."
+  }
+}

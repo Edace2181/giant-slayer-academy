@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.4",
+  "title": "Explain Security Alerting and Monitoring Concepts and Tools",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security teams need continuous visibility into systems, applications, and infrastructure so they can recognize suspicious behavior and act on it.",
+        "The monitoring cycle is: collect activity, analyze it, alert on important conditions, respond, and validate that the response worked.",
+        "Focus on what must be observed, which tool supplies the required visibility, and what should happen after an alert is generated."
+      ],
+      "entries": [
+        {
+          "title": "Monitoring Computing Resources",
+          "paragraphs": [
+            "Monitoring computing resources means observing technology assets for security and operational events so analysts can detect, investigate, and respond to meaningful activity."
+          ],
+          "memoryHook": "Monitoring sees it, alerting tells you, response acts on it, and validation proves the response worked.",
+          "recognitionCue": "Observe technology assets for security and operational events -> Monitoring computing resources"
+        }
+      ],
+      "callout": "Ask whether the scenario needs visibility, notification, response, or proof that remediation succeeded."
+    },
+    {
+      "id": "computing-resources",
+      "title": "Systems, Applications, and Infrastructure",
+      "paragraphs": [
+        "The monitored resource is an important clue. A host, a software service, and the supporting environment produce different evidence."
+      ],
+      "entries": [
+        {
+          "title": "Systems",
+          "paragraphs": [
+            "System monitoring watches operating systems and endpoints for logins, running processes, resource use, security events, and configuration changes."
+          ],
+          "recognitionCue": "Monitor host or operating-system activity -> Systems"
+        },
+        {
+          "title": "Applications",
+          "paragraphs": [
+            "Application monitoring examines software behavior such as errors, authentication events, transactions, suspicious activity, and performance."
+          ],
+          "recognitionCue": "Monitor software behavior, errors, or transactions -> Applications"
+        },
+        {
+          "title": "Infrastructure",
+          "paragraphs": [
+            "Infrastructure monitoring observes networks, routers, switches, servers, cloud resources, and other technology that supports the environment."
+          ],
+          "recognitionCue": "Monitor networks, platforms, and supporting services -> Infrastructure"
+        }
+      ],
+      "table": {
+        "caption": "Computing-resource monitoring",
+        "headers": ["Resource", "Primary question"],
+        "rows": [
+          ["Systems", "What is happening on this host or operating system?"],
+          ["Applications", "What is the software doing?"],
+          ["Infrastructure", "What is happening across the supporting environment?"]
+        ]
+      }
+    },
+    {
+      "id": "monitoring-activities",
+      "title": "Monitoring Activities",
+      "paragraphs": [
+        "Security operations repeatedly collects, evaluates, communicates, and preserves monitoring information. Each activity produces a different result."
+      ],
+      "entries": [
+        {
+          "title": "Activities",
+          "paragraphs": [
+            "Monitoring activities are the operational actions performed to collect security evidence, identify important conditions, communicate findings, retain records, and support response."
+          ],
+          "recognitionCue": "Operational work performed during security monitoring -> Activities"
+        },
+        {
+          "title": "Log Aggregation",
+          "paragraphs": [
+            "Log aggregation brings records from many sources into a central location for easier searching, correlation, investigation, and monitoring."
+          ],
+          "recognitionCue": "Collect records from many sources centrally -> Log aggregation"
+        },
+        {
+          "title": "Alerting",
+          "paragraphs": [
+            "Alerting notifies security personnel when a defined suspicious or important condition occurs, such as repeated failed logins, malware detection, or a policy violation."
+          ],
+          "recognitionCue": "Notify personnel when a defined condition occurs -> Alerting"
+        },
+        {
+          "title": "Scanning",
+          "paragraphs": [
+            "Scanning actively examines systems or networks for vulnerabilities, exposed services, security problems, and misconfigurations."
+          ],
+          "recognitionCue": "Systematically inspect resources for weaknesses or conditions -> Scanning"
+        },
+        {
+          "title": "Reporting",
+          "paragraphs": [
+            "Reporting summarizes alerts, incidents, vulnerabilities, trends, and compliance information for analysts, leaders, auditors, and other stakeholders."
+          ],
+          "recognitionCue": "Summarize and communicate monitoring findings -> Reporting"
+        },
+        {
+          "title": "Archiving",
+          "paragraphs": [
+            "Archiving preserves logs and monitoring data for later investigations, compliance needs, trend analysis, or legal requirements."
+          ],
+          "recognitionCue": "Retain historical monitoring data for later use -> Archiving"
+        }
+      ]
+    },
+    {
+      "id": "response-remediation-validation",
+      "title": "Alert Response, Remediation, and Validation",
+      "paragraphs": [
+        "An alert has value only when the organization investigates it, takes an appropriate action, and confirms the result."
+      ],
+      "entries": [
+        {
+          "title": "Alert Response and Remediation/Validation",
+          "paragraphs": [
+            "This activity investigates an alert, corrects or contains its cause, and confirms that the chosen response achieved the intended security result."
+          ],
+          "recognitionCue": "Investigate, correct, and confirm success -> Alert response and remediation/validation"
+        },
+        {
+          "title": "Quarantine",
+          "paragraphs": [
+            "Quarantine isolates a suspicious or compromised system or object so it cannot readily harm other resources while investigation and remediation continue."
+          ],
+          "memoryHook": "Separate the dangerous item from the rest of the environment.",
+          "recognitionCue": "Isolate a suspicious endpoint or object -> Quarantine"
+        },
+        {
+          "title": "Alert Tuning",
+          "paragraphs": [
+            "Alert tuning adjusts rules, conditions, or thresholds to reduce noise and false positives while preserving or improving useful detection."
+          ],
+          "memoryHook": "Make the alert system smarter, not louder.",
+          "recognitionCue": "Adjust detection logic to improve alert quality -> Alert tuning"
+        }
+      ],
+      "table": {
+        "caption": "Quarantine and alert tuning",
+        "headers": ["Action", "Purpose"],
+        "rows": [
+          ["Quarantine", "Contain a suspicious system or object"],
+          ["Alert tuning", "Improve how monitoring generates alerts"]
+        ]
+      }
+    },
+    {
+      "id": "automation-and-benchmarks",
+      "title": "Monitoring Tools, SCAP, and Benchmarks",
+      "paragraphs": [
+        "Monitoring tools collect, analyze, and act on security information. Standards and secure baselines make automated assessments consistent."
+      ],
+      "entries": [
+        {
+          "title": "Tools",
+          "paragraphs": [
+            "Security monitoring tools provide the technologies used to collect events, examine conditions, detect problems, and support action."
+          ],
+          "recognitionCue": "Technology used to collect, analyze, and act on monitoring information -> Tools"
+        },
+        {
+          "title": "Security Content Automation Protocol (SCAP)",
+          "paragraphs": [
+            "SCAP is a collection of standards that supports automated vulnerability checking, configuration assessment, and compliance evaluation."
+          ],
+          "recognitionCue": "Standardized formats for automated security assessment -> SCAP"
+        },
+        {
+          "title": "Benchmarks",
+          "paragraphs": [
+            "Benchmarks define recommended secure configurations or baselines that organizations use to evaluate whether systems are configured appropriately."
+          ],
+          "recognitionCue": "Reference standard for secure configuration -> Benchmark"
+        }
+      ],
+      "table": {
+        "caption": "SCAP and benchmarks",
+        "headers": ["Concept", "Role"],
+        "rows": [
+          ["SCAP", "Standardize and automate security checking"],
+          ["Benchmark", "Describe the secure configuration used for comparison"]
+        ]
+      }
+    },
+    {
+      "id": "agents-and-agentless",
+      "title": "Agents and Agentless Monitoring",
+      "paragraphs": [
+        "The collection architecture determines whether dedicated monitoring software must be installed on each endpoint."
+      ],
+      "entries": [
+        {
+          "title": "Agents/Agentless",
+          "paragraphs": [
+            "Agent-based monitoring installs local software for detailed endpoint visibility and continuous reporting. Agentless monitoring collects remotely through APIs, network protocols, or existing management services."
+          ],
+          "memoryHook": "Agent means installed locally; agentless means collected remotely.",
+          "recognitionCue": "Installed endpoint software versus remote collection -> Agents/agentless"
+        }
+      ],
+      "table": {
+        "caption": "Agent-based and agentless monitoring",
+        "headers": ["Method", "How information is collected"],
+        "rows": [
+          ["Agent-based", "Dedicated software runs on the monitored endpoint"],
+          ["Agentless", "Existing remote interfaces provide the information"]
+        ]
+      }
+    },
+    {
+      "id": "siem",
+      "title": "Security Information and Event Management",
+      "paragraphs": [
+        "A SIEM goes beyond merely storing logs by correlating events and helping analysts identify patterns across many sources."
+      ],
+      "entries": [
+        {
+          "title": "Security Information and Event Management (SIEM)",
+          "paragraphs": [
+            "A SIEM centralizes security logs and events, correlates related activity, generates alerts, supports searches and investigations, and produces reports."
+          ],
+          "recognitionCue": "Central log correlation, analysis, and alerting -> SIEM"
+        }
+      ]
+    },
+    {
+      "id": "antivirus-and-dlp",
+      "title": "Antivirus and Data Loss Prevention",
+      "paragraphs": [
+        "Both technologies monitor endpoint or data activity, but they protect against different outcomes."
+      ],
+      "entries": [
+        {
+          "title": "Antivirus",
+          "paragraphs": [
+            "Antivirus detects, blocks, removes, or contains malicious software using known and suspicious-code detection methods."
+          ],
+          "recognitionCue": "Detect or block malicious code -> Antivirus"
+        },
+        {
+          "title": "Data Loss Prevention (DLP)",
+          "paragraphs": [
+            "DLP monitors and controls sensitive data in email, files, network transfers, and endpoints to prevent unauthorized movement or use."
+          ],
+          "recognitionCue": "Detect or prevent sensitive data from leaving approved boundaries -> DLP"
+        }
+      ],
+      "table": {
+        "caption": "Antivirus and DLP",
+        "headers": ["Tool", "Primary concern"],
+        "rows": [
+          ["Antivirus", "Malicious software"],
+          ["DLP", "Unauthorized movement or use of sensitive data"]
+        ]
+      }
+    },
+    {
+      "id": "snmp-traps-and-netflow",
+      "title": "SNMP Traps and NetFlow",
+      "paragraphs": [
+        "Network monitoring may need a device-generated event notice or metadata describing traffic conversations."
+      ],
+      "entries": [
+        {
+          "title": "Simple Network Management Protocol (SNMP) Traps",
+          "paragraphs": [
+            "An SNMP trap is an unsolicited notification a network device sends to a management system when a defined event occurs."
+          ],
+          "memoryHook": "The device announces that something happened.",
+          "recognitionCue": "Device automatically sends an event notification -> SNMP trap"
+        },
+        {
+          "title": "NetFlow",
+          "paragraphs": [
+            "NetFlow summarizes network conversations through metadata such as source, destination, ports, protocol, and traffic volume."
+          ],
+          "memoryHook": "Who talked to whom, using what, and how much?",
+          "recognitionCue": "Metadata describing network communication flows -> NetFlow"
+        }
+      ],
+      "table": {
+        "caption": "SNMP traps and NetFlow",
+        "headers": ["Technology", "Evidence"],
+        "rows": [
+          ["SNMP trap", "An unsolicited device-event notification"],
+          ["NetFlow", "Metadata about traffic conversations"]
+        ]
+      }
+    },
+    {
+      "id": "vulnerability-scanners",
+      "title": "Vulnerability Scanners",
+      "paragraphs": [
+        "Vulnerability scanners extend monitoring by checking the environment for newly exposed or already known weaknesses."
+      ],
+      "entries": [
+        {
+          "title": "Vulnerability Scanners",
+          "paragraphs": [
+            "A vulnerability scanner automatically inspects systems for known vulnerabilities, missing corrections, and insecure configurations."
+          ],
+          "recognitionCue": "Automatically identify known weaknesses and insecure configurations -> Vulnerability scanner"
+        }
+      ]
+    },
+    {
+      "id": "alert-response-flow",
+      "title": "Alert Response Flow",
+      "paragraphs": [
+        "Systems generate events, logs are aggregated, a SIEM analyzes and correlates them, and an alert directs an analyst to investigate.",
+        "The organization may quarantine a suspicious system, remediate the issue, validate the result, and tune the alert logic using what the investigation revealed."
+      ],
+      "entries": [
+        {
+          "title": "Operational Sequence",
+          "paragraphs": [
+            "Collect evidence before detecting patterns, alert before responding, and validate before declaring the response successful."
+          ],
+          "recognitionCue": "Collect -> Detect -> Alert -> Respond -> Validate -> Improve"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Endpoint or OS activity -> Systems | Software behavior -> Applications | Networks and supporting resources -> Infrastructure",
+        "Centralize records -> Log aggregation | Notify an analyst -> Alerting | Inspect for weaknesses -> Scanning | Communicate findings -> Reporting | Preserve records -> Archiving",
+        "Separate a suspicious device -> Quarantine | Reduce noisy alerts -> Alert tuning",
+        "Automate standardized checks -> SCAP | Compare with a secure baseline -> Benchmark | Install local collection software -> Agent | Collect remotely -> Agentless",
+        "Correlate security events -> SIEM | Detect malicious code -> Antivirus | Prevent sensitive-data movement -> DLP",
+        "Device sends a notice -> SNMP trap | Describe traffic conversations -> NetFlow | Find known weaknesses -> Vulnerability scanner"
+      ],
+      "entries": [
+        {
+          "title": "Monitoring Decision",
+          "paragraphs": [
+            "Identify the required evidence first, then choose the tool or activity that produces that evidence."
+          ],
+          "recognitionCue": "Resource -> evidence -> tool -> alert -> response"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Log aggregation collects records; a SIEM can correlate, analyze, alert, and support investigation.",
+        "An SNMP trap is an event notification; NetFlow describes network traffic flows.",
+        "DLP protects sensitive data from unauthorized movement; antivirus detects malicious software.",
+        "SCAP standardizes automated security assessment; a benchmark describes a recommended secure configuration.",
+        "An agent is installed locally; agentless monitoring uses existing remote interfaces.",
+        "Quarantine contains a suspicious system; alert tuning improves the detection logic."
+      ],
+      "callout": "Ask whether the scenario needs collection, correlation, detection, notification, containment, validation, or tuning."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Watch endpoints -> System monitoring | Watch software behavior -> Application monitoring | Watch the supporting environment -> Infrastructure monitoring",
+        "Bring records together -> Log aggregation | Tell an analyst -> Alerting | Look for issues -> Scanning | Summarize findings -> Reporting | Keep records -> Archiving",
+        "Separate a suspicious system -> Quarantine | Make alerts more useful -> Alert tuning",
+        "Automate standardized checks -> SCAP | Secure configuration reference -> Benchmark",
+        "Install a local monitor -> Agent | Monitor without dedicated local software -> Agentless",
+        "Centralize and correlate events -> SIEM | Find malware -> Antivirus | Stop sensitive-data leakage -> DLP",
+        "Device-generated event notification -> SNMP trap | Who talked to whom? -> NetFlow | Find known vulnerabilities -> Vulnerability scanner"
+      ],
+      "entries": [
+        {
+          "title": "Final Recognition Rule",
+          "paragraphs": [
+            "Choose the resource being observed, the evidence the analyst needs, and the action that should follow the alert."
+          ],
+          "recognitionCue": "See it -> tell me -> act on it -> prove it worked"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the monitoring platform and the immediate containment response.",
+    "prompt": "Authentication records from hundreds of endpoints must be centralized and correlated so repeated failed logins across multiple systems generate one investigation alert. During the investigation, one endpoint is confirmed to be communicating with malicious infrastructure and must be separated from other resources immediately.",
+    "fields": [
+      {
+        "id": "monitoring-platform",
+        "label": "Platform for centralized correlation and alerting",
+        "choices": [
+          "Security information and event management (SIEM)",
+          "NetFlow",
+          "Data loss prevention (DLP)",
+          "Vulnerability scanner"
+        ],
+        "answer": "Security information and event management (SIEM)"
+      },
+      {
+        "id": "containment-response",
+        "label": "Immediate response for the confirmed endpoint",
+        "choices": [
+          "Quarantine",
+          "Alert tuning",
+          "Archiving",
+          "Reporting"
+        ],
+        "answer": "Quarantine"
+      }
+    ],
+    "correctFeedback": "Correct. A SIEM centralizes and correlates security events so related activity can produce an actionable alert. Quarantine then isolates the confirmed endpoint to limit harm while investigation and remediation continue.",
+    "retryFeedback": "Not quite. Choose the platform that correlates security events from many sources, then choose the response that immediately separates a confirmed suspicious endpoint. Review Security Information and Event Management plus Alert Response, Remediation, and Validation, then try again."
+  }
+}

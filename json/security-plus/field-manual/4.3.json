@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.3",
+  "title": "Explain Various Activities Associated with Vulnerability Management",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Vulnerability management is a continuous process for finding, understanding, prioritizing, treating, validating, and reporting security weaknesses.",
+        "The important skill is recognizing where an activity belongs in the lifecycle and what decision the organization must make next.",
+        "Use this sequence: identify the weakness, analyze its meaning, prioritize the risk, respond, validate the remediation, and report the result."
+      ],
+      "entries": [
+        {
+          "title": "Vulnerability Management Lifecycle",
+          "paragraphs": [
+            "A finding is not finished when a scanner discovers it. The organization must determine whether it is real, evaluate its practical risk, choose a response, confirm the response worked, and communicate the outcome."
+          ],
+          "recognitionCue": "Find it -> understand it -> prioritize it -> treat it -> prove the result -> document it"
+        }
+      ],
+      "callout": "At every stage, ask how the weakness was discovered, how serious it is here, what should be done, and how the result will be verified."
+    },
+    {
+      "id": "identification-methods",
+      "title": "Identification Methods",
+      "paragraphs": [
+        "Identification activities discover possible vulnerabilities before they can be analyzed or remediated. Different methods provide different kinds of evidence."
+      ],
+      "entries": [
+        {
+          "title": "Identification Methods",
+          "paragraphs": [
+            "Organizations may use scans, application-security testing, threat feeds, penetration tests, disclosure programs, and audits to discover weaknesses."
+          ],
+          "recognitionCue": "Ways used to discover security weaknesses -> Identification methods"
+        },
+        {
+          "title": "Vulnerability Scan",
+          "paragraphs": [
+            "A vulnerability scanner automatically compares hosts, services, applications, operating systems, and network devices against known weaknesses and insecure configurations."
+          ],
+          "memoryHook": "Automatically look for known weaknesses.",
+          "recognitionCue": "Automated probing for known flaws or missing patches -> Vulnerability scan"
+        }
+      ]
+    },
+    {
+      "id": "application-security-testing",
+      "title": "Application-Security Testing",
+      "paragraphs": [
+        "Application-security activities examine code, runtime behavior, and third-party dependencies. The clue is what part of the application is being observed and whether it is executing."
+      ],
+      "entries": [
+        {
+          "title": "Application Security",
+          "paragraphs": [
+            "Application security includes the practices used to find and reduce weaknesses in software throughout its development and operating life."
+          ],
+          "recognitionCue": "Find and reduce software weaknesses -> Application security"
+        },
+        {
+          "title": "Static Analysis",
+          "paragraphs": [
+            "Static analysis examines source code or compiled code without running the application. It can reveal unsafe patterns, programming errors, and potential vulnerabilities."
+          ],
+          "memoryHook": "Inspect the code while it is standing still.",
+          "recognitionCue": "Analyze code without executing the application -> Static analysis"
+        },
+        {
+          "title": "Dynamic Analysis",
+          "paragraphs": [
+            "Dynamic analysis evaluates an application while it is running and observes how the software behaves during execution."
+          ],
+          "memoryHook": "Run it and watch what happens.",
+          "recognitionCue": "Test application behavior during execution -> Dynamic analysis"
+        },
+        {
+          "title": "Package Monitoring",
+          "paragraphs": [
+            "Package monitoring tracks external libraries, frameworks, modules, and other dependencies for disclosed vulnerabilities or security problems."
+          ],
+          "memoryHook": "Your code may be sound while a dependency is vulnerable.",
+          "recognitionCue": "Watch third-party software components for disclosed flaws -> Package monitoring"
+        }
+      ],
+      "table": {
+        "caption": "Static and dynamic application analysis",
+        "headers": ["Method", "Primary evidence"],
+        "rows": [
+          ["Static analysis", "Source or compiled code examined without execution"],
+          ["Dynamic analysis", "Behavior observed while the application runs"],
+          ["Package monitoring", "Known issues in third-party dependencies"]
+        ]
+      }
+    },
+    {
+      "id": "threat-feeds",
+      "title": "Threat Feeds",
+      "paragraphs": [
+        "Threat feeds supply current information about known or emerging threats and vulnerabilities. They may include indicators, malicious infrastructure, attack patterns, or adversary activity."
+      ],
+      "entries": [
+        {
+          "title": "Threat Feed",
+          "paragraphs": [
+            "A threat feed is a stream of security intelligence that helps defenders recognize conditions requiring investigation or protection."
+          ],
+          "recognitionCue": "Current stream of threat, vulnerability, or indicator information -> Threat feed"
+        }
+      ]
+    },
+    {
+      "id": "threat-intelligence-sources",
+      "title": "Threat-Intelligence Sources",
+      "paragraphs": [
+        "The source of the intelligence is often the deciding clue: public information, a commercial provider, a member community, or underground activity."
+      ],
+      "entries": [
+        {
+          "title": "Open-Source Intelligence (OSINT)",
+          "paragraphs": [
+            "OSINT is collected from publicly available material such as websites, research, news, public repositories, and government publications."
+          ],
+          "memoryHook": "Public information anyone can access.",
+          "recognitionCue": "Threat intelligence from public sources -> OSINT"
+        },
+        {
+          "title": "Proprietary/Third-Party",
+          "paragraphs": [
+            "A proprietary or third-party feed is supplied by a commercial or specialized external provider and may offer curated or exclusive intelligence."
+          ],
+          "memoryHook": "Pay or partner for specialized intelligence.",
+          "recognitionCue": "Commercial intelligence from an outside provider -> Proprietary/third-party feed"
+        },
+        {
+          "title": "Information-Sharing Organization",
+          "paragraphs": [
+            "An information-sharing organization lets trusted participants exchange threat intelligence, vulnerabilities, techniques, and industry-specific risk information."
+          ],
+          "memoryHook": "Organizations warn one another.",
+          "recognitionCue": "Members exchange trusted threat information -> Information-sharing organization"
+        },
+        {
+          "title": "Dark Web",
+          "paragraphs": [
+            "Security teams may monitor hidden or underground services for stolen credentials, leaked data, attacker discussions, planned operations, and exploit activity."
+          ],
+          "recognitionCue": "Intelligence from hidden criminal or underground sources -> Dark web monitoring"
+        }
+      ]
+    },
+    {
+      "id": "penetration-testing-and-disclosure",
+      "title": "Penetration Testing and Disclosure Programs",
+      "paragraphs": [
+        "These activities involve authorized attempts or approved reporting channels. The key distinction is whether someone is testing exploitability, reporting a discovery, or receiving a reward."
+      ],
+      "entries": [
+        {
+          "title": "Penetration Testing",
+          "paragraphs": [
+            "A penetration test actively attempts to exploit vulnerabilities in an authorized environment to determine whether they can produce real impact."
+          ],
+          "memoryHook": "Do not only identify the weak door; test whether it can be opened.",
+          "recognitionCue": "Authorized exploitation attempt -> Penetration testing"
+        },
+        {
+          "title": "Responsible Disclosure Program",
+          "paragraphs": [
+            "A responsible disclosure program gives outside researchers an approved and safe channel for reporting vulnerabilities to the organization."
+          ],
+          "recognitionCue": "Formal process for researchers to report weaknesses safely -> Responsible disclosure"
+        },
+        {
+          "title": "Bug Bounty Program",
+          "paragraphs": [
+            "A bug bounty program offers money, recognition, or another incentive for qualifying vulnerabilities that are reported responsibly."
+          ],
+          "recognitionCue": "Reward for an approved vulnerability report -> Bug bounty"
+        }
+      ],
+      "table": {
+        "caption": "Discovery and disclosure activities",
+        "headers": ["Activity", "Primary purpose"],
+        "rows": [
+          ["Vulnerability scan", "Identify possible weaknesses"],
+          ["Penetration test", "Attempt authorized exploitation"],
+          ["Responsible disclosure", "Provide a safe reporting channel"],
+          ["Bug bounty", "Reward qualifying responsible reports"]
+        ]
+      }
+    },
+    {
+      "id": "system-and-process-audits",
+      "title": "System and Process Audits",
+      "paragraphs": [
+        "Audits compare actual systems, records, controls, or procedures against approved standards, policies, and requirements."
+      ],
+      "entries": [
+        {
+          "title": "System/Process Audit",
+          "paragraphs": [
+            "A system or process audit may reveal missing controls, improper procedures, misconfigurations, or policy violations."
+          ],
+          "memoryHook": "Are we doing what the security requirements say we should do?",
+          "recognitionCue": "Formal examination of controls, records, or processes -> System/process audit"
+        }
+      ]
+    },
+    {
+      "id": "analysis-and-confirmation",
+      "title": "Analysis and Confirmation",
+      "paragraphs": [
+        "Discovery produces a finding. Analysis determines what that finding means, and confirmation establishes whether it is real."
+      ],
+      "entries": [
+        {
+          "title": "Analysis",
+          "paragraphs": [
+            "Analysis evaluates a discovered weakness, its severity, exposure, possible impact, and urgency."
+          ],
+          "recognitionCue": "Understand a finding and its significance -> Analysis"
+        },
+        {
+          "title": "Confirmation",
+          "paragraphs": [
+            "Confirmation checks whether the reported vulnerability actually exists before the organization spends effort or accepts risk based on an inaccurate result."
+          ],
+          "memoryHook": "Before reacting, verify the finding.",
+          "recognitionCue": "Determine whether the reported weakness is real -> Confirmation"
+        }
+      ]
+    },
+    {
+      "id": "false-positive-and-negative",
+      "title": "False Positives and False Negatives",
+      "paragraphs": [
+        "A security tool can report a condition that is not present or fail to report one that is present. First ask whether the tool reported something, then whether reality matched the report."
+      ],
+      "entries": [
+        {
+          "title": "False Positive",
+          "paragraphs": [
+            "A false positive is an alert or finding that reports a problem even though the problem is not actually present."
+          ],
+          "recognitionCue": "The tool reports a weakness that does not exist -> False positive"
+        },
+        {
+          "title": "False Negative",
+          "paragraphs": [
+            "A false negative occurs when a real weakness exists but the tool does not report it."
+          ],
+          "recognitionCue": "A real weakness is missed by the tool -> False negative"
+        }
+      ],
+      "table": {
+        "caption": "False-positive and false-negative outcomes",
+        "headers": ["Result", "What happened"],
+        "rows": [
+          ["False positive", "The tool reported a problem that was not present"],
+          ["False negative", "The tool failed to report a problem that was present"]
+        ]
+      }
+    },
+    {
+      "id": "prioritization",
+      "title": "Prioritization",
+      "paragraphs": [
+        "Organizations usually cannot correct every vulnerability immediately. Prioritization determines the order of work using risk rather than discovery time alone."
+      ],
+      "entries": [
+        {
+          "title": "Prioritize",
+          "paragraphs": [
+            "Prioritization may consider severity, exploitability, exposure, business importance, existing controls, and likely impact."
+          ],
+          "memoryHook": "Address the most dangerous and consequential weaknesses first.",
+          "recognitionCue": "Rank findings to determine remediation order -> Prioritize"
+        }
+      ]
+    },
+    {
+      "id": "cve-and-cvss",
+      "title": "CVE and CVSS",
+      "paragraphs": [
+        "CVE and CVSS help teams discuss vulnerabilities consistently, but one identifies the vulnerability and the other rates severity."
+      ],
+      "entries": [
+        {
+          "title": "Common Vulnerability Scoring System (CVSS)",
+          "paragraphs": [
+            "CVSS provides a standardized numerical severity score that helps organizations compare vulnerabilities and support prioritization."
+          ],
+          "memoryHook": "CVSS supplies the score.",
+          "recognitionCue": "Standardized rating of vulnerability severity -> CVSS"
+        },
+        {
+          "title": "Common Vulnerabilities and Exposures (CVE)",
+          "paragraphs": [
+            "CVE provides standardized identifiers so vendors, researchers, and tools can refer to the same publicly known vulnerability."
+          ],
+          "memoryHook": "CVE supplies the common identifier.",
+          "recognitionCue": "Standard identifier for a publicly known vulnerability -> CVE"
+        }
+      ],
+      "table": {
+        "caption": "CVE and CVSS",
+        "headers": ["Standard", "What it tells you"],
+        "rows": [
+          ["CVE", "Which publicly known vulnerability is being discussed"],
+          ["CVSS", "How severe the vulnerability is rated"]
+        ]
+      }
+    },
+    {
+      "id": "classification-and-exposure",
+      "title": "Classification and Exposure Factor",
+      "paragraphs": [
+        "Classification organizes weaknesses into meaningful groups. Exposure factor estimates how much asset value could be lost if an event succeeds."
+      ],
+      "entries": [
+        {
+          "title": "Vulnerability Classification",
+          "paragraphs": [
+            "Vulnerability classification groups findings by characteristics such as type, cause, location, or affected technology."
+          ],
+          "recognitionCue": "Place weaknesses into meaningful categories -> Vulnerability classification"
+        },
+        {
+          "title": "Exposure Factor",
+          "paragraphs": [
+            "Exposure factor represents the amount or percentage of asset value expected to be lost from one successful event."
+          ],
+          "memoryHook": "If exploitation succeeds, how much could be lost?",
+          "recognitionCue": "Estimated percentage of asset value lost in one event -> Exposure factor"
+        }
+      ]
+    },
+    {
+      "id": "environmental-impact-and-risk-tolerance",
+      "title": "Environment, Organizational Impact, and Risk Tolerance",
+      "paragraphs": [
+        "The same technical vulnerability can have very different practical risk depending on where it exists, what it supports, and how much risk the organization accepts."
+      ],
+      "entries": [
+        {
+          "title": "Environmental Variables",
+          "paragraphs": [
+            "Internet exposure, location, configuration, existing controls, and system importance can raise or lower the real-world significance of a vulnerability."
+          ],
+          "recognitionCue": "Local conditions change practical vulnerability risk -> Environmental variables"
+        },
+        {
+          "title": "Industry/Organizational Impact",
+          "paragraphs": [
+            "Business operations, regulations, safety concerns, and sector-specific consequences determine what a vulnerability means to this organization."
+          ],
+          "recognitionCue": "Evaluate business- or industry-specific consequences -> Industry/organizational impact"
+        },
+        {
+          "title": "Risk Tolerance",
+          "paragraphs": [
+            "Risk tolerance is the amount of risk the organization is willing to accept. A condition tolerated by one organization may be unacceptable to another."
+          ],
+          "recognitionCue": "Amount of risk the organization is willing to withstand -> Risk tolerance"
+        }
+      ]
+    },
+    {
+      "id": "response-and-remediation",
+      "title": "Vulnerability Response and Remediation",
+      "paragraphs": [
+        "After a finding is confirmed and prioritized, the organization chooses how to remove, reduce, transfer, or formally accept the associated risk."
+      ],
+      "entries": [
+        {
+          "title": "Vulnerability Response and Remediation",
+          "paragraphs": [
+            "This lifecycle stage selects and applies the treatment that best fits the vulnerability, business constraints, and risk decision."
+          ],
+          "recognitionCue": "Choose and apply treatment for a confirmed finding -> Vulnerability response and remediation"
+        }
+      ]
+    },
+    {
+      "id": "patching-and-insurance",
+      "title": "Patching and Insurance",
+      "paragraphs": [
+        "Patching changes the vulnerable technology. Insurance transfers part of the possible financial impact but does not remove the weakness."
+      ],
+      "entries": [
+        {
+          "title": "Patching",
+          "paragraphs": [
+            "Patching applies a vendor correction to remove or reduce a known software vulnerability."
+          ],
+          "recognitionCue": "Apply an available vendor fix -> Patching"
+        },
+        {
+          "title": "Insurance",
+          "paragraphs": [
+            "Insurance transfers some financial consequences of a security incident to another party while the underlying vulnerability may still remain."
+          ],
+          "recognitionCue": "Transfer part of the financial risk -> Insurance"
+        }
+      ]
+    },
+    {
+      "id": "segmentation-and-compensating-controls",
+      "title": "Segmentation and Compensating Controls",
+      "paragraphs": [
+        "When the preferred fix cannot be applied immediately, defenders can reduce exposure through isolation or alternate safeguards."
+      ],
+      "entries": [
+        {
+          "title": "Segmentation",
+          "paragraphs": [
+            "Segmentation separates systems or networks to restrict access and reduce how far an attacker can move from a vulnerable system."
+          ],
+          "recognitionCue": "Contain exposure or lateral movement through separation -> Segmentation"
+        },
+        {
+          "title": "Compensating Controls",
+          "paragraphs": [
+            "A compensating control provides alternate protection when the preferred remediation or control cannot be implemented."
+          ],
+          "memoryHook": "Use another safeguard when the normal fix is unavailable.",
+          "recognitionCue": "Alternative protection for an unavailable preferred control -> Compensating control"
+        }
+      ]
+    },
+    {
+      "id": "exceptions-and-exemptions",
+      "title": "Exceptions and Exemptions",
+      "paragraphs": [
+        "Sometimes an organization formally approves a deviation from a normal security requirement. The decision should be authorized, time-aware, and documented with its associated risk."
+      ],
+      "entries": [
+        {
+          "title": "Exceptions and Exemptions",
+          "paragraphs": [
+            "An exception or exemption authorizes a system or process to depart from a normal requirement under approved conditions. It is not itself an alternate safeguard."
+          ],
+          "recognitionCue": "Documented approval to deviate from a requirement -> Exception/exemption"
+        }
+      ]
+    },
+    {
+      "id": "validation-of-remediation",
+      "title": "Validation of Remediation",
+      "paragraphs": [
+        "A remediation is not complete merely because someone says the work was performed. Validation gathers evidence that the vulnerability was actually removed or reduced as intended."
+      ],
+      "entries": [
+        {
+          "title": "Validation of Remediation",
+          "paragraphs": [
+            "Validation is the lifecycle stage that confirms corrective action achieved the expected security result."
+          ],
+          "recognitionCue": "Confirm that remediation actually resolved the finding -> Validation of remediation"
+        }
+      ]
+    },
+    {
+      "id": "rescanning-audit-and-verification",
+      "title": "Rescanning, Audit, and Verification",
+      "paragraphs": [
+        "These activities all support validation, but each produces different evidence."
+      ],
+      "entries": [
+        {
+          "title": "Rescanning",
+          "paragraphs": [
+            "Rescanning repeats the vulnerability scan after remediation to determine whether the scanner still detects the weakness."
+          ],
+          "recognitionCue": "Run the vulnerability scanner again after remediation -> Rescanning"
+        },
+        {
+          "title": "Audit",
+          "paragraphs": [
+            "An audit reviews records, controls, and required procedures to confirm that remediation and compliance steps were properly implemented."
+          ],
+          "recognitionCue": "Review evidence that required remediation controls and processes were followed -> Audit"
+        },
+        {
+          "title": "Verification",
+          "paragraphs": [
+            "Verification directly confirms that the corrected control or system now operates as expected and the weakness has been removed or reduced."
+          ],
+          "recognitionCue": "Prove the fix works as intended -> Verification"
+        }
+      ],
+      "table": {
+        "caption": "Remediation validation methods",
+        "headers": ["Method", "Evidence produced"],
+        "rows": [
+          ["Rescanning", "Whether the scanner still identifies the vulnerability"],
+          ["Audit", "Whether required controls and processes were followed"],
+          ["Verification", "Whether the corrected control or system works as intended"]
+        ]
+      }
+    },
+    {
+      "id": "reporting",
+      "title": "Reporting",
+      "paragraphs": [
+        "Reporting communicates vulnerability findings and lifecycle status to the people responsible for technical action, risk decisions, and oversight."
+      ],
+      "entries": [
+        {
+          "title": "Reporting",
+          "paragraphs": [
+            "A useful report may include the vulnerability, severity, priority, owner, business impact, remediation status, accepted risks, and validation results."
+          ],
+          "recognitionCue": "Communicate findings, ownership, risk, and remediation status -> Reporting"
+        }
+      ]
+    },
+    {
+      "id": "vulnerability-management-lifecycle",
+      "title": "The Complete Vulnerability-Management Lifecycle",
+      "paragraphs": [
+        "Identification finds a possible weakness. Analysis confirms and understands it. Prioritization determines order. Response treats the risk. Validation proves the result. Reporting communicates the evidence and status."
+      ],
+      "entries": [
+        {
+          "title": "Lifecycle Decision",
+          "paragraphs": [
+            "When a scenario contains several correct activities, identify the current lifecycle stage and select the activity that advances the process from that stage."
+          ],
+          "recognitionCue": "Identify -> analyze -> prioritize -> remediate -> validate -> report"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Automated known-weakness search -> Vulnerability scan | Code without execution -> Static analysis | Running behavior -> Dynamic analysis | Dependency flaws -> Package monitoring",
+        "Public intelligence -> OSINT | Commercial provider -> Proprietary feed | Member exchange -> Information-sharing organization | Underground sources -> Dark web",
+        "Authorized exploitation -> Penetration testing | Safe researcher channel -> Responsible disclosure | Reward for qualifying report -> Bug bounty | Formal control review -> Audit",
+        "Verify the finding is real -> Confirmation | Report without real problem -> False positive | Real problem without report -> False negative",
+        "Severity score -> CVSS | Standard vulnerability identifier -> CVE | Potential percentage loss -> Exposure factor",
+        "Local conditions alter risk -> Environmental variables | Business-specific consequence -> Industry/organizational impact | Acceptable risk amount -> Risk tolerance",
+        "Vendor correction -> Patching | Financial transfer -> Insurance | Network isolation -> Segmentation | Alternate safeguard -> Compensating control | Approved deviation -> Exception/exemption",
+        "Scan after remediation -> Rescanning | Confirm the fix works -> Verification | Communicate findings and status -> Reporting"
+      ],
+      "entries": [
+        {
+          "title": "Stage Recognition",
+          "paragraphs": [
+            "Look for the action verb in the scenario: discover, confirm, rank, treat, validate, or communicate. That verb usually identifies the lifecycle stage."
+          ],
+          "recognitionCue": "The scenario's action verb reveals the vulnerability-management stage."
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "CVE identifies a publicly known vulnerability; CVSS rates its severity.",
+        "A false positive reports a problem that is absent; a false negative misses a problem that is present.",
+        "A vulnerability scan identifies likely weaknesses; a penetration test attempts authorized exploitation.",
+        "Patching directly corrects a vulnerability; a compensating control reduces risk when the preferred fix cannot be used.",
+        "An exception or exemption approves a deviation; a compensating control supplies alternate protection.",
+        "Rescanning repeats the scan; verification is the broader confirmation that remediation achieved its intended result."
+      ],
+      "callout": "Ask which stage the organization is performing: identify, analyze, prioritize, remediate, validate, or report."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Find known weaknesses -> Vulnerability scan | Inspect code -> Static analysis | Test running behavior -> Dynamic analysis | Watch dependencies -> Package monitoring",
+        "Public intelligence -> OSINT | Provider intelligence -> Proprietary feed | Shared intelligence -> Information-sharing organization | Underground intelligence -> Dark web",
+        "Attempt exploitation -> Penetration test | Report through approved channel -> Responsible disclosure | Earn a reward -> Bug bounty | Examine controls/processes -> Audit",
+        "Is the finding real? -> Confirmation | Alert without problem -> False positive | Problem without alert -> False negative",
+        "What is fixed first? -> Prioritize | How severe? -> CVSS | Which known vulnerability? -> CVE",
+        "How much loss? -> Exposure factor | What changes in this environment? -> Environmental variables | What does it mean here? -> Industry/organizational impact",
+        "How much risk is acceptable? -> Risk tolerance | Apply the vendor fix -> Patching | Transfer financial impact -> Insurance",
+        "Contain exposure -> Segmentation | Use another safeguard -> Compensating control | Approve a deviation -> Exception/exemption",
+        "Scan again -> Rescanning | Prove the fix worked -> Verification | Document and communicate -> Reporting"
+      ],
+      "entries": [
+        {
+          "title": "Final Decision Cue",
+          "paragraphs": [
+            "Identify the lifecycle stage, use the evidence to distinguish the closest terms, and choose the action that produces the required next result."
+          ],
+          "recognitionCue": "Stage -> evidence -> risk decision -> verified outcome"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the immediate risk-reduction response and the later validation activity.",
+    "prompt": "A public-facing billing server has a confirmed vulnerability, but the vendor patch cannot be installed until compatibility testing finishes. The organization must reduce the server's network exposure immediately. After the approved maintenance window and patch installation, the team must determine whether the vulnerability scanner still detects the weakness.",
+    "fields": [
+      {
+        "id": "immediate-response",
+        "label": "Immediate risk-reduction response",
+        "choices": [
+          "Segmentation",
+          "Insurance",
+          "Exception/exemption",
+          "Reporting"
+        ],
+        "answer": "Segmentation"
+      },
+      {
+        "id": "validation-activity",
+        "label": "Post-remediation validation activity",
+        "choices": [
+          "Rescanning",
+          "CVE assignment",
+          "OSINT collection",
+          "Bug bounty"
+        ],
+        "answer": "Rescanning"
+      }
+    ],
+    "correctFeedback": "Correct. Segmentation immediately limits access to the vulnerable server while the patch is being prepared. Rescanning after the patch checks whether the vulnerability scanner still identifies the weakness.",
+    "retryFeedback": "Not quite. Choose the response that restricts the vulnerable server's network exposure without claiming the weakness is already fixed, then choose the activity that repeats the vulnerability scan after remediation. Review Segmentation and Compensating Controls plus Rescanning, Audit, and Verification, then try again."
+  }
+}

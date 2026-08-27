@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Given a Scenario, Analyze Indicators of Malicious Activity",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security analysts usually receive clues rather than a message that names the attack. Files may become inaccessible, accounts may lock, resource usage may spike, logins may appear from impossible locations, logs may disappear, or services may stop responding.",
+        "Security+ expects you to connect those indicators to the malicious activity that most reasonably explains them.",
+        "Use this sequence: identify what changed, combine the available clues, and choose the attack or condition that best explains the full pattern."
+      ],
+      "callout": "Indicator = the clue · Malicious activity = what most likely caused the clue"
+    },
+    {
+      "id": "malware-attacks",
+      "title": "Malware Attacks",
+      "paragraphs": [
+        "Malware is malicious software designed to damage, disrupt, spy on, control, or misuse systems and data. Different malware families are recognized by how they behave and what impact they create.",
+        "Start with the behavior in the scenario. Then identify the malware type whose defining behavior matches it."
+      ],
+      "callout": "Behavior and impact reveal the malware category"
+    },
+    {
+      "id": "ransomware-trojan-and-worm",
+      "title": "Ransomware, Trojan, and Worm",
+      "paragraphs": [
+        "These malware types are often separated by the attacker's goal, the disguise used, or the way the malware spreads."
+      ],
+      "entries": [
+        {
+          "title": "Ransomware",
+          "paragraphs": [
+            "Ransomware prevents access to systems or data, commonly by encrypting files and demanding payment or another action for recovery. Clues include unreadable files, changed extensions, mass file modification, a ransom message, and inaccessible shared resources."
+          ],
+          "memoryHook": "Your data is locked, and the attacker wants something to unlock it.",
+          "recognitionCue": "Encrypted or inaccessible files plus a demand → Ransomware"
+        },
+        {
+          "title": "Trojan",
+          "paragraphs": [
+            "A Trojan disguises malicious software as something legitimate or useful so the victim will install or run it."
+          ],
+          "memoryHook": "Looks safe. Is not safe.",
+          "recognitionCue": "Malware pretending to be legitimate software → Trojan"
+        },
+        {
+          "title": "Worm",
+          "paragraphs": [
+            "A worm spreads from system to system without requiring a user to copy it or a host file to carry it. Rapid infections, heavy network traffic, and unexpected resource consumption can reveal a worm outbreak."
+          ],
+          "memoryHook": "It spreads itself.",
+          "recognitionCue": "Self-propagating malware → Worm"
+        }
+      ]
+    },
+    {
+      "id": "spyware-bloatware-and-virus",
+      "title": "Spyware, Bloatware, and Virus",
+      "paragraphs": [
+        "These terms describe quiet data collection, unwanted resource use, or malicious code that depends on a host file or program."
+      ],
+      "entries": [
+        {
+          "title": "Spyware",
+          "paragraphs": [
+            "Spyware secretly monitors activity or collects information such as browsing activity, credentials, personal information, or system details."
+          ],
+          "memoryHook": "Watch quietly and steal information.",
+          "recognitionCue": "Secret monitoring or data collection → Spyware"
+        },
+        {
+          "title": "Bloatware",
+          "paragraphs": [
+            "Bloatware is unnecessary or unwanted software that consumes memory, storage, or processing resources and can add unnecessary services or components. It is not always intentionally malicious, but it can increase attack surface and reduce performance."
+          ],
+          "recognitionCue": "Unnecessary software consuming resources → Bloatware"
+        },
+        {
+          "title": "Virus",
+          "paragraphs": [
+            "A virus attaches malicious code to another file or program and typically spreads when the infected host is executed or shared."
+          ],
+          "memoryHook": "The malware needs a host.",
+          "recognitionCue": "Malicious code attached to another file or program → Virus"
+        }
+      ]
+    },
+    {
+      "id": "keylogger-logic-bomb-and-rootkit",
+      "title": "Keylogger, Logic Bomb, and Rootkit",
+      "paragraphs": [
+        "These malware types are recognized by what they capture, when they activate, or how they hide and maintain access."
+      ],
+      "entries": [
+        {
+          "title": "Keylogger",
+          "paragraphs": [
+            "A keylogger records keyboard input and can capture passwords, messages, payment information, and other typed data."
+          ],
+          "recognitionCue": "Records keystrokes → Keylogger"
+        },
+        {
+          "title": "Logic Bomb",
+          "paragraphs": [
+            "A logic bomb is malicious code that activates when a specified date, time, user action, or system event occurs."
+          ],
+          "memoryHook": "Wait for the trigger.",
+          "recognitionCue": "Malicious code activates after a specific condition → Logic bomb"
+        },
+        {
+          "title": "Rootkit",
+          "paragraphs": [
+            "A rootkit maintains privileged access while concealing processes, files, accounts, or other malicious activity."
+          ],
+          "memoryHook": "Hide deep and stay privileged.",
+          "recognitionCue": "Stealth plus persistent privileged access → Rootkit"
+        }
+      ],
+      "table": {
+        "caption": "Malware recognition sheet",
+        "headers": [
+          "Malware",
+          "Recognition"
+        ],
+        "rows": [
+          ["Ransomware", "Locks or encrypts data and demands payment or action"],
+          ["Trojan", "Pretends to be legitimate"],
+          ["Worm", "Spreads itself"],
+          ["Spyware", "Secretly monitors"],
+          ["Bloatware", "Unwanted software consumes resources"],
+          ["Virus", "Attaches to a host file or program"],
+          ["Keylogger", "Records typing"],
+          ["Logic bomb", "Activates on a condition"],
+          ["Rootkit", "Hides privileged presence"]
+        ]
+      }
+    },
+    {
+      "id": "physical-attacks",
+      "title": "Physical Attacks",
+      "paragraphs": [
+        "Some malicious activity targets physical access, credentials, devices, or environmental conditions rather than software."
+      ],
+      "entries": [
+        {
+          "title": "Physical Brute Force",
+          "paragraphs": [
+            "Physical brute force uses force to defeat a door, lock, barrier, or enclosure."
+          ],
+          "memoryHook": "Force the physical control open.",
+          "recognitionCue": "Physical force used against a barrier or lock → Physical brute force"
+        },
+        {
+          "title": "Radio Frequency Identification (RFID) Cloning",
+          "paragraphs": [
+            "RFID cloning copies information from an RFID credential so an attacker can impersonate an authorized badge or device."
+          ],
+          "memoryHook": "Copy the badge identity.",
+          "recognitionCue": "Duplicated RFID credential → RFID cloning"
+        },
+        {
+          "title": "Environmental",
+          "paragraphs": [
+            "An environmental attack affects systems through heat, water, power disruption, fire, or another physical condition."
+          ],
+          "recognitionCue": "Physical environment causes system impact → Environmental attack"
+        }
+      ]
+    },
+    {
+      "id": "network-ddos",
+      "title": "Network Attacks: DDoS, Amplification, and Reflection",
+      "paragraphs": [
+        "Network attacks target communications, services, naming systems, authentication, or network-connected devices. Distributed denial-of-service attacks focus on exhausting a target's capacity."
+      ],
+      "entries": [
+        {
+          "title": "Distributed Denial-of-Service (DDoS)",
+          "paragraphs": [
+            "A DDoS attack uses many systems to overwhelm a target with traffic or requests. Indicators include extremely high traffic, resource exhaustion, service inaccessibility, and large numbers of connection attempts."
+          ],
+          "memoryHook": "Many sources overwhelm one target.",
+          "recognitionCue": "Many distributed sources overwhelm a service → DDoS"
+        },
+        {
+          "title": "Amplified DDoS",
+          "paragraphs": [
+            "An amplification attack turns a small request into a much larger response directed toward the victim."
+          ],
+          "memoryHook": "Small request, big response.",
+          "recognitionCue": "Attack traffic is multiplied → Amplified DDoS"
+        },
+        {
+          "title": "Reflected DDoS",
+          "paragraphs": [
+            "A reflected attack makes third-party systems send their responses toward the victim, commonly after the attacker spoofs the victim's address."
+          ],
+          "memoryHook": "Bounce the attack through somebody else.",
+          "recognitionCue": "Third-party systems send the traffic toward the victim → Reflected DDoS"
+        }
+      ],
+      "callout": "Amplification increases the amount of traffic · Reflection changes who sends it toward the victim"
+    },
+    {
+      "id": "network-access-and-interception-attacks",
+      "title": "DNS, Wireless, and On-Path Attacks",
+      "paragraphs": [
+        "These attacks target name resolution, radio-based communications, or the path between two communicating parties."
+      ],
+      "entries": [
+        {
+          "title": "Domain Name System (DNS) Attacks",
+          "paragraphs": [
+            "DNS attacks manipulate or disrupt the system that resolves names to destinations. They may redirect users, alter DNS information, interrupt name resolution, or create DNS-related outages."
+          ],
+          "recognitionCue": "Name-resolution behavior is manipulated or disrupted → DNS attack"
+        },
+        {
+          "title": "Wireless Attacks",
+          "paragraphs": [
+            "Wireless attacks target Wi-Fi or other radio-based communications. Unexpected wireless networks, suspicious access points, unauthorized wireless connections, and connection disruptions are common clues."
+          ],
+          "recognitionCue": "Malicious activity involving wireless communications → Wireless attack"
+        },
+        {
+          "title": "On-Path Attack",
+          "paragraphs": [
+            "An on-path attacker positions between two communicating systems to observe, steal, or modify their traffic."
+          ],
+          "memoryHook": "System A ↔ attacker ↔ System B",
+          "recognitionCue": "Attacker intercepts traffic between two parties → On-path attack"
+        }
+      ]
+    },
+    {
+      "id": "network-credential-replay-and-malicious-code",
+      "title": "Credential Replay and Network-Delivered Malicious Code",
+      "paragraphs": [
+        "Captured authentication data and network-delivered scripts or payloads can both appear as malicious network activity, but their defining clues differ."
+      ],
+      "entries": [
+        {
+          "title": "Credential Replay",
+          "paragraphs": [
+            "Credential replay reuses captured authentication material. The attacker may not need to know the original secret if the captured credential or authentication data can be presented again."
+          ],
+          "memoryHook": "Capture it once. Use it again.",
+          "recognitionCue": "Previously captured authentication material reused → Credential replay"
+        },
+        {
+          "title": "Malicious Code",
+          "paragraphs": [
+            "Malicious code may be delivered or executed through network activity. Suspicious downloads, unknown outbound connections, unexpected scripts or processes, and unusual network traffic are common indicators."
+          ],
+          "recognitionCue": "Unauthorized executable or script activity delivered through the network → Malicious code"
+        }
+      ]
+    },
+    {
+      "id": "application-attacks-and-memory",
+      "title": "Application Attacks: Injection and Buffer Overflow",
+      "paragraphs": [
+        "Application attacks abuse software input handling, memory, permissions, transactions, or file access. Injection and buffer overflow differ in what the malicious input causes."
+      ],
+      "entries": [
+        {
+          "title": "Injection",
+          "paragraphs": [
+            "Injection supplies malicious input that an application incorrectly interprets as a command or instruction."
+          ],
+          "memoryHook": "Attacker input becomes an executable instruction.",
+          "recognitionCue": "Untrusted input interpreted as a command → Injection"
+        },
+        {
+          "title": "Buffer Overflow",
+          "paragraphs": [
+            "A buffer overflow writes more data into memory than the allocated space can hold. It can cause crashes, memory corruption, or unexpected execution."
+          ],
+          "recognitionCue": "Input exceeds a memory boundary → Buffer overflow"
+        }
+      ]
+    },
+    {
+      "id": "application-replay-access-and-file-attacks",
+      "title": "Application Replay, Access, and File Attacks",
+      "paragraphs": [
+        "These application attacks reuse valid communication, gain higher permissions, make false information appear real, or escape an intended file path."
+      ],
+      "entries": [
+        {
+          "title": "Replay",
+          "paragraphs": [
+            "A replay attack captures valid communication or a valid transaction and sends it again later."
+          ],
+          "memoryHook": "It was valid once, so the attacker sends it again.",
+          "recognitionCue": "Previously valid communication resent → Replay"
+        },
+        {
+          "title": "Privilege Escalation",
+          "paragraphs": [
+            "Privilege escalation occurs when an attacker gains more access than originally authorized, such as moving from a standard-user account to administrator access."
+          ],
+          "memoryHook": "Move upward in permissions.",
+          "recognitionCue": "Gain higher privileges → Privilege escalation"
+        },
+        {
+          "title": "Forgery",
+          "paragraphs": [
+            "Forgery creates or alters requests, messages, credentials, or data so the false information appears authentic."
+          ],
+          "memoryHook": "Make the fake look legitimate.",
+          "recognitionCue": "False information presented as authentic → Forgery"
+        },
+        {
+          "title": "Directory Traversal",
+          "paragraphs": [
+            "Directory traversal uses path manipulation to reach files or folders outside the location an application was intended to expose."
+          ],
+          "memoryHook": "Escape the allowed folder.",
+          "recognitionCue": "Reach files outside the permitted directory path → Directory traversal"
+        }
+      ],
+      "table": {
+        "caption": "Application attack recognition sheet",
+        "headers": ["Attack", "Recognition"],
+        "rows": [
+          ["Injection", "Input becomes a command"],
+          ["Buffer overflow", "Data exceeds a memory boundary"],
+          ["Replay", "Valid communication is reused"],
+          ["Privilege escalation", "Higher permissions are gained"],
+          ["Forgery", "False information appears authentic"],
+          ["Directory traversal", "An allowed file path is escaped"]
+        ]
+      }
+    },
+    {
+      "id": "cryptographic-attacks",
+      "title": "Cryptographic Attacks",
+      "paragraphs": [
+        "Cryptographic attacks attempt to weaken, bypass, or exploit cryptographic protections."
+      ],
+      "entries": [
+        {
+          "title": "Downgrade Attack",
+          "paragraphs": [
+            "A downgrade attack forces systems to use a weaker protocol, algorithm, or security option than they would normally use."
+          ],
+          "memoryHook": "Force them backward to weaker security.",
+          "recognitionCue": "Systems forced to use weaker cryptography → Downgrade attack"
+        },
+        {
+          "title": "Collision",
+          "paragraphs": [
+            "A collision occurs when two different inputs produce the same hash value. Strong hash functions are designed to make this extremely difficult."
+          ],
+          "recognitionCue": "Different inputs produce the same hash → Collision"
+        },
+        {
+          "title": "Birthday Attack",
+          "paragraphs": [
+            "A birthday attack uses probability to increase the chance of finding a hash collision sooner than exhaustive search would suggest."
+          ],
+          "recognitionCue": "Probability-based search for a hash collision → Birthday attack"
+        }
+      ]
+    },
+    {
+      "id": "password-attacks",
+      "title": "Password Attacks",
+      "paragraphs": [
+        "Password spraying and password brute force both make password guesses, but they distribute those guesses differently."
+      ],
+      "entries": [
+        {
+          "title": "Password Spraying",
+          "paragraphs": [
+            "Password spraying tries one or a small number of common passwords against many different accounts. This pattern may reduce the chance of triggering lockouts on one account."
+          ],
+          "memoryHook": "Few passwords against many accounts.",
+          "recognitionCue": "Small password set used across many accounts → Password spraying"
+        },
+        {
+          "title": "Password Brute Force",
+          "paragraphs": [
+            "Password brute force tries many possible passwords against one account or a small number of accounts until one succeeds."
+          ],
+          "memoryHook": "Many passwords against one target.",
+          "recognitionCue": "Repeated password guesses against an account → Brute force"
+        }
+      ],
+      "callout": "Few-to-many = Password spraying · Many-to-one = Password brute force"
+    },
+    {
+      "id": "indicators-of-malicious-activity",
+      "title": "Indicators of Malicious Activity",
+      "paragraphs": [
+        "An indicator is evidence that something unusual or malicious may be happening. One indicator alone may not prove an attack, so analysts combine clues to understand what is occurring.",
+        "The strongest answer is the one that explains the complete set of evidence, not merely one familiar word."
+      ],
+      "callout": "Combine multiple indicators before naming the malicious activity"
+    },
+    {
+      "id": "identity-and-account-indicators",
+      "title": "Account Lockout and Concurrent Session Usage",
+      "paragraphs": [
+        "Account behavior can reveal repeated authentication attempts or unauthorized use of an identity."
+      ],
+      "entries": [
+        {
+          "title": "Account Lockout",
+          "paragraphs": [
+            "Unexpected lockouts can indicate repeated failed authentication attempts, poorly configured automation, or unauthorized access attempts."
+          ],
+          "recognitionCue": "Repeated failed logins plus a locked account → Investigate a password attack"
+        },
+        {
+          "title": "Concurrent Session Usage",
+          "paragraphs": [
+            "Concurrent session usage means the same account appears active in multiple sessions at the same time. It may indicate stolen credentials, session compromise, or unauthorized account sharing."
+          ],
+          "recognitionCue": "Same account unexpectedly active in multiple places → Possible account compromise"
+        }
+      ]
+    },
+    {
+      "id": "blocked-content-and-impossible-travel",
+      "title": "Blocked Content and Impossible Travel",
+      "paragraphs": [
+        "Security tools and identity systems can expose attempted malicious activity even when the attempt is blocked or the login technically succeeds."
+      ],
+      "entries": [
+        {
+          "title": "Blocked Content",
+          "paragraphs": [
+            "Security controls may block malicious websites, attachments, downloads, or commands. The control stopped the content, but the source and attempted activity still require investigation."
+          ],
+          "recognitionCue": "Repeated security blocks → Investigate the source and attempted activity"
+        },
+        {
+          "title": "Impossible Travel",
+          "paragraphs": [
+            "Impossible travel occurs when an account authenticates from two geographic locations within a time interval that makes physical travel impossible."
+          ],
+          "recognitionCue": "Geographically impossible login sequence → Possible stolen credentials"
+        }
+      ]
+    },
+    {
+      "id": "resource-indicators",
+      "title": "Resource Consumption and Resource Inaccessibility",
+      "paragraphs": [
+        "Resource indicators show either unexpected use of system capacity or an unexpected loss of access. Several attacks can produce these signs, so supporting clues matter."
+      ],
+      "entries": [
+        {
+          "title": "Resource Consumption",
+          "paragraphs": [
+            "Unexpected spikes in CPU, memory, disk, or network traffic may indicate a worm, malware, DDoS activity, or unauthorized processes."
+          ],
+          "recognitionCue": "Unexpected resource spike → Resource-consumption indicator"
+        },
+        {
+          "title": "Resource Inaccessibility",
+          "paragraphs": [
+            "A system, service, file, or other expected resource suddenly becomes unavailable. Possible causes include ransomware, DDoS, service disruption, or system compromise."
+          ],
+          "recognitionCue": "Expected resource becomes unavailable → Resource inaccessibility"
+        }
+      ]
+    },
+    {
+      "id": "logging-and-threat-intelligence-indicators",
+      "title": "Logging and Threat-Intelligence Indicators",
+      "paragraphs": [
+        "The timing, external documentation, or absence of expected records can all provide evidence during an investigation."
+      ],
+      "entries": [
+        {
+          "title": "Out-of-Cycle Logging",
+          "paragraphs": [
+            "Out-of-cycle logging means logging or system activity appears outside its normal schedule or expected pattern."
+          ],
+          "memoryHook": "Why is this happening now?",
+          "recognitionCue": "Activity occurs at an unusual or unexpected time → Out-of-cycle logging"
+        },
+        {
+          "title": "Published / Documented",
+          "paragraphs": [
+            "Observed behavior may match malicious indicators already published by security vendors, threat-intelligence providers, government organizations, or other trusted sources."
+          ],
+          "recognitionCue": "Observed activity matches a known published indicator → Published or documented indicator"
+        },
+        {
+          "title": "Missing Logs",
+          "paragraphs": [
+            "Missing expected logs can indicate disabled logging, deleted records, an attempt to hide activity, or a system that stopped reporting."
+          ],
+          "memoryHook": "Where did the evidence go?",
+          "recognitionCue": "Expected audit records are missing → Possible tampering or evasion"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "paragraphs": [
+        "Begin with the evidence, then identify the malicious activity whose defining behavior best matches the complete scenario."
+      ],
+      "bullets": [
+        "Files encrypted and ransom requested → Ransomware",
+        "Fake legitimate application → Trojan",
+        "Malware spreads itself → Worm",
+        "Secret monitoring → Spyware",
+        "Unnecessary resource-heavy software → Bloatware",
+        "Malware attached to a host file → Virus",
+        "Keystrokes captured → Keylogger",
+        "Activates on a trigger → Logic bomb",
+        "Stealthy privileged malware → Rootkit",
+        "Physical lock or barrier forced → Physical brute force",
+        "Badge copied → RFID cloning",
+        "Many systems overwhelm one target → DDoS",
+        "Traffic multiplied → Amplification",
+        "Third parties send traffic → Reflection",
+        "Name resolution manipulated or disrupted → DNS attack",
+        "Traffic intercepted between endpoints → On-path attack",
+        "Captured authentication reused → Credential replay",
+        "Malicious input becomes a command → Injection",
+        "Memory boundary exceeded → Buffer overflow",
+        "Valid communication reused → Replay",
+        "Normal user becomes administrator → Privilege escalation",
+        "False information appears authentic → Forgery",
+        "Permitted folder boundary escaped → Directory traversal",
+        "Weaker cryptography forced → Downgrade",
+        "Two different inputs share a hash → Collision",
+        "Probability used to seek a collision → Birthday attack",
+        "Few passwords against many accounts → Password spraying",
+        "Many passwords against one account → Password brute force",
+        "Repeated login failures → Account lockout",
+        "Same account active in multiple places → Concurrent sessions",
+        "Impossible geographic login sequence → Impossible travel",
+        "Unexpected CPU, memory, disk, or network spike → Resource consumption",
+        "Expected system, service, or file unavailable → Resource inaccessibility",
+        "Activity at an unusual time → Out-of-cycle logging",
+        "Activity matches trusted threat intelligence → Published or documented indicator",
+        "Expected audit records disappear → Missing logs"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.4 Exam Trap",
+      "variant": "warning",
+      "paragraphs": [
+        "One indicator can have several possible causes. Resource inaccessibility, for example, may result from ransomware, DDoS, service disruption, or another compromise. Use the combination of clues rather than choosing an attack from one word.",
+        "A virus requires a host file or program; a worm self-propagates. A Trojan disguises itself as legitimate software; a virus attaches to another file or program.",
+        "Replay reuses valid communication; credential replay specifically reuses authentication material.",
+        "Password spraying tries a few passwords across many accounts; password brute force tries many passwords against one or a few accounts.",
+        "Physical brute force defeats a lock or barrier with force; password brute force repeatedly guesses credentials."
+      ],
+      "callout": "Do not hunt for one vocabulary word. Choose the activity that best explains all available indicators."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "paragraphs": [
+        "Use this final sheet to connect each clue to its most direct malicious activity or indicator."
+      ],
+      "bullets": [
+        "Files locked plus a demand → Ransomware",
+        "Looks legitimate → Trojan",
+        "Spreads itself → Worm",
+        "Secretly watches → Spyware",
+        "Unwanted resource-heavy software → Bloatware",
+        "Needs a host file → Virus",
+        "Records typing → Keylogger",
+        "Waits for a trigger → Logic bomb",
+        "Hides privileged presence → Rootkit",
+        "Forces a physical barrier → Physical brute force",
+        "Copies an RFID badge → RFID cloning",
+        "Many sources overwhelm a target → DDoS",
+        "Multiplies attack traffic → Amplification",
+        "Bounces traffic through others → Reflection",
+        "Manipulates name resolution → DNS attack",
+        "Intercepts communication → On-path attack",
+        "Reuses captured authentication → Credential replay",
+        "Turns input into a command → Injection",
+        "Overflows memory → Buffer overflow",
+        "Reuses valid communication → Replay",
+        "Gains higher permissions → Privilege escalation",
+        "Makes false information appear real → Forgery",
+        "Escapes an allowed folder → Directory traversal",
+        "Forces weaker cryptography → Downgrade",
+        "Different inputs share a hash → Collision",
+        "Uses probability to find a collision → Birthday attack",
+        "Few passwords plus many users → Password spraying",
+        "Many passwords plus one user → Password brute force",
+        "Repeated failures → Account lockout",
+        "Same account active simultaneously → Concurrent sessions",
+        "Impossible location change → Impossible travel",
+        "Unexpected resource use → Resource consumption",
+        "Expected resource unavailable → Resource inaccessibility",
+        "Activity at an unusual time → Out-of-cycle logging",
+        "Matches a known threat indicator → Published or documented",
+        "Expected evidence disappears → Missing logs"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Match each set of clues to the most direct conclusion.",
+    "prompt": "A file server suddenly contains encrypted documents and a ransom note. In a separate alert, the same account signs in from Dallas and Tokyo fifteen minutes apart.",
+    "fields": [
+      {
+        "id": "malware-activity",
+        "label": "File-server malicious activity",
+        "choices": [
+          "Ransomware",
+          "Trojan",
+          "Worm",
+          "Rootkit"
+        ],
+        "answer": "Ransomware"
+      },
+      {
+        "id": "account-indicator",
+        "label": "Account indicator",
+        "choices": [
+          "Impossible travel",
+          "Concurrent session usage",
+          "Account lockout",
+          "Out-of-cycle logging"
+        ],
+        "answer": "Impossible travel"
+      }
+    ],
+    "correctFeedback": "Correct. Encrypted files plus a demand point to ransomware, while geographically impossible logins point to impossible travel and possible credential compromise.",
+    "retryFeedback": "Not quite. Use all the clues: identify what happened to the files, then compare the login locations with the elapsed time. Review the sections covering ransomware and impossible travel, then try again."
+  }
+}

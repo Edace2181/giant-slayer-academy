@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "4",
+  "objective": "4.5",
+  "title": "Given a Scenario, Modify Enterprise Capabilities to Enhance Security",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Organizations often already own the security capability they need, but the control must be configured correctly to reduce the identified risk.",
+        "Objective 4.5 asks you to recognize which enterprise capability should change and which modification most directly addresses the scenario.",
+        "Use this decision pattern: identify the problem, identify the existing control, and change the setting that produces the required protection."
+      ],
+      "entries": [
+        {
+          "title": "Enterprise Capability Decision",
+          "paragraphs": [
+            "Enterprise security improvements may involve firewalls, IDS/IPS, web filters, operating-system controls, secure protocols, DNS and email security, endpoint monitoring, network admission, or data protection."
+          ],
+          "recognitionCue": "Identify the risk first, then modify the control that addresses it most directly."
+        }
+      ],
+      "callout": "Ask what capability already exists and what change would make it more effective."
+    },
+    {
+      "id": "firewall-controls",
+      "title": "Firewall Controls",
+      "paragraphs": [
+        "A firewall permits or blocks network traffic according to policy. Effective changes narrow access to only the communications the organization actually requires."
+      ],
+      "entries": [
+        {
+          "title": "Firewall",
+          "paragraphs": [
+            "A firewall enforces traffic policy between networks, hosts, or trust zones."
+          ],
+          "recognitionCue": "Permit or block network traffic according to policy -> Firewall"
+        },
+        {
+          "title": "Rules",
+          "paragraphs": [
+            "A firewall rule is an individual instruction that evaluates conditions such as source, destination, direction, port, or protocol and then permits or denies matching traffic."
+          ],
+          "recognitionCue": "Individual traffic condition and action -> Firewall rule"
+        },
+        {
+          "title": "Access Lists",
+          "paragraphs": [
+            "An access list is a collection of permit and deny entries used by firewalls, routers, and other network devices to filter communications."
+          ],
+          "recognitionCue": "Collection of permit/deny entries -> Access list"
+        },
+        {
+          "title": "Ports/Protocols",
+          "paragraphs": [
+            "Port and protocol restrictions harden a firewall by allowing only required services and blocking unnecessary communication methods."
+          ],
+          "memoryHook": "If the business does not need the service, do not leave the door open.",
+          "recognitionCue": "Restrict unnecessary transport endpoints and protocols -> Firewall hardening"
+        },
+        {
+          "title": "Screened Subnets",
+          "paragraphs": [
+            "A screened subnet places public-facing services in a separate network between less-trusted networks and the protected internal environment."
+          ],
+          "memoryHook": "Internet -> screened subnet -> internal network.",
+          "recognitionCue": "Separate public-facing systems from internal systems -> Screened subnet"
+        }
+      ],
+      "table": {
+        "caption": "Firewall configuration concepts",
+        "headers": ["Concept", "Security role"],
+        "rows": [
+          ["Rule", "One traffic-control instruction"],
+          ["Access list", "A collection of permit/deny entries"],
+          ["Ports/protocols", "Limit communications to required services"],
+          ["Screened subnet", "Isolate public-facing systems from the internal network"]
+        ]
+      }
+    },
+    {
+      "id": "ids-and-ips",
+      "title": "IDS/IPS Trends and Signatures",
+      "paragraphs": [
+        "An intrusion detection system identifies suspicious activity, while an intrusion prevention system can also block or prevent the detected activity."
+      ],
+      "entries": [
+        {
+          "title": "IDS/IPS",
+          "paragraphs": [
+            "IDS/IPS technology examines activity for attacks. Detection alerts; prevention can act inline to stop matching traffic."
+          ],
+          "recognitionCue": "Detect attacks, with prevention capable of blocking them -> IDS/IPS"
+        },
+        {
+          "title": "Trends",
+          "paragraphs": [
+            "Trend-based detection identifies suspicious patterns or changes that develop over time, such as growing authentication failures or unusual traffic volume."
+          ],
+          "recognitionCue": "Suspicious pattern developing over time -> Trend"
+        },
+        {
+          "title": "Signatures",
+          "paragraphs": [
+            "A signature represents a known malicious fingerprint that observed activity can be compared against."
+          ],
+          "recognitionCue": "Known attack pattern or fingerprint -> Signature"
+        }
+      ],
+      "table": {
+        "caption": "Trend and signature detection",
+        "headers": ["Method", "Primary clue"],
+        "rows": [
+          ["Trend", "Behavior changes or develops over time"],
+          ["Signature", "Activity matches a known malicious pattern"]
+        ]
+      }
+    },
+    {
+      "id": "web-filtering",
+      "title": "Web Filtering",
+      "paragraphs": [
+        "A web filter governs access to websites and web content. The best implementation depends on where filtering must occur and what evidence the policy uses."
+      ],
+      "entries": [
+        {
+          "title": "Web Filter",
+          "paragraphs": [
+            "A web filter allows, inspects, or blocks web destinations and content according to organizational policy."
+          ],
+          "recognitionCue": "Control access to websites and web content -> Web filter"
+        }
+      ]
+    },
+    {
+      "id": "web-filter-delivery",
+      "title": "Agent-Based Filtering and Centralized Proxies",
+      "paragraphs": [
+        "The deployment clue determines whether policy follows the device or traffic passes through a shared checkpoint."
+      ],
+      "entries": [
+        {
+          "title": "Agent-Based",
+          "paragraphs": [
+            "Agent-based filtering installs software on the endpoint, allowing policy enforcement even when the device is away from the organization's local network."
+          ],
+          "recognitionCue": "Web filtering software installed on the endpoint -> Agent-based"
+        },
+        {
+          "title": "Centralized Proxy",
+          "paragraphs": [
+            "A centralized proxy receives web requests for users and applies inspection, logging, and policy at one controlled point."
+          ],
+          "recognitionCue": "Central intermediary inspects users' web requests -> Centralized proxy"
+        }
+      ],
+      "table": {
+        "caption": "Web-filter deployment models",
+        "headers": ["Model", "Where enforcement occurs"],
+        "rows": [
+          ["Agent-based", "On the endpoint"],
+          ["Centralized proxy", "At a shared web-traffic checkpoint"]
+        ]
+      }
+    },
+    {
+      "id": "web-filter-decisions",
+      "title": "Web-Filter Decision Methods",
+      "paragraphs": [
+        "Web filters can judge a request by its address, content type, an explicit policy, or the destination's known history."
+      ],
+      "entries": [
+        {
+          "title": "Universal Resource Locator (URL) Scanning",
+          "paragraphs": [
+            "URL scanning examines a requested web address for indicators of a malicious or prohibited destination."
+          ],
+          "recognitionCue": "Evaluate the requested web address -> URL scanning"
+        },
+        {
+          "title": "Content Categorization",
+          "paragraphs": [
+            "Content categorization groups websites by purpose or subject so policy can allow or block categories such as social media, gambling, or malware."
+          ],
+          "recognitionCue": "Classify websites by content type -> Content categorization"
+        },
+        {
+          "title": "Block Rules",
+          "paragraphs": [
+            "A block rule explicitly denies a site, domain, content category, or other defined web destination."
+          ],
+          "recognitionCue": "Defined policy says access is denied -> Block rule"
+        },
+        {
+          "title": "Reputation",
+          "paragraphs": [
+            "Reputation filtering uses a destination's history or risk score, including associations with malware, phishing, or spam."
+          ],
+          "recognitionCue": "Trustworthiness or known history determines access -> Reputation"
+        }
+      ]
+    },
+    {
+      "id": "operating-system-security",
+      "title": "Operating-System Security",
+      "paragraphs": [
+        "Platform-level controls centrally enforce configuration and access decisions across managed systems."
+      ],
+      "entries": [
+        {
+          "title": "Operating System Security",
+          "paragraphs": [
+            "Operating-system security uses host-level settings and policy mechanisms to enforce secure configuration and access."
+          ],
+          "recognitionCue": "Platform-level control of host configuration and access -> Operating-system security"
+        },
+        {
+          "title": "Group Policy",
+          "paragraphs": [
+            "Group Policy centrally configures Windows users and computers, including password policies, security settings, software restrictions, and administrative controls."
+          ],
+          "recognitionCue": "Centralized Windows configuration enforcement -> Group Policy"
+        },
+        {
+          "title": "SELinux",
+          "paragraphs": [
+            "Security-Enhanced Linux adds mandatory access-control policy that restricts what users, processes, and services may access."
+          ],
+          "recognitionCue": "Linux mandatory access-control enforcement -> SELinux"
+        }
+      ]
+    },
+    {
+      "id": "secure-protocols",
+      "title": "Implementation of Secure Protocols",
+      "paragraphs": [
+        "Secure communication depends on choosing a protected protocol, permitting the appropriate port, and selecting a transport method that satisfies the requirement."
+      ],
+      "entries": [
+        {
+          "title": "Implementation of Secure Protocols",
+          "paragraphs": [
+            "Implementing secure protocols means configuring protected communication methods rather than relying on insecure alternatives or incomplete network settings."
+          ],
+          "recognitionCue": "Select and configure protected communication methods -> Implementation of secure protocols"
+        },
+        {
+          "title": "Protocol Selection",
+          "paragraphs": [
+            "Protocol selection chooses a secure service, such as HTTPS instead of HTTP or SSH instead of Telnet."
+          ],
+          "recognitionCue": "Choose the communication protocol with the required protection -> Protocol selection"
+        },
+        {
+          "title": "Port Selection",
+          "paragraphs": [
+            "Port selection allows the network endpoint required by the approved secure protocol while avoiding unnecessary or insecure services."
+          ],
+          "recognitionCue": "Choose or permit the correct network port -> Port selection"
+        },
+        {
+          "title": "Transport Method",
+          "paragraphs": [
+            "The transport method determines how protected communication is carried, including reliability, encryption, tunneling, and TCP-versus-UDP requirements."
+          ],
+          "recognitionCue": "Determine how protected data travels between systems -> Transport method"
+        }
+      ]
+    },
+    {
+      "id": "dns-filtering",
+      "title": "DNS Filtering",
+      "paragraphs": [
+        "DNS filtering stops access earlier in the connection process by refusing to resolve a prohibited or malicious domain name."
+      ],
+      "entries": [
+        {
+          "title": "DNS Filtering",
+          "paragraphs": [
+            "DNS filtering prevents users or systems from obtaining the address of a known malicious or prohibited domain."
+          ],
+          "memoryHook": "Do not give the device the address of the dangerous destination.",
+          "recognitionCue": "Block a malicious domain during name resolution -> DNS filtering"
+        }
+      ]
+    },
+    {
+      "id": "email-security",
+      "title": "Email Security",
+      "paragraphs": [
+        "Email security combines sender authorization, message signatures, failure-handling policy, reporting, and centralized inspection."
+      ],
+      "entries": [
+        {
+          "title": "Email Security",
+          "paragraphs": [
+            "Email security controls reduce spoofing, phishing, malware delivery, and other message-based threats."
+          ],
+          "recognitionCue": "Authenticate senders and inspect message traffic -> Email security"
+        },
+        {
+          "title": "Sender Policy Framework (SPF)",
+          "paragraphs": [
+            "SPF uses a DNS record to identify the mail servers authorized to send messages for a domain."
+          ],
+          "memoryHook": "SPF identifies the sender infrastructure.",
+          "recognitionCue": "Is this server authorized to send for the domain? -> SPF"
+        },
+        {
+          "title": "DomainKeys Identified Mail (DKIM)",
+          "paragraphs": [
+            "DKIM uses a domain-controlled cryptographic signature to help verify that a message was authorized and was not improperly altered in transit."
+          ],
+          "memoryHook": "DKIM verifies the signature.",
+          "recognitionCue": "Cryptographically verify email origin and integrity -> DKIM"
+        },
+        {
+          "title": "Domain-Based Message Authentication, Reporting and Conformance (DMARC)",
+          "paragraphs": [
+            "DMARC builds on SPF and DKIM alignment, publishes how receivers should handle authentication failures, and supports reporting."
+          ],
+          "memoryHook": "DMARC supplies the policy and reporting.",
+          "recognitionCue": "Policy for handling email-authentication failures -> DMARC"
+        },
+        {
+          "title": "Email Gateway",
+          "paragraphs": [
+            "An email gateway sits between external and internal mail systems to inspect or filter spam, malware, attachments, links, and phishing attempts."
+          ],
+          "recognitionCue": "Central security checkpoint for inbound and outbound email -> Email gateway"
+        }
+      ],
+      "table": {
+        "caption": "Email-authentication roles",
+        "headers": ["Control", "Question answered"],
+        "rows": [
+          ["SPF", "Is this sending server authorized?"],
+          ["DKIM", "Is the signed message authentic and intact?"],
+          ["DMARC", "What should happen when authentication checks fail?"]
+        ]
+      }
+    },
+    {
+      "id": "fim-and-dlp",
+      "title": "File Integrity Monitoring and DLP",
+      "paragraphs": [
+        "One control watches whether protected files changed; the other controls whether sensitive information is moving outside approved boundaries."
+      ],
+      "entries": [
+        {
+          "title": "File Integrity Monitoring",
+          "paragraphs": [
+            "File integrity monitoring detects unauthorized or unexpected changes to system, configuration, and application files."
+          ],
+          "recognitionCue": "Detect an unexpected protected-file change -> FIM"
+        },
+        {
+          "title": "DLP",
+          "paragraphs": [
+            "Data loss prevention detects or blocks unauthorized use or movement of sensitive information through endpoints, email, cloud services, file transfers, or network traffic."
+          ],
+          "recognitionCue": "Prevent sensitive information from leaving approved boundaries -> DLP"
+        }
+      ],
+      "table": {
+        "caption": "FIM and DLP",
+        "headers": ["Control", "Primary question"],
+        "rows": [
+          ["FIM", "Did this protected file change?"],
+          ["DLP", "Is sensitive information leaving or being used improperly?"]
+        ]
+      }
+    },
+    {
+      "id": "network-access-control",
+      "title": "Network Access Control",
+      "paragraphs": [
+        "Network admission can depend on both identity and device health rather than merely physical or wireless connectivity."
+      ],
+      "entries": [
+        {
+          "title": "Network Access Control (NAC)",
+          "paragraphs": [
+            "NAC evaluates a user or device's identity, security posture, and compliance before allowing, restricting, blocking, or quarantining network access."
+          ],
+          "recognitionCue": "Evaluate a user or device before network admission -> NAC"
+        }
+      ]
+    },
+    {
+      "id": "edr-and-xdr",
+      "title": "EDR and XDR",
+      "paragraphs": [
+        "Detection and response may focus on endpoint telemetry or correlate evidence across several security domains."
+      ],
+      "entries": [
+        {
+          "title": "EDR/XDR",
+          "paragraphs": [
+            "Endpoint Detection and Response continuously monitors endpoint activity for detection, investigation, isolation, and response. Extended Detection and Response correlates evidence across endpoints, email, networks, cloud systems, identities, and other sources."
+          ],
+          "memoryHook": "EDR focuses on endpoints; XDR extends across the environment.",
+          "recognitionCue": "Endpoint detection and response extended across multiple security sources -> EDR/XDR"
+        }
+      ],
+      "table": {
+        "caption": "EDR and XDR focus",
+        "headers": ["Capability", "Scope"],
+        "rows": [
+          ["EDR", "Endpoint telemetry, investigation, and response"],
+          ["XDR", "Cross-platform correlation and response"]
+        ]
+      }
+    },
+    {
+      "id": "user-behavior-analytics",
+      "title": "User Behavior Analytics",
+      "paragraphs": [
+        "Behavior analytics establishes a normal activity pattern and highlights deviations that may require investigation."
+      ],
+      "entries": [
+        {
+          "title": "User Behavior Analytics",
+          "paragraphs": [
+            "UBA identifies unusual user activity such as abnormal access, unexpected geography, large downloads, or logins at unusual times."
+          ],
+          "recognitionCue": "Detect anomalies by comparing activity with expected user patterns -> User behavior analytics"
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "variant": "recognition",
+      "paragraphs": [
+        "Permit or deny traffic -> Firewall rule | Collection of permit/deny entries -> Access list | Separate public services -> Screened subnet",
+        "Known malicious pattern -> Signature | Suspicious pattern over time -> Trend",
+        "Filtering follows the endpoint -> Agent-based | Shared web checkpoint -> Centralized proxy | Inspect address -> URL scanning | Group websites -> Content categorization | Explicit denial -> Block rule | Destination history -> Reputation",
+        "Central Windows policy -> Group Policy | Linux mandatory controls -> SELinux | Safer communication technology -> Protocol selection | Block malicious name resolution -> DNS filtering",
+        "Authorized mail server -> SPF | Signed email -> DKIM | Failure policy and reporting -> DMARC | Central mail inspection -> Email gateway",
+        "Detect file changes -> FIM | Stop sensitive-data movement -> DLP | Check before network admission -> NAC",
+        "Endpoint response -> EDR | Cross-platform response -> XDR | Abnormal user activity -> UBA"
+      ],
+      "entries": [
+        {
+          "title": "Capability Selection",
+          "paragraphs": [
+            "Name the risk category first: traffic, web access, email, endpoint, data, network admission, or behavior."
+          ],
+          "recognitionCue": "Problem category -> existing capability -> most direct configuration change"
+        }
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "SPF authorizes sending servers; DKIM verifies a domain signature; DMARC defines policy and reporting for failed alignment.",
+        "FIM asks whether a protected file changed; DLP asks whether sensitive information is leaving or being used improperly.",
+        "NAC decides whether a user or device should join the network; a firewall decides whether particular traffic should pass.",
+        "EDR focuses on endpoints; XDR correlates across a broader set of security domains.",
+        "A signature matches a known pattern; a trend identifies behavior developing over time.",
+        "DNS filtering blocks name resolution; web filtering evaluates web destinations, requests, or content."
+      ],
+      "callout": "Ask what capability the scenario wants changed: traffic, web access, email, endpoint, data, identity behavior, or network admission."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "variant": "recognition-sheet",
+      "paragraphs": [
+        "Control traffic -> Firewall | Public systems separated -> Screened subnet | Known fingerprint -> Signature | Pattern over time -> Trend",
+        "Filter on endpoint -> Agent-based | Filter through one checkpoint -> Proxy | Check URL -> URL scanning | Group site types -> Content categorization | Known bad history -> Reputation",
+        "Manage Windows policy -> Group Policy | Restrict Linux processes -> SELinux | Use safer protocol -> Protocol selection | Stop a dangerous DNS lookup -> DNS filtering",
+        "Authorized email server -> SPF | Signed message -> DKIM | Authentication policy/reporting -> DMARC | Filter mail centrally -> Email gateway",
+        "Watch file changes -> FIM | Stop sensitive-data loss -> DLP | Check network admission -> NAC",
+        "Endpoint detection/response -> EDR | Broader detection/response -> XDR | User acting unusually -> UBA"
+      ],
+      "entries": [
+        {
+          "title": "Final Decision Cue",
+          "paragraphs": [
+            "Select the control whose configuration change acts closest to the risk described in the scenario."
+          ],
+          "recognitionCue": "Risk -> control -> setting -> reduced exposure"
+        }
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Choose the sender-authorization control and the receiver-policy control.",
+    "prompt": "A company is reducing forged email that impersonates its domain. It must publish which mail servers are allowed to send on the domain's behalf. It must also tell receiving systems to quarantine messages that fail aligned email-authentication checks and collect reports about those failures.",
+    "fields": [
+      {
+        "id": "sender-authorization",
+        "label": "Control that identifies authorized sending servers",
+        "choices": [
+          "Sender Policy Framework (SPF)",
+          "DomainKeys Identified Mail (DKIM)",
+          "Domain-Based Message Authentication, Reporting and Conformance (DMARC)",
+          "Email gateway"
+        ],
+        "answer": "Sender Policy Framework (SPF)"
+      },
+      {
+        "id": "receiver-policy",
+        "label": "Control that defines failure handling and reporting",
+        "choices": [
+          "Domain-Based Message Authentication, Reporting and Conformance (DMARC)",
+          "Sender Policy Framework (SPF)",
+          "File integrity monitoring",
+          "DNS filtering"
+        ],
+        "answer": "Domain-Based Message Authentication, Reporting and Conformance (DMARC)"
+      }
+    ],
+    "correctFeedback": "Correct. SPF publishes which mail servers may send for the domain. DMARC uses SPF and DKIM alignment to define receiver handling for authentication failures and provide reporting.",
+    "retryFeedback": "Not quite. Choose the control that lists authorized sending servers, then choose the control that publishes failure-handling policy and reporting. Review Email Security and try again."
+  }
+}
