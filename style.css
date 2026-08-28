@@ -326,6 +326,343 @@ body.certification-cabinet[data-certification] .certification-cabinet-header h1:
     gap: 14px;
 }
 
+.certification-cabinet[data-certification="security-plus"] .certification-cabinet-shell {
+    width: min(1400px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="aplus-core1"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="aplus-core2"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="network-plus"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="linux-essentials"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="aws-cloud-practitioner"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.certification-cabinet[data-certification="cloud-plus"] .certification-cabinet-shell {
+    width: min(1500px, calc(100% - 36px));
+}
+
+.aplus-training-hero,
+.network-training-hero,
+.linux-training-hero,
+.aws-training-hero,
+.cloud-plus-training-hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1.85 / 1;
+    margin: 0 0 26px;
+    border-radius: 18px;
+    background: #07020f;
+    box-shadow:
+        0 0 18px rgba(198, 92, 255, 0.5),
+        0 0 32px rgba(243, 179, 61, 0.22);
+}
+
+.aplus-training-hero img,
+.network-training-hero img,
+.linux-training-hero img,
+.aws-training-hero img,
+.cloud-plus-training-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.certification-cabinet[data-certification="aplus-core2"] .aplus-training-hero {
+    aspect-ratio: 2.1 / 1;
+}
+
+.certification-cabinet[data-certification="network-plus"] .network-training-hero {
+    aspect-ratio: 2.1 / 1;
+}
+
+.certification-cabinet[data-certification="linux-essentials"] .linux-training-hero {
+    aspect-ratio: 2.1 / 1;
+}
+
+.certification-cabinet[data-certification="aws-cloud-practitioner"] .aws-training-hero {
+    aspect-ratio: 2.1 / 1;
+}
+
+.certification-cabinet[data-certification="cloud-plus"] .cloud-plus-training-hero {
+    aspect-ratio: 2.1 / 1;
+}
+
+.security-training-hero {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 26px;
+    padding: 8px;
+    border: 2px solid var(--kingdom-accent, #c65cff);
+    border-radius: 14px;
+    background: rgba(4, 5, 16, 0.92);
+    box-shadow:
+        inset 0 0 16px rgba(198, 92, 255, 0.12),
+        0 0 18px rgba(198, 92, 255, 0.48),
+        0 0 30px rgba(243, 179, 61, 0.18);
+}
+
+.security-training-hero::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 8px;
+    border-radius: 9px;
+    background:
+        linear-gradient(180deg, rgba(3, 3, 12, 0.78) 0%, rgba(3, 3, 12, 0.2) 30%, transparent 54%),
+        linear-gradient(0deg, rgba(3, 3, 12, 0.72) 0%, transparent 25%);
+    pointer-events: none;
+}
+
+.security-training-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+}
+
+.security-training-hero-copy.certification-cabinet-header {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 50%;
+    width: min(900px, calc(100% - 48px));
+    margin: 0;
+    padding: 8px 20px 18px;
+    transform: translateX(-50%);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.security-training-hero-copy.certification-cabinet-header::before {
+    display: none;
+}
+
+.security-training-hero-copy.certification-cabinet-header h1 {
+    margin: 4px 0 2px;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+.security-training-hero-copy.certification-cabinet-header h1::before {
+    width: clamp(3rem, 5vw, 4.6rem);
+    height: clamp(3rem, 5vw, 4.6rem);
+}
+
+.security-training-hero-copy.certification-cabinet-header p {
+    margin: 3px 0;
+    font-size: clamp(0.78rem, 1.35vw, 1.12rem);
+    line-height: 1.28;
+}
+
+.security-training-callout {
+    position: absolute;
+    z-index: 2;
+    right: 18px;
+    bottom: 15px;
+    left: 18px;
+    margin: 0;
+    color: #ffd76a;
+    font-size: clamp(0.95rem, 2vw, 1.55rem);
+    font-weight: 800;
+    letter-spacing: 0.035em;
+    text-shadow: 0 0 8px rgba(255, 156, 32, 0.7);
+}
+
+.certification-cabinet[data-certification="security-plus"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="aplus-core1"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="aplus-core2"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="network-plus"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="linux-essentials"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="aws-cloud-practitioner"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="cloud-plus"] .game-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.certification-cabinet[data-certification="security-plus"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="aplus-core1"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="aplus-core2"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="network-plus"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="linux-essentials"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="aws-cloud-practitioner"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+.certification-cabinet[data-certification="cloud-plus"] .game-links .link-btn {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .certification-cabinet[data-certification="security-plus"] .game-links,
+    .certification-cabinet[data-certification="aplus-core1"] .game-links,
+    .certification-cabinet[data-certification="aplus-core2"] .game-links,
+    .certification-cabinet[data-certification="network-plus"] .game-links,
+    .certification-cabinet[data-certification="linux-essentials"] .game-links,
+    .certification-cabinet[data-certification="aws-cloud-practitioner"] .game-links,
+    .certification-cabinet[data-certification="cloud-plus"] .game-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .certification-cabinet[data-certification="security-plus"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="aplus-core1"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="aplus-core2"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="network-plus"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="linux-essentials"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="aws-cloud-practitioner"] .certification-cabinet-shell,
+    .certification-cabinet[data-certification="cloud-plus"] .certification-cabinet-shell {
+        width: calc(100% - 14px);
+        padding-top: 16px;
+    }
+
+    .security-training-hero {
+        padding: 4px;
+        border-radius: 11px;
+    }
+
+    .security-training-hero::after {
+        inset: 4px;
+        border-radius: 7px;
+    }
+
+    .security-training-hero img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .security-training-hero-copy.certification-cabinet-header {
+        top: 7px;
+        width: calc(100% - 18px);
+        padding: 4px 6px;
+    }
+
+    .security-training-hero-copy.certification-cabinet-header .campaign-kicker {
+        font-size: 0.62rem;
+    }
+
+    .security-training-hero-copy.certification-cabinet-header h1 {
+        margin: 2px 0;
+        font-size: clamp(1.5rem, 9vw, 2rem);
+    }
+
+    .security-training-hero-copy.certification-cabinet-header h1::before {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 5px;
+    }
+
+    .security-training-hero-copy.certification-cabinet-header p {
+        margin: 1px 0;
+        font-size: 0.62rem;
+        line-height: 1.18;
+    }
+
+    .security-training-callout {
+        right: 8px;
+        bottom: 9px;
+        left: 8px;
+        font-size: 0.7rem;
+    }
+
+    .certification-cabinet[data-certification="security-plus"] .game-links,
+    .certification-cabinet[data-certification="aplus-core1"] .game-links,
+    .certification-cabinet[data-certification="aplus-core2"] .game-links,
+    .certification-cabinet[data-certification="network-plus"] .game-links,
+    .certification-cabinet[data-certification="linux-essentials"] .game-links,
+    .certification-cabinet[data-certification="aws-cloud-practitioner"] .game-links,
+    .certification-cabinet[data-certification="cloud-plus"] .game-links {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: min(300px, 100%);
+    }
+}
+
 body[data-certification]:not(.certification-cabinet)::before {
     display: block;
     padding: 9px 14px 9px 46px;
