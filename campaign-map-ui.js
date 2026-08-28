@@ -33,7 +33,7 @@
     const withoutIcon = iconMatch ? raw.slice(iconMatch[0].length).trim() : raw;
     return {
       icon,
-      name: withoutIcon.replace(new RegExp(`^World\\s+${number}\\s*`, "i"), "").trim()
+      name: withoutIcon.replace(new RegExp(`^(?:World|Chapter)\\s+${number}\\s*`, "i"), "").trim()
     };
   }
 
@@ -48,7 +48,7 @@
     link.href = source.getAttribute("href");
     link.append(
       element("span", "world-icon", details.icon),
-      element("span", "world-label", `World ${number}`),
+      element("span", "world-label", `Chapter ${number}`),
       element("strong", "", details.name)
     );
 
@@ -79,7 +79,7 @@
   commandCopy.append(
     element("span", "campaign-panel-label", "COMMANDER PROGRESS"),
     element("h2", "", `Your ${body.dataset.journeyName} Journey`),
-    element("p", "", "Five campaign worlds lead to mixed review, Captain Challenges, and the Exam Chamber.")
+    element("p", "", "Five campaign chapters lead to mixed review, Captain Challenges, and the Exam Chamber.")
   );
   const overall = element("section", "campaign-overall-slot");
   overall.dataset.overallProgress = "";
