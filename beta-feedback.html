@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giant Slayer Academy Beta Feedback</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="beta-feedback.css">
+<link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body feedback-page">
+<div class="crt-overlay" aria-hidden="true"></div>
+
+<main class="feedback-shell">
+    <header class="feedback-header">
+        <p class="feedback-kicker">Help Shape the Academy</p>
+        <h1>Giant Slayer Academy Beta Feedback</h1>
+        <p>
+            Beta testers help improve the academy by reporting bugs, confusing areas,
+            usability issues, suggestions, and positive feedback.
+        </p>
+    </header>
+
+    <section class="feedback-card" aria-labelledby="feedbackFormTitle">
+        <h2 id="feedbackFormTitle">Beta Testing Report</h2>
+        <p class="required-note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">required</span> are required.</p>
+
+        <form id="betaFeedbackForm">
+            <fieldset>
+                <legend>Tester Information</legend>
+                <div class="feedback-grid two-column">
+                    <div class="form-field">
+                        <label for="testerName">Name or nickname <span>(optional)</span></label>
+                        <input id="testerName" name="testerName" type="text" autocomplete="name" maxlength="100">
+                    </div>
+                    <div class="form-field">
+                        <label for="testerEmail">Email <span>(optional)</span></label>
+                        <input id="testerEmail" name="testerEmail" type="email" autocomplete="email" maxlength="254">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Certification and Testing Environment</legend>
+                <div class="feedback-grid two-column">
+                    <div class="form-field">
+                        <label for="certification">Certification <span aria-hidden="true">*</span></label>
+                        <select id="certification" name="certification" required>
+                            <option value="">Select a certification</option>
+                            <option>A+ Core 1</option>
+                            <option>A+ Core 2</option>
+                            <option>Network+</option>
+                            <option>Security+</option>
+                            <option>Linux Essentials</option>
+                            <option>AWS Cloud Practitioner</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="device">Device <span aria-hidden="true">*</span></label>
+                        <select id="device" name="device" required>
+                            <option value="">Select a device</option>
+                            <option>Desktop</option>
+                            <option>Laptop</option>
+                            <option>Tablet</option>
+                            <option>Phone</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="browser">Browser <span aria-hidden="true">*</span></label>
+                        <select id="browser" name="browser" required>
+                            <option value="">Select a browser</option>
+                            <option>Chrome</option>
+                            <option>Edge</option>
+                            <option>Firefox</option>
+                            <option>Safari</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="areaTested">Area tested <span aria-hidden="true">*</span></label>
+                        <select id="areaTested" name="areaTested" required>
+                            <option value="">Select an area</option>
+                            <option>Objective Training</option>
+                            <option>Practice Exams</option>
+                            <option>PBQ Arena</option>
+                            <option>Linux Labs</option>
+                            <option>Review Hub</option>
+                            <option>Commander Dashboard</option>
+                            <option>Navigation</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+                <div class="feedback-grid">
+                    <div class="form-field">
+                        <label for="workedWell">What worked well?</label>
+                        <textarea id="workedWell" name="workedWell" rows="4" maxlength="1500"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="confusing">What was confusing?</label>
+                        <textarea id="confusing" name="confusing" rows="4" maxlength="1500"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="bugDescription">Bug description</label>
+                        <textarea id="bugDescription" name="bugDescription" rows="4" maxlength="1500"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="reproductionSteps">Steps to reproduce</label>
+                        <textarea id="reproductionSteps" name="reproductionSteps" rows="5" maxlength="1500" placeholder="1. Opened…&#10;2. Selected…&#10;3. Observed…"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="suggestions">Suggestions for improvement</label>
+                        <textarea id="suggestions" name="suggestions" rows="4" maxlength="1500"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <aside class="privacy-notice" aria-labelledby="privacyTitle">
+                <h2 id="privacyTitle">Privacy Notice</h2>
+                <p>Do not submit:</p>
+                <ul>
+                    <li>Passwords</li>
+                    <li>Personal account information</li>
+                    <li>Exam dumps</li>
+                    <li>Copyrighted exam content</li>
+                    <li>Sensitive personal information</li>
+                </ul>
+            </aside>
+
+            <p class="email-notice">
+                Submitting opens a formatted draft in your email application. Review the draft,
+                address it to the beta coordinator if needed, and manually press Send.
+            </p>
+
+            <div class="feedback-actions">
+                <button class="link-btn feedback-submit" type="submit">Prepare Feedback Email</button>
+                <button class="link-btn feedback-reset" type="reset">Clear Form</button>
+                <a class="link-btn feedback-return" href="index.html">🏰 Return to Academy 🏰</a>
+            </div>
+            <p id="feedbackStatus" class="feedback-status" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+</main>
+
+<script src="beta-feedback.js"></script>
+</body>
+</html>
