@@ -69,6 +69,7 @@ Start at `index.html` and select **AWS Cloud Practitioner**.
 - `LINUX-LABS-v1.0-RELEASE-NOTES.md` — Linux Labs release summary
 - `LINUX-LABS-v1.0-AUDIT.json` — machine-readable Linux Labs release evidence
 - `GIANT-SLAYER-ACADEMY-PROJECT-HISTORY.md` — evidence-based Part 1 project chronology
+- `GIANT-SLAYER-ACADEMY-STORY-MODE-BLUEPRINT-v1.0.docx` — canonical Story Mode world, progression, combat, quest, and vertical-slice blueprint
 - `DEVELOPMENT-STANDARD.md` — platform engineering and release requirements
 - `DEVELOPMENT-BOARD.md` — roadmap and release-history ledger
 

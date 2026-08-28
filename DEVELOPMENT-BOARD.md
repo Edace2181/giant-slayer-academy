@@ -1,21 +1,21 @@
 # Hydra Academy Development Board
 
-**Version 1.9**
+**Version 1.10**
 **Date: July 27, 2026**
 **Purpose:** Project roadmap, milestone tracker, and release-history ledger
 
 ## Project Overview
 
-Hydra Academy is a multi-certification learning platform that transforms official certification objectives into structured campaigns. Each campaign progresses through Objective Sweep recognition, Mixed Objective Review, Captain Challenges, the Exam Chamber, the Final Dungeon, and independently authored Practice Exams.
+Giant Slayer Academy is a multi-certification learning universe that transforms official certification objectives into structured campaigns. Hydra is the reusable learning engine operating behind the Academy's question delivery, adaptation, progress, review, lab, PBQ, and future Story Mode battle systems.
 
 This board tracks active development, completed platform milestones, upcoming production gates, and future ideas. Engineering requirements and release criteria remain governed separately by `DEVELOPMENT-STANDARD.md` and certification-specific addenda.
 
 ## Current Version
 
-**Development Board:** Version 1.9
+**Development Board:** Version 1.10
 **Hydra Academy Platform:** Version 1.0
-**Current active campaign:** Linux Essentials
-**Current campaign state:** Recognition campaign and Linux Labs v1.0 production-complete and live on GitHub Pages
+**Current active campaign:** Giant Slayer Academy Story Mode
+**Current campaign state:** Blueprint v1.0 created; awaiting vertical-slice objective and interaction-model approval
 
 Official Version 1.0 certification releases currently include:
 
@@ -26,6 +26,24 @@ Official Version 1.0 certification releases currently include:
 - AWS Certified Cloud Practitioner
 
 ## Completed Milestones
+
+### Giant Slayer Academy Story Mode Blueprint v1.0 — Design Complete
+
+The original question-powered combat concept has been expanded into a canonical world, progression, quest, enemy, arena, and learning-engine architecture.
+
+- Established Giant Slayer Academy as the player-facing universe.
+- Established Hydra as the internal reusable learning and battle engine.
+- Defined the canonical Part 1 journey as A+ → Network+ → Security+ → Linux → AWS.
+- Defined A+ Core 1 and Core 2 as connected realms inside the A+ Kingdom.
+- Mapped certification domains to provinces and objectives to compact RPG regions.
+- Defined repeatable lower-level training with reduced Story XP and full educational value.
+- Defined main quests, side quests, NPC roles, objective Guardians, certification Giants, and repeatable Kingdom Arenas.
+- Preserved approved question banks, authoritative explanations, Objective Sweep coverage, and separation between Story progression and certification mastery.
+- Defined the first production gate as one A+ Core 1 vertical slice.
+
+**Blueprint:** `GIANT-SLAYER-ACADEMY-STORY-MODE-BLUEPRINT-v1.0.docx`
+**Blueprint status:** Complete
+**Production authorization:** Not yet granted
 
 ### Linux Labs Version 1.0 — Production Complete
 
@@ -210,40 +228,31 @@ Validation results:
 
 ## Current Development Sprint
 
-### Linux Essentials Campaign Development
+### Story Mode Vertical-Slice Planning
 
-The Linux Essentials campaign is the active development focus.
+Story Mode is the active design focus. The next gate is planning—not full kingdom production.
 
-Completed within the current campaign:
+Required decisions:
 
-- Official LPI Version 1.6 blueprint mapped to five Topics and 19 Objectives.
-- Campaign skeleton completed.
-- Nineteen Objective Sweep banks completed.
-- 235 Level 2 recognition questions validated.
-- Objective Sweep v1.0 locked as the immutable baseline.
-- Campaign statistics, progress presentation, official LPI weights, and enhanced Objective Cards implemented.
-- Linux campaign-map presentation adopted as the platform campaign-map design.
-- Objective Selection presentation standardized across existing certifications.
-- Phase 2B Production Readiness audit completed with no release-blocking defects.
-- Phase 3 World 6 Mixed Objective Review approved using the complete locked 235-question pool.
-- World 7 Captain Challenges completed with four banks and 120 original questions.
-- World 8 Exam Chamber, Final Dungeon, Final Boss menu, and six Practice Exam loader paths approved.
-- Six independently authored Linux Essentials Practice Exams completed with 240 validated questions.
-- Platform-wide Phase 3 Better Study Tools completed and validated across all five certifications.
-
-The Linux Essentials recognition campaign, Final Dungeon, Linux Labs v1.0, graduation chamber, and final live acceptance audit are complete.
+- Select the first A+ Core 1 objective region.
+- Approve the region name and visual identity.
+- Define three NPCs, one main quest, and two side quests.
+- Define three normal enemies, one elite, and one Guardian.
+- Approve the first battle, quest, map, Battle Report, and persistence wireframes.
+- Finalize or defer the global player-facing arena name.
+- Approve vertical-slice production before modifying shared runtime systems.
 
 ## Upcoming Milestones
 
-1. **Automated Regression Foundation** — Add repeatable syntax, JSON, internal-link, and mission-bank checks to continuous integration.
-2. **Platform UI Consistency Review** — Continue comparing shared campaign surfaces against the current canonical templates.
-3. **Accessibility Follow-up** — Extend the explicit focus-visible standard across legacy campaign controls.
+1. **Story Mode Vertical-Slice Plan** — Select the first A+ Core 1 objective and approve its map, cast, quests, enemies, Guardian, and wireframes.
+2. **Story Mode Proof of Concept** — Build one compact region only after the vertical-slice plan is approved.
+3. **Automated Regression Foundation** — Add repeatable syntax, JSON, internal-link, and mission-bank checks to continuous integration.
+4. **Accessibility Follow-up** — Extend the explicit focus-visible standard across legacy campaign controls.
 
 ## Future Ideas / Backlog
 
 - PBQ Arena
 - Victory Screen
-- Story Mode
 - Recognition Mode controls
 - Mini Bosses
 - Additional certification labs using the approved Linux Labs instructional architecture
@@ -361,6 +370,15 @@ Together, the A+ Core 1 and Core 2 PBQ campaigns contribute 50 missions and 251 
 - Recorded Mission 26 as the non-graded Linux Labs graduation chamber.
 - Recorded the completed repository-wide and live-site acceptance audit.
 - Replaced outdated Linux final-audit milestones with automated regression, UI consistency, and accessibility follow-up work.
+
+### Version 1.10 — July 27, 2026
+
+- Recorded the canonical Giant Slayer Academy Story Mode Blueprint v1.0.
+- Established Giant Slayer Academy as the player-facing universe and Hydra as the internal reusable learning engine.
+- Recorded the A+ → Network+ → Security+ → Linux → AWS Part 1 progression.
+- Defined kingdoms, realms, provinces, objective regions, locations, encounters, Guardians, Giants, quests, NPCs, and Kingdom Arenas.
+- Defined repeatable lower-level training, Story XP scaling, and the separation of Story progression from certification mastery.
+- Advanced Story Mode from the future backlog into vertical-slice planning.
 
 ---
 
