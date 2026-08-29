@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "5",
+  "objective": "5.5",
+  "title": "Explain Types and Purposes of Audits and Assessments",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Organizations use audits, assessments, attestations, and penetration testing to gather evidence that security controls work. Some evaluations are performed internally, while others require an independent external review.",
+        "The key distinctions are who performs the evaluation, what the activity is meant to prove, and how much information or access a penetration tester receives."
+      ],
+      "callout": "Recognition goal: identify who is evaluating the organization, what is being evaluated, and how much the tester knows about the target."
+    },
+    {
+      "id": "attestation",
+      "title": "Attestation",
+      "entries": [
+        {
+          "title": "Attestation",
+          "paragraphs": [
+            "A formal declaration or confirmation that stated requirements, conditions, or controls have been met. It provides assurance to management, customers, regulators, or other stakeholders."
+          ],
+          "recognitionCue": "Formal statement confirming compliance or control status -> attestation"
+        }
+      ]
+    },
+    {
+      "id": "internal-audits-and-assessments",
+      "title": "Internal Audits and Assessments",
+      "paragraphs": [
+        "Internal activities are performed by or for the organization itself. They support improvement and oversight from inside the organization, but may not provide the same independence as an external review."
+      ],
+      "entries": [
+        {
+          "title": "Internal assessments",
+          "paragraphs": ["Evaluations performed by or for the organization itself."],
+          "recognitionCue": "The organization evaluates itself -> internal assessment"
+        },
+        {
+          "title": "Compliance assessment",
+          "paragraphs": ["An internal compliance review checks whether the organization follows its policies, standards, regulations, and contractual requirements."],
+          "recognitionCue": "The organization checks its own compliance -> compliance assessment"
+        },
+        {
+          "title": "Audit committee",
+          "paragraphs": ["A governance group that oversees audit activities and may review findings, risk, compliance issues, and remediation."],
+          "recognitionCue": "Governance group overseeing audits -> audit committee"
+        },
+        {
+          "title": "Self-assessments",
+          "paragraphs": ["Control or compliance evaluations performed by the responsible organization. They can lower cost, support frequent evaluation, and identify gaps early, but they have less independence than an external audit."],
+          "recognitionCue": "The organization grades itself -> self-assessment"
+        }
+      ]
+    },
+    {
+      "id": "external-audits-and-assessments",
+      "title": "External Audits and Assessments",
+      "paragraphs": [
+        "External evaluations are performed by parties outside the organization and provide outside or independent assurance."
+      ],
+      "entries": [
+        {
+          "title": "External assessments",
+          "paragraphs": ["Evaluations of security posture, controls, or compliance performed from outside the organization."],
+          "recognitionCue": "An outside evaluator reviews security posture -> external assessment"
+        },
+        {
+          "title": "Regulatory audit",
+          "paragraphs": ["An external review that evaluates whether the organization meets requirements established by an applicable regulator."],
+          "recognitionCue": "A regulator evaluates required compliance -> regulatory audit"
+        },
+        {
+          "title": "Examinations",
+          "paragraphs": ["Formal reviews of systems, controls, records, processes, or operations used to determine compliance or effectiveness."],
+          "recognitionCue": "Detailed formal review of records or controls -> examination"
+        },
+        {
+          "title": "Assessment",
+          "paragraphs": ["An outside evaluation of security condition, controls, or compliance."],
+          "recognitionCue": "Outside evaluator reviews security condition or compliance -> assessment"
+        },
+        {
+          "title": "Independent third-party audit",
+          "paragraphs": ["An objective audit performed by an unaffiliated outside organization. Independence can provide stronger assurance to external stakeholders."],
+          "recognitionCue": "An independent outside auditor evaluates the organization -> third-party audit"
+        }
+      ],
+      "table": {
+        "caption": "Internal and external evaluation distinction",
+        "headers": ["Evaluation source", "Primary recognition clue"],
+        "rows": [
+          ["Internal", "The organization evaluates itself"],
+          ["External", "An outside party evaluates the organization"],
+          ["Independent third party", "An unaffiliated outside auditor provides stronger independence"]
+        ]
+      }
+    },
+    {
+      "id": "penetration-testing",
+      "title": "Penetration Testing",
+      "paragraphs": [
+        "Penetration testing is an authorized attempt to identify and exploit security weaknesses. Unlike an audit that evaluates controls or compliance, a penetration test actively tests defenses."
+      ],
+      "entries": [
+        {
+          "title": "Penetration testing",
+          "paragraphs": ["Authorized attempts to identify and exploit security weaknesses."],
+          "recognitionCue": "Actively test defenses under authorization -> penetration testing"
+        },
+        {
+          "title": "Physical penetration test",
+          "paragraphs": ["Evaluates physical-security controls such as doors, locks, badges, barriers, and facility access."],
+          "recognitionCue": "Test physical access controls -> physical penetration test"
+        },
+        {
+          "title": "Offensive penetration test",
+          "paragraphs": ["The testing team acts like an adversary and focuses on attacking or exploiting defenses."],
+          "recognitionCue": "Simulated attacker activity -> offensive penetration test"
+        },
+        {
+          "title": "Defensive penetration test",
+          "paragraphs": ["Focuses on whether defenders can detect, respond to, and stop simulated attack activity."],
+          "recognitionCue": "Evaluate defensive capabilities -> defensive penetration test"
+        },
+        {
+          "title": "Integrated penetration test",
+          "paragraphs": ["Evaluates offensive and defensive teams together: one side attacks while the other detects and responds."],
+          "recognitionCue": "Offense and defense operate in the same exercise -> integrated penetration test"
+        }
+      ],
+      "table": {
+        "caption": "Penetration testing purposes",
+        "headers": ["Testing type", "What it evaluates"],
+        "rows": [
+          ["Physical", "Physical access controls"],
+          ["Offensive", "The simulated attack"],
+          ["Defensive", "Detection, response, and defense"],
+          ["Integrated", "Offensive and defensive teams together"]
+        ]
+      }
+    },
+    {
+      "id": "knowledge-levels",
+      "title": "Knowledge Levels",
+      "paragraphs": [
+        "The amount of information provided to a penetration tester changes the style of the assessment."
+      ],
+      "entries": [
+        {
+          "title": "Known environment",
+          "paragraphs": ["The tester receives extensive information about the target, such as architecture, credentials, source information, or configuration details."],
+          "recognitionCue": "High level of internal target knowledge -> known environment"
+        },
+        {
+          "title": "Partially known environment",
+          "paragraphs": ["The tester receives some information about the target, but still must discover the rest."],
+          "recognitionCue": "Some target knowledge and some discovery -> partially known environment"
+        },
+        {
+          "title": "Unknown environment",
+          "paragraphs": ["The tester receives little or no internal information and must discover the environment similarly to an external attacker."],
+          "recognitionCue": "Little or no internal target knowledge -> unknown environment"
+        }
+      ],
+      "table": {
+        "caption": "Penetration tester knowledge comparison",
+        "headers": ["Environment", "Information provided"],
+        "rows": [
+          ["Known", "Extensive information"],
+          ["Partially known", "Some information"],
+          ["Unknown", "Little or no information"]
+        ]
+      }
+    },
+    {
+      "id": "reconnaissance",
+      "title": "Reconnaissance",
+      "paragraphs": [
+        "Reconnaissance gathers information about a target before or during testing. The key distinction is whether the tester directly interacts with the target environment."
+      ],
+      "entries": [
+        {
+          "title": "Reconnaissance",
+          "paragraphs": ["Collection of information about a target before or during a test."],
+          "recognitionCue": "Gather target information before or during testing -> reconnaissance"
+        },
+        {
+          "title": "Passive reconnaissance",
+          "paragraphs": ["Gathers information, including publicly available information, without directly interacting with target systems."],
+          "recognitionCue": "Learn about the target without touching its systems -> passive reconnaissance"
+        },
+        {
+          "title": "Active reconnaissance",
+          "paragraphs": ["Directly interacts with the target environment by probing hosts, services, or network resources."],
+          "recognitionCue": "Interact with or probe target systems -> active reconnaissance"
+        }
+      ],
+      "table": {
+        "caption": "Passive and active reconnaissance",
+        "headers": ["Method", "Target interaction"],
+        "rows": [
+          ["Passive", "No direct interaction"],
+          ["Active", "Direct interaction or probing"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Formal declaration that requirements or controls are met = attestation",
+        "The organization evaluates itself = internal assessment or self-assessment",
+        "Internal review against requirements = compliance assessment",
+        "Governance oversight of audits = audit committee",
+        "Regulator performs the review = regulatory audit",
+        "Formal inspection of records or controls = examination",
+        "Unaffiliated outside auditor = independent third-party audit",
+        "Test physical barriers or facility access = physical penetration test",
+        "Simulated attacker = offensive; test defenders = defensive; test both together = integrated",
+        "Extensive information = known; some information = partially known; little or none = unknown",
+        "No direct target interaction = passive reconnaissance; direct probing = active reconnaissance"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Do not confuse an audit with a penetration test. An audit evaluates controls or compliance, while a penetration test actively attempts exploitation. Also separate who performs an evaluation from how much a penetration tester knows: internal and external identify the evaluator, while known, partially known, and unknown identify the tester's target knowledge."
+      ],
+      "callout": "Ask who is performing the assessment, what is being tested, and how much information the tester has."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Formally certify = attestation",
+        "We evaluate ourselves = internal assessment",
+        "Check internal compliance = compliance assessment",
+        "Oversee audits = audit committee",
+        "Grade ourselves = self-assessment",
+        "Regulator checks us = regulatory audit",
+        "Formal deep review = examination",
+        "Outside review = external assessment",
+        "Independent auditor = third-party audit",
+        "Actively test weaknesses = penetration testing",
+        "Try to enter a facility = physical penetration test",
+        "Attack defenses = offensive",
+        "Test defenders = defensive",
+        "Attack and defend together = integrated",
+        "Know nearly everything = known environment",
+        "Know some = partially known environment",
+        "Know almost nothing = unknown environment",
+        "Gather target information = reconnaissance",
+        "Research without touching = passive reconnaissance",
+        "Probe the target = active reconnaissance"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Classify the test conditions and information-gathering method.",
+    "prompt": "An authorized penetration-testing team receives network diagrams and selected system details, but not complete target information. The team then probes hosts and services to discover what is reachable.",
+    "fields": [
+      {
+        "id": "knowledge-level",
+        "label": "Tester knowledge level",
+        "choices": ["Known environment", "Partially known environment", "Unknown environment", "External assessment"],
+        "answer": "Partially known environment"
+      },
+      {
+        "id": "recon-method",
+        "label": "Reconnaissance method used to probe the target",
+        "choices": ["Active reconnaissance", "Passive reconnaissance", "Attestation", "Examination"],
+        "answer": "Active reconnaissance"
+      }
+    ],
+    "correctFeedback": "Correct. The team has some but not complete target information, so the environment is partially known. Probing target hosts and services is active reconnaissance because it directly interacts with the environment.",
+    "retryFeedback": "Not quite. First decide how much target information the testers received, then decide whether their information gathering directly touched the target systems."
+  }
+}

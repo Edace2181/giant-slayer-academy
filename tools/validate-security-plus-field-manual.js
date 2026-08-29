@@ -1895,6 +1895,21 @@ const lessonDefinitions = {
       [["Privacy", "Legal implications", "Local/regional privacy", "National privacy", "Global privacy"], "privacy-and-legal-implications"],
       [["Data subject", "Controller vs. processor", "Ownership", "Data inventory and retention", "Right to be forgotten"], "privacy-roles-records-and-rights"]
     ].flatMap(([items, section]) => items.map(item => [item, section])))
+  },
+  "5.5": {
+    world: "5", expectedQuestionCount: 21,
+    sectionIds: ["what-you-are-learning", "attestation", "internal-audits-and-assessments", "external-audits-and-assessments", "penetration-testing", "knowledge-levels", "reconnaissance", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    entryTitles: ["Attestation", "Internal assessments", "Compliance assessment", "Audit committee", "Self-assessments", "External assessments", "Regulatory audit", "Examinations", "Assessment", "Independent third-party audit", "Penetration testing", "Physical penetration test", "Offensive penetration test", "Defensive penetration test", "Integrated penetration test", "Known environment", "Partially known environment", "Unknown environment", "Reconnaissance", "Passive reconnaissance", "Active reconnaissance"],
+    miniCheckPrompt: "An authorized penetration-testing team receives network diagrams and selected system details, but not complete target information. The team then probes hosts and services to discover what is reachable.",
+    miniCheckAnswers: { "knowledge-level": "Partially known environment", "recon-method": "Active reconnaissance" },
+    blueprintMappings: Object.fromEntries([
+      [["Attestation"], "attestation"],
+      [["Internal assessments", "Compliance assessment", "Audit committee", "Self-assessments"], "internal-audits-and-assessments"],
+      [["External assessments", "Regulatory audit", "Examinations", "Assessment", "Independent third-party audit"], "external-audits-and-assessments"],
+      [["Penetration testing", "Physical penetration test", "Offensive penetration test", "Defensive penetration test", "Integrated penetration test"], "penetration-testing"],
+      [["Known environment", "Partially known environment", "Unknown environment"], "knowledge-levels"],
+      [["Reconnaissance", "Passive reconnaissance", "Active reconnaissance"], "reconnaissance"]
+    ].flatMap(([items, section]) => items.map(item => [item, section])))
   }
 };
 
@@ -2069,7 +2084,7 @@ requireValue(
   campaign.includes('href="security-plus-world5-objectives.html" class="world world5 unlocked"'),
   "Campaign Map World 5 does not route directly to the Objective Hub."
 );
-["5.1", "5.2", "5.3", "5.4"].forEach(objective => {
+["5.1", "5.2", "5.3", "5.4", "5.5"].forEach(objective => {
   requireValue(world5Hub.includes('security-plus-field-manual.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the Objective " + objective + " Field Manual action.");
   requireValue(world5Hub.includes('security-plus-quiz.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the direct Objective " + objective + " Sweep action.");
 });
@@ -2083,7 +2098,6 @@ requireValue(
     manualScript.includes("function renderNavigation()"),
   "The shared Field Manual renderer is missing large-lesson navigation."
 );
-requireValue(!fs.existsSync(path.join(fieldManualRoot, "5.5.json")), "Objective 5.5 must not be created during the Objective 5.4 approval gate.");
 if (errors.length) {
   console.error("Security+ Field Manual validation: FAIL");
   errors.forEach(error => console.error("- " + error));
@@ -2137,10 +2151,11 @@ if (errors.length) {
   console.log("- Objective 5.3 published teaching/Sweep mappings: 20 of 20 (100%)");
   console.log("- Objective 5.4 lesson, Mini Check, and 24-question Sweep: PASS");
   console.log("- Objective 5.4 published teaching/Sweep mappings: 24 of 24 (100%)");
+  console.log("- Objective 5.5 lesson, Mini Check, and 21-question Sweep: PASS");
+  console.log("- Objective 5.5 published teaching/Sweep mappings: 21 of 21 (100%)");
   console.log("- Shared always-visible lesson navigation: PASS");
   console.log("- Campaign → World 1 through World 5 Objective Hub routes: PASS");
   console.log("- Direct Objective Sweep actions: PASS");
   console.log("- World 4 Objectives 4.1–4.9 Field Manual and direct Sweep actions: PASS");
-  console.log("- World 5 Objectives 5.1–5.4 Field Manual and direct Sweep actions: PASS");
-  console.log("- Objective 5.5 remains unimplemented: PASS");
+  console.log("- World 5 Objectives 5.1–5.5 Field Manual and direct Sweep actions: PASS");
 }
