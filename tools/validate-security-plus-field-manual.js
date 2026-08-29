@@ -9,6 +9,7 @@ const world1HubPath = path.join(root, "security-plus-world1-objectives.html");
 const world2HubPath = path.join(root, "security-plus-world2-objectives.html");
 const world3HubPath = path.join(root, "security-plus-world3-objectives.html");
 const world4HubPath = path.join(root, "security-plus-world4-objectives.html");
+const world5HubPath = path.join(root, "security-plus-world5-objectives.html");
 const campaignPath = path.join(root, "security-plus-campaign.html");
 const quizPath = path.join(root, "security-plus-quiz.html");
 const manualPagePath = path.join(root, "security-plus-field-manual.html");
@@ -1837,6 +1838,35 @@ const lessonDefinitions = {
       "Dashboards": "reports-and-dashboards",
       "Packet captures": "packet-captures"
     }
+  },
+  "5.1": {
+    world: "5", expectedQuestionCount: 36,
+    sectionIds: ["what-you-are-learning", "governance-documents", "policy-types", "standard-and-procedure-types", "external-considerations", "governance-structures", "systems-and-data-roles", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    entryTitles: ["Guidelines", "Policies", "Acceptable use policy (AUP)", "Information security policies", "Business continuity policy", "Disaster recovery policy", "Incident response policy", "Software development lifecycle (SDLC) policy", "Change management policy", "Standards", "Password standard", "Access control standard", "Physical security standard", "Encryption standard", "Procedures", "Change management procedure", "Onboarding/offboarding procedure", "Playbooks", "External considerations", "Regulatory", "Legal", "Industry", "Local/regional", "National", "Global", "Monitoring and revision", "Types of governance structures", "Boards", "Committees", "Government entities", "Centralized/decentralized", "Roles and responsibilities for systems and data", "Owners", "Controllers", "Processors", "Custodians/stewards"],
+    miniCheckPrompt: "Leadership requires every system to use approved encryption algorithms. A separate document gives administrators the exact steps for applying the approved configuration.",
+    miniCheckAnswers: { "mandatory-requirement": "Encryption standard", "implementation-steps": "Procedure" },
+    blueprintMappings: Object.fromEntries([
+      [["Guidelines", "Policies", "Standards", "Procedures", "Playbooks"], "governance-documents"],
+      [["Acceptable use policy (AUP)", "Information security policies", "Business continuity policy", "Disaster recovery policy", "Incident response policy", "Software development lifecycle (SDLC) policy", "Change management policy"], "policy-types"],
+      [["Password standard", "Access control standard", "Physical security standard", "Encryption standard", "Change management procedure", "Onboarding/offboarding procedure"], "standard-and-procedure-types"],
+      [["External considerations", "Regulatory", "Legal", "Industry", "Local/regional", "National", "Global", "Monitoring and revision"], "external-considerations"],
+      [["Types of governance structures", "Boards", "Committees", "Government entities", "Centralized/decentralized"], "governance-structures"],
+      [["Roles and responsibilities for systems and data", "Owners", "Controllers", "Processors", "Custodians/stewards"], "systems-and-data-roles"]
+    ].flatMap(([items, section]) => items.map(item => [item, section])))
+  },
+  "5.2": {
+    world: "5", expectedQuestionCount: 38,
+    sectionIds: ["what-you-are-learning", "identification-and-assessment", "risk-analysis", "risk-tracking", "risk-strategies", "reporting-and-impact", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    entryTitles: ["Risk identification", "Risk assessment", "Ad hoc", "Recurring", "One-time", "Continuous", "Risk analysis", "Qualitative", "Quantitative", "Single loss expectancy (SLE)", "Annualized loss expectancy (ALE)", "Annualized rate of occurrence (ARO)", "Probability", "Likelihood", "Exposure factor", "Impact", "Risk register", "Key risk indicators", "Risk owners", "Risk threshold", "Risk tolerance", "Risk appetite", "Expansionary", "Conservative", "Neutral", "Risk management strategies", "Transfer", "Accept", "Exemption", "Exception", "Avoid", "Mitigate", "Risk reporting", "Business impact analysis", "Recovery time objective (RTO)", "Recovery point objective (RPO)", "Mean time to repair (MTTR)", "Mean time between failures (MTBF)"],
+    miniCheckPrompt: "A business can tolerate no more than four hours before a critical service is restored, and it can accept losing no more than fifteen minutes of recently created data.",
+    miniCheckAnswers: { "restore-window": "Recovery time objective (RTO)", "data-loss-window": "Recovery point objective (RPO)" },
+    blueprintMappings: Object.fromEntries([
+      [["Risk identification", "Risk assessment", "Ad hoc", "Recurring", "One-time", "Continuous"], "identification-and-assessment"],
+      [["Risk analysis", "Qualitative", "Quantitative", "Single loss expectancy (SLE)", "Annualized loss expectancy (ALE)", "Annualized rate of occurrence (ARO)", "Probability", "Likelihood", "Exposure factor", "Impact"], "risk-analysis"],
+      [["Risk register", "Key risk indicators", "Risk owners", "Risk threshold", "Risk tolerance", "Risk appetite", "Expansionary", "Conservative", "Neutral"], "risk-tracking"],
+      [["Risk management strategies", "Transfer", "Accept", "Exemption", "Exception", "Avoid", "Mitigate"], "risk-strategies"],
+      [["Risk reporting", "Business impact analysis", "Recovery time objective (RTO)", "Recovery point objective (RPO)", "Mean time to repair (MTTR)", "Mean time between failures (MTBF)"], "reporting-and-impact"]
+    ].flatMap(([items, section]) => items.map(item => [item, section])))
   }
 };
 
@@ -1929,6 +1959,7 @@ const world1Hub = fs.readFileSync(world1HubPath, "utf8");
 const world2Hub = fs.readFileSync(world2HubPath, "utf8");
 const world3Hub = fs.readFileSync(world3HubPath, "utf8");
 const world4Hub = fs.readFileSync(world4HubPath, "utf8");
+const world5Hub = fs.readFileSync(world5HubPath, "utf8");
 const campaign = fs.readFileSync(campaignPath, "utf8");
 const quiz = fs.readFileSync(quizPath, "utf8");
 const manualPage = fs.readFileSync(manualPagePath, "utf8");
@@ -2007,6 +2038,15 @@ requireValue(
   "World 4 Objective Hub does not preserve the verified 246-question total."
 );
 requireValue(
+  campaign.includes('href="security-plus-world5-objectives.html" class="world world5 unlocked"'),
+  "Campaign Map World 5 does not route directly to the Objective Hub."
+);
+["5.1", "5.2"].forEach(objective => {
+  requireValue(world5Hub.includes('security-plus-field-manual.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the Objective " + objective + " Field Manual action.");
+  requireValue(world5Hub.includes('security-plus-quiz.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the direct Objective " + objective + " Sweep action.");
+});
+requireValue(world5Hub.includes('data-world-progress="5" data-questions="157"'), "World 5 Objective Hub does not preserve the verified 157-question total.");
+requireValue(
   quiz.includes('<script src="security-plus-quiz.js"></script>'),
   "Security+ quiz page no longer loads the existing quiz engine."
 );
@@ -2015,10 +2055,7 @@ requireValue(
     manualScript.includes("function renderNavigation()"),
   "The shared Field Manual renderer is missing large-lesson navigation."
 );
-requireValue(
-  !fs.existsSync(path.join(fieldManualRoot, "5.1.json")),
-  "Objective 5.1 must not be created during the Objective 4.9 approval gate."
-);
+requireValue(!fs.existsSync(path.join(fieldManualRoot, "5.3.json")), "Objective 5.3 must not be created during the Objective 5.2 approval gate.");
 if (errors.length) {
   console.error("Security+ Field Manual validation: FAIL");
   errors.forEach(error => console.error("- " + error));
@@ -2064,9 +2101,14 @@ if (errors.length) {
   console.log("- Objective 4.8 published teaching/Sweep mappings: 21 of 21 (100%)");
   console.log("- Objective 4.9 lesson, Mini Check, and 13-question Sweep: PASS");
   console.log("- Objective 4.9 published teaching/Sweep mappings: 13 of 13 (100%)");
+  console.log("- Objective 5.1 lesson, Mini Check, and 36-question Sweep: PASS");
+  console.log("- Objective 5.1 published teaching/Sweep mappings: 36 of 36 (100%)");
+  console.log("- Objective 5.2 lesson, Mini Check, and 38-question Sweep: PASS");
+  console.log("- Objective 5.2 published teaching/Sweep mappings: 38 of 38 (100%)");
   console.log("- Shared always-visible lesson navigation: PASS");
-  console.log("- Campaign → World 1, World 2, World 3, and World 4 Objective Hub routes: PASS");
+  console.log("- Campaign → World 1 through World 5 Objective Hub routes: PASS");
   console.log("- Direct Objective Sweep actions: PASS");
   console.log("- World 4 Objectives 4.1–4.9 Field Manual and direct Sweep actions: PASS");
-  console.log("- Objective 5.1 remains unimplemented: PASS");
+  console.log("- World 5 Objectives 5.1–5.2 Field Manual and direct Sweep actions: PASS");
+  console.log("- Objective 5.3 remains unimplemented: PASS");
 }
