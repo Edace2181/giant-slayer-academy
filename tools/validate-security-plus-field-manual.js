@@ -1867,6 +1867,20 @@ const lessonDefinitions = {
       [["Risk management strategies", "Transfer", "Accept", "Exemption", "Exception", "Avoid", "Mitigate"], "risk-strategies"],
       [["Risk reporting", "Business impact analysis", "Recovery time objective (RTO)", "Recovery point objective (RPO)", "Mean time to repair (MTTR)", "Mean time between failures (MTBF)"], "reporting-and-impact"]
     ].flatMap(([items, section]) => items.map(item => [item, section])))
+  },
+  "5.3": {
+    world: "5", expectedQuestionCount: 20,
+    sectionIds: ["what-you-are-learning", "vendor-assessment", "vendor-selection", "agreement-types", "vendor-monitoring", "questionnaires-and-rules-of-engagement", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    entryTitles: ["Vendor assessment", "Penetration testing", "Right-to-audit clause", "Evidence of internal audits", "Independent assessments", "Supply chain analysis", "Vendor selection", "Due diligence", "Conflict of interest", "Agreement types", "Service-level agreement (SLA)", "Memorandum of agreement (MOA)", "Memorandum of understanding (MOU)", "Master service agreement (MSA)", "Work order/statement of work (WO/SOW)", "Non-disclosure agreement (NDA)", "Business partners agreement (BPA)", "Vendor monitoring", "Questionnaires", "Rules of engagement"],
+    miniCheckPrompt: "A customer contract allows the customer to inspect a cloud provider's controls. Before a penetration test begins, a separate document defines the permitted systems, testing window, and stop conditions.",
+    miniCheckAnswers: { "inspection-permission": "Right-to-audit clause", "testing-boundaries": "Rules of engagement" },
+    blueprintMappings: Object.fromEntries([
+      [["Vendor assessment", "Penetration testing", "Right-to-audit clause", "Evidence of internal audits", "Independent assessments", "Supply chain analysis"], "vendor-assessment"],
+      [["Vendor selection", "Due diligence", "Conflict of interest"], "vendor-selection"],
+      [["Agreement types", "Service-level agreement (SLA)", "Memorandum of agreement (MOA)", "Memorandum of understanding (MOU)", "Master service agreement (MSA)", "Work order/statement of work (WO/SOW)", "Non-disclosure agreement (NDA)", "Business partners agreement (BPA)"], "agreement-types"],
+      [["Vendor monitoring"], "vendor-monitoring"],
+      [["Questionnaires", "Rules of engagement"], "questionnaires-and-rules-of-engagement"]
+    ].flatMap(([items, section]) => items.map(item => [item, section])))
   }
 };
 
@@ -2041,7 +2055,7 @@ requireValue(
   campaign.includes('href="security-plus-world5-objectives.html" class="world world5 unlocked"'),
   "Campaign Map World 5 does not route directly to the Objective Hub."
 );
-["5.1", "5.2"].forEach(objective => {
+["5.1", "5.2", "5.3"].forEach(objective => {
   requireValue(world5Hub.includes('security-plus-field-manual.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the Objective " + objective + " Field Manual action.");
   requireValue(world5Hub.includes('security-plus-quiz.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the direct Objective " + objective + " Sweep action.");
 });
@@ -2055,7 +2069,7 @@ requireValue(
     manualScript.includes("function renderNavigation()"),
   "The shared Field Manual renderer is missing large-lesson navigation."
 );
-requireValue(!fs.existsSync(path.join(fieldManualRoot, "5.3.json")), "Objective 5.3 must not be created during the Objective 5.2 approval gate.");
+requireValue(!fs.existsSync(path.join(fieldManualRoot, "5.4.json")), "Objective 5.4 must not be created during the Objective 5.3 approval gate.");
 if (errors.length) {
   console.error("Security+ Field Manual validation: FAIL");
   errors.forEach(error => console.error("- " + error));
@@ -2105,10 +2119,12 @@ if (errors.length) {
   console.log("- Objective 5.1 published teaching/Sweep mappings: 36 of 36 (100%)");
   console.log("- Objective 5.2 lesson, Mini Check, and 38-question Sweep: PASS");
   console.log("- Objective 5.2 published teaching/Sweep mappings: 38 of 38 (100%)");
+  console.log("- Objective 5.3 lesson, Mini Check, and 20-question Sweep: PASS");
+  console.log("- Objective 5.3 published teaching/Sweep mappings: 20 of 20 (100%)");
   console.log("- Shared always-visible lesson navigation: PASS");
   console.log("- Campaign → World 1 through World 5 Objective Hub routes: PASS");
   console.log("- Direct Objective Sweep actions: PASS");
   console.log("- World 4 Objectives 4.1–4.9 Field Manual and direct Sweep actions: PASS");
-  console.log("- World 5 Objectives 5.1–5.2 Field Manual and direct Sweep actions: PASS");
-  console.log("- Objective 5.3 remains unimplemented: PASS");
+  console.log("- World 5 Objectives 5.1–5.3 Field Manual and direct Sweep actions: PASS");
+  console.log("- Objective 5.4 remains unimplemented: PASS");
 }

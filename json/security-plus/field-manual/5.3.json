@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "certification": "security-plus",
+  "examCode": "SY0-701",
+  "world": "5",
+  "objective": "5.3",
+  "title": "Explain Processes Associated with Third-Party Risk Assessment and Management",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Third-party risk management follows a lifecycle: investigate and select a vendor, define the relationship in agreements, assess the vendor within authorized boundaries, and monitor the relationship over time.",
+        "You will learn to recognize the evidence, contract language, assessment methods, and oversight activities used at each stage."
+      ],
+      "callout": "Recognition goal: identify whether a clue describes vendor selection, an agreement, an assessment method, assessment boundaries, or ongoing monitoring."
+    },
+    {
+      "id": "vendor-assessment",
+      "title": "Vendor Assessment",
+      "entries": [
+        {"title": "Vendor assessment", "paragraphs": ["Evaluates a supplier's security posture and risk before engagement and throughout the relationship."]},
+        {"title": "Penetration testing", "paragraphs": ["Uses authorized exploitation to test whether weaknesses in a vendor environment can be used by an attacker."], "recognitionCue": "Authorized exploitation of the vendor environment -> penetration testing"},
+        {"title": "Right-to-audit clause", "paragraphs": ["Contract language that gives a customer permission to inspect or verify a vendor's controls."], "recognitionCue": "Customer's contractual inspection right -> right-to-audit clause"},
+        {"title": "Evidence of internal audits", "paragraphs": ["Records showing that the vendor evaluated its own controls. This is first-party evidence because the vendor assessed itself."]},
+        {"title": "Independent assessments", "paragraphs": ["Security reviews performed by an outside, objective party. Independence gives the customer evidence that is not produced solely by the vendor."]},
+        {"title": "Supply chain analysis", "paragraphs": ["Examines upstream dependencies, subcontractors, components, and supplier relationships that may introduce risk beyond the direct vendor."]}
+      ],
+      "table": {
+        "caption": "Ways to evaluate vendor risk",
+        "headers": ["Method or evidence", "Recognition clue"],
+        "rows": [
+          ["Penetration testing", "Authorized exploitation"],
+          ["Right-to-audit clause", "Contractual permission to inspect"],
+          ["Evidence of internal audits", "Vendor assessed its own controls"],
+          ["Independent assessments", "Outside objective party performed the review"],
+          ["Supply chain analysis", "Upstream dependencies and supplier relationships"]
+        ]
+      }
+    },
+    {
+      "id": "vendor-selection",
+      "title": "Vendor Selection",
+      "entries": [
+        {"title": "Vendor selection", "paragraphs": ["Chooses a supplier after evaluating whether its capabilities, controls, reliability, and risk fit the organization's needs."]},
+        {"title": "Due diligence", "paragraphs": ["The reasonable investigation performed before making a vendor decision. It gathers and verifies information so the choice is informed rather than assumed."], "recognitionCue": "Investigation before the decision -> due diligence"},
+        {"title": "Conflict of interest", "paragraphs": ["A personal or organizational interest that could bias vendor evaluation or selection. Conflicts should be disclosed and managed so the decision remains impartial."], "recognitionCue": "Competing interest could bias selection -> conflict of interest"}
+      ]
+    },
+    {
+      "id": "agreement-types",
+      "title": "Agreement Types",
+      "entries": [
+        {"title": "Agreement types", "paragraphs": ["Contracts and relationship documents define what the parties expect, protect, deliver, and measure."]},
+        {"title": "Service-level agreement (SLA)", "paragraphs": ["Defines measurable service performance such as availability, response time, or resolution targets."], "recognitionCue": "Measurable service commitment -> SLA"},
+        {"title": "Memorandum of agreement (MOA)", "paragraphs": ["A formal document describing agreed responsibilities between parties."]},
+        {"title": "Memorandum of understanding (MOU)", "paragraphs": ["A generally nonbinding statement of shared intentions or cooperation."], "recognitionCue": "Shared intentions, generally nonbinding -> MOU"},
+        {"title": "Master service agreement (MSA)", "paragraphs": ["An overarching contract that establishes common terms governing current and future service engagements."], "recognitionCue": "Umbrella terms for future engagements -> MSA"},
+        {"title": "Work order/statement of work (WO/SOW)", "paragraphs": ["Defines the specific deliverables, scope, schedule, and work to be performed for an engagement."], "recognitionCue": "Project-specific scope and deliverables -> WO/SOW"},
+        {"title": "Non-disclosure agreement (NDA)", "paragraphs": ["Restricts the disclosure or unauthorized use of confidential information shared between parties."], "recognitionCue": "Protect confidentiality of shared information -> NDA"},
+        {"title": "Business partners agreement (BPA)", "paragraphs": ["Defines responsibilities and expectations between cooperating businesses."]}
+      ],
+      "table": {
+        "caption": "Agreement recognition guide",
+        "headers": ["Agreement", "Primary purpose"],
+        "rows": [
+          ["SLA", "Measurable service performance"],
+          ["MOA", "Formal agreed responsibilities"],
+          ["MOU", "Shared intentions, generally nonbinding"],
+          ["MSA", "Overarching terms for service engagements"],
+          ["WO/SOW", "Specific scope, deliverables, and schedule"],
+          ["NDA", "Confidentiality restrictions"],
+          ["BPA", "Responsibilities between business partners"]
+        ]
+      }
+    },
+    {
+      "id": "vendor-monitoring",
+      "title": "Vendor Monitoring",
+      "entries": [
+        {"title": "Vendor monitoring", "paragraphs": ["Continuously or periodically observes supplier performance, compliance, and security posture after selection. Monitoring detects changes that a one-time review would miss."], "recognitionCue": "Ongoing observation after engagement -> vendor monitoring"}
+      ]
+    },
+    {
+      "id": "questionnaires-and-rules-of-engagement",
+      "title": "Questionnaires and Rules of Engagement",
+      "entries": [
+        {"title": "Questionnaires", "paragraphs": ["Structured questions used to collect information about a vendor's controls, processes, and security posture. Responses are inputs to assessment and may require supporting evidence."], "recognitionCue": "Structured vendor control questions -> questionnaires"},
+        {"title": "Rules of engagement", "paragraphs": ["Define the boundaries, permissions, timing, contacts, allowed techniques, and stop conditions for assessment activity."], "recognitionCue": "Authorized testing boundaries and permissions -> rules of engagement"}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Investigation before selecting a vendor = due diligence",
+        "Contract permits customer inspection = right-to-audit clause",
+        "Vendor reviews itself = evidence of internal audits; outside party reviews it = independent assessment",
+        "Measurable service target = SLA; umbrella contract = MSA; specific deliverables = WO/SOW",
+        "Structured control questions = questionnaire; authorized assessment boundaries = rules of engagement",
+        "Ongoing supplier observation = vendor monitoring"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "A right-to-audit clause grants permission to inspect; rules of engagement control how an authorized assessment is performed. An MSA sets broad relationship terms, while a WO/SOW defines the specific work. Due diligence happens before a vendor decision, while monitoring continues after engagement."
+      ],
+      "callout": "Use the timing and purpose in the clue: selection, contract definition, assessment evidence, testing boundaries, or ongoing oversight."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Due diligence = investigate before selecting",
+        "Conflict of interest = possible selection bias",
+        "Right-to-audit = contractual inspection permission",
+        "Internal audit evidence = vendor assessed itself",
+        "Independent assessment = outside objective review",
+        "Supply chain analysis = upstream dependency risk",
+        "SLA = measurable service levels",
+        "MSA = overarching service terms",
+        "WO/SOW = specific work and deliverables",
+        "NDA = protect confidential information",
+        "Questionnaire = structured control questions",
+        "Rules of engagement = assessment boundaries",
+        "Vendor monitoring = ongoing oversight"
+      ]
+    }
+  ],
+  "miniCheck": {
+    "intro": "Classify each third-party risk clue.",
+    "prompt": "A customer contract allows the customer to inspect a cloud provider's controls. Before a penetration test begins, a separate document defines the permitted systems, testing window, and stop conditions.",
+    "fields": [
+      {"id": "inspection-permission", "label": "Contract language permitting the customer to inspect controls", "choices": ["Right-to-audit clause", "Independent assessment", "Questionnaire", "Service-level agreement (SLA)"], "answer": "Right-to-audit clause"},
+      {"id": "testing-boundaries", "label": "Document defining permitted testing boundaries and conditions", "choices": ["Rules of engagement", "Statement of work (SOW)", "Non-disclosure agreement (NDA)", "Vendor monitoring"], "answer": "Rules of engagement"}
+    ],
+    "correctFeedback": "Correct. The right-to-audit clause grants inspection authority, while the rules of engagement define how authorized testing may occur.",
+    "retryFeedback": "Not quite. Separate the contract language that grants inspection rights from the document that sets testing boundaries and permissions."
+  }
+}
