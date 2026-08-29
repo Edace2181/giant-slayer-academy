@@ -1910,6 +1910,20 @@ const lessonDefinitions = {
       [["Known environment", "Partially known environment", "Unknown environment"], "knowledge-levels"],
       [["Reconnaissance", "Passive reconnaissance", "Active reconnaissance"], "reconnaissance"]
     ].flatMap(([items, section]) => items.map(item => [item, section])))
+  },
+  "5.6": {
+    world: "5", expectedQuestionCount: 22,
+    sectionIds: ["what-you-are-learning", "phishing-awareness", "anomalous-behavior-recognition", "user-guidance-and-training", "reporting-and-monitoring", "program-development-and-execution", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    entryTitles: ["Phishing", "Campaigns", "Recognizing a phishing attempt", "Responding to reported suspicious messages", "Anomalous behavior recognition", "Risky behavior", "Unexpected behavior", "Unintentional behavior", "User guidance and training", "Policy/handbooks", "Situational awareness", "Insider threat", "Password management", "Removable media and cables", "Social engineering", "Operational security", "Hybrid/remote work environments", "Reporting and monitoring", "Initial", "Recurring", "Development", "Execution"],
+    miniCheckPrompt: "Before new employees begin working independently, the organization teaches them not to connect unknown USB drives or data cables to company systems.",
+    miniCheckAnswers: { "training-timing": "Initial", "awareness-topic": "Removable media and cables" },
+    blueprintMappings: Object.fromEntries([
+      [["Phishing", "Campaigns", "Recognizing a phishing attempt", "Responding to reported suspicious messages"], "phishing-awareness"],
+      [["Anomalous behavior recognition", "Risky behavior", "Unexpected behavior", "Unintentional behavior"], "anomalous-behavior-recognition"],
+      [["User guidance and training", "Policy/handbooks", "Situational awareness", "Insider threat", "Password management", "Removable media and cables", "Social engineering", "Operational security", "Hybrid/remote work environments"], "user-guidance-and-training"],
+      [["Reporting and monitoring", "Initial", "Recurring"], "reporting-and-monitoring"],
+      [["Development", "Execution"], "program-development-and-execution"]
+    ].flatMap(([items, section]) => items.map(item => [item, section])))
   }
 };
 
@@ -2084,7 +2098,7 @@ requireValue(
   campaign.includes('href="security-plus-world5-objectives.html" class="world world5 unlocked"'),
   "Campaign Map World 5 does not route directly to the Objective Hub."
 );
-["5.1", "5.2", "5.3", "5.4", "5.5"].forEach(objective => {
+["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"].forEach(objective => {
   requireValue(world5Hub.includes('security-plus-field-manual.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the Objective " + objective + " Field Manual action.");
   requireValue(world5Hub.includes('security-plus-quiz.html?world=5&amp;objective=' + objective), "World 5 Objective Hub is missing the direct Objective " + objective + " Sweep action.");
 });
@@ -2153,9 +2167,12 @@ if (errors.length) {
   console.log("- Objective 5.4 published teaching/Sweep mappings: 24 of 24 (100%)");
   console.log("- Objective 5.5 lesson, Mini Check, and 21-question Sweep: PASS");
   console.log("- Objective 5.5 published teaching/Sweep mappings: 21 of 21 (100%)");
+  console.log("- Objective 5.6 lesson, Mini Check, and 22-question Sweep: PASS");
+  console.log("- Objective 5.6 published teaching/Sweep mappings: 22 of 22 (100%)");
   console.log("- Shared always-visible lesson navigation: PASS");
   console.log("- Campaign → World 1 through World 5 Objective Hub routes: PASS");
   console.log("- Direct Objective Sweep actions: PASS");
   console.log("- World 4 Objectives 4.1–4.9 Field Manual and direct Sweep actions: PASS");
-  console.log("- World 5 Objectives 5.1–5.5 Field Manual and direct Sweep actions: PASS");
+  console.log("- World 5 Objectives 5.1–5.6 Field Manual and direct Sweep actions: PASS");
+  console.log("- Security+ Field Manual Objectives 1.1–5.6 complete: PASS");
 }
