@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.5",
+  "title": "Explain the Purpose of Cloud-Native Design Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A cloud-native application is designed to take advantage of capabilities provided by cloud environments instead of simply treating the cloud like somebody else's server room.",
+        "CompTIA wants you to understand several design ideas that help cloud applications become easier to scale, maintain, connect, and change."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is this design trying to reduce infrastructure management, separate application components, distribute work, or help services find one another?"
+      ],
+      "callout": "Independent services + managed cloud capabilities + dynamic communication → think cloud-native design."
+    },
+    {
+      "id": "cloud-provided-managed-services",
+      "title": "Cloud-Provided Managed Services",
+      "paragraphs": [
+        "A managed service allows the cloud provider to operate more of the underlying technology for the customer.",
+        "Instead of building, patching, and maintaining every supporting system yourself, you consume the capability as a service.",
+        "Think: Use the cloud provider's managed tool instead of building everything from scratch.",
+        "The major benefit is reducing operational work so the organization can concentrate on its application or business function."
+      ],
+      "callout": "If the company wants to reduce administration of underlying infrastructure → think cloud-provided managed service."
+    },
+    {
+      "id": "microservices",
+      "title": "Microservices",
+      "paragraphs": [
+        "A microservices architecture divides an application into smaller services that perform individual functions.",
+        "Instead of one enormous application where everything is tightly connected, separate services can handle different jobs.",
+        "User authentication, product inventory, payment processing, and notifications could each operate as separate services.",
+        "Think: One big application becomes a team of smaller specialists.",
+        "A change to one microservice may be possible without rebuilding the entire application."
+      ],
+      "callout": "If an application is divided into small independently operating services → think microservices."
+    },
+    {
+      "id": "loosely-coupled-architecture",
+      "title": "Loosely Coupled Architecture",
+      "paragraphs": [
+        "A loosely coupled architecture keeps components from depending too heavily on one another.",
+        "One component can change or fail without automatically forcing every other component to fail.",
+        "Think: Connected, but not chained together.",
+        "This improves flexibility because components can be modified more independently."
+      ],
+      "callout": "If components need independence so changes or failures do not cascade through the entire application → think loosely coupled architecture."
+    },
+    {
+      "id": "fan-out",
+      "title": "Fan-Out",
+      "paragraphs": [
+        "Fan-out describes sending one event, message, or piece of work to multiple destinations or consumers.",
+        "Imagine one notification arriving and then being distributed to several different services.",
+        "Think: One comes in → many go out."
+      ],
+      "entries": [
+        {
+          "title": "Order Processing Example",
+          "paragraphs": [
+            "A customer places an order. That single event could trigger inventory processing, billing, shipping, and customer notification."
+          ],
+          "recognitionCue": "If one event must trigger multiple independent actions → think fan-out."
+        }
+      ]
+    },
+    {
+      "id": "service-discovery",
+      "title": "Service Discovery",
+      "paragraphs": [
+        "In a dynamic cloud environment, services may appear, disappear, move, or scale.",
+        "Service discovery allows services to locate other services they need to communicate with without relying entirely on fixed locations.",
+        "Think: Instead of memorizing everyone's address, ask where the service currently lives."
+      ],
+      "callout": "If dynamically changing services need to find one another → think service discovery."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Provider handles supporting platform or service → Managed service",
+        "Application divided into smaller independent functions → Microservices",
+        "Components should not strongly depend on each other → Loosely coupled architecture",
+        "One event goes to several consumers → Fan-out",
+        "Services dynamically locate other services → Service discovery"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Microservices vs. Loosely Coupled Architecture",
+          "paragraphs": [
+            "They often work together, but they are not identical.",
+            "Microservices describes breaking an application into smaller services. Loose coupling describes reducing dependencies between components.",
+            "A system can contain multiple components without those components being properly loosely coupled."
+          ]
+        },
+        {
+          "title": "Fan-Out vs. Service Discovery",
+          "paragraphs": [
+            "Fan-out means distributing work. Service discovery means finding services.",
+            "One message needing five consumers points to fan-out. A service needing to locate another changing service points to service discovery."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Provider handles underlying service operations → Managed service",
+        "Large application broken into small services → Microservices",
+        "Components operate with minimal dependency → Loosely coupled architecture",
+        "One event triggers many destinations → Fan-out",
+        "Dynamic services need to find each other → Service discovery"
+      ]
+    }
+  ]
+}

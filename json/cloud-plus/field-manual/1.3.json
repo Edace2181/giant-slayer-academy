@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Explain Cloud Networking Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud workloads still need networks.",
+        "Users need ways to reach cloud resources, cloud systems need ways to communicate with each other, and traffic must be routed, filtered, distributed, and sometimes accelerated.",
+        "For this objective, recognize how organizations connect to the cloud, how cloud networks distribute traffic, how virtual cloud networks are organized, how networks communicate, and how traffic finds the correct destination."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["What does the traffic need to connect to, pass through, distribute across, or reach?"],
+      "callout": "Connection requirement → choose the connection. Traffic-management requirement → choose the networking function. Routing requirement → choose the routing mechanism."
+    },
+    {
+      "id": "public-and-private-connections",
+      "title": "Public and Private Connections to the Cloud",
+      "paragraphs": [
+        "Organizations need a path between their users or internal networks and their cloud environment.",
+        "Two concepts in this objective are especially important: virtual private network (VPN) and dedicated connection."
+      ],
+      "entries": [
+        {
+          "title": "Virtual Private Network (VPN)",
+          "paragraphs": [
+            "A VPN creates a protected connection across another network, commonly the internet.",
+            "It allows users, offices, or networks to communicate with cloud resources through an encrypted tunnel.",
+            "Think: Private tunnel across a public road.",
+            "VPNs are useful when an organization wants secure connectivity without requiring a separate physical connection directly into the cloud environment."
+          ],
+          "recognitionCue": "If the scenario describes an encrypted tunnel to cloud resources → think VPN."
+        },
+        {
+          "title": "Dedicated Connections",
+          "paragraphs": [
+            "A dedicated connection provides a private connection between an organization and a cloud environment rather than relying entirely on normal public internet connectivity.",
+            "Organizations may use dedicated connectivity when they need a more direct and predictable connection to cloud resources.",
+            "Think: My own road to the cloud."
+          ],
+          "recognitionCue": "If the requirement is private, dedicated connectivity instead of a normal internet path → think dedicated connection."
+        }
+      ],
+      "table": {
+        "caption": "VPN and dedicated-connection recognition",
+        "headers": ["Connection", "Core idea"],
+        "rows": [["VPN", "Protected tunnel"], ["Dedicated connection", "Dedicated path"]]
+      }
+    },
+    {
+      "id": "network-functions-components-and-services",
+      "title": "Network Functions, Components, and Services",
+      "paragraphs": [
+        "Cloud networking services distribute requests, control how application traffic enters, bring content closer to users, and filter allowed traffic."
+      ],
+      "entries": [
+        {
+          "title": "Application Load Balancer",
+          "paragraphs": [
+            "An application load balancer distributes requests among backend resources using application-level information.",
+            "It can understand details about application requests and send those requests to appropriate resources.",
+            "Think: Route based on what the application request is asking for."
+          ],
+          "recognitionCue": "If traffic must be distributed using application-level information → think application load balancer."
+        },
+        {
+          "title": "Network Load Balancer",
+          "paragraphs": [
+            "A network load balancer distributes traffic using network and transport information rather than the deeper application request.",
+            "Think: Move connections efficiently without needing to understand the application request itself."
+          ],
+          "recognitionCue": "If load balancing is based on network-level connection information → think network load balancer."
+        },
+        {
+          "title": "Application Gateway",
+          "paragraphs": [
+            "An application gateway acts as an entry point for application traffic and directs that traffic toward the appropriate application resources.",
+            "The gateway sits between clients and the application environment. Clients reach the gateway first, and the gateway handles how application traffic enters.",
+            "Think: The front door for application traffic."
+          ],
+          "recognitionCue": "If the scenario needs an application-aware gateway at the front of a cloud application → think application gateway."
+        },
+        {
+          "title": "Content Delivery Network (CDN)",
+          "paragraphs": [
+            "A content delivery network distributes copies of content closer to users.",
+            "Instead of forcing every user to retrieve the same content from one distant origin, a CDN serves content from locations closer to the requester.",
+            "This improves delivery speed and reduces unnecessary traffic back to the original system.",
+            "Think: Bring the content closer to the customer."
+          ],
+          "examples": ["Users around the world need the same website images and downloadable content, so distributed locations serve it closer to them."],
+          "recognitionCue": "If static or repeated content must be delivered closer to geographically distributed users → think CDN."
+        },
+        {
+          "title": "Firewalls",
+          "paragraphs": [
+            "A firewall controls network traffic according to security rules.",
+            "In cloud networks, firewalls determine which traffic is allowed or blocked between systems, networks, or external users.",
+            "Think: Traffic reaches the security checkpoint. Does the rule allow it through?"
+          ],
+          "recognitionCue": "If the requirement is allowing or blocking network traffic → think firewall."
+        }
+      ],
+      "table": {
+        "caption": "Network-service recognition",
+        "headers": ["Service", "Primary role"],
+        "rows": [
+          ["Application load balancer", "Distribute application-aware requests"],
+          ["Network load balancer", "Distribute network connections"],
+          ["Application gateway", "Application front door"],
+          ["CDN", "Serve content closer to users"],
+          ["Firewall", "Allow or block traffic"]
+        ]
+      }
+    },
+    {
+      "id": "virtual-private-cloud",
+      "title": "Virtual Private Cloud (VPC)",
+      "paragraphs": [
+        "A virtual private cloud is a logically isolated cloud network where an organization can place and organize cloud resources.",
+        "Within the VPC, administrators control subnets, routes, and connections to other networks.",
+        "Think: My private network space inside the cloud provider."
+      ],
+      "callout": "If the scenario needs an isolated cloud network for an organization's resources → think VPC.",
+      "entries": [
+        {
+          "title": "VPC Peering",
+          "paragraphs": ["VPC peering connects two VPCs so resources in those networks can communicate. It works well when a relatively direct relationship is required.", "Think: Build a direct bridge between two cloud networks."],
+          "recognitionCue": "If two VPCs need direct connectivity → think VPC peering."
+        },
+        {
+          "title": "Transit Gateway",
+          "paragraphs": [
+            "A transit gateway provides a central location through which multiple networks can connect.",
+            "Instead of creating many separate network-to-network connections, networks connect through the central transit point.",
+            "Think: Hub in the middle."
+          ],
+          "examples": ["Several VPCs need to communicate, so a central transit gateway replaces a difficult web of individual connections."],
+          "recognitionCue": "If many cloud networks need centralized connectivity → think transit gateway."
+        },
+        {
+          "title": "Subnets",
+          "paragraphs": [
+            "A subnet divides a larger network into smaller logical network sections.",
+            "In a VPC, subnets organize cloud resources and help determine how groups of resources communicate.",
+            "Think: One big network divided into smaller neighborhoods."
+          ],
+          "recognitionCue": "If the scenario involves dividing a cloud network into smaller network ranges → think subnet."
+        }
+      ],
+      "table": {
+        "caption": "VPC connectivity and organization",
+        "headers": ["Concept", "Recognition"],
+        "rows": [["VPC peering", "Direct relationship between two VPCs"], ["Transit gateway", "Central hub for many networks"], ["Subnet", "Smaller IP network range"]]
+      }
+    },
+    {
+      "id": "routing-and-switching",
+      "title": "Routing and Switching",
+      "paragraphs": [
+        "Cloud networks still need mechanisms for moving traffic.",
+        "Switching deals with communication within network segments. Routing determines how traffic moves between different networks."
+      ],
+      "entries": [
+        {
+          "title": "Virtual Local Area Network (VLAN)",
+          "paragraphs": [
+            "A VLAN logically separates devices into different network groups even when they may use shared physical networking infrastructure.",
+            "Think: Separate networks without requiring completely separate physical switches."
+          ],
+          "recognitionCue": "If devices need logical network separation → think VLAN."
+        },
+        {
+          "title": "Software-Defined Networking (SDN)",
+          "paragraphs": [
+            "Software-defined networking controls networking through software rather than relying only on manual configuration of individual physical devices.",
+            "Cloud environments use software-controlled networking because networks must be created and changed dynamically.",
+            "Think: Control the network through software."
+          ],
+          "recognitionCue": "If networking must be centrally or programmatically controlled through software → think SDN."
+        },
+        {
+          "title": "Border Gateway Protocol (BGP)",
+          "paragraphs": [
+            "BGP exchanges routing information between separate routing environments and helps networks learn which paths reach different destinations.",
+            "Think: Networks telling other networks which destinations they can reach."
+          ],
+          "recognitionCue": "If different network environments must dynamically exchange routing information → think BGP."
+        },
+        {
+          "title": "Static Routes",
+          "paragraphs": [
+            "A static route is a manually configured path telling network traffic where to go. It does not automatically learn a new route.",
+            "An administrator defines the destination and path.",
+            "Think: Administrator says, 'To reach that network, go this way.'"
+          ],
+          "recognitionCue": "If the route is manually configured → think static route."
+        },
+        {
+          "title": "Route Tables",
+          "paragraphs": [
+            "A route table contains routing rules that determine where network traffic should be sent.",
+            "A route entry normally identifies a destination and where traffic for that destination should go next.",
+            "Cloud subnets and networks use route tables to reach other segments, other cloud networks, and external destinations.",
+            "Think: The network's direction sheet."
+          ],
+          "recognitionCue": "If the scenario asks where cloud traffic should be sent based on destination → think route table."
+        }
+      ],
+      "table": {
+        "caption": "Routing and switching concept comparison",
+        "headers": ["Concept", "Core distinction"],
+        "rows": [
+          ["VLAN", "Logical network separation"],
+          ["SDN", "Software-controlled networking"],
+          ["BGP", "Routing information learned and exchanged dynamically"],
+          ["Static route", "Manually defined path"],
+          ["Route table", "Rules consulted to determine traffic direction"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Encrypted tunnel to the cloud → VPN",
+        "Private dedicated cloud connection → Dedicated connection",
+        "Distribute traffic using application information → Application load balancer",
+        "Distribute network connections → Network load balancer",
+        "Application front door or gateway → Application gateway",
+        "Deliver content closer to geographically distant users → CDN",
+        "Allow or block traffic → Firewall",
+        "Isolated cloud network → VPC",
+        "Directly connect two VPCs → VPC peering",
+        "Connect many networks through one central hub → Transit gateway",
+        "Divide a network into smaller sections → Subnet",
+        "Logical network segmentation → VLAN",
+        "Software-controlled networking → SDN",
+        "Dynamically exchange routing information → BGP",
+        "Administrator manually defines the path → Static route",
+        "Determine where traffic goes based on routing rules → Route table"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "VPN vs. Dedicated Connection", "paragraphs": ["Both can provide private connectivity. VPN means an encrypted tunnel across existing infrastructure; a dedicated connection means dedicated private connectivity."]},
+        {"title": "Application vs. Network Load Balancer", "paragraphs": ["Both distribute traffic. Application-aware request information points to an application load balancer; network connection information points to a network load balancer."]},
+        {"title": "Load Balancer vs. CDN", "paragraphs": ["A load balancer distributes incoming workload among backend resources. A CDN distributes content closer to users."]},
+        {"title": "VPC Peering vs. Transit Gateway", "paragraphs": ["Two VPCs needing direct communication point to peering. Many networks needing one central connection point point to a transit gateway."]},
+        {"title": "VLAN vs. Subnet", "paragraphs": ["A VLAN provides logical switching separation. A subnet divides an IP network into smaller ranges."]},
+        {"title": "BGP vs. Static Route", "paragraphs": ["BGP exchanges routing information dynamically. An administrator manually defines a static route."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Encrypted tunnel into the cloud → VPN",
+        "Private dedicated path to the cloud → Dedicated connection",
+        "Distribute application-aware requests → Application load balancer",
+        "Distribute network connections → Network load balancer",
+        "Application traffic enters through a controlled front door → Application gateway",
+        "Serve content closer to users → CDN",
+        "Allow or deny network traffic → Firewall",
+        "Need an isolated network inside the cloud → VPC",
+        "Direct connection between two VPCs → VPC peering",
+        "Many VPCs or networks need one connectivity hub → Transit gateway",
+        "Split an IP network into smaller ranges → Subnet",
+        "Logical network segmentation → VLAN",
+        "Control networking through software → SDN",
+        "Networks dynamically exchange route information → BGP",
+        "Administrator manually specifies a path → Static route",
+        "Traffic destination must be matched to routing rules → Route table"
+      ]
+    }
+  ]
+}

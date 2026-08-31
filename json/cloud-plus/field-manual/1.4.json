@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.4",
+  "title": "Compare and Contrast Storage Resources and Technologies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud storage is not one giant bucket where every piece of data belongs.",
+        "Different workloads need different combinations of speed, capacity, accessibility, performance, and cost.",
+        "CompTIA wants you to recognize which storage tier, disk technology, and storage type best fits the scenario.",
+        "The main mental model is: How often is the data accessed, how fast must it respond, and how much are we willing to pay?"
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Does this workload need fast frequent access, cheap long-term storage, or a particular way of presenting the data to an application?"
+      ],
+      "callout": "Frequency + performance + access method + cost → choose the storage solution."
+    },
+    {
+      "id": "tiered-storage",
+      "title": "Tiered Storage",
+      "paragraphs": [
+        "Storage tiers separate data according to how frequently it needs to be accessed.",
+        "Usually, faster and easier access carries a higher cost, while slower and less frequent access carries a lower cost."
+      ],
+      "entries": [
+        {
+          "title": "Hot Storage",
+          "paragraphs": [
+            "Hot storage is intended for data that is accessed frequently and needs to be readily available.",
+            "Examples include active application data, frequently accessed files, and current business information.",
+            "Think: Hot = we're using it right now.",
+            "Hot storage normally prioritizes performance over lowest possible cost."
+          ],
+          "recognitionCue": "If data is accessed constantly and needs fast retrieval → think hot storage."
+        },
+        {
+          "title": "Warm Storage",
+          "paragraphs": [
+            "Warm storage is for data that is still needed periodically but is not accessed as frequently as hot data.",
+            "Think: Warm = we still use it, just not every day.",
+            "It can provide a middle ground between performance and cost."
+          ],
+          "recognitionCue": "If data is occasionally accessed but still needs reasonable retrieval → think warm storage."
+        },
+        {
+          "title": "Cold Storage",
+          "paragraphs": [
+            "Cold storage is designed for infrequently accessed data.",
+            "The organization keeps the information but does not expect to retrieve it regularly.",
+            "Think: Cold = keep it around, but we rarely touch it.",
+            "Lower storage cost may come with slower access or other retrieval tradeoffs."
+          ],
+          "recognitionCue": "If data is rarely accessed and cost matters more than speed → think cold storage."
+        },
+        {
+          "title": "Archive Storage",
+          "paragraphs": [
+            "Archive storage is intended for information that must be retained for long periods but is almost never needed during normal operations.",
+            "Examples may include historical records or long-term retained data.",
+            "Think: Archive = put it in the vault.",
+            "Archive storage typically emphasizes very low storage cost rather than rapid retrieval."
+          ],
+          "recognitionCue": "If long-term retention matters far more than quick access → think archive storage."
+        }
+      ],
+      "table": {
+        "caption": "Hot, warm, cold, and archive storage comparison",
+        "headers": ["Tier", "Access pattern", "Performance priority", "Cost tendency"],
+        "rows": [
+          ["Hot", "Frequent", "Highest", "Higher"],
+          ["Warm", "Occasional", "Moderate", "Moderate"],
+          ["Cold", "Infrequent", "Lower", "Lower"],
+          ["Archive", "Rare or long-term", "Lowest priority", "Lowest storage cost"]
+        ]
+      }
+    },
+    {
+      "id": "disk-types",
+      "title": "Disk Types",
+      "entries": [
+        {
+          "title": "Solid-State Drive (SSD)",
+          "paragraphs": [
+            "A solid-state drive stores data electronically without the moving mechanical parts found in traditional hard drives.",
+            "SSDs generally provide faster access, better responsiveness, and higher input/output performance. The tradeoff is generally cost.",
+            "Think: SSD = speed."
+          ],
+          "recognitionCue": "If the workload needs high storage performance or fast response → think SSD."
+        },
+        {
+          "title": "Hard Disk Drive (HDD)",
+          "paragraphs": [
+            "A hard disk drive uses spinning magnetic disks.",
+            "HDDs can provide large amounts of storage at a lower cost than faster SSD technology.",
+            "Think: HDD = capacity for the money."
+          ],
+          "recognitionCue": "If large inexpensive capacity matters more than maximum storage speed → think HDD."
+        }
+      ],
+      "table": {
+        "caption": "SSD and HDD workload fit",
+        "headers": ["Need", "Better fit"],
+        "rows": [
+          ["High performance", "SSD"],
+          ["Fast storage access", "SSD"],
+          ["Large inexpensive capacity", "HDD"],
+          ["Performance less important than cost", "HDD"]
+        ]
+      }
+    },
+    {
+      "id": "storage-types",
+      "title": "Storage Types",
+      "entries": [
+        {
+          "title": "Object Storage",
+          "paragraphs": [
+            "Object storage stores information as individual objects.",
+            "An object normally includes the data, metadata describing the data, and an identifier.",
+            "Object storage works especially well for large collections of unstructured data such as images, video, backups, documents, and large datasets.",
+            "Think: Store the thing as an object with information describing it."
+          ],
+          "recognitionCue": "If the scenario involves massive amounts of unstructured cloud data → think object storage."
+        },
+        {
+          "title": "Block Storage",
+          "paragraphs": [
+            "Block storage presents storage as blocks that a system can use much like a disk or volume.",
+            "The operating system can place a filesystem on that storage and use it for applications.",
+            "Block storage is commonly associated with workloads requiring strong storage performance.",
+            "Think: Give the server a disk."
+          ],
+          "recognitionCue": "If a virtual machine or application needs storage that behaves like a disk volume → think block storage."
+        },
+        {
+          "title": "File Storage",
+          "paragraphs": [
+            "File storage organizes information using familiar files, folders, and directories.",
+            "Multiple systems or users may access shared files through a common filesystem.",
+            "Think: Folders and files."
+          ],
+          "recognitionCue": "If users or systems need shared hierarchical files and directories → think file storage."
+        }
+      ],
+      "table": {
+        "caption": "Object, block, and file storage comparison",
+        "headers": ["Type", "Mental model", "Strong recognition clue"],
+        "rows": [
+          ["Object", "Objects and metadata", "Unstructured cloud data"],
+          ["Block", "Disk or volume", "Storage presented to a system"],
+          ["File", "Files and folders", "Shared hierarchical filesystem"]
+        ]
+      }
+    },
+    {
+      "id": "performance-implications",
+      "title": "Performance Implications",
+      "paragraphs": [
+        "Choosing storage requires understanding what the workload actually needs.",
+        "High-performance applications may require faster storage. Large collections of rarely accessed information may not.",
+        "A workload that needs immediate access should not automatically be placed in the cheapest archive tier simply because it saves money.",
+        "Think: Match storage performance to workload demand."
+      ],
+      "callout": "If slow storage would hurt the application → performance becomes a primary storage requirement."
+    },
+    {
+      "id": "cost-implications",
+      "title": "Cost Implications",
+      "paragraphs": [
+        "Higher performance and frequent accessibility commonly cost more.",
+        "Organizations can reduce costs by placing data in appropriate tiers instead of keeping everything on premium storage.",
+        "Frequently used operational data fits hot storage, while old retained data fits cold or archive storage.",
+        "Think: Do not pay race-car prices for data that sits in the garage."
+      ],
+      "callout": "If reducing storage expense without deleting data is the goal → examine tier and performance requirements."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Frequently accessed data → Hot",
+        "Occasionally accessed data → Warm",
+        "Rarely accessed data → Cold",
+        "Long-term retained data → Archive",
+        "Need highest disk performance → SSD",
+        "Need inexpensive large capacity → HDD",
+        "Unstructured data and metadata → Object",
+        "Virtual machine needs disk-like storage → Block",
+        "Shared folders and files → File",
+        "Faster storage requirement → Performance implication",
+        "Move infrequently accessed data downward in tiers → Cost optimization"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Cold vs. Archive",
+          "paragraphs": [
+            "Both involve infrequently accessed data.",
+            "Cold still assumes the information may occasionally need to be retrieved. Archive emphasizes long-term retention where routine access is extremely uncommon."
+          ]
+        },
+        {
+          "title": "Block vs. File",
+          "paragraphs": [
+            "Block storage gives a system raw disk-like storage. File storage gives users or systems a filesystem containing files and folders."
+          ]
+        },
+        {
+          "title": "Hot vs. SSD",
+          "paragraphs": [
+            "These describe different things. Hot is an access tier; SSD is disk technology.",
+            "Hot storage could use high-performance technology, but the words are not interchangeable."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Frequently accessed data → Hot storage",
+        "Occasionally accessed data → Warm storage",
+        "Rarely accessed data → Cold storage",
+        "Long-term retention → Archive storage",
+        "Fast disk performance → SSD",
+        "Large inexpensive disk capacity → HDD",
+        "Unstructured data → Object storage",
+        "Disk-like volume → Block storage",
+        "Files and directories → File storage",
+        "Performance first → Faster storage",
+        "Cost first with infrequent access → Lower storage tier"
+      ]
+    }
+  ]
+}

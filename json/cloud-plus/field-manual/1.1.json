@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.1",
+  "title": "Given a Scenario, Use the Appropriate Cloud Service Model",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud service models answer one major question: How much of the technology stack does the cloud provider manage, and how much remains your responsibility?",
+        "CompTIA may describe an organization that wants more control, less administration, a ready-to-use application, or the ability to run small pieces of code without managing servers. Your job is to recognize which service model best matches that requirement.",
+        "The four models in this objective are Infrastructure as a service (IaaS), Platform as a service (PaaS), Software as a service (SaaS), and Function as a service (FaaS).",
+        "The biggest difference between them is how much responsibility moves from the customer to the cloud provider."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "How much of the environment does the organization want to manage itself?"
+      ],
+      "callout": "More customer control → think IaaS. More provider management → move toward PaaS, SaaS, or FaaS depending on the workload."
+    },
+    {
+      "id": "infrastructure-as-a-service",
+      "title": "Infrastructure as a Service (IaaS)",
+      "paragraphs": [
+        "IaaS provides the basic computing infrastructure needed to build an environment.",
+        "The cloud provider supplies resources such as computing, storage, and networking, while the customer maintains significant control over what happens inside the environment.",
+        "The customer may still configure and maintain operating systems, applications, software configuration, and workload settings.",
+        "Think: The cloud provider gives me the building materials, but I still build and maintain much of the house.",
+        "IaaS is useful when an organization wants cloud flexibility but still needs control over its systems."
+      ],
+      "entries": [
+        {
+          "title": "Example",
+          "paragraphs": [
+            "A company wants to move several existing servers into the cloud while continuing to manage the operating systems and applications. That points toward IaaS."
+          ],
+          "recognitionCue": "If you see virtual infrastructure with customer-managed operating systems → think IaaS."
+        }
+      ]
+    },
+    {
+      "id": "platform-as-a-service",
+      "title": "Platform as a Service (PaaS)",
+      "paragraphs": [
+        "PaaS gives developers a managed environment where they can build and deploy applications without managing as much of the underlying infrastructure.",
+        "Instead of spending time maintaining the operating system and supporting platform, developers can concentrate more heavily on the application itself.",
+        "Think: Give me the workshop so I can build the application.",
+        "PaaS is especially useful when the focus is application development, application deployment, and reduced operating-system administration."
+      ],
+      "entries": [
+        {
+          "title": "Example",
+          "paragraphs": [
+            "A development team wants to deploy a web application but does not want to maintain the servers or operating system running underneath it. That points toward PaaS."
+          ],
+          "recognitionCue": "If developers need a managed environment for building or deploying applications → think PaaS."
+        }
+      ]
+    },
+    {
+      "id": "software-as-a-service",
+      "title": "Software as a Service (SaaS)",
+      "paragraphs": [
+        "SaaS provides a finished application that users access as a service.",
+        "The customer is primarily concerned with using the software, not building or maintaining the infrastructure behind it.",
+        "The provider manages the application and the underlying platform and infrastructure.",
+        "Think: I just want to use the software.",
+        "Common SaaS scenarios involve organizations wanting a ready-to-use application without maintaining the servers supporting that application."
+      ],
+      "entries": [
+        {
+          "title": "Example",
+          "paragraphs": [
+            "A business wants employees to use an online application without installing and maintaining its own application servers. That points toward SaaS."
+          ],
+          "recognitionCue": "If the customer simply needs to use a completed cloud-hosted application → think SaaS."
+        }
+      ]
+    },
+    {
+      "id": "function-as-a-service",
+      "title": "Function as a Service (FaaS)",
+      "paragraphs": [
+        "FaaS allows developers to execute individual pieces of code in response to an event or request without managing the servers that run that code.",
+        "The developer provides the function. The cloud environment handles the infrastructure needed to execute it.",
+        "Think: Run this piece of code when something happens.",
+        "FaaS can be useful when code needs to run only when triggered instead of requiring a continuously managed server environment."
+      ],
+      "entries": [
+        {
+          "title": "Example",
+          "paragraphs": [
+            "An application needs a small piece of code to run automatically whenever a user uploads a file. The developer wants the code to execute when needed without maintaining a dedicated server. That points toward FaaS."
+          ],
+          "recognitionCue": "If event-driven code must run without managing servers → think FaaS."
+        }
+      ]
+    },
+    {
+      "id": "service-model-comparison",
+      "title": "IaaS vs. PaaS vs. SaaS vs. FaaS",
+      "paragraphs": [
+        "A useful mental progression is: IaaS → manage more; PaaS → build more, manage less; SaaS → use the software; FaaS → provide the function and let the platform execute it."
+      ],
+      "table": {
+        "caption": "Cloud service model recognition sheet",
+        "headers": ["Model", "What the customer receives", "Customer focus", "Recognition cue"],
+        "rows": [
+          ["IaaS", "Cloud infrastructure", "Managing systems", "Greater control"],
+          ["PaaS", "Managed application platform", "Building and deploying", "No operating-system management"],
+          ["SaaS", "Finished software", "Using the application", "Ready-to-use application"],
+          ["FaaS", "Event-triggered functions", "Writing function code", "Run code without servers"]
+        ]
+      }
+    },
+    {
+      "id": "shared-responsibility-model",
+      "title": "Shared Responsibility Model",
+      "paragraphs": [
+        "Moving something into the cloud does not mean the customer has zero security or management responsibility.",
+        "The shared responsibility model divides responsibility between the cloud provider and the cloud customer. Exactly where that dividing line sits depends heavily on the service model being used.",
+        "With IaaS, the customer generally has more responsibility because the customer manages more of the environment.",
+        "With SaaS, the provider manages much more of the underlying technology, but the customer still has responsibilities related to how the service is used.",
+        "Think: Cloud does not eliminate responsibility. It redistributes responsibility."
+      ]
+    },
+    {
+      "id": "service-model-connection",
+      "title": "The Service Model Connection",
+      "paragraphs": [
+        "As you move from IaaS toward more fully managed services, customer management generally decreases and provider management generally increases.",
+        "That distinction is one of the easiest ways to identify the correct service model in a scenario."
+      ],
+      "bullets": [
+        "If CompTIA asks who manages what → think shared responsibility model.",
+        "If the customer wants greater control → think toward IaaS.",
+        "If the customer wants the provider to manage more → think toward PaaS or SaaS depending on whether they are building or simply using software."
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Customer manages operating systems → IaaS",
+        "Need cloud infrastructure with significant customer control → IaaS",
+        "Developers want to build applications without managing the OS → PaaS",
+        "Need a managed application development environment → PaaS",
+        "Users simply need a finished application → SaaS",
+        "No desire to maintain the application platform → SaaS",
+        "Small event-driven code executes when triggered → FaaS",
+        "Run code without managing servers → FaaS",
+        "Question asks where customer responsibility ends and provider responsibility begins → Shared responsibility model"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "PaaS vs. SaaS",
+          "paragraphs": [
+            "Both reduce infrastructure management, but they solve different problems. PaaS is for building and deploying applications. SaaS is the finished application.",
+            "If the scenario describes developers creating software, lean toward PaaS. If the scenario describes employees simply using software, lean toward SaaS."
+          ]
+        },
+        {
+          "title": "PaaS vs. FaaS",
+          "paragraphs": [
+            "Both allow developers to avoid managing much of the underlying infrastructure. The difference is what the developer is deploying.",
+            "PaaS → application environment. FaaS → individual function or piece of code that runs when triggered."
+          ]
+        },
+        {
+          "title": "Cloud vs. Zero Responsibility",
+          "paragraphs": [
+            "Do not assume that moving to SaaS means the customer has no responsibilities.",
+            "The provider manages more of the technology, but the cloud environment still follows a shared responsibility model."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Need virtual infrastructure and customer-managed systems → IaaS",
+        "Need a managed environment to build applications → PaaS",
+        "Need ready-to-use cloud software → SaaS",
+        "Need event-triggered code without server management → FaaS",
+        "More customer control → Think IaaS",
+        "Developers build but do not manage the underlying OS → Think PaaS",
+        "Users simply consume the application → Think SaaS",
+        "Function executes only when needed → Think FaaS",
+        "Question asks who manages which part of the cloud environment → Shared responsibility model",
+        "Provider manages more of the stack → Customer generally manages less",
+        "Cloud adoption does not remove customer responsibility → Shared responsibility"
+      ]
+    }
+  ]
+}

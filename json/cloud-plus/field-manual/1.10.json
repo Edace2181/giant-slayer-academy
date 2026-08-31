@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.10",
+  "title": "Compare and Contrast Methods for Optimizing Workloads Using Cloud Resources",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud optimization means matching the workload to the resources that serve it.",
+        "You do not automatically throw a virtual machine at everything.",
+        "CompTIA wants you to recognize how compute, orchestration, workflows, networking, storage performance, and managed services affect workload efficiency."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What is actually limiting or complicating this workload: compute model, coordination, process flow, network performance, storage performance, or administration?"
+      ],
+      "callout": "Identify the bottleneck or workload requirement first → then choose the cloud resource."
+    },
+    {
+      "id": "compute-resources",
+      "title": "Compute Resources",
+      "entries": [
+        {
+          "title": "Virtual Machine (VM)",
+          "paragraphs": [
+            "A virtual machine provides a complete virtual machine environment including an operating system.",
+            "Virtual machines provide strong isolation and flexibility for applications that need their own operating system environment.",
+            "Think: I need the whole virtual computer."
+          ],
+          "recognitionCue": "If the workload needs a complete isolated operating system environment → think virtual machine."
+        },
+        {
+          "title": "Container",
+          "paragraphs": [
+            "A container packages an application and its dependencies without requiring the same full guest operating system footprint as a virtual machine.",
+            "Containers are useful for portable, modular workloads.",
+            "Think: Package the application, not an entire computer."
+          ],
+          "recognitionCue": "If the workload needs lightweight portable application packaging → think container."
+        },
+        {
+          "title": "Serverless",
+          "paragraphs": [
+            "Serverless computing lets a developer run workloads without managing the underlying servers directly.",
+            "The cloud provider handles much of the infrastructure operation.",
+            "Think: Run the workload; don't manage the server."
+          ],
+          "recognitionCue": "If the organization wants code or workloads to run without server administration → think serverless."
+        }
+      ],
+      "table": {
+        "caption": "Virtual machine, container, and serverless comparison",
+        "headers": ["Compute model", "Recognition clue"],
+        "rows": [
+          ["Virtual machine", "Full operating system environment"],
+          ["Container", "Lightweight packaged application"],
+          ["Serverless", "Run workload without managing servers"]
+        ]
+      }
+    },
+    {
+      "id": "orchestration",
+      "title": "Orchestration",
+      "paragraphs": [
+        "Orchestration coordinates multiple cloud resources or workloads so they operate together.",
+        "Instead of manually managing each component, orchestration automates their coordination.",
+        "Think: Coordinate the whole orchestra."
+      ],
+      "callout": "If many resources must be automatically coordinated → think orchestration."
+    },
+    {
+      "id": "workflow",
+      "title": "Workflow",
+      "paragraphs": [
+        "A workflow defines the sequence of steps required to complete a process.",
+        "One activity may trigger another until the job finishes.",
+        "Think: Step A → Step B → Step C.",
+        "Workflow describes what steps happen and in what order. Orchestration coordinates the systems or resources that perform the work."
+      ],
+      "callout": "If the scenario describes an ordered sequence of tasks → think workflow."
+    },
+    {
+      "id": "network",
+      "title": "Network",
+      "entries": [
+        {
+          "title": "Latency",
+          "paragraphs": [
+            "Latency measures delay. It is how long it takes for traffic to travel and receive a response.",
+            "Think: How long did the trip take?",
+            "Applications that require immediate interaction can suffer when latency is high."
+          ],
+          "recognitionCue": "If users complain about delay or response time → think network latency."
+        },
+        {
+          "title": "Throughput",
+          "paragraphs": [
+            "Network throughput measures the amount of data successfully transferred over time.",
+            "Think: How much can move through the pipe?",
+            "A network may have acceptable latency but insufficient throughput for transferring large amounts of data."
+          ],
+          "recognitionCue": "If the issue is the volume of data transferred over time → think network throughput."
+        }
+      ],
+      "callout": "Latency = delay. Throughput = amount transferred."
+    },
+    {
+      "id": "storage",
+      "title": "Storage",
+      "entries": [
+        {
+          "title": "Input/Output Operations per Second (IOPS)",
+          "paragraphs": [
+            "Input/output operations per second measures how many storage input/output operations can occur within a second.",
+            "Workloads performing large numbers of storage operations may require high IOPS.",
+            "Think: How many storage jobs can happen each second?"
+          ],
+          "recognitionCue": "If the application performs many small or frequent disk operations → think IOPS."
+        },
+        {
+          "title": "Throughput",
+          "paragraphs": [
+            "Storage throughput measures how much storage data can be transferred over time.",
+            "Large sequential transfers may care heavily about throughput.",
+            "Think: How much storage data can move through the pipe?"
+          ],
+          "recognitionCue": "If the workload moves large amounts of storage data → think storage throughput."
+        }
+      ],
+      "callout": "IOPS = number of operations. Storage throughput = amount of data."
+    },
+    {
+      "id": "managed-services",
+      "title": "Managed Services",
+      "paragraphs": [
+        "Using managed services can optimize operations by shifting more infrastructure administration to the cloud provider.",
+        "This can reduce the effort required to maintain supporting systems.",
+        "Think: Do we need to operate this ourselves, or can the provider do it?"
+      ],
+      "callout": "If reducing infrastructure-management overhead is the optimization goal → think managed service."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Complete operating system environment → Virtual machine",
+        "Lightweight application package → Container",
+        "Run workload without managing server → Serverless",
+        "Coordinate multiple resources automatically → Orchestration",
+        "Ordered series of tasks → Workflow",
+        "Network delay or response time → Latency",
+        "Network data transferred over time → Network throughput",
+        "Number of storage operations → IOPS",
+        "Amount of storage data transferred → Storage throughput",
+        "Reduce infrastructure administration → Managed service"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.10 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Virtual Machine vs. Container vs. Serverless",
+          "paragraphs": [
+            "Do not choose based only on the fact that all three can run applications. Ask how much environment the workload actually needs.",
+            "A full machine environment points to a virtual machine. A packaged application points to a container. A workload without server management points to serverless."
+          ]
+        },
+        {
+          "title": "Latency vs. Throughput",
+          "paragraphs": [
+            "Fast response is not the same as moving lots of data. Delay points to latency; volume over time points to throughput."
+          ]
+        },
+        {
+          "title": "IOPS vs. Storage Throughput",
+          "paragraphs": [
+            "A workload performing thousands of small operations may need high IOPS. A workload transferring large amounts of data may need high throughput."
+          ]
+        },
+        {
+          "title": "Orchestration vs. Workflow",
+          "paragraphs": [
+            "Workflow describes sequence. Orchestration describes coordination."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Need complete virtual operating system → Virtual machine",
+        "Need lightweight portable workload → Container",
+        "Do not want to manage servers → Serverless",
+        "Coordinate many cloud resources → Orchestration",
+        "Automate ordered process steps → Workflow",
+        "Slow response or delay → Latency",
+        "Need more network data transferred per second → Network throughput",
+        "Need more storage operations per second → IOPS",
+        "Need more storage data transferred per second → Storage throughput",
+        "Reduce operational administration → Managed service",
+        "Operations count → IOPS",
+        "Data volume → Throughput"
+      ]
+    }
+  ]
+}

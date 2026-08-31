@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.8",
+  "title": "Summarize Cost Considerations Related to Cloud Usage",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud resources cost money differently depending on how they are purchased and how efficiently they are used.",
+        "CompTIA wants you to recognize cloud billing models and techniques that help organizations understand and control spending."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the organization paying for exclusivity, committing ahead of time, paying only for current usage, accepting interruption for savings, or trying to control waste?"
+      ],
+      "callout": "Workload predictability + usage pattern + cost requirement → choose the billing approach."
+    },
+    {
+      "id": "billing-models",
+      "title": "Billing Models",
+      "entries": [
+        {
+          "title": "Dedicated Host",
+          "paragraphs": [
+            "A dedicated host provides physical host resources for one customer rather than sharing that host with unrelated tenants.",
+            "Because the customer receives dedicated physical capacity, it normally costs more than shared alternatives.",
+            "Think: Rent the whole building."
+          ],
+          "recognitionCue": "If physical host resources must be dedicated to one customer → think dedicated host."
+        },
+        {
+          "title": "Reserved Resources",
+          "paragraphs": [
+            "Reserved resources involve committing to resources ahead of time for a period of expected usage.",
+            "The customer may receive better pricing because the usage is predictable and committed.",
+            "Think: I know I'll need this for a while, so I'll commit now."
+          ],
+          "recognitionCue": "If a stable predictable workload can make a longer commitment for savings → think reserved resources."
+        },
+        {
+          "title": "Pay-As-You-Go",
+          "paragraphs": [
+            "With pay-as-you-go, the organization pays according to the resources it consumes instead of committing to a large amount of capacity in advance.",
+            "It provides flexibility for changing workloads.",
+            "Think: Use it → pay for it."
+          ],
+          "recognitionCue": "If usage changes and the organization wants flexibility without a long-term resource commitment → think pay-as-you-go."
+        },
+        {
+          "title": "Spot Instance",
+          "paragraphs": [
+            "A spot instance uses available excess cloud capacity at a reduced cost, with the tradeoff that the resource may be interrupted when the provider needs that capacity back.",
+            "Think: Cheap seat, but you may get kicked out.",
+            "This is best suited to workloads that can tolerate interruption."
+          ],
+          "recognitionCue": "If lowest compute price matters and the workload can survive interruption → think spot instance."
+        }
+      ],
+      "table": {
+        "caption": "Cloud billing model comparison",
+        "headers": ["Model", "Best clue"],
+        "rows": [
+          ["Dedicated host", "Exclusive physical host"],
+          ["Reserved resources", "Predictable long-term workload"],
+          ["Pay-as-you-go", "Flexible variable demand"],
+          ["Spot instance", "Cheap interruptible workload"]
+        ]
+      }
+    },
+    {
+      "id": "resource-metering",
+      "title": "Resource Metering",
+      "paragraphs": [
+        "Resource metering measures how many cloud resources are being consumed.",
+        "Examples include compute usage, storage consumption, and network usage.",
+        "Metering helps providers calculate charges and customers understand where spending occurs.",
+        "Think: Cloud utility meter."
+      ],
+      "callout": "If the requirement is measuring cloud consumption → think resource metering."
+    },
+    {
+      "id": "tagging",
+      "title": "Tagging",
+      "paragraphs": [
+        "Tagging attaches labels or metadata to cloud resources.",
+        "Tags can identify a department, project, application, environment, or owner.",
+        "From a cost perspective, tagging helps determine who or what is generating the expense.",
+        "Think: Put a name tag on the bill."
+      ],
+      "callout": "If costs need to be tracked by department, application, team, or project → think tagging."
+    },
+    {
+      "id": "rightsizing",
+      "title": "Rightsizing",
+      "paragraphs": [
+        "Rightsizing adjusts resources so they better match actual workload requirements.",
+        "A virtual machine with far more CPU and memory than it ever uses may be wasting money.",
+        "A smaller appropriately sized resource could meet the same requirement at lower cost.",
+        "Think: Not too big. Not too small. Just right."
+      ],
+      "callout": "If resources are consistently underused and cost must decrease → think rightsizing."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Exclusive physical cloud host → Dedicated host",
+        "Predictable workload and commitment → Reserved resources",
+        "Variable workload with no commitment → Pay-as-you-go",
+        "Interruptible workload seeking low cost → Spot instance",
+        "Measure resource consumption → Resource metering",
+        "Attribute charges by project or team → Tagging",
+        "Resource bigger than the workload requires → Rightsizing"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.8 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Reserved Resources vs. Pay-As-You-Go",
+          "paragraphs": [
+            "Reserved resources point to predictable usage and commitment. Pay-as-you-go points to flexibility and consumption-based usage."
+          ]
+        },
+        {
+          "title": "Spot Instance vs. Pay-As-You-Go",
+          "paragraphs": [
+            "Both avoid the same kind of long commitment associated with reservations, but spot resources have one key clue: interruption is acceptable."
+          ]
+        },
+        {
+          "title": "Resource Metering vs. Tagging",
+          "paragraphs": [
+            "Metering tells you how much was consumed. Tagging helps tell you who or what the resource belongs to."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Need exclusive physical host → Dedicated host",
+        "Stable long-term demand → Reserved resources",
+        "Variable usage → Pay-as-you-go",
+        "Interruptible job with the lowest price → Spot instance",
+        "Measure cloud consumption → Resource metering",
+        "Identify which department owns a cost → Tagging",
+        "Oversized resource wasting money → Rightsizing"
+      ]
+    }
+  ]
+}

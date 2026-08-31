@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.9",
+  "title": "Explain the Importance of Database Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud applications need somewhere to organize and retrieve their data.",
+        "For this objective, CompTIA keeps the database scope focused.",
+        "You need to distinguish relational databases, non-relational databases, self-managed deployment, and provider-managed deployment."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Does the data need structured relationships, flexible non-relational storage, or a different level of management responsibility?"
+      ],
+      "callout": "Data structure + management responsibility → identify the database approach."
+    },
+    {
+      "id": "types",
+      "title": "Types",
+      "entries": [
+        {
+          "title": "Relational Databases",
+          "paragraphs": [
+            "A relational database organizes data into structured tables containing rows and columns.",
+            "Relationships can connect information between tables.",
+            "Think: Structured tables that relate to each other.",
+            "Relational databases work well when data has clearly defined structure and relationships."
+          ],
+          "recognitionCue": "If the scenario emphasizes structured tables and relationships between data → think relational database."
+        },
+        {
+          "title": "Non-Relational Databases",
+          "paragraphs": [
+            "A non-relational database does not require data to follow the same table-and-relationship model used by relational databases.",
+            "It can provide greater flexibility for data whose structure varies.",
+            "Think: The data doesn't have to live inside traditional related tables."
+          ],
+          "recognitionCue": "If the data structure is flexible or does not fit traditional relational tables → think non-relational database."
+        }
+      ],
+      "table": {
+        "caption": "Relational and non-relational database comparison",
+        "headers": ["Database type", "Recognition clue"],
+        "rows": [
+          ["Relational", "Structured tables and relationships"],
+          ["Non-relational", "Flexible or nontraditional data structure"]
+        ]
+      }
+    },
+    {
+      "id": "deployment-options",
+      "title": "Deployment Options",
+      "entries": [
+        {
+          "title": "Self-Managed Databases",
+          "paragraphs": [
+            "With a self-managed database, the customer assumes more responsibility for operating the database environment.",
+            "That can include tasks surrounding installation, configuration, maintenance, and administration.",
+            "Think: My database, my maintenance.",
+            "The advantage is greater customer control. The tradeoff is greater administrative responsibility."
+          ],
+          "recognitionCue": "If the organization wants more control and accepts database administration duties → think self-managed."
+        },
+        {
+          "title": "Provider-Managed Databases",
+          "paragraphs": [
+            "With a provider-managed database, the cloud provider handles more of the operational work.",
+            "The customer can focus more heavily on using the database rather than maintaining all of the infrastructure supporting it.",
+            "Think: I need the database service, not another server to babysit."
+          ],
+          "recognitionCue": "If the organization wants to reduce database infrastructure administration → think provider-managed."
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Tables, rows, columns, and relationships → Relational",
+        "Flexible or nontraditional structure → Non-relational",
+        "Customer handles database operations → Self-managed",
+        "Provider handles more database operations → Provider-managed"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.9 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Database Type vs. Deployment Option",
+          "paragraphs": [
+            "These are two different decisions.",
+            "Relational or non-relational describes how the data is organized. Self-managed or provider-managed describes who operates the database environment.",
+            "A relational database can be self-managed or provider-managed. A non-relational database can also be self-managed or provider-managed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Structured tables and relationships → Relational",
+        "Flexible data structure → Non-relational",
+        "Customer wants maximum database control → Self-managed",
+        "Customer wants reduced database administration → Provider-managed",
+        "How data is organized → Database type",
+        "Who maintains it → Deployment option"
+      ]
+    }
+  ]
+}

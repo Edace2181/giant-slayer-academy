@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.2",
+  "title": "Explain Concepts Related to Service Availability",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud services are useful only when users and applications can actually reach them.",
+        "This objective focuses on how cloud environments keep resources available, how organizations recover when something fails, and how recovery requirements affect the design.",
+        "You need to recognize where resources are located, how availability is maintained, and how quickly systems and data must recover after a disruption."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Is the scenario trying to keep a service available, place resources closer to users, expand capacity, or recover after a failure?"],
+      "callout": "Availability problem → identify whether the answer concerns location, redundancy, capacity, monitoring, or disaster recovery."
+    },
+    {
+      "id": "resource-availability",
+      "title": "Resource Availability",
+      "paragraphs": [
+        "Resource availability describes the design choices that keep cloud resources accessible when demand changes or part of the environment fails.",
+        "For this objective, recognize how regions, availability zones, cloud bursting, edge computing, and availability monitoring each address a different availability need."
+      ]
+    },
+    {
+      "id": "regions",
+      "title": "Regions",
+      "paragraphs": [
+        "A region is a large geographic area in which a cloud provider operates cloud infrastructure.",
+        "Organizations may choose regions based on proximity to users, availability requirements, geographic separation, and business requirements.",
+        "Think: Region = major geographic location.",
+        "Using resources in more than one region can help reduce dependence on a single geographic area."
+      ],
+      "callout": "If the scenario discusses geographically separate cloud locations → think region."
+    },
+    {
+      "id": "availability-zones",
+      "title": "Availability Zones",
+      "paragraphs": [
+        "An availability zone is an isolated location within a cloud region.",
+        "A region may contain multiple availability zones so workloads can be distributed instead of depending on one physical location.",
+        "Think: Region is the neighborhood; availability zones are separate houses inside it.",
+        "If one availability zone experiences a failure, resources placed in another zone may continue operating."
+      ],
+      "callout": "If the scenario needs protection from failure within the same region → think multiple availability zones."
+    },
+    {
+      "id": "region-vs-availability-zone",
+      "title": "Region vs. Availability Zone",
+      "paragraphs": ["Do not treat them as the same thing."],
+      "table": {
+        "caption": "Region and availability-zone recognition",
+        "headers": ["Concept", "Meaning", "Recognition cue"],
+        "rows": [
+          ["Region", "Large geographic cloud area", "Separation across geographic areas"],
+          ["Availability zone", "Isolated location inside a region", "Isolation within the same region"]
+        ]
+      }
+    },
+    {
+      "id": "cloud-bursting",
+      "title": "Cloud Bursting",
+      "paragraphs": [
+        "Cloud bursting allows an environment to use cloud resources when its normal capacity is not enough.",
+        "The workload operates using its normal environment until demand rises beyond available capacity. Additional workload can then expand into cloud resources.",
+        "Think: Normal environment is full → burst into the cloud."
+      ],
+      "entries": [{
+        "title": "Example",
+        "paragraphs": ["A company normally handles its workload internally, but traffic becomes extremely high during a major seasonal event. Instead of permanently purchasing enough equipment for peak demand, it temporarily uses additional cloud capacity. That is cloud bursting."],
+        "recognitionCue": "If temporary demand exceeds normal capacity → think cloud bursting."
+      }]
+    },
+    {
+      "id": "edge-computing",
+      "title": "Edge Computing",
+      "paragraphs": [
+        "Edge computing places processing resources closer to the users, devices, or systems generating the data.",
+        "Instead of sending everything to a distant central cloud environment first, some processing occurs closer to where the activity happens.",
+        "The major availability-related benefit is that workloads can reduce dependence on distant infrastructure and improve responsiveness.",
+        "Think: Move the processing closer to the action."
+      ],
+      "callout": "If the scenario emphasizes processing close to users or data sources → think edge computing."
+    },
+    {
+      "id": "availability-monitoring",
+      "title": "Availability Monitoring",
+      "paragraphs": [
+        "Availability monitoring checks whether cloud resources and services are functioning and accessible.",
+        "Monitoring helps administrators recognize failures or degraded service before the problem becomes larger.",
+        "It can determine whether the service is reachable, whether the resource is responding, whether availability has dropped, and whether a failure has occurred.",
+        "Think: You cannot respond to an outage you do not know exists."
+      ],
+      "callout": "If the requirement is detecting whether a cloud service is online and reachable → think availability monitoring."
+    },
+    {
+      "id": "disaster-recovery",
+      "title": "Disaster Recovery",
+      "paragraphs": [
+        "Availability planning tries to keep services running. Disaster recovery (DR) focuses on restoring services and data after a serious disruption.",
+        "Two of the most important DR measurements are recovery time objective (RTO) and recovery point objective (RPO). These sound similar, but they measure completely different things."
+      ]
+    },
+    {
+      "id": "recovery-time-objective",
+      "title": "Recovery Time Objective (RTO)",
+      "paragraphs": [
+        "RTO identifies the targeted maximum amount of time a service can remain unavailable after a disruption.",
+        "In plain English: How quickly must we get the system running again?",
+        "If an application must be restored within two hours of a failure, the two-hour requirement describes the RTO.",
+        "Think: RTO = Time to recover."
+      ],
+      "callout": "If the scenario asks how long the business can tolerate downtime → think RTO."
+    },
+    {
+      "id": "recovery-point-objective",
+      "title": "Recovery Point Objective (RPO)",
+      "paragraphs": [
+        "RPO identifies how much data loss the organization can tolerate, measured in time.",
+        "In plain English: How far back can our recovered data be?",
+        "If an organization can tolerate losing no more than 15 minutes of data, its recovery approach needs to support an RPO of approximately 15 minutes.",
+        "Think: RPO = Point in the data timeline."
+      ],
+      "callout": "If the scenario asks how much recent data can be lost → think RPO."
+    },
+    {
+      "id": "rto-vs-rpo",
+      "title": "RTO vs. RPO",
+      "table": {
+        "caption": "Recovery-objective recognition",
+        "headers": ["Clue", "Objective"],
+        "rows": [["Downtime", "RTO"], ["Data loss", "RPO"]]
+      }
+    },
+    {
+      "id": "recovery-sites",
+      "title": "Hot, Warm, and Cold Sites",
+      "entries": [
+        {
+          "title": "Hot Site",
+          "paragraphs": ["A hot site is a disaster recovery location that is highly prepared to take over operations. It contains the resources needed to resume service quickly and normally provides the fastest recovery of the three site types. That readiness requires more resources."],
+          "memoryHook": "Hot = ready now.",
+          "recognitionCue": "If the priority is the fastest recovery site → think hot site."
+        },
+        {
+          "title": "Warm Site",
+          "paragraphs": ["A warm site sits between hot and cold. It has some systems and resources ready but may still require configuration, data restoration, or additional preparation before full operations resume. It balances recovery speed with cost and preparation."],
+          "memoryHook": "Warm = partly ready.",
+          "recognitionCue": "If some recovery infrastructure already exists but additional work is required → think warm site."
+        },
+        {
+          "title": "Cold Site",
+          "paragraphs": ["A cold site provides a location for recovery but has the least amount of equipment and preparation immediately available. More work is required before operations can resume, so recovery is generally slower."],
+          "memoryHook": "Cold = start almost from scratch.",
+          "recognitionCue": "If low readiness and slower recovery are acceptable → think cold site."
+        }
+      ],
+      "table": {
+        "caption": "Recovery-site readiness",
+        "headers": ["Site", "Readiness", "Recovery speed"],
+        "rows": [["Hot", "Most ready", "Fastest"], ["Warm", "Partly ready", "Moderate"], ["Cold", "Least ready", "Slowest"]]
+      }
+    },
+    {
+      "id": "multicloud-tenancy",
+      "title": "Multicloud Tenancy",
+      "paragraphs": [
+        "A multicloud approach uses cloud resources across more than one cloud environment or provider.",
+        "From an availability perspective, this can reduce dependence on a single cloud provider. If one provider or environment experiences a major disruption, workloads designed to operate elsewhere may have another location available.",
+        "Think: Do not place every cloud dependency in one basket.",
+        "This does not automatically create high availability—the environment still has to be designed correctly—but it can provide additional options for resilience and recovery."
+      ],
+      "callout": "If the scenario wants to reduce dependence on one cloud provider → think multicloud."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Large geographic cloud location → Region",
+        "Separate infrastructure location within a region → Availability zone",
+        "Need resilience against a localized failure → Multiple availability zones",
+        "Temporary demand exceeds existing capacity → Cloud bursting",
+        "Processing must occur closer to users or data → Edge computing",
+        "Need to detect whether services are reachable → Availability monitoring",
+        "Maximum tolerated downtime → RTO",
+        "Maximum tolerated data loss → RPO",
+        "Recovery environment must be immediately ready → Hot site",
+        "Some recovery infrastructure already prepared → Warm site",
+        "Recovery location with minimal readiness → Cold site",
+        "Reduce reliance on one cloud provider → Multicloud"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "RTO vs. RPO", "paragraphs": ["Do not choose based on the fact that both involve recovery. Ask what the scenario is measuring.", "How long until the system returns? → RTO. How much data can disappear? → RPO."]},
+        {"title": "Region vs. Availability Zone", "paragraphs": ["A region is the larger geographic area. An availability zone is an isolated location inside that region.", "Large geographic separation → region. Isolation within the same region → availability zone."]},
+        {"title": "Hot vs. Warm vs. Cold", "paragraphs": ["Do not focus only on whether a backup location exists. Focus on how ready that location is.", "Ready very quickly → Hot. Some preparation remains → Warm. Significant setup remains → Cold."]},
+        {"title": "Cloud Bursting vs. Disaster Recovery", "paragraphs": ["Cloud bursting responds to capacity demand. Disaster recovery responds to failure or disaster.", "Traffic spike → cloud bursting. Primary environment destroyed → disaster recovery."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Large geographic cloud area → Region",
+        "Isolated location inside a region → Availability zone",
+        "Protect against localized cloud infrastructure failure → Multiple availability zones",
+        "Unexpected demand exceeds normal capacity → Cloud bursting",
+        "Process data closer to users/devices → Edge computing",
+        "Check whether a service is online → Availability monitoring",
+        "Maximum acceptable downtime → RTO",
+        "Maximum acceptable data loss → RPO",
+        "Need the fastest recovery location → Hot site",
+        "Recovery site partly prepared → Warm site",
+        "Recovery site requires major setup → Cold site",
+        "Reduce dependence on a single cloud provider → Multicloud",
+        "Time to recover → RTO",
+        "Point to recover data from → RPO",
+        "Hot → Most ready; Warm → Partly ready; Cold → Least ready"
+      ]
+    }
+  ]
+}

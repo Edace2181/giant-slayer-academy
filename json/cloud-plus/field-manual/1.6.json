@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.6",
+  "title": "Compare and Contrast Containerization Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Containers package applications and their required components so workloads can run consistently across environments.",
+        "This objective is not asking you to become a container engineer.",
+        "You need to recognize a container running by itself, multiple containers being managed together, how container ports are exposed, what happens to container data, and where container images are stored."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the scenario about running, coordinating, connecting, storing data for, or obtaining containers?"
+      ],
+      "callout": "Container lifecycle clue → identify the matching container concept."
+    },
+    {
+      "id": "stand-alone",
+      "title": "Stand-Alone",
+      "paragraphs": [
+        "A stand-alone container operates independently without requiring a larger orchestration platform to coordinate a group of containers.",
+        "This can work well for simple workloads.",
+        "Think: One container, one job."
+      ],
+      "callout": "If a container simply needs to run by itself without fleet management → think stand-alone."
+    },
+    {
+      "id": "workload-orchestration",
+      "title": "Workload Orchestration",
+      "paragraphs": [
+        "As container environments grow, manually managing every container becomes difficult.",
+        "Workload orchestration coordinates containers and their workloads.",
+        "An orchestration platform can help manage placement, deployment, scaling, recovery, and coordination.",
+        "Think: The conductor managing the container orchestra."
+      ],
+      "callout": "If many containers must be automatically coordinated → think workload orchestration."
+    },
+    {
+      "id": "networking",
+      "title": "Networking",
+      "paragraphs": [
+        "Containers can run services that listen on network ports.",
+        "Container networking governs how containers communicate with hosts, other containers, and external services."
+      ],
+      "entries": [
+        {
+          "title": "Port Mapping",
+          "paragraphs": [
+            "Port mapping connects a port exposed outside the container to the appropriate port used by the application inside the container.",
+            "Think: Outside door → container door.",
+            "An application may listen on a particular port inside its container while external clients reach it through a mapped host port."
+          ],
+          "recognitionCue": "If users need to reach an application running on a container's internal port → think port mapping."
+        }
+      ]
+    },
+    {
+      "id": "storage-types",
+      "title": "Storage Types",
+      "paragraphs": [
+        "Container storage can either persist beyond a container's life or remain temporary with that workload."
+      ],
+      "entries": [
+        {
+          "title": "Persistent Volumes",
+          "paragraphs": [
+            "Containers are often designed to be replaceable. That becomes a problem when the application needs data to survive after the container disappears.",
+            "A persistent volume stores data separately so that data remains available beyond the life of one container.",
+            "Think: Container dies; data survives.",
+            "Examples include application data that must remain after a container restart or replacement."
+          ],
+          "recognitionCue": "If data must survive container deletion or recreation → think persistent volume."
+        },
+        {
+          "title": "Ephemeral Storage",
+          "paragraphs": [
+            "Ephemeral storage exists only temporarily with the workload.",
+            "When the container is removed, the data may disappear with it.",
+            "Think: Temporary container, temporary data.",
+            "It works well for temporary files or information that does not need long-term retention."
+          ],
+          "recognitionCue": "If the data can disappear when the container disappears → think ephemeral storage."
+        }
+      ],
+      "table": {
+        "caption": "Persistent and ephemeral container storage",
+        "headers": ["Storage", "Survives container replacement?", "Best clue"],
+        "rows": [
+          ["Persistent", "Yes", "Data must remain"],
+          ["Ephemeral", "No or temporary", "Data can disappear"]
+        ]
+      }
+    },
+    {
+      "id": "image-registries",
+      "title": "Image Registries",
+      "paragraphs": [
+        "Before a container can run, its image must come from somewhere.",
+        "An image registry stores and distributes container images.",
+        "A system can retrieve the required image and use it to launch containers.",
+        "Think: Container image warehouse."
+      ],
+      "callout": "If the scenario asks where container images are stored or retrieved → think image registry."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "One independent container → Stand-alone",
+        "Many containers need coordination → Workload orchestration",
+        "Container communication path → Networking",
+        "Connect external port to container service → Port mapping",
+        "Data must survive container replacement → Persistent volume",
+        "Temporary container data → Ephemeral storage",
+        "Store or distribute container images → Image registry"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.6 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Image vs. Container",
+          "paragraphs": [
+            "The image is the stored template used to create the workload. The container is the running instance created from that image.",
+            "The objective specifically lists image registries, meaning the place used to keep container images."
+          ]
+        },
+        {
+          "title": "Persistent vs. Ephemeral",
+          "paragraphs": [
+            "Do not select based simply on whether the application uses storage.",
+            "Ask whether the data must survive after the container is destroyed. Yes points to persistent; no points to ephemeral."
+          ]
+        },
+        {
+          "title": "Stand-Alone vs. Orchestration",
+          "paragraphs": [
+            "One or a few simple containers may run stand-alone. Large groups requiring automated coordination point toward orchestration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Single independent container → Stand-alone",
+        "Manage many containers → Workload orchestration",
+        "Container-to-host, container-to-container, or external communication → Networking",
+        "External port needs to reach container application → Port mapping",
+        "Container disappears but data must remain → Persistent volume",
+        "Temporary container data → Ephemeral storage",
+        "Need a repository for container images → Image registry"
+      ]
+    }
+  ]
+}

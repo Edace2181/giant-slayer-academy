@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | Cloud+ | Field Manual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="security-plus-field-manual.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body security-field-manual-page" data-certification="cloud-plus">
+  <div class="crt-overlay"></div>
+  <main class="security-field-manual-shell">
+    <p id="cloudManualLoading" role="status">Opening the Giant Slayer's Field Manual…</p>
+
+    <section id="cloudManualError" class="security-field-error hidden" role="alert">
+      <h1>Unable to Open This Field Manual</h1>
+      <p id="cloudManualErrorMessage">The requested lesson could not be loaded.</p>
+      <a id="cloudManualErrorReturn" href="cloud-plus-campaign.html" class="back-link">← Return to Cloud+ Campaign Map</a>
+    </section>
+
+    <div id="cloudManualApplication" class="hidden">
+      <header class="security-field-manual-header">
+        <span id="cloudManualKicker" class="security-field-manual-kicker"></span>
+        <h1>📖 Giant Slayer's Field Manual</h1>
+        <p id="cloudManualObjective" class="security-field-manual-objective"></p>
+        <p id="cloudManualCompletionNote" class="security-manual-completion-note hidden"></p>
+      </header>
+
+      <nav id="cloudManualNavigation" class="security-manual-navigation hidden" aria-label="Field Manual mini-lessons">
+        <p>Jump to a Mini-Lesson</p>
+        <div id="cloudManualNavigationLinks" class="security-manual-navigation-links"></div>
+      </nav>
+
+      <div id="cloudManualSections"></div>
+
+      <section class="security-field-section security-mini-check" aria-labelledby="cloudMiniCheckHeading">
+        <h2 id="cloudMiniCheckHeading">Recognition Check · Mini Check</h2>
+        <p id="cloudMiniCheckIntro">Use the existing GSA recognition bank to confirm the objective concepts before continuing.</p>
+        <form id="cloudMiniCheckForm">
+          <fieldset>
+            <legend id="cloudMiniCheckPrompt">Loading the Mini Check…</legend>
+            <div id="cloudMiniCheckChoices" class="answers-box"></div>
+          </fieldset>
+          <button type="submit" class="link-btn">Check My Answer</button>
+        </form>
+        <p id="cloudMiniCheckFeedback" class="security-mini-check-feedback" role="status" aria-live="polite" aria-atomic="true">Choose an answer, then check your response.</p>
+        <div class="security-field-manual-actions">
+          <button id="cloudManualComplete" type="button" class="link-btn security-manual-primary hidden">⚔️ Complete Manual and Begin Objective Sweep</button>
+          <a id="cloudManualReturn" href="cloud-plus-world1-objectives.html" class="back-link">← Return to Chapter 1 Objective Hub</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="cloud-plus-field-manual.js"></script>
+</body>
+</html>

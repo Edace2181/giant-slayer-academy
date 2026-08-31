@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "1",
+  "objective": "1.7",
+  "title": "Compare and Contrast Virtualization Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Virtualization allows multiple virtual machines and networks to operate on physical infrastructure.",
+        "CompTIA wants you to recognize how virtual machines can operate independently, work together, be copied, interact with hardware, use virtual networking, and access different storage systems."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the scenario about virtual machine availability, placement, duplication, hardware access, networking, or storage?"
+      ],
+      "callout": "What does the virtual machine need from the virtualization environment?"
+    },
+    {
+      "id": "stand-alone",
+      "title": "Stand-Alone",
+      "paragraphs": [
+        "A stand-alone virtualization host operates independently.",
+        "Its virtual machines depend primarily on that host instead of participating in a larger cluster.",
+        "Think: One virtualization host doing its own thing."
+      ],
+      "callout": "If a virtualization server works independently without clustered hosts → think stand-alone."
+    },
+    {
+      "id": "clustering",
+      "title": "Clustering",
+      "paragraphs": [
+        "A virtualization cluster groups multiple hosts together so they can work as a larger system.",
+        "Clustering can improve resource availability and workload flexibility.",
+        "If one host has a problem, clustered designs may allow workloads to continue or move elsewhere depending on the implementation.",
+        "Think: Multiple hosts working as a team."
+      ],
+      "callout": "If several virtualization hosts cooperate for resilience or workload placement → think clustering."
+    },
+    {
+      "id": "cloning",
+      "title": "Cloning",
+      "paragraphs": [
+        "Cloning creates a copy of an existing virtual machine.",
+        "Instead of building another machine manually from the beginning, an existing system can be duplicated.",
+        "Think: Copy the virtual machine."
+      ],
+      "callout": "If an identical or similar virtual machine needs to be created quickly from an existing one → think cloning."
+    },
+    {
+      "id": "host-affinity",
+      "title": "Host Affinity",
+      "paragraphs": [
+        "Host affinity controls or influences where a virtual machine workload should run.",
+        "An organization may want a particular virtual machine to remain on or near a particular virtualization host.",
+        "Think: This virtual machine prefers this host."
+      ],
+      "callout": "If the requirement specifies that a virtual machine should run on a particular host → think host affinity."
+    },
+    {
+      "id": "hardware-pass-through",
+      "title": "Hardware Pass-Through",
+      "paragraphs": [
+        "Normally, virtualized hardware sits between a virtual machine and the physical device.",
+        "Hardware pass-through allows a virtual machine more direct access to specific physical hardware.",
+        "This can be useful when the workload needs capabilities of that device directly.",
+        "Think: Let the virtual machine talk directly to the real hardware."
+      ],
+      "callout": "If a virtual machine needs direct access to a physical device → think hardware pass-through."
+    },
+    {
+      "id": "network-types",
+      "title": "Network Types",
+      "entries": [
+        {
+          "title": "Overlay Networks",
+          "paragraphs": [
+            "An overlay network creates a virtual network on top of another underlying network.",
+            "The physical network provides connectivity underneath, while the overlay creates logical connections between virtualized resources.",
+            "Think: A virtual network laid over the physical network."
+          ],
+          "recognitionCue": "If the network exists logically across underlying infrastructure → think overlay network."
+        },
+        {
+          "title": "Virtual Machine (VM) Networks",
+          "paragraphs": [
+            "A virtual machine network provides network connectivity for virtual machines.",
+            "Virtual machines need virtual networking to communicate with other virtual machines, hosts, external networks, and other services.",
+            "Think: The network where the virtual machines communicate."
+          ],
+          "recognitionCue": "If the scenario is about basic network connectivity for virtual machines → think VM network."
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "Storage",
+      "entries": [
+        {
+          "title": "Local Storage",
+          "paragraphs": [
+            "Local storage resides directly on or within the virtualization host.",
+            "The advantage is simplicity and direct access. The major consideration is that the storage is tied more closely to that particular host.",
+            "Think: The disk lives with the host."
+          ],
+          "recognitionCue": "If virtual machine storage exists directly on its virtualization host → think local storage."
+        },
+        {
+          "title": "Storage Area Network (SAN)",
+          "paragraphs": [
+            "A storage area network provides networked block storage.",
+            "Servers can access storage across a storage network while treating that storage more like disk volumes.",
+            "Think: Shared network storage presented as blocks."
+          ],
+          "recognitionCue": "If multiple systems need network-based block storage → think SAN."
+        },
+        {
+          "title": "Network-Attached Storage (NAS)",
+          "paragraphs": [
+            "Network-attached storage provides network-accessible file storage.",
+            "Systems access shared files and directories over a network.",
+            "Think: Shared files across the network."
+          ],
+          "recognitionCue": "If multiple systems need shared network files → think NAS."
+        }
+      ],
+      "table": {
+        "caption": "Local, SAN, and NAS storage comparison",
+        "headers": ["Storage", "Main characteristic"],
+        "rows": [
+          ["Local", "Storage attached to the host"],
+          ["SAN", "Network-based block storage"],
+          ["NAS", "Network-based file storage"]
+        ]
+      },
+      "callout": "SAN = block. NAS = file."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Independent virtualization host → Stand-alone",
+        "Hosts operate together → Clustering",
+        "Duplicate an existing virtual machine → Cloning",
+        "Virtual machine should run on a specified host → Host affinity",
+        "Virtual machine needs direct physical device access → Hardware pass-through",
+        "Virtual network built over underlying infrastructure → Overlay network",
+        "Network connectivity for virtual machines → VM network",
+        "Disk attached to host → Local storage",
+        "Shared network block storage → SAN",
+        "Shared network file storage → NAS"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 1.7 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Cloning vs. Clustering",
+          "paragraphs": [
+            "Cloning copies a virtual machine. Clustering groups hosts or resources together."
+          ]
+        },
+        {
+          "title": "SAN vs. NAS",
+          "paragraphs": [
+            "This is the major recognition distinction: SAN means block storage; NAS means file storage."
+          ]
+        },
+        {
+          "title": "Host Affinity vs. Hardware Pass-Through",
+          "paragraphs": [
+            "Host affinity controls where the virtual machine runs. Hardware pass-through controls which physical device the virtual machine accesses directly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "One independent virtualization host → Stand-alone",
+        "Multiple hosts cooperating → Cluster",
+        "Copy an existing virtual machine → Clone",
+        "Virtual machine should remain on a specific host → Host affinity",
+        "Virtual machine needs direct physical hardware → Hardware pass-through",
+        "Logical network riding over underlying network → Overlay network",
+        "Connectivity between virtual machines → VM network",
+        "Storage attached directly to host → Local",
+        "Network block storage → SAN",
+        "Network file storage → NAS"
+      ]
+    }
+  ]
+}
