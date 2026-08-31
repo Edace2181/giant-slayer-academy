@@ -29,11 +29,15 @@ const lesson110 = json("json/cloud-plus/field-manual/1.10.json");
 const bank110 = json("json/cloud-plus/world1/1.10-hatchling.json");
 const lesson111 = json("json/cloud-plus/field-manual/1.11.json");
 const bank111 = json("json/cloud-plus/world1/1.11-hatchling.json");
+const campaign = read("cloud-plus-campaign.html");
+const cloudEntry = read("cloud-plus.html");
 const hub = read("cloud-plus-world1-objectives.html");
 const manualPage = read("cloud-plus-field-manual.html");
 const manualScript = read("cloud-plus-field-manual.js");
 const quizPage = read("cloud-plus-quiz.html");
 const quizScript = read("cloud-plus-quiz.js");
+const navigationStandard = read("GSA-NAVIGATION-STANDARD.md");
+const legacyWorld1Path = path.join(root, "cloud-plus-world1.html");
 
 requireValue(lesson.schemaVersion === 1, "Objective 1.1 schemaVersion must be 1.");
 requireValue(lesson.certification === "cloud-plus", "Objective 1.1 certification must be cloud-plus.");
@@ -179,6 +183,9 @@ const lessonText111 = JSON.stringify(lesson111);
 requiredTopics111.forEach(topic => requireValue(lessonText111.includes(topic), "Objective 1.11 is missing required topic: " + topic));
 requireValue(Array.isArray(bank111) && bank111.length === 13, "Objective 1.11 protected Sweep bank must contain exactly 13 questions.");
 requireValue(bank111[0]?.id === "CV0004-1.11-R001", "Objective 1.11 GSA Mini Check source must remain the existing first bank question.");
+requireValue(campaign.includes('href="cloud-plus-world1-objectives.html" class="world world1 unlocked"'), "Cloud+ Campaign Map Chapter 1 must route directly to the Objective Hub.");
+requireValue(!fs.existsSync(legacyWorld1Path), "Legacy Cloud+ Chapter 1 PRESS START page must be retired after Objective Hub migration.");
+requireValue(![campaign, cloudEntry, hub, manualPage, manualScript, quizPage, quizScript].some(source => source.includes("cloud-plus-world1.html")), "Active Cloud+ navigation still references the legacy Chapter 1 landing page.");
 requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.1"), "Chapter 1 Objective Hub is missing the Objective 1.1 Field Manual action.");
 requireValue(hub.includes("cloud-plus-quiz.html?world=1&amp;objective=1.1"), "Chapter 1 Objective Hub is missing the direct Objective 1.1 Sweep action.");
 requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.2"), "Chapter 1 Objective Hub is missing the Objective 1.2 Field Manual action.");
@@ -201,12 +208,28 @@ requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.
 requireValue(hub.includes("cloud-plus-quiz.html?world=1&amp;objective=1.10"), "Chapter 1 Objective Hub is missing the direct Objective 1.10 Sweep action.");
 requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.11"), "Chapter 1 Objective Hub is missing the Objective 1.11 Field Manual action.");
 requireValue(hub.includes("cloud-plus-quiz.html?world=1&amp;objective=1.11"), "Chapter 1 Objective Hub is missing the direct Objective 1.11 Sweep action.");
+requireValue(hub.includes('href="cloud-plus-campaign.html" class="back-link">← Return to Campaign Map</a>'), "Chapter 1 Objective Hub must return to the Cloud+ Campaign Map.");
+requireValue(manualScript.includes('elements.returnLink.href = "cloud-plus-world" + world + "-objectives.html";'), "Cloud+ Field Manual must return to its Chapter Objective Hub.");
+requireValue(quizScript.includes('return { href: `cloud-plus-world${world}-objectives.html`, label: `Return to Chapter ${world}` };'), "Cloud+ Objective Sweep must return to its Chapter Objective Hub.");
+requireValue(cloudEntry.includes('href="index.html?entered=1" class="link-btn">🏰 Return to Academy 🏰</a>'), "Cloud+ Return to Academy must open the internal Select a Game hub.");
 requireValue(manualPage.includes('id="cloudManualNavigation"') && manualScript.includes("function renderNavigation()"), "Cloud+ Field Manual is missing lesson navigation.");
 requireValue(manualPage.includes("confirm the objective concepts") && manualScript.includes("Review the objective recognition cues"), "Cloud+ Mini Check guidance must remain objective-neutral.");
 requireValue(manualScript.includes('const MANUAL_KEY = "hydra-cloud-plus-field-manual-v1"'), "Cloud+ Field Manual completion storage must remain isolated.");
 requireValue(manualScript.includes('"json/cloud-plus/world" + world + "/" + objective + "-hatchling.json"'), "Cloud+ Mini Check must use the existing GSA bank at runtime.");
 requireValue(quizPage.includes('<script src="cloud-plus-quiz.js"></script>'), "Cloud+ quiz page no longer loads the existing quiz engine.");
 requireValue(quizScript.includes('saveObjectiveProgress({ objective, world'), "Cloud+ Objective Sweep progress integration is missing.");
+[
+  "Security+ is the canonical learner-flow model",
+  "Academy Gate = external front door",
+  "Select a Game = internal Academy hub",
+  "Training Grounds",
+  "Campaign Map",
+  "PRESS START",
+  "Field Manual Return to Chapter",
+  "Objective Hub Return",
+  "Certification Return to Academy",
+  "Academy Hub"
+].forEach(rule => requireValue(navigationStandard.includes(rule), "GSA navigation standard is missing required rule: " + rule));
 
 if (errors.length) {
   console.error("Cloud+ Field Manual validation: FAIL");
