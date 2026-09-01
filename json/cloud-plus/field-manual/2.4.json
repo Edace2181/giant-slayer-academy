@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Given a Scenario, Use Code to Deploy and Configure Cloud Resources",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud resources do not always need to be created by clicking buttons in a management console. Organizations can define infrastructure and configuration in code.",
+        "This makes deployments repeatable, reviewable, testable, version-controlled, and easier to reproduce.",
+        "CompTIA wants you to understand both the automation concepts and the basic programming logic used to make them work."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the code creating infrastructure, configuring systems, making a decision, repeating deployment reliably, or detecting differences from the intended state?"
+      ],
+      "callout": "Create infrastructure → IaC. Configure systems → CaC. Logic controls behavior → scripting."
+    },
+    {
+      "id": "infrastructure-as-code",
+      "title": "Infrastructure as Code (IaC)",
+      "paragraphs": [
+        "Infrastructure as code defines infrastructure resources using code or configuration files.",
+        "Instead of manually creating networks, virtual machines, storage, and other cloud resources, the desired infrastructure is described in code and deployed automatically.",
+        "Think: Write the infrastructure before you build the infrastructure."
+      ],
+      "callout": "If code provisions cloud infrastructure → think IaC."
+    },
+    {
+      "id": "configuration-as-code",
+      "title": "Configuration as Code (CaC)",
+      "paragraphs": [
+        "Configuration as code defines how systems and applications should be configured.",
+        "Configuration can specify application settings, services, system settings, software, and other desired-state details.",
+        "Think: IaC builds the house. CaC tells us how everything inside should be arranged."
+      ],
+      "callout": "If code defines the desired configuration of systems or applications → think CaC.",
+      "table": {
+        "caption": "Infrastructure as code and configuration as code comparison",
+        "headers": ["Concept", "Main purpose"],
+        "rows": [
+          ["IaC", "Provision infrastructure"],
+          ["CaC", "Configure systems and software"]
+        ]
+      }
+    },
+    {
+      "id": "scripting-logic",
+      "title": "Scripting Logic",
+      "paragraphs": [
+        "Automation code needs basic logic so it can adapt to different circumstances."
+      ],
+      "entries": [
+        {
+          "title": "Variables",
+          "paragraphs": [
+            "A variable stores a value that can be reused or changed. Instead of hard-coding a region everywhere, a script can store it once and reference the variable.",
+            "Think: Give the value a name."
+          ],
+          "recognitionCue": "If a value needs to be reused or changed easily → think variable."
+        },
+        {
+          "title": "Conditionals",
+          "paragraphs": [
+            "A conditional makes a decision. For example: if the environment is production, enable stronger settings; otherwise, use development settings.",
+            "Think: If this is true, do this."
+          ],
+          "recognitionCue": "If code chooses between actions based on a condition → think conditional."
+        },
+        {
+          "title": "Operators",
+          "paragraphs": [
+            "Operators perform actions or comparisons on values. Examples include equal to, greater than, less than, addition, and logical AND or OR.",
+            "Think: Operators compare or manipulate values."
+          ],
+          "recognitionCue": "If code needs to compare, calculate, or combine conditions → think operators."
+        },
+        {
+          "title": "Data Types",
+          "paragraphs": [
+            "A data type describes what kind of value something contains. Common examples include strings for text, integers or numbers for numeric values, Booleans for true or false, and collections for groups of values.",
+            "Think: What kind of thing is stored here?"
+          ],
+          "recognitionCue": "If the question asks whether a value is text, number, or true or false → think data type."
+        },
+        {
+          "title": "Functions",
+          "paragraphs": [
+            "A function is a reusable section of code designed to perform a task.",
+            "Instead of writing the same logic repeatedly, the script can call the function whenever that task is needed.",
+            "Think: Write it once, call it when needed."
+          ],
+          "recognitionCue": "If a block of code performs a reusable task → think function."
+        }
+      ]
+    },
+    {
+      "id": "repeatability",
+      "title": "Repeatability",
+      "paragraphs": [
+        "Automation should produce consistent results when the same deployment is executed again.",
+        "Repeatability reduces variation caused by manual configuration.",
+        "Think: Same instructions → same result."
+      ],
+      "callout": "If the organization wants identical environments deployed consistently → think repeatability."
+    },
+    {
+      "id": "drift-detection",
+      "title": "Drift Detection",
+      "paragraphs": [
+        "Configuration drift occurs when the actual environment becomes different from the intended configuration.",
+        "For example, the code defines a firewall rule, someone manually changes the live firewall, and the desired state no longer matches the actual state.",
+        "Drift detection identifies that difference.",
+        "Think: What we built wandered away from what the code says."
+      ],
+      "callout": "If deployed resources no longer match their defined configuration → think drift detection."
+    },
+    {
+      "id": "versioning",
+      "title": "Versioning",
+      "paragraphs": [
+        "Versioning records changes made to code over time.",
+        "It helps teams track and review modifications, restore earlier versions, and understand who changed what.",
+        "Think: History for the deployment code."
+      ],
+      "callout": "If the organization needs change history or rollback of deployment code → think versioning."
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "paragraphs": [
+        "Automation code should be tested before being trusted with production resources.",
+        "Testing can identify syntax mistakes, logic errors, incorrect values, and deployment problems.",
+        "Think: Test the instructions before they build the environment."
+      ],
+      "callout": "If code must be validated before deployment → think testing."
+    },
+    {
+      "id": "documentation",
+      "title": "Documentation",
+      "paragraphs": [
+        "Documentation explains what the code does, how it should be used, which variables are required, which assumptions exist, and how administrators maintain it.",
+        "Think: Future administrators should not have to solve a mystery."
+      ],
+      "callout": "If other administrators need to understand or maintain automation → think documentation."
+    },
+    {
+      "id": "formats",
+      "title": "Formats",
+      "entries": [
+        {
+          "title": "JavaScript Object Notation (JSON)",
+          "paragraphs": [
+            "JSON is a structured data format commonly used by systems and APIs.",
+            "It uses braces, commas, quoted strings, and key-value pairs.",
+            "Think: Structured key-value data with braces."
+          ],
+          "recognitionCue": "If structured configuration uses braces and quoted key-value pairs → think JSON."
+        },
+        {
+          "title": "Yet Another Markup Language (YAML)",
+          "paragraphs": [
+            "YAML is a human-readable structured configuration format that relies heavily on indentation.",
+            "Think: Readable configuration organized by indentation."
+          ],
+          "recognitionCue": "If configuration is indentation-based without JSON's braces → think YAML."
+        }
+      ],
+      "table": {
+        "caption": "JSON and YAML recognition comparison",
+        "headers": ["Format", "Recognition clue"],
+        "rows": [
+          ["JSON", "Braces, commas, and quoted keys"],
+          ["YAML", "Indentation and a cleaner human-readable layout"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Code creates infrastructure → IaC",
+        "Code configures systems → CaC",
+        "Store a reusable value → Variable",
+        "Make an if or else decision → Conditional",
+        "Compare or manipulate values → Operator",
+        "Text, number, or true-false distinction → Data type",
+        "Reusable block of code → Function",
+        "Same deployment every time → Repeatability",
+        "Actual configuration differs from intended configuration → Drift detection",
+        "Track code changes → Versioning",
+        "Validate deployment code → Testing",
+        "Explain how automation works → Documentation",
+        "Braces and key-value syntax → JSON",
+        "Indentation-based configuration → YAML"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 2.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "IaC vs. CaC",
+          "paragraphs": [
+            "Ask what the code is primarily defining. Infrastructure resources point to IaC; system or application configuration points to CaC."
+          ]
+        },
+        {
+          "title": "Drift Detection vs. Versioning",
+          "paragraphs": [
+            "Drift means the live environment differs from the desired state. Versioning means the code changed over time.",
+            "A version change may be intentional. Drift is an unwanted or unexpected mismatch."
+          ]
+        },
+        {
+          "title": "JSON vs. YAML",
+          "paragraphs": [
+            "Both can describe structured configuration. JSON uses braces, commas, and quoted keys; YAML uses indentation and a simpler key-value layout."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Provision virtual machines, networks, or storage with code → IaC",
+        "Set system or application configuration with code → CaC",
+        "Store a reusable value → Variable",
+        "Choose an action based on a true-false decision → Conditional",
+        "Compare or calculate values → Operator",
+        "Identify text, number, or Boolean → Data type",
+        "Reusable code task → Function",
+        "Deploy an identical environment repeatedly → Repeatability",
+        "Live resource differs from the defined state → Drift detection",
+        "Track deployment-code history → Versioning",
+        "Validate code before production → Testing",
+        "Explain and maintain automation → Documentation",
+        "Braces plus structured key-value pairs → JSON",
+        "Indentation-based configuration → YAML"
+      ]
+    }
+  ]
+}

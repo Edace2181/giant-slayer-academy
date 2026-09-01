@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Summarize Aspects of Cloud Migration",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud migration means moving applications, workloads, or data between environments.",
+        "Migration is not always on premises to cloud. CompTIA also includes cloud to on premises and cloud to cloud.",
+        "Before anything moves, the organization must evaluate whether its resources, applications, costs, network, compliance requirements, and operational model will still work in the destination."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What is moving, where is it going, and how much should the application change during the move?"
+      ],
+      "callout": "Source + destination + amount of application change → determine the migration approach."
+    },
+    {
+      "id": "migration-types",
+      "title": "Migration Types",
+      "entries": [
+        {
+          "title": "On-Premises-to-Cloud",
+          "paragraphs": [
+            "This migration moves workloads from infrastructure controlled locally by the organization into a cloud environment.",
+            "Think: Our data center → cloud."
+          ],
+          "recognitionCue": "If existing local infrastructure is being moved into cloud services → think on-premises-to-cloud migration."
+        },
+        {
+          "title": "Cloud-to-On-Premises",
+          "paragraphs": [
+            "This moves workloads from a cloud environment back to infrastructure operated by the organization.",
+            "Reasons might include changes in cost, control, compatibility, or regulatory requirements.",
+            "Think: Bring it back home."
+          ],
+          "recognitionCue": "If a workload is leaving the cloud for company-controlled infrastructure → think cloud-to-on-premises migration."
+        },
+        {
+          "title": "Cloud-to-Cloud",
+          "paragraphs": [
+            "This migration moves a workload between cloud environments.",
+            "Think: Cloud A → Cloud B."
+          ],
+          "recognitionCue": "If the workload is moving between cloud environments or providers → think cloud-to-cloud migration."
+        }
+      ]
+    },
+    {
+      "id": "resource-allocation",
+      "title": "Resource Allocation",
+      "paragraphs": [
+        "Before migration, the organization needs to determine the compute, storage, network, and supporting resources required in the destination environment.",
+        "Allocating too little can cause poor performance. Allocating far too much can increase cost unnecessarily.",
+        "Think: Move the workload, not the old waste."
+      ],
+      "callout": "If the migration requires determining how much destination capacity the workload needs → think resource allocation."
+    },
+    {
+      "id": "migration-considerations",
+      "title": "Migration Considerations",
+      "entries": [
+        {
+          "title": "Storage",
+          "paragraphs": [
+            "Determine how much data must move, which storage type the workload needs, how quickly the data can be transferred, and what storage performance the application requires."
+          ],
+          "recognitionCue": "Large data movement or destination storage needs → think storage consideration."
+        },
+        {
+          "title": "Platform Compatibility",
+          "paragraphs": [
+            "The destination must support the application's operating environment, software, services, architecture, and other requirements.",
+            "Think: Can this workload actually live there?"
+          ],
+          "recognitionCue": "If the destination cannot properly support the application → think platform compatibility."
+        },
+        {
+          "title": "Compute",
+          "paragraphs": [
+            "The new environment must provide enough processing resources for the workload.",
+            "Think: Enough CPU and memory for the job."
+          ],
+          "recognitionCue": "If workload processing capacity is the concern → think compute."
+        },
+        {
+          "title": "Cost",
+          "paragraphs": [
+            "Migration itself can cost money, and the new environment has ongoing operating expenses.",
+            "Organizations must examine whether the migration actually makes financial sense."
+          ],
+          "recognitionCue": "If the destination works technically but may cost too much → think cost consideration."
+        },
+        {
+          "title": "Networking",
+          "paragraphs": [
+            "Applications may depend on connectivity among users, systems, cloud resources, and other environments.",
+            "Migration can change network routes, addresses, bandwidth requirements, and latency."
+          ],
+          "recognitionCue": "If moving the workload changes how systems communicate → think networking consideration."
+        },
+        {
+          "title": "Management Overhead",
+          "paragraphs": [
+            "A migration may reduce or increase the amount of administration required.",
+            "Think: Who has to manage this after we move it?"
+          ],
+          "recognitionCue": "If staffing or administration requirements change after migration → think management overhead."
+        },
+        {
+          "title": "Service Availability",
+          "paragraphs": [
+            "The organization must plan how migration affects uptime. Some migrations can tolerate extended downtime; others cannot."
+          ],
+          "recognitionCue": "If the business must remain operational during the move → think service availability."
+        },
+        {
+          "title": "Vendor Lock-In",
+          "paragraphs": [
+            "Vendor lock-in occurs when a workload becomes strongly dependent on one provider's technologies or services, making future migration difficult or expensive.",
+            "Think: Easy to enter, painful to leave."
+          ],
+          "recognitionCue": "If using a proprietary cloud feature makes switching providers difficult → think vendor lock-in."
+        },
+        {
+          "title": "Environmental — Power and Cooling",
+          "paragraphs": [
+            "Moving workloads can change physical infrastructure requirements.",
+            "Moving into cloud services may reduce local equipment needs. Moving back on premises may increase electricity, cooling, and facility-capacity requirements."
+          ],
+          "recognitionCue": "If migration changes physical data-center requirements → think environmental power and cooling."
+        },
+        {
+          "title": "Regulatory",
+          "paragraphs": [
+            "An organization may be legally required to handle systems or data in specific ways."
+          ],
+          "recognitionCue": "If laws or government rules affect where or how the workload can operate → think regulatory requirements."
+        },
+        {
+          "title": "Compliance",
+          "paragraphs": [
+            "Organizations may need to demonstrate that their environment follows required standards, policies, or controls."
+          ],
+          "recognitionCue": "If migration must maintain required standards or controls → think compliance."
+        }
+      ]
+    },
+    {
+      "id": "application-migration-strategies",
+      "title": "Application Migration Strategies",
+      "paragraphs": [
+        "This group is extremely recognition-heavy. Focus on how much the application changes and whether it moves at all."
+      ],
+      "entries": [
+        {
+          "title": "Rehost",
+          "paragraphs": [
+            "Rehost means moving an application to the new environment with very little change. This is often called lift and shift.",
+            "Think: Pick it up and put it there."
+          ],
+          "recognitionCue": "If the goal is moving quickly without redesigning the application → think rehost."
+        },
+        {
+          "title": "Replatform",
+          "paragraphs": [
+            "Replatform involves making some changes so the application can take better advantage of the destination without completely redesigning it.",
+            "Think: Move it and tune it."
+          ],
+          "recognitionCue": "If the application moves mostly intact but receives moderate platform-related improvements → think replatform."
+        },
+        {
+          "title": "Re-Architect",
+          "paragraphs": [
+            "Re-architect means changing the application's overall design or architecture to better support the new environment.",
+            "Think: Redesign how the application is built."
+          ],
+          "recognitionCue": "If the migration requires a major architectural redesign → think re-architect."
+        },
+        {
+          "title": "Retain",
+          "paragraphs": [
+            "Retain means keeping the application where it currently resides because migration may be too expensive, too risky, unnecessary, or incompatible.",
+            "Think: Leave it alone."
+          ],
+          "recognitionCue": "If the organization decides not to move the workload → think retain."
+        },
+        {
+          "title": "Retire",
+          "paragraphs": [
+            "Retire means removing an application or workload because it is no longer needed.",
+            "Think: Turn it off and say goodbye."
+          ],
+          "recognitionCue": "If an obsolete workload should be eliminated instead of migrated → think retire."
+        },
+        {
+          "title": "Refactor",
+          "paragraphs": [
+            "Refactor means modifying application code so it works better with the new environment or architecture.",
+            "The business function may remain the same while the internal code is improved or changed.",
+            "Think: Rewrite or reorganize the code."
+          ],
+          "recognitionCue": "If developers must significantly change application code → think refactor."
+        }
+      ],
+      "table": {
+        "caption": "Application migration strategy comparison",
+        "headers": ["Strategy", "Main idea"],
+        "rows": [
+          ["Rehost", "Move with minimal changes"],
+          ["Replatform", "Move with moderate platform changes"],
+          ["Re-architect", "Redesign architecture"],
+          ["Retain", "Keep where it is"],
+          ["Retire", "Eliminate it"],
+          ["Refactor", "Modify or rework application code"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Local data center → cloud → On-premises-to-cloud",
+        "Cloud → company infrastructure → Cloud-to-on-premises",
+        "Provider A → provider B → Cloud-to-cloud",
+        "Determine destination capacity → Resource allocation",
+        "Destination cannot support current workload → Platform compatibility",
+        "Cloud service is difficult to leave → Vendor lock-in",
+        "Maintain uptime during the move → Service availability",
+        "Laws determine migration choices → Regulatory",
+        "Required controls or standards → Compliance",
+        "Move application essentially unchanged → Rehost",
+        "Small or moderate cloud improvements → Replatform",
+        "Major design change → Re-architect",
+        "Do not move it → Retain",
+        "Do not need it anymore → Retire",
+        "Change application code → Refactor"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 2.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Rehost vs. Replatform",
+          "paragraphs": [
+            "Rehost means almost no application change. Replatform makes some changes to benefit from the new platform."
+          ]
+        },
+        {
+          "title": "Replatform vs. Re-Architect",
+          "paragraphs": [
+            "Replatform tunes the application. Re-architect redesigns the application's structure."
+          ]
+        },
+        {
+          "title": "Re-Architect vs. Refactor",
+          "paragraphs": [
+            "These can overlap in the real world. For exam recognition, re-architect emphasizes architecture or design changes; refactor emphasizes code changes."
+          ]
+        },
+        {
+          "title": "Retain vs. Retire",
+          "paragraphs": [
+            "Retain means keep using the workload where it is. Retire means stop using it entirely."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Data center → cloud → On-premises-to-cloud",
+        "Cloud → local infrastructure → Cloud-to-on-premises",
+        "Cloud A → Cloud B → Cloud-to-cloud",
+        "Determine destination CPU, storage, and network capacity → Resource allocation",
+        "Can the destination run the workload? → Platform compatibility",
+        "Cloud service makes a provider change difficult → Vendor lock-in",
+        "Migration must avoid an outage → Service availability",
+        "Physical facility requirements change → Power and cooling",
+        "Law controls migration → Regulatory",
+        "Required controls or standards → Compliance",
+        "Move nearly unchanged → Rehost",
+        "Move plus modest improvements → Replatform",
+        "Redesign architecture → Re-architect",
+        "Leave workload where it is → Retain",
+        "Remove obsolete workload → Retire",
+        "Rewrite or reorganize code → Refactor"
+      ]
+    }
+  ]
+}

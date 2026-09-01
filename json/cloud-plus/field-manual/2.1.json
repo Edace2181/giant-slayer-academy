@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Compare and Contrast Cloud Deployment Models",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A cloud deployment model describes where the cloud environment exists, who uses it, and how much control the organization has over it.",
+        "CompTIA wants you to recognize four models: public, private, hybrid, and community.",
+        "The main question is not simply, 'Is this in the cloud?' The better question is: Who owns or uses the environment, and does the organization need dedicated control or shared resources?"
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Who needs access to this cloud environment, and how dedicated does the infrastructure need to be?"
+      ],
+      "callout": "Shared provider environment → public. Dedicated organization environment → private. Combination → hybrid. Shared by organizations with common needs → community."
+    },
+    {
+      "id": "public-cloud",
+      "title": "Public Cloud",
+      "paragraphs": [
+        "A public cloud is operated by a cloud provider and delivers services to customers using the provider's infrastructure.",
+        "Different customers can use the provider's cloud while their environments remain logically separated.",
+        "Organizations choose public cloud when they want rapid access to cloud resources, less physical infrastructure to maintain, provider-managed facilities, and flexible resource usage.",
+        "Think: Use the cloud provider's environment instead of owning the whole facility."
+      ],
+      "callout": "If a business consumes cloud resources from a provider's shared cloud infrastructure → think public cloud."
+    },
+    {
+      "id": "private-cloud",
+      "title": "Private Cloud",
+      "paragraphs": [
+        "A private cloud is dedicated to a single organization.",
+        "The organization receives greater control because the infrastructure is not provided as a general shared environment for unrelated customers.",
+        "Private cloud may be useful when an organization has demanding security, control, compliance, or customization requirements.",
+        "Think: Cloud capabilities, but dedicated to us."
+      ],
+      "callout": "If one organization needs a dedicated cloud environment → think private cloud."
+    },
+    {
+      "id": "on-premises-private-cloud",
+      "title": "On-Premises Private Cloud",
+      "paragraphs": [
+        "A private cloud can operate on premises, meaning the infrastructure remains within facilities controlled by the organization.",
+        "This provides cloud-style capabilities while the organization retains direct responsibility for its physical environment.",
+        "Think: Our cloud, in our building."
+      ],
+      "callout": "If cloud infrastructure is dedicated to one organization and physically maintained at its own site → think on-premises private cloud."
+    },
+    {
+      "id": "hybrid-cloud",
+      "title": "Hybrid Cloud",
+      "paragraphs": [
+        "A hybrid cloud combines different environments, commonly private infrastructure and public cloud resources.",
+        "Applications or data can use the environment that best matches their requirements.",
+        "For example, an organization may keep sensitive workloads in a private environment while using public cloud resources for other applications.",
+        "Think: Part ours, part provider."
+      ],
+      "callout": "If the solution combines private or on-premises resources with public cloud resources → think hybrid cloud."
+    },
+    {
+      "id": "community-cloud",
+      "title": "Community Cloud",
+      "paragraphs": [
+        "A community cloud is shared by multiple organizations that have similar requirements or interests.",
+        "Those organizations may share security requirements, regulatory requirements, business missions, or industry needs.",
+        "Think: A private club for organizations with something important in common."
+      ],
+      "callout": "If several organizations with shared requirements use the same cloud environment → think community cloud."
+    },
+    {
+      "id": "deployment-model-comparison",
+      "title": "Deployment Model Comparison",
+      "table": {
+        "caption": "Cloud deployment model comparison",
+        "headers": ["Deployment model", "Main clue"],
+        "rows": [
+          ["Public", "Provider environment used by customers"],
+          ["Private", "Dedicated to one organization"],
+          ["Private — on premises", "Dedicated cloud located at the organization's facility"],
+          ["Hybrid", "Combines cloud environments"],
+          ["Community", "Shared among organizations with common requirements"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Provider-hosted cloud services → Public",
+        "Dedicated cloud for one business → Private",
+        "Organization owns and operates its private cloud locally → On-premises private",
+        "Public cloud plus private or on-premises environment → Hybrid",
+        "Several organizations share similar compliance or mission requirements → Community"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 2.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Public vs. Community",
+          "paragraphs": [
+            "Both can involve multiple organizations. Public cloud is broadly offered by a provider; community cloud is intended for a defined group with common requirements."
+          ]
+        },
+        {
+          "title": "Private vs. On Premises",
+          "paragraphs": [
+            "Private describes who the cloud is dedicated to. On premises describes where the infrastructure resides.",
+            "Dedicated cloud infrastructure inside the organization's own facility points strongly toward on-premises private cloud."
+          ]
+        },
+        {
+          "title": "Hybrid Does Not Mean Multicloud",
+          "paragraphs": [
+            "For this objective, hybrid combines different deployment environments, such as private infrastructure with public cloud.",
+            "Do not automatically choose hybrid just because more than one cloud service appears in the scenario."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Provider cloud available to customers → Public cloud",
+        "Dedicated to one organization → Private cloud",
+        "Dedicated cloud inside the company's own facility → On-premises private cloud",
+        "Private or on-premises plus public cloud → Hybrid cloud",
+        "Organizations with shared requirements use one environment → Community cloud"
+      ]
+    }
+  ]
+}

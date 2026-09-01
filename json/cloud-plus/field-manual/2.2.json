@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Given a Scenario, Implement Appropriate Deployment Strategies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "When a new application version is ready, the organization has to decide how to replace the existing version without causing unnecessary disruption.",
+        "CompTIA expects you to recognize blue-green, canary, rolling, and in-place deployment strategies.",
+        "The biggest differences are how many users receive the new version, whether both versions run at the same time, how quickly the old version disappears, and how easy it is to recover if the deployment fails."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "How should the new application version be introduced, and how much risk or downtime can the organization tolerate?"
+      ],
+      "callout": "Two complete environments → blue-green. Small test group → canary. Replace in batches → rolling. Update the existing system directly → in-place."
+    },
+    {
+      "id": "blue-green",
+      "title": "Blue-Green Deployment",
+      "paragraphs": [
+        "A blue-green deployment maintains two separate application environments.",
+        "One environment runs the current production version, and the second environment contains the new version.",
+        "After testing the new environment, traffic can be switched from the old environment to the new one.",
+        "Think: Build the replacement beside production, then flip the traffic.",
+        "A major advantage is rollback. If the new environment has a serious problem, traffic can potentially be redirected back to the previous environment."
+      ],
+      "callout": "If two complete environments exist and traffic switches between them → think blue-green."
+    },
+    {
+      "id": "canary",
+      "title": "Canary Deployment",
+      "paragraphs": [
+        "A canary deployment sends the new version to a small portion of users or traffic first.",
+        "The organization observes how that version behaves before expanding it to everyone.",
+        "Think: Test with a few before risking the whole crowd.",
+        "If problems appear, the deployment can be stopped before most users are affected."
+      ],
+      "callout": "If only a small percentage of users receive the new version first → think canary."
+    },
+    {
+      "id": "rolling",
+      "title": "Rolling Deployment",
+      "paragraphs": [
+        "A rolling deployment updates resources gradually in groups.",
+        "Instead of replacing the entire environment simultaneously, portions of the application are upgraded one batch at a time.",
+        "During the deployment, old and new versions may temporarily operate at the same time.",
+        "Think: Replace the tires while the car keeps moving, one at a time."
+      ],
+      "callout": "If servers or instances are updated gradually in batches → think rolling deployment."
+    },
+    {
+      "id": "in-place",
+      "title": "In-Place Deployment",
+      "paragraphs": [
+        "An in-place deployment updates the application directly on the existing resources.",
+        "There is no separate replacement environment.",
+        "It can require fewer resources because the organization does not maintain another complete environment, but problems with the upgrade directly affect the existing system.",
+        "Think: Upgrade what is already there."
+      ],
+      "callout": "If the existing production resources themselves are upgraded → think in-place."
+    },
+    {
+      "id": "deployment-strategy-comparison",
+      "title": "Deployment Strategy Comparison",
+      "table": {
+        "caption": "Cloud deployment strategy comparison",
+        "headers": ["Strategy", "What happens", "Strong clue"],
+        "rows": [
+          ["Blue-green", "Two full environments; traffic switches", "Easy switch or rollback"],
+          ["Canary", "Small audience receives new version first", "Limited-risk testing"],
+          ["Rolling", "Instances updated in groups", "Gradual replacement"],
+          ["In-place", "Existing resources upgraded directly", "No separate environment"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "New and old complete environments coexist → Blue-green",
+        "Redirect traffic to a new environment → Blue-green",
+        "Release a new version to 5% of users first → Canary",
+        "Observe a small group before full rollout → Canary",
+        "Upgrade instances several at a time → Rolling",
+        "Replace the old version gradually → Rolling",
+        "Install new software directly over existing production → In-place"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 2.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Blue-Green vs. Canary",
+          "paragraphs": [
+            "Both can reduce deployment risk. Blue-green emphasizes two complete environments; canary emphasizes the small portion of users or traffic that receives the new version first."
+          ]
+        },
+        {
+          "title": "Canary vs. Rolling",
+          "paragraphs": [
+            "Canary asks how many users should see the new version first. Rolling asks how many backend systems should be upgraded at a time."
+          ]
+        },
+        {
+          "title": "Blue-Green vs. In-Place",
+          "paragraphs": [
+            "Blue-green builds the replacement separately. In-place changes the existing system directly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Two complete production environments → Blue-green",
+        "Switch traffic from old to new → Blue-green",
+        "Small percentage receives the update first → Canary",
+        "Validate a new release with limited users → Canary",
+        "Update servers in batches → Rolling",
+        "Gradually replace old instances → Rolling",
+        "Upgrade the existing production environment directly → In-place"
+      ]
+    }
+  ]
+}

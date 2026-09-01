@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "2",
+  "objective": "2.5",
+  "title": "Given a Set of Requirements, Provision the Appropriate Cloud Resources",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Provisioning means selecting and creating the cloud resources needed by a workload.",
+        "There is not always one best cloud resource. The correct resource depends on the requirements.",
+        "CompTIA gives you eight major requirement categories: storage, performance, security, cost, availability, compliance, network, and compute."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Which requirement is driving the resource decision?"
+      ],
+      "callout": "Find the strongest requirement first → provision resources that satisfy it without unnecessarily violating the others."
+    },
+    {
+      "id": "storage-requirements",
+      "title": "Storage Requirements",
+      "paragraphs": [
+        "Storage requirements determine how much data must be stored, how it needs to be accessed, how quickly it must respond, and how long it must be retained.",
+        "Different workloads may need high-performance storage, shared files, object storage, or large inexpensive capacity.",
+        "Think: How much data, what kind, and how fast?"
+      ],
+      "callout": "If the scenario focuses on data capacity or access method → prioritize storage requirements."
+    },
+    {
+      "id": "performance-requirements",
+      "title": "Performance Requirements",
+      "paragraphs": [
+        "Performance requirements define how quickly or efficiently the workload must operate.",
+        "They can involve processing capability, storage speed, network performance, or response time.",
+        "A resource that is inexpensive but cannot meet application demand is not properly provisioned.",
+        "Think: How fast does this need to run?"
+      ],
+      "callout": "If users or applications require specific speed or responsiveness → prioritize performance."
+    },
+    {
+      "id": "security-requirements",
+      "title": "Security Requirements",
+      "paragraphs": [
+        "Security requirements determine which protections must exist around cloud resources.",
+        "They can affect decisions about network access, resource isolation, data protection, and system configuration.",
+        "Think: What must be protected, and from whom?"
+      ],
+      "callout": "If protection or restricted access is the primary concern → prioritize security requirements."
+    },
+    {
+      "id": "cost-requirements",
+      "title": "Cost Requirements",
+      "paragraphs": [
+        "Cloud resources should provide the required capability without unnecessary spending.",
+        "Provisioning far more resources than necessary creates waste. Provisioning too little can create performance or availability problems.",
+        "Think: Meet the requirement without buying far more than the workload needs."
+      ],
+      "callout": "If the workload must stay within a specific budget → prioritize cost requirements while still meeting technical needs."
+    },
+    {
+      "id": "availability-requirements",
+      "title": "Availability Requirements",
+      "paragraphs": [
+        "Availability requirements determine how resilient a workload must be.",
+        "A business-critical application may require resources distributed so the service can continue when individual components fail.",
+        "Think: How bad would it be if this disappeared?"
+      ],
+      "callout": "If the workload cannot tolerate significant downtime → prioritize availability requirements."
+    },
+    {
+      "id": "compliance-requirements",
+      "title": "Compliance Requirements",
+      "paragraphs": [
+        "Compliance requirements can restrict where data resides, how it is protected, who can access it, and which controls are required.",
+        "A technically excellent solution is still wrong if it violates required compliance controls.",
+        "Think: Allowed by technology does not always mean allowed by policy or regulation."
+      ],
+      "callout": "If required standards or controls dictate the design → prioritize compliance."
+    },
+    {
+      "id": "network-requirements",
+      "title": "Network Requirements",
+      "paragraphs": [
+        "Network requirements determine how systems and users communicate with the resource.",
+        "Considerations can include connectivity, bandwidth, latency, routing, and network isolation.",
+        "Think: Who needs to talk to whom, and how well must the connection perform?"
+      ],
+      "callout": "If connectivity between resources is the main issue → prioritize network requirements."
+    },
+    {
+      "id": "compute-requirements",
+      "title": "Compute Requirements",
+      "paragraphs": [
+        "Compute requirements determine how much processing capacity the workload needs.",
+        "This can include CPU, memory, workload type, and the amount of processing.",
+        "Think: How much processing muscle does the application need?"
+      ],
+      "callout": "If the application is CPU- or memory-constrained → prioritize compute resources."
+    },
+    {
+      "id": "requirements-work-together",
+      "title": "Requirements Work Together",
+      "paragraphs": [
+        "A real scenario may contain several requirements at once.",
+        "For example, a customer-facing application may need to remain available, protect sensitive data, stay within a strict budget, and handle high traffic.",
+        "You cannot choose the solution based only on cost. You have to balance availability, security, performance, and cost.",
+        "The CompTIA-style skill is identifying which requirement eliminates the wrong answers."
+      ],
+      "table": {
+        "caption": "Cloud resource requirement comparison",
+        "headers": ["Requirement", "Main question"],
+        "rows": [
+          ["Storage", "What data capacity, type, or access is needed?"],
+          ["Performance", "How fast must the workload operate?"],
+          ["Security", "What must be protected?"],
+          ["Cost", "What can the organization afford?"],
+          ["Availability", "How much downtime is acceptable?"],
+          ["Compliance", "What controls or rules must be followed?"],
+          ["Network", "How must systems communicate?"],
+          ["Compute", "How much processing power is needed?"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Running out of disk capacity → Storage",
+        "Application response is too slow → Performance",
+        "Unauthorized access must be prevented → Security",
+        "Spending exceeds the budget → Cost",
+        "Service must survive failures → Availability",
+        "Regulation requires specific controls → Compliance",
+        "Systems cannot communicate effectively → Network",
+        "CPU or memory is insufficient → Compute"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 2.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Performance vs. Compute",
+          "paragraphs": [
+            "Compute can affect performance, but performance problems are not automatically compute problems.",
+            "A slow application could be limited by CPU, storage, or network. Identify the actual bottleneck before increasing compute."
+          ]
+        },
+        {
+          "title": "Security vs. Compliance",
+          "paragraphs": [
+            "Security protects systems and data. Compliance satisfies required rules and controls.",
+            "A compliance requirement may require security controls, but the reason the control exists in the scenario matters."
+          ]
+        },
+        {
+          "title": "Availability vs. Performance",
+          "paragraphs": [
+            "Availability asks whether the service is accessible. Performance asks how well it operates while accessible.",
+            "A slow service may still be available. A fast server that is offline is not available."
+          ]
+        },
+        {
+          "title": "Cost vs. Everything Else",
+          "paragraphs": [
+            "The cheapest solution is not automatically correct. Choose the least costly solution that still meets all stated requirements."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Need more or faster data capacity → Storage requirement",
+        "Need faster workload response → Performance requirement",
+        "Need protection, isolation, or access control → Security requirement",
+        "Need to reduce spending → Cost requirement",
+        "Must survive failure or downtime → Availability requirement",
+        "Must satisfy a required standard or regulation → Compliance requirement",
+        "Need connectivity, bandwidth, or routing → Network requirement",
+        "Need more CPU or memory → Compute requirement"
+      ]
+    }
+  ]
+}
