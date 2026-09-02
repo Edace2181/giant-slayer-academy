@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "3",
+  "objective": "3.3",
+  "title": "Given a Scenario, Use Appropriate Backup and Recovery Methods",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud systems can fail, and data can be deleted, corrupted, encrypted by malware, damaged by configuration mistakes, or lost through infrastructure failure.",
+        "Organizations need backup and recovery methods that determine what gets backed up, where copies are stored, how frequently backups occur, how long they remain, how they are protected, and how data will be restored.",
+        "The main mental model is: create the recovery copy → protect it → test it → restore what is needed."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "How much data must be protected, where should the copy live, and how should it be restored when something goes wrong?"
+      ],
+      "callout": "Backup protects the copy. Recovery determines how that copy returns to service."
+    },
+    {
+      "id": "backup-types",
+      "title": "Backup Types",
+      "paragraphs": [
+        "CompTIA distinguishes full, incremental, and differential backups by asking what data gets copied during each backup."
+      ],
+      "entries": [
+        {
+          "title": "Full Backup",
+          "paragraphs": [
+            "A full backup copies all selected data.",
+            "It provides a complete backup set and straightforward restoration, but usually requires more storage and backup time.",
+            "Think: Copy everything."
+          ],
+          "recognitionCue": "All selected data is copied → full backup."
+        },
+        {
+          "title": "Incremental Backup",
+          "paragraphs": [
+            "An incremental backup copies changes made since the most recent backup, whether that backup was full or incremental.",
+            "Incremental backups can reduce backup time and storage use because each contains only the latest changes.",
+            "Think: Only what changed since the last backup."
+          ],
+          "recognitionCue": "Changes since the most recent backup → incremental."
+        },
+        {
+          "title": "Differential Backup",
+          "paragraphs": [
+            "A differential backup copies changes made since the last full backup.",
+            "Each differential continues comparing back to that full backup until another full backup occurs.",
+            "Think: Keep comparing back to the full."
+          ],
+          "recognitionCue": "Changes since the last full backup → differential."
+        }
+      ],
+      "table": {
+        "caption": "Backup type comparison",
+        "headers": ["Backup", "What gets copied?"],
+        "rows": [
+          ["Full", "Everything selected"],
+          ["Incremental", "Changes since the latest backup"],
+          ["Differential", "Changes since the latest full backup"]
+        ]
+      }
+    },
+    {
+      "id": "backup-locations",
+      "title": "Backup Locations",
+      "entries": [
+        {
+          "title": "On-Site Backup",
+          "paragraphs": [
+            "An on-site backup remains at the same primary location or environment.",
+            "It can provide fast local access and convenient recovery, but a disaster affecting the primary location may also affect the backup.",
+            "Think: The backup is close to home."
+          ],
+          "recognitionCue": "Backup stored at the primary site → on site."
+        },
+        {
+          "title": "Off-Site Backup",
+          "paragraphs": [
+            "An off-site backup is stored away from the primary location.",
+            "Geographic separation can protect data from site disasters, fires, floods, regional outages, and physical damage.",
+            "Think: If the building disappears, the backup should not disappear with it."
+          ],
+          "recognitionCue": "Backup stored away from the primary environment → off site."
+        }
+      ]
+    },
+    {
+      "id": "schedule",
+      "title": "Schedule",
+      "paragraphs": [
+        "A backup schedule defines when and how frequently backups occur, such as hourly, daily, weekly, or monthly.",
+        "The required frequency depends on how much recent data the organization can afford to lose.",
+        "Think: When do we make another recovery copy?"
+      ],
+      "callout": "If the question asks when backups occur → think schedule."
+    },
+    {
+      "id": "retention",
+      "title": "Retention",
+      "paragraphs": [
+        "Retention determines how long backup copies are kept.",
+        "Different periods can support business needs, compliance, historical recovery, and storage-cost management.",
+        "Think: How long do we keep the recovery copy?"
+      ],
+      "callout": "Schedule means make. Retention means keep."
+    },
+    {
+      "id": "replication",
+      "title": "Replication",
+      "paragraphs": [
+        "Replication copies data to another system or location and can improve availability, resilience, and recovery capability.",
+        "Replication can copy changes quickly, but harmful changes can also be replicated. Corruption, malicious encryption, or deletion may reach the replica.",
+        "Think: Keep another copy somewhere else."
+      ],
+      "callout": "Replication can support recovery, but it does not automatically provide the same protection as independent backup history."
+    },
+    {
+      "id": "encryption",
+      "title": "Encryption",
+      "paragraphs": [
+        "Backups may contain the same sensitive information as production systems. Encryption helps protect backup confidentiality.",
+        "It is especially important when backups are stored off site, data crosses networks, backup media could be stolen, or cloud storage is used.",
+        "Think: A backup is still sensitive data."
+      ],
+      "callout": "If backup confidentiality must be protected → think encryption."
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "paragraphs": [
+        "A backup that cannot be restored is not useful. CompTIA specifically includes testing for recoverability and integrity."
+      ],
+      "entries": [
+        {
+          "title": "Recoverability",
+          "paragraphs": [
+            "Recoverability verifies that data can actually be restored from the backup.",
+            "Think: Can we bring it back?"
+          ],
+          "recognitionCue": "Verify that a backup can successfully restore → recoverability."
+        },
+        {
+          "title": "Integrity",
+          "paragraphs": [
+            "Integrity verifies that backup data is complete and has not been improperly modified or corrupted.",
+            "Think: Did the copy remain correct?"
+          ],
+          "recognitionCue": "Verify that backup data is accurate and uncorrupted → integrity."
+        }
+      ]
+    },
+    {
+      "id": "recovery-types",
+      "title": "Recovery Types",
+      "entries": [
+        {
+          "title": "In-Place Recovery",
+          "paragraphs": [
+            "In-place recovery restores data or a system back into its original location or resource.",
+            "Think: Repair or restore the original."
+          ],
+          "recognitionCue": "Restore back into the original resource or location → in-place."
+        },
+        {
+          "title": "Parallel Recovery",
+          "paragraphs": [
+            "Parallel recovery restores the workload into another environment while the original environment remains separate.",
+            "Administrators can recover without immediately overwriting the original system.",
+            "Think: Build the recovered copy beside the original."
+          ],
+          "recognitionCue": "Restore to a separate environment alongside the original → parallel."
+        }
+      ]
+    },
+    {
+      "id": "recovery-options",
+      "title": "Recovery Options",
+      "entries": [
+        {
+          "title": "Bulk Recovery",
+          "paragraphs": [
+            "Bulk recovery restores a large amount of data or many resources together, such as an entire virtual machine, database, large dataset, or group of resources.",
+            "Think: Bring back the big chunk."
+          ],
+          "recognitionCue": "Restore a large quantity or resource set → bulk."
+        },
+        {
+          "title": "Granular Recovery",
+          "paragraphs": [
+            "Granular recovery restores a specific smaller item, such as one file, mailbox, database record, or configuration item.",
+            "Think: I only need that one thing."
+          ],
+          "recognitionCue": "Restore a specific individual item → granular."
+        }
+      ]
+    },
+    {
+      "id": "backup-and-recovery-example",
+      "title": "Backup and Recovery Example",
+      "paragraphs": [
+        "Suppose a company creates a full backup every Sunday, creates incremental backups each weekday, keeps backups for 90 days, stores copies in another region, encrypts them, and regularly restores test files.",
+        "That scenario contains full backup, incremental backup, schedule, retention, off-site location, encryption, and recoverability testing.",
+        "A CompTIA question may target only one piece, so identify the requirement the question is actually asking about."
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Copy everything → Full",
+        "Changes since the latest backup → Incremental",
+        "Changes since the last full backup → Differential",
+        "Backup near the primary environment → On site",
+        "Backup geographically separated → Off site",
+        "How often backups occur → Schedule",
+        "How long backups remain → Retention",
+        "Copy data elsewhere → Replication",
+        "Protect backup confidentiality → Encryption",
+        "Verify that restore works → Recoverability",
+        "Verify that data remains correct → Integrity",
+        "Restore the original environment → In-place",
+        "Restore into a separate environment → Parallel",
+        "Restore a large amount → Bulk",
+        "Restore one specific item → Granular"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 3.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Incremental vs. Differential",
+          "paragraphs": [
+            "Incremental copies changes since the most recent backup. Differential copies changes since the most recent full backup.",
+            "Memory hook: incremental looks back one backup; differential looks back to the full."
+          ]
+        },
+        {
+          "title": "Schedule vs. Retention",
+          "paragraphs": [
+            "Schedule determines when backups are made. Retention determines how long they remain."
+          ]
+        },
+        {
+          "title": "Backup vs. Replication",
+          "paragraphs": [
+            "Replication provides another copy, but it can also reproduce corruption, accidental deletion, or malicious changes.",
+            "Do not automatically treat replication as equivalent to a protected historical backup."
+          ]
+        },
+        {
+          "title": "Recoverability vs. Integrity",
+          "paragraphs": [
+            "Recoverability asks whether the backup can be restored. Integrity asks whether the backup is correct and unmodified."
+          ]
+        },
+        {
+          "title": "In-Place vs. Parallel",
+          "paragraphs": [
+            "In-place restores the original location or resource. Parallel restores into a separate environment."
+          ]
+        },
+        {
+          "title": "Bulk vs. Granular",
+          "paragraphs": [
+            "Bulk restores a large amount. Granular restores a specific item."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Everything → Full",
+        "Since the last backup → Incremental",
+        "Since the last full backup → Differential",
+        "Same location → On site",
+        "Different location → Off site",
+        "How often? → Schedule",
+        "How long? → Retention",
+        "Keep another copy → Replication",
+        "Protect backup confidentiality → Encryption",
+        "Can we restore it? → Recoverability",
+        "Is the copy correct? → Integrity",
+        "Restore the original → In-place",
+        "Restore beside the original → Parallel",
+        "Restore a lot → Bulk",
+        "Restore one thing → Granular"
+      ]
+    }
+  ]
+}

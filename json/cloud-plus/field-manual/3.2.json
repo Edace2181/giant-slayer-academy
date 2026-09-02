@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "3",
+  "objective": "3.2",
+  "title": "Given a Scenario, Configure Appropriate Scaling Approaches",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud workloads do not always need the same amount of resources. Demand may increase, decrease, follow predictable patterns, change suddenly, or respond to business events.",
+        "Scaling changes available resources so a workload can continue meeting demand efficiently.",
+        "CompTIA wants you to answer two different questions: when or why should scaling occur, and how should resources be scaled?"
+      ],
+      "callout": "Scaling approach = when or why scaling happens. Scaling type = what gets changed."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What causes the resource change, and should the environment add more instances or make existing instances larger?"
+      ],
+      "callout": "The trigger determines when. Horizontal or vertical determines how."
+    },
+    {
+      "id": "approaches",
+      "title": "Scaling Approaches",
+      "entries": [
+        {
+          "title": "Triggered Scaling",
+          "paragraphs": [
+            "Triggered scaling automatically changes resources when a defined condition occurs.",
+            "Instead of an administrator manually changing capacity, the environment responds to configured conditions.",
+            "Think: When this happens → scale."
+          ],
+          "recognitionCue": "If a condition automatically causes scaling → think triggered scaling."
+        },
+        {
+          "title": "Scheduled Scaling",
+          "paragraphs": [
+            "Scheduled scaling changes resources according to a predetermined time or schedule.",
+            "It works well when demand is predictable, such as increasing capacity before known business-hour traffic and reducing it afterward.",
+            "Think: We already know when the crowd is coming."
+          ],
+          "recognitionCue": "Predictable time-based resource change → scheduled scaling."
+        },
+        {
+          "title": "Manual Scaling",
+          "paragraphs": [
+            "Manual scaling requires an administrator to intentionally change resources.",
+            "It can fit rare scaling events, approval requirements, situations where automation is unnecessary, or environments requiring direct control.",
+            "Think: A human decides when to scale."
+          ],
+          "recognitionCue": "Administrator directly changes capacity → manual scaling."
+        }
+      ],
+      "table": {
+        "caption": "Scaling approach comparison",
+        "headers": ["Approach", "Recognition"],
+        "rows": [
+          ["Triggered", "A condition causes scaling"],
+          ["Scheduled", "A time or date causes scaling"],
+          ["Manual", "A human causes scaling"]
+        ]
+      }
+    },
+    {
+      "id": "triggered-scaling",
+      "title": "Triggered Scaling Conditions",
+      "entries": [
+        {
+          "title": "Trending",
+          "paragraphs": [
+            "Trending uses observed patterns to determine that demand is moving toward a point where scaling is needed.",
+            "For example, traffic may increase steadily toward normal capacity, allowing scaling before the workload becomes overwhelmed.",
+            "Think: The numbers are heading this way."
+          ],
+          "recognitionCue": "Observed trend indicates a future capacity need → trending trigger."
+        },
+        {
+          "title": "Load",
+          "paragraphs": [
+            "Load-based scaling changes resources according to current workload utilization.",
+            "Indicators can include CPU, memory, request volume, or connection count.",
+            "Think: The system is busy right now."
+          ],
+          "recognitionCue": "Current workload utilization triggers scaling → load."
+        },
+        {
+          "title": "Event",
+          "paragraphs": [
+            "Event-based scaling occurs when a particular event happens, such as a message entering a queue, a file being uploaded, a job beginning, or an application event occurring.",
+            "Think: Something happened → scale resources."
+          ],
+          "recognitionCue": "A specific occurrence triggers scaling → event."
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "title": "Scaling Types",
+      "entries": [
+        {
+          "title": "Horizontal Scaling",
+          "paragraphs": [
+            "Horizontal scaling increases or decreases the number of resource instances.",
+            "Instead of making one server dramatically larger, additional servers can share the workload.",
+            "Increasing instances is scaling out; reducing instances is scaling in.",
+            "Think: Add more machines."
+          ],
+          "recognitionCue": "Increase the number of instances → horizontal scaling."
+        },
+        {
+          "title": "Vertical Scaling",
+          "paragraphs": [
+            "Vertical scaling changes the capacity of an existing resource.",
+            "A virtual machine might grow from two CPUs and 4 GB of RAM to eight CPUs and 32 GB of RAM while remaining one virtual machine.",
+            "Increasing capacity is scaling up; reducing it is scaling down.",
+            "Think: Make the machine bigger."
+          ],
+          "recognitionCue": "Increase resources inside an existing instance → vertical scaling."
+        }
+      ],
+      "table": {
+        "caption": "Horizontal and vertical scaling comparison",
+        "headers": ["Type", "Main idea", "Recognition clue"],
+        "rows": [
+          ["Horizontal", "More instances", "Add servers or virtual machines"],
+          ["Vertical", "Bigger instance", "Add CPU or RAM"]
+        ]
+      }
+    },
+    {
+      "id": "combining-scaling-concepts",
+      "title": "Combining Scaling Concepts",
+      "paragraphs": [
+        "A scenario can describe both an approach and a type because they answer different questions.",
+        "If CPU reaches 80% and the cloud platform automatically launches two additional instances, the approach is triggered scaling based on load and the type is horizontal scaling.",
+        "If an existing virtual machine is increased from four CPUs to eight every Monday morning, the approach is scheduled and the type is vertical."
+      ],
+      "callout": "Approach and type are not competing answers—they describe different parts of scaling."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Condition causes automatic scaling → Triggered",
+        "Pattern indicates changing demand → Trending",
+        "CPU or request utilization triggers scaling → Load",
+        "Specific occurrence triggers scaling → Event",
+        "Scale at a predetermined time → Scheduled",
+        "Administrator changes resources → Manual",
+        "Add additional instances → Horizontal",
+        "Add CPU or RAM to an existing instance → Vertical"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 3.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Horizontal vs. Vertical",
+          "paragraphs": [
+            "Horizontal means more machines. Vertical means a bigger machine.",
+            "Adding three instances is horizontal; increasing RAM from 8 GB to 32 GB is vertical."
+          ]
+        },
+        {
+          "title": "Triggered vs. Scheduled",
+          "paragraphs": [
+            "Triggered scaling follows a condition or event. Scheduled scaling follows a clock or calendar.",
+            "If scaling is explicitly configured for 8:00 AM, it is scheduled even when the demand pattern is regular."
+          ]
+        },
+        {
+          "title": "Trending vs. Load",
+          "paragraphs": [
+            "Trending uses an observed direction or pattern. Load uses actual current utilization."
+          ]
+        },
+        {
+          "title": "Event vs. Load",
+          "paragraphs": [
+            "Event means something occurred. Load means resource usage reached a condition."
+          ]
+        },
+        {
+          "title": "Approach vs. Type",
+          "paragraphs": [
+            "Do not confuse what caused scaling with what scaling changed. Ask both questions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Condition causes a change → Triggered",
+        "Trend predicts increasing demand → Trending",
+        "System is currently overloaded → Load",
+        "Specific occurrence happens → Event",
+        "Clock or calendar → Scheduled",
+        "Administrator does it → Manual",
+        "Add more instances → Horizontal",
+        "Make an existing instance bigger → Vertical",
+        "Scale out or in → Horizontal",
+        "Scale up or down → Vertical"
+      ]
+    }
+  ]
+}

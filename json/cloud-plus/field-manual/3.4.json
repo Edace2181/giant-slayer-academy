@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "3",
+  "objective": "3.4",
+  "title": "Given a Scenario, Manage the Life Cycle of Cloud Resources",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud resources do not simply get deployed and remain unchanged forever. During their lifetime they may need to be patched, updated, tested, modified, replaced, or decommissioned.",
+        "Administrators also need to understand whether a resource contains data that should disappear with it or data that must survive.",
+        "The main idea is: deploy → maintain → update → test → protect required data → retire safely."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Where is the cloud resource in its life cycle, what maintenance does it need, and what must happen to its data when the resource changes or disappears?"
+      ],
+      "callout": "Maintain it while supported. Test changes before trusting them. Preserve persistent data. Remove resources safely when their life ends."
+    },
+    {
+      "id": "patches",
+      "title": "Patches",
+      "paragraphs": [
+        "A patch is a change applied to software or systems to correct a problem.",
+        "Patches can address security vulnerabilities, bugs, or stability problems in virtual machines, operating systems, applications, containers, and supporting services.",
+        "Think: Fix something that is wrong."
+      ],
+      "callout": "If a fix is applied to an existing system or software component → think patch."
+    },
+    {
+      "id": "updates",
+      "title": "Updates",
+      "paragraphs": [
+        "An update moves software or a system to a newer version or release.",
+        "Updates can introduce improvements, new features, compatibility changes, security improvements, and bug fixes."
+      ],
+      "entries": [
+        {
+          "title": "Major Update",
+          "paragraphs": [
+            "A major update is a significant version change that may contain large feature, architecture, compatibility, requirement, or behavior changes.",
+            "Major updates generally deserve closer compatibility and application testing because more behavior may change.",
+            "Think: A big version move."
+          ],
+          "recognitionCue": "Significant version or change level → major update."
+        },
+        {
+          "title": "Minor Update",
+          "paragraphs": [
+            "A minor update is a smaller change within the current product or version family.",
+            "It can include smaller improvements, bug fixes, minor features, or compatibility improvements.",
+            "Think: A smaller step forward."
+          ],
+          "recognitionCue": "Smaller version or update change → minor update."
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "paragraphs": [
+        "Changes to cloud resources should be tested before they are trusted in production.",
+        "Testing can determine whether a patch or update works correctly, breaks applications, changes dependencies, creates performance problems, or causes compatibility problems.",
+        "Think: Do not discover the problem after production users do."
+      ],
+      "callout": "If a change must be validated before relying on it → think testing."
+    },
+    {
+      "id": "patch-update-workflow",
+      "title": "Patch and Update Workflow",
+      "paragraphs": [
+        "A safe conceptual process is to identify the maintenance need, apply the change in a test environment, verify application and system behavior, deploy appropriately, and monitor the results.",
+        "The objective does not require one specific patch-management framework. The exam clue is that testing belongs before blindly applying major changes to important production resources."
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Data During the Resource Life Cycle",
+      "paragraphs": [
+        "The distinction between ephemeral and persistent data becomes especially important when cloud resources are restarted, recreated, scaled, replaced, or decommissioned."
+      ],
+      "entries": [
+        {
+          "title": "Ephemeral Data",
+          "paragraphs": [
+            "Ephemeral data is temporary data tied to the life of a resource or workload. If the resource disappears, the data may disappear too.",
+            "Examples include temporary processing data, cache data, and temporary files.",
+            "Think: The resource disappears, and temporary data can disappear with it."
+          ],
+          "recognitionCue": "Temporary data that does not need to survive resource replacement → ephemeral."
+        },
+        {
+          "title": "Persistent Data",
+          "paragraphs": [
+            "Persistent data must remain available beyond the life of the individual resource that currently uses it.",
+            "Examples include customer information, application databases, business files, and required records.",
+            "Think: The server may disappear. The important data cannot."
+          ],
+          "recognitionCue": "Data must survive resource deletion or replacement → persistent."
+        }
+      ],
+      "callout": "Before decommissioning a cloud resource, determine whether required persistent data must be retained, transferred, or protected."
+    },
+    {
+      "id": "decommissioning",
+      "title": "Decommissioning",
+      "paragraphs": [
+        "Decommissioning safely removes a cloud resource from service when it is no longer needed or should no longer be used.",
+        "Activities can include removing workloads, preserving required data, removing access, updating documentation, removing dependencies, and deleting the resource.",
+        "Think: Retire the resource correctly, not merely yank the plug."
+      ],
+      "callout": "If a cloud resource must be safely retired or removed → think decommissioning."
+    },
+    {
+      "id": "end-of-life-and-support",
+      "title": "End of Life and End of Support",
+      "entries": [
+        {
+          "title": "End of Life (EOL)",
+          "paragraphs": [
+            "End of life means a product or resource has reached the end of its intended product life cycle.",
+            "The organization may need to replace it, upgrade it, or migrate away from it.",
+            "Think: This product has reached the end of its road."
+          ],
+          "recognitionCue": "Product or resource reaches the end of its life cycle → end of life."
+        },
+        {
+          "title": "End of Support (EOS)",
+          "paragraphs": [
+            "End of support means the vendor or provider no longer provides normal support for the product or version.",
+            "Security fixes, technical assistance, compatibility support, or maintenance updates may disappear.",
+            "Think: You can keep using it, but the vendor is no longer standing behind it."
+          ],
+          "recognitionCue": "Vendor stops supporting a product or version → end of support."
+        }
+      ],
+      "callout": "End of life describes the product life cycle. End of support describes the vendor's support commitment."
+    },
+    {
+      "id": "lifecycle-example",
+      "title": "Life-Cycle Example",
+      "paragraphs": [
+        "An old cloud application is running on a version that will soon reach end of support.",
+        "A proper response can identify the unsupported version, test the replacement or update, migrate the application, preserve persistent data, verify the replacement, remove old access and dependencies, and decommission the old resource.",
+        "Think: Move what matters before destroying what does not."
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Correct a vulnerability or bug → Patch",
+        "Move to a newer release → Update",
+        "Significant version change → Major",
+        "Smaller version change → Minor",
+        "Validate a change before production → Testing",
+        "Temporary or disposable data → Ephemeral",
+        "Data must survive workload replacement → Persistent",
+        "Safely remove an old resource → Decommissioning",
+        "Product reaches its life-cycle end → End of life",
+        "Vendor no longer supports it → End of support"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 3.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Patch vs. Update",
+          "paragraphs": [
+            "A patch fixes a specific issue. An update moves software or a system to a newer release."
+          ]
+        },
+        {
+          "title": "Major vs. Minor Update",
+          "paragraphs": [
+            "A major update is a larger change with greater potential compatibility impact. A minor update is a smaller version change."
+          ]
+        },
+        {
+          "title": "Ephemeral vs. Persistent",
+          "paragraphs": [
+            "Ephemeral data is allowed to disappear with the resource. Persistent data must survive the resource.",
+            "If a temporary cloud instance is deleted but customer records must remain, the customer records are persistent."
+          ]
+        },
+        {
+          "title": "End of Life vs. End of Support",
+          "paragraphs": [
+            "End of life means the life cycle has ended. End of support means vendor support has ended. Either can justify replacement or decommissioning."
+          ]
+        },
+        {
+          "title": "Delete vs. Decommission",
+          "paragraphs": [
+            "Simply deleting a resource is not always the same as safely decommissioning it.",
+            "Before retirement, consider required data, dependencies, access, replacement, and documentation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Fix a problem → Patch",
+        "Move forward to a newer release → Update",
+        "Large version move → Major",
+        "Small version move → Minor",
+        "Verify before production → Testing",
+        "Temporary data → Ephemeral",
+        "Must survive the resource → Persistent",
+        "Retire safely → Decommissioning",
+        "Life cycle is over → End of life",
+        "Vendor stops helping or fixing → End of support"
+      ]
+    }
+  ]
+}
