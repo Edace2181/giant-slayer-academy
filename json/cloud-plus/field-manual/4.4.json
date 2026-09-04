@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.4",
+  "title": "Given a Scenario, Apply Security Best Practices",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud security is strongest when systems are designed securely from the beginning and continuously maintained.",
+        "CompTIA wants you to recognize practices that reduce trust, minimize exposure, protect data, secure credentials, and limit unnecessary permissions."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What security practice reduces the specific risk in the scenario?"
+      ],
+      "callout": "Reduce trust → Zero Trust. Secure configuration → benchmark or hardening. Fix a vulnerability → patching. Protect data → encryption. Limit access → least privilege. Protect credentials → secrets management."
+    },
+    {
+      "id": "zero-trust",
+      "title": "Zero Trust",
+      "paragraphs": [
+        "Zero Trust assumes that no user, system, or connection should automatically be trusted simply because of location or previous access.",
+        "Access should be explicitly verified. Think: Never trust automatically; verify access."
+      ],
+      "callout": "Internal location should not automatically grant trust → Zero Trust."
+    },
+    {
+      "id": "benchmarks",
+      "title": "Security Benchmarks",
+      "paragraphs": [
+        "A benchmark provides recommended secure configuration settings."
+      ],
+      "entries": [
+        {
+          "title": "Center for Internet Security (CIS) Benchmark",
+          "paragraphs": [
+            "The Center for Internet Security publishes security configuration benchmarks for many technologies.",
+            "Think: Independent secure configuration baseline."
+          ],
+          "recognitionCue": "The organization needs standardized secure configuration guidance → CIS benchmark."
+        },
+        {
+          "title": "Vendor-Specific Benchmark",
+          "paragraphs": [
+            "Cloud and technology vendors may publish security recommendations specifically for their own platforms.",
+            "Think: The manufacturer tells you how to securely configure its product."
+          ],
+          "recognitionCue": "Guidance is specifically tailored to one provider or product → vendor-specific benchmark."
+        }
+      ]
+    },
+    {
+      "id": "hardening",
+      "title": "Hardening",
+      "paragraphs": [
+        "Hardening reduces the attack surface by securely configuring the system.",
+        "Examples include disabling unnecessary services, removing unnecessary accounts, closing unused ports, and applying secure configuration settings.",
+        "Think: Remove everything the attacker does not need you to leave open."
+      ],
+      "callout": "Unnecessary functionality is being removed or locked down → hardening."
+    },
+    {
+      "id": "patching",
+      "title": "Patching",
+      "paragraphs": [
+        "Patching fixes known software vulnerabilities and defects."
+      ],
+      "callout": "A known software flaw needs correction → patching."
+    },
+    {
+      "id": "encryption",
+      "title": "Encryption",
+      "entries": [
+        {
+          "title": "Data in Transit",
+          "paragraphs": [
+            "Data in transit is information moving between systems. Encryption protects that information while it crosses networks.",
+            "Think: Protect data while traveling."
+          ],
+          "recognitionCue": "Information must be protected while moving → encryption in transit."
+        },
+        {
+          "title": "Data at Rest",
+          "paragraphs": [
+            "Data at rest is stored information, including databases, storage volumes, files, and backups.",
+            "Think: Protect data while sitting still."
+          ],
+          "recognitionCue": "Stored information must be protected → encryption at rest."
+        }
+      ]
+    },
+    {
+      "id": "secrets-management",
+      "title": "Secrets Management",
+      "paragraphs": [
+        "Secrets include sensitive credentials used by users, systems, and applications, such as passwords, API keys, tokens, and encryption keys.",
+        "Secrets management stores and controls these values securely rather than embedding them directly into application code.",
+        "Think: Do not hard-code the keys to the kingdom."
+      ],
+      "callout": "API keys or passwords should not appear in source code → secrets management."
+    },
+    {
+      "id": "api-security",
+      "title": "API Security",
+      "paragraphs": [
+        "APIs expose functions and data to other systems.",
+        "API security ensures those interfaces are properly authenticated, authorized, protected, and restricted.",
+        "Think: An API is a door. Secure the door."
+      ],
+      "callout": "Attackers could misuse an application interface → API security."
+    },
+    {
+      "id": "principle-of-least-privilege",
+      "title": "Principle of Least Privilege",
+      "paragraphs": [
+        "The principle of least privilege grants only the minimum access required to perform a job.",
+        "Think: Give exactly enough permission—and no more."
+      ],
+      "callout": "A user or application has excessive permissions → least privilege."
+    },
+    {
+      "id": "container-security",
+      "title": "Container Security",
+      "entries": [
+        {
+          "title": "Privileged Containers",
+          "paragraphs": [
+            "A privileged container has elevated permissions and greater access to underlying host capabilities. That increased power creates increased risk.",
+            "Think: A container with the master keys."
+          ],
+          "recognitionCue": "A container has extensive host-level permissions → privileged container."
+        },
+        {
+          "title": "Unprivileged Containers",
+          "paragraphs": [
+            "An unprivileged container runs with limited permissions. This reduces the damage the container may cause if compromised.",
+            "Think: A container gets only what it actually needs."
+          ],
+          "recognitionCue": "Container privileges should be minimized → unprivileged container."
+        },
+        {
+          "title": "File Access Permissions",
+          "paragraphs": [
+            "Container files and mounted resources should have appropriate permissions.",
+            "Think: A container should not read or modify files it has no business touching."
+          ],
+          "recognitionCue": "The issue concerns who can access container files → file access permissions."
+        }
+      ]
+    },
+    {
+      "id": "storage-security",
+      "title": "Storage Security",
+      "entries": [
+        {
+          "title": "Object Storage Security",
+          "paragraphs": [
+            "Object storage access must be restricted so unauthorized users cannot retrieve or modify stored objects.",
+            "Think: A cloud bucket should not become public because of an incorrect access setting."
+          ],
+          "recognitionCue": "Cloud objects are unintentionally publicly accessible → object storage security."
+        },
+        {
+          "title": "File Storage Security",
+          "paragraphs": [
+            "File storage security controls who can access shared files and directories."
+          ],
+          "recognitionCue": "Permissions on shared files or folders are the issue → file storage security."
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Do not trust based on location → Zero Trust",
+        "Standard secure configuration guidance → CIS",
+        "Provider-specific security recommendation → Vendor-specific benchmark",
+        "Disable unnecessary services → Hardening",
+        "Fix a known vulnerability → Patching",
+        "Protect traffic → Encryption in transit",
+        "Protect stored information → Encryption at rest",
+        "Protect API keys or passwords → Secrets management",
+        "Secure an exposed service interface → API security",
+        "Minimum permissions → Principle of least privilege",
+        "Container has elevated host access → Privileged",
+        "Restrict container rights → Unprivileged",
+        "Restrict container files → File access permissions",
+        "Restrict object access → Object storage security",
+        "Restrict shared file access → File storage security"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Hardening vs. Patching",
+          "paragraphs": [
+            "Hardening reduces exposure through configuration. Patching fixes software flaws."
+          ]
+        },
+        {
+          "title": "Encryption at Rest vs. In Transit",
+          "paragraphs": [
+            "Moving data is in transit. Stored data is at rest."
+          ]
+        },
+        {
+          "title": "Least Privilege vs. Zero Trust",
+          "paragraphs": [
+            "Least privilege says to grant minimum permissions. Zero Trust says not to trust automatically and to verify access explicitly. They complement each other but are different concepts."
+          ]
+        },
+        {
+          "title": "Privileged vs. Unprivileged Container",
+          "paragraphs": [
+            "If elevated host access is unnecessary, an unprivileged container is safer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Verify every access request → Zero Trust",
+        "Independent secure baseline → CIS",
+        "Provider's secure settings → Vendor-specific benchmark",
+        "Remove unnecessary functionality → Hardening",
+        "Fix vulnerability → Patching",
+        "Protect moving data → Encryption in transit",
+        "Protect stored data → Encryption at rest",
+        "Protect credentials or keys → Secrets management",
+        "Protect application interface → API security",
+        "Minimum required rights → Least privilege",
+        "Elevated container rights → Privileged",
+        "Reduced container rights → Unprivileged",
+        "Publicly exposed objects → Object storage security issue",
+        "Incorrect shared-file permissions → File storage security issue"
+      ]
+    }
+  ]
+}

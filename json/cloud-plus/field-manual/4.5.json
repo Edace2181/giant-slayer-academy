@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.5",
+  "title": "Given a Scenario, Apply Security Controls in the Cloud",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Security best practices guide how systems should be designed. Security controls are the actual protections used to detect, block, restrict, or prevent threats.",
+        "CompTIA wants you to recognize which control addresses a specific problem."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What exactly needs protection: the endpoint, the data, the network, the application, or the identity?"
+      ],
+      "callout": "Identify the threat target → choose the control closest to that target."
+    },
+    {
+      "id": "endpoint-protection",
+      "title": "Endpoint Protection",
+      "paragraphs": [
+        "Endpoint protection secures individual systems such as virtual machines, servers, and workstations.",
+        "It may detect or block malicious activity occurring on the device.",
+        "Think: Protect the machine itself."
+      ],
+      "callout": "Malware or malicious activity must be stopped on individual systems → endpoint protection."
+    },
+    {
+      "id": "data-loss-prevention",
+      "title": "Data Loss Prevention (DLP)",
+      "paragraphs": [
+        "Data loss prevention helps prevent sensitive information from leaving authorized locations or being used improperly.",
+        "Think: Stop sensitive data from walking out the door."
+      ],
+      "callout": "Sensitive information is being copied, transmitted, or exposed improperly → DLP."
+    },
+    {
+      "id": "intrusion-detection-and-prevention",
+      "title": "Intrusion Prevention System / Intrusion Detection System (IPS/IDS)",
+      "entries": [
+        {
+          "title": "Intrusion Detection System (IDS)",
+          "paragraphs": [
+            "An IDS watches activity and identifies signs of suspicious or malicious behavior. Its primary function is detection.",
+            "Think: See the attack → sound the alarm."
+          ],
+          "recognitionCue": "The requirement is detecting suspicious network activity → IDS."
+        },
+        {
+          "title": "Intrusion Prevention System (IPS)",
+          "paragraphs": [
+            "An IPS detects malicious activity and can actively block or prevent it.",
+            "Think: See the attack → stop the attack."
+          ],
+          "recognitionCue": "Malicious activity must automatically be blocked → IPS."
+        }
+      ],
+      "callout": "IDS detects. IPS detects and prevents."
+    },
+    {
+      "id": "ddos-protection",
+      "title": "Distributed Denial-of-Service (DDoS) Protection",
+      "paragraphs": [
+        "DDoS protection helps defend services against distributed denial-of-service attacks that attempt to overwhelm resources with traffic.",
+        "Think: Keep the flood from drowning the service."
+      ],
+      "callout": "Massive distributed traffic is attempting to exhaust cloud resources → DDoS protection."
+    },
+    {
+      "id": "iam-policies",
+      "title": "Identity and Access Management (IAM) Policies",
+      "paragraphs": [
+        "IAM policies define which identities can perform which actions on resources.",
+        "Think: Who can do what to which resource?"
+      ],
+      "callout": "Permissions for users, roles, or services must be controlled → IAM policy."
+    },
+    {
+      "id": "firewall-controls",
+      "title": "Firewall Controls",
+      "paragraphs": [
+        "A firewall controls network traffic according to defined rules. CompTIA highlights three cloud firewall-related controls."
+      ],
+      "entries": [
+        {
+          "title": "Network Access Control List (ACL)",
+          "paragraphs": [
+            "A network ACL controls traffic using network rules such as source, destination, protocol, and port.",
+            "Think: Network rule list."
+          ],
+          "recognitionCue": "Traffic must be allowed or denied at a network or subnet level → network ACL."
+        },
+        {
+          "title": "Web Application Firewall (WAF)",
+          "paragraphs": [
+            "A WAF protects web applications by inspecting web application traffic. It focuses on application-layer web requests.",
+            "Think: A firewall specifically watching web traffic."
+          ],
+          "recognitionCue": "Malicious HTTP or web requests must be filtered → WAF."
+        },
+        {
+          "title": "Network Security Group",
+          "paragraphs": [
+            "A network security group controls allowed network traffic associated with cloud resources or groups of resources.",
+            "Think: Cloud resource firewall rules."
+          ],
+          "recognitionCue": "Inbound or outbound traffic to cloud resources must be restricted → network security group."
+        }
+      ],
+      "table": {
+        "caption": "Security control comparison",
+        "headers": ["Control", "Best clue"],
+        "rows": [
+          ["Endpoint protection", "Protect a system"],
+          ["DLP", "Stop sensitive data loss"],
+          ["IDS", "Detect an attack"],
+          ["IPS", "Block an attack"],
+          ["DDoS protection", "Handle a traffic flood"],
+          ["IAM policy", "Identity permissions"],
+          ["Network ACL", "Network or subnet traffic rules"],
+          ["WAF", "Web application traffic"],
+          ["Security group", "Cloud resource traffic"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Malware protection on a virtual machine → Endpoint protection",
+        "Stop a confidential file from leaving → DLP",
+        "Alert on malicious network traffic → IDS",
+        "Automatically block malicious network traffic → IPS",
+        "Massive traffic flood → DDoS protection",
+        "A user has excessive cloud permissions → IAM policy",
+        "Filter subnet or network traffic → Network ACL",
+        "Block malicious web requests → WAF",
+        "Restrict inbound or outbound instance traffic → Network security group"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "IDS vs. IPS",
+          "paragraphs": [
+            "IDS sees. IPS stops."
+          ]
+        },
+        {
+          "title": "WAF vs. Network Firewall Controls",
+          "paragraphs": [
+            "A WAF focuses specifically on web application traffic. If an attack targets HTTP application requests, choose WAF. If the question is simply controlling general network traffic, choose an ACL, security group, or other firewall control."
+          ]
+        },
+        {
+          "title": "IAM Policy vs. Firewall",
+          "paragraphs": [
+            "IAM controls identity permissions. A firewall controls network traffic.",
+            "A user unauthorized to delete a cloud database is an IAM issue. A host unauthorized to connect on a port is a network-control issue."
+          ]
+        },
+        {
+          "title": "DLP vs. Encryption",
+          "paragraphs": [
+            "Encryption protects confidentiality. DLP focuses on preventing unauthorized data movement or disclosure."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Protect a virtual machine or endpoint → Endpoint protection",
+        "Stop sensitive data leaving → DLP",
+        "Detect intrusion → IDS",
+        "Block intrusion → IPS",
+        "Protect against a traffic flood → DDoS protection",
+        "Control identity permissions → IAM policy",
+        "Subnet or network filtering → Network ACL",
+        "Web application filtering → WAF",
+        "Cloud-resource network rules → Network security group",
+        "Detect → IDS",
+        "Prevent → IPS",
+        "Identity → IAM",
+        "Web request → WAF"
+      ]
+    }
+  ]
+}

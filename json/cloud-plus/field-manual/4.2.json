@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.2",
+  "title": "Compare and Contrast Aspects of Compliance and Regulation",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud organizations cannot store and process data however they want.",
+        "Different data may be subject to legal requirements, contract requirements, geographic restrictions, industry standards, and retention requirements.",
+        "CompTIA wants you to recognize what requirement is controlling the data and why."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the scenario asking who controls the data, where it may physically exist, how sensitive it is, or how long it must be preserved?"
+      ],
+      "callout": "Ownership → who controls it. Locality and sovereignty → where it exists and which laws apply. Classification → how sensitive it is. Retention → how long it stays."
+    },
+    {
+      "id": "data-sovereignty",
+      "title": "Data Sovereignty",
+      "paragraphs": [
+        "Data sovereignty means data is subject to the laws and regulations of the country or jurisdiction where that data is located.",
+        "Think: Where the data lives can determine which law rules it."
+      ],
+      "callout": "Geographic location determines which laws apply to data → data sovereignty."
+    },
+    {
+      "id": "data-ownership",
+      "title": "Data Ownership",
+      "paragraphs": [
+        "Data ownership identifies who has authority and responsibility over the data.",
+        "An organization may use a cloud provider to store information while the organization still owns that data.",
+        "Think: The provider stores it; that does not automatically mean the provider owns it."
+      ],
+      "callout": "Who has responsibility or control over the information → data ownership."
+    },
+    {
+      "id": "data-locality",
+      "title": "Data Locality",
+      "paragraphs": [
+        "Data locality concerns the physical or geographic location where data is stored or processed.",
+        "An organization may require certain data to remain within a country, within a region, or within a specific geographic boundary.",
+        "Think: Where exactly is my data?"
+      ],
+      "callout": "Data must remain in a particular place → data locality."
+    },
+    {
+      "id": "sovereignty-vs-locality",
+      "title": "Data Sovereignty vs. Data Locality",
+      "paragraphs": [
+        "Data locality asks where data is located. Data sovereignty asks which jurisdiction's laws apply because of that location.",
+        "The organization can own data that is stored in a provider's facility; ownership and location are separate questions."
+      ]
+    },
+    {
+      "id": "data-classification",
+      "title": "Data Classification",
+      "paragraphs": [
+        "Data classification places information into categories based on characteristics such as sensitivity or importance.",
+        "Different classifications may require different protections. Not every piece of data deserves the same security treatment."
+      ],
+      "callout": "Information must be categorized according to sensitivity → data classification."
+    },
+    {
+      "id": "data-retention",
+      "title": "Data Retention",
+      "paragraphs": [
+        "Data retention defines how long information must be kept.",
+        "Different requirements may force an organization to retain information even when it would otherwise prefer to delete it."
+      ],
+      "entries": [
+        {
+          "title": "Litigation Hold",
+          "paragraphs": [
+            "A litigation hold prevents relevant data from being deleted when it may be needed for legal proceedings.",
+            "Normal deletion or retention schedules may need to be suspended. Think: A legal case says not to touch that data."
+          ],
+          "recognitionCue": "Data must be preserved because of current or expected litigation → litigation hold."
+        },
+        {
+          "title": "Contractual Retention",
+          "paragraphs": [
+            "A contract may require data to remain available for a defined period. Think: We agreed to keep it."
+          ],
+          "recognitionCue": "A contract dictates how long data must remain → contractual retention."
+        },
+        {
+          "title": "Regulatory Retention",
+          "paragraphs": [
+            "Laws or regulations may require certain records to be kept for a specified period. Think: The rule says we must keep it."
+          ],
+          "recognitionCue": "Government or industry regulation dictates retention → regulatory retention."
+        }
+      ]
+    },
+    {
+      "id": "industry-standards",
+      "title": "Industry Standards",
+      "entries": [
+        {
+          "title": "Systems and Organization Controls 2 (SOC 2)",
+          "paragraphs": [
+            "SOC 2 deals with controls used by service organizations to protect customer information and operate trustworthy services.",
+            "Think: Service organization controls and assurance."
+          ],
+          "recognitionCue": "A cloud or service provider needs independent assurance around organizational controls → SOC 2."
+        },
+        {
+          "title": "Payment Card Industry Data Security Standard (PCI DSS)",
+          "paragraphs": [
+            "PCI DSS applies to environments that store, process, or transmit payment card information.",
+            "Think: Credit or debit card data."
+          ],
+          "recognitionCue": "The environment handles payment card data → PCI DSS."
+        },
+        {
+          "title": "International Organization for Standardization (ISO) 27001",
+          "paragraphs": [
+            "ISO/IEC 27001 provides requirements for establishing and maintaining an information security management system.",
+            "Think: Formal, organization-wide information security management."
+          ],
+          "recognitionCue": "An internationally recognized information security management framework → ISO 27001."
+        },
+        {
+          "title": "Cloud Security Alliance",
+          "paragraphs": [
+            "The Cloud Security Alliance (CSA) develops cloud-focused security guidance and resources.",
+            "Think: Security guidance specifically aimed at cloud computing."
+          ],
+          "recognitionCue": "Cloud-specific security guidance or best practices → Cloud Security Alliance."
+        }
+      ]
+    },
+    {
+      "id": "compliance-comparison",
+      "title": "Compliance Comparison",
+      "table": {
+        "caption": "Compliance and regulation recognition",
+        "headers": ["Concept", "Recognition clue"],
+        "rows": [
+          ["Data sovereignty", "Laws based on where data resides"],
+          ["Data ownership", "Who controls or is responsible for data"],
+          ["Data locality", "Where data physically or geographically exists"],
+          ["Data classification", "Sensitivity category"],
+          ["Litigation hold", "Preserve for a legal case"],
+          ["Contractual retention", "Agreement says to keep it"],
+          ["Regulatory retention", "Regulation says to keep it"],
+          ["SOC 2", "Service organization controls"],
+          ["PCI DSS", "Payment cards"],
+          ["ISO 27001", "Information security management system"],
+          ["CSA", "Cloud security guidance"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Data Sovereignty vs. Data Locality",
+          "paragraphs": [
+            "Locality means where. Sovereignty means law or jurisdiction."
+          ]
+        },
+        {
+          "title": "Ownership vs. Location",
+          "paragraphs": [
+            "The organization can own data that is stored in a provider's facility. Ownership and location are separate questions."
+          ]
+        },
+        {
+          "title": "Litigation Hold vs. Normal Retention",
+          "paragraphs": [
+            "A litigation hold can override routine deletion. If legal proceedings require preservation, do not delete the data merely because the normal retention period expired."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Which country's law applies? → Data sovereignty",
+        "Who controls the data? → Data ownership",
+        "Where must data physically remain? → Data locality",
+        "How sensitive is the data? → Data classification",
+        "Preserve for lawsuit → Litigation hold",
+        "Contract requires retention → Contractual",
+        "Regulation requires retention → Regulatory",
+        "Payment card data → PCI DSS",
+        "Service organization control assurance → SOC 2",
+        "Information security management system → ISO 27001",
+        "Cloud-focused security guidance → Cloud Security Alliance"
+      ]
+    }
+  ]
+}

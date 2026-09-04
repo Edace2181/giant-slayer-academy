@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.1",
+  "title": "Explain Vulnerability Management Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Vulnerability management is the continuous process of finding weaknesses, deciding how serious they are, fixing them, and confirming that the risk has been reduced.",
+        "CompTIA wants you to understand this flow: define scope → identify vulnerabilities → assess risk → remediate.",
+        "The key is recognizing where in the vulnerability-management process the scenario currently is."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Are we deciding what to scan, finding weaknesses, deciding which ones matter most, or fixing them?"
+      ],
+      "callout": "Scope → Identification → Assessment → Remediation."
+    },
+    {
+      "id": "steps",
+      "title": "Vulnerability Management Steps",
+      "paragraphs": [
+        "Each step answers a different operational question. Follow the scenario from defining the Scanning Scope through corrective action."
+      ],
+      "entries": [
+        {
+          "title": "Scanning Scope",
+          "paragraphs": [
+            "Before scanning begins, the organization must determine what is included. The scope could include specific cloud resources, applications, virtual machines, networks, containers, or particular environments.",
+            "Poorly defined scope can miss important systems, waste resources, or scan systems that should not be included.",
+            "Think: Before looking for problems, decide where you are allowed and supposed to look."
+          ],
+          "recognitionCue": "The question asks which systems or resources should be examined → scanning scope."
+        },
+        {
+          "title": "Identification",
+          "paragraphs": [
+            "Identification is the process of discovering potential vulnerabilities.",
+            "Scanning tools may detect missing patches, weak configurations, known software vulnerabilities, and exposed services.",
+            "Think: Find the weakness."
+          ],
+          "recognitionCue": "The vulnerability has just been discovered → identification."
+        },
+        {
+          "title": "Assessment",
+          "paragraphs": [
+            "Finding a vulnerability does not automatically mean it is the highest priority. Assessment determines the seriousness and potential impact of the weakness.",
+            "Administrators may consider severity, exploitability, the affected resource, business importance, and exposure.",
+            "Think: We found it. Now how dangerous is it?"
+          ],
+          "recognitionCue": "The organization is determining risk or priority → assessment."
+        },
+        {
+          "title": "Remediation",
+          "paragraphs": [
+            "Remediation is the action taken to reduce or eliminate the vulnerability.",
+            "Corrective actions can include applying a patch, changing a configuration, removing an unnecessary service, or updating software.",
+            "Think: Fix the weakness."
+          ],
+          "recognitionCue": "Action is being taken to eliminate the vulnerability → remediation."
+        }
+      ],
+      "table": {
+        "caption": "Vulnerability management flow",
+        "headers": ["Step", "Main question"],
+        "rows": [
+          ["Scanning scope", "What are we examining?"],
+          ["Identification", "What weaknesses exist?"],
+          ["Assessment", "How serious are they?"],
+          ["Remediation", "How do we fix them?"]
+        ]
+      }
+    },
+    {
+      "id": "common-vulnerabilities-and-exposures",
+      "title": "Common Vulnerabilities and Exposures (CVEs)",
+      "paragraphs": [
+        "Common Vulnerabilities and Exposures (CVE) provides standardized identifiers for publicly known cybersecurity vulnerabilities.",
+        "A CVE identifier lets different tools, vendors, and administrators refer to the same known vulnerability using a common name.",
+        "A CVE tells you which known vulnerability is being discussed. It does not by itself tell you everything about the organization's actual risk; that still requires assessment.",
+        "Think: CVE = vulnerability ID card."
+      ],
+      "callout": "A standardized identifier for a publicly known vulnerability → CVE."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Determine which systems will be scanned → Scanning scope",
+        "Discover missing patches or vulnerabilities → Identification",
+        "Rank vulnerabilities by seriousness → Assessment",
+        "Patch or reconfigure a vulnerable system → Remediation",
+        "Standard identifier for a publicly known vulnerability → CVE"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Identification vs. Assessment",
+          "paragraphs": [
+            "Identification finds a vulnerability. Assessment evaluates it.",
+            "A scanner reporting a vulnerability is identification. The security team deciding it presents critical business risk is assessment."
+          ]
+        },
+        {
+          "title": "Assessment vs. Remediation",
+          "paragraphs": [
+            "Assessment decides priority. Remediation takes corrective action."
+          ]
+        },
+        {
+          "title": "CVE vs. Vulnerability Severity",
+          "paragraphs": [
+            "A CVE identifies a known vulnerability. It is not itself the organization's complete risk assessment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Decide what to scan → Scanning scope",
+        "Find vulnerability → Identification",
+        "Determine severity or priority → Assessment",
+        "Fix vulnerability → Remediation",
+        "Known vulnerability identifier → CVE",
+        "Found it → Identification",
+        "How bad is it? → Assessment",
+        "Fix it → Remediation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.3",
+  "title": "Given a Scenario, Implement Identity and Access Management",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Identity and access management answers several different questions: Who are you? How do you prove it? What are you allowed to do? How do we record what you did?",
+        "CompTIA separates IAM into secure access methods, authentication, authorization, and accounting.",
+        "A useful mental model is: Authentication → Who are you? Authorization → What can you do? Accounting → What did you do?"
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is this scenario establishing identity, granting permissions, accessing cloud systems, or recording activity?"
+      ],
+      "callout": "Prove identity → authentication. Grant rights → authorization. Record actions → accounting."
+    },
+    {
+      "id": "secure-access-management-environment",
+      "title": "Secure Access to the Cloud Management Environment",
+      "paragraphs": [
+        "The management environment is where administrators or applications control cloud resources. CompTIA includes several ways to access it."
+      ],
+      "entries": [
+        {
+          "title": "Programmatic Access",
+          "paragraphs": [
+            "Programmatic access allows software or scripts to interact with cloud management services without a human clicking through a portal."
+          ]
+        },
+        {
+          "title": "Application Programming Interface (API)",
+          "paragraphs": [
+            "An API exposes defined operations that software can call. Think: Software talks directly to the cloud service."
+          ],
+          "recognitionCue": "An application directly requests cloud operations → API."
+        },
+        {
+          "title": "Software Development Kit (SDK)",
+          "paragraphs": [
+            "An SDK provides libraries and tools developers can use to build applications that interact with cloud APIs.",
+            "Think: Developer toolbox for working with the API."
+          ],
+          "recognitionCue": "Developers need language-specific libraries or tools to access cloud services → SDK."
+        },
+        {
+          "title": "Command-Line Interface (CLI)",
+          "paragraphs": [
+            "A CLI lets administrators manage cloud resources using typed commands.",
+            "Think: Cloud administration from the terminal."
+          ],
+          "recognitionCue": "An administrator uses commands or scripts rather than a graphical portal → CLI."
+        },
+        {
+          "title": "Web Portal",
+          "paragraphs": [
+            "A web portal provides browser-based graphical cloud management. Think: Point, click, configure."
+          ],
+          "recognitionCue": "An administrator manages cloud resources through a browser GUI → web portal."
+        }
+      ]
+    },
+    {
+      "id": "secure-access-cloud-resources",
+      "title": "Secure Access to Cloud Resources",
+      "paragraphs": [
+        "Managing the cloud environment and connecting to resources inside it are not always the same thing."
+      ],
+      "entries": [
+        {
+          "title": "API",
+          "paragraphs": [
+            "Applications may directly access a cloud resource through its API."
+          ],
+          "recognitionCue": "Application-to-service access → API."
+        },
+        {
+          "title": "Secure Shell (SSH)",
+          "paragraphs": [
+            "SSH provides secure remote command-line access and is commonly associated with administering Linux and Unix-like systems.",
+            "Think: Secure remote terminal."
+          ],
+          "recognitionCue": "Encrypted command-line access to a server → SSH."
+        },
+        {
+          "title": "Remote Desktop Protocol (RDP)",
+          "paragraphs": [
+            "RDP provides graphical remote desktop access and is commonly associated with Windows systems.",
+            "Think: Remote Windows desktop."
+          ],
+          "recognitionCue": "A remote graphical Windows session → RDP."
+        },
+        {
+          "title": "Bastion Host",
+          "paragraphs": [
+            "A bastion host is a specially controlled system used as a secure access point into otherwise restricted systems.",
+            "Instead of exposing every internal virtual machine directly, administrators first connect to the bastion.",
+            "Think: Guarded front door into the protected network."
+          ],
+          "recognitionCue": "A controlled jump point into private cloud resources → bastion host."
+        }
+      ]
+    },
+    {
+      "id": "authentication-models",
+      "title": "Authentication Models",
+      "entries": [
+        {
+          "title": "Local Users",
+          "paragraphs": [
+            "Local users are identities maintained directly within the system or cloud environment. Think: The account lives here."
+          ],
+          "recognitionCue": "The identity is created and managed directly on the target environment → local user."
+        },
+        {
+          "title": "Federation",
+          "paragraphs": [
+            "Federation allows an identity established in one system or organization to be trusted by another.",
+            "Think: Prove who you are over there, and we will trust it here."
+          ],
+          "recognitionCue": "Users authenticate through one identity system and gain access to another environment → federation."
+        },
+        {
+          "title": "Security Assertion Markup Language (SAML)",
+          "paragraphs": [
+            "SAML exchanges authentication and authorization information between identity systems.",
+            "It is strongly associated with enterprise federation and single sign-on. Think: The enterprise identity provider tells the cloud service who you are."
+          ],
+          "recognitionCue": "Enterprise SSO or federation uses identity assertions → SAML."
+        },
+        {
+          "title": "Token-Based Authentication",
+          "paragraphs": [
+            "Token-based authentication uses a token representing an authenticated identity or session.",
+            "Instead of repeatedly transmitting a password, the system can use the token. Think: Show the trusted pass."
+          ],
+          "recognitionCue": "Access depends on a generated security token → token-based authentication."
+        },
+        {
+          "title": "Directory-Based Authentication",
+          "paragraphs": [
+            "Directory-based authentication relies on a centralized directory containing user identities and related information.",
+            "Think: Central employee identity book."
+          ],
+          "recognitionCue": "Accounts are authenticated against a centralized directory → directory-based authentication."
+        },
+        {
+          "title": "Multifactor Authentication (MFA)",
+          "paragraphs": [
+            "MFA requires more than one authentication factor. Typical categories are something you know, something you have, and something you are.",
+            "Think: A password alone is not enough."
+          ],
+          "recognitionCue": "Two or more different authentication factors are required → MFA."
+        },
+        {
+          "title": "OpenID Connect",
+          "paragraphs": [
+            "OpenID Connect (OIDC) is an identity layer commonly used to authenticate users in modern applications.",
+            "Think: Modern application identity and authentication."
+          ],
+          "recognitionCue": "A modern web or application service needs identity information during authentication → OpenID Connect."
+        }
+      ]
+    },
+    {
+      "id": "authorization-models",
+      "title": "Authorization Models",
+      "paragraphs": [
+        "After authentication proves identity, authorization determines permissions."
+      ],
+      "entries": [
+        {
+          "title": "Role-Based Access Control",
+          "paragraphs": [
+            "Role-based access control (RBAC) grants permissions based on a user's role, such as administrator, developer, auditor, or help desk.",
+            "Think: Your job role determines your permissions."
+          ],
+          "recognitionCue": "Access is assigned based on job function → RBAC."
+        },
+        {
+          "title": "Group-Based Access Control",
+          "paragraphs": [
+            "Permissions are assigned to groups, and users receive those permissions through group membership.",
+            "Think: Join the group → inherit its access."
+          ],
+          "recognitionCue": "Permissions follow group membership → group-based access control."
+        },
+        {
+          "title": "OAuth 2.0",
+          "paragraphs": [
+            "OAuth 2.0 allows a user or application to grant limited access to resources without sharing the user's password with the requesting application.",
+            "Think: You can access this resource on my behalf, but only what I authorize."
+          ],
+          "recognitionCue": "One application needs delegated access to another service → OAuth 2.0."
+        },
+        {
+          "title": "Discretionary Access",
+          "paragraphs": [
+            "With discretionary access, the owner of a resource can decide who receives access.",
+            "Think: I own it, so I choose who gets in."
+          ],
+          "recognitionCue": "The resource owner determines permissions → discretionary access."
+        }
+      ]
+    },
+    {
+      "id": "accounting",
+      "title": "Accounting",
+      "paragraphs": [
+        "Accounting tracks activity associated with identities."
+      ],
+      "entries": [
+        {
+          "title": "Audit Trail",
+          "paragraphs": [
+            "An audit trail records actions and events so administrators can determine who performed an action, what was changed, and when it occurred.",
+            "Think: Who did what, and when?"
+          ],
+          "recognitionCue": "Actions need to be traceable to an identity → audit trail."
+        }
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "IAM Recognition Cues",
+      "bullets": [
+        "Software directly controls cloud → API",
+        "Developer libraries for cloud interaction → SDK",
+        "Terminal-based cloud administration → CLI",
+        "Browser management → Web portal",
+        "Secure remote command line → SSH",
+        "Remote Windows GUI → RDP",
+        "Controlled jump system → Bastion host",
+        "Identity lives on the system → Local user",
+        "One identity provider is trusted elsewhere → Federation",
+        "Enterprise SSO assertions → SAML",
+        "Security token proves a session → Token-based",
+        "Central identity repository → Directory-based",
+        "Multiple authentication factors → MFA",
+        "Modern application authentication → OpenID Connect",
+        "Job determines permission → RBAC",
+        "Group determines permission → Group-based",
+        "Delegated authorization → OAuth 2.0",
+        "Owner decides access → Discretionary",
+        "Record user actions → Audit trail"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Authentication vs. Authorization",
+          "paragraphs": [
+            "Authentication asks who you are. Authorization asks what you may do."
+          ]
+        },
+        {
+          "title": "OpenID Connect vs. OAuth 2.0",
+          "paragraphs": [
+            "OpenID Connect provides authentication and identity. OAuth 2.0 provides authorization and delegated access."
+          ]
+        },
+        {
+          "title": "SAML vs. OAuth",
+          "paragraphs": [
+            "SAML strongly points toward enterprise federation and SSO. OAuth points toward delegated authorization."
+          ]
+        },
+        {
+          "title": "SSH vs. RDP",
+          "paragraphs": [
+            "SSH provides a remote command line. RDP provides a remote graphical desktop."
+          ]
+        },
+        {
+          "title": "Bastion Host vs. Direct Access",
+          "paragraphs": [
+            "A bastion host reduces the need to expose every internal system directly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Software calls cloud service → API",
+        "Developer toolkit → SDK",
+        "Terminal cloud management → CLI",
+        "Browser cloud management → Web portal",
+        "Secure terminal into resource → SSH",
+        "Remote Windows desktop → RDP",
+        "Secure jump point → Bastion host",
+        "Identity stored locally → Local user",
+        "Trusted external identity → Federation",
+        "Enterprise SSO assertion → SAML",
+        "Temporary identity or session proof → Token",
+        "Central directory → Directory-based",
+        "Multiple factors → MFA",
+        "Modern identity authentication → OpenID Connect",
+        "Permissions by job → RBAC",
+        "Permissions by membership → Group-based",
+        "Delegated authorization → OAuth 2.0",
+        "Owner chooses permission → Discretionary",
+        "Who did what? → Audit trail"
+      ]
+    }
+  ]
+}

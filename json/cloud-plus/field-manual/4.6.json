@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "4",
+  "objective": "4.6",
+  "title": "Given a Scenario, Monitor Suspicious Activities to Identify Common Attacks",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud defenders need to recognize when normal activity becomes suspicious.",
+        "CompTIA wants you to examine events, changes from normal behavior, exposed services, and signs of common attacks.",
+        "The core mental model is: know normal → identify abnormal → connect the symptom to the attack."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What changed from normal behavior, and which attack best explains that change?"
+      ],
+      "callout": "Unexpected activity + unusual resource usage + exposed service + suspicious user behavior → investigate the likely attack."
+    },
+    {
+      "id": "event-monitoring",
+      "title": "Event Monitoring",
+      "paragraphs": [
+        "Event monitoring reviews system, application, network, and security activity for suspicious behavior.",
+        "Events may reveal failed logins, configuration changes, unusual network activity, new processes, and resource spikes.",
+        "Think: Watch what the environment is doing."
+      ],
+      "callout": "Suspicious behavior must be detected from recorded system activity → event monitoring."
+    },
+    {
+      "id": "deviation-from-baseline",
+      "title": "Deviation from the Baseline",
+      "paragraphs": [
+        "A baseline represents normal behavior. A deviation occurs when activity moves significantly away from what is normally expected.",
+        "Examples include CPU normally at 20% suddenly reaching 100%, a normal login pattern changing to several countries, or typical network volume suddenly multiplying.",
+        "Think: You cannot recognize weird until you know normal."
+      ],
+      "callout": "Behavior differs sharply from established normal activity → deviation from the baseline."
+    },
+    {
+      "id": "unnecessary-open-ports",
+      "title": "Unnecessary Open Ports",
+      "paragraphs": [
+        "Every open port can create another potential entry point. Services that are not needed should not remain exposed.",
+        "Think: An open door with nobody using the room should be closed."
+      ],
+      "callout": "An unused service is reachable from the network → unnecessary open port."
+    },
+    {
+      "id": "vulnerability-exploitation",
+      "title": "Attack Types: Vulnerability Exploitation",
+      "paragraphs": [
+        "Vulnerability exploitation occurs when attackers take advantage of weaknesses in software, configuration, or systems."
+      ],
+      "entries": [
+        {
+          "title": "Human Error",
+          "paragraphs": [
+            "A user or administrator may accidentally create a vulnerability through misconfiguration, incorrect permissions, or exposure of resources.",
+            "Think: Not every security hole was intentionally created."
+          ],
+          "recognitionCue": "An accidental configuration exposes a system → human error."
+        },
+        {
+          "title": "Outdated Software",
+          "paragraphs": [
+            "Software that has not been patched may contain known exploitable vulnerabilities.",
+            "Think: Old software can mean old holes attackers already know about."
+          ],
+          "recognitionCue": "Attackers exploit a known flaw that should have been patched → outdated software."
+        }
+      ]
+    },
+    {
+      "id": "social-engineering",
+      "title": "Social Engineering",
+      "paragraphs": [
+        "Social engineering attacks humans instead of directly attacking technology."
+      ],
+      "entries": [
+        {
+          "title": "Phishing",
+          "paragraphs": [
+            "Phishing uses deceptive messages or websites to persuade victims to reveal information or perform harmful actions.",
+            "Attackers may attempt to steal passwords, authentication tokens, or financial information.",
+            "Think: Trick the person to open the door."
+          ],
+          "recognitionCue": "A fraudulent message tries to steal credentials → phishing."
+        }
+      ]
+    },
+    {
+      "id": "malware",
+      "title": "Malware",
+      "paragraphs": [
+        "Malware is malicious software designed to harm, control, disrupt, or misuse systems."
+      ],
+      "callout": "An unknown malicious program is running on a cloud workload → malware."
+    },
+    {
+      "id": "ransomware",
+      "title": "Ransomware",
+      "paragraphs": [
+        "Ransomware is malware that denies access to data or systems, often by encrypting information and demanding payment.",
+        "Think: Your data is locked, and the attacker wants a ransom."
+      ],
+      "callout": "Files suddenly become encrypted and payment is demanded → ransomware."
+    },
+    {
+      "id": "ddos",
+      "title": "Distributed Denial-of-Service (DDoS)",
+      "paragraphs": [
+        "A DDoS attack uses many systems to overwhelm a target with traffic or requests. The goal is usually to make the service unavailable.",
+        "Think: Too much traffic from too many places."
+      ],
+      "callout": "A cloud service becomes unavailable because of massive distributed traffic → DDoS."
+    },
+    {
+      "id": "cryptojacking",
+      "title": "Cryptojacking",
+      "paragraphs": [
+        "Cryptojacking occurs when attackers secretly use another organization's computing resources to perform cryptocurrency mining.",
+        "Cloud environments are attractive targets because compute resources can be consumed quickly. Signs can include unexpected CPU usage, unexpected resource creation, and an increased cloud bill.",
+        "Think: Somebody is using your cloud horsepower to make themselves money."
+      ],
+      "callout": "Unexplained compute usage and billing spikes appear from cryptocurrency mining → cryptojacking."
+    },
+    {
+      "id": "zombie-instances",
+      "title": "Zombie Instances",
+      "paragraphs": [
+        "A zombie instance is a cloud resource that continues running even though it is no longer actively needed or properly managed.",
+        "It can waste money, remain unpatched, become forgotten, and increase the attack surface.",
+        "Think: Dead to the business, still alive in the cloud."
+      ],
+      "callout": "An abandoned virtual machine is still running unnoticed → zombie instance."
+    },
+    {
+      "id": "metadata",
+      "title": "Metadata",
+      "paragraphs": [
+        "Cloud instances may have access to metadata containing information about the instance and its environment.",
+        "If improperly protected or accessed by an attacker, metadata may reveal sensitive information or credentials.",
+        "Think: Information about a cloud resource can itself become valuable to an attacker."
+      ],
+      "callout": "An attacker attempts to retrieve instance information or credentials from cloud metadata → metadata attack."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Attack Recognition Cues",
+      "bullets": [
+        "Review suspicious events → Event monitoring",
+        "Activity differs from normal → Deviation from the baseline",
+        "Unused network service is exposed → Unnecessary open port",
+        "An attacker uses a weakness → Vulnerability exploitation",
+        "A misconfiguration creates a weakness → Human error",
+        "A known unpatched vulnerability is exploited → Outdated software",
+        "A fake login email appears → Phishing",
+        "A malicious program runs → Malware",
+        "Files are encrypted and a ransom is demanded → Ransomware",
+        "Massive distributed traffic appears → DDoS",
+        "Unexpected cryptocurrency mining occurs → Cryptojacking",
+        "A forgotten cloud resource is still running → Zombie instance",
+        "An attacker retrieves instance identity or configuration information → Metadata"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 4.6 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "DDoS vs. Cryptojacking",
+          "paragraphs": [
+            "Both can cause heavy resource usage. Ask why the resources are busy.",
+            "Huge incoming traffic suggests DDoS. Unauthorized compute performing cryptocurrency mining suggests cryptojacking."
+          ]
+        },
+        {
+          "title": "Malware vs. Ransomware",
+          "paragraphs": [
+            "Ransomware is a specific type of malware. If the defining symptom is encryption plus a payment demand, choose ransomware."
+          ]
+        },
+        {
+          "title": "Zombie Instance vs. Compromised Instance",
+          "paragraphs": [
+            "A zombie instance may simply be forgotten and unmanaged. That does not automatically mean it has been compromised.",
+            "Abandoned resources can still become security risks because nobody is maintaining them."
+          ]
+        },
+        {
+          "title": "Human Error vs. Attack",
+          "paragraphs": [
+            "Human error can create the vulnerability, and an attacker can then exploit that weakness.",
+            "An administrator accidentally exposing storage is human error. An attacker downloading that exposed data is exploitation."
+          ]
+        },
+        {
+          "title": "Baseline Deviation vs. Attack",
+          "paragraphs": [
+            "A baseline deviation is an indicator, not automatic proof of an attack. Investigate what caused the abnormal behavior."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Watch suspicious system activity → Event monitoring",
+        "Activity differs from normal → Baseline deviation",
+        "Unused service is exposed → Unnecessary open port",
+        "Attacker uses a weakness → Vulnerability exploitation",
+        "Administrator accidentally exposes a resource → Human error",
+        "Old unpatched vulnerability is exploited → Outdated software",
+        "Fake message steals credentials → Phishing",
+        "Malicious program → Malware",
+        "Data encrypted and money demanded → Ransomware",
+        "Distributed traffic overwhelms service → DDoS",
+        "Unauthorized cryptocurrency mining → Cryptojacking",
+        "Forgotten cloud resource still running → Zombie instance",
+        "Attacker targets instance information or credentials → Metadata",
+        "Massive incoming traffic → DDoS",
+        "Massive unauthorized compute → Cryptojacking",
+        "Know normal first → Detect abnormal"
+      ]
+    }
+  ]
+}
