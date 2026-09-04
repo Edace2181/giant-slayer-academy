@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "5.1",
+  "title": "Explain Source Control Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Source control helps teams track changes to code, collaborate safely, review work, and recover earlier versions when something goes wrong.",
+        "The main mental model is: make a change → record it → review it → combine it with other work.",
+        "CompTIA wants you to recognize version management, code review, pull requests, pushes, commits, merges, and branches."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the scenario about tracking code history, saving a change, uploading it, reviewing it, or combining development work?"
+      ],
+      "callout": "Save locally → commit. Send changes → push. Request review or integration → pull request. Combine branches → merge."
+    },
+    {
+      "id": "version-management",
+      "title": "Version Management",
+      "paragraphs": [
+        "Version management tracks how code changes over time.",
+        "It allows teams to see previous versions, identify who changed something, compare changes, and return to an earlier state.",
+        "Think: Code has a history."
+      ],
+      "callout": "Developers need to track changes or restore an earlier version → version management."
+    },
+    {
+      "id": "code-review",
+      "title": "Code Review",
+      "paragraphs": [
+        "A code review examines another developer's changes before they become part of the main codebase.",
+        "Reviewers may look for errors, security problems, poor logic, and inconsistent practices.",
+        "Think: Another set of eyes before the code goes live."
+      ],
+      "callout": "Another developer is examining proposed code changes → code review."
+    },
+    {
+      "id": "pull-request",
+      "title": "Pull Request",
+      "paragraphs": [
+        "A pull request asks for proposed changes from one branch to be reviewed and potentially merged into another branch.",
+        "A pull request often becomes the place where code is discussed, reviews occur, testing results appear, and approval is granted.",
+        "Think: I finished my changes. Please review them and bring them into the main code."
+      ],
+      "callout": "A developer requests review before merging a branch → pull request."
+    },
+    {
+      "id": "code-push",
+      "title": "Code Push",
+      "paragraphs": [
+        "A code push sends locally recorded changes to a remote repository.",
+        "A developer may commit changes locally first and then push those commits to the remote system.",
+        "Think: My machine → shared repository."
+      ],
+      "callout": "Locally saved code changes must be uploaded to the shared repository → push."
+    },
+    {
+      "id": "code-commit",
+      "title": "Code Commit",
+      "paragraphs": [
+        "A commit records a set of code changes as a point in the project's history.",
+        "A commit usually represents a meaningful change. Think: Save this checkpoint in the code timeline."
+      ],
+      "callout": "Changes need to be recorded as a versioned checkpoint → commit."
+    },
+    {
+      "id": "code-merge",
+      "title": "Code Merge",
+      "paragraphs": [
+        "A merge combines changes from different branches.",
+        "For example, after a developer finishes a feature branch and receives approval, that branch may be merged into the main branch.",
+        "Think: Bring the separate work back together."
+      ],
+      "callout": "Changes from two branches must be combined → merge."
+    },
+    {
+      "id": "branch-management",
+      "title": "Branch Management",
+      "paragraphs": [
+        "A branch allows development to occur separately from another line of code.",
+        "Teams can create branches for features, fixes, and experiments while the main codebase continues operating.",
+        "Branch management includes creating, maintaining, and combining development branches.",
+        "Think: Make a side road without changing the highway yet."
+      ],
+      "callout": "Developers need isolated areas for separate changes → branch management."
+    },
+    {
+      "id": "source-control-flow",
+      "title": "Source Control Flow",
+      "paragraphs": [
+        "A useful exam recognition flow is: Branch → Edit → Commit → Push → Pull Request → Review → Merge.",
+        "Not every environment uses the exact same workflow, but the sequence clearly separates recording, sharing, reviewing, and combining changes."
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Track code history → Version management",
+        "Another developer examines changes → Code review",
+        "Request changes be reviewed or merged → Pull request",
+        "Upload local changes to a remote repository → Code push",
+        "Record a change checkpoint → Code commit",
+        "Combine branches → Code merge",
+        "Develop separately from main code → Branch management"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 5.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Commit vs. Push",
+          "paragraphs": [
+            "A commit records a change. A push sends recorded changes to a remote repository. You can commit without immediately pushing."
+          ]
+        },
+        {
+          "title": "Pull Request vs. Merge",
+          "paragraphs": [
+            "A pull request proposes and reviews integration. A merge actually combines the code."
+          ]
+        },
+        {
+          "title": "Branch vs. Version",
+          "paragraphs": [
+            "A branch is a separate line of development. Version management is the broader concept of tracking code changes over time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Track change history → Version management",
+        "Review another developer's work → Code review",
+        "Request review and integration → Pull request",
+        "Record code checkpoint → Commit",
+        "Send local commits to remote repository → Push",
+        "Combine separate code lines → Merge",
+        "Develop independently → Branch",
+        "Save it → Commit",
+        "Send it → Push",
+        "Review it → Pull request",
+        "Combine it → Merge"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "5.3",
+  "title": "Explain Concepts Related to Integration of Systems",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Modern cloud environments contain many different services, applications, and platforms. Those systems need ways to communicate.",
+        "CompTIA wants you to recognize event-driven architectures, REST, SOAP, RPC, WebSockets, and GraphQL.",
+        "The key mental model is: How are these systems exchanging information?"
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is communication triggered by an event, based on web requests, calling a remote function, maintaining a live connection, or requesting specific data?"
+      ],
+      "callout": "Communication pattern → integration technology."
+    },
+    {
+      "id": "event-driven-architectures",
+      "title": "Event-Driven Architectures",
+      "paragraphs": [
+        "An event-driven architecture reacts when events occur, such as a file upload, completed purchase, created user, or received message.",
+        "Instead of constantly asking whether something changed, a component can react when the event happens.",
+        "Think: Something happened → do something."
+      ],
+      "callout": "An action occurs automatically because another event happened → event-driven architecture."
+    },
+    {
+      "id": "web-services",
+      "title": "Web Services",
+      "paragraphs": [
+        "Web services allow systems to communicate over networks using defined interfaces. CompTIA focuses on three approaches: REST, SOAP, and RPC."
+      ],
+      "entries": [
+        {
+          "title": "Representational State Transfer (REST)",
+          "paragraphs": [
+            "REST is a common approach for building web APIs and commonly works with resources using familiar web operations.",
+            "Conceptual operations include retrieving, creating, modifying, and deleting information.",
+            "Think: Web-style API communication around resources."
+          ],
+          "recognitionCue": "Applications interact through a lightweight web API based around resources → REST."
+        },
+        {
+          "title": "Simple Object Access Protocol (SOAP)",
+          "paragraphs": [
+            "SOAP is a structured web-service protocol that commonly uses XML-formatted messages. It is more formal and structured than many REST-style services.",
+            "Think: Structured XML-based web-service communication."
+          ],
+          "recognitionCue": "Formal web-service messaging uses XML → SOAP."
+        },
+        {
+          "title": "Remote Procedure Call (RPC)",
+          "paragraphs": [
+            "RPC allows one system to request that a procedure or function execute on another system.",
+            "To the developer, it can resemble calling a function even though the function executes remotely.",
+            "Think: Run this function over there."
+          ],
+          "recognitionCue": "One system invokes a procedure on another system → RPC."
+        }
+      ],
+      "table": {
+        "caption": "REST, SOAP, and RPC comparison",
+        "headers": ["Technology", "Recognition clue"],
+        "rows": [
+          ["REST", "Resource-oriented web API"],
+          ["SOAP", "Structured XML web-service messages"],
+          ["RPC", "Invoke a remote function or procedure"]
+        ]
+      }
+    },
+    {
+      "id": "websockets",
+      "title": "WebSockets",
+      "paragraphs": [
+        "WebSockets provide a persistent two-way communication channel between systems.",
+        "Unlike a one-time request and response, a WebSocket connection can remain open so both sides continue sending information.",
+        "Good recognition scenarios include live updates, real-time messaging, and interactive applications.",
+        "Think: Keep the communication line open."
+      ],
+      "callout": "Client and server need continuous real-time two-way communication → WebSockets."
+    },
+    {
+      "id": "graphql",
+      "title": "GraphQL",
+      "paragraphs": [
+        "GraphQL allows a client to request the specific data fields it needs.",
+        "Instead of receiving a fixed response containing unnecessary information, the client describes the data it wants.",
+        "Think: Give me exactly these fields."
+      ],
+      "callout": "The client needs to request precisely selected data from an API → GraphQL."
+    },
+    {
+      "id": "communication-comparison",
+      "title": "Communication Comparison",
+      "table": {
+        "caption": "System integration recognition",
+        "headers": ["Concept", "Main idea"],
+        "rows": [
+          ["Event-driven", "React when something happens"],
+          ["REST", "Resource-oriented web API"],
+          ["SOAP", "Structured XML messages"],
+          ["RPC", "Call a remote procedure"],
+          ["WebSockets", "Persistent two-way connection"],
+          ["GraphQL", "Client specifies requested data"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Event causes automatic action → Event-driven architecture",
+        "Lightweight resource-oriented API → REST",
+        "Formal XML web service → SOAP",
+        "Execute a function on a remote system → RPC",
+        "Real-time persistent connection → WebSockets",
+        "Client specifies exactly which fields it wants → GraphQL"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 5.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "REST vs. SOAP",
+          "paragraphs": [
+            "Both can integrate systems through web services. REST is lightweight and resource-oriented. SOAP uses a structured protocol and XML."
+          ]
+        },
+        {
+          "title": "REST vs. GraphQL",
+          "paragraphs": [
+            "REST commonly exposes defined resources and endpoints. GraphQL lets the client specify exactly which data it wants."
+          ]
+        },
+        {
+          "title": "RPC vs. REST",
+          "paragraphs": [
+            "RPC thinks in terms of performing a procedure. REST thinks in terms of interacting with a resource."
+          ]
+        },
+        {
+          "title": "WebSockets vs. Normal Request/Response",
+          "paragraphs": [
+            "If communication must remain open for real-time interaction, choose WebSockets."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "React when an event occurs → Event-driven architecture",
+        "Resource-oriented web API → REST",
+        "Formal XML messages → SOAP",
+        "Call a remote function → RPC",
+        "Persistent real-time two-way connection → WebSocket",
+        "Request exact fields needed → GraphQL",
+        "Something happened → Event-driven",
+        "Web resource communication → REST",
+        "XML service → SOAP",
+        "Run a function elsewhere → RPC",
+        "Keep the connection open → WebSocket",
+        "Give me only these fields → GraphQL"
+      ]
+    }
+  ]
+}

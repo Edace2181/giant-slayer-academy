@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "6.1",
+  "title": "Given a Scenario, Troubleshoot Deployment Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud deployments can fail even when the design looks correct on paper.",
+        "Troubleshooting deployment issues means identifying what prevents a workload from being created, starting, scaling, or operating correctly.",
+        "CompTIA focuses on incompatibility, misconfigurations, outdated definitions, deprecated functionality, outages, resource limits, and regional availability.",
+        "The main mental model is: What changed, what is missing, and what limit or incompatibility is blocking deployment?"
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the deployment failing because the resource cannot run, is configured incorrectly, is unsupported, has hit a limit, or is unavailable where it is being deployed?"
+      ],
+      "callout": "Deployment failure → check compatibility, configuration, support status, resource limits, and regional service availability."
+    },
+    {
+      "id": "incompatibility",
+      "title": "Incompatibility",
+      "paragraphs": [
+        "An incompatibility occurs when two components, platforms, versions, or resource requirements cannot work together correctly.",
+        "Examples include an application requiring an unavailable feature, an image being incompatible with the chosen architecture, or one software version not supporting another component.",
+        "Think: These pieces do not fit together."
+      ],
+      "callout": "Technologies or versions cannot work together → incompatibility."
+    },
+    {
+      "id": "misconfigurations",
+      "title": "Misconfigurations",
+      "paragraphs": [
+        "A deployment may contain all the correct components but still fail because they were configured incorrectly."
+      ],
+      "entries": [
+        {
+          "title": "Resource Allocation",
+          "paragraphs": [
+            "Resource allocation determines how much compute, memory, storage, or other capacity is assigned. Too little can prevent a workload from functioning.",
+            "Think: The workload did not receive what it needs."
+          ],
+          "recognitionCue": "The deployment lacks enough assigned resources → resource allocation misconfiguration."
+        },
+        {
+          "title": "Permission Issues",
+          "paragraphs": [
+            "A deployment process may need permission to create resources, attach storage, access images, configure networks, and use APIs.",
+            "If those rights are missing, deployment can fail even when the template is correct.",
+            "Think: The deployment knows what to do, but it is not allowed to do it."
+          ],
+          "recognitionCue": "An operation fails with access denied or insufficient privileges → permission issue."
+        },
+        {
+          "title": "Oversubscription",
+          "paragraphs": [
+            "Oversubscription occurs when more resources are promised or allocated than the underlying infrastructure can realistically provide at the same time.",
+            "It can lead to poor performance, resource contention, and deployment failures.",
+            "Think: More seats were sold than the plane has."
+          ],
+          "recognitionCue": "Too many workloads are competing for limited underlying resources → oversubscription."
+        },
+        {
+          "title": "Sizing Issues",
+          "paragraphs": [
+            "A sizing issue occurs when the selected resource size is too small, too large, or the wrong type for the workload.",
+            "Think: Wrong-size box."
+          ],
+          "recognitionCue": "The instance shape or resource size does not meet workload needs → sizing issue."
+        }
+      ]
+    },
+    {
+      "id": "outdated-component-definitions",
+      "title": "Outdated Component Definitions",
+      "paragraphs": [
+        "Cloud deployment templates and definitions may reference versions, images, packages, or components that are no longer current.",
+        "An outdated definition can fail when the referenced item no longer exists, is unsupported, has changed, or requires newer syntax.",
+        "Think: The deployment instructions are asking for yesterday's component."
+      ],
+      "callout": "A template references an old image, package, or resource definition → outdated component definition."
+    },
+    {
+      "id": "deprecation-of-functionality",
+      "title": "Deprecation of Functionality",
+      "paragraphs": [
+        "Deprecation means functionality is being retired or is no longer recommended and may eventually stop working.",
+        "A deployment relying on deprecated functionality can fail after the provider removes or disables it.",
+        "Think: It used to work, but the platform has moved on."
+      ],
+      "callout": "A previously supported feature has been phased out → deprecation of functionality."
+    },
+    {
+      "id": "outages",
+      "title": "Outages",
+      "paragraphs": [
+        "Cloud services can experience outages. CompTIA distinguishes full and partial impact."
+      ],
+      "entries": [
+        {
+          "title": "Full Outage",
+          "paragraphs": [
+            "A full outage means the service is completely unavailable. Think: Nothing works."
+          ],
+          "recognitionCue": "All users or all service functionality is unavailable → full outage."
+        },
+        {
+          "title": "Partial Outage",
+          "paragraphs": [
+            "A partial outage affects only part of the service, such as one region, one feature, some users, or some resources.",
+            "Think: Something works, something does not."
+          ],
+          "recognitionCue": "Only part of the environment is affected → partial outage."
+        }
+      ]
+    },
+    {
+      "id": "resource-limits",
+      "title": "Resource Limits",
+      "paragraphs": [
+        "Cloud providers place limits on how many requests or resources a customer can consume."
+      ],
+      "entries": [
+        {
+          "title": "API Throttling",
+          "paragraphs": [
+            "API throttling limits how many API requests can be made within a given period.",
+            "If automation sends too many requests too quickly, the provider may reject or delay requests.",
+            "Think: Slow down—you are calling the API too fast."
+          ],
+          "recognitionCue": "Deployment automation fails after sending too many API requests → API throttling."
+        },
+        {
+          "title": "Service Quotas",
+          "paragraphs": [
+            "A service quota limits how many resources or how much capacity an account can use, such as instances, addresses, storage, or networks.",
+            "Think: You reached your allowed maximum."
+          ],
+          "recognitionCue": "The account cannot create another resource because a provider limit was reached → service quota."
+        }
+      ],
+      "table": {
+        "caption": "Resource-limit comparison",
+        "headers": ["Problem", "Meaning"],
+        "rows": [
+          ["API throttling", "Too many requests too quickly"],
+          ["Service quota", "Too many resources or too much capacity"]
+        ]
+      }
+    },
+    {
+      "id": "regional-service-availability",
+      "title": "Regional Service Availability",
+      "paragraphs": [
+        "Not every cloud service or resource type exists in every region.",
+        "A deployment may fail because the selected region does not provide the requested service.",
+        "Think: The cloud provider has it—but not there."
+      ],
+      "callout": "A resource exists at the provider but not in the selected region → regional service availability."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Technologies cannot work together → Incompatibility",
+        "Too few resources are assigned → Resource allocation",
+        "Access is denied during deployment → Permission issue",
+        "Too many workloads share limited infrastructure → Oversubscription",
+        "The instance is too small, too large, or the wrong shape → Sizing issue",
+        "A template references an old component → Outdated component definition",
+        "A feature has been phased out → Deprecation",
+        "The entire service is unavailable → Full outage",
+        "Only part of the service is unavailable → Partial outage",
+        "Too many API calls occur → API throttling",
+        "The maximum number of resources is reached → Service quota",
+        "The service is unavailable in the selected region → Regional service availability"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 6.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Oversubscription vs. Sizing",
+          "paragraphs": [
+            "Oversubscription means too many workloads are competing for shared capacity. Sizing means one workload has the wrong resource size."
+          ]
+        },
+        {
+          "title": "API Throttling vs. Service Quota",
+          "paragraphs": [
+            "Both can block automation. Requests per period indicate API throttling; allowed resource quantity indicates a service quota."
+          ]
+        },
+        {
+          "title": "Outdated vs. Deprecated",
+          "paragraphs": [
+            "Outdated means an old definition or version. Deprecated means functionality is intentionally being phased out."
+          ]
+        },
+        {
+          "title": "Full vs. Partial Outage",
+          "paragraphs": [
+            "Full means the service is gone. Partial means only some users, features, or resources are affected."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Components cannot work together → Incompatibility",
+        "Not enough assigned CPU, RAM, or storage → Resource allocation",
+        "Deployment gets access denied → Permission issue",
+        "Too many workloads compete for host capacity → Oversubscription",
+        "Wrong instance size → Sizing issue",
+        "Template references an old image or version → Outdated component definition",
+        "Feature is being retired → Deprecation",
+        "Everything is unavailable → Full outage",
+        "Only some functionality is unavailable → Partial outage",
+        "Too many API requests → API throttling",
+        "Maximum allowed resources reached → Service quota",
+        "Service exists, but not in this region → Regional service availability"
+      ]
+    }
+  ]
+}

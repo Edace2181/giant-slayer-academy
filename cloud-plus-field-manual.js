@@ -227,7 +227,8 @@
   }
 
   async function initialize() {
-    if (!/^[1-5]$/.test(world) || !/^[1-6]\.\d+$/.test(objective) || objective.split(".")[0] !== world) {
+    const objectiveMatchesWorld = objective.split(".")[0] === world || (world === "5" && /^6\.[1-3]$/.test(objective));
+    if (!/^[1-5]$/.test(world) || !/^[1-6]\.\d+$/.test(objective) || !objectiveMatchesWorld) {
       showRouteError("The requested Cloud+ Field Manual route is invalid.");
       return;
     }

@@ -59,12 +59,27 @@ const lesson45 = json("json/cloud-plus/field-manual/4.5.json");
 const bank45 = json("json/cloud-plus/world4/4.5-hatchling.json");
 const lesson46 = json("json/cloud-plus/field-manual/4.6.json");
 const bank46 = json("json/cloud-plus/world4/4.6-hatchling.json");
+const lesson51 = json("json/cloud-plus/field-manual/5.1.json");
+const bank51 = json("json/cloud-plus/world5/5.1-hatchling.json");
+const lesson52 = json("json/cloud-plus/field-manual/5.2.json");
+const bank52 = json("json/cloud-plus/world5/5.2-hatchling.json");
+const lesson53 = json("json/cloud-plus/field-manual/5.3.json");
+const bank53 = json("json/cloud-plus/world5/5.3-hatchling.json");
+const lesson54 = json("json/cloud-plus/field-manual/5.4.json");
+const bank54 = json("json/cloud-plus/world5/5.4-hatchling.json");
+const lesson61 = json("json/cloud-plus/field-manual/6.1.json");
+const bank61 = json("json/cloud-plus/world5/6.1-hatchling.json");
+const lesson62 = json("json/cloud-plus/field-manual/6.2.json");
+const bank62 = json("json/cloud-plus/world5/6.2-hatchling.json");
+const lesson63 = json("json/cloud-plus/field-manual/6.3.json");
+const bank63 = json("json/cloud-plus/world5/6.3-hatchling.json");
 const campaign = read("cloud-plus-campaign.html");
 const cloudEntry = read("cloud-plus.html");
 const hub = read("cloud-plus-world1-objectives.html");
 const hub2 = read("cloud-plus-world2-objectives.html");
 const hub3 = read("cloud-plus-world3-objectives.html");
 const hub4 = read("cloud-plus-world4-objectives.html");
+const hub5 = read("cloud-plus-world5-objectives.html");
 const manualPage = read("cloud-plus-field-manual.html");
 const manualScript = read("cloud-plus-field-manual.js");
 const quizPage = read("cloud-plus-quiz.html");
@@ -74,6 +89,7 @@ const legacyWorld1Path = path.join(root, "cloud-plus-world1.html");
 const legacyWorld2Path = path.join(root, "cloud-plus-world2.html");
 const legacyWorld3Path = path.join(root, "cloud-plus-world3.html");
 const legacyWorld4Path = path.join(root, "cloud-plus-world4.html");
+const legacyWorld5Path = path.join(root, "cloud-plus-world5.html");
 
 requireValue(lesson.schemaVersion === 1, "Objective 1.1 schemaVersion must be 1.");
 requireValue(lesson.certification === "cloud-plus", "Objective 1.1 certification must be cloud-plus.");
@@ -406,15 +422,97 @@ world4Requirements.forEach(requirement => {
   requireValue(objectiveBank[0]?.id === requirement.firstQuestion, `Objective ${objective} GSA Mini Check source must remain the existing first bank question.`);
 });
 
+const world5Requirements = [
+  {
+    objective: "5.1",
+    lesson: lesson51,
+    bank: bank51,
+    bankCount: 7,
+    firstQuestion: "CV0004-5.1-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "version-management", "code-review", "pull-request", "code-push", "code-commit", "code-merge", "branch-management", "source-control-flow", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Version Management", "Code Review", "Pull Request", "Code Push", "Code Commit", "Code Merge", "Branch Management"]
+  },
+  {
+    objective: "5.2",
+    lesson: lesson52,
+    bank: bank52,
+    bankCount: 20,
+    firstQuestion: "CV0004-5.2-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "automation", "code-integration", "code-deployment", "build", "testing", "security", "workflow", "artifacts", "repositories", "cicd-recognition-flow", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Automation", "Code Integration", "Code Deployment", "Build", "Testing", "Security", "Workflow", "Artifacts", "Images", "virtual machine (VM)", "Container", "Packages", "RPM", "Debian", "ZIP", "tar", "Flat File", "Repositories", "Public Repository", "Private Repository"]
+  },
+  {
+    objective: "5.3",
+    lesson: lesson53,
+    bank: bank53,
+    bankCount: 7,
+    firstQuestion: "CV0004-5.3-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "event-driven-architectures", "web-services", "websockets", "graphql", "communication-comparison", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Event-Driven Architectures", "Web Services", "REST", "SOAP", "RPC", "WebSockets", "GraphQL"]
+  },
+  {
+    objective: "5.4",
+    lesson: lesson54,
+    bank: bank54,
+    bankCount: 9,
+    firstQuestion: "CV0004-5.4-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "ansible", "docker", "elk-stack", "git", "github-actions", "grafana", "jenkins", "kubernetes", "terraform", "devops-tool-comparison", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Ansible", "Docker", "Elasticsearch, Logstash, and Kibana (ELK) Stack", "Git", "GitHub Actions", "Grafana", "Jenkins", "Kubernetes", "Terraform"]
+  },
+  {
+    objective: "6.1",
+    lesson: lesson61,
+    bank: bank61,
+    bankCount: 15,
+    firstQuestion: "CV0004-6.1-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "incompatibility", "misconfigurations", "outdated-component-definitions", "deprecation-of-functionality", "outages", "resource-limits", "regional-service-availability", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Incompatibility", "Misconfigurations", "Resource Allocation", "Permission Issues", "Oversubscription", "Sizing Issues", "Outdated Component Definitions", "Deprecation of Functionality", "Outages", "Full Outage", "Partial Outage", "Resource Limits", "API Throttling", "Service Quotas", "Regional Service Availability"]
+  },
+  {
+    objective: "6.2",
+    lesson: lesson62,
+    bank: bank62,
+    bankCount: 22,
+    firstQuestion: "CV0004-6.2-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "network-service-unavailability", "dhcp", "dns", "ntp", "nat", "http-status-codes", "latency", "bandwidth-throughput", "network-device-misconfiguration", "protocol-issues", "ip-addressing-issues", "routing-issues", "switching-issues", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Network Service Unavailability", "DHCP", "DNS", "NTP", "NAT", "HTTP", "Status Codes", "Latency", "Bandwidth/Throughput", "Network Device Misconfiguration", "Protocol Incompatibility", "Protocol Deprecations", "IP Addressing Issues", "Scope Exhaustion", "Network Overlap", "Routing Issues", "Missing Routes", "Misconfigured Routes", "Switching Issues", "VLAN Issues", "Misconfigured tag", "Access vs. Trunk Ports"]
+  },
+  {
+    objective: "6.3",
+    lesson: lesson63,
+    bank: bank63,
+    bankCount: 8,
+    firstQuestion: "CV0004-6.3-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "cipher-suite-deprecations", "authorization-issues", "privilege-escalation", "unauthorized-access", "authentication-issues", "leaked-credentials", "software-vulnerability-issues", "unauthorized-software", "security-troubleshooting-flow", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Cipher Suite Deprecations", "Authorization Issues", "Privilege Escalation", "Unauthorized Access", "Authentication Issues", "Leaked Credentials", "Software Vulnerability Issues", "Unauthorized Software"]
+  }
+];
+
+world5Requirements.forEach(requirement => {
+  const { objective, lesson: objectiveLesson, bank: objectiveBank } = requirement;
+  requireValue(objectiveLesson.schemaVersion === 1 && objectiveLesson.certification === "cloud-plus" && objectiveLesson.examCode === "CV0-004", `Objective ${objective} metadata must match Cloud+ CV0-004.`);
+  requireValue(objectiveLesson.world === "5" && objectiveLesson.objective === objective, `Objective ${objective} route metadata must match Chapter 5.`);
+  requireValue(objectiveLesson.miniCheckSource === "objective-sweep-bank" && !Object.prototype.hasOwnProperty.call(objectiveLesson, "miniCheck"), `Objective ${objective} must use the GSA-owned Mini Check source without authoring a question.`);
+  const objectiveSectionIds = (objectiveLesson.sections || []).map(section => section.id);
+  requireValue(objectiveSectionIds.length === new Set(objectiveSectionIds).size, `Objective ${objective} section IDs must be unique.`);
+  requirement.sections.forEach(id => requireValue(objectiveSectionIds.includes(id), `Objective ${objective} is missing section: ${id}`));
+  const objectiveText = JSON.stringify(objectiveLesson);
+  requirement.topics.forEach(topic => requireValue(objectiveText.includes(topic), `Objective ${objective} is missing required topic: ${topic}`));
+  requireValue(Array.isArray(objectiveBank) && objectiveBank.length === requirement.bankCount, `Objective ${objective} protected Sweep bank must contain exactly ${requirement.bankCount} questions.`);
+  requireValue(objectiveBank[0]?.id === requirement.firstQuestion, `Objective ${objective} GSA Mini Check source must remain the existing first bank question.`);
+});
+
 requireValue(campaign.includes('href="cloud-plus-world1-objectives.html" class="world world1 unlocked"'), "Cloud+ Campaign Map Chapter 1 must route directly to the Objective Hub.");
 requireValue(campaign.includes('href="cloud-plus-world2-objectives.html" class="world world2 unlocked"'), "Cloud+ Campaign Map Chapter 2 must route directly to the Objective Hub.");
 requireValue(campaign.includes('href="cloud-plus-world3-objectives.html" class="world world3 unlocked"'), "Cloud+ Campaign Map Chapter 3 must route directly to the Objective Hub.");
 requireValue(campaign.includes('href="cloud-plus-world4-objectives.html" class="world world4 unlocked"'), "Cloud+ Campaign Map Chapter 4 must route directly to the Objective Hub.");
+requireValue(campaign.includes('href="cloud-plus-world5-objectives.html" class="world world5 unlocked"'), "Cloud+ Campaign Map Chapter 5 must route directly to the Objective Hub.");
 requireValue(!fs.existsSync(legacyWorld1Path), "Legacy Cloud+ Chapter 1 PRESS START page must be retired after Objective Hub migration.");
 requireValue(!fs.existsSync(legacyWorld2Path), "Legacy Cloud+ Chapter 2 PRESS START page must be retired after Objective Hub migration.");
 requireValue(!fs.existsSync(legacyWorld3Path), "Legacy Cloud+ Chapter 3 PRESS START page must be retired after Objective Hub migration.");
 requireValue(!fs.existsSync(legacyWorld4Path), "Legacy Cloud+ Chapter 4 PRESS START page must be retired after Objective Hub migration.");
-requireValue(![campaign, cloudEntry, hub, hub2, hub3, hub4, manualPage, manualScript, quizPage, quizScript].some(source => source.includes("cloud-plus-world1.html") || source.includes("cloud-plus-world2.html") || source.includes("cloud-plus-world3.html") || source.includes("cloud-plus-world4.html")), "Active Cloud+ navigation still references a retired Chapter 1, Chapter 2, Chapter 3, or Chapter 4 landing page.");
+requireValue(!fs.existsSync(legacyWorld5Path), "Legacy Cloud+ Chapter 5 PRESS START page must be retired after Objective Hub migration.");
+requireValue(![campaign, cloudEntry, hub, hub2, hub3, hub4, hub5, manualPage, manualScript, quizPage, quizScript].some(source => source.includes("cloud-plus-world1.html") || source.includes("cloud-plus-world2.html") || source.includes("cloud-plus-world3.html") || source.includes("cloud-plus-world4.html") || source.includes("cloud-plus-world5.html")), "Active Cloud+ navigation still references a retired Chapter 1, Chapter 2, Chapter 3, Chapter 4, or Chapter 5 landing page.");
 requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.1"), "Chapter 1 Objective Hub is missing the Objective 1.1 Field Manual action.");
 requireValue(hub.includes("cloud-plus-quiz.html?world=1&amp;objective=1.1"), "Chapter 1 Objective Hub is missing the direct Objective 1.1 Sweep action.");
 requireValue(hub.includes("cloud-plus-field-manual.html?world=1&amp;objective=1.2"), "Chapter 1 Objective Hub is missing the Objective 1.2 Field Manual action.");
@@ -453,7 +551,13 @@ world4Requirements.forEach(({ objective }) => {
   requireValue(hub4.includes(`cloud-plus-quiz.html?world=4&amp;objective=${objective}`), `Chapter 4 Objective Hub is missing the direct Objective ${objective} Sweep action.`);
 });
 requireValue(hub4.includes('href="cloud-plus-campaign.html" class="back-link">← Return to Campaign Map</a>'), "Chapter 4 Objective Hub must return to the Cloud+ Campaign Map.");
+world5Requirements.forEach(({ objective }) => {
+  requireValue(hub5.includes(`cloud-plus-field-manual.html?world=5&amp;objective=${objective}`), `Chapter 5 Objective Hub is missing the Objective ${objective} Field Manual action.`);
+  requireValue(hub5.includes(`cloud-plus-quiz.html?world=5&amp;objective=${objective}`), `Chapter 5 Objective Hub is missing the direct Objective ${objective} Sweep action.`);
+});
+requireValue(hub5.includes('href="cloud-plus-campaign.html" class="back-link">← Return to Campaign Map</a>'), "Chapter 5 Objective Hub must return to the Cloud+ Campaign Map.");
 requireValue(manualScript.includes('elements.returnLink.href = "cloud-plus-world" + world + "-objectives.html";'), "Cloud+ Field Manual must return to its Chapter Objective Hub.");
+requireValue(manualScript.includes('world === "5" && /^6\\.[1-3]$/.test(objective)'), "Cloud+ Chapter 5 Field Manual routing must support official Objectives 6.1-6.3.");
 requireValue(quizScript.includes('return { href: `cloud-plus-world${world}-objectives.html`, label: `Return to Chapter ${world}` };'), "Cloud+ Objective Sweep must return to its Chapter Objective Hub.");
 requireValue(cloudEntry.includes('href="index.html?entered=1" class="link-btn">🏰 Return to Academy 🏰</a>'), "Cloud+ Return to Academy must open the internal Select a Game hub.");
 requireValue(manualPage.includes('id="cloudManualNavigation"') && manualScript.includes("function renderNavigation()"), "Cloud+ Field Manual is missing lesson navigation.");
@@ -527,6 +631,11 @@ if (errors.length) {
     console.log(`- Protected Objective ${requirement.objective} Sweep bank remains ${requirement.bankCount} questions: PASS`);
   });
   world4Requirements.forEach(requirement => {
+    console.log(`- Objective ${requirement.objective} official/published mappings: ${requirement.topics.length} of ${requirement.topics.length} (100%)`);
+    console.log(`- Objective ${requirement.objective} lesson architecture and ${requirement.sections.length}-section navigator: PASS`);
+    console.log(`- Protected Objective ${requirement.objective} Sweep bank remains ${requirement.bankCount} questions: PASS`);
+  });
+  world5Requirements.forEach(requirement => {
     console.log(`- Objective ${requirement.objective} official/published mappings: ${requirement.topics.length} of ${requirement.topics.length} (100%)`);
     console.log(`- Objective ${requirement.objective} lesson architecture and ${requirement.sections.length}-section navigator: PASS`);
     console.log(`- Protected Objective ${requirement.objective} Sweep bank remains ${requirement.bankCount} questions: PASS`);

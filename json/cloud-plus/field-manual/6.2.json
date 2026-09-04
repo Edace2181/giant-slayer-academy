@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "6.2",
+  "title": "Given a Scenario, Troubleshoot Network Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud networking problems can look similar on the surface. A user may simply report that something does not work.",
+        "The real cause could involve DNS, DHCP, NTP, NAT, HTTP, latency, bandwidth, routing, VLAN configuration, or IP addressing.",
+        "The key troubleshooting skill is identifying which network function is failing from the symptom."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "What network function is supposed to happen, and what symptom identifies the broken layer or service?"
+      ],
+      "callout": "Name resolution → DNS. Address assignment → DHCP. Time → NTP. Address translation → NAT. Web response → HTTP. Path → routing. Local segmentation → VLAN."
+    },
+    {
+      "id": "network-service-unavailability",
+      "title": "Network Service Unavailability",
+      "paragraphs": [
+        "A network service can fail even while the underlying network remains partially functional. CompTIA highlights DHCP, DNS, NTP, NAT, and HTTP."
+      ]
+    },
+    {
+      "id": "dhcp",
+      "title": "Dynamic Host Configuration Protocol (DHCP)",
+      "paragraphs": [
+        "DHCP automatically provides IP configuration to devices, including an IP address, subnet information, default gateway, and DNS settings.",
+        "Think: DHCP gives the device its network identity."
+      ],
+      "callout": "A device cannot obtain IP configuration automatically → DHCP."
+    },
+    {
+      "id": "dns",
+      "title": "Domain Name System (DNS)",
+      "paragraphs": [
+        "DNS translates names into IP addresses.",
+        "Think: Name → address."
+      ],
+      "callout": "Users can reach a service by IP address but not by hostname → DNS."
+    },
+    {
+      "id": "ntp",
+      "title": "Network Time Protocol (NTP)",
+      "paragraphs": [
+        "NTP synchronizes system clocks. Correct time matters for logs, authentication, certificates, and event correlation.",
+        "Think: Keep everybody's clock together."
+      ],
+      "callout": "Cloud systems have incorrect or inconsistent time → NTP."
+    },
+    {
+      "id": "nat",
+      "title": "Network Address Translation (NAT)",
+      "paragraphs": [
+        "NAT translates one IP addressing context into another. It is often used when private resources need connectivity through translated addresses.",
+        "Think: Translate the address before traffic leaves."
+      ],
+      "callout": "Private-addressed systems cannot reach destinations through the expected translated connection → NAT."
+    },
+    {
+      "id": "http-status-codes",
+      "title": "Hypertext Transfer Protocol (HTTP) Status Codes",
+      "paragraphs": [
+        "HTTP is used for web communication, and status codes indicate what happened to a web request.",
+        "Think: The first digit identifies the result family."
+      ],
+      "table": {
+        "caption": "HTTP status code recognition",
+        "headers": ["Code family", "General meaning"],
+        "rows": [
+          ["2xx", "Success"],
+          ["3xx", "Redirect"],
+          ["4xx", "Client or request error"],
+          ["5xx", "Server error"]
+        ]
+      },
+      "callout": "A 404-style issue points to the client or request side. A 500-style issue points to the server side."
+    },
+    {
+      "id": "latency",
+      "title": "Latency",
+      "paragraphs": [
+        "Latency is delay. High latency means traffic takes too long to reach its destination or return.",
+        "Symptoms include slow response, delay, and lag.",
+        "Think: The connection works—it is just taking too long."
+      ],
+      "callout": "The main symptom is delay rather than failure → latency."
+    },
+    {
+      "id": "bandwidth-throughput",
+      "title": "Bandwidth/Throughput Issues",
+      "paragraphs": [
+        "Bandwidth describes available network capacity. Throughput describes the amount of data actually transferred successfully over time.",
+        "A connection may exist but perform poorly because insufficient capacity is available.",
+        "Think: The road is open, but not enough traffic can move through it."
+      ],
+      "callout": "Large transfers are slow because not enough data can move at once → bandwidth or throughput issue."
+    },
+    {
+      "id": "network-device-misconfiguration",
+      "title": "Network Device Misconfiguration",
+      "paragraphs": [
+        "Virtual and physical networking devices depend on correct interfaces, policies, routes, gateways, and switching settings.",
+        "Think: The network is there, but somebody configured it incorrectly."
+      ],
+      "callout": "Connectivity broke after a network configuration change → network device misconfiguration."
+    },
+    {
+      "id": "protocol-issues",
+      "title": "Protocol Issues",
+      "entries": [
+        {
+          "title": "Protocol Incompatibility",
+          "paragraphs": [
+            "A protocol incompatibility occurs when communicating systems do not support compatible protocols or versions.",
+            "Think: They are speaking different languages."
+          ],
+          "recognitionCue": "Two systems cannot communicate because their supported protocols do not match → protocol incompatibility."
+        },
+        {
+          "title": "Protocol Deprecations",
+          "paragraphs": [
+            "A provider may stop supporting an old protocol or protocol version. A system relying on it may stop working after support is removed.",
+            "Think: That language is no longer accepted."
+          ],
+          "recognitionCue": "Connectivity worked until an old protocol was retired → protocol deprecation."
+        }
+      ]
+    },
+    {
+      "id": "ip-addressing-issues",
+      "title": "IP Addressing Issues",
+      "entries": [
+        {
+          "title": "Scope Exhaustion",
+          "paragraphs": [
+            "A DHCP or address pool contains a limited number of addresses. Scope exhaustion occurs when all available addresses have been assigned and new systems cannot receive one.",
+            "Think: No IP addresses are left in the bucket."
+          ],
+          "recognitionCue": "New systems cannot obtain addresses because the pool is full → scope exhaustion."
+        },
+        {
+          "title": "Network Overlap",
+          "paragraphs": [
+            "Network overlap occurs when connected networks use conflicting address ranges.",
+            "Routing becomes ambiguous because the same addresses appear in multiple places.",
+            "Think: Two neighborhoods have the same street addresses."
+          ],
+          "recognitionCue": "Connected networks use overlapping IP ranges → network overlap."
+        }
+      ]
+    },
+    {
+      "id": "routing-issues",
+      "title": "Routing Issues",
+      "paragraphs": [
+        "Routing determines how packets travel between different networks."
+      ],
+      "entries": [
+        {
+          "title": "Missing Routes",
+          "paragraphs": [
+            "A missing route means the router or route table has no path for the destination. Think: No directions exist."
+          ],
+          "recognitionCue": "The destination network is unreachable because no route exists → missing route."
+        },
+        {
+          "title": "Misconfigured Routes",
+          "paragraphs": [
+            "A route may exist but point traffic in the wrong direction. Think: Directions exist—they are just wrong."
+          ],
+          "recognitionCue": "Traffic is sent toward the wrong gateway or path → misconfigured route."
+        }
+      ],
+      "callout": "Missing route → no path. Misconfigured route → wrong path."
+    },
+    {
+      "id": "switching-issues",
+      "title": "Switching Issues",
+      "paragraphs": [
+        "Cloud and virtual networks still rely on logical switching behavior. CompTIA focuses on VLAN issues and port configuration."
+      ],
+      "entries": [
+        {
+          "title": "VLAN Issues",
+          "paragraphs": [
+            "A VLAN logically separates network traffic. Incorrect VLAN configuration can isolate systems that should communicate or place traffic in the wrong network.",
+            "Think: The device is in the wrong logical neighborhood."
+          ],
+          "recognitionCue": "Devices are incorrectly separated or joined because of VLAN configuration → VLAN issue."
+        },
+        {
+          "title": "Misconfigured VLAN Tags",
+          "paragraphs": [
+            "A VLAN tag identifies which VLAN traffic belongs to. An incorrect tag can associate traffic with the wrong VLAN or cause it to be discarded.",
+            "Think: Wrong label on the packet."
+          ],
+          "recognitionCue": "Tagged traffic is assigned to the wrong logical network → misconfigured tags."
+        },
+        {
+          "title": "Access vs. Trunk Ports",
+          "paragraphs": [
+            "An access port normally carries traffic for one VLAN to an endpoint. A trunk port carries traffic for multiple VLANs, using tags to identify the traffic.",
+            "Think: Access = one VLAN. Trunk = many VLANs on one link."
+          ],
+          "recognitionCue": "One endpoint VLAN → access port. Multiple VLANs across one connection → trunk port."
+        }
+      ],
+      "table": {
+        "caption": "Access and trunk port comparison",
+        "headers": ["Port", "Main clue"],
+        "rows": [
+          ["Access", "One VLAN"],
+          ["Trunk", "Multiple VLANs"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "A network service fails while some connectivity remains → Network service unavailability",
+        "A device cannot obtain an IP address automatically → DHCP",
+        "IP works but hostname does not → DNS",
+        "Systems have incorrect time → NTP",
+        "Private systems cannot translate addresses → NAT",
+        "A web response contains an error number → HTTP status code",
+        "The connection works but feels delayed → Latency",
+        "Data transfers too slowly → Bandwidth/throughput",
+        "The network broke after a configuration change → Network device misconfiguration",
+        "Systems use incompatible protocols → Protocol incompatibility",
+        "An old protocol is no longer supported → Protocol deprecation",
+        "An address pool is empty → Scope exhaustion",
+        "The same subnet exists in two connected networks → Network overlap",
+        "No path exists → Missing route",
+        "The wrong path is configured → Misconfigured route",
+        "Logical network membership is wrong → VLAN issue",
+        "The VLAN identifier is wrong → Misconfigured tag",
+        "One VLAN per endpoint port → Access port",
+        "Multiple VLANs on one link → Trunk port"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 6.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "DNS vs. General Connectivity",
+          "paragraphs": [
+            "Do not automatically blame DNS when users cannot reach anything. If a destination works by IP address but not by hostname, DNS becomes the strong clue."
+          ]
+        },
+        {
+          "title": "Latency vs. Throughput",
+          "paragraphs": [
+            "Latency measures delay. Throughput measures the amount of data transferred. A tiny request can suffer high latency; a giant transfer can suffer low throughput."
+          ]
+        },
+        {
+          "title": "Scope Exhaustion vs. DNS",
+          "paragraphs": [
+            "If a device never receives a valid IP address, suspect DHCP or addressing. If it has an IP but names fail, suspect DNS."
+          ]
+        },
+        {
+          "title": "Missing vs. Misconfigured Route",
+          "paragraphs": [
+            "No route means missing. A route that sends traffic incorrectly is misconfigured."
+          ]
+        },
+        {
+          "title": "Access vs. Trunk",
+          "paragraphs": [
+            "Access carries one VLAN. Trunk carries multiple VLANs. If multiple VLANs need to cross a link, an access port is the wrong choice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "No automatic IP assignment → DHCP",
+        "IP works, hostname fails → DNS",
+        "Clock synchronization fails → NTP",
+        "Private address translation fails → NAT",
+        "Web returns 4xx or 5xx → HTTP status code",
+        "Long delay → Latency",
+        "Not enough data is moving → Bandwidth or throughput",
+        "Incorrect device settings → Network device misconfiguration",
+        "Protocol versions cannot communicate → Protocol incompatibility",
+        "Old protocol removed → Protocol deprecation",
+        "No addresses left → Scope exhaustion",
+        "Two networks use the same range → Network overlap",
+        "No destination path → Missing route",
+        "Traffic follows the wrong path → Misconfigured route",
+        "Wrong logical LAN → VLAN issue",
+        "Wrong VLAN ID → Misconfigured tag",
+        "Single VLAN → Access port",
+        "Multiple VLANs → Trunk port",
+        "2xx → Success",
+        "3xx → Redirect",
+        "4xx → Client or request issue",
+        "5xx → Server issue"
+      ]
+    }
+  ]
+}

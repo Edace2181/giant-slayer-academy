@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "5.2",
+  "title": "Explain Concepts Related to Continuous Integration/Continuous Deployment (CI/CD) Pipelines",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A continuous integration/continuous deployment (CI/CD) pipeline automates the journey from code change to tested, packaged, and potentially deployed software.",
+        "Instead of developers manually performing every step, the pipeline creates a repeatable workflow.",
+        "The basic mental model is: code → integrate → build → test → secure → package → deploy."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Where is the software in the pipeline: integrating code, building it, testing it, packaging it, or deploying it?"
+      ],
+      "callout": "An automated code-to-deployment process → CI/CD pipeline."
+    },
+    {
+      "id": "automation",
+      "title": "Automation",
+      "paragraphs": [
+        "Automation removes repetitive manual work from the software delivery process.",
+        "A pipeline may start when code changes, build software, run tests, perform security checks, create artifacts, and deploy applications.",
+        "Think: A developer changes code; the pipeline starts doing the chores."
+      ],
+      "callout": "Repetitive development or deployment steps happen automatically → automation."
+    },
+    {
+      "id": "code-integration",
+      "title": "Code Integration",
+      "paragraphs": [
+        "Continuous integration frequently combines developer changes into the shared codebase and validates those changes.",
+        "It reduces problems caused when developers work separately for long periods and then try to combine huge changes at once.",
+        "Think: Integrate small changes often."
+      ],
+      "callout": "Developer code is frequently combined and automatically validated → code integration."
+    },
+    {
+      "id": "code-deployment",
+      "title": "Code Deployment",
+      "paragraphs": [
+        "Code deployment moves software into an environment where it can run.",
+        "A CI/CD pipeline can automate deployment after code successfully passes required stages.",
+        "Think: Get the tested software into the destination environment."
+      ],
+      "callout": "Approved code is automatically released into an environment → deployment."
+    },
+    {
+      "id": "build",
+      "title": "Build",
+      "paragraphs": [
+        "The build stage converts source code into a form that can be executed or packaged.",
+        "Depending on the application, this may involve compiling code, resolving dependencies, packaging files, or creating an image.",
+        "Think: Turn source code into something deployable."
+      ],
+      "callout": "Source code is being converted into a usable software artifact → build."
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "paragraphs": [
+        "Automated testing checks whether software behaves as expected and can catch problems before deployment.",
+        "Think: Does the new code actually work?"
+      ],
+      "callout": "The pipeline automatically validates application behavior → testing."
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "paragraphs": [
+        "Security checks can be integrated into the pipeline instead of waiting until after deployment.",
+        "The goal is to identify security problems earlier in the delivery process.",
+        "Think: Security is part of the pipeline, not an afterthought."
+      ],
+      "callout": "Code or artifacts are checked for security weaknesses during CI/CD → pipeline security."
+    },
+    {
+      "id": "workflow",
+      "title": "Workflow",
+      "paragraphs": [
+        "A workflow defines the sequence of pipeline activities.",
+        "For example: Commit → Build → Test → Security Check → Package → Deploy.",
+        "Think: What happens first, second, third, and next?"
+      ],
+      "callout": "The scenario describes ordered CI/CD stages → workflow."
+    },
+    {
+      "id": "artifacts",
+      "title": "Artifacts",
+      "paragraphs": [
+        "An artifact is an output produced by the pipeline that can be stored, distributed, or deployed.",
+        "CompTIA specifically lists images, packages, and flat files."
+      ],
+      "entries": [
+        {
+          "title": "Images: VM Image",
+          "paragraphs": [
+            "A virtual machine (VM) image is a prepared representation used to create virtual machines. Think: Template for a VM."
+          ],
+          "recognitionCue": "The pipeline produces something used to launch identical virtual machines → VM image."
+        },
+        {
+          "title": "Images: Container Image",
+          "paragraphs": [
+            "A container image packages application code and required components used to launch containers. Think: Container blueprint."
+          ],
+          "recognitionCue": "The artifact is used to start containers → container image."
+        },
+        {
+          "title": "Packages: Red Hat Package Manager (RPM)",
+          "paragraphs": [
+            "RPM packages software commonly associated with Red Hat-family Linux systems."
+          ],
+          "recognitionCue": "Red Hat-style Linux package → RPM."
+        },
+        {
+          "title": "Packages: Debian",
+          "paragraphs": [
+            "Debian-based environments use Debian package formats for software installation."
+          ],
+          "recognitionCue": "Debian-family software package → Debian."
+        },
+        {
+          "title": "Packages: ZIP",
+          "paragraphs": [
+            "A ZIP file bundles and compresses files into one archive. Think: Pack several files together."
+          ],
+          "recognitionCue": "Files are bundled into a common compressed archive → ZIP."
+        },
+        {
+          "title": "Packages: tar",
+          "paragraphs": [
+            "A tar archive bundles multiple files together and is common in Unix and Linux environments."
+          ],
+          "recognitionCue": "Unix or Linux files are collected into a tar archive → tar."
+        },
+        {
+          "title": "Flat File",
+          "paragraphs": [
+            "A flat file is a simple file containing information without the richer structure of a database.",
+            "Pipeline output can be stored as a flat file when a simple format is sufficient."
+          ],
+          "recognitionCue": "The artifact is an individual data or configuration file → flat file."
+        }
+      ]
+    },
+    {
+      "id": "repositories",
+      "title": "Repositories",
+      "paragraphs": [
+        "Repositories store code, packages, images, or other artifacts."
+      ],
+      "entries": [
+        {
+          "title": "Public Repository",
+          "paragraphs": [
+            "A public repository is broadly accessible according to its permissions and is commonly used to distribute software or artifacts to many users."
+          ],
+          "recognitionCue": "Software or artifacts must be broadly accessible → public repository."
+        },
+        {
+          "title": "Private Repository",
+          "paragraphs": [
+            "A private repository restricts access to authorized users or systems. Organizations may use it for proprietary code or internal artifacts.",
+            "Think: Company-only warehouse."
+          ],
+          "recognitionCue": "Code or artifacts should only be accessible internally or to authorized users → private repository."
+        }
+      ]
+    },
+    {
+      "id": "cicd-recognition-flow",
+      "title": "CI/CD Recognition Flow",
+      "paragraphs": [
+        "Developer commits → Code integrates → Build → Testing → Security checks → Artifact created → Artifact stored in a repository → Deployment."
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Automatically perform pipeline tasks → Automation",
+        "Frequently combine developer changes → Code integration",
+        "Release approved code into an environment → Code deployment",
+        "Turn source into deployable output → Build",
+        "Validate software behavior → Testing",
+        "Check for vulnerabilities during the pipeline → Security",
+        "Ordered pipeline stages → Workflow",
+        "A pipeline output → Artifact",
+        "Virtual machine template → VM image",
+        "Container blueprint → Container image",
+        "Red Hat package → RPM",
+        "Debian software package → Debian",
+        "Compressed general archive → ZIP",
+        "Unix or Linux archive → tar",
+        "Simple standalone file → Flat file",
+        "Openly accessible artifact repository → Public",
+        "Restricted artifact repository → Private"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 5.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Continuous Integration vs. Deployment",
+          "paragraphs": [
+            "Integration combines and validates code. Deployment releases it into an environment. Code entering the shared branch does not automatically mean it has been deployed."
+          ]
+        },
+        {
+          "title": "Build vs. Artifact",
+          "paragraphs": [
+            "Build is the process. An artifact is the output of that process."
+          ]
+        },
+        {
+          "title": "Container Image vs. Running Container",
+          "paragraphs": [
+            "The image is the reusable artifact. The container is the running workload created from it."
+          ]
+        },
+        {
+          "title": "Public vs. Private Repository",
+          "paragraphs": [
+            "The difference is primarily access. Internal proprietary artifacts belong in appropriately restricted repositories."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Automated development steps → CI/CD automation",
+        "Combine developer changes frequently → Continuous integration",
+        "Convert source code into deployable form → Build",
+        "Validate application behavior → Testing",
+        "Check software security during pipeline → Security",
+        "Ordered stages → Workflow",
+        "Pipeline output → Artifact",
+        "Virtual machine deployment template → VM image",
+        "Container deployment template → Container image",
+        "Red Hat package → RPM",
+        "Debian-family package → Debian",
+        "General compressed archive → ZIP",
+        "Unix or Linux archive → tar",
+        "Simple file artifact → Flat file",
+        "Open artifact storage → Public repository",
+        "Restricted artifact storage → Private repository"
+      ]
+    }
+  ]
+}

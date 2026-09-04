@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "certification": "cloud-plus",
+  "examCode": "CV0-004",
+  "world": "5",
+  "objective": "6.3",
+  "title": "Given a Scenario, Troubleshoot Security Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Cloud security troubleshooting starts with identifying what security mechanism failed.",
+        "Access denied can indicate authentication or authorization. Failed secure communication can indicate an outdated cipher suite. Strange workload behavior can indicate exploitation or unauthorized software.",
+        "The mental model is: Who are you? → Authentication. What can you do? → Authorization. Is the software trusted, patched, and securely communicating? → Security configuration."
+      ]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "Is the issue proving identity, enforcing permissions, protecting credentials, using secure protocols, or preventing vulnerable or unauthorized software?"
+      ],
+      "callout": "Cannot prove identity → authentication. Wrong permission → authorization. Unexpected elevated permission → privilege escalation. Stolen secret → leaked credentials."
+    },
+    {
+      "id": "cipher-suite-deprecations",
+      "title": "Cipher Suite Deprecations",
+      "paragraphs": [
+        "A cipher suite defines cryptographic algorithms used to protect secure communication. Older suites may become unsafe and eventually be deprecated.",
+        "If one system still requires an obsolete cipher while another no longer allows it, secure communication may fail.",
+        "Think: The systems want encryption, but they no longer agree on a safe method."
+      ],
+      "callout": "Encrypted communication stops after an old cryptographic option is removed → cipher suite deprecation."
+    },
+    {
+      "id": "authorization-issues",
+      "title": "Authorization Issues",
+      "paragraphs": [
+        "Authorization determines what an authenticated identity is allowed to do.",
+        "A user can authenticate successfully and still encounter an authorization problem.",
+        "Think: We know who you are. The question is whether you are allowed to do this."
+      ],
+      "callout": "Login succeeds but the user cannot perform an action → authorization issue."
+    },
+    {
+      "id": "privilege-escalation",
+      "title": "Privilege Escalation",
+      "paragraphs": [
+        "Privilege escalation occurs when an identity gains more permissions than it should have.",
+        "An attacker may exploit a vulnerability or configuration error to move from limited permissions to powerful privileges.",
+        "Think: A normal user becomes an administrator when they should not."
+      ],
+      "callout": "An account obtains higher privileges than intended → privilege escalation."
+    },
+    {
+      "id": "unauthorized-access",
+      "title": "Unauthorized Access",
+      "paragraphs": [
+        "Unauthorized access occurs when a person, system, or process gains access to resources it should not be allowed to reach.",
+        "Think: They got in where they did not belong."
+      ],
+      "callout": "Someone accesses protected data or resources without proper permission → unauthorized access."
+    },
+    {
+      "id": "authentication-issues",
+      "title": "Authentication Issues",
+      "paragraphs": [
+        "Authentication determines whether an identity can prove who it claims to be.",
+        "Symptoms include login failures, invalid tokens, rejected credentials, and authentication service problems.",
+        "Think: Can you prove who you are?"
+      ],
+      "callout": "The identity cannot successfully log in or prove itself → authentication issue."
+    },
+    {
+      "id": "leaked-credentials",
+      "title": "Leaked Credentials",
+      "paragraphs": [
+        "Leaked credentials are passwords, API keys, tokens, or other authentication secrets exposed to unauthorized parties.",
+        "They may leak through source code, logs, misconfigured storage, phishing, or accidental disclosure.",
+        "Think: The key still works, but somebody who should not have it now has a copy."
+      ],
+      "callout": "A password, token, or API key has been exposed → leaked credentials."
+    },
+    {
+      "id": "software-vulnerability-issues",
+      "title": "Software Vulnerability Issues",
+      "paragraphs": [
+        "A software vulnerability is a weakness that can be exploited.",
+        "Security problems arise when software is outdated, unpatched, incorrectly configured, or uses vulnerable components.",
+        "Think: The attacker found a weakness in the software itself."
+      ],
+      "callout": "Exploitation is possible because of a known software flaw → software vulnerability issue."
+    },
+    {
+      "id": "unauthorized-software",
+      "title": "Unauthorized Software",
+      "paragraphs": [
+        "Unauthorized software is installed or running without organizational approval.",
+        "It may introduce malware risk, unpatched vulnerabilities, unknown services, and compliance issues.",
+        "Think: If nobody approved it, nobody may be maintaining or securing it either."
+      ],
+      "callout": "Unknown or unapproved software appears on a cloud system → unauthorized software."
+    },
+    {
+      "id": "security-troubleshooting-flow",
+      "title": "Security Troubleshooting Flow",
+      "paragraphs": [
+        "Can the identity log in? No → Authentication. Can the identity perform the required action? No → Authorization.",
+        "Does the identity have more rights than it should? Yes → Privilege escalation. Did somebody obtain credentials they should not have? Yes → Leaked credentials.",
+        "Did secure communication stop after cryptographic changes? Yes → Cipher suite deprecation. Is vulnerable or unapproved software involved? Yes → Software vulnerability or unauthorized software."
+      ],
+      "table": {
+        "caption": "Authentication and authorization recognition",
+        "headers": ["Question", "Concept"],
+        "rows": [
+          ["Who are you?", "Authentication"],
+          ["What may you do?", "Authorization"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "An old encryption option is no longer accepted → Cipher suite deprecation",
+        "Login succeeds but an operation is denied → Authorization issue",
+        "A user becomes an administrator unexpectedly → Privilege escalation",
+        "A person accesses a resource without permission → Unauthorized access",
+        "A user cannot prove identity → Authentication issue",
+        "A password, API key, or token is exposed → Leaked credentials",
+        "A known exploitable flaw exists → Software vulnerability issue",
+        "An unapproved application is running → Unauthorized software"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "⚠️ Objective 6.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {
+          "title": "Authentication vs. Authorization",
+          "paragraphs": [
+            "Authentication happens first. Cannot log in means authentication. Can log in but cannot perform an action means authorization."
+          ]
+        },
+        {
+          "title": "Privilege Escalation vs. Unauthorized Access",
+          "paragraphs": [
+            "Privilege escalation means a user gains a higher privilege level. Unauthorized access means a user gains access to something forbidden.",
+            "An attacker becoming an administrator is privilege escalation. Reading a confidential file without permission is unauthorized access."
+          ]
+        },
+        {
+          "title": "Leaked Credentials vs. Authentication Failure",
+          "paragraphs": [
+            "Leaked credentials may authenticate successfully, which is what makes them dangerous. A stolen key can still work even though the person using it is not legitimate."
+          ]
+        },
+        {
+          "title": "Cipher Deprecation vs. General Network Failure",
+          "paragraphs": [
+            "If basic connectivity exists but the encrypted session fails because an old cryptographic configuration is no longer accepted, choose cipher suite deprecation."
+          ]
+        },
+        {
+          "title": "Vulnerability vs. Unauthorized Software",
+          "paragraphs": [
+            "Vulnerable software is approved or existing software that contains a weakness. Unauthorized software should not be present in the first place."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Secure connection fails after old encryption is removed → Cipher suite deprecation",
+        "Identity is verified but an action is denied → Authorization issue",
+        "Normal user gains administrator rights → Privilege escalation",
+        "User reaches a forbidden resource → Unauthorized access",
+        "Cannot verify identity → Authentication issue",
+        "Password, token, or API key is exposed → Leaked credentials",
+        "Known software flaw can be exploited → Software vulnerability",
+        "Unapproved program is found → Unauthorized software",
+        "Who are you? → Authentication",
+        "What can you do? → Authorization",
+        "More privilege than intended → Privilege escalation",
+        "Someone has your secret → Leaked credentials",
+        "Old crypto is no longer accepted → Cipher suite deprecation"
+      ]
+    }
+  ]
+}
