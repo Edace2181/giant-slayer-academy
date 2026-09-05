@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | A+ Core 1 | Field Manual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="security-plus-field-manual.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body security-field-manual-page" data-certification="aplus-core1">
+  <div class="crt-overlay"></div>
+  <main class="security-field-manual-shell">
+    <p id="aplusManualLoading" role="status">Opening the Giant Slayer's Field Manual…</p>
+
+    <section id="aplusManualError" class="security-field-error hidden" role="alert">
+      <h1>Unable to Open This Field Manual</h1>
+      <p id="aplusManualErrorMessage">The requested lesson could not be loaded.</p>
+      <a id="aplusManualErrorReturn" href="aplus-core1-campaign.html" class="back-link">← Return to A+ Core 1 Campaign Map</a>
+    </section>
+
+    <div id="aplusManualApplication" class="hidden">
+      <header class="security-field-manual-header">
+        <span id="aplusManualKicker" class="security-field-manual-kicker"></span>
+        <h1>📖 Giant Slayer's Field Manual</h1>
+        <p id="aplusManualObjective" class="security-field-manual-objective"></p>
+        <p id="aplusManualCompletionNote" class="security-manual-completion-note hidden"></p>
+      </header>
+
+      <nav id="aplusManualNavigation" class="security-manual-navigation hidden" aria-label="Field Manual mini-lessons">
+        <p>Jump to a Mini-Lesson</p>
+        <div id="aplusManualNavigationLinks" class="security-manual-navigation-links"></div>
+      </nav>
+
+      <div id="aplusManualSections"></div>
+
+      <section class="security-field-section security-mini-check" aria-labelledby="aplusMiniCheckHeading">
+        <h2 id="aplusMiniCheckHeading">Recognition Check · Mini Check</h2>
+        <p>Use the existing GSA recognition bank to confirm the objective concepts before continuing.</p>
+        <form id="aplusMiniCheckForm">
+          <fieldset>
+            <legend id="aplusMiniCheckPrompt">Loading the Mini Check…</legend>
+            <div id="aplusMiniCheckChoices" class="answers-box"></div>
+          </fieldset>
+          <button type="submit" class="link-btn">Check My Answer</button>
+        </form>
+        <p id="aplusMiniCheckFeedback" class="security-mini-check-feedback" role="status" aria-live="polite" aria-atomic="true">Choose an answer, then check your response.</p>
+        <div class="security-field-manual-actions">
+          <button id="aplusManualComplete" type="button" class="link-btn security-manual-primary hidden">⚔️ Complete Manual and Begin Objective Sweep</button>
+          <a id="aplusManualReturn" href="aplus-core1-world1-objectives.html" class="back-link">← Return to World 1 Objective Hub</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="aplus-core1-field-manual.js"></script>
+</body>
+</html>

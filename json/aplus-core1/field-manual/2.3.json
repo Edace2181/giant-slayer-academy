@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Summarize Services Provided by Networked Hosts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A network contains more than client computers. Many hosts exist specifically to provide services to other devices.",
+        "Networked hosts can resolve names, assign addresses, share resources, provide applications, centralize logs and identity, filter or distribute traffic, and monitor connected physical systems."
+      ],
+      "bullets": [
+        "Server roles: DNS, DHCP, fileshare, print, mail, syslog, web, AAA, database, and NTP",
+        "Internet appliances: spam gateway, UTM, load balancer, and proxy",
+        "Legacy and embedded systems: SCADA",
+        "Internet of Things (IoT) devices"
+      ],
+      "callout": "Ask: what service is this host providing to the network?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a scenario describes what a networked system is doing, can you identify the server role, appliance, industrial system, or IoT device responsible?"
+      ],
+      "bullets": [
+        "Names → DNS",
+        "IP configuration → DHCP",
+        "Shared resources → file or print server",
+        "Central logs → syslog",
+        "Identity, access, and activity → AAA",
+        "Structured application data → database",
+        "Clock synchronization → NTP"
+      ]
+    },
+    {
+      "id": "server-roles",
+      "title": "Server Roles",
+      "paragraphs": [
+        "A server role describes a service a networked host provides to other systems. One physical or virtual server can perform one role or several roles.",
+        "Focus on the service being provided, not the server's brand or operating system."
+      ]
+    },
+    {
+      "id": "dns-server",
+      "title": "DNS Server",
+      "paragraphs": [
+        "A Domain Name System (DNS) server translates human-readable names into network information such as IP addresses. When users can connect by address but not hostname, name resolution is the clue."
+      ],
+      "callout": "Resolve network names → DNS server."
+    },
+    {
+      "id": "dhcp-server",
+      "title": "DHCP Server",
+      "paragraphs": [
+        "A Dynamic Host Configuration Protocol (DHCP) server automatically provides client network settings such as an IP address, subnet information, default gateway, and DNS server information."
+      ],
+      "callout": "A new client automatically receives network settings → DHCP server."
+    },
+    {
+      "id": "dns-vs-dhcp",
+      "title": "DNS vs. DHCP",
+      "table": {
+        "caption": "Core infrastructure services",
+        "headers": ["Service", "Primary job"],
+        "rows": [["DNS", "Helps devices locate resources by name"], ["DHCP", "Gives devices their network configuration"]]
+      },
+      "callout": "DHCP gives you an address; DNS helps you find an address."
+    },
+    {
+      "id": "fileshare-server",
+      "title": "File Server and Fileshare",
+      "paragraphs": [
+        "A file server stores data that users or systems access across a network. A fileshare exposes authorized folders or files for department storage, shared documents, home folders, and collaboration."
+      ],
+      "callout": "Employees access the same network folder → file server/fileshare."
+    },
+    {
+      "id": "print-server",
+      "title": "Print Server",
+      "paragraphs": [
+        "A print server centralizes printer availability, sharing, print queues, and job management instead of making every workstation manage every printer independently."
+      ],
+      "callout": "Many users send jobs to a centrally managed queue → print server."
+    },
+    {
+      "id": "file-vs-print",
+      "title": "File Server vs. Print Server",
+      "table": {
+        "caption": "Shared-resource server roles",
+        "headers": ["Central resource", "Server role"],
+        "rows": [["Documents, folders, and data", "File server"], ["Printers, queues, and print jobs", "Print server"]]
+      }
+    },
+    {
+      "id": "mail-server",
+      "title": "Mail Server",
+      "paragraphs": [
+        "A mail server provides organizational email services, which can include sending, receiving, storing mailboxes, and giving users access to messages.",
+        "SMTP, POP3, and IMAP describe mail protocols; this objective asks you to recognize the host providing the overall email service."
+      ],
+      "callout": "Organization hosts employee email → mail server."
+    },
+    {
+      "id": "syslog-server",
+      "title": "Syslog Server",
+      "paragraphs": [
+        "Syslog provides a standardized way for routers, switches, servers, firewalls, and other devices to send log messages to a centralized location.",
+        "Central collection simplifies monitoring, troubleshooting, and event correlation."
+      ],
+      "callout": "Centralized logs from many network devices → syslog server."
+    },
+    {
+      "id": "web-server",
+      "title": "Web Server",
+      "paragraphs": [
+        "A web server hosts websites or web applications and responds to HTTP or HTTPS requests. It can provide public sites, intranet pages, web apps, and management interfaces."
+      ],
+      "callout": "A browser requests the company intranet → web server."
+    },
+    {
+      "id": "aaa",
+      "title": "Authentication, Authorization, and Accounting (AAA)",
+      "entries": [
+        {
+          "title": "Authentication",
+          "paragraphs": ["Authentication verifies identity using accepted credentials such as a password or certificate."],
+          "recognitionCue": "Who are you?"
+        },
+        {
+          "title": "Authorization",
+          "paragraphs": ["Authorization determines which resources or actions an authenticated identity is permitted to access."],
+          "recognitionCue": "What are you allowed to do?"
+        },
+        {
+          "title": "Accounting",
+          "paragraphs": ["Accounting records activity, sessions, connections, or resource use."],
+          "recognitionCue": "What did you do?"
+        }
+      ],
+      "callout": "Authentication → identity; authorization → permissions; accounting → activity records."
+    },
+    {
+      "id": "database-server",
+      "title": "Database Server",
+      "paragraphs": [
+        "A database server stores and manages structured data that applications query, insert, modify, or delete, such as customer records, inventory, orders, and account data."
+      ],
+      "callout": "An application queries centralized structured records → database server."
+    },
+    {
+      "id": "file-vs-database",
+      "title": "File Server vs. Database Server",
+      "table": {
+        "caption": "Files and structured records",
+        "headers": ["Server role", "Provides"],
+        "rows": [["File server", "Files and folders"], ["Database server", "Structured records that applications query"]]
+      },
+      "callout": "Shared spreadsheet file → file server; application searches customer records → database server."
+    },
+    {
+      "id": "ntp-server",
+      "title": "Network Time Protocol (NTP)",
+      "paragraphs": [
+        "Network Time Protocol (NTP) synchronizes clocks across networked systems. Accurate time supports logs, authentication, security events, troubleshooting, and scheduled operations.",
+        "When devices disagree about time, reconstructing an event sequence becomes difficult."
+      ],
+      "callout": "Inconsistent system timestamps → investigate NTP."
+    },
+    {
+      "id": "internet-appliances",
+      "title": "Internet Appliances",
+      "paragraphs": [
+        "Internet appliances are network devices designed primarily for specialized network or security functions. Objective 2.3 includes spam gateways, unified threat management, load balancers, and proxy servers."
+      ]
+    },
+    {
+      "id": "spam-gateway",
+      "title": "Spam Gateway",
+      "paragraphs": [
+        "A spam gateway inspects email traffic and filters unwanted or malicious messages before they reach the organization's mail system or users."
+      ],
+      "callout": "Filter unwanted email before delivery → spam gateway."
+    },
+    {
+      "id": "utm",
+      "title": "Unified Threat Management (UTM)",
+      "paragraphs": [
+        "A unified threat management (UTM) appliance combines multiple security capabilities into one platform, potentially including firewall, intrusion detection or prevention, malware protection, and content filtering."
+      ],
+      "callout": "Several network-security functions in one appliance → UTM."
+    },
+    {
+      "id": "load-balancer",
+      "title": "Load Balancer",
+      "paragraphs": [
+        "A load balancer distributes incoming requests or workloads among multiple backend servers. It can improve scalability and availability by avoiding dependence on one overloaded or unavailable server."
+      ],
+      "bullets": ["Clients send requests to one service", "The load balancer receives them", "Requests are distributed across available backend servers"],
+      "callout": "One service, multiple backend servers, distributed traffic → load balancer."
+    },
+    {
+      "id": "proxy-server",
+      "title": "Proxy Server",
+      "paragraphs": [
+        "A proxy server acts as an intermediary between a client and another destination. It can support filtering, access control, caching, privacy, and logging."
+      ],
+      "callout": "Client traffic passes through a middleman → proxy server."
+    },
+    {
+      "id": "appliance-comparisons",
+      "title": "Internet Appliance Comparisons",
+      "entries": [
+        {"title": "Proxy vs. Load Balancer", "paragraphs": ["A proxy intermediates or controls communication. A load balancer distributes requests among backend servers."]},
+        {"title": "Spam Gateway vs. UTM", "paragraphs": ["A spam gateway specializes in email filtering. A UTM combines multiple network-security functions."]}
+      ],
+      "callout": "Proxy = middleman; load balancer = traffic distributor; spam gateway = mail specialist; UTM = consolidated security."
+    },
+    {
+      "id": "legacy-embedded-systems",
+      "title": "Legacy and Embedded Systems",
+      "paragraphs": [
+        "Not every networked system resembles a desktop or conventional server. Legacy, embedded, and industrial systems can have specialized hardware and software, limited upgrade options, and long service lifecycles.",
+        "Treat these purpose-built systems according to their operational role and constraints."
+      ]
+    },
+    {
+      "id": "scada",
+      "title": "Supervisory Control and Data Acquisition (SCADA)",
+      "paragraphs": [
+        "Supervisory Control and Data Acquisition (SCADA) systems monitor and control industrial processes and infrastructure in manufacturing, utilities, water, energy, and similar environments.",
+        "SCADA can supervise sensors, pumps, machinery, and physical processes, so failures may affect production, infrastructure, or safety."
+      ],
+      "callout": "Networked industrial monitoring or control → SCADA."
+    },
+    {
+      "id": "iot-devices",
+      "title": "Internet of Things (IoT) Devices",
+      "paragraphs": [
+        "Internet of Things (IoT) devices are network-connected devices with specialized functions beyond traditional general-purpose computers, such as smart thermostats, lights, cameras, sensors, appliances, and environmental monitors.",
+        "They often combine embedded hardware and software, limited local interfaces, and dependence on applications or cloud services."
+      ],
+      "callout": "A specialized physical device becomes network-connected → IoT."
+    },
+    {
+      "id": "scada-vs-iot",
+      "title": "SCADA vs. IoT",
+      "table": {
+        "caption": "Connected physical systems",
+        "headers": ["Technology", "Primary scenario"],
+        "rows": [["SCADA", "Industrial monitoring and control"], ["IoT", "Network-connected specialized device"]]
+      },
+      "callout": "Factory control → SCADA; smart connected thing → IoT."
+    },
+    {
+      "id": "server-role-map",
+      "title": "Server Role Map",
+      "table": {
+        "caption": "Server roles by service",
+        "headers": ["Category", "Role and service"],
+        "rows": [
+          ["Network infrastructure", "DNS → names; DHCP → configuration; NTP → time"],
+          ["Shared resources", "File server → files; print server → printers"],
+          ["Communication", "Mail server → email; web server → web content"],
+          ["Monitoring and access", "Syslog → logs; AAA → identity, permissions, and activity"],
+          ["Application data", "Database server → structured data"]
+        ]
+      }
+    },
+    {
+      "id": "appliance-map",
+      "title": "Internet Appliance Map",
+      "table": {
+        "caption": "Appliances by function",
+        "headers": ["Function", "Appliance"],
+        "rows": [
+          ["Email filtering", "Spam gateway"],
+          ["Consolidated security", "UTM"],
+          ["Traffic distribution", "Load balancer"],
+          ["Communication intermediary", "Proxy server"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Resolve network names → DNS",
+        "Automatically assign settings → DHCP",
+        "Shared network folders → file server",
+        "Central printer queue → print server",
+        "Organizational email → mail server",
+        "Centralized network logs → syslog",
+        "Host a website or web app → web server",
+        "Verify identity, grant permissions, track activity → AAA",
+        "Structured application records → database server",
+        "Synchronize system clocks → NTP",
+        "Filter unwanted email → spam gateway",
+        "Multiple security functions → UTM",
+        "Distribute requests across servers → load balancer",
+        "Intermediary for client traffic → proxy server",
+        "Industrial monitoring and control → SCADA",
+        "Network-connected specialized device → IoT"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "The exam may describe the job without naming the server or appliance. Ignore what the box looks like and identify the service behavior first."
+      ],
+      "entries": [
+        {"title": "DNS vs. DHCP", "paragraphs": ["DNS resolves names; DHCP assigns network configuration."]},
+        {"title": "File Server vs. Database", "paragraphs": ["Files and folders point to a file server; structured records queried by an application point to a database server."]},
+        {"title": "Authentication vs. Authorization vs. Accounting", "paragraphs": ["Authentication verifies identity, authorization determines permissions, and accounting tracks activity."]},
+        {"title": "Syslog vs. NTP", "paragraphs": ["Logs point to syslog; time synchronization points to NTP. Synchronized time also makes centralized logs more useful."]},
+        {"title": "Spam Gateway vs. Mail Server", "paragraphs": ["A mail server provides email; a spam gateway filters unwanted or malicious email."]},
+        {"title": "Proxy vs. Load Balancer", "paragraphs": ["A proxy intermediates or filters communication; a load balancer spreads incoming requests across backend servers."]},
+        {"title": "SCADA vs. IoT", "paragraphs": ["Industrial process control points to SCADA; a specialized connected device points to IoT."]}
+      ],
+      "callout": "SERVICE BEHAVIOR → SERVER OR APPLIANCE ROLE."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Names to addresses → DNS",
+        "Automatic network configuration → DHCP",
+        "Shared files → file server/fileshare",
+        "Centralized printing → print server",
+        "Email service → mail server",
+        "Centralized logs → syslog",
+        "Web content → web server",
+        "Who are you? → authentication",
+        "What can you do? → authorization",
+        "What did you do? → accounting",
+        "Structured application data → database server",
+        "Clock synchronization → NTP",
+        "Email spam filtering → spam gateway",
+        "All-in-one network security → UTM",
+        "Spread traffic across servers → load balancer",
+        "Network intermediary → proxy server",
+        "Industrial monitoring and control → SCADA",
+        "Specialized network-connected device → IoT",
+        "SERVICE BEHAVIOR → SERVER/APPLIANCE ROLE"
+      ]
+    }
+  ]
+}

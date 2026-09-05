@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Compare and Contrast TCP and UDP Ports, Protocols, and Their Purposes",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Networks run many services at the same time. Ports help a system determine which network service should receive particular traffic.",
+        "For this objective, recognize common port numbers, the protocols associated with them, what those protocols do, and the difference between TCP and UDP."
+      ],
+      "bullets": [
+        "Service purpose → protocol → port",
+        "IP address → which system",
+        "Port number → which service",
+        "Transport behavior → TCP or UDP"
+      ],
+      "callout": "Do not stop at Port 22 = SSH. Recognize secure remote command-line connection → SSH → port 22."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When CompTIA describes what a network service is doing, can you identify the protocol, its port number, and whether TCP or UDP behavior best fits the communication?"
+      ],
+      "callout": "SERVICE PURPOSE → PROTOCOL → PORT."
+    },
+    {
+      "id": "ports-and-protocols",
+      "title": "Ports and Protocols",
+      "paragraphs": [
+        "An IP address identifies a device. A port helps identify a service on that device. One server can provide several services from the same IP address because each service can listen on a different port."
+      ],
+      "table": {
+        "caption": "Objective 2.1 port map",
+        "headers": ["Port", "Protocol", "Purpose"],
+        "rows": [
+          ["20-21", "FTP", "File transfer"],
+          ["22", "SSH", "Secure remote command line"],
+          ["23", "Telnet", "Unencrypted remote terminal"],
+          ["25", "SMTP", "Send or transfer email"],
+          ["53", "DNS", "Name resolution"],
+          ["67/68", "DHCP", "Automatic network configuration"],
+          ["80", "HTTP", "Standard web traffic"],
+          ["110", "POP3", "Retrieve or download email"],
+          ["143", "IMAP", "Server-based mailbox access"],
+          ["137-139", "NetBIOS/NetBT", "Legacy local-network naming and sessions"],
+          ["389", "LDAP", "Directory access"],
+          ["443", "HTTPS", "Secure web traffic"],
+          ["445", "SMB/CIFS", "Network file and printer sharing"],
+          ["3389", "RDP", "Remote graphical desktop"]
+        ]
+      },
+      "callout": "IP = which system? Port = which service?"
+    },
+    {
+      "id": "ftp",
+      "title": "FTP - Ports 20 and 21",
+      "paragraphs": [
+        "File Transfer Protocol (FTP) transfers files between systems. Port 21 carries the control connection, while port 20 is traditionally associated with data transfer in active FTP.",
+        "FTP does not provide the secure encrypted remote administration associated with SSH."
+      ],
+      "callout": "Traditional file transfer service → FTP → 20/21."
+    },
+    {
+      "id": "ssh-and-telnet",
+      "title": "SSH vs. Telnet",
+      "entries": [
+        {
+          "title": "SSH - Port 22",
+          "paragraphs": ["Secure Shell (SSH) provides encrypted remote command-line access for managing another system."],
+          "recognitionCue": "Secure remote command line → SSH → 22."
+        },
+        {
+          "title": "Telnet - Port 23",
+          "paragraphs": ["Telnet provides legacy text-based remote terminal access without the encryption expected from SSH."],
+          "recognitionCue": "Unencrypted remote terminal → Telnet → 23."
+        }
+      ],
+      "callout": "22 secure; 23 legacy and insecure."
+    },
+    {
+      "id": "smtp",
+      "title": "SMTP - Port 25",
+      "paragraphs": [
+        "Simple Mail Transfer Protocol (SMTP) sends and transfers email. It is not the protocol used to retrieve messages from a mailbox."
+      ],
+      "callout": "Send or transfer email → SMTP → 25."
+    },
+    {
+      "id": "dns",
+      "title": "DNS - Port 53",
+      "paragraphs": [
+        "Domain Name System (DNS) resolves names to IP addresses and supplies other DNS information. If a resource works by IP address but not by hostname, investigate DNS.",
+        "DNS can use both TCP and UDP. Basic queries commonly use UDP; TCP is used when reliable connection-oriented communication or larger exchanges are required."
+      ],
+      "callout": "Names ↔ addresses → DNS → 53."
+    },
+    {
+      "id": "dhcp",
+      "title": "DHCP - Ports 67 and 68",
+      "paragraphs": [
+        "Dynamic Host Configuration Protocol (DHCP) automatically supplies network settings such as an IP address, subnet information, default gateway, and DNS server information."
+      ],
+      "table": {
+        "caption": "DHCP port roles",
+        "headers": ["Port", "Role"],
+        "rows": [["UDP 67", "DHCP server"], ["UDP 68", "DHCP client"]]
+      },
+      "callout": "Automatic IP configuration → DHCP → server 67, client 68."
+    },
+    {
+      "id": "http-and-https",
+      "title": "HTTP vs. HTTPS",
+      "entries": [
+        {
+          "title": "HTTP - Port 80",
+          "paragraphs": ["Hypertext Transfer Protocol (HTTP) carries standard web communication without HTTPS encryption."],
+          "recognitionCue": "Standard unencrypted web connection → HTTP → 80."
+        },
+        {
+          "title": "HTTPS - Port 443",
+          "paragraphs": ["Hypertext Transfer Protocol Secure (HTTPS) provides encrypted web communication."],
+          "recognitionCue": "Secure website connection → HTTPS → 443."
+        }
+      ],
+      "callout": "80 = web; 443 = secure web."
+    },
+    {
+      "id": "pop3-and-imap",
+      "title": "POP3 vs. IMAP",
+      "entries": [
+        {
+          "title": "POP3 - Port 110",
+          "paragraphs": ["Post Office Protocol 3 (POP3) retrieves email and traditionally emphasizes downloading messages from the mail server to the client."],
+          "recognitionCue": "Retrieve or download email → POP3 → 110."
+        },
+        {
+          "title": "IMAP - Port 143",
+          "paragraphs": ["Internet Mail Access Protocol (IMAP) accesses and manages mailbox information on the server, supporting the same mailbox across multiple devices."],
+          "recognitionCue": "Synchronized server-based mailbox → IMAP → 143."
+        }
+      ],
+      "callout": "SMTP sends; POP3 pulls; IMAP keeps the server mailbox in sync."
+    },
+    {
+      "id": "netbios-netbt",
+      "title": "NetBIOS and NetBT - Ports 137-139",
+      "paragraphs": [
+        "Network Basic Input/Output System (NetBIOS) provides legacy local-network communication and resource-related services. NetBIOS over TCP/IP (NetBT) carries those services over TCP/IP.",
+        "Ports 137 through 139 historically support name, datagram, and session functions."
+      ],
+      "callout": "Legacy Windows-style local networking → NetBIOS/NetBT → 137-139."
+    },
+    {
+      "id": "ldap",
+      "title": "LDAP - Port 389",
+      "paragraphs": [
+        "Lightweight Directory Access Protocol (LDAP) accesses and works with directory information about users, groups, systems, and other organizational resources."
+      ],
+      "callout": "Query or access directory information → LDAP → 389."
+    },
+    {
+      "id": "smb-cifs",
+      "title": "SMB and CIFS - Port 445",
+      "paragraphs": [
+        "Server Message Block (SMB) is commonly used for network file and printer sharing. Common Internet File System (CIFS) is associated with the SMB family of file-sharing technologies."
+      ],
+      "callout": "Windows-style shared folders and printers → SMB/CIFS → 445."
+    },
+    {
+      "id": "netbios-vs-smb",
+      "title": "NetBIOS vs. SMB",
+      "paragraphs": [
+        "These technologies can appear together in Windows networking, but their port recognition must remain distinct."
+      ],
+      "bullets": [
+        "NetBIOS/NetBT → ports 137-139",
+        "SMB/CIFS → port 445"
+      ]
+    },
+    {
+      "id": "rdp",
+      "title": "RDP - Port 3389",
+      "paragraphs": [
+        "Remote Desktop Protocol (RDP) provides graphical remote access to another computer, allowing interaction with a remote desktop rather than only a command-line shell."
+      ],
+      "callout": "Remote graphical Windows desktop → RDP → 3389."
+    },
+    {
+      "id": "ssh-vs-rdp",
+      "title": "SSH vs. RDP",
+      "table": {
+        "caption": "Remote access recognition",
+        "headers": ["Protocol", "Port", "Experience"],
+        "rows": [["SSH", "22", "Secure command line"], ["RDP", "3389", "Graphical remote desktop"]]
+      },
+      "callout": "SSH = terminal; RDP = desktop."
+    },
+    {
+      "id": "tcp",
+      "title": "Transmission Control Protocol (TCP)",
+      "paragraphs": [
+        "TCP is connection-oriented. It establishes a logical connection before normal application data is exchanged and provides sequencing, acknowledgments, retransmission, and ordered delivery.",
+        "Those reliability mechanisms add overhead but help ensure that missing data is detected and resent."
+      ],
+      "callout": "Reliability and ordered delivery matter → TCP."
+    },
+    {
+      "id": "tcp-handshake",
+      "title": "TCP Three-Way Handshake",
+      "paragraphs": [
+        "TCP establishes a connection with a three-way handshake: SYN requests the connection, SYN-ACK acknowledges and responds, and ACK confirms the response."
+      ],
+      "bullets": ["SYN → Can we talk?", "SYN-ACK → Yes, I hear you.", "ACK → Good, begin the exchange."],
+      "callout": "SYN → SYN-ACK → ACK indicates connection-oriented TCP communication."
+    },
+    {
+      "id": "udp",
+      "title": "User Datagram Protocol (UDP)",
+      "paragraphs": [
+        "UDP is connectionless. It sends without establishing a TCP-style connection and does not provide TCP's built-in guarantees for delivery, ordering, or retransmission.",
+        "The reduced overhead is useful when timely delivery or lower transport overhead matters more than verifying every piece of data at the transport layer."
+      ],
+      "callout": "Connectionless and lower overhead → UDP."
+    },
+    {
+      "id": "tcp-vs-udp",
+      "title": "TCP vs. UDP",
+      "table": {
+        "caption": "Transport protocol comparison",
+        "headers": ["TCP", "UDP"],
+        "rows": [
+          ["Connection-oriented", "Connectionless"],
+          ["Reliable delivery mechanisms", "No built-in delivery guarantee"],
+          ["Ordered delivery", "No built-in ordering guarantee"],
+          ["Acknowledgments", "No TCP-style acknowledgments"],
+          ["Retransmission", "No TCP-style retransmission"],
+          ["More overhead", "Lower overhead"]
+        ]
+      },
+      "callout": "TCP asks, Did you get it? UDP says, Sending it! The correct choice depends on the application's needs."
+    },
+    {
+      "id": "transport-recognition",
+      "title": "TCP and UDP Protocol Recognition",
+      "table": {
+        "caption": "Common transport associations",
+        "headers": ["Protocol", "Port", "Transport recognition"],
+        "rows": [
+          ["FTP", "20-21", "TCP"], ["SSH", "22", "TCP"], ["Telnet", "23", "TCP"],
+          ["SMTP", "25", "TCP"], ["DNS", "53", "TCP/UDP"], ["DHCP", "67/68", "UDP"],
+          ["HTTP", "80", "TCP"], ["POP3", "110", "TCP"], ["IMAP", "143", "TCP"],
+          ["NetBIOS/NetBT", "137-139", "TCP/UDP depending on service"], ["LDAP", "389", "TCP/UDP"],
+          ["HTTPS", "443", "TCP"], ["SMB/CIFS", "445", "TCP"], ["RDP", "3389", "TCP/UDP"]
+        ]
+      },
+      "callout": "Reliable connection-oriented delivery → TCP. Connectionless lower-overhead delivery → UDP."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "File transfer → FTP → 20/21",
+        "Secure remote CLI → SSH → 22",
+        "Legacy remote terminal → Telnet → 23",
+        "Send email → SMTP → 25",
+        "Name resolution → DNS → 53",
+        "Automatic network configuration → DHCP → 67/68",
+        "Standard web → HTTP → 80",
+        "Retrieve email → POP3 → 110",
+        "Server-based mailbox → IMAP → 143",
+        "Legacy NetBIOS networking → NetBIOS/NetBT → 137-139",
+        "Directory access → LDAP → 389",
+        "Secure web → HTTPS → 443",
+        "Network file sharing → SMB/CIFS → 445",
+        "Graphical remote desktop → RDP → 3389",
+        "Reliable and connection-oriented → TCP",
+        "Connectionless and lower overhead → UDP"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "This objective groups similar services. Identify the service first, then recall the protocol and port. If the question compares transport behavior, decide whether it wants reliability and a connection or lower overhead and connectionless delivery."
+      ],
+      "entries": [
+        {"title": "SSH vs. Telnet", "paragraphs": ["Both provide a remote command line. Secure and encrypted means SSH 22; legacy and unsecured means Telnet 23."]},
+        {"title": "HTTP vs. HTTPS", "paragraphs": ["Standard web traffic uses HTTP 80; encrypted web traffic uses HTTPS 443."]},
+        {"title": "SMTP vs. POP3 vs. IMAP", "paragraphs": ["SMTP 25 sends, POP3 110 retrieves or downloads, and IMAP 143 maintains a server-based mailbox."]},
+        {"title": "DNS vs. DHCP", "paragraphs": ["DNS 53 resolves names. DHCP 67/68 provides automatic network configuration."]},
+        {"title": "SSH vs. RDP", "paragraphs": ["SSH 22 supplies a secure command line; RDP 3389 supplies a graphical desktop."]},
+        {"title": "TCP vs. UDP", "paragraphs": ["Do not reduce the comparison to slow versus fast. Ask whether the application requires connection establishment, acknowledgments, ordering, and retransmission."]}
+      ],
+      "callout": "SERVICE → PROTOCOL → PORT; then evaluate TCP versus UDP behavior when asked."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "FTP 20/21 → file transfer",
+        "SSH 22 → secure command-line administration",
+        "Telnet 23 → legacy unencrypted terminal",
+        "SMTP 25 → send or transfer email",
+        "DNS 53 → resolve names",
+        "DHCP 67/68 → automatic network configuration",
+        "HTTP 80 → standard web",
+        "POP3 110 → retrieve or download mail",
+        "IMAP 143 → manage server mailbox",
+        "NetBIOS/NetBT 137-139 → legacy NetBIOS networking",
+        "LDAP 389 → directory service access",
+        "HTTPS 443 → secure web",
+        "SMB/CIFS 445 → network file and printer sharing",
+        "RDP 3389 → graphical remote desktop",
+        "TCP → connection-oriented reliable delivery",
+        "UDP → connectionless lower-overhead delivery",
+        "TCP connection → SYN → SYN-ACK → ACK",
+        "SERVICE → PROTOCOL → PORT"
+      ]
+    }
+  ]
+}

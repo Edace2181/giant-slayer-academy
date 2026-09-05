@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.8",
+  "title": "Explain Networking Tools and Their Purposes",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Networking tools build, strip, analyze, trace, terminate, test, loop, and observe network connections.",
+        "For this objective, recognize the crimper, cable stripper, Wi-Fi analyzer, toner probe, punchdown tool, cable tester, loopback plug, and network tap."
+      ],
+      "callout": "BUILD → STRIP → ANALYZE → TRACE → PUNCH → TEST → LOOP → CAPTURE."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a scenario describes a networking task, can you identify the exact tool for the job?"
+      ],
+      "bullets": ["Attach a modular plug → crimper", "Remove cable jacket → cable stripper", "Inspect wireless environment → Wi-Fi analyzer", "Trace a hidden cable → toner probe", "Terminate on block or jack → punchdown tool", "Verify cable wiring → cable tester", "Test an interface internally → loopback plug", "Observe live traffic → network tap"]
+    },
+    {
+      "id": "crimper",
+      "title": "Crimper",
+      "paragraphs": [
+        "A crimper attaches certain modular connectors to network cable. A common use is securing an RJ45-style plug onto prepared twisted-pair Ethernet cable after its conductors are arranged and inserted."
+      ],
+      "callout": "Attach a modular Ethernet plug to cable → crimper."
+    },
+    {
+      "id": "cable-stripper",
+      "title": "Cable Stripper",
+      "paragraphs": [
+        "A cable stripper removes the outer jacket or insulation without unnecessarily damaging the conductors. It prepares cable for termination."
+      ],
+      "callout": "Remove cable jacket before termination → cable stripper."
+    },
+    {
+      "id": "crimper-vs-stripper",
+      "title": "Crimper vs. Cable Stripper",
+      "table": {
+        "caption": "Cable-preparation tools",
+        "headers": ["Tool", "Job"],
+        "rows": [["Cable stripper", "Removes the outer jacket"], ["Crimper", "Secures a modular connector onto cable"]]
+      },
+      "callout": "Strip first; crimp later."
+    },
+    {
+      "id": "wi-fi-analyzer",
+      "title": "Wi-Fi Analyzer",
+      "paragraphs": [
+        "A Wi-Fi analyzer examines nearby wireless networks, channels, signal strength, congestion, and frequency bands. It helps diagnose poor wireless performance and choose cleaner channels."
+      ],
+      "callout": "Inspect crowded channels or compare wireless signal strength → Wi-Fi analyzer."
+    },
+    {
+      "id": "analyzer-vs-tester",
+      "title": "Wi-Fi Analyzer vs. Cable Tester",
+      "table": {
+        "caption": "Wireless and wired troubleshooting",
+        "headers": ["Tool", "Environment"],
+        "rows": [["Wi-Fi analyzer", "Wireless signals and channels"], ["Cable tester", "Physical network cabling"]]
+      },
+      "callout": "Air → Wi-Fi analyzer; wire → cable tester."
+    },
+    {
+      "id": "toner-probe",
+      "title": "Toner Probe",
+      "paragraphs": [
+        "A toner probe traces and identifies cables. A tone generator places a signal on the cable, and the probe detects it so a technician can locate the cable among unlabeled runs or follow it through a building."
+      ],
+      "callout": "Find the mystery cable and where it goes → toner probe."
+    },
+    {
+      "id": "punchdown-tool",
+      "title": "Punchdown Tool",
+      "paragraphs": [
+        "A punchdown tool presses individual twisted-pair conductors into insulation displacement connector slots on patch panels, keystone jacks, and punchdown blocks, often trimming excess wire."
+      ],
+      "callout": "Terminate conductors on a patch panel or keystone jack → punchdown tool."
+    },
+    {
+      "id": "crimper-vs-punchdown",
+      "title": "Crimper vs. Punchdown Tool",
+      "table": {
+        "caption": "Cable-termination tools",
+        "headers": ["Termination", "Tool"],
+        "rows": [["Modular plug", "Crimper"], ["IDC slots on a jack or panel", "Punchdown tool"]]
+      },
+      "callout": "Plug → crimper; jack or panel → punchdown."
+    },
+    {
+      "id": "cable-tester",
+      "title": "Cable Tester",
+      "paragraphs": [
+        "A cable tester verifies cable continuity and pinout. Depending on the tester, it can detect opens, shorts, miswires, reversed conductors, split pairs, and other wiring faults."
+      ],
+      "callout": "Is this Ethernet cable wired correctly end to end? → cable tester."
+    },
+    {
+      "id": "open-circuit",
+      "title": "Open Circuit",
+      "paragraphs": [
+        "An open occurs when a conductor does not form a complete electrical path because it is broken or not properly terminated. A cable tester can identify the fault."
+      ],
+      "callout": "Open = the path is broken."
+    },
+    {
+      "id": "short-circuit",
+      "title": "Short Circuit",
+      "paragraphs": [
+        "A short occurs when conductors that should remain separate make electrical contact. A cable tester can detect this wiring fault."
+      ],
+      "callout": "Short = wires touch that should not touch."
+    },
+    {
+      "id": "miswire",
+      "title": "Miswire",
+      "paragraphs": [
+        "A miswire occurs when conductors connect to the wrong pins, such as one end's pin 1 connecting to the other end's pin 3."
+      ],
+      "callout": "Miswire = connected, but to the wrong place."
+    },
+    {
+      "id": "tester-vs-toner",
+      "title": "Cable Tester vs. Toner Probe",
+      "table": {
+        "caption": "Cable troubleshooting questions",
+        "headers": ["Question", "Tool"],
+        "rows": [["Which cable is this and where does it go?", "Toner probe"], ["Is this cable wired correctly?", "Cable tester"]]
+      },
+      "callout": "Toner = location; tester = quality."
+    },
+    {
+      "id": "loopback-plug",
+      "title": "Loopback Plug",
+      "paragraphs": [
+        "A loopback plug sends transmitted signals back into the same interface, helping verify whether a NIC or network port can transmit and receive without depending on the rest of the network."
+      ],
+      "callout": "Test a local NIC or port internally → loopback plug."
+    },
+    {
+      "id": "loopback-vs-tester",
+      "title": "Loopback Plug vs. Cable Tester",
+      "table": {
+        "caption": "Interface and cable testing",
+        "headers": ["Target", "Tool"],
+        "rows": [["Network cable", "Cable tester"], ["Network interface or port", "Loopback plug"]]
+      },
+      "callout": "Cable problem → tester; port or NIC problem → loopback plug."
+    },
+    {
+      "id": "network-tap",
+      "title": "Network Tap",
+      "paragraphs": [
+        "A network tap provides visibility into traffic passing across a wired link. It copies or exposes that traffic to a packet analyzer, intrusion-detection system, or monitoring platform without making the monitor the normal destination."
+      ],
+      "callout": "Capture or observe packets on a network link → network tap."
+    },
+    {
+      "id": "tap-vs-switch",
+      "title": "Network Tap vs. Switch",
+      "table": {
+        "caption": "Moving and observing traffic",
+        "headers": ["Device", "Primary job"],
+        "rows": [["Switch", "Forwards traffic according to switching logic"], ["Network tap", "Provides traffic visibility for monitoring"]]
+      },
+      "callout": "Switch moves traffic; tap observes traffic."
+    },
+    {
+      "id": "tap-vs-analyzer",
+      "title": "Network Tap vs. Wi-Fi Analyzer",
+      "table": {
+        "caption": "Network observation tools",
+        "headers": ["Environment", "Tool"],
+        "rows": [["Wireless channels and signals", "Wi-Fi analyzer"], ["Packets on a wired link", "Network tap"]]
+      },
+      "callout": "Air → analyzer; wired traffic → tap."
+    },
+    {
+      "id": "tool-map",
+      "title": "Networking Tool Map",
+      "bullets": [
+        "Cable stripper → remove outer jacket",
+        "Crimper → attach modular connector",
+        "Punchdown tool → terminate on jack or panel",
+        "Toner probe → trace and identify cable",
+        "Cable tester → verify wiring",
+        "Loopback plug → test interface or port",
+        "Wi-Fi analyzer → inspect wireless environment",
+        "Network tap → observe wired traffic"
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Attach modular plug → crimper",
+        "Remove cable jacket → cable stripper",
+        "Find crowded wireless channel → Wi-Fi analyzer",
+        "Trace unlabeled cable → toner probe",
+        "Terminate wires on patch panel → punchdown tool",
+        "Check cable continuity and pinout → cable tester",
+        "Detect open, short, or miswire → cable tester",
+        "Test a NIC or port locally → loopback plug",
+        "Observe packets on a wired link → network tap"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.8 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Several tools touch network cables. Identify the exact task before choosing the tool."
+      ],
+      "entries": [
+        {"title": "Crimper vs. Punchdown", "paragraphs": ["Attach a plug → crimper; terminate a jack or panel → punchdown tool."]},
+        {"title": "Stripper vs. Crimper", "paragraphs": ["Remove the jacket → stripper; attach the connector → crimper."]},
+        {"title": "Toner vs. Tester", "paragraphs": ["Find the cable → toner probe; verify the cable → cable tester."]},
+        {"title": "Cable Tester vs. Loopback", "paragraphs": ["Test the cable → cable tester; isolate the NIC or port → loopback plug."]},
+        {"title": "Wi-Fi Analyzer vs. Network Tap", "paragraphs": ["Wireless signal or channel → Wi-Fi analyzer; packet visibility on a wired link → network tap."]}
+      ],
+      "callout": "Where? → toner. Working? → tester. Port? → loopback. Traffic? → tap."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Remove jacket → cable stripper",
+        "Attach modular connector → crimper",
+        "Terminate panel or jack → punchdown tool",
+        "Trace or identify cable → toner probe",
+        "Verify wiring or detect cable faults → cable tester",
+        "Analyze Wi-Fi channels and congestion → Wi-Fi analyzer",
+        "Test NIC or port locally → loopback plug",
+        "Observe wired network traffic → network tap",
+        "STRIP → stripper; CRIMP → crimper; TRACE → toner; PUNCH → punchdown; TEST CABLE → tester; TEST PORT → loopback; ANALYZE WI-FI → analyzer; OBSERVE TRAFFIC → tap"
+      ]
+    }
+  ]
+}

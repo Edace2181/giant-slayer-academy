@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Given a Scenario, Configure Basic Mobile Device Network Connectivity and Provide Application Support",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A mobile device can have working hardware and still fail the user if it cannot connect, pair, locate itself, access managed company resources, or synchronize information.",
+        "This objective covers five connected areas: wireless and cellular connectivity, Bluetooth pairing, location services, mobile device management, and synchronization."
+      ],
+      "bullets": [
+        "Wireless/cellular data network: 3G, 4G, 5G, hotspot, Wi-Fi, SIM, and eSIM",
+        "Bluetooth: enable, pair, authenticate, and test nearby devices",
+        "Location services: GPS and cellular location services",
+        "Mobile device management (MDM): corporate/BYOD configurations, policy enforcement, and corporate applications",
+        "Mobile device synchronization: data caps, calendar, contacts, mail, and cloud storage"
+      ],
+      "callout": "CONNECT → PAIR → LOCATE → MANAGE → SYNC."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a mobile user cannot reach a network, pair an accessory, use location features, access managed resources, or synchronize data, can you identify the layer that should be investigated?"
+      ],
+      "bullets": [
+        "Internet or network path → Cellular data or Wi-Fi",
+        "Nearby accessory → Bluetooth",
+        "Where am I? → Location services",
+        "Company configuration and control → MDM",
+        "Same information across devices → Synchronization"
+      ]
+    },
+    {
+      "id": "wireless-and-cellular-data",
+      "title": "Wireless and Cellular Data Networks",
+      "paragraphs": [
+        "A mobile device can access networks through carrier-provided cellular service or a local Wi-Fi network. Enable or disable the appropriate path based on coverage, user needs, data usage, troubleshooting, and security requirements.",
+        "The first question is: which network is the device supposed to be using?"
+      ],
+      "callout": "Cellular data and Wi-Fi are separate paths; disabling one does not remove internet access when the other remains connected."
+    },
+    {
+      "id": "cellular-generations",
+      "title": "3G, 4G, and 5G",
+      "paragraphs": [
+        "3G, 4G, and 5G represent successive generations of cellular network technology. Recognize the progression rather than treating each label as a guaranteed speed.",
+        "Actual performance depends on carrier, coverage, signal strength, device support, and congestion."
+      ],
+      "table": {
+        "caption": "Cellular generation recognition",
+        "headers": ["Generation", "Recognition"],
+        "rows": [["3G", "Older cellular generation"], ["4G", "Later generation with improved mobile-data capability"], ["5G", "Newer generation designed for greater performance and capacity"]]
+      },
+      "callout": "Internet through a mobile carrier instead of a local wireless LAN → cellular data."
+    },
+    {
+      "id": "wi-fi-and-hotspot",
+      "title": "Wi-Fi and Hotspot",
+      "entries": [
+        {
+          "title": "Wi-Fi",
+          "paragraphs": ["Wi-Fi connects a mobile device to a local wireless network. Enable Wi-Fi, select the intended network, enter the required credentials, and verify connectivity."],
+          "memoryHook": "Wi-Fi joins the local wireless LAN.",
+          "recognitionCue": "A phone or tablet must join an existing local wireless network → Wi-Fi."
+        },
+        {
+          "title": "Hotspot",
+          "paragraphs": ["A hotspot lets a mobile device share its network connection with another device. A common setup shares the phone's cellular data by presenting a Wi-Fi network that a laptop joins."],
+          "memoryHook": "The phone becomes the Wi-Fi source.",
+          "recognitionCue": "The laptop has no internet, but the phone has cellular data → enable hotspot."
+        }
+      ],
+      "callout": "Wi-Fi joins; hotspot shares. Hotspot activity may consume the phone's cellular data allowance."
+    },
+    {
+      "id": "sim-and-esim",
+      "title": "SIM and eSIM",
+      "paragraphs": [
+        "A Subscriber Identity Module (SIM) supplies subscriber information for cellular service. A traditional SIM is a removable physical module; an eSIM provides supported SIM functionality electronically."
+      ],
+      "table": {
+        "caption": "SIM vs. eSIM",
+        "headers": ["Technology", "Implementation", "Recognition clue"],
+        "rows": [["SIM", "Physical module inserted into a compatible device", "Insert it"], ["eSIM", "Cellular service provisioned electronically", "Provision it"]]
+      },
+      "callout": "Physical subscriber module → SIM. Cellular activation without inserting a card → eSIM."
+    },
+    {
+      "id": "bluetooth",
+      "title": "Bluetooth",
+      "paragraphs": [
+        "Bluetooth provides short-range wireless communication with nearby compatible devices such as headsets, earbuds, speakers, keyboards, and mice.",
+        "For this objective, know not only what Bluetooth is but also how to establish and verify a connection."
+      ]
+    },
+    {
+      "id": "bluetooth-pairing",
+      "title": "Bluetooth Pairing Process",
+      "bullets": [
+        "Enable Bluetooth on the mobile device.",
+        "Enable pairing or discoverable mode on the accessory.",
+        "Find the device by scanning for available Bluetooth devices.",
+        "Select the intended device.",
+        "Enter or confirm the appropriate personal identification number (PIN) code when required.",
+        "Test connectivity by using the accessory's intended function."
+      ],
+      "callout": "ON → PAIR → FIND → PIN → TEST. Connected is not finished until the function is verified."
+    },
+    {
+      "id": "bluetooth-enabled-vs-pairing",
+      "title": "Bluetooth Enabled vs. Pairing Enabled",
+      "paragraphs": [
+        "Bluetooth enabled means the wireless function is turned on. Pairing enabled means a device is ready to establish a new Bluetooth relationship.",
+        "An accessory can remain invisible even when the phone's Bluetooth is on because the accessory was not placed in pairing or discoverable mode."
+      ],
+      "callout": "The accessory does not appear during discovery → check pairing mode."
+    },
+    {
+      "id": "location-services",
+      "title": "Location Services",
+      "paragraphs": [
+        "Mobile applications use location services for navigation, maps, tracking, nearby information, and other location-aware features. This objective distinguishes GPS services from cellular location services."
+      ],
+      "entries": [
+        {
+          "title": "GPS Services",
+          "paragraphs": ["Global Positioning System (GPS) uses satellite signals to determine geographic position and is strongly associated with navigation."],
+          "recognitionCue": "Satellite-based positioning → GPS services."
+        },
+        {
+          "title": "Cellular Location Services",
+          "paragraphs": ["Cellular location uses information from mobile network infrastructure to help estimate a device's location."],
+          "recognitionCue": "Location based on cellular infrastructure → cellular location services."
+        }
+      ],
+      "callout": "Sky → GPS. Towers → cellular location. Modern devices may combine methods."
+    },
+    {
+      "id": "mobile-device-management",
+      "title": "Mobile Device Management (MDM)",
+      "paragraphs": [
+        "Mobile device management (MDM) lets an organization centrally manage mobile devices and protect company information accessed from phones and tablets.",
+        "MDM can manage device configurations, enforce policies, and control corporate applications across a mobile fleet."
+      ],
+      "callout": "An organization needs centralized configuration and control of mobile devices → MDM."
+    },
+    {
+      "id": "corporate-vs-byod",
+      "title": "Corporate Devices vs. BYOD",
+      "entries": [
+        {
+          "title": "Corporate Device Configuration",
+          "paragraphs": ["A corporate device is owned and managed by the organization. MDM can apply required configurations consistently across company-owned devices."],
+          "recognitionCue": "The organization owns the hardware → corporate configuration."
+        },
+        {
+          "title": "Bring Your Own Device (BYOD)",
+          "paragraphs": ["Bring your own device (BYOD) means an employee uses a personally owned phone or tablet to access approved business applications, mail, information, or services."],
+          "recognitionCue": "The employee owns the device and uses it for company work → BYOD."
+        }
+      ],
+      "callout": "Ownership decides the label: company owns it → corporate; employee owns it → BYOD."
+    },
+    {
+      "id": "policy-and-corporate-applications",
+      "title": "Policy Enforcement and Corporate Applications",
+      "entries": [
+        {
+          "title": "Policy Enforcement",
+          "paragraphs": ["MDM can centrally apply organizational requirements instead of relying on each user to configure them manually."],
+          "recognitionCue": "One company rule must apply across many managed devices → policy enforcement."
+        },
+        {
+          "title": "Corporate Applications",
+          "paragraphs": ["MDM can install, configure, manage, or control access to applications required for company work."],
+          "recognitionCue": "Work applications must be centrally managed on mobile devices → corporate applications."
+        }
+      ]
+    },
+    {
+      "id": "mobile-device-synchronization",
+      "title": "Mobile Device Synchronization",
+      "paragraphs": [
+        "Mobile device synchronization keeps information consistent across devices, applications, or services. A change made on one connected device can appear on another after synchronization.",
+        "For this objective, recognize calendar, contacts, mail, cloud storage, and the effect of cellular data caps."
+      ],
+      "callout": "Change it here and see it there → synchronization."
+    },
+    {
+      "id": "recognizing-data-caps",
+      "title": "Recognizing Data Caps",
+      "paragraphs": [
+        "A data cap limits the amount of cellular data available under a plan. File synchronization, cloud uploads and downloads, and hotspot usage can consume that allowance.",
+        "When practical, Wi-Fi can support large synchronization tasks without consuming cellular data."
+      ],
+      "callout": "Large synchronization task plus a limited cellular plan → consider the data cap."
+    },
+    {
+      "id": "calendar-and-contacts",
+      "title": "Calendar and Contacts",
+      "entries": [
+        {
+          "title": "Calendar",
+          "paragraphs": ["Calendar synchronization keeps appointments and events consistent across connected devices or services."],
+          "recognitionCue": "The same meetings must appear on the laptop and phone → calendar synchronization."
+        },
+        {
+          "title": "Contacts",
+          "paragraphs": ["Contact synchronization keeps address-book information consistent across connected devices or accounts."],
+          "recognitionCue": "The same updated address book is needed across devices → contact synchronization."
+        }
+      ]
+    },
+    {
+      "id": "business-applications",
+      "title": "Business Applications: Mail and Cloud Storage",
+      "entries": [
+        {
+          "title": "Mail",
+          "paragraphs": ["Mail synchronization keeps business email current on the mobile device. Failure can involve network access, account configuration, application settings, synchronization, or organizational requirements."],
+          "recognitionCue": "The browser works, but business email does not update → investigate mail synchronization and configuration."
+        },
+        {
+          "title": "Cloud Storage",
+          "paragraphs": ["Cloud storage keeps files on a remote service so authorized devices can access or synchronize them. Large transfers over cellular service can consume significant data."],
+          "recognitionCue": "The same business files must be available across connected devices → cloud storage synchronization."
+        }
+      ]
+    },
+    {
+      "id": "connectivity-vs-synchronization",
+      "title": "Connectivity vs. Synchronization",
+      "paragraphs": [
+        "Connectivity asks whether the device can reach the network. Synchronization asks whether a particular application's information is updating correctly.",
+        "If a browser works but mail does not update, network connectivity has already been demonstrated. Move toward mail, account, application, synchronization, or organizational configuration."
+      ],
+      "callout": "Internet works does not mean every application is configured and synchronizing correctly."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Carrier-based mobile network → Cellular data",
+        "Older to newer cellular generations → 3G/4G/5G",
+        "Join a local wireless network → Wi-Fi",
+        "Smartphone shares internet → Hotspot",
+        "Physical subscriber module → SIM",
+        "Electronic subscriber provisioning → eSIM",
+        "Nearby paired peripheral → Bluetooth",
+        "Make an accessory discoverable → Enable pairing",
+        "Bluetooth authentication code → PIN",
+        "Confirm the accessory functions → Test connectivity",
+        "Satellite location → GPS services",
+        "Cell-network-assisted location → Cellular location services",
+        "Centralized mobile control → MDM",
+        "Company-owned device → Corporate",
+        "Personally owned work device → BYOD",
+        "Apply mobile rules centrally → Policy enforcement",
+        "Manage work apps centrally → Corporate applications",
+        "Same information across devices → Synchronization",
+        "Limited cellular allowance → Data cap",
+        "Appointments → Calendar; address book → Contacts; messages → Mail; files → Cloud storage"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Several technologies can appear in the same mobile scenario. Determine which layer is failing before selecting a setting or service."
+      ],
+      "entries": [
+        {"title": "Cellular Data vs. Wi-Fi", "paragraphs": ["Carrier service points to cellular data. A local wireless LAN points to Wi-Fi. Either path can provide internet independently."]},
+        {"title": "Wi-Fi vs. Hotspot", "paragraphs": ["Wi-Fi joins an existing network. A hotspot lets the mobile device provide connectivity to another device."]},
+        {"title": "SIM vs. eSIM", "paragraphs": ["A SIM is a physical subscriber module. An eSIM is electronically provisioned. A cellular generation such as 5G does not determine which one is used."]},
+        {"title": "Bluetooth Enabled vs. Pairing Enabled", "paragraphs": ["Bluetooth can be on while an accessory remains undiscoverable. The accessory must enter pairing mode."]},
+        {"title": "Pairing vs. Testing", "paragraphs": ["Pairing establishes the connection; testing proves the device performs its intended function."]},
+        {"title": "GPS vs. Cellular Location", "paragraphs": ["Satellite source points to GPS; cellular infrastructure points to cellular location services."]},
+        {"title": "Corporate vs. BYOD", "paragraphs": ["Ask who owns the hardware: organization means corporate; employee means BYOD."]},
+        {"title": "MDM vs. Synchronization", "paragraphs": ["MDM manages and controls devices; synchronization keeps information consistent."]}
+      ],
+      "callout": "Ask which problem you are solving: CONNECT, PAIR, LOCATE, MANAGE, or SYNC."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Carrier-provided internet → Cellular data",
+        "Local wireless network → Wi-Fi",
+        "Phone supplies internet to another device → Hotspot",
+        "Physical subscriber module → SIM",
+        "Electronic SIM functionality → eSIM",
+        "Nearby wireless accessory → Bluetooth",
+        "Prepare accessory for discovery → Pairing",
+        "Bluetooth authentication number → PIN",
+        "Verify paired accessory → Test connectivity",
+        "Satellite position → GPS",
+        "Cell-network-based position → Cellular location services",
+        "Centralized device control → MDM",
+        "Organization owns device → Corporate",
+        "Employee owns work device → BYOD",
+        "Apply company requirements centrally → Policy enforcement",
+        "Manage company mobile apps → Corporate applications",
+        "Keep information consistent → Synchronization",
+        "Limited cellular allowance → Data cap",
+        "Appointments → Calendar; people → Contacts; messages → Mail; files → Cloud storage",
+        "CONNECT → PAIR → LOCATE → MANAGE → SYNC"
+      ]
+    }
+  ]
+}

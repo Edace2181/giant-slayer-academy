@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.5",
+  "title": "Compare and Contrast Common Networking Hardware Devices",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Networks use devices that route traffic, connect local systems, provide wireless access, organize cabling, filter traffic, deliver power, terminate provider connections, and give endpoints network access.",
+        "For this objective, recognize each device by its function and distinguish hardware that can look similar while doing different jobs."
+      ],
+      "bullets": ["Routers and switches", "Access points, patch panels, and firewalls", "Power over Ethernet", "Cable, DSL, and fiber termination", "NICs and physical MAC addresses"],
+      "callout": "Route → switch → connect → organize → protect → power → terminate → interface."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When CompTIA describes what a networking device is doing, can you identify the hardware and separate it from similar devices?"
+      ],
+      "bullets": ["Between networks → router", "Inside a LAN → switch", "Wireless access → access point", "Cable organization → patch panel", "Traffic filtering → firewall", "Power plus Ethernet → PoE", "ISP termination → modem or ONT", "Endpoint network adapter → NIC"]
+    },
+    {
+      "id": "routers",
+      "title": "Routers",
+      "paragraphs": [
+        "A router connects different networks and forwards traffic between them using IP addressing. A common example connects a local network to the internet."
+      ],
+      "callout": "Traffic must move from one IP network to another → router."
+    },
+    {
+      "id": "switches",
+      "title": "Switches",
+      "paragraphs": [
+        "A switch connects computers, printers, servers, access points, phones, and other devices inside a local area network. It forwards Ethernet traffic primarily using MAC addresses."
+      ],
+      "callout": "Several wired devices communicate on the same LAN → switch."
+    },
+    {
+      "id": "router-vs-switch",
+      "title": "Router vs. Switch",
+      "table": {
+        "caption": "Core traffic devices",
+        "headers": ["Device", "Primary job"],
+        "rows": [["Router", "Connects different networks"], ["Switch", "Connects devices within the same LAN"]]
+      },
+      "callout": "Switch = inside; router = between."
+    },
+    {
+      "id": "managed-switch",
+      "title": "Managed Switch",
+      "paragraphs": [
+        "A managed switch allows administrators to configure and monitor VLANs, port settings, trunks, security features, and other switch behavior through management interfaces."
+      ],
+      "callout": "Need VLANs, monitoring, or port control → managed switch."
+    },
+    {
+      "id": "unmanaged-switch",
+      "title": "Unmanaged Switch",
+      "paragraphs": [
+        "An unmanaged switch provides simple plug-and-play Ethernet connectivity with little or no configuration."
+      ],
+      "callout": "Basic connectivity with no administrative configuration → unmanaged switch."
+    },
+    {
+      "id": "managed-vs-unmanaged",
+      "title": "Managed vs. Unmanaged Switch",
+      "table": {
+        "caption": "Switch-management comparison",
+        "headers": ["Type", "Recognition"],
+        "rows": [["Managed", "Configurable and monitorable"], ["Unmanaged", "Basic plug-and-play connectivity"]]
+      },
+      "callout": "Need control → managed; need simple connectivity → unmanaged."
+    },
+    {
+      "id": "access-points",
+      "title": "Access Points",
+      "paragraphs": [
+        "A wireless access point (AP) provides wireless devices access to a wired network by bridging wireless clients into the LAN."
+      ],
+      "callout": "Add Wi-Fi coverage to an existing wired LAN → access point."
+    },
+    {
+      "id": "ap-vs-router",
+      "title": "Access Point vs. Router",
+      "table": {
+        "caption": "Combined consumer features, separate networking roles",
+        "headers": ["Device", "Function"],
+        "rows": [["Router", "Routes between networks"], ["Access point", "Provides wireless access to a LAN"]]
+      },
+      "callout": "Router routes; an AP provides Wi-Fi."
+    },
+    {
+      "id": "patch-panel",
+      "title": "Patch Panel",
+      "paragraphs": [
+        "A patch panel is a central passive termination and organization point for permanent network cable runs. Short patch cables connect its front ports to active equipment such as switches."
+      ],
+      "bullets": ["Wall jack", "Permanent cable run", "Patch panel", "Patch cable", "Switch"],
+      "callout": "Many building Ethernet runs terminate in one rack → patch panel."
+    },
+    {
+      "id": "patch-panel-vs-switch",
+      "title": "Patch Panel vs. Switch",
+      "table": {
+        "caption": "Rack-device comparison",
+        "headers": ["Device", "Role"],
+        "rows": [["Patch panel", "Passive cable termination and organization"], ["Switch", "Active Ethernet traffic forwarding"]]
+      },
+      "callout": "Patch panel organizes; switch communicates."
+    },
+    {
+      "id": "firewall",
+      "title": "Firewall",
+      "paragraphs": [
+        "A firewall allows or blocks traffic according to security rules based on factors such as source, destination, protocol, port, and policy. It can be hardware, software, or part of another appliance."
+      ],
+      "callout": "Permit or deny network traffic using security rules → firewall."
+    },
+    {
+      "id": "firewall-vs-router",
+      "title": "Firewall vs. Router",
+      "table": {
+        "caption": "Network-edge functions",
+        "headers": ["Device", "Primary question"],
+        "rows": [["Router", "Where should this traffic go?"], ["Firewall", "Should this traffic be allowed?"]]
+      },
+      "callout": "Router moves traffic; firewall controls traffic."
+    },
+    {
+      "id": "power-over-ethernet",
+      "title": "Power over Ethernet (PoE)",
+      "paragraphs": [
+        "Power over Ethernet (PoE) carries electrical power and network data over Ethernet cabling, reducing the need for a separate endpoint power connection.",
+        "Wireless access points, IP cameras, VoIP phones, and other network devices commonly use PoE."
+      ],
+      "callout": "One Ethernet cable supplies data and power → PoE."
+    },
+    {
+      "id": "poe-injector",
+      "title": "PoE Injector",
+      "paragraphs": [
+        "A PoE injector adds electrical power to an Ethernet connection when the existing switch does not provide PoE."
+      ],
+      "bullets": ["Non-PoE switch", "PoE injector", "PoE-powered endpoint"],
+      "callout": "Existing non-PoE switch plus one powered endpoint → PoE injector."
+    },
+    {
+      "id": "poe-switch",
+      "title": "PoE Switch",
+      "paragraphs": [
+        "A PoE switch provides Ethernet data and electrical power directly from its switch ports, simplifying deployments with many powered devices."
+      ],
+      "callout": "Many access points, phones, or cameras require centralized power → PoE switch."
+    },
+    {
+      "id": "injector-vs-poe-switch",
+      "title": "PoE Injector vs. PoE Switch",
+      "table": {
+        "caption": "PoE delivery options",
+        "headers": ["Hardware", "Best recognition"],
+        "rows": [["PoE injector", "Adds power to one or a few links from a non-PoE switch"], ["PoE switch", "Provides power directly from many switch ports"]]
+      }
+    },
+    {
+      "id": "poe-standards",
+      "title": "PoE Standards",
+      "table": {
+        "caption": "Power over Ethernet generations",
+        "headers": ["Standard", "Recognition"],
+        "rows": [["IEEE 802.3af", "PoE"], ["IEEE 802.3at", "PoE+"], ["IEEE 802.3bt", "Higher-power PoE, often called PoE++ or 4-pair PoE"]]
+      },
+      "paragraphs": [
+        "Power capability increases across these generations. The switch or injector must support the connected device's power requirement."
+      ],
+      "callout": "af → at → bt = increasing power capability."
+    },
+    {
+      "id": "cable-modem",
+      "title": "Cable Modem",
+      "paragraphs": [
+        "A cable modem terminates internet service delivered through a cable-provider network, commonly over coaxial cable, and connects that service to customer networking equipment."
+      ],
+      "callout": "ISP service enters through coax → cable modem."
+    },
+    {
+      "id": "dsl",
+      "title": "Digital Subscriber Line (DSL)",
+      "paragraphs": [
+        "Digital Subscriber Line (DSL) provides internet connectivity over telephone copper wiring, typically through a DSL modem or gateway."
+      ],
+      "callout": "Traditional telephone copper carries internet service → DSL."
+    },
+    {
+      "id": "cable-vs-dsl",
+      "title": "Cable Modem vs. DSL",
+      "table": {
+        "caption": "Provider-medium recognition",
+        "headers": ["Service", "Incoming medium"],
+        "rows": [["Cable modem", "Coaxial cable"], ["DSL", "Telephone copper pair"]]
+      },
+      "callout": "Coax = cable; phone line = DSL."
+    },
+    {
+      "id": "ont",
+      "title": "Optical Network Terminal (ONT)",
+      "paragraphs": [
+        "An Optical Network Terminal (ONT) terminates a fiber-optic provider connection at the customer premises and converts the optical signal for customer networking equipment."
+      ],
+      "callout": "Fiber internet enters the building → ONT."
+    },
+    {
+      "id": "isp-termination-map",
+      "title": "Cable Modem vs. DSL vs. ONT",
+      "table": {
+        "caption": "ISP termination hardware",
+        "headers": ["Incoming medium", "Device or service"],
+        "rows": [["Coax", "Cable modem"], ["Telephone copper", "DSL"], ["Fiber", "ONT"]]
+      },
+      "callout": "Identify the physical provider medium first."
+    },
+    {
+      "id": "nic",
+      "title": "Network Interface Card (NIC)",
+      "paragraphs": [
+        "A Network Interface Card (NIC) gives a device the ability to connect to a network. It can be built in or added as an Ethernet, wireless, PCIe, or USB network adapter."
+      ],
+      "callout": "Computer needs network-interface hardware → NIC."
+    },
+    {
+      "id": "physical-mac-address",
+      "title": "Physical Media Access Control (MAC) Address",
+      "paragraphs": [
+        "A physical Media Access Control (MAC) address identifies a network interface at the data-link layer and is associated with NIC hardware. It is commonly written as hexadecimal values such as 00:1A:2B:3C:4D:5E."
+      ],
+      "callout": "Identify the physical interface on the local LAN → MAC address."
+    },
+    {
+      "id": "mac-vs-ip",
+      "title": "MAC Address vs. IP Address",
+      "table": {
+        "caption": "Interface and logical addressing",
+        "headers": ["Address", "Role"],
+        "rows": [["MAC address", "Identifies a network interface on the local network"], ["IP address", "Logical address used across IP networks"]]
+      },
+      "callout": "MAC = interface identity; IP = logical network location."
+    },
+    {
+      "id": "nic-vs-mac",
+      "title": "NIC vs. MAC Address",
+      "table": {
+        "caption": "Hardware and identifier",
+        "headers": ["Term", "Meaning"],
+        "rows": [["NIC", "Network-interface hardware"], ["MAC address", "Identifier associated with that interface"]]
+      },
+      "callout": "NIC = the adapter; MAC = the adapter's address."
+    },
+    {
+      "id": "hardware-map",
+      "title": "Networking Hardware Map",
+      "bullets": [
+        "Router → between networks",
+        "Switch → within a LAN",
+        "Access point → wireless clients into a LAN",
+        "Patch panel → organize and terminate cable runs",
+        "Firewall → filter traffic",
+        "PoE injector → add power to a link",
+        "PoE switch → power directly from switch ports",
+        "Cable modem → coax; DSL → telephone copper; ONT → fiber",
+        "NIC → network interface; MAC address → interface identifier"
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Connect different IP networks → router",
+        "Connect devices in one LAN → switch",
+        "Need VLAN configuration → managed switch",
+        "Plug-and-play Ethernet → unmanaged switch",
+        "Provide Wi-Fi access → access point",
+        "Organize structured cabling → patch panel",
+        "Permit or deny traffic → firewall",
+        "Data and power over Ethernet → PoE",
+        "Add power to non-PoE link → injector",
+        "Powered switch ports → PoE switch",
+        "802.3af → PoE; 802.3at → PoE+; 802.3bt → higher-power PoE",
+        "Coax ISP → cable modem; telephone copper → DSL; fiber → ONT",
+        "Device network adapter → NIC",
+        "Physical interface identifier → MAC address"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Devices can sit beside one another or share one consumer enclosure. The exam cares about function, not appearance."
+      ],
+      "entries": [
+        {"title": "Router vs. Switch", "paragraphs": ["Between networks → router; within one LAN → switch."]},
+        {"title": "Managed vs. Unmanaged", "paragraphs": ["Configuration, VLANs, or monitoring require a managed switch; simple connectivity fits unmanaged."]},
+        {"title": "Router vs. Access Point", "paragraphs": ["Routing between networks is the router role; providing Wi-Fi is the access-point role."]},
+        {"title": "Patch Panel vs. Switch", "paragraphs": ["A patch panel passively terminates cables; a switch actively forwards frames."]},
+        {"title": "Router vs. Firewall", "paragraphs": ["A router forwards; a firewall permits or denies."]},
+        {"title": "PoE Injector vs. PoE Switch", "paragraphs": ["An injector adds power to a link; a PoE switch supplies power directly from its ports."]},
+        {"title": "Cable vs. DSL vs. ONT", "paragraphs": ["Coax → cable modem; telephone copper → DSL; fiber → ONT."]},
+        {"title": "NIC vs. MAC", "paragraphs": ["The NIC is hardware; the MAC address identifies that interface."]}
+      ],
+      "callout": "Ask whether the device is routing, switching, providing wireless, organizing, filtering, powering, terminating, or interfacing."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Different networks communicate → router",
+        "Wired LAN devices communicate → switch",
+        "Configurable switch → managed",
+        "Plug-and-play switch → unmanaged",
+        "Wireless clients join wired LAN → access point",
+        "Structured cabling terminates in rack → patch panel",
+        "Traffic allowed or blocked → firewall",
+        "Ethernet carries data and power → PoE",
+        "Add PoE to one link → injector",
+        "Multiple powered switch ports → PoE switch",
+        "PoE → 802.3af; PoE+ → 802.3at; higher power → 802.3bt",
+        "Coax → cable modem; phone line → DSL; fiber → ONT",
+        "Endpoint network adapter → NIC",
+        "Physical interface address → MAC address",
+        "Route → router; switch → switch; wireless → AP; organize → patch panel; protect → firewall; power → PoE; terminate → modem/ONT; interface → NIC"
+      ]
+    }
+  ]
+}

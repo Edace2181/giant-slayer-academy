@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.6",
+  "title": "Configure Basic Wired/Wireless SOHO Networks",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "A small office/home office network needs correct IP configuration before devices can communicate reliably.",
+        "For this objective, recognize IPv4, private and public addressing, IPv6, APIPA, static and dynamic assignment, subnet masks, and default gateways."
+      ],
+      "bullets": ["IP address → device identity", "Subnet mask → local-network boundary", "Gateway → path to other networks"],
+      "callout": "ADDRESS → MASK → GATEWAY."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a SOHO device cannot communicate, can you determine whether its IP address, address type, subnet mask, or gateway is responsible?"
+      ],
+      "bullets": ["Who am I? → IP address", "Who is local? → subnet mask", "How do I leave? → gateway"]
+    },
+    {
+      "id": "ip-addressing",
+      "title": "Internet Protocol (IP) Addressing",
+      "paragraphs": [
+        "An IP address identifies a device logically on an IP network. Devices require compatible IP configuration to communicate, and the two major versions are IPv4 and IPv6."
+      ],
+      "callout": "IP address = logical network address."
+    },
+    {
+      "id": "ipv4",
+      "title": "IPv4",
+      "paragraphs": [
+        "Internet Protocol version 4 (IPv4) uses 32-bit addresses written as four decimal octets separated by periods. Each octet ranges from 0 through 255."
+      ],
+      "callout": "192.168.1.10 and other four-part dotted-decimal addresses → IPv4."
+    },
+    {
+      "id": "private-ipv4",
+      "title": "Private IPv4 Addresses",
+      "paragraphs": [
+        "Private IPv4 addresses are used inside private networks and are not directly routed across the public internet. Separate homes and organizations can reuse the same private ranges."
+      ],
+      "table": {
+        "caption": "Private IPv4 ranges",
+        "headers": ["Block", "Range"],
+        "rows": [["10.0.0.0/8", "10.0.0.0 - 10.255.255.255"], ["172.16.0.0/12", "172.16.0.0 - 172.31.255.255"], ["192.168.0.0/16", "192.168.0.0 - 192.168.255.255"]]
+      },
+      "callout": "Remember 10; 172.16-31; 192.168."
+    },
+    {
+      "id": "public-ipv4",
+      "title": "Public IPv4 Addresses",
+      "paragraphs": [
+        "A public IPv4 address is globally routable on the public internet. In many SOHO networks, internal devices use private addresses while the internet-facing connection receives a public address from the provider."
+      ],
+      "callout": "Address used directly on the public internet → public IPv4."
+    },
+    {
+      "id": "private-vs-public",
+      "title": "Private vs. Public IPv4",
+      "table": {
+        "caption": "IPv4 address visibility",
+        "headers": ["Type", "Recognition"],
+        "rows": [["Private", "Used internally and not directly routed across the public internet"], ["Public", "Globally routable for internet communication"]]
+      },
+      "callout": "Private stays inside; public faces outside."
+    },
+    {
+      "id": "ipv6",
+      "title": "IPv6",
+      "paragraphs": [
+        "Internet Protocol version 6 (IPv6) uses 128-bit addresses written with hexadecimal groups separated by colons. Its much larger address space addresses IPv4 scarcity."
+      ],
+      "callout": "2001:db8::10 and other colon-separated hexadecimal addresses → IPv6."
+    },
+    {
+      "id": "ipv4-vs-ipv6",
+      "title": "IPv4 vs. IPv6",
+      "table": {
+        "caption": "IP version recognition",
+        "headers": ["Version", "Size", "Notation"],
+        "rows": [["IPv4", "32 bit", "Dotted decimal, such as 192.168.1.10"], ["IPv6", "128 bit", "Colon-separated hexadecimal, such as 2001:db8::10"]]
+      },
+      "callout": "Dots and decimal → IPv4; colons and hexadecimal → IPv6."
+    },
+    {
+      "id": "apipa",
+      "title": "Automatic Private IP Addressing (APIPA)",
+      "paragraphs": [
+        "Automatic Private IP Addressing (APIPA) lets an IPv4 device assign itself an address when it cannot obtain normal configuration from DHCP. APIPA uses 169.254.0.0/16."
+      ],
+      "callout": "169.254.x.x → APIPA → DHCP did not answer."
+    },
+    {
+      "id": "apipa-meaning",
+      "title": "What APIPA Usually Means",
+      "paragraphs": [
+        "On a SOHO network that normally uses DHCP, APIPA indicates that the client expected automatic addressing but failed to receive it. Possible causes include DHCP failure, bad cabling, wireless problems, a switch issue, or router trouble."
+      ],
+      "callout": "Treat 169.254 as a troubleshooting clue, not an ordinary static address."
+    },
+    {
+      "id": "apipa-limitations",
+      "title": "APIPA Limitations",
+      "paragraphs": [
+        "APIPA can permit limited communication between devices on the same local APIPA network, but it normally does not provide proper access to other networks or the internet because the client lacks normal configuration such as a gateway."
+      ],
+      "callout": "APIPA = local survival mode, not normal network configuration."
+    },
+    {
+      "id": "static-addressing",
+      "title": "Static Addressing",
+      "paragraphs": [
+        "A static IP address is manually configured and remains assigned until changed. It suits servers, printers, network appliances, and infrastructure devices that need predictable addresses."
+      ],
+      "callout": "Manually configured predictable address → static."
+    },
+    {
+      "id": "dynamic-addressing",
+      "title": "Dynamic Addressing",
+      "paragraphs": [
+        "A dynamic IP address is assigned automatically, commonly by DHCP, and may change over time. It is convenient for laptops, phones, tablets, and workstations."
+      ],
+      "callout": "Client automatically receives settings → dynamic."
+    },
+    {
+      "id": "static-vs-dynamic",
+      "title": "Static vs. Dynamic",
+      "table": {
+        "caption": "Address-assignment methods",
+        "headers": ["Method", "Recognition"],
+        "rows": [["Static", "Manually configured and predictable"], ["Dynamic", "Automatically assigned, usually by DHCP"]]
+      },
+      "callout": "Static = fixed manually; dynamic = automatic."
+    },
+    {
+      "id": "static-vs-reservation",
+      "title": "Static Address vs. DHCP Reservation",
+      "table": {
+        "caption": "Two ways to provide a predictable address",
+        "headers": ["Method", "Where configured"],
+        "rows": [["Static address", "Directly on the endpoint"], ["DHCP reservation", "On the DHCP server; the endpoint still uses DHCP"]]
+      },
+      "callout": "Static = device decides; reservation = DHCP decides."
+    },
+    {
+      "id": "subnet-mask",
+      "title": "Subnet Mask",
+      "paragraphs": [
+        "A subnet mask tells an IPv4 host which part of an address identifies the network and which part identifies the host. The device uses it to decide whether a destination is local or must be sent toward a gateway."
+      ],
+      "callout": "Subnet mask = who is local?"
+    },
+    {
+      "id": "common-soho-mask",
+      "title": "Common SOHO Subnet Mask",
+      "paragraphs": [
+        "A common SOHO mask is 255.255.255.0, which corresponds to /24. With that mask, the first three octets identify the network portion."
+      ],
+      "callout": "255.255.255.0 = /24."
+    },
+    {
+      "id": "mask-local-remote",
+      "title": "How the Subnet Mask Decides",
+      "paragraphs": [
+        "With a /24 mask, 192.168.1.20 and 192.168.1.50 are local to one another, while 192.168.2.50 is on a different network and must be reached through a gateway."
+      ],
+      "callout": "The mask decides local versus remote."
+    },
+    {
+      "id": "default-gateway",
+      "title": "Default Gateway",
+      "paragraphs": [
+        "The default gateway is the device address a host uses when a destination is outside the local network. In a SOHO network, it is commonly the router's local IP address."
+      ],
+      "callout": "Local communication works but remote networks fail → check the default gateway."
+    },
+    {
+      "id": "gateway-vs-router",
+      "title": "Gateway vs. Router",
+      "table": {
+        "caption": "Exit device and exit address",
+        "headers": ["Term", "Meaning"],
+        "rows": [["Router", "The networking device"], ["Default gateway", "The IP address a client uses as its exit path"]]
+      },
+      "callout": "Router = box; gateway = address of the exit."
+    },
+    {
+      "id": "address-mask-gateway",
+      "title": "IP Address vs. Subnet Mask vs. Gateway",
+      "table": {
+        "caption": "Three essential host settings",
+        "headers": ["Setting", "Question answered"],
+        "rows": [["IP address", "Who am I?"], ["Subnet mask", "Who is local?"], ["Default gateway", "How do I leave this network?"]]
+      },
+      "callout": "ADDRESS → MASK → GATEWAY."
+    },
+    {
+      "id": "soho-example",
+      "title": "SOHO IPv4 Configuration Example",
+      "paragraphs": [
+        "On network 192.168.10.0/24, a laptop could use address 192.168.10.25, mask 255.255.255.0, and gateway 192.168.10.1. The address identifies the laptop, the mask identifies local destinations, and the gateway receives remote traffic."
+      ]
+    },
+    {
+      "id": "misconfigured-ip",
+      "title": "Recognizing a Misconfigured Address",
+      "paragraphs": [
+        "If a device should be on 192.168.1.0/24 but is configured as 192.168.2.40 with a /24 mask, it belongs to a different logical subnet. A connected cable does not guarantee valid IP connectivity."
+      ]
+    },
+    {
+      "id": "ip-addressing-map",
+      "title": "IP Addressing Map",
+      "bullets": [
+        "Private IPv4 → internal network",
+        "Public IPv4 → internet-routable",
+        "IPv6 → 128-bit hexadecimal and colons",
+        "169.254.x.x → APIPA",
+        "Static → manually assigned",
+        "Dynamic → automatically assigned",
+        "Subnet mask → local-network boundary",
+        "Gateway → path toward other networks"
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Four decimal octets → IPv4",
+        "10.x.x.x → private IPv4",
+        "172.16-31.x.x → private IPv4",
+        "192.168.x.x → private IPv4",
+        "Globally internet-routable IPv4 → public IPv4",
+        "Hexadecimal groups with colons → IPv6",
+        "169.254.x.x → APIPA",
+        "Manually assigned address → static",
+        "Automatically assigned address → dynamic",
+        "Determines local network → subnet mask",
+        "255.255.255.0 → /24",
+        "Path to outside networks → default gateway"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.6 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "IP address, subnet mask, and gateway appear together but are not interchangeable. Match the symptom to the setting's job."
+      ],
+      "entries": [
+        {"title": "Private vs. Public IPv4", "paragraphs": ["Only 172.16 through 172.31 belongs to the private 172 block; 10/8 and 192.168/16 are the other private ranges."]},
+        {"title": "IPv4 vs. IPv6", "paragraphs": ["Dotted decimal points to IPv4; colon-separated hexadecimal points to IPv6."]},
+        {"title": "APIPA vs. Normal Private Address", "paragraphs": ["192.168.x.x is commonly intentional private addressing; 169.254.x.x is self-assignment after automatic IPv4 configuration fails."]},
+        {"title": "Static vs. Dynamic", "paragraphs": ["Typed manually means static; automatically obtained means dynamic. A DHCP reservation can make a dynamic address predictable."]},
+        {"title": "Subnet Mask vs. Gateway", "paragraphs": ["The mask decides which destinations are local; the gateway provides the path to destinations that are not local."]},
+        {"title": "Local vs. Internet Connectivity", "paragraphs": ["If local communication works but remote networks fail and addressing is valid, inspect the gateway. If the client has 169.254.x.x, investigate DHCP or connectivity first."]}
+      ],
+      "callout": "Mask decides; gateway exits."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Dotted decimal → IPv4",
+        "10/8, 172.16/12, 192.168/16 → private IPv4",
+        "Globally routable address → public IPv4",
+        "128-bit colon-separated hexadecimal → IPv6",
+        "169.254.x.x → APIPA",
+        "Endpoint configured manually → static",
+        "Address assigned automatically → dynamic",
+        "DHCP gives one device the same address → reservation",
+        "Defines local-network boundary → subnet mask",
+        "255.255.255.0 → /24",
+        "Route out of the local subnet → default gateway",
+        "IP address → who am I?",
+        "Subnet mask → who is local?",
+        "Gateway → how do I leave?",
+        "ADDRESS → MASK → GATEWAY"
+      ]
+    }
+  ]
+}

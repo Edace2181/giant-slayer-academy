@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Explain Common Network Configuration Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Networks depend on logical configuration that determines how names are resolved, devices receive IP settings, networks are separated, and users connect securely from remote locations.",
+        "Objective 2.4 covers DNS records, DHCP configuration concepts, virtual LANs, and virtual private networks."
+      ],
+      "bullets": ["DNS records", "DHCP leases, reservations, scopes, and exclusions", "Virtual LAN (VLAN)", "Virtual private network (VPN)"],
+      "callout": "DNS = find; DHCP = assign; VLAN = separate; VPN = securely connect."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a scenario describes name resolution, IP assignment, logical network separation, or secure remote connectivity, can you identify the exact configuration concept?"
+      ],
+      "bullets": ["Name record → DNS", "Automatic address assignment → DHCP", "Logical segmentation → VLAN", "Protected remote connection → VPN"]
+    },
+    {
+      "id": "dns",
+      "title": "Domain Name System (DNS)",
+      "paragraphs": [
+        "DNS lets systems locate network resources by name instead of requiring users to remember IP addresses. Different DNS records answer different questions about a name."
+      ],
+      "bullets": ["A", "AAAA", "Canonical Name (CNAME)", "Mail exchanger (MX)", "Text (TXT)"],
+      "callout": "DNS records publish information about names and domains."
+    },
+    {
+      "id": "a-record",
+      "title": "A Record",
+      "paragraphs": ["An A record maps a hostname to an IPv4 address."],
+      "callout": "Hostname needs an IPv4 address → A record."
+    },
+    {
+      "id": "aaaa-record",
+      "title": "AAAA Record",
+      "paragraphs": ["An AAAA record maps a hostname to an IPv6 address."],
+      "callout": "Hostname needs an IPv6 address → AAAA record."
+    },
+    {
+      "id": "a-vs-aaaa",
+      "title": "A vs. AAAA",
+      "table": {
+        "caption": "Address-record comparison",
+        "headers": ["Record", "Maps a hostname to"],
+        "rows": [["A", "IPv4 address"], ["AAAA", "IPv6 address"]]
+      },
+      "callout": "One A → IPv4; four A's → IPv6."
+    },
+    {
+      "id": "cname",
+      "title": "Canonical Name (CNAME)",
+      "paragraphs": [
+        "A Canonical Name (CNAME) record creates an alias from one hostname to another hostname. It does not directly map the alias to an IP address."
+      ],
+      "callout": "One hostname acts as an alias for another → CNAME."
+    },
+    {
+      "id": "a-vs-cname",
+      "title": "A Record vs. CNAME",
+      "table": {
+        "caption": "Address and alias records",
+        "headers": ["Record", "Points to"],
+        "rows": [["A", "An IPv4 address"], ["CNAME", "Another hostname"]]
+      },
+      "callout": "A points to an address; CNAME points to a name."
+    },
+    {
+      "id": "mx-record",
+      "title": "Mail Exchanger (MX)",
+      "paragraphs": [
+        "An MX record identifies the mail server responsible for receiving email for a domain."
+      ],
+      "callout": "Which server receives email for a domain? → MX."
+    },
+    {
+      "id": "txt-record",
+      "title": "Text (TXT) Record",
+      "paragraphs": [
+        "A TXT record stores text information in DNS. In this objective, its important role is publishing email spam-management, authentication, and policy information for DKIM, SPF, and DMARC."
+      ],
+      "callout": "Publish text-based domain policy or verification information → TXT."
+    },
+    {
+      "id": "dkim",
+      "title": "DomainKeys Identified Mail (DKIM)",
+      "paragraphs": [
+        "DomainKeys Identified Mail (DKIM) uses a digital signature to help verify that a message was authorized by the sending domain and was not altered in transit. A public key is commonly published in a DNS TXT record."
+      ],
+      "callout": "Cryptographically signed email validation → DKIM."
+    },
+    {
+      "id": "spf",
+      "title": "Sender Policy Framework (SPF)",
+      "paragraphs": [
+        "Sender Policy Framework (SPF) publishes which mail servers are authorized to send email for a domain. Receiving systems can compare the sending server with that policy."
+      ],
+      "callout": "Is this server allowed to send for the domain? → SPF."
+    },
+    {
+      "id": "dmarc",
+      "title": "Domain-Based Message Authentication, Reporting, and Conformance (DMARC)",
+      "paragraphs": [
+        "Domain-based Message Authentication, Reporting, and Conformance (DMARC) builds on SPF and DKIM. It tells receiving systems how the domain owner wants failed or suspicious messages handled and can provide reporting."
+      ],
+      "callout": "Enforcement and reporting based on SPF/DKIM results → DMARC."
+    },
+    {
+      "id": "email-auth-comparison",
+      "title": "DKIM vs. SPF vs. DMARC",
+      "table": {
+        "caption": "Email-authentication recognition",
+        "headers": ["Technology", "Question answered"],
+        "rows": [
+          ["DKIM", "Was the message signed and unchanged?"],
+          ["SPF", "Is this sending server authorized?"],
+          ["DMARC", "What policy applies to failed checks, and how are results reported?"]
+        ]
+      },
+      "callout": "DKIM = signature; SPF = sender; DMARC = policy."
+    },
+    {
+      "id": "dns-record-map",
+      "title": "DNS Record Recognition",
+      "table": {
+        "caption": "Objective 2.4 DNS record map",
+        "headers": ["Record", "Primary purpose"],
+        "rows": [["A", "IPv4 address"], ["AAAA", "IPv6 address"], ["CNAME", "Hostname alias"], ["MX", "Domain mail server"], ["TXT", "Text, policy, or verification information"]]
+      },
+      "callout": "Address → A/AAAA; alias → CNAME; mail → MX; policy/text → TXT."
+    },
+    {
+      "id": "dhcp",
+      "title": "Dynamic Host Configuration Protocol (DHCP)",
+      "paragraphs": [
+        "DHCP automatically provides network configuration to clients. Leases, reservations, scopes, and exclusions control how its address pool is assigned."
+      ],
+      "callout": "DHCP manages the address pool."
+    },
+    {
+      "id": "dhcp-lease",
+      "title": "DHCP Lease",
+      "paragraphs": [
+        "A lease is the period of time a DHCP-assigned IP address is given to a client. The address is not necessarily permanent, and the client can renew the lease."
+      ],
+      "callout": "Borrow the IP for a defined time → lease."
+    },
+    {
+      "id": "dhcp-reservation",
+      "title": "DHCP Reservation",
+      "paragraphs": [
+        "A reservation ensures that a particular device receives the same address from DHCP, usually by associating the address with a device identifier such as its MAC address."
+      ],
+      "callout": "Use DHCP but always receive the same IP → reservation."
+    },
+    {
+      "id": "dhcp-scope",
+      "title": "DHCP Scope",
+      "paragraphs": [
+        "A scope defines the range of IP addresses that a DHCP server is allowed to assign. It is the available DHCP address pool."
+      ],
+      "callout": "Define the range DHCP can distribute → scope."
+    },
+    {
+      "id": "dhcp-exclusion",
+      "title": "DHCP Exclusion",
+      "paragraphs": [
+        "An exclusion removes selected addresses from the DHCP assignment range so they are not handed out dynamically."
+      ],
+      "callout": "Address is inside the scope but must not be assigned → exclusion."
+    },
+    {
+      "id": "dhcp-concept-map",
+      "title": "Lease vs. Reservation vs. Scope vs. Exclusion",
+      "table": {
+        "caption": "DHCP configuration concepts",
+        "headers": ["Concept", "Controls"],
+        "rows": [["Lease", "How long a client keeps an assignment"], ["Reservation", "Which address a specific device receives"], ["Scope", "The range DHCP can use"], ["Exclusion", "Addresses in the range DHCP must not use"]]
+      },
+      "callout": "Lease = time; reservation = device; scope = range; exclusion = block."
+    },
+    {
+      "id": "dhcp-example",
+      "title": "DHCP Concepts Working Together",
+      "paragraphs": [
+        "A scope might allow 192.168.10.100 through 192.168.10.200. An exclusion can remove .100 through .109, a reservation can save .120 for a printer, and the lease controls how long ordinary dynamic assignments last."
+      ],
+      "callout": "Scope opens the pool; exclusion removes part; reservation saves one; lease controls time."
+    },
+    {
+      "id": "vlan",
+      "title": "Virtual LAN (VLAN)",
+      "paragraphs": [
+        "A Virtual Local Area Network (VLAN) logically separates devices into different network segments even when they share physical switching infrastructure.",
+        "One managed switch can place administration, employees, and guests into separate logical networks."
+      ],
+      "callout": "One physical switching environment → multiple logical networks."
+    },
+    {
+      "id": "vlan-purpose",
+      "title": "Why VLANs Are Used",
+      "paragraphs": [
+        "VLANs support network segmentation, organization, traffic separation, security boundaries, and reduced unnecessary broadcast traffic.",
+        "Each VLAN forms a logical broadcast domain, and routing is normally required for devices in different VLANs to communicate."
+      ],
+      "callout": "VLANs separate first; routing reconnects when allowed."
+    },
+    {
+      "id": "vlan-recognition",
+      "title": "VLAN Recognition",
+      "bullets": ["Segment departments", "Separate guests from employees", "Create logical networks", "Separate broadcast domains", "Share switching hardware while separating traffic"],
+      "callout": "Logical separation on shared switching infrastructure → VLAN."
+    },
+    {
+      "id": "vpn",
+      "title": "Virtual Private Network (VPN)",
+      "paragraphs": [
+        "A Virtual Private Network (VPN) creates a protected logical connection across another network, commonly the internet. It can connect remote users or separate sites to organizational resources."
+      ],
+      "callout": "Protected tunnel across an untrusted network → VPN."
+    },
+    {
+      "id": "remote-access-vpn",
+      "title": "Remote-Access VPN",
+      "paragraphs": [
+        "A remote-access VPN lets an individual device securely connect to another network, such as an employee laptop connecting to company resources from home."
+      ],
+      "callout": "One user or device → company network."
+    },
+    {
+      "id": "site-to-site-vpn",
+      "title": "Site-to-Site VPN",
+      "paragraphs": [
+        "A site-to-site VPN connects two networks through a protected logical link across another network, such as linking two offices over the internet."
+      ],
+      "callout": "Network → network."
+    },
+    {
+      "id": "vlan-vs-vpn",
+      "title": "VLAN vs. VPN",
+      "table": {
+        "caption": "Virtual network concepts",
+        "headers": ["Technology", "Primary job"],
+        "rows": [["VLAN", "Logically separates devices inside network infrastructure"], ["VPN", "Securely connects users or networks across another network"]]
+      },
+      "callout": "VLAN = segment; VPN = tunnel."
+    },
+    {
+      "id": "configuration-map",
+      "title": "Configuration Map",
+      "bullets": [
+        "DNS: A → IPv4; AAAA → IPv6; CNAME → alias; MX → mail; TXT → text/policy",
+        "Email authentication: DKIM → signature; SPF → authorized sender; DMARC → policy/reporting",
+        "DHCP: lease → time; reservation → device; scope → range; exclusion → blocked addresses",
+        "VLAN → separate logical LANs",
+        "VPN → protected connection or tunnel"
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Hostname to IPv4 → A",
+        "Hostname to IPv6 → AAAA",
+        "Hostname alias → CNAME",
+        "Domain mail server → MX",
+        "DNS text or policy information → TXT",
+        "Signed email verification → DKIM",
+        "Authorized email sender → SPF",
+        "Email-authentication enforcement/reporting → DMARC",
+        "Temporary assignment duration → lease",
+        "Same DHCP address for one device → reservation",
+        "DHCP address pool → scope",
+        "Addresses DHCP must not distribute → exclusions",
+        "Logical network separation → VLAN",
+        "Secure remote or network connection → VPN"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Identify the job first: DNS finds, DHCP assigns, VLAN separates, and VPN connects securely. Then choose the exact configuration concept."
+      ],
+      "entries": [
+        {"title": "A vs. AAAA", "paragraphs": ["Look at the IP version: A maps to IPv4; AAAA maps to IPv6."]},
+        {"title": "A vs. CNAME", "paragraphs": ["A maps a name to an IPv4 address; CNAME maps a name to another name."]},
+        {"title": "MX vs. TXT", "paragraphs": ["MX identifies where domain mail goes; TXT stores text such as email-authentication information."]},
+        {"title": "DKIM vs. SPF vs. DMARC", "paragraphs": ["DKIM is signature, SPF is authorized sender, and DMARC is policy/reporting."]},
+        {"title": "Scope vs. Exclusion", "paragraphs": ["A scope defines addresses DHCP may assign; an exclusion removes addresses DHCP must not assign."]},
+        {"title": "Reservation vs. Static IP", "paragraphs": ["A reservation still uses DHCP to provide a consistent address. A static IP is configured directly on the device."]},
+        {"title": "Lease vs. Reservation", "paragraphs": ["A lease controls time; a reservation controls which address a device receives."]},
+        {"title": "VLAN vs. VPN", "paragraphs": ["A VLAN segments local infrastructure; a VPN provides a protected connection across another network."]}
+      ],
+      "callout": "DNS FIND; DHCP ASSIGN; VLAN SEPARATE; VPN CONNECT SECURELY."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Hostname → IPv4 → A",
+        "Hostname → IPv6 → AAAA",
+        "Hostname alias → CNAME",
+        "Mail destination → MX",
+        "DNS text information → TXT",
+        "Cryptographically signed email → DKIM",
+        "Authorized sending server → SPF",
+        "Authentication policy and reporting → DMARC",
+        "Temporary IP assignment period → lease",
+        "Specific device gets the same DHCP IP → reservation",
+        "DHCP address range → scope",
+        "Do-not-assign addresses → exclusions",
+        "Logical networks on shared switching infrastructure → VLAN",
+        "Secure tunnel over another network → VPN",
+        "Remote worker to company → remote-access VPN",
+        "Office network to office network → site-to-site VPN",
+        "DNS = find; DHCP = assign; VLAN = separate; VPN = securely connect"
+      ]
+    }
+  ]
+}

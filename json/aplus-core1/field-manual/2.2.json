@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Explain Wireless Networking Technologies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Wireless networking uses radio signals instead of physical network cables to move information between devices.",
+        "For this objective, understand how wireless technologies differ by frequency, channel, channel width, frequency band, wireless standard, range, and purpose."
+      ],
+      "bullets": [
+        "Wi-Fi frequencies: 2.4 GHz, 5 GHz, and 6 GHz",
+        "Channels: regulations, selection, widths, frequencies, and bands",
+        "IEEE 802.11 wireless LAN standards",
+        "Bluetooth, near-field communication (NFC), and radio-frequency identification (RFID)"
+      ],
+      "callout": "Frequency band → channels → channel width → performance and interference."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": [
+        "When a scenario describes range, interference, frequency, channel use, device pairing, proximity, or identification, can you recognize the wireless technology involved?"
+      ],
+      "bullets": [
+        "Longer range and better wall penetration → 2.4 GHz",
+        "More capacity and less congestion than 2.4 GHz → 5 GHz",
+        "Newer Wi-Fi spectrum → 6 GHz",
+        "Nearby paired peripheral → Bluetooth",
+        "Extremely close interaction → NFC",
+        "Wireless identification or tagging → RFID"
+      ]
+    },
+    {
+      "id": "wi-fi-frequency-bands",
+      "title": "Wi-Fi Frequency Bands",
+      "paragraphs": [
+        "Wi-Fi operates within defined portions of the radio-frequency spectrum. For this objective, know the 2.4 GHz, 5 GHz, and 6 GHz bands.",
+        "In general, increasing frequency trades some propagation and obstacle penetration for additional spectrum and performance opportunities."
+      ],
+      "callout": "Lower travels better; higher gives Wi-Fi more room to work."
+    },
+    {
+      "id": "two-four-ghz",
+      "title": "2.4 GHz",
+      "paragraphs": [
+        "The 2.4 GHz band offers good range, better obstacle penetration than higher Wi-Fi frequencies, and broad device compatibility.",
+        "It is also crowded because many Wi-Fi and non-Wi-Fi devices share the spectrum, and it has fewer practical non-overlapping channel choices than 5 GHz."
+      ],
+      "callout": "2.4 = reach farther, but crowded."
+    },
+    {
+      "id": "five-ghz",
+      "title": "5 GHz",
+      "paragraphs": [
+        "The 5 GHz band provides more available channels, less congestion than heavily used 2.4 GHz environments, support for wider channels, and strong performance opportunities.",
+        "Compared with 2.4 GHz, it generally has shorter practical range and less ability to penetrate obstacles."
+      ],
+      "callout": "5 GHz = more room, less reach."
+    },
+    {
+      "id": "six-ghz",
+      "title": "6 GHz",
+      "paragraphs": [
+        "The 6 GHz band adds substantial spectrum for newer compatible Wi-Fi technologies. It offers more channels, room for wide channels, and less interference from older devices that cannot use the band.",
+        "Devices must specifically support 6 GHz, and its higher frequency makes range and obstacle penetration more challenging than lower-frequency Wi-Fi."
+      ],
+      "callout": "6 GHz = new Wi-Fi territory for compatible equipment."
+    },
+    {
+      "id": "band-comparison",
+      "title": "2.4 GHz vs. 5 GHz vs. 6 GHz",
+      "table": {
+        "caption": "Wi-Fi band recognition",
+        "headers": ["Band", "Primary recognition"],
+        "rows": [
+          ["2.4 GHz", "Better range and penetration; more congestion"],
+          ["5 GHz", "More channels and capacity; shorter reach than 2.4 GHz"],
+          ["6 GHz", "Additional newer spectrum; compatible equipment required"]
+        ]
+      },
+      "paragraphs": [
+        "Higher frequency does not automatically guarantee a faster connection. Performance also depends on the Wi-Fi standard, signal quality, channel width, interference, client and access-point capabilities, distance, and obstacles."
+      ],
+      "callout": "2.4 = reach; 5 = room; 6 = new room."
+    },
+    {
+      "id": "wireless-channels",
+      "title": "Wireless Channels",
+      "paragraphs": [
+        "A frequency band is divided into smaller portions called channels. Wi-Fi devices select channels within a supported band to communicate.",
+        "Nearby networks using the same or overlapping radio spectrum can interfere or compete with one another."
+      ],
+      "callout": "Band = where Wi-Fi lives; channel = where inside that band it talks."
+    },
+    {
+      "id": "two-four-channels",
+      "title": "2.4 GHz Channels",
+      "paragraphs": [
+        "The 2.4 GHz band has limited channel space. In many common deployments, channels 1, 6, and 11 are the familiar non-overlapping 20 MHz choices.",
+        "Poor channel planning among nearby access points can create unnecessary competition and interference."
+      ],
+      "callout": "Common 2.4 GHz planning → 1, 6, 11."
+    },
+    {
+      "id": "five-six-channels",
+      "title": "5 GHz and 6 GHz Channels",
+      "paragraphs": [
+        "5 GHz provides considerably more channel choices than 2.4 GHz, and 6 GHz provides even more spectrum for compatible Wi-Fi technologies.",
+        "Available channels depend on regulatory region, equipment, channel width, and Wi-Fi implementation."
+      ],
+      "callout": "More spectrum provides more channel-planning options."
+    },
+    {
+      "id": "regulations",
+      "title": "Regulations",
+      "paragraphs": [
+        "Governments regulate radio spectrum so devices and services can coexist. Channel availability and permitted operation can therefore vary by region.",
+        "A channel available in one country may be restricted elsewhere; equipment must be configured for the applicable regulatory requirements."
+      ],
+      "callout": "Channel unavailable because of geographic restrictions → regulations."
+    },
+    {
+      "id": "channel-selection",
+      "title": "Channel Selection",
+      "paragraphs": [
+        "Channel selection affects interference, congestion, performance, and reliability. Nearby access points on the same channel must compete for the same radio space.",
+        "Selecting a cleaner appropriate channel can improve the wireless environment."
+      ],
+      "callout": "Do not make every access point shout in the same lane."
+    },
+    {
+      "id": "frequencies-bands-channels",
+      "title": "Frequencies, Bands, and Channels",
+      "table": {
+        "caption": "Wireless terminology",
+        "headers": ["Term", "Meaning"],
+        "rows": [
+          ["Frequency", "Rate of the radio signal, measured in hertz"],
+          ["Band", "A range of radio frequencies"],
+          ["Channel", "A defined portion within a frequency band"]
+        ]
+      },
+      "callout": "Frequency = radio territory; band = neighborhood; channel = address inside it."
+    },
+    {
+      "id": "channel-width",
+      "title": "Channel Width",
+      "paragraphs": [
+        "Channel width describes how much radio spectrum a channel occupies. Common Wi-Fi widths include 20 MHz, 40 MHz, 80 MHz, and 160 MHz, depending on the technology and band.",
+        "A wider channel can provide more capacity, but it also consumes more spectrum. In crowded environments, narrower channels can preserve more independent channel opportunities."
+      ],
+      "callout": "Wide = more road, but it uses more land."
+    },
+    {
+      "id": "width-vs-number",
+      "title": "Channel Width vs. Channel Number",
+      "table": {
+        "caption": "Channel number and width",
+        "headers": ["Concept", "Question answered"],
+        "rows": [
+          ["Channel number", "Where does communication occur inside the band?"],
+          ["Channel width", "How much spectrum does the channel occupy?"]
+        ]
+      },
+      "callout": "Number = where; width = how wide."
+    },
+    {
+      "id": "802-11-standards",
+      "title": "802.11 Standards",
+      "paragraphs": [
+        "Wi-Fi networking is based on the IEEE 802.11 family of wireless LAN standards. Different generations support different combinations of frequency bands, speeds, channel widths, and wireless capabilities."
+      ],
+      "callout": "IEEE 802.11 = the Wi-Fi standards family."
+    },
+    {
+      "id": "standard-frequency-map",
+      "title": "802.11 Standard Recognition",
+      "table": {
+        "caption": "Common 802.11 frequency associations",
+        "headers": ["Standard", "Frequency recognition"],
+        "rows": [
+          ["802.11a", "5 GHz"],
+          ["802.11b", "2.4 GHz"],
+          ["802.11g", "2.4 GHz"],
+          ["802.11n", "2.4 GHz and 5 GHz"],
+          ["802.11ac", "5 GHz"],
+          ["802.11ax / Wi-Fi 6", "2.4 GHz and 5 GHz"],
+          ["Wi-Fi 6E", "802.11ax capability extended into 6 GHz"]
+        ]
+      },
+      "callout": "b/g → 2.4; a/ac → 5; n → both; ax → modern multi-band Wi-Fi."
+    },
+    {
+      "id": "bluetooth",
+      "title": "Bluetooth",
+      "paragraphs": [
+        "Bluetooth is short-range wireless technology used to connect nearby devices and peripherals such as headphones, speakers, keyboards, mice, and phones.",
+        "Bluetooth commonly operates in 2.4 GHz spectrum and can share radio space with other technologies there."
+      ],
+      "callout": "Nearby paired device or peripheral → Bluetooth."
+    },
+    {
+      "id": "bluetooth-vs-wi-fi",
+      "title": "Bluetooth vs. Wi-Fi",
+      "table": {
+        "caption": "Bluetooth and Wi-Fi roles",
+        "headers": ["Technology", "Primary job"],
+        "rows": [["Wi-Fi", "Network connectivity"], ["Bluetooth", "Short-range device and peripheral connectivity"]]
+      },
+      "callout": "Wi-Fi joins networks; Bluetooth joins devices."
+    },
+    {
+      "id": "nfc",
+      "title": "Near-Field Communication (NFC)",
+      "paragraphs": [
+        "Near-field communication (NFC) provides wireless communication over an extremely short distance. Uses include contactless payments, access systems, reading compatible tags, and quick proximity interactions."
+      ],
+      "callout": "Tap or extremely close wireless interaction → NFC."
+    },
+    {
+      "id": "rfid",
+      "title": "Radio-Frequency Identification (RFID)",
+      "paragraphs": [
+        "Radio-frequency identification (RFID) identifies or tracks tagged objects. An RFID tag holds identifying information, and an RFID reader detects that information.",
+        "RFID supports inventory tracking, asset identification, access cards, product tracking, and other identification systems."
+      ],
+      "callout": "Reader detects an identification tag → RFID."
+    },
+    {
+      "id": "active-vs-passive-rfid",
+      "title": "Active vs. Passive RFID",
+      "entries": [
+        {
+          "title": "Passive RFID",
+          "paragraphs": ["A passive tag has no active power source for normal transmission and uses energy from the reader's radio signal to respond."],
+          "recognitionCue": "Tag powered by reader interaction → passive RFID."
+        },
+        {
+          "title": "Active RFID",
+          "paragraphs": ["An active tag has its own power source and can support greater capabilities and potentially longer ranges."],
+          "recognitionCue": "Tag has its own battery or power source → active RFID."
+        }
+      ],
+      "callout": "Passive borrows power; active brings power."
+    },
+    {
+      "id": "nfc-vs-rfid",
+      "title": "NFC vs. RFID",
+      "table": {
+        "caption": "NFC and RFID recognition",
+        "headers": ["Technology", "Primary clue"],
+        "rows": [["NFC", "Extremely close interaction, payment, access, or tap"], ["RFID", "Identification and tracking with tags and readers"]]
+      },
+      "callout": "NFC = interact nearby; RFID = identify the tag."
+    },
+    {
+      "id": "wireless-technology-map",
+      "title": "Wi-Fi vs. Bluetooth vs. NFC vs. RFID",
+      "table": {
+        "caption": "Wireless technology purpose map",
+        "headers": ["Technology", "Primary recognition"],
+        "rows": [
+          ["Wi-Fi", "Network connectivity"],
+          ["Bluetooth", "Nearby device or peripheral connectivity"],
+          ["NFC", "Extremely close-range interaction"],
+          ["RFID", "Identification or tracking with tags"]
+        ]
+      },
+      "callout": "Wi-Fi = network; Bluetooth = pair; NFC = tap; RFID = tag."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Better Wi-Fi range and penetration → 2.4 GHz",
+        "More Wi-Fi channel options than 2.4 GHz → 5 GHz",
+        "Newer additional Wi-Fi spectrum → 6 GHz",
+        "Common non-overlapping 2.4 GHz 20 MHz choices → 1, 6, 11",
+        "Geographic rules affect channels → regulations",
+        "Nearby wireless LANs competing → channel selection",
+        "20/40/80/160 MHz → channel widths",
+        "Range of frequencies → band",
+        "Portion of a band → channel",
+        "IEEE wireless LAN family → 802.11",
+        "Nearby paired peripheral → Bluetooth",
+        "Tap or contactless interaction → NFC",
+        "Tagged inventory or assets → RFID"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": [
+        "Wireless options can all be technically wireless. The job, distance, frequency, channel requirement, and environment determine the answer."
+      ],
+      "entries": [
+        {"title": "2.4 GHz vs. 5 GHz vs. 6 GHz", "paragraphs": ["Do not automatically choose the highest number. Better range points to 2.4 GHz; more channel options point to 5 GHz; newer additional spectrum points to 6 GHz with compatible equipment."]},
+        {"title": "Band vs. Channel vs. Width", "paragraphs": ["A band is a frequency range, a channel is a selected portion inside the band, and width is the amount of spectrum occupied."]},
+        {"title": "Wider Does Not Always Mean Better", "paragraphs": ["Wide channels can increase potential throughput but consume more spectrum and can reduce reuse in a crowded environment."]},
+        {"title": "Bluetooth vs. Wi-Fi", "paragraphs": ["Network connectivity points to Wi-Fi; peripheral pairing points to Bluetooth. Shared 2.4 GHz operation does not make them the same."]},
+        {"title": "NFC vs. Bluetooth", "paragraphs": ["An extremely close tap points to NFC; a nearby paired accessory points to Bluetooth."]},
+        {"title": "NFC vs. RFID", "paragraphs": ["A very-close interactive scenario points to NFC; an identification or tracking system points to RFID."]}
+      ],
+      "callout": "Ask: what is it doing, how far, what band, and what channel requirement?"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "2.4 GHz → better range and penetration; more congestion",
+        "5 GHz → more channel options; less reach than 2.4 GHz",
+        "6 GHz → additional newer spectrum for compatible devices",
+        "1, 6, 11 → common 2.4 GHz non-overlapping 20 MHz choices",
+        "Regulations → legal or geographic channel restrictions",
+        "Channel selection → manage nearby network competition",
+        "20/40/80/160 MHz → channel width",
+        "Band → range of frequencies",
+        "Channel → defined portion of a band",
+        "802.11 → Wi-Fi standards family",
+        "a/ac → 5 GHz; b/g → 2.4 GHz; n → 2.4/5 GHz",
+        "802.11ax → Wi-Fi 6; Wi-Fi 6E adds 6 GHz capability",
+        "Bluetooth → nearby wireless peripheral",
+        "NFC → extremely close contactless interaction",
+        "RFID → radio-based tag identification",
+        "Network → Wi-Fi; pair → Bluetooth; tap → NFC; tag → RFID"
+      ]
+    }
+  ]
+}
