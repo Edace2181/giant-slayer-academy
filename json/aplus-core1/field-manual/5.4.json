@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.4",
+  "title": "Troubleshoot Common Mobile Device Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Mobile devices combine batteries, displays, touch sensors, wireless radios, charging systems, ports, applications, and operating systems. One symptom may come from physical damage, power, connectivity, touch, software, or performance."],
+      "bullets": ["Poor battery health and swollen batteries", "Broken screens and improper charging", "Poor or no connectivity", "Liquid damage and overheating", "Digitizer issues and damaged ports", "Malware and touch calibration", "Application installation and stylus issues", "Degraded performance"],
+      "callout": "POWER → PHYSICAL → CONNECTIVITY → TOUCH → SOFTWARE → PERFORMANCE"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Use the symptom to identify whether a mobile-device problem involves the battery, charging system, connectivity, physical hardware, touch system, software, or performance."],
+      "bullets": ["Fast drain → battery health", "Physical expansion → swollen battery", "Cracked display → broken screen", "Will not charge → charging path", "Cannot connect → wireless or cellular path", "Wet device → liquid damage", "Hot device → overheating", "Image works but touch fails → digitizer", "Loose socket → damaged port", "Malicious behavior → malware", "Wrong touch location → calibration", "Installation blocked → storage, compatibility, or policy", "Pen fails → stylus path", "Increasingly slow → degraded performance"]
+    },
+    {
+      "id": "common-symptoms",
+      "title": "Common Mobile-Device Symptoms",
+      "paragraphs": ["Classify the symptom before taking action. Mobile devices tightly integrate their hardware and software, so complete scenario evidence matters."],
+      "callout": "BATTERY → PHYSICAL → CONNECTION → TOUCH → SOFTWARE → PERFORMANCE"
+    },
+    {
+      "id": "poor-battery-health",
+      "title": "Poor Battery Health",
+      "paragraphs": ["Rechargeable batteries lose capacity with age and charge cycles. Symptoms include short runtime, rapid drain, unexpected shutdowns, or abnormal percentage reporting. Check available battery-health data, power use, and charging behavior before replacement."],
+      "callout": "Battery reports full but no longer lasts → battery health."
+    },
+    {
+      "id": "battery-health-vs-usage",
+      "title": "Poor Battery Health vs. Heavy Power Usage",
+      "paragraphs": ["Fast drain can come from degraded capacity or high consumption from a bright display, intensive applications, background activity, wireless radios, or heavy processor use."],
+      "callout": "BAD CAPACITY vs. HIGH CONSUMPTION."
+    },
+    {
+      "id": "swollen-battery",
+      "title": "Swollen Battery",
+      "paragraphs": ["A damaged lithium-based battery may bulge the case, lift the screen, separate the back cover, or distort the device. Stop using and charging it; do not puncture, crush, or bend it. Follow approved handling and disposal procedures."],
+      "callout": "SWELLING = PHYSICAL SAFETY CONCERN."
+    },
+    {
+      "id": "battery-health-vs-swelling",
+      "title": "Poor Battery Health vs. Swollen Battery",
+      "table": {
+        "caption": "Capacity and physical safety",
+        "headers": ["Condition", "Primary symptom", "Response clue"],
+        "rows": [["Poor health", "Reduced capacity or runtime", "DRAINS FAST"], ["Swollen", "Physical expansion", "STOP USE/CHARGING"]]
+      }
+    },
+    {
+      "id": "broken-screen",
+      "title": "Broken Screen",
+      "paragraphs": ["Drops, impacts, pressure, and other physical damage can cause cracks, missing image areas, lines, black regions, or no display. Screen damage can also affect touch when the digitizer is damaged."],
+      "callout": "Physical impact plus visible damage → screen hardware."
+    },
+    {
+      "id": "display-vs-digitizer",
+      "title": "Display vs. Digitizer",
+      "table": {
+        "caption": "Image and touch functions",
+        "headers": ["Component", "Function", "Failure clue"],
+        "rows": [["Display", "Shows the image", "Image is broken"], ["Digitizer", "Detects touch", "Image looks normal but touch fails"]]
+      },
+      "callout": "SEE → DISPLAY. TOUCH → DIGITIZER."
+    },
+    {
+      "id": "improper-charging",
+      "title": "Improper Charging",
+      "paragraphs": ["Charging problems can involve the outlet, power adapter, cable, port, battery, debris, or software and firmware. Test the path in order and use known-good components when appropriate."],
+      "callout": "OUTLET → ADAPTER → CABLE → PORT → BATTERY"
+    },
+    {
+      "id": "physically-damaged-ports",
+      "title": "Physically Damaged Ports",
+      "paragraphs": ["Bent connectors, debris, impacts, liquid, or sideways cable pressure can cause no charging, no data transfer, a loose connector, or operation only at certain angles."],
+      "callout": "WIGGLE TO MAKE IT WORK → PORT OR CABLE DAMAGE."
+    },
+    {
+      "id": "poor-no-connectivity",
+      "title": "Poor/No Connectivity",
+      "paragraphs": ["First identify whether Wi-Fi, cellular, or Bluetooth is failing. Check the radio, airplane mode, selected network, credentials, signal, comparison devices, and whether reconnecting resolves the issue."],
+      "callout": "Identify the radio before troubleshooting the connection."
+    },
+    {
+      "id": "wifi-cellular-bluetooth",
+      "title": "Wi-Fi vs. Cellular vs. Bluetooth",
+      "table": {
+        "caption": "Mobile radio clues",
+        "headers": ["Symptom", "Radio", "Memory hook"],
+        "rows": [["Cannot reach wireless LAN", "Wi-Fi", "NETWORK"], ["No carrier or mobile data", "Cellular", "CARRIER"], ["Accessory will not pair", "Bluetooth", "ACCESSORY"]]
+      }
+    },
+    {
+      "id": "liquid-damage",
+      "title": "Liquid Damage",
+      "paragraphs": ["Liquid exposure can cause shorts, corrosion, charging trouble, display or touch failures, and complete device failure. Avoid actions that increase electrical damage and follow manufacturer-approved service procedures."],
+      "callout": "Failure after submersion → liquid damage becomes a major clue."
+    },
+    {
+      "id": "overheating",
+      "title": "Overheating",
+      "paragraphs": ["Intensive workloads, battery or charging problems, environmental heat, poor ventilation, and malfunctioning applications can make a device excessively hot, slow charging, reduce performance, or trigger shutdown."],
+      "callout": "HOT → THROTTLE → PROTECT."
+    },
+    {
+      "id": "overheating-performance",
+      "title": "Overheating and Performance",
+      "paragraphs": ["A mobile device may intentionally reduce performance when temperatures become excessive to protect its hardware."],
+      "callout": "HOT + SLOW → THERMAL THROTTLING."
+    },
+    {
+      "id": "digitizer-issues",
+      "title": "Digitizer Issues",
+      "paragraphs": ["The digitizer converts touch into device input. Failure can cause no response, dead screen areas, incorrect touch locations, or phantom touches."],
+      "callout": "Picture works, fingers do not → digitizer."
+    },
+    {
+      "id": "cursor-drift-calibration",
+      "title": "Cursor Drift/Touch Calibration",
+      "paragraphs": ["Cursor drift or calibration trouble means detected input does not match the intended location. A tap on one icon may activate a nearby icon."],
+      "callout": "Touch here, device responds there → calibration or digitizer issue."
+    },
+    {
+      "id": "digitizer-vs-calibration",
+      "title": "Digitizer Failure vs. Calibration",
+      "table": {
+        "caption": "Touch response clues",
+        "headers": ["Condition", "Behavior", "Memory hook"],
+        "rows": [["Digitizer failure", "No touch or dead areas", "NO TOUCH"], ["Calibration problem", "Touch registers in the wrong place", "WRONG PLACE"]]
+      }
+    },
+    {
+      "id": "malware",
+      "title": "Malware",
+      "paragraphs": ["Unexpected pop-ups, unwanted applications, redirects, unusual battery or data use, strange behavior, and degraded performance can indicate mobile malware. Slowness alone is not enough evidence."],
+      "callout": "Unexpected malicious behavior → investigate malware."
+    },
+    {
+      "id": "unable-install-apps",
+      "title": "Unable to Install New Applications",
+      "paragraphs": ["Installation can fail because of insufficient storage, an unsupported OS, device incompatibility, app-store restrictions, MDM or security policy, account limits, or missing permissions."],
+      "callout": "CANNOT INSTALL → STORAGE, COMPATIBILITY, POLICY, OR PERMISSIONS."
+    },
+    {
+      "id": "stylus-does-not-work",
+      "title": "Stylus Does Not Work",
+      "paragraphs": ["A stylus issue can involve compatibility, pairing, battery or charging, digitizer support, physical damage, or configuration. Active styluses may require power or pairing; passive models may not."],
+      "callout": "Stylus failure → compatibility, power/pairing, and digitizer."
+    },
+    {
+      "id": "degraded-performance",
+      "title": "Degraded Performance",
+      "paragraphs": ["Low storage, background processes, overheating, malware, aging hardware, or problematic applications can make a device slow. Use accompanying evidence to narrow the cause."],
+      "bullets": ["Slow plus hot → thermal", "Slow plus pop-ups → malware possibility", "Slow plus nearly full storage → storage or resource issue"],
+      "callout": "SLOW is a symptom, not a diagnosis."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Capacity has declined → poor battery health", "Case or screen pushed outward → swollen battery", "Cracked image after drop → broken screen", "Known-good chargers fail → charging or port issue", "Wi-Fi, cellular, or Bluetooth unavailable → connectivity", "Failure after water exposure → liquid damage", "Hot device throttles → overheating", "Image normal but touch dead → digitizer", "Loose connector → damaged port", "Redirects and pop-ups → malware", "Touch position offset → calibration", "App installation blocked → storage, compatibility, or policy", "Pen input fails → stylus", "Overall device slows → degraded performance"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Mobile symptoms overlap. Classify battery, physical, connection, touch, software, and performance clues before choosing an action."],
+      "entries": [
+        {"title": "Poor Battery Health vs. Swollen Battery", "paragraphs": ["Short runtime points toward battery health. Physical expansion is an urgent swollen-battery safety issue."]},
+        {"title": "Broken Screen vs. Digitizer", "paragraphs": ["If the image is broken, inspect the display. If the image is normal but touch fails, inspect the digitizer."], "memoryHook": "SEE vs. TOUCH"},
+        {"title": "Digitizer vs. Calibration", "paragraphs": ["No touch response points toward digitizer failure; input at the wrong location points toward calibration."]},
+        {"title": "Charging Cable vs. Port", "paragraphs": ["A different cable that fixes charging isolates the cable. Multiple cables failing in a loose port points toward the port."]},
+        {"title": "Overheating vs. Degraded Performance", "paragraphs": ["Slowness has many causes, but slowness with high temperature strongly supports overheating."]},
+        {"title": "Malware vs. Normal Slowdown", "paragraphs": ["Slow operation alone is ambiguous. Redirects, pop-ups, or unwanted behavior make malware more likely."]},
+        {"title": "Unable to Install an App", "paragraphs": ["Check storage, compatibility, OS version, policy, and permissions before blaming malware."]}
+      ]
+    },
+    {
+      "id": "mobile-troubleshooting-workflow",
+      "title": "Mobile Troubleshooting Workflow",
+      "bullets": ["Identify whether the symptom is power, physical, connectivity, touch, software, or performance.", "Treat swelling and liquid or electrical hazards safely.", "Trace charging from source through adapter, cable, port, and battery.", "Identify the affected radio before changing connectivity settings.", "Separate display output from touch input.", "Use accompanying evidence to diagnose slow performance."],
+      "callout": "POWER → PHYSICAL → CONNECTIVITY → TOUCH → SOFTWARE → PERFORMANCE"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Rapid drain from aging capacity → poor battery health", "Battery expands → swollen battery", "Cracked display → broken screen", "Will not charge → charging path", "No Wi-Fi, cellular, or Bluetooth → connectivity", "Failure after water exposure → liquid damage", "Hot device → overheating", "Image works but touch fails → digitizer", "Loose charging connector → damaged port", "Malicious pop-ups → malware", "Wrong touch location → calibration", "Cannot install app → storage, compatibility, or policy", "Pen input fails → stylus", "Increasingly slow device → degraded performance"],
+      "callout": "DRAINS → BATTERY HEALTH | BULGES → SWOLLEN | SEE → DISPLAY | TOUCH → DIGITIZER | WIGGLE → PORT/CABLE | HOT + SLOW → THERMAL | POP-UPS → MALWARE"
+    }
+  ]
+}

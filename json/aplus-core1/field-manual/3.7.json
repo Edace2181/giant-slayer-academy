@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.7",
+  "title": "Given a Scenario, Deploy and Configure Multifunction Devices, Printers, and Settings",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Deploying a printer or multifunction device requires correct physical setup, software, connectivity, sharing, settings, security, network scanning, and scanner hardware."],
+      "bullets": ["Unboxing and setup location", "Operating-system printer drivers and firmware", "USB, Ethernet, and wireless connectivity", "Printer sharing and print servers", "Print settings and security", "Network scan destinations", "ADF and flatbed scanners"],
+      "callout": "PLACE → INSTALL → CONNECT → SHARE → CONFIGURE → SECURE → SCAN"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes deployment, a connection method, a driver issue, a print setting, a security requirement, or a scan destination, identify which layer of printer configuration is being tested."],
+      "bullets": ["Correct OS support → driver", "PCL vs. PostScript → printer language and driver choice", "Direct local connection → USB", "Network printer → Ethernet or wireless", "Centralized printing → print server", "Both sides of paper → duplex", "Identity before job release → authentication and secured print", "Shared-folder scan → SMB", "Automatic multi-page scan → ADF"]
+    },
+    {
+      "id": "unboxing",
+      "title": "Properly Unboxing the Device",
+      "paragraphs": ["Before powering on a new printer or multifunction device, remove protective tape, foam, shipping locks, cartridge restraints, scanner locks, and internal packing material."],
+      "callout": "New printer makes unusual mechanical noises → check for unremoved shipping material."
+    },
+    {
+      "id": "setup-location",
+      "title": "Choosing the Setup Location",
+      "paragraphs": ["Choose a location with sufficient space, ventilation, power, network access, wireless signal, user accessibility, paper handling, and maintenance clearance. Avoid unsuitable heat and moisture conditions."],
+      "bullets": ["Leave room to open paper trays and scanner lids.", "Preserve access to side panels, toner compartments, and maintenance doors.", "Confirm wired or wireless connectivity at the selected location."],
+      "callout": "Place the device where it can operate and be serviced safely."
+    },
+    {
+      "id": "operating-system-printer-drivers",
+      "title": "Operating-System Printer Drivers",
+      "paragraphs": ["A printer driver translates between the operating system, applications, and printer. Use a driver that matches the printer model, operating system, and OS architecture when relevant."],
+      "callout": "Printer is detected but features are missing or output is wrong → verify the driver."
+    },
+    {
+      "id": "pcl",
+      "title": "Printer Control Language (PCL)",
+      "paragraphs": ["Printer Control Language (PCL) is widely supported and commonly associated with efficient general-purpose office and business printing."],
+      "callout": "Standard office documents → PCL may be appropriate."
+    },
+    {
+      "id": "postscript",
+      "title": "PostScript",
+      "paragraphs": ["PostScript is a page-description language known for precise text and graphics rendering. It is associated with publishing, design, graphics, and consistent page output across platforms."],
+      "callout": "Graphics-heavy document requiring page fidelity → PostScript."
+    },
+    {
+      "id": "pcl-vs-postscript",
+      "title": "PCL vs. PostScript",
+      "table": {
+        "caption": "Printer-language comparison",
+        "headers": ["Language", "Common strength", "Recognition clue"],
+        "rows": [["PCL", "Efficient general office printing", "Business documents"], ["PostScript", "Precise page and graphics rendering", "Publishing, design, or page fidelity"]]
+      },
+      "callout": "OFFICE → PCL. GRAPHICS/PAGE FIDELITY → POSTSCRIPT."
+    },
+    {
+      "id": "printer-firmware",
+      "title": "Printer Firmware",
+      "paragraphs": ["Printer firmware is software stored on the device that controls its hardware and internal functions. Updates can fix bugs, improve compatibility, address security vulnerabilities, and add features."],
+      "callout": "Driver = software on the computer. Firmware = software inside the printer."
+    },
+    {
+      "id": "device-connectivity",
+      "title": "Device Connectivity",
+      "paragraphs": ["Printers can connect through USB, Ethernet, or wireless networking. Select the connection based on whether the device serves one computer or network users."],
+      "callout": "Identify whether the printer is local, wired-networked, or wireless-networked."
+    },
+    {
+      "id": "usb-printer-connectivity",
+      "title": "USB Printer Connectivity",
+      "paragraphs": ["USB commonly provides a direct local connection between one computer and a printer."],
+      "callout": "One desktop directly connected to a printer → USB."
+    },
+    {
+      "id": "ethernet-printer-connectivity",
+      "title": "Ethernet Printer Connectivity",
+      "paragraphs": ["Ethernet connects a printer directly to a wired network and is well suited to stable shared printing in office environments."],
+      "callout": "Printer available directly on the wired LAN → Ethernet."
+    },
+    {
+      "id": "wireless-printer-connectivity",
+      "title": "Wireless Printer Connectivity",
+      "paragraphs": ["Wireless connectivity places a compatible printer on the network without an Ethernet cable. Confirm signal strength, network coverage, security, and credentials."],
+      "callout": "Network printing without a network cable → wireless."
+    },
+    {
+      "id": "connectivity-comparison",
+      "title": "USB vs. Ethernet vs. Wireless",
+      "table": {
+        "caption": "Printer connection methods",
+        "headers": ["Connection", "Scope", "Recognition clue"],
+        "rows": [["USB", "Direct/local", "One connected computer"], ["Ethernet", "Wired network", "Network cable and LAN"], ["Wireless", "Wireless network", "Network access without Ethernet cabling"]]
+      },
+      "callout": "ONE COMPUTER → USB. NETWORK CABLE → ETHERNET. NO NETWORK CABLE → WIRELESS."
+    },
+    {
+      "id": "public-shared-devices",
+      "title": "Public/Shared Devices",
+      "paragraphs": ["A printer serving multiple users can be exposed through a printer share or managed centrally by a print server."],
+      "callout": "Determine whether the need is simple sharing or centralized management."
+    },
+    {
+      "id": "printer-share",
+      "title": "Printer Share",
+      "paragraphs": ["A printer share makes a printer attached to or configured on one computer available to other users."],
+      "callout": "Printer connected to PC A but needed by other PCs → printer share."
+    },
+    {
+      "id": "print-server",
+      "title": "Print Server",
+      "paragraphs": ["A print server centrally manages printers and print jobs. It can manage queues, deploy drivers, enforce access control, and administer multiple printers."],
+      "callout": "Many shared printers managed from one central system → print server."
+    },
+    {
+      "id": "share-vs-server",
+      "title": "Printer Share vs. Print Server",
+      "table": {
+        "caption": "Shared-printing models",
+        "headers": ["Model", "Primary role", "Recognition clue"],
+        "rows": [["Printer share", "A host exposes a printer", "One system shares its printer"], ["Print server", "Centralized print infrastructure", "Queues, drivers, access, and multiple printers"]]
+      },
+      "callout": "SHARE = expose a printer. SERVER = centrally manage printing."
+    },
+    {
+      "id": "configuration-settings",
+      "title": "Configuration Settings",
+      "paragraphs": ["Common printer configuration settings include duplex, orientation, tray settings, and print quality."],
+      "callout": "Match the requested output behavior to the exact setting."
+    },
+    {
+      "id": "duplex-printing",
+      "title": "Duplex Printing",
+      "paragraphs": ["Duplex printing places output on both sides of the paper."],
+      "callout": "Reduce paper use by printing both sides → duplex."
+    },
+    {
+      "id": "page-orientation",
+      "title": "Page Orientation",
+      "paragraphs": ["Orientation controls page direction. Portrait is taller than wide; landscape is wider than tall."],
+      "callout": "Wide spreadsheet → try landscape orientation."
+    },
+    {
+      "id": "tray-settings",
+      "title": "Tray Settings",
+      "paragraphs": ["Tray settings identify the paper size, paper type, and source tray. Examples include Letter, Legal, labels, envelopes, and specialty paper."],
+      "callout": "Printer requests a different paper size despite loaded paper → check tray settings."
+    },
+    {
+      "id": "print-quality",
+      "title": "Print Quality",
+      "paragraphs": ["Print-quality settings control resolution, draft or high-quality output, and toner or ink usage. Higher quality can increase print time and consumable use."],
+      "callout": "Quality balances output appearance against time and resources."
+    },
+    {
+      "id": "printer-security",
+      "title": "Printer Security",
+      "paragraphs": ["Shared printers and multifunction devices can process sensitive information. Objective 3.7 includes user authentication, badging, audit logs, and secured prints."],
+      "callout": "Protect device access, job release, and activity records."
+    },
+    {
+      "id": "user-authentication",
+      "title": "User Authentication",
+      "paragraphs": ["User authentication requires a person to prove identity before accessing printer functions."],
+      "callout": "Only authorized employees may use the device → user authentication."
+    },
+    {
+      "id": "badging",
+      "title": "Badging",
+      "paragraphs": ["Badging lets a user authenticate by presenting an identification badge or card to the device."],
+      "callout": "Employee taps a company badge before printing → badging."
+    },
+    {
+      "id": "audit-logs",
+      "title": "Audit Logs",
+      "paragraphs": ["Audit logs record printer activity such as who used the device, when the activity occurred, and other security-related events."],
+      "callout": "Security team needs printer-usage history → audit logs."
+    },
+    {
+      "id": "secured-prints",
+      "title": "Secured Prints",
+      "paragraphs": ["A secured print job remains held until the authorized user releases it, preventing sensitive output from sitting unattended in a tray."],
+      "callout": "Confidential document waits for the employee → secured print."
+    },
+    {
+      "id": "authentication-vs-secured-print",
+      "title": "Authentication vs. Secured Print",
+      "table": {
+        "caption": "Identity and job-release controls",
+        "headers": ["Control", "Purpose", "Question answered"],
+        "rows": [["Authentication", "Verifies user identity", "Who are you?"], ["Secured print", "Holds the job for authorized release", "When may this job print?"]]
+      },
+      "callout": "Authentication and secured printing often work together."
+    },
+    {
+      "id": "network-scan-services",
+      "title": "Network Scan Services",
+      "paragraphs": ["A multifunction device can send scanned documents directly to email, a Server Message Block (SMB) network share, or a supported cloud service."],
+      "callout": "Identify the requested destination: mailbox, shared folder, or online service."
+    },
+    {
+      "id": "scan-to-email",
+      "title": "Scan to Email",
+      "paragraphs": ["Scan to email creates a digital document and sends it to an email destination, commonly as an attachment."],
+      "callout": "Scanned document delivered directly to an inbox → email."
+    },
+    {
+      "id": "scan-to-smb",
+      "title": "Scan to SMB",
+      "paragraphs": ["Server Message Block (SMB) allows the multifunction device to save a scanned file to a network shared folder."],
+      "callout": "Scan directly into a departmental network folder → SMB."
+    },
+    {
+      "id": "scan-to-cloud-services",
+      "title": "Scan to Cloud Services",
+      "paragraphs": ["A multifunction device can upload scanned documents directly to supported cloud storage or another online service."],
+      "callout": "Scan directly to an online storage destination → cloud service."
+    },
+    {
+      "id": "scan-destination-comparison",
+      "title": "Email vs. SMB vs. Cloud Scanning",
+      "table": {
+        "caption": "Network scan destinations",
+        "headers": ["Service", "Destination", "Recognition clue"],
+        "rows": [["Email", "Mailbox", "Inbox or attachment"], ["SMB", "Network file share", "Shared folder"], ["Cloud", "Online service", "Supported cloud storage"]]
+      },
+      "callout": "INBOX → EMAIL. SHARED FOLDER → SMB. ONLINE STORAGE → CLOUD."
+    },
+    {
+      "id": "automatic-document-feeder",
+      "title": "Automatic Document Feeder (ADF)",
+      "paragraphs": ["An Automatic Document Feeder (ADF) pulls multiple loose pages through the scanner for batch scanning or copying."],
+      "callout": "Scan a 30-page loose document automatically → ADF."
+    },
+    {
+      "id": "flatbed-scanner",
+      "title": "Flatbed Scanner",
+      "paragraphs": ["A flatbed scanner captures an item placed on glass. It is suited to single pages, photographs, books, fragile originals, and items that should not pass through rollers."],
+      "callout": "Scan a bound book or delicate photograph → flatbed."
+    },
+    {
+      "id": "adf-flatbed-scanner",
+      "title": "ADF/Flatbed Scanner",
+      "table": {
+        "caption": "Scanner input methods",
+        "headers": ["Scanner", "Best for", "Recognition clue"],
+        "rows": [["ADF", "Multiple loose pages", "Automatic stack feeding"], ["Flatbed", "Books, photos, fragile or single items", "Item placed on glass"]]
+      },
+      "callout": "STACK → ADF. GLASS → FLATBED."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Shipping locks or tape → proper unboxing", "Ventilation, access, and network availability → setup location", "OS communication with printer → driver", "General office language → PCL", "Precise graphics rendering → PostScript", "Software inside printer → firmware", "Direct PC connection → USB", "Wired network → Ethernet", "Cable-free network → wireless", "Printer exposed through another computer → printer share", "Central print management → print server", "Both sides → duplex", "Vertical or horizontal page → orientation", "Paper source, size, or type → tray settings", "Output appearance → quality", "Prove identity → user authentication", "ID card access → badging", "Usage history → audit logs", "Hold job for user → secured print", "Mailbox → email", "Shared folder → SMB", "Online destination → cloud service", "Multiple loose pages → ADF", "Book or photo on glass → flatbed"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.7 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Printer deployment scenarios mix drivers, connections, sharing, settings, security, scanning, and scanner hardware. Identify the layer the scenario actually tests."],
+      "entries": [
+        {"title": "Driver vs. Firmware", "paragraphs": ["A driver runs in the operating system; firmware runs inside the printer."], "memoryHook": "PC SOFTWARE vs. PRINTER SOFTWARE"},
+        {"title": "PCL vs. PostScript", "paragraphs": ["PCL fits general office printing; PostScript emphasizes precise graphics and page-description rendering."], "memoryHook": "OFFICE vs. DESIGN"},
+        {"title": "USB vs. Ethernet", "paragraphs": ["USB is a direct local connection. Ethernet places the device directly on the network."], "memoryHook": "ONE COMPUTER vs. NETWORK"},
+        {"title": "Printer Share vs. Print Server", "paragraphs": ["A host can share one printer; a print server provides centralized infrastructure and management."], "memoryHook": "SHARE vs. SERVER"},
+        {"title": "Duplex vs. Orientation", "paragraphs": ["Duplex controls paper sides; orientation controls page direction."], "memoryHook": "SIDES vs. DIRECTION"},
+        {"title": "Tray vs. Quality", "paragraphs": ["Tray settings identify paper source, size, and type. Quality controls appearance, resolution, and resource use."], "memoryHook": "PAPER vs. OUTPUT LOOK"},
+        {"title": "Authentication vs. Audit Log", "paragraphs": ["Authentication controls access; an audit log records activity."], "memoryHook": "BEFORE ACCESS vs. AFTER ACTIVITY"},
+        {"title": "Authentication vs. Secured Print", "paragraphs": ["Authentication verifies identity; secured print holds the job for authorized release."], "memoryHook": "IDENTITY vs. CONFIDENTIAL JOB"},
+        {"title": "ADF vs. Flatbed", "paragraphs": ["ADF handles a stack of loose pages; a flatbed scans an item placed on glass."], "memoryHook": "MANY PAGES vs. BOOK/PHOTO"}
+      ]
+    },
+    {
+      "id": "deployment-workflow",
+      "title": "Printer Deployment Workflow",
+      "bullets": ["PLACE: unbox correctly and select a safe, serviceable location.", "INSTALL: use the correct OS driver and printer firmware.", "CONNECT: choose USB, Ethernet, or wireless.", "SHARE: configure a printer share or print server when required.", "CONFIGURE: set duplex, orientation, trays, and quality.", "SECURE: apply authentication, badging, audit logs, and secured prints.", "SCAN: configure email, SMB, or cloud destinations and choose ADF or flatbed input."],
+      "callout": "PLACE → INSTALL → CONNECT → SHARE → CONFIGURE → SECURE → SCAN"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Remove shipping material → proper unboxing", "Ventilation/network/accessibility → setup location", "OS printer communication → driver", "Office print language → PCL", "Precise graphics rendering → PostScript", "Software inside printer → firmware", "Direct local printing → USB", "Wired network printing → Ethernet", "Wireless network printing → wireless", "Host makes printer available → printer share", "Central management → print server", "Both sides → duplex", "Vertical page → portrait", "Horizontal page → landscape", "Paper size/source → tray settings", "Output appearance → quality", "Verify user identity → authentication", "ID card access → badging", "Usage history → audit logs", "Hold job for release → secured print", "Mailbox scan → email", "Shared-folder scan → SMB", "Online destination → cloud service", "Automatic multi-page scanner → ADF", "Glass scanning surface → flatbed"],
+      "callout": "PLACE → INSTALL → CONNECT → SHARE → CONFIGURE → SECURE → SCAN"
+    }
+  ]
+}

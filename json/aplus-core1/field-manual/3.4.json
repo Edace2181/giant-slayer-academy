@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.4",
+  "title": "Compare and Contrast Storage Devices",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Computers store data with mechanical disks, solid-state flash, removable media, and optical media. Multiple drives can also be combined in RAID configurations for performance, fault tolerance, or both.",
+        "Objective 3.4 tests whether you can distinguish the storage technology, communication interface, physical form factor, drive configuration, and intended purpose."
+      ],
+      "bullets": ["Hard drives", "Solid-state drives", "RAID 0, 1, 5, 6, and 10", "Flash drives", "Memory cards", "Optical drives"],
+      "callout": "TECHNOLOGY → INTERFACE → FORM FACTOR → CONFIGURATION → PURPOSE"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes storage speed, physical size, connection method, fault tolerance, or portability, identify which storage characteristic the clue is testing."],
+      "bullets": ["Spinning platters → HDD", "No moving parts → SSD", "High-speed PCIe storage protocol → NVMe", "Small motherboard-mounted module → M.2", "Striping → RAID 0", "Mirroring → RAID 1", "Parity → RAID 5 or 6", "Mirror plus stripe → RAID 10"]
+    },
+    {
+      "id": "hard-drives",
+      "title": "Hard Drives",
+      "paragraphs": ["A Hard Disk Drive (HDD) stores data magnetically on rotating platters. Its mechanical components include platters, a spindle, and read/write heads."],
+      "callout": "Mechanical drive with spinning magnetic platters → HDD."
+    },
+    {
+      "id": "spindle-speeds",
+      "title": "Spindle Speeds",
+      "paragraphs": ["Spindle speed describes how quickly an HDD's platters rotate and is measured in revolutions per minute (RPM). Common examples include 5,400, 7,200, and 10,000 RPM."],
+      "bullets": ["Higher RPM can improve access performance, although RPM is not the only performance factor.", "SSDs have no spindle speed because they contain no rotating platters."],
+      "callout": "An RPM value identifies a mechanical hard drive characteristic."
+    },
+    {
+      "id": "hard-drive-form-factors",
+      "title": "Hard-Drive Form Factors",
+      "paragraphs": ["Hard-drive form factors describe physical size. Objective 3.4 requires you to compare 2.5-inch and 3.5-inch drives."],
+      "callout": "Form factor describes physical dimensions, not capacity or speed."
+    },
+    {
+      "id": "two-five-inch-drive",
+      "title": "2.5-Inch Drive",
+      "paragraphs": ["The 2.5-inch form factor is smaller and is commonly associated with laptops, compact computers, and some external drives."],
+      "callout": "Laptop mechanical drive → 2.5-inch HDD."
+    },
+    {
+      "id": "three-five-inch-drive",
+      "title": "3.5-Inch Drive",
+      "paragraphs": ["The 3.5-inch form factor is larger and is commonly associated with desktop computers, workstations, servers, and large-capacity storage systems."],
+      "callout": "Standard desktop mechanical drive → 3.5-inch HDD."
+    },
+    {
+      "id": "two-five-vs-three-five",
+      "title": "2.5-Inch vs. 3.5-Inch",
+      "table": {
+        "caption": "Hard-drive form-factor comparison",
+        "headers": ["Form factor", "Physical profile", "Common system"],
+        "rows": [["2.5-inch", "Smaller", "Laptop or compact system"], ["3.5-inch", "Larger", "Desktop or storage system"]]
+      },
+      "callout": "Laptop → 2.5-inch. Desktop HDD → 3.5-inch."
+    },
+    {
+      "id": "solid-state-drives",
+      "title": "Solid-State Drives",
+      "paragraphs": ["A Solid-State Drive (SSD) stores data in non-volatile flash memory. It has no spinning platter or moving read/write head."],
+      "bullets": ["Fast access", "No mechanical seek time", "Silent operation", "Better resistance to physical shock", "Often lower power use"],
+      "callout": "Storage with no moving parts → SSD."
+    },
+    {
+      "id": "hdd-vs-ssd",
+      "title": "HDD vs. SSD",
+      "table": {
+        "caption": "Mechanical and solid-state storage",
+        "headers": ["Device", "Storage mechanism", "Recognition clue"],
+        "rows": [["HDD", "Magnetic rotating platters", "RPM and mechanical movement"], ["SSD", "Non-volatile flash", "No moving parts"]]
+      },
+      "callout": "HDD = SPIN. SSD = FLASH."
+    },
+    {
+      "id": "ssd-communication-interfaces",
+      "title": "SSD Communication Interfaces",
+      "paragraphs": ["Storage terminology can describe different layers. For Objective 3.4, distinguish Non-Volatile Memory Express (NVMe), Serial Advanced Technology Attachment (SATA), Peripheral Component Interconnect Express (PCIe), and Serial Attached SCSI (SAS)."],
+      "callout": "Ask how the storage device communicates with the system."
+    },
+    {
+      "id": "sata-storage-interface",
+      "title": "SATA Storage Interface",
+      "paragraphs": ["Serial Advanced Technology Attachment (SATA) is a common storage interface used by hard drives, SATA SSDs, and optical drives. A SATA SSD is still solid-state storage; SATA identifies how it communicates."],
+      "callout": "2.5-inch SSD using the traditional SATA interface → SATA SSD."
+    },
+    {
+      "id": "pcie-storage-interface",
+      "title": "PCIe Storage Interface",
+      "paragraphs": ["Peripheral Component Interconnect Express (PCIe) is a high-speed system interface used by many devices, including high-performance storage. PCIe offers substantially more bandwidth than traditional SATA."],
+      "callout": "High-speed storage pathway → PCIe."
+    },
+    {
+      "id": "nvme",
+      "title": "Non-Volatile Memory Express (NVMe)",
+      "paragraphs": ["Non-Volatile Memory Express (NVMe) is a storage communication protocol designed for fast non-volatile storage over PCIe. It avoids limitations inherited from protocols designed for older disk technologies."],
+      "callout": "High-speed PCIe storage protocol → NVMe."
+    },
+    {
+      "id": "nvme-vs-pcie",
+      "title": "NVMe vs. PCIe",
+      "table": {
+        "caption": "Protocol and pathway",
+        "headers": ["Term", "Role", "Mental model"],
+        "rows": [["PCIe", "High-speed bus/interface", "Road"], ["NVMe", "Storage protocol commonly using PCIe", "Storage language traveling on the road"]]
+      },
+      "callout": "Protocol clue → NVMe. Underlying bus clue → PCIe."
+    },
+    {
+      "id": "sata-vs-nvme",
+      "title": "SATA vs. NVMe",
+      "paragraphs": ["Both SATA and NVMe can be used with SSDs. SATA follows a traditional storage-interface architecture, while NVMe is optimized for high-performance flash storage over PCIe."],
+      "callout": "SSD does not automatically mean NVMe."
+    },
+    {
+      "id": "sas",
+      "title": "Serial Attached SCSI (SAS)",
+      "paragraphs": ["Serial Attached SCSI (SAS) is a storage interface commonly used in servers, enterprise storage, and storage arrays where reliability and high performance are important."],
+      "callout": "Enterprise or server storage interface → SAS."
+    },
+    {
+      "id": "sata-vs-sas",
+      "title": "SATA vs. SAS",
+      "table": {
+        "caption": "Common storage-interface scenarios",
+        "headers": ["Interface", "Common environment", "Compatibility reminder"],
+        "rows": [["SATA", "Consumer and workstation storage", "Requires SATA support"], ["SAS", "Enterprise and server storage", "Requires a compatible controller and platform"]]
+      },
+      "callout": "SATA = everyday storage. SAS = enterprise storage."
+    },
+    {
+      "id": "ssd-form-factors",
+      "title": "SSD Form Factors",
+      "paragraphs": ["SSD form factors describe physical design. Objective 3.4 requires you to distinguish M.2 from Mini-Serial Advanced Technology Attachment (mSATA). A form factor does not always identify the protocol."],
+      "callout": "Form factor tells you physical design."
+    },
+    {
+      "id": "m2",
+      "title": "M.2",
+      "paragraphs": ["M.2 is a compact card-style form factor commonly used for SSDs that install directly into compatible motherboard slots. Depending on both drive and slot, an M.2 SSD may use SATA or PCIe/NVMe."],
+      "callout": "Small motherboard-mounted SSD module → M.2."
+    },
+    {
+      "id": "m2-vs-nvme",
+      "title": "M.2 Form Factor vs. NVMe",
+      "table": {
+        "caption": "A critical storage distinction",
+        "headers": ["Term", "What it identifies", "Examples"],
+        "rows": [["M.2", "Physical form factor", "M.2 SATA or M.2 NVMe"], ["NVMe", "Storage protocol", "NVMe over PCIe"]]
+      },
+      "callout": "M.2 = SHAPE. NVMe = COMMUNICATION."
+    },
+    {
+      "id": "msata",
+      "title": "Mini-Serial Advanced Technology Attachment (mSATA)",
+      "paragraphs": ["mSATA is a compact SSD form factor and interface based on SATA technology. It appeared in smaller systems before M.2 became more common."],
+      "callout": "Compact older SATA-based SSD → mSATA."
+    },
+    {
+      "id": "m2-vs-msata",
+      "title": "M.2 vs. mSATA",
+      "paragraphs": ["M.2 and mSATA can look similar, but they are different standards. M.2 is a newer flexible module format that can support different interfaces, while mSATA is an older SATA-based design."],
+      "callout": "Similar appearance does not make M.2 and mSATA interchangeable."
+    },
+    {
+      "id": "drive-configurations",
+      "title": "Drive Configurations",
+      "paragraphs": ["Redundant Array of Independent Disks (RAID) combines multiple drives for increased performance, fault tolerance, or both. Objective 3.4 requires RAID 0, 1, 5, 6, and 10."],
+      "callout": "RAID recognition words: STRIPE, MIRROR, PARITY."
+    },
+    {
+      "id": "raid-0",
+      "title": "RAID 0",
+      "paragraphs": ["RAID 0 uses striping to spread data across at least two drives. It can improve performance but provides no fault tolerance; failure of one drive destroys the array's data."],
+      "callout": "RAID 0 = striping and ZERO redundancy."
+    },
+    {
+      "id": "raid-1",
+      "title": "RAID 1",
+      "paragraphs": ["RAID 1 uses mirroring. In a basic two-drive mirror, the same data is written to both drives, and either drive can preserve the data if the other fails. Usable capacity is approximately one drive's capacity."],
+      "callout": "RAID 1 = one copy mirrors another."
+    },
+    {
+      "id": "raid-0-vs-raid-1",
+      "title": "RAID 0 vs. RAID 1",
+      "table": {
+        "caption": "Striping and mirroring",
+        "headers": ["Level", "Method", "Fault tolerance"],
+        "rows": [["RAID 0", "Striping", "None"], ["RAID 1", "Mirroring", "One drive in a basic two-drive mirror"]]
+      },
+      "callout": "0 = speed with zero protection. 1 = mirror."
+    },
+    {
+      "id": "raid-5",
+      "title": "RAID 5",
+      "paragraphs": ["RAID 5 uses striping with distributed single parity. It requires at least three drives and can tolerate one drive failure."],
+      "bullets": ["Approximate usable capacity: (number of drives - 1) × smallest drive capacity", "Three 2 TB drives provide about 4 TB usable"],
+      "callout": "RAID 5 = stripe + single parity + one-drive fault tolerance."
+    },
+    {
+      "id": "raid-6",
+      "title": "RAID 6",
+      "paragraphs": ["RAID 6 uses striping with dual distributed parity. It requires at least four drives and can tolerate two drive failures."],
+      "bullets": ["Approximate usable capacity: (number of drives - 2) × smallest drive capacity", "Four 2 TB drives provide about 4 TB usable"],
+      "callout": "RAID 6 = stripe + dual parity + two-drive fault tolerance."
+    },
+    {
+      "id": "raid-5-vs-raid-6",
+      "title": "RAID 5 vs. RAID 6",
+      "table": {
+        "caption": "Parity RAID comparison",
+        "headers": ["Level", "Parity", "Minimum drives", "Drive failures tolerated"],
+        "rows": [["RAID 5", "Single distributed parity", "3", "1"], ["RAID 6", "Dual distributed parity", "4", "2"]]
+      },
+      "callout": "RAID 5 → one may fail. RAID 6 → two may fail."
+    },
+    {
+      "id": "raid-10",
+      "title": "RAID 10",
+      "paragraphs": ["RAID 10 combines mirroring and striping across at least four drives. It provides strong performance and fault tolerance without parity."],
+      "callout": "RAID 10 = MIRROR + STRIPE."
+    },
+    {
+      "id": "raid-10-fault-tolerance",
+      "title": "RAID 10 Fault Tolerance",
+      "paragraphs": ["RAID 10 can survive drive failures while each mirrored set retains a working member. It may survive more than one failure, but only when both members of the same mirror are not lost."],
+      "callout": "Which drives fail matters; do not claim RAID 10 always survives any two failures."
+    },
+    {
+      "id": "raid-comparison",
+      "title": "RAID Comparison",
+      "table": {
+        "caption": "Required RAID levels",
+        "headers": ["RAID", "Method", "Minimum drives", "Fault tolerance", "Main clue"],
+        "rows": [
+          ["0", "Striping", "2", "None", "Performance"],
+          ["1", "Mirroring", "2", "One drive in a basic mirror", "Duplicate data"],
+          ["5", "Striping + parity", "3", "One drive", "Single parity"],
+          ["6", "Striping + dual parity", "4", "Two drives", "Dual parity"],
+          ["10", "Mirroring + striping", "4", "Depends on which drives fail", "Performance + redundancy"]
+        ]
+      },
+      "callout": "0 STRIPE | 1 MIRROR | 5 ONE PARITY | 6 TWO PARITY | 10 MIRROR + STRIPE"
+    },
+    {
+      "id": "raid-is-not-backup",
+      "title": "RAID Is Not a Backup",
+      "paragraphs": ["RAID can improve performance, redundancy, or availability, but it does not replace a separate recoverable backup. It does not inherently protect against accidental deletion, malware, file corruption, theft, fire, or destruction of the entire system."],
+      "callout": "RAID keeps storage available. Backup preserves a separate recoverable copy."
+    },
+    {
+      "id": "removable-storage",
+      "title": "Removable Storage",
+      "paragraphs": ["Removable storage is designed to be connected, removed, and transported easily. Objective 3.4 includes flash drives and memory cards."],
+      "callout": "Portable flash media → flash drive or memory card."
+    },
+    {
+      "id": "flash-drives",
+      "title": "Flash Drives",
+      "paragraphs": ["A USB flash drive places non-volatile flash memory in a portable device with a USB connection. Common uses include moving files, portable storage, installation media, and recovery tools."],
+      "callout": "Small USB device used to transport files → flash drive."
+    },
+    {
+      "id": "memory-cards",
+      "title": "Memory Cards",
+      "paragraphs": ["A memory card is compact removable flash storage commonly used in cameras, smartphones, tablets, embedded devices, and other portable electronics."],
+      "callout": "Camera-style removable flash media → memory card."
+    },
+    {
+      "id": "flash-drive-vs-memory-card",
+      "title": "Flash Drive vs. Memory Card",
+      "table": {
+        "caption": "Two forms of removable flash storage",
+        "headers": ["Device", "Connection", "Recognition clue"],
+        "rows": [["Flash drive", "Usually has its own USB connector", "USB stick"], ["Memory card", "Inserts into a card slot or reader", "Camera or portable-device card"]]
+      },
+      "callout": "USB stick → flash drive. Card slot → memory card."
+    },
+    {
+      "id": "optical-drives",
+      "title": "Optical Drives",
+      "paragraphs": ["An optical drive reads and sometimes writes laser-based media such as CD, DVD, and Blu-ray. Uses include software installation, media playback, data distribution, and removable archival media."],
+      "callout": "Laser-readable disc → optical drive."
+    },
+    {
+      "id": "optical-vs-magnetic-vs-flash",
+      "title": "Optical vs. Magnetic vs. Flash Storage",
+      "table": {
+        "caption": "Storage mechanism comparison",
+        "headers": ["Mechanism", "Devices", "Recognition clue"],
+        "rows": [["Magnetic", "HDD", "Spinning platter"], ["Flash", "SSD, flash drive, memory card", "Memory chips and no moving parts"], ["Optical", "CD, DVD, Blu-ray drive", "Laser-readable disc"]]
+      },
+      "callout": "SPINNING MAGNET → HDD. CHIPS → FLASH. LASER DISC → OPTICAL."
+    },
+    {
+      "id": "storage-map",
+      "title": "Storage Map",
+      "table": {
+        "caption": "Technology, interface, form factor, and configuration",
+        "headers": ["Category", "Term", "Core clue"],
+        "rows": [
+          ["Mechanical", "HDD", "Magnetic platters and RPM"],
+          ["Solid-state", "SSD", "Flash and no moving parts"],
+          ["Interface/protocol", "SATA / PCIe / NVMe / SAS", "How storage communicates"],
+          ["SSD form factor", "M.2 / mSATA", "Physical module design"],
+          ["Configuration", "RAID 0 / 1 / 5 / 6 / 10", "Stripe, mirror, and parity"],
+          ["Removable", "Flash drive / memory card", "Portable flash media"],
+          ["Optical", "CD / DVD / Blu-ray", "Laser-readable disc"]
+        ]
+      },
+      "callout": "Separate technology, interface, form factor, configuration, and purpose."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "5,400, 7,200, or 10,000 RPM → HDD spindle speed",
+        "Laptop HDD → 2.5-inch",
+        "Desktop HDD → 3.5-inch",
+        "No moving parts → SSD",
+        "Traditional consumer storage interface → SATA",
+        "High-speed system interface → PCIe",
+        "Modern PCIe storage protocol → NVMe",
+        "Enterprise/server storage interface → SAS",
+        "Small motherboard-mounted SSD → M.2",
+        "Older compact SATA SSD → mSATA",
+        "Striping/no redundancy → RAID 0",
+        "Mirroring → RAID 1",
+        "Single parity → RAID 5",
+        "Dual parity → RAID 6",
+        "Mirror + stripe → RAID 10",
+        "USB portable storage → flash drive",
+        "Camera removable storage → memory card",
+        "Laser-based disc storage → optical drive"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Storage questions can mix technology, interface, protocol, form factor, and RAID configuration. Identify which layer each clue describes before answering."],
+      "entries": [
+        {"title": "HDD vs. SSD", "paragraphs": ["RPM and spinning platters indicate HDD. Flash and no moving parts indicate SSD."], "memoryHook": "SPIN vs. FLASH"},
+        {"title": "2.5-Inch vs. 3.5-Inch", "paragraphs": ["These describe physical drive size, not interface, capacity, or speed."], "memoryHook": "Laptop 2.5; desktop HDD 3.5"},
+        {"title": "SATA vs. NVMe", "paragraphs": ["SATA is a traditional storage interface family. NVMe is a high-performance storage protocol commonly using PCIe."], "memoryHook": "An SSD is not automatically NVMe"},
+        {"title": "M.2 vs. NVMe", "paragraphs": ["M.2 is a form factor; NVMe is a protocol. An M.2 drive can use SATA or NVMe."], "memoryHook": "M.2 = shape; NVMe = communication"},
+        {"title": "PCIe vs. NVMe", "paragraphs": ["PCIe is the bus/interface; NVMe is the storage protocol."], "memoryHook": "PCIe = road; NVMe = storage language"},
+        {"title": "SATA vs. SAS", "paragraphs": ["SATA is common in consumer storage; SAS is common in enterprise and server storage."], "memoryHook": "Everyday vs. enterprise"},
+        {"title": "M.2 vs. mSATA", "paragraphs": ["M.2 is a newer flexible module standard; mSATA is an older SATA-based compact design."], "memoryHook": "Small cards can still be different standards"},
+        {"title": "RAID 0 vs. RAID 1", "paragraphs": ["RAID 0 stripes for performance without fault tolerance. RAID 1 mirrors for redundancy."], "memoryHook": "0 = zero protection; 1 = mirror"},
+        {"title": "RAID 5 vs. RAID 6", "paragraphs": ["RAID 5 uses single parity and tolerates one drive failure. RAID 6 uses dual parity and tolerates two."], "memoryHook": "5 = one; 6 = two"},
+        {"title": "RAID 1 vs. RAID 10", "paragraphs": ["RAID 1 mirrors; RAID 10 combines mirrored sets with striping for performance and redundancy."], "memoryHook": "10 = mirror + stripe"},
+        {"title": "RAID 0 vs. RAID 10", "paragraphs": ["Both stripe, but RAID 10 stripes across mirrored sets while RAID 0 has no redundancy."], "memoryHook": "0 = speed only; 10 = speed + protection"},
+        {"title": "RAID vs. Backup", "paragraphs": ["RAID redundancy is not a separate recoverable backup copy."], "memoryHook": "Availability is not backup"},
+        {"title": "Flash Drive vs. Memory Card", "paragraphs": ["A flash drive usually has its own USB connector; a memory card uses a compatible reader or slot."], "memoryHook": "USB stick vs. card slot"}
+      ]
+    },
+    {
+      "id": "scenario-workflow",
+      "title": "Storage Scenario Workflow",
+      "bullets": ["Identify the storage mechanism: magnetic, flash, or optical.", "Identify the communication interface or protocol: SATA, PCIe, NVMe, or SAS.", "Identify the physical form factor: 2.5-inch, 3.5-inch, M.2, or mSATA.", "Identify the configuration: single drive or required RAID level.", "Identify the purpose: performance, fault tolerance, portability, or optical-media access."],
+      "callout": "TECHNOLOGY → INTERFACE → FORM FACTOR → CONFIGURATION → PURPOSE"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Spinning platter or RPM → HDD",
+        "Laptop mechanical drive → 2.5-inch",
+        "Desktop mechanical drive → 3.5-inch",
+        "No moving parts → SSD",
+        "Consumer storage interface → SATA",
+        "High-speed system bus → PCIe",
+        "High-performance PCIe storage protocol → NVMe",
+        "Enterprise/server storage → SAS",
+        "Small motherboard SSD form factor → M.2",
+        "Older compact SATA SSD → mSATA",
+        "Striping → RAID 0",
+        "Mirroring → RAID 1",
+        "Single parity → RAID 5",
+        "Dual parity → RAID 6",
+        "Mirror + stripe → RAID 10",
+        "Portable USB storage → flash drive",
+        "Removable camera-style flash storage → memory card",
+        "CD, DVD, or Blu-ray → optical drive"
+      ],
+      "callout": "HDD → SPIN | SSD → FLASH | M.2 → FORM FACTOR | NVMe → PROTOCOL | PCIe → PATHWAY"
+    }
+  ]
+}

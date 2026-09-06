@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.5",
+  "title": "Troubleshoot Network Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["A network can be connected and still perform badly. Connect each reported symptom to the most likely network condition."],
+      "bullets": ["Intermittent wireless and internet connectivity", "Slow network speeds and limited connectivity", "Jitter and high latency", "Poor VoIP quality", "Port flapping", "External interference", "Authentication failures"],
+      "callout": "CONNECTIVITY → PERFORMANCE → TIMING → SIGNAL → AUTHENTICATION → INTERNET"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a user reports disconnects, slowness, delayed traffic, bad VoIP, wireless interference, or login problems, identify the symptom and where to investigate."],
+      "bullets": ["Wi-Fi drops and reconnects → intermittent wireless", "Low transfer rate → slow speed", "Some resources work → limited connectivity", "Delay varies → jitter", "Choppy voice → poor VoIP quality", "Switch port cycles up/down → port flapping", "Long delay → high latency", "Outside radio source → external interference", "Credentials rejected → authentication failure", "Internet disappears and returns → intermittent internet"]
+    },
+    {
+      "id": "common-symptoms",
+      "title": "Common Network Symptoms",
+      "paragraphs": ["Several problems can feel like the network is simply bad. Identify how it is failing: connectivity, performance, timing, physical link, radio environment, authentication, or upstream internet."],
+      "callout": "Describe the failure precisely before troubleshooting it."
+    },
+    {
+      "id": "intermittent-wireless",
+      "title": "Intermittent Wireless Connectivity",
+      "paragraphs": ["Wi-Fi that disconnects, reconnects, loses signal, or works only periodically can result from weak signal, interference, congestion, an access point, the client adapter, movement, or range."],
+      "callout": "Laptop Wi-Fi drops while wired systems remain stable → intermittent wireless connectivity."
+    },
+    {
+      "id": "wireless-distance",
+      "title": "Wireless Signal and Distance",
+      "paragraphs": ["Wireless signals weaken with greater distance, obstacles, and interference. A problem limited to one physical area strongly suggests coverage or interference."],
+      "callout": "LOCATION MATTERS → SIGNAL OR INTERFERENCE."
+    },
+    {
+      "id": "slow-network-speeds",
+      "title": "Slow Network Speeds",
+      "paragraphs": ["Congestion, weak wireless signal, interference, damaged cabling, hardware limits, network saturation, or provider trouble can reduce throughput even while the connection remains active."],
+      "callout": "CONNECTED, BUT SLOW."
+    },
+    {
+      "id": "speed-vs-latency",
+      "title": "Speed vs. Latency",
+      "table": {
+        "caption": "Throughput and delay",
+        "headers": ["Measure", "Meaning", "Memory hook"],
+        "rows": [["Speed", "How much data moves over time", "HOW MUCH"], ["Latency", "How long data takes to travel or respond", "HOW LONG"]]
+      },
+      "callout": "High bandwidth can coexist with noticeable latency."
+    },
+    {
+      "id": "limited-connectivity",
+      "title": "Limited Connectivity",
+      "paragraphs": ["Limited connectivity means a device can reach some network resources but not everything it should. Investigate IP configuration, gateway, DNS, DHCP, and network access."],
+      "callout": "Local network works but external networks do not → check gateway and connectivity configuration."
+    },
+    {
+      "id": "limited-vs-none",
+      "title": "Limited vs. No Connectivity",
+      "table": {
+        "caption": "Partial and complete loss",
+        "headers": ["Condition", "Reachability", "Memory hook"],
+        "rows": [["Limited", "Some communication exists", "SOME"], ["No connectivity", "Nothing is reachable", "NONE"]]
+      }
+    },
+    {
+      "id": "jitter",
+      "title": "Jitter",
+      "paragraphs": ["Jitter is variation in packet delay. Inconsistent arrival timing is especially noticeable in VoIP, video calls, and streaming."],
+      "callout": "Packet delay changes from one packet to the next → jitter."
+    },
+    {
+      "id": "high-latency",
+      "title": "High Latency",
+      "paragraphs": ["Latency is the delay between sending data and receiving a response. High latency causes lag, delayed responses, and noticeable conversation delay."],
+      "callout": "High latency = wait."
+    },
+    {
+      "id": "jitter-vs-latency",
+      "title": "Jitter vs. Latency",
+      "table": {
+        "caption": "Two timing conditions",
+        "headers": ["Condition", "Pattern", "Memory hook"],
+        "rows": [["Latency", "Packets consistently take too long", "LATE"], ["Jitter", "Packet delay varies", "INCONSISTENTLY LATE"]]
+      }
+    },
+    {
+      "id": "poor-voip-quality",
+      "title": "Poor VoIP Quality",
+      "paragraphs": ["VoIP problems can sound choppy, delayed, robotic, broken, or full of dropouts. Jitter, latency, packet loss, congestion, and insufficient network performance are common contributors."],
+      "callout": "VoIP exposes timing problems quickly."
+    },
+    {
+      "id": "voip-jitter",
+      "title": "VoIP and Jitter",
+      "paragraphs": ["Voice packets need predictable timing. Significant variation makes audio choppy or uneven."],
+      "callout": "JITTER → CHOPPY VOICE."
+    },
+    {
+      "id": "voip-latency",
+      "title": "VoIP and Latency",
+      "paragraphs": ["Packets that consistently take too long create conversational delay. Choppy or uneven audio points toward jitter; a long delay points toward latency."],
+      "callout": "LATENCY → DELAYED VOICE."
+    },
+    {
+      "id": "port-flapping",
+      "title": "Port Flapping",
+      "paragraphs": ["Port flapping occurs when a switch port repeatedly transitions up, down, up, and down. Faulty cabling, connectors, a NIC, the switch port, or other physical-link instability can cause it."],
+      "callout": "Switch logs show one interface cycling repeatedly → port flapping."
+    },
+    {
+      "id": "port-flapping-vs-internet",
+      "title": "Port Flapping vs. Intermittent Internet",
+      "table": {
+        "caption": "Local interface and upstream access",
+        "headers": ["Symptom", "Scope", "Memory hook"],
+        "rows": [["Port flapping", "Specific switch interface changes state", "SWITCH INTERFACE"], ["Intermittent internet", "External access disappears and returns", "WAN/ISP"]]
+      }
+    },
+    {
+      "id": "external-interference",
+      "title": "External Interference",
+      "paragraphs": ["Other Wi-Fi networks, Bluetooth devices, microwave ovens, and RF-producing equipment can disrupt wireless communication."],
+      "callout": "Wi-Fi becomes unreliable when nearby RF equipment operates → external interference."
+    },
+    {
+      "id": "interference-vs-weak-signal",
+      "title": "Interference vs. Weak Signal",
+      "table": {
+        "caption": "Two wireless clues",
+        "headers": ["Condition", "Typical cause", "Memory hook"],
+        "rows": [["Weak signal", "Range, obstacles, coverage", "TOO FAR"], ["Interference", "Competing RF energy", "TOO MUCH RF"]]
+      },
+      "callout": "A Wi-Fi analyzer can help inspect the radio environment."
+    },
+    {
+      "id": "authentication-failures",
+      "title": "Authentication Failures",
+      "paragraphs": ["Incorrect or expired credentials, a wrong wireless key, certificate trouble, account restrictions, or authentication-server problems can prevent a user or device from proving its identity."],
+      "callout": "Network exists, but credentials are rejected → authentication failure."
+    },
+    {
+      "id": "authentication-vs-connectivity",
+      "title": "Authentication vs. Connectivity",
+      "table": {
+        "caption": "Identity and network path",
+        "headers": ["Failure", "Meaning", "Question"],
+        "rows": [["Authentication", "Identity check rejects the user or device", "WHO ARE YOU?"], ["Connectivity", "Required network path cannot be established", "CAN YOU REACH IT?"]]
+      }
+    },
+    {
+      "id": "intermittent-internet",
+      "title": "Intermittent Internet Connectivity",
+      "paragraphs": ["External internet access that repeatedly works, stops, and returns can involve the ISP, modem or ONT, router, WAN cabling, DNS in some scenarios, or an unstable upstream service."],
+      "callout": "Determine whether the local network also fails."
+    },
+    {
+      "id": "local-vs-internet",
+      "title": "Local Network vs. Internet",
+      "paragraphs": ["If local servers and printers remain reachable while websites fail, focus on the gateway, WAN, or ISP. If the entire local connection disappears, investigate local networking first."],
+      "callout": "LAN WORKS + INTERNET FAILS → LOOK OUTWARD."
+    },
+    {
+      "id": "network-symptom-map",
+      "title": "Network Symptom Map",
+      "table": {
+        "caption": "Classify the reported failure",
+        "headers": ["Category", "Symptom", "Core clue"],
+        "rows": [["Connectivity", "Intermittent wireless", "Wi-Fi drops and reconnects"], ["Connectivity", "Limited", "Some resources work"], ["Connectivity", "Intermittent internet", "External access comes and goes"], ["Performance", "Slow speed", "Low transfer throughput"], ["Timing", "Latency", "Delay"], ["Timing", "Jitter", "Changing delay"], ["Voice", "Poor VoIP", "Choppy or delayed calls"], ["Physical link", "Port flapping", "Switch interface cycles"], ["Wireless", "External interference", "RF disruption"], ["Access", "Authentication failure", "Credentials rejected"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Wi-Fi repeatedly disconnects → intermittent wireless", "Data transfers slowly → slow network speed", "Some resources work → limited connectivity", "Delay changes constantly → jitter", "Choppy IP call → poor VoIP quality", "Switch interface cycles up/down → port flapping", "Long response delay → high latency", "Nearby RF disrupts wireless → external interference", "Credentials rejected → authentication failure", "Internet disappears and returns → intermittent internet"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Several symptoms feel like the network is bad. Identify exactly how it is failing."],
+      "entries": [
+        {"title": "Slow Speed vs. High Latency", "paragraphs": ["Slow speed means low throughput; high latency means long response time."], "memoryHook": "THROUGHPUT vs. DELAY"},
+        {"title": "Latency vs. Jitter", "paragraphs": ["Latency is delay; jitter is variation in delay."], "memoryHook": "LATE vs. UNEVEN"},
+        {"title": "Jitter vs. Poor VoIP", "paragraphs": ["Jitter is a network condition; poor VoIP is the experience it can help cause."]},
+        {"title": "Intermittent Wireless vs. Internet", "paragraphs": ["A Wi-Fi path that drops is wireless trouble. Wi-Fi that stays connected while internet access disappears points toward WAN or provider trouble."]},
+        {"title": "Limited Connectivity vs. Authentication", "paragraphs": ["Limited connectivity provides incomplete access; authentication rejects identity or credentials."]},
+        {"title": "Port Flapping vs. Wireless Disconnects", "paragraphs": ["Port flapping affects a wired switch interface; intermittent wireless affects the radio connection."]},
+        {"title": "Weak Signal vs. External Interference", "paragraphs": ["Distance and obstacles weaken signal; competing RF sources create interference."]}
+      ]
+    },
+    {
+      "id": "network-troubleshooting-workflow",
+      "title": "Network Troubleshooting Workflow",
+      "bullets": ["Identify whether connectivity is wired, wireless, local, or internet-facing.", "Separate throughput from delay and changing delay.", "Use VoIP symptoms to distinguish jitter and latency clues.", "Inspect switch logs for port-state changes.", "Compare wireless coverage with external RF activity.", "Separate access-path failure from credential rejection."],
+      "callout": "CONNECTIVITY → PERFORMANCE → TIMING → SIGNAL → AUTHENTICATION → INTERNET"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Wi-Fi drops and reconnects → intermittent wireless", "Low transfer rate → slow speed", "Only some resources work → limited connectivity", "Changing packet delay → jitter", "Choppy voice → poor VoIP quality", "Switch port cycles → port flapping", "Long response time → high latency", "Outside RF disrupts Wi-Fi → external interference", "Credentials rejected → authentication failure", "Internet access disappears and returns → intermittent internet"],
+      "callout": "SLOW → SPEED | LATE → LATENCY | UNEVEN → JITTER | CHOPPY CALL → VoIP | UP/DOWN PORT → FLAPPING | RF NOISE → INTERFERENCE | ACCESS DENIED → AUTHENTICATION | LAN OK, WAN FAILS → INTERNET PATH"
+    }
+  ]
+}

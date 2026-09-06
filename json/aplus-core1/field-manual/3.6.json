@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.6",
+  "title": "Given a Scenario, Install the Appropriate Power Supply",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["A computer power supply unit (PSU) accepts alternating-current power from an electrical outlet and converts it into the direct-current voltages needed by internal components."],
+      "bullets": ["Input voltage", "Output voltages", "20+4 pin motherboard connector", "Redundant power supply", "Modular power supply", "Wattage rating", "Energy efficiency"],
+      "callout": "INPUT → CONVERT → CONNECT → CAPACITY → RELIABILITY → EFFICIENCY"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes electrical input, component voltage, motherboard compatibility, power capacity, cable management, redundancy, or efficiency, identify the exact PSU requirement before selecting hardware."],
+      "bullets": ["Wall power → 110-120 VAC or 220-240 VAC", "Computer rails → 3.3V, 5V, or 12V DC", "Main motherboard power → 20+4 pin", "Survive one PSU failure → redundant supply", "Attach only needed cables → modular supply", "System power capacity → wattage rating", "Less energy wasted as heat → higher efficiency"]
+    },
+    {
+      "id": "what-a-power-supply-does",
+      "title": "What a Power Supply Does",
+      "paragraphs": ["The wall supplies alternating current (AC), while computer components primarily require direct current (DC). The PSU converts AC to DC and distributes several DC voltage rails throughout the system."],
+      "callout": "Wall AC → PSU → computer DC."
+    },
+    {
+      "id": "input-voltage",
+      "title": "Input Voltage",
+      "paragraphs": ["The PSU must accept the building's electrical supply. Objective 3.6 compares 110-120 VAC with 220-240 VAC."],
+      "callout": "Input voltage is power coming into the PSU."
+    },
+    {
+      "id": "110-120-vac",
+      "title": "110-120 VAC",
+      "paragraphs": ["Electrical systems in locations such as the United States commonly provide mains power in the 110-120 VAC range."],
+      "callout": "Standard U.S. wall-power clue → 110-120 VAC input."
+    },
+    {
+      "id": "220-240-vac",
+      "title": "220-240 VAC",
+      "paragraphs": ["Many electrical systems elsewhere use mains power around 220-240 VAC. A computer moved to a location with approximately 230 VAC requires a PSU that supports this range."],
+      "callout": "Higher-voltage mains environment → 220-240 VAC input."
+    },
+    {
+      "id": "input-voltage-comparison",
+      "title": "110-120 VAC vs. 220-240 VAC",
+      "paragraphs": ["Both ranges describe electricity entering the power supply. They are not the low DC voltages normally delivered to computer components."],
+      "callout": "110-120 or 220-240 = WALL SIDE. 3.3, 5, or 12 = COMPUTER SIDE."
+    },
+    {
+      "id": "automatic-voltage-selection",
+      "title": "Automatic Voltage Selection",
+      "paragraphs": ["Many modern PSUs automatically accept a broad AC input range. Older or specialized units may use a manual voltage selector that must match the local electrical supply."],
+      "bullets": ["Check the PSU input specifications.", "Configure a manual selector before applying power.", "Do not assume every PSU supports every mains range."],
+      "callout": "An incorrect manual input-voltage setting can cause serious problems."
+    },
+    {
+      "id": "output-voltages",
+      "title": "Output 3.3V vs. 5V vs. 12V",
+      "paragraphs": ["After receiving AC input, the PSU provides multiple DC output rails for computer hardware. Objective 3.6 requires recognition of 3.3V, 5V, and 12V."],
+      "callout": "Different computer circuits use different DC voltage rails."
+    },
+    {
+      "id": "3-3v-output",
+      "title": "3.3V Output",
+      "paragraphs": ["The 3.3-volt rail provides low-voltage power used by motherboard electronics and other circuitry. PSU connectors and motherboard design distribute the appropriate voltage automatically."],
+      "callout": "3.3V = low-voltage system electronics."
+    },
+    {
+      "id": "5v-output",
+      "title": "5V Output",
+      "paragraphs": ["The 5-volt rail powers various electronic components and interfaces. It is a PSU output, not an incoming wall-voltage range."],
+      "callout": "5V = another common low-voltage computer rail."
+    },
+    {
+      "id": "12v-output",
+      "title": "12V Output",
+      "paragraphs": ["The 12-volt rail is important for higher-power loads associated with CPU voltage regulation, graphics cards, motors in drives, fans, and pumps."],
+      "callout": "High-demand PC hardware → the 12V rail is an important PSU consideration."
+    },
+    {
+      "id": "input-vs-output-voltage",
+      "title": "Input vs. Output Voltage",
+      "table": {
+        "caption": "Wall-side and computer-side voltage",
+        "headers": ["Side", "Current and voltage", "Purpose"],
+        "rows": [["Input", "110-120 VAC or 220-240 VAC", "Electrical supply from the building"], ["Output", "3.3V, 5V, or 12V DC", "Power used by computer hardware"]]
+      },
+      "callout": "WALL → AC. COMPONENTS → DC."
+    },
+    {
+      "id": "20-plus-4-pin-connector",
+      "title": "20+4 Pin Motherboard Connector",
+      "paragraphs": ["The main ATX motherboard power connector commonly uses a 20-pin section plus a detachable 4-pin section. Together, they form the modern 24-pin main motherboard connection while retaining compatibility with certain older 20-pin designs."],
+      "callout": "Standard 24-pin ATX main power → use the PSU's 20+4 pin connector."
+    },
+    {
+      "id": "motherboard-vs-cpu-power",
+      "title": "20+4 Pin vs. CPU Power",
+      "paragraphs": ["The 20+4 pin connector powers the motherboard. The processor area commonly requires an additional, separate CPU power connector."],
+      "callout": "20+4 = MAIN BOARD. Also verify the required CPU power connection."
+    },
+    {
+      "id": "redundant-power-supply",
+      "title": "Redundant Power Supply",
+      "paragraphs": ["A redundant power supply system contains multiple PSU modules so another can continue supplying power if one fails. Redundancy is common in servers, data centers, mission-critical equipment, and other high-availability systems."],
+      "callout": "Server must remain online after one PSU fails → redundant power supply."
+    },
+    {
+      "id": "how-redundancy-works",
+      "title": "How PSU Redundancy Works",
+      "paragraphs": ["During normal operation, the system has more than one available power module. If one module fails, another continues supplying power. Some redundant designs also support hot-swapping."],
+      "callout": "One PSU fails → the system stays on."
+    },
+    {
+      "id": "redundant-vs-higher-wattage",
+      "title": "Redundant PSU vs. Higher-Wattage PSU",
+      "table": {
+        "caption": "Availability and capacity solve different problems",
+        "headers": ["Feature", "What it provides", "What it does not prove"],
+        "rows": [["Higher wattage", "Greater power capacity", "Protection from a single PSU failure"], ["Redundancy", "Continued operation after a PSU module fails", "Greater total capacity by itself"]]
+      },
+      "callout": "Wattage = CAPACITY. Redundancy = AVAILABILITY."
+    },
+    {
+      "id": "modular-power-supply",
+      "title": "Modular Power Supply",
+      "paragraphs": ["A modular power supply lets the installer attach only the cables required by the system. This can reduce unused cables, simplify cable management, improve accessibility, and support cleaner airflow."],
+      "callout": "Removable, selectable PSU cables → modular power supply."
+    },
+    {
+      "id": "modular-vs-non-modular",
+      "title": "Modular vs. Non-Modular PSU",
+      "table": {
+        "caption": "Power-supply cable design",
+        "headers": ["Design", "Cables", "Recognition clue"],
+        "rows": [["Modular", "Attach or remove as needed", "Choose only required cables"], ["Non-modular", "Permanently attached", "All cables remain on the PSU"]]
+      },
+      "callout": "Modular describes cable attachment, not redundancy or efficiency."
+    },
+    {
+      "id": "modular-cable-safety",
+      "title": "Modular PSU Cable Safety",
+      "paragraphs": ["Modular cables from different PSU models are not automatically interchangeable. PSU-side connectors may look alike while using different electrical pin arrangements."],
+      "callout": "Use only cables approved for the specific PSU model. Physical fit does not prove electrical compatibility."
+    },
+    {
+      "id": "wattage-rating",
+      "title": "Wattage Rating",
+      "paragraphs": ["A PSU's wattage rating is the amount of electrical power it is designed to provide. Common examples include 450 W, 550 W, 650 W, 750 W, 850 W, and 1,000 W."],
+      "callout": "Watts = PSU power capacity."
+    },
+    {
+      "id": "selecting-wattage",
+      "title": "Selecting the Correct Wattage",
+      "paragraphs": ["The PSU must support the entire system under load with appropriate overhead. Consider the CPU, GPU, motherboard, drives, fans, expansion cards, cooling pumps, and USB-powered devices."],
+      "callout": "Adding a high-performance GPU → recalculate total PSU wattage requirements."
+    },
+    {
+      "id": "undersized-power-supply",
+      "title": "Undersized Power Supply",
+      "paragraphs": ["Insufficient PSU capacity can cause failure to boot, shutdowns or restarts under load, instability, and failures when high-power hardware activates."],
+      "callout": "PC works at idle but shuts down when the GPU is stressed → check PSU capacity."
+    },
+    {
+      "id": "wattage-vs-wall-voltage",
+      "title": "Wattage vs. Wall Voltage",
+      "paragraphs": ["Voltage and wattage describe different electrical characteristics. Input voltage must support the building's supply; wattage rating must support the computer's total power demand."],
+      "table": {
+        "caption": "Two PSU selection numbers",
+        "headers": ["Measurement", "Meaning", "Selection question"],
+        "rows": [["Volts", "Electrical potential", "Does the PSU accept local mains power?"], ["Watts", "Power capacity", "Can the PSU supply the entire computer?"]]
+      }
+    },
+    {
+      "id": "energy-efficiency",
+      "title": "Energy Efficiency",
+      "paragraphs": ["A PSU cannot convert input power with 100 percent efficiency. Some energy is lost primarily as heat. Energy efficiency describes how effectively incoming AC power becomes useful DC output."],
+      "callout": "Efficiency = useful output compared with input, with less waste as heat."
+    },
+    {
+      "id": "higher-efficiency",
+      "title": "Higher-Efficiency Power Supplies",
+      "paragraphs": ["For the same useful output, a more efficient PSU wastes less electrical energy, produces less conversion heat, may reduce electricity consumption, and may reduce cooling requirements."],
+      "callout": "Lower electrical waste and heat → choose a more energy-efficient PSU."
+    },
+    {
+      "id": "efficiency-vs-wattage",
+      "title": "Efficiency vs. Wattage",
+      "paragraphs": ["Wattage identifies maximum power capacity. Efficiency identifies how effectively input energy becomes useful output. A 650 W high-efficiency PSU does not automatically provide more maximum output than an 850 W lower-efficiency PSU."],
+      "callout": "WATTAGE = HOW MUCH. EFFICIENCY = HOW WELL."
+    },
+    {
+      "id": "efficiency-example",
+      "title": "PSU Efficiency Example",
+      "paragraphs": ["The PSU draws more power from the wall than it delivers to the components because conversion loses some energy. A more efficient unit wastes less of that input energy."],
+      "callout": "Wall power = useful computer power + conversion loss."
+    },
+    {
+      "id": "installation-workflow",
+      "title": "Installing the Appropriate PSU",
+      "bullets": ["Determine the available AC input voltage.", "Verify that the PSU supports that voltage.", "Calculate total system power requirements and select sufficient wattage.", "Verify motherboard and component connectors.", "Decide whether modular cabling is needed.", "Determine whether PSU redundancy is required.", "Consider energy efficiency.", "Install and secure the PSU.", "Connect and fully seat all required power cables.", "Test system operation under appropriate load."],
+      "callout": "INPUT → CAPACITY → CONNECTORS → FEATURES → TEST"
+    },
+    {
+      "id": "psu-recognition-map",
+      "title": "PSU Recognition Map",
+      "table": {
+        "caption": "Match the PSU clue to the requirement",
+        "headers": ["Category", "Requirement", "Recognition clue"],
+        "rows": [["Input", "110-120 or 220-240 VAC", "Local wall power"], ["Output", "3.3V, 5V, or 12V DC", "Computer voltage rails"], ["Connection", "20+4 pin", "Main ATX motherboard power"], ["Reliability", "Redundant supply", "Continue after one PSU fails"], ["Cabling", "Modular supply", "Attach only needed cables"], ["Capacity", "Wattage rating", "Maximum supported system load"], ["Conversion", "Energy efficiency", "Less wasted input energy and heat"]]
+      },
+      "callout": "INPUT → OUTPUT → CONNECTION → AVAILABILITY → CABLING → CAPACITY → EFFICIENCY"
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["U.S. wall-power range → 110-120 VAC", "Higher-voltage mains environment → 220-240 VAC", "PSU output rails → 3.3V, 5V, and 12V", "High-demand component power → 12V rail", "Main ATX motherboard power → 20+4 pin", "Server must survive PSU failure → redundant power supply", "Remove unused PSU cables → modular power supply", "Can the PSU power all components? → wattage rating", "Reduce wasted electrical energy and heat → energy efficiency", "Crashes after high-power GPU upgrade → check PSU wattage", "Availability rather than simply more power → redundancy"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.6 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["PSU scenarios often include several electrical numbers and design features at once. First identify what each number or feature describes."],
+      "entries": [
+        {"title": "Input vs. Output Voltage", "paragraphs": ["110-120 VAC and 220-240 VAC are wall inputs. 3.3V, 5V, and 12V are PSU outputs."], "memoryHook": "BIG AC NUMBER = WALL; SMALL DC NUMBER = COMPONENT"},
+        {"title": "3.3V vs. 5V vs. 12V", "paragraphs": ["PSU connectors distribute the appropriate rails. For recognition, 12V is especially associated with higher-power hardware, while 3.3V and 5V serve lower-voltage electronics."]},
+        {"title": "20+4 Pin vs. CPU Power", "paragraphs": ["The 20+4 pin connection is main motherboard power, not the processor's separate power connector."], "memoryHook": "20+4 = MAIN BOARD"},
+        {"title": "Redundant vs. Modular", "paragraphs": ["Redundant means multiple PSU modules for availability. Modular means removable cables."], "memoryHook": "BACKUP vs. CABLES"},
+        {"title": "Redundant vs. High Wattage", "paragraphs": ["Redundancy protects against a PSU failure. Wattage provides power capacity. One very large PSU remains one PSU."]},
+        {"title": "Modular vs. Higher Efficiency", "paragraphs": ["Modular describes cable management; efficiency describes electrical conversion. Neither automatically implies the other."]},
+        {"title": "Wattage vs. Efficiency", "paragraphs": ["Wattage is how much power the PSU can provide; efficiency is how effectively it converts input power."], "memoryHook": "CAPACITY vs. CONVERSION"},
+        {"title": "Correct Wattage", "paragraphs": ["Calculate the total system load, not just one component. Include CPU, motherboard, drives, fans, expansion hardware, GPU, and other loads."]},
+        {"title": "Modular Cable Trap", "paragraphs": ["Never reuse a modular cable from another PSU solely because its connector fits. PSU-side pinouts can differ."], "memoryHook": "Same-looking connector does not guarantee the same pinout"}
+      ]
+    },
+    {
+      "id": "scenario-decision-path",
+      "title": "PSU Scenario Decision Path",
+      "bullets": ["Location or mains clue → verify 110-120 or 220-240 VAC input support.", "Computer voltage-rail clue → identify 3.3V, 5V, or 12V output.", "Main motherboard connector clue → 20+4 pin.", "Stay online after PSU failure → redundant design.", "Remove unused cables → modular design.", "New CPU or GPU power demand → sufficient total wattage.", "Reduce conversion loss and heat → higher energy efficiency."],
+      "callout": "Name the requirement before choosing the PSU."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["110-120 volts from wall → AC input", "220-240 volts from wall → AC input", "3.3 volts → PSU DC output", "5 volts → PSU DC output", "12 volts → PSU DC output and major power rail", "Standard ATX main motherboard connection → 20+4 pin", "System remains online after PSU failure → redundant PSU", "Attach only needed power cables → modular PSU", "Maximum PSU power capability → wattage rating", "Instability under heavy component load → check PSU wattage", "Less energy lost as heat → higher efficiency", "Lower electrical waste → higher efficiency"],
+      "callout": "INPUT | OUTPUT | MOTHERBOARD | AVAILABILITY | CABLES | CAPACITY | EFFICIENCY"
+    }
+  ]
+}

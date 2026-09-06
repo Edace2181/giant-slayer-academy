@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.2",
+  "title": "Troubleshoot Drive and RAID Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Storage failures can produce mechanical noises, boot errors, missing drives, corruption, degraded RAID arrays, and severe performance problems."],
+      "bullets": ["LED status indicators", "Grinding noises and clicking sounds", "Bootable device not found", "Data loss and corruption", "RAID and S.M.A.R.T. failure", "Extended read/write times and low IOPS", "Missing drives in the OS and missing arrays", "Audible alarms"],
+      "callout": "LISTEN → LOOK → DETECT → VERIFY DRIVE → VERIFY ARRAY → PROTECT DATA"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When storage produces a noise, status indicator, boot failure, performance problem, or RAID warning, determine whether the issue involves a physical drive, operating-system detection, or the RAID array."],
+      "bullets": ["Grinding or clicking HDD → mechanical failure warning", "Bootable device not found → no valid boot storage located", "S.M.A.R.T. warning → drive-health failure condition", "Very slow storage → read/write or IOPS problem", "Drive absent from OS → detection or configuration issue", "Individual drives visible but RAID volume absent → array problem", "RAID alarm → array or controller needs attention"]
+    },
+    {
+      "id": "common-symptoms",
+      "title": "Common Drive and RAID Symptoms",
+      "paragraphs": ["Storage symptoms fall into physical-drive, performance, detection, and RAID categories. Identify the category before choosing the next troubleshooting action."],
+      "callout": "PHYSICAL DRIVE → PERFORMANCE → DETECTION → RAID"
+    },
+    {
+      "id": "led-status-indicators",
+      "title": "LED Status Indicators",
+      "paragraphs": ["Storage devices, drive bays, and RAID systems may use LEDs to indicate activity, drive presence, failure, rebuilding, or a degraded state. Colors and blink patterns vary by manufacturer, so consult the hardware documentation when exact meanings matter."],
+      "callout": "Failure LED on one RAID bay → investigate that drive and the array status."
+    },
+    {
+      "id": "grinding-noises",
+      "title": "Grinding Noises",
+      "paragraphs": ["A grinding mechanical-hard-drive sound can indicate damage involving the spindle, read/write mechanism, or other moving components. SSDs contain no moving platters, so grinding is not a normal SSD symptom."],
+      "callout": "Grinding HDD → protect accessible data and investigate mechanical failure."
+    },
+    {
+      "id": "clicking-sounds",
+      "title": "Clicking Sounds",
+      "paragraphs": ["Persistent abnormal clicking from an HDD can indicate a read/write mechanism repeatedly failing to operate correctly. Distinguish it from occasional normal drive activity."],
+      "callout": "Repeated clicking plus difficult file access → possible drive failure."
+    },
+    {
+      "id": "grinding-vs-clicking",
+      "title": "Grinding vs. Clicking",
+      "table": {
+        "caption": "Mechanical HDD warnings",
+        "headers": ["Noise", "Clue", "Response"],
+        "rows": [["Grinding", "Mechanical scraping or wear", "Protect data and investigate failure"], ["Repeated clicking", "Read/write mechanism cannot operate correctly", "Protect data and investigate failure"]]
+      },
+      "callout": "ABNORMAL HDD NOISE → PROTECT DATA AND INVESTIGATE DRIVE FAILURE."
+    },
+    {
+      "id": "bootable-device-not-found",
+      "title": "Bootable Device Not Found",
+      "paragraphs": ["This message means system firmware cannot find a usable device from which to load the operating system. Causes include a failed or disconnected drive, incorrect boot order, controller trouble, or damaged boot information."],
+      "callout": "Firmware cannot find something valid to boot."
+    },
+    {
+      "id": "boot-device-flow",
+      "title": "Troubleshooting Bootable Device Not Found",
+      "bullets": ["Confirm BIOS/UEFI detects the drive.", "Check storage power and data connections.", "Verify the correct boot device is selected.", "Evaluate drive health.", "Verify the operating system and boot information are intact."],
+      "callout": "DETECTED? → SELECTED? → HEALTHY? → BOOTABLE?"
+    },
+    {
+      "id": "data-loss-corruption",
+      "title": "Data Loss/Corruption",
+      "paragraphs": ["Data loss means information is no longer available. Data corruption means information still exists but is damaged or unreliable. Drive failures, file-system problems, improper shutdowns, hardware errors, and RAID failures can cause either symptom."],
+      "callout": "LOSS = MISSING. CORRUPTION = DAMAGED."
+    },
+    {
+      "id": "raid-failure",
+      "title": "RAID Failure",
+      "paragraphs": ["A RAID failure can involve one or more failed member drives, controller problems, lost configuration, a degraded array, or an unavailable array. The effect of a failed drive depends on the RAID level."],
+      "callout": "Identify the RAID level and which drives failed."
+    },
+    {
+      "id": "raid-0-failure",
+      "title": "RAID 0 Failure",
+      "paragraphs": ["RAID 0 uses striping with no redundancy. Failure of one member causes the array to fail."],
+      "callout": "RAID 0 = zero fault tolerance."
+    },
+    {
+      "id": "raid-1-failure",
+      "title": "RAID 1 Failure",
+      "paragraphs": ["RAID 1 mirrors data. In a basic two-drive mirror, the surviving drive can continue providing data after one member fails; replace the failed member and rebuild according to the system procedure."],
+      "callout": "RAID 1 → one mirrored copy can survive."
+    },
+    {
+      "id": "raid-5-failure",
+      "title": "RAID 5 Failure",
+      "paragraphs": ["RAID 5 uses distributed parity and tolerates one failed drive. Another required drive failure before recovery or rebuild can make the array fail."],
+      "callout": "RAID 5 → one failure tolerated."
+    },
+    {
+      "id": "raid-6-failure",
+      "title": "RAID 6 Failure",
+      "paragraphs": ["RAID 6 uses dual parity and can tolerate two failed drives."],
+      "callout": "RAID 6 → two failures tolerated."
+    },
+    {
+      "id": "raid-10-failure",
+      "title": "RAID 10 Failure",
+      "paragraphs": ["RAID 10 combines mirroring and striping. Its ability to survive multiple failures depends on which mirror members fail."],
+      "callout": "RAID 10 survives through its mirrors."
+    },
+    {
+      "id": "raid-comparison",
+      "title": "RAID Failure Comparison",
+      "table": {
+        "caption": "What a failed member means",
+        "headers": ["Level", "Data method", "Fault-tolerance clue"],
+        "rows": [["RAID 0", "Striping", "No failed-drive tolerance"], ["RAID 1", "Mirroring", "One copy can survive"], ["RAID 5", "Distributed parity", "One failed drive tolerated"], ["RAID 6", "Dual parity", "Two failed drives tolerated"], ["RAID 10", "Mirroring plus striping", "Depends which mirrored members fail"]]
+      }
+    },
+    {
+      "id": "smart",
+      "title": "Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.)",
+      "paragraphs": ["S.M.A.R.T. monitors drive-health information and can warn about developing storage problems or predicted drive failure."],
+      "callout": "S.M.A.R.T. = drive-health warning system."
+    },
+    {
+      "id": "smart-failure",
+      "title": "S.M.A.R.T. Failure",
+      "paragraphs": ["A S.M.A.R.T. failure means the drive has reported a serious health condition or possible impending failure. It does not mean the drive should remain in use until it dies."],
+      "callout": "S.M.A.R.T. WARNING → PROTECT DATA FIRST."
+    },
+    {
+      "id": "extended-read-write-times",
+      "title": "Extended Read/Write Times",
+      "paragraphs": ["Storage operations that complete but take abnormally long can indicate developing hardware trouble, congestion, controller issues, or other performance problems."],
+      "callout": "Files that once opened quickly now load abnormally slowly → investigate storage performance and health."
+    },
+    {
+      "id": "low-performance-iops",
+      "title": "Low Performance Input/Output Operations Per Second (IOPS)",
+      "paragraphs": ["IOPS measures how many input/output operations storage completes per second. Low IOPS can cause slow application response, slow virtual machines, poor database performance, and storage bottlenecks."],
+      "callout": "Workload needs many small operations but responds slowly → check IOPS."
+    },
+    {
+      "id": "read-write-vs-iops",
+      "title": "Read/Write Time vs. IOPS",
+      "table": {
+        "caption": "Storage performance clues",
+        "headers": ["Measure", "Question answered", "Memory hook"],
+        "rows": [["Read/write time", "How long does an operation take?", "HOW LONG"], ["IOPS", "How many operations finish per second?", "HOW MANY"]]
+      }
+    },
+    {
+      "id": "missing-drives-os",
+      "title": "Missing Drives in the OS",
+      "paragraphs": ["A drive can be absent from the operating system because of a loose cable, missing power, failed drive, controller problem, disabled interface, driver issue, uninitialized configuration, mounting problem, or RAID configuration."],
+      "callout": "First ask whether firmware detects the drive."
+    },
+    {
+      "id": "firmware-vs-os-detection",
+      "title": "Firmware Detection vs. OS Detection",
+      "table": {
+        "caption": "Where the drive disappears",
+        "headers": ["Detection result", "Primary path", "Examples"],
+        "rows": [["Missing from BIOS/UEFI", "Hardware", "Connection, controller, power, drive failure"], ["Visible in BIOS/UEFI but missing from OS", "Software or configuration", "Driver, partition, initialization, mount settings"]]
+      },
+      "callout": "FIRMWARE FIRST → OS SECOND."
+    },
+    {
+      "id": "array-missing",
+      "title": "Array Missing",
+      "paragraphs": ["A missing RAID array means the group or volume is not recognized. Causes include a controller problem, missing member drives, lost RAID configuration, multiple drive failures, or incorrect controller configuration."],
+      "callout": "Member drives exist but the expected RAID volume is absent → investigate the array and controller configuration."
+    },
+    {
+      "id": "missing-drive-vs-array",
+      "title": "Missing Drive vs. Missing Array",
+      "table": {
+        "caption": "Member and group problems",
+        "headers": ["Missing item", "Meaning", "Memory hook"],
+        "rows": [["Drive", "One physical or logical storage member is absent", "MEMBER"], ["Array", "The RAID group or volume is absent", "GROUP"]]
+      }
+    },
+    {
+      "id": "audible-alarms",
+      "title": "Audible Alarms",
+      "paragraphs": ["RAID enclosures, servers, controllers, and storage systems may sound an alarm for a failed drive, degraded RAID, hardware fault, or other storage alert. Identify the source, inspect array status, determine the failed component, and follow the proper recovery procedure."],
+      "callout": "Storage enclosure begins beeping → check RAID and storage status."
+    },
+    {
+      "id": "alarm-vs-drive-noise",
+      "title": "Audible Alarm vs. Drive Noise",
+      "table": {
+        "caption": "Two audible storage clues",
+        "headers": ["Sound", "Source", "Meaning"],
+        "rows": [["Beeping", "RAID enclosure or controller", "System alert"], ["Clicking or grinding", "Mechanical HDD", "Drive-mechanics warning"]]
+      },
+      "callout": "BEEP = SYSTEM ALERT. CLICK/GRIND = DRIVE MECHANICS."
+    },
+    {
+      "id": "storage-troubleshooting-flow",
+      "title": "Storage Troubleshooting Flow",
+      "bullets": ["Listen for clicking, grinding, or an audible alarm.", "Look for activity, failure, or degraded-state LEDs.", "Check whether firmware detects each physical drive.", "Check whether the operating system sees the drive.", "Verify RAID members, controller status, and whether the array is degraded or missing.", "Protect recoverable data before risky work when failure is likely."],
+      "callout": "LISTEN → LOOK → FIRMWARE → OS → RAID → PROTECT DATA"
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Failure LED on a drive bay → drive or array status issue", "Grinding HDD → mechanical failure", "Repeated HDD clicking → possible mechanical failure", "Firmware cannot find boot storage → bootable device not found", "Missing information → data loss", "Damaged or unreadable information → corruption", "Degraded disk group → RAID failure", "Predicted drive-health problem → S.M.A.R.T. failure", "Storage operation takes too long → extended read/write time", "Few operations per second → low IOPS", "Disk absent from OS → missing drive", "RAID volume absent → missing array", "RAID enclosure beeping → audible alarm"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Do not assume every storage symptom means the same thing. Classify the clue as physical drive, performance, detection, or RAID."],
+      "entries": [
+        {"title": "Clicking vs. Audible Alarm", "paragraphs": ["Clicking comes from a mechanical HDD; beeping comes from a storage enclosure or controller alert."], "memoryHook": "CLICK → DISK | BEEP → ALERT"},
+        {"title": "Grinding vs. Normal Activity", "paragraphs": ["Persistent grinding is not a normal HDD activity sound and becomes especially serious when paired with data problems."]},
+        {"title": "Bootable Device Not Found vs. Missing Drive", "paragraphs": ["A bootable-device error means firmware cannot find a usable boot target. It can occur even when the physical drive exists."]},
+        {"title": "S.M.A.R.T. Warning", "paragraphs": ["S.M.A.R.T. describes drive health, not merely an operating-system error."], "memoryHook": "S.M.A.R.T. → DRIVE HEALTH"},
+        {"title": "Read/Write Time vs. IOPS", "paragraphs": ["Read/write time measures operation duration; IOPS counts operations per second."], "memoryHook": "HOW LONG vs. HOW MANY"},
+        {"title": "Missing from BIOS vs. Missing from OS", "paragraphs": ["Missing from firmware points toward hardware, controller, connection, or drive failure. Present in firmware but absent from the OS points toward configuration or drivers."]},
+        {"title": "Missing Drive vs. Missing Array", "paragraphs": ["A drive is one member; an array is the RAID group. Do not treat a missing array like one uninitialized standalone disk."]},
+        {"title": "RAID-Level Failure", "paragraphs": ["RAID 0 has no fault tolerance; RAID 1 mirrors; RAID 5 tolerates one drive; RAID 6 tolerates two; RAID 10 depends on which mirror members fail."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Failure or activity lights → LED status indicators", "Grinding or repeated clicking HDD → mechanical failure", "No valid storage target during startup → bootable device not found", "Information missing → data loss", "Information damaged → data corruption", "Disk group degraded or failed → RAID failure", "Drive predicts a health failure → S.M.A.R.T.", "Operation takes too long → extended read/write time", "Too few operations each second → low IOPS", "Physical disk absent in OS → missing drive", "RAID volume absent → missing array", "Storage enclosure beeping → audible alarm"],
+      "callout": "GRIND/CLICK → DRIVE | S.M.A.R.T. → HEALTH | SLOW → TIME OR IOPS | MISSING DISK → DETECTION | MISSING RAID → ARRAY | BEEP → STORAGE ALERT"
+    }
+  ]
+}

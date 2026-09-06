@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "4",
+  "objective": "4.1",
+  "title": "Explain Virtualization Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Virtualization allows one physical computer to provide isolated computing environments that behave like separate systems."],
+      "bullets": ["Purpose of virtual machines", "Sandbox and test/development environments", "Application, legacy, and cross-platform virtualization", "Security, network, and storage requirements", "Desktop virtualization and VDI", "Containers", "Type 1 and Type 2 hypervisors"],
+      "callout": "ISOLATE → TEST → COMPATIBILITY → PROVIDE RESOURCES → CHOOSE VIRTUALIZATION TYPE"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes isolation, testing, legacy applications, remote desktops, containers, or hypervisors, identify what is virtualized and where its management layer runs."],
+      "bullets": ["Safe isolated environment → sandbox", "Verify changes before production → test/development VM", "Old software or OS → legacy virtualization", "Different operating systems → cross-platform virtualization", "Centralized remote desktops → VDI", "Lightweight application isolation → containers", "Hypervisor on hardware → Type 1", "Hypervisor inside an OS → Type 2"]
+    },
+    {
+      "id": "virtual-machines",
+      "title": "Virtual Machines",
+      "paragraphs": ["A virtual machine (VM) is a software-based computer with virtualized CPU, RAM, storage, network adapters, and other hardware. It can run its own guest operating system and applications."],
+      "callout": "VM = a computer inside a computer."
+    },
+    {
+      "id": "purpose-of-virtual-machines",
+      "title": "Purpose of Virtual Machines",
+      "paragraphs": ["Virtual machines provide isolation, testing, compatibility, flexible deployment, and the ability to run multiple operating systems on one physical computer."],
+      "callout": "Ask why the workload needs to be virtualized."
+    },
+    {
+      "id": "sandbox",
+      "title": "Sandbox",
+      "paragraphs": ["A sandbox is an isolated environment used to run software or test actions without exposing the primary system to unnecessary risk. It is useful for suspicious files, unknown software, practice configurations, and potentially harmful changes."],
+      "callout": "Test questionable software away from production → sandbox VM."
+    },
+    {
+      "id": "sandbox-vs-production",
+      "title": "Sandbox vs. Production Environment",
+      "table": {
+        "caption": "Experimentation and operational use",
+        "headers": ["Environment", "Purpose", "Recognition clue"],
+        "rows": [["Sandbox", "Isolated experimentation", "Try it safely"], ["Production", "Real operational work", "Run it for users"]]
+      },
+      "callout": "Isolation limits risk but does not eliminate the need for security controls."
+    },
+    {
+      "id": "test-development",
+      "title": "Test Development",
+      "paragraphs": ["Test and development VMs let technicians and developers build applications, verify updates, test configurations, reproduce problems, and try operating-system changes before production deployment."],
+      "callout": "Verify an update before production installation → test/development VM."
+    },
+    {
+      "id": "vm-testing-benefits",
+      "title": "Why VMs Are Useful for Testing",
+      "paragraphs": ["A VM can often be created, isolated, reconfigured, rebuilt, and replaced quickly. This makes it useful when a change may damage the test environment."],
+      "callout": "Break the VM, not production."
+    },
+    {
+      "id": "application-virtualization",
+      "title": "Application Virtualization",
+      "paragraphs": ["Application virtualization separates an application from some or all of the local operating-system environment. It can support centralized delivery, compatibility, isolation, and legacy applications without virtualizing an entire computer for every use case."],
+      "callout": "Virtualize the application, not necessarily the whole machine."
+    },
+    {
+      "id": "legacy-software-os",
+      "title": "Legacy Software/OS",
+      "paragraphs": ["Virtualization can preserve an environment containing the older operating system, libraries, runtime, or configuration required by critical legacy software."],
+      "callout": "Old application requires an obsolete OS → legacy software/OS virtualization."
+    },
+    {
+      "id": "cross-platform-virtualization",
+      "title": "Cross-Platform Virtualization",
+      "paragraphs": ["Cross-platform virtualization provides another supported operating-system or platform environment, such as Linux and Windows environments on one physical system."],
+      "callout": "One computer must support different OS environments → cross-platform virtualization."
+    },
+    {
+      "id": "legacy-vs-cross-platform",
+      "title": "Legacy vs. Cross-Platform Virtualization",
+      "table": {
+        "caption": "Two compatibility goals",
+        "headers": ["Concept", "Primary purpose", "Recognition clue"],
+        "rows": [["Legacy", "Preserve older software or OS support", "Old environment"], ["Cross-platform", "Provide a different platform or OS", "Different environment"]]
+      },
+      "callout": "OLD → LEGACY. DIFFERENT → CROSS-PLATFORM."
+    },
+    {
+      "id": "virtual-machine-requirements",
+      "title": "Virtual-Machine Requirements",
+      "paragraphs": ["Virtual machines are virtual, but their security, network, storage, and host-resource requirements are real. Plan the environment before adding guests."],
+      "bullets": ["Security", "Network", "Storage"]
+    },
+    {
+      "id": "security-requirements",
+      "title": "Security Requirements",
+      "paragraphs": ["Secure virtual environments like physical ones. Patch guest operating systems, protect the host and management interfaces, control access, isolate sensitive workloads, and protect VM data."],
+      "callout": "Several VMs share one host → secure both the host and every guest."
+    },
+    {
+      "id": "isolation-and-security",
+      "title": "Isolation and Security",
+      "paragraphs": ["Isolation is a benefit of virtualization, but a virtualized workload is not automatically trusted or secure. Correct configuration and security controls still matter."],
+      "callout": "Isolation reduces exposure; it does not replace security."
+    },
+    {
+      "id": "network-requirements",
+      "title": "Network Requirements",
+      "paragraphs": ["A VM needs a virtual network path when it must reach other VMs, the host, a local network, the internet, or remote services. Virtual adapters connect through virtual networking components."],
+      "callout": "VM cannot reach network resources → inspect virtual networking configuration."
+    },
+    {
+      "id": "storage-requirements",
+      "title": "Storage Requirements",
+      "paragraphs": ["VM storage holds virtual disks, guest operating systems, applications, snapshots, VM data, and user files. Multiple virtual machines can consume substantial capacity."],
+      "callout": "CPU and RAM are available but another VM cannot be created because the disk is full → storage requirement."
+    },
+    {
+      "id": "resource-planning",
+      "title": "Resource Planning",
+      "paragraphs": ["A physical host must have adequate CPU, RAM, storage, and network capacity for all guests. Provisioning more VMs does not create unlimited physical resources."],
+      "callout": "The host must sustain the combined demand of its guests."
+    },
+    {
+      "id": "desktop-virtualization",
+      "title": "Desktop Virtualization",
+      "paragraphs": ["Desktop virtualization separates a user's desktop environment from the physical endpoint. The desktop can run on centralized infrastructure and be presented remotely."],
+      "callout": "The user's desktop does not have to execute on the device in front of them."
+    },
+    {
+      "id": "vdi",
+      "title": "Virtual Desktop Infrastructure (VDI)",
+      "paragraphs": ["VDI hosts virtual desktops centrally and delivers them to users over a network. It can centralize desktop management, applications, security, updates, and data."],
+      "callout": "Employee connects from a thin client to a centrally hosted desktop → VDI."
+    },
+    {
+      "id": "vdi-vs-local-desktop",
+      "title": "VDI vs. Local Desktop",
+      "table": {
+        "caption": "Where the desktop executes",
+        "headers": ["Desktop", "Execution location", "Recognition clue"],
+        "rows": [["Local", "User's physical PC", "Desktop is here"], ["VDI", "Centralized infrastructure", "Desktop is there and presented remotely"]]
+      },
+      "callout": "REMOTE USER DESKTOP → VDI."
+    },
+    {
+      "id": "containers",
+      "title": "Containers",
+      "paragraphs": ["A container packages an application and its needed components into an isolated environment. Containers share more of the underlying operating-system environment and are generally lighter than full VMs."],
+      "callout": "Container = isolated application environment."
+    },
+    {
+      "id": "containers-vs-vms",
+      "title": "Containers vs. Virtual Machines",
+      "table": {
+        "caption": "Application and machine virtualization",
+        "headers": ["Technology", "Virtualization scope", "Typical resource profile"],
+        "rows": [["Virtual machine", "Full computer environment with guest OS", "Heavier"], ["Container", "Application and dependencies with shared OS components", "Lighter"]]
+      },
+      "callout": "VM = WHOLE COMPUTER. CONTAINER = APPLICATION PACKAGE."
+    },
+    {
+      "id": "container-use-cases",
+      "title": "When Containers Make Sense",
+      "paragraphs": ["Containers suit applications that need consistent deployment, isolation, portability, and lightweight resource use."],
+      "callout": "Same isolated application environment across systems → container."
+    },
+    {
+      "id": "hypervisors",
+      "title": "Hypervisors",
+      "paragraphs": ["A hypervisor is software or firmware that creates and manages virtual machines. Objective 4.1 requires Type 1 and Type 2 hypervisors."],
+      "callout": "Hypervisor = VM manager."
+    },
+    {
+      "id": "type-1-hypervisor",
+      "title": "Type 1 Hypervisor",
+      "paragraphs": ["A Type 1, or bare-metal, hypervisor runs directly on physical hardware without a normal general-purpose host operating system beneath it. It is common in servers, data centers, and enterprise virtualization."],
+      "callout": "Physical server boots directly into the virtualization platform → Type 1."
+    },
+    {
+      "id": "type-2-hypervisor",
+      "title": "Type 2 Hypervisor",
+      "paragraphs": ["A Type 2 hypervisor runs as an application inside a host operating system. It is common in desktop labs, training, testing, and development."],
+      "callout": "Hardware → host OS → hypervisor application → VM."
+    },
+    {
+      "id": "type-1-vs-type-2",
+      "title": "Type 1 vs. Type 2 Hypervisor",
+      "table": {
+        "caption": "Hypervisor placement",
+        "headers": ["Type", "Directly above hardware", "Common environment"],
+        "rows": [["Type 1", "Hypervisor", "Server/data center"], ["Type 2", "Host operating system", "Desktop/lab"]]
+      },
+      "callout": "TYPE 1 = HARDWARE FIRST. TYPE 2 = HOST OS FIRST."
+    },
+    {
+      "id": "host-guest-hypervisor",
+      "title": "Host vs. Guest vs. Hypervisor",
+      "table": {
+        "caption": "Core virtualization roles",
+        "headers": ["Term", "Role", "Memory hook"],
+        "rows": [["Host", "Provides physical resources", "House"], ["Hypervisor", "Creates and manages VMs", "Manager"], ["Guest", "Virtualized machine or OS", "Lives inside"]]
+      },
+      "callout": "HOST provides. HYPERVISOR manages. GUEST runs."
+    },
+    {
+      "id": "virtualization-map",
+      "title": "Virtualization Map",
+      "table": {
+        "caption": "Purpose, requirements, and technology",
+        "headers": ["Category", "Concept", "Core clue"],
+        "rows": [["Purpose", "Sandbox", "Safe isolated testing"], ["Purpose", "Test/development", "Verify changes before production"], ["Compatibility", "Legacy", "Keep old software or OS usable"], ["Compatibility", "Cross-platform", "Run another OS/platform"], ["Requirements", "Security/network/storage", "Protect, connect, and store VMs"], ["Desktop", "VDI", "Centralized remote desktops"], ["Lightweight", "Containers", "Isolated application environments"], ["Hypervisor", "Type 1", "Directly on hardware"], ["Hypervisor", "Type 2", "Inside a host OS"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Risky isolated testing → sandbox", "Test a patch before production → test/development VM", "Old application needs old OS → legacy virtualization", "Different OS environment → cross-platform virtualization", "Protect host and guests → security requirement", "VM needs LAN or internet → network requirement", "Virtual-disk capacity → storage requirement", "Centralized user desktops → VDI", "Lightweight application isolation → container", "Hypervisor on hardware → Type 1", "Hypervisor inside Windows, macOS, or Linux → Type 2", "Physical resource provider → host", "Virtualized operating system → guest"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["The main traps are deciding what is virtualized and what runs directly above the physical hardware."],
+      "entries": [
+        {"title": "Sandbox vs. Test Environment", "paragraphs": ["Sandbox emphasizes isolation and safety; test/development emphasizes building or validating changes before production."], "memoryHook": "RISK → SANDBOX; VERIFY → TEST"},
+        {"title": "Application Virtualization vs. VM", "paragraphs": ["Application virtualization focuses on an app; a VM provides a full virtual computer and guest OS."], "memoryHook": "APP ONLY vs. WHOLE OS"},
+        {"title": "Legacy vs. Cross-Platform", "paragraphs": ["Legacy preserves an old environment; cross-platform supplies a different platform."], "memoryHook": "OLD vs. DIFFERENT"},
+        {"title": "VDI vs. General VM", "paragraphs": ["A VM has many purposes. VDI specifically delivers virtual desktop environments to users."]},
+        {"title": "Container vs. VM", "paragraphs": ["A container isolates an application with shared OS components; a VM contains a full guest environment."], "memoryHook": "APPLICATION vs. COMPUTER"},
+        {"title": "Type 1 vs. Type 2", "paragraphs": ["If the hypervisor is directly above hardware, choose Type 1. If a normal host OS is directly above hardware, choose Type 2."], "memoryHook": "BARE METAL vs. HOST OS"},
+        {"title": "Host vs. Guest", "paragraphs": ["The host provides resources; the guest consumes virtualized resources."], "memoryHook": "HOST = HOUSE; GUEST = LIVES INSIDE"}
+      ]
+    },
+    {
+      "id": "virtualization-decision-path",
+      "title": "Virtualization Decision Path",
+      "bullets": ["Identify the goal: isolation, testing, compatibility, centralized desktops, or lightweight application delivery.", "Confirm the required security, network, and storage resources.", "Decide whether the workload needs a full VM, application virtualization, VDI, or a container.", "For a VM, identify whether the hypervisor runs on hardware or inside a host OS.", "Distinguish the physical host from its virtual guests."],
+      "callout": "WHAT is virtualized? WHERE does its manager run?"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Safe isolated testing → sandbox", "Verify before deployment → test/development", "Run an old environment → legacy virtualization", "Run a different platform → cross-platform virtualization", "Protect host and VMs → security requirement", "Provide VM connectivity → network requirement", "Store virtual disks → storage requirement", "Centralized remote desktop → VDI", "Lightweight application isolation → container", "Full virtual computer → VM", "VM management layer → hypervisor", "Directly on hardware → Type 1", "Inside host OS → Type 2", "Physical resource provider → host", "Virtualized system → guest"],
+      "callout": "SANDBOX → ISOLATE | TEST → VERIFY | VDI → DESKTOPS | CONTAINER → APPLICATION | TYPE 1 → BARE METAL | TYPE 2 → HOST OS"
+    }
+  ]
+}

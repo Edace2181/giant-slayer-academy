@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.2",
+  "title": "Summarize Basic Cable Types and Their Connectors, Features, and Purposes",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Different cables carry network data, peripheral data, video, storage traffic, or power. Objective 3.2 tests whether you can connect the medium and purpose to the correct cable and physical connector.",
+        "The central workflow is: identify what the connection carries, select the cable or interface family, and then recognize the connector."
+      ],
+      "bullets": ["Network cables", "Peripheral cables", "Video cables", "Hard drive cables", "Adapters", "Connector types"],
+      "callout": "WHAT IS IT CARRYING? → WHAT CABLE? → WHAT CONNECTOR?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes a cable's medium, connector, performance generation, installation environment, or purpose, identify the exact cable or connector before choosing an answer."],
+      "bullets": [
+        "Ethernet → twisted pair and RJ45",
+        "Telephone → RJ11",
+        "Coaxial → F-type",
+        "Fiber → ST, SC, or LC",
+        "Modern reversible data, power, or compatible video → USB-C",
+        "Digital or analog video → HDMI, DisplayPort, DVI, VGA, or USB-C",
+        "Internal drive data → SATA",
+        "Legacy serial → DB9"
+      ]
+    },
+    {
+      "id": "network-cables",
+      "title": "Network Cables",
+      "paragraphs": ["Network cables carry data between networked devices. The named media are copper, coaxial, twisted pair, and optical fiber."],
+      "callout": "Electrical signal → copper. Light → optical fiber."
+    },
+    {
+      "id": "copper-network-cabling",
+      "title": "Copper Network Cabling",
+      "paragraphs": ["Copper Network Cabling carries electrical signals. Objective 3.2 includes twisted-pair Ethernet and coaxial cable, with twisted pair further distinguished by category, shielding, and installation rating."],
+      "callout": "Copper = electrical signal."
+    },
+    {
+      "id": "twisted-pair-categories",
+      "title": "Cable Categories",
+      "paragraphs": ["Cable Categories identify performance and construction classes for twisted-pair Ethernet. Common examples include Cat 5e, Cat 6, and Cat 6a."],
+      "bullets": ["Higher categories support newer or higher-performance Ethernet specifications when correctly installed.", "NICs, switches, connectors, run length, and installation quality also affect actual link performance."],
+      "callout": "Category = cable capability class, not the connector name."
+    },
+    {
+      "id": "t568a-t568b",
+      "title": "T568A and T568B Standards",
+      "paragraphs": ["T568A/T568B Standards define the conductor color order used when terminating twisted-pair Ethernet. Both use eight conductors, but the orange and green pair positions differ."],
+      "callout": "Ethernet conductor color sequence → T568A or T568B."
+    },
+    {
+      "id": "straight-through-cabling",
+      "title": "Straight-Through Cabling",
+      "paragraphs": ["A straight-through cable uses the same termination standard on both ends: T568A to T568A or T568B to T568B. Modern Ethernet ports often handle crossover needs automatically, but consistent termination remains essential."],
+      "callout": "Same pattern on both ends → straight-through cable."
+    },
+    {
+      "id": "stp",
+      "title": "Shielded Twisted Pair",
+      "paragraphs": ["Shielded Twisted Pair (STP) adds shielding to reduce electromagnetic interference and radio-frequency interference. It is useful near motors, industrial equipment, or other electrically noisy systems."],
+      "callout": "High-interference Ethernet environment → STP."
+    },
+    {
+      "id": "utp",
+      "title": "Unshielded Twisted Pair",
+      "paragraphs": ["Unshielded Twisted Pair (UTP) does not include the additional shielding used by STP. It is the common choice for ordinary office and home Ethernet installations."],
+      "callout": "Typical everyday Ethernet → UTP."
+    },
+    {
+      "id": "stp-vs-utp",
+      "title": "STP vs. UTP",
+      "table": {
+        "caption": "Shielded and unshielded Ethernet cable",
+        "headers": ["Cable", "Construction", "Best clue"],
+        "rows": [["STP", "Additional shielding", "Electrically noisy environment"], ["UTP", "No additional shielding", "Normal office or home installation"]]
+      },
+      "callout": "Noise → STP. Normal environment → UTP."
+    },
+    {
+      "id": "direct-burial",
+      "title": "Direct Burial Cable",
+      "paragraphs": ["Direct Burial Cable has protective construction for underground installation and exposure to moisture, soil, and outdoor conditions."],
+      "callout": "Underground network run → direct burial cable."
+    },
+    {
+      "id": "plenum-rated",
+      "title": "Plenum-Rated Cable",
+      "paragraphs": ["Plenum-Rated Cable is designed for building air-handling spaces. Its jacket reduces dangerous smoke and toxic emissions compared with ordinary cable when exposed to fire."],
+      "callout": "GROUND → direct burial. AIR-HANDLING SPACE → plenum-rated."
+    },
+    {
+      "id": "coaxial",
+      "title": "Coaxial Cable",
+      "paragraphs": ["Coaxial cable has a central conductor surrounded by insulation, shielding, and an outer jacket. It is commonly used for cable television, cable internet, and cable-modem connections."],
+      "callout": "Cable modem or cable television medium → coaxial."
+    },
+    {
+      "id": "optical-fiber",
+      "title": "Optical Cabling",
+      "paragraphs": ["Optical Cabling transmits data as light rather than electrical signals. Fiber supports high bandwidth and long distances and is resistant to electromagnetic interference."],
+      "callout": "Light rather than electricity → optical fiber."
+    },
+    {
+      "id": "single-mode",
+      "title": "Single-Mode Fiber",
+      "paragraphs": ["Single-Mode Fiber uses a small core and a single primary light path. It is suited to very long distances, provider links, and backbone connectivity."],
+      "callout": "Long-distance optical link → single-mode fiber."
+    },
+    {
+      "id": "multimode",
+      "title": "Multimode Fiber",
+      "paragraphs": ["Multimode Fiber uses a larger core and supports multiple light paths. It is commonly used for shorter-distance links within buildings and data centers."],
+      "callout": "Shorter local optical link → multimode fiber."
+    },
+    {
+      "id": "single-vs-multimode",
+      "title": "Single-Mode vs. Multimode",
+      "table": {
+        "caption": "Fiber recognition",
+        "headers": ["Fiber", "Core and path", "Distance clue"],
+        "rows": [["Single-mode", "Smaller core; single primary path", "Longer distance"], ["Multimode", "Larger core; multiple paths", "Shorter distance"]]
+      },
+      "callout": "SINGLE = FAR. MULTI = NEARER."
+    },
+    {
+      "id": "peripheral-cables",
+      "title": "Peripheral Cables",
+      "paragraphs": ["Peripheral Cables connect computers to external devices. Objective 3.2 names USB 2.0, USB 3.0, serial cable, and Thunderbolt."],
+      "callout": "Identify the interface generation separately from the connector shape."
+    },
+    {
+      "id": "usb-2",
+      "title": "USB 2.0",
+      "paragraphs": ["USB 2.0 is an older Universal Serial Bus generation used by keyboards, mice, printers, storage devices, and other peripherals. It carries data and can provide power."],
+      "callout": "Older common USB performance generation → USB 2.0."
+    },
+    {
+      "id": "usb-3",
+      "title": "USB 3.0",
+      "paragraphs": ["USB 3.0 provides substantially higher transfer capability than USB 2.0 and is commonly used for external storage, docks, and high-speed peripherals."],
+      "callout": "Higher-throughput USB generation → USB 3.0."
+    },
+    {
+      "id": "usb-2-vs-usb-3",
+      "title": "USB 2.0 vs. USB 3.0",
+      "table": {
+        "caption": "USB generation recognition",
+        "headers": ["Generation", "Relative capability", "Important distinction"],
+        "rows": [["USB 2.0", "Older and slower", "A performance generation"], ["USB 3.0", "Newer and faster", "A performance generation"]]
+      },
+      "callout": "USB version = capability. USB connector name = physical shape."
+    },
+    {
+      "id": "serial-cable",
+      "title": "Serial Cable",
+      "paragraphs": ["A Serial Cable is associated with legacy peripherals, console connections, and industrial equipment. A common legacy serial connector is the 9-pin D-sub DB9."],
+      "callout": "Legacy communications or nine-pin D-shaped connector → serial/DB9."
+    },
+    {
+      "id": "thunderbolt",
+      "title": "Thunderbolt",
+      "paragraphs": ["Thunderbolt is a high-speed multipurpose interface that can carry high-speed data, display traffic, docking connections, and external-storage traffic. Modern versions commonly use a USB-C connector shape."],
+      "callout": "USB-C shape does not automatically guarantee Thunderbolt support."
+    },
+    {
+      "id": "video-cables",
+      "title": "Video Cables",
+      "paragraphs": ["Video Cables carry display signals. The named interfaces are High-Definition Multimedia Interface, DisplayPort, Digital Visual Interface, Video Graphics Array, and compatible USB-C video."],
+      "callout": "Determine whether the clue calls for consumer digital, PC digital, older display, analog legacy, or USB-C video."
+    },
+    {
+      "id": "hdmi",
+      "title": "High-Definition Multimedia Interface",
+      "paragraphs": ["High-Definition Multimedia Interface (HDMI) carries digital video and audio. It is common on televisions, monitors, game consoles, laptops, and media devices."],
+      "callout": "One digital cable carries picture and sound to a television → HDMI."
+    },
+    {
+      "id": "displayport",
+      "title": "DisplayPort",
+      "paragraphs": ["DisplayPort is a digital display interface common on PCs, graphics cards, and computer monitors. It supports digital video and can also carry audio."],
+      "callout": "PC-focused digital monitor connection → DisplayPort."
+    },
+    {
+      "id": "dvi",
+      "title": "Digital Visual Interface",
+      "paragraphs": ["Digital Visual Interface (DVI) is an older computer-display interface. Depending on the DVI variant, it can carry digital video, analog video, or both."],
+      "callout": "Older PC display connector from the digital era → DVI."
+    },
+    {
+      "id": "vga",
+      "title": "Video Graphics Array",
+      "paragraphs": ["Video Graphics Array (VGA) is a legacy analog video interface commonly associated with a 15-pin D-shaped connector."],
+      "callout": "Legacy analog monitor connection → VGA."
+    },
+    {
+      "id": "usb-c-video",
+      "title": "USB-C for Video",
+      "paragraphs": ["USB-C Video can carry a display signal when the device, port, cable, and supported display mode or protocol provide that capability. The same connector shape may also carry data and power."],
+      "callout": "USB-C shape does not guarantee video, speed, power, or Thunderbolt capabilities."
+    },
+    {
+      "id": "video-comparison",
+      "title": "HDMI vs. DisplayPort vs. DVI vs. VGA",
+      "table": {
+        "caption": "Video-interface recognition",
+        "headers": ["Interface", "Signal and context", "Recognition clue"],
+        "rows": [["HDMI", "Digital video and audio; consumer AV", "Television, console, or media device"], ["DisplayPort", "Digital video and audio; PC-focused", "Graphics card or PC monitor"], ["DVI", "Older computer display", "Digital-era PC connector"], ["VGA", "Analog video", "Legacy 15-pin display connection"]]
+      },
+      "callout": "HDMI = TV/AV. DisplayPort = PC digital. DVI = older PC. VGA = analog legacy."
+    },
+    {
+      "id": "hard-drive-cables",
+      "title": "Hard Drive Cables",
+      "paragraphs": ["Hard Drive Cables connect storage devices. Objective 3.2 distinguishes internal Serial Advanced Technology Attachment from External SATA."],
+      "callout": "Inside the computer → SATA. External SATA device → eSATA."
+    },
+    {
+      "id": "sata",
+      "title": "Serial Advanced Technology Attachment",
+      "paragraphs": ["Serial Advanced Technology Attachment (SATA) connects internal hard drives, SATA solid-state drives, and optical drives. A SATA drive commonly uses separate data and power connections."],
+      "callout": "Internal drive data connection to the motherboard → SATA cable."
+    },
+    {
+      "id": "esata",
+      "title": "External SATA",
+      "paragraphs": ["External SATA (eSATA) extends SATA connectivity to external storage devices."],
+      "callout": "SATA outside the computer → eSATA cable."
+    },
+    {
+      "id": "sata-vs-esata",
+      "title": "SATA vs. eSATA",
+      "table": {
+        "caption": "Internal and external storage links",
+        "headers": ["Interface", "Location", "Purpose"],
+        "rows": [["SATA", "Internal", "Drive data connection"], ["eSATA", "External", "External SATA storage connection"]]
+      },
+      "callout": "SATA = inside. eSATA = outside."
+    },
+    {
+      "id": "adapters",
+      "title": "Adapters",
+      "paragraphs": ["Adapters connect unlike physical interfaces when the underlying signals and conversion are compatible. Examples include USB-C to HDMI, DisplayPort to HDMI, USB to Ethernet, and compatible DVI conversions."],
+      "callout": "Different connectors with supported conversion → adapter."
+    },
+    {
+      "id": "connector-types",
+      "title": "Connector Types",
+      "paragraphs": ["Connector Types describe the physical termination or receptacle. Do not confuse a connector shape with a cable category, data standard, or guaranteed capability."],
+      "callout": "Cable category and interface version describe capability; connector name describes physical form."
+    },
+    {
+      "id": "rj11",
+      "title": "RJ11",
+      "paragraphs": ["RJ11 is commonly associated with telephone connections and is physically smaller than RJ45."],
+      "callout": "Telephone-line connector → RJ11."
+    },
+    {
+      "id": "rj45",
+      "title": "RJ45",
+      "paragraphs": ["RJ45 is the common modular connector associated with twisted-pair Ethernet."],
+      "callout": "Cat 5e, Cat 6, or Cat 6a Ethernet plug → RJ45."
+    },
+    {
+      "id": "rj11-vs-rj45",
+      "title": "RJ11 vs. RJ45",
+      "table": {
+        "caption": "Similar modular connectors",
+        "headers": ["Connector", "Primary association", "Physical clue"],
+        "rows": [["RJ11", "Telephone", "Smaller"], ["RJ45", "Ethernet", "Larger twisted-pair network plug"]]
+      },
+      "callout": "Phone = RJ11. Network = RJ45."
+    },
+    {
+      "id": "f-type",
+      "title": "F-Type Connector",
+      "paragraphs": ["The F-Type connector is a screw-on connector used with coaxial cable for cable television and cable-modem connections."],
+      "callout": "Coaxial cable connection → F-type."
+    },
+    {
+      "id": "st",
+      "title": "Straight Tip",
+      "paragraphs": ["Straight Tip (ST) is a fiber-optic connector with a bayonet-style twist-lock mechanism."],
+      "callout": "Fiber connector that twists and locks → ST."
+    },
+    {
+      "id": "sc",
+      "title": "Subscriber Connector",
+      "paragraphs": ["Subscriber Connector (SC) is a square-profile fiber connector with a push-pull design."],
+      "callout": "Push-pull fiber connector → SC."
+    },
+    {
+      "id": "lc",
+      "title": "Lucent Connector",
+      "paragraphs": ["Lucent Connector (LC) is a small-form-factor fiber connector used where high connector density matters."],
+      "callout": "Small, dense fiber connector → LC."
+    },
+    {
+      "id": "fiber-connectors",
+      "title": "ST vs. SC vs. LC",
+      "table": {
+        "caption": "Fiber connector recognition",
+        "headers": ["Connector", "Mechanism or form", "Memory cue"],
+        "rows": [["ST", "Bayonet twist-lock", "ST = twist"], ["SC", "Push-pull", "SC = push"], ["LC", "Small form factor", "LC = little"]]
+      },
+      "callout": "ST = TWIST. SC = PUSH. LC = LITTLE."
+    },
+    {
+      "id": "punchdown-block",
+      "title": "Punchdown Block",
+      "paragraphs": ["A Punchdown Block provides termination points for individual copper conductors. A punchdown tool seats the wires into insulation-displacement slots."],
+      "callout": "Terminate individual twisted-pair conductors → punchdown block."
+    },
+    {
+      "id": "microusb",
+      "title": "MicroUSB",
+      "paragraphs": ["MicroUSB is a small USB connector commonly found on older mobile devices and peripherals."],
+      "callout": "Older small mobile USB connector → MicroUSB."
+    },
+    {
+      "id": "miniusb",
+      "title": "MiniUSB",
+      "paragraphs": ["MiniUSB is an older USB connector that is larger than MicroUSB and appeared on cameras, GPS units, and other earlier electronics."],
+      "callout": "Older USB connector larger than MicroUSB → MiniUSB."
+    },
+    {
+      "id": "usb-c-connector",
+      "title": "USB-C Connector",
+      "paragraphs": ["The USB-C Connector is compact and reversible. Depending on the implementation, it may support data, power, charging, video, or Thunderbolt."],
+      "callout": "Reversible modern connector; capabilities must be verified separately → USB-C."
+    },
+    {
+      "id": "molex",
+      "title": "Molex",
+      "paragraphs": ["Molex is a legacy internal power connector used with older hard drives, optical drives, fans, and other internal components."],
+      "callout": "Legacy four-pin internal peripheral power → Molex."
+    },
+    {
+      "id": "lightning",
+      "title": "Lightning Connector",
+      "paragraphs": ["The Lightning Connector is a proprietary reversible connector associated with many earlier Apple mobile devices. Newer Apple devices may use USB-C instead."],
+      "callout": "Earlier Apple mobile connector → Lightning."
+    },
+    {
+      "id": "db9",
+      "title": "DB9",
+      "paragraphs": ["DB9 is a 9-pin D-sub connector commonly associated with serial communication."],
+      "callout": "Nine-pin legacy serial connector → DB9."
+    },
+    {
+      "id": "cable-recognition-map",
+      "title": "Building the Cable Recognition Map",
+      "table": {
+        "caption": "Cable and environment clues",
+        "headers": ["Clue", "Cable or interface"],
+        "rows": [["Standard Ethernet", "UTP"], ["High-interference Ethernet", "STP"], ["Underground installation", "Direct burial"], ["Air-handling space", "Plenum-rated"], ["Cable broadband", "Coaxial"], ["Long-distance optical link", "Single-mode fiber"], ["Shorter optical link", "Multimode fiber"], ["Internal drive", "SATA"], ["External SATA storage", "eSATA"]]
+      }
+    },
+    {
+      "id": "connector-map",
+      "title": "Building the Connector Map",
+      "table": {
+        "caption": "Physical connector associations",
+        "headers": ["Connector", "Recognition"],
+        "rows": [["RJ11", "Telephone"], ["RJ45", "Ethernet"], ["F-type", "Coaxial"], ["ST", "Fiber twist-lock"], ["SC", "Fiber push-pull"], ["LC", "Small fiber form factor"], ["Punchdown block", "Individual copper termination"], ["MicroUSB", "Older small USB"], ["MiniUSB", "Older, larger mobile USB"], ["USB-C", "Modern reversible connector"], ["Molex", "Legacy internal power"], ["Lightning", "Earlier Apple mobile"], ["DB9", "Serial"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Ethernet conductor color order → T568A/T568B",
+        "High-interference Ethernet → STP",
+        "Underground run → direct burial",
+        "Air-handling space → plenum-rated",
+        "Cable internet → coaxial and F-type",
+        "Long-distance optical link → single-mode",
+        "Shorter optical link → multimode",
+        "Older USB generation → USB 2.0",
+        "Higher-speed USB generation → USB 3.0",
+        "High-speed multipurpose interface → Thunderbolt",
+        "Consumer digital audio and video → HDMI",
+        "PC digital display → DisplayPort",
+        "Older PC display → DVI",
+        "Legacy analog display → VGA",
+        "Internal storage data → SATA",
+        "External SATA storage → eSATA",
+        "Telephone → RJ11",
+        "Ethernet → RJ45",
+        "Legacy internal power → Molex",
+        "Nine-pin serial → DB9"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Similar-looking cables and connectors are separated by medium, purpose, environment, generation, or physical form. Identify those categories before choosing."],
+      "entries": [
+        {"title": "RJ11 vs. RJ45", "paragraphs": ["RJ11 is telephone; RJ45 is Ethernet."]},
+        {"title": "STP vs. UTP", "paragraphs": ["STP adds interference shielding; UTP is common for normal environments."]},
+        {"title": "Direct Burial vs. Plenum", "paragraphs": ["Direct burial solves underground exposure; plenum rating addresses air-handling fire and smoke requirements."]},
+        {"title": "Single-Mode vs. Multimode", "paragraphs": ["Single-mode is the long-distance clue; multimode is the shorter-distance clue."]},
+        {"title": "T568 Standard vs. Cable Category", "paragraphs": ["T568A/T568B define conductor order; Cat 5e, Cat 6, and Cat 6a are cable categories."]},
+        {"title": "USB Generation vs. Connector", "paragraphs": ["USB 2.0 and USB 3.0 are performance generations; MicroUSB, MiniUSB, and USB-C are connector forms."]},
+        {"title": "USB-C vs. Thunderbolt", "paragraphs": ["USB-C is a connector shape; Thunderbolt is an interface technology that may use USB-C."]},
+        {"title": "HDMI vs. DisplayPort", "paragraphs": ["Both carry digital display traffic; HDMI is common in consumer AV, while DisplayPort is common on PCs and monitors."]},
+        {"title": "DVI vs. VGA", "paragraphs": ["DVI is an older computer-display interface; VGA is legacy analog video."]},
+        {"title": "SATA vs. eSATA", "paragraphs": ["SATA is internal; eSATA is external."]},
+        {"title": "SATA Data vs. Molex Power", "paragraphs": ["SATA is the storage data interface; Molex is a legacy power connector."]},
+        {"title": "ST vs. SC vs. LC", "paragraphs": ["ST twists, SC pushes, and LC is the small-form-factor fiber connector."]}
+      ],
+      "callout": "MEDIUM → PURPOSE → CONNECTOR."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "T568A/T568B → Ethernet wiring pattern",
+        "UTP → normal twisted-pair Ethernet",
+        "STP → shielded Ethernet for interference",
+        "Direct burial → underground",
+        "Plenum-rated → air-handling space",
+        "Coaxial → cable broadband",
+        "Single-mode → long-distance fiber",
+        "Multimode → shorter-distance fiber",
+        "USB 2.0 → older USB generation",
+        "USB 3.0 → higher-speed USB generation",
+        "Serial/DB9 → legacy communication",
+        "Thunderbolt → high-speed multipurpose interface",
+        "HDMI → digital consumer audio and video",
+        "DisplayPort → digital PC display",
+        "DVI → older PC display",
+        "VGA → analog legacy display",
+        "USB-C → reversible connector with implementation-dependent capabilities",
+        "SATA → internal storage data",
+        "eSATA → external SATA storage",
+        "RJ11 → telephone",
+        "RJ45 → Ethernet",
+        "F-type → coaxial",
+        "ST → fiber twist-lock",
+        "SC → fiber push-pull",
+        "LC → small fiber connector",
+        "Punchdown block → copper conductor termination",
+        "MicroUSB → older small mobile USB",
+        "MiniUSB → older larger USB connector",
+        "Molex → legacy internal power",
+        "Lightning → earlier Apple mobile",
+        "NETWORK → RJ45, F-TYPE, or FIBER; PHONE → RJ11; VIDEO → HDMI, DISPLAYPORT, DVI, VGA, or USB-C; STORAGE → SATA or eSATA; SERIAL → DB9; POWER → MOLEX"
+      ]
+    }
+  ]
+}

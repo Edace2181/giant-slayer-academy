@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.5",
+  "title": "Given a Scenario, Install and Configure Motherboards, CPUs, and Add-On Cards",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Installing a motherboard or CPU requires more than finding a part that appears to fit. You must select compatible hardware, connect it correctly, configure firmware and security settings, install the required expansion capability, and provide effective cooling."],
+      "bullets": ["Motherboard form factor and connector types", "CPU socket and platform compatibility", "BIOS/UEFI configuration", "Security, virtualization, and encryption hardware", "CPU architecture and core configuration", "Expansion cards", "Cooling"],
+      "callout": "FIT → CONNECT → COMPATIBILITY → CONFIGURE → EXPAND → COOL"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes a motherboard, CPU, firmware setting, expansion requirement, or cooling problem, identify which layer must be installed or configured before choosing a solution."],
+      "bullets": ["Full-size desktop board → ATX", "Smaller desktop board → microATX", "Compact board → ITX", "Modern expansion → PCIe", "Hardware-backed platform security → TPM", "Trusted startup software → Secure Boot", "Hardware-assisted VMs → virtualization support", "Graphics output → video card", "Incoming video → capture card", "CPU heat transfer → heat sink plus thermal interface material"]
+    },
+    {
+      "id": "motherboard-form-factors",
+      "title": "Motherboard Form Factors",
+      "paragraphs": ["A motherboard form factor defines physical dimensions, mounting layout, general expansion capacity, and case compatibility. Objective 3.5 requires Advanced Technology Extended (ATX), microATX, and Information Technology eXtended (ITX)."],
+      "callout": "Form factor answers: how large is the board, and what case supports it?"
+    },
+    {
+      "id": "atx",
+      "title": "Advanced Technology Extended (ATX)",
+      "paragraphs": ["ATX is a common full-size desktop motherboard form factor. Its larger area generally allows more expansion slots, connectors, and components."],
+      "callout": "Desktop build needing substantial expansion capability → ATX."
+    },
+    {
+      "id": "microatx",
+      "title": "microATX",
+      "paragraphs": ["microATX is smaller than standard ATX and is used when a system needs a compact desktop design while retaining common desktop components. It generally offers fewer expansion slots than ATX."],
+      "callout": "Smaller desktop build with moderate expansion needs → microATX."
+    },
+    {
+      "id": "itx",
+      "title": "Information Technology eXtended (ITX)",
+      "paragraphs": ["ITX identifies a family of compact motherboard designs. In typical PC-building scenarios, Mini-ITX is the commonly encountered implementation and prioritizes a small system footprint over physical expansion capacity."],
+      "callout": "Very compact desktop system → ITX."
+    },
+    {
+      "id": "motherboard-form-factor-comparison",
+      "title": "ATX vs. microATX vs. ITX",
+      "table": {
+        "caption": "Motherboard size and expansion comparison",
+        "headers": ["Form factor", "Relative size", "Typical expansion potential"],
+        "rows": [["ATX", "Large", "Higher"], ["microATX", "Medium", "Moderate"], ["ITX", "Compact", "Limited"]]
+      },
+      "callout": "Always verify that the case supports the motherboard form factor."
+    },
+    {
+      "id": "motherboard-connector-types",
+      "title": "Motherboard Connector Types",
+      "paragraphs": ["Motherboards provide connectors for expansion cards, storage, power, internal devices, case controls, and compact modules."],
+      "bullets": ["PCI", "PCIe", "Power connectors", "SATA", "eSATA", "Headers", "M.2"]
+    },
+    {
+      "id": "pci",
+      "title": "Peripheral Component Interconnect (PCI)",
+      "paragraphs": ["PCI is an older expansion bus historically used for sound cards, network cards, and other add-on hardware."],
+      "callout": "Legacy motherboard expansion slot → PCI."
+    },
+    {
+      "id": "pcie-expansion",
+      "title": "PCIe Expansion",
+      "paragraphs": ["Peripheral Component Interconnect Express (PCIe) is the modern high-speed serial expansion interface for video cards, network cards, sound cards, capture cards, and some storage devices. Slots can use lane configurations such as x1, x4, x8, and x16."],
+      "callout": "Modern graphics or expansion card → PCIe."
+    },
+    {
+      "id": "pci-vs-pcie",
+      "title": "PCI vs. PCIe",
+      "table": {
+        "caption": "Expansion-interface generations",
+        "headers": ["Interface", "Technology", "Recognition clue"],
+        "rows": [["PCI", "Older parallel expansion", "Legacy add-on card"], ["PCIe", "Modern high-speed serial expansion", "Modern GPU or expansion card"]]
+      },
+      "callout": "PCI = legacy. PCIe = modern."
+    },
+    {
+      "id": "power-connectors",
+      "title": "Power Connectors",
+      "paragraphs": ["The motherboard requires power from the power supply through the main motherboard connector and commonly a separate CPU power connector near the processor socket. Both connections must be seated correctly."],
+      "callout": "Newly assembled system is completely dead → verify motherboard and CPU power connections."
+    },
+    {
+      "id": "sata-motherboard-connector",
+      "title": "SATA Motherboard Connector",
+      "paragraphs": ["Serial Advanced Technology Attachment (SATA) motherboard ports connect internal hard drives, SATA SSDs, and optical drives."],
+      "callout": "Internal SATA storage connection → SATA port."
+    },
+    {
+      "id": "esata-motherboard-connector",
+      "title": "eSATA Motherboard Connector",
+      "paragraphs": ["External SATA (eSATA) provides SATA-based connectivity for external storage."],
+      "callout": "SATA = internal. eSATA = external."
+    },
+    {
+      "id": "headers",
+      "title": "Headers",
+      "paragraphs": ["A header is a group of motherboard pins used to connect internal components or case features. Common examples include front-panel buttons, status LEDs, USB ports, audio, and fans."],
+      "callout": "Case power button or LED connection → front-panel header."
+    },
+    {
+      "id": "m2-motherboard-connector",
+      "title": "M.2 Motherboard Connector",
+      "paragraphs": ["M.2 is a compact motherboard connector and module form factor used for SSDs, wireless cards, and other compact devices. An M.2 storage device may use SATA or PCIe/NVMe depending on the module and slot."],
+      "callout": "M.2 identifies the compact physical connection; it does not automatically mean NVMe."
+    },
+    {
+      "id": "motherboard-compatibility",
+      "title": "Motherboard Compatibility",
+      "paragraphs": ["Before installing a CPU, verify the manufacturer platform, physical socket, supported processor generation, chipset, and BIOS/UEFI support. Physical fit by itself does not guarantee electrical or firmware compatibility."],
+      "callout": "CPU → SOCKET → CHIPSET → FIRMWARE SUPPORT"
+    },
+    {
+      "id": "cpu-socket-types",
+      "title": "CPU Socket Types",
+      "paragraphs": ["The CPU socket provides the physical and electrical connection between processor and motherboard. AMD and Intel each use multiple socket designs across product generations."],
+      "callout": "Buying a replacement CPU → verify the exact socket first."
+    },
+    {
+      "id": "amd-intel-socket-compatibility",
+      "title": "AMD and Intel Socket Compatibility",
+      "entries": [
+        {"title": "AMD Socket Compatibility", "paragraphs": ["An AMD motherboard does not support every AMD processor. Confirm the socket, chipset, processor generation, and BIOS/UEFI support."]},
+        {"title": "Intel Socket Compatibility", "paragraphs": ["An Intel motherboard does not support every Intel processor. Confirm the socket, chipset, processor generation, and BIOS/UEFI support."]}
+      ],
+      "callout": "CPU brand alone does not prove compatibility."
+    },
+    {
+      "id": "multisocket-motherboards",
+      "title": "Multisocket Motherboards",
+      "paragraphs": ["A multisocket motherboard supports more than one physical CPU. These boards are most common in servers, high-end workstations, and specialized systems."],
+      "callout": "Multiple physical processors → multisocket motherboard."
+    },
+    {
+      "id": "multisocket-vs-multicore",
+      "title": "Multisocket vs. Multicore",
+      "table": {
+        "caption": "Physical processors and internal processing units",
+        "headers": ["Term", "Meaning", "Mental model"],
+        "rows": [["Multisocket", "More than one physical CPU socket", "Multiple chips"], ["Multicore", "Multiple processing cores inside one CPU package", "Workers inside a chip"]]
+      },
+      "callout": "SOCKET = physical CPU. CORE = processing unit inside the CPU."
+    },
+    {
+      "id": "bios-uefi-settings",
+      "title": "BIOS/UEFI Settings",
+      "paragraphs": ["BIOS or Unified Extensible Firmware Interface (UEFI) initializes hardware and provides low-level configuration before the operating system loads. Modern systems generally use UEFI, while older systems commonly used legacy BIOS."],
+      "bullets": ["Boot options", "USB permissions", "TPM security features", "Fan considerations", "Secure Boot", "Boot password", "BIOS password", "Temperature monitoring"],
+      "callout": "BIOS/UEFI = hardware configuration before the OS."
+    },
+    {
+      "id": "boot-options",
+      "title": "Boot Options",
+      "paragraphs": ["Boot options control where and how the computer tries to load an operating system. The boot order can prioritize an internal drive, USB device, optical media, or the network."],
+      "callout": "Install an OS from USB → configure the firmware boot order."
+    },
+    {
+      "id": "usb-permissions",
+      "title": "USB Permissions",
+      "paragraphs": ["Firmware settings may enable, disable, or restrict USB functionality for security and device control before the operating system loads."],
+      "callout": "Restrict USB at the firmware level → BIOS/UEFI USB permissions."
+    },
+    {
+      "id": "tpm-security-features",
+      "title": "TPM Security Features",
+      "paragraphs": ["A Trusted Platform Module (TPM) provides hardware-backed security functions. It can protect cryptographic keys and support device security, encryption, platform integrity, and secure authentication."],
+      "callout": "Hardware-backed key protection tied to the computer → TPM."
+    },
+    {
+      "id": "fan-considerations",
+      "title": "Fan Considerations",
+      "paragraphs": ["BIOS/UEFI can configure or monitor fan speeds, fan profiles, and temperature-based behavior. Correct fan connections and firmware controls help maintain safe operating temperatures."],
+      "callout": "Adjust CPU fan behavior based on temperature → firmware fan settings."
+    },
+    {
+      "id": "secure-boot",
+      "title": "Secure Boot",
+      "paragraphs": ["Secure Boot is a UEFI security feature that helps prevent unauthorized or untrusted software from loading during startup."],
+      "callout": "Prevent an untrusted bootloader from starting → Secure Boot."
+    },
+    {
+      "id": "tpm-vs-secure-boot",
+      "title": "TPM vs. Secure Boot",
+      "table": {
+        "caption": "Two platform-security roles",
+        "headers": ["Feature", "Primary role", "Memory hook"],
+        "rows": [["TPM", "Hardware-backed cryptographic security", "Keys"], ["Secure Boot", "Trust verification during startup", "Boot trust"]]
+      },
+      "callout": "TPM protects security material; Secure Boot validates startup software."
+    },
+    {
+      "id": "firmware-passwords",
+      "title": "Boot Password and BIOS Password",
+      "entries": [
+        {"title": "Boot Password", "paragraphs": ["A boot password requires authentication before the system proceeds through startup."], "recognitionCue": "Password required to start or use the machine → boot password."},
+        {"title": "BIOS Password", "paragraphs": ["A BIOS/UEFI password protects access to firmware configuration and prevents unauthorized settings changes."], "recognitionCue": "Protect the firmware setup screen → BIOS password."}
+      ],
+      "callout": "BOOT = start the computer. BIOS = change firmware settings."
+    },
+    {
+      "id": "temperature-monitoring",
+      "title": "Temperature Monitoring",
+      "paragraphs": ["BIOS/UEFI can report CPU and system temperatures. Temperature data helps identify failed fans, poor airflow, incorrect cooler installation, and other thermal problems."],
+      "callout": "CPU shuts down under load → inspect temperature monitoring and cooling."
+    },
+    {
+      "id": "virtualization-support",
+      "title": "Virtualization Support",
+      "paragraphs": ["Modern CPUs can provide hardware-assisted virtualization so one physical computer can run multiple virtual machines efficiently. The processor must support the feature, and the BIOS/UEFI setting may need to be enabled."],
+      "bullets": ["Intel VT-x and AMD-V are vendor examples.", "The exam concept is CPU virtualization support plus firmware enablement."],
+      "callout": "Hypervisor says hardware virtualization is unavailable → verify CPU support and the firmware setting."
+    },
+    {
+      "id": "hardware-encryption",
+      "title": "Hardware Encryption",
+      "paragraphs": ["Objective 3.5 includes TPM and Hardware Security Module (HSM) as hardware that protects cryptographic keys and operations. Their intended scale and placement differ."],
+      "callout": "Identify whether the scenario needs endpoint platform security or dedicated cryptographic hardware."
+    },
+    {
+      "id": "tpm",
+      "title": "Trusted Platform Module (TPM)",
+      "paragraphs": ["A TPM is integrated into or closely associated with an individual computing platform. It can securely store or protect cryptographic information used by that endpoint."],
+      "callout": "Local platform encryption and key protection → TPM."
+    },
+    {
+      "id": "hsm",
+      "title": "Hardware Security Module (HSM)",
+      "paragraphs": ["A Hardware Security Module (HSM) is dedicated hardware designed to perform cryptographic operations and protect high-value keys. HSMs are associated with centralized or specialized security environments."],
+      "callout": "Dedicated hardware for high-value cryptographic keys → HSM."
+    },
+    {
+      "id": "tpm-vs-hsm",
+      "title": "TPM vs. HSM",
+      "table": {
+        "caption": "Hardware-backed cryptographic security",
+        "headers": ["Hardware", "Typical relationship", "Recognition clue"],
+        "rows": [["TPM", "Tied to an endpoint platform", "Device security and local key protection"], ["HSM", "Dedicated cryptographic appliance or module", "Specialized or centralized key protection"]]
+      },
+      "callout": "TPM = device security. HSM = dedicated key security."
+    },
+    {
+      "id": "cpu-architecture",
+      "title": "CPU Architecture",
+      "paragraphs": ["CPU architecture defines the processor's instruction-set architecture and affects operating-system and software compatibility. Objective 3.5 requires x86/x64, ARM, and core configurations."],
+      "callout": "Architecture affects which software can execute on the processor."
+    },
+    {
+      "id": "x86-x64",
+      "title": "x86/x64",
+      "paragraphs": ["x86 commonly refers to the traditional 32-bit PC architecture. x64 is the 64-bit extension of the x86 family and supports a much larger address space. Modern desktops and laptops commonly use x64."],
+      "callout": "x86 = 32-bit clue. x64 = 64-bit x86-family clue."
+    },
+    {
+      "id": "arm",
+      "title": "Advanced RISC Machine (ARM)",
+      "paragraphs": ["ARM is a Reduced Instruction Set Computer architecture widely used in mobile devices, tablets, embedded systems, and increasing numbers of computers and servers. ARM designs are strongly associated with power efficiency."],
+      "callout": "Power-efficient architecture common in mobile and embedded systems → ARM."
+    },
+    {
+      "id": "x86-x64-vs-arm",
+      "title": "x86/x64 vs. ARM",
+      "table": {
+        "caption": "Processor-architecture recognition",
+        "headers": ["Architecture", "Common association", "Compatibility point"],
+        "rows": [["x86/x64", "Traditional PC and server ecosystem", "Software must support x86 or x64 as appropriate"], ["ARM", "Mobile, embedded, and power-efficient systems", "Software must provide ARM support"]]
+      },
+      "callout": "Choose by architecture requirement, not simply by how new the device is."
+    },
+    {
+      "id": "core-configurations",
+      "title": "Core Configurations",
+      "paragraphs": ["A CPU core is an individual processing unit inside a physical processor. A processor can have one or many cores, such as dual-core, quad-core, six-core, eight-core, or higher."],
+      "callout": "Multiple cores = multiple processing units inside one CPU package."
+    },
+    {
+      "id": "core-count-vs-clock-speed",
+      "title": "Core Count vs. Clock Speed",
+      "paragraphs": ["Core count is the number of processing cores; clock speed is the rate at which processor cycles occur. More cores do not guarantee that every workload completes faster because software must be able to use them."],
+      "callout": "Cores = workers. Clock speed = pace."
+    },
+    {
+      "id": "expansion-cards",
+      "title": "Expansion Cards",
+      "paragraphs": ["Expansion cards add capabilities to a computer. Modern sound, video, capture, and network interface cards commonly use PCIe."],
+      "callout": "Identify the capability the system needs to add."
+    },
+    {
+      "id": "sound-card",
+      "title": "Sound Card",
+      "paragraphs": ["A sound card provides audio processing and audio input/output connections for speakers, headphones, microphones, and other audio equipment."],
+      "callout": "Additional audio capability → sound card."
+    },
+    {
+      "id": "video-card",
+      "title": "Video Card",
+      "paragraphs": ["A video card, or graphics card, contains a graphics processing unit (GPU) that renders graphics and produces display output."],
+      "callout": "Stronger 3D graphics or display output → video card."
+    },
+    {
+      "id": "capture-card",
+      "title": "Capture Card",
+      "paragraphs": ["A capture card receives incoming audio/video signals so a computer can record, process, or stream them. Common uses include gameplay capture, camera input, streaming, and video production."],
+      "callout": "Record HDMI output from another device → capture card."
+    },
+    {
+      "id": "video-card-vs-capture-card",
+      "title": "Video Card vs. Capture Card",
+      "table": {
+        "caption": "Graphics output and external video input",
+        "headers": ["Card", "Signal role", "Recognition clue"],
+        "rows": [["Video card", "Creates and sends graphics output", "Render or display"], ["Capture card", "Receives external video input", "Record or stream another source"]]
+      },
+      "callout": "VIDEO = OUT. CAPTURE = IN."
+    },
+    {
+      "id": "network-interface-card",
+      "title": "Network Interface Card",
+      "paragraphs": ["A Network Interface Card (NIC) adds network connectivity, such as an additional Ethernet interface."],
+      "callout": "Additional network connection → NIC."
+    },
+    {
+      "id": "cooling",
+      "title": "Cooling",
+      "paragraphs": ["Computer components generate heat, and the CPU requires effective cooling to prevent thermal throttling, instability, shutdown, and hardware damage."],
+      "bullets": ["Fans", "Heat sink", "Thermal paste/pads", "Liquid cooling"]
+    },
+    {
+      "id": "fans",
+      "title": "Fans",
+      "paragraphs": ["A fan moves air through or around the computer to carry heat away. Fans support CPU cooling, case airflow, GPU cooling, and power-supply cooling."],
+      "callout": "Temperature rises because air is not moving → inspect fans and airflow."
+    },
+    {
+      "id": "heat-sink",
+      "title": "Heat Sink",
+      "paragraphs": ["A heat sink is a thermally conductive component that draws heat from a processor or chip and spreads it across a larger surface area for dissipation. A fan often moves air across its fins."],
+      "callout": "Heat sink = conduct and spread heat."
+    },
+    {
+      "id": "thermal-paste-pads",
+      "title": "Thermal Paste/Pads",
+      "paragraphs": ["Thermal paste fills microscopic imperfections between a CPU and heat sink to improve heat transfer. Thermal pads serve a similar thermal-interface role where a preformed material is appropriate."],
+      "bullets": ["Use the material specified for the hardware design.", "Too little, too much, or incorrect installation can reduce cooling effectiveness.", "Thermal interface material is not ordinary adhesive."],
+      "callout": "Thermal paste or pad helps heat move from component to cooler."
+    },
+    {
+      "id": "heat-sink-vs-thermal-material",
+      "title": "Heat Sink vs. Thermal Interface Material",
+      "table": {
+        "caption": "Two complementary cooling roles",
+        "headers": ["Component", "Role", "Memory hook"],
+        "rows": [["Thermal paste/pad", "Improves contact and heat transfer", "Contact"], ["Heat sink", "Conducts and dissipates heat", "Dissipation"]]
+      },
+      "callout": "Thermal material transfers; the heat sink dissipates."
+    },
+    {
+      "id": "liquid-cooling",
+      "title": "Liquid Cooling",
+      "paragraphs": ["Liquid cooling uses coolant to carry heat from a cold plate or water block to a radiator, where fans release that heat into the air. A typical loop includes a cold plate, pump, tubing, radiator, fans, and coolant."],
+      "callout": "CPU → cold plate → coolant → radiator → air."
+    },
+    {
+      "id": "air-vs-liquid-cooling",
+      "title": "Air Cooling vs. Liquid Cooling",
+      "table": {
+        "caption": "Common CPU cooling designs",
+        "headers": ["Cooling", "Core components", "Failure clue"],
+        "rows": [["Air", "Heat sink and fan", "Stopped fan or blocked airflow"], ["Liquid", "Pump, coolant, radiator, and fans", "Pump failure can cause rapid temperature rise"]]
+      },
+      "callout": "Air = heat sink. Liquid = radiator loop."
+    },
+    {
+      "id": "cpu-cooling-installation",
+      "title": "CPU Cooling Installation",
+      "bullets": ["Verify CPU, socket, and cooler compatibility.", "Install the CPU in the correct orientation.", "Apply or verify the appropriate thermal interface material.", "Seat and secure the heat sink or cooling block evenly.", "Connect required fan and pump power.", "Verify fan or pump operation.", "Monitor CPU temperature after startup."],
+      "callout": "CONTACT → SECURE → POWER → VERIFY"
+    },
+    {
+      "id": "recognition-maps",
+      "title": "Motherboard, Firmware, CPU, Expansion, and Cooling Maps",
+      "entries": [
+        {"title": "Motherboard", "examples": ["ATX → full-size desktop", "microATX → smaller desktop", "ITX → compact system", "PCI → legacy expansion", "PCIe → modern expansion", "SATA → internal storage", "eSATA → external SATA", "Headers → case and internal connections", "M.2 → compact motherboard module"]},
+        {"title": "Firmware", "examples": ["Boot options → startup device/order", "USB permissions → firmware-level USB control", "TPM → hardware-backed platform security", "Fan settings → cooling behavior", "Secure Boot → trusted startup software", "Boot password → system startup access", "BIOS password → firmware settings access", "Temperature monitoring → thermal conditions", "Virtualization support → hardware-assisted VMs"]},
+        {"title": "CPU", "examples": ["AMD/Intel → verify exact socket and platform", "Multisocket → multiple physical CPUs", "x86 → 32-bit clue", "x64 → 64-bit x86 family", "ARM → RISC-based power-efficient architecture", "Multicore → multiple processing units inside a CPU"]},
+        {"title": "Expansion", "examples": ["Audio → sound card", "Graphics → video card", "Incoming video recording → capture card", "Network → NIC"]},
+        {"title": "Cooling", "examples": ["Move air → fan", "Spread processor heat → heat sink", "Improve thermal contact → thermal paste/pad", "Move heat with coolant → liquid cooling"]}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Full-size desktop motherboard → ATX", "Smaller desktop motherboard → microATX", "Compact motherboard → ITX", "Legacy expansion → PCI", "Modern expansion → PCIe", "Internal SATA drive → SATA", "External SATA → eSATA", "Case buttons or LEDs → headers", "Compact motherboard module → M.2", "CPU replacement → verify socket compatibility", "Multiple physical processors → multisocket", "Change startup device → boot options", "Restrict USB before OS loads → USB permissions", "Hardware-backed platform security → TPM", "Prevent untrusted startup software → Secure Boot", "Startup password → boot password", "Protect firmware settings → BIOS password", "Hardware-assisted VMs → virtualization support", "Dedicated cryptographic key hardware → HSM", "32-bit PC architecture → x86", "64-bit x86-family architecture → x64", "Power-efficient RISC architecture → ARM", "Graphics output → video card", "Incoming video recording → capture card", "Network expansion → NIC", "Move cooling air → fan", "Spread CPU heat → heat sink", "Improve cooler contact → thermal paste/pad", "Pump plus radiator → liquid cooling"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.5 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Objective 3.5 mixes physical installation, firmware configuration, CPU architecture, security, expansion hardware, and cooling. Identify the layer the scenario tests before comparing answers."],
+      "entries": [
+        {"title": "ATX vs. microATX vs. ITX", "paragraphs": ["ATX generally offers the most physical expansion, microATX balances size and expansion, and ITX prioritizes compact size."], "memoryHook": "BIG → MEDIUM → SMALL"},
+        {"title": "PCI vs. PCIe", "paragraphs": ["PCI is legacy; PCIe is the modern expansion interface."], "memoryHook": "A modern GPU points to PCIe"},
+        {"title": "SATA vs. M.2", "paragraphs": ["SATA identifies a storage interface; M.2 identifies a compact connector/form factor. An M.2 drive may use SATA or PCIe/NVMe."], "memoryHook": "Interface vs. shape"},
+        {"title": "Manufacturer vs. Socket", "paragraphs": ["AMD or Intel branding is not enough. Socket, chipset/platform, processor generation, and firmware support must match."], "memoryHook": "BRAND ≠ COMPATIBILITY"},
+        {"title": "Multisocket vs. Multicore", "paragraphs": ["Multisocket means multiple physical CPUs; multicore means multiple processing units inside one CPU."], "memoryHook": "Sockets = chips; cores = workers inside a chip"},
+        {"title": "TPM vs. Secure Boot", "paragraphs": ["TPM provides hardware-backed cryptographic security; Secure Boot verifies trusted startup software."], "memoryHook": "KEYS vs. BOOT TRUST"},
+        {"title": "TPM vs. HSM", "paragraphs": ["TPM is tied to an individual platform; HSM is dedicated cryptographic hardware."], "memoryHook": "MACHINE vs. DEDICATED KEYS"},
+        {"title": "Boot Password vs. BIOS Password", "paragraphs": ["A boot password controls system startup; a BIOS password controls access to firmware configuration."], "memoryHook": "START vs. SETTINGS"},
+        {"title": "x86 vs. x64", "paragraphs": ["x86 is the common 32-bit clue; x64 identifies the 64-bit x86-family architecture."], "memoryHook": "32-bit vs. 64-bit"},
+        {"title": "x64 vs. ARM", "paragraphs": ["x64 belongs to the traditional x86-family PC/server ecosystem; ARM is strongly associated with RISC-based power-efficient designs."], "memoryHook": "Follow the architecture requirement"},
+        {"title": "Video Card vs. Capture Card", "paragraphs": ["A video card renders output; a capture card receives external video."], "memoryHook": "VIDEO OUT; CAPTURE IN"},
+        {"title": "Fan vs. Heat Sink", "paragraphs": ["A fan moves air; a heat sink conducts and spreads heat. They commonly work together."], "memoryHook": "AIRFLOW vs. DISSIPATION"},
+        {"title": "Heat Sink vs. Thermal Paste", "paragraphs": ["The heat sink dissipates heat; thermal paste improves contact between the CPU and cooler."], "memoryHook": "SINK = dissipation; PASTE = contact"},
+        {"title": "Air vs. Liquid Cooling", "paragraphs": ["Air cooling uses a heat sink and fan; liquid cooling uses a pump, coolant, radiator, and fans."], "memoryHook": "Heat sink vs. radiator loop"}
+      ]
+    },
+    {
+      "id": "scenario-workflow",
+      "title": "Installation and Configuration Workflow",
+      "bullets": ["FIT: select a case-compatible motherboard form factor.", "CONNECT: identify power, expansion, storage, header, and M.2 connections.", "COMPATIBILITY: verify CPU socket, chipset/platform, generation, and firmware support.", "CONFIGURE: apply the required BIOS/UEFI, security, virtualization, and monitoring settings.", "EXPAND: install the card that provides the required function.", "COOL: install, power, and verify the correct thermal solution."],
+      "callout": "FIT → CONNECT → COMPATIBILITY → CONFIGURE → EXPAND → COOL"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Full-size motherboard → ATX", "Smaller desktop board → microATX", "Compact motherboard → ITX", "Legacy expansion → PCI", "Modern expansion → PCIe", "Internal storage connector → SATA", "External SATA → eSATA", "Internal motherboard pins → headers", "Compact motherboard module → M.2", "Processor replacement → check CPU socket compatibility", "More than one physical CPU → multisocket", "Startup device → boot options", "Firmware-level USB control → USB permissions", "Platform security and keys → TPM", "Trusted startup software → Secure Boot", "Startup access → boot password", "Firmware settings access → BIOS password", "Thermal conditions → temperature monitoring", "VM acceleration → virtualization support", "Dedicated cryptographic hardware → HSM", "32-bit architecture → x86", "64-bit PC architecture → x64", "RISC/mobile-efficient architecture → ARM", "Multiple processing units in one CPU → multicore", "Audio → sound card", "Graphics → video card", "Incoming video → capture card", "Networking → NIC", "Move air → fan", "Draw and spread heat → heat sink", "Improve thermal contact → thermal paste/pad", "Pump and radiator → liquid cooling"],
+      "callout": "FORM FACTOR | EXPANSION | COMPATIBILITY | FIRMWARE | SECURITY | ARCHITECTURE | COOLING"
+    }
+  ]
+}

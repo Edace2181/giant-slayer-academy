@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "4",
+  "objective": "4.2",
+  "title": "Summarize Cloud Computing Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Cloud computing provides computing resources and services over a network, commonly through provider-managed infrastructure."],
+      "bullets": ["Private, public, hybrid, and community cloud", "IaaS, SaaS, and PaaS", "Shared vs. dedicated resources", "Metered utilization", "Ingress and egress", "Elasticity and availability", "File synchronization", "Multitenancy"],
+      "callout": "WHO OWNS/USES IT? → WHAT SERVICE DO I RECEIVE? → HOW DOES THE CLOUD BEHAVE?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes who uses the cloud, how much the provider manages, how resources are consumed, or how services scale and share infrastructure, identify the matching cloud concept."],
+      "bullets": ["One organization → private cloud", "Provider cloud open to many customers → public cloud", "Private and public together → hybrid cloud", "Organizations with common needs → community cloud", "Rent infrastructure → IaaS", "Use a finished application → SaaS", "Deploy apps on a managed platform → PaaS", "Pay based on consumption → metered utilization", "Scale with demand → elasticity", "Multiple customers share provider infrastructure → multitenancy"]
+    },
+    {
+      "id": "common-cloud-models",
+      "title": "Common Cloud Models",
+      "paragraphs": ["Cloud models describe who uses the environment and how much of the technology stack a provider manages. Deployment models answer who the cloud is for; service models answer what the provider delivers."],
+      "callout": "DEPLOYMENT MODEL = WHO? SERVICE MODEL = WHAT?"
+    },
+    {
+      "id": "private-cloud",
+      "title": "Private Cloud",
+      "paragraphs": ["A private cloud is dedicated to a single organization. It may be hosted on-premises or by a third-party provider; the defining point is that the environment is dedicated to one organization."],
+      "callout": "Company wants cloud-style infrastructure reserved exclusively for itself → private cloud."
+    },
+    {
+      "id": "public-cloud",
+      "title": "Public Cloud",
+      "paragraphs": ["A public cloud is operated by a provider and offered to many customers. Customers consume services from the provider's infrastructure."],
+      "callout": "Business rents provider resources alongside many other customers → public cloud."
+    },
+    {
+      "id": "private-vs-public",
+      "title": "Private vs. Public Cloud",
+      "table": {
+        "caption": "Deployment by audience",
+        "headers": ["Model", "Who uses it", "Recognition clue"],
+        "rows": [["Private", "One organization", "Dedicated environment"], ["Public", "Many provider customers", "Broad provider service"]]
+      },
+      "callout": "ONE ORGANIZATION → PRIVATE. MANY CUSTOMERS → PUBLIC."
+    },
+    {
+      "id": "hybrid-cloud",
+      "title": "Hybrid Cloud",
+      "paragraphs": ["A hybrid cloud combines private and public cloud environments. An organization might keep sensitive databases private while using public cloud resources for web workloads."],
+      "callout": "Private plus public working together → hybrid cloud."
+    },
+    {
+      "id": "community-cloud",
+      "title": "Community Cloud",
+      "paragraphs": ["A community cloud is shared by organizations with common requirements or interests, such as security, regulatory, industry, or mission requirements."],
+      "callout": "Related organizations with shared needs → community cloud."
+    },
+    {
+      "id": "deployment-model-recognition",
+      "title": "Deployment Model Recognition",
+      "table": {
+        "caption": "Who is the cloud for?",
+        "headers": ["Model", "Core clue", "Memory hook"],
+        "rows": [["Private", "One organization", "ONE"], ["Public", "Many provider customers", "MANY"], ["Hybrid", "Private and public", "BOTH"], ["Community", "Organizations with common requirements", "GROUP"]]
+      }
+    },
+    {
+      "id": "cloud-service-models",
+      "title": "Cloud Service Models",
+      "paragraphs": ["Cloud service models classify how much of the technology stack the provider manages. Objective 4.2 requires Infrastructure as a Service, Software as a Service, and Platform as a Service."],
+      "callout": "How much of the technology stack does the customer manage?"
+    },
+    {
+      "id": "iaas",
+      "title": "Infrastructure as a Service (IaaS)",
+      "paragraphs": ["IaaS provides foundational virtual compute, storage, and networking. The provider manages the physical infrastructure while the customer has more control over operating systems and workloads."],
+      "callout": "Cloud virtual machines while the customer manages the OS and applications → IaaS."
+    },
+    {
+      "id": "saas",
+      "title": "Software as a Service (SaaS)",
+      "paragraphs": ["SaaS delivers a complete application. The provider manages most of the underlying technology while the user signs in, configures permitted settings, and uses the software."],
+      "callout": "Use the finished cloud application without managing servers → SaaS."
+    },
+    {
+      "id": "paas",
+      "title": "Platform as a Service (PaaS)",
+      "paragraphs": ["PaaS provides a managed platform on which developers build and deploy applications. The provider manages the underlying infrastructure and operating environment while developers focus on code, data, and application configuration."],
+      "callout": "Bring your code; the provider manages the platform → PaaS."
+    },
+    {
+      "id": "service-model-comparison",
+      "title": "IaaS vs. PaaS vs. SaaS",
+      "table": {
+        "caption": "What the provider delivers",
+        "headers": ["Model", "Customer receives", "Recognition clue"],
+        "rows": [["IaaS", "Infrastructure", "Manage the OS and applications"], ["PaaS", "Application platform", "Deploy code without managing servers"], ["SaaS", "Finished software", "Use the provider-managed application"]]
+      },
+      "callout": "I = INFRASTRUCTURE. P = PLATFORM. S = SOFTWARE."
+    },
+    {
+      "id": "cloud-characteristics",
+      "title": "Cloud Characteristics",
+      "paragraphs": ["Cloud environments have recognizable operational characteristics involving resource allocation, measurement, data movement, scaling, access, synchronization, and tenant separation."],
+      "bullets": ["Shared vs. dedicated resources", "Metered utilization", "Ingress/egress", "Elasticity", "Availability", "File synchronization", "Multitenancy"]
+    },
+    {
+      "id": "shared-resources",
+      "title": "Shared Resources",
+      "paragraphs": ["Shared resources are infrastructure resources used by multiple customers or workloads. Providers pool compute, storage, and networking capacity to use infrastructure efficiently."],
+      "callout": "Shared = underlying resources serve multiple users or customers."
+    },
+    {
+      "id": "dedicated-resources",
+      "title": "Dedicated Resources",
+      "paragraphs": ["Dedicated resources are reserved for a particular customer or workload. They can provide greater isolation, predictable resource access, or specialized performance and compliance characteristics."],
+      "callout": "Dedicated = reserved for you."
+    },
+    {
+      "id": "shared-vs-dedicated",
+      "title": "Shared vs. Dedicated Resources",
+      "table": {
+        "caption": "Resource allocation",
+        "headers": ["Resource model", "Allocation", "Memory hook"],
+        "rows": [["Shared", "Pool used by multiple customers or workloads", "TOGETHER"], ["Dedicated", "Assigned to one customer or workload", "RESERVED"]]
+      }
+    },
+    {
+      "id": "metered-utilization",
+      "title": "Metered Utilization",
+      "paragraphs": ["Metered utilization means cloud consumption is measured. Customers may be charged based on compute time, storage, data transfer, and other service usage."],
+      "callout": "Monthly bill changes with resource consumption → metered utilization."
+    },
+    {
+      "id": "ingress",
+      "title": "Ingress",
+      "paragraphs": ["Ingress is data entering a cloud environment or service."],
+      "callout": "Uploading local data into cloud storage → ingress."
+    },
+    {
+      "id": "egress",
+      "title": "Egress",
+      "paragraphs": ["Egress is data leaving a cloud environment or service."],
+      "callout": "Transferring cloud-hosted data out of the provider environment → egress."
+    },
+    {
+      "id": "ingress-vs-egress",
+      "title": "Ingress/Egress",
+      "table": {
+        "caption": "Direction of cloud data movement",
+        "headers": ["Term", "Direction", "Memory hook"],
+        "rows": [["Ingress", "Into the cloud", "IN"], ["Egress", "Out of the cloud", "EXIT"]]
+      },
+      "callout": "Provider accounting or charges for data movement may depend on service terms."
+    },
+    {
+      "id": "elasticity",
+      "title": "Elasticity",
+      "paragraphs": ["Elasticity is the ability to increase or decrease resources as demand changes, such as adding compute capacity during peak traffic and reducing it when demand falls."],
+      "callout": "Resources automatically stretch and shrink with demand → elasticity."
+    },
+    {
+      "id": "elasticity-vs-scalability",
+      "title": "Elasticity vs. Scalability",
+      "paragraphs": ["Scalability is closely related, but this objective specifically requires elasticity: resources can dynamically grow or shrink as demand changes."],
+      "callout": "DEMAND CHANGES → RESOURCES CHANGE."
+    },
+    {
+      "id": "availability",
+      "title": "Availability",
+      "paragraphs": ["Availability describes whether a service or resource is accessible when needed. Redundancy, multiple systems or locations, and failover can improve availability."],
+      "callout": "Service remains accessible despite a component failure → availability."
+    },
+    {
+      "id": "availability-vs-performance",
+      "title": "Availability vs. Performance",
+      "paragraphs": ["A service can be available but slow, or fast but occasionally unavailable. Availability asks whether it is up; performance asks how fast it operates."],
+      "callout": "AVAILABILITY = UP. PERFORMANCE = FAST."
+    },
+    {
+      "id": "file-synchronization",
+      "title": "File Synchronization",
+      "paragraphs": ["File synchronization keeps copies of files updated across systems or devices. An edit on one device can make the updated version available on another synchronized device."],
+      "callout": "Keep copies aligned across devices → file synchronization."
+    },
+    {
+      "id": "synchronization-vs-backup",
+      "title": "Synchronization vs. Backup",
+      "table": {
+        "caption": "Alignment and recovery",
+        "headers": ["Process", "Purpose", "Memory hook"],
+        "rows": [["Synchronization", "Keep current files aligned", "SAME"], ["Backup", "Preserve recoverable copies", "RECOVER"]]
+      },
+      "callout": "A deletion or change may also synchronize; synchronization is not automatically a backup."
+    },
+    {
+      "id": "multitenancy",
+      "title": "Multitenancy",
+      "paragraphs": ["Multitenancy means multiple customers, called tenants, use shared infrastructure while their environments and data remain logically separated."],
+      "callout": "Many customers, one underlying platform, logically separated → multitenancy."
+    },
+    {
+      "id": "multitenancy-vs-shared-resources",
+      "title": "Multitenancy vs. Shared Resources",
+      "table": {
+        "caption": "Related cloud concepts",
+        "headers": ["Concept", "Focus", "Memory hook"],
+        "rows": [["Shared resources", "Infrastructure is pooled", "RESOURCE DESIGN"], ["Multitenancy", "Separate customers use the shared environment", "CUSTOMER DESIGN"]]
+      }
+    },
+    {
+      "id": "multitenancy-vs-public-cloud",
+      "title": "Multitenancy vs. Public Cloud",
+      "paragraphs": ["A public cloud often uses multitenancy, but the terms are not identical. Public cloud is a deployment model; multitenancy is an architecture in which tenants share infrastructure while remaining logically isolated."],
+      "callout": "PUBLIC = WHO CAN USE IT. MULTITENANT = HOW CUSTOMERS SHARE IT."
+    },
+    {
+      "id": "cloud-maps",
+      "title": "Building the Cloud Maps",
+      "table": {
+        "caption": "Deployment, service, and operational recognition",
+        "headers": ["Category", "Concept", "Core clue"],
+        "rows": [["Deployment", "Private", "One organization"], ["Deployment", "Public", "Provider serves many customers"], ["Deployment", "Hybrid", "Private plus public"], ["Deployment", "Community", "Organizations with common needs"], ["Service", "IaaS", "Infrastructure"], ["Service", "PaaS", "Application platform"], ["Service", "SaaS", "Finished software"], ["Characteristic", "Metered utilization", "Measure usage"], ["Characteristic", "Elasticity", "Grow or shrink resources"], ["Characteristic", "Availability", "Remain accessible"], ["Characteristic", "File synchronization", "Keep copies aligned"], ["Characteristic", "Multitenancy", "Logically separated customers share infrastructure"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Cloud dedicated to one company → private cloud", "Provider services for many customers → public cloud", "Public and private combined → hybrid cloud", "Organizations with common requirements → community cloud", "Rent VMs, networking, and storage → IaaS", "Use a complete cloud application → SaaS", "Deploy code without managing servers → PaaS", "Infrastructure pool used by multiple workloads → shared resources", "Resource reserved for one customer → dedicated resources", "Usage-based billing → metered utilization", "Data uploaded into cloud → ingress", "Data transferred out of cloud → egress", "Resources expand and contract → elasticity", "Service must remain reachable → availability", "Files remain consistent across devices → file synchronization", "Customers remain logically separated on a shared system → multitenancy"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.2 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Cloud questions often mix deployment models, service models, and operational characteristics. First identify which classification the scenario is testing."],
+      "entries": [
+        {"title": "Private vs. Public", "paragraphs": ["Private is dedicated to one organization; public provider services are offered to many customers."], "memoryHook": "ONE vs. MANY"},
+        {"title": "Hybrid vs. Community", "paragraphs": ["Hybrid combines private and public environments; community serves organizations with common requirements."], "memoryHook": "TWO CLOUD TYPES vs. RELATED ORGANIZATIONS"},
+        {"title": "IaaS vs. PaaS vs. SaaS", "paragraphs": ["IaaS supplies infrastructure, PaaS supplies a development platform, and SaaS supplies a finished application."], "memoryHook": "BUILD THE SERVER → IaaS | BUILD THE APP → PaaS | USE THE APP → SaaS"},
+        {"title": "Shared vs. Dedicated", "paragraphs": ["Shared resources are pooled; dedicated resources are reserved."], "memoryHook": "POOL vs. RESERVED"},
+        {"title": "Ingress vs. Egress", "paragraphs": ["Ingress enters the cloud; egress exits the cloud."], "memoryHook": "IN vs. EXIT"},
+        {"title": "Metered Utilization vs. Elasticity", "paragraphs": ["Metered utilization measures consumption; elasticity changes resources with demand."], "memoryHook": "HOW MUCH USED? vs. HOW MUCH NEEDED NOW?"},
+        {"title": "Elasticity vs. Availability", "paragraphs": ["Elasticity changes resource amount; availability keeps a service accessible."], "memoryHook": "CHANGE SIZE vs. STAY UP"},
+        {"title": "File Synchronization vs. Backup", "paragraphs": ["Synchronization aligns current copies; backup preserves a recoverable copy."], "memoryHook": "SAME vs. RECOVER"},
+        {"title": "Multitenancy vs. Dedicated", "paragraphs": ["Multitenancy supports multiple logically isolated customers on shared infrastructure; dedicated resources are reserved for one customer or workload."], "memoryHook": "MANY TENANTS vs. ONE RESERVED RESOURCE"}
+      ]
+    },
+    {
+      "id": "cloud-decision-path",
+      "title": "Cloud Decision Path",
+      "bullets": ["Ask who owns or uses the environment to identify the deployment model.", "Ask what the provider delivers to identify IaaS, PaaS, or SaaS.", "Determine whether resources are shared or dedicated.", "Identify whether the scenario concerns measured use, data direction, changing demand, uptime, file alignment, or tenant separation.", "Apply the narrowest official term that matches the scenario."],
+      "callout": "WHO? → WHAT SERVICE? → WHAT BEHAVIOR?"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["One organization's cloud → private cloud", "Provider cloud serving many customers → public cloud", "Private plus public → hybrid cloud", "Organizations with shared requirements → community cloud", "Rent compute, network, and storage → IaaS", "Managed app-development environment → PaaS", "Finished cloud application → SaaS", "Pooled infrastructure → shared resources", "Reserved infrastructure → dedicated resources", "Pay according to consumption → metered utilization", "Upload into cloud → ingress", "Transfer out of cloud → egress", "Automatically add or remove resources → elasticity", "Keep a service reachable → availability", "Same files across devices → file synchronization", "Logically isolated customers on shared infrastructure → multitenancy"],
+      "callout": "PRIVATE → ONE | PUBLIC → MANY | HYBRID → BOTH | COMMUNITY → SHARED NEEDS | IaaS → INFRASTRUCTURE | PaaS → PLATFORM | SaaS → SOFTWARE | INGRESS → IN | EGRESS → EXIT | ELASTICITY → STRETCH/SHRINK | AVAILABILITY → STAY UP"
+    }
+  ]
+}

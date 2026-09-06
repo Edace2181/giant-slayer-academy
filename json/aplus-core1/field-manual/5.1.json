@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.1",
+  "title": "Troubleshoot Motherboards, RAM, CPUs, and Power",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Motherboard, RAM, CPU, cooling, and power problems can produce similar symptoms. CompTIA expects you to recognize the symptom first and connect it to the most likely hardware area."],
+      "bullets": ["POST beeps and proprietary crash screens", "Blank screen and no power", "Sluggish performance and overheating", "Burning smell and random shutdown", "Application crashes and unusual noise", "Capacitor swelling", "Inaccurate system date/time"],
+      "callout": "OBSERVE → ISOLATE → CONNECT THE SYMPTOM TO POWER, RAM, CPU, COOLING, OR MOTHERBOARD"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a computer fails, use the symptom to determine which motherboard, RAM, CPU, cooling, or power component should be investigated first."],
+      "bullets": ["POST beep pattern → startup hardware problem", "No power → start with the power path", "Power but no image → blank-screen path", "Slow and hot → thermal issue", "Shutdown under load → power or overheating", "Burning smell → electrical overheating or failure", "Bulging capacitor → motherboard damage", "Date/time resets → CMOS/RTC battery"]
+    },
+    {
+      "id": "common-symptoms",
+      "title": "Common Motherboard, RAM, CPU, and Power Symptoms",
+      "paragraphs": ["Troubleshooting questions usually describe an effect instead of naming the failed component. Do not immediately replace hardware; identify when the symptom appears and which subsystem could produce it."],
+      "callout": "SYMPTOM → LIKELY AREA → VERIFY"
+    },
+    {
+      "id": "troubleshooting-by-symptom",
+      "title": "Troubleshooting by Symptom",
+      "bullets": ["What exactly is the symptom?", "When does it occur?", "Does the computer receive power?", "Does POST complete?", "Is the problem constant or intermittent?", "Is heat involved?", "Did hardware recently change?"],
+      "callout": "Gather evidence before replacing components."
+    },
+    {
+      "id": "post",
+      "title": "Power-On Self-Test (POST)",
+      "paragraphs": ["During startup, firmware performs a Power-On Self-Test to confirm essential hardware is available and functioning well enough to continue. RAM, CPU, motherboard, and video problems can be detected during POST."],
+      "callout": "POST = hardware check before normal boot."
+    },
+    {
+      "id": "post-beeps",
+      "title": "POST Beeps",
+      "paragraphs": ["When a system cannot display an error, firmware may report hardware problems through beep patterns. Codes vary by motherboard and firmware manufacturer, so use the manufacturer's documentation rather than assuming a universal chart."],
+      "callout": "Repeating beeps after a RAM installation → verify RAM seating and compatibility, then consult the system's beep-code documentation."
+    },
+    {
+      "id": "post-vs-os-errors",
+      "title": "POST Beeps vs. Operating-System Errors",
+      "table": {
+        "caption": "When the symptom occurs",
+        "headers": ["Symptom", "Timing", "Primary path"],
+        "rows": [["Beep pattern", "During initial startup", "POST hardware"], ["Application or OS error", "After the OS loads", "Runtime software or hardware instability"]]
+      },
+      "callout": "BEFORE OS → POST."
+    },
+    {
+      "id": "proprietary-crash-screens",
+      "title": "Proprietary Crash Screens",
+      "paragraphs": ["Platforms may display proprietary crash screens after severe system errors. The screen signals instability but does not by itself identify one failed component. Record error information, recent changes, repeated patterns, and whether crashes occur under load."],
+      "callout": "Crash screen = symptom requiring investigation."
+    },
+    {
+      "id": "blank-screen",
+      "title": "Blank Screen",
+      "paragraphs": ["A blank screen can occur even though the computer appears to start. Investigate system power, monitor and video connections, RAM, GPU, motherboard, CPU, and POST failure. First determine whether the computer is actually powering on."],
+      "callout": "LIGHTS/FANS BUT NO IMAGE → BLANK-SCREEN PATH."
+    },
+    {
+      "id": "ram-and-blank-screen",
+      "title": "RAM and a Blank Screen",
+      "paragraphs": ["Improperly seated or incompatible RAM can prevent POST. If a blank screen begins after a RAM upgrade, power down, verify compatibility and correct slots, reseat the modules, and test known-good memory when appropriate."],
+      "callout": "Hardware changed → inspect the changed hardware first."
+    },
+    {
+      "id": "no-power",
+      "title": "No Power",
+      "paragraphs": ["No power means the system shows no normal signs of starting: no LEDs, fans, POST, display, or startup sounds. Follow the path from the wall outlet through any power strip or UPS, power cord, PSU switch, PSU connections, motherboard connectors, and front-panel power connection."],
+      "callout": "No power → follow electricity from the wall to the motherboard."
+    },
+    {
+      "id": "no-power-vs-blank-screen",
+      "title": "No Power vs. Blank Screen",
+      "table": {
+        "caption": "Two startup symptoms",
+        "headers": ["Symptom", "System activity", "Primary path"],
+        "rows": [["No power", "No normal startup signs", "Power path, PSU, motherboard"], ["Blank screen", "System may power on", "Display, POST, RAM, GPU, motherboard, CPU"]]
+      },
+      "callout": "DEAD MACHINE → POWER. RUNNING MACHINE, NO PICTURE → DISPLAY/POST/HARDWARE."
+    },
+    {
+      "id": "sluggish-performance",
+      "title": "Sluggish Performance",
+      "paragraphs": ["Within this objective, sluggish performance can involve insufficient RAM, CPU performance, overheating, thermal throttling, or hardware instability. A system that slows as temperatures rise may be reducing CPU performance for protection."],
+      "callout": "Fast when cold but slow after heavy use → investigate overheating."
+    },
+    {
+      "id": "insufficient-ram",
+      "title": "Insufficient RAM and Performance",
+      "paragraphs": ["When RAM is insufficient, the operating system may depend more heavily on storage-based virtual memory, making the system feel sluggish. Use the complete scenario rather than blaming RAM for every slow system."],
+      "callout": "Not enough working memory → performance can suffer."
+    },
+    {
+      "id": "overheating",
+      "title": "Overheating",
+      "paragraphs": ["Cooling failures can cause sluggish performance, instability, application crashes, and random shutdowns. Inspect fans, heat sinks, dust, thermal paste or pads, airflow, pumps, and CPU temperature."],
+      "callout": "HEAT → THROTTLE → CRASH → SHUT DOWN, depending on severity."
+    },
+    {
+      "id": "common-causes-overheating",
+      "title": "Common Causes of Overheating",
+      "bullets": ["Failed fan", "Blocked airflow", "Dust buildup", "Loose heat sink", "Improperly installed cooler", "Dried or improperly applied thermal material", "Failed liquid-cooling pump"],
+      "callout": "Temperature rises rapidly after cooler replacement → verify cooler seating and the thermal interface."
+    },
+    {
+      "id": "burning-smell",
+      "title": "Burning Smell",
+      "paragraphs": ["A burning smell is a serious warning that can indicate PSU failure, a short circuit, overheated wiring, motherboard component failure, or a damaged connector. If safe, remove power before inspection and do not keep operating the computer to see whether the smell disappears."],
+      "callout": "Burning electrical odor → power down and investigate hardware and power."
+    },
+    {
+      "id": "random-shutdown",
+      "title": "Random Shutdown",
+      "paragraphs": ["A sudden power-off can result from overheating, PSU failure, insufficient power, motherboard faults, or other serious instability. If it happens during heavy CPU or GPU load, check temperatures and PSU capability."],
+      "callout": "Shutdown under load → heat or power become strong suspects."
+    },
+    {
+      "id": "shutdown-vs-restart",
+      "title": "Random Shutdown vs. Restart",
+      "table": {
+        "caption": "Power loss and reboot behavior",
+        "headers": ["Symptom", "Strong possibilities", "Clue"],
+        "rows": [["Sudden shutdown", "PSU, power delivery, thermal protection", "Complete loss of power"], ["Unexpected restart", "OS, drivers, RAM, hardware instability", "System boots again"]]
+      }
+    },
+    {
+      "id": "application-crashes",
+      "title": "Application Crashes",
+      "paragraphs": ["One application may have a software problem, but repeated unpredictable crashes across unrelated applications can suggest faulty RAM, CPU instability, overheating, or wider system instability."],
+      "callout": "One app → perhaps the app. Many unrelated apps → consider system instability."
+    },
+    {
+      "id": "ram-and-application-crashes",
+      "title": "RAM and Application Crashes",
+      "paragraphs": ["Faulty RAM can corrupt data while programs run, causing application crashes, system crashes, random errors, and instability."],
+      "callout": "Multiple applications crash randomly with no clear software pattern → test RAM."
+    },
+    {
+      "id": "unusual-noise",
+      "title": "Unusual Noise",
+      "paragraphs": ["Locate unusual noises before deciding what failed. In this objective, sources include cooling fans, the PSU fan, liquid-cooling pumps, and obstructed fan blades. Drive clicking or grinding belongs to storage troubleshooting under Objective 5.2."],
+      "callout": "Find where the sound originates."
+    },
+    {
+      "id": "fan-noise",
+      "title": "Fan Noise",
+      "paragraphs": ["A fan may become loud because its bearings are failing, dust or a cable is touching the blades, or it is running at maximum speed because temperatures are high."],
+      "callout": "A loud fan may be the problem or a clue to another heat problem."
+    },
+    {
+      "id": "capacitor-swelling",
+      "title": "Capacitor Swelling",
+      "paragraphs": ["Failed capacitors on motherboards or other hardware may bulge, swell, or leak. An obviously swollen top is a physical hardware-failure clue, not a software problem."],
+      "callout": "BULGING CAPACITOR → MOTHERBOARD FAILURE."
+    },
+    {
+      "id": "inaccurate-system-date-time",
+      "title": "Inaccurate System Date/Time",
+      "paragraphs": ["A small motherboard battery supports the real-time clock and certain firmware settings when normal power is unavailable. A weak CMOS/RTC battery can cause the date, time, or BIOS/UEFI settings to reset."],
+      "callout": "Clock forgets after power removal → CMOS/RTC battery."
+    },
+    {
+      "id": "date-time-vs-network",
+      "title": "Date/Time vs. Network Time Issue",
+      "paragraphs": ["A clock that becomes wrong only while the OS is running may involve synchronization or software. If stored time repeatedly disappears after the system is unplugged, the motherboard battery is a strong suspect."],
+      "callout": "FORGETS WHEN UNPLUGGED → BATTERY."
+    },
+    {
+      "id": "symptom-map",
+      "title": "Putting the Symptoms Together",
+      "table": {
+        "caption": "World 5.1 symptom map",
+        "headers": ["Category", "Symptom", "Likely area"],
+        "rows": [["Startup", "POST beep", "Startup hardware"], ["Startup", "Blank screen", "Display, POST, RAM, GPU, motherboard, CPU"], ["Startup", "No power", "Power path, PSU, motherboard"], ["Performance", "Sluggish as heat rises", "Thermal throttling"], ["Stability", "Application crashes", "RAM, CPU, heat, or software"], ["Stability", "Random shutdown", "Heat or power"], ["Physical", "Burning smell", "Electrical failure or overheating"], ["Physical", "Unusual fan or pump noise", "Cooling hardware"], ["Physical", "Swollen capacitor", "Motherboard"], ["Time", "Date/time resets", "CMOS/RTC battery"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Beeps before the OS loads → POST hardware error", "Exact beep meaning → manufacturer documentation", "System powers up but shows no picture → blank screen", "No LEDs or fans → no power", "System slows as temperature rises → overheating or thermal throttling", "Electrical burning odor → remove power and investigate", "Shutdown during heavy load → power or overheating", "Unrelated programs crash → possible RAM or system instability", "Grinding or rattling from cooling area → fan or cooling problem", "Bulging motherboard component → capacitor swelling", "Time lost after unplugging → CMOS/RTC battery"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Distinguish failure to receive power, failure to POST, thermal instability, and component failure before choosing an action."],
+      "entries": [
+        {"title": "No Power vs. Blank Screen", "paragraphs": ["No lights and no fans follow the power path. Lights or fans with no image follow the blank-screen and POST path."], "memoryHook": "NO LIFE → POWER | LIFE, NO IMAGE → POST/DISPLAY"},
+        {"title": "POST Beep vs. OS Crash", "paragraphs": ["A beep during initial startup belongs to POST. A crash after the OS loads is a runtime problem."], "memoryHook": "BEFORE OS → HARDWARE STARTUP CHECK"},
+        {"title": "RAM vs. CPU Heat", "paragraphs": ["Random application crashes make RAM a strong possibility; performance that falls as temperature rises points toward CPU overheating or thermal throttling."]},
+        {"title": "Overheating vs. Insufficient PSU", "paragraphs": ["High temperature points toward cooling. Shutdown after adding high-power hardware can point toward an inadequate PSU."]},
+        {"title": "Burning Smell vs. Overheating", "paragraphs": ["High temperature calls for cooling checks. A burning electrical odor requires power-down and hardware inspection."]},
+        {"title": "Unusual Noise", "paragraphs": ["Fan or pump noise belongs to cooling and power troubleshooting. Drive clicking or grinding belongs to Objective 5.2."]},
+        {"title": "Capacitor Swelling", "paragraphs": ["Swollen or leaking capacitors are a physical motherboard-failure symptom."], "memoryHook": "BULGE → BOARD"},
+        {"title": "Inaccurate Date/Time", "paragraphs": ["Firmware time that resets after loss of power points toward the CMOS/RTC battery."]}
+      ]
+    },
+    {
+      "id": "troubleshooting-workflow",
+      "title": "Hardware Symptom Workflow",
+      "bullets": ["Observe the exact symptom and when it occurs.", "Separate no-power, POST, runtime, thermal, and physical-warning paths.", "Check recent hardware changes first.", "Use manufacturer documentation for proprietary indicators such as beep codes.", "Verify the likely component or subsystem before replacement.", "Protect the system and remove power when electrical damage is suspected."],
+      "callout": "OBSERVE → ISOLATE → VERIFY"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Startup beep pattern → POST error", "Powered system with no image → blank screen", "No lights or fans → no power", "Performance slows as heat rises → thermal throttling", "Very high temperatures → cooling problem", "Burning electrical odor → power down and investigate", "Sudden shutdown under load → power or overheating", "Random application crashes → possible faulty RAM", "Rattling cooling fan → fan problem", "Bulging capacitor → motherboard failure", "Date/time resets after power removal → CMOS/RTC battery"],
+      "callout": "NO POWER → FOLLOW POWER | NO DISPLAY → CHECK POST | RANDOM ERRORS → CONSIDER RAM | HOT + SLOW → THERMAL | BURNING → STOP POWER | FORGOTTEN TIME → BATTERY"
+    }
+  ]
+}

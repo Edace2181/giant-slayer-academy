@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "3",
+  "objective": "3.3",
+  "title": "Compare and Contrast RAM Characteristics",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": [
+        "Random Access Memory (RAM) temporarily stores data and instructions that the CPU is actively using. It is volatile, so its contents are lost when power is removed.",
+        "Objective 3.3 tests whether you can compare RAM by physical form factor, DDR generation, error-correction capability, and memory-channel configuration."
+      ],
+      "bullets": ["Form factor", "DDR generation", "ECC capability", "Channel configuration"],
+      "callout": "SIZE → GENERATION → RELIABILITY → CHANNELS"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes the physical module, memory generation, error protection, or channel layout, identify the matching RAM characteristic before selecting an answer."],
+      "bullets": [
+        "Laptop-sized module → SODIMM",
+        "Desktop-sized module → DIMM",
+        "Memory generation → DDR iteration",
+        "Detect and correct certain memory errors → ECC",
+        "Matched modules in supported paired slots → multi-channel configuration"
+      ]
+    },
+    {
+      "id": "random-access-memory",
+      "title": "Random Access Memory (RAM)",
+      "paragraphs": ["RAM is the system's temporary working memory. It keeps information needed by the operating system, applications, and CPU readily available while the computer is running.", "More RAM can allow a system to keep more active programs and data in memory instead of relying as heavily on slower storage."],
+      "callout": "RAM = temporary workspace."
+    },
+    {
+      "id": "ram-form-factors",
+      "title": "RAM Form Factors",
+      "paragraphs": ["A RAM form factor describes the module's physical size and shape. Objective 3.3 requires you to distinguish Small Outline Dual In-line Memory Module (SODIMM) from Dual In-line Memory Module (DIMM)."],
+      "callout": "Form factor answers: what physical module fits the system?"
+    },
+    {
+      "id": "dimm",
+      "title": "Dual In-line Memory Module (DIMM)",
+      "paragraphs": ["A Dual In-line Memory Module (DIMM) is the common full-size memory form factor used in desktop computers and many servers. It is physically larger than a SODIMM."],
+      "callout": "Desktop or server-sized memory → DIMM."
+    },
+    {
+      "id": "sodimm",
+      "title": "Small Outline Dual In-line Memory Module (SODIMM)",
+      "paragraphs": ["A Small Outline Dual In-line Memory Module (SODIMM) is a compact memory form factor commonly used in laptops, mini PCs, small-form-factor systems, and some all-in-one computers."],
+      "callout": "Laptop or compact-system memory → SODIMM."
+    },
+    {
+      "id": "dimm-vs-sodimm",
+      "title": "DIMM vs. SODIMM",
+      "paragraphs": ["DIMMs and SODIMMs perform the same basic job, but their physical dimensions and slots differ. A correct DDR generation does not make the wrong form factor fit."],
+      "table": {
+        "caption": "RAM form-factor comparison",
+        "headers": ["Form factor", "Physical profile", "Common use"],
+        "rows": [["DIMM", "Full-size module", "Desktops and servers"], ["SODIMM", "Compact module", "Laptops and compact systems"]]
+      },
+      "callout": "Desktop → DIMM. Laptop → SODIMM."
+    },
+    {
+      "id": "double-data-rate",
+      "title": "Double Data Rate (DDR)",
+      "paragraphs": ["Double Data Rate (DDR) identifies a family of synchronous dynamic RAM technologies that transfer data on both edges of the clock signal. For A+, the key idea is that DDR exists in distinct generations."],
+      "callout": "DDR number = memory generation."
+    },
+    {
+      "id": "ddr-iterations",
+      "title": "DDR Iterations",
+      "paragraphs": ["DDR iterations include DDR, DDR2, DDR3, DDR4, and DDR5. Successive generations change characteristics such as speed, bandwidth, voltage, electrical signaling, and physical keying."],
+      "bullets": ["A newer generation is not merely a faster drop-in replacement.", "The installed DDR generation must be supported by the motherboard and memory controller."],
+      "callout": "Motherboard requires DDR5 → install compatible DDR5 memory."
+    },
+    {
+      "id": "ddr-physical-keying",
+      "title": "DDR Physical Keying",
+      "paragraphs": ["RAM modules contain a notch that helps prevent installation into an incompatible slot. The notch position differs among DDR generations."],
+      "bullets": ["Verify DDR generation", "Verify DIMM or SODIMM form factor", "Verify module orientation", "Never force a module into a slot"],
+      "callout": "Different DDR generation → different physical keying."
+    },
+    {
+      "id": "ddr-generation-vs-form-factor",
+      "title": "DDR Generation vs. Form Factor",
+      "paragraphs": ["DDR generation and form factor answer different compatibility questions. A module can be a DDR4 DIMM or a DDR4 SODIMM."],
+      "table": {
+        "caption": "Two independent RAM characteristics",
+        "headers": ["Characteristic", "What it describes", "Examples"],
+        "rows": [["DDR", "Technology generation", "DDR4, DDR5"], ["Form factor", "Physical size and shape", "DIMM, SODIMM"]]
+      },
+      "callout": "DDR = generation. DIMM/SODIMM = size and shape."
+    },
+    {
+      "id": "ecc-ram",
+      "title": "Error-Correcting Code (ECC) RAM",
+      "paragraphs": ["Error-Correcting Code (ECC) RAM adds error-checking information that allows a supported system to detect and correct certain memory errors. It is valuable where reliability and data integrity are especially important."],
+      "bullets": ["Servers", "Workstations", "Mission-critical systems"],
+      "callout": "Memory error protection in a supported server → ECC RAM."
+    },
+    {
+      "id": "why-ecc-matters",
+      "title": "Why ECC Matters",
+      "paragraphs": ["A memory bit error can alter data unexpectedly. ECC improves reliability by automatically identifying and correcting certain errors before they become larger problems."],
+      "callout": "ECC prioritizes reliability and data integrity."
+    },
+    {
+      "id": "non-ecc-ram",
+      "title": "Non-ECC RAM",
+      "paragraphs": ["Non-ECC RAM does not provide the same built-in error-correction capability as ECC memory. It is common in consumer desktops, laptops, gaming systems, and general-purpose computers."],
+      "callout": "Standard consumer system with no ECC requirement → non-ECC RAM."
+    },
+    {
+      "id": "ecc-vs-non-ecc",
+      "title": "ECC vs. Non-ECC RAM",
+      "table": {
+        "caption": "Memory reliability comparison",
+        "headers": ["Memory", "Error correction", "Common scenario"],
+        "rows": [["ECC", "Detects and corrects certain memory errors", "Reliability-focused server or workstation"], ["Non-ECC", "No ECC capability", "Ordinary consumer system"]]
+      },
+      "callout": "ECC = reliability. Non-ECC = standard consumer use."
+    },
+    {
+      "id": "ecc-compatibility",
+      "title": "ECC Compatibility",
+      "paragraphs": ["ECC support depends on the motherboard, chipset, CPU, firmware, and overall platform design. Physical fit alone does not guarantee that ECC functionality will work."],
+      "callout": "A system that requires ECC must also provide platform support for ECC."
+    },
+    {
+      "id": "channel-configurations",
+      "title": "Channel Configurations",
+      "paragraphs": ["A memory channel is a communication pathway between RAM and the memory controller. Channel configurations can be single-channel, dual-channel, or other supported multi-channel arrangements."],
+      "callout": "More active channels can provide more memory-bandwidth potential."
+    },
+    {
+      "id": "single-channel",
+      "title": "Single-Channel Memory",
+      "paragraphs": ["In a single-channel configuration, memory operates through one channel. This can occur when only one module is installed or when modules are placed in slots that do not enable an additional channel."],
+      "callout": "Single channel = one memory pathway."
+    },
+    {
+      "id": "dual-channel",
+      "title": "Dual-Channel Memory",
+      "paragraphs": ["In a dual-channel configuration, the memory controller uses two channels. This can increase memory bandwidth compared with single-channel operation."],
+      "callout": "Two compatible modules in the motherboard's matched channel slots → dual-channel."
+    },
+    {
+      "id": "matching-memory-modules",
+      "title": "Matching Memory Modules",
+      "paragraphs": ["For reliable multi-channel operation, modules commonly work best when important characteristics match. Always follow the motherboard documentation for exact compatibility and slot placement."],
+      "bullets": ["Capacity", "Speed", "DDR generation", "Timing characteristics"],
+      "callout": "Matched RAM + correct slots = best chance of intended multi-channel operation."
+    },
+    {
+      "id": "memory-slot-placement",
+      "title": "Memory Slot Placement",
+      "paragraphs": ["A motherboard may have four RAM slots but only two memory channels, with two slots assigned to each channel. When installing two modules, the correct pair may not be the two adjacent slots."],
+      "callout": "Two modules installed but still single-channel → check the motherboard's required slot pairing."
+    },
+    {
+      "id": "channels-vs-modules",
+      "title": "Channel Configuration vs. Number of Modules",
+      "paragraphs": ["Two modules do not automatically guarantee dual-channel mode, and four modules do not automatically mean four-channel operation. The memory controller, motherboard design, compatible modules, and slot placement determine the active channel configuration."],
+      "callout": "Modules are physical sticks. Channels are memory pathways."
+    },
+    {
+      "id": "capacity-vs-channels",
+      "title": "Capacity vs. Channel Configuration",
+      "paragraphs": ["Capacity describes how much memory is installed; channel configuration describes how the memory controller accesses it. Two 8 GB modules provide 16 GB total and may operate in dual-channel mode when installed correctly on a supported motherboard."],
+      "callout": "GB = capacity. Channel = bandwidth pathway."
+    },
+    {
+      "id": "ram-recognition-map",
+      "title": "RAM Recognition Map",
+      "table": {
+        "caption": "Identify the characteristic described by the clue",
+        "headers": ["Category", "Characteristic", "Recognition clue"],
+        "rows": [
+          ["Physical form", "DIMM", "Desktop or server-sized module"],
+          ["Physical form", "SODIMM", "Laptop or compact-system module"],
+          ["Technology", "DDR iteration", "Memory generation"],
+          ["Reliability", "ECC vs. non-ECC", "Error correction requirement"],
+          ["Performance configuration", "Channel configuration", "One, two, or multiple memory pathways"]
+        ]
+      },
+      "callout": "SIZE → GENERATION → RELIABILITY → CHANNELS"
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": [
+        "Laptop RAM → SODIMM",
+        "Desktop RAM → DIMM",
+        "DDR4 vs. DDR5 → different, non-interchangeable generations",
+        "Different notch position → DDR physical keying",
+        "Server memory error protection → ECC",
+        "Standard consumer memory → non-ECC",
+        "One memory pathway → single-channel",
+        "Two supported, correctly populated pathways → dual-channel",
+        "Two modules in the wrong slots → intended channel mode may not activate"
+      ]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["RAM scenarios often combine several characteristics. Break each question into four independent checks."],
+      "bullets": ["What physical SIZE and form factor?", "What DDR GENERATION?", "Does it require ERROR CORRECTION?", "What CHANNEL configuration is supported and populated?"],
+      "callout": "Do not let one correct RAM characteristic hide an incompatibility in another."
+    },
+    {
+      "id": "ddr-compatibility-traps",
+      "title": "DDR Compatibility Traps",
+      "paragraphs": ["DDR generations are generally not physically or electrically interchangeable. A higher DDR number is not simply a speed rating that can be ignored during installation."],
+      "bullets": ["DDR3 motherboard → DDR3 memory", "DDR4 motherboard → DDR4 memory", "DDR5 motherboard → DDR5 memory", "Never force a keyed module into a slot"],
+      "callout": "Generation is a compatibility requirement, not merely a performance label."
+    },
+    {
+      "id": "ecc-comparison-traps",
+      "title": "ECC Comparison Traps",
+      "paragraphs": ["For Objective 3.3, stay focused on the official comparison: ECC versus non-ECC RAM. A reliability clue can point to ECC, but the platform must support it."],
+      "callout": "Server or mission-critical plus memory error protection → verify ECC support."
+    },
+    {
+      "id": "channel-configuration-traps",
+      "title": "Channel Configuration Traps",
+      "paragraphs": ["The number of installed modules does not by itself prove the active channel mode. Look for motherboard support, compatible modules, and correct matched slot placement."],
+      "callout": "Two sticks can add capacity without enabling dual-channel if installed incorrectly."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": [
+        "Desktop/server-sized RAM → DIMM",
+        "Laptop/compact RAM → SODIMM",
+        "Memory technology generation → DDR iteration",
+        "DDR4 module in DDR5 slot → incompatible generation",
+        "Different DDR notches → physical compatibility protection",
+        "Correct certain memory errors → ECC RAM",
+        "Normal consumer memory → non-ECC RAM",
+        "One memory pathway → single-channel",
+        "Two memory pathways → dual-channel",
+        "Matched RAM in correct paired slots → intended multi-channel operation",
+        "DIMM/SODIMM → FORM FACTOR",
+        "DDR → GENERATION",
+        "ECC → RELIABILITY",
+        "CHANNELS → BANDWIDTH PATHWAYS"
+      ],
+      "callout": "SIZE → GENERATION → RELIABILITY → CHANNELS"
+    }
+  ]
+}

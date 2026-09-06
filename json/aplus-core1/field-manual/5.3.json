@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.3",
+  "title": "Troubleshoot Video, Projector, and Display Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Display problems can originate from input selection, cables, projector hardware, display panels, resolution or other settings, and audio configuration. Recognize the symptom and identify the most appropriate area to troubleshoot."],
+      "bullets": ["Incorrect input source and physical cabling", "Burnt-out projector bulb", "Fuzzy image, burn-in, and dead pixels", "Flashing screen and incorrect colors", "Audio issues", "Dim image and intermittent projector shutdown", "Sizing and distorted images"],
+      "callout": "SOURCE → CABLE → DISPLAY → SETTINGS → PROJECTOR → AUDIO"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a screen looks wrong, shows nothing, loses its image, or a projector behaves incorrectly, identify whether the problem is the input, cable, panel, configuration, or projector hardware."],
+      "bullets": ["Wrong source selected → incorrect input source", "Image changes when cable moves → physical cabling", "Projector produces no light → burnt-out bulb", "Blurry image → fuzzy image", "Retained image → burn-in", "One fixed bad point → dead pixel", "Repeated flicker → flashing screen", "Wrong colors → cable, settings, or display", "Video without sound → audio path", "Very dark image → brightness, backlight, or lamp", "Hot projector shuts down → thermal issue", "Too large or small → sizing", "Stretched or warped → distortion"]
+    },
+    {
+      "id": "common-symptoms",
+      "title": "Common Video, Projector, and Display Symptoms",
+      "paragraphs": ["Classify display symptoms before replacing equipment. The same visible result can come from the source, connection, settings, display panel, or projector hardware."],
+      "callout": "NO SIGNAL → QUALITY → PANEL DEFECT → AUDIO → PROJECTOR → GEOMETRY"
+    },
+    {
+      "id": "signal-path",
+      "title": "Start With the Signal Path",
+      "bullets": ["Confirm the source device is producing video.", "Verify the correct output is being used.", "Select the matching input on the display.", "Secure both ends of the cable.", "Test the cable or adapter when appropriate.", "Verify resolution and display settings.", "Test the display or projector itself."],
+      "callout": "SOURCE → CONNECTION → DISPLAY → CONFIGURATION"
+    },
+    {
+      "id": "incorrect-input-source",
+      "title": "Incorrect Input Source",
+      "paragraphs": ["Displays and projectors can offer HDMI, DisplayPort, VGA, USB-C, and other inputs. A computer connected to HDMI 2 will not appear when the display is set to HDMI 1."],
+      "callout": "Laptop is connected but projector says No Signal → verify the input source."
+    },
+    {
+      "id": "input-vs-cable",
+      "title": "Incorrect Input vs. Bad Cable",
+      "table": {
+        "caption": "Two no-image causes",
+        "headers": ["Clue", "Likely area", "First check"],
+        "rows": [["Selected input does not match connected port", "Configuration", "Correct the input"], ["Input matches but signal is missing or intermittent", "Cable or port", "Inspect and test the physical path"]]
+      },
+      "callout": "PORT MATCH FIRST."
+    },
+    {
+      "id": "physical-cabling-issues",
+      "title": "Physical Cabling Issues",
+      "paragraphs": ["A damaged, loose, incorrect, or poorly seated cable can cause no image, intermittent video, flickering, incorrect colors, audio trouble, or reduced quality. Inspect both ends, connectors, adapters, the cable body, and the selected port type."],
+      "callout": "Display problem → always check the physical path."
+    },
+    {
+      "id": "intermittent-cable-problems",
+      "title": "Intermittent Cable Problems",
+      "paragraphs": ["When moving a video cable causes the image to appear or disappear, the cable or connector is a strong suspect."],
+      "callout": "MOVEMENT CHANGES THE SYMPTOM → CABLE/CONNECTOR."
+    },
+    {
+      "id": "burnt-out-bulb",
+      "title": "Burnt-Out Bulb",
+      "paragraphs": ["Many projectors use a lamp that eventually reaches the end of its service life. A failed or failing bulb can produce no projected light, a very dim image before failure, or a lamp warning indicator. Follow manufacturer replacement procedures because lamps can become extremely hot."],
+      "callout": "Projector powers on but the lamp does not illuminate → burnt-out bulb."
+    },
+    {
+      "id": "fuzzy-image",
+      "title": "Fuzzy Image",
+      "paragraphs": ["A blurry image can result from incorrect focus, resolution, scaling, poor cable quality, projector distance, or positioning. For monitors, verify native resolution and scaling; for projectors, also check focus and distance."],
+      "callout": "Fuzzy = image exists but lacks clarity."
+    },
+    {
+      "id": "native-resolution",
+      "title": "Native Resolution",
+      "paragraphs": ["Flat-panel displays are usually clearest at their intended native resolution. An incorrect resolution can cause blur, scaling artifacts, and sizing problems."],
+      "callout": "Wrong resolution → image may not look sharp."
+    },
+    {
+      "id": "display-burn-in",
+      "title": "Display Burn-In",
+      "paragraphs": ["Burn-in occurs when a persistent image becomes permanently retained or visibly imprinted on a display. Static interface elements may remain visible even after the content changes."],
+      "callout": "OLD IMAGE WILL NOT LEAVE → BURN-IN."
+    },
+    {
+      "id": "burn-in-vs-retention",
+      "title": "Burn-In vs. Temporary Image Retention",
+      "paragraphs": ["Objective 5.3 requires recognition of display burn-in. The key clue is a persistent ghost of previously displayed content rather than a temporary artifact that fades."],
+      "callout": "Persistent old pattern → burn-in."
+    },
+    {
+      "id": "dead-pixels",
+      "title": "Dead Pixels",
+      "paragraphs": ["A dead pixel does not operate correctly and can appear as a tiny fixed point that remains in the same location regardless of the displayed image."],
+      "callout": "Dead pixel = one tiny permanent display defect."
+    },
+    {
+      "id": "dead-pixel-vs-burn-in",
+      "title": "Dead Pixel vs. Burn-In",
+      "table": {
+        "caption": "Two persistent panel defects",
+        "headers": ["Defect", "Appearance", "Memory hook"],
+        "rows": [["Dead pixel", "Small individual fixed point", "DOT"], ["Burn-in", "Persistent image or pattern", "GHOST IMAGE"]]
+      }
+    },
+    {
+      "id": "flashing-screen",
+      "title": "Flashing Screen",
+      "paragraphs": ["A flashing or flickering screen can involve a loose or damaged cable, display hardware, refresh settings, graphics hardware or software, or power. Begin with secure connections and correct settings, then test known-good components when appropriate."],
+      "callout": "Flicker = unstable image path or display behavior."
+    },
+    {
+      "id": "flashing-vs-intermittent-blank",
+      "title": "Flashing Screen vs. Intermittent Blank Screen",
+      "table": {
+        "caption": "Two unstable display symptoms",
+        "headers": ["Symptom", "Behavior", "Shared possibility"],
+        "rows": [["Flashing or flickering", "Rapid visible instability", "Cable, settings, hardware"], ["Intermittent blank", "Signal disappears entirely", "Cable, connector, source"]]
+      }
+    },
+    {
+      "id": "incorrect-color-display",
+      "title": "Incorrect Color Display",
+      "paragraphs": ["Wrong tones, missing colors, an unusual tint, or washed output can result from loose or damaged cabling, bent connector pins, display settings, color configuration, or display hardware."],
+      "callout": "Strange VGA color tint → inspect the cable and connector pins."
+    },
+    {
+      "id": "color-settings",
+      "title": "Color Settings",
+      "paragraphs": ["If the physical signal path is good, inspect color temperature, profiles, brightness, contrast, and operating-system display configuration."],
+      "callout": "HARDWARE GOOD → CHECK SETTINGS."
+    },
+    {
+      "id": "audio-issues",
+      "title": "Audio Issues",
+      "paragraphs": ["HDMI and some DisplayPort configurations carry video and audio. If the picture works but sound does not, check the selected audio output, interface capability, display speakers, volume and mute controls, and OS audio settings."],
+      "callout": "Working video does not guarantee correct audio routing."
+    },
+    {
+      "id": "audio-output-device",
+      "title": "Audio Output Device",
+      "paragraphs": ["A computer can send sound to internal speakers, headphones, an HDMI display, a DisplayPort monitor, or a dock. Selecting the wrong destination can leave display speakers silent even while video works."],
+      "callout": "HDMI video works but sound goes elsewhere → select the correct audio output."
+    },
+    {
+      "id": "dim-image",
+      "title": "Dim Image",
+      "paragraphs": ["A dim image remains visible but is not bright enough. Causes include brightness settings, a backlight problem, a projector lamp nearing failure, power-saving settings, or display hardware."],
+      "callout": "IMAGE EXISTS + TOO DARK → BRIGHTNESS/BACKLIGHT/LAMP."
+    },
+    {
+      "id": "dim-monitor-vs-projector",
+      "title": "Dim Monitor vs. Dim Projector",
+      "table": {
+        "caption": "Use the device in the scenario",
+        "headers": ["Device", "Primary checks", "Clue"],
+        "rows": [["Monitor", "Brightness, backlight, power saving, hardware", "Panel image is dark"], ["Projector", "Lamp age, brightness mode, room conditions, hardware", "Projected image is dark"]]
+      }
+    },
+    {
+      "id": "intermittent-projector-shutdown",
+      "title": "Intermittent Projector Shutdown",
+      "paragraphs": ["A projector may shut down to protect itself from excessive heat caused by blocked vents, dust, a failed fan, overheating, or poor airflow."],
+      "callout": "PROJECTOR RUNS, GETS HOT, THEN SHUTS DOWN → THERMAL."
+    },
+    {
+      "id": "projector-thermal-protection",
+      "title": "Projector Thermal Protection",
+      "paragraphs": ["Projectors generate substantial heat. Keep vents clear, maintain filters when applicable, verify fans operate, and provide adequate ventilation."],
+      "callout": "A hot projector protects itself by shutting down."
+    },
+    {
+      "id": "sizing-issues",
+      "title": "Sizing Issues",
+      "paragraphs": ["A sizing problem makes the image too large, too small, cut off, or unable to fill the expected area. Investigate resolution, scaling, aspect ratio, projector zoom, and display settings."],
+      "callout": "Correct shape, wrong overall size → configuration or geometry."
+    },
+    {
+      "id": "resolution-scaling",
+      "title": "Resolution and Scaling",
+      "paragraphs": ["Inappropriate operating-system resolution or scaling can make text and windows appear too large or too small."],
+      "callout": "SIZE PROBLEM → RESOLUTION/SCALING."
+    },
+    {
+      "id": "distorted-image",
+      "title": "Distorted Image",
+      "paragraphs": ["A distorted image has the wrong shape or proportions, such as stretched, squashed, warped, or trapezoid output. Causes include aspect-ratio settings, resolution mismatch, projector alignment, and keystone settings."],
+      "callout": "Distortion = shape is wrong."
+    },
+    {
+      "id": "keystone-distortion",
+      "title": "Projector Keystone Distortion",
+      "paragraphs": ["A projector that is not perpendicular to the screen can produce a trapezoid-shaped image. Correct projector position first and use keystone correction when appropriate."],
+      "callout": "Projected image wider at one end → position or keystone correction."
+    },
+    {
+      "id": "sizing-vs-distortion",
+      "title": "Sizing vs. Distortion",
+      "table": {
+        "caption": "Dimensions and shape",
+        "headers": ["Symptom", "Meaning", "Memory hook"],
+        "rows": [["Sizing", "Correct shape but wrong overall dimensions", "TOO BIG/SMALL"], ["Distortion", "Wrong shape or proportions", "STRETCHED/WARPED"]]
+      }
+    },
+    {
+      "id": "display-category-map",
+      "title": "Troubleshooting Display Problems by Category",
+      "table": {
+        "caption": "Symptom categories and first checks",
+        "headers": ["Category", "Examples", "First checks"],
+        "rows": [["No signal", "No image", "Input, cable, port, source"], ["Poor quality", "Fuzzy or wrong color", "Focus, resolution, cabling, color settings"], ["Panel defect", "Burn-in or dead pixel", "Display panel"], ["Flicker", "Flashing or unstable image", "Cabling, settings, hardware"], ["Projector", "No lamp, dim image, hot shutdown", "Bulb, airflow, temperature"], ["Audio", "Picture without sound", "Output device, cable capability, volume"], ["Geometry", "Wrong size or distorted shape", "Resolution, scaling, aspect ratio, keystone"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Display set to a different port → incorrect input source", "Signal changes when cable moves → physical cabling", "Projector lamp fails to illuminate → burnt-out bulb", "Blurry image → fuzzy image", "Old image remains visible → burn-in", "One permanent bad point → dead pixel", "Rapid display flicker → flashing screen", "Strange tint or missing color → incorrect color display", "HDMI picture without sound → audio issue or output selection", "Visible but dark picture → dim image", "Projector shuts off after heating → cooling or ventilation", "Image too large or small → sizing", "Stretched or trapezoid image → distortion"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.3 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Classify the symptom before selecting a fix. Several display problems can look similar while originating in different parts of the signal path."],
+      "entries": [
+        {"title": "Input Source vs. Cable", "paragraphs": ["Wrong input is a configuration problem. An image that changes when the cable moves is a physical-path problem."], "memoryHook": "SELECT → SOURCE | WIGGLE → CABLE"},
+        {"title": "Fuzzy Image vs. Dead Pixel", "paragraphs": ["Fuzzy affects image sharpness; a dead pixel is one fixed point."], "memoryHook": "WHOLE IMAGE vs. ONE DOT"},
+        {"title": "Dead Pixel vs. Burn-In", "paragraphs": ["A dead pixel is an individual defect; burn-in is a retained image or pattern."], "memoryHook": "DOT vs. GHOST"},
+        {"title": "Flashing vs. Burn-In", "paragraphs": ["Flashing changes over time; burn-in remains static."], "memoryHook": "MOVING PROBLEM vs. STUCK IMAGE"},
+        {"title": "Dim Image vs. Burnt-Out Bulb", "paragraphs": ["A dim image remains visible. A burnt-out bulb cannot provide normal projector light, though a weakening bulb may become dim before failure."]},
+        {"title": "Projector Shutdown vs. Bulb", "paragraphs": ["A projector that runs and later shuts down points toward heat or ventilation. A lamp that never illuminates points toward the bulb."], "memoryHook": "RUNS THEN DIES → HEAT | NO LAMP → BULB"},
+        {"title": "Audio vs. Video", "paragraphs": ["When video is correct but sound is missing, inspect audio output selection, volume, interface support, and speakers before replacing display hardware."]},
+        {"title": "Sizing vs. Distortion", "paragraphs": ["Sizing changes overall dimensions; distortion changes shape or proportions."], "memoryHook": "DIMENSIONS vs. SHAPE"},
+        {"title": "Fuzzy vs. Sizing", "paragraphs": ["Both can involve resolution. Lack of sharpness means fuzzy; wrong physical display size means sizing."]}
+      ]
+    },
+    {
+      "id": "display-troubleshooting-workflow",
+      "title": "Display Troubleshooting Workflow",
+      "bullets": ["Classify the symptom: no signal, poor quality, panel defect, audio, projector, or geometry.", "Trace the source, output, cable, input, and display in order.", "Check resolution, scaling, aspect ratio, color, and audio settings.", "Use the device-specific clue for monitor or projector problems.", "Test known-good cables or displays when appropriate.", "Apply the narrowest symptom term supported by the scenario."],
+      "callout": "SOURCE → CABLE → DISPLAY → SETTINGS → PROJECTOR → AUDIO"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Wrong display port selected → incorrect input source", "Loose or damaged connection → physical cabling", "Failed projector lamp → burnt-out bulb", "Blurry image → fuzzy image", "Old picture permanently remains → burn-in", "One fixed defective point → dead pixel", "Rapid flicker → flashing screen", "Wrong tint or missing colors → incorrect color display", "Picture works but sound does not → audio issue", "Image is visible but too dark → dim image", "Projector shuts down after heating → cooling or ventilation", "Image too large or small → sizing", "Image stretched or warped → distorted image", "Trapezoid projection → keystone or positioning"],
+      "callout": "NO SIGNAL → SOURCE/CABLE | BLURRY → FOCUS/RESOLUTION | GHOST → BURN-IN | DOT → DEAD PIXEL | NO SOUND → AUDIO PATH | HOT SHUTDOWN → COOLING | BIG/SMALL → SIZING | WARPED → DISTORTION"
+    }
+  ]
+}

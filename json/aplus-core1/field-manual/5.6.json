@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core1",
+  "examCode": "220-1201",
+  "world": "5",
+  "objective": "5.6",
+  "title": "Troubleshoot Printer Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Printer troubleshooting connects a visible symptom to the part of the printing process most likely responsible."],
+      "bullets": ["Lines, garbled output, fading, speckling, and echo images", "Paper jams, no feed, and multipage misfeeds", "Pending and frozen queues", "Grinding noises", "Staple and hole-punch finishing issues", "Orientation and tray recognition", "Local and network connectivity"],
+      "callout": "OUTPUT → PAPER PATH → QUEUE → FINISHER → SETTINGS → CONNECTIVITY"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a printer produces bad output, mishandles paper, makes noise, cannot communicate, or stops processing jobs, identify the most likely area to troubleshoot."],
+      "bullets": ["Vertical line → imaging or print path", "Random symbols → driver or language", "Paper stuck → jam", "Output too light → toner, ink, or print mechanism", "No pickup → feed", "Several sheets → separation", "Jobs pile up → queue or communication", "Random dots → speckling", "Repeated image → ghosting", "Grinding → mechanical hardware", "Staple or punch failure → finisher", "Wrong page direction → orientation", "Tray absent → tray detection", "Printer unreachable → connectivity", "Queue will not process → frozen queue"]
+    },
+    {
+      "id": "lines-down-pages",
+      "title": "Lines Down Printed Pages",
+      "paragraphs": ["Lines can come from contamination or defects in imaging components, printheads, rollers, the toner or ink path, or debris. A line in the same location on each page points toward a consistent print-path component."],
+      "callout": "CONSISTENT LOCATION → CONSISTENT HARDWARE CAUSE."
+    },
+    {
+      "id": "repeating-defects",
+      "title": "Repeating Defects",
+      "paragraphs": ["If a defect repeats across pages, inspect the component that contacts the paper or creates the image at that same location."],
+      "callout": "Track the defect through the print path."
+    },
+    {
+      "id": "garbled-print",
+      "title": "Garbled Print",
+      "paragraphs": ["Random characters, incorrect symbols, unreadable text, or output that does not match the document can result from an incorrect driver, wrong printer language, corrupt print data, or communication trouble."],
+      "callout": "Printer receives data but interprets it incorrectly."
+    },
+    {
+      "id": "printer-languages",
+      "title": "PCL/PostScript and Garbled Output",
+      "paragraphs": ["PCL and PostScript are printer languages. An incorrect or incompatible driver or language can produce nonsense output."],
+      "callout": "GARBLED → DRIVER/LANGUAGE."
+    },
+    {
+      "id": "paper-jams",
+      "title": "Paper Jams",
+      "paragraphs": ["Damaged or incorrectly loaded paper, debris, worn rollers, the wrong paper type, or an obstruction can trap paper in the path. Follow the paper path, remove paper and scraps carefully, verify trays and guides, and inspect rollers and feed mechanisms."],
+      "callout": "JAM → CLEAR THE ENTIRE PAPER PATH."
+    },
+    {
+      "id": "faded-prints",
+      "title": "Faded Prints",
+      "paragraphs": ["Low toner or ink, printhead or imaging trouble, and quality settings can cause faint output. Identify the printer technology before choosing a component."],
+      "callout": "LASER FADED → TONER. INKJET FADED → INK/PRINTHEAD."
+    },
+    {
+      "id": "paper-not-feeding",
+      "title": "Paper Not Feeding",
+      "paragraphs": ["If no sheet enters, inspect pickup rollers, the feed mechanism, tray, loading, and paper guides."],
+      "callout": "ZERO SHEETS → PICKUP/FEED."
+    },
+    {
+      "id": "multipage-misfeed",
+      "title": "Multipage Misfeed",
+      "paragraphs": ["When several sheets enter together, investigate the separation mechanism, feed rollers, paper condition, humidity or static, and loading."],
+      "callout": "TOO MANY SHEETS → SEPARATION/FEED."
+    },
+    {
+      "id": "no-feed-vs-misfeed",
+      "title": "Paper Not Feeding vs. Multipage Misfeed",
+      "table": {
+        "caption": "Paper pickup symptoms",
+        "headers": ["Symptom", "What enters", "Primary path"],
+        "rows": [["Not feeding", "No sheet", "Pickup and feed"], ["Multipage misfeed", "Several sheets", "Separation and feed"]]
+      }
+    },
+    {
+      "id": "multiple-prints-pending",
+      "title": "Multiple Prints Pending in Queue",
+      "paragraphs": ["If jobs enter the queue but do not leave, inspect printer offline or paused status, connectivity, the spooler, a failed job, the driver, and printer errors."],
+      "callout": "Jobs arrive at the queue but do not leave."
+    },
+    {
+      "id": "print-queue",
+      "title": "Print Queue",
+      "paragraphs": ["A print queue controls job order. One damaged job can block later jobs from processing."],
+      "callout": "Queue = waiting line for print jobs."
+    },
+    {
+      "id": "speckling",
+      "title": "Speckling on Printed Pages",
+      "paragraphs": ["Unwanted dots or spots can come from toner contamination, dirty components, imaging problems, or debris."],
+      "callout": "DOTS EVERYWHERE → CONTAMINATION/IMAGING."
+    },
+    {
+      "id": "speckling-vs-lines",
+      "title": "Speckling vs. Lines",
+      "table": {
+        "caption": "Printed defect shapes",
+        "headers": ["Defect", "Pattern", "Memory hook"],
+        "rows": [["Line", "Continuous or repeating linear mark", "TRACK"], ["Speckling", "Scattered spots", "DOTS"]]
+      }
+    },
+    {
+      "id": "double-echo-images",
+      "title": "Double/Echo Images",
+      "paragraphs": ["A faint repeated copy of earlier content is ghosting. On laser printers, imaging or fusing trouble can allow part of an image to appear again."],
+      "callout": "IMAGE APPEARS AGAIN → GHOSTING."
+    },
+    {
+      "id": "echo-vs-speckling",
+      "title": "Echo Image vs. Speckling",
+      "table": {
+        "caption": "Repeated content and random spots",
+        "headers": ["Defect", "Appearance", "Memory hook"],
+        "rows": [["Echo", "Recognizable repeated image", "COPY/GHOST"], ["Speckling", "Random dots", "DOTS"]]
+      }
+    },
+    {
+      "id": "grinding-noise",
+      "title": "Grinding Noise",
+      "paragraphs": ["A new, abnormal, persistent grinding sound can indicate damaged gears, roller trouble, a foreign object, a misinstalled cartridge, or feed-mechanism failure. Stop and inspect the mechanical path."],
+      "callout": "Grinding after cartridge replacement → verify installation and alignment."
+    },
+    {
+      "id": "grinding-vs-normal",
+      "title": "Grinding Noise vs. Normal Printing Noise",
+      "paragraphs": ["Printers naturally make mechanical sounds, but new, abnormal, persistent grinding is a hardware-path clue."],
+      "callout": "ABNORMAL MECHANICAL SOUND → HARDWARE PATH."
+    },
+    {
+      "id": "finishing-issues",
+      "title": "Finishing Issues",
+      "paragraphs": ["Finishing hardware performs tasks such as stapling and hole punching after printing."],
+      "callout": "FINISHER = what happens to the paper after printing."
+    },
+    {
+      "id": "staple-jams",
+      "title": "Staple Jams",
+      "paragraphs": ["When pages print correctly but are not stapled, inspect the staple cartridge, jammed staples, alignment, and finisher mechanism."],
+      "callout": "PAGE GOOD + STAPLE BAD → FINISHER."
+    },
+    {
+      "id": "hole-punch",
+      "title": "Hole Punch",
+      "paragraphs": ["Hole-punch failures can involve the punch mechanism, debris, alignment, the waste container, or finisher configuration."],
+      "callout": "Printing is good but punching is bad → finisher hardware or settings."
+    },
+    {
+      "id": "engine-vs-finisher",
+      "title": "Print Engine vs. Finisher",
+      "table": {
+        "caption": "Image creation and post-processing",
+        "headers": ["Component", "Role", "Failure clue"],
+        "rows": [["Print engine", "Creates the printed page", "Image problem"], ["Finisher", "Staples, punches, or handles the completed page", "Staple or punch problem"]]
+      }
+    },
+    {
+      "id": "incorrect-orientation",
+      "title": "Incorrect Page Orientation",
+      "paragraphs": ["Portrait positions content vertically; landscape positions it horizontally. If the direction is wrong, inspect application and print settings."],
+      "callout": "Wide spreadsheet cuts off columns in portrait → select landscape."
+    },
+    {
+      "id": "tray-not-recognized",
+      "title": "Tray Not Recognized",
+      "paragraphs": ["A tray may be absent because it is not fully seated, is configured incorrectly, has a sensor or physical problem, or is missing from driver settings. Verify physical installation, paper settings, printer configuration, driver settings, and tray hardware."],
+      "callout": "Printer does not know the tray exists."
+    },
+    {
+      "id": "tray-detection-vs-settings",
+      "title": "Tray Not Recognized vs. Wrong Tray Settings",
+      "table": {
+        "caption": "Detection and configuration",
+        "headers": ["Symptom", "Meaning", "Memory hook"],
+        "rows": [["Tray not recognized", "Printer does not detect the tray", "MISSING TRAY"], ["Wrong tray settings", "Tray exists but paper information is wrong", "WRONG PAPER INFO"]]
+      }
+    },
+    {
+      "id": "connectivity-issues",
+      "title": "Connectivity Issues",
+      "paragraphs": ["USB, Ethernet, wireless, IP configuration, offline status, network paths, and print servers can prevent communication between a sending device and a printer."],
+      "callout": "Can the computer reach the printer?"
+    },
+    {
+      "id": "local-vs-network-connectivity",
+      "title": "Local vs. Network Printer Connectivity",
+      "table": {
+        "caption": "Connection-specific checks",
+        "headers": ["Printer path", "First checks", "Focus"],
+        "rows": [["USB", "Cable, port, device detection", "Local connection"], ["Ethernet", "Physical network and IP reachability", "Wired network"], ["Wireless", "Wi-Fi association and IP reachability", "Radio and network"]]
+      }
+    },
+    {
+      "id": "frozen-print-queue",
+      "title": "Frozen Print Queue",
+      "paragraphs": ["A corrupt job, spooler problem, offline printer, driver issue, or communication failure can stop queued jobs. Cancel problematic jobs, restart the print process or spooler when appropriate, verify connectivity, and retry."],
+      "callout": "QUEUE FROZEN → CLEAR THE BLOCKAGE."
+    },
+    {
+      "id": "frozen-queue-vs-hardware",
+      "title": "Frozen Queue vs. Printer Hardware Failure",
+      "paragraphs": ["If a printer can produce a local test page but computer jobs remain stuck, the queue, driver, spooler, or communication path is more likely than the mechanical print engine."],
+      "callout": "LOCAL TEST WORKS → LOOK UPSTREAM."
+    },
+    {
+      "id": "printer-troubleshooting-map",
+      "title": "Printer Troubleshooting Map",
+      "table": {
+        "caption": "Symptoms and troubleshooting areas",
+        "headers": ["Category", "Symptoms", "Likely area"],
+        "rows": [["Output", "Lines, fading, speckling, echo", "Imaging, consumables, print path"], ["Data", "Garbled print", "Driver, language, job data"], ["Paper", "Jam, no feed, multiple sheets", "Paper path, pickup, separation"], ["Queue", "Pending or frozen jobs", "Printer status, spooler, connectivity"], ["Mechanical", "Grinding", "Gears, rollers, cartridge, feed"], ["Finishing", "Staple or punch failure", "Finisher"], ["Configuration", "Wrong orientation or tray detection", "Print and device settings"], ["Communication", "Printer unreachable", "USB, network, or print server"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Vertical or repeating line → imaging or print path", "Random symbols → driver or printer language", "Paper stuck → paper jam", "Output too light → toner, ink, or print mechanism", "No pickup → feed roller", "Several sheets pulled → separation", "Jobs accumulate → queue, spooler, or connectivity", "Random dots → speckling", "Faint repeated image → echo or ghosting", "Abnormal grinding → mechanical path", "Stapler or punch fails → finisher", "Wrong vertical or horizontal layout → orientation", "Tray absent → tray recognition", "Printer unreachable → connectivity", "Jobs refuse to process → frozen queue"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.6 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["First decide whether the scenario describes output, paper handling, queue, finishing, settings, or connectivity."],
+      "entries": [
+        {"title": "Lines vs. Speckling", "paragraphs": ["Lines are continuous or repeating tracks; speckling is scattered dots."]},
+        {"title": "Faded vs. Garbled", "paragraphs": ["Faded output is correct but light; garbled output contains incorrect or unreadable content."]},
+        {"title": "Speckling vs. Echo", "paragraphs": ["Speckling creates random spots; echo repeats a recognizable image."]},
+        {"title": "No Feed vs. Multipage Misfeed", "paragraphs": ["No feed means zero sheets enter; a multipage misfeed pulls several sheets."]},
+        {"title": "Paper Jam vs. Frozen Queue", "paragraphs": ["A jam is physical paper blockage; a frozen queue is a digital job blockage."]},
+        {"title": "Pending Jobs vs. Frozen Queue", "paragraphs": ["Pending jobs are the symptom. Inspect printer status, connectivity, a bad job, and the spooler to identify whether the queue is frozen."]},
+        {"title": "Grinding vs. Garbled", "paragraphs": ["Grinding is mechanical; garbled content involves data, driver, language, or communication."]},
+        {"title": "Printing vs. Finishing", "paragraphs": ["Correct pages with failed stapling or punching point toward the finisher."]},
+        {"title": "Orientation vs. Sizing", "paragraphs": ["Orientation means portrait versus landscape; sizing means scale or dimensions."]},
+        {"title": "Tray Recognition vs. Paper Feed", "paragraphs": ["An undetected tray is a recognition problem. A detected tray whose paper does not move is a feed problem."]},
+        {"title": "Connectivity vs. Frozen Queue", "paragraphs": ["An unreachable printer has a connection problem. A reachable printer with stuck jobs points toward the queue or spooler."]}
+      ]
+    },
+    {
+      "id": "printer-troubleshooting-workflow",
+      "title": "Printer Troubleshooting Workflow",
+      "bullets": ["Classify the symptom as output, paper, queue, finishing, settings, or connectivity.", "Identify the printer technology before choosing consumables or imaging parts.", "Follow the complete paper path for jams and feed problems.", "Separate printed-page defects from post-print finishing failures.", "Use local test output to distinguish the print engine from upstream jobs and communication.", "Verify the physical or network connection before clearing recurring queue symptoms."],
+      "callout": "OUTPUT → PAPER PATH → QUEUE → FINISHER → SETTINGS → CONNECTIVITY"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Line down page → imaging or print path", "Random characters → driver or printer language", "Paper stuck → jam", "Light output → faded print", "Paper stays in tray → pickup/feed", "Several sheets enter → multipage misfeed", "Jobs wait → queue, spooler, or connectivity", "Random dots → speckling", "Repeated image → echo", "Grinding → mechanical hardware", "Stapling or punching fails → finisher", "Wrong direction → orientation", "Tray absent → recognition", "Printer unreachable → connectivity", "Jobs stuck indefinitely → frozen queue"],
+      "callout": "LINES → IMAGING | GARBLED → DRIVER/LANGUAGE | FADED → TONER/INK | ZERO SHEETS → PICKUP | MANY SHEETS → SEPARATION | DOTS → SPECKLING | GHOST → ECHO | GRIND → MECHANICAL | STAPLE/PUNCH → FINISHER | JOBS STUCK → QUEUE"
+    }
+  ]
+}
