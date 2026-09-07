@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.7",
+  "title": "Given a Scenario, Configure Microsoft Windows Networking Features on a Client/Desktop",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["A Windows client can join local or centralized environments, share resources, use static or dynamic IP configuration, establish several connection types, and apply network security profiles.", "The main mental model is: identity → local access → IP configuration → connection type → security profile → network resources."]},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["Can you identify whether a Windows networking scenario involves domain or workgroup membership, shared resources, IP settings, connection type, firewall, profile, proxy, network path, or data limits?"], "bullets": ["Central identity → domain", "Peer environment → workgroup", "Drive letter to a share → mapped drive", "Manual IP → static", "DHCP IP → dynamic", "Encrypted remote tunnel → VPN", "Cellular → WWAN", "Untrusted network → public", "Trusted LAN → private", "Data-limited connection → metered"]},
+    {"id": "domain-vs-workgroup", "title": "Domain Joined vs. Workgroup", "paragraphs": ["A workgroup is decentralized: each computer manages its own users, passwords, permissions, and resources. A domain provides centralized authentication, accounts, Group Policy, and resource access."], "table": {"caption": "Windows network identity", "headers": ["Model", "Administration", "Recognition"], "rows": [["Domain joined", "Centralized", "Organizational identity and policy"], ["Workgroup", "Local/decentralized", "Peer computers manage themselves"]]}},
+    {"id": "shared-resources", "title": "Shared Resources", "entries": [
+      {"title": "Shared Resources", "paragraphs": ["Folders and other resources can be made available to authenticated network users subject to sharing and filesystem permissions."]},
+      {"title": "Printers", "paragraphs": ["A printer may be shared from a computer, print server, or network-connected device for many users."]},
+      {"title": "File Servers", "paragraphs": ["A file server centrally stores files accessed by network clients."], "recognitionCue": "Central shared storage → file server."},
+      {"title": "Mapped Drives", "paragraphs": ["A mapped drive assigns a drive letter such as Z: to a network path such as \\\\server\\share."], "recognitionCue": "A network folder appears as drive S: → mapped drive."}
+    ]},
+    {"id": "local-os-firewall", "title": "Local OS Firewall Settings", "paragraphs": ["Windows Defender Firewall filters endpoint traffic. Its configuration can vary across domain, private, and public profiles."], "entries": [
+      {"title": "Application Restrictions and Exceptions", "paragraphs": ["Restrictions block an application's traffic; an exception permits the required application or traffic when appropriate."], "recognitionCue": "An application works locally but its network traffic is blocked → configure a firewall exception."},
+      {"title": "Configuration", "paragraphs": ["Choose the correct profile, direction, protocol, port, and application scope rather than disabling the firewall broadly."]}
+    ]},
+    {"id": "client-network-configuration", "title": "Client Network Configuration", "entries": [
+      {"title": "Internet Protocol (IP) Addressing Scheme", "paragraphs": ["The IP address identifies the client on the network."]},
+      {"title": "Domain Name System (DNS) Settings", "paragraphs": ["DNS translates names into IP addresses."], "recognitionCue": "IPs work but names fail → investigate DNS."},
+      {"title": "Subnet Mask", "paragraphs": ["The subnet mask identifies which addresses are local to the client."]},
+      {"title": "Gateway", "paragraphs": ["The default gateway forwards traffic toward other networks."], "recognitionCue": "The client cannot leave its local subnet → verify the gateway."},
+      {"title": "Static vs. Dynamic", "paragraphs": ["Static settings are manually assigned and remain until changed. Dynamic settings are automatically assigned, commonly by DHCP."], "memoryHook": "Type it → static. Receive it → dynamic."}
+    ], "callout": "Address = who am I; mask = who is local; gateway = how do I leave; DNS = how do I find names."},
+    {"id": "establish-network-connections", "title": "Establish Network Connections", "entries": [
+      {"title": "Virtual Private Network (VPN)", "paragraphs": ["A VPN creates an encrypted logical tunnel across another network such as the Internet."], "recognitionCue": "A remote employee securely connects to the company network → VPN."},
+      {"title": "Wireless", "paragraphs": ["A wireless client commonly uses Wi-Fi to join a local WLAN through an access point."]},
+      {"title": "Wired", "paragraphs": ["A wired client commonly uses Ethernet cabling."]},
+      {"title": "Wireless Wide Area Network (WWAN)/Cellular Network", "paragraphs": ["WWAN provides wide-area connectivity through a cellular carrier rather than a local Wi-Fi access point."], "recognitionCue": "A laptop uses a carrier modem away from Wi-Fi → WWAN."}
+    ]},
+    {"id": "proxy-settings", "title": "Proxy Settings", "paragraphs": ["A proxy is an intermediary between the client and a destination. Organizations use proxies for filtering, logging, access control, or policy enforcement."], "callout": "Client → proxy → destination. A proxy is a middleman; a VPN is a secure tunnel."},
+    {"id": "public-vs-private", "title": "Public Network vs. Private Network", "paragraphs": ["A public profile suits untrusted networks such as hotels, airports, and coffee shops and applies restrictive discovery and sharing behavior. A private profile suits a trusted home or office LAN."], "callout": "Strangers → public. Trusted LAN → private."},
+    {"id": "network-paths", "title": "File Explorer Navigation—Network Paths", "paragraphs": ["A Universal Naming Convention (UNC) path such as \\\\server\\share directly identifies a network resource. A mapped drive assigns that path a local drive letter."], "callout": "Network address → UNC path. Drive letter → mapped drive."},
+    {"id": "metered-connections", "title": "Metered Connections and Limitations", "paragraphs": ["A metered connection tells Windows that data is limited or costly. Windows may reduce update downloads, background synchronization, and application traffic."], "callout": "A capped cellular plan → configure the connection as metered."},
+    {"id": "recognition-cues", "title": "Recognition Cues", "bullets": ["Central login → domain", "Peer PCs → workgroup", "Network folder → shared resource", "Central files → file server", "Drive letter to share → mapped drive", "Blocked application traffic → firewall restriction", "Manual address → static", "DHCP → dynamic", "Name resolution → DNS", "Encrypted remote network → VPN", "Access point → wireless", "Cable → wired", "Cellular → WWAN", "Intermediary → proxy", "Untrusted network → public", "Trusted LAN → private", "\\\\server\\share → network path", "Capped data → metered"]},
+    {"id": "exam-trap", "title": "Objective 1.7 Exam Trap", "variant": "exam-trap", "entries": [
+      {"title": "Domain vs. Workgroup", "paragraphs": ["Domain is centralized; workgroup is local and decentralized."]},
+      {"title": "Static vs. Dynamic", "paragraphs": ["Static is manually assigned; dynamic is received automatically, commonly from DHCP."]},
+      {"title": "Gateway vs. DNS", "paragraphs": ["Gateway reaches other networks; DNS resolves names."]},
+      {"title": "VPN vs. Proxy", "paragraphs": ["VPN is an encrypted network tunnel; proxy is an intermediary for selected traffic."]},
+      {"title": "Wi-Fi vs. WWAN", "paragraphs": ["Wi-Fi uses a local access point; WWAN uses a cellular provider."]},
+      {"title": "Mapped Drive vs. UNC Path", "paragraphs": ["A mapped drive uses a drive letter; a UNC path directly names the network resource."]}
+    ]},
+    {"id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet", "bullets": ["Central authentication → domain", "Local peers → workgroup", "Network resource → share", "Central storage → file server", "Drive letter → mapped drive", "Allowed app traffic → firewall exception", "Client identity → IP", "Local boundary → subnet mask", "Exit subnet → gateway", "Names → DNS", "Manual → static", "DHCP → dynamic", "Secure tunnel → VPN", "Access point → wireless", "Ethernet → wired", "Cell tower → WWAN", "Middleman → proxy", "Untrusted → public", "Trusted → private", "Direct share address → UNC", "Limited data → metered"]}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.5",
+  "title": "Given a Scenario, Use the Appropriate Microsoft Command-Line Tools",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["Windows command-line tools navigate folders, test networking, manage disks and files, gather information, and manage the operating system.", "The main mental model is: navigate → network → disk → files → information → OS management."], "callout": "Choose a command for the task it performs, not simply because its name looks familiar."},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["When a Windows scenario describes a task, can you choose the correct command and basic syntax pattern?"], "bullets": ["Change folder → cd", "List contents → dir", "IP configuration → ipconfig", "Reachability → ping", "Connections → netstat", "DNS → nslookup", "Network share → net use", "Route → tracert", "Route quality → pathping", "Filesystem check → chkdsk", "Create filesystem → format", "Partition management → diskpart"]},
+    {"id": "navigation", "title": "Navigation", "entries": [
+      {"title": "cd", "paragraphs": ["cd means change directory and moves the command prompt to another folder. Example: cd Documents."], "recognitionCue": "Move from the current folder into another → cd."},
+      {"title": "dir", "paragraphs": ["dir lists a directory's files, folders, dates, and sizes."], "recognitionCue": "See what is in the current folder → dir."}
+    ], "callout": "Go → cd. Look → dir."},
+    {"id": "network", "title": "Network", "entries": [
+      {"title": "ipconfig", "paragraphs": ["ipconfig displays Windows TCP/IP configuration; ipconfig /all adds detailed adapter, DNS, and DHCP information."], "recognitionCue": "Verify the local address, mask, gateway, DNS, or DHCP data → ipconfig."},
+      {"title": "ping", "paragraphs": ["ping uses ICMP echo messages to test basic IP reachability when ICMP is allowed."], "recognitionCue": "Can this computer reach the destination? → ping."},
+      {"title": "netstat", "paragraphs": ["netstat displays active connections, listening ports, local and remote addresses, and protocol statistics."], "recognitionCue": "Inspect current TCP/UDP connections and ports → netstat."},
+      {"title": "nslookup", "paragraphs": ["nslookup queries DNS to resolve names or addresses and test name resolution."], "recognitionCue": "IP connectivity works but a hostname does not resolve → nslookup."},
+      {"title": "net use", "paragraphs": ["net use connects to and manages network resources such as shared folders and mapped drives. Example: net use Z: \\\\server\\share."], "recognitionCue": "Map a share to a drive letter → net use."},
+      {"title": "tracert", "paragraphs": ["tracert displays the intermediate network hops to a destination."], "recognitionCue": "Determine which routers traffic crosses → tracert."},
+      {"title": "pathping", "paragraphs": ["pathping combines route tracing with latency and packet-loss measurements and takes longer while it gathers statistics."], "recognitionCue": "Find the hop where delay or packet loss may occur → pathping."}
+    ]},
+    {"id": "network-comparisons", "title": "Network Command Comparisons", "table": {"caption": "Network troubleshooting commands", "headers": ["Question", "Command"], "rows": [["What are my local IP settings?", "ipconfig"], ["Can I reach it?", "ping"], ["What connections and ports are active?", "netstat"], ["Can DNS resolve it?", "nslookup"], ["What route does traffic take?", "tracert"], ["Where along the route is loss or delay?", "pathping"], ["How do I map a share?", "net use"]]}},
+    {"id": "disk-management", "title": "Disk Management", "entries": [
+      {"title": "chkdsk", "paragraphs": ["chkdsk checks a volume and filesystem for errors and can repair supported problems with appropriate options."], "recognitionCue": "Suspected filesystem corruption → chkdsk."},
+      {"title": "format", "paragraphs": ["format creates a filesystem on a volume. It can destroy existing target data, so verify the drive before use."], "recognitionCue": "Prepare a volume with a filesystem → format."},
+      {"title": "diskpart", "paragraphs": ["diskpart is a powerful interactive tool for disks, partitions, and volumes. Commands such as list disk and list volume inspect storage; other operations can be destructive."], "recognitionCue": "Manage disk or partition structure from the command line → diskpart."}
+    ], "callout": "Check filesystem → chkdsk. Create filesystem → format. Manage storage structure → diskpart."},
+    {"id": "file-management", "title": "File Management", "entries": [
+      {"title": "md", "paragraphs": ["md, also available as mkdir, creates a directory."], "recognitionCue": "Create a folder → md."},
+      {"title": "rmdir", "paragraphs": ["rmdir removes a directory when its contents and selected options allow removal."], "recognitionCue": "Remove a directory → rmdir."},
+      {"title": "robocopy", "paragraphs": ["Robust File Copy reliably copies files and directory trees for large, repeated, recursive, or network transfer jobs."], "recognitionCue": "Reliably copy a large folder tree → robocopy."}
+    ]},
+    {"id": "informational", "title": "Informational", "entries": [
+      {"title": "hostname", "paragraphs": ["hostname displays the computer's host name."], "recognitionCue": "Which computer is this? → hostname."},
+      {"title": "net user", "paragraphs": ["net user displays or manages local Windows user accounts."], "recognitionCue": "View or manage local users at the command line → net user."},
+      {"title": "winver", "paragraphs": ["winver displays the Windows version and build interface."], "recognitionCue": "Quickly identify the Windows release or build → winver."},
+      {"title": "whoami", "paragraphs": ["whoami displays the current user or security context."], "recognitionCue": "Confirm which account the shell is running as → whoami."},
+      {"title": "[command name] /?", "paragraphs": ["Appending /? to many Windows commands displays their built-in syntax and options. Example: ipconfig /?."], "recognitionCue": "Need command options without an external reference → [command] /?."}
+    ], "callout": "Machine → hostname. Current identity → whoami."},
+    {"id": "os-management", "title": "OS Management", "entries": [
+      {"title": "gpupdate", "paragraphs": ["gpupdate refreshes and reapplies Group Policy settings."], "recognitionCue": "A changed policy should be refreshed now → gpupdate."},
+      {"title": "gpresult", "paragraphs": ["gpresult reports which Group Policy settings have been applied to a computer or user."], "recognitionCue": "Verify which policies actually applied → gpresult."},
+      {"title": "sfc", "paragraphs": ["System File Checker verifies protected Windows system files and can repair damaged copies. The familiar form is sfc /scannow."], "recognitionCue": "Protected Windows files may be corrupt → sfc /scannow."}
+    ], "callout": "Refresh policy → gpupdate. Report applied policy → gpresult."},
+    {"id": "recognition-cues", "title": "Recognition Cues", "bullets": ["Move directory → cd", "List files → dir", "View IP settings → ipconfig", "Test reachability → ping", "View connections → netstat", "Query DNS → nslookup", "Map share → net use", "Trace route → tracert", "Route and loss statistics → pathping", "Check filesystem → chkdsk", "Create filesystem → format", "Manage partitions → diskpart", "Create folder → md", "Remove folder → rmdir", "Robust copy → robocopy", "Computer name → hostname", "Local users → net user", "Windows version → winver", "Current identity → whoami", "Command help → /?", "Refresh policy → gpupdate", "Applied policy → gpresult", "Repair system files → sfc"]},
+    {"id": "exam-trap", "title": "Objective 1.5 Exam Trap", "variant": "exam-trap", "entries": [
+      {"title": "ping vs. tracert vs. pathping", "paragraphs": ["ping tests reachability; tracert lists hops; pathping adds loss and latency statistics per hop."]},
+      {"title": "ipconfig vs. nslookup", "paragraphs": ["ipconfig shows local configuration; nslookup tests DNS."]},
+      {"title": "chkdsk vs. format vs. diskpart", "paragraphs": ["chkdsk checks a filesystem; format creates one; diskpart manages disk and partition structure."]},
+      {"title": "hostname vs. whoami", "paragraphs": ["hostname identifies the computer; whoami identifies the current user context."]},
+      {"title": "gpupdate vs. gpresult", "paragraphs": ["gpupdate refreshes policy; gpresult reports applied policy."]}
+    ]},
+    {"id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet", "bullets": ["cd → change folder", "dir → list contents", "ipconfig → IP configuration", "ping → reachability", "netstat → connections", "nslookup → DNS", "net use → network resource", "tracert → route", "pathping → route quality", "chkdsk → check filesystem", "format → create filesystem", "diskpart → disk structure", "md → make directory", "rmdir → remove directory", "robocopy → robust copy", "hostname → computer name", "net user → users", "winver → Windows version", "whoami → current identity", "/? → command help", "gpupdate → refresh policy", "gpresult → policy results", "sfc → protected system files"]}
+  ]
+}

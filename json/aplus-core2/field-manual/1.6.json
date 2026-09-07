@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.6",
+  "title": "Given a Scenario, Configure Microsoft Windows Settings",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["Windows configuration is distributed across Control Panel, Settings, File Explorer, administrative tools, and device interfaces.", "The main mental model is: task → correct Windows settings area."], "callout": "Know the destination by its function, not only by the appearance of a particular Windows release."},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["When a Windows configuration scenario appears, can you identify which settings area controls it?"], "bullets": ["Browser properties → Internet Options", "Printers → Devices and Printers", "Traditional programs → Programs and Features", "Network sharing → Network and Sharing Center", "Firewall → Windows Defender Firewall", "Audio → Sound", "Search → Indexing Options", "Hidden files → File Explorer Options", "Power states → Power Options", "Accessibility → Ease of Access"]},
+    {"id": "control-panel-settings", "title": "Control Panel Settings", "entries": [
+      {"title": "Internet Options", "paragraphs": ["Controls legacy browser and Internet properties such as security zones, connections, privacy, certificates, and proxy-related behavior."], "recognitionCue": "Browser or legacy Internet properties → Internet Options."},
+      {"title": "Devices and Printers", "paragraphs": ["Provides user-facing access to printers and some connected peripherals."], "recognitionCue": "Set a default printer → Devices and Printers."},
+      {"title": "Program and Features", "paragraphs": ["Programs and Features manages, modifies, or uninstalls traditional desktop applications."], "recognitionCue": "Remove a classic Windows program → Programs and Features."},
+      {"title": "Network and Sharing Center", "paragraphs": ["Provides traditional network status, adapter, and sharing configuration."], "recognitionCue": "Configure network sharing in Control Panel → Network and Sharing Center."},
+      {"title": "System (Control Panel)", "paragraphs": ["Shows computer-wide Windows and hardware information and links to advanced system options."]},
+      {"title": "Windows Defender Firewall", "paragraphs": ["Controls firewall profiles, application allowances, and inbound or outbound rules."], "recognitionCue": "Allow or block network traffic → Windows Defender Firewall."},
+      {"title": "Mail", "paragraphs": ["Manages profiles for supported desktop mail clients."], "recognitionCue": "Configure a desktop mail profile → Mail."},
+      {"title": "Sound", "paragraphs": ["Configures playback and recording devices, speakers, microphones, and related behavior."], "recognitionCue": "Hear or speak → Sound."},
+      {"title": "User Accounts", "paragraphs": ["Manages Control Panel user-account settings."]},
+      {"title": "Device Manager", "paragraphs": ["Manages hardware, drivers, and device status."], "recognitionCue": "Fix a driver or hardware device → Device Manager."},
+      {"title": "Indexing Options", "paragraphs": ["Controls locations and content included in Windows Search indexing."], "recognitionCue": "A searchable folder is missing from results → Indexing Options."},
+      {"title": "Administrative Tools", "paragraphs": ["Provides shortcuts to advanced Windows management utilities."]}
+    ]},
+    {"id": "file-explorer-options", "title": "File Explorer Options", "paragraphs": ["File Explorer Options controls general folder behavior and view settings."], "entries": [
+      {"title": "View Hidden Files", "paragraphs": ["The View settings can display files and folders normally marked hidden."]},
+      {"title": "Hide Extensions", "paragraphs": ["Windows can hide known file extensions. Technicians often show them to identify real file types, including deceptive names such as invoice.pdf.exe."]},
+      {"title": "General Options", "paragraphs": ["General options change broad File Explorer behavior such as folder-opening preferences."]},
+      {"title": "View Options", "paragraphs": ["View options determine how files and folders are displayed."]}
+    ]},
+    {"id": "power-options", "title": "Power Options", "entries": [
+      {"title": "Hibernate", "paragraphs": ["Writes the session to storage and powers down, using less continuing power than sleep."]},
+      {"title": "Power Plans", "paragraphs": ["A power plan defines performance, display, sleep timing, and energy-use behavior."]},
+      {"title": "Sleep/Suspend", "paragraphs": ["Keeps the session in RAM in a low-power state for fast resume."]},
+      {"title": "Standby", "paragraphs": ["Standby is another term associated with a low-power sleep state."]},
+      {"title": "Choose What Closing the Lid Does", "paragraphs": ["A laptop can sleep, hibernate, shut down, or do nothing when its lid closes."]},
+      {"title": "Turn On Fast Startup", "paragraphs": ["Fast Startup uses a hybrid shutdown process to accelerate the next boot; it is not normal sleep."]},
+      {"title": "USB Selective Suspend", "paragraphs": ["Reduces power to individual idle USB devices."], "recognitionCue": "A USB device powers down because of energy savings → USB selective suspend."}
+    ], "callout": "Sleep keeps the session in RAM; hibernate writes it to disk."},
+    {"id": "modern-settings", "title": "Modern Windows Settings", "entries": [
+      {"title": "Ease of Access", "paragraphs": ["Provides Narrator, Magnifier, contrast, and input assistance."], "recognitionCue": "Accessibility → Ease of Access."},
+      {"title": "Time and Language", "paragraphs": ["Controls date, time zone, region, language, and keyboard or input language."]},
+      {"title": "Update and Security", "paragraphs": ["Contains Windows Update, recovery, and security-related areas in supported Windows Settings layouts."]},
+      {"title": "Personalization", "paragraphs": ["Controls backgrounds, themes, colors, and lock-screen appearance."]},
+      {"title": "Apps", "paragraphs": ["Manages installed applications, defaults, and application-related settings."]},
+      {"title": "Privacy", "paragraphs": ["Controls application access to location, camera, microphone, files, and other protected resources."]},
+      {"title": "System (Windows Settings)", "paragraphs": ["Contains core device, display, notification, storage, power, and OS behavior settings."]},
+      {"title": "Devices", "paragraphs": ["Manages connected peripherals and device-related options."]},
+      {"title": "Network and Internet", "paragraphs": ["Configures Wi-Fi, Ethernet, VPN, proxy, and other connections."]},
+      {"title": "Gaming", "paragraphs": ["Controls Windows gaming-related features."]},
+      {"title": "Accounts", "paragraphs": ["Controls sign-in, Microsoft accounts, family or other users, and work or school accounts."]}
+    ]},
+    {"id": "control-panel-vs-settings", "title": "Control Panel vs. Settings", "paragraphs": ["Windows exposes overlapping configuration through traditional Control Panel and the modern Settings app. CompTIA may name either destination."], "table": {"caption": "Common overlapping destinations", "headers": ["Traditional", "Modern", "Function"], "rows": [["Programs and Features", "Apps", "Application management"], ["Devices and Printers", "Devices", "Peripherals"], ["Network and Sharing Center", "Network and Internet", "Networking"], ["User Accounts", "Accounts", "Identity"]]}},
+    {"id": "recognition-cues", "title": "Recognition Cues", "bullets": ["Internet properties → Internet Options", "Printer → Devices and Printers", "Remove classic program → Programs and Features", "Network sharing → Network and Sharing Center", "System information → System", "Traffic rules → Windows Defender Firewall", "Mail profile → Mail", "Audio → Sound", "Control Panel users → User Accounts", "Driver → Device Manager", "Search index → Indexing Options", "Advanced utilities → Administrative Tools", "Hidden files/extensions → File Explorer Options", "Sleep/hibernate/lid → Power Options", "Accessibility → Ease of Access", "Clock/language → Time and Language", "Updates → Update and Security", "Theme → Personalization", "Modern applications → Apps", "App permissions → Privacy", "Core device settings → System", "Peripherals → Devices", "Wi-Fi/VPN/proxy → Network and Internet", "Games → Gaming", "Sign-in → Accounts"]},
+    {"id": "exam-trap", "title": "Objective 1.6 Exam Trap", "variant": "exam-trap", "entries": [
+      {"title": "Programs and Features vs. Apps", "paragraphs": ["Programs and Features is the traditional Control Panel destination; Apps is the modern Settings destination."]},
+      {"title": "Devices and Printers vs. Device Manager", "paragraphs": ["Devices and Printers is user-facing; Device Manager troubleshoots hardware and drivers."]},
+      {"title": "Network and Sharing Center vs. Network and Internet", "paragraphs": ["The former is traditional Control Panel; the latter is modern Settings."]},
+      {"title": "Sleep vs. Hibernate", "paragraphs": ["Sleep keeps the session in RAM; hibernate writes it to storage."]},
+      {"title": "Fast Startup vs. Sleep", "paragraphs": ["Fast Startup speeds boot after shutdown; sleep preserves an active session in low-power RAM."]}
+    ]},
+    {"id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet", "bullets": ["Browser → Internet Options", "Printers → Devices and Printers", "Classic uninstall → Programs and Features", "Sharing → Network and Sharing Center", "Firewall → Windows Defender Firewall", "Audio → Sound", "Drivers → Device Manager", "Search → Indexing Options", "Hidden files → File Explorer Options", "Power state → Power Options", "Accessibility → Ease of Access", "Language → Time and Language", "Updates → Update and Security", "Appearance → Personalization", "Apps → Apps", "Permissions → Privacy", "Network → Network and Internet", "Gaming → Gaming", "Sign-in → Accounts"]}
+  ]
+}

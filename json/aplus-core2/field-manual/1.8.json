@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.8",
+  "title": "Explain Common Features and Tools of the macOS/Desktop Operating System",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["macOS uses distinct application formats, folders, security features, navigation tools, backup services, cloud services, and utilities.", "The main mental model is: install → navigate → configure → protect → back up → troubleshoot."]},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["When a Mac scenario describes installing software, locating files, configuring settings, protecting data, using cloud services, or troubleshooting, can you select the correct feature or tool?"], "bullets": ["Disk image → .dmg", "Installer → .pkg", "Application bundle → .app", "Backup → Time Machine", "Encryption → FileVault", "Search → Spotlight", "File manager → Finder", "Credentials → Keychain", "Workspace overview → Mission Control", "Storage → Disk Utility", "CLI → Terminal", "Frozen app → Force Quit"]},
+    {"id": "application-installation", "title": "Installation and Uninstallation of Applications", "entries": [
+      {"title": "File Types", "paragraphs": ["macOS software commonly arrives as disk images, installer packages, or application bundles."]},
+      {"title": ".dmg", "paragraphs": ["A disk image mounts like a virtual disk and commonly contains an application, installer, or instructions. A common flow is open the .dmg, drag the .app into Applications, then eject the image."], "memoryHook": "Container → .dmg."},
+      {"title": ".pkg", "paragraphs": ["An installer package runs an installation workflow and can place components in required system locations."], "memoryHook": "Installer → .pkg."},
+      {"title": ".app", "paragraphs": ["An application bundle appears as one program even though it contains multiple internal files."], "memoryHook": "Program → .app."},
+      {"title": "App Store", "paragraphs": ["The App Store supplies Apple-managed application distribution, installation, updates, and Apple ID integration."]},
+      {"title": "Uninstallation Process", "paragraphs": ["Many apps can be removed from Applications, but complex apps may include an uninstaller or leave support files. Do not assume deleting one icon always removes everything."]}
+    ]},
+    {"id": "system-folders", "title": "System Folders", "table": {"caption": "Important macOS paths", "headers": ["Path", "Purpose"], "rows": [["/Applications", "Applications available on the Mac"], ["/Users", "User home directories"], ["/Library", "System-wide support data"], ["/System", "macOS operating-system files"], ["/Users/<username>/Library", "Support data and settings for one user"]]}, "callout": "/Library is system-wide; ~/Library is user-specific."},
+    {"id": "apple-id-and-restrictions", "title": "Apple ID and Corporate Restrictions", "paragraphs": ["An Apple ID provides access to iCloud, the App Store, iMessage, FaceTime, and other Apple services. Organization-managed Macs may restrict applications, settings, accounts, security features, or cloud services."], "callout": "A setting disabled by company management → corporate restriction or policy."},
+    {"id": "best-practices", "title": "Best Practices", "entries": [
+      {"title": "Backups", "paragraphs": ["Backups protect against failure, deletion, corruption, and loss. Time Machine is the built-in macOS backup system."]},
+      {"title": "Antivirus", "paragraphs": ["Macs are not immune to malware; endpoint protection may be appropriate for the risk and organizational requirements."]},
+      {"title": "Updates/Patches", "paragraphs": ["OS and application updates deliver security, stability, compatibility, and bug fixes."]},
+      {"title": "Rapid Security Response (RSR)", "paragraphs": ["RSR lets Apple deliver urgent security improvements without waiting for a full traditional OS update."], "recognitionCue": "Urgent Apple security fix outside a major update → RSR."}
+    ]},
+    {"id": "system-preferences", "title": "System Preferences", "paragraphs": ["Depending on the macOS version, Apple uses the names System Preferences or System Settings."], "entries": [
+      {"title": "Displays", "paragraphs": ["Controls resolution, arrangement, brightness, and external displays."]},
+      {"title": "Networks", "paragraphs": ["Configures Wi-Fi, Ethernet, and other interfaces."]},
+      {"title": "Printers", "paragraphs": ["Adds, removes, and manages printers."]},
+      {"title": "Scanners", "paragraphs": ["Adds, removes, and manages scanners."]},
+      {"title": "Privacy", "paragraphs": ["Controls application access to camera, microphone, location, files, and other protected resources."]},
+      {"title": "Accessibility", "paragraphs": ["Provides assistive visual, hearing, motor, and interaction features."]},
+      {"title": "Time Machine", "paragraphs": ["Configures macOS backup destinations and historical file recovery."]}
+    ]},
+    {"id": "desktop-features", "title": "Desktop and Navigation Features", "entries": [
+      {"title": "Multiple Desktops", "paragraphs": ["Virtual desktops, called Spaces, separate workspaces."]},
+      {"title": "Mission Control", "paragraphs": ["Shows an overview of open windows, full-screen applications, and Spaces."], "recognitionCue": "See all workspaces and windows → Mission Control."},
+      {"title": "Keychain", "paragraphs": ["Stores passwords, certificates, and cryptographic keys."], "recognitionCue": "Inspect a saved password or certificate → Keychain."},
+      {"title": "Spotlight", "paragraphs": ["Searches applications, files, and information on the Mac."], "recognitionCue": "Search the Mac → Spotlight."},
+      {"title": "Gestures", "paragraphs": ["Multi-finger trackpad and pointing-device actions scroll, zoom, switch Spaces, and open Mission Control."]},
+      {"title": "Finder", "paragraphs": ["Finder is the macOS file manager for browsing and managing files and folders."], "recognitionCue": "Browse files → Finder."},
+      {"title": "Dock", "paragraphs": ["The Dock launches and switches applications and provides access to selected files, folders, running apps, and Trash."]},
+      {"title": "Continuity", "paragraphs": ["Continuity connects supported Apple devices so a workflow can start on one device and continue on another."]}
+    ]},
+    {"id": "icloud", "title": "iCloud", "entries": [
+      {"title": "iMessage", "paragraphs": ["Apple's messaging service."]},
+      {"title": "FaceTime", "paragraphs": ["Apple's audio and video calling service."]},
+      {"title": "Drive", "paragraphs": ["iCloud Drive stores and synchronizes files through Apple's cloud service."]}
+    ], "callout": "Time Machine is backup and recovery; iCloud Drive is cloud storage and synchronization."},
+    {"id": "disk-utility", "title": "Disk Utility", "paragraphs": ["Disk Utility manages storage devices and volumes, formatting, partitions, and supported disk checking or repair operations."], "callout": "Mac disks and volumes → Disk Utility."},
+    {"id": "filevault", "title": "FileVault", "paragraphs": ["FileVault provides full-disk encryption to protect stored Mac data if the device is lost or stolen."], "callout": "Disk encryption → FileVault. Credentials → Keychain."},
+    {"id": "terminal", "title": "Terminal", "paragraphs": ["Terminal provides command-line access to macOS."], "callout": "Mac command line → Terminal."},
+    {"id": "force-quit", "title": "Force Quit", "paragraphs": ["Force Quit closes an unresponsive application when normal Quit fails. It is available from the Apple menu and a keyboard shortcut."], "callout": "Frozen Mac application → Force Quit."},
+    {"id": "recognition-cues", "title": "Recognition Cues", "bullets": ["Disk image → .dmg", "Installer → .pkg", "Application → .app", "Apple software source → App Store", "Programs → /Applications", "User homes → /Users", "System-wide support → /Library", "OS files → /System", "User support → ~/Library", "Apple identity → Apple ID", "Managed setting → corporate restriction", "Urgent fix → RSR", "Backup → Time Machine", "Workspaces → multiple desktops", "Workspace overview → Mission Control", "Credentials → Keychain", "Search → Spotlight", "Cloud files → iCloud Drive", "Files → Finder", "App launcher → Dock", "Cross-device workflow → Continuity", "Disks → Disk Utility", "Encryption → FileVault", "CLI → Terminal", "Frozen app → Force Quit"]},
+    {"id": "exam-trap", "title": "Objective 1.8 Exam Trap", "variant": "exam-trap", "entries": [
+      {"title": ".dmg vs. .pkg vs. .app", "paragraphs": [".dmg is a container, .pkg is an installer, and .app is the application bundle."]},
+      {"title": "/Library vs. User Library", "paragraphs": ["/Library is system-wide; ~/Library belongs to one user."]},
+      {"title": "Finder vs. Spotlight", "paragraphs": ["Finder browses and manages files; Spotlight searches."]},
+      {"title": "Mission Control vs. Multiple Desktops", "paragraphs": ["Multiple desktops are workspaces; Mission Control shows and manages them."]},
+      {"title": "Keychain vs. FileVault", "paragraphs": ["Keychain stores credentials; FileVault encrypts the disk."]},
+      {"title": "Time Machine vs. iCloud Drive", "paragraphs": ["Time Machine is backup and recovery; iCloud Drive is cloud synchronization."]},
+      {"title": "Disk Utility vs. Finder", "paragraphs": ["Disk Utility manages devices and volumes; Finder manages files and folders."]}
+    ]},
+    {"id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet", "bullets": ["Mounted image → .dmg", "Installer → .pkg", "Application → .app", "Apps → /Applications", "User folders → /Users", "Shared support → /Library", "OS → /System", "Per-user support → ~/Library", "Apple identity → Apple ID", "Managed restriction → corporate policy", "Backup → Time Machine", "Urgent security → RSR", "Search → Spotlight", "Browse → Finder", "Credentials → Keychain", "Overview → Mission Control", "Messages → iMessage", "Calls → FaceTime", "Cloud files → iCloud Drive", "Cross-device → Continuity", "Disk tools → Disk Utility", "Full-disk encryption → FileVault", "Command line → Terminal", "Frozen app → Force Quit"]}
+  ]
+}

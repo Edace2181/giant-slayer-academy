@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Compare and Contrast Basic Features of Microsoft Windows Editions",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Windows editions support different consumer, business, security, management, and hardware capabilities. Recognize the Windows 10 and 11 editions, feature differences, upgrade paths, and Windows 11 hardware requirements.", "The main mental model is: edition → business features → security and management → upgrade path → hardware requirements."],
+      "bullets": ["Windows 10 Home, Pro, Pro for Workstations, and Enterprise", "Windows 11 Home, Pro, and Enterprise", "N versions", "Domain versus workgroup and user-interface differences", "RDP, RAM limitations, BitLocker, and Group Policy", "In-place upgrade versus clean install", "TPM and UEFI"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario requires domain membership, RDP hosting, BitLocker, Group Policy, enterprise management, or Windows 11 security requirements, can you identify the appropriate Windows edition or feature?"],
+      "bullets": ["Basic consumer PC → Home", "Business workstation → Pro", "High-end workstation hardware → Pro for Workstations", "Large managed organization → Enterprise", "Media technologies omitted → N version", "Windows 11 security baseline → TPM and UEFI"]
+    },
+    {
+      "id": "windows-10-editions",
+      "title": "Windows 10 Editions",
+      "entries": [
+        {"title": "Windows 10 Home", "paragraphs": ["Home is the consumer baseline. It lacks several advanced business-management and security features available in higher editions."], "memoryHook": "Home = consumer.", "recognitionCue": "A basic personal PC has no need for domain join or advanced management → Home."},
+        {"title": "Windows 10 Pro", "paragraphs": ["Pro adds business-oriented capabilities such as domain joining, BitLocker, Remote Desktop hosting, and Group Policy tools."], "memoryHook": "Pro = business workstation.", "recognitionCue": "A workstation needs domain membership or business security features → Pro."},
+        {"title": "Windows 10 Pro for Workstations", "paragraphs": ["Pro for Workstations targets high-end professional systems and demanding hardware or workloads beyond ordinary desktops."], "memoryHook": "Pro plus demanding workstation hardware.", "recognitionCue": "A high-performance professional workstation needs expanded hardware support → Pro for Workstations."},
+        {"title": "Windows 10 Enterprise", "paragraphs": ["Enterprise is designed for larger organizations that need advanced centralized management, deployment, and security capabilities."], "memoryHook": "Enterprise = centrally managed at scale.", "recognitionCue": "A large organization requires enterprise-wide administration → Enterprise."}
+      ]
+    },
+    {
+      "id": "windows-11-editions",
+      "title": "Windows 11 Editions",
+      "entries": [
+        {"title": "Windows 11 Home", "paragraphs": ["Home serves consumer systems and provides the baseline Windows 11 experience without the full set of business-management features."], "memoryHook": "Home = consumer."},
+        {"title": "Windows 11 Pro", "paragraphs": ["Pro adds business, management, remote-access, and encryption capabilities for professional workstations."], "memoryHook": "Pro = professional and business features."},
+        {"title": "Windows 11 Enterprise", "paragraphs": ["Enterprise supports large, centrally managed organizations with advanced security and administration requirements."], "memoryHook": "Enterprise = managed organization at scale."}
+      ],
+      "table": {"caption": "Windows edition recognition", "headers": ["Edition", "Typical audience", "Recognition"], "rows": [["Home", "Consumer", "Basic personal computer"], ["Pro", "Professional or small business", "Domain, BitLocker, RDP host, and policy needs"], ["Pro for Workstations (Windows 10)", "High-end professional workstation", "Demanding hardware and workloads"], ["Enterprise", "Large organization", "Central management and security at scale"]]}
+    },
+    {
+      "id": "n-versions",
+      "title": "N Versions",
+      "paragraphs": ["N editions are Windows editions distributed without certain media-related technologies and applications normally included with standard editions."],
+      "callout": "A Windows edition lacks the usual built-in media components → N version."
+    },
+    {
+      "id": "domain-and-workgroup",
+      "title": "Domain vs. Workgroup",
+      "paragraphs": ["A workgroup is decentralized: each computer manages its own local users, security, and permissions. A domain centralizes authentication and administration so policies and identities can be managed across many computers."],
+      "table": {"caption": "Domain and workgroup", "headers": ["Model", "Administration", "Recognition"], "rows": [["Workgroup", "Local and peer-oriented", "Each PC manages itself"], ["Domain", "Centralized", "Shared identities and policies"]]},
+      "callout": "Small and local → workgroup. Central control → domain."
+    },
+    {
+      "id": "desktop-styles-and-ui",
+      "title": "Desktop Styles and User Interface",
+      "paragraphs": ["Windows releases and editions can differ in Start menu, taskbar, Settings interface, and desktop appearance. Interface cues help distinguish releases, while business and security capabilities distinguish editions."],
+      "callout": "Use appearance to recognize a Windows release, but use capabilities to choose an edition."
+    },
+    {
+      "id": "rdp-and-ram",
+      "title": "RDP Availability and RAM Support",
+      "entries": [
+        {"title": "Remote Desktop Protocol (RDP)", "paragraphs": ["RDP lets a user interact with a Windows desktop remotely. A system may include an RDP client even when its edition cannot host incoming Remote Desktop sessions. Business-class editions are associated with RDP hosting."], "memoryHook": "Client connects out; host accepts in.", "recognitionCue": "Other computers must connect into this workstation → verify RDP host support."},
+        {"title": "Random-Access Memory (RAM) Support Limitations", "paragraphs": ["Windows editions can impose different maximum RAM limits. Higher-tier editions may support more memory than Home, so verify the edition as well as the physical hardware."], "memoryHook": "The edition can limit usable RAM.", "recognitionCue": "Installed memory exceeds what the selected edition supports → edition RAM limitation."}
+      ]
+    },
+    {
+      "id": "security-and-policy-features",
+      "title": "BitLocker and Group Policy",
+      "entries": [
+        {"title": "BitLocker", "paragraphs": ["BitLocker provides full-volume encryption on supported Windows editions and can use TPM-backed protection."], "memoryHook": "BitLocker = protect drive data with encryption.", "recognitionCue": "A business laptop needs built-in Windows full-volume encryption → BitLocker."},
+        {"title": "Group Policy Editor (gpedit.msc)", "paragraphs": ["gpedit.msc opens the Local Group Policy Editor on supported editions. It configures computer and user policies; Home commonly lacks the full editor available in Pro and Enterprise."], "memoryHook": "gpedit.msc = local policy configuration.", "recognitionCue": "A technician needs to configure local administrative policy → gpedit.msc."}
+      ]
+    },
+    {
+      "id": "upgrade-paths",
+      "title": "Upgrade Paths",
+      "entries": [
+        {"title": "In-Place Upgrade", "paragraphs": ["An in-place upgrade installs a newer supported Windows release while attempting to preserve applications, user files, and settings."], "memoryHook": "Keep the environment → in-place upgrade.", "recognitionCue": "The user wants the newer version without rebuilding the workstation → in-place upgrade."},
+        {"title": "Clean Install", "paragraphs": ["A clean install creates a fresh Windows environment. Required data must be backed up before the prior environment is removed or reformatted."], "memoryHook": "Start fresh → clean install.", "recognitionCue": "The old environment should be replaced completely → clean install."}
+      ],
+      "table": {"caption": "Windows upgrade paths", "headers": ["Path", "Outcome"], "rows": [["In-place upgrade", "Preserve supported applications, files, and settings"], ["Clean install", "Create a fresh environment"]]}
+    },
+    {
+      "id": "hardware-requirements",
+      "title": "Windows 11 Hardware Requirements",
+      "entries": [
+        {"title": "Trusted Platform Module (TPM)", "paragraphs": ["A TPM provides hardware-backed security functions involving cryptographic keys, device integrity, and features such as BitLocker."], "memoryHook": "TPM = hardware security foundation.", "recognitionCue": "The requirement describes hardware-backed key protection → TPM."},
+        {"title": "Unified Extensible Firmware Interface (UEFI)", "paragraphs": ["UEFI is the modern firmware and boot environment that replaced legacy BIOS on current systems. Windows 11 emphasizes modern firmware and security capabilities."], "memoryHook": "UEFI = modern firmware and boot environment.", "recognitionCue": "The requirement describes modern system firmware → UEFI."}
+      ],
+      "callout": "TPM is security hardware; UEFI is the firmware and boot environment."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Consumer edition → Home", "Business workstation → Pro", "High-end workstation → Pro for Workstations", "Large centrally managed company → Enterprise", "Media technologies omitted → N version", "Decentralized PCs → workgroup", "Centralized authentication → domain", "Accept incoming remote desktop sessions → RDP host support", "Edition limits usable memory → RAM support limitation", "Drive encryption → BitLocker", "Local Group Policy → gpedit.msc", "Preserve environment during upgrade → in-place", "Start fresh → clean install", "Hardware-backed security → TPM", "Modern firmware → UEFI"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Home vs. Pro", "paragraphs": ["Home is the consumer baseline. Pro adds business features such as domain join, BitLocker, Group Policy, and RDP hosting."]},
+        {"title": "Pro vs. Enterprise", "paragraphs": ["Pro fits professional or smaller-business workstations. Enterprise targets large organizations with centralized management and security needs."]},
+        {"title": "RDP Client vs. RDP Host", "paragraphs": ["Being able to connect to another computer is not the same as accepting incoming Remote Desktop sessions. Client connects out; host accepts in."]},
+        {"title": "TPM vs. BitLocker", "paragraphs": ["TPM is a hardware security component. BitLocker is an encryption feature that can use the TPM."]},
+        {"title": "Domain vs. Workgroup", "paragraphs": ["A domain is centralized; a workgroup is locally managed and decentralized."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Home user → Home", "Business workstation → Pro", "High-performance Windows 10 workstation → Pro for Workstations", "Large managed organization → Enterprise", "Media features omitted → N", "Peer/local administration → workgroup", "Centralized authentication → domain", "Remote desktop hosting → RDP-capable business edition", "Edition-based memory ceiling → RAM limitation", "Disk encryption → BitLocker", "Policy editor → gpedit.msc", "Preserve applications and settings → in-place upgrade", "Fresh environment → clean install", "Security hardware → TPM", "Modern firmware → UEFI"]
+    }
+  ]
+}

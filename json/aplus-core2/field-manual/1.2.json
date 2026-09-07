@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.2",
+  "title": "Given a Scenario, Perform OS Installations and Upgrades in a Diverse Environment",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Installing or upgrading an operating system requires choosing how setup starts, what installation method fits the goal, how storage is prepared, and whether the target environment is compatible.", "The main mental model is: boot → installation type → partition → format → drivers → compatibility → update."],
+      "bullets": ["Boot methods", "Installation and deployment types", "Third-party driver considerations", "GPT and MBR partitioning", "Drive formatting", "Upgrade preparation and compatibility", "Feature updates and product life cycle"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes deploying, reinstalling, repairing, upgrading, or recovering an OS, can you select the correct boot method, installation type, partition style, and preparation steps?"],
+      "bullets": ["Thumb drive → USB boot", "Installer across a LAN → network boot", "Fresh start → clean install", "Keep applications and settings → upgrade", "Standardized copy → image deployment", "Little or no technician interaction → zero-touch", "Modern UEFI and large drive → GPT", "Legacy partition scheme → MBR", "Before an upgrade → back up files and preferences"]
+    },
+    {
+      "id": "boot-methods",
+      "title": "Boot Methods",
+      "entries": [
+        {"title": "Universal Serial Bus (USB)", "paragraphs": ["A bootable USB flash drive can hold and launch an OS installer. It is portable, fast, and common for individual deployments or repairs."], "recognitionCue": "Technician starts setup from a thumb drive → USB boot."},
+        {"title": "Network", "paragraphs": ["A computer can boot installation resources from a network, which is useful for centrally deploying operating systems to many endpoints."], "recognitionCue": "The installer comes from a deployment server across the LAN → network boot."},
+        {"title": "Solid-State/Flash Drives", "paragraphs": ["Installation media can reside on flash-based or solid-state storage. A USB flash drive is one common example, but this official category covers flash media more broadly."]},
+        {"title": "Internet-Based", "paragraphs": ["Some systems retrieve recovery or installation resources directly from vendor or cloud infrastructure when local media is unavailable."], "recognitionCue": "The device downloads its recovery image from the vendor → Internet-based installation."},
+        {"title": "External/Hot-Swappable Drive", "paragraphs": ["An external drive can carry the installer. A hot-swappable device may be connected or removed while a compatible system is running, but safe-removal procedures still matter."]},
+        {"title": "Internal Hard Drive Partition", "paragraphs": ["Installation or recovery files may be stored on a dedicated partition of the internal drive."], "recognitionCue": "The installer or recovery files are already stored inside the computer → internal partition."},
+        {"title": "Multiboot", "paragraphs": ["A multiboot system contains more than one bootable operating system and offers a startup choice."], "recognitionCue": "The startup menu offers Windows or Linux → multiboot."}
+      ]
+    },
+    {
+      "id": "installation-types",
+      "title": "Types of Installations",
+      "entries": [
+        {"title": "Clean Install", "paragraphs": ["A clean install creates a fresh operating-system environment rather than preserving the old installation. Back up required data before removing or formatting the old system volume."], "memoryHook": "Clean = start fresh.", "recognitionCue": "The previous configuration should be removed completely → clean install."},
+        {"title": "Upgrade", "paragraphs": ["An upgrade moves a supported installation to a newer OS while attempting to preserve user files, applications, and settings."], "memoryHook": "Upgrade = keep the environment and move forward.", "recognitionCue": "The user must retain applications, files, and settings → upgrade."}
+      ],
+      "table": {"caption": "Clean install and upgrade", "headers": ["Method", "Primary goal", "Main concern"], "rows": [["Clean install", "Fresh environment", "Back up anything that must be retained"], ["Upgrade", "Preserve environment", "Verify application, driver, and hardware compatibility"]]}
+    },
+    {
+      "id": "deployment-methods",
+      "title": "Deployment Methods",
+      "entries": [
+        {"title": "Image Deployment", "paragraphs": ["An image is a prepared copy of an OS installation and configuration. Organizations deploy images to create standardized workstations."], "memoryHook": "One prepared build → many machines.", "recognitionCue": "A company needs identical workstation configurations → image deployment."},
+        {"title": "Remote Network Installation", "paragraphs": ["A remote network installation delivers OS setup resources across the network, reducing the need for local physical media."], "recognitionCue": "The OS is installed remotely over the network → remote network installation."},
+        {"title": "Zero-Touch Deployment", "paragraphs": ["Zero-touch deployment automates provisioning with little or no technician interaction at the endpoint."], "memoryHook": "Zero touch = automated provisioning.", "recognitionCue": "A new laptop configures itself after connecting to the deployment service → zero-touch."}
+      ],
+      "callout": "Image describes what prepared configuration is deployed; remote describes where setup resources come from; zero-touch describes how automated the process is."
+    },
+    {
+      "id": "recovery-and-repair",
+      "title": "Recovery and Repair",
+      "entries": [
+        {"title": "Recovery Partition", "paragraphs": ["A recovery partition stores tools or files used to restore a system, often to a vendor-provided factory state."], "memoryHook": "Recovery partition = built-in restore source.", "recognitionCue": "A hidden internal partition restores the factory environment → recovery partition."},
+        {"title": "Repair Installation", "paragraphs": ["A repair installation replaces or repairs OS components while preserving as much of the existing user environment as possible."], "memoryHook": "Repair the OS without rebuilding everything.", "recognitionCue": "System files are damaged but the user environment should remain → repair installation."},
+        {"title": "Other Considerations and Third-Party Drivers", "paragraphs": ["Some storage controllers, network adapters, and specialized devices require a driver that the installer does not include. Have the correct vendor-supported driver available before deployment."], "recognitionCue": "Setup cannot see a specialized storage controller → load the appropriate third-party driver."}
+      ]
+    },
+    {
+      "id": "partitioning",
+      "title": "Partitioning",
+      "paragraphs": ["Partitioning divides a physical storage device into logical regions. The selected scheme must match the firmware, capacity, and deployment requirements."],
+      "entries": [
+        {"title": "GUID Partition Table (GPT)", "paragraphs": ["GPT is the modern partitioning standard commonly paired with UEFI. It supports large drives and more partitions than traditional MBR."], "memoryHook": "Modern + UEFI → GPT.", "recognitionCue": "A modern UEFI system or large drive → GPT."},
+        {"title": "Master Boot Record (MBR)", "paragraphs": ["MBR is an older partitioning scheme associated with legacy BIOS environments and has stricter drive-size and partition-count limits."], "memoryHook": "Legacy BIOS → MBR.", "recognitionCue": "The scenario requires an older legacy partition scheme → MBR."}
+      ]
+    },
+    {
+      "id": "drive-format",
+      "title": "Drive Format",
+      "paragraphs": ["After partitioning, a volume usually needs a filesystem. Formatting creates that filesystem so the OS can organize files."],
+      "table": {"caption": "Partition and format", "headers": ["Action", "Purpose", "Recognition"], "rows": [["Partition", "Define logical storage regions", "Divide the drive"], ["Format", "Create a filesystem", "Prepare the volume for files"]]},
+      "callout": "Partition divides space; format creates the filesystem."
+    },
+    {
+      "id": "upgrade-considerations",
+      "title": "Upgrade Considerations",
+      "entries": [
+        {"title": "Back Up Files and User Preferences", "paragraphs": ["Protect documents, application data, browser data, photos, and user preferences before a major OS change. An upgrade plan is incomplete without a tested recovery path."], "memoryHook": "Upgrade second; backup first."},
+        {"title": "Application and Driver Support / Backward Compatibility", "paragraphs": ["The OS may install successfully while an important application or device fails. Confirm that software and drivers support the target release. Backward compatibility means the newer environment can still use items designed for an older one."], "recognitionCue": "A legacy application must keep running after upgrade → verify backward compatibility."},
+        {"title": "Hardware Compatibility", "paragraphs": ["Verify CPU, RAM, storage, firmware, TPM when applicable, and device support against the target OS requirements."], "recognitionCue": "Before upgrading, determine whether the computer can actually run the target OS → hardware compatibility."}
+      ]
+    },
+    {
+      "id": "feature-updates",
+      "title": "Feature Updates and Product Life Cycle",
+      "paragraphs": ["A feature update introduces significant OS functions or version changes compared with smaller maintenance or security updates. Treat it like a meaningful platform change: verify backups and compatibility first.", "Products move through vendor support stages. Deploying an OS near the end of its product life cycle can create security, support, and future-upgrade problems."],
+      "callout": "A major feature release still needs compatibility planning; a near-EOL release may be the wrong deployment target."
+    },
+    {
+      "id": "installation-decision-map",
+      "title": "OS Installation Decision Map",
+      "bullets": ["Need a fresh system → clean install", "Preserve applications and settings → upgrade", "Repeat one standard configuration → image deployment", "Install resources come across the network → remote network installation", "Automate with almost no endpoint interaction → zero-touch", "Restore vendor state → recovery partition", "Repair damaged OS components → repair installation"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Thumb drive → USB", "Installer from LAN → network", "Vendor recovery downloaded online → Internet-based", "External disk carries installer → external/hot-swappable drive", "Installer stored internally → internal partition", "Two OS choices → multiboot", "Start fresh → clean install", "Preserve environment → upgrade", "Standard corporate build → image deployment", "Fully automated provisioning → zero-touch", "Factory restore source → recovery partition", "Fix OS in place → repair installation", "Installer cannot see hardware → third-party driver", "Modern UEFI → GPT", "Legacy BIOS → MBR", "Create filesystem → format", "Before upgrade → backup", "Older software must still work → backward compatibility", "Major OS capability release → feature update", "Support timeline → product life cycle"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Clean Install vs. Upgrade", "paragraphs": ["Clean creates a fresh environment. Upgrade attempts to preserve files, applications, and settings."]},
+        {"title": "Image vs. Zero-Touch", "paragraphs": ["An image is the prepared configuration being deployed. Zero-touch describes how little technician interaction is required. They may be used together."]},
+        {"title": "Recovery Partition vs. Repair Installation", "paragraphs": ["A recovery partition is the source or location used to restore a system. A repair installation is the method used to fix OS components."]},
+        {"title": "GPT vs. MBR", "paragraphs": ["GPT is the modern UEFI-associated scheme; MBR is the older legacy scheme."]},
+        {"title": "Partition vs. Format", "paragraphs": ["Partition defines regions; format builds the filesystem inside a region."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["USB → portable installer", "Network → boot installer across LAN", "Internet-based → download recovery", "External/hot-swappable → external installation media", "Internal partition → built-in setup source", "Multiboot → choose among operating systems", "Clean → fresh environment", "Upgrade → preserve environment", "Image → standardized copy", "Remote → network-delivered installation", "Zero-touch → automated provisioning", "Recovery partition → factory restore source", "Repair → fix OS in place", "Third-party driver → unsupported setup hardware", "GPT → modern UEFI", "MBR → legacy", "Format → create filesystem", "Backup → protect user data first", "Backward compatibility → newer system supports older item", "Hardware compatibility → device meets target requirements", "Feature update → major OS functionality", "Product life cycle → support timeline"]
+    }
+  ]
+}

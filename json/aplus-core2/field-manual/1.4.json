@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.4",
+  "title": "Given a Scenario, Use Microsoft Windows Operating System Features and Tools",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Windows includes built-in tools for processes, services, startup, hardware, storage, logs, scheduling, certificates, accounts, performance, system configuration, cleanup, drive optimization, and Registry editing.", "The main mental model is: problem type → correct Windows tool."],
+      "bullets": ["Task Manager", "Microsoft Management Console (MMC) snap-ins", "System Information and Resource Monitor", "System Configuration", "Disk Cleanup and Disk Defragment", "Registry Editor"],
+      "callout": "For each scenario, identify exactly what must be inspected or changed, then choose the most direct built-in tool."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a Windows troubleshooting or administrative task appears, can you identify the fastest built-in tool for the job?"],
+      "bullets": ["Running process → Task Manager", "Windows logs → Event Viewer", "Partition or volume → Disk Management", "Automatic job → Task Scheduler", "Hardware or driver → Device Manager", "Certificates → Certificate Manager", "Local accounts and groups → Local Users and Groups", "Performance counters → Performance Monitor", "Policies → Group Policy Editor", "Hardware and OS inventory → System Information", "Detailed real-time use → Resource Monitor", "Startup configuration → System Configuration", "Temporary files → Disk Cleanup", "HDD fragmentation → Disk Defragment", "Registry → Registry Editor"]
+    },
+    {
+      "id": "task-manager",
+      "title": "Task Manager",
+      "paragraphs": ["Task Manager provides a quick view of running applications and processes, system performance, users, startup programs, and services. It is the first stop when the question is what is running or consuming resources right now."],
+      "entries": [
+        {"title": "Services", "paragraphs": ["The Services area shows Windows services and their current status."], "recognitionCue": "Inspect a background Windows service quickly → Task Manager Services."},
+        {"title": "Startup", "paragraphs": ["The Startup area manages applications that launch when Windows starts or a user signs in."], "recognitionCue": "Too many applications slow sign-in or boot → Task Manager Startup."},
+        {"title": "Performance", "paragraphs": ["The Performance area gives an overview of CPU, memory, disk, and network utilization."], "recognitionCue": "Check CPU or RAM use quickly → Task Manager Performance."},
+        {"title": "Processes", "paragraphs": ["The Processes area shows applications and background processes and lets a technician identify or end an unresponsive or resource-heavy process."], "recognitionCue": "An application is frozen → Task Manager Processes."},
+        {"title": "Users", "paragraphs": ["The Users area shows logged-in users and their resource usage."], "recognitionCue": "Determine who is signed in and using resources → Task Manager Users."}
+      ]
+    },
+    {
+      "id": "microsoft-management-console",
+      "title": "Microsoft Management Console (MMC) Snap-Ins",
+      "paragraphs": ["Microsoft Management Console provides a common framework for Windows administrative tools called snap-ins. CompTIA expects recognition of the tool name, its job, and its .msc command."],
+      "callout": "MMC is the container; the snap-in is the task-specific tool."
+    },
+    {
+      "id": "event-viewer",
+      "title": "Event Viewer — eventvwr.msc",
+      "paragraphs": ["Event Viewer displays application, security, system, and other Windows event logs. Use it to investigate recorded errors, warnings, and significant events."],
+      "callout": "What happened? Read the logs in Event Viewer."
+    },
+    {
+      "id": "disk-management",
+      "title": "Disk Management — diskmgmt.msc",
+      "paragraphs": ["Disk Management manages physical disks, partitions, volumes, drive letters, and formatting."],
+      "callout": "Create or inspect a partition, volume, or drive letter → Disk Management."
+    },
+    {
+      "id": "task-scheduler",
+      "title": "Task Scheduler — taskschd.msc",
+      "paragraphs": ["Task Scheduler runs actions automatically in response to a time, schedule, trigger, or event."],
+      "callout": "Run a maintenance script every night → Task Scheduler."
+    },
+    {
+      "id": "device-manager",
+      "title": "Device Manager — devmgmt.msc",
+      "paragraphs": ["Device Manager displays installed hardware and drivers. Use it to identify device problems, update drivers, and disable or enable hardware."],
+      "callout": "A device shows a warning icon or needs a driver → Device Manager."
+    },
+    {
+      "id": "certificate-manager",
+      "title": "Certificate Manager — certmgr.msc",
+      "paragraphs": ["Certificate Manager displays and manages digital certificates associated with the current user."],
+      "callout": "View or manage an installed user certificate → Certificate Manager."
+    },
+    {
+      "id": "local-users-and-groups",
+      "title": "Local User and Groups — lusrmgr.msc",
+      "paragraphs": ["Local Users and Groups manages local user accounts, local groups, and group membership."],
+      "callout": "Add a local account to the Administrators group → Local Users and Groups."
+    },
+    {
+      "id": "performance-monitor",
+      "title": "Performance Monitor — perfmon.msc",
+      "paragraphs": ["Performance Monitor provides detailed performance counters and supports sustained or historical measurement."],
+      "callout": "Track detailed CPU or disk counters over time → Performance Monitor."
+    },
+    {
+      "id": "group-policy-editor",
+      "title": "Group Policy Editor — gpedit.msc",
+      "paragraphs": ["Group Policy Editor configures supported local computer and user policies."],
+      "callout": "Configure a local Windows policy → Group Policy Editor."
+    },
+    {
+      "id": "additional-tools",
+      "title": "Additional Windows Tools",
+      "entries": [
+        {"title": "System Information — msinfo32.exe", "paragraphs": ["System Information displays detailed hardware, components, OS environment, and system-resource inventory."], "memoryHook": "What is inside this PC? → msinfo32.", "recognitionCue": "Find the system model, BIOS version, RAM, and OS inventory → System Information."},
+        {"title": "Resource Monitor — resmon.exe", "paragraphs": ["Resource Monitor shows detailed real-time CPU, memory, disk, and network activity by process."], "memoryHook": "Who is using resources right now? → resmon.", "recognitionCue": "Identify the process generating current network traffic → Resource Monitor."},
+        {"title": "System Configuration — msconfig.exe", "paragraphs": ["System Configuration helps isolate and troubleshoot startup, boot, and service configuration problems."], "memoryHook": "Startup and boot configuration → msconfig.", "recognitionCue": "Troubleshoot broader Windows startup behavior → System Configuration."},
+        {"title": "Disk Cleanup — cleanmgr.exe", "paragraphs": ["Disk Cleanup removes temporary, cached, and other unnecessary files to recover storage space."], "memoryHook": "Free disk space → cleanmgr.", "recognitionCue": "Remove unneeded temporary files → Disk Cleanup."},
+        {"title": "Disk Defragment — dfrgui.exe", "paragraphs": ["The drive optimization interface traditionally defragments hard disks. Windows handles SSD optimization differently, so do not treat SSDs like mechanical HDDs."], "memoryHook": "HDD fragmentation → dfrgui.", "recognitionCue": "A traditional hard drive is heavily fragmented → Disk Defragment."},
+        {"title": "Registry Editor — regedit.exe", "paragraphs": ["Registry Editor views and changes the Windows Registry, a low-level configuration database for Windows, users, applications, and hardware. Incorrect changes can seriously affect the system."], "memoryHook": "Registry key → regedit.", "recognitionCue": "Inspect or change a specific Registry key → Registry Editor."}
+      ]
+    },
+    {
+      "id": "monitoring-tool-comparison",
+      "title": "Task Manager, Resource Monitor, and Performance Monitor",
+      "table": {"caption": "Choose the right monitoring tool", "headers": ["Tool", "Best use", "Memory cue"], "rows": [["Task Manager", "Quick overview and process control", "Quick"], ["Resource Monitor", "Detailed current CPU, memory, disk, and network use", "Deep now"], ["Performance Monitor", "Counters and longer-term monitoring", "Track"]]},
+      "callout": "Task Manager is quick; Resource Monitor is detailed and live; Performance Monitor measures counters over time."
+    },
+    {
+      "id": "tool-comparisons",
+      "title": "High-Value Tool Comparisons",
+      "entries": [
+        {"title": "Event Viewer vs. Performance Monitor", "paragraphs": ["Event Viewer answers what logged event occurred. Performance Monitor answers how performance counters behave."]},
+        {"title": "Disk Management vs. Disk Cleanup vs. Disk Defragment", "paragraphs": ["Disk Management changes storage structure; Disk Cleanup frees space; Disk Defragment optimizes fragmented HDD data layout."]},
+        {"title": "Device Manager vs. System Information", "paragraphs": ["Device Manager configures and troubleshoots hardware and drivers. System Information reads detailed system inventory."]},
+        {"title": "Task Manager Startup vs. System Configuration", "paragraphs": ["Task Manager Startup controls startup applications. msconfig supports broader startup, boot, and service troubleshooting."]},
+        {"title": "Registry Editor vs. Group Policy Editor", "paragraphs": ["regedit directly edits Registry data. gpedit configures supported administrative policies."]}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Kill a frozen process → Task Manager", "Manage startup applications → Task Manager Startup", "Read Windows logs → Event Viewer", "Manage partitions and volumes → Disk Management", "Schedule an automatic action → Task Scheduler", "Driver or device problem → Device Manager", "Manage certificates → Certificate Manager", "Manage local users and groups → lusrmgr.msc", "Detailed performance counters → Performance Monitor", "Local policy → Group Policy Editor", "Hardware and OS inventory → System Information", "Detailed live activity → Resource Monitor", "Startup configuration → System Configuration", "Delete temporary files → Disk Cleanup", "Optimize a fragmented HDD → Disk Defragment", "Edit the Registry → Registry Editor"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.4 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Several Windows tools may sound plausible. Focus on the exact object being inspected or changed: process, event log, performance counter, device, inventory, partition, free space, startup item, policy, or Registry key."],
+      "entries": [
+        {"title": "Current Activity vs. Historical Events", "paragraphs": ["Task Manager and Resource Monitor show current activity. Event Viewer shows recorded events."]},
+        {"title": "Live Detail vs. Counter Tracking", "paragraphs": ["Resource Monitor provides detailed live use; Performance Monitor measures counters and trends."]},
+        {"title": "Storage Structure vs. Storage Space", "paragraphs": ["Disk Management handles partitions and volumes; Disk Cleanup removes unnecessary files."]},
+        {"title": "Hardware Management vs. Inventory", "paragraphs": ["Device Manager changes or troubleshoots devices and drivers; msinfo32 reports system information."]},
+        {"title": "Policy vs. Registry", "paragraphs": ["gpedit configures policy; regedit directly edits Registry keys and values."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Frozen process → Task Manager", "Startup application → Task Manager Startup", "Current resource overview → Task Manager Performance", "Windows logs → eventvwr.msc", "Partitions or volumes → diskmgmt.msc", "Scheduled job → taskschd.msc", "Hardware and drivers → devmgmt.msc", "Certificates → certmgr.msc", "Local accounts and groups → lusrmgr.msc", "Performance counters → perfmon.msc", "Local policy → gpedit.msc", "Hardware and OS inventory → msinfo32.exe", "Detailed live resource use → resmon.exe", "Startup troubleshooting → msconfig.exe", "Remove unnecessary files → cleanmgr.exe", "Optimize HDD fragmentation → dfrgui.exe", "Windows Registry → regedit.exe"]
+    }
+  ]
+}

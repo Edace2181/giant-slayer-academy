@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.1",
+  "title": "Explain Common Operating System Types and Their Purposes",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Operating systems connect users, applications, hardware, storage, and security. Recognize the major workstation and mobile systems, their filesystems, vendor life-cycle limits, and compatibility concerns.", "The main mental model is: OS family → device purpose → filesystem → support life cycle → compatibility."],
+      "bullets": ["Workstation systems: Windows, Linux, macOS, and Chrome OS", "Mobile systems: iPadOS, iOS, and Android", "Filesystems: NTFS, ReFS, FAT32, ext4, XFS, APFS, and exFAT", "End-of-life and update limitations", "Compatibility between operating systems"],
+      "callout": "Identify the device and workload, then match the OS, storage format, support status, and compatibility requirements."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes a device, application, filesystem, or support limitation, can you identify the operating system or compatibility issue involved?"],
+      "bullets": ["Broad commercial desktop support → Windows", "Open-source flexibility → Linux", "Apple computer ecosystem → macOS", "Browser-centered managed device → Chrome OS", "Apple phone → iOS", "Apple tablet → iPadOS", "Many manufacturers → Android"]
+    },
+    {
+      "id": "workstation-operating-systems",
+      "title": "Workstation Systems (OSs)",
+      "entries": [
+        {"title": "Windows", "paragraphs": ["Microsoft Windows is widely used on business and consumer computers. Its broad application, hardware, driver, and enterprise-management support makes it a common workstation platform."], "memoryHook": "Windows = broad desktop compatibility.", "recognitionCue": "A standard business desktop needs common commercial applications and domain services → Windows."},
+        {"title": "Linux", "paragraphs": ["Linux is an open-source family of operating systems distributed in many versions. It is common on servers, development systems, embedded devices, and technical workstations."], "memoryHook": "Linux = open-source flexibility.", "recognitionCue": "A system emphasizes open-source tools, customization, or server administration → Linux."},
+        {"title": "macOS", "paragraphs": ["macOS is Apple's desktop operating system for Mac hardware. It integrates closely with Apple hardware, services, and the wider Apple ecosystem."], "memoryHook": "macOS = Apple computers.", "recognitionCue": "The workstation is a Mac → macOS."},
+        {"title": "Chrome OS", "paragraphs": ["Chrome OS is Google's lightweight, browser-centered operating system commonly found on Chromebooks. It emphasizes web applications, cloud services, and simple administration."], "memoryHook": "Chrome OS = browser and cloud first.", "recognitionCue": "A managed Chromebook relies primarily on web applications → Chrome OS."}
+      ]
+    },
+    {
+      "id": "workstation-comparison",
+      "title": "Workstation OS Comparison",
+      "table": {"caption": "Workstation operating-system recognition", "headers": ["Operating system", "Typical strength", "Recognition clue"], "rows": [["Windows", "Broad commercial hardware and application support", "General business or consumer PC"], ["Linux", "Open-source flexibility and administration", "Server, developer, or customized environment"], ["macOS", "Apple hardware and ecosystem integration", "Mac computer"], ["Chrome OS", "Browser-centered cloud workflow", "Chromebook or web-first endpoint"]]}
+    },
+    {
+      "id": "mobile-operating-systems",
+      "title": "Mobile OSs",
+      "entries": [
+        {"title": "iPadOS", "paragraphs": ["iPadOS is Apple's operating system for iPad tablets, optimized for touch, larger tablet displays, multitasking, and supported accessories."], "memoryHook": "iPadOS = Apple tablet.", "recognitionCue": "The device is an iPad → iPadOS."},
+        {"title": "iOS", "paragraphs": ["iOS is Apple's mobile operating system for iPhones. It is tightly controlled by Apple and integrates with Apple services and devices."], "memoryHook": "iOS = iPhone.", "recognitionCue": "The device is an Apple smartphone → iOS."},
+        {"title": "Android", "paragraphs": ["Android is Google's mobile operating system used by many manufacturers across phones, tablets, and other devices. Vendor customization creates differences in interfaces and update schedules."], "memoryHook": "Android = many vendors and form factors.", "recognitionCue": "A non-Apple mobile device from one of many manufacturers → Android."}
+      ],
+      "table": {"caption": "Mobile platform recognition", "headers": ["Platform", "Primary device", "Key distinction"], "rows": [["iOS", "iPhone", "Apple smartphone platform"], ["iPadOS", "iPad", "Apple tablet platform"], ["Android", "Many devices and vendors", "Hardware variety and vendor customization"]]}
+    },
+    {
+      "id": "filesystems-overview",
+      "title": "Various Filesystem Types",
+      "paragraphs": ["A filesystem defines how an operating system organizes, stores, names, and retrieves files. Compatibility matters because an operating system may not natively read or write every filesystem."],
+      "callout": "Choose a filesystem for the operating system, device, required features, and cross-platform needs."
+    },
+    {
+      "id": "windows-filesystems",
+      "title": "Windows-Oriented Filesystems",
+      "entries": [
+        {"title": "New Technology File System (NTFS)", "paragraphs": ["NTFS is the standard modern Windows filesystem. It supports permissions, journaling, large files, compression, and encryption-related features."], "memoryHook": "NTFS = normal Windows system storage.", "recognitionCue": "A Windows internal drive needs permissions and journaling → NTFS."},
+        {"title": "Resilient File System (ReFS)", "paragraphs": ["ReFS is a Microsoft filesystem designed for resilience, integrity, and large-scale storage scenarios rather than ordinary Windows boot volumes."], "memoryHook": "ReFS = resilient Microsoft storage.", "recognitionCue": "Storage integrity and resilience at scale → ReFS."},
+        {"title": "File Allocation Table 32 (FAT32)", "paragraphs": ["FAT32 is an older, widely compatible filesystem. Its key limitation is a maximum individual file size of about 4 GB."], "memoryHook": "FAT32 = broad compatibility with a 4 GB file limit.", "recognitionCue": "A removable drive cannot accept a file larger than 4 GB → FAT32 limitation."}
+      ]
+    },
+    {
+      "id": "linux-filesystems",
+      "title": "Linux Filesystems",
+      "entries": [
+        {"title": "Fourth Extended Filesystem (ext4)", "paragraphs": ["ext4 is a common general-purpose Linux filesystem with journaling, reliability, and broad Linux support."], "memoryHook": "ext4 = common general-purpose Linux.", "recognitionCue": "A standard Linux installation needs a familiar local filesystem → ext4."},
+        {"title": "Extended Filesystem (XFS)", "paragraphs": ["XFS is a high-performance journaling filesystem used on Linux, especially for large files and scalable storage workloads."], "memoryHook": "XFS = scalable Linux storage.", "recognitionCue": "A Linux workload emphasizes large files and scalable performance → XFS."}
+      ]
+    },
+    {
+      "id": "apple-and-portable-filesystems",
+      "title": "Apple and Portable Filesystems",
+      "entries": [
+        {"title": "Apple File System (APFS)", "paragraphs": ["APFS is Apple's modern filesystem for macOS, iOS, and iPadOS. It is optimized for flash storage and supports encryption and snapshots."], "memoryHook": "APFS = modern Apple storage.", "recognitionCue": "A modern Mac or Apple mobile device uses its native filesystem → APFS."},
+        {"title": "Extensible File Allocation Table (exFAT)", "paragraphs": ["exFAT is designed for flash and removable storage, supports files larger than FAT32's limit, and is broadly compatible across modern operating systems."], "memoryHook": "exFAT = portable sharing without FAT32's 4 GB limit.", "recognitionCue": "A large file must move between Windows and macOS → exFAT."}
+      ]
+    },
+    {
+      "id": "filesystem-comparison",
+      "title": "Filesystem Comparison",
+      "table": {"caption": "Filesystem recognition map", "headers": ["Filesystem", "Association", "High-value distinction"], "rows": [["NTFS", "Windows", "Permissions and journaling"], ["ReFS", "Specialized Windows storage", "Resilience and integrity"], ["FAT32", "Legacy/removable", "About 4 GB maximum individual file"], ["ext4", "Linux", "Common general-purpose filesystem"], ["XFS", "Linux", "Scalable performance and large files"], ["APFS", "Apple", "Modern flash-optimized filesystem"], ["exFAT", "Cross-platform removable storage", "Large-file support"]]}
+    },
+    {
+      "id": "vendor-life-cycle-limitations",
+      "title": "Vendor Life-Cycle Limitations",
+      "entries": [
+        {"title": "End-of-Life (EOL)", "paragraphs": ["End-of-life means the vendor has ended support for a product or version. Security fixes, compatibility updates, and technical assistance may stop."], "memoryHook": "EOL = support has ended.", "recognitionCue": "An OS no longer receives vendor security updates → EOL."},
+        {"title": "Update Limitations", "paragraphs": ["A device may keep working but be unable to install newer OS or application updates because of unsupported hardware, storage limits, vendor policy, or an obsolete OS version."], "memoryHook": "Update limitation = the device cannot move forward.", "recognitionCue": "Hardware cannot support the next release → update limitation."}
+      ],
+      "callout": "EOL describes vendor support status; an update limitation explains why a system cannot advance."
+    },
+    {
+      "id": "compatibility-concerns",
+      "title": "Compatibility Concerns Between Operating Systems",
+      "paragraphs": ["Moving data, applications, or hardware between operating systems can expose compatibility problems. Verify support before migration or deployment."],
+      "bullets": ["Application compatibility: software for one platform may not run natively on another.", "Driver compatibility: hardware needs a driver for the target OS and version.", "Filesystem compatibility: another OS may read but not write a format, or not recognize it.", "Feature compatibility: permissions, metadata, filenames, and formatting may not transfer exactly.", "Peripheral and service compatibility: management, authentication, and device features can differ."],
+      "callout": "The same file, application, or device is not automatically portable across operating systems."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Business workstation → Windows", "Open-source server → Linux", "Apple computer → macOS", "Web-first Chromebook → Chrome OS", "Apple tablet → iPadOS", "Apple smartphone → iOS", "Multi-vendor mobile platform → Android", "Windows permissions/journaling → NTFS", "Resilient Microsoft storage → ReFS", "4 GB file limit → FAT32", "General Linux filesystem → ext4", "Scalable Linux filesystem → XFS", "Modern Apple filesystem → APFS", "Large cross-platform removable files → exFAT", "Vendor support stops → EOL", "System cannot install a newer release → update limitation"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "FAT32 vs. exFAT", "paragraphs": ["FAT32 has broad legacy compatibility but an approximately 4 GB file limit. exFAT supports larger files and modern cross-platform use."]},
+        {"title": "NTFS vs. exFAT", "paragraphs": ["NTFS supplies Windows permissions and journaling. exFAT favors portable exchange."]},
+        {"title": "ext4 vs. XFS", "paragraphs": ["ext4 is a common general-purpose Linux choice; XFS is associated with scalable, high-performance storage and large files."]},
+        {"title": "EOL vs. Update Limitation", "paragraphs": ["EOL means vendor support has ended. An update limitation means a particular device cannot install a newer release."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Windows → broad commercial desktop support", "Linux → open-source flexibility", "macOS → Apple computers", "Chrome OS → browser-centered Chromebook", "iOS → iPhone", "iPadOS → iPad", "Android → many mobile vendors", "NTFS → Windows system storage", "ReFS → resilient Microsoft storage", "FAT32 → legacy compatibility, 4 GB file limit", "ext4 → common Linux", "XFS → scalable Linux", "APFS → modern Apple", "exFAT → portable large-file exchange", "EOL → support ended", "Update limitation → device cannot advance", "Cross-platform move → verify applications, drivers, filesystems, and features"]
+    }
+  ]
+}
