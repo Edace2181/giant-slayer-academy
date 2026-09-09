@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.10",
+  "title": "Given a Scenario, Install Applications According to Requirements",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Application installation requires more than launching an installer. Verify operating-system compatibility, hardware requirements, external devices, distribution method, and deployment impact before proceeding.", "The main mental model is: compatibility → hardware → distribution → impact → install."],
+      "bullets": ["System requirements for applications", "32-bit and 64-bit compatibility", "Graphics, VRAM, RAM, CPU, token, and storage requirements", "Application-to-OS compatibility", "Physical media, mountable ISO, downloadable package, and image deployment", "Device, network, operational, and business impact"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Before installing an application, can you determine whether the device meets its requirements and choose a deployment method that avoids technical and business problems?"],
+      "bullets": ["Application architecture → 32-bit or 64-bit", "High-end graphics → dedicated GPU", "Graphics memory → VRAM", "System working memory → RAM", "Processing → CPU", "Physical authentication or licensing → hardware token", "Disk capacity → storage", "Unsupported platform → application-to-OS compatibility"]
+    },
+    {
+      "id": "system-requirements",
+      "title": "System Requirements for Applications",
+      "paragraphs": ["Applications publish minimum and recommended requirements. Unsupported installations may fail, crash, perform poorly, omit features, or leave the organization without vendor support."],
+      "callout": "Read and verify the full requirements before installing."
+    },
+    {
+      "id": "architecture-requirements",
+      "title": "32-bit vs. 64-bit Dependent Application Requirements",
+      "paragraphs": ["Applications may target 32-bit or 64-bit architecture. A 64-bit application generally needs a supported 64-bit operating environment; vendor compatibility must be verified rather than assumed."],
+      "callout": "Application architecture must match an operating environment the vendor supports."
+    },
+    {
+      "id": "graphics-requirements",
+      "title": "Graphics and VRAM Requirements",
+      "entries": [
+        {"title": "Dedicated vs. Integrated Graphics Card", "paragraphs": ["Integrated graphics is built into the platform and shares system resources. A dedicated graphics card supplies separate graphics-processing hardware and typically its own graphics memory. CAD, 3D rendering, gaming, and video production may require a supported dedicated GPU."], "recognitionCue": "A professional 3D application requires a supported discrete GPU → dedicated graphics."},
+        {"title": "Video Random-Access Memory (VRAM) Requirements", "paragraphs": ["VRAM is memory used by the graphics processor. Applications can specify a minimum VRAM capacity independently of system RAM."], "memoryHook": "VRAM = graphics memory.", "recognitionCue": "The requirement describes memory available to the GPU → VRAM."}
+      ],
+      "callout": "RAM supports the system and applications; VRAM supports graphics processing."
+    },
+    {
+      "id": "hardware-requirements",
+      "title": "Hardware Requirements",
+      "entries": [
+        {"title": "RAM Requirements", "paragraphs": ["Insufficient system RAM can cause installation restrictions, heavy paging, poor performance, and application instability."], "memoryHook": "RAM = working space for running applications."},
+        {"title": "Central Processing Unit (CPU) Requirements", "paragraphs": ["Applications may require a supported processor architecture, performance level, instruction set, or core count."], "recognitionCue": "The processor architecture is unsupported → CPU requirement not met."},
+        {"title": "External Hardware Tokens", "paragraphs": ["Some applications require a physical token or USB dongle for authentication, security, or licensing."], "recognitionCue": "Software will not run without its USB security device → external hardware token."},
+        {"title": "Storage Requirements", "paragraphs": ["Plan for installer files, the installed application, updates, temporary data, and user-generated content—not just the initial download size."], "recognitionCue": "The application needs 30 GB but only 8 GB is free → storage requirement not met."}
+      ]
+    },
+    {
+      "id": "application-os-compatibility",
+      "title": "Application-to-OS Compatibility",
+      "paragraphs": ["Confirm that the vendor supports the installed Windows, macOS, or Linux release and the required architecture. Powerful hardware does not compensate for an unsupported operating system."],
+      "callout": "Hardware compatibility and operating-system compatibility are separate checks."
+    },
+    {
+      "id": "distribution-methods",
+      "title": "Distribution Methods",
+      "entries": [
+        {"title": "Physical Media vs. Mountable ISO File", "paragraphs": ["Physical media is a tangible disc or USB device. An ISO is a disk-image file that the operating system mounts so it behaves like inserted optical media."], "memoryHook": "Hold it → physical. Mount it → ISO.", "recognitionCue": "An .iso opens as a virtual disc → mountable ISO."},
+        {"title": "Downloadable Package", "paragraphs": ["An installer may be downloaded from an authorized vendor site, application repository, or corporate portal. Verify the source before installation."], "recognitionCue": "The installer is obtained online as a package → downloadable package."},
+        {"title": "Image Deployment", "paragraphs": ["Organizations can include applications in a standardized system image for consistent deployment to many devices."], "memoryHook": "One approved build → many machines.", "recognitionCue": "Deploy the same approved application set at scale → image deployment."}
+      ]
+    },
+    {
+      "id": "impact-considerations",
+      "title": "Impact Considerations for New Applications",
+      "paragraphs": ["A deployment plan must look beyond whether setup completes. Evaluate the endpoint, network, daily operations, and organizational consequences."],
+      "entries": [
+        {"title": "Device", "paragraphs": ["Consider CPU, RAM, storage, graphics, battery life, and overall endpoint performance."], "recognitionCue": "The installed application makes the workstation unusably slow → device impact."},
+        {"title": "Network", "paragraphs": ["Consider installer downloads, updates, synchronization, cloud traffic, streaming, and simultaneous deployments."], "recognitionCue": "A mass push saturates the WAN → network impact."},
+        {"title": "Operation", "paragraphs": ["Consider reboots, downtime, conflicts, training, and workflow disruption."], "recognitionCue": "Required reboots interrupt employees during business hours → operational impact."},
+        {"title": "Business", "paragraphs": ["Consider licensing cost, compliance, security, productivity, risk, and business-process effects."], "recognitionCue": "Licensing exceeds the approved budget → business impact."}
+      ],
+      "callout": "PC → device. Traffic → network. Workflow → operation. Organization, cost, or risk → business."
+    },
+    {
+      "id": "installation-workflow",
+      "title": "Application Installation Workflow",
+      "bullets": ["Verify OS support and architecture.", "Verify CPU, RAM, VRAM, storage, and graphics requirements.", "Confirm any external hardware token.", "Choose physical media, ISO, downloadable package, or image deployment.", "Assess device, network, operational, and business impact.", "Install only after requirements and authorization are satisfied."]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Application architecture → 32-bit/64-bit", "GPU-intensive workload → dedicated graphics", "Graphics memory → VRAM", "System working memory → RAM", "Processing capability → CPU", "USB security dongle → external hardware token", "Free disk capacity → storage", "Unsupported platform → application-to-OS compatibility", "Actual disc or USB → physical media", "Virtual disc file → ISO", "Online installer → downloadable package", "Standardized mass deployment → image deployment", "Endpoint slows → device impact", "Bandwidth saturation → network impact", "Work disruption → operational impact", "Cost, compliance, or organizational risk → business impact"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.10 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "RAM vs. VRAM", "paragraphs": ["RAM is general system memory; VRAM is graphics-processor memory."]},
+        {"title": "Dedicated vs. Integrated Graphics", "paragraphs": ["Integrated graphics shares platform resources; dedicated graphics provides separate processing hardware and typically dedicated VRAM."]},
+        {"title": "Hardware vs. OS Compatibility", "paragraphs": ["Meeting hardware requirements does not mean the vendor supports the installed OS. Verify both."]},
+        {"title": "Physical Media vs. ISO", "paragraphs": ["Physical media is an actual device or disc; an ISO is a mountable file representing media contents."]},
+        {"title": "Image vs. Downloadable Package", "paragraphs": ["An image provides a standardized environment at scale; a downloadable package is a separate application installer."]},
+        {"title": "Device vs. Operational Impact", "paragraphs": ["Computer performance is device impact; employee downtime and workflow disruption are operational impact."]},
+        {"title": "Network vs. Business Impact", "paragraphs": ["Bandwidth use is network impact; licensing, compliance, cost, and organizational risk are business impact."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["64-bit requirement → architecture compatibility", "GPU-intensive application → dedicated graphics", "Graphics memory → VRAM", "System memory → RAM", "Processing → CPU", "Physical security/license device → hardware token", "Disk space → storage", "Unsupported operating system → OS compatibility", "Disc or USB → physical media", "Virtual disc → ISO", "Online installer → downloadable package", "Standard company build → image deployment", "Endpoint performance → device impact", "Bandwidth → network impact", "Workflow or downtime → operational impact", "Cost, risk, or compliance → business impact"]
+    }
+  ]
+}

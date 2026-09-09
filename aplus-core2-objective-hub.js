@@ -3,7 +3,7 @@
 
   const MANUAL_KEY = "hydra-aplus-core2-field-manual-v1";
   const PROGRESS_KEY = "hydra-aplus-core2-progress-v1";
-  const objectiveStatuses = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8"].map(objective => ({
+  const objectiveStatuses = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11"].map(objective => ({
     objective,
     manualStatus: document.getElementById("objective" + objective.replace(".", "") + "ManualStatus"),
     sweepStatus: document.getElementById("objective" + objective.replace(".", "") + "SweepStatus")

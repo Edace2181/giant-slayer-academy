@@ -64,6 +64,27 @@ const objectives = {
     firstId: "A1202-1.8-R001",
     sections: ["what-you-are-learning", "maestro-focus", "application-installation", "system-folders", "apple-id-and-restrictions", "best-practices", "system-preferences", "desktop-features", "icloud", "disk-utility", "filevault", "terminal", "force-quit", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
     topics: ["Installation and Uninstallation of Applications", "File Types", ".dmg", ".pkg", ".app", "App Store", "Uninstallation Process", "System Folders", "/Applications", "/Users", "/Library", "/System", "/Users/<username>/Library", "Apple ID and Corporate Restrictions", "Best Practices", "Backups", "Antivirus", "Updates/Patches", "Rapid Security Response (RSR)", "System Preferences", "Displays", "Networks", "Printers", "Scanners", "Privacy", "Accessibility", "Time Machine", "Multiple Desktops", "Mission Control", "Keychain", "Spotlight", "iCloud", "iMessage", "FaceTime", "Drive", "Gestures", "Finder", "Dock", "Continuity", "Disk Utility", "FileVault", "Terminal", "Force Quit"]
+  },
+  "1.9": {
+    count: 45,
+    hash: "C70AC36DFC4AC3A8F7672C9A8D11A437FF9B0E5BB7F2E13A0DF36B262D738F8E",
+    firstId: "A1202-1.9-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "file-management", "filesystem-management", "administrative", "package-management", "network", "informational", "text-editors", "common-configuration-files", "os-components", "root-account", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["File Management", "ls", "pwd", "mv", "cp", "rm", "chmod", "chown", "grep", "find", "Filesystem Management", "fsck", "mount", "Administrative", "su", "sudo", "Package Management", "apt", "dnf", "Network", "ip", "ping", "curl", "dig", "traceroute", "Informational", "man", "cat", "top", "ps", "du", "df", "Text Editors", "nano", "Common Configuration Files", "/etc/passwd", "/etc/shadow", "/etc/hosts", "/etc/fstab", "/etc/resolv.conf", "OS Components", "systemd", "Kernel", "Bootloader", "Root Account"]
+  },
+  "1.10": {
+    count: 18,
+    hash: "3B44E9AF36F12B4CC0F4E9E17A8B927102B1297D76B3890A0D0C1755B99ADB85",
+    firstId: "A1202-1.10-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "system-requirements", "architecture-requirements", "graphics-requirements", "hardware-requirements", "application-os-compatibility", "distribution-methods", "impact-considerations", "installation-workflow", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["System Requirements for Applications", "32-bit vs. 64-bit Dependent Application Requirements", "Dedicated vs. Integrated Graphics Card", "Video Random-Access Memory (VRAM) Requirements", "RAM Requirements", "Central Processing Unit (CPU) Requirements", "External Hardware Tokens", "Storage Requirements", "Application-to-OS Compatibility", "Distribution Methods", "Physical Media vs. Mountable ISO File", "Downloadable Package", "Image Deployment", "Impact Considerations for New Applications", "Device", "Network", "Operation", "Business"]
+  },
+  "1.11": {
+    count: 11,
+    hash: "C55B4B6F8A0F93B928D2B60A66C6A19B091C1B25FEE63ED63865D62B68484258",
+    firstId: "A1202-1.11-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "cloud-productivity", "email-systems", "storage", "sync-folder-settings", "collaboration-tools", "collaboration-recognition-map", "identity-synchronization", "licensing-assignment", "setup-workflow", "scenario-troubleshooting", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Email Systems", "Storage", "Sync/Folder Settings", "Collaboration Tools", "Spreadsheets", "Videoconferencing", "Presentation Tools", "Word Processing Tools", "Instant Messaging", "Identity Synchronization", "Licensing Assignment"]
   }
 };
 

@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.9",
+  "title": "Identify Common Features and Tools of the Linux Client/Desktop Operating System",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Linux technicians often work from the command line. For this objective, recognize the command, configuration file, or operating-system component that fits a stated task.", "The main mental model is: files → filesystem → privileges → packages → network → information → configuration → OS components."],
+      "bullets": ["File and filesystem management", "Administrative privileges and package management", "Network and informational commands", "Text editing and configuration files", "systemd, kernel, bootloader, and the root account"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a Linux scenario gives you a task, can you identify the correct command, configuration file, or operating-system component?"],
+      "bullets": ["List files → ls", "Current directory → pwd", "Move or rename → mv", "Copy → cp", "Remove → rm", "Permissions → chmod", "Ownership → chown", "Search text → grep", "Find files → find", "Check filesystem → fsck", "Attach filesystem → mount", "Switch user → su", "Elevate one command → sudo"]
+    },
+    {
+      "id": "file-management",
+      "title": "File Management",
+      "entries": [
+        {"title": "ls", "paragraphs": ["ls lists files and directories."], "memoryHook": "ls = list.", "recognitionCue": "See what exists in the current directory → ls."},
+        {"title": "pwd", "paragraphs": ["pwd means print working directory and displays the current filesystem location."], "memoryHook": "pwd = where am I?", "recognitionCue": "Display the current directory path → pwd."},
+        {"title": "mv", "paragraphs": ["mv moves a file or directory and can also rename it."], "recognitionCue": "Rename old.txt to new.txt → mv."},
+        {"title": "cp", "paragraphs": ["cp copies files or directories."], "recognitionCue": "Create a second copy of a file → cp."},
+        {"title": "rm", "paragraphs": ["rm removes files. Command-line deletion may not provide the easy recovery of a desktop trash or recycle bin."], "recognitionCue": "Delete a file at the shell → rm."},
+        {"title": "chmod", "paragraphs": ["chmod changes read, write, and execute permissions."], "recognitionCue": "A script lacks execute permission → chmod."},
+        {"title": "chown", "paragraphs": ["chown changes the owner of a file or directory."], "recognitionCue": "A file belongs to the wrong user → chown."},
+        {"title": "grep", "paragraphs": ["grep searches text streams or file contents for matching patterns."], "recognitionCue": "Search a log for the word failed → grep."},
+        {"title": "find", "paragraphs": ["find searches the filesystem for files and directories that match criteria."], "recognitionCue": "Locate report.txt somewhere under a directory → find."}
+      ],
+      "callout": "chmod changes what users can do; chown changes who owns the item. grep finds text; find locates filesystem objects."
+    },
+    {
+      "id": "filesystem-management",
+      "title": "Filesystem Management",
+      "entries": [
+        {"title": "fsck", "paragraphs": ["fsck checks and can repair filesystem inconsistencies, such as problems following an improper shutdown."], "memoryHook": "fsck = filesystem check.", "recognitionCue": "A Linux filesystem may contain errors → fsck."},
+        {"title": "mount", "paragraphs": ["mount attaches a filesystem to the Linux directory tree at a mount point so its content becomes accessible."], "memoryHook": "mount = attach filesystem.", "recognitionCue": "Make another filesystem accessible at a directory → mount."}
+      ]
+    },
+    {
+      "id": "administrative",
+      "title": "Administrative",
+      "entries": [
+        {"title": "su", "paragraphs": ["su switches to another user identity and is commonly associated with switching to root when permitted."], "memoryHook": "su = switch user."},
+        {"title": "sudo", "paragraphs": ["sudo runs an authorized command with elevated privileges without remaining signed in as the superuser."], "memoryHook": "sudo = elevate this command.", "recognitionCue": "Run one package command with administrative authority → sudo."}
+      ],
+      "callout": "Switch identity → su. Elevate a specific command → sudo."
+    },
+    {
+      "id": "package-management",
+      "title": "Package Management",
+      "paragraphs": ["Package managers install, update, and remove software while working with distribution repositories and dependencies."],
+      "entries": [
+        {"title": "apt", "paragraphs": ["apt is associated with Debian-based distributions, including Ubuntu."], "recognitionCue": "Install a package on Ubuntu → apt."},
+        {"title": "dnf", "paragraphs": ["dnf is associated with Fedora and related Red Hat-family distributions."], "recognitionCue": "Install a package on Fedora → dnf."}
+      ],
+      "callout": "Debian or Ubuntu → apt. Fedora or RHEL family → dnf."
+    },
+    {
+      "id": "network",
+      "title": "Network",
+      "entries": [
+        {"title": "ip", "paragraphs": ["The ip command displays and configures network interfaces, addresses, and routes."], "recognitionCue": "Inspect Linux interface or address information → ip."},
+        {"title": "ping", "paragraphs": ["ping uses ICMP to test basic IP reachability when ICMP is allowed."], "recognitionCue": "Can the Linux client reach the destination? → ping."},
+        {"title": "curl", "paragraphs": ["curl transfers data to or from URLs and services and is useful for retrieving content or testing an endpoint."], "recognitionCue": "Test whether a web endpoint returns data → curl."},
+        {"title": "dig", "paragraphs": ["dig queries Domain Name System records and resolver responses."], "recognitionCue": "Investigate DNS from Linux → dig."},
+        {"title": "traceroute", "paragraphs": ["traceroute displays the network hops toward a destination."], "recognitionCue": "Show the route traffic takes → traceroute."}
+      ],
+      "callout": "ip shows local networking; dig asks DNS; ping checks reachability; traceroute shows the path."
+    },
+    {
+      "id": "informational",
+      "title": "Informational",
+      "entries": [
+        {"title": "man", "paragraphs": ["man displays manual pages containing command descriptions, syntax, and options."], "recognitionCue": "Need command documentation → man."},
+        {"title": "cat", "paragraphs": ["cat displays file contents and can combine text streams or files."], "recognitionCue": "Show the contents of /etc/hosts → cat."},
+        {"title": "top", "paragraphs": ["top provides a dynamic, updating view of processes and system-resource use."], "recognitionCue": "Watch live processes and resource activity → top."},
+        {"title": "ps", "paragraphs": ["ps reports a snapshot or list of process information."], "recognitionCue": "Capture the current process list → ps."},
+        {"title": "du", "paragraphs": ["du reports space used by files and directories."], "recognitionCue": "How much space does this folder consume? → du."},
+        {"title": "df", "paragraphs": ["df reports used and available capacity on mounted filesystems."], "recognitionCue": "How full is this filesystem? → df."}
+      ],
+      "callout": "top is live; ps is a snapshot. du measures directory usage; df reports filesystem capacity."
+    },
+    {
+      "id": "text-editors",
+      "title": "Text Editors",
+      "entries": [
+        {"title": "nano", "paragraphs": ["nano is a simple terminal-based text editor for files such as configuration documents."], "recognitionCue": "Edit a text configuration file from the terminal → nano."}
+      ]
+    },
+    {
+      "id": "common-configuration-files",
+      "title": "Common Configuration Files",
+      "entries": [
+        {"title": "/etc/passwd", "paragraphs": ["Stores user-account information. Modern systems normally store protected password hashes elsewhere."], "memoryHook": "Account information → /etc/passwd."},
+        {"title": "/etc/shadow", "paragraphs": ["Stores restricted password hashes and password-aging information."], "memoryHook": "Protected password information → /etc/shadow."},
+        {"title": "/etc/hosts", "paragraphs": ["Stores local static hostname-to-IP mappings for the individual system."], "recognitionCue": "Manually map one hostname locally → /etc/hosts."},
+        {"title": "/etc/fstab", "paragraphs": ["Defines filesystems, mount points, and mount options used for persistent or automatic mounting."], "recognitionCue": "Configure a filesystem to mount at boot → /etc/fstab."},
+        {"title": "/etc/resolv.conf", "paragraphs": ["Contains DNS resolver configuration on many Linux systems."], "recognitionCue": "Identify configured DNS resolver information → /etc/resolv.conf."}
+      ],
+      "callout": "/etc/hosts supplies local mappings; /etc/resolv.conf defines resolver behavior."
+    },
+    {
+      "id": "os-components",
+      "title": "OS Components",
+      "entries": [
+        {"title": "systemd", "paragraphs": ["systemd is a common system and service manager that initializes and manages Linux services."], "memoryHook": "systemd = system and services."},
+        {"title": "Kernel", "paragraphs": ["The kernel is the OS core that manages CPU, memory, processes, hardware, and the interface between software and hardware."], "memoryHook": "Kernel = core."},
+        {"title": "Bootloader", "paragraphs": ["The bootloader begins the operating-system startup process and loads the kernel."], "memoryHook": "Bootloader = load the OS core."}
+      ],
+      "callout": "Bootloader → kernel → system and services."
+    },
+    {
+      "id": "root-account",
+      "title": "Root Account",
+      "paragraphs": ["The root account is the Linux superuser with extensive system-wide authority. Use it carefully; when appropriate, administrators use sudo for individual elevated commands rather than remaining logged in as root."],
+      "callout": "Root is the superuser; sudo limits elevation to an authorized command."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["List → ls", "Location → pwd", "Move or rename → mv", "Copy → cp", "Delete → rm", "Permissions → chmod", "Ownership → chown", "Search text → grep", "Locate file → find", "Check filesystem → fsck", "Attach filesystem → mount", "Switch user → su", "Elevate command → sudo", "Ubuntu packages → apt", "Fedora packages → dnf", "Interfaces → ip", "Reachability → ping", "URL request → curl", "DNS → dig", "Route → traceroute", "Help → man", "Read file → cat", "Live processes → top", "Process list → ps", "Directory usage → du", "Filesystem space → df", "Editor → nano", "Users → /etc/passwd", "Passwords → /etc/shadow", "Local names → /etc/hosts", "Persistent mounts → /etc/fstab", "Resolver → /etc/resolv.conf", "Services → systemd", "OS core → kernel", "Startup loader → bootloader", "Superuser → root"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.9 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "chmod vs. chown", "paragraphs": ["chmod changes permissions; chown changes ownership."]},
+        {"title": "grep vs. find", "paragraphs": ["grep searches text content; find locates files and directories."]},
+        {"title": "su vs. sudo", "paragraphs": ["su switches identity; sudo elevates a command."]},
+        {"title": "apt vs. dnf", "paragraphs": ["apt belongs to Debian/Ubuntu families; dnf belongs to Fedora/Red Hat families."]},
+        {"title": "top vs. ps", "paragraphs": ["top is a dynamic live view; ps is a process snapshot."]},
+        {"title": "du vs. df", "paragraphs": ["du reports directory or file usage; df reports filesystem capacity and free space."]},
+        {"title": "/etc/passwd vs. /etc/shadow", "paragraphs": ["passwd stores account information; shadow stores protected password data."]},
+        {"title": "/etc/hosts vs. /etc/resolv.conf", "paragraphs": ["hosts supplies local mappings; resolv.conf configures DNS resolution."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["ls → list", "pwd → current directory", "mv → move/rename", "cp → copy", "rm → remove", "chmod → permissions", "chown → ownership", "grep → text search", "find → file search", "fsck → filesystem check", "mount → attach filesystem", "su → switch user", "sudo → elevated command", "apt → Debian/Ubuntu packages", "dnf → Fedora-family packages", "ip → interfaces", "ping → reachability", "curl → URL data", "dig → DNS", "traceroute → hops", "man → help", "cat → file contents", "top → live processes", "ps → process snapshot", "du → directory usage", "df → filesystem capacity", "nano → terminal editor", "/etc/passwd → accounts", "/etc/shadow → password hashes", "/etc/hosts → local mappings", "/etc/fstab → mounts", "/etc/resolv.conf → DNS resolver", "systemd → services", "kernel → core", "bootloader → startup", "root → superuser"]
+    }
+  ]
+}

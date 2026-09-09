@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "1",
+  "objective": "1.11",
+  "title": "Given a Scenario, Install and Configure Cloud-Based Productivity Tools",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Cloud productivity environments provide communication, applications, identity, and data through connected services rather than relying only on local software.", "The main mental model is: identity → license → applications → storage → sync → collaborate."],
+      "bullets": ["Email systems", "Cloud storage and sync/folder settings", "Spreadsheets, videoconferencing, presentation, word processing, and instant messaging", "Identity synchronization", "Licensing assignment"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When setting up a user with cloud productivity services, can you determine whether the requirement involves email, storage, synchronization, collaboration, identity, or licensing?"],
+      "bullets": ["Cloud mailbox → email system", "Cloud files → storage", "Keep local and cloud folders aligned → sync settings", "Cells and formulas → spreadsheet", "Online meeting → videoconferencing", "Slide deck → presentation tool", "Documents → word processing", "Real-time chat → instant messaging", "Accounts aligned across systems → identity synchronization", "Service entitlement → licensing assignment"]
+    },
+    {
+      "id": "cloud-productivity",
+      "title": "Cloud-Based Productivity",
+      "paragraphs": ["Cloud productivity tools let users access applications, files, and communication services from multiple devices while supporting collaboration, synchronization, centralized administration, and remote work."],
+      "callout": "User plus cloud identity and license → productivity services."
+    },
+    {
+      "id": "email-systems",
+      "title": "Email Systems",
+      "paragraphs": ["A cloud email system centrally hosts mailboxes that users access through web interfaces, desktop clients, or mobile applications. Setup may involve the user account, mailbox, authentication, client synchronization, organizational configuration, and licensing."],
+      "callout": "A user can sign in but has no mailbox functionality → verify email-service configuration and licensing."
+    },
+    {
+      "id": "storage",
+      "title": "Storage",
+      "paragraphs": ["Cloud storage keeps files on provider-hosted infrastructure so authorized users can upload, download, share, access, and collaborate across devices."],
+      "callout": "Storage describes where cloud data resides."
+    },
+    {
+      "id": "sync-folder-settings",
+      "title": "Sync/Folder Settings",
+      "paragraphs": ["Synchronization keeps selected local and cloud copies aligned in both directions. Verify the signed-in account, sync status, selected folders, and whether local copies are retained."],
+      "table": {"caption": "Storage and synchronization", "headers": ["Concept", "Question answered"], "rows": [["Storage", "Where does the data reside?"], ["Synchronization", "How are copies kept matching?"]]},
+      "callout": "Files appear online but not in the expected desktop folder → check sync/folder settings."
+    },
+    {
+      "id": "collaboration-tools",
+      "title": "Collaboration Tools",
+      "paragraphs": ["Cloud collaboration lets multiple users share, comment on, co-edit, and review content without occupying the same physical location."],
+      "entries": [
+        {"title": "Spreadsheets", "paragraphs": ["Organize data into rows and columns and support formulas, calculations, charts, and collaborative editing."], "recognitionCue": "A team needs shared budget calculations → spreadsheet."},
+        {"title": "Videoconferencing", "paragraphs": ["Provides real-time audio, video, online meetings, and screen sharing."], "recognitionCue": "Face-to-face online meeting → videoconferencing."},
+        {"title": "Presentation Tools", "paragraphs": ["Create slide-based visual presentations."], "recognitionCue": "Build a slide deck → presentation tool."},
+        {"title": "Word Processing Tools", "paragraphs": ["Create and edit reports, letters, documentation, and other text-oriented documents, often collaboratively."], "recognitionCue": "Create a written report → word processing."},
+        {"title": "Instant Messaging", "paragraphs": ["Provides near-real-time direct or group text communication, presence, and often file sharing."], "recognitionCue": "Real-time chat → instant messaging."}
+      ]
+    },
+    {
+      "id": "collaboration-recognition-map",
+      "title": "Collaboration Recognition Map",
+      "table": {"caption": "Match the task to the tool", "headers": ["Task", "Tool"], "rows": [["Numbers, cells, and formulas", "Spreadsheet"], ["Live audio/video meeting", "Videoconferencing"], ["Slides", "Presentation"], ["Text document", "Word processing"], ["Live text chat", "Instant messaging"]]}
+    },
+    {
+      "id": "identity-synchronization",
+      "title": "Identity Synchronization",
+      "paragraphs": ["Identity synchronization keeps user and account information aligned between connected identity environments. Missing or incorrect synchronization can cause missing cloud accounts, sign-in failures, bad account data, and access problems."],
+      "table": {"caption": "Identity and file synchronization", "headers": ["Synchronization", "Data involved"], "rows": [["Identity synchronization", "Users and account information"], ["File synchronization", "User data and files"]]},
+      "callout": "Who you are → identity sync. What you saved → file sync."
+    },
+    {
+      "id": "licensing-assignment",
+      "title": "Licensing Assignment",
+      "paragraphs": ["Cloud productivity services commonly use per-user or subscription licensing. A valid account can authenticate successfully yet lack a mailbox, application, storage allocation, or collaboration feature until the correct license is assigned."],
+      "table": {"caption": "Identity and licensing", "headers": ["Concept", "Question"], "rows": [["Identity", "Who is the user?"], ["License", "Which paid or authorized services may the user use?"]]},
+      "callout": "Login succeeds but the application reports no entitlement → check licensing assignment."
+    },
+    {
+      "id": "setup-workflow",
+      "title": "Cloud Productivity Setup Workflow",
+      "bullets": ["Establish that the user can authenticate.", "Confirm identity synchronization created or aligned the correct cloud account.", "Assign licenses for required services.", "Configure the email mailbox and client access.", "Confirm cloud storage access.", "Configure the correct sync folders and verify sync status.", "Confirm access to word processing, spreadsheets, presentations, videoconferencing, and messaging."],
+      "callout": "Identity → license → services → sync → work."
+    },
+    {
+      "id": "scenario-troubleshooting",
+      "title": "Scenario Troubleshooting",
+      "entries": [
+        {"title": "Authenticated but Services Are Missing", "paragraphs": ["If a new employee signs in successfully but email, storage, or videoconferencing is unavailable, first verify that the required services and licenses were assigned."]},
+        {"title": "Files Differ Across Devices", "paragraphs": ["If identity and the application work but an edited file does not appear elsewhere, verify the correct account, selected folders, current sync status, and network access."]},
+        {"title": "Cloud Storage Is Not Automatically Backup", "paragraphs": ["Synchronization copies changes—including deletions or unwanted edits—to connected locations. A backup strategy preserves recoverable versions independently of normal sync behavior."]}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Hosted mailbox → email system", "Cloud-hosted files → storage", "Local and cloud folders differ → sync settings", "Cells and calculations → spreadsheet", "Online audio/video meeting → videoconferencing", "Slides → presentation", "Documents → word processing", "Chat → instant messaging", "Accounts aligned across systems → identity synchronization", "Valid user lacks application entitlement → licensing assignment"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.11 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Storage vs. Synchronization", "paragraphs": ["Storage is where cloud data resides; synchronization keeps local and cloud copies aligned."]},
+        {"title": "Identity Sync vs. File Sync", "paragraphs": ["Identity sync aligns accounts; file sync aligns documents and data."]},
+        {"title": "Authentication vs. Licensing", "paragraphs": ["If the user cannot sign in, investigate identity and authentication. If sign-in succeeds but a service is unavailable, licensing is a strong suspect."]},
+        {"title": "Email vs. Instant Messaging", "paragraphs": ["Email is a mailbox system; instant messaging is real-time chat."]},
+        {"title": "Videoconferencing vs. Presentation", "paragraphs": ["Videoconferencing is a live meeting; a presentation tool creates a slide deck."]},
+        {"title": "Synchronization vs. Backup", "paragraphs": ["Sync keeps copies aligned; backup preserves recoverable copies. Sync is not automatically backup."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Cloud mailbox → email", "Cloud files → storage", "Keep folders aligned → synchronization", "Cells and formulas → spreadsheet", "Online meeting → videoconferencing", "Slides → presentation", "Documents → word processing", "Chat → instant messaging", "Accounts aligned between systems → identity synchronization", "Access entitlement → licensing assignment", "Cannot sign in → identity/authentication", "Signs in but lacks service → licensing", "Files differ across devices → synchronization"]
+    }
+  ]
+}
