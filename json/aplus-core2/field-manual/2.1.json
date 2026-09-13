@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Summarize Various Security Measures and Their Purposes",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Security works best in layers. Organizations protect people, facilities, systems, accounts, applications, and data with physical, logical, identity, and data-protection controls.", "Use this mental model: keep them away → verify who they are → limit what they can do → protect the data."],
+      "bullets": ["Physical security controls", "Physical access credentials and biometrics", "Logical security and authentication", "Privilege, endpoint, data, identity, and directory controls"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a security requirement appears, identify what is being protected: the facility, physical entry, an identity, a logical resource, privileged access, an endpoint, or sensitive data."],
+      "callout": "Stop vehicles → bollards; verify every request → Zero Trust; minimum permissions → least privilege; stop sensitive-data leakage → DLP."
+    },
+    {
+      "id": "physical-security",
+      "title": "Physical Security",
+      "paragraphs": ["Physical security protects facilities, equipment, and people from unauthorized physical access, theft, and damage."],
+      "entries": [
+        {"title": "Bollards", "paragraphs": ["Strong posts or barriers that stop or redirect vehicles around entrances and sensitive areas."], "recognitionCue": "Vehicle barrier → bollard."},
+        {"title": "Access Control Vestibule", "paragraphs": ["A two-door controlled space that verifies a person before releasing the second door and helps prevent tailgating."], "recognitionCue": "Door → verify → door."},
+        {"title": "Badge Reader", "paragraphs": ["Reads an employee or visitor credential to unlock a door, record entry, or enforce role-based physical access."], "recognitionCue": "Scan employee credential → badge reader."},
+        {"title": "Video Surveillance", "paragraphs": ["Monitors and records activity to deter wrongdoing, support investigations, and provide evidence."], "recognitionCue": "See and record → video surveillance."},
+        {"title": "Alarm Systems", "paragraphs": ["Alert personnel when a door, glass-break sensor, or other monitored condition indicates possible unauthorized entry."], "recognitionCue": "Security event → alert."},
+        {"title": "Motion Sensors", "paragraphs": ["Detect movement and can trigger lights, alarms, or recording."], "recognitionCue": "Movement → motion sensor."},
+        {"title": "Door Locks", "paragraphs": ["Physically restrict entry to rooms or buildings."], "recognitionCue": "Secure a doorway → door lock."},
+        {"title": "Equipment Locks", "paragraphs": ["Physically secure laptops, computers, and other valuable devices."], "recognitionCue": "Keep a device from walking away → equipment lock."},
+        {"title": "Security Guards", "paragraphs": ["Provide human verification, patrol, enforcement, and incident response."], "recognitionCue": "Human physical control → security guard."},
+        {"title": "Fences", "paragraphs": ["Define a perimeter and deter or delay unauthorized entry."], "recognitionCue": "Boundary → fence."}
+      ]
+    },
+    {
+      "id": "physical-access-security",
+      "title": "Physical Access Security",
+      "paragraphs": ["Physical access controls determine who may cross a physical security boundary."],
+      "entries": [
+        {"title": "Key Fobs", "paragraphs": ["Electronic credentials presented to an access-control reader."], "recognitionCue": "Tap or present a fob → access."},
+        {"title": "Smart Cards", "paragraphs": ["Chip-based cards that store or process authentication information for building access, computer authentication, or identity verification."], "recognitionCue": "Card plus chip → smart card."},
+        {"title": "Mobile Digital Key", "paragraphs": ["Allows a phone or other mobile device to act as an access credential."], "recognitionCue": "Phone equals key."},
+        {"title": "Keys", "paragraphs": ["Traditional physical keys operate locks but can be lost, copied, or stolen."], "recognitionCue": "Physical key plus lock."}
+      ]
+    },
+    {
+      "id": "biometrics",
+      "title": "Biometrics",
+      "paragraphs": ["Biometrics verify identity using a biological or behavioral characteristic: something you are."],
+      "entries": [
+        {"title": "Retina Scanner", "paragraphs": ["Analyzes characteristics inside the eye."], "recognitionCue": "Eye → retina scanner."},
+        {"title": "Fingerprint Scanner", "paragraphs": ["Analyzes fingerprint patterns."], "recognitionCue": "Finger → fingerprint scanner."},
+        {"title": "Palm Print Scanner", "paragraphs": ["Analyzes characteristics of the user's palm."], "recognitionCue": "Palm → palm print scanner."},
+        {"title": "Facial Recognition Technology (FRT)", "paragraphs": ["Compares facial characteristics."], "recognitionCue": "Face → FRT."},
+        {"title": "Voice Recognition Technology", "paragraphs": ["Authenticates from characteristics of a person's voice."], "recognitionCue": "Voice → biometric."}
+      ]
+    },
+    {
+      "id": "lighting-and-magnetometers",
+      "title": "Lighting and Magnetometers",
+      "entries": [
+        {"title": "Lighting", "paragraphs": ["Improves visibility, strengthens surveillance, deters intrusion, and removes dark hiding places."]},
+        {"title": "Magnetometers", "paragraphs": ["Detect metal objects during security screening."], "recognitionCue": "Metal detection → magnetometer."}
+      ]
+    },
+    {
+      "id": "logical-security",
+      "title": "Logical Security",
+      "paragraphs": ["Logical controls protect systems, applications, accounts, networks, and data."],
+      "entries": [
+        {"title": "Principle of Least Privilege", "paragraphs": ["Give a user or process only the access needed to perform its job."], "recognitionCue": "How much access? Minimum necessary."},
+        {"title": "Zero Trust Model", "paragraphs": ["Do not automatically trust a user, device, or request because it is inside the network; verify explicitly and continuously."], "recognitionCue": "Should this request be trusted? Verify it."},
+        {"title": "Access Control Lists (ACLs)", "paragraphs": ["Allow or deny specified users, groups, systems, or traffic access to a resource."], "recognitionCue": "Who or what is allowed? → ACL."}
+      ]
+    },
+    {
+      "id": "multifactor-authentication",
+      "title": "Multifactor Authentication (MFA)",
+      "paragraphs": ["MFA combines factors from more than one category, such as something you know, have, and are. Two passwords are not MFA because they are the same factor type."],
+      "entries": [
+        {"title": "Email", "paragraphs": ["Delivers an authentication code or confirmation through email."]},
+        {"title": "Hardware Token", "paragraphs": ["A physical device used as an authentication factor."]},
+        {"title": "Authenticator Application", "paragraphs": ["Generates a code or receives an approval request on a registered device."]},
+        {"title": "Short Message Service (SMS)", "paragraphs": ["Delivers a code by text message."]},
+        {"title": "Voice Call", "paragraphs": ["Calls a registered number to confirm authentication."]},
+        {"title": "Time-Based One-Time Password (TOTP)", "paragraphs": ["Generates a short-lived code using the current time, commonly changing every 30 seconds."], "recognitionCue": "Clock-based one use → TOTP."},
+        {"title": "One-Time Password/Passcode (OTP)", "paragraphs": ["A broad category of codes valid for one authentication event or a short period; TOTP is one way to create an OTP."], "recognitionCue": "One use → OTP."}
+      ]
+    },
+    {
+      "id": "federation-and-single-sign-on",
+      "title": "SAML and Single Sign-On",
+      "entries": [
+        {"title": "Security Assertions Markup Language (SAML)", "paragraphs": ["Exchanges identity and authentication assertions between systems and commonly enables federated web authentication."], "recognitionCue": "Authentication assertion → SAML."},
+        {"title": "Single Sign-On (SSO)", "paragraphs": ["Lets a user authenticate once and access multiple authorized services without repeated sign-ins."], "recognitionCue": "One login → many services."}
+      ],
+      "callout": "SSO is the user capability; SAML is one technology that can enable federated SSO."
+    },
+    {
+      "id": "privileged-access",
+      "title": "Just-in-Time and Privileged Access",
+      "entries": [
+        {"title": "Just-in-Time Access", "paragraphs": ["Grants elevated rights only when needed and for a limited period."], "recognitionCue": "Temporary privilege → JIT."},
+        {"title": "Privileged Access Management (PAM)", "paragraphs": ["Controls and monitors administrator credentials, elevated sessions, temporary access, and privileged activity."], "recognitionCue": "Privileged-account system → PAM."}
+      ]
+    },
+    {
+      "id": "endpoint-data-and-identity-controls",
+      "title": "Endpoint, Data, and Identity Controls",
+      "entries": [
+        {"title": "Mobile Device Management (MDM)", "paragraphs": ["Centrally applies device settings, application controls, compliance rules, and remote lock or wipe actions to mobile endpoints."], "recognitionCue": "Manage company phones and tablets → MDM."},
+        {"title": "Data Loss Prevention (DLP)", "paragraphs": ["Detects or blocks sensitive information from leaving approved locations or being shared improperly."], "recognitionCue": "Stop sensitive-data leakage → DLP."},
+        {"title": "Identity Access Management (IAM)", "paragraphs": ["The broad framework for identities, authentication, authorization, and access."], "recognitionCue": "Who are you and what may you access? → IAM."},
+        {"title": "Directory Services", "paragraphs": ["Centrally store and organize users, groups, computers, and resources; Active Directory is an example."], "recognitionCue": "Central identity and resource store → directory service."}
+      ]
+    },
+    {
+      "id": "control-comparison-map",
+      "title": "Control Comparison Map",
+      "table": {
+        "caption": "Common security control distinctions",
+        "headers": ["Clue", "Best match", "Do not confuse with"],
+        "rows": [
+          ["Minimum necessary rights", "Least privilege", "Zero Trust verifies requests"],
+          ["Specific allow/deny permissions", "ACL", "IAM is the broader identity framework"],
+          ["One login across services", "SSO", "SAML carries an assertion"],
+          ["Temporary elevated access", "JIT", "PAM manages privileged access broadly"],
+          ["Manage mobile endpoints", "MDM", "DLP protects information from leakage"],
+          ["Central identity store", "Directory services", "IAM manages identity and access processes"]
+        ]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Vehicle barrier → bollard", "Controlled two-door entry → access control vestibule", "Credential scanner → badge reader", "Camera recording → video surveillance", "Movement detection → motion sensor", "Chip credential → smart card", "Phone credential → mobile digital key", "Biological identity → biometric", "Metal detection → magnetometer", "Minimum permissions → least privilege", "Verify every request → Zero Trust", "Permit/deny list → ACL", "Multiple factor categories → MFA", "Authentication assertion → SAML", "Temporary privilege → JIT", "Privileged-account control → PAM", "Mobile endpoint control → MDM", "Stop data leakage → DLP"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.1 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["Answer the control named by the scenario's purpose, not merely a related security term."],
+      "bullets": ["Least privilege limits access; Zero Trust questions every request.", "OTP means one use; TOTP is specifically time generated.", "SAML is an assertion technology; SSO is the one-login experience.", "JIT provides temporary elevation; PAM manages privileged accounts and sessions.", "MDM manages devices; DLP protects sensitive data from leaving.", "Directory services store identities; IAM governs identity and access."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Vehicle barrier → bollard", "Electronic credential → key fob", "Chip credential → smart card", "Body characteristic → biometric", "Minimum rights → least privilege", "Never automatically trust → Zero Trust", "Time-changing code → TOTP", "One-use code → OTP", "Federated assertion → SAML", "One login/many apps → SSO", "Temporary access → JIT", "Privileged access management → PAM", "Endpoint/mobile management → MDM", "Sensitive-data protection → DLP", "Identity and access framework → IAM", "Central identity/resource store → directory services"],
+      "callout": "Keep them away → verify them → limit them → protect the data."
+    }
+  ]
+}

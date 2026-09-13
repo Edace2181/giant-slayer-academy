@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Summarize Types of Malware and Tools/Methods for Detection, Removal, and Prevention",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Malware questions are behavior-recognition problems. Identify what the threat does, then select the appropriate detection, response, recovery, or prevention method."],
+      "bullets": ["Malware types and their signature behaviors", "Adware and potentially unwanted programs", "Recovery, endpoint detection, managed response, and cross-layer detection", "Antimalware, email, firewall, education, and reinstallation controls"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When malware behavior appears, identify the threat from its strongest clue, then choose a tool or method that matches where the threat is detected and how much trust remains in the system."],
+      "callout": "Recognize the behavior → detect or contain → remove or recover → prevent recurrence."
+    },
+    {
+      "id": "deception-and-stealth-malware",
+      "title": "Deception and Stealth Malware",
+      "entries": [
+        {"title": "Trojan", "paragraphs": ["Pretends to be legitimate or desirable software while performing malicious activity. Its defining clue is deception rather than file infection."], "recognitionCue": "Looks safe but is malicious → Trojan."},
+        {"title": "Rootkit", "paragraphs": ["Hides malicious activity while maintaining privileged access and may interfere deeply with the operating system."], "recognitionCue": "Deep stealth and privileged persistence → rootkit."},
+        {"title": "Fileless Malware", "paragraphs": ["Operates largely in memory or abuses legitimate system tools instead of relying on a traditional malicious executable on disk."], "recognitionCue": "Memory or legitimate utilities → fileless malware."}
+      ]
+    },
+    {
+      "id": "infection-and-surveillance-malware",
+      "title": "Infection and Surveillance Malware",
+      "entries": [
+        {"title": "Virus", "paragraphs": ["Infects files or executable content and replicates when the infected content runs."], "recognitionCue": "Infect and replicate → virus."},
+        {"title": "Spyware", "paragraphs": ["Secretly collects information about browsing, applications, behavior, or personal information."], "recognitionCue": "Broad secret monitoring → spyware."},
+        {"title": "Keylogger", "paragraphs": ["Records keystrokes and may capture usernames, passwords, messages, or financial information."], "recognitionCue": "Every key typed is recorded → keylogger."},
+        {"title": "Stalkerware", "paragraphs": ["Secretly monitors another person's activities, location, communications, or device and is associated with privacy abuse."], "recognitionCue": "Covert personal tracking → stalkerware."}
+      ]
+    },
+    {
+      "id": "disruption-and-resource-malware",
+      "title": "Disruption and Resource-Abuse Malware",
+      "entries": [
+        {"title": "Ransomware", "paragraphs": ["Locks a system or encrypts files and demands payment to restore access."], "recognitionCue": "Unreadable files plus a payment demand → ransomware."},
+        {"title": "Boot Sector Virus", "paragraphs": ["Infects boot-related storage areas and can execute during startup before normal OS operation."], "recognitionCue": "Boot process infection → boot sector virus."},
+        {"title": "Cryptominer", "paragraphs": ["Steals CPU or GPU resources to generate cryptocurrency for an attacker, often causing high utilization, heat, fan activity, slowness, and power use."], "recognitionCue": "Idle PC with a pegged CPU or GPU → cryptominer."}
+      ]
+    },
+    {
+      "id": "adware-and-pup",
+      "title": "Adware and Potentially Unwanted Programs",
+      "entries": [
+        {"title": "Adware", "paragraphs": ["Displays unwanted advertisements, pop-ups, or redirects."], "recognitionCue": "Unwanted ads everywhere → adware."},
+        {"title": "Potentially Unwanted Program (PUP)", "paragraphs": ["Software that may not meet a strict malware definition but is unwanted or risky, such as bundled browser tools or questionable utilities."], "recognitionCue": "An unwanted bundled program → PUP."}
+      ],
+      "callout": "Adware describes advertising behavior; PUP is the broader category of undesirable software."
+    },
+    {
+      "id": "malware-recognition-map",
+      "title": "Malware Recognition Map",
+      "table": {
+        "caption": "Behavior-to-malware matching",
+        "headers": ["Strongest clue", "Malware type"],
+        "rows": [["Disguised as legitimate", "Trojan"], ["Deep privileged hiding", "Rootkit"], ["Infects and replicates", "Virus"], ["Broad secret monitoring", "Spyware"], ["Encrypts or locks for payment", "Ransomware"], ["Records keystrokes", "Keylogger"], ["Infects startup area", "Boot sector virus"], ["Mines cryptocurrency", "Cryptominer"], ["Tracks another person", "Stalkerware"], ["Runs in memory or through legitimate tools", "Fileless malware"], ["Displays unwanted advertisements", "Adware"], ["Undesired questionable application", "PUP"]]
+      }
+    },
+    {
+      "id": "recovery-console",
+      "title": "Recovery Console",
+      "paragraphs": ["A recovery console or environment lets a technician diagnose and repair an operating system outside normal operation. It is useful when malware or corruption prevents normal startup."],
+      "callout": "The OS cannot operate normally → use a recovery environment."
+    },
+    {
+      "id": "detection-and-response",
+      "title": "Tools and Methods: EDR, MDR, and XDR",
+      "entries": [
+        {"title": "Endpoint Detection and Response (EDR)", "paragraphs": ["Collects endpoint telemetry, detects suspicious behavior, and supports investigation and response on workstations, laptops, and servers."], "recognitionCue": "Endpoint-focused detection and response → EDR."},
+        {"title": "Managed Detection and Response (MDR)", "paragraphs": ["Provides monitoring and response as a managed service, commonly through an outside security provider."], "recognitionCue": "Outsourced security monitoring and response → MDR."},
+        {"title": "Extended Detection and Response (XDR)", "paragraphs": ["Correlates detections across multiple sources such as endpoints, email, identity, networks, and cloud services."], "recognitionCue": "Cross-layer detection and response → XDR."}
+      ]
+    },
+    {
+      "id": "antivirus-and-antimalware",
+      "title": "Antivirus and Anti-Malware",
+      "entries": [
+        {"title": "Antivirus", "paragraphs": ["Detects and removes malicious software, historically emphasizing viruses and known signatures."]},
+        {"title": "Anti-Malware", "paragraphs": ["Detects and removes a broader range of malicious software. Modern antivirus and anti-malware capabilities often overlap."]}
+      ],
+      "callout": "For the exam, antivirus is the traditional term; anti-malware emphasizes broader malicious-software protection."
+    },
+    {
+      "id": "preventive-controls",
+      "title": "Preventive Controls",
+      "entries": [
+        {"title": "Email Security Gateway", "paragraphs": ["Inspects email for malicious attachments, phishing, spam, and suspicious links before they reach users."], "recognitionCue": "Stop a malicious attachment before the inbox → email security gateway."},
+        {"title": "Software Firewalls", "paragraphs": ["Run on an endpoint and control its network traffic to reduce exposure to unauthorized connections."], "recognitionCue": "Endpoint traffic filter → software firewall."},
+        {"title": "User Education Regarding Common Threats", "paragraphs": ["Teaches users to recognize suspicious links, attachments, downloads, software, and social-engineering techniques."], "recognitionCue": "Teach the human sensor."},
+        {"title": "Antiphishing Training", "paragraphs": ["Focuses on urgency, impersonation, credential requests, suspicious links, and unusual attachments in fraudulent messages."], "recognitionCue": "Teach users to spot fraudulent messages → antiphishing training."}
+      ]
+    },
+    {
+      "id": "os-reinstallation",
+      "title": "OS Reinstallation",
+      "paragraphs": ["If malware deeply compromises system integrity, a rootkit persists, or successful removal cannot be verified, reinstalling the operating system can restore a known-clean starting point."],
+      "bullets": ["Protect necessary data appropriately.", "Do not restore infected content.", "Use reinstallation when confidence in ordinary cleanup is insufficient."],
+      "callout": "Cannot trust the system → rebuild it."
+    },
+    {
+      "id": "detection-removal-prevention",
+      "title": "Detection, Removal, and Prevention Model",
+      "entries": [
+        {"title": "Detect", "paragraphs": ["Use antivirus, anti-malware, EDR, XDR, and email security gateways to identify suspicious or malicious activity."]},
+        {"title": "Respond and Remove", "paragraphs": ["Use endpoint response tools, a recovery console, malware-removal tools, or OS reinstallation when integrity cannot be restored confidently."]},
+        {"title": "Prevent", "paragraphs": ["Keep security tools updated, filter network and email traffic, and train users against common threats and phishing."]}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Fake legitimate application → Trojan", "Stealth privileged malware → rootkit", "Infects files → virus", "Broad monitoring → spyware", "Files encrypted for payment → ransomware", "Captures typing → keylogger", "Startup infection → boot sector virus", "Unauthorized crypto mining → cryptominer", "Secret personal tracking → stalkerware", "Memory-based or legitimate utilities → fileless", "Pop-up advertisements → adware", "Undesired bundled software → PUP", "Repair outside normal boot → recovery console", "Endpoint telemetry and response → EDR", "Managed security service → MDR", "Cross-source detection → XDR", "Filter threats before inbox → email security gateway", "Local traffic filtering → software firewall", "System cannot be trusted → OS reinstallation"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.4 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["A Trojan relies on disguise; a virus infects and replicates.", "Spyware broadly monitors; a keylogger specifically records keys; stalkerware covertly tracks a person.", "A rootkit hides deeply with privilege; fileless malware operates largely without a traditional disk file.", "Ransomware demands payment for access; a cryptominer quietly consumes compute resources.", "Adware emphasizes advertisements; PUP is a broader unwanted-software category.", "EDR is endpoint focused, MDR is a managed service, and XDR spans security sources.", "Antivirus or anti-malware protects the endpoint; an email security gateway filters malicious mail before delivery.", "If cleanup cannot restore trust, OS reinstallation may be the safest choice."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Disguise → Trojan", "Deep stealth → rootkit", "Infect and replicate → virus", "Secret monitoring → spyware", "Encrypt for money → ransomware", "Record typing → keylogger", "Boot infection → boot sector virus", "Steal compute for crypto → cryptominer", "Track a person → stalkerware", "Memory or legitimate tools → fileless", "Unwanted ads → adware", "Unwanted application → PUP", "Repair environment → recovery console", "Endpoint detection → EDR", "Managed response → MDR", "Extended sources → XDR", "Malware protection → antivirus or anti-malware", "Dangerous email filtering → email security gateway", "Local network filtering → software firewall", "Cannot trust the OS → reinstall"],
+      "callout": "Recognize → detect → remove or recover → prevent."
+    }
+  ]
+}

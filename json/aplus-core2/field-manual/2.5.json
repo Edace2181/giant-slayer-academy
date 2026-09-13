@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.5",
+  "title": "Compare and Contrast Common Social Engineering Attacks, Threats, and Vulnerabilities",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["This objective joins three security ideas: social engineering manipulates people, threats attack systems or organizations, and vulnerabilities are weaknesses that make attacks easier."],
+      "callout": "Trick the person → attack the system → exploit the weakness."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Identify the exact attack from the delivery channel, target, behavior, technical destination, or weakness emphasized in the scenario."],
+      "bullets": ["Email → phishing; voice → vishing; SMS → smishing", "One source flood → DoS; distributed sources → DDoS", "Database input → SQL injection; browser script → XSS", "Fix exists but is absent → unpatched; vendor fixes ended → EOL"]
+    },
+    {
+      "id": "social-engineering",
+      "title": "Social Engineering",
+      "paragraphs": ["Social engineering attacks the human decision-maker rather than relying only on a technical exploit."],
+      "entries": [
+        {"title": "Phishing", "paragraphs": ["Uses fraudulent messages, usually email, to induce clicks, attachments, credential disclosure, payments, or other actions."], "recognitionCue": "Fraudulent email → phishing."},
+        {"title": "Vishing", "paragraphs": ["Voice-based phishing, often a call from someone pretending to be a bank, help desk, or vendor."], "recognitionCue": "Fraudulent phone call → vishing."},
+        {"title": "Smishing", "paragraphs": ["Phishing delivered through SMS or text messaging."], "recognitionCue": "Fraudulent text → smishing."},
+        {"title": "QR Code Phishing", "paragraphs": ["Uses a malicious or deceptive QR code to direct a victim to a fraudulent destination."], "recognitionCue": "Malicious QR code → QR code phishing."}
+      ]
+    },
+    {
+      "id": "targeted-phishing",
+      "title": "Spear Phishing and Whaling",
+      "entries": [
+        {"title": "Spear Phishing", "paragraphs": ["Targets a specific person or group and uses contextual information to appear convincing."], "recognitionCue": "Specific target → spear phishing."},
+        {"title": "Whaling", "paragraphs": ["Targets a high-value executive or senior leader."], "recognitionCue": "Executive target → whaling."}
+      ],
+      "callout": "Broad campaign → phishing; selected victim → spear phishing; executive victim → whaling."
+    },
+    {
+      "id": "physical-social-engineering",
+      "title": "Physical Social Engineering",
+      "entries": [
+        {"title": "Shoulder Surfing", "paragraphs": ["Observes someone entering a password, PIN, door code, or other sensitive information."], "recognitionCue": "Watch the credential → shoulder surfing."},
+        {"title": "Tailgating", "paragraphs": ["Enters a restricted area by following an authorized person through a controlled door."], "recognitionCue": "Follow through the door → tailgating."},
+        {"title": "Impersonation", "paragraphs": ["Pretends to be a trusted employee, technician, manager, vendor, or organization."], "recognitionCue": "Pretend to be trusted → impersonation."},
+        {"title": "Dumpster Diving", "paragraphs": ["Searches discarded materials for passwords, account information, internal documents, or hardware details."], "recognitionCue": "Trash becomes intelligence → dumpster diving."}
+      ]
+    },
+    {
+      "id": "availability-and-wireless-threats",
+      "title": "Availability and Wireless Threats",
+      "entries": [
+        {"title": "Denial of Service (DoS)", "paragraphs": ["Overwhelms or exhausts a service from one or a limited number of sources to make it unavailable."], "recognitionCue": "One-source service flood → DoS."},
+        {"title": "Distributed Denial of Service (DDoS)", "paragraphs": ["Uses many distributed systems to overwhelm one target."], "recognitionCue": "Many-source service flood → DDoS."},
+        {"title": "Evil Twin", "paragraphs": ["A fraudulent wireless access point that imitates a legitimate network to attract users and intercept traffic."], "recognitionCue": "Fake Wi-Fi that looks real → evil twin."}
+      ]
+    },
+    {
+      "id": "identity-and-interception-threats",
+      "title": "Identity and Interception Threats",
+      "entries": [
+        {"title": "Zero-Day Attack", "paragraphs": ["Exploits a newly unknown or uncorrected vulnerability before an effective fix is available or defenders have meaningful response time."], "recognitionCue": "New flaw with no ready fix → zero-day."},
+        {"title": "Spoofing", "paragraphs": ["Falsifies identity or source information such as an email address, IP address, caller ID, or MAC address."], "recognitionCue": "Fake source or identity → spoofing."},
+        {"title": "On-Path Attack", "paragraphs": ["Places an attacker between communicating parties to read, capture, or alter traffic."], "recognitionCue": "User → attacker → destination."}
+      ]
+    },
+    {
+      "id": "credential-attacks",
+      "title": "Credential Attacks",
+      "entries": [
+        {"title": "Brute-Force Attack", "paragraphs": ["Systematically tries many possible passwords or keys until one works."], "recognitionCue": "Try broad combinations → brute force."},
+        {"title": "Dictionary Attack", "paragraphs": ["Tries candidate passwords from a prepared word or common-password list."], "recognitionCue": "Try a word list → dictionary attack."}
+      ]
+    },
+    {
+      "id": "insider-and-web-threats",
+      "title": "Insider and Web Threats",
+      "entries": [
+        {"title": "Insider Threat", "paragraphs": ["Risk created by an employee, contractor, or partner with legitimate access acting maliciously, negligently, or accidentally."], "recognitionCue": "Danger from authorized access → insider threat."},
+        {"title": "Structured Query Language (SQL) Injection", "paragraphs": ["Uses malicious input to manipulate database queries."], "recognitionCue": "Attacker input changes a database query → SQL injection."},
+        {"title": "Cross-Site Scripting (XSS)", "paragraphs": ["Injects malicious web content that executes as script in another user's browser."], "recognitionCue": "Web input becomes browser script → XSS."}
+      ],
+      "callout": "Database query → SQL injection; browser-executed script → XSS."
+    },
+    {
+      "id": "business-and-supply-chain-threats",
+      "title": "Business and Supply Chain Threats",
+      "entries": [
+        {"title": "Business Email Compromise (BEC)", "paragraphs": ["Uses fraudulent or compromised business email identities to request payments, change account details, or disclose sensitive data."], "recognitionCue": "Trusted-looking corporate email requests financial action → BEC."},
+        {"title": "Supply Chain/Pipeline Attack", "paragraphs": ["Compromises a trusted vendor, software provider, update mechanism, dependency, or service to reach downstream customers."], "recognitionCue": "Attack the trusted supplier to reach the customer."}
+      ]
+    },
+    {
+      "id": "vulnerabilities",
+      "title": "Vulnerabilities",
+      "paragraphs": ["A vulnerability is a weakness that can be exploited."],
+      "entries": [
+        {"title": "Non-Compliant Systems", "paragraphs": ["Do not meet required organizational or regulatory standards."], "recognitionCue": "Policy requires one state; the system has another."},
+        {"title": "Unpatched Systems", "paragraphs": ["Are missing available security fixes."], "recognitionCue": "A fix exists but was not installed."},
+        {"title": "Unprotected Systems", "paragraphs": ["Lack expected controls such as antivirus or a firewall."], "recognitionCue": "Missing antivirus or missing firewall → unprotected."},
+        {"title": "End-of-Life (EOL)", "paragraphs": ["No longer receive normal vendor support or security updates."], "recognitionCue": "Vendor fixes have ended → EOL."},
+        {"title": "Bring Your Own Device (BYOD)", "paragraphs": ["A personally owned device used for business can introduce unknown posture, mixed data, privacy concerns, unsupported software, loss risk, and limited organizational control."], "recognitionCue": "Personal device plus business data → BYOD risk."}
+      ]
+    },
+    {
+      "id": "vulnerability-comparison",
+      "title": "Vulnerability Comparison",
+      "table": {
+        "caption": "Match the weakness to the scenario",
+        "headers": ["Clue", "Vulnerability"],
+        "rows": [["Violates a required standard", "Non-compliant"], ["Available security update is absent", "Unpatched"], ["Antivirus or firewall is missing", "Unprotected"], ["Vendor support and fixes have ended", "EOL"], ["Personally controlled device handles business data", "BYOD"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Fraudulent email → phishing", "Fraudulent call → vishing", "Fraudulent SMS → smishing", "Malicious QR → QR code phishing", "Specific victim → spear phishing", "Executive victim → whaling", "Observe a credential → shoulder surfing", "Follow through a secure door → tailgating", "Pretend to be trusted → impersonation", "Search trash → dumpster diving", "One-source flood → DoS", "Distributed flood → DDoS", "Fake access point → evil twin", "New unknown flaw → zero-day", "Fake source → spoofing", "Intercept communication → on-path attack", "Try all combinations → brute force", "Word list → dictionary attack", "Authorized internal risk → insider threat", "Database input attack → SQL injection", "Browser script attack → XSS", "Fraudulent corporate request → BEC", "Trusted vendor compromise → supply chain attack"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.5 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["Email is phishing, voice is vishing, SMS is smishing, and a malicious code image is QR code phishing.", "A specific target is spear phishing; an executive target is whaling.", "Shoulder surfing watches credentials; tailgating follows a person through a controlled entrance.", "DoS uses one or limited sources; DDoS is distributed.", "An evil twin is a fake access point; spoofing falsifies source identity.", "Brute force tries broad combinations; a dictionary attack tries prepared words.", "SQL injection targets database queries; XSS runs script in a browser.", "A zero-day lacks an effective ready fix; an unpatched system skipped an available fix."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Email scam → phishing", "Phone scam → vishing", "Text scam → smishing", "QR scam → QR code phishing", "Selected victim → spear phishing", "Executive → whaling", "Observe secrets → shoulder surfing", "Follow through door → tailgating", "Fake trusted person → impersonation", "Search discarded material → dumpster diving", "Service flood → DoS", "Distributed flood → DDoS", "Fake Wi-Fi → evil twin", "New unfixed flaw → zero-day", "Fake source → spoofing", "Traffic interception → on-path", "All combinations → brute force", "Word list → dictionary", "Internal authorized risk → insider threat", "Database → SQL injection", "Browser script → XSS", "Fraudulent corporate email → BEC", "Trusted supplier compromise → supply chain", "Policy failure → non-compliant", "Missing fix → unpatched", "Missing defenses → unprotected", "No vendor support → EOL", "Personal work device → BYOD"],
+      "callout": "Trick the person → attack the system → exploit the weakness."
+    }
+  ]
+}

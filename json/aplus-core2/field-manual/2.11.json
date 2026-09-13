@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.11",
+  "title": "Given a Scenario, Configure Relevant Security Settings in a Browser",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["Browsers interact with websites, downloads, add-ons, certificates, credentials, cookies, cached data, synchronization, proxies, and DNS. Each feature can affect security and privacy."], "callout": "Trust the source → patch the browser → control add-ons → verify connections → protect data → limit features."},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["When a browser-security scenario appears, decide whether it concerns a download source, integrity check, patch, add-on, credential, certificate, stored browser data, proxy, DNS, or feature setting."], "bullets": ["Download origin and integrity", "Browser and add-on updates", "Secure connections and certificates", "Stored data and privacy", "Proxy, Secure DNS, and feature management"]},
+    {
+      "id": "browser-downloads", "title": "Browser Download/Installation",
+      "entries": [
+        {"title": "Trusted Sources", "paragraphs": ["Obtain software from an official vendor site, approved company portal, or trusted repository."], "recognitionCue": "Approved origin → trusted source."},
+        {"title": "Hashing", "paragraphs": ["Calculate the downloaded file's fixed-value fingerprint and compare it with a trusted published hash to detect alteration."], "recognitionCue": "Expected hash equals downloaded hash → integrity evidence."},
+        {"title": "Untrusted Sources", "paragraphs": ["Unknown or unauthorized sites may distribute malware, Trojans, modified installers, PUPs, and fake applications."], "recognitionCue": "Suspicious free-download site → untrusted source."}
+      ], "callout": "Hashing verifies integrity; encryption provides confidentiality."
+    },
+    {"id": "browser-patching", "title": "Browser Patching", "paragraphs": ["Keep the browser current to correct security vulnerabilities, stability issues, and compatibility problems."], "callout": "Known browser exploit → patch or update the browser."},
+    {
+      "id": "extensions-and-plugins", "title": "Extensions and Plug-Ins",
+      "paragraphs": ["Extensions and plug-ins add functionality but also add code and attack surface. Install only trusted, required add-ons."],
+      "entries": [
+        {"title": "Trusted Sources", "paragraphs": ["Use official browser stores, approved organizational sources, and known developers."]},
+        {"title": "Untrusted Sources", "paragraphs": ["Malicious add-ons can read browsing data, inject ads, redirect searches, capture information, or alter web pages."]}
+      ], "callout": "Verify before you extend."
+    },
+    {"id": "password-managers", "title": "Password Managers", "paragraphs": ["A browser or separate password manager can securely store credentials, promote strong unique passwords, reduce reuse, and provide controlled autofill."], "callout": "Many accounts and repeated credentials → password vault."},
+    {
+      "id": "secure-connections", "title": "Secure Connections/Sites - Valid Certificates",
+      "paragraphs": ["HTTPS uses TLS to protect browser communication. A valid certificate helps establish the website's identity and supports the secure connection."],
+      "bullets": ["Treat expired, name-mismatched, untrusted, or otherwise invalid certificates as warnings, not harmless prompts.", "A certificate helps answer who the site is; TLS encryption protects the traffic."],
+      "callout": "Hostname mismatch → do not treat the site as trusted."
+    },
+    {
+      "id": "privacy-and-stored-data", "title": "Browser Settings: Privacy and Stored Data",
+      "entries": [
+        {"title": "Pop-Up Blocker", "paragraphs": ["Limits unwanted browser windows, malicious prompts, advertisements, and social-engineering opportunities while permitting narrow exceptions for trusted sites when required."]},
+        {"title": "Clearing Browsing Data", "paragraphs": ["Removes a broader set of stored activity such as history, cookies, site data, and saved form information."]},
+        {"title": "Clearing Cache", "paragraphs": ["Removes locally stored images, scripts, and page resources to correct stale or corrupted site behavior."]},
+        {"title": "Private-Browsing Mode", "paragraphs": ["Reduces ordinary local retention of history, session data, and cookies after a session; it does not make the user anonymous to websites, networks, ISPs, or employers."]}
+      ], "callout": "Browsing data is broad; cache specifically stores website resources."
+    },
+    {
+      "id": "browser-data-synchronization", "title": "Sign-In/Browser Data Synchronization",
+      "paragraphs": ["A signed-in browser may synchronize bookmarks, passwords, history, tabs, and settings between devices. Restrict synchronization when policy must keep organizational data off personal or unmanaged systems."],
+      "callout": "Browser data follows the signed-in account."
+    },
+    {"id": "ad-blockers", "title": "Ad Blockers", "paragraphs": ["Ad blockers reduce advertising content and may lower exposure to malicious advertising, but they do not replace endpoint security."]},
+    {
+      "id": "proxy-and-secure-dns", "title": "Proxy and Secure DNS",
+      "entries": [
+        {"title": "Proxy", "paragraphs": ["Routes browser traffic through an intermediary for filtering, logging, access control, or policy enforcement."], "recognitionCue": "Browser → intermediary → website."},
+        {"title": "Secure DNS", "paragraphs": ["Uses encrypted DNS technologies supported by the browser or system to protect name-resolution traffic to a compatible resolver."], "recognitionCue": "Encrypted name lookup → Secure DNS."}
+      ], "callout": "A proxy intermediates web traffic; Secure DNS protects DNS lookups."
+    },
+    {
+      "id": "browser-feature-management", "title": "Browser Feature Management",
+      "paragraphs": ["Enable or disable plug-ins, extensions, and other features according to trust, necessity, and support status."],
+      "entries": [
+        {"title": "Disable Unnecessary Features", "paragraphs": ["Remove or disable unused plug-ins and extensions to reduce attack surface."]},
+        {"title": "Enable Required Features Carefully", "paragraphs": ["Enable only features that are trusted, required, and supported for the business application."]}
+      ], "callout": "Necessary and trusted → enable; unnecessary or untrusted → disable."
+    },
+    {
+      "id": "browser-hardening-workflow", "title": "Browser Hardening Workflow",
+      "bullets": ["Patch the browser.", "Use trusted download and extension sources.", "Compare trusted hashes when available.", "Install only necessary add-ons.", "Verify HTTPS and certificate validity.", "Protect credentials with an appropriate password manager.", "Manage browsing data, cache, privacy mode, and synchronization.", "Configure proxy and Secure DNS according to policy.", "Disable unused plug-ins, extensions, and features."]
+    },
+    {
+      "id": "recognition-cues", "title": "Recognition Cues",
+      "bullets": ["Official vendor download → trusted source", "File fingerprint → hashing", "Unknown software site → untrusted source", "Browser vulnerability → browser patching", "Browser add-on → extension or plug-in", "Credential vault → password manager", "HTTPS website identity → valid certificate", "Unwanted windows → pop-up blocker", "Remove history and cookies → clear browsing data", "Remove old page resources → clear cache", "Reduce local history → private browsing", "Browser data across devices → synchronization", "Remove advertising → ad blocker", "Traffic intermediary → proxy", "Encrypted name lookup → Secure DNS", "Unneeded add-on → disable it"]
+    },
+    {
+      "id": "exam-trap", "title": "Objective 2.11 Exam Trap", "variant": "exam-trap",
+      "bullets": ["A trusted source identifies where software came from; a valid certificate helps verify a secure site's identity.", "A hash verifies integrity; antivirus searches for malicious software.", "Cache contains temporary page resources; browsing data is the broader collection.", "Private browsing reduces local retention but does not make Internet activity anonymous.", "A password manager stores credentials; browser synchronization copies browser data between devices.", "A proxy intermediates traffic; Secure DNS encrypts name lookups.", "An extension is an add-on, while feature management decides which plug-ins, extensions, and capabilities remain enabled."]
+    },
+    {
+      "id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet",
+      "bullets": ["Approved source → trusted", "Verify download integrity → hash", "Suspicious source → untrusted", "Browser flaw → patch", "Add-on → extension or plug-in", "Credential vault → password manager", "Trusted HTTPS identity → valid certificate", "Stop extra windows → pop-up blocker", "Erase history and cookies → clear browsing data", "Remove old web resources → clear cache", "Limit local history → private browsing", "Cross-device browser data → synchronization", "Block ads → ad blocker", "Traffic middleman → proxy", "Encrypted DNS → Secure DNS", "Unneeded add-on → disable"],
+      "callout": "Trust the source → patch the browser → control add-ons → verify connections → protect data → limit features."
+    }
+  ]
+}

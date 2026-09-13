@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.10",
+  "title": "Given a Scenario, Apply Security Settings on SOHO Wireless and Wired Networks",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id": "what-you-are-learning", "title": "What You Are Learning", "paragraphs": ["A SOHO router may be the Internet gateway, wireless access point, firewall, DHCP server, and management device. Weak configuration can expose the entire network."], "callout": "Secure the router → secure Wi-Fi → limit exposure → control access."},
+    {"id": "maestro-focus", "title": "Maestro Focus", "paragraphs": ["When securing a small network, identify whether a router, wireless, firewall, physical, or management setting provides the narrowest effective control."]},
+    {
+      "id": "router-credentials-and-filtering", "title": "Router Settings: Credentials and Filtering",
+      "entries": [
+        {"title": "Change Default Passwords", "paragraphs": ["Factory administrator credentials are widely known. Replace them with a strong, unique router password immediately."], "recognitionCue": "Factory admin password → change it."},
+        {"title": "IP Filtering", "paragraphs": ["Allows or blocks traffic based on source or destination IP addresses, hosts, or networks."], "recognitionCue": "IP address → allow or deny."},
+        {"title": "Content Filtering", "paragraphs": ["Restricts selected websites, categories, or services for security, parental control, or business policy."], "recognitionCue": "Block selected sites or categories → content filtering."}
+      ]
+    },
+    {
+      "id": "firmware-and-physical-security", "title": "Firmware and Physical Security",
+      "entries": [
+        {"title": "Firmware Updates", "paragraphs": ["Install vendor firmware updates to correct router security flaws, stability issues, and supported feature problems."], "recognitionCue": "Router vulnerability → firmware update."},
+        {"title": "Physical Placement/Secure Locations", "paragraphs": ["Keep routers and switches away from public access so unauthorized people cannot reset them, disconnect cables, connect devices, or steal equipment."], "recognitionCue": "Publicly reachable router → move it to a secure location."}
+      ]
+    },
+    {"id": "upnp", "title": "Universal Plug and Play (UPnP)", "paragraphs": ["UPnP lets devices and applications discover and request automatic network configuration. It is convenient but can increase exposure and should be disabled when not required."], "callout": "Automatic network configuration → UPnP."},
+    {"id": "screened-subnet", "title": "Screened Subnet", "paragraphs": ["A screened subnet isolates externally accessible systems from the protected internal network, similar to a DMZ-style segment."], "callout": "Public-facing service in a separate network area → screened subnet."},
+    {"id": "secure-management-access", "title": "Configure Secure Management Access", "paragraphs": ["Protect router administration with HTTPS instead of HTTP, SSH instead of Telnet where applicable, strong credentials, limited management sources, and disabled unnecessary remote administration."], "callout": "Administrative traffic and credentials must be protected too."},
+    {
+      "id": "wireless-specific", "title": "Wireless-Specific Security",
+      "entries": [
+        {"title": "Changing the Service Set Identifier (SSID)", "paragraphs": ["Replace the factory wireless name to avoid advertising the router make or model and to identify the network clearly without exposing sensitive information."], "recognitionCue": "SSID is the Wi-Fi name."},
+        {"title": "Disabling SSID Broadcast", "paragraphs": ["Stops ordinary advertisement of the network name but does not provide strong protection because wireless analysis can still discover it."], "recognitionCue": "Do not announce the name."},
+        {"title": "Encryption Settings", "paragraphs": ["Protect wireless traffic with supported secure options such as WPA2 with AES or WPA3 when available."], "recognitionCue": "Protect radio traffic → encryption."},
+        {"title": "Configuring Guest Access", "paragraphs": ["Gives visitors Internet connectivity while isolating them from trusted internal devices and services."], "recognitionCue": "Visitor Internet without internal access → guest network."}
+      ]
+    },
+    {"id": "ssid-and-encryption-comparison", "title": "SSID Visibility vs. Encryption", "table": {"caption": "Do not confuse network naming with traffic protection", "headers": ["Setting", "Purpose"], "rows": [["Change SSID", "Change the Wi-Fi network name"], ["Disable SSID broadcast", "Reduce casual name visibility"], ["Wireless encryption", "Protect wireless access and traffic"]]}, "callout": "Hidden does not mean encrypted."},
+    {
+      "id": "firewall-settings", "title": "Firewall Settings",
+      "entries": [
+        {"title": "Disabling Unused Ports", "paragraphs": ["Close or disable ports and services that no system requires to reduce attack surface."], "recognitionCue": "Nobody needs the service → close the port."},
+        {"title": "Port Forwarding/Mapping", "paragraphs": ["Maps incoming traffic on a router's external interface to a specified internal host and service."], "recognitionCue": "Public port → private host."}
+      ], "callout": "Port forwarding deliberately opens a path inward, so expose only a required and secured service."
+    },
+    {"id": "network-control-comparisons", "title": "Network Control Comparisons", "table": {"caption": "Choose the correct SOHO control", "headers": ["Clue", "Control"], "rows": [["Application automatically requests router configuration", "UPnP"], ["Administrator intentionally maps traffic", "Port forwarding"], ["Public-facing system is isolated", "Screened subnet"], ["Visitors must not reach internal resources", "Guest access"], ["Router software vulnerability", "Firmware update"], ["Encrypted router administration", "Secure management access"]]}},
+    {"id": "soho-hardening-workflow", "title": "SOHO Hardening Workflow", "bullets": ["Change default passwords and configure secure management access.", "Install router firmware updates.", "Place network equipment in a secure location.", "Use an appropriate SSID, strong encryption, and guest isolation.", "Disable unnecessary UPnP and unused ports.", "Apply IP and content filtering as required.", "Isolate exposed services in a screened subnet.", "Use port forwarding only when a secured internal service must be reachable."]},
+    {"id": "recognition-cues", "title": "Recognition Cues", "bullets": ["Factory credentials → change default passwords", "Address-based allow or deny → IP filtering", "Router patch → firmware update", "Block sites or categories → content filtering", "Prevent physical tampering → secure placement", "Automatic application network setup → UPnP", "Isolated Internet-facing segment → screened subnet", "Protected router administration → secure management access", "Wi-Fi name → SSID", "Stop ordinary name advertisement → disable SSID broadcast", "Protect Wi-Fi traffic → encryption", "Visitor isolation → guest access", "Unnecessary exposure → disable unused ports", "External-to-internal mapping → port forwarding"]},
+    {"id": "exam-trap", "title": "Objective 2.10 Exam Trap", "variant": "exam-trap", "bullets": ["Changing the SSID changes the name; disabling broadcast reduces ordinary visibility; neither replaces encryption.", "Guest access isolates visitors from the trusted main WLAN.", "UPnP requests configuration automatically; port forwarding is an intentional administrative mapping.", "A screened subnet creates a separate area for exposed systems; port forwarding maps traffic through a router or firewall.", "Firmware updates change router software; configuration settings change how the router operates.", "Unused ports should remain closed; forwarding is only for a required secured service."]},
+    {"id": "maestro-recognition-sheet", "title": "Maestro Recognition Sheet", "bullets": ["Factory password → change it", "IP allow or deny → IP filtering", "Router vulnerability → firmware update", "Block content → content filtering", "Protect router physically → secure location", "Automatic setup → UPnP", "Public-facing isolation → screened subnet", "Secure administration → secure management access", "Wi-Fi name → SSID", "Hide ordinary advertisement → disable broadcast", "Protect wireless traffic → encryption", "Visitor network → guest access", "Unneeded service → disable port", "Public-to-private mapping → port forwarding"], "callout": "Secure the router → secure Wi-Fi → limit exposure → control access."}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Compare and Contrast Wireless Security Protocols and Authentication Methods",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Wireless security asks two different questions: how the radio traffic is protected, and how the user or device proves its identity."],
+      "bullets": ["Protocols and encryption: WPA2, WPA3, TKIP, AES", "Authentication: RADIUS, TACACS+, Kerberos, multifactor authentication"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Distinguish the protocol or encryption protecting wireless traffic from the service or method authenticating a user or administrator."],
+      "callout": "Protect the radio traffic → authenticate the user or device."
+    },
+    {
+      "id": "protocols-and-encryption",
+      "title": "Protocols and Encryption",
+      "entries": [
+        {"title": "Wi-Fi Protected Access 2 (WPA2)", "paragraphs": ["An established and still common wireless security generation, strongly associated with AES-based protection."], "recognitionCue": "Established secure Wi-Fi with AES → WPA2."},
+        {"title": "WPA3", "paragraphs": ["The newer wireless security generation with improved protections and the preferred choice when supported."], "recognitionCue": "Newer and stronger WPA generation → WPA3."},
+        {"title": "Temporal Key Integrity Protocol (TKIP)", "paragraphs": ["A legacy encryption technology associated with earlier WPA deployments; it is not the preferred modern option."], "recognitionCue": "Older WPA-era encryption → TKIP."},
+        {"title": "Advanced Encryption Standard (AES)", "paragraphs": ["A strong symmetric encryption standard used for modern wireless protection."], "recognitionCue": "Modern strong encryption → AES."}
+      ]
+    },
+    {
+      "id": "wpa2-vs-wpa3",
+      "title": "WPA2 vs. WPA3",
+      "table": {
+        "caption": "Wireless security generations",
+        "headers": ["Technology", "Recognition"],
+        "rows": [["WPA2", "Established, common, and associated with AES"], ["WPA3", "Newer generation with improved security capabilities"]]
+      },
+      "callout": "If all devices support it and the question asks for the newer generation, choose WPA3."
+    },
+    {
+      "id": "tkip-vs-aes",
+      "title": "TKIP vs. AES",
+      "table": {
+        "caption": "Encryption comparison",
+        "headers": ["Technology", "Recognition"],
+        "rows": [["TKIP", "Legacy wireless encryption"], ["AES", "Modern, stronger symmetric encryption"]]
+      },
+      "callout": "WPA2 and WPA3 are protocol generations; TKIP and AES are encryption technologies."
+    },
+    {
+      "id": "authentication",
+      "title": "Authentication",
+      "paragraphs": ["Authentication establishes whether a user, device, or administrator should receive access."],
+      "entries": [
+        {"title": "Remote Authentication Dial-In User Service (RADIUS)", "paragraphs": ["Provides centralized authentication, authorization, and accounting for network access and is commonly used by enterprise Wi-Fi and VPN services."], "recognitionCue": "Users or devices joining a network → RADIUS."},
+        {"title": "Terminal Access Controller Access-Control System Plus (TACACS+)", "paragraphs": ["Centralizes administrative authentication and authorization for network infrastructure such as routers and switches."], "recognitionCue": "Administrator logging into a router or switch → TACACS+."},
+        {"title": "Kerberos", "paragraphs": ["A ticket-based authentication protocol strongly associated with Active Directory domain authentication."], "recognitionCue": "Domain authentication ticket → Kerberos."},
+        {"title": "Multifactor Authentication", "paragraphs": ["Requires more than one factor category, such as a password plus a token or a PIN plus a fingerprint."], "recognitionCue": "Two different factor types → MFA."}
+      ]
+    },
+    {
+      "id": "authentication-comparison",
+      "title": "Authentication Comparison",
+      "table": {
+        "caption": "Choose the authentication system from the scenario",
+        "headers": ["Scenario", "Best match"],
+        "rows": [["Enterprise wireless or VPN user access", "RADIUS"], ["Router or switch administrator access", "TACACS+"], ["Domain tickets for identities and resources", "Kerberos"], ["More than one factor category", "Multifactor authentication"]]
+      }
+    },
+    {
+      "id": "security-decision-model",
+      "title": "Wireless Security Decision Model",
+      "bullets": ["If the question asks for a Wi-Fi security generation, choose between WPA2 and WPA3.", "If it asks which encryption protects the traffic, choose between legacy TKIP and modern AES.", "If enterprise users are authenticating to network access, think RADIUS.", "If administrators are authenticating to network devices, think TACACS+.", "If the clue is a domain ticket, think Kerberos.", "If the clue is multiple factor categories, think multifactor authentication."]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Established secure Wi-Fi generation → WPA2", "Newer Wi-Fi security generation → WPA3", "Older WPA encryption → TKIP", "Modern strong encryption → AES", "Enterprise network user authentication → RADIUS", "Network-device administrator authentication → TACACS+", "Authentication ticket → Kerberos", "Multiple factor categories → multifactor authentication"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.3 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["WPA2 is a wireless security protocol; AES is an encryption algorithm.", "WPA3 is newer than WPA2; WPA2 remains common.", "TKIP is legacy; AES is modern and stronger.", "RADIUS authenticates network access; TACACS+ commonly authenticates network-device administrators.", "RADIUS centralizes network entry; Kerberos uses domain authentication tickets.", "Encryption protects traffic; authentication verifies identity."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Established secure Wi-Fi → WPA2", "Newer secure Wi-Fi → WPA3", "Legacy wireless encryption → TKIP", "Modern encryption → AES", "Enterprise network access → RADIUS", "Router or switch administration → TACACS+", "Ticket-based domain authentication → Kerberos", "Multiple factors → MFA"],
+      "callout": "Protect the radio traffic → authenticate the user."
+    }
+  ]
+}

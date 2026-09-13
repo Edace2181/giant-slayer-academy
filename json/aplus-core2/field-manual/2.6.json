@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.6",
+  "title": "Given a Scenario, Implement Procedures for Basic Small Office/Home Office (SOHO) Malware Removal",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["CompTIA defines a specific SOHO malware-removal sequence. Success depends on recognizing the order, not merely knowing individual tools."],
+      "callout": "Verify → quarantine → disable restore → remediate → update → scan → reimage if needed → maintain → restore → educate."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When malware is suspected, follow the process in order so the infection does not spread, cleanup uses current tools, recovery does not reintroduce malware, and the user is less likely to repeat the incident."]
+    },
+    {
+      "id": "investigate-and-verify",
+      "title": "1. Investigate and Verify Malware Symptoms",
+      "paragraphs": ["Confirm symptoms such as pop-ups, redirects, unknown processes, poor performance, antivirus alerts, unexpected traffic, changed settings, or unfamiliar applications before assuming malware."],
+      "bullets": ["Hardware failures, misconfiguration, and ordinary software bugs can resemble malware.", "Verify before remediating so the response matches the actual cause."],
+      "callout": "First step → investigate and verify."
+    },
+    {
+      "id": "quarantine",
+      "title": "2. Quarantine the Infected System",
+      "paragraphs": ["Disconnect Ethernet, Wi-Fi, and other network access after malware is confirmed or strongly suspected."],
+      "bullets": ["Prevent spread to other devices", "Interrupt data exfiltration", "Block command-and-control traffic", "Reduce additional infection activity"],
+      "callout": "Confirmed infection → stop the system from communicating."
+    },
+    {
+      "id": "disable-system-restore",
+      "title": "3. Disable System Restore in Windows Home",
+      "paragraphs": ["Temporarily disable System Restore before remediation so infected restore data cannot preserve and later reintroduce malicious content."],
+      "callout": "Dirty system → restore off. This is temporary."
+    },
+    {
+      "id": "remediate",
+      "title": "4. Remediate Infected Systems",
+      "paragraphs": ["Remove or neutralize malicious software, stop malicious processes, and correct altered settings with appropriate security and repair tools."],
+      "callout": "Remediation is the threat-removal step."
+    },
+    {
+      "id": "update-antimalware",
+      "title": "5. Update Anti-Malware Software",
+      "paragraphs": ["Update the antimalware engine and detection information before the final scan so current threats can be recognized."],
+      "callout": "New threat plus old definitions is a poor match."
+    },
+    {
+      "id": "scan-and-removal-techniques",
+      "title": "6. Scan and Removal Techniques",
+      "entries": [
+        {"title": "Safe Mode", "paragraphs": ["Starts Windows with a reduced set of drivers and services so some malware does not load and interfere with removal."], "recognitionCue": "Minimal Windows startup → Safe Mode."},
+        {"title": "Preinstallation Environment", "paragraphs": ["Allows scanning and repair outside the normal installed Windows environment when malware hides, blocks tools, or loads early."], "recognitionCue": "Scan while the normal OS is not fully running → preinstallation environment."}
+      ],
+      "callout": "Safe Mode is minimal Windows; a preinstallation environment works outside normal Windows."
+    },
+    {
+      "id": "reimage-or-reinstall",
+      "title": "7. Reimage/Reinstall",
+      "paragraphs": ["If malware cannot be removed reliably or system integrity cannot be trusted, reimage or reinstall the operating system to establish a known-clean state."],
+      "callout": "Persistent compromise or rootkit → rebuild."
+    },
+    {
+      "id": "schedule-scans-and-updates",
+      "title": "8. Schedule Scans and Run Updates",
+      "paragraphs": ["After cleanup, schedule malware scans and update the operating system, applications, and security software."],
+      "callout": "Clean it → keep it clean."
+    },
+    {
+      "id": "restore-protection",
+      "title": "9. Enable System Restore and Create a Restore Point in Windows Home",
+      "paragraphs": ["After the system is verified clean, re-enable System Restore and create a fresh restore point rather than relying on recovery data created during compromise."],
+      "callout": "Clean system → restore on → clean restore point."
+    },
+    {
+      "id": "educate-end-user",
+      "title": "10. Educate the End User",
+      "paragraphs": ["Explain how the infection may have occurred and how to reduce recurrence."],
+      "bullets": ["Avoid suspicious links and attachments", "Use trusted download sources", "Recognize phishing", "Keep software updated", "Report suspicious behavior promptly"],
+      "callout": "Fix the machine and the behavior that enabled the attack."
+    },
+    {
+      "id": "malware-removal-sequence",
+      "title": "GSA Malware Removal Sequence",
+      "table": {
+        "caption": "The required order of operations",
+        "headers": ["Step", "Action", "Purpose"],
+        "rows": [["1", "Investigate and verify", "Confirm malware symptoms"], ["2", "Quarantine", "Prevent communication and spread"], ["3", "Disable System Restore", "Avoid preserving compromised recovery data"], ["4", "Remediate", "Remove the threat"], ["5", "Update anti-malware", "Use current detection"], ["6", "Scan and remove", "Use Safe Mode or a preinstallation environment if needed"], ["7", "Reimage/reinstall", "Rebuild when trust cannot be restored"], ["8", "Schedule scans and run updates", "Reduce recurrence"], ["9", "Enable System Restore and create a point", "Establish clean recovery data"], ["10", "Educate the end user", "Reduce repeat behavior"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["First determine whether malware exists → investigate and verify", "Prevent spread → quarantine", "Avoid infected restore data → disable System Restore", "Remove the threat → remediate", "Improve detection → update anti-malware", "Malware resists normal startup → Safe Mode", "Scan outside normal OS → preinstallation environment", "System integrity cannot be trusted → reimage/reinstall", "Prevent recurrence → schedule scans and run updates", "After confirmed cleanup → enable System Restore and create a restore point", "Reduce user-caused reinfection → educate the end user"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.6 Exam Trap",
+      "variant": "exam-trap",
+      "paragraphs": ["The central exam trap is order."],
+      "bullets": ["Investigate first, then quarantine before attempting removal.", "Disable System Restore before remediation; enable it and create a clean point after cleanup.", "Safe Mode attempts easier removal; reimage or reinstall when trustworthy remediation is not possible.", "Update anti-malware before relying on the final scan.", "Removal is not the final step: maintain updates and scans, restore protection, and educate the user."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Suspect malware → investigate", "Confirmed infection → quarantine", "Before cleanup → disable System Restore", "Remove infection → remediate", "Current detection → update anti-malware", "Minimal Windows → Safe Mode", "Outside regular OS → preinstallation environment", "Cannot trust system → reimage/reinstall", "Future protection → scans and updates", "Clean recovery point → enable System Restore and create one", "Prevent repeat incident → educate end user"],
+      "callout": "Verify → quarantine → disable restore → remediate → update → scan → reimage if needed → maintain → restore → educate."
+    }
+  ]
+}

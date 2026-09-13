@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.7",
+  "title": "Given a Scenario, Apply Workstation Security Options and Hardening Techniques",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Hardening reduces a workstation's attack surface and makes the system more difficult to misuse or compromise."],
+      "bullets": ["Data-at-rest encryption", "Password and firmware protection", "End-user best practices", "Account management", "Default administrator security, AutoRun, and unused services"],
+      "callout": "Protect data → strengthen authentication → limit accounts → lock the workstation → remove unnecessary exposure."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Identify whether a hardening requirement protects stored data, improves authentication, secures an unattended device, constrains an account, or removes an unnecessary entry point."]
+    },
+    {
+      "id": "data-at-rest-encryption",
+      "title": "Data-at-Rest Encryption",
+      "paragraphs": ["Data at rest is stored on an SSD, HDD, USB device, or other media. Encryption makes it unreadable without authorization if the device or drive is stolen."],
+      "bullets": ["BitLocker, FileVault, and EFS are examples encountered elsewhere.", "This objective tests the broader principle of protecting stored data."],
+      "callout": "Stolen drive does not equal readable data."
+    },
+    {
+      "id": "password-considerations",
+      "title": "Password Considerations",
+      "entries": [
+        {"title": "Length", "paragraphs": ["Longer passwords generally create a larger guessing and brute-force search space."]},
+        {"title": "Character Types", "paragraphs": ["Uppercase, lowercase, numbers, and symbols can expand the possible password space."]},
+        {"title": "Uniqueness", "paragraphs": ["Use a different password for each unrelated system so one compromise does not unlock other accounts."]},
+        {"title": "Complexity", "paragraphs": ["Requires a password to satisfy defined structure or character rules."]},
+        {"title": "Expiration", "paragraphs": ["Requires password changes after a defined policy period."]}
+      ],
+      "callout": "Length asks how long; complexity asks which rules; uniqueness asks whether it was reused."
+    },
+    {
+      "id": "password-managers",
+      "title": "Password Managers",
+      "paragraphs": ["A password manager securely stores credentials and helps users maintain long, strong, unique passwords without memorizing every one."],
+      "callout": "Many accounts and repeated passwords → use a password vault."
+    },
+    {
+      "id": "bios-uefi-passwords",
+      "title": "BIOS/UEFI Passwords",
+      "paragraphs": ["Firmware passwords protect the computer before or outside the operating system and can prevent unauthorized changes to firmware settings or boot behavior."],
+      "callout": "Protect startup configuration before the OS loads → BIOS/UEFI password."
+    },
+    {
+      "id": "end-user-best-practices",
+      "title": "End-User Best Practices",
+      "entries": [
+        {"title": "Use Screensaver Locks", "paragraphs": ["Require authentication after inactivity so a walk-away workstation is not left exposed."]},
+        {"title": "Log Off When Not in Use", "paragraphs": ["Ends the active session and is appropriate when the user is finished, especially on shared or sensitive systems."]},
+        {"title": "Secure/Protect Critical Hardware", "paragraphs": ["Use controlled access, equipment locks, secure storage, and physical supervision for laptops and other valuable systems."]},
+        {"title": "Secure Personally Identifiable Information (PII) and Passwords", "paragraphs": ["Do not expose personal records or share, reuse, or leave authentication secrets where others can obtain them."]},
+        {"title": "Use Password Managers", "paragraphs": ["Store and generate credentials in a protected vault instead of reusing weak passwords."]}
+      ],
+      "callout": "Lock preserves the session behind authentication; log off ends the session."
+    },
+    {
+      "id": "account-management",
+      "title": "Account Management",
+      "entries": [
+        {"title": "Restrict User Permissions", "paragraphs": ["Apply least privilege and avoid making ordinary users administrators."]},
+        {"title": "Restrict Log-In Times", "paragraphs": ["Allow an account to sign in only during approved hours."], "recognitionCue": "Clock or work shift → log-in restriction."},
+        {"title": "Disable Guest Account", "paragraphs": ["Remove unnecessary temporary access when the guest account is not required."]},
+        {"title": "Use Failed Attempts Lockout", "paragraphs": ["Lock an account after too many incorrect authentication attempts to slow brute-force and dictionary attacks."], "recognitionCue": "Repeated bad passwords → account lockout."},
+        {"title": "Use Timeout/Screen Lock", "paragraphs": ["Automatically lock an inactive workstation after a defined period."], "recognitionCue": "Inactivity → screen lock."},
+        {"title": "Apply Account Expiration Dates", "paragraphs": ["Automatically disable temporary accounts after a specified date."], "recognitionCue": "Calendar date or project end → account expiration."}
+      ]
+    },
+    {
+      "id": "account-control-comparisons",
+      "title": "Account Control Comparisons",
+      "table": {
+        "caption": "Match the trigger to the control",
+        "headers": ["Trigger", "Control"],
+        "rows": [["Too many incorrect passwords", "Failed attempts lockout"], ["No keyboard or mouse activity", "Timeout/screen lock"], ["Sign-in allowed only during a work shift", "Restrict log-in times"], ["Temporary account ends on a date", "Account expiration"]]
+      }
+    },
+    {
+      "id": "default-administrator",
+      "title": "Change Default Administrator's User Account/Password",
+      "paragraphs": ["Default names and credentials are predictable. Rename or otherwise secure the built-in administrator identity where appropriate and replace default credentials with a strong unique password."],
+      "callout": "Known default credentials are an easy target."
+    },
+    {
+      "id": "disable-autorun",
+      "title": "Disable AutoRun",
+      "paragraphs": ["AutoRun can launch content automatically from removable media. Disabling it reduces the chance that an inserted device executes malicious code without deliberate user action."],
+      "callout": "Insert USB does not mean automatically run code."
+    },
+    {
+      "id": "disable-unused-services",
+      "title": "Disable Unused Services",
+      "paragraphs": ["Every unnecessary service can add attack surface, consume resources, and increase administrative complexity. Disable services that are not needed when it is safe to do so."],
+      "callout": "Do not run what the workstation does not need."
+    },
+    {
+      "id": "hardening-workflow",
+      "title": "Hardening Workflow",
+      "table": {
+        "caption": "Layered workstation hardening",
+        "headers": ["Goal", "Examples"],
+        "rows": [["Protect stored data", "Data-at-rest encryption"], ["Strengthen authentication", "Length, character types, uniqueness, complexity, firmware passwords"], ["Limit rights and access", "Restricted permissions, log-in times, lockout, expiration"], ["Protect unattended systems", "Screensaver locks, timeouts, log off"], ["Reduce attack surface", "Disable AutoRun and unused services"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Stolen drive protection → data-at-rest encryption", "Harder guessing → password length", "Defined character rules → complexity", "Different password per service → uniqueness", "Protect firmware settings → BIOS/UEFI password", "Walk away → screensaver lock", "Finished session → log off", "Protect laptop theft → secure critical hardware", "Personal records → PII", "Credential vault → password manager", "Minimum rights → restrict user permissions", "Allowed hours → restrict log-in times", "Unused temporary access → disable guest", "Repeated failures → account lockout", "Inactivity → timeout/screen lock", "Temporary employee end → account expiration", "Predictable admin credentials → change default administrator account/password", "Automatic removable-media execution → disable AutoRun", "Unnecessary background exposure → disable unused services"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.7 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["A password authenticates; encryption protects the stored content.", "Length is the number of characters; complexity is a policy structure; uniqueness prevents reuse.", "Account lockout follows bad passwords; a screen lock follows inactivity.", "Log-in restrictions use allowed hours; account expiration uses an end date.", "A BIOS/UEFI password protects firmware; a Windows password authenticates to the OS.", "AutoRun concerns automatic removable-media execution; unused services are unnecessary background or network capabilities."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Stored data → encryption", "Longer credential → length", "Character rules → complexity", "Different password everywhere → uniqueness", "Firmware protection → BIOS/UEFI password", "Walk away → screen lock", "Finished work → log off", "Physical laptop protection → secure hardware", "Personal information → protect PII", "Credential vault → password manager", "Minimum rights → restrict permissions", "Allowed work hours → log-in restrictions", "Unused visitor access → disable guest", "Repeated failures → account lockout", "Inactive session → timeout", "Temporary employment → account expiration", "Predictable built-in credentials → change administrator account/password", "Automatic media execution → disable AutoRun", "Unnecessary exposure → disable unused services"],
+      "callout": "Protect data → strengthen authentication → limit accounts → lock the workstation → reduce attack surface."
+    }
+  ]
+}

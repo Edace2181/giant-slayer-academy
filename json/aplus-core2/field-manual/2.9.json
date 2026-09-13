@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.9",
+  "title": "Compare and Contrast Common Data Destruction and Disposal Methods",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Retired drives and devices can still contain passwords, customer records, personal data, financial information, and proprietary material. Disposal must make that information unrecoverable to the required standard."],
+      "callout": "Reuse it → wipe it; destroy it → physically destroy it; outsource it → verify it."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When media will be reused, recycled, transferred, or destroyed, select a method that protects the data, preserves the device only when required, and satisfies organizational, regulatory, and environmental rules."]
+    },
+    {
+      "id": "physical-destruction",
+      "title": "Physical Destruction of Hard Drives",
+      "paragraphs": ["Physical destruction is appropriate when storage media no longer needs to remain usable."],
+      "entries": [
+        {"title": "Drilling", "paragraphs": ["Punctures and damages key drive components so the device cannot operate normally."], "recognitionCue": "Holes through the drive → drilling."},
+        {"title": "Shredding", "paragraphs": ["Mechanically reduces storage devices to small fragments."], "recognitionCue": "Drive becomes pieces → shredding."},
+        {"title": "Degaussing", "paragraphs": ["Uses a strong magnetic field to disrupt information on magnetic media such as hard disk drives and tapes. It is not a general solution for flash-based SSDs."], "recognitionCue": "Magnetic storage plus magnetic erasure → degaussing."},
+        {"title": "Incineration", "paragraphs": ["Uses extreme heat to destroy the storage media physically."], "recognitionCue": "Destroy with heat → incineration."}
+      ]
+    },
+    {
+      "id": "destruction-comparison",
+      "title": "Physical Destruction Comparison",
+      "table": {"caption": "Match the destruction method to the clue", "headers": ["Clue", "Method"], "rows": [["Puncture components", "Drilling"], ["Reduce media to fragments", "Shredding"], ["Disrupt magnetic data", "Degaussing"], ["Destroy with extreme heat", "Incineration"]]}
+    },
+    {
+      "id": "recycling-and-repurposing",
+      "title": "Recycling or Repurposing Best Practices",
+      "paragraphs": ["If media will remain usable, sanitize its prior information appropriately before reuse, transfer, or recycling."],
+      "entries": [
+        {"title": "Erasing/Wiping", "paragraphs": ["Intentionally sanitizes stored information so previous data is difficult or impractical to recover."], "recognitionCue": "Reuse the drive → wipe it first."},
+        {"title": "Low-Level Formatting", "paragraphs": ["Represents deeper storage initialization or erasure than ordinary filesystem formatting. Modern devices often rely on secure-erase or manufacturer sanitization functions rather than literal low-level reconstruction."], "recognitionCue": "Deeper storage-level formatting concept."},
+        {"title": "Standard Formatting", "paragraphs": ["Creates or recreates a filesystem such as NTFS or exFAT but should not automatically be treated as guaranteed secure destruction."], "recognitionCue": "Prepare the filesystem → standard formatting."}
+      ]
+    },
+    {
+      "id": "format-vs-wipe",
+      "title": "Standard Formatting vs. Secure Wiping",
+      "paragraphs": ["Standard formatting rebuilds filesystem structures. Secure wiping is specifically intended to sanitize information that existed previously."],
+      "callout": "Prepare a filesystem → format; securely remove old data → wipe."
+    },
+    {
+      "id": "physical-vs-logical-disposal",
+      "title": "Physical Destruction vs. Wiping",
+      "table": {"caption": "Choose based on whether the media must remain usable", "headers": ["Requirement", "Approach"], "rows": [["Media must be reused", "Appropriate secure erasing/wiping or sanitization"], ["Media must never be reused", "Approved physical destruction"]]}
+    },
+    {
+      "id": "outsourcing-concepts",
+      "title": "Outsourcing Concepts",
+      "entries": [
+        {"title": "Third-Party Vendor", "paragraphs": ["An outside company hired to destroy storage, recycle hardware, or dispose of equipment. Outsourcing does not remove the data owner's responsibility."], "recognitionCue": "Outside company handles disposal → third-party vendor."},
+        {"title": "Certification of Destruction/Recycling", "paragraphs": ["Documentation showing that media or equipment was destroyed, sanitized, or recycled as required."], "recognitionCue": "Auditable proof the work occurred → certificate."}
+      ]
+    },
+    {
+      "id": "chain-of-responsibility",
+      "title": "Chain of Responsibility",
+      "paragraphs": ["When a vendor handles media, maintain secure control and documentation from pickup through final destruction or recycling."],
+      "callout": "Do not lose control of the data merely because someone else destroys it."
+    },
+    {
+      "id": "regulatory-and-environmental",
+      "title": "Regulatory and Environmental Requirements",
+      "entries": [
+        {"title": "Regulatory Requirements", "paragraphs": ["Laws, regulations, contracts, or policy may specify retention periods, approved destruction methods, privacy safeguards, and disposal records."]},
+        {"title": "Environmental Requirements", "paragraphs": ["Electronic equipment may contain materials requiring approved e-waste recyclers, disposal providers, and environmental procedures rather than ordinary trash."]}
+      ],
+      "callout": "Secure disposal and responsible disposal are both required."
+    },
+    {
+      "id": "disposal-decision-model",
+      "title": "Disposal Decision Model",
+      "bullets": ["Determine whether the media must remain usable.", "Classify data sensitivity and the required sanitization standard.", "Choose wiping for reuse or approved physical destruction when reuse is prohibited.", "Use media-appropriate methods; degaussing applies to magnetic media.", "If outsourcing, verify the vendor, chain of responsibility, and certification.", "Meet regulatory and environmental requirements."]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Holes through drive → drilling", "Drive reduced to fragments → shredding", "Strong magnetic field → degaussing", "Extreme heat → incineration", "Keep media but sanitize it → erasing/wiping", "Deeper storage initialization → low-level formatting", "Recreate filesystem → standard formatting", "Outside disposal company → third-party vendor", "Proof of destruction → certification of destruction/recycling", "Legal obligations → regulatory requirements", "E-waste handling → environmental requirements"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.9 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["Deleting file references is not the same as securely wiping underlying data.", "Standard formatting rebuilds a filesystem; secure wiping sanitizes prior information.", "Degaussing applies to magnetic media and should not be the automatic answer for SSDs.", "If the device must remain usable, do not physically destroy it.", "A third-party vendor performs the work; a certificate proves the required work occurred."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Puncture drive → drilling", "Destroy into pieces → shredding", "Erase magnetic media → degaussing", "Destroy with heat → incineration", "Reuse securely → wipe", "Deep formatting → low-level formatting", "Recreate filesystem → standard formatting", "Outside destruction company → third-party vendor", "Proof of destruction → certificate", "Legal rules → regulatory requirements", "E-waste concerns → environmental requirements"],
+      "callout": "Reuse it → wipe it; destroy it → physically destroy it; outsource it → verify it."
+    }
+  ]
+}

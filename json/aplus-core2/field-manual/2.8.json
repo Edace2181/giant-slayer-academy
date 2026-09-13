@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.8",
+  "title": "Given a Scenario, Apply Common Methods for Securing Mobile Devices",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Mobile devices hold personal and corporate data, credentials, email, cloud access, applications, and location information. Protect them with hardening, patching, endpoint security, recovery controls, and policy."],
+      "callout": "Lock it → encrypt it → patch it → protect it → find it → wipe it → back it up → manage it."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["If a phone or tablet is lost, stolen, outdated, infected, or handling company data, choose the control that protects the device and its information at that stage."]
+    },
+    {
+      "id": "hardening-techniques",
+      "title": "Hardening Techniques",
+      "paragraphs": ["Mobile hardening reduces opportunities for unauthorized access or compromise."],
+      "entries": [
+        {"title": "Device Encryption", "paragraphs": ["Protects data stored on a mobile device so theft does not make the information readable without authentication."], "recognitionCue": "Stolen phone does not equal readable data."},
+        {"title": "Configuration Profiles", "paragraphs": ["Bundle Wi-Fi, VPN, password, security, email, certificate, and application restrictions into a standard settings package."], "recognitionCue": "One profile → many settings."}
+      ]
+    },
+    {
+      "id": "screen-locks",
+      "title": "Screen Locks",
+      "entries": [
+        {"title": "Facial Recognition", "paragraphs": ["Uses facial characteristics as a biometric unlock method."]},
+        {"title": "PIN Codes", "paragraphs": ["Use a numeric or alphanumeric secret; stronger, less predictable PINs provide better protection."]},
+        {"title": "Fingerprint", "paragraphs": ["Uses fingerprint characteristics as a biometric unlock method."]},
+        {"title": "Pattern", "paragraphs": ["Requires a knowledge-based graphical sequence across screen points and is only as strong as its unpredictability."]},
+        {"title": "Swipe", "paragraphs": ["Provides convenience but little meaningful authentication compared with a PIN, password, fingerprint, or face."]}
+      ],
+      "callout": "Sensitive device → strong authentication, not a simple swipe."
+    },
+    {
+      "id": "screen-lock-comparison",
+      "title": "Screen Lock Comparison",
+      "table": {
+        "caption": "Mobile unlock methods",
+        "headers": ["Method", "Factor or strength"],
+        "rows": [["Swipe", "Gesture only; minimal security"], ["Pattern", "Knowledge-based graphical secret"], ["PIN", "Knowledge-based numeric or alphanumeric secret"], ["Fingerprint", "Biometric"], ["Facial recognition", "Biometric"]]
+      }
+    },
+    {
+      "id": "configuration-profiles-and-mdm",
+      "title": "Configuration Profiles vs. MDM",
+      "paragraphs": ["A configuration profile is the settings and policy package applied to a device. Mobile Device Management (MDM) is the central platform that distributes, enforces, and monitors those profiles."],
+      "callout": "Settings package → profile; central management system → MDM."
+    },
+    {
+      "id": "patch-management",
+      "title": "Patch Management",
+      "entries": [
+        {"title": "OS Updates", "paragraphs": ["Patch operating-system vulnerabilities and can improve stability, compatibility, and reliability."], "recognitionCue": "Mobile platform vulnerability → OS update."},
+        {"title": "Application Updates", "paragraphs": ["Patch weaknesses in installed mobile applications."], "recognitionCue": "Specific app vulnerability → application update."}
+      ]
+    },
+    {
+      "id": "endpoint-security-software",
+      "title": "Endpoint Security Software",
+      "entries": [
+        {"title": "Antivirus", "paragraphs": ["Detects and blocks malicious software; exact capabilities vary by mobile OS and management model."]},
+        {"title": "Anti-Malware", "paragraphs": ["Detects or removes a broad range of malicious software."]},
+        {"title": "Content Filtering", "paragraphs": ["Blocks or restricts access to dangerous, inappropriate, or unauthorized websites, categories, downloads, and destinations."], "recognitionCue": "Bad destination or content → filter it."}
+      ],
+      "callout": "Antivirus and anti-malware target malicious software; content filtering restricts risky destinations or content."
+    },
+    {
+      "id": "locator-and-remote-wipe",
+      "title": "Locator Applications and Remote Wipes",
+      "entries": [
+        {"title": "Locator Applications", "paragraphs": ["Use GPS, Wi-Fi, or cellular location to help find a missing device."], "recognitionCue": "Potentially recoverable lost device → locator application."},
+        {"title": "Remote Wipes", "paragraphs": ["Erase mobile data from a distance when a device is lost, stolen, or no longer under organizational control."], "recognitionCue": "Unrecoverable sensitive device → remote wipe."}
+      ]
+    },
+    {
+      "id": "remote-backup",
+      "title": "Remote Backup Applications",
+      "paragraphs": ["Copy contacts, photos, documents, application data, or configuration to another location so replacing a device does not mean losing authorized data."],
+      "callout": "Backup preserves the owner's copy; remote wipe destroys the unauthorized local copy."
+    },
+    {
+      "id": "failed-login-restrictions",
+      "title": "Failed Log-In Attempts Restrictions",
+      "paragraphs": ["Repeated authentication failures can trigger increasing delays, temporary lockout, device lock, or a policy-defined wipe to resist PIN and password guessing."],
+      "callout": "Repeated wrong credentials → failed-login restriction; inactivity → screen timeout."
+    },
+    {
+      "id": "policies-and-procedures",
+      "title": "Policies and Procedures",
+      "entries": [
+        {"title": "Mobile Device Management (MDM)", "paragraphs": ["Centrally manages configuration profiles, password rules, applications, encryption, remote lock and wipe, compliance, and device restrictions."], "recognitionCue": "Central control of phones and tablets → MDM."},
+        {"title": "BYOD vs. Corporate-Owned Devices", "paragraphs": ["With Bring Your Own Device (BYOD), the employee owns the device and the organization balances corporate security with personal privacy. With corporate-owned devices, the organization owns the hardware and normally exercises greater control over settings, applications, updates, accounts, and wipe actions."]},
+        {"title": "Profile Security Requirements", "paragraphs": ["Define the minimum screen lock, PIN strength, encryption, OS version, application, configuration, and security-software baseline required for corporate access."], "recognitionCue": "Meet the security profile or do not receive access."}
+      ]
+    },
+    {
+      "id": "compliance",
+      "title": "Mobile Compliance",
+      "paragraphs": ["A device that does not meet required settings can be restricted, blocked, or remediated before it receives corporate access."],
+      "callout": "No compliance → no corporate access."
+    },
+    {
+      "id": "mobile-security-workflow",
+      "title": "Mobile Security Workflow",
+      "table": {
+        "caption": "Layer mobile protections",
+        "headers": ["Goal", "Control"],
+        "rows": [["Protect stored data", "Device encryption"], ["Stop unauthorized access", "Strong screen lock"], ["Apply standards", "Configuration profiles"], ["Close vulnerabilities", "OS and application updates"], ["Detect or block threats", "Endpoint security and content filtering"], ["Recover a missing device", "Locator application"], ["Preserve authorized data", "Remote backup"], ["Protect data on an unrecoverable device", "Remote wipe"], ["Resist guessing", "Failed log-in restrictions"], ["Enforce organization policy", "MDM and profile security requirements"]]
+      }
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Stored phone data → device encryption", "Unauthorized physical access → screen lock", "Face or fingerprint → biometric", "Numeric secret → PIN", "Drawn secret → pattern", "Weak gesture-only unlock → swipe", "Standard settings package → configuration profile", "Platform vulnerability → OS update", "Installed-program vulnerability → application update", "Malicious software → antivirus or anti-malware", "Dangerous website or content → content filtering", "Find missing phone → locator application", "Erase stolen phone → remote wipe", "Preserve mobile data → remote backup", "Repeated PIN guessing → failed log-in restriction", "Central mobile administration → MDM", "Personal work device → BYOD", "Organization-owned phone → corporate-owned", "Required baseline → profile security requirements"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.8 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["A screen lock blocks ordinary access; encryption protects the stored data itself.", "PIN is something known; fingerprint and face are biometrics.", "A simple swipe does not provide strong authentication.", "An OS update patches the platform; an application update patches the app.", "Antivirus or anti-malware detects software; content filtering restricts risky destinations.", "A locator finds a potentially recoverable device; a remote wipe protects data on a stolen or unrecoverable device.", "Backup preserves authorized data; wipe removes the local copy.", "A configuration profile contains settings; MDM centrally distributes and enforces them.", "BYOD is employee owned; corporate-owned means the organization controls the device.", "Failed attempts restrictions follow wrong credentials; a screen timeout follows inactivity."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Stored mobile data → encryption", "Unauthorized access → screen lock", "Face → facial recognition", "Secret code → PIN", "Finger → fingerprint", "Drawn code → pattern", "Weak unlock → swipe", "Standard device settings → configuration profile", "OS weakness → OS update", "App weakness → application update", "Malicious software → antivirus or anti-malware", "Risky web access → content filtering", "Missing device → locator", "Stolen device → remote wipe", "Recover user data → remote backup", "Repeated guessing → failed-login restriction", "Central administration → MDM", "Personal phone at work → BYOD", "Organization-owned phone → corporate-owned", "Security baseline → profile security requirements"],
+      "callout": "Lock it → encrypt it → patch it → protect it → find it → wipe it → back it up → manage it."
+    }
+  ]
+}

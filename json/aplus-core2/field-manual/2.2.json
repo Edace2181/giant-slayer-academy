@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "certification": "aplus-core2",
+  "examCode": "220-1202",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Given a Scenario, Configure and Apply Basic Microsoft Windows OS Security Settings",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Windows provides built-in controls for malware, network traffic, accounts, sign-in, authorization, privilege elevation, encryption, and centralized domain management.", "Use this mental model: protect → authenticate → authorize → encrypt → manage."],
+      "bullets": ["Defender Antivirus and Windows Firewall", "Users, groups, and sign-in options", "NTFS and share permissions, elevation, and UAC", "BitLocker, BitLocker-To-Go, and EFS", "Active Directory administration"]
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a Windows security scenario appears, decide whether the required control scans malware, filters traffic, changes an account or sign-in method, applies permissions, elevates a process, encrypts data, or manages the domain."],
+      "callout": "Malware → Defender; traffic → Firewall; elevation prompt → UAC; drive → BitLocker; removable drive → BitLocker-To-Go; file or folder → EFS."
+    },
+    {
+      "id": "defender-antivirus",
+      "title": "Defender Antivirus",
+      "paragraphs": ["Microsoft Defender Antivirus supplies built-in antimalware protection."],
+      "entries": [
+        {"title": "Activate/Deactivate", "paragraphs": ["Turn the antimalware engine on or off through Windows Security. Protection normally remains active unless an approved troubleshooting or management need requires otherwise."]},
+        {"title": "Update Definitions", "paragraphs": ["Current security intelligence and signatures help Defender recognize newly identified threats."], "recognitionCue": "Protection is enabled but signatures are stale → update definitions."}
+      ]
+    },
+    {
+      "id": "windows-firewall",
+      "title": "Firewall",
+      "paragraphs": ["Windows Firewall filters inbound and outbound network traffic."],
+      "entries": [
+        {"title": "Activate/Deactivate", "paragraphs": ["Enable or disable the firewall for the applicable network profile; keep it enabled during normal operation."]},
+        {"title": "Port Security", "paragraphs": ["Permit or deny traffic by port and protocol."], "recognitionCue": "A service requires an inbound TCP port → configure a port rule."},
+        {"title": "Application Security", "paragraphs": ["Allow or block a specific application rather than opening unrelated traffic."], "recognitionCue": "An app needs network access → application rule or exception."}
+      ]
+    },
+    {
+      "id": "users-and-groups",
+      "title": "Users and Groups",
+      "entries": [
+        {"title": "Local vs. Microsoft Account", "paragraphs": ["A local account exists on one PC. A Microsoft account is cloud connected and integrates Windows with Microsoft services."]},
+        {"title": "Standard Account", "paragraphs": ["Supports everyday work without unrestricted administrative rights and aligns with least privilege."], "recognitionCue": "Normal daily user → standard account."},
+        {"title": "Administrator", "paragraphs": ["Can make elevated, system-wide changes; these rights should be used only when required."], "recognitionCue": "Full system control → administrator."},
+        {"title": "Guest User", "paragraphs": ["Provides limited temporary access when supported and enabled."]},
+        {"title": "Power User", "paragraphs": ["A legacy intermediate-privilege group or concept. Modern Windows primarily uses standard users, administrators, and UAC."]}
+      ]
+    },
+    {
+      "id": "login-os-options",
+      "title": "Log-In OS Options",
+      "entries": [
+        {"title": "Username and Password", "paragraphs": ["Traditional sign-in using a named identity and a memorized secret."]},
+        {"title": "Personal Identification Number (PIN)", "paragraphs": ["A short, device-bound sign-in secret used by Windows Hello."]},
+        {"title": "Fingerprint", "paragraphs": ["Biometric sign-in using a supported fingerprint reader."]},
+        {"title": "Facial Recognition", "paragraphs": ["Biometric sign-in using a supported camera."]},
+        {"title": "Single Sign-On (SSO)", "paragraphs": ["One authentication provides access to multiple authorized resources."]},
+        {"title": "Passwordless/Windows Hello", "paragraphs": ["Modern Windows sign-in using a PIN, fingerprint, or facial recognition instead of transmitting a reusable password."], "recognitionCue": "PIN or biometric Windows login → Windows Hello."}
+      ]
+    },
+    {
+      "id": "ntfs-and-share-permissions",
+      "title": "NTFS vs. Share Permissions",
+      "entries": [
+        {"title": "NTFS Permissions", "paragraphs": ["Authorize access to files and folders on an NTFS volume for both local and network access."], "recognitionCue": "Filesystem authorization → NTFS permission."},
+        {"title": "Share Permissions", "paragraphs": ["Apply when a resource is reached through a network share."], "recognitionCue": "Network-share authorization → share permission."},
+        {"title": "Effective Network Access", "paragraphs": ["When NTFS and share permissions both apply, their combined effect constrains access; the more restrictive effective permission wins."]}
+      ]
+    },
+    {
+      "id": "attributes-and-inheritance",
+      "title": "File and Folder Attributes and Inheritance",
+      "entries": [
+        {"title": "File and Folder Attributes", "paragraphs": ["Read-only, hidden, and archive are properties of files and folders; they are not NTFS authorization permissions."]},
+        {"title": "Inheritance", "paragraphs": ["Allows permissions from a parent folder to flow to child folders and files."], "recognitionCue": "A new file receives its folder's permissions → inheritance."}
+      ]
+    },
+    {
+      "id": "elevation-and-uac",
+      "title": "Run as Administrator and User Account Control",
+      "entries": [
+        {"title": "Run as Administrator vs. Standard User", "paragraphs": ["A standard user runs with normal rights. Run as administrator requests elevated execution for a process that needs system-level access."]},
+        {"title": "User Account Control (UAC)", "paragraphs": ["Prompts for consent or credentials when a task requests elevated privileges."], "recognitionCue": "Installer triggers an elevation confirmation → UAC."}
+      ],
+      "callout": "Administrator describes an account's privilege level; UAC is the elevation control and prompt."
+    },
+    {
+      "id": "windows-encryption",
+      "title": "Windows Encryption",
+      "entries": [
+        {"title": "BitLocker", "paragraphs": ["Encrypts a Windows volume to protect data if a device or internal drive is lost or stolen."], "recognitionCue": "Whole drive or volume → BitLocker."},
+        {"title": "BitLocker-To-Go", "paragraphs": ["Encrypts removable storage such as USB drives."], "recognitionCue": "Removable drive → BitLocker-To-Go."},
+        {"title": "Encrypting File System (EFS)", "paragraphs": ["Encrypts selected files and folders on NTFS."], "recognitionCue": "Individual file or folder → EFS."}
+      ]
+    },
+    {
+      "id": "active-directory",
+      "title": "Active Directory",
+      "paragraphs": ["Active Directory centrally manages users, computers, groups, resources, authentication, and policy in a Windows domain."],
+      "entries": [
+        {"title": "Joining a Domain", "paragraphs": ["Adds a Windows computer to central domain identity and policy management."]},
+        {"title": "Assigning Log-In Script", "paragraphs": ["Runs a script when a user signs in to map drives, configure resources, or run required commands."]},
+        {"title": "Moving Objects Within Organizational Units", "paragraphs": ["Organizational units arrange users, computers, and groups; moving an object can change administrative or Group Policy scope."]},
+        {"title": "Assigning Home Folders", "paragraphs": ["Provides a user-specific network storage location."]},
+        {"title": "Applying Group Policy", "paragraphs": ["Centrally configures user and computer security settings, restrictions, desktop behavior, and scripts."]},
+        {"title": "Selecting Security Groups", "paragraphs": ["Assigns authorization to group membership instead of managing permissions one user at a time."]},
+        {"title": "Configuring Folder Redirection", "paragraphs": ["Points standard user folders to another location, often central network storage."]}
+      ]
+    },
+    {
+      "id": "active-directory-comparisons",
+      "title": "Active Directory Comparison Map",
+      "table": {
+        "caption": "Choose the matching Active Directory feature",
+        "headers": ["Requirement", "Feature"],
+        "rows": [
+          ["Make a PC part of centralized management", "Join the domain"],
+          ["Run an action when a user signs in", "Log-in script"],
+          ["Organize objects and scope administration or policy", "Organizational unit"],
+          ["Give a user dedicated network storage", "Home folder"],
+          ["Apply centralized Windows settings", "Group Policy"],
+          ["Authorize by membership", "Security group"],
+          ["Move known user folders to central storage", "Folder redirection"]
+        ]
+      }
+    },
+    {
+      "id": "security-configuration-workflow",
+      "title": "Security Configuration Workflow",
+      "bullets": ["Identify whether the issue is malware, traffic, identity, authorization, elevation, encryption, or domain management.", "Apply the narrowest control that satisfies the requirement.", "Preserve least privilege and avoid unnecessary firewall openings or administrator use.", "Verify the setting and test the intended user, application, or resource access."]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Malware protection → Defender Antivirus", "New malware signatures → update definitions", "Network traffic filter → Firewall", "One-PC identity → local account", "Cloud-connected Windows identity → Microsoft account", "Everyday account → standard user", "System control → administrator", "Modern PIN or biometric login → Windows Hello", "Filesystem authorization → NTFS", "Network share authorization → share permissions", "Parent permissions flow down → inheritance", "Elevation approval → UAC", "Volume encryption → BitLocker", "USB encryption → BitLocker-To-Go", "File or folder encryption → EFS", "Central Windows identity and policy → Active Directory"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.2 Exam Trap",
+      "variant": "exam-trap",
+      "bullets": ["Defender handles malware; Firewall handles network traffic.", "A local account belongs to one PC; a Microsoft account is cloud connected.", "Run as administrator requests elevation; UAC controls and prompts for it.", "NTFS permissions apply at the filesystem; share permissions apply through the network share.", "BitLocker protects a volume, BitLocker-To-Go protects removable storage, and EFS protects selected files or folders.", "An OU organizes and scopes policy; a security group assigns access.", "A home folder is user-specific storage; folder redirection moves known folder paths."]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Antimalware → Defender", "Traffic filter → Firewall", "Daily privileges → standard user", "Elevated privileges → administrator", "Elevation check → UAC", "PIN or biometric sign-in → Windows Hello", "Filesystem permissions → NTFS", "Network-share permissions → share", "Parent-to-child flow → inheritance", "Whole volume → BitLocker", "Removable drive → BitLocker-To-Go", "Selected file or folder → EFS", "Central Windows domain → Active Directory", "Sign-in automation → log-in script", "AD organization → OU", "Central policy → Group Policy", "Authorization by membership → security group", "Redirect known folders → folder redirection"],
+      "callout": "Protect → authenticate → authorize → encrypt → manage."
+    }
+  ]
+}

@@ -5,6 +5,7 @@
   const params = new URLSearchParams(window.location.search);
   const world = params.get("world") || "";
   const objective = params.get("objective") || "";
+  const objectiveWorldOverrides = { "4.6": "5", "4.7": "5", "4.8": "5", "4.9": "5", "4.10": "5" };
   const elements = {
     loading: document.getElementById("aplusManualLoading"), error: document.getElementById("aplusManualError"),
     errorMessage: document.getElementById("aplusManualErrorMessage"), errorReturn: document.getElementById("aplusManualErrorReturn"),
@@ -172,7 +173,8 @@
   });
 
   async function initialize() {
-    if (!/^[1-5]$/.test(world) || !/^[1-5]\.\d+$/.test(objective) || objective.split(".")[0] !== world) {
+    const expectedWorld = objectiveWorldOverrides[objective] || objective.split(".")[0];
+    if (!/^[1-5]$/.test(world) || !/^[1-5]\.\d+$/.test(objective) || expectedWorld !== world) {
       showRouteError("The requested A+ Core 2 Field Manual route is invalid."); return;
     }
     try {
