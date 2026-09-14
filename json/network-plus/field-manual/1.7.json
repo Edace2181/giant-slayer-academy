@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.7",
+  "title": "Given a Scenario, Use Appropriate IPv4 Network Addressing",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["IPv4 addressing identifies where traffic originates and where it should go. Recognize public, private, and special-purpose addresses; interpret subnet prefixes; and identify historical address classes."],
+      "bullets": ["Public vs. private, APIPA, RFC1918, and loopback/localhost", "Subnetting with VLSM and CIDR", "IPv4 Classes A through E"],
+      "callout": "Identify the address → identify its purpose → identify the network → identify the host range."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When given an IPv4 address and prefix, can you determine the address type, network membership, and usable range?"],
+      "bullets": ["Internet-routable → Public", "10/8, 172.16/12, or 192.168/16 → RFC1918 private", "169.254/16 → APIPA", "127/8 → Loopback", "Different masks for different subnets → VLSM", "Slash notation → CIDR", "1-126 → Class A; 128-191 → B; 192-223 → C; 224-239 → D; 240-255 → E"]
+    },
+    {
+      "id": "ipv4-basics",
+      "title": "IPv4 Address Basics",
+      "paragraphs": ["An IPv4 address contains 32 bits written as four decimal octets from 0 through 255. A subnet mask or prefix separates the network bits from the host bits."],
+      "examples": ["192.168.20.50/24 uses 24 network bits", "Network: 192.168.20.0", "Host identifier within that network: .50"],
+      "callout": "Network = neighborhood; host = house."
+    },
+    {
+      "id": "public-and-private",
+      "title": "Public vs. Private Addressing",
+      "entries": [
+        {"title": "Public IPv4", "paragraphs": ["A public address is globally routable on the Internet when properly assigned and routed. It must be uniquely managed."], "memoryHook": "Internet-facing address space."},
+        {"title": "RFC1918 Private IPv4", "paragraphs": ["RFC1918 reserves 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16 for private networks. Private systems commonly use NAT to reach public networks."], "memoryHook": "10; 172.16-31; 192.168.", "recognitionCue": "172.20.5.10 is private; 172.40.5.10 is not in RFC1918."}
+      ],
+      "table": {"caption": "RFC1918 private ranges", "headers": ["Network", "Address range", "Recognition"], "rows": [["10.0.0.0/8", "10.0.0.0-10.255.255.255", "Any 10.x.x.x"], ["172.16.0.0/12", "172.16.0.0-172.31.255.255", "Only 172.16-31"], ["192.168.0.0/16", "192.168.0.0-192.168.255.255", "192.168.x.x"]]}
+    },
+    {
+      "id": "special-addresses",
+      "title": "APIPA and Loopback/Localhost",
+      "entries": [
+        {"title": "Automatic Private IP Addressing (APIPA)", "paragraphs": ["A DHCP-configured host may self-assign from 169.254.0.0/16 when it cannot obtain normal configuration. Local-link communication may work, but normal routed connectivity generally does not."], "memoryHook": "169.254 = investigate DHCP.", "recognitionCue": "A workstation expected DHCP but received 169.254.37.8 → APIPA."},
+        {"title": "Loopback/Localhost", "paragraphs": ["IPv4 loopback is 127.0.0.0/8; 127.0.0.1 is the familiar localhost address. It tests or reaches the local system through its own TCP/IP stack."], "memoryHook": "127 = this computer.", "recognitionCue": "Ping 127.0.0.1 → Test the local TCP/IP stack."}
+      ],
+      "callout": "APIPA is self-assigned local-link addressing; loopback stays inside the host. Neither is an RFC1918 range."
+    },
+    {
+      "id": "subnetting-and-cidr",
+      "title": "Subnetting and CIDR",
+      "paragraphs": ["Subnetting divides a larger network into smaller broadcast domains. Classless Inter-Domain Routing (CIDR) uses slash notation to state the number of network bits; the remaining bits identify hosts."],
+      "table": {"caption": "Common IPv4 prefixes", "headers": ["CIDR", "Subnet mask", "Total addresses", "Traditional usable hosts"], "rows": [["/24", "255.255.255.0", "256", "254"], ["/25", "255.255.255.128", "128", "126"], ["/26", "255.255.255.192", "64", "62"], ["/27", "255.255.255.224", "32", "30"], ["/28", "255.255.255.240", "16", "14"], ["/29", "255.255.255.248", "8", "6"], ["/30", "255.255.255.252", "4", "2"]]},
+      "callout": "Traditional usable hosts = 2^(host bits) - 2 for the network and broadcast addresses."
+    },
+    {
+      "id": "cidr-example",
+      "title": "CIDR Worked Example",
+      "paragraphs": ["For 192.168.10.0/26: IPv4 has 32 bits, so 32 - 26 leaves 6 host bits. 2^6 gives 64 total addresses. Subtracting the traditional network and broadcast addresses leaves 62 usable host addresses."],
+      "callout": "/26 → 64 total addresses → 62 traditional usable hosts."
+    },
+    {
+      "id": "vlsm",
+      "title": "Variable Length Subnet Mask (VLSM)",
+      "paragraphs": ["VLSM assigns different prefix lengths to different subnets within one addressing plan. A large department can receive a larger subnet while smaller groups receive smaller ones, reducing waste."],
+      "callout": "CIDR is the prefix notation; VLSM uses different prefix sizes to right-size multiple subnets."
+    },
+    {
+      "id": "ipv4-classes",
+      "title": "IPv4 Address Classes",
+      "paragraphs": ["Classful addressing is historical, but Network+ still requires recognition of the first-octet ranges."],
+      "table": {"caption": "Historical IPv4 classes", "headers": ["Class", "First octet", "Historical default", "Purpose"], "rows": [["A", "1-126", "/8", "Unicast networks"], ["B", "128-191", "/16", "Unicast networks"], ["C", "192-223", "/24", "Unicast networks"], ["D", "224-239", "Not applicable", "Multicast"], ["E", "240-255", "Not applicable", "Reserved/experimental"]]},
+      "callout": "127.x.x.x is reserved for loopback, so the normal Class A host range stops at 126."
+    },
+    {
+      "id": "address-examples",
+      "title": "Address Recognition Examples",
+      "bullets": ["10.40.8.9 → RFC1918 private", "172.20.5.10 → RFC1918 private", "172.40.5.10 → Not RFC1918", "192.168.50.25 → RFC1918 private", "169.254.20.8 → APIPA", "127.0.0.1 → Loopback", "224.10.5.2 → Class D multicast"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["32-bit address → IPv4", "10.x.x.x → Private", "172.16-31.x.x → Private", "192.168.x.x → Private", "169.254.x.x → APIPA", "127.x.x.x → Loopback", "Slash number → Network bits/CIDR", "Different subnet sizes → VLSM", "1-126 → Class A", "128-191 → Class B", "192-223 → Class C", "224-239 → Class D multicast", "240-255 → Class E"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.7 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "APIPA vs. RFC1918", "paragraphs": ["169.254/16 is APIPA, not an RFC1918 private range."]},
+        {"title": "The 172 Private Range", "paragraphs": ["Only 172.16 through 172.31 is private; not every address beginning with 172 is private."]},
+        {"title": "APIPA vs. Loopback", "paragraphs": ["169.254 indicates self-assignment after DHCP failure; 127 points to the local host."]},
+        {"title": "CIDR vs. VLSM", "paragraphs": ["CIDR is slash-prefix notation. VLSM uses different subnet sizes within one design."]},
+        {"title": "Class C vs. Class D", "paragraphs": ["192-223 is Class C. 224-239 is Class D multicast."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Internet routable → Public", "10, 172.16-31, 192.168 → RFC1918", "169.254 → APIPA", "127 → Loopback", "Slash prefix → CIDR", "Different sizes → VLSM", "A 1-126", "B 128-191", "C 192-223", "D 224-239 multicast", "E 240-255 reserved", "/24 → 255.255.255.0", "/26 → 64 total / 62 traditional usable"]
+    }
+  ]
+}

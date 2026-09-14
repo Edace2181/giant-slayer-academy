@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Given a Scenario, Configure Switching Technologies and Features",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Switches do more than connect devices. Learn how to segment traffic, configure interfaces, carry VLANs, combine links, prevent Layer 2 loops, and handle Ethernet frame sizes."],
+      "bullets": ["VLANs, VLAN databases, and SVIs", "Native VLANs, voice VLANs, and 802.1Q tagging", "Link aggregation, speed, and duplex", "Spanning tree", "MTU and jumbo frames"],
+      "callout": "SEGMENT → TAG → CONNECT → BUNDLE → PREVENT LOOPS → SIZE THE FRAME"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a switching scenario, identify how the switch should segment traffic, configure interfaces, prevent loops, and handle Ethernet frames."],
+      "bullets": ["Logical Layer 2 network → VLAN", "Stored switch VLAN information → VLAN database", "Logical Layer 3 interface for a VLAN → SVI", "Untagged trunk VLAN → Native VLAN", "Separate IP phone VLAN → Voice VLAN", "Ethernet VLAN identification → 802.1Q", "Physical links combined logically → Link aggregation", "Layer 2 loop prevention → Spanning tree"]
+    },
+    {
+      "id": "vlans-and-svis",
+      "title": "VLANs, VLAN Databases, and SVIs",
+      "entries": [
+        {"title": "Virtual Local Area Network (VLAN)", "paragraphs": ["A VLAN logically separates devices into different Layer 2 networks even when they share physical switching infrastructure. Each VLAN is its own broadcast domain—for example, VLAN 10 users, VLAN 20 servers, and VLAN 30 printers."], "memoryHook": "One switch → multiple logical networks."},
+        {"title": "VLAN Database", "paragraphs": ["The VLAN database stores the VLAN information configured on a switch. The switch must know which VLAN IDs exist before its ports can participate correctly in those VLANs."], "memoryHook": "Which VLANs exist on this switch?"},
+        {"title": "Switch Virtual Interface (SVI)", "paragraphs": ["An SVI is a logical Layer 3 interface associated with a VLAN. It can provide switch management or inter-VLAN routing on a capable switch. A VLAN 20 SVI might use 192.168.20.1."], "memoryHook": "The VLAN gets an IP interface."}
+      ],
+      "callout": "VLAN = Layer 2 segment. SVI = Layer 3 IP interface for that segment."
+    },
+    {
+      "id": "trunk-and-voice-configuration",
+      "title": "Native VLAN, Voice VLAN, and 802.1Q",
+      "entries": [
+        {"title": "Native VLAN", "paragraphs": ["On an 802.1Q trunk, the native VLAN carries traffic that is normally untagged. Both ends of the trunk should agree on the native VLAN."], "memoryHook": "Untagged traffic on the trunk."},
+        {"title": "Voice VLAN", "paragraphs": ["A voice VLAN separates IP phone traffic from normal workstation data. The separation helps organization, security policy, and QoS implementation."], "memoryHook": "Phone traffic gets its own VLAN."},
+        {"title": "802.1Q Tagging", "paragraphs": ["IEEE 802.1Q inserts VLAN identification into Ethernet frames so one trunk can carry multiple VLANs."], "memoryHook": "Which VLAN does this frame belong to?"}
+      ],
+      "callout": "Tagged multi-VLAN traffic → 802.1Q. Untagged trunk traffic → Native VLAN."
+    },
+    {
+      "id": "link-aggregation",
+      "title": "Link Aggregation",
+      "paragraphs": ["Link aggregation combines multiple physical network links into one logical connection. It can increase aggregate bandwidth, provide redundancy, and distribute load."],
+      "callout": "Several physical switch links acting as one logical connection → Link aggregation."
+    },
+    {
+      "id": "speed-and-duplex",
+      "title": "Interface Speed and Duplex",
+      "entries": [
+        {"title": "Speed", "paragraphs": ["Speed is the configured transmission rate, such as 100 Mbps, 1 Gbps, or 10 Gbps. Interfaces can negotiate it or be configured manually."], "memoryHook": "How fast?"},
+        {"title": "Duplex", "paragraphs": ["Half duplex sends or receives but not simultaneously. Full duplex sends and receives simultaneously. A duplex mismatch can leave a link connected while causing unexpectedly poor performance."], "memoryHook": "How do both directions communicate?"}
+      ],
+      "callout": "Rate → Speed. Direction behavior → Duplex."
+    },
+    {
+      "id": "spanning-tree",
+      "title": "Spanning Tree",
+      "paragraphs": ["Redundant switch links improve availability but can create Layer 2 loops. Spanning tree builds a loop-free logical topology and can place redundant paths in a non-forwarding state until needed."],
+      "callout": "Redundant switch connections without a Layer 2 loop → Spanning tree."
+    },
+    {
+      "id": "mtu-and-jumbo-frames",
+      "title": "MTU and Jumbo Frames",
+      "entries": [
+        {"title": "Maximum Transmission Unit (MTU)", "paragraphs": ["MTU identifies the largest supported transmission size in a packet or frame context. MTU mismatches can cause communication and performance problems."], "memoryHook": "How big can it be?"},
+        {"title": "Jumbo Frames", "paragraphs": ["A jumbo frame is larger than a standard Ethernet frame. It can help some high-volume environments, but every participating device and link must support the configured size."], "memoryHook": "Bigger Ethernet frame."}
+      ],
+      "callout": "Size limit → MTU. Larger-than-standard Ethernet frame → Jumbo frame."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Logical Layer 2 segmentation → VLAN", "Stored VLAN information → VLAN database", "VLAN logical IP interface → SVI", "Untagged trunk traffic → Native VLAN", "Separated IP phone traffic → Voice VLAN", "VLAN tag in Ethernet frame → 802.1Q", "Physical links acting as one → Link aggregation", "Transmission rate → Speed", "Send/receive behavior → Duplex", "Prevent Layer 2 loops → Spanning tree", "Maximum transmission size → MTU", "Larger Ethernet frame → Jumbo frame"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "VLAN vs. SVI", "paragraphs": ["Logical Layer 2 segment → VLAN. Logical Layer 3 interface for that VLAN → SVI."]},
+        {"title": "Native VLAN vs. Voice VLAN", "paragraphs": ["Untagged trunk traffic → Native VLAN. IP phone traffic → Voice VLAN."]},
+        {"title": "Native VLAN vs. 802.1Q", "paragraphs": ["Untagged VLAN on a trunk → Native VLAN. Tagged VLAN identification → 802.1Q."]},
+        {"title": "VLAN vs. 802.1Q", "paragraphs": ["Logical segmentation → VLAN. Mechanism identifying VLAN traffic across tagged links → 802.1Q."]},
+        {"title": "Link Aggregation vs. Spanning Tree", "paragraphs": ["Combine physical links logically → Link aggregation. Prevent Layer 2 loops → Spanning tree."]},
+        {"title": "Speed vs. Duplex", "paragraphs": ["Transmission rate → Speed. Simultaneous send/receive capability → Full duplex."]},
+        {"title": "MTU vs. Jumbo Frame", "paragraphs": ["Maximum transmission size → MTU. Larger-than-standard Ethernet frame → Jumbo frame."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Logical Layer 2 network → VLAN", "Stored VLAN information → VLAN database", "VLAN IP interface → SVI", "Untagged trunk traffic → Native VLAN", "IP phone network → Voice VLAN", "VLAN frame identification → 802.1Q", "Multiple links become one → Link aggregation", "How fast? → Speed", "Both directions simultaneously? → Full duplex", "Layer 2 loop prevention → Spanning tree", "Maximum transmission size → MTU", "Large Ethernet frame → Jumbo frame"],
+      "callout": "SEGMENT → TAG → CONNECT → BUNDLE → PREVENT LOOPS → SIZE THE FRAME"
+    }
+  ]
+}

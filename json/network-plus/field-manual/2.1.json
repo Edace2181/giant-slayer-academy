@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Explain Characteristics of Routing Technologies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Routing decides where packets should go when they travel between networks. Learn how routers acquire routes, choose a route, translate addresses, provide gateway redundancy, and divide physical interfaces logically."],
+      "bullets": ["Static and dynamic routing", "BGP, EIGRP, and OSPF", "Administrative distance, prefix length, and metric", "NAT and PAT", "FHRP and VIP", "Subinterfaces"],
+      "callout": "LEARN ROUTES → CHOOSE ROUTE → FORWARD TRAFFIC → TRANSLATE ADDRESSES → PROVIDE REDUNDANCY"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a router has multiple ways to reach a destination, identify how each route was learned, how the router selects the route, and what technology changes or protects the path."],
+      "bullets": ["Manually entered route → Static routing", "Routes learned automatically → Dynamic routing", "Internet or autonomous-system routing → BGP", "Cisco-associated internal routing → EIGRP", "Link-state routing using cost → OSPF", "Route-source trust → Administrative distance", "Most specific destination match → Prefix length", "Protocol path preference → Metric"]
+    },
+    {
+      "id": "static-and-dynamic-routing",
+      "title": "Static and Dynamic Routing",
+      "entries": [
+        {"title": "Static Routing", "paragraphs": ["A static route is manually configured by an administrator. It is predictable and useful when a network is small, a path rarely changes, or a particular path must always be used. It does not automatically adapt to topology changes."], "memoryHook": "ADMINISTRATOR TELLS THE ROUTER THE PATH.", "recognitionCue": "A route manually entered by an administrator is a static route."},
+        {"title": "Dynamic Routing", "paragraphs": ["Dynamic routing lets routers exchange routing information and learn paths automatically. It fits larger or changing environments because learned routes can adapt when the topology changes."], "memoryHook": "ROUTERS LEARN FROM ROUTERS.", "recognitionCue": "Routers exchanging and updating route information indicates dynamic routing."}
+      ],
+      "callout": "Manual configuration → Static. Automatic learning → Dynamic."
+    },
+    {
+      "id": "dynamic-routing-protocols",
+      "title": "Dynamic Routing Protocols",
+      "entries": [
+        {"title": "Border Gateway Protocol (BGP)", "paragraphs": ["BGP exchanges routing information between autonomous systems and is strongly associated with Internet-scale routing. An autonomous system is a network or group of networks under common administration."], "memoryHook": "Routing between large networks.", "recognitionCue": "Routing between autonomous systems or across the Internet → BGP."},
+        {"title": "Enhanced Interior Gateway Routing Protocol (EIGRP)", "paragraphs": ["EIGRP is a dynamic routing protocol strongly associated with Cisco environments. It learns internal routes and selects paths using routing metrics."], "memoryHook": "Cisco-associated internal routing."},
+        {"title": "Open Shortest Path First (OSPF)", "paragraphs": ["OSPF is a link-state dynamic routing protocol. OSPF routers learn the topology, calculate preferred paths, and use cost as their metric."], "memoryHook": "LINK STATE → COST → SHORTEST PATH.", "recognitionCue": "A link-state protocol using cost → OSPF."}
+      ]
+    },
+    {
+      "id": "route-selection",
+      "title": "Route Selection",
+      "paragraphs": ["A router can know several routes toward one destination. Prefix length, administrative distance, and metric answer different selection questions."],
+      "entries": [
+        {"title": "Prefix Length", "paragraphs": ["Prefix length states how many address bits identify the network. When several routes match a destination, the router prefers the most specific match—the longest prefix match. If 192.168.0.0/16 and 192.168.10.0/24 both match 192.168.10.50, /24 wins."], "memoryHook": "More matching network bits = more specific route."},
+        {"title": "Administrative Distance", "paragraphs": ["Administrative distance represents the router's trust in the source of routing information. A lower administrative distance is generally preferred when routes to the same destination come from different sources."], "memoryHook": "Which route source do I trust?"},
+        {"title": "Metric", "paragraphs": ["A metric is a value a routing protocol uses to choose among paths it learned. Depending on the protocol, it can reflect cost, bandwidth, delay, or other path information. OSPF uses cost."], "memoryHook": "Which path does this protocol prefer?"}
+      ],
+      "callout": "Destination specificity → Prefix length. Route-source trust → Administrative distance. Path quality inside a protocol → Metric."
+    },
+    {
+      "id": "address-translation",
+      "title": "Address Translation",
+      "paragraphs": ["Private IPv4 addresses are not normally routed directly across the public Internet. Address translation allows privately addressed systems to communicate with external networks."],
+      "entries": [
+        {"title": "Network Address Translation (NAT)", "paragraphs": ["NAT changes IP address information as traffic crosses between networks and is commonly used to translate private IPv4 addresses to public IPv4 addresses."], "memoryHook": "Change the address.", "recognitionCue": "Private-to-public address translation → NAT."},
+        {"title": "Port Address Translation (PAT)", "paragraphs": ["PAT distinguishes sessions with port numbers so multiple internal devices can share one public IPv4 address. For example, 192.168.10.20:51001 and 192.168.10.21:51002 can map through the same public address."], "memoryHook": "Many devices → one address → different ports.", "recognitionCue": "Many hosts share one public address using unique ports → PAT."}
+      ],
+      "callout": "Address translation → NAT. Address plus port translation → PAT."
+    },
+    {
+      "id": "gateway-redundancy",
+      "title": "FHRP and Virtual IP",
+      "entries": [
+        {"title": "First Hop Redundancy Protocol (FHRP)", "paragraphs": ["FHRP provides default-gateway redundancy. Multiple routers can participate so another router can take over gateway duties if the active router fails."], "memoryHook": "Backup for the default gateway."},
+        {"title": "Virtual IP (VIP)", "paragraphs": ["A VIP is a logical address not permanently tied to one physical interface. Hosts use the shared VIP as their default gateway, so the active physical router can change without requiring client reconfiguration."], "memoryHook": "One logical gateway address."}
+      ],
+      "callout": "FHRP is the redundancy mechanism; VIP is the shared logical address."
+    },
+    {
+      "id": "subinterfaces",
+      "title": "Subinterfaces",
+      "paragraphs": ["A subinterface is a logical interface created from a physical router interface. One physical port can therefore support multiple logical networks or VLANs, such as separate logical interfaces beneath GigabitEthernet0/0."],
+      "callout": "One physical interface → multiple logical interfaces."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Administrator enters route → Static routing", "Routers exchange routes → Dynamic routing", "Internet/autonomous systems → BGP", "Cisco-associated internal protocol → EIGRP", "Link state and cost → OSPF", "Most specific route → Prefix length/longest prefix match", "Trustworthiness of source → Administrative distance", "Path value within protocol → Metric", "Private/public translation → NAT", "Many systems share address through ports → PAT", "Redundant gateway → FHRP", "Shared gateway address → VIP", "Logical divisions of one physical interface → Subinterfaces"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Static vs. Dynamic", "paragraphs": ["Manual route → Static. Automatically learned route → Dynamic."]},
+        {"title": "Administrative Distance vs. Metric", "paragraphs": ["Which route source is trusted? → Administrative distance. Which path does a protocol prefer? → Metric."]},
+        {"title": "Prefix Length vs. Metric", "paragraphs": ["Most specific destination match → Prefix length. Best path according to the routing protocol → Metric."]},
+        {"title": "NAT vs. PAT", "paragraphs": ["Address translation → NAT. Multiple hosts sharing an address through ports → PAT."]},
+        {"title": "FHRP vs. VIP", "paragraphs": ["Gateway redundancy mechanism → FHRP. Logical shared address → VIP."]},
+        {"title": "Physical Interface vs. Subinterface", "paragraphs": ["Hardware interface → Physical interface. Logical division of a physical interface → Subinterface."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Manual route → Static routing", "Automatically learned routes → Dynamic routing", "Internet-scale routing → BGP", "Cisco-associated routing → EIGRP", "Link state + cost → OSPF", "Most specific match → Prefix length", "Route-source trust → Administrative distance", "Protocol path value → Metric", "Address translation → NAT", "Address + port translation → PAT", "Gateway redundancy → FHRP", "Shared gateway address → VIP", "One physical interface, multiple logical interfaces → Subinterfaces"],
+      "callout": "LEARN ROUTES → CHOOSE ROUTE → FORWARD TRAFFIC → TRANSLATE ADDRESSES → PROVIDE REDUNDANCY"
+    }
+  ]
+}

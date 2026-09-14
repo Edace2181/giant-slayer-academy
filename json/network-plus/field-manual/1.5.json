@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.5",
+  "title": "Compare and Contrast Transmission Media and Transceivers",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network data travels over wireless, copper, or fiber media. The equipment at both ends must support compatible standards, speeds, transceivers, and connectors."],
+      "bullets": ["Wireless: 802.11, cellular, and satellite", "Wired: 802.3, fiber, DAC/twinax, coax, cable speeds, and plenum ratings", "Transceiver protocols and form factors", "Fiber, telephone, Ethernet, and coax connector types"],
+      "callout": "Medium → standard → speed and distance → transceiver → connector."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a scenario describes distance, environment, cable, connector, wireless technology, or transceiver requirements, can you identify the appropriate transmission technology?"],
+      "bullets": ["Wi-Fi → 802.11", "Wired Ethernet → 802.3", "Long fiber → Single-mode", "Shorter fiber → Multimode", "Short high-speed copper → DAC/twinax", "Storage networking → Fibre Channel", "Modular transceiver → SFP or QSFP", "Phone → RJ11; Ethernet → RJ45", "Threaded coax → F-type; bayonet coax → BNC"]
+    },
+    {
+      "id": "wireless-media",
+      "title": "Wireless Transmission",
+      "entries": [
+        {"title": "802.11 Standards", "paragraphs": ["The IEEE 802.11 family defines wireless LAN technology commonly called Wi-Fi. Versions differ by frequency, speed, channels, and performance."], "memoryHook": "802.11 = Wi-Fi.", "recognitionCue": "A wireless LAN standard is required → 802.11."},
+        {"title": "Cellular", "paragraphs": ["Cellular networks use a carrier's infrastructure for phones, tablets, hotspots, mobile Internet, and WAN backup."], "memoryHook": "Mobile carrier network.", "recognitionCue": "A mobile or backup connection uses a carrier network → Cellular."},
+        {"title": "Satellite", "paragraphs": ["Satellite provides broad geographic coverage where terrestrial broadband may be unavailable, though latency depends on the satellite architecture."], "memoryHook": "Remote location → sky.", "recognitionCue": "A rural site has no cable or fiber service → Satellite."}
+      ]
+    },
+    {
+      "id": "wired-media",
+      "title": "Wired Transmission",
+      "entries": [
+        {"title": "802.3 Standards", "paragraphs": ["The IEEE 802.3 family defines Ethernet standards over copper and fiber."], "memoryHook": "802.3 = Ethernet.", "recognitionCue": "A wired LAN standard is required → 802.3."},
+        {"title": "Single-Mode Fiber", "paragraphs": ["Single-mode fiber uses a small core and is designed for longer-distance, high-bandwidth links such as backbones, WANs, and provider connections."], "memoryHook": "Single path → long distance."},
+        {"title": "Multimode Fiber", "paragraphs": ["Multimode fiber uses a larger core with multiple light paths and is commonly used for shorter links in buildings, campuses, and data centers."], "memoryHook": "Multiple paths → shorter distance."},
+        {"title": "Direct Attach Copper (DAC) Cable", "paragraphs": ["DAC is a short, high-speed copper cable assembly commonly used between nearby switches and servers. Its transceiver ends are generally integrated."], "memoryHook": "Short + fast + copper."},
+        {"title": "Twinaxial Cable", "paragraphs": ["Twinaxial cable has two inner conductors and is commonly the medium used in DAC assemblies."], "memoryHook": "DAC → twinax."},
+        {"title": "Coaxial Cable", "paragraphs": ["Coaxial cable has a central conductor, insulation, and shielding. It is associated with cable broadband and legacy network uses."], "memoryHook": "Center conductor + shield."}
+      ]
+    },
+    {
+      "id": "cable-selection",
+      "title": "Cable Speeds and Ratings",
+      "entries": [
+        {"title": "Cable Speeds", "paragraphs": ["The medium must support the required bandwidth, distance, network standard, and equipment interface. A faster switch port cannot exceed the capability of an incompatible cable or transceiver."], "memoryHook": "The cable must support the link."},
+        {"title": "Plenum vs. Non-Plenum Cable", "paragraphs": ["Plenum-rated cable is designed for air-handling spaces where fire and smoke characteristics matter. Non-plenum cable is used only where building codes and installation requirements permit it."], "memoryHook": "Air-handling space → plenum."}
+      ]
+    },
+    {
+      "id": "transceivers",
+      "title": "Transceivers",
+      "paragraphs": ["A transceiver transmits and receives. Modular transceivers allow interfaces to support different media, speeds, distances, and protocols."],
+      "entries": [
+        {"title": "Ethernet", "paragraphs": ["An Ethernet transceiver carries general network traffic and must match the equipment, medium, speed, and interface."], "memoryHook": "General network communication."},
+        {"title": "Fibre Channel (FC)", "paragraphs": ["Fibre Channel is strongly associated with high-speed storage and SAN traffic; it is not simply another name for Ethernet over fiber."], "memoryHook": "Storage network protocol."},
+        {"title": "Small Form-Factor Pluggable (SFP)", "paragraphs": ["SFP is a modular transceiver form factor available for different media and link capabilities."], "memoryHook": "Small pluggable transceiver."},
+        {"title": "Quad Small Form-Factor Pluggable (QSFP)", "paragraphs": ["QSFP is a high-capacity modular transceiver family. SFP and QSFP are form factors, not cable connector types."], "memoryHook": "Quad = higher-capacity family."}
+      ]
+    },
+    {
+      "id": "connector-types",
+      "title": "Connector Types",
+      "table": {"caption": "Connector recognition", "headers": ["Connector", "Medium or use", "Recognition clue"], "rows": [["Subscriber connector (SC)", "Fiber", "Push-pull fiber connector"], ["Local connector (LC)", "Fiber", "Small, high-density connector"], ["Straight tip (ST)", "Fiber", "Bayonet-style lock"], ["Multi-fiber push on (MPO)", "Fiber", "Multiple strands in one connector"], ["RJ11", "Copper telephone", "Phone connection"], ["RJ45", "Twisted-pair Ethernet", "Copper LAN connection"], ["F-type", "Coax", "Threaded cable/broadband connector"], ["Bayonet Neill-Concelman (BNC)", "Coax", "Bayonet-style lock"]]}
+    },
+    {
+      "id": "media-comparison",
+      "title": "Media and Interface Comparison",
+      "table": {"caption": "Transmission technology decision map", "headers": ["Requirement", "Best recognition", "Key distinction"], "rows": [["Wireless LAN", "802.11", "Wi-Fi"], ["Wired Ethernet", "802.3", "Copper or fiber Ethernet"], ["Long optical link", "Single-mode", "Small core, longer distance"], ["Shorter optical link", "Multimode", "Larger core"], ["Very short high-speed equipment link", "DAC/twinax", "Integrated copper assembly"], ["Storage protocol", "Fibre Channel", "SAN association"], ["Modular interface", "SFP/QSFP", "Transceiver form factor"]]}
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Wi-Fi → 802.11", "Wired Ethernet → 802.3", "Mobile carrier → Cellular", "Remote-area connectivity → Satellite", "Long-distance fiber → Single-mode", "Shorter-distance fiber → Multimode", "Short high-speed copper → DAC", "DAC conductor type → Twinax", "Cable broadband → Coax", "Air-handling space → Plenum", "Ethernet traffic → Ethernet transceiver", "Storage networking → Fibre Channel", "Pluggable form factor → SFP/QSFP", "Fiber → SC/LC/ST/MPO", "Telephone → RJ11", "Copper Ethernet → RJ45", "Coax → F-type/BNC"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "802.11 vs. 802.3", "paragraphs": ["802.11 is wireless LAN. 802.3 is Ethernet."]},
+        {"title": "Single-Mode vs. Multimode", "paragraphs": ["Single-mode supports longer distance; multimode is associated with shorter links."]},
+        {"title": "SFP/QSFP vs. SC/LC", "paragraphs": ["SFP and QSFP are transceiver form factors. SC, LC, ST, and MPO are fiber connector types."]},
+        {"title": "RJ11 vs. RJ45", "paragraphs": ["RJ11 is associated with telephone wiring. RJ45 is associated with twisted-pair Ethernet."]},
+        {"title": "F-Type vs. BNC", "paragraphs": ["Both use coax. F-type has a strong cable/broadband association; BNC uses a bayonet lock."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["11 → air; 3 → Ethernet", "Long fiber → single-mode", "Shorter fiber → multimode", "Short fast copper → DAC/twinax", "Coax broadband → F-type", "Coax bayonet → BNC", "Storage protocol → Fibre Channel", "Transceiver → SFP/QSFP", "Fiber connector → SC/LC/ST/MPO", "Phone → RJ11", "Ethernet copper → RJ45"]
+    }
+  ]
+}

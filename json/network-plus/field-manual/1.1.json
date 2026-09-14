@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.1",
+  "title": "Explain Concepts Related to the Open Systems Interconnection (OSI) Reference Model",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["The Open Systems Interconnection (OSI) model is a seven-layer reference model used to describe how network communication works. It separates one large communication process into layers so devices, protocols, and faults can be identified consistently.", "The main mental model is: bits → frames → packets → segments or datagrams → sessions → data format → user-facing network services."],
+      "bullets": ["Layer 1 - Physical", "Layer 2 - Data link", "Layer 3 - Network", "Layer 4 - Transport", "Layer 5 - Session", "Layer 6 - Presentation", "Layer 7 - Application"],
+      "callout": "When a scenario names a device, address, protocol behavior, or fault, identify the layer responsible."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Can you move from a clue to the responsible OSI layer without walking through all seven layers?"],
+      "bullets": ["Cable, signal, or bits → Layer 1", "MAC address, frame, or switching → Layer 2", "IP address, packet, or routing → Layer 3", "TCP, UDP, or port number → Layer 4", "Session establishment or management → Layer 5", "Formatting, translation, encryption, or compression → Layer 6", "Application-facing network service → Layer 7"]
+    },
+    {
+      "id": "layers-one-through-four",
+      "title": "Layers 1-4: Moving Data",
+      "entries": [
+        {"title": "Layer 1 - Physical", "paragraphs": ["The Physical layer transmits raw bits across copper, fiber, or radio. It covers cables, connectors, signals, and physical interfaces."], "memoryHook": "Can the signal physically get there?", "recognitionCue": "A damaged cable, connector, or missing link signal points to Layer 1."},
+        {"title": "Layer 2 - Data Link", "paragraphs": ["The Data Link layer handles local-link delivery using frames and MAC addresses. Traditional Ethernet switches forward frames at this layer."], "memoryHook": "Local delivery by MAC address.", "recognitionCue": "A MAC table or Ethernet frame points to Layer 2."},
+        {"title": "Layer 3 - Network", "paragraphs": ["The Network layer provides logical addressing and routing between networks. Routers examine IP addresses and forward packets toward a destination network."], "memoryHook": "Where is the destination network?", "recognitionCue": "An IP address, subnet, packet, or route points to Layer 3."},
+        {"title": "Layer 4 - Transport", "paragraphs": ["The Transport layer provides end-to-end delivery between services. TCP uses segments and reliability mechanisms; UDP uses datagrams with less overhead. Port numbers identify the receiving service."], "memoryHook": "Which service receives the traffic, and how is it delivered?", "recognitionCue": "TCP, UDP, sequencing, reliability, or a port number points to Layer 4."}
+      ]
+    },
+    {
+      "id": "layers-five-through-seven",
+      "title": "Layers 5-7: Sessions, Representation, and Services",
+      "entries": [
+        {"title": "Layer 5 - Session", "paragraphs": ["The Session layer establishes, maintains, and terminates communication sessions between applications."], "memoryHook": "Start, maintain, and end the conversation.", "recognitionCue": "A scenario centered on an ongoing application session points to Layer 5."},
+        {"title": "Layer 6 - Presentation", "paragraphs": ["The Presentation layer transforms data into a usable representation through formatting, translation, encoding, encryption or decryption, and compression or decompression."], "memoryHook": "What format should the data take?", "recognitionCue": "Data representation or transformation points to Layer 6."},
+        {"title": "Layer 7 - Application", "paragraphs": ["The Application layer provides network services used by application processes. HTTP, HTTPS, DNS, SMTP, and FTP are common examples. The layer describes the network service or interface, not the entire user application."], "memoryHook": "Where applications access network services.", "recognitionCue": "An application-facing protocol or network service points to Layer 7."}
+      ]
+    },
+    {
+      "id": "layer-comparison",
+      "title": "OSI Recognition Map",
+      "table": {"caption": "OSI layer recognition", "headers": ["Layer", "Primary role", "High-value clues"], "rows": [["1 Physical", "Transmit bits", "Cable, connector, signal"], ["2 Data Link", "Local delivery", "Frame, MAC, switch"], ["3 Network", "Logical addressing and routing", "Packet, IP, router"], ["4 Transport", "End-to-end service delivery", "TCP, UDP, port"], ["5 Session", "Manage conversations", "Establish, maintain, terminate"], ["6 Presentation", "Represent and transform data", "Format, translate, encrypt, compress"], ["7 Application", "Application-facing network services", "HTTP, DNS, SMTP, FTP"]]}
+    },
+    {
+      "id": "encapsulation",
+      "title": "Encapsulation and Decapsulation",
+      "paragraphs": ["As data moves down the stack, each applicable layer adds control information. A simplified sending path is application data → transport segment or datagram → network packet → data-link frame → physical bits. The receiving system removes that information in reverse."],
+      "callout": "Send = wrap the data; receive = unwrap the data."
+    },
+    {
+      "id": "troubleshooting",
+      "title": "OSI Troubleshooting Thinking",
+      "paragraphs": ["The model provides a structured way to locate a communication failure."],
+      "bullets": ["No link because a cable is unplugged → Layer 1", "Switch forwarding or MAC-table issue → Layer 2", "Incorrect IP address or route → Layer 3", "TCP/UDP service or port problem → Layer 4", "Session cannot be established or maintained → Layer 5", "Data cannot be decoded or translated → Layer 6", "Application-facing network service is unavailable → Layer 7"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Bits → Physical", "Frames and MAC addresses → Data Link", "Packets and IP addresses → Network", "TCP segments, UDP datagrams, and ports → Transport", "Communication-session management → Session", "Data formatting or translation → Presentation", "Application network services → Application", "Cable → MAC → IP → port"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "MAC vs. IP", "paragraphs": ["MAC addressing and frames are Layer 2. IP addressing and packets are Layer 3."]},
+        {"title": "Switch vs. Router", "paragraphs": ["Traditional Ethernet switching is Layer 2. Routing between networks is Layer 3."]},
+        {"title": "Port vs. IP Address", "paragraphs": ["A port number identifies a Layer 4 service; an IP address identifies a Layer 3 endpoint or network interface."]},
+        {"title": "Application vs. Application Layer", "paragraphs": ["Layer 7 is the application-facing network service, not everything the user-facing program does."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Layer 1 → Physical → bits, cable, signal", "Layer 2 → Data Link → frames, MAC, switching", "Layer 3 → Network → packets, IP, routing", "Layer 4 → Transport → TCP, UDP, ports", "Layer 5 → Session → establish, maintain, terminate", "Layer 6 → Presentation → format, translate, encrypt, compress", "Layer 7 → Application → application-facing network service", "Physical → Data Link → Network → Transport → Session → Presentation → Application"]
+    }
+  ]
+}

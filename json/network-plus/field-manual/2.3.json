@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Given a Scenario, Select and Configure Wireless Devices and Technologies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Wireless design requires more than an SSID and password. Learn to select spectrum, plan channels, identify service sets, choose a topology, secure access, shape coverage, and manage access points."],
+      "bullets": ["Channels, channel width, non-overlapping channels, regulatory impacts, and 802.11h", "2.4 GHz, 5 GHz, 6 GHz, and band steering", "SSID, BSSID, and ESSID", "Mesh, ad hoc, point-to-point, and infrastructure networks", "WPA2, WPA3, guest networks, captive portals, PSK, and Enterprise", "Omnidirectional and directional antennas", "Autonomous and lightweight APs"],
+      "callout": "CHOOSE FREQUENCY → PLAN CHANNELS → IDENTIFY NETWORK → CHOOSE TOPOLOGY → SECURE ACCESS → SHAPE COVERAGE → MANAGE APS"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a wireless deployment, choose the appropriate frequency, channel design, network type, security method, antenna, and AP architecture."],
+      "bullets": ["Spectrum used by a channel → Channel width", "Avoid frequency overlap → Non-overlapping channels", "Local spectrum rules → Regulatory impacts", "5 GHz regulatory mechanisms → 802.11h", "Longer reach and wall penetration → 2.4 GHz", "More capacity and less legacy interference → 5 GHz", "New additional spectrum → 6 GHz", "Move capable clients toward a preferred band → Band steering"]
+    },
+    {
+      "id": "channels-and-regulation",
+      "title": "Channels and Regulatory Planning",
+      "entries": [
+        {"title": "Wireless Channels", "paragraphs": ["Wireless frequencies are divided into channels—lanes in the wireless spectrum. Good channel planning reduces interference and improves performance."]},
+        {"title": "Channel Width", "paragraphs": ["Channel width is how much spectrum a channel occupies. Wider channels can increase potential throughput, but they consume more spectrum and can reduce the number of usable non-overlapping channels."], "memoryHook": "How wide is the wireless lane?"},
+        {"title": "Non-Overlapping Channels", "paragraphs": ["Overlapping frequency ranges can interfere. Assigning non-overlapping channels to nearby APs keeps neighboring WLAN cells from talking over one another."], "recognitionCue": "Nearby APs need interference-minimizing assignments → Non-overlapping channels."},
+        {"title": "Regulatory Impacts and 802.11h", "paragraphs": ["Regional rules can govern allowed channels, transmit power, and frequency behavior. 802.11h provides regulatory and coexistence mechanisms for portions of the 5 GHz spectrum, including radar-related concerns."], "memoryHook": "5 GHz + regulatory coexistence."}
+      ]
+    },
+    {
+      "id": "frequency-options",
+      "title": "Frequency Options and Band Steering",
+      "entries": [
+        {"title": "2.4 GHz", "paragraphs": ["2.4 GHz generally offers greater range and better obstacle penetration than higher frequencies, but has less spectrum and commonly more interference."], "memoryHook": "More reach, more crowding."},
+        {"title": "5 GHz", "paragraphs": ["5 GHz provides more spectrum and channel options and often less legacy interference than 2.4 GHz. Its practical reach and penetration are generally lower."], "memoryHook": "More capacity, shorter practical reach."},
+        {"title": "6 GHz", "paragraphs": ["6 GHz adds newer spectrum for compatible Wi-Fi devices and access points. Compatibility is essential."], "memoryHook": "Newer, cleaner wireless spectrum."},
+        {"title": "Band Steering", "paragraphs": ["Band steering encourages capable clients toward a preferred band, helping distribute clients away from congestion."], "memoryHook": "Move capable clients to the better band."}
+      ],
+      "callout": "Reach → 2.4 GHz. Capacity → 5 GHz. New spectrum → 6 GHz."
+    },
+    {
+      "id": "service-set-identifiers",
+      "title": "SSID, BSSID, and ESSID",
+      "entries": [
+        {"title": "Service Set Identifier (SSID)", "paragraphs": ["The SSID is the human-recognizable wireless network name users select, such as GSA-WiFi."], "memoryHook": "The Wi-Fi name."},
+        {"title": "Basic Service Set Identifier (BSSID)", "paragraphs": ["The BSSID identifies a specific basic service set, commonly a particular AP radio interface. It distinguishes which radio a client is using."], "memoryHook": "Specific AP/radio identity."},
+        {"title": "Extended Service Set Identifier (ESSID)", "paragraphs": ["An extended service set lets multiple APs participate in a broader WLAN with a common network identity and roaming coverage."], "memoryHook": "Multiple APs, one extended WLAN."}
+      ],
+      "callout": "Name → SSID. Specific AP → BSSID. Extended multi-AP WLAN → ESSID."
+    },
+    {
+      "id": "wireless-network-types",
+      "title": "Wireless Network Types",
+      "entries": [
+        {"title": "Mesh Networks", "paragraphs": ["Wireless mesh nodes interconnect and can forward traffic through multiple wireless paths."], "memoryHook": "Wireless nodes connect to one another."},
+        {"title": "Ad Hoc", "paragraphs": ["Devices communicate directly without a traditional access point."], "memoryHook": "Device ↔ device."},
+        {"title": "Point-to-Point", "paragraphs": ["A point-to-point wireless link bridges exactly two locations. Directional antennas are commonly appropriate."], "memoryHook": "Building A ↔ Building B."},
+        {"title": "Infrastructure", "paragraphs": ["In infrastructure mode, clients connect through an access point to reach network resources."], "memoryHook": "Client → AP → network."}
+      ]
+    },
+    {
+      "id": "wireless-encryption",
+      "title": "Wireless Encryption",
+      "entries": [
+        {"title": "Wi-Fi Protected Access 2 (WPA2)", "paragraphs": ["WPA2 is the established, widely deployed secure Wi-Fi generation that preceded WPA3."]},
+        {"title": "WPA3", "paragraphs": ["WPA3 is the newer Wi-Fi security generation and improves wireless security when supported by the AP and clients."]}
+      ],
+      "callout": "WPA2 and WPA3 describe security generations; PSK and Enterprise describe authentication models."
+    },
+    {
+      "id": "guest-access-and-authentication",
+      "title": "Guest Access and Authentication",
+      "entries": [
+        {"title": "Guest Networks", "paragraphs": ["A guest network gives visitors access while separating them from trusted internal resources."], "memoryHook": "Visitors get their own network."},
+        {"title": "Captive Portals", "paragraphs": ["A captive portal redirects a newly connected user to a web page for login, registration, an access code, or terms acceptance before normal access is granted."], "memoryHook": "Connect to Wi-Fi, then a web page appears."},
+        {"title": "Pre-Shared Key (PSK)", "paragraphs": ["PSK authentication uses one shared wireless credential. It is simple, but becomes difficult to manage securely at organizational scale."], "memoryHook": "Everyone knows the same Wi-Fi password."},
+        {"title": "Enterprise Authentication", "paragraphs": ["Enterprise authentication provides centrally managed, individual identities instead of one shared password. It is appropriate where stronger identity and access control are required."], "memoryHook": "User-specific central authentication."}
+      ],
+      "callout": "A guest network can use a captive portal, but they are not the same. Shared credential → PSK. Individual identity → Enterprise."
+    },
+    {
+      "id": "antennas",
+      "title": "Omnidirectional and Directional Antennas",
+      "entries": [
+        {"title": "Omnidirectional", "paragraphs": ["An omnidirectional antenna spreads coverage broadly around the antenna and suits clients located in many directions."], "memoryHook": "Spread the signal around."},
+        {"title": "Directional", "paragraphs": ["A directional antenna focuses radio energy toward a chosen direction. It suits focused coverage and point-to-point building links."], "memoryHook": "Aim the signal."}
+      ],
+      "callout": "Broad surrounding coverage → Omnidirectional. Focused coverage → Directional."
+    },
+    {
+      "id": "access-point-management",
+      "title": "Autonomous and Lightweight APs",
+      "entries": [
+        {"title": "Autonomous AP", "paragraphs": ["An autonomous AP operates and is configured largely as an independent device. Individual management can fit a small environment."], "memoryHook": "The AP manages itself."},
+        {"title": "Lightweight AP", "paragraphs": ["A lightweight AP relies on centralized management or control, simplifying larger deployments with many APs."], "memoryHook": "A central controller manages the APs."}
+      ],
+      "callout": "Standalone → Autonomous. Centrally controlled → Lightweight."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Spectrum consumed by a channel → Channel width", "Reduce channel interference → Non-overlapping channels", "Regional spectrum restrictions → Regulatory impacts", "5 GHz regulatory behavior → 802.11h", "Greater reach → 2.4 GHz", "More spectrum/capacity → 5 GHz", "Newer additional spectrum → 6 GHz", "Move clients between bands → Band steering", "Wi-Fi name → SSID", "Specific radio identity → BSSID", "Extended multi-AP WLAN → ESSID", "Wireless nodes interconnect → Mesh", "Direct device connection → Ad hoc", "Two-location bridge → Point-to-point", "Clients through an AP → Infrastructure", "Visitor isolation → Guest network", "Web page before access → Captive portal", "Shared password → PSK", "Individual authentication → Enterprise", "Coverage around → Omnidirectional", "Focused signal → Directional", "Standalone AP → Autonomous", "Central management → Lightweight"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Channel Width vs. Channel", "paragraphs": ["Channel → Frequency allocation in use. Channel width → Amount of spectrum the channel occupies."]},
+        {"title": "2.4 GHz vs. 5 GHz vs. 6 GHz", "paragraphs": ["Range and penetration → 2.4 GHz. More spectrum and capacity → 5 GHz. Additional newer spectrum → 6 GHz."]},
+        {"title": "SSID vs. BSSID", "paragraphs": ["Network name users recognize → SSID. Specific AP/radio identity → BSSID."]},
+        {"title": "Ad Hoc vs. Infrastructure", "paragraphs": ["Devices communicate directly → Ad hoc. Clients connect through an AP → Infrastructure."]},
+        {"title": "Mesh vs. Point-to-Point", "paragraphs": ["Multiple interconnected wireless nodes → Mesh. Exactly two locations → Point-to-point."]},
+        {"title": "WPA3 vs. Enterprise", "paragraphs": ["WPA3 is a wireless security generation. Enterprise is an authentication model."]},
+        {"title": "PSK vs. Enterprise", "paragraphs": ["Shared credential → PSK. Individual central authentication → Enterprise."]},
+        {"title": "Guest Network vs. Captive Portal", "paragraphs": ["Separate visitor network → Guest network. Web interaction before access → Captive portal."]},
+        {"title": "Omnidirectional vs. Directional", "paragraphs": ["Broad coverage → Omnidirectional. Focused coverage → Directional."]},
+        {"title": "Autonomous vs. Lightweight", "paragraphs": ["Independently managed → Autonomous. Centrally managed → Lightweight."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Wireless lane size → Channel width", "Avoid overlap → Non-overlapping channels", "5 GHz regulation → 802.11h", "Reach → 2.4 GHz", "More spectrum → 5 GHz", "New spectrum → 6 GHz", "Preferred band → Band steering", "Wi-Fi name → SSID", "Specific AP → BSSID", "Extended WLAN → ESSID", "Interconnected nodes → Mesh", "Direct devices → Ad hoc", "Two endpoints → Point-to-point", "Client through AP → Infrastructure", "Established security → WPA2", "Newer security → WPA3", "Visitor isolation → Guest network", "Web gate → Captive portal", "Shared password → PSK", "Individual identity → Enterprise", "Coverage all around → Omnidirectional", "Focused signal → Directional", "Standalone → Autonomous", "Central management → Lightweight"],
+      "callout": "CHOOSE FREQUENCY → PLAN CHANNELS → IDENTIFY NETWORK → CHOOSE TOPOLOGY → SECURE ACCESS → SHAPE COVERAGE → MANAGE APS"
+    }
+  ]
+}

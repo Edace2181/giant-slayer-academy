@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.4",
+  "title": "Explain Common Networking Ports, Protocols, Services, and Traffic Types",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network services use protocols and ports so systems know what service is requested, where traffic belongs, and how communication should behave. This objective also covers IP protocol types, IPSec components, and traffic-delivery patterns."],
+      "bullets": ["Common service and port mappings", "ICMP, TCP, UDP, GRE, and IPSec", "AH, ESP, and IKE", "Unicast, multicast, anycast, and broadcast"],
+      "callout": "Service → protocol → port → transport or network behavior → traffic type."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When CompTIA supplies a port number, protocol, service, security function, or delivery pattern, can you identify its role immediately?"]
+    },
+    {
+      "id": "core-ports",
+      "title": "Core Port Recognition",
+      "table": {"caption": "Official N10-009 Objective 1.4 port mappings", "headers": ["Protocol or service", "Port", "Primary purpose"], "rows": [["File Transfer Protocol (FTP)", "20/21", "File transfer; not inherently encrypted"], ["Secure File Transfer Protocol (SFTP)", "22", "Secure file transfer over SSH"], ["Secure Shell (SSH)", "22", "Encrypted remote command line"], ["Telnet", "23", "Unencrypted remote terminal"], ["Simple Mail Transfer Protocol (SMTP)", "25", "Mail transfer"], ["Domain Name System (DNS)", "53", "Name resolution"], ["Dynamic Host Configuration Protocol (DHCP)", "67/68", "Automatic network configuration"], ["Trivial File Transfer Protocol (TFTP)", "69", "Simple file transfer"], ["Hypertext Transfer Protocol (HTTP)", "80", "Web traffic"], ["Network Time Protocol (NTP)", "123", "Time synchronization"], ["Simple Network Management Protocol (SNMP)", "161/162", "Management queries and notifications"], ["Lightweight Directory Access Protocol (LDAP)", "389", "Directory services"], ["Hypertext Transfer Protocol Secure (HTTPS)", "443", "Encrypted web traffic"], ["Server Message Block (SMB)", "445", "File, folder, and printer sharing"], ["Syslog", "514", "Centralized logging"], ["Simple Mail Transfer Protocol Secure (SMTPS)", "587", "Secure mail submission per the objective"], ["Lightweight Directory Access Protocol over SSL (LDAPS)", "636", "Protected directory services"], ["Structured Query Language (SQL) Server", "1433", "Microsoft SQL Server"], ["Remote Desktop Protocol (RDP)", "3389", "Graphical Windows remote access"], ["Session Initiation Protocol (SIP)", "5060/5061", "Voice and video session signaling"]]}
+    },
+    {
+      "id": "file-and-remote-services",
+      "title": "File Transfer and Remote Access",
+      "entries": [
+        {"title": "FTP - 20/21", "paragraphs": ["FTP transfers files but does not inherently protect credentials or content."], "memoryHook": "FTP → 20/21 → files."},
+        {"title": "SFTP and SSH - 22", "paragraphs": ["SSH provides encrypted remote shell access. SFTP uses SSH functionality for secure file transfer."], "memoryHook": "22 = secure shell family."},
+        {"title": "Telnet - 23", "paragraphs": ["Telnet provides an unencrypted remote terminal and should not be confused with SSH."], "memoryHook": "Telnet → 23 → old and insecure."},
+        {"title": "TFTP - 69", "paragraphs": ["TFTP is a simple file-transfer protocol with fewer capabilities and security features than robust alternatives."], "memoryHook": "TFTP → 69 → trivial transfer."},
+        {"title": "RDP - 3389", "paragraphs": ["RDP provides graphical remote access to Windows systems."], "memoryHook": "Remote Windows desktop → 3389."}
+      ]
+    },
+    {
+      "id": "infrastructure-services",
+      "title": "Infrastructure and Management Services",
+      "entries": [
+        {"title": "DNS - 53", "paragraphs": ["DNS resolves names and other DNS records."], "recognitionCue": "A host name must resolve to an address → DNS 53."},
+        {"title": "DHCP - 67/68", "paragraphs": ["DHCP automatically supplies IP addressing, subnet mask, gateway, DNS, and other client configuration."], "recognitionCue": "A client must obtain an address automatically → DHCP 67/68."},
+        {"title": "NTP - 123", "paragraphs": ["NTP synchronizes time, which supports accurate logs, authentication, troubleshooting, and security."], "recognitionCue": "Network devices have inconsistent clocks → NTP 123."},
+        {"title": "SNMP - 161/162", "paragraphs": ["SNMP supports monitoring and management. Port 161 is associated with queries and management; 162 with traps and notifications."], "recognitionCue": "A device sends an unsolicited monitoring notification → SNMP trap 162."},
+        {"title": "Syslog - 514", "paragraphs": ["Syslog carries event and log messages to a centralized collector."], "recognitionCue": "Network devices forward logs centrally → Syslog 514."}
+      ]
+    },
+    {
+      "id": "application-services",
+      "title": "Web, Mail, Directory, Database, and Voice Services",
+      "entries": [
+        {"title": "HTTP 80 and HTTPS 443", "paragraphs": ["HTTP provides web communication on 80. HTTPS protects web communication on 443."], "memoryHook": "Web 80; secure web 443."},
+        {"title": "SMTP 25 and SMTPS 587", "paragraphs": ["SMTP transfers email on 25. For this objective, associate secure mail submission or transfer with SMTPS on 587."], "memoryHook": "Mail 25; secure mail 587."},
+        {"title": "LDAP 389 and LDAPS 636", "paragraphs": ["LDAP accesses directory services on 389. LDAPS protects LDAP communication with SSL/TLS on 636."], "memoryHook": "Directory 389; secure directory 636."},
+        {"title": "SMB - 445", "paragraphs": ["SMB provides network file, folder, printer, and other resource sharing."], "memoryHook": "Windows resource sharing → 445."},
+        {"title": "SQL Server - 1433", "paragraphs": ["Microsoft SQL Server commonly listens on 1433."], "memoryHook": "SQL Server → 1433."},
+        {"title": "SIP - 5060/5061", "paragraphs": ["SIP establishes and manages voice and video communication sessions."], "memoryHook": "Call signaling → 5060/5061."}
+      ]
+    },
+    {
+      "id": "ip-types",
+      "title": "Internet Protocol Types",
+      "entries": [
+        {"title": "Internet Control Message Protocol (ICMP)", "paragraphs": ["ICMP carries IP control and diagnostic messages, including echo request and reply used by ping. ICMP does not use TCP or UDP port numbers."], "memoryHook": "Network status and diagnostics."},
+        {"title": "Transmission Control Protocol (TCP)", "paragraphs": ["TCP is connection-oriented and uses sequencing, acknowledgments, and retransmission to provide reliable delivery."], "memoryHook": "Reliable, tracked delivery."},
+        {"title": "User Datagram Protocol (UDP)", "paragraphs": ["UDP is connectionless, has less overhead, and does not provide TCP-style delivery guarantees."], "memoryHook": "Lower overhead without built-in reliability."},
+        {"title": "Generic Routing Encapsulation (GRE)", "paragraphs": ["GRE encapsulates one network protocol inside another for tunneling. GRE alone does not provide encryption."], "memoryHook": "Packet inside another packet."},
+        {"title": "Internet Protocol Security (IPSec)", "paragraphs": ["IPSec is a suite used to protect IP communications through authentication, integrity, confidentiality, and security-association negotiation."], "memoryHook": "Secure IP traffic."}
+      ]
+    },
+    {
+      "id": "ipsec-components",
+      "title": "IPSec Components",
+      "entries": [
+        {"title": "Authentication Header (AH)", "paragraphs": ["AH provides authentication and integrity protection but not payload confidentiality through encryption."], "memoryHook": "Authenticate and verify integrity."},
+        {"title": "Encapsulating Security Payload (ESP)", "paragraphs": ["ESP can provide payload confidentiality through encryption and can also support integrity and authentication."], "memoryHook": "Encrypt and protect the payload."},
+        {"title": "Internet Key Exchange (IKE)", "paragraphs": ["IKE negotiates security parameters, security associations, and keys used by IPSec peers."], "memoryHook": "Set up the secure relationship."}
+      ],
+      "table": {"caption": "IPSec component recognition", "headers": ["Component", "Primary role", "Exam cue"], "rows": [["AH", "Authentication and integrity", "Verify without payload encryption"], ["ESP", "Confidentiality and protection", "Encrypt the payload"], ["IKE", "Key and security-association negotiation", "Negotiate the relationship"]]}
+    },
+    {
+      "id": "traffic-types",
+      "title": "Traffic Types",
+      "entries": [
+        {"title": "Unicast", "paragraphs": ["Unicast is one sender to one specific receiver."], "memoryHook": "One → one."},
+        {"title": "Multicast", "paragraphs": ["Multicast sends from one source to a selected group of receivers that participate in the group."], "memoryHook": "One → selected group."},
+        {"title": "Anycast", "paragraphs": ["Anycast sends traffic to one member of a group, commonly the nearest or best instance according to routing."], "memoryHook": "One → one of many."},
+        {"title": "Broadcast", "paragraphs": ["Broadcast sends from one source to all members of the local broadcast domain and is especially associated with IPv4 LAN behavior."], "memoryHook": "One → everyone local."}
+      ],
+      "table": {"caption": "Traffic delivery patterns", "headers": ["Type", "Pattern", "Destination"], "rows": [["Unicast", "One to one", "One specific receiver"], ["Multicast", "One to group", "Selected group members"], ["Anycast", "One to one of many", "Nearest or best group member"], ["Broadcast", "One to all local", "Every host in broadcast domain"]]}
+    },
+    {
+      "id": "port-memory-ladder",
+      "title": "Port Memory Ladder",
+      "bullets": ["20/21 → FTP", "22 → SSH and SFTP", "23 → Telnet", "25 → SMTP", "53 → DNS", "67/68 → DHCP", "69 → TFTP", "80 → HTTP", "123 → NTP", "161/162 → SNMP", "389 → LDAP", "443 → HTTPS", "445 → SMB", "514 → Syslog", "587 → SMTPS", "636 → LDAPS", "1433 → SQL Server", "3389 → RDP", "5060/5061 → SIP"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Diagnostic messages or ping → ICMP", "Connection-oriented reliable transport → TCP", "Connectionless lower-overhead transport → UDP", "Encapsulation tunnel without inherent encryption → GRE", "Secure IP communications → IPSec", "Authentication and integrity → AH", "Encryption and confidentiality → ESP", "Key negotiation → IKE", "One-to-one → Unicast", "One-to-selected-group → Multicast", "One-to-one-of-many → Anycast", "One-to-everyone-local → Broadcast"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "SSH/SFTP vs. Telnet", "paragraphs": ["SSH and SFTP use 22 and are secure. Telnet uses 23 and is unencrypted."]},
+        {"title": "ICMP vs. TCP/UDP", "paragraphs": ["ICMP is its own IP protocol and does not have a TCP or UDP port."]},
+        {"title": "GRE vs. IPSec", "paragraphs": ["GRE provides encapsulation. IPSec provides security. GRE alone does not imply encryption."]},
+        {"title": "AH vs. ESP vs. IKE", "paragraphs": ["AH authenticates and protects integrity; ESP provides confidentiality; IKE negotiates keys and associations."]},
+        {"title": "Anycast vs. Multicast", "paragraphs": ["Anycast reaches one member of many possible destinations. Multicast reaches the selected group."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Files → FTP 20/21 or secure SFTP 22", "Remote shell → SSH 22, not Telnet 23", "Names → DNS 53", "Address configuration → DHCP 67/68", "Web → HTTP 80 or HTTPS 443", "Time → NTP 123", "Management → SNMP 161/162", "Directory → LDAP 389 or LDAPS 636", "Shares → SMB 445", "Logs → Syslog 514", "Database → SQL Server 1433", "Remote desktop → RDP 3389", "Call signaling → SIP 5060/5061", "Reliable → TCP; low overhead → UDP", "Tunnel → GRE; secure IP → IPSec", "AH authenticates; ESP encrypts; IKE negotiates", "Unicast one; multicast group; anycast one of many; broadcast all local"]
+    }
+  ]
+}

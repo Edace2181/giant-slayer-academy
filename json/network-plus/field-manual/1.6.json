@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.6",
+  "title": "Compare and Contrast Network Topologies, Architectures, and Types",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["A network topology describes how systems and devices are arranged and communicate. Architecture identifies functional layers, while north-south and east-west describe traffic direction."],
+      "bullets": ["Mesh, hybrid, star/hub and spoke, spine and leaf, and point to point", "Three-tier: access, distribution, and core", "Collapsed core", "North-south and east-west traffic"],
+      "callout": "How is it connected? → How is it organized? → Which way is traffic moving?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When CompTIA describes device connections or traffic movement, can you identify the topology, architecture, or flow?"],
+      "bullets": ["Many interconnected paths → Mesh", "Combination of designs → Hybrid", "Center with branches → Star/hub and spoke", "Data-center fabric → Spine and leaf", "Exactly two endpoints → Point to point", "Access + distribution + core → Three-tier", "Core and distribution combined → Collapsed core", "Into or out of an environment → North-south", "Within an environment → East-west"]
+    },
+    {
+      "id": "mesh-and-hybrid",
+      "title": "Mesh and Hybrid Topologies",
+      "entries": [
+        {"title": "Mesh", "paragraphs": ["Mesh provides multiple interconnections and alternate paths. A full mesh connects every participating node to every other node; a partial mesh provides redundancy without every possible link."], "memoryHook": "Many paths.", "recognitionCue": "The design emphasizes redundant interconnections → Mesh."},
+        {"title": "Hybrid", "paragraphs": ["A hybrid topology combines multiple topology designs in different parts of the network."], "memoryHook": "Mix and match.", "recognitionCue": "The network combines star and mesh characteristics → Hybrid."}
+      ]
+    },
+    {
+      "id": "star-and-point-to-point",
+      "title": "Centralized and Direct Topologies",
+      "entries": [
+        {"title": "Star/Hub and Spoke", "paragraphs": ["A central point connects endpoints or remote sites. A LAN switch can be the center of a star; headquarters can be the hub for WAN branches. The hub can become a central dependency unless redundant."], "memoryHook": "Every road leads to the center.", "recognitionCue": "Branches connect through headquarters → Hub and spoke."},
+        {"title": "Point to Point", "paragraphs": ["A point-to-point link directly connects exactly two endpoints, such as routers or locations."], "memoryHook": "A ↔ B.", "recognitionCue": "Two endpoints have a dedicated direct link → Point to point."}
+      ]
+    },
+    {
+      "id": "spine-and-leaf",
+      "title": "Spine and Leaf",
+      "paragraphs": ["Spine-and-leaf is a modern data-center architecture. Leaf switches connect endpoints and resources; spine switches provide high-speed connectivity among leaves. A typical design connects each leaf to each spine, producing predictable redundant paths for east-west traffic."],
+      "callout": "Data center + many server-to-server flows → Spine and leaf."
+    },
+    {
+      "id": "three-tier",
+      "title": "Three-Tier Hierarchical Model",
+      "entries": [
+        {"title": "Access", "paragraphs": ["The access layer connects endpoints such as PCs, phones, printers, and wireless APs."], "memoryHook": "Users enter here."},
+        {"title": "Distribution", "paragraphs": ["The distribution layer aggregates access connectivity and commonly applies routing and policy."], "memoryHook": "Aggregate and control."},
+        {"title": "Core", "paragraphs": ["The core layer provides fast backbone connectivity among major network areas."], "memoryHook": "High-speed backbone."}
+      ],
+      "callout": "Access → Distribution → Core = enter → organize → move fast."
+    },
+    {
+      "id": "collapsed-core",
+      "title": "Collapsed Core",
+      "paragraphs": ["A collapsed-core architecture combines the distribution and core functions into one tier, with a separate access tier. It simplifies networks that do not require three distinct layers."],
+      "callout": "Core + distribution together → Collapsed core."
+    },
+    {
+      "id": "traffic-flows",
+      "title": "Traffic Flows",
+      "entries": [
+        {"title": "North-South", "paragraphs": ["North-south traffic moves into or out of an environment, such as a user accessing the Internet or an Internet client reaching a hosted application."], "memoryHook": "Inside ↔ outside."},
+        {"title": "East-West", "paragraphs": ["East-west traffic moves laterally within an environment, such as application-server-to-database-server or VM-to-VM traffic."], "memoryHook": "Inside ↔ inside."}
+      ]
+    },
+    {
+      "id": "architecture-comparison",
+      "title": "Architecture Comparison",
+      "table": {"caption": "Topology and architecture recognition", "headers": ["Design", "Defining pattern", "Typical clue"], "rows": [["Mesh", "Multiple interconnections", "Path redundancy"], ["Hybrid", "Combined designs", "Mixed topologies"], ["Star/hub and spoke", "Central hub", "Branches depend on center"], ["Spine and leaf", "Leaves connect to spines", "Data-center fabric"], ["Point to point", "Two endpoints", "Dedicated direct link"], ["Three-tier", "Access, distribution, core", "Separate hierarchy"], ["Collapsed core", "Distribution and core combined", "Two functional tiers"]]}
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Many redundant links → Mesh", "Combination → Hybrid", "Central hub and branches → Star/hub and spoke", "Data-center fabric → Spine and leaf", "Two endpoints → Point to point", "Access/distribution/core → Three-tier", "Endpoints → Access", "Aggregation and policy → Distribution", "Backbone → Core", "Combined core/distribution → Collapsed core", "Enter or leave → North-south", "Internal lateral → East-west"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.6 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Mesh vs. Hub and Spoke", "paragraphs": ["Mesh provides interconnected alternate paths. Hub and spoke depends on a central location."]},
+        {"title": "Three-Tier vs. Collapsed Core", "paragraphs": ["Three-tier separates core and distribution. Collapsed core combines them."]},
+        {"title": "Spine and Leaf vs. Three-Tier", "paragraphs": ["Spine and leaf is a data-center fabric; three-tier is an access/distribution/core hierarchy."]},
+        {"title": "North-South vs. East-West", "paragraphs": ["North-south crosses the environment boundary. East-west stays within the environment."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Many paths → Mesh", "Mixed designs → Hybrid", "Center + branches → Hub and spoke", "Data-center fabric → Spine and leaf", "Two endpoints → Point to point", "Access + distribution + core → Three-tier", "Users → Access", "Policy → Distribution", "Backbone → Core", "Core + distribution → Collapsed core", "Inside/outside → North-south", "Inside/inside → East-west"]
+    }
+  ]
+}

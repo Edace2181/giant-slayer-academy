@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.2",
+  "title": "Compare and Contrast Networking Appliances, Applications, and Functions",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Networks use specialized appliances, applications, and functions to move traffic, protect systems, distribute workloads, control wireless access, provide storage, and improve performance. CompTIA expects recognition of both physical and virtual appliances."],
+      "bullets": ["Router, switch, firewall, IDS, and IPS", "Load balancer and proxy", "NAS and SAN", "Wireless access point and controller", "Content delivery network", "VPN, QoS, and TTL"],
+      "callout": "Function matters more than the box: identify what the component does."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a networking requirement, can you select the appliance, application, or function designed to solve it?"],
+      "bullets": ["Connect networks → Router", "Connect LAN devices → Switch", "Allow or block traffic → Firewall", "Detect → IDS; detect and prevent → IPS", "Spread requests → Load balancer", "Intermediate requester → Proxy", "Files → NAS; blocks → SAN", "Provide Wi-Fi → AP; manage APs → Controller", "Place content near users → CDN", "Secure tunnel → VPN", "Prioritize traffic → QoS", "Limit packet lifetime → TTL"]
+    },
+    {
+      "id": "physical-and-virtual",
+      "title": "Physical and Virtual Appliances",
+      "paragraphs": ["A network appliance can be dedicated hardware or a virtualized software appliance. Routers, firewalls, load balancers, and other functions may use either form while performing the same core role."],
+      "callout": "Do not identify an appliance only by its physical appearance; identify its network function."
+    },
+    {
+      "id": "forwarding-and-security",
+      "title": "Forwarding and Security Appliances",
+      "entries": [
+        {"title": "Router", "paragraphs": ["A router connects different IP networks and forwards packets according to network-layer addressing."], "memoryHook": "Network to network.", "recognitionCue": "Traffic must move between subnets → Router."},
+        {"title": "Switch", "paragraphs": ["A switch connects devices within a LAN and traditionally forwards Ethernet frames according to MAC addresses."], "memoryHook": "Device to device on the LAN.", "recognitionCue": "Multiple wired devices need local connectivity → Switch."},
+        {"title": "Firewall", "paragraphs": ["A firewall permits or blocks traffic according to security rules."], "memoryHook": "Should this traffic be allowed?", "recognitionCue": "Enforce an allow/deny network policy → Firewall."},
+        {"title": "Intrusion Detection System (IDS)", "paragraphs": ["An IDS monitors for suspicious activity and generates alerts without automatically stopping the traffic."], "memoryHook": "See it and alert.", "recognitionCue": "Notify analysts of suspicious traffic → IDS."},
+        {"title": "Intrusion Prevention System (IPS)", "paragraphs": ["An IPS detects suspicious activity and can actively block or prevent it."], "memoryHook": "See it and stop it.", "recognitionCue": "Automatically block malicious traffic → IPS."}
+      ]
+    },
+    {
+      "id": "delivery-and-intermediation",
+      "title": "Delivery and Intermediation",
+      "entries": [
+        {"title": "Load Balancer", "paragraphs": ["A load balancer distributes requests across multiple systems to improve performance and availability."], "memoryHook": "Do not make one server do everything.", "recognitionCue": "Spread web requests among several servers → Load balancer."},
+        {"title": "Proxy", "paragraphs": ["A proxy acts as an intermediary between a client and another destination. It can provide filtering, access control, privacy, caching, or policy enforcement."], "memoryHook": "Client → proxy → destination.", "recognitionCue": "Clients access resources through an intermediary → Proxy."},
+        {"title": "Content Delivery Network (CDN)", "paragraphs": ["A CDN caches or distributes content across geographically distributed systems so users can receive it from nearby infrastructure."], "memoryHook": "Put content closer to users.", "recognitionCue": "Global users need lower-latency content delivery → CDN."}
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "Network Storage",
+      "entries": [
+        {"title": "Network-Attached Storage (NAS)", "paragraphs": ["NAS provides file-level storage over a network through shared files and folders."], "memoryHook": "Network file storage.", "recognitionCue": "Users need a shared folder → NAS."},
+        {"title": "Storage Area Network (SAN)", "paragraphs": ["A SAN provides networked block-level storage, commonly to servers. The storage can appear like locally attached disks to the host."], "memoryHook": "Storage network for servers.", "recognitionCue": "Servers need high-speed block storage → SAN."}
+      ],
+      "table": {"caption": "NAS and SAN comparison", "headers": ["Technology", "Storage level", "Typical clue"], "rows": [["NAS", "File", "Shared folders and files"], ["SAN", "Block", "Server storage volumes"]]}
+    },
+    {
+      "id": "wireless",
+      "title": "Wireless Infrastructure",
+      "entries": [
+        {"title": "Access Point (AP)", "paragraphs": ["An AP provides wireless clients with access to the network."], "memoryHook": "Wi-Fi entry point.", "recognitionCue": "Laptops and phones need wireless LAN access → AP."},
+        {"title": "Wireless Controller", "paragraphs": ["A wireless controller centrally configures and manages multiple access points."], "memoryHook": "Manage the AP fleet.", "recognitionCue": "Dozens of APs need centralized management → Wireless controller."}
+      ]
+    },
+    {
+      "id": "network-functions",
+      "title": "Network Functions",
+      "entries": [
+        {"title": "Virtual Private Network (VPN)", "paragraphs": ["A VPN creates a protected connection across another network for remote access or site-to-site communication."], "memoryHook": "Secure tunnel.", "recognitionCue": "A remote employee needs protected access to an internal network → VPN."},
+        {"title": "Quality of Service (QoS)", "paragraphs": ["QoS classifies and prioritizes traffic so time-sensitive services such as voice receive appropriate treatment when resources compete. QoS does not create additional bandwidth."], "memoryHook": "Important traffic goes first.", "recognitionCue": "Voice is choppy during bulk transfers → Configure QoS."},
+        {"title": "Time to Live (TTL)", "paragraphs": ["Routers decrement an IP packet's TTL at each hop. When it reaches zero, the packet is discarded, preventing indefinite circulation during a routing loop."], "memoryHook": "A packet cannot wander forever.", "recognitionCue": "Limit how long an IP packet can traverse routers → TTL."}
+      ]
+    },
+    {
+      "id": "comparison-map",
+      "title": "Appliance and Function Comparison",
+      "table": {"caption": "Network component recognition", "headers": ["Need", "Best match", "Key distinction"], "rows": [["Connect different networks", "Router", "Layer 3 forwarding"], ["Connect LAN devices", "Switch", "Layer 2 forwarding"], ["Enforce traffic rules", "Firewall", "Permit or deny"], ["Alert on suspicious traffic", "IDS", "Detection"], ["Block suspicious traffic", "IPS", "Prevention"], ["Distribute requests", "Load balancer", "Workload sharing"], ["Intermediate client requests", "Proxy", "Acts on client's behalf"], ["Shared files", "NAS", "File-level"], ["Server storage", "SAN", "Block-level"], ["Provide wireless access", "AP", "Client connectivity"], ["Manage APs", "Controller", "Central administration"], ["Nearby content", "CDN", "Distributed delivery"], ["Protected connection", "VPN", "Secure tunnel"], ["Traffic priority", "QoS", "Classification and scheduling"], ["Packet lifetime", "TTL", "Hop limit"]]}
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Different IP networks → Router", "Devices within a LAN → Switch", "Traffic-rule enforcement → Firewall", "Alert only → IDS", "Automatic prevention → IPS", "Distribute server requests → Load balancer", "Intermediary → Proxy", "File storage → NAS", "Block storage → SAN", "Wi-Fi connection → AP", "Central AP management → Controller", "Distributed content → CDN", "Secure private connection → VPN", "Traffic priority → QoS", "Packet lifetime → TTL"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "IDS vs. IPS", "paragraphs": ["IDS detects and alerts. IPS detects and prevents."]},
+        {"title": "NAS vs. SAN", "paragraphs": ["NAS presents files. SAN presents block storage."]},
+        {"title": "AP vs. Controller", "paragraphs": ["An AP connects wireless clients. A controller manages multiple APs."]},
+        {"title": "Firewall vs. IDS/IPS", "paragraphs": ["A firewall enforces configured traffic rules. IDS and IPS focus on detecting suspicious activity; IPS can block it."]},
+        {"title": "QoS vs. Bandwidth", "paragraphs": ["QoS prioritizes existing capacity; it does not create more capacity."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Route → Router", "Switch locally → Switch", "Protect by policy → Firewall", "Detect → IDS", "Prevent → IPS", "Distribute → Load balancer or CDN, based on scenario", "Intermediate → Proxy", "Store files → NAS", "Store blocks → SAN", "Connect Wi-Fi → AP", "Control Wi-Fi fleet → Controller", "Secure connection → VPN", "Prioritize → QoS", "Expire packet → TTL"]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Summarize Cloud Concepts and Connectivity Options",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Cloud networking applies familiar network functions through virtual resources and provider services. Recognize the virtual network, its security controls and gateways, connection method, deployment and service models, and scaling behavior."],
+      "bullets": ["NFV and VPC", "Network security groups and security lists", "Internet and NAT gateways", "VPN and Direct Connect", "Public, private, and hybrid deployment models", "SaaS, IaaS, and PaaS service models", "Scalability, elasticity, and multitenancy"],
+      "callout": "Build the cloud network → protect it → connect it → choose the model → scale it."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Can you identify the virtual network component, security control, gateway, connectivity option, cloud model, or scaling characteristic described by a scenario?"],
+      "bullets": ["Virtual network function → NFV", "Isolated cloud network → VPC", "Cloud traffic rules → Security group or security list", "VPC Internet path → Internet gateway", "Private outbound translation → NAT gateway", "Encrypted connection → VPN", "Dedicated connection → Direct Connect", "Provider/shared → Public; organization-controlled → Private; combination → Hybrid", "Use → SaaS; infrastructure → IaaS; build/deploy → PaaS", "Capacity growth → Scalability; dynamic demand response → Elasticity", "Shared infrastructure with logical separation → Multitenancy"]
+    },
+    {
+      "id": "virtual-networking",
+      "title": "Virtual Cloud Networking",
+      "entries": [
+        {"title": "Network Functions Virtualization (NFV)", "paragraphs": ["NFV implements functions such as routers, firewalls, and load balancers in software rather than requiring a dedicated physical appliance for each function."], "memoryHook": "Network function without a dedicated box.", "recognitionCue": "A firewall runs as a virtualized network service → NFV."},
+        {"title": "Virtual Private Cloud (VPC)", "paragraphs": ["A VPC is a logically isolated virtual network within a cloud environment. It can contain address ranges, subnets, routes, security controls, and gateways."], "memoryHook": "Your network space inside the cloud.", "recognitionCue": "An organization needs an isolated network in a public cloud → VPC."}
+      ]
+    },
+    {
+      "id": "cloud-security-controls",
+      "title": "Network Security Groups and Security Lists",
+      "entries": [
+        {"title": "Network Security Group", "paragraphs": ["A network security group applies permitted-traffic rules to associated cloud resources or interfaces. Exact behavior varies by provider, but the exam clue is a cloud-native traffic filter attached to resources."], "memoryHook": "Protect selected cloud resources.", "recognitionCue": "Apply inbound and outbound rules to a workload → Network security group."},
+        {"title": "Network Security List", "paragraphs": ["A network security list applies traffic rules at a cloud network or subnet boundary, depending on the provider's design."], "memoryHook": "Protect the cloud network segment.", "recognitionCue": "Apply rules to traffic entering or leaving a subnet → Network security list."}
+      ],
+      "callout": "Both control cloud traffic; distinguish the resource-oriented or subnet-oriented scope described by the provider and scenario."
+    },
+    {
+      "id": "cloud-gateways",
+      "title": "Cloud Gateways",
+      "entries": [
+        {"title": "Internet Gateway", "paragraphs": ["An Internet gateway provides a path between a VPC and the Internet when routes and resource addressing permit it."], "memoryHook": "VPC to Internet path.", "recognitionCue": "A public cloud resource needs direct Internet connectivity → Internet gateway."},
+        {"title": "Network Address Translation (NAT) Gateway", "paragraphs": ["A NAT gateway translates addresses so private resources can initiate outbound Internet connections without accepting unsolicited inbound connections directly."], "memoryHook": "Private outbound Internet access.", "recognitionCue": "A private instance must download updates without becoming publicly reachable → NAT gateway."}
+      ]
+    },
+    {
+      "id": "cloud-connectivity",
+      "title": "Cloud Connectivity Options",
+      "entries": [
+        {"title": "Virtual Private Network (VPN)", "paragraphs": ["A VPN creates an encrypted tunnel between users or sites and a cloud environment, commonly across the public Internet."], "memoryHook": "Encrypted cloud connection.", "recognitionCue": "Secure cloud connectivity over the Internet → VPN."},
+        {"title": "Direct Connect", "paragraphs": ["Direct Connect represents a dedicated private connection to cloud infrastructure instead of an Internet-based tunnel. Provider terminology and implementation can vary."], "memoryHook": "Dedicated cloud path.", "recognitionCue": "A predictable dedicated connection to the cloud is required → Direct Connect."}
+      ],
+      "table": {"caption": "Cloud connection recognition", "headers": ["Option", "Path", "Primary clue"], "rows": [["VPN", "Encrypted tunnel, often over Internet", "Protected logical connection"], ["Direct Connect", "Dedicated private connectivity", "Dedicated path and predictable performance"]]}
+    },
+    {
+      "id": "deployment-models",
+      "title": "Deployment Models",
+      "entries": [
+        {"title": "Public Cloud", "paragraphs": ["A provider operates shared infrastructure for multiple customers while tenant resources remain logically separated."], "memoryHook": "Provider-operated shared cloud.", "recognitionCue": "The organization consumes resources from a public provider → Public cloud."},
+        {"title": "Private Cloud", "paragraphs": ["Cloud infrastructure is dedicated to or controlled for one organization, whether hosted internally or by another party."], "memoryHook": "Cloud for one organization.", "recognitionCue": "An organization requires dedicated cloud control → Private cloud."},
+        {"title": "Hybrid Cloud", "paragraphs": ["A hybrid model connects or combines public and private cloud environments so workloads or data can use both."], "memoryHook": "Public plus private.", "recognitionCue": "Private resources extend into provider cloud capacity → Hybrid cloud."}
+      ]
+    },
+    {
+      "id": "service-models",
+      "title": "Service Models",
+      "entries": [
+        {"title": "Software as a Service (SaaS)", "paragraphs": ["SaaS provides a finished application. The provider manages the underlying platform and infrastructure."], "memoryHook": "Use the application.", "recognitionCue": "Users open a provider-hosted productivity application → SaaS."},
+        {"title": "Infrastructure as a Service (IaaS)", "paragraphs": ["IaaS provides virtual machines, storage, and networking. The customer controls operating systems and workloads while the provider manages the physical infrastructure."], "memoryHook": "Rent the infrastructure.", "recognitionCue": "The customer configures virtual servers and networks → IaaS."},
+        {"title": "Platform as a Service (PaaS)", "paragraphs": ["PaaS provides a managed application-development and deployment platform so teams can build applications without managing all underlying infrastructure."], "memoryHook": "Build and deploy on the platform.", "recognitionCue": "Developers deploy code to a managed runtime → PaaS."}
+      ],
+      "table": {"caption": "Cloud service model recognition", "headers": ["Model", "Customer focus", "Memory cue"], "rows": [["SaaS", "Use finished software", "Use"], ["PaaS", "Build and deploy applications", "Build"], ["IaaS", "Manage workloads on virtual infrastructure", "Infrastructure"]]}
+    },
+    {
+      "id": "cloud-characteristics",
+      "title": "Cloud Characteristics",
+      "entries": [
+        {"title": "Scalability", "paragraphs": ["Scalability is the ability to increase or decrease processing, storage, or server capacity to support workload requirements."], "memoryHook": "Can the environment grow?", "recognitionCue": "Capacity can be expanded to support more users → Scalability."},
+        {"title": "Elasticity", "paragraphs": ["Elasticity is the dynamic expansion and contraction of resources in response to changing demand."], "memoryHook": "Demand changes, resources change.", "recognitionCue": "Resources automatically grow during a spike and shrink afterward → Elasticity."},
+        {"title": "Multitenancy", "paragraphs": ["Multitenancy allows multiple customers to share underlying cloud infrastructure while their environments remain logically separated."], "memoryHook": "Shared infrastructure, separate tenants.", "recognitionCue": "Multiple organizations use one provider platform with logical isolation → Multitenancy."}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Virtual network service → NFV", "Isolated cloud network → VPC", "Cloud resource traffic filter → Network security group", "Subnet traffic filter → Network security list", "Public Internet path → Internet gateway", "Private outbound translation → NAT gateway", "Encrypted tunnel → VPN", "Dedicated cloud path → Direct Connect", "Provider cloud → Public", "Single-organization cloud → Private", "Combination → Hybrid", "Finished software → SaaS", "Virtual infrastructure → IaaS", "Development platform → PaaS", "Ability to grow → Scalability", "Automatic demand response → Elasticity", "Shared provider infrastructure → Multitenancy"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Internet Gateway vs. NAT Gateway", "paragraphs": ["An Internet gateway provides Internet connectivity. A NAT gateway lets private resources initiate outbound traffic through address translation."]},
+        {"title": "VPN vs. Direct Connect", "paragraphs": ["A VPN is an encrypted logical tunnel; Direct Connect is a dedicated connection."]},
+        {"title": "SaaS vs. PaaS vs. IaaS", "paragraphs": ["Use software with SaaS, build and deploy with PaaS, and manage workloads on rented infrastructure with IaaS."]},
+        {"title": "Scalability vs. Elasticity", "paragraphs": ["Scalability means capacity can change. Elasticity emphasizes dynamic adjustment as demand changes."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Virtual function → NFV", "Cloud network → VPC", "Traffic rules → Security group or list", "Internet path → Internet gateway", "Private outbound path → NAT gateway", "Encrypted path → VPN", "Dedicated path → Direct Connect", "Public / private / hybrid → deployment", "SaaS / IaaS / PaaS → service", "Grow → scalability", "Flex dynamically → elasticity", "Share underlying infrastructure → multitenancy"]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Explain Important Factors of Physical Installations",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Networks depend on physical rooms, racks, cabling, power, cooling, humidity control, security, and fire protection. Each affects reliability and availability."],
+      "bullets": ["IDF and MDF locations", "Rack size and port-side exhaust/intake", "Patch panels and fiber distribution panels", "Lockable installations", "UPS, PDU, power load, and voltage", "Humidity, fire suppression, and temperature"],
+      "callout": "PLACE IT → RACK IT → CABLE IT → LOCK IT → POWER IT → COOL IT → PROTECT IT"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a physical installation, identify where equipment belongs and which cabling, power, airflow, access-control, and environmental requirements matter."],
+      "bullets": ["Central building distribution point → MDF", "Secondary/local distribution point → IDF", "Equipment dimensions and capacity → Rack size", "Cooling-air direction → Port-side exhaust/intake", "Copper termination → Patch panel", "Fiber termination → Fiber distribution panel", "Unauthorized physical access prevention → Lockable", "Temporary battery power → UPS", "Rack power distribution → PDU"]
+    },
+    {
+      "id": "installation-locations",
+      "title": "MDF and IDF Locations",
+      "entries": [
+        {"title": "Main Distribution Frame (MDF)", "paragraphs": ["The MDF is the facility's primary telecommunications and network distribution location. It commonly acts as the central point from which connectivity reaches other areas."], "memoryHook": "Main network room."},
+        {"title": "Intermediate Distribution Frame (IDF)", "paragraphs": ["An IDF is a secondary distribution location that extends connectivity closer to users or another area. A multi-floor building might have one MDF and an IDF on each floor."], "memoryHook": "Local or secondary network closet."}
+      ],
+      "callout": "Main/central → MDF. Intermediate/local → IDF."
+    },
+    {
+      "id": "racks-and-airflow",
+      "title": "Rack Size and Port-Side Airflow",
+      "entries": [
+        {"title": "Rack Size", "paragraphs": ["Standardized rack size determines whether equipment physically fits. Check equipment dimensions, available rack space, expansion capacity, cable clearance, and airflow."], "memoryHook": "Will the equipment physically fit?"},
+        {"title": "Port-Side Exhaust/Intake", "paragraphs": ["Port-side intake or exhaust describes airflow orientation relative to the network ports. Equipment must align with the room's cooling design; the wrong direction can create hot spots."], "memoryHook": "Which way does the air move?"}
+      ]
+    },
+    {
+      "id": "cabling-distribution",
+      "title": "Cabling and Distribution Panels",
+      "entries": [
+        {"title": "Patch Panel", "paragraphs": ["A patch panel is a passive, organized termination point for structured network cabling. Permanent building cabling terminates there, and short patch cables connect it to active equipment. This improves organization, identification, changes, and cable management."], "memoryHook": "Permanent cabling terminates here."},
+        {"title": "Fiber Distribution Panel", "paragraphs": ["A fiber distribution panel protects, organizes, terminates, and distributes fiber-optic connections."], "memoryHook": "Patch-panel concept for fiber."}
+      ],
+      "callout": "A patch panel organizes cabling; it does not switch Ethernet frames."
+    },
+    {
+      "id": "physical-security",
+      "title": "Lockable Installations",
+      "paragraphs": ["Racks, cabinets, and telecommunications rooms may need locks to stop unauthorized access. Physical access could let someone disconnect cables, attach rogue devices, reset or reconfigure equipment, tamper with connections, or steal devices."],
+      "callout": "Cybersecurity begins with physical security."
+    },
+    {
+      "id": "power",
+      "title": "Power Planning",
+      "entries": [
+        {"title": "Uninterruptible Power Supply (UPS)", "paragraphs": ["A UPS provides temporary battery-backed power during an outage. It can bridge a short interruption, preserve availability, or allow a graceful shutdown."], "memoryHook": "Power fails; equipment stays on temporarily."},
+        {"title": "Power Distribution Unit (PDU)", "paragraphs": ["A PDU distributes electrical power to multiple rack devices. Distribution does not by itself provide battery backup."], "memoryHook": "Power distribution for the rack."},
+        {"title": "Power Load", "paragraphs": ["Power load is the total electrical demand placed on a circuit or power system. Added equipment must not exceed capacity."], "memoryHook": "How much power are all devices using?"},
+        {"title": "Voltage", "paragraphs": ["Voltage is an electrical characteristic that must match the equipment and facility supply. Incorrect voltage can prevent operation or damage hardware."], "memoryHook": "Is the power compatible with the equipment?"}
+      ],
+      "callout": "Backup → UPS. Distribution → PDU. Total demand → Power load. Electrical potential → Voltage."
+    },
+    {
+      "id": "environmental-factors",
+      "title": "Environmental Factors",
+      "entries": [
+        {"title": "Humidity", "paragraphs": ["Humidity is moisture in the air. Excess humidity can cause moisture-related damage; very low humidity can increase static-electricity risk."], "memoryHook": "Too wet or too dry can cause problems."},
+        {"title": "Fire Suppression", "paragraphs": ["Fire-suppression systems detect or control fires while accounting for sensitive electronics and people. The wrong suppression approach can create additional equipment damage."], "memoryHook": "Stop the fire without creating another disaster."},
+        {"title": "Temperature", "paragraphs": ["Network equipment creates heat and must remain within supported operating temperatures. Poor cooling can cause instability, shorten equipment life, trigger shutdowns, or lead to failure."], "memoryHook": "Electronics plus too much heat equals trouble."}
+      ],
+      "callout": "Port-side exhaust/intake describes how equipment moves air; temperature describes the environmental heat level."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Primary network room → MDF", "Secondary network closet → IDF", "Equipment must physically fit → Rack size", "Cooling-air direction → Port-side exhaust/intake", "Organized structured-cable termination → Patch panel", "Organized fiber termination → Fiber distribution panel", "Prevent physical tampering → Lockable", "Battery-backed temporary power → UPS", "Rack power distribution → PDU", "Total electrical demand → Power load", "Electrical potential → Voltage", "Air moisture → Humidity", "Protect equipment from fire → Fire suppression", "Equipment heat/cooling → Temperature"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 2.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "MDF vs. IDF", "paragraphs": ["Primary or central distribution room → MDF. Secondary or local closet → IDF."]},
+        {"title": "Patch Panel vs. Switch", "paragraphs": ["A patch panel passively terminates and organizes cabling. A switch actively forwards Ethernet frames."]},
+        {"title": "Patch Panel vs. Fiber Distribution Panel", "paragraphs": ["General structured-cable termination → Patch panel. Fiber-specific termination → Fiber distribution panel."]},
+        {"title": "UPS vs. PDU", "paragraphs": ["Battery backup → UPS. Electrical distribution → PDU. A PDU does not automatically provide battery power."]},
+        {"title": "Power Load vs. Voltage", "paragraphs": ["Total electrical demand → Power load. Electrical potential supplied or required → Voltage."]},
+        {"title": "Temperature vs. Port-Side Airflow", "paragraphs": ["Environmental heat level → Temperature. Direction equipment moves cooling air → Port-side exhaust/intake."]},
+        {"title": "Humidity vs. Temperature", "paragraphs": ["Moisture in air → Humidity. Heat level → Temperature."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Main network distribution room → MDF", "Secondary network closet → IDF", "Physical equipment capacity → Rack size", "Airflow direction → Port-side exhaust/intake", "Structured cable termination → Patch panel", "Fiber termination → Fiber distribution panel", "Physical access protection → Lockable", "Temporary battery power → UPS", "Rack power distribution → PDU", "Total electrical demand → Power load", "Electrical potential → Voltage", "Moisture level → Humidity", "Fire protection → Fire suppression", "Heat/cooling → Temperature"],
+      "callout": "PLACE IT → RACK IT → CABLE IT → LOCK IT → POWER IT → COOL IT → PROTECT IT"
+    }
+  ]
+}

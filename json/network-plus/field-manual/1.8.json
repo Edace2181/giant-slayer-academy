@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "1",
+  "objective": "1.8",
+  "title": "Summarize Evolving Use Cases for Modern Network Environments",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Modern networks are becoming more software-driven, automated, policy-based, cloud-connected, and identity-aware while relying less on manual device-by-device configuration. This objective connects programmable networking, overlays, zero trust, cloud-delivered security, infrastructure as code, source control, and IPv6 transition."],
+      "bullets": ["Software-defined networking (SDN) and software-defined wide area networking (SD-WAN)", "Virtual Extensible Local Area Network (VXLAN)", "Zero Trust Architecture (ZTA)", "Secure Access Service Edge (SASE) and Security Service Edge (SSE)", "Infrastructure as Code (IaC) and automation", "Source control", "IPv6 transition and compatibility"],
+      "callout": "Centralize → automate → segment → verify → secure → version → modernize addressing."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Can you identify centralized control, application-aware WAN decisions, overlay networking, identity-based access, cloud-delivered security, coded configuration, and IPv6 transition methods?"],
+      "bullets": ["Software controls network behavior → SDN", "Software-managed WAN → SD-WAN", "Application-sensitive path decisions → Application aware", "Deploy without manual site configuration → Zero-touch provisioning", "Use multiple underlying WAN types → Transport agnostic", "One central place sets network policy → Central policy management", "Layer 2 overlay across Layer 3 → VXLAN", "Connect Layer 2 domains across data centers → DCI", "Never trust automatically → ZTA", "Identity/context-based access → Policy-based authentication and authorization", "Minimum permissions → Least privilege", "Networking plus security delivered near the edge or cloud → SASE", "Cloud-delivered security services → SSE", "Define infrastructure in code → IaC", "Automated instructions → Playbooks, templates, and reusable tasks", "Actual state differs from intended state → Configuration drift", "Track configuration and code changes → Version control", "Central place for code and configuration → Repository", "Independent development path → Branch", "IPv6 mitigates address exhaustion", "IPv4 and IPv6 together → Dual stack", "IPv6 across IPv4 → Tunneling", "IPv6-to-IPv4 translation → NAT64"]
+    },
+    {
+      "id": "sdn-and-sdwan",
+      "title": "SDN and SD-WAN",
+      "entries": [
+        {"title": "Software-Defined Networking (SDN)", "paragraphs": ["SDN separates network control logic from the individual devices that forward traffic. Instead of configuring each device independently, administrators gain centralized and programmable control."], "examples": ["Centralized management", "Automation", "Consistent policy", "Faster changes"], "memoryHook": "Control the network through software.", "recognitionCue": "Network behavior is centrally controlled through software rather than configured independently on every device → SDN."},
+        {"title": "Software-Defined Wide Area Network (SD-WAN)", "paragraphs": ["SD-WAN applies software-defined control specifically to wide area network connectivity. It can centrally manage branch traffic across broadband, MPLS, cellular, Internet links, and other transports."], "examples": ["Broadband", "MPLS", "Cellular", "Internet links"], "memoryHook": "Software-controlled WAN.", "recognitionCue": "An organization centrally manages branch WAN connectivity using software → SD-WAN."}
+      ],
+      "callout": "SDN is broad software-defined network control; SD-WAN focuses on WAN connectivity."
+    },
+    {
+      "id": "sdwan-capabilities",
+      "title": "SD-WAN Capabilities",
+      "entries": [
+        {"title": "Application-Aware Networking", "paragraphs": ["An application-aware SD-WAN identifies traffic by application and makes routing or policy decisions accordingly. Voice traffic can use one path while bulk backup traffic uses another."], "memoryHook": "What application is this traffic from?", "recognitionCue": "The WAN path is selected according to application type → Application-aware SD-WAN."},
+        {"title": "Zero-Touch Provisioning", "paragraphs": ["Zero-touch provisioning deploys equipment with little or no manual configuration at the remote site. The device connects to the network, contacts its management system, downloads configuration, and applies policy."], "examples": ["Connect to the network", "Contact the management system", "Download configuration", "Apply policy"], "memoryHook": "Plug it in and it configures itself.", "recognitionCue": "A branch device arrives with no local network engineer required → Zero-touch provisioning."},
+        {"title": "Transport Agnostic", "paragraphs": ["A transport-agnostic system applies policy across different underlying connection types, including broadband, fiber, MPLS, and cellular."], "examples": ["Broadband", "Fiber", "MPLS", "Cellular"], "memoryHook": "The underlay can change; policy still works.", "recognitionCue": "SD-WAN operates across multiple carrier technologies → Transport agnostic."},
+        {"title": "Central Policy Management", "paragraphs": ["Administrators define network rules once from a centralized control system and apply them across many devices or sites, reducing repetitive configuration."], "memoryHook": "One policy → many devices and sites.", "recognitionCue": "An administrator changes branch routing or security policy from one platform → Central policy management."}
+      ]
+    },
+    {
+      "id": "vxlan-and-dci",
+      "title": "VXLAN and Data Center Interconnect",
+      "entries": [
+        {"title": "Virtual Extensible Local Area Network (VXLAN)", "paragraphs": ["VXLAN creates Layer 2 overlay networks across Layer 3 infrastructure. It lets logically connected Layer 2 networks extend across routed infrastructure in data centers, virtualized environments, and large-scale networks."], "examples": ["Data centers", "Virtualized environments", "Large-scale networks"], "memoryHook": "Layer 2 over Layer 3.", "recognitionCue": "A Layer 2 network must extend across a Layer 3 data-center fabric → VXLAN."},
+        {"title": "Layer 2 Encapsulation", "paragraphs": ["VXLAN encapsulates Layer 2 Ethernet traffic so it can travel across a Layer 3 IP network. Systems can appear to share one logical Layer 2 segment even when the physical path is routed."], "memoryHook": "Ethernet frame inside IP transport.", "recognitionCue": "Ethernet traffic is carried across an IP underlay → VXLAN encapsulation."},
+        {"title": "Data Center Interconnect (DCI)", "paragraphs": ["DCI connects separate data-center environments. VXLAN can support designs that extend logical Layer 2 networks between data centers."], "memoryHook": "Data center ↔ data center.", "recognitionCue": "Workloads in separate data centers need logically connected network segments → DCI."}
+      ]
+    },
+    {
+      "id": "zero-trust",
+      "title": "Zero Trust Architecture (ZTA)",
+      "paragraphs": ["ZTA does not automatically trust users, devices, or connections merely because they are inside a network. Trust is evaluated per request using policy and context."],
+      "entries": [
+        {"title": "Policy-Based Authentication", "paragraphs": ["Authentication answers who you are. In a Zero Trust environment, policy can evaluate user identity, device, location, risk, and authentication method."], "examples": ["User identity", "Device", "Location", "Risk", "Authentication method"], "memoryHook": "Verify identity according to policy."},
+        {"title": "Authorization", "paragraphs": ["Authorization answers what an authenticated user or system is allowed to do. Authentication comes first; authorization determines access afterward."], "memoryHook": "Authentication = who; authorization = what."},
+        {"title": "Least Privilege Access", "paragraphs": ["Users and systems receive only the access required to perform their tasks and nothing more."], "memoryHook": "Only what you need.", "recognitionCue": "An employee needs read-only access to one application and nothing else → Least privilege."}
+      ],
+      "callout": "Verify identity → check policy → authorize → grant minimum access. Trust is earned per request, not assumed by location."
+    },
+    {
+      "id": "sase-and-sse",
+      "title": "SASE and SSE",
+      "entries": [
+        {"title": "Secure Access Service Edge (SASE)", "paragraphs": ["SASE combines networking and security capabilities in a cloud-delivered architecture for remote users, cloud applications, and traffic that may not traverse a traditional headquarters perimeter."], "examples": ["Remote users", "Cloud-hosted applications", "Traffic outside a traditional headquarters perimeter"], "memoryHook": "Networking + security at the edge or cloud.", "recognitionCue": "An organization combines WAN access and cloud-delivered security controls → SASE."},
+        {"title": "Security Service Edge (SSE)", "paragraphs": ["SSE focuses on the security-services portion of SASE without the complete WAN networking component."], "memoryHook": "SASE security without the WAN piece.", "recognitionCue": "The scenario requests cloud-delivered security services rather than WAN connectivity → SSE."}
+      ],
+      "callout": "SASE includes networking and security; SSE focuses on security services."
+    },
+    {
+      "id": "infrastructure-as-code",
+      "title": "Infrastructure as Code (IaC)",
+      "paragraphs": ["IaC defines and manages infrastructure through code or structured configuration files instead of relying on manual device-by-device changes. It improves repeatability, consistency, speed, version tracking, and resistance to manual error."],
+      "bullets": ["Repeatability", "Consistency", "Speed", "Version tracking", "Reduced manual error"],
+      "entries": [
+        {"title": "Playbooks, Templates, and Reusable Tasks", "paragraphs": ["A playbook defines a series of automated actions, a template provides a reusable configuration structure, and a reusable task performs an operation that can be invoked repeatedly."], "memoryHook": "Define once → use many times.", "recognitionCue": "Fifty switches receive the same automated instructions → Playbook or template automation."},
+        {"title": "Configuration Drift and Compliance", "paragraphs": ["Configuration drift occurs when actual configuration no longer matches the intended or approved state. Automation can detect drift, restore the desired state, and verify compliance."], "examples": ["Approved: SSH enabled and Telnet disabled", "Drift: someone manually enables Telnet", "Compliance: automation detects and corrects the mismatch"], "memoryHook": "Expected state ≠ actual state."},
+        {"title": "Automated Upgrades", "paragraphs": ["Automation can coordinate consistent upgrades across many devices, reducing repetitive work. Upgrades still require testing and proper change-management controls."], "memoryHook": "Update many devices consistently."},
+        {"title": "Dynamic Inventories", "paragraphs": ["A dynamic inventory automatically discovers or updates the systems that automation should manage as devices appear, disappear, scale, or change addresses."], "examples": ["Devices appear or disappear", "Cloud resources scale dynamically", "IP addresses change"], "memoryHook": "The device list updates itself.", "recognitionCue": "The automation platform discovers which current systems need configuration → Dynamic inventory."}
+      ]
+    },
+    {
+      "id": "source-control",
+      "title": "Source Control",
+      "paragraphs": ["IaC configuration belongs in source control so teams can track changes, versions, contributors, conflicts, and parallel work with software-development discipline."],
+      "bullets": ["Changes", "Versions", "Contributors", "Conflicts", "Parallel work"],
+      "entries": [
+        {"title": "Version Control", "paragraphs": ["Version control tracks changes over time and supports history, rollback, auditing, and comparison."], "examples": ["History", "Rollback", "Auditing", "Comparison"], "memoryHook": "Who changed what and when?", "recognitionCue": "An administrator needs a previous network-configuration version → Version control."},
+        {"title": "Central Repository", "paragraphs": ["A central repository stores the authoritative shared code and configuration so team members can retrieve and contribute changes."], "memoryHook": "One authoritative location."},
+        {"title": "Conflict Identification", "paragraphs": ["A conflict occurs when incompatible changes affect the same code or configuration. Source control identifies the collision so it can be resolved."], "memoryHook": "Two changes collide."},
+        {"title": "Branching", "paragraphs": ["A branch creates an independent line of development. An engineer can prepare a new VLAN configuration separately from production, test it, and merge it only when ready."], "examples": ["Main branch → Production configuration", "Feature branch → New VLAN deployment", "After testing → Merge the change"], "memoryHook": "Work on a change without altering the main version yet.", "recognitionCue": "An engineer develops configuration separately from production → Branching."}
+      ]
+    },
+    {
+      "id": "ipv6-addressing",
+      "title": "IPv6 Addressing",
+      "paragraphs": ["IPv4 uses 32-bit addressing. IPv6 uses 128-bit addressing and a vastly larger address space. IPv6 mitigates IPv4 address exhaustion. During migration, networks must account for systems and services that still require IPv4 compatibility."],
+      "callout": "IPv6 expands addressing; transition methods maintain compatibility during coexistence."
+    },
+    {
+      "id": "ipv6-compatibility",
+      "title": "IPv6 Compatibility Requirements",
+      "entries": [
+        {"title": "Tunneling", "paragraphs": ["Tunneling encapsulates IPv6 traffic so it can cross IPv4-only infrastructure."], "memoryHook": "IPv6 inside IPv4.", "recognitionCue": "IPv6 islands must communicate across an IPv4-only network → Tunneling."},
+        {"title": "Dual Stack", "paragraphs": ["A dual-stack device or network runs IPv4 and IPv6 simultaneously and selects the appropriate protocol according to the destination and available support."], "memoryHook": "Speak both languages.", "recognitionCue": "A server has both IPv4 and IPv6 configured → Dual stack."},
+        {"title": "NAT64", "paragraphs": ["NAT64 uses protocol and address translation so IPv6-only systems can communicate with IPv4 systems."], "memoryHook": "IPv6 ↔ IPv4 translation.", "recognitionCue": "An IPv6-only client must reach an IPv4-only server → NAT64."}
+      ],
+      "table": {"caption": "IPv6 transition recognition", "headers": ["Method", "What it does", "Exam clue"], "rows": [["Tunneling", "Carries IPv6 through IPv4", "Encapsulation across legacy network"], ["Dual stack", "Runs both protocols", "Native IPv4 and IPv6 coexistence"], ["NAT64", "Translates IPv6 and IPv4", "IPv6 client reaches IPv4 service"]]}
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Software-controlled network → SDN", "Software-controlled WAN → SD-WAN", "Traffic decisions based on application → Application aware", "Automatic branch deployment → Zero-touch provisioning", "Multiple WAN transport types → Transport agnostic", "One place defines WAN policy → Central policy management", "Layer 2 overlay over Layer 3 → VXLAN", "Connect data centers → DCI", "Ethernet carried through a routed network → Layer 2 encapsulation", "Verify every request → ZTA", "Identity verification → Authentication", "Permission decision → Authorization", "Minimum required access → Least privilege", "Networking plus security as a cloud service → SASE", "Security-only edge services → SSE", "Infrastructure defined in code → IaC", "Automated workflow → Playbook", "Reusable configuration structure → Template", "Actual configuration differs from intended → Configuration drift", "Track changes → Version control", "Shared authoritative location → Central repository", "Two edits collide → Conflict identification", "Separate line of work → Branching", "IPv4 exhaustion solution → IPv6", "IPv6 across IPv4 → Tunneling", "IPv4 and IPv6 simultaneously → Dual stack", "IPv6-to-IPv4 translation → NAT64"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.8 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "SDN vs. SD-WAN", "paragraphs": ["SDN is broad software-defined network control; SD-WAN focuses on wide-area connectivity."]},
+        {"title": "Zero-Touch Provisioning vs. Central Policy Management", "paragraphs": ["Zero-touch provisioning deploys a device without local manual setup. Central policy management changes policy from one control point."]},
+        {"title": "SASE vs. SSE", "paragraphs": ["SASE combines networking and security. SSE focuses on the cloud-delivered security functions."]},
+        {"title": "VXLAN vs. Ordinary VLAN", "paragraphs": ["VXLAN carries a Layer 2 overlay across Layer 3 infrastructure; an ordinary VLAN remains a local Layer 2 segmentation concept."]},
+        {"title": "Authentication vs. Authorization", "paragraphs": ["Authentication verifies identity. Authorization determines permitted resources and actions."]},
+        {"title": "ZTA vs. Least Privilege", "paragraphs": ["ZTA is the broader architecture of continuous verification and policy-based access. Least privilege is the principle of granting only required permissions within that architecture."]},
+        {"title": "Configuration Drift vs. Version Control", "paragraphs": ["Configuration drift means the actual system differs from the desired state. Version control tracks file and configuration revisions over time."]},
+        {"title": "Repository vs. Branch", "paragraphs": ["A repository is the central shared storage for code and configuration. A branch is an independent line of development within that work."]},
+        {"title": "Tunneling vs. Dual Stack vs. NAT64", "paragraphs": ["Tunneling encapsulates, dual stack runs both protocols, and NAT64 translates between them."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Software-defined network → SDN", "Software-defined WAN → SD-WAN", "Application-based decision → Application aware", "No manual branch setup → Zero-touch provisioning", "Multiple carrier technologies → Transport agnostic", "Centralized rules → Central policy management", "Layer 2 over Layer 3 → VXLAN", "Data center ↔ data center → DCI", "Never automatically trust → ZTA", "Who are you? → Authentication", "What can you do? → Authorization", "Minimum access → Least privilege", "Network plus security edge → SASE", "Security edge → SSE", "Infrastructure defined as code → IaC", "Automation workflow → Playbook", "Reusable configuration → Template", "Expected state ≠ actual state → Configuration drift", "Track revisions → Version control", "Shared code/configuration location → Central repository", "Changes collide → Conflict identification", "Independent work stream → Branching", "IPv4 exhaustion → IPv6", "IPv6 through IPv4 → Tunneling", "IPv4 plus IPv6 → Dual stack", "IPv6 ↔ IPv4 translation → NAT64", "Centralize → automate → segment → verify → secure → version → modernize addressing"]
+    }
+  ]
+}
