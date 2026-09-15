@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "3",
+  "objective": "3.5",
+  "title": "Compare and Contrast Network Access and Management Methods",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Administrators need secure ways to connect sites and users and to manage network systems. Identify who connects, how the connection works, and whether management uses production connectivity or a separate path."],
+      "bullets": ["Site-to-site, client-to-site, and clientless VPN access", "Split tunnel and full tunnel", "SSH, GUI, API, and console management", "Jump boxes/hosts", "In-band and out-of-band management"],
+      "callout": "CONNECT SITES → CONNECT USERS → MANAGE DEVICES → CONTROL ADMIN ACCESS → KEEP A BACKUP PATH"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a remote-access or device-management scenario, identify who is connecting, how the connection is made, and whether management traffic uses the production network or an independent path."],
+      "bullets": ["Network-to-network VPN → Site-to-site", "Individual user/device to network → Client-to-site", "Browser access without a traditional client → Clientless", "Corporate traffic only through VPN → Split tunnel", "All client traffic through VPN → Full tunnel", "Secure remote CLI → SSH", "Visual management → GUI", "Programmatic management → API", "Direct local access → Console", "Controlled administrative gateway → Jump box", "Production path → In-band", "Separate path → Out-of-band"]
+    },
+    {
+      "id": "vpn-types",
+      "title": "VPN Connection Types",
+      "entries": [
+        {"title": "Site-to-Site VPN", "paragraphs": ["A site-to-site VPN securely connects two networks across an untrusted network. Users at headquarters and a branch can communicate through a persistent network-to-network tunnel without establishing individual sessions."], "memoryHook": "Office ↔ office."},
+        {"title": "Client-to-Site VPN", "paragraphs": ["A client-to-site VPN connects an individual endpoint or remote worker to an organization's network."], "memoryHook": "Laptop → office."},
+        {"title": "Clientless VPN", "paragraphs": ["A clientless VPN provides remote access without a traditional installed VPN client, often through a web browser or built-in capability."], "memoryHook": "Remote access without installing a full client."}
+      ],
+      "callout": "Site-to-site describes network-to-network. Client-to-site describes endpoint-to-network. Clientless describes how the endpoint accesses the service."
+    },
+    {
+      "id": "split-and-full-tunnels",
+      "title": "Split Tunnel vs. Full Tunnel",
+      "entries": [
+        {"title": "Split Tunnel", "paragraphs": ["Only selected traffic, such as corporate destinations, enters the VPN; other traffic exits through the client's local Internet connection. This reduces VPN bandwidth but creates simultaneous trusted and untrusted paths."], "memoryHook": "Some traffic through the VPN."},
+        {"title": "Full Tunnel", "paragraphs": ["All client traffic, including ordinary Internet traffic, enters the corporate VPN so centralized controls can inspect and govern it."], "memoryHook": "Everything goes through the company."}
+      ],
+      "callout": "Some → Split. All → Full."
+    },
+    {
+      "id": "connection-methods",
+      "title": "Connection Methods",
+      "entries": [
+        {"title": "Secure Shell (SSH)", "paragraphs": ["SSH provides encrypted remote command-line administration for routers, switches, servers, and other devices."], "memoryHook": "Secure remote CLI."},
+        {"title": "Graphical User Interface (GUI)", "paragraphs": ["A GUI provides visual menus, buttons, forms, and dashboards for human administrators."], "memoryHook": "Point-and-click management."},
+        {"title": "Application Programming Interface (API)", "paragraphs": ["An API lets software manage another system programmatically and supports automation, orchestration, scripting, and integration."], "memoryHook": "Software manages software."},
+        {"title": "Console", "paragraphs": ["A console connection provides direct device management and remains valuable when the device has no IP configuration or production networking is broken."], "memoryHook": "Direct cable to the device."}
+      ],
+      "callout": "Remote commands → SSH. Human visual control → GUI. Automation → API. Direct device access → Console."
+    },
+    {
+      "id": "jump-box",
+      "title": "Jump Box / Jump Host",
+      "paragraphs": ["A jump box is a hardened, controlled intermediary through which administrators connect before reaching sensitive systems. It centralizes access control, reduces management exposure, supports logging, and preserves security segmentation."],
+      "examples": ["Administrator laptop → Jump host → Server or network device", "Remote administrator → VPN → Jump box → Router"],
+      "callout": "A VPN provides secure connectivity; a jump box controls the administrative path inside the network."
+    },
+    {
+      "id": "in-band-and-out-of-band",
+      "title": "In-Band and Out-of-Band Management",
+      "entries": [
+        {"title": "In-Band Management", "paragraphs": ["In-band management uses the normal production network—for example, SSH, GUI, or API access over production IP connectivity. If production fails, remote management may also fail."], "memoryHook": "Manage the network through the network."},
+        {"title": "Out-of-Band Management", "paragraphs": ["Out-of-band management uses an independent management path, such as a dedicated network, management interface, or console-server system. It can remain available during production outages."], "memoryHook": "Separate backup path for administration."}
+      ],
+      "callout": "Console is a direct device-management method. Out-of-band describes a broader separate management architecture; console access can be part of it."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Network-to-network tunnel → Site-to-site VPN", "Remote user to organization → Client-to-site VPN", "Browser-based remote access → Clientless", "Only corporate traffic through VPN → Split tunnel", "All traffic through VPN → Full tunnel", "Secure remote CLI → SSH", "Visual management → GUI", "Automated software interaction → API", "Direct device management → Console", "Hardened administrative intermediary → Jump box/host", "Management over production network → In-band", "Separate management path → Out-of-band"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Site-to-Site vs. Client-to-Site", "paragraphs": ["Network to network → Site-to-site. Device or user to network → Client-to-site."]},
+        {"title": "Clientless vs. Client-to-Site", "paragraphs": ["Client-to-site describes the endpoint-to-network relationship. Clientless describes access without a traditional installed VPN client; these are not opposites."]},
+        {"title": "Split vs. Full Tunnel", "paragraphs": ["Corporate traffic only → Split. Everything → Full."]},
+        {"title": "SSH vs. Console", "paragraphs": ["Remote network CLI → SSH. Direct device access, especially when networking is broken → Console."]},
+        {"title": "GUI vs. API", "paragraphs": ["Human visual interaction → GUI. Software automation and integration → API."]},
+        {"title": "Jump Box vs. VPN", "paragraphs": ["Secure transport into a network → VPN. Controlled administrative intermediary → Jump box."]},
+        {"title": "Console vs. Out-of-Band", "paragraphs": ["Direct local method → Console. Separate management architecture or path → Out-of-band."]},
+        {"title": "In-Band vs. Out-of-Band", "paragraphs": ["Production network → In-band. Separate management path → Out-of-band."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Office-to-office tunnel → Site-to-site VPN", "Remote worker tunnel → Client-to-site VPN", "Browser access → Clientless", "Some traffic through VPN → Split tunnel", "All traffic through VPN → Full tunnel", "Secure remote CLI → SSH", "Visual management → GUI", "Programmatic management → API", "Direct device access → Console", "Administrative gateway → Jump box", "Production LAN management → In-band", "Separate management path → Out-of-band"],
+      "callout": "CONNECT SITES → CONNECT USERS → MANAGE DEVICES → CONTROL ADMIN ACCESS → KEEP A BACKUP PATH"
+    }
+  ]
+}

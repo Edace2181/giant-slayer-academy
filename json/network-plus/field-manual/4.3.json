@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "4",
+  "objective": "4.3",
+  "title": "Given a Scenario, Apply Network Security Features, Defense Techniques, and Solutions",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["After identifying risks and attacks, administrators apply controls that reduce exposure and restrict unauthorized access."],
+      "bullets": ["Device hardening, disabling unused ports/services, and changing default passwords", "NAC, port security, 802.1X, and MAC filtering", "Key management", "ACLs, URL filtering, and content filtering", "Trusted, untrusted, and screened-subnet zones"],
+      "callout": "HARDEN → VERIFY → RESTRICT → FILTER → SEGMENT"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given a network-security scenario, choose whether to reduce the attack surface, control who connects, protect cryptographic keys, filter traffic or content, or isolate systems into appropriate zones."],
+      "bullets": ["Reduce exposed functionality → Device hardening", "Turn off unnecessary interfaces/functions → Disable unused ports and services", "Replace factory credentials → Change default passwords", "Verify endpoints before access → NAC", "Restrict a switch port → Port security", "Authenticate at a port → 802.1X", "Allow/deny a MAC address → MAC filtering"]
+    },
+    {
+      "id": "device-hardening",
+      "title": "Device Hardening",
+      "paragraphs": ["Device hardening removes unnecessary exposure so systems are more difficult to attack."],
+      "entries": [
+        {"title": "Disable Unused Ports and Services", "paragraphs": ["Every unused switch interface, management protocol, and application service adds attack surface. If it is not needed, disable it."], "memoryHook": "Turn off what you do not need."},
+        {"title": "Change Default Passwords", "paragraphs": ["Factory credentials are widely known and routinely targeted. Replace them before deploying a device."], "memoryHook": "The factory password is an attacker's first guess."}
+      ]
+    },
+    {
+      "id": "network-access-control",
+      "title": "Network Access Control",
+      "entries": [
+        {"title": "Network Access Control (NAC)", "paragraphs": ["NAC is a broad framework that determines whether a user or device may join the network, potentially evaluating identity and endpoint status first."], "memoryHook": "Check before you connect."},
+        {"title": "Port Security", "paragraphs": ["Port security restricts which devices can use a specific switch interface."], "memoryHook": "This switch port accepts only approved devices."},
+        {"title": "802.1X", "paragraphs": ["802.1X provides authentication-based, port-level network access control for wired or wireless connections."], "memoryHook": "Authenticate before the port opens."},
+        {"title": "MAC Filtering", "paragraphs": ["MAC filtering permits or denies listed hardware addresses. Because a MAC address can be spoofed, it is weak identity proof by itself."], "memoryHook": "Is this MAC address on the list?"}
+      ],
+      "callout": "Broad admission framework → NAC. Port authentication → 802.1X. Switch-interface restriction → Port security. Address list → MAC filtering."
+    },
+    {
+      "id": "key-management",
+      "title": "Key Management",
+      "paragraphs": ["Key management protects the complete cryptographic-key lifecycle: creation, storage, distribution, rotation, and revocation. Poor key handling can defeat otherwise strong encryption."],
+      "callout": "CREATE → STORE → DISTRIBUTE → ROTATE → REVOKE"
+    },
+    {
+      "id": "security-rules",
+      "title": "Security Rules and Filtering",
+      "entries": [
+        {"title": "Access Control List (ACL)", "paragraphs": ["An ACL permits or denies network traffic using criteria such as source, destination, protocol, and port."], "memoryHook": "Traffic matches a rule, then allow or block."},
+        {"title": "URL Filtering", "paragraphs": ["URL filtering controls access to web destinations by URL or category."], "memoryHook": "Which websites may you visit?"},
+        {"title": "Content Filtering", "paragraphs": ["Content filtering evaluates the material or file type itself and blocks prohibited, unsafe, or unwanted content."], "memoryHook": "What is inside the traffic?"}
+      ],
+      "callout": "Network traffic criteria → ACL. Web destination → URL filter. Material itself → Content filter."
+    },
+    {
+      "id": "security-zones",
+      "title": "Trusted, Untrusted, and Screened Zones",
+      "entries": [
+        {"title": "Trusted Zone", "paragraphs": ["A trusted zone contains controlled internal systems given a higher level of trust."], "memoryHook": "Inside."},
+        {"title": "Untrusted Zone", "paragraphs": ["An untrusted zone contains networks that receive no automatic trust; the Internet is the classic example."], "memoryHook": "Outside."},
+        {"title": "Screened Subnet", "paragraphs": ["A screened subnet is an isolated buffer network for public-facing web servers, mail gateways, or other exposed services between untrusted networks and the trusted LAN."], "memoryHook": "Public services in the buffer."}
+      ],
+      "callout": "Internal → Trusted. External → Untrusted. Isolated middle zone → Screened subnet."
+    },
+    {
+      "id": "defense-in-depth",
+      "title": "Defense in Depth",
+      "paragraphs": ["Security controls are stronger together. A layered design can disable unused ports, replace default credentials, require 802.1X, enforce ACLs, filter web traffic and content, and isolate public servers in a screened subnet."],
+      "callout": "No single control protects everything."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Reduce attack surface → Device hardening", "Unused switch interface → Disable port", "Unnecessary function → Disable service", "Factory credential → Change default password", "Validate before joining → NAC", "Restrict switch-port device → Port security", "Authenticate before access → 802.1X", "MAC allow/deny list → MAC filtering", "Protect cryptographic keys → Key management", "Permit/deny traffic → ACL", "Block website → URL filtering", "Block material → Content filtering", "Internal network → Trusted", "Internet/external network → Untrusted", "Isolated public-facing network → Screened subnet"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "NAC vs. 802.1X", "paragraphs": ["Broad access-control solution → NAC. Specific port-authentication standard → 802.1X."]},
+        {"title": "Port Security vs. MAC Filtering", "paragraphs": ["Control switch-port access → Port security. Permit or deny listed MAC addresses → MAC filtering."]},
+        {"title": "MAC Filtering vs. 802.1X", "paragraphs": ["MAC address check → MAC filtering. Identity authentication → 802.1X."]},
+        {"title": "ACL vs. URL Filtering", "paragraphs": ["Network traffic rule → ACL. Web destination rule → URL filtering."]},
+        {"title": "URL Filtering vs. Content Filtering", "paragraphs": ["Where the user goes → URL filtering. What material is transferred → Content filtering."]},
+        {"title": "Trusted vs. Untrusted", "paragraphs": ["Internal/higher trust → Trusted. External/low trust → Untrusted."]},
+        {"title": "Screened Subnet vs. Trusted Network", "paragraphs": ["Externally reachable isolated systems → Screened subnet. Internal protected systems → Trusted zone."]},
+        {"title": "Encryption vs. Key Management", "paragraphs": ["Protect data cryptographically → Encryption. Protect the key lifecycle → Key management."]},
+        {"title": "Hardening vs. NAC", "paragraphs": ["Reduce exposure on a device → Hardening. Decide whether an endpoint joins the network → NAC."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Reduce exposure → Hardening", "Unused interface → Disable port", "Unnecessary protocol → Disable service", "Factory credentials → Change password", "Network admission → NAC", "Switch-port restriction → Port security", "Port authentication → 802.1X", "Address list → MAC filtering", "Key lifecycle → Key management", "Traffic rules → ACL", "Website rule → URL filtering", "Material rule → Content filtering", "Internal → Trusted", "External → Untrusted", "Public systems buffer → Screened subnet"],
+      "callout": "HARDEN → VERIFY → RESTRICT → FILTER → SEGMENT"
+    }
+  ]
+}

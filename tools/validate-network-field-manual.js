@@ -95,6 +95,62 @@ const objectives = {
     firstId: "2.4-01",
     sections: ["what-you-are-learning", "maestro-focus", "installation-locations", "racks-and-airflow", "cabling-distribution", "physical-security", "power", "environmental-factors", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
     topics: ["Intermediate Distribution Frame (IDF)", "Main Distribution Frame (MDF)", "Rack Size", "Port-Side Exhaust/Intake", "Patch Panel", "Fiber Distribution Panel", "Lockable", "Uninterruptible Power Supply (UPS)", "Power Distribution Unit (PDU)", "Power Load", "Voltage", "Humidity", "Fire Suppression", "Temperature"]
+  },
+  "3.1": {
+    count: 29,
+    hash: "722AE0036C62C4E6F17F0E26C5EFB028002E18FD7BE06488B1C12FBC7DCC5557",
+    firstId: "3.1-01",
+    sections: ["what-you-are-learning", "maestro-focus", "documentation", "physical-logical-and-rack-diagrams", "cable-and-network-diagrams", "asset-inventory", "ipam-sla-and-wireless-survey", "life-cycle-management", "software-management", "change-management", "configuration-management", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Physical Diagram", "Logical Diagram", "Rack Diagram", "Cable Maps", "Layer 1 Diagram", "Layer 2 Diagram", "Layer 3 Diagram", "Hardware", "Software", "Licensing", "Warranty Support", "IP Address Management (IPAM)", "Service-Level Agreement (SLA)", "Wireless Survey", "Heat Map", "End-of-Life (EOL)", "End-of-Support (EOS)", "Patches and Bug Fixes", "Operating System (OS)", "Firmware", "Decommissioning", "Change Management", "Request Process Tracking", "Service Request", "Production Configuration", "Backup Configuration", "Baseline/Golden Configuration"]
+  },
+  "3.2": {
+    count: 26,
+    hash: "3FCE0E622AB3A8399D862471FB98660ED7EF2F0C10EEE94A53849C14ADAC3214",
+    firstId: "3.2-01",
+    sections: ["what-you-are-learning", "maestro-focus", "snmp", "snmp-versions", "flow-and-packet-capture", "baselines-and-anomalies", "logs-and-siem", "api-and-port-mirroring", "network-discovery", "monitoring-solutions", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Simple Network Management Protocol (SNMP)", "SNMP Traps", "Management Information Base (MIB)", "SNMP v2c", "SNMP v3", "Community Strings", "Authentication", "Flow Data", "Packet Capture", "Baseline Metrics", "Anomaly Alerting/Notification", "Log Aggregation", "Syslog Collector", "Security Information and Event Management (SIEM)", "Application Programming Interface (API) Integration", "Port Mirroring", "Network Discovery", "Ad Hoc Discovery", "Scheduled Discovery", "Traffic Analysis", "Performance Monitoring", "Availability Monitoring", "Configuration Monitoring"]
+  },
+  "3.3": {
+    count: 14,
+    hash: "0918B22A05D0C9B4A8FBAA4600EC37E0837C38246F7C90D930081E36E0427E23",
+    firstId: 133001,
+    sections: ["what-you-are-learning", "maestro-focus", "dr-metrics", "dr-sites", "high-availability", "dr-testing", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Recovery Point Objective (RPO)", "Recovery Time Objective (RTO)", "Mean Time to Repair (MTTR)", "Mean Time Between Failures (MTBF)", "Cold Site", "Warm Site", "Hot Site", "Active-Active", "Active-Passive", "Tabletop Exercise", "Validation Test"]
+  },
+  "3.4": {
+    count: 30,
+    hash: "DFBBCEA222953A8528855C532A298E87A7E526154A46CCF657770DCD303EB3D6",
+    firstId: "3.4-01",
+    sections: ["what-you-are-learning", "maestro-focus", "dhcp", "slaac", "dns-security", "dns-records", "dns-zones-and-answers", "hosts-file", "time-protocols", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Dynamic Host Configuration Protocol (DHCP)", "Scope", "Reservation", "Lease Time", "Options", "Relay/IP Helper", "Exclusions", "Stateless Address Autoconfiguration (SLAAC)", "Domain Name System (DNS)", "Domain Name System Security Extensions (DNSSEC)", "DNS over HTTPS (DoH)", "DNS over TLS (DoT)", "Address (A)", "AAAA", "Canonical Name (CNAME)", "Mail Exchange (MX)", "Text (TXT)", "Nameserver (NS)", "Pointer (PTR)", "Forward", "Reverse", "Authoritative", "Non-Authoritative", "Primary", "Secondary", "Recursive", "Hosts File", "Network Time Protocol (NTP)", "Precision Time Protocol (PTP)", "Network Time Security (NTS)"]
+  },
+  "3.5": {
+    count: 12,
+    hash: "F64335DCF19533F9A97E9EB934CB269DE189D2DCE2A34590FCA55A3454C758E7",
+    firstId: "3.5-01",
+    sections: ["what-you-are-learning", "maestro-focus", "vpn-types", "split-and-full-tunnels", "connection-methods", "jump-box", "in-band-and-out-of-band", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Site-to-Site VPN", "Client-to-Site VPN", "Clientless VPN", "Split Tunnel", "Full Tunnel", "Secure Shell (SSH)", "Graphical User Interface (GUI)", "Application Programming Interface (API)", "Console", "Jump Box", "In-Band Management", "Out-of-Band Management"]
+  },
+  "4.1": {
+    count: 38,
+    hash: "409A30E027C1A269A29F83656AB2D4B468A146067B587DA45BB47DF8E4746C89",
+    firstId: "4.1-01",
+    sections: ["what-you-are-learning", "maestro-focus", "encryption-and-certificates", "identity-and-access-management", "aaa-and-federation", "authorization-controls", "physical-and-deception-security", "security-terminology", "cia-triad", "compliance", "network-segmentation", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Encryption", "Data in Transit", "Data at Rest", "Digital Certificate", "Public Key Infrastructure (PKI)", "Self-Signed Certificate", "Identity and Access Management (IAM)", "Authentication", "Multifactor Authentication (MFA)", "Single Sign-On (SSO)", "RADIUS", "LDAP", "SAML", "TACACS+", "Time-Based Authentication", "Authorization", "Least Privilege", "Role-Based Access Control (RBAC)", "Geofencing", "Cameras", "Locks", "Honeypot", "Honeynet", "Risk", "Vulnerability", "Exploit", "Threat", "Confidentiality", "Integrity", "Availability", "Data Locality", "PCI DSS", "GDPR", "Network Segmentation", "IoT", "IIoT", "SCADA", "ICS", "OT", "Guest", "BYOD"]
+  },
+  "4.2": {
+    count: 18,
+    hash: "CB28242AC2A93FAD8425548F2650DB775B99E73A4E89B2D4E21262A24EE85E0F",
+    firstId: "4.2-01",
+    sections: ["what-you-are-learning", "maestro-focus", "denial-of-service", "switching-attacks", "arp-attacks", "dns-attacks", "rogue-and-wireless-attacks", "social-engineering", "malware", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Denial-of-Service (DoS)", "Distributed Denial-of-Service (DDoS)", "VLAN Hopping", "Media Access Control (MAC) Flooding", "ARP Poisoning", "ARP Spoofing", "DNS Poisoning", "DNS Spoofing", "Rogue DHCP", "Rogue AP", "Evil Twin", "On-Path Attack", "Phishing", "Dumpster Diving", "Shoulder Surfing", "Tailgating", "Malware"]
+  },
+  "4.3": {
+    count: 13,
+    hash: "2535504C1E327BF3AC20F00A1DC55ADB248700B711511D8797745748E623CF50",
+    firstId: "4.3-01",
+    sections: ["what-you-are-learning", "maestro-focus", "device-hardening", "network-access-control", "key-management", "security-rules", "security-zones", "defense-in-depth", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Device Hardening", "Disable Unused Ports and Services", "Change Default Passwords", "Network Access Control (NAC)", "Port Security", "802.1X", "MAC Filtering", "Key Management", "Access Control List (ACL)", "URL Filtering", "Content Filtering", "Trusted Zone", "Untrusted Zone", "Screened Subnet"]
   }
 };
 
@@ -124,7 +180,9 @@ for (const [objective, expected] of Object.entries(objectives)) {
 
 const hubs = {
   "1": read("network-world1-objectives.html"),
-  "2": read("network-world2-objectives.html")
+  "2": read("network-world2-objectives.html"),
+  "3": read("network-world3-objectives.html"),
+  "4": read("network-world4-objectives.html")
 };
 const campaign = read("network-campaign.html");
 const manualPage = read("network-field-manual.html");
@@ -134,6 +192,8 @@ const quizScript = read("quiz.js");
 
 requireValue(campaign.includes('href="network-world1-objectives.html"'), "Campaign World 1 must route to its Objective Hub.");
 requireValue(campaign.includes('href="network-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
+requireValue(campaign.includes('href="network-world3-objectives.html"'), "Campaign World 3 must route to its Objective Hub.");
+requireValue(campaign.includes('href="network-world4-objectives.html"'), "Campaign World 4 must route to its Objective Hub.");
 for (const objective of Object.keys(objectives)) {
   const world = objective.split(".")[0];
   const hub = hubs[world];
@@ -152,6 +212,8 @@ requireValue(manualScript.includes('"json/world" + world + "/" + objective + "-h
 requireValue(manualScript.includes('window.location.assign("hydra-quiz.html?world="'), "Completing a manual must continue to the existing Objective Sweep.");
 requireValue(manualScript.includes('elements.returnLink.href = "network-world" + world + "-objectives.html"'), "Field Manuals must return to their Objective Hub.");
 requireValue(manualScript.includes('(world === "2" && /^2\\.[1-4]$/.test(objective))'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
+requireValue(manualScript.includes('(world === "3" && /^3\\.[1-5]$/.test(objective))'), "The Field Manual route gate must include published World 3 objectives 3.1-3.5.");
+requireValue(manualScript.includes('(world === "4" && /^4\\.[1-3]$/.test(objective))'), "The Field Manual route gate must include only published World 4 objectives 4.1-4.3.");
 requireValue(quizScript.includes("returnLink.href = getWorldMenuFile(world)"), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {

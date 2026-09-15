@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "4",
+  "objective": "4.2",
+  "title": "Summarize Various Types of Attacks and Their Impact to the Network",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network attacks target availability, switching, address resolution, DNS, wireless access, network services, people, and endpoints."],
+      "bullets": ["DoS and DDoS", "VLAN hopping and MAC flooding", "ARP poisoning and spoofing", "DNS poisoning and spoofing", "Rogue DHCP, rogue APs, evil twins, and on-path attacks", "Phishing, dumpster diving, shoulder surfing, and tailgating", "Malware"],
+      "callout": "OVERWHELM → BYPASS → IMPERSONATE → REDIRECT → INTERCEPT → DECEIVE → INFECT"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When network behavior becomes abnormal, identify whether an attacker is exhausting resources, bypassing segmentation, corrupting mappings, redirecting DNS, introducing rogue infrastructure, intercepting traffic, manipulating people, or deploying malware."],
+      "bullets": ["One source overwhelms service → DoS", "Many sources overwhelm service → DDoS", "Unauthorized cross-VLAN access → VLAN hopping", "Fake MAC entries fill a switch table → MAC flooding", "Corrupted ARP mappings → ARP poisoning", "Forged ARP messages → ARP spoofing"]
+    },
+    {
+      "id": "denial-of-service",
+      "title": "Denial-of-Service Attacks",
+      "entries": [
+        {"title": "Denial-of-Service (DoS)", "paragraphs": ["A DoS attack makes a system, network, or service unavailable by exhausting bandwidth, CPU, memory, connection capacity, or application resources, commonly from one primary source."], "memoryHook": "Overwhelm the target."},
+        {"title": "Distributed Denial-of-Service (DDoS)", "paragraphs": ["A DDoS attack coordinates many systems against one target, making source blocking more difficult while producing the same availability impact."], "memoryHook": "Many attackers → one target."}
+      ],
+      "callout": "One source → DoS. Many distributed sources → DDoS."
+    },
+    {
+      "id": "switching-attacks",
+      "title": "VLAN Hopping and MAC Flooding",
+      "entries": [
+        {"title": "VLAN Hopping", "paragraphs": ["VLAN hopping attempts to bypass segmentation and reach traffic or resources on another VLAN."], "memoryHook": "Escape your VLAN."},
+        {"title": "Media Access Control (MAC) Flooding", "paragraphs": ["MAC flooding overwhelms a switch's address table with fake source MAC entries, disrupting normal forwarding and potentially causing less-secure traffic handling."], "memoryHook": "Fill the switch's MAC table."}
+      ]
+    },
+    {
+      "id": "arp-attacks",
+      "title": "ARP Poisoning and Spoofing",
+      "paragraphs": ["Address Resolution Protocol (ARP) maps local IPv4 addresses to MAC addresses. Manipulated mappings can redirect traffic."],
+      "entries": [
+        {"title": "ARP Poisoning", "paragraphs": ["ARP poisoning is the corrupted result: hosts store false IP-to-MAC mappings."], "memoryHook": "Bad table."},
+        {"title": "ARP Spoofing", "paragraphs": ["ARP spoofing is the action of sending forged ARP messages while impersonating another system."], "memoryHook": "Fake ARP message."}
+      ],
+      "callout": "Forged message → Spoofing. Corrupted mapping table → Poisoning."
+    },
+    {
+      "id": "dns-attacks",
+      "title": "DNS Poisoning and Spoofing",
+      "entries": [
+        {"title": "DNS Poisoning", "paragraphs": ["DNS poisoning corrupts resolution information or a DNS cache so users receive maliciously incorrect answers."], "memoryHook": "Corrupted DNS data."},
+        {"title": "DNS Spoofing", "paragraphs": ["DNS spoofing sends a falsified response that impersonates legitimate DNS information."], "memoryHook": "Fake DNS reply."}
+      ],
+      "callout": "Fake response → Spoofing. Corrupted stored resolution data → Poisoning."
+    },
+    {
+      "id": "rogue-and-wireless-attacks",
+      "title": "Rogue Devices, Evil Twins, and On-Path Attacks",
+      "entries": [
+        {"title": "Rogue DHCP", "paragraphs": ["An unauthorized DHCP service gives clients malicious or incorrect addressing, gateway, or DNS settings."], "memoryHook": "A fake address server gives bad directions."},
+        {"title": "Rogue AP", "paragraphs": ["A rogue access point is an unauthorized wireless device connected to or operating inside an organization, creating an uncontrolled network path."], "memoryHook": "Unapproved Wi-Fi device."},
+        {"title": "Evil Twin", "paragraphs": ["An evil twin deliberately imitates a trusted WLAN's SSID, appearance, or login experience to attract victims."], "memoryHook": "Fake Wi-Fi that looks real."},
+        {"title": "On-Path Attack", "paragraphs": ["An on-path attacker secretly positions between communicating endpoints to observe or manipulate their traffic while both believe they communicate directly."], "memoryHook": "The attacker sits in the middle."}
+      ],
+      "callout": "Any unauthorized AP → Rogue AP. An AP impersonating a trusted WLAN → Evil twin. Interception of an existing path → On-path."
+    },
+    {
+      "id": "social-engineering",
+      "title": "Social Engineering",
+      "paragraphs": ["Social engineering attacks people rather than relying only on technical exploitation."],
+      "entries": [
+        {"title": "Phishing", "paragraphs": ["Deceptive messages trick users into revealing credentials or sensitive data, sending money, or executing malware."], "memoryHook": "Fraudulent message."},
+        {"title": "Dumpster Diving", "paragraphs": ["Attackers search discarded materials for passwords, diagrams, account data, labels, or other useful information."], "memoryHook": "Trash can contain data."},
+        {"title": "Shoulder Surfing", "paragraphs": ["An attacker observes someone entering or viewing a password, PIN, or other secret."], "memoryHook": "Look over the shoulder."},
+        {"title": "Tailgating", "paragraphs": ["An unauthorized person follows an authorized person through a controlled entrance into a restricted area."], "memoryHook": "Follow them through the door."}
+      ]
+    },
+    {
+      "id": "malware",
+      "title": "Malware",
+      "paragraphs": ["Malware is malicious software designed to damage, disrupt, spy on, control, steal from, or further compromise systems. Network impacts include propagation, data theft, outages, and unauthorized control."],
+      "callout": "Harmful software executing on an endpoint → Malware."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["One source overwhelms → DoS", "Many sources overwhelm → DDoS", "Escape VLAN segmentation → VLAN hopping", "Overflow MAC table → MAC flooding", "Corrupt ARP table → ARP poisoning", "Forged ARP response → ARP spoofing", "Corrupt DNS data/cache → DNS poisoning", "Fake DNS response → DNS spoofing", "Unauthorized address service → Rogue DHCP", "Unauthorized wireless device → Rogue AP", "Fake trusted WLAN → Evil twin", "Attacker between endpoints → On-path", "Deceptive message → Phishing", "Search discarded data → Dumpster diving", "Observe credentials → Shoulder surfing", "Follow through restricted door → Tailgating", "Malicious software → Malware"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "DoS vs. DDoS", "paragraphs": ["One source → DoS. Many distributed sources → DDoS."]},
+        {"title": "VLAN Hopping vs. MAC Flooding", "paragraphs": ["Reach another VLAN → VLAN hopping. Overload the MAC table → MAC flooding."]},
+        {"title": "ARP Poisoning vs. ARP Spoofing", "paragraphs": ["Corrupted mapping table → Poisoning. Forged ARP messages → Spoofing."]},
+        {"title": "DNS Poisoning vs. DNS Spoofing", "paragraphs": ["Corrupted DNS information → Poisoning. Fake DNS response → Spoofing."]},
+        {"title": "Rogue DHCP vs. Rogue AP", "paragraphs": ["Unauthorized address service → Rogue DHCP. Unauthorized wireless device → Rogue AP."]},
+        {"title": "Rogue AP vs. Evil Twin", "paragraphs": ["Unauthorized AP → Rogue AP. AP deliberately imitating a trusted WLAN → Evil twin."]},
+        {"title": "Evil Twin vs. On-Path", "paragraphs": ["Fake WLAN attracts the victim → Evil twin. Attacker intercepts an existing communication path → On-path."]},
+        {"title": "Phishing vs. Shoulder Surfing", "paragraphs": ["Deceptive message → Phishing. Physical observation → Shoulder surfing."]},
+        {"title": "Dumpster Diving vs. Tailgating", "paragraphs": ["Search discarded materials → Dumpster diving. Follow someone through an access point → Tailgating."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Overwhelm → DoS", "Distributed overwhelm → DDoS", "Escape VLAN → VLAN hopping", "Fill MAC table → MAC flooding", "Bad ARP table → ARP poisoning", "Fake ARP → ARP spoofing", "Bad DNS data → DNS poisoning", "Fake DNS reply → DNS spoofing", "Unauthorized DHCP → Rogue DHCP", "Unauthorized AP → Rogue AP", "Fake trusted Wi-Fi → Evil twin", "Intercept in middle → On-path", "Deceptive message → Phishing", "Search trash → Dumpster diving", "Watch credentials → Shoulder surfing", "Follow through door → Tailgating", "Malicious software → Malware"],
+      "callout": "OVERWHELM → BYPASS → IMPERSONATE → REDIRECT → INTERCEPT → DECEIVE → INFECT"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "3",
+  "objective": "3.4",
+  "title": "Given a Scenario, Implement IPv4 and IPv6 Network Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network services perform essential background work: assigning addresses, resolving names, validating DNS information, and synchronizing time for IPv4 and IPv6 systems."],
+      "bullets": ["DHCP reservations, scopes, leases, options, relay/IP helper, and exclusions", "Stateless Address Autoconfiguration (SLAAC)", "DNSSEC, DoH, DoT, and common DNS records", "Forward/reverse, authoritative/non-authoritative, primary/secondary, and recursive DNS", "Hosts files", "NTP, PTP, and NTS"],
+      "callout": "ASSIGN ADDRESSES → RESOLVE NAMES → VERIFY SOURCES → SYNCHRONIZE TIME"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a host needs addressing, name resolution, or accurate time, identify the network service and configuration option that controls the required behavior."],
+      "bullets": ["Automatic IPv4 addressing → DHCP", "Same address for the same client → Reservation", "DHCP address pool → Scope", "Assignment duration → Lease time", "Additional settings → Options", "DHCP across subnets → Relay/IP helper", "Addresses never assigned dynamically → Exclusions", "Automatic IPv6 self-configuration → SLAAC"]
+    },
+    {
+      "id": "dhcp",
+      "title": "Dynamic Host Configuration Protocol (DHCP)",
+      "paragraphs": ["DHCP automatically supplies IPv4 clients with an address, subnet information, default gateway, DNS servers, and other network settings."],
+      "entries": [
+        {"title": "Scope", "paragraphs": ["A DHCP scope defines the pool or range of addresses available for a particular network."], "memoryHook": "Which addresses can DHCP hand out?"},
+        {"title": "Reservation", "paragraphs": ["A reservation consistently assigns a particular DHCP address to a particular client, providing predictable addressing without manual client configuration."], "memoryHook": "DHCP, but always the same address."},
+        {"title": "Lease Time", "paragraphs": ["Lease time controls how long a client may use an assigned address before renewal. Short leases suit rapidly changing clients; longer leases reduce renewal activity in stable environments."], "memoryHook": "How long may the client keep it?"},
+        {"title": "Options", "paragraphs": ["DHCP options provide extra settings such as the default gateway, DNS servers, and other network-specific parameters."], "memoryHook": "Address plus extra settings."},
+        {"title": "Relay/IP Helper", "paragraphs": ["A DHCP relay, often configured as an IP helper, forwards DHCP messages between subnets because routers do not normally forward the client's initial broadcasts."], "memoryHook": "Client and DHCP server are on different subnets."},
+        {"title": "Exclusions", "paragraphs": ["An exclusion identifies addresses inside the network range that DHCP must not assign dynamically, protecting addresses used by routers, servers, printers, and infrastructure."], "memoryHook": "Do not give these addresses out."}
+      ],
+      "callout": "Pool → Scope. Same client/same address → Reservation. Keep out → Exclusion."
+    },
+    {
+      "id": "slaac",
+      "title": "Stateless Address Autoconfiguration (SLAAC)",
+      "paragraphs": ["SLAAC lets an IPv6 host form its own IPv6 address using information advertised by the local IPv6 network, without requiring a stateful DHCP server to assign the address."],
+      "callout": "Server-driven assignment → DHCP. IPv6 host self-configuration → SLAAC."
+    },
+    {
+      "id": "dns-security",
+      "title": "DNS, DNSSEC, DoH, and DoT",
+      "entries": [
+        {"title": "Domain Name System (DNS)", "paragraphs": ["DNS resolves human-friendly names to network information such as IP addresses."], "memoryHook": "Name → address."},
+        {"title": "Domain Name System Security Extensions (DNSSEC)", "paragraphs": ["DNSSEC cryptographically validates the authenticity and integrity of DNS data. Its primary purpose is trusting the answer, not encrypting the query."], "memoryHook": "Can I trust this DNS answer?"},
+        {"title": "DNS over HTTPS (DoH)", "paragraphs": ["DoH protects DNS queries by carrying them through HTTPS."], "memoryHook": "DNS inside HTTPS."},
+        {"title": "DNS over TLS (DoT)", "paragraphs": ["DoT protects DNS communication directly with TLS."], "memoryHook": "DNS inside TLS."}
+      ],
+      "callout": "Trust the answer → DNSSEC. HTTPS transport → DoH. TLS transport → DoT."
+    },
+    {
+      "id": "dns-records",
+      "title": "DNS Record Types",
+      "table": {
+        "caption": "Required Network+ DNS record recognition",
+        "headers": ["Record", "Purpose", "Recognition"],
+        "rows": [
+          ["Address (A)", "Hostname to IPv4 address", "A = IPv4"],
+          ["AAAA", "Hostname to IPv6 address", "AAAA = IPv6"],
+          ["Canonical Name (CNAME)", "Alias to another hostname", "One name points to another name"],
+          ["Mail Exchange (MX)", "Mail server for a domain", "Where does the mail go?"],
+          ["Text (TXT)", "Text, verification, or policy data", "Store text in DNS"],
+          ["Nameserver (NS)", "DNS server responsible for a zone", "Who serves this zone?"],
+          ["Pointer (PTR)", "IP address to hostname", "Reverse lookup"]
+        ]
+      },
+      "callout": "A → IPv4. AAAA → IPv6. CNAME → Alias. MX → Mail. TXT → Text. NS → Nameserver. PTR → Reverse."
+    },
+    {
+      "id": "dns-zones-and-answers",
+      "title": "DNS Zones and Answer Types",
+      "entries": [
+        {"title": "Forward and Reverse Zones", "paragraphs": ["A forward zone resolves a hostname to an IP address. A reverse zone uses PTR records to resolve an IP address back to a hostname."], "memoryHook": "Name first → Forward. IP first → Reverse."},
+        {"title": "Authoritative vs. Non-Authoritative", "paragraphs": ["An authoritative answer comes from a DNS server responsible for the zone. A non-authoritative answer comes from another source, often cached data held by a resolver."], "memoryHook": "Owns the answer vs. learned the answer."},
+        {"title": "Primary vs. Secondary", "paragraphs": ["A primary DNS zone holds the main writable copy. A secondary holds a replicated copy received from a primary."], "memoryHook": "Main source vs. replica."},
+        {"title": "Recursive DNS", "paragraphs": ["A recursive resolver contacts other DNS servers on the client's behalf until it finds the needed answer."], "memoryHook": "Client asks once; resolver does the searching."}
+      ]
+    },
+    {
+      "id": "hosts-file",
+      "title": "Hosts File",
+      "paragraphs": ["A hosts file provides local, static hostname-to-IP mappings on one device and can resolve those entries without querying DNS."],
+      "callout": "One device and manual mapping → Hosts file. Central network name-resolution service → DNS."
+    },
+    {
+      "id": "time-protocols",
+      "title": "Time Protocols",
+      "paragraphs": ["Accurate time supports logging, authentication, certificates, troubleshooting, distributed systems, and security analysis."],
+      "entries": [
+        {"title": "Network Time Protocol (NTP)", "paragraphs": ["NTP provides general clock synchronization across networked devices."], "memoryHook": "Keep everybody on the same clock."},
+        {"title": "Precision Time Protocol (PTP)", "paragraphs": ["PTP provides highly precise synchronization for environments where normal NTP precision is insufficient."], "memoryHook": "When NTP is not precise enough."},
+        {"title": "Network Time Security (NTS)", "paragraphs": ["NTS adds authentication and protection to network time synchronization."], "memoryHook": "Secure NTP."}
+      ],
+      "callout": "General time → NTP. High precision → PTP. Secure time → NTS."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Automatic IPv4 configuration → DHCP", "Address pool → Scope", "Same client/same IP → Reservation", "Assignment duration → Lease time", "Additional settings → DHCP options", "DHCP across a router → Relay/IP helper", "Prevent dynamic assignment → Exclusion", "IPv6 self-configuration → SLAAC", "Name resolution → DNS", "DNS authenticity and integrity → DNSSEC", "DNS over HTTPS → DoH", "DNS over TLS → DoT", "IPv4 name mapping → A", "IPv6 name mapping → AAAA", "Alias → CNAME", "Mail server → MX", "Text data → TXT", "Zone nameserver → NS", "Reverse lookup → PTR", "Name to IP → Forward zone", "IP to name → Reverse zone", "Responsible server → Authoritative", "Cached answer → Non-authoritative", "Writable zone → Primary", "Replica zone → Secondary", "Searches for client → Recursive", "Local static mapping → Hosts file", "Standard time → NTP", "Precise time → PTP", "Secure time → NTS"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Reservation vs. Exclusion", "paragraphs": ["Same client always receives the same DHCP address → Reservation. DHCP never dynamically issues an address → Exclusion."]},
+        {"title": "Scope vs. Lease", "paragraphs": ["Pool of addresses → Scope. How long an assignment remains valid → Lease."]},
+        {"title": "DHCP vs. SLAAC", "paragraphs": ["Server-driven assignment → DHCP. IPv6 self-configuration → SLAAC."]},
+        {"title": "DNSSEC vs. DoH vs. DoT", "paragraphs": ["Validate DNS data → DNSSEC. Encrypt DNS with HTTPS → DoH. Encrypt DNS with TLS → DoT."]},
+        {"title": "A vs. AAAA", "paragraphs": ["IPv4 → A. IPv6 → AAAA."]},
+        {"title": "CNAME vs. A", "paragraphs": ["Alias to another hostname → CNAME. Hostname directly mapped to IPv4 → A."]},
+        {"title": "MX vs. NS", "paragraphs": ["Mail server → MX. DNS server for the zone → NS."]},
+        {"title": "Forward vs. Reverse DNS", "paragraphs": ["Name to address → Forward. Address to name → Reverse."]},
+        {"title": "Authoritative vs. Recursive", "paragraphs": ["Owns the zone answer → Authoritative. Searches other servers for the client → Recursive."]},
+        {"title": "Primary vs. Secondary", "paragraphs": ["Main writable zone → Primary. Replica → Secondary."]},
+        {"title": "Hosts File vs. DNS", "paragraphs": ["Local static mapping → Hosts file. Central name-resolution service → DNS."]},
+        {"title": "NTP vs. PTP vs. NTS", "paragraphs": ["General time → NTP. Precise time → PTP. Secure time → NTS."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Automatic IPv4 → DHCP", "Pool → Scope", "Same client/same IP → Reservation", "Duration → Lease", "Extra settings → Options", "Across subnets → Relay/IP helper", "Do not assign → Exclusion", "IPv6 autoconfiguration → SLAAC", "Name resolution → DNS", "Authenticity → DNSSEC", "HTTPS → DoH", "TLS → DoT", "IPv4 → A", "IPv6 → AAAA", "Alias → CNAME", "Mail → MX", "Text → TXT", "Nameserver → NS", "Reverse → PTR", "Name to IP → Forward", "IP to name → Reverse", "Zone owner → Authoritative", "Cached → Non-authoritative", "Main copy → Primary", "Replica → Secondary", "Client lookup service → Recursive", "Local mapping → Hosts file", "Standard time → NTP", "Precision → PTP", "Secure time → NTS"],
+      "callout": "ASSIGN ADDRESSES → RESOLVE NAMES → VERIFY SOURCES → SYNCHRONIZE TIME"
+    }
+  ]
+}

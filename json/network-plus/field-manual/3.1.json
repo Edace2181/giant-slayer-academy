@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "3",
+  "objective": "3.1",
+  "title": "Explain the Purpose of Organizational Processes and Procedures",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["A working network is not necessarily a manageable network. Documentation, life-cycle procedures, change controls, and known-good configurations let administrators understand what exists, where it is, how it connects, who supports it, when it should be replaced, what changed, and what correct operation looks like."],
+      "bullets": ["Physical, logical, rack, cable, and Layer 1-3 diagrams", "Hardware, software, licensing, and warranty inventories", "IPAM, SLAs, wireless surveys, and heat maps", "EOL, EOS, software management, and decommissioning", "Change-management request tracking", "Production, backup, and baseline/golden configurations"],
+      "callout": "DOCUMENT → TRACK → MAINTAIN → CHANGE → CONFIGURE → RETIRE"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["If someone new had to operate or troubleshoot the network tomorrow, identify the information and processes they would need to understand what exists, what changed, and what the environment should look like."],
+      "bullets": ["Real placement and connections → Physical diagram", "Functional network relationships → Logical diagram", "Rack positions → Rack diagram", "Cable paths and endpoints → Cable map", "Switching and VLAN relationships → Layer 2 diagram", "IP and routing relationships → Layer 3 diagram", "Track addresses → IPAM", "Agreed service expectations → SLA", "Known-good configuration → Baseline/golden configuration"]
+    },
+    {
+      "id": "documentation",
+      "title": "Documentation",
+      "paragraphs": ["Documentation records important information about the network and supporting systems. Good documentation prevents the next administrator from guessing and improves troubleshooting, maintenance, upgrades, audits, and disaster recovery."],
+      "callout": "Document the environment so knowledge survives staff and technology changes."
+    },
+    {
+      "id": "physical-logical-and-rack-diagrams",
+      "title": "Physical, Logical, and Rack Diagrams",
+      "entries": [
+        {"title": "Physical Diagram", "paragraphs": ["A physical diagram represents equipment, ports, cables, racks, physical links, and real locations—things an administrator can physically touch."], "recognitionCue": "Actual cable or device placement → Physical diagram."},
+        {"title": "Logical Diagram", "paragraphs": ["A logical diagram emphasizes how the network functions: networks, VLANs, subnets, routing relationships, and logical connections rather than exact placement."], "recognitionCue": "VLAN, subnet, or functional relationship → Logical diagram."},
+        {"title": "Rack Diagram", "paragraphs": ["A rack diagram shows where equipment is positioned in a rack, available rack space, and the organization of installed devices."], "recognitionCue": "Locate a particular switch inside a rack → Rack diagram."}
+      ]
+    },
+    {
+      "id": "cable-and-network-diagrams",
+      "title": "Cable Maps and Layer 1-3 Network Diagrams",
+      "entries": [
+        {"title": "Cable Maps and Diagrams", "paragraphs": ["Cable maps trace cable origins and destinations, patch-panel ports, switch ports, wall connections, and device endpoints."], "memoryHook": "Where does this cable go?"},
+        {"title": "Layer 1 Diagram", "paragraphs": ["A Layer 1 diagram focuses on physical devices, cables, interfaces, and physical links."], "memoryHook": "Physical connectivity."},
+        {"title": "Layer 2 Diagram", "paragraphs": ["A Layer 2 diagram focuses on switches, VLANs, data-link connections, and switching relationships."], "memoryHook": "Switching and VLANs."},
+        {"title": "Layer 3 Diagram", "paragraphs": ["A Layer 3 diagram focuses on IP networks, subnets, routers, Layer 3 interfaces, and routing relationships."], "memoryHook": "IP and routing."}
+      ],
+      "callout": "Physical links → Layer 1. Switching/VLANs → Layer 2. IP/routing → Layer 3."
+    },
+    {
+      "id": "asset-inventory",
+      "title": "Asset Inventory",
+      "paragraphs": ["An asset inventory answers: What technology does the organization own, operate, or manage? Useful records include models, serial numbers, locations, ownership, deployment status, and support information."],
+      "entries": [
+        {"title": "Hardware", "paragraphs": ["Tracks physical assets such as routers, switches, access points, servers, and workstations."]},
+        {"title": "Software", "paragraphs": ["Tracks deployed applications and versions for management, compatibility, security, and support."]},
+        {"title": "Licensing", "paragraphs": ["Records authorized software use and the number of licenses available or consumed."]},
+        {"title": "Warranty Support", "paragraphs": ["Records whether hardware remains eligible for manufacturer or vendor support and replacement."]}
+      ]
+    },
+    {
+      "id": "ipam-sla-and-wireless-survey",
+      "title": "IPAM, SLAs, and Wireless Surveys",
+      "entries": [
+        {"title": "IP Address Management (IPAM)", "paragraphs": ["IPAM centrally tracks address ranges, subnets, allocated addresses, and available addresses."], "memoryHook": "Who has which IP?"},
+        {"title": "Service-Level Agreement (SLA)", "paragraphs": ["An SLA defines agreed and measurable service expectations such as availability, response time, or restoration targets."], "memoryHook": "What service level was promised?"},
+        {"title": "Wireless Survey and Heat Map", "paragraphs": ["A wireless survey measures wireless conditions in a physical space. A heat map visualizes coverage or signal characteristics and helps reveal weak areas and gaps."], "memoryHook": "Where is Wi-Fi strong or weak?"}
+      ]
+    },
+    {
+      "id": "life-cycle-management",
+      "title": "Life-Cycle Management",
+      "paragraphs": ["Technology moves through deployment, maintenance, updates, and retirement. Life-cycle management plans these stages so unsupported or obsolete systems do not become operational and security risks."],
+      "entries": [
+        {"title": "End-of-Life (EOL)", "paragraphs": ["EOL means a product has reached the end of its product lifecycle and is being discontinued or retired."], "memoryHook": "The product is being retired."},
+        {"title": "End-of-Support (EOS)", "paragraphs": ["EOS means the vendor stops providing support for the product."], "memoryHook": "No more vendor support."},
+        {"title": "Decommissioning", "paragraphs": ["Decommissioning is the controlled removal of equipment or systems from production. It includes handling connections, configuration, data, ownership records, and dependent processes—not merely unplugging the device."], "memoryHook": "Retire it properly."}
+      ],
+      "callout": "EOL is product retirement; EOS is support termination. They can occur at different times."
+    },
+    {
+      "id": "software-management",
+      "title": "Software Management",
+      "entries": [
+        {"title": "Patches and Bug Fixes", "paragraphs": ["Patches and bug fixes correct security vulnerabilities, stability issues, and functional defects."], "memoryHook": "Fix the software."},
+        {"title": "Operating System (OS)", "paragraphs": ["Operating systems require tracked versions, updates, compatibility planning, and lifecycle management."]},
+        {"title": "Firmware", "paragraphs": ["Firmware is software embedded in or closely associated with hardware. Routers, switches, and APs may require firmware updates for bugs, security, compatibility, or features."], "recognitionCue": "A low-level vendor update for a network appliance → Firmware."}
+      ]
+    },
+    {
+      "id": "change-management",
+      "title": "Change Management",
+      "paragraphs": ["Change management provides a controlled, documented process for modifying production technology. It records what will change, why it is needed, who requested or approved it, and what happened."],
+      "entries": [
+        {"title": "Request Process Tracking / Service Request", "paragraphs": ["A service request creates an accountable, trackable record of requested network work or changes and preserves a history of the request."], "memoryHook": "Create a record of the request."}
+      ],
+      "callout": "Do not make untracked production changes."
+    },
+    {
+      "id": "configuration-management",
+      "title": "Configuration Management",
+      "entries": [
+        {"title": "Production Configuration", "paragraphs": ["The production configuration is what the live environment uses right now."], "memoryHook": "Live now."},
+        {"title": "Backup Configuration", "paragraphs": ["A backup configuration is a saved copy used to restore a lost, damaged, or unwanted current configuration."], "memoryHook": "Recovery copy."},
+        {"title": "Baseline/Golden Configuration", "paragraphs": ["A baseline or golden configuration is an approved, known-good standard used for comparison and consistent deployment."], "memoryHook": "What correct should look like."}
+      ],
+      "callout": "Live → Production. Restore → Backup. Approved standard → Golden."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Physical connections → Physical diagram", "Functional relationships → Logical diagram", "Equipment placement → Rack diagram", "Trace cables → Cable map", "Physical topology → Layer 1", "VLAN/switching topology → Layer 2", "IP/routing topology → Layer 3", "Track technology → Asset inventory", "Track addresses → IPAM", "Agreed service expectations → SLA", "Wireless coverage → Heat map", "Product lifecycle ends → EOL", "Vendor support ends → EOS", "Correct software defects → Patch/bug fix", "Embedded device software → Firmware", "Remove technology from service → Decommissioning", "Control and document changes → Change management", "Track requested work → Service request", "Current live configuration → Production", "Restore saved configuration → Backup", "Approved known-good configuration → Baseline/golden"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Physical vs. Logical Diagram", "paragraphs": ["Where and how equipment is physically connected → Physical. How networks, VLANs, and subnets relate → Logical."]},
+        {"title": "Layer 1 vs. Layer 2 vs. Layer 3", "paragraphs": ["Physical links → Layer 1. Switching and VLANs → Layer 2. IP and routing → Layer 3."]},
+        {"title": "Asset Inventory vs. IPAM", "paragraphs": ["Equipment, software, licenses, and warranties → Asset inventory. IP addresses and subnets → IPAM."]},
+        {"title": "EOL vs. EOS", "paragraphs": ["Product lifecycle ends → EOL. Vendor support ends → EOS."]},
+        {"title": "Patch vs. Firmware", "paragraphs": ["General software correction → Patch. Software closely associated with hardware → Firmware."]},
+        {"title": "Change Request vs. Configuration Backup", "paragraphs": ["Request and track a change → Change management/service request. Restore a previous configuration → Backup configuration."]},
+        {"title": "Production vs. Backup vs. Golden", "paragraphs": ["Live now → Production. Recovery copy → Backup. Known-good standard → Golden."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Physical placement → Physical diagram", "Network relationships → Logical diagram", "Rack positions → Rack diagram", "Cable path → Cable map", "Physical connectivity → Layer 1", "Switching/VLANs → Layer 2", "IP/routing → Layer 3", "Technology tracking → Asset inventory", "IP tracking → IPAM", "Service commitment → SLA", "Wireless coverage → Heat map", "Product retirement → EOL", "Support termination → EOS", "Software correction → Patch/bug fix", "Hardware-associated software → Firmware", "Remove system → Decommissioning", "Controlled modification → Change management", "Track requested work → Service request", "Live configuration → Production", "Recovery configuration → Backup", "Known-good standard → Golden configuration"],
+      "callout": "DOCUMENT → TRACK → MAINTAIN → CHANGE → CONFIGURE → RETIRE"
+    }
+  ]
+}

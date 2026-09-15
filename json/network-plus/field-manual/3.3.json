@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "3",
+  "objective": "3.3",
+  "title": "Explain Disaster Recovery (DR) Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Disaster recovery defines how much data and downtime an organization can tolerate, measures system reliability and repair time, prepares alternate sites and redundant systems, and verifies that recovery plans work."],
+      "bullets": ["RPO, RTO, MTTR, and MTBF", "Cold, warm, and hot sites", "Active-active and active-passive high availability", "Tabletop exercises and validation tests"],
+      "callout": "MEASURE → PREPARE → FAIL OVER → RECOVER → TEST"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Given an outage or disaster, identify whether the requirement concerns acceptable data loss, acceptable downtime, reliability, repair time, alternate-site readiness, redundancy behavior, or testing."],
+      "bullets": ["How much data can we lose? → RPO", "How long can we be down? → RTO", "How long does repair take? → MTTR", "How long between failures? → MTBF", "Least prepared site → Cold", "Partially prepared site → Warm", "Ready-to-operate site → Hot", "Both systems operating → Active-active", "One active and one waiting → Active-passive", "Discuss the scenario → Tabletop", "Prove recovery capability → Validation test"]
+    },
+    {
+      "id": "dr-metrics",
+      "title": "Disaster Recovery Metrics",
+      "entries": [
+        {"title": "Recovery Point Objective (RPO)", "paragraphs": ["RPO defines the maximum acceptable data loss measured backward in time. A four-hour RPO means backup and recovery design should normally prevent losing more than about four hours of data."], "memoryHook": "RPO = point in the data.", "recognitionCue": "We can lose no more than 30 minutes of data → RPO."},
+        {"title": "Recovery Time Objective (RTO)", "paragraphs": ["RTO is the target time allowed to restore a service after disruption. A two-hour RTO means the recovery design should return the service within that target."], "memoryHook": "RTO = time to return.", "recognitionCue": "The application must operate again within one hour → RTO."},
+        {"title": "Mean Time to Repair (MTTR)", "paragraphs": ["MTTR is the average time required to repair or restore a failed component or system. Lower MTTR means faster average recovery."], "memoryHook": "It broke; how long until it is fixed?"},
+        {"title": "Mean Time Between Failures (MTBF)", "paragraphs": ["MTBF is the average operating time between failures of a repairable component. Higher MTBF generally indicates greater reliability."], "memoryHook": "How long does it run before failing again?"}
+      ],
+      "callout": "Data loss → RPO. Downtime target → RTO. Repair duration → MTTR. Reliability/time between failures → MTBF."
+    },
+    {
+      "id": "dr-sites",
+      "title": "Cold, Warm, and Hot Sites",
+      "entries": [
+        {"title": "Cold Site", "paragraphs": ["A cold site is the least prepared alternate facility. It may have space and basic infrastructure but requires substantial equipment, data, configuration, and setup before work can resume. It generally costs less but recovers more slowly."], "memoryHook": "Build it when you get there."},
+        {"title": "Warm Site", "paragraphs": ["A warm site is partially prepared. Infrastructure and some equipment may exist, but data restoration, configuration, or other work remains before full operation."], "memoryHook": "Some of it is ready."},
+        {"title": "Hot Site", "paragraphs": ["A hot site maintains systems and infrastructure close to operational readiness for rapid resumption. It recovers fastest but generally costs the most."], "memoryHook": "Ready to go."}
+      ],
+      "callout": "Cold → Build. Warm → Finish. Hot → Go."
+    },
+    {
+      "id": "high-availability",
+      "title": "High-Availability Approaches",
+      "entries": [
+        {"title": "Active-Active", "paragraphs": ["In active-active, multiple systems serve production traffic at the same time. If one fails, the remaining active systems continue handling requests."], "memoryHook": "Both are working."},
+        {"title": "Active-Passive", "paragraphs": ["In active-passive, one system provides service while another waits on standby to take over after failure."], "memoryHook": "One works; one waits."}
+      ],
+      "callout": "Work + work → Active-active. Work + wait → Active-passive."
+    },
+    {
+      "id": "dr-testing",
+      "title": "Disaster Recovery Testing",
+      "paragraphs": ["An untested recovery plan may fail during a real disaster. Testing identifies missing assumptions, unclear responsibilities, and nonfunctional recovery steps."],
+      "entries": [
+        {"title": "Tabletop Exercise", "paragraphs": ["Participants discuss and walk through a disaster scenario, responsibilities, response steps, and likely problems without necessarily causing a production failover."], "memoryHook": "Talk through the disaster."},
+        {"title": "Validation Test", "paragraphs": ["A validation test verifies that recovery procedures, systems, and capabilities actually function as expected."], "memoryHook": "Prove it works."}
+      ],
+      "callout": "Discuss the response → Tabletop. Verify the capability → Validation."
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Acceptable data loss → RPO", "Acceptable downtime → RTO", "Average repair duration → MTTR", "Average time between failures → MTBF", "Least-ready recovery site → Cold", "Partially ready recovery site → Warm", "Highly ready recovery site → Hot", "Multiple systems serving → Active-active", "Primary serving and secondary waiting → Active-passive", "Discuss disaster response → Tabletop exercise", "Verify recovery works → Validation test"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "RPO vs. RTO", "paragraphs": ["How much data can we lose? → RPO. How long can we be down? → RTO."]},
+        {"title": "RTO vs. MTTR", "paragraphs": ["RTO is the recovery target or requirement. MTTR is the observed average repair or restoration duration."]},
+        {"title": "MTTR vs. MTBF", "paragraphs": ["Repair duration → MTTR. Reliability and time between failures → MTBF."]},
+        {"title": "Cold vs. Warm vs. Hot", "paragraphs": ["Minimal readiness → Cold. Partial readiness → Warm. High readiness → Hot."]},
+        {"title": "Active-Active vs. Active-Passive", "paragraphs": ["Both systems serve → Active-active. One serves while one waits → Active-passive."]},
+        {"title": "Tabletop vs. Validation", "paragraphs": ["Discuss the response → Tabletop. Verify recovery capability → Validation."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Acceptable data loss → RPO", "Acceptable downtime → RTO", "Repair time → MTTR", "Time between failures → MTBF", "Least prepared site → Cold", "Partially prepared site → Warm", "Most prepared site → Hot", "Both systems working → Active-active", "One works and one waits → Active-passive", "Talk through disaster → Tabletop", "Prove recovery works → Validation test"],
+      "callout": "MEASURE → PREPARE → FAIL OVER → RECOVER → TEST"
+    }
+  ]
+}

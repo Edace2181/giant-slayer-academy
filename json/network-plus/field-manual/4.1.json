@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "4",
+  "objective": "4.1",
+  "title": "Explain the Importance of Basic Network Security Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network security protects data, identities, devices, access, physical equipment, network segments, and regulatory obligations."],
+      "bullets": ["Encryption, certificates, PKI, and self-signed certificates", "IAM, authentication, authorization, MFA, SSO, RADIUS, LDAP, SAML, TACACS+, and time-based authentication", "Least privilege, RBAC, and geofencing", "Cameras, locks, honeypots, and honeynets", "Risk, vulnerability, exploit, threat, and the CIA triad", "Data locality, PCI DSS, GDPR, and network segmentation"],
+      "callout": "PROTECT DATA → VERIFY IDENTITY → CONTROL ACCESS → PROTECT EQUIPMENT → DETECT THREATS → SEGMENT RISK"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a security requirement appears, determine whether it protects data, proves identity, controls permissions, secures physical infrastructure, manages risk, satisfies compliance, or isolates devices."],
+      "bullets": ["Readable data protection → Encryption", "Identity bound to a public key → Certificate", "Certificate trust framework → PKI", "Identity proof → Authentication", "Permission decision → Authorization", "Minimum permissions → Least privilege", "Role-derived permissions → RBAC", "Location-based policy → Geofencing"]
+    },
+    {
+      "id": "encryption-and-certificates",
+      "title": "Encryption, Certificates, and PKI",
+      "entries": [
+        {"title": "Encryption", "paragraphs": ["Encryption changes readable data into a protected form. Data in transit is moving across a network; data at rest is stored in files, databases, backups, or configurations."], "memoryHook": "Moving → Transit. Stored → Rest."},
+        {"title": "Digital Certificate", "paragraphs": ["A certificate associates an identity with a cryptographic public key and supports secure connections and identity verification."], "memoryHook": "This public key belongs to this identity."},
+        {"title": "Public Key Infrastructure (PKI)", "paragraphs": ["PKI creates, manages, distributes, validates, and revokes certificates, forming the broader certificate trust system."], "memoryHook": "The certificate trust framework."},
+        {"title": "Self-Signed Certificate", "paragraphs": ["A self-signed certificate is signed by the entity that created it instead of an externally trusted certificate authority. It can encrypt traffic, but clients may not trust it automatically."], "memoryHook": "I signed my own certificate."}
+      ],
+      "callout": "Credential binding identity to a key → Certificate. System managing certificate trust → PKI."
+    },
+    {
+      "id": "identity-and-access-management",
+      "title": "Identity and Access Management (IAM)",
+      "paragraphs": ["IAM manages digital identities and their access to resources. Authentication asks who you are; authorization determines what an authenticated identity may do."],
+      "entries": [
+        {"title": "Multifactor Authentication (MFA)", "paragraphs": ["MFA uses more than one factor category, such as something known, possessed, or inherent. Password plus authenticator code is MFA."], "memoryHook": "More than one different type of proof."},
+        {"title": "Single Sign-On (SSO)", "paragraphs": ["SSO lets a user authenticate once and reach multiple authorized services without repeatedly entering credentials."], "memoryHook": "Sign in once; access multiple services."},
+        {"title": "Time-Based Authentication", "paragraphs": ["Time-based authentication uses short-lived codes that change according to time, such as authenticator-app one-time passwords."], "memoryHook": "The code expires and changes."}
+      ],
+      "callout": "Multiple factor types → MFA. One authentication reused across services → SSO."
+    },
+    {
+      "id": "aaa-and-federation",
+      "title": "AAA, Directories, and Federation",
+      "entries": [
+        {"title": "RADIUS", "paragraphs": ["Remote Authentication Dial-In User Service provides centralized authentication, authorization, and accounting for network access, including enterprise wireless, VPN, and NAC scenarios."], "memoryHook": "User gets onto the network."},
+        {"title": "LDAP", "paragraphs": ["Lightweight Directory Access Protocol accesses and manages directory information such as users, groups, devices, and organizational objects."], "memoryHook": "Query the directory."},
+        {"title": "SAML", "paragraphs": ["Security Assertion Markup Language exchanges identity and authentication assertions between systems and commonly supports federated web authentication and SSO."], "memoryHook": "One system tells another the user is authenticated."},
+        {"title": "TACACS+", "paragraphs": ["Terminal Access Controller Access Control System Plus provides centralized AAA strongly associated with administrator access to routers, switches, and other network infrastructure."], "memoryHook": "Administrator manages the device."}
+      ],
+      "callout": "Network access → RADIUS. Network-device administration → TACACS+. Directory lookup → LDAP. Federated assertion → SAML."
+    },
+    {
+      "id": "authorization-controls",
+      "title": "Authorization Controls",
+      "entries": [
+        {"title": "Least Privilege", "paragraphs": ["Least privilege grants only the permissions needed to perform required duties and removes unnecessary rights."], "memoryHook": "Only what you need—nothing extra."},
+        {"title": "Role-Based Access Control (RBAC)", "paragraphs": ["RBAC assigns permissions according to job roles such as help desk, network administrator, HR, or finance."], "memoryHook": "Role determines access."},
+        {"title": "Geofencing", "paragraphs": ["Geofencing applies access rules based on geographic location, such as rejecting authentication from unapproved regions."], "memoryHook": "Where are you connecting from?"}
+      ],
+      "callout": "Minimum required access → Least privilege. Access according to role → RBAC."
+    },
+    {
+      "id": "physical-and-deception-security",
+      "title": "Physical Security and Deception Technologies",
+      "entries": [
+        {"title": "Cameras and Locks", "paragraphs": ["Cameras monitor and record physical activity. Locks restrict entry to rooms, racks, cabinets, and equipment."], "memoryHook": "Watch the environment and keep unauthorized people out."},
+        {"title": "Honeypot", "paragraphs": ["A honeypot is one decoy system intentionally exposed to attract and observe malicious activity."], "memoryHook": "One fake target."},
+        {"title": "Honeynet", "paragraphs": ["A honeynet is a collection or network of deceptive systems that simulates a larger environment."], "memoryHook": "A whole fake network."}
+      ]
+    },
+    {
+      "id": "security-terminology",
+      "title": "Risk, Vulnerability, Exploit, and Threat",
+      "entries": [
+        {"title": "Vulnerability", "paragraphs": ["A vulnerability is a weakness, such as unpatched software, a weak configuration, or a default password."], "memoryHook": "The weakness."},
+        {"title": "Exploit", "paragraphs": ["An exploit is a method or technique that takes advantage of a vulnerability."], "memoryHook": "Using the weakness."},
+        {"title": "Threat", "paragraphs": ["A threat is a potential source of harm, including an attacker, malware, or environmental event."], "memoryHook": "The potential danger."},
+        {"title": "Risk", "paragraphs": ["Risk represents potential loss when a threat can affect a vulnerable asset and is evaluated through likelihood and impact."], "memoryHook": "What could happen, and how bad would it be?"}
+      ],
+      "callout": "Weakness → Vulnerability. Use it → Exploit. Danger → Threat. Potential loss → Risk."
+    },
+    {
+      "id": "cia-triad",
+      "title": "Confidentiality, Integrity, and Availability (CIA) Triad",
+      "entries": [
+        {"title": "Confidentiality", "paragraphs": ["Information is disclosed only to authorized identities. Encryption and access control support confidentiality."], "memoryHook": "Keep it secret."},
+        {"title": "Integrity", "paragraphs": ["Information remains accurate and changes only through authorized action."], "memoryHook": "Keep it correct."},
+        {"title": "Availability", "paragraphs": ["Systems and data remain accessible when needed. Redundancy and recovery support availability."], "memoryHook": "Keep it working."}
+      ]
+    },
+    {
+      "id": "compliance",
+      "title": "Audits and Regulatory Compliance",
+      "entries": [
+        {"title": "Data Locality", "paragraphs": ["Data locality concerns the physical or geographic region where information is stored and processed."], "memoryHook": "Where does the data live?"},
+        {"title": "PCI DSS", "paragraphs": ["Payment Card Industry Data Security Standard establishes security requirements for payment-card data."], "memoryHook": "Payment-card security."},
+        {"title": "GDPR", "paragraphs": ["General Data Protection Regulation governs personal-data protection and processing within its applicable jurisdiction."], "memoryHook": "Regulated personal-data privacy."}
+      ]
+    },
+    {
+      "id": "network-segmentation",
+      "title": "Network Segmentation Enforcement",
+      "paragraphs": ["Segmentation limits access and reduces the spread of compromise by separating device groups with different risks and trust levels."],
+      "entries": [
+        {"title": "IoT and IIoT", "paragraphs": ["Internet of Things devices include cameras, sensors, smart devices, and building systems. Industrial Internet of Things applies connected-device concepts to industrial settings; both can require isolation from general user networks."]},
+        {"title": "SCADA, ICS, and OT", "paragraphs": ["Supervisory Control and Data Acquisition, Industrial Control Systems, and Operational Technology control physical processes and need strong segmentation from ordinary IT networks."]},
+        {"title": "Guest", "paragraphs": ["Guest users should reach permitted services such as the Internet without reaching trusted internal systems."]},
+        {"title": "BYOD", "paragraphs": ["Bring Your Own Device endpoints are personally owned and may not meet corporate management standards, so they receive controlled, segmented access."]}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Moving protected data → Encryption in transit", "Stored protected data → Encryption at rest", "Identity/public-key binding → Certificate", "Certificate framework → PKI", "Locally signed → Self-signed", "Verify identity → Authentication", "Multiple factors → MFA", "Login once → SSO", "Network access AAA → RADIUS", "Directory query → LDAP", "Federated assertion → SAML", "Device-admin AAA → TACACS+", "Temporary code → Time-based authentication", "Determine permissions → Authorization", "Minimum access → Least privilege", "Role permissions → RBAC", "Location restriction → Geofencing", "One decoy → Honeypot", "Decoy network → Honeynet", "Weakness → Vulnerability", "Technique using weakness → Exploit", "Potential danger → Threat", "Potential loss → Risk", "Secrecy/accuracy/accessibility → CIA triad", "Data location → Data locality", "Cardholder data → PCI DSS", "Regulated personal data → GDPR", "Isolate risky groups → Network segmentation"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 4.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Data in Transit vs. Data at Rest", "paragraphs": ["Moving → Transit. Stored → Rest."]},
+        {"title": "Certificate vs. PKI", "paragraphs": ["Identity/public-key credential → Certificate. Trust-management framework → PKI."]},
+        {"title": "Authentication vs. Authorization", "paragraphs": ["Who are you? → Authentication. What may you do? → Authorization."]},
+        {"title": "MFA vs. SSO", "paragraphs": ["Multiple factors → MFA. One authentication reused across services → SSO."]},
+        {"title": "RADIUS vs. TACACS+", "paragraphs": ["Network access → RADIUS. Device administration → TACACS+."]},
+        {"title": "LDAP vs. SAML", "paragraphs": ["Directory access → LDAP. Federated assertions → SAML."]},
+        {"title": "Least Privilege vs. RBAC", "paragraphs": ["Minimum needed access → Least privilege. Access based on role → RBAC."]},
+        {"title": "Honeypot vs. Honeynet", "paragraphs": ["One decoy → Honeypot. Network of decoys → Honeynet."]},
+        {"title": "Vulnerability vs. Exploit", "paragraphs": ["Weakness → Vulnerability. Technique using it → Exploit."]},
+        {"title": "Threat vs. Risk", "paragraphs": ["Potential danger → Threat. Potential impact or loss → Risk."]},
+        {"title": "CIA Triad", "paragraphs": ["Unauthorized disclosure → Confidentiality. Unauthorized alteration → Integrity. Unreachable service → Availability."]},
+        {"title": "IoT vs. IIoT/OT", "paragraphs": ["General connected embedded device → IoT. Industrial connected environment → IIoT or OT."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Transit → Moving", "Rest → Stored", "Certificate → Identity/key", "PKI → Trust framework", "Self-signed → Own signature", "Authentication → Identity", "Authorization → Permission", "MFA → Multiple factor types", "SSO → One login", "RADIUS → Network access", "LDAP → Directory", "SAML → Federation", "TACACS+ → Device administration", "Least privilege → Minimum access", "RBAC → Role access", "Honeypot → One decoy", "Honeynet → Decoy network", "Vulnerability → Weakness", "Exploit → Use weakness", "Threat → Danger", "Risk → Potential loss", "Confidentiality → Secret", "Integrity → Correct", "Availability → Accessible", "PCI DSS → Card data", "GDPR → Personal data", "Segmentation → Isolate risk"],
+      "callout": "PROTECT DATA → VERIFY IDENTITY → CONTROL ACCESS → PROTECT EQUIPMENT → DETECT THREATS → SEGMENT RISK"
+    }
+  ]
+}

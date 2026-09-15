@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "3",
+  "objective": "3.2",
+  "title": "Given a Scenario, Use Network Monitoring Technologies",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network monitoring answers whether the network is available, whether it is performing normally, what traffic is moving, what changed, and what happened before a problem appeared."],
+      "bullets": ["SNMP, traps, MIBs, v2c, v3, community strings, and authentication", "Flow data and packet capture", "Baseline metrics and anomaly alerting", "Log aggregation, syslog collectors, and SIEM", "API integration and port mirroring", "Network discovery, traffic, performance, availability, and configuration monitoring"],
+      "callout": "DISCOVER → COLLECT → COMPARE → ANALYZE → ALERT → RESPOND"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["When a network problem occurs, choose the monitoring technology that provides the information needed to discover, measure, capture, aggregate, or alert on the problem."],
+      "bullets": ["Monitor and manage devices → SNMP", "Device sends unsolicited alert → Trap", "SNMP object database → MIB", "Community strings → SNMP v2c", "Stronger authentication and security → SNMP v3", "Traffic summaries → Flow data", "Actual packets → Packet capture", "Normal reference → Baseline", "Unexpected deviation → Anomaly alert"]
+    },
+    {
+      "id": "snmp",
+      "title": "SNMP, Traps, and MIBs",
+      "entries": [
+        {"title": "Simple Network Management Protocol (SNMP)", "paragraphs": ["SNMP monitors and manages supported switches, routers, APs, servers, and other network devices from a centralized system."], "memoryHook": "Ask network devices how they are doing."},
+        {"title": "SNMP Traps", "paragraphs": ["A trap is an unsolicited notification an SNMP-enabled device sends to a management system. The manager does not need to wait for periodic polling to learn that an event occurred."], "memoryHook": "The device says something happened."},
+        {"title": "Management Information Base (MIB)", "paragraphs": ["A MIB organizes the manageable object information exposed through SNMP."], "memoryHook": "Catalog of things SNMP can monitor."}
+      ],
+      "callout": "Polling asks for information; a trap is initiated by the device. A MIB defines the available information."
+    },
+    {
+      "id": "snmp-versions",
+      "title": "SNMP v2c and v3",
+      "entries": [
+        {"title": "SNMP v2c", "paragraphs": ["SNMP v2c commonly uses community strings as shared credentials for access."], "memoryHook": "Shared string."},
+        {"title": "SNMP v3", "paragraphs": ["SNMP v3 adds stronger security capabilities, including authentication."], "memoryHook": "Secure, authenticated SNMP."}
+      ],
+      "callout": "Community strings → v2c. Stronger authentication/security → v3."
+    },
+    {
+      "id": "flow-and-packet-capture",
+      "title": "Flow Data and Packet Capture",
+      "entries": [
+        {"title": "Flow Data", "paragraphs": ["Flow data summarizes traffic conversations: who communicated, traffic direction, volume, and recurring patterns without preserving every packet byte."], "memoryHook": "Who talked to whom, and how much?"},
+        {"title": "Packet Capture", "paragraphs": ["A packet capture records actual packets for detailed protocol and packet-level troubleshooting."], "memoryHook": "Show me the actual packets."}
+      ],
+      "callout": "Conversation summary → Flow data. Packet-level detail → Packet capture."
+    },
+    {
+      "id": "baselines-and-anomalies",
+      "title": "Baseline Metrics and Anomaly Alerts",
+      "entries": [
+        {"title": "Baseline Metrics", "paragraphs": ["A baseline records normal behavior such as bandwidth use, latency, resource consumption, and error rates. Without it, administrators cannot confidently identify unusual values."], "memoryHook": "What does normal look like?"},
+        {"title": "Anomaly Alerting/Notification", "paragraphs": ["An anomaly is a deviation from an expected baseline or pattern. Monitoring platforms can alert administrators when abnormal behavior appears."], "memoryHook": "Normal was X; now something is different."}
+      ]
+    },
+    {
+      "id": "logs-and-siem",
+      "title": "Log Aggregation, Syslog, and SIEM",
+      "entries": [
+        {"title": "Log Aggregation", "paragraphs": ["Log aggregation centralizes logs from many systems so they are easier to search, correlate, troubleshoot, and analyze."], "memoryHook": "Bring all the logs together."},
+        {"title": "Syslog Collector", "paragraphs": ["A syslog collector receives and stores syslog messages from network devices."], "memoryHook": "Network devices send their logs here."},
+        {"title": "Security Information and Event Management (SIEM)", "paragraphs": ["A SIEM collects and analyzes security information from multiple sources and correlates related events rather than merely storing logs."], "memoryHook": "Centralize and correlate security events."}
+      ],
+      "callout": "Receive centralized syslog → Syslog collector. Correlate security events across sources → SIEM."
+    },
+    {
+      "id": "api-and-port-mirroring",
+      "title": "API Integration and Port Mirroring",
+      "entries": [
+        {"title": "Application Programming Interface (API) Integration", "paragraphs": ["An API lets monitoring software exchange information programmatically with another system."], "memoryHook": "Software talks to software."},
+        {"title": "Port Mirroring", "paragraphs": ["Port mirroring makes a switch copy traffic from one or more source interfaces to a destination interface where a monitoring or packet-analysis device can inspect it."], "memoryHook": "Copy the traffic so I can watch it."}
+      ],
+      "callout": "Port mirroring delivers a copy; packet capture records and analyzes the packets."
+    },
+    {
+      "id": "network-discovery",
+      "title": "Network Discovery",
+      "paragraphs": ["Network discovery identifies devices and resources on a network."],
+      "entries": [
+        {"title": "Ad Hoc Discovery", "paragraphs": ["Ad hoc discovery is launched manually when an immediate need appears."], "memoryHook": "Run it now."},
+        {"title": "Scheduled Discovery", "paragraphs": ["Scheduled discovery runs automatically at predetermined intervals to keep inventory current."], "memoryHook": "Check again on a schedule."}
+      ]
+    },
+    {
+      "id": "monitoring-solutions",
+      "title": "Monitoring Solutions",
+      "entries": [
+        {"title": "Traffic Analysis", "paragraphs": ["Traffic analysis examines utilization, communication patterns, heavy sources, unexpected traffic, and congestion."], "memoryHook": "What is moving across the network?"},
+        {"title": "Performance Monitoring", "paragraphs": ["Performance monitoring measures how well systems and services operate through latency, throughput, utilization, errors, and resource consumption."], "memoryHook": "How well is it running?"},
+        {"title": "Availability Monitoring", "paragraphs": ["Availability monitoring determines whether devices and services are reachable and operational."], "memoryHook": "Is it up or down?"},
+        {"title": "Configuration Monitoring", "paragraphs": ["Configuration monitoring tracks device configurations and detects expected, unexpected, or unauthorized changes."], "memoryHook": "Did somebody change the configuration?"}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Monitor devices → SNMP", "Device-generated notification → Trap", "SNMP information structure → MIB", "Community string → v2c", "Authenticated secure SNMP → v3", "Traffic summary → Flow data", "Actual packets → Packet capture", "Normal reference → Baseline metrics", "Unexpected deviation → Anomaly alert", "Centralize logs → Log aggregation", "Receive syslog → Syslog collector", "Security-event correlation → SIEM", "Programmatic integration → API", "Copy switch traffic → Port mirroring", "Immediate discovery → Ad hoc", "Recurring discovery → Scheduled", "Analyze network use → Traffic analysis", "Measure network quality → Performance monitoring", "Up/down state → Availability monitoring", "Detect configuration changes → Configuration monitoring"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 3.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "SNMP Polling vs. Trap", "paragraphs": ["Manager requests device information → SNMP polling. Device initiates a notification → Trap."]},
+        {"title": "SNMP v2c vs. v3", "paragraphs": ["Community strings → v2c. Authentication and stronger security → v3."]},
+        {"title": "MIB vs. Trap", "paragraphs": ["Structured SNMP object definitions → MIB. Event notification → Trap."]},
+        {"title": "Flow Data vs. Packet Capture", "paragraphs": ["Conversation summary → Flow data. Actual packet contents → Packet capture."]},
+        {"title": "Baseline vs. Anomaly", "paragraphs": ["Expected normal behavior → Baseline. Deviation from normal → Anomaly."]},
+        {"title": "Syslog Collector vs. SIEM", "paragraphs": ["Receive centralized syslog → Syslog collector. Correlate security events → SIEM."]},
+        {"title": "Packet Capture vs. Port Mirroring", "paragraphs": ["Capture and analyze packets → Packet capture. Copy switch traffic toward the analyzer → Port mirroring."]},
+        {"title": "Performance vs. Availability", "paragraphs": ["How well is it running? → Performance. Is it reachable? → Availability."]},
+        {"title": "Traffic vs. Configuration Monitoring", "paragraphs": ["What is moving? → Traffic analysis. What changed on the device? → Configuration monitoring."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Device monitoring → SNMP", "Device alert → Trap", "SNMP objects → MIB", "Community string → v2c", "Secure/authenticated SNMP → v3", "Traffic summary → Flow data", "Actual packets → Packet capture", "Normal reference → Baseline", "Unexpected deviation → Anomaly", "Central logs → Log aggregation", "Syslog destination → Syslog collector", "Security correlation → SIEM", "Programmatic integration → API", "Copy switch traffic → Port mirroring", "Immediate discovery → Ad hoc", "Recurring discovery → Scheduled", "Traffic behavior → Traffic analysis", "Network quality → Performance monitoring", "Up/down → Availability monitoring", "Configuration changes → Configuration monitoring"],
+      "callout": "DISCOVER → COLLECT → COMPARE → ANALYZE → ALERT → RESPOND"
+    }
+  ]
+}
