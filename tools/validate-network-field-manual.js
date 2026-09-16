@@ -151,6 +151,41 @@ const objectives = {
     firstId: "4.3-01",
     sections: ["what-you-are-learning", "maestro-focus", "device-hardening", "network-access-control", "key-management", "security-rules", "security-zones", "defense-in-depth", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
     topics: ["Device Hardening", "Disable Unused Ports and Services", "Change Default Passwords", "Network Access Control (NAC)", "Port Security", "802.1X", "MAC Filtering", "Key Management", "Access Control List (ACL)", "URL Filtering", "Content Filtering", "Trusted Zone", "Untrusted Zone", "Screened Subnet"]
+  },
+  "5.1": {
+    count: 20,
+    hash: "46D282F6946E7EFF51040034DBCECD2411016AEA49BCFD08F1E6FEDA0F00E99C",
+    firstId: "5.1-01",
+    sections: ["what-you-are-learning", "maestro-focus", "identify-problem", "establish-theory", "test-theory", "plan-and-implement", "verify-and-prevent", "document", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Gather information", "Question users", "Identify symptoms", "Determine whether anything changed", "Duplicate the problem", "Approach multiple problems individually", "Question the obvious", "Top-to-Bottom OSI", "Bottom-to-Top OSI", "Divide and Conquer", "Test the Theory", "Establish a Plan of Action", "Implement or Escalate", "Verify Full System Functionality", "preventive measures", "Document Throughout the Process"]
+  },
+  "5.2": {
+    count: 24,
+    hash: "B64ED7B8B4B441D72BFBBC5B16A43B28B074D4B8D5190FA407CD9E349C6C6DCF",
+    firstId: "5.2-01",
+    sections: ["what-you-are-learning", "maestro-focus", "cable-selection", "signal-degradation", "termination-and-polarity", "interface-counters", "port-status", "poe", "transceivers", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Single-Mode", "Multimode", "Category 5/6/7/8", "STP vs. UTP", "Crosstalk", "Interference", "Attenuation", "Improper Termination", "TX/RX Transposed", "Cyclic Redundancy Check (CRC)", "Runts", "Giants", "Drops", "Error Disabled", "Administratively Down", "Suspended", "Power Budget Exceeded", "Incorrect Standard", "Transceiver", "Signal Strength"]
+  },
+  "5.3": {
+    count: 14,
+    hash: "A30E994B683973CF74BAA50C7529F3321F513BCC57FCE5ECAFF6E1FCEEEEF1C0",
+    firstId: "5.3-01",
+    sections: ["what-you-are-learning", "maestro-focus", "stp", "vlan-and-acl", "route-selection", "addressing", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Network Loops", "Root Bridge Selection", "Port Roles", "Port States", "Incorrect VLAN Assignment", "Access Control List (ACL)", "Routing Table", "Default Route", "Address Pool Exhaustion", "Incorrect Default Gateway", "Incorrect IP Address", "Duplicate IP Address", "Incorrect Subnet Mask"]
+  },
+  "5.4": {
+    count: 13,
+    hash: "04168D99027CA363313070C2B4235000672CA252C7504DD598D43F77ADFB48AE",
+    firstId: "5.4-01",
+    sections: ["what-you-are-learning", "maestro-focus", "capacity", "latency-loss-and-jitter", "wireless-performance", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Congestion", "Contention", "Bottleneck", "Bandwidth", "Throughput Capacity", "Latency", "Packet Loss", "Jitter", "Interference", "Channel Overlap", "Signal Degradation or Loss", "Insufficient Wireless Coverage", "Client Disassociation", "Roaming Misconfiguration"]
+  },
+  "5.5": {
+    count: 13,
+    hash: "D8B4BAFAE8479A1F72DF967A4C3E59AA663AA2A792B11D43C54783CD14367139",
+    firstId: "5.5-01",
+    sections: ["what-you-are-learning", "maestro-focus", "protocol-analyzer", "command-line-tools", "discovery-and-speed", "hardware-tools", "device-commands", "tool-selection", "recognition-cues", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Protocol Analyzer", "ping", "traceroute / tracert", "nslookup", "tcpdump", "dig", "netstat", "ip / ifconfig / ipconfig", "arp", "Nmap", "LLDP / CDP", "Speed Tester", "Toner", "Cable Tester", "Network Tap", "Wi-Fi Analyzer", "Visual Fault Locator", "show mac-address-table", "show route", "show interface", "show config", "show arp", "show vlan", "show power"]
   }
 };
 
@@ -182,7 +217,8 @@ const hubs = {
   "1": read("network-world1-objectives.html"),
   "2": read("network-world2-objectives.html"),
   "3": read("network-world3-objectives.html"),
-  "4": read("network-world4-objectives.html")
+  "4": read("network-world4-objectives.html"),
+  "5": read("network-world5-objectives.html")
 };
 const campaign = read("network-campaign.html");
 const manualPage = read("network-field-manual.html");
@@ -194,6 +230,7 @@ requireValue(campaign.includes('href="network-world1-objectives.html"'), "Campai
 requireValue(campaign.includes('href="network-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
 requireValue(campaign.includes('href="network-world3-objectives.html"'), "Campaign World 3 must route to its Objective Hub.");
 requireValue(campaign.includes('href="network-world4-objectives.html"'), "Campaign World 4 must route to its Objective Hub.");
+requireValue(campaign.includes('href="network-world5-objectives.html"'), "Campaign World 5 must route to its Objective Hub.");
 for (const objective of Object.keys(objectives)) {
   const world = objective.split(".")[0];
   const hub = hubs[world];
@@ -214,6 +251,7 @@ requireValue(manualScript.includes('elements.returnLink.href = "network-world" +
 requireValue(manualScript.includes('(world === "2" && /^2\\.[1-4]$/.test(objective))'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
 requireValue(manualScript.includes('(world === "3" && /^3\\.[1-5]$/.test(objective))'), "The Field Manual route gate must include published World 3 objectives 3.1-3.5.");
 requireValue(manualScript.includes('(world === "4" && /^4\\.[1-3]$/.test(objective))'), "The Field Manual route gate must include only published World 4 objectives 4.1-4.3.");
+requireValue(manualScript.includes('(world === "5" && /^5\\.[1-5]$/.test(objective))'), "The Field Manual route gate must include published World 5 objectives 5.1-5.5.");
 requireValue(quizScript.includes("returnLink.href = getWorldMenuFile(world)"), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "5",
+  "objective": "5.2",
+  "title": "Given a Scenario, Troubleshoot Common Cabling and Physical Interface Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Physical-layer failures often appear as intermittent links, poor performance, interface errors, or devices that never power on. Diagnose the medium, signal, termination, interface, power, and transceiver in a deliberate order."],
+      "bullets": ["Incorrect cable selection", "Signal degradation", "Improper termination and reversed transmit/receive paths", "Interface counters and port states", "PoE faults", "Transceiver mismatches and weak optical signals"],
+      "callout": "CHECK MEDIUM → CHECK SIGNAL → CHECK TERMINATION → CHECK INTERFACE → CHECK POWER → CHECK TRANSCEIVER"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Match the symptom to the physical component most capable of producing it."],
+      "bullets": ["Wrong medium or rating → Incorrect cable", "Noise from nearby pairs → Crosstalk", "External electrical noise → Interference", "Signal weakens over distance → Attenuation", "Frames arrive damaged → CRC errors", "Port deliberately disabled → Administratively down", "Power demand exceeds available supply → PoE budget exceeded"]
+    },
+    {
+      "id": "cable-selection",
+      "title": "Incorrect Cable Selection",
+      "entries": [
+        {"title": "Single-Mode vs. Multimode Fiber", "paragraphs": ["Single-mode fiber supports long distances with a small core and matched optics. Multimode fiber supports shorter links with a larger core. Mixing media or optics can prevent a stable link."], "memoryHook": "Long distance → single-mode; shorter building links → multimode."},
+        {"title": "Category 5/6/7/8", "paragraphs": ["Copper category determines supported frequency, construction, distance, and performance. A lower category or poor installation can prevent the intended Ethernet speed."], "memoryHook": "The link can only perform as well as its weakest cable segment."},
+        {"title": "STP vs. UTP", "paragraphs": ["Shielded twisted pair (STP) adds protection in electrically noisy environments but requires correct grounding. Unshielded twisted pair (UTP) is common and easier to install but offers less external-noise protection."], "memoryHook": "Electrical noise present → consider shielding."}
+      ]
+    },
+    {
+      "id": "signal-degradation",
+      "title": "Signal Degradation",
+      "entries": [
+        {"title": "Crosstalk", "paragraphs": ["Signals from one wire pair interfere with another pair in the same or nearby cable."], "memoryHook": "Pair-to-pair interference."},
+        {"title": "Interference", "paragraphs": ["External electromagnetic or radio-frequency energy disrupts the signal. Motors, fluorescent lighting, power cabling, and radio transmitters are common sources."], "memoryHook": "Outside energy corrupts the link."},
+        {"title": "Attenuation", "paragraphs": ["Signal strength decreases as distance increases or as connectors and splices add loss."], "memoryHook": "The signal fades along the path."}
+      ]
+    },
+    {
+      "id": "termination-and-polarity",
+      "title": "Termination and Polarity",
+      "entries": [
+        {"title": "Improper Termination", "paragraphs": ["Wrong pinouts, loose conductors, excessive untwisting, contamination, or damaged connectors can create opens, shorts, intermittent links, and performance loss."], "memoryHook": "Inspect both ends and test the cable map."},
+        {"title": "TX/RX Transposed", "paragraphs": ["A transmitter (TX) must connect to the receiver (RX) on the opposite end. Reversed fiber strands or polarity prevent communication even when the components are otherwise correct."], "memoryHook": "Transmit must meet receive."}
+      ]
+    },
+    {
+      "id": "interface-counters",
+      "title": "Increasing Interface Counters",
+      "entries": [
+        {"title": "Cyclic Redundancy Check (CRC)", "paragraphs": ["CRC errors indicate frames arrived corrupted, commonly because of bad cabling, interference, duplex issues, or failing interfaces."], "memoryHook": "The frame arrived, but its integrity check failed."},
+        {"title": "Runts", "paragraphs": ["Runts are Ethernet frames smaller than the minimum valid frame size."], "memoryHook": "Too small."},
+        {"title": "Giants", "paragraphs": ["Giants exceed the expected maximum frame size and can reflect MTU or framing problems."], "memoryHook": "Too large."},
+        {"title": "Drops", "paragraphs": ["Drops show frames or packets discarded because of congestion, buffer limits, errors, or policy."], "memoryHook": "Traffic was discarded."}
+      ]
+    },
+    {
+      "id": "port-status",
+      "title": "Port Status",
+      "entries": [
+        {"title": "Error Disabled", "paragraphs": ["The switch automatically disabled the port after detecting a violation or fault such as port security, BPDU guard, or link instability."], "memoryHook": "The device protected itself."},
+        {"title": "Administratively Down", "paragraphs": ["An administrator intentionally disabled the interface in configuration."], "memoryHook": "Configured shutdown."},
+        {"title": "Suspended", "paragraphs": ["The port is prevented from forwarding because of a logical consistency or bundling problem, often involving a link-aggregation group."], "memoryHook": "Configuration inconsistency holds the port out."}
+      ]
+    },
+    {
+      "id": "poe",
+      "title": "Power over Ethernet (PoE)",
+      "entries": [
+        {"title": "Power Budget Exceeded", "paragraphs": ["The switch has insufficient remaining power for another powered device even though the port supports PoE."], "memoryHook": "Capable port, exhausted supply."},
+        {"title": "Incorrect Standard", "paragraphs": ["The power sourcing equipment and powered device require compatible PoE standards and power levels. A lower standard may not provide enough wattage."], "memoryHook": "Capability mismatch, not total budget."}
+      ]
+    },
+    {
+      "id": "transceivers",
+      "title": "Transceiver Issues",
+      "entries": [
+        {"title": "Mismatch", "paragraphs": ["Both ends must agree on medium, wavelength, speed, distance class, connector, and supported transceiver type."], "memoryHook": "Match optics end to end."},
+        {"title": "Signal Strength", "paragraphs": ["Optical power that is too weak can result from distance, dirty connectors, excessive bends, bad splices, failing optics, or too many loss points."], "memoryHook": "Inspect the optical budget and path."}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Wrong fiber distance/type → Single-mode vs. multimode mismatch", "Insufficient copper rating → Wrong category", "Electrical environment → STP vs. UTP", "Neighboring pairs → Crosstalk", "External noise source → Interference", "Long run and weak signal → Attenuation", "Damaged frames → CRC", "Frames too small → Runts", "Frames too large → Giants", "Automatic safety shutdown → Error disabled", "Configured shutdown → Administratively down", "No remaining PoE capacity → Budget exceeded", "Weak light level → Signal strength"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.2 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Crosstalk vs. Interference", "paragraphs": ["Crosstalk comes from other signal pairs; interference comes from an external electromagnetic or radio source."]},
+        {"title": "Interference vs. Attenuation", "paragraphs": ["Interference adds unwanted energy; attenuation is loss of signal strength over the path."]},
+        {"title": "CRC vs. Drops", "paragraphs": ["CRC means corrupted frames were received; drops mean traffic was discarded."]},
+        {"title": "Runts vs. Giants", "paragraphs": ["Runts are below the minimum frame size; giants exceed the maximum."]},
+        {"title": "Error Disabled vs. Administratively Down", "paragraphs": ["Error disabled is an automatic protective response; administratively down is an intentional configuration state."]},
+        {"title": "PoE Budget vs. Standard", "paragraphs": ["Budget describes total available power; standard describes compatible delivery capability."]},
+        {"title": "Transceiver Mismatch vs. Signal Strength", "paragraphs": ["Mismatch means incompatible endpoints; signal strength means the selected link is suffering excessive optical loss."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Long fiber → Single-mode", "Pair noise → Crosstalk", "External electrical noise → Interference", "Distance loss → Attenuation", "Bad frame integrity → CRC", "Too small → Runt", "Too large → Giant", "Automatic shutdown → Error disabled", "Intentional shutdown → Administratively down", "Total power shortage → PoE budget", "Power capability mismatch → PoE standard", "Incompatible optics → Transceiver mismatch", "Low optical power → Signal strength"],
+      "callout": "MEDIUM → SIGNAL → TERMINATION → INTERFACE → POWER → TRANSCEIVER"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "5",
+  "objective": "5.3",
+  "title": "Given a Scenario, Troubleshoot Common Issues with Network Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["A physical link can be healthy while switching, filtering, routing, or addressing still prevents service. Use the symptom's scope to locate the failing layer."],
+      "bullets": ["Spanning Tree Protocol issues", "Incorrect VLAN assignment and ACL behavior", "Routing-table and default-route problems", "Address-pool exhaustion", "Gateway, IP address, duplicate-address, and subnet-mask errors"],
+      "callout": "CHECK SWITCHING → CHECK VLAN → CHECK FILTERING → CHECK ROUTING → CHECK ADDRESSING"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Determine whether the failure affects a switched path, a logical segment, an allowed flow, a routed destination, or the host's own address configuration."],
+      "bullets": ["Broadcast storm or unstable MAC learning → STP loop", "User placed in the wrong subnet → Incorrect VLAN", "Specific traffic denied → ACL", "Unknown remote network → Routing table or default route", "Clients cannot receive leases → Address pool exhaustion", "Local works but remote fails → Default gateway or route"]
+    },
+    {
+      "id": "stp",
+      "title": "Spanning Tree Protocol (STP)",
+      "entries": [
+        {"title": "Network Loops", "paragraphs": ["Redundant Layer 2 links without correct STP control can circulate frames indefinitely, causing broadcast storms, duplicate frames, and unstable MAC tables."], "memoryHook": "Layer 2 loop → broadcast storm."},
+        {"title": "Root Bridge Selection", "paragraphs": ["STP builds its topology around the root bridge. An unintended root can force inefficient paths and unpredictable forwarding decisions."], "memoryHook": "The root anchors the tree."},
+        {"title": "Port Roles", "paragraphs": ["Roles describe each port's job in the spanning-tree topology, such as root, designated, or alternate."], "memoryHook": "Role = the port's job."},
+        {"title": "Port States", "paragraphs": ["States describe whether a port is learning or forwarding traffic. A port held in a nonforwarding state may be working exactly as STP intends—or may reveal a topology issue."], "memoryHook": "State = what the port is doing now."}
+      ]
+    },
+    {
+      "id": "vlan-and-acl",
+      "title": "VLAN and Filtering Issues",
+      "entries": [
+        {"title": "Incorrect VLAN Assignment", "paragraphs": ["A device assigned to the wrong VLAN joins the wrong broadcast domain and usually receives or expects addressing for the wrong subnet."], "memoryHook": "Correct cable, wrong logical network."},
+        {"title": "Access Control List (ACL)", "paragraphs": ["An ACL with the wrong address, protocol, port, direction, order, or implicit deny can block otherwise valid traffic."], "memoryHook": "If a specific flow fails, inspect the rule path."}
+      ]
+    },
+    {
+      "id": "route-selection",
+      "title": "Route Selection",
+      "entries": [
+        {"title": "Routing Table", "paragraphs": ["The routing table must contain a valid path for the destination. A missing, stale, or less-preferred entry can send traffic incorrectly or leave it unroutable."], "memoryHook": "Is there a matching route?"},
+        {"title": "Default Route", "paragraphs": ["The default route carries traffic when no more-specific route exists. If it is absent or points to the wrong next hop, unknown remote destinations fail."], "memoryHook": "No specific match → use the default."}
+      ]
+    },
+    {
+      "id": "addressing",
+      "title": "Addressing Issues",
+      "entries": [
+        {"title": "Address Pool Exhaustion", "paragraphs": ["When a DHCP scope has no available leases, new clients cannot obtain valid configuration."], "memoryHook": "Existing clients may work while new clients fail."},
+        {"title": "Incorrect Default Gateway", "paragraphs": ["A host can reach its local subnet but cannot reach remote networks when its gateway is missing or wrong."], "memoryHook": "Local works; remote fails."},
+        {"title": "Incorrect IP Address", "paragraphs": ["An address outside the intended subnet or VLAN prevents normal communication."], "memoryHook": "Right link, wrong identity."},
+        {"title": "Duplicate IP Address", "paragraphs": ["Two hosts using the same address produce intermittent reachability, address-conflict messages, and changing ARP mappings."], "memoryHook": "One address, two owners."},
+        {"title": "Incorrect Subnet Mask", "paragraphs": ["The mask tells a host which destinations are local. A wrong mask makes the host send traffic to the wrong place—or skip the gateway when it is required."], "memoryHook": "The mask defines local versus remote."}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Broadcast storm and MAC flapping → STP loop", "Unexpected spanning-tree path → Root bridge selection", "Job in topology → Port role", "Forwarding behavior → Port state", "Wrong logical segment → Incorrect VLAN", "Particular protocol or destination blocked → ACL", "Specific destination has no path → Routing table", "All unknown networks fail → Default route", "New clients lack leases → Address pool exhaustion", "Local subnet works but remote does not → Default gateway", "Intermittent conflict → Duplicate IP", "Host misjudges local network → Subnet mask"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.3 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "STP Loop vs. Wrong VLAN", "paragraphs": ["A loop produces widespread Layer 2 instability; a wrong VLAN isolates or misplaces a specific device or port."]},
+        {"title": "Port Role vs. Port State", "paragraphs": ["Role is the port's topology function; state describes its current forwarding behavior."]},
+        {"title": "Routing Table vs. Default Route", "paragraphs": ["The routing table contains all known routes; the default is the fallback when no specific match exists."]},
+        {"title": "Gateway vs. IP Address", "paragraphs": ["A bad gateway commonly preserves local access but breaks remote access. A bad IP may break local communication too."]},
+        {"title": "Gateway vs. Subnet Mask", "paragraphs": ["The gateway forwards remote traffic; the mask decides which traffic is remote."]},
+        {"title": "Pool Exhaustion vs. Duplicate IP", "paragraphs": ["Exhaustion denies new leases. A duplicate creates conflicting ownership and intermittent connectivity."]},
+        {"title": "ACL vs. Route", "paragraphs": ["An ACL denies a flow by policy. A routing problem means the network lacks or chooses the wrong path."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Looping frames → STP", "Unexpected root → Root selection", "Topology job → Port role", "Current forwarding behavior → Port state", "Wrong segment → VLAN", "Denied flow → ACL", "Missing path → Routing table", "Fallback missing → Default route", "No DHCP leases → Pool exhaustion", "Remote unreachable → Default gateway", "Address conflict → Duplicate IP", "Wrong local boundary → Subnet mask"],
+      "callout": "SWITCHING → VLAN → FILTERING → ROUTING → ADDRESSING"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "5",
+  "objective": "5.4",
+  "title": "Given a Scenario, Troubleshoot Common Performance Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Performance troubleshooting turns 'the network is slow' into measurable symptoms: insufficient capacity, delay, loss, variation, or wireless instability."],
+      "bullets": ["Congestion, contention, and bottlenecks", "Bandwidth and throughput capacity", "Latency, packet loss, and jitter", "Wireless interference and channel overlap", "Signal degradation, weak coverage, disassociation, and roaming problems"],
+      "callout": "MEASURE CAPACITY → FIND DELAY → FIND LOSS → FIND VARIATION → CHECK WIRELESS"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Separate the performance metric from its possible cause. Bandwidth is potential capacity; throughput is what the application actually receives."],
+      "bullets": ["Too many devices competing → Contention", "Traffic exceeds available capacity → Congestion", "One constrained component limits the path → Bottleneck", "Time in transit → Latency", "Traffic never arrives → Packet loss", "Delay changes from packet to packet → Jitter"]
+    },
+    {
+      "id": "capacity",
+      "title": "Capacity and Competition",
+      "entries": [
+        {"title": "Congestion and Contention", "paragraphs": ["Congestion occurs when traffic demand exceeds available capacity. Contention occurs when multiple devices compete for a shared medium or resource."], "memoryHook": "Overloaded path vs. competing users."},
+        {"title": "Bottlenecking", "paragraphs": ["A bottleneck is the slowest or most constrained component in an end-to-end path. Faster components elsewhere cannot overcome it."], "memoryHook": "The narrowest point controls the flow."},
+        {"title": "Bandwidth", "paragraphs": ["Bandwidth is the theoretical capacity of a link or channel."], "memoryHook": "How much the pipe could carry."},
+        {"title": "Throughput Capacity", "paragraphs": ["Throughput is the useful data rate achieved in real conditions after protocol overhead, competition, loss, and device limits."], "memoryHook": "How much data actually gets through."}
+      ]
+    },
+    {
+      "id": "latency-loss-and-jitter",
+      "title": "Latency, Packet Loss, and Jitter",
+      "entries": [
+        {"title": "Latency", "paragraphs": ["Latency is the time traffic takes to travel from source to destination. Distance, queuing, processing, and retransmissions can increase it."], "memoryHook": "Delay."},
+        {"title": "Packet Loss", "paragraphs": ["Packet loss means traffic never reaches its destination. Congestion, errors, failing links, and wireless interference are common causes."], "memoryHook": "Missing packets."},
+        {"title": "Jitter", "paragraphs": ["Jitter is variation in delay between packets. Voice and video are especially sensitive because playback expects a consistent arrival rhythm."], "memoryHook": "Uneven delay."}
+      ]
+    },
+    {
+      "id": "wireless-performance",
+      "title": "Wireless Performance",
+      "entries": [
+        {"title": "Interference", "paragraphs": ["Other wireless networks, non-Wi-Fi transmitters, microwave ovens, Bluetooth devices, and electrical equipment can corrupt or delay frames."], "memoryHook": "Unwanted energy in the air."},
+        {"title": "Channel Overlap", "paragraphs": ["Nearby access points on overlapping channels compete and interfere. Channel planning reduces this self-inflicted problem."], "memoryHook": "Neighboring WLANs occupy colliding spectrum."},
+        {"title": "Signal Degradation or Loss", "paragraphs": ["Distance, walls, metal, absorption, reflection, and antenna placement weaken or distort the signal."], "memoryHook": "The radio signal fades or is obstructed."},
+        {"title": "Insufficient Wireless Coverage", "paragraphs": ["Coverage gaps occur when access-point placement, transmit power, antenna choice, or density cannot adequately serve an area."], "memoryHook": "No strong cell where the client needs one."},
+        {"title": "Client Disassociation", "paragraphs": ["A client repeatedly loses its association because of signal problems, interference, authentication failures, AP load, or configuration issues."], "memoryHook": "The client falls off the WLAN."},
+        {"title": "Roaming Misconfiguration", "paragraphs": ["Poorly coordinated SSIDs, security settings, channels, thresholds, or controller policies can prevent smooth movement between access points."], "memoryHook": "Movement between APs is the trigger."}
+      ]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Demand exceeds capacity → Congestion", "Devices compete for shared access → Contention", "One slow component controls path → Bottleneck", "Advertised link potential → Bandwidth", "Measured useful rate → Throughput", "Slow response → Latency", "Missing traffic → Packet loss", "Uneven real-time delivery → Jitter", "External radio energy → Interference", "Nearby WLAN frequencies collide → Channel overlap", "Weak signal across distance/barriers → Signal loss", "Dead zone → Insufficient coverage", "Client repeatedly disconnects → Disassociation", "Failure while moving between APs → Roaming misconfiguration"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.4 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Congestion vs. Contention", "paragraphs": ["Congestion is excess load on a path; contention is competition for shared access."]},
+        {"title": "Bottleneck vs. Congestion", "paragraphs": ["A bottleneck is the limiting component; congestion is the overloaded condition that may occur there."]},
+        {"title": "Bandwidth vs. Throughput", "paragraphs": ["Bandwidth is potential capacity; throughput is achieved data transfer."]},
+        {"title": "Latency vs. Packet Loss", "paragraphs": ["Latency arrives late; packet loss does not arrive."]},
+        {"title": "Latency vs. Jitter", "paragraphs": ["Latency is delay; jitter is variation in delay."]},
+        {"title": "Interference vs. Channel Overlap", "paragraphs": ["Interference can come from many external sources; channel overlap specifically involves colliding Wi-Fi channel space."]},
+        {"title": "Signal Loss vs. Coverage", "paragraphs": ["Signal loss describes weakening on the path; insufficient coverage describes an area without adequate service."]},
+        {"title": "Disassociation vs. Roaming", "paragraphs": ["Disassociation is the client losing connection; roaming misconfiguration is specifically a handoff problem between APs."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Excess load → Congestion", "Shared competition → Contention", "Limiting component → Bottleneck", "Potential rate → Bandwidth", "Actual rate → Throughput", "Delay → Latency", "Missing data → Loss", "Variable delay → Jitter", "Unwanted RF → Interference", "Colliding channels → Overlap", "Weak radio path → Degradation", "Dead area → Coverage", "Connection drops → Disassociation", "Bad AP handoff → Roaming"],
+      "callout": "CAPACITY → DELAY → LOSS → VARIATION → WIRELESS"
+    }
+  ]
+}

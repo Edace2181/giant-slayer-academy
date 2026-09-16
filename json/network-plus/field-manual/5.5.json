@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "5",
+  "objective": "5.5",
+  "title": "Given a Scenario, Use the Appropriate Tool or Protocol to Solve Networking Issues",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Troubleshooting tools answer different questions. The exam gives you a symptom and expects the tool or command that produces the most direct evidence."],
+      "bullets": ["Protocol analyzers and command-line utilities", "Discovery, neighbor, and speed tools", "Physical cabling and wireless tools", "Basic networking-device show commands"],
+      "callout": "TEST REACHABILITY → TRACE PATH → CHECK NAME RESOLUTION → INSPECT TRAFFIC → INSPECT HOST → DISCOVER NETWORK → TEST PHYSICAL → INSPECT DEVICE"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Choose the narrowest tool that directly answers the question in the scenario."],
+      "bullets": ["Can the host respond? → ping", "Where does the path stop? → traceroute/tracert", "What does DNS return? → nslookup or dig", "What is inside the traffic? → Protocol analyzer or tcpdump", "Which ports are listening locally? → netstat", "Which systems and services exist? → Nmap", "Where does this cable go? → Toner"]
+    },
+    {
+      "id": "protocol-analyzer",
+      "title": "Protocol Analyzer",
+      "paragraphs": ["A protocol analyzer captures and decodes network traffic so you can inspect headers, conversations, retransmissions, handshakes, errors, and application behavior. It is the broad analysis category; tcpdump is a command-line capture tool."],
+      "callout": "Need packet-level proof? Capture the traffic."
+    },
+    {
+      "id": "command-line-tools",
+      "title": "Command-Line Tools",
+      "entries": [
+        {"title": "ping", "paragraphs": ["Tests basic IP reachability and round-trip response using ICMP."], "memoryHook": "Can I reach it?"},
+        {"title": "traceroute / tracert", "paragraphs": ["Shows the hop-by-hop path toward a destination and helps locate where delay or failure begins."], "memoryHook": "Where does the path stop?"},
+        {"title": "nslookup", "paragraphs": ["Queries DNS and is widely available for basic name-resolution testing."], "memoryHook": "What address does this name resolve to?"},
+        {"title": "tcpdump", "paragraphs": ["Captures and filters packets from the command line."], "memoryHook": "Packet capture in a terminal."},
+        {"title": "dig", "paragraphs": ["Performs detailed DNS queries and exposes record and response information."], "memoryHook": "Detailed DNS investigation."},
+        {"title": "netstat", "paragraphs": ["Displays local network connections, listening ports, statistics, and—in some implementations—routing information."], "memoryHook": "What is this host listening to or connected with?"},
+        {"title": "ip / ifconfig / ipconfig", "paragraphs": ["Displays or manages host interface and IP configuration. The exact command depends on the operating system."], "memoryHook": "What is this host's network configuration?"},
+        {"title": "arp", "paragraphs": ["Displays or manages the host's ARP cache, which maps IPv4 addresses to MAC addresses on the local network."], "memoryHook": "What MAC does this host associate with that local IP?"}
+      ]
+    },
+    {
+      "id": "discovery-and-speed",
+      "title": "Discovery, Neighbors, and Speed",
+      "entries": [
+        {"title": "Nmap", "paragraphs": ["Discovers hosts, open ports, and services across a network."], "memoryHook": "Scan the network, not just the local host."},
+        {"title": "LLDP / CDP", "paragraphs": ["Link Layer Discovery Protocol (LLDP) and Cisco Discovery Protocol (CDP) reveal directly connected network neighbors and their advertised identity, port, and capabilities."], "memoryHook": "Who is connected next door?"},
+        {"title": "Speed Tester", "paragraphs": ["Measures achieved transfer rate and often latency to assess end-user performance."], "memoryHook": "How fast is the connection in practice?"}
+      ]
+    },
+    {
+      "id": "hardware-tools",
+      "title": "Hardware Tools",
+      "entries": [
+        {"title": "Toner", "paragraphs": ["Places a detectable tone on copper cabling so a probe can trace or identify the correct cable."], "memoryHook": "Find where the cable goes."},
+        {"title": "Cable Tester", "paragraphs": ["Checks continuity, pinout, opens, shorts, crossed pairs, and other wiring faults."], "memoryHook": "Prove whether the cable is wired correctly."},
+        {"title": "Network Tap", "paragraphs": ["Provides a dedicated observation point that copies traffic for monitoring or packet capture."], "memoryHook": "Get traffic to the analyzer."},
+        {"title": "Wi-Fi Analyzer", "paragraphs": ["Measures wireless channels, signal strength, nearby networks, utilization, and interference patterns."], "memoryHook": "See the radio environment."},
+        {"title": "Visual Fault Locator", "paragraphs": ["Injects visible light into fiber to reveal breaks, severe bends, and faulty connectors over short distances."], "memoryHook": "Visible light exposes a fiber fault."}
+      ]
+    },
+    {
+      "id": "device-commands",
+      "title": "Basic Networking Device Commands",
+      "entries": [
+        {"title": "show mac-address-table", "paragraphs": ["Displays the switch's learned mapping of MAC addresses to interfaces and VLANs."], "memoryHook": "Where did the switch learn this MAC?"},
+        {"title": "show route", "paragraphs": ["Displays known destination networks, next hops, and route selection information."], "memoryHook": "How will the device reach that network?"},
+        {"title": "show interface", "paragraphs": ["Displays link state, speed, duplex, counters, errors, and interface details."], "memoryHook": "What is happening on this port?"},
+        {"title": "show config", "paragraphs": ["Displays the device configuration so intended settings can be reviewed or compared."], "memoryHook": "How is the device configured?"},
+        {"title": "show arp", "paragraphs": ["Displays the network device's IP-to-MAC neighbor mappings."], "memoryHook": "Which MAC corresponds to this local IP?"},
+        {"title": "show vlan", "paragraphs": ["Displays VLANs and port membership."], "memoryHook": "Which logical segment owns this port?"},
+        {"title": "show power", "paragraphs": ["Displays power supply or PoE use, availability, and delivery information."], "memoryHook": "Is power available and being delivered?"}
+      ]
+    },
+    {
+      "id": "tool-selection",
+      "title": "Tool Selection Workflow",
+      "bullets": ["Start with host configuration: ip, ifconfig, or ipconfig", "Test a nearby and then remote address: ping", "Trace a failing route: traceroute or tracert", "Test the name service directly: nslookup or dig", "Inspect host sockets: netstat", "Discover remote hosts and services: Nmap", "Capture traffic: tcpdump or a protocol analyzer", "Trace and test physical media: toner, cable tester, or visual fault locator", "Inspect wireless conditions: Wi-Fi analyzer", "Confirm device forwarding and configuration: show commands"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Reachability → ping", "Hop-by-hop path → traceroute/tracert", "Basic DNS lookup → nslookup", "Detailed DNS response → dig", "Terminal packet capture → tcpdump", "Local sockets/listeners → netstat", "Host interface settings → ip/ifconfig/ipconfig", "Local IP-to-MAC cache → arp", "Network host/service scan → Nmap", "Directly connected neighbor → LLDP/CDP", "Actual connection rate → Speed tester", "Trace copper → Toner", "Validate wire map → Cable tester", "Passive capture feed → Tap", "Channels and RF → Wi-Fi analyzer", "Short fiber fault → Visual fault locator"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.5 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "ping vs. traceroute", "paragraphs": ["ping tests reachability; traceroute/tracert reveals the path and failure point."]},
+        {"title": "nslookup vs. dig", "paragraphs": ["Both query DNS; dig generally exposes more detailed record and response data."]},
+        {"title": "Protocol Analyzer vs. tcpdump", "paragraphs": ["Protocol analyzer is the analysis category; tcpdump is a command-line capture utility."]},
+        {"title": "netstat vs. Nmap", "paragraphs": ["netstat inspects the local host's connections and listeners; Nmap scans hosts and services on the network."]},
+        {"title": "arp vs. show arp", "paragraphs": ["arp examines a host cache; show arp examines the table on a networking device."]},
+        {"title": "Toner vs. Cable Tester", "paragraphs": ["A toner traces and identifies a cable; a cable tester validates wiring and continuity."]},
+        {"title": "Tap vs. Protocol Analyzer", "paragraphs": ["A tap supplies a copy of traffic; an analyzer captures and interprets it."]},
+        {"title": "Wi-Fi Analyzer vs. Speed Tester", "paragraphs": ["A Wi-Fi analyzer examines RF conditions; a speed tester measures achieved network performance."]},
+        {"title": "show mac-address-table vs. show arp", "paragraphs": ["The MAC table maps MACs to switch ports; ARP maps IP addresses to MAC addresses."]},
+        {"title": "show interface vs. show config", "paragraphs": ["show interface examines operational port details; show config examines configured settings."]},
+        {"title": "show vlan vs. show mac-address-table", "paragraphs": ["show vlan reveals VLAN membership; show mac-address-table reveals learned device locations."]},
+        {"title": "show power vs. show interface", "paragraphs": ["show power focuses on power/PoE capacity and use; show interface focuses on link operation and counters."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Reachability → ping", "Path → traceroute", "DNS → nslookup/dig", "Packets → analyzer/tcpdump", "Local sockets → netstat", "Host config → ip/ifconfig/ipconfig", "Host ARP cache → arp", "Remote discovery → Nmap", "Neighbor → LLDP/CDP", "Rate → Speed tester", "Trace copper → Toner", "Wire map → Cable tester", "Capture feed → Tap", "Radio environment → Wi-Fi analyzer", "Fiber break → Visual fault locator", "Switch learning → show mac-address-table", "Routes → show route", "Port health → show interface", "Settings → show config", "Device ARP → show arp", "Segments → show vlan", "PoE → show power"],
+      "callout": "REACH → TRACE → RESOLVE → CAPTURE → INSPECT → DISCOVER → TEST → VERIFY"
+    }
+  ]
+}

@@ -175,7 +175,8 @@
     const validRoute = (world === "1" && /^1\.[1-8]$/.test(objective)) ||
       (world === "2" && /^2\.[1-4]$/.test(objective)) ||
       (world === "3" && /^3\.[1-5]$/.test(objective)) ||
-      (world === "4" && /^4\.[1-3]$/.test(objective));
+      (world === "4" && /^4\.[1-3]$/.test(objective)) ||
+      (world === "5" && /^5\.[1-5]$/.test(objective));
     if (!validRoute) {
       showRouteError("The requested Network+ Field Manual route is invalid."); return;
     }

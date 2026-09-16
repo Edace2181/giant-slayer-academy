@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "certification": "network-plus",
+  "examCode": "N10-009",
+  "world": "5",
+  "objective": "5.1",
+  "title": "Explain the Troubleshooting Methodology",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Network troubleshooting is a disciplined process. The exam tests which step should happen next—not merely whether a technical action could eventually solve the problem."],
+      "bullets": ["Identify the problem", "Establish a theory of probable cause", "Test the theory", "Plan a solution and identify potential effects", "Implement the solution or escalate", "Verify full functionality and apply preventive measures", "Document throughout the process"],
+      "callout": "IDENTIFY → THEORIZE → TEST → PLAN → FIX → VERIFY → DOCUMENT"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Focus",
+      "paragraphs": ["Read the scenario for what the technician has already done. That tells you which methodology step comes next."],
+      "bullets": ["Facts and symptoms → Identify", "Likely cause → Theory", "Prove or disprove the cause → Test", "Choose the repair and consider impact → Plan", "Perform the approved repair → Implement", "Confirm the whole service works → Verify", "Record findings, actions, outcomes, and lessons learned → Document"]
+    },
+    {
+      "id": "identify-problem",
+      "title": "Step 1 — Identify the Problem",
+      "paragraphs": ["Begin by defining the real problem before changing anything. Gather objective evidence and learn what the user experienced."],
+      "bullets": ["Gather information from users, monitoring systems, logs, and documentation", "Question users about timing, scope, frequency, and impact", "Identify symptoms precisely", "Determine whether anything changed before the issue began", "Duplicate the problem, if possible, without creating additional risk", "Approach multiple problems individually so unrelated symptoms do not blur the diagnosis"],
+      "callout": "Collect facts first. A symptom is evidence—not yet the root cause."
+    },
+    {
+      "id": "establish-theory",
+      "title": "Step 2 — Establish a Theory of Probable Cause",
+      "paragraphs": ["Use the evidence to form a likely explanation. Question the obvious before assuming a rare failure."],
+      "entries": [
+        {"title": "Bottom-to-Top OSI", "paragraphs": ["Start with physical connectivity and move upward. This is effective when link, power, cabling, or interface symptoms are likely."], "memoryHook": "Cable and link first."},
+        {"title": "Top-to-Bottom OSI", "paragraphs": ["Start with the application and move downward. This is effective when the physical network appears healthy but a user-facing service fails."], "memoryHook": "Application first."},
+        {"title": "Divide and Conquer", "paragraphs": ["Begin at a middle layer, test, and use the result to decide whether to move up or down."], "memoryHook": "Split the stack and narrow the search."}
+      ]
+    },
+    {
+      "id": "test-theory",
+      "title": "Step 3 — Test the Theory to Determine the Cause",
+      "paragraphs": ["Run a focused, safe test that can confirm or reject the suspected cause."],
+      "bullets": ["If the theory is confirmed, determine the next steps needed to resolve the problem", "If the theory is not confirmed, establish a new theory or escalate"],
+      "callout": "A theory is a suspected cause. A test provides evidence."
+    },
+    {
+      "id": "plan-and-implement",
+      "title": "Steps 4 and 5 — Plan, Then Implement",
+      "entries": [
+        {"title": "Establish a Plan of Action", "paragraphs": ["Choose the corrective action and identify potential effects such as downtime, dependencies, security impact, rollback needs, and required approval."], "memoryHook": "Know the blast radius before touching production."},
+        {"title": "Implement or Escalate", "paragraphs": ["Perform the approved solution when it is within your authority and capability. Escalate when risk, access, expertise, or policy requires another owner."], "memoryHook": "Execute safely—or hand it to the right tier."}
+      ]
+    },
+    {
+      "id": "verify-and-prevent",
+      "title": "Step 6 — Verify Full System Functionality",
+      "paragraphs": ["Do more than confirm the original symptom disappeared. Test the complete service, related functions, and user experience."],
+      "bullets": ["Confirm the repair solved the reported problem", "Check that dependent and adjacent services still operate", "Have the user validate when appropriate", "Implement preventive measures when applicable"],
+      "callout": "A successful change is not complete until the system is verified."
+    },
+    {
+      "id": "document",
+      "title": "Step 7 — Document Throughout the Process",
+      "paragraphs": ["Record findings, actions, outcomes, and lessons learned throughout the process. Good documentation supports handoffs, repeatability, trend analysis, and faster future troubleshooting."],
+      "bullets": ["Symptoms and scope", "Evidence and tests", "Changes performed", "Final outcome", "Preventive actions and lessons learned"]
+    },
+    {
+      "id": "recognition-cues",
+      "title": "Recognition Cues",
+      "bullets": ["Question users or determine changes → Identify", "Suspect a likely cause → Establish a theory", "Run a targeted diagnostic → Test the theory", "Assess impact or rollback → Plan", "Apply the fix → Implement", "Confirm every function → Verify", "Record what happened → Document", "Physical symptoms first → Bottom-to-top", "Application symptoms first → Top-to-bottom", "Start in the middle → Divide and conquer"]
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 5.1 Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Identify vs. Theory", "paragraphs": ["Collecting facts and symptoms is identification. Naming a probable cause is establishing a theory."]},
+        {"title": "Theory vs. Test", "paragraphs": ["A theory is the hypothesis. A diagnostic action that proves or disproves it is the test."]},
+        {"title": "Plan vs. Implement", "paragraphs": ["Considering impact and choosing the fix is planning. Performing the fix is implementation."]},
+        {"title": "Implement vs. Verify", "paragraphs": ["Making the change is implementation. Confirming complete operation afterward is verification."]},
+        {"title": "Bottom-to-Top vs. Top-to-Bottom", "paragraphs": ["Start at cabling/link for bottom-to-top; start at the application for top-to-bottom."]},
+        {"title": "Documentation Timing", "paragraphs": ["Do not wait until the very end to capture evidence. The objective explicitly requires documentation throughout the process."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Facts → Identify", "Suspected cause → Theory", "Proof → Test", "Impact and repair path → Plan", "Action → Implement", "Whole-system confirmation → Verify", "Permanent record → Document", "Physical upward → Bottom-to-top", "Application downward → Top-to-bottom", "Middle then narrow → Divide and conquer"],
+      "callout": "IDENTIFY → THEORIZE → TEST → PLAN → FIX → VERIFY → DOCUMENT"
+    }
+  ]
+}
