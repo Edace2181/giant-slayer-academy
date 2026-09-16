@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | AWS Cloud Practitioner | Field Manual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="security-plus-field-manual.css">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="arcade-body security-field-manual-page" data-certification="aws-cloud-practitioner">
+  <div class="crt-overlay"></div>
+  <main class="security-field-manual-shell">
+    <p id="awsManualLoading" role="status">Opening the Giant Slayer's Field Manual…</p>
+
+    <section id="awsManualError" class="security-field-error hidden" role="alert">
+      <h1>Unable to Open This Field Manual</h1>
+      <p id="awsManualErrorMessage">The requested lesson could not be loaded.</p>
+      <a id="awsManualErrorReturn" href="aws-cloud-practitioner-campaign.html" class="back-link">← Return to AWS Cloud Practitioner Campaign Map</a>
+    </section>
+
+    <div id="awsManualApplication" class="hidden">
+      <header class="security-field-manual-header">
+        <span id="awsManualKicker" class="security-field-manual-kicker"></span>
+        <h1>📖 Giant Slayer's Field Manual</h1>
+        <p id="awsManualObjective" class="security-field-manual-objective"></p>
+        <p id="awsManualCompletionNote" class="security-manual-completion-note hidden"></p>
+      </header>
+
+      <nav id="awsManualNavigation" class="security-manual-navigation hidden" aria-label="Field Manual mini-lessons">
+        <p>Jump to a Mini-Lesson</p>
+        <div id="awsManualNavigationLinks" class="security-manual-navigation-links"></div>
+      </nav>
+
+      <div id="awsManualSections"></div>
+
+      <section class="security-field-section security-mini-check" aria-labelledby="awsMiniCheckHeading">
+        <h2 id="awsMiniCheckHeading">Recognition Check · Mini Check</h2>
+        <p>Use the existing GSA recognition bank to confirm the task-statement concepts before continuing.</p>
+        <form id="awsMiniCheckForm">
+          <fieldset>
+            <legend id="awsMiniCheckPrompt">Loading the Mini Check…</legend>
+            <div id="awsMiniCheckChoices" class="answers-box"></div>
+          </fieldset>
+          <button type="submit" class="link-btn">Check My Answer</button>
+        </form>
+        <p id="awsMiniCheckFeedback" class="security-mini-check-feedback" role="status" aria-live="polite" aria-atomic="true">Choose an answer, then check your response.</p>
+        <div class="security-field-manual-actions">
+          <button id="awsManualComplete" type="button" class="link-btn security-manual-primary hidden">⚔️ Complete Manual and Begin Objective Sweep</button>
+          <a id="awsManualReturn" href="aws-cloud-practitioner-world1-objectives.html" class="back-link">← Return to World 1 Objective Hub</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="aws-cloud-practitioner-field-manual.js"></script>
+</body>
+</html>

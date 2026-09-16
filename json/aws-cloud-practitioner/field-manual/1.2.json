@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "1",
+  "objective": "1.2",
+  "title": "Identify Design Principles of the AWS Cloud",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS wants you to recognize principles used to build and operate cloud workloads effectively."],
+      "bullets": ["The AWS Well-Architected Framework", "Operational Excellence", "Security", "Reliability", "Performance Efficiency", "Cost Optimization", "Sustainability", "Differences between the pillars"],
+      "callout": "Which Well-Architected pillar best matches the requirement in the scenario?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["RUN → Operational Excellence", "PROTECT → Security", "RECOVER → Reliability", "PERFORM → Performance Efficiency", "SAVE → Cost Optimization", "SUSTAIN → Sustainability"],
+      "callout": "RUN → PROTECT → RECOVER → PERFORM → SAVE → SUSTAIN"
+    },
+    {
+      "id": "well-architected-framework",
+      "title": "AWS Well-Architected Framework",
+      "paragraphs": ["The AWS Well-Architected Framework helps organizations understand how to design and operate workloads using cloud architecture practices. It provides a structured way to evaluate architectural decisions through six pillars."],
+      "bullets": ["Operational Excellence", "Security", "Reliability", "Performance Efficiency", "Cost Optimization", "Sustainability"],
+      "callout": "Are we building and operating this workload well?"
+    },
+    {
+      "id": "operational-excellence",
+      "title": "Operational Excellence",
+      "paragraphs": ["Operational Excellence focuses on supporting development, running workloads effectively, and continually improving processes and procedures."],
+      "bullets": ["Operating workloads effectively", "Monitoring operations", "Learning from operational events", "Making frequent, controlled improvements"],
+      "callout": "RUN IT BETTER"
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "paragraphs": ["The Security pillar focuses on protecting information, systems, and assets while supporting business requirements."],
+      "bullets": ["Protect information", "Control access", "Protect systems", "Detect security events", "Maintain confidentiality and integrity"],
+      "callout": "PROTECT IT"
+    },
+    {
+      "id": "reliability",
+      "title": "Reliability",
+      "paragraphs": ["Reliability focuses on a workload performing its intended function correctly and consistently, including recovery when something fails."],
+      "bullets": ["Recover from failures", "Handle disruptions", "Maintain expected functionality", "Meet changing demand", "Reduce the effect of failures"],
+      "callout": "KEEP IT WORKING—AND RECOVER WHEN IT BREAKS"
+    },
+    {
+      "id": "performance-efficiency",
+      "title": "Performance Efficiency",
+      "paragraphs": ["Performance Efficiency focuses on using computing resources efficiently to meet requirements as demand and technologies change."],
+      "bullets": ["Appropriate resource selection", "Efficient resource use", "Meeting workload performance requirements", "Adapting to changing technology"],
+      "callout": "RIGHT TECHNOLOGY, RIGHT PERFORMANCE"
+    },
+    {
+      "id": "cost-optimization",
+      "title": "Cost Optimization",
+      "paragraphs": ["Cost Optimization focuses on avoiding unnecessary expense while delivering the required business value. It does not mean choosing the cheapest option regardless of the outcome."],
+      "bullets": ["Control spending", "Eliminate waste", "Understand expenditures", "Deliver value at appropriate cost"],
+      "callout": "DO NOT PAY FOR WHAT YOU DO NOT NEED"
+    },
+    {
+      "id": "sustainability",
+      "title": "Sustainability",
+      "paragraphs": ["The Sustainability pillar focuses on minimizing the environmental impacts of running cloud workloads."],
+      "bullets": ["Environmental impact", "Sustainability goals", "Resource efficiency for environmental reasons", "Reducing environmental footprint"],
+      "callout": "DO THE WORK WITH LESS ENVIRONMENTAL IMPACT"
+    },
+    {
+      "id": "pillar-comparison",
+      "title": "Distinguishing the Six Pillars",
+      "paragraphs": ["Identify the primary concern. Another pillar may be related, but the exam asks for the best match."],
+      "table": {
+        "caption": "Primary concern and its Well-Architected pillar",
+        "headers": ["Primary concern", "Pillar"],
+        "rows": [
+          ["Improve operations and processes", "Operational Excellence"],
+          ["Protect data, systems, and assets", "Security"],
+          ["Recover from failures and continue functioning", "Reliability"],
+          ["Efficiently meet performance requirements", "Performance Efficiency"],
+          ["Avoid unnecessary spending", "Cost Optimization"],
+          ["Reduce environmental impact", "Sustainability"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.2 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Operational Excellence vs. Reliability", "paragraphs": ["Improve how systems are operated → Operational Excellence. Recover when systems fail → Reliability."]},
+        {"title": "Security vs. Reliability", "paragraphs": ["Protection or unauthorized access → Security. Failure or recovery → Reliability."]},
+        {"title": "Reliability vs. Performance Efficiency", "paragraphs": ["Can it continue or recover? → Reliability. Is it efficiently meeting performance requirements? → Performance Efficiency."]},
+        {"title": "Performance Efficiency vs. Cost Optimization", "paragraphs": ["Optimize performance and resource selection → Performance Efficiency. Optimize spending → Cost Optimization."]},
+        {"title": "Cost Optimization vs. Sustainability", "paragraphs": ["Reduce financial waste → Cost Optimization. Reduce environmental impact → Sustainability."]},
+        {"title": "Operational Excellence vs. Performance Efficiency", "paragraphs": ["Improve operational procedures → Operational Excellence. Improve efficient use of computing resources → Performance Efficiency."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Framework for evaluating cloud architecture → AWS Well-Architected Framework", "Operate and continually improve → Operational Excellence", "Protect systems, data, and assets → Security", "Recover and continue functioning → Reliability", "Efficient computing performance → Performance Efficiency", "Control spending and eliminate financial waste → Cost Optimization", "Reduce environmental impact → Sustainability"],
+      "callout": "RUN → PROTECT → RECOVER → PERFORM → SAVE → SUSTAIN"
+    }
+  ]
+}

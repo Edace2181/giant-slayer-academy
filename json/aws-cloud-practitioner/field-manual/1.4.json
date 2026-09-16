@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "1",
+  "objective": "1.4",
+  "title": "Understand Concepts of Cloud Economics",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Cloud computing changes how an organization pays for computing resources. The objective is not simply to claim AWS is cheaper, but to recognize the economic mechanisms that can create financial advantages."],
+      "bullets": ["Aspects of cloud economics and potential cost savings", "Fixed costs compared with variable costs", "Costs associated with on-premises environments", "BYOL compared with included licenses", "Rightsizing", "Benefits of automation", "Economies of scale"],
+      "callout": "How can cloud computing change the way an organization spends money and uses resources?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["BUY → Purchase infrastructure ahead of demand", "USE → Consume resources according to need", "SIZE → Match resources to workload requirements", "AUTOMATE → Reduce repetitive manual effort", "SCALE → Benefit from AWS operating at enormous scale"],
+      "callout": "BUY → USE → SIZE → AUTOMATE → SCALE"
+    },
+    {
+      "id": "cloud-economics",
+      "title": "Cloud Economics",
+      "paragraphs": ["Cloud economics examines the financial considerations and economic benefits associated with cloud computing. Instead of owning and operating every physical component, organizations can consume cloud resources according to need."],
+      "bullets": ["Servers and storage", "Networking equipment", "Facilities", "Power and cooling", "Software licenses", "Maintenance and replacement", "Infrastructure personnel"],
+      "callout": "How does the cloud change the money side of computing?"
+    },
+    {
+      "id": "fixed-and-variable-costs",
+      "title": "Fixed Costs vs. Variable Costs",
+      "entries": [
+        {"title": "Fixed Costs", "paragraphs": ["A fixed cost remains even when the resource is lightly used. Purchased servers, equipment, and facility capacity cost money regardless of utilization."], "memoryHook": "FIXED = stays. Own it and pay even when it is idle."},
+        {"title": "Variable Costs", "paragraphs": ["A variable cost changes according to consumption. Cloud spending can rise during busy periods and fall when less capacity is needed."], "memoryHook": "VARIABLE = changes. Use more, pay more; use less, pay less."}
+      ],
+      "callout": "Cloud can shift spending from large fixed infrastructure investments toward variable consumption-based costs."
+    },
+    {
+      "id": "on-premises-costs",
+      "title": "Costs Associated with On-Premises Environments",
+      "paragraphs": ["The purchase price of one server is not the complete cost of running on-premises infrastructure."],
+      "bullets": ["Hardware acquisition", "Networking and storage", "Facilities", "Power and cooling", "Physical security", "Maintenance and replacement", "Software licensing", "Personnel"],
+      "callout": "HARDWARE + FACILITY + POWER + COOLING + MAINTENANCE + PEOPLE + LICENSING"
+    },
+    {
+      "id": "licensing-strategies",
+      "title": "Licensing Strategies",
+      "entries": [
+        {"title": "Bring Your Own License (BYOL)", "paragraphs": ["The organization uses an eligible software license it already owns with its cloud workload, subject to applicable license terms."], "memoryHook": "I already have an eligible license."},
+        {"title": "Included License", "paragraphs": ["The software licensing cost is incorporated into the cloud resource or offering rather than supplied from an existing customer entitlement."], "memoryHook": "The license comes with it."}
+      ],
+      "callout": "BRING IT → BYOL. COMES WITH IT → INCLUDED."
+    },
+    {
+      "id": "rightsizing",
+      "title": "Rightsizing",
+      "paragraphs": ["Rightsizing means matching resources to the workload's actual requirements. Consistently underused, overprovisioned capacity can create unnecessary cost."],
+      "bullets": ["Review utilization", "Identify overprovisioned or underprovisioned resources", "Select appropriate compute, memory, storage, and performance", "Avoid paying for capacity the workload does not need"],
+      "callout": "NOT TOO BIG. NOT TOO SMALL. RIGHT SIZE."
+    },
+    {
+      "id": "automation",
+      "title": "Benefits of Automation",
+      "paragraphs": ["Automation performs repeatable work without requiring the same manual effort each time. Human time and operational effort are also economic resources."],
+      "bullets": ["Reduce repetitive manual work", "Improve consistency", "Increase operational efficiency", "Perform tasks more quickly", "Reduce operational overhead"],
+      "callout": "MAKE THE COMPUTER DO THE REPEATABLE WORK"
+    },
+    {
+      "id": "economies-of-scale",
+      "title": "Economies of Scale",
+      "paragraphs": ["Economies of scale are financial efficiencies created by operating at very large scale. AWS aggregates demand and operates infrastructure for many customers, achieving efficiencies that a smaller individual organization may not obtain alone."],
+      "bullets": ["Massive provider scale", "Aggregated demand", "Large-scale purchasing and operation", "Cost efficiencies and potential savings"],
+      "callout": "HUGE SCALE → GREATER ECONOMIC EFFICIENCY"
+    },
+    {
+      "id": "cost-savings",
+      "title": "Potential Cost Savings of Moving to Cloud",
+      "paragraphs": ["Moving to cloud is not automatically cheaper. Savings can result when an organization changes how it purchases, sizes, operates, and pays for infrastructure."],
+      "bullets": ["Reduce large upfront investments", "Move toward variable consumption", "Avoid overprovisioning", "Rightsize resources", "Automate repetitive work", "Benefit from economies of scale", "Reduce some physical-infrastructure operating costs"],
+      "callout": "Understand why savings can occur—not a guarantee that every migration costs less."
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "Cloud Economics Scenario Recognition",
+      "table": {
+        "caption": "Match the financial clue to the cloud-economics concept",
+        "headers": ["Scenario clue", "Concept"],
+        "rows": [
+          ["Cost remains despite low utilization", "Fixed cost"],
+          ["Cost changes according to consumption", "Variable cost"],
+          ["Power, cooling, facilities, and hardware operation", "On-premises costs"],
+          ["Use an existing eligible software license", "BYOL"],
+          ["License comes with the offering", "Included license"],
+          ["Match capacity to actual workload", "Rightsizing"],
+          ["Remove repetitive manual effort", "Automation"],
+          ["Provider's huge scale creates efficiencies", "Economies of scale"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.4 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Fixed vs. Variable Cost", "paragraphs": ["Pay regardless of utilization → Fixed. Cost changes with consumption → Variable."]},
+        {"title": "BYOL vs. Included License", "paragraphs": ["Customer supplies an eligible existing license → BYOL. License is incorporated into the offering → Included license."]},
+        {"title": "Rightsizing vs. Elasticity", "paragraphs": ["Choose an appropriately sized resource → Rightsizing. Increase or decrease resources as demand changes → Elasticity."]},
+        {"title": "Rightsizing vs. Cost Optimization", "paragraphs": ["Specific resource-sizing action → Rightsizing. Well-Architected financial-efficiency pillar → Cost Optimization."]},
+        {"title": "Automation vs. Agility", "paragraphs": ["Perform repeatable tasks automatically → Automation. Experiment, adapt, and respond quickly → Agility."]},
+        {"title": "Economies of Scale vs. Elasticity", "paragraphs": ["Provider scale creates economic efficiency → Economies of scale. Workload capacity changes with demand → Elasticity."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Financial considerations of cloud → Cloud economics", "Pay regardless of utilization → Fixed costs", "Pay according to consumption → Variable costs", "Facilities, power, cooling, maintenance, and hardware → On-premises costs", "Use an eligible license already owned → BYOL", "License comes with offering → Included license", "Match resources to workload needs → Rightsizing", "Perform repetitive processes automatically → Automation", "Provider scale creates financial efficiency → Economies of scale", "Potential financial advantage from changing the infrastructure model → Cloud cost savings"],
+      "callout": "BUY → USE → SIZE → AUTOMATE → SCALE"
+    },
+    {
+      "id": "world-one-connection",
+      "title": "World 1 Connection",
+      "bullets": ["1.1 VALUE → Why use AWS Cloud?", "1.2 DESIGN → How do we evaluate good AWS architecture?", "1.3 MIGRATE → How do we approach moving to AWS?", "1.4 ECONOMICS → How does cloud change the financial model?"],
+      "callout": "VALUE → DESIGN → MIGRATE → ECONOMICS"
+    }
+  ]
+}

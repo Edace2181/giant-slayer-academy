@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "1",
+  "objective": "1.3",
+  "title": "Understand the Benefits of and Strategies for Migration to the AWS Cloud",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Moving to AWS is not simply copying everything from a data center. Organizations need a cloud adoption strategy, migration resources, desired outcomes, and an approach suited to each workload."],
+      "bullets": ["Cloud adoption strategies", "Resources that support the cloud migration journey", "AWS Cloud Adoption Framework (AWS CAF)", "AWS CAF business outcomes", "Appropriate migration strategies, including database replication and AWS Snowball"],
+      "callout": "How can an organization plan and support its move to AWS, and what migration approach fits the situation?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["PLAN → Why are we adopting cloud?", "PREPARE → Which organizational capabilities must be ready?", "MOVE → How should the workload or data migrate?", "IMPROVE → Which business outcomes are we pursuing?"],
+      "callout": "PLAN → PREPARE → MOVE → IMPROVE"
+    },
+    {
+      "id": "cloud-adoption-strategy",
+      "title": "Cloud Adoption Strategies",
+      "paragraphs": ["A cloud adoption strategy directs how an organization will begin using cloud technologies. It aligns the migration with business objectives, organizational readiness, technical requirements, operational capabilities, risks, and desired outcomes."],
+      "bullets": ["Improve operational efficiency", "Reduce business risk", "Support business growth", "Modernize technology", "Increase organizational agility", "Improve sustainability-related outcomes"],
+      "callout": "Planning people, processes, technology, readiness, and goals → Cloud adoption strategy"
+    },
+    {
+      "id": "migration-resources",
+      "title": "Resources for the Cloud Migration Journey",
+      "paragraphs": ["AWS guidance and assessment resources can help inventory workloads, evaluate readiness and dependencies, plan migration phases, and connect technical work to expected business outcomes."],
+      "callout": "Assess before moving: readiness, dependencies, risks, and outcomes."
+    },
+    {
+      "id": "aws-caf",
+      "title": "AWS Cloud Adoption Framework (AWS CAF)",
+      "paragraphs": ["AWS CAF helps organizations identify capabilities needed for successful cloud transformation. Cloud adoption affects business, people, governance, technology, security, and operations—not just servers."],
+      "callout": "AWS CAF = prepare the organization for cloud transformation."
+    },
+    {
+      "id": "caf-outcomes",
+      "title": "AWS CAF Business Outcomes",
+      "entries": [
+        {"title": "Reduced Business Risk", "paragraphs": ["Improve how the organization identifies and manages operational, security, governance, and business risks."], "memoryHook": "Reduce exposure and the impact of business problems."},
+        {"title": "Improved ESG Performance", "paragraphs": ["Support environmental, social, and governance objectives through the cloud transformation program."], "memoryHook": "People + planet + governance."},
+        {"title": "Increased Revenue", "paragraphs": ["Use cloud capabilities to reach opportunities faster, support new offerings, and enable business growth."], "memoryHook": "Help the business grow."},
+        {"title": "Increased Operational Efficiency", "paragraphs": ["Streamline processes, reduce unnecessary effort, and use organizational resources more effectively."], "memoryHook": "Do the work better."}
+      ]
+    },
+    {
+      "id": "migration-strategies",
+      "title": "Selecting a Migration Strategy",
+      "paragraphs": ["Choose a migration method based on the workload, dependencies, data volume, operational constraints, network capacity, downtime tolerance, and business goals. One method does not fit every workload."],
+      "callout": "What is the appropriate way to move this workload or dataset?"
+    },
+    {
+      "id": "database-replication",
+      "title": "Database Replication",
+      "paragraphs": ["Database replication copies and synchronizes database changes between source and target systems. It is useful when an active database continues receiving inserts, updates, and deletes during migration."],
+      "bullets": ["Existing database", "Source and target must remain synchronized", "Changing data must continue to replicate", "Reduce disruption before final cutover"],
+      "callout": "Keep copying and synchronizing active database data → Database replication"
+    },
+    {
+      "id": "aws-snowball",
+      "title": "AWS Snowball",
+      "paragraphs": ["AWS Snowball uses a physical data-transfer device to move large datasets into or out of AWS when transferring the data over the available network would take too long or be impractical."],
+      "bullets": ["Very large data volume", "Limited or slow network connection", "Online transfer would take too long", "Physical device is shipped for data transfer"],
+      "callout": "Large offline data transfer when the network is impractical → AWS Snowball"
+    },
+    {
+      "id": "framework-comparison",
+      "title": "AWS CAF vs. Well-Architected Framework",
+      "table": {
+        "caption": "Choose the framework based on the scope of the question",
+        "headers": ["Question focus", "Framework"],
+        "rows": [
+          ["Prepare an organization for cloud adoption and transformation", "AWS CAF"],
+          ["Evaluate whether a cloud workload is architected and operated well", "AWS Well-Architected Framework"]
+        ]
+      },
+      "callout": "ADOPT/TRANSFORM WELL → AWS CAF. BUILD/OPERATE WELL → Well-Architected."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Objective 1.3 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "AWS CAF vs. Well-Architected", "paragraphs": ["Organizational cloud transformation → AWS CAF. Workload architecture and operations → Well-Architected Framework."]},
+        {"title": "Operational Efficiency vs. Operational Excellence", "paragraphs": ["AWS CAF transformation outcome → Increased operational efficiency. Well-Architected pillar → Operational Excellence."]},
+        {"title": "ESG vs. Sustainability", "paragraphs": ["Organization-wide environmental, social, and governance outcome → Improved ESG performance. Workload environmental impact pillar → Sustainability."]},
+        {"title": "Revenue vs. Cost Optimization", "paragraphs": ["Grow business opportunities and income → Increased revenue. Avoid unnecessary workload spending → Cost Optimization."]},
+        {"title": "Database Replication vs. AWS Snowball", "paragraphs": ["Continuously synchronize an active database → Database replication. Move a very large dataset with a physical device because the network is impractical → AWS Snowball."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Plan how the organization adopts cloud → Cloud adoption strategy", "Guidance and readiness assessment → Migration journey resources", "Organizational transformation framework → AWS CAF", "Lower organizational exposure → Reduced business risk", "Environmental + social + governance outcome → Improved ESG performance", "Business growth and income → Increased revenue", "Streamlined operations → Increased operational efficiency", "Synchronize changing database data → Database replication", "Large physical data transfer → AWS Snowball", "Six-pillar workload evaluation → Well-Architected Framework"],
+      "callout": "PLAN → PREPARE → MOVE → IMPROVE"
+    }
+  ]
+}
