@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "2",
+  "objective": "2.4",
+  "title": "Identify Components and Resources for Security",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS provides different security services for different jobs, third-party products, security documentation, educational resources, and checks that identify security concerns."],
+      "bullets": ["AWS WAF", "AWS Firewall Manager", "AWS Shield", "Amazon GuardDuty", "AWS Marketplace", "AWS Knowledge Center", "AWS Security Center", "AWS Security Blog", "AWS Trusted Advisor"],
+      "callout": "Which AWS security service or security resource matches this need?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["FILTER → AWS WAF", "PROTECT → AWS Shield", "MANAGE → AWS Firewall Manager", "DETECT → Amazon GuardDuty", "ADVISE → AWS Trusted Advisor", "LEARN → AWS security documentation and resources"],
+      "callout": "FILTER → PROTECT → MANAGE → DETECT → ADVISE → LEARN"
+    },
+    {
+      "id": "security-capabilities",
+      "title": "AWS Security Capabilities",
+      "paragraphs": ["Security is a toolbox. A service that detects suspicious activity does not perform the same job as a web-request filter or centralized firewall-policy manager."],
+      "callout": "Recognize the job → choose the right tool."
+    },
+    {
+      "id": "security-services",
+      "title": "AWS Security Features and Services",
+      "entries": [
+        {"title": "AWS WAF", "paragraphs": ["A web application firewall that controls and filters HTTP or HTTPS web requests using rules."], "memoryHook": "Web traffic bouncer."},
+        {"title": "AWS Shield", "paragraphs": ["Helps protect AWS workloads against distributed denial-of-service (DDoS) attacks."], "memoryHook": "DDoS → Shield."},
+        {"title": "AWS Firewall Manager", "paragraphs": ["Centrally configures and manages firewall rules and security policies across multiple accounts and resources."], "memoryHook": "Central security-policy boss."},
+        {"title": "Amazon GuardDuty", "paragraphs": ["Continuously detects suspicious or potentially malicious activity using relevant AWS data sources."], "memoryHook": "Threat detection."}
+      ]
+    },
+    {
+      "id": "aws-marketplace",
+      "title": "Third-Party Security Products — AWS Marketplace",
+      "paragraphs": ["AWS Marketplace provides software offerings from third-party vendors, including commercial security products that can be used with AWS environments."],
+      "bullets": ["Third-party vendor software", "Find, buy, and deploy products", "Security solutions beyond AWS-created services"],
+      "callout": "Third-party cloud security software → AWS Marketplace"
+    },
+    {
+      "id": "security-documentation",
+      "title": "AWS Security Documentation and Information",
+      "paragraphs": ["Sometimes the correct resource provides guidance rather than directly protecting a workload."],
+      "entries": [
+        {"title": "AWS Knowledge Center", "paragraphs": ["Answers and guidance for common AWS questions and technical issues."], "memoryHook": "How do I understand or resolve this common issue?"},
+        {"title": "AWS Security Center", "paragraphs": ["A destination for AWS security-related information and resources."], "memoryHook": "AWS security information hub."},
+        {"title": "AWS Security Blog", "paragraphs": ["AWS-authored security articles, guidance, technical content, and updates."], "memoryHook": "Security articles and updates."}
+      ]
+    },
+    {
+      "id": "trusted-advisor",
+      "title": "AWS Trusted Advisor",
+      "paragraphs": ["AWS Trusted Advisor evaluates AWS environments and provides best-practice recommendations across areas that include security. In this objective, recognize its role in identifying security issues and improvement opportunities."],
+      "bullets": ["Best-practice checks", "Recommendations about the AWS environment", "Potential security concerns", "Advisory guidance"],
+      "callout": "Trusted Advisor recommends; GuardDuty detects."
+    },
+    {
+      "id": "toolbox-comparison",
+      "title": "Security Toolbox Comparison",
+      "table": {
+        "caption": "Give every security service or resource one clear job",
+        "headers": ["Need", "Service or resource"],
+        "rows": [
+          ["Filter web requests", "AWS WAF"],
+          ["DDoS protection", "AWS Shield"],
+          ["Central firewall policy management", "AWS Firewall Manager"],
+          ["Threat detection", "Amazon GuardDuty"],
+          ["Third-party security product", "AWS Marketplace"],
+          ["Common technical question", "AWS Knowledge Center"],
+          ["AWS security information and resources", "AWS Security Center"],
+          ["Security articles and updates", "AWS Security Blog"],
+          ["Best-practice recommendations", "AWS Trusted Advisor"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 2.4 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "WAF vs. Shield", "paragraphs": ["Filter web requests → WAF. DDoS protection → Shield."]},
+        {"title": "WAF vs. Firewall Manager", "paragraphs": ["Apply web request rules → WAF. Centrally manage firewall and security policies → Firewall Manager."]},
+        {"title": "Shield vs. GuardDuty", "paragraphs": ["DDoS protection → Shield. Threat detection → GuardDuty."]},
+        {"title": "GuardDuty vs. Inspector", "paragraphs": ["Suspicious activity → GuardDuty. Software vulnerabilities and exposure → Inspector."]},
+        {"title": "GuardDuty vs. Trusted Advisor", "paragraphs": ["Detect threats → GuardDuty. Recommend best-practice improvements → Trusted Advisor."]},
+        {"title": "Security Hub vs. Trusted Advisor", "paragraphs": ["Centralize security findings → Security Hub. Best-practice recommendations → Trusted Advisor."]},
+        {"title": "AWS Service vs. Marketplace", "paragraphs": ["AWS-provided capability → Specific AWS service. Third-party vendor security product → AWS Marketplace."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Web request filtering → AWS WAF", "DDoS protection → AWS Shield", "Central firewall policies → AWS Firewall Manager", "Threat detection → Amazon GuardDuty", "Best-practice recommendations → AWS Trusted Advisor", "Third-party products → AWS Marketplace", "Common AWS guidance → AWS Knowledge Center", "AWS security resources → AWS Security Center", "Security articles and updates → AWS Security Blog"],
+      "callout": "FILTER → PROTECT → MANAGE → DETECT → ADVISE → LEARN"
+    },
+    {
+      "id": "world-two-connection",
+      "title": "World 2 Connection",
+      "bullets": ["2.1 RESPONSIBILITY → Who secures what?", "2.2 GOVERNANCE & COMPLIANCE → How do we protect, monitor, audit, and prove?", "2.3 ACCESS → Who gets access?", "2.4 SECURITY TOOLBOX → Which security tool or resource fits?"],
+      "callout": "RESPONSIBILITY → GOVERNANCE → ACCESS → SECURITY TOOLBOX"
+    }
+  ]
+}

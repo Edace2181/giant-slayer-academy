@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "2",
+  "objective": "2.1",
+  "title": "Understand the AWS Shared Responsibility Model",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Cloud security is shared between AWS and the customer. Shared does not mean every task is divided equally; responsibility follows the layer each party controls."],
+      "bullets": ["Components of the AWS shared responsibility model", "Customer responsibilities", "AWS responsibilities", "Responsibilities involving both parties", "How the boundary changes with Amazon EC2, Amazon RDS, and AWS Lambda"],
+      "callout": "Who controls and must secure this layer?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["AWS → Security OF the cloud", "Customer → Security IN the cloud", "Service choice → Moves the responsibility boundary"],
+      "callout": "AWS = OF · CUSTOMER = IN · SERVICE = MOVES THE LINE"
+    },
+    {
+      "id": "shared-responsibility-model",
+      "title": "AWS Shared Responsibility Model",
+      "paragraphs": ["The model divides cloud security and management responsibilities between AWS and the customer because each controls different parts of the environment."],
+      "bullets": ["Some responsibilities belong primarily to AWS", "Some belong primarily to the customer", "Some require participation from both sides", "The exact division depends on the service"],
+      "callout": "AWS + CUSTOMER = SHARED RESPONSIBILITY—not a literal 50/50 split."
+    },
+    {
+      "id": "aws-responsibilities",
+      "title": "AWS Responsibility — Security OF the Cloud",
+      "paragraphs": ["AWS protects the infrastructure that runs AWS Cloud services."],
+      "bullets": ["Physical facilities and data centers", "Physical server hardware", "Foundational networking infrastructure", "Underlying infrastructure that delivers AWS services"],
+      "callout": "Physical AWS infrastructure → AWS responsibility"
+    },
+    {
+      "id": "customer-responsibilities",
+      "title": "Customer Responsibility — Security IN the Cloud",
+      "paragraphs": ["Customers secure the parts of the environment they control. The exact list changes by service."],
+      "bullets": ["Customer data", "Identities and permissions", "Access management", "Customer-controlled configuration", "Application code and security", "Guest operating system responsibilities on applicable services", "Network and security settings"],
+      "callout": "You control it → you must secure it."
+    },
+    {
+      "id": "shared-responsibilities",
+      "title": "Shared Responsibilities",
+      "paragraphs": ["AWS handles its part of the technology and operational controls, while the customer handles the corresponding responsibilities within the resources and configurations the customer controls."],
+      "callout": "AWS securing its infrastructure does not correct a customer's unsafe data, identity, code, or configuration decisions."
+    },
+    {
+      "id": "service-boundary",
+      "title": "The Responsibility Boundary Moves by Service",
+      "paragraphs": ["The more managed the service, the more of the underlying stack AWS operates. Customer data, access, permissions, and customer-controlled configuration remain important throughout the ladder."],
+      "callout": "EC2 → RDS → Lambda: AWS progressively manages more underneath."
+    },
+    {
+      "id": "amazon-ec2",
+      "title": "Amazon EC2",
+      "paragraphs": ["AWS operates the physical infrastructure beneath the virtual machine. The customer controls and secures much more of the guest environment."],
+      "bullets": ["Guest operating system", "OS updates and patches", "Installed applications", "Customer data", "Access and permissions", "Security configuration"],
+      "callout": "EC2 guest OS patching → Customer responsibility"
+    },
+    {
+      "id": "amazon-rds",
+      "title": "Amazon RDS",
+      "paragraphs": ["Amazon RDS is a managed relational database service. Compared with installing a database on EC2, AWS manages more of the database platform and underlying environment."],
+      "bullets": ["AWS manages more of the underlying database platform", "Customer remains responsible for data", "Customer manages access and permissions", "Customer remains responsible for customer-controlled configuration"],
+      "callout": "Managed service does not mean zero customer security responsibility."
+    },
+    {
+      "id": "aws-lambda",
+      "title": "AWS Lambda",
+      "paragraphs": ["AWS Lambda runs code without the customer managing servers directly. AWS operates the underlying infrastructure and runtime environment, while the customer remains responsible for secure code, data, permissions, access, and configuration."],
+      "callout": "Bring the code; AWS manages much more underneath."
+    },
+    {
+      "id": "responsibility-ladder",
+      "title": "EC2 vs. RDS vs. Lambda",
+      "table": {
+        "caption": "Responsibility shifts as AWS manages more of the service",
+        "headers": ["Area", "EC2", "RDS", "Lambda"],
+        "rows": [
+          ["Physical AWS infrastructure", "AWS", "AWS", "AWS"],
+          ["Guest/underlying environment", "Customer manages more", "AWS manages more", "AWS manages much more"],
+          ["Customer data", "Customer", "Customer", "Customer"],
+          ["Customer access and permissions", "Customer", "Customer", "Customer"],
+          ["Customer-controlled configuration", "Customer", "Customer", "Customer"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 2.1 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Security OF vs. IN the Cloud", "paragraphs": ["AWS secures the cloud infrastructure. The customer secures what the customer controls in the cloud."]},
+        {"title": "Physical Infrastructure vs. Customer Configuration", "paragraphs": ["AWS facilities and hardware → AWS. Customer resource configuration → Customer."]},
+        {"title": "EC2 Guest OS vs. Physical Host", "paragraphs": ["Guest OS on EC2 → Customer. Physical infrastructure under EC2 → AWS."]},
+        {"title": "RDS vs. EC2", "paragraphs": ["Database installed on EC2 → Customer manages more. Amazon RDS → AWS manages more of the database platform."]},
+        {"title": "Lambda vs. EC2", "paragraphs": ["EC2 leaves more of the computing environment to the customer. Lambda shifts more underlying management to AWS."]},
+        {"title": "Managed Service Trap", "paragraphs": ["Managed does not transfer responsibility for customer data, access, code, permissions, or customer-controlled configuration to AWS."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Shared cloud security → AWS shared responsibility model", "Security OF the cloud → AWS", "Security IN the cloud → Customer", "Physical data center and hardware → AWS", "Customer data and permissions → Customer", "EC2 guest OS → Customer", "Managed database platform → RDS / AWS manages more", "Serverless underlying infrastructure → Lambda / AWS manages more", "Different service changes the boundary → Responsibility shifts by service"],
+      "callout": "AWS = OF · CUSTOMER = IN · SERVICE = MOVES THE LINE"
+    }
+  ]
+}

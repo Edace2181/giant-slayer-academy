@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "2",
+  "objective": "2.3",
+  "title": "Identify AWS Access Management Capabilities",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS access management identifies users and workloads, authenticates identities, grants only required permissions, protects credentials, centralizes workforce access, and protects the root user."],
+      "bullets": ["AWS IAM and least privilege", "Users, groups, roles, custom policies, and managed policies", "Access keys, password policies, and credential storage", "MFA, IAM Identity Center, and cross-account roles", "Root-user protection and root-only tasks", "Federated identity management"],
+      "callout": "How should identities authenticate and receive only the AWS permissions they actually require?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["IDENTIFY → Who requests access?", "AUTHENTICATE → Can they prove who they are?", "AUTHORIZE → What may they do?", "PROTECT → Are credentials and privileged identities secure?"],
+      "callout": "IDENTIFY → AUTHENTICATE → AUTHORIZE → PROTECT"
+    },
+    {
+      "id": "aws-iam",
+      "title": "AWS Identity and Access Management (IAM)",
+      "paragraphs": ["AWS IAM securely controls access to AWS resources by associating permissions with identities."],
+      "bullets": ["Users", "Groups", "Policies", "Roles", "Permissions"],
+      "callout": "IAM = who can do what in AWS?"
+    },
+    {
+      "id": "authentication-and-authorization",
+      "title": "Authentication vs. Authorization",
+      "entries": [
+        {"title": "Authentication", "paragraphs": ["Verifies the identity making the request."], "memoryHook": "Who are you? ID check."},
+        {"title": "Authorization", "paragraphs": ["Determines which actions and resources an authenticated identity may use."], "memoryHook": "What can you do? Permission."}
+      ]
+    },
+    {
+      "id": "users-groups-policies",
+      "title": "IAM Users, Groups, and Policies",
+      "entries": [
+        {"title": "IAM User", "paragraphs": ["An individual identity in AWS that can receive credentials and permissions."], "memoryHook": "One AWS identity."},
+        {"title": "IAM Group", "paragraphs": ["A collection of IAM users with common access needs."], "memoryHook": "Assign shared permissions to several users."},
+        {"title": "Managed Policy", "paragraphs": ["A reusable permission policy that can be attached to multiple identities. AWS and customers can provide managed policies."], "memoryHook": "Reusable policy."},
+        {"title": "Custom Policy", "paragraphs": ["A policy tailored to specific access requirements."], "memoryHook": "Precisely tailored permissions."}
+      ],
+      "callout": "Policy = what is allowed or denied."
+    },
+    {
+      "id": "least-privilege",
+      "title": "Principle of Least Privilege",
+      "paragraphs": ["Grant only the permissions required to perform the necessary task—no more. Broad administrator access for convenience violates least privilege."],
+      "bullets": ["Minimum permissions", "Only required access", "Reduce excessive privileges", "Review and tailor permissions"],
+      "callout": "GIVE ONLY THE KEYS THEY NEED"
+    },
+    {
+      "id": "iam-roles",
+      "title": "IAM Roles and Cross-Account Access",
+      "entries": [
+        {"title": "IAM Role", "paragraphs": ["An assumable identity that provides temporary permissions without requiring permanent credentials for every use case."], "memoryHook": "Assume permissions when needed."},
+        {"title": "Cross-Account IAM Role", "paragraphs": ["Provides controlled access from one AWS account to resources in another account."], "memoryHook": "Account A → role → Account B."}
+      ]
+    },
+    {
+      "id": "identity-center-and-federation",
+      "title": "IAM Identity Center and Federation",
+      "entries": [
+        {"title": "AWS IAM Identity Center", "paragraphs": ["Centrally manages workforce access to multiple AWS accounts and applications."], "memoryHook": "One central workforce access door."},
+        {"title": "Federated Identity", "paragraphs": ["Lets users access AWS with identities managed by an external identity provider rather than separate long-term IAM users."], "memoryHook": "Use an existing corporate identity to access AWS."}
+      ]
+    },
+    {
+      "id": "authentication-methods",
+      "title": "AWS Authentication Methods",
+      "entries": [
+        {"title": "Multi-Factor Authentication (MFA)", "paragraphs": ["Requires an additional authentication factor beyond a password and is especially important for privileged identities."], "memoryHook": "Password + another factor."},
+        {"title": "IAM Identity Center", "paragraphs": ["Provides centralized workforce authentication and access to assigned accounts and applications."], "memoryHook": "Central workforce sign-in."},
+        {"title": "Cross-Account IAM Roles", "paragraphs": ["Allow an authenticated principal to assume authorized access in another AWS account."], "memoryHook": "Temporary authenticated access across accounts."}
+      ]
+    },
+    {
+      "id": "credential-management",
+      "title": "Access Keys and Password Policies",
+      "entries": [
+        {"title": "Access Keys", "paragraphs": ["Credentials for programmatic AWS access. They must not be shared, exposed, or embedded insecurely."], "memoryHook": "Programmatic credential."},
+        {"title": "Password Policies", "paragraphs": ["Define password requirements for applicable IAM users according to the organization's security needs."], "memoryHook": "Password rules."}
+      ]
+    },
+    {
+      "id": "credential-storage",
+      "title": "Credential Storage",
+      "paragraphs": ["Hardcoding passwords, tokens, and secrets in source code creates unnecessary exposure."],
+      "entries": [
+        {"title": "AWS Secrets Manager", "paragraphs": ["Stores, retrieves, and can rotate application secrets such as database credentials and API-related secrets."], "memoryHook": "Securely manage and rotate a secret."},
+        {"title": "AWS Systems Manager", "paragraphs": ["Provides resource-management capabilities including parameter storage for configuration and sensitive values."], "memoryHook": "Manage systems and parameters."}
+      ],
+      "callout": "Do not put the password in the code."
+    },
+    {
+      "id": "root-user",
+      "title": "AWS Account Root User",
+      "paragraphs": ["The AWS account root user is extremely powerful. Protect it heavily, avoid everyday use, and use it only for tasks that specifically require root credentials."],
+      "bullets": ["Use a strong password", "Enable MFA", "Protect root credentials", "Avoid root access keys unless specifically necessary", "Use appropriately permissioned identities for routine work", "Recognize that some sensitive account tasks are root-user-only"],
+      "callout": "ROOT = MASTER KEY: lock it away from daily administration."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 2.3 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Authentication vs. Authorization", "paragraphs": ["Prove identity → Authentication. Determine allowed actions → Authorization."]},
+        {"title": "User vs. Group", "paragraphs": ["Individual identity → User. Collection of users → Group."]},
+        {"title": "Policy vs. Role", "paragraphs": ["Defines permissions → Policy. Assumable identity and permissions → Role."]},
+        {"title": "IAM vs. IAM Identity Center", "paragraphs": ["AWS identities and permissions → IAM. Central workforce access across accounts and applications → IAM Identity Center."]},
+        {"title": "Cross-Account vs. Federation", "paragraphs": ["Assume permissions in another AWS account → Cross-account role. Use identities from an external identity provider → Federation."]},
+        {"title": "Root User", "paragraphs": ["Protect heavily, enable MFA, avoid daily use, and reserve for root-only tasks."]},
+        {"title": "Hardcoded Credentials", "paragraphs": ["Store application secrets securely with services such as AWS Secrets Manager rather than embedding them in source code."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Who can do what → IAM", "Verify identity → Authentication", "Determine permissions → Authorization", "Individual identity → User", "Collection of users → Group", "Permission document → Policy", "Assumable permissions → Role", "Minimum required access → Least privilege", "Another AWS account → Cross-account role", "Central workforce access → IAM Identity Center", "Existing external identities → Federation", "Additional factor → MFA", "Programmatic credential → Access key", "Password requirements → Password policy", "Application secret → Secrets Manager", "Configuration parameters → Systems Manager", "Highly privileged account identity → Root user"],
+      "callout": "IDENTIFY → AUTHENTICATE → AUTHORIZE → PROTECT"
+    }
+  ]
+}

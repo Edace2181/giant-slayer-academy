@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Understand AWS Cloud Security, Governance, and Compliance Concepts",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Organizations must protect data, monitor resources, record actions, evaluate configurations, find security issues, and demonstrate compliance."],
+      "bullets": ["AWS compliance and governance concepts", "Benefits of cloud security and encryption", "Where cloud security logs are captured and located", "AWS Artifact and varying compliance needs", "Amazon Inspector, AWS Security Hub, Amazon GuardDuty, and AWS Shield", "Encryption in transit and at rest", "CloudWatch, CloudTrail, Audit Manager, AWS Config, and access reports"],
+      "callout": "What security, governance, compliance, encryption, logging, monitoring, or auditing capability does this scenario require?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["PROTECT → Security controls and encryption", "WATCH → Monitor resources and activity", "RECORD → Maintain evidence of events and actions", "CONFIGURE → Track required resource configurations", "PROVE → Produce compliance evidence and reports"],
+      "callout": "PROTECT → WATCH → RECORD → CONFIGURE → PROVE"
+    },
+    {
+      "id": "security-governance-compliance",
+      "title": "Security vs. Governance vs. Compliance",
+      "entries": [
+        {"title": "Security", "paragraphs": ["Protect systems, resources, and data."], "memoryHook": "Protect it."},
+        {"title": "Governance", "paragraphs": ["Establish and maintain control over how cloud resources are managed."], "memoryHook": "Manage it properly."},
+        {"title": "Compliance", "paragraphs": ["Meet applicable legal, regulatory, industry, and organizational requirements."], "memoryHook": "Meet the rules."}
+      ],
+      "callout": "Security, governance, and compliance overlap, but they are not interchangeable."
+    },
+    {
+      "id": "cloud-security-and-logs",
+      "title": "Benefits of Cloud Security and Security Logs",
+      "paragraphs": ["AWS provides security capabilities at cloud scale, including encryption, monitoring, threat and vulnerability findings, centralized visibility, and recorded events. Cloud security logs help investigations reconstruct actions, changes, events, and resource behavior."],
+      "bullets": ["Know which service produces the needed evidence", "Protect both moving and stored data", "Retain visibility for security investigation", "Use customer-configured controls under the shared responsibility model"],
+      "callout": "The value of a log depends on whether the question asks about performance, an API action, or resource configuration."
+    },
+    {
+      "id": "aws-artifact",
+      "title": "AWS Artifact",
+      "paragraphs": ["AWS Artifact provides on-demand access to AWS security and compliance documents and certain agreements."],
+      "bullets": ["AWS compliance reports", "Audit documentation", "Compliance evidence", "AWS agreements"],
+      "callout": "ARTIFACT → AWS COMPLIANCE PAPERWORK AND EVIDENCE"
+    },
+    {
+      "id": "compliance-requirements",
+      "title": "Compliance Requirements Vary",
+      "entries": [
+        {"title": "Geographic Locations", "paragraphs": ["Requirements may depend on country, jurisdiction, Region, or where data is handled."], "memoryHook": "Location can change the rules."},
+        {"title": "Industries", "paragraphs": ["Healthcare, financial services, retail, and other industries can have different obligations based on the information they handle."], "memoryHook": "Industry can change the rules."},
+        {"title": "AWS Services", "paragraphs": ["Not every service has identical compliance eligibility or characteristics. Customers must verify whether a service fits their workload's requirements."], "memoryHook": "AWS service does not automatically mean every compliance requirement is satisfied."}
+      ]
+    },
+    {
+      "id": "encryption",
+      "title": "Encryption Options",
+      "entries": [
+        {"title": "Encryption in Transit", "paragraphs": ["Protects data while it moves between clients, services, systems, or networks."], "memoryHook": "TRANSIT = traveling."},
+        {"title": "Encryption at Rest", "paragraphs": ["Protects data while stored in databases, disks, or storage systems."], "memoryHook": "REST = resting."}
+      ],
+      "callout": "Is the data moving or sitting?"
+    },
+    {
+      "id": "customer-resource-security",
+      "title": "Services Customers Use to Secure AWS Resources",
+      "entries": [
+        {"title": "Amazon Inspector", "paragraphs": ["Identifies software vulnerabilities and unintended network exposure in supported workloads."], "memoryHook": "What is weak?"},
+        {"title": "Amazon GuardDuty", "paragraphs": ["Threat detection that analyzes relevant AWS data sources for suspicious or potentially malicious activity."], "memoryHook": "What is suspicious?"},
+        {"title": "AWS Security Hub", "paragraphs": ["Centralizes security findings and helps manage cloud security posture."], "memoryHook": "Gather security findings in one place."},
+        {"title": "AWS Shield", "paragraphs": ["Helps protect AWS workloads against distributed denial-of-service (DDoS) attacks."], "memoryHook": "DDoS → Shield."}
+      ]
+    },
+    {
+      "id": "governance-services",
+      "title": "Governance and Compliance Services",
+      "entries": [
+        {"title": "Amazon CloudWatch", "paragraphs": ["Monitors resources and applications through metrics, logs, alarms, and operational visibility."], "memoryHook": "How is it doing?"},
+        {"title": "AWS CloudTrail", "paragraphs": ["Records AWS account and API activity for auditing, governance, security investigation, and event history."], "memoryHook": "Who did what?"},
+        {"title": "AWS Audit Manager", "paragraphs": ["Helps continually collect evidence and organize it against audit frameworks to support audit preparation and compliance assessment."], "memoryHook": "Organize evidence for an audit."},
+        {"title": "AWS Config", "paragraphs": ["Records and evaluates AWS resource configurations, configuration history, changes, and compliance with rules."], "memoryHook": "How is or was it configured?"},
+        {"title": "Access Reports", "paragraphs": ["Provide visibility into permissions and access-related information for governance and review."], "memoryHook": "Who or what has access?"}
+      ]
+    },
+    {
+      "id": "service-comparison",
+      "title": "Security and Governance Service Comparison",
+      "table": {
+        "caption": "Match the scenario to the service or concept",
+        "headers": ["Scenario clue", "Service or concept"],
+        "rows": [
+          ["Compliance documents and agreements", "AWS Artifact"],
+          ["Find workload vulnerabilities", "Amazon Inspector"],
+          ["Detect suspicious activity", "Amazon GuardDuty"],
+          ["Centralize security findings", "AWS Security Hub"],
+          ["DDoS protection", "AWS Shield"],
+          ["Metrics, logs, and alarms", "Amazon CloudWatch"],
+          ["Account and API activity", "AWS CloudTrail"],
+          ["Collect and organize audit evidence", "AWS Audit Manager"],
+          ["Track and evaluate resource configuration", "AWS Config"],
+          ["Review permission and access information", "Access reports"],
+          ["Protect moving data", "Encryption in transit"],
+          ["Protect stored data", "Encryption at rest"]
+        ]
+      }
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 2.2 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Artifact vs. CloudTrail", "paragraphs": ["AWS compliance documentation → Artifact. Audit account and API actions → CloudTrail."]},
+        {"title": "Inspector vs. GuardDuty", "paragraphs": ["Find vulnerabilities → Inspector. Detect threats and suspicious activity → GuardDuty."]},
+        {"title": "GuardDuty vs. Security Hub", "paragraphs": ["Detect potential threats → GuardDuty. Centralize security findings → Security Hub."]},
+        {"title": "Shield vs. GuardDuty", "paragraphs": ["DDoS protection → Shield. Threat detection → GuardDuty."]},
+        {"title": "CloudWatch vs. CloudTrail", "paragraphs": ["Metrics, monitoring, and alarms → CloudWatch. Who performed an AWS action → CloudTrail."]},
+        {"title": "CloudTrail vs. Audit Manager vs. Config", "paragraphs": ["Who did it → CloudTrail. Organize audit evidence → Audit Manager. How is or was it configured → Config."]},
+        {"title": "Transit vs. Rest", "paragraphs": ["Moving data → Encryption in transit. Stored data → Encryption at rest."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["AWS compliance documents → AWS Artifact", "Moving data → Encryption in transit", "Stored data → Encryption at rest", "Vulnerabilities → Amazon Inspector", "Threat detection → Amazon GuardDuty", "Central findings → AWS Security Hub", "DDoS → AWS Shield", "Metrics and alarms → CloudWatch", "Who did what → CloudTrail", "Audit evidence → Audit Manager", "Resource configuration → AWS Config", "Permission visibility → Access reports", "Location or industry changes rules → Compliance requirements", "Service eligibility differs → Service-specific compliance"],
+      "callout": "PROTECT → WATCH → RECORD → CONFIGURE → PROVE"
+    }
+  ]
+}
