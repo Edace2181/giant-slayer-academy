@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "4",
+  "objective": "3.7",
+  "title": "Identify AWS AI/ML Services and Analytics Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Each AWS AI, machine learning, and analytics service has a recognizable job. First decide whether the requirement involves intelligence or understanding data, then identify the specific task."],
+      "bullets": ["Amazon SageMaker AI", "Amazon Lex", "Amazon Kendra", "Amazon Athena", "Amazon Kinesis", "AWS Glue", "Amazon QuickSight"],
+      "callout": "Do I need AI, or do I need to analyze data?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["BUILD ML → SageMaker AI", "TALK → Lex", "SEARCH → Kendra", "QUERY → Athena", "STREAM → Kinesis", "PREPARE → Glue", "VISUALIZE → QuickSight"],
+      "callout": "BUILD · TALK · SEARCH · QUERY · STREAM · PREPARE · VISUALIZE"
+    },
+    {
+      "id": "ai-vs-analytics",
+      "title": "AI/ML vs. Analytics",
+      "paragraphs": ["AI and ML services build models or provide intelligent capabilities such as conversation and enterprise search. Analytics services ingest, process, query, transform, or visualize data."],
+      "callout": "AI/ML = BUILD OR USE INTELLIGENCE · ANALYTICS = UNDERSTAND DATA"
+    },
+    {
+      "id": "sagemaker-ai",
+      "title": "Amazon SageMaker AI",
+      "paragraphs": ["Amazon SageMaker AI provides managed capabilities to prepare data and build, train, deploy, and operate machine learning models."],
+      "callout": "Build, train, or deploy an ML model → Amazon SageMaker AI"
+    },
+    {
+      "id": "amazon-lex",
+      "title": "Amazon Lex",
+      "paragraphs": ["Amazon Lex helps build conversational interfaces using voice and text with automatic speech recognition and natural-language understanding."],
+      "callout": "Chatbot or conversational voice/text interface → Amazon Lex"
+    },
+    {
+      "id": "amazon-kendra",
+      "title": "Amazon Kendra",
+      "paragraphs": ["Amazon Kendra uses machine learning to provide intelligent enterprise search across connected organizational content sources."],
+      "callout": "Intelligent enterprise search → Amazon Kendra"
+    },
+    {
+      "id": "amazon-athena",
+      "title": "Amazon Athena",
+      "paragraphs": ["Amazon Athena is a serverless interactive query service that uses SQL to analyze data stored directly in Amazon S3."],
+      "callout": "S3 plus SQL → Amazon Athena"
+    },
+    {
+      "id": "amazon-kinesis",
+      "title": "Amazon Kinesis",
+      "paragraphs": ["Amazon Kinesis services ingest and process real-time streaming data such as application events, logs, telemetry, and continuous feeds."],
+      "callout": "Streaming or continuous real-time data → Amazon Kinesis"
+    },
+    {
+      "id": "aws-glue",
+      "title": "AWS Glue",
+      "paragraphs": ["AWS Glue is a serverless data-integration service used to discover, prepare, move, and transform data. It also provides the AWS Glue Data Catalog."],
+      "bullets": ["Extract, transform, and load (ETL)", "Data preparation", "Data transformation", "Data integration", "Centralized Data Catalog"],
+      "callout": "ETL or data preparation → AWS Glue"
+    },
+    {
+      "id": "amazon-quicksight",
+      "title": "Amazon QuickSight",
+      "paragraphs": ["Amazon QuickSight is a managed business-intelligence service for creating interactive visualizations, dashboards, and analyses."],
+      "callout": "Dashboard, visualization, or business intelligence → Amazon QuickSight"
+    },
+    {
+      "id": "analytics-comparison",
+      "title": "Analytics Service Comparison",
+      "table": {"caption": "Give each analytics service one clear job", "headers": ["Action", "Service"], "rows": [["Query S3 with SQL", "Amazon Athena"], ["Process streaming data", "Amazon Kinesis"], ["Prepare, transform, and catalog data", "AWS Glue"], ["Create dashboards and visualizations", "Amazon QuickSight"]]},
+      "callout": "QUERY → STREAM → PREPARE → VISUALIZE"
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Build and train ML models → SageMaker AI", "Create a chatbot → Lex", "Search enterprise content intelligently → Kendra", "Run SQL queries against S3 → Athena", "Process real-time streams → Kinesis", "Perform ETL or transform data → Glue", "Create executive dashboards → QuickSight"],
+      "callout": "The task verb identifies the service."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.7 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "SageMaker vs. Lex vs. Kendra", "paragraphs": ["Build ML models → SageMaker. Conversational interface → Lex. Intelligent enterprise search → Kendra."]},
+        {"title": "Athena vs. Glue", "paragraphs": ["Query S3 data with SQL → Athena. Prepare and transform data → Glue."]},
+        {"title": "Athena vs. QuickSight", "paragraphs": ["SQL analysis → Athena. Dashboards and visualizations → QuickSight."]},
+        {"title": "Kinesis vs. Athena", "paragraphs": ["Streaming data → Kinesis. Query S3 with SQL → Athena."]},
+        {"title": "Glue vs. QuickSight", "paragraphs": ["ETL and data preparation → Glue. Business intelligence → QuickSight."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Machine learning models → SageMaker AI", "Chatbot or conversation → Lex", "Enterprise search → Kendra", "SQL plus S3 → Athena", "Streaming → Kinesis", "ETL and data preparation → Glue", "Dashboard or BI → QuickSight"],
+      "callout": "SAGEMAKER · LEX · KENDRA · ATHENA · KINESIS · GLUE · QUICKSIGHT"
+    }
+  ]
+}

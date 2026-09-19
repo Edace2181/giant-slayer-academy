@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "4",
+  "objective": "3.5",
+  "title": "Identify AWS Network Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS networking questions become easier when you identify whether the requirement involves isolation, a VPC component, traffic security, DNS, or connectivity to AWS."],
+      "bullets": ["Amazon VPC", "Subnets and gateways", "Security groups and network ACLs", "Amazon Inspector", "Amazon Route 53", "AWS VPN", "AWS Direct Connect"],
+      "callout": "Do I need to isolate, divide, protect, resolve, or connect the network?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["ISOLATE → Amazon VPC", "DIVIDE → Subnet", "CONNECT → Gateway", "RESOURCE FIREWALL → Security group", "SUBNET FILTER → Network ACL", "RESOLVE → Route 53", "ENCRYPTED TUNNEL → AWS VPN", "DEDICATED LINK → Direct Connect"],
+      "callout": "ISOLATE · DIVIDE · PROTECT · RESOLVE · CONNECT"
+    },
+    {
+      "id": "network-services",
+      "title": "AWS Network Services",
+      "paragraphs": ["AWS network services provide isolation, addressing, connectivity, routing, traffic delivery, and name resolution for cloud resources and connected environments."],
+      "callout": "First identify the networking job, then select the service or control."
+    },
+    {
+      "id": "amazon-vpc",
+      "title": "Amazon VPC",
+      "paragraphs": ["Amazon Virtual Private Cloud (Amazon VPC) lets customers define a logically isolated virtual network for AWS resources. Customers choose address ranges, subnets, routes, gateways, and security controls."],
+      "callout": "Logically isolated AWS network → Amazon VPC"
+    },
+    {
+      "id": "subnets",
+      "title": "Subnets",
+      "paragraphs": ["A subnet is an IP address range within a VPC. Each subnet resides in one Availability Zone and provides a placement boundary for resources."],
+      "callout": "IP range within a VPC and one AZ → Subnet"
+    },
+    {
+      "id": "gateways",
+      "title": "VPC Gateways",
+      "paragraphs": ["Gateway components create connectivity paths between a VPC and destinations such as the internet, other networks, or supported AWS services."],
+      "callout": "Network entrance or exit path → Gateway"
+    },
+    {
+      "id": "vpc-security",
+      "title": "Security in a VPC",
+      "paragraphs": ["Customers combine security groups, network ACLs, routing, monitoring, and supported security services to control and evaluate network traffic."],
+      "entries": [
+        {"title": "Security Groups", "paragraphs": ["Stateful virtual firewalls that control allowed inbound and outbound traffic for associated resources."], "memoryHook": "Resource-level, stateful."},
+        {"title": "Network ACLs", "paragraphs": ["Stateless traffic filters applied at the subnet boundary."], "memoryHook": "Subnet-level, stateless."},
+        {"title": "Amazon Inspector", "paragraphs": ["Evaluates supported workloads for vulnerabilities and can identify unintended network exposure."], "memoryHook": "Assess vulnerabilities and exposure."}
+      ]
+    },
+    {
+      "id": "security-group-vs-nacl",
+      "title": "Security Group vs. Network ACL",
+      "table": {
+        "caption": "Separate the two common VPC traffic controls",
+        "headers": ["Control", "Recognition"],
+        "rows": [["Security group", "Stateful firewall associated with resources"], ["Network ACL", "Stateless filter at the subnet boundary"]]
+      },
+      "callout": "RESOURCE + STATEFUL = SECURITY GROUP · SUBNET + STATELESS = NACL"
+    },
+    {
+      "id": "route-53",
+      "title": "Amazon Route 53",
+      "paragraphs": ["Amazon Route 53 is a scalable Domain Name System (DNS) web service that directs users to applications and other resources."],
+      "callout": "DNS or domain-name routing → Amazon Route 53"
+    },
+    {
+      "id": "connectivity-options",
+      "title": "Connectivity Options to AWS",
+      "paragraphs": ["Connectivity choices depend on bandwidth, latency consistency, security, resilience, deployment time, and cost."],
+      "entries": [
+        {"title": "AWS VPN", "paragraphs": ["Uses encrypted tunnels to connect users or networks to AWS over an existing network path such as the internet."], "memoryHook": "Encrypted tunnel over an existing path."},
+        {"title": "AWS Direct Connect", "paragraphs": ["Provides a dedicated private network connection between a customer location and AWS."], "memoryHook": "Dedicated private link."}
+      ]
+    },
+    {
+      "id": "vpn-vs-direct-connect",
+      "title": "AWS VPN vs. AWS Direct Connect",
+      "table": {
+        "caption": "Choose the connection based on the requirement",
+        "headers": ["Requirement", "Option"],
+        "rows": [["Encrypted tunnel over an existing network such as the internet", "AWS VPN"], ["Dedicated private connection to AWS", "AWS Direct Connect"]]
+      }
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Create an isolated AWS network → Amazon VPC", "Place resources in an IP range inside one AZ → Subnet", "Control stateful traffic for a resource → Security group", "Filter stateless traffic at a subnet boundary → Network ACL", "Assess workload vulnerabilities and network exposure → Amazon Inspector", "Route a domain name to an application → Route 53", "Encrypted connection over the internet → AWS VPN", "Dedicated private connection → AWS Direct Connect"],
+      "callout": "The boundary and connection type reveal the answer."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.5 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "VPC vs. Subnet", "paragraphs": ["VPC → isolated virtual network. Subnet → IP range inside the VPC and one Availability Zone."]},
+        {"title": "Security Group vs. Network ACL", "paragraphs": ["Security group → stateful and resource-associated. Network ACL → stateless and subnet boundary."]},
+        {"title": "Route 53 Trap", "paragraphs": ["Route 53 is the DNS service; the number in its name does not make it a generic routing-table service."]},
+        {"title": "VPN vs. Direct Connect", "paragraphs": ["VPN → encrypted tunnel over an existing path. Direct Connect → dedicated private link."]},
+        {"title": "Inspector vs. Traffic Filter", "paragraphs": ["Inspector assesses supported workloads for vulnerabilities and exposure; it is not the firewall controlling each connection."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Isolated network → Amazon VPC", "IP range in one AZ → Subnet", "Connectivity path → Gateway", "Stateful resource firewall → Security group", "Stateless subnet filter → Network ACL", "Vulnerability and exposure assessment → Amazon Inspector", "DNS → Route 53", "Encrypted tunnel → AWS VPN", "Dedicated private link → AWS Direct Connect"],
+      "callout": "VPC · SUBNET · SECURITY GROUP · NACL · ROUTE 53 · VPN · DIRECT CONNECT"
+    }
+  ]
+}

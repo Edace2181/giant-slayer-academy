@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "3",
+  "objective": "3.4",
+  "title": "Identify AWS Database Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS provides purpose-built database services because not every database problem is the same. The exam asks you to identify the database type, management model, and migration tool that match the workload."],
+      "bullets": ["EC2-hosted and AWS-managed databases", "Amazon RDS and Amazon Aurora", "Amazon DynamoDB", "Amazon ElastiCache", "AWS Database Migration Service (AWS DMS)", "AWS Schema Conversion Tool (AWS SCT)"],
+      "callout": "What kind of database does the workload need?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["CONTROL → Database on EC2", "RELATIONAL → RDS or Aurora", "NOSQL → DynamoDB", "CACHE → ElastiCache", "MOVE → DMS", "CONVERT → SCT"],
+      "callout": "CONTROL · RELATIONAL · NOSQL · CACHE · MOVE · CONVERT"
+    },
+    {
+      "id": "ec2-vs-managed",
+      "title": "EC2-Hosted vs. AWS-Managed Databases",
+      "entries": [
+        {"title": "Database on Amazon EC2", "paragraphs": ["The customer installs and operates database software on a virtual server, gaining more control while accepting responsibility for tasks such as operating-system management, database installation, configuration, patching, and maintenance."], "memoryHook": "More control, more customer management."},
+        {"title": "AWS-Managed Database", "paragraphs": ["AWS handles more infrastructure and routine operational work, depending on the service, so customers can focus more on applications and data."], "memoryHook": "Less infrastructure management."}
+      ],
+      "callout": "Managed does not mean the customer has no responsibility."
+    },
+    {
+      "id": "relational-databases",
+      "title": "Relational Databases",
+      "paragraphs": ["Relational databases organize structured data in tables and use schemas and relationships to represent the data model."],
+      "entries": [
+        {"title": "Amazon RDS", "paragraphs": ["Amazon Relational Database Service makes it easier to set up, operate, and scale supported relational database engines."], "memoryHook": "Managed relational database service."},
+        {"title": "Amazon Aurora", "paragraphs": ["Amazon Aurora is an AWS-designed managed relational database engine compatible with MySQL and PostgreSQL."], "memoryHook": "AWS relational engine."}
+      ]
+    },
+    {
+      "id": "rds-vs-aurora",
+      "title": "RDS vs. Aurora",
+      "table": {
+        "caption": "Separate the managed service from the AWS-designed engine",
+        "headers": ["Recognition", "Answer"],
+        "rows": [["Managed service supporting relational database engines", "Amazon RDS"], ["AWS-designed relational engine compatible with MySQL and PostgreSQL", "Amazon Aurora"]]
+      }
+    },
+    {
+      "id": "nosql-and-dynamodb",
+      "title": "NoSQL and Amazon DynamoDB",
+      "paragraphs": ["NoSQL databases use non-relational models such as key-value or document structures. Amazon DynamoDB is a fully managed serverless NoSQL database that supports key-value and document data models."],
+      "callout": "Managed key-value or document database → Amazon DynamoDB"
+    },
+    {
+      "id": "elasticache",
+      "title": "Amazon ElastiCache",
+      "paragraphs": ["Amazon ElastiCache provides managed in-memory caching. Keeping frequently accessed information in memory can improve application response times and reduce repeated load on backend databases."],
+      "callout": "In-memory cache or frequently accessed data → Amazon ElastiCache"
+    },
+    {
+      "id": "database-types",
+      "title": "Database Type Recognition",
+      "table": {
+        "caption": "Match the data need to the service category",
+        "headers": ["Need", "Service"],
+        "rows": [["Managed relational database", "Amazon RDS"], ["AWS relational engine compatible with MySQL/PostgreSQL", "Amazon Aurora"], ["Managed NoSQL key-value or document database", "Amazon DynamoDB"], ["Managed in-memory cache", "Amazon ElastiCache"]]
+      }
+    },
+    {
+      "id": "database-migration",
+      "title": "Database Migration",
+      "paragraphs": ["Database migration moves data from a source database to a target environment and may also require schema conversion when the source and destination engines differ."],
+      "entries": [
+        {"title": "AWS Database Migration Service", "paragraphs": ["AWS DMS migrates and replicates database data between supported sources and targets and can help limit downtime by allowing the source to remain operational during migration."], "memoryHook": "DMS moves the data."},
+        {"title": "AWS Schema Conversion Tool", "paragraphs": ["AWS SCT assesses and converts schemas and code objects when the source and target database engines use different structures."], "memoryHook": "SCT converts the structure."}
+      ]
+    },
+    {
+      "id": "migration-sequence",
+      "title": "Migration Sequence",
+      "paragraphs": ["When database engines differ, AWS SCT can convert the required schema components and AWS DMS can then migrate or replicate the data. The two tools may be used together."],
+      "callout": "Convert with SCT, then move with DMS."
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Complete OS and database control → Database on EC2", "AWS manages more database infrastructure → Managed database service", "Managed relational database → RDS", "AWS relational engine compatible with MySQL/PostgreSQL → Aurora", "NoSQL key-value or document database → DynamoDB", "In-memory caching → ElastiCache", "Migrate or replicate database data → DMS", "Convert a database schema → SCT"],
+      "callout": "Find the database model or migration action."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.4 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "EC2 Database vs. Managed Database", "paragraphs": ["Database on EC2 → more control and customer management. Managed database → AWS handles more routine infrastructure work."]},
+        {"title": "RDS vs. Aurora", "paragraphs": ["RDS is the managed relational service. Aurora is an AWS-designed relational engine compatible with MySQL and PostgreSQL."]},
+        {"title": "RDS vs. DynamoDB", "paragraphs": ["Relational tables and schemas → RDS or Aurora. Key-value or document NoSQL → DynamoDB."]},
+        {"title": "DynamoDB vs. ElastiCache", "paragraphs": ["Persistent NoSQL data → DynamoDB. In-memory cache for frequently accessed data → ElastiCache."]},
+        {"title": "DMS vs. SCT", "paragraphs": ["Move or replicate data → DMS. Convert schemas and code objects → SCT."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Self-managed database → EC2", "Managed relational → RDS", "AWS relational engine → Aurora", "NoSQL → DynamoDB", "Memory or cache → ElastiCache", "Move database data → DMS", "Convert database schema → SCT"],
+      "callout": "EC2 = CONTROL · RDS = RELATIONAL · DYNAMODB = NOSQL · DMS = MOVE · SCT = CONVERT"
+    },
+    {
+      "id": "world-three-connection",
+      "title": "World 3 Connection",
+      "bullets": ["3.1 DEPLOY & OPERATE → Console, CLI, APIs, SDKs, IaC, and deployment models", "3.2 GLOBAL INFRASTRUCTURE → Regions, AZs, edge locations, and availability", "3.3 COMPUTE → EC2, containers, serverless, scaling, and load balancing", "3.4 DATABASES → RDS, Aurora, DynamoDB, ElastiCache, DMS, and SCT"],
+      "callout": "INTERACT → PLACE → COMPUTE → STORE"
+    }
+  ]
+}

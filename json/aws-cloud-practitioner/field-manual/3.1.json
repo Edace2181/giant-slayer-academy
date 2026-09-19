@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "3",
+  "objective": "3.1",
+  "title": "Define Methods of Deploying and Operating in the AWS Cloud",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS gives customers several different ways to create, configure, and operate cloud resources. The exam wants you to recognize which method makes sense for a particular situation."],
+      "bullets": ["Various ways of provisioning and operating in the AWS Cloud", "Various ways to access AWS services", "Types of cloud deployment models", "APIs, SDKs, AWS CLI, AWS Management Console, and infrastructure as code", "One-time operations and repeatable processes", "Cloud, hybrid, and on-premises deployments"],
+      "callout": "How should I interact with and deploy AWS resources?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["CLICK → AWS Management Console", "TYPE → AWS CLI", "CONNECT SOFTWARE → API", "CODE → AWS SDK", "REPEAT INFRASTRUCTURE → IaC", "AWS TEMPLATE → AWS CloudFormation", "PLACE IT → Cloud, on premises, or hybrid"],
+      "callout": "CLICK · TYPE · CONNECT · CODE · REPEAT · TEMPLATE · PLACE"
+    },
+    {
+      "id": "provisioning-and-operating",
+      "title": "Provisioning and Operating in AWS",
+      "paragraphs": ["Provisioning means creating and configuring the cloud resources a workload needs. Operating means managing, monitoring, updating, and maintaining those resources after deployment."],
+      "callout": "Provisioning creates the environment; operating keeps it working."
+    },
+    {
+      "id": "management-console",
+      "title": "AWS Management Console",
+      "paragraphs": ["The AWS Management Console is the browser-based graphical interface for AWS."],
+      "bullets": ["Create resources", "Configure services", "View resources", "Monitor environments", "Perform administrative tasks", "Learn or explore an AWS service", "Perform an occasional or simple one-time operation"],
+      "callout": "Browser-based graphical AWS management → AWS Management Console"
+    },
+    {
+      "id": "aws-cli",
+      "title": "AWS Command Line Interface",
+      "paragraphs": ["The AWS CLI lets users interact with AWS services by entering commands. Instead of clicking through menus, users execute terminal commands."],
+      "bullets": ["Automating tasks", "Repeating operations", "Working from scripts", "Managing AWS without the graphical console"],
+      "callout": "Manage AWS from a command line → AWS CLI"
+    },
+    {
+      "id": "apis",
+      "title": "APIs",
+      "paragraphs": ["An application programming interface (API) allows software to communicate programmatically with AWS services. Applications can make requests to AWS instead of requiring a human to click buttons."],
+      "callout": "Application needs programmatic AWS access → API"
+    },
+    {
+      "id": "aws-sdks",
+      "title": "AWS SDKs",
+      "paragraphs": ["An AWS Software Development Kit (SDK) provides language-specific libraries and tools that developers can use to interact with AWS services."],
+      "entries": [
+        {"title": "Python Application Scenario", "paragraphs": ["A Python application needs to interact with AWS resources. Rather than manually constructing every service request, the developer can use an AWS SDK."], "memoryHook": "AWS tools for my programming language."}
+      ],
+      "callout": "Developer wants AWS access from application code → AWS SDK"
+    },
+    {
+      "id": "access-method-exam-trap",
+      "title": "Exam Trap — CLI vs. SDK vs. Console",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "AWS Management Console", "paragraphs": ["Human plus browser plus graphical interface."], "memoryHook": "Click."},
+        {"title": "AWS CLI", "paragraphs": ["Human or script plus terminal commands."], "memoryHook": "Type."},
+        {"title": "AWS SDK", "paragraphs": ["Application code uses language-specific AWS libraries."], "memoryHook": "Code."},
+        {"title": "AWS Service API", "paragraphs": ["Software directly calls exposed AWS operations."], "memoryHook": "Connect software."}
+      ],
+      "callout": "CLICK → CONSOLE · TYPE → CLI · CODE → SDK"
+    },
+    {
+      "id": "infrastructure-as-code",
+      "title": "Infrastructure as Code",
+      "paragraphs": ["Infrastructure as code (IaC) means defining infrastructure through machine-readable configuration rather than manually creating every resource. Reusable infrastructure definitions support repeatability, consistency, automation, reduced manual configuration, and easier environment recreation."],
+      "callout": "Repeatable infrastructure deployment → Infrastructure as code"
+    },
+    {
+      "id": "aws-cloudformation",
+      "title": "AWS CloudFormation",
+      "paragraphs": ["AWS CloudFormation is a major AWS infrastructure-as-code service. It lets customers define infrastructure and AWS resources using templates instead of manually creating and configuring each component one at a time."],
+      "bullets": ["Describe the desired AWS infrastructure", "Reuse approved templates", "Create consistent environments", "Automate resource provisioning"],
+      "callout": "Deploy AWS infrastructure from templates → AWS CloudFormation"
+    },
+    {
+      "id": "one-time-operations",
+      "title": "One-Time Operations",
+      "paragraphs": ["Not every AWS task needs automation. If an administrator needs to create one resource once, using the AWS Management Console might be perfectly reasonable. Automation could add unnecessary complexity to a simple one-time task."],
+      "callout": "One time → Manual may be fine."
+    },
+    {
+      "id": "repeatable-processes",
+      "title": "Repeatable Processes",
+      "paragraphs": ["When development, testing, and production environments must be deployed consistently, repeating every step manually creates opportunities for mistakes. Infrastructure as code, APIs, SDKs, scripts, and CLI tools can make the process repeatable."],
+      "callout": "Repeatable → Automate it."
+    },
+    {
+      "id": "one-time-vs-repeatable",
+      "title": "One-Time vs. Repeatable",
+      "table": {
+        "caption": "Match the process to the operational requirement",
+        "headers": ["Requirement", "Approach"],
+        "rows": [["One simple operation", "Console may be appropriate"], ["The same infrastructure repeatedly", "Automation and infrastructure as code"]]
+      },
+      "callout": "ONCE = CLICK · AGAIN AND AGAIN = AUTOMATE"
+    },
+    {
+      "id": "cloud-deployment",
+      "title": "Cloud Deployment",
+      "paragraphs": ["A cloud deployment places workloads and resources in a cloud environment. The resources use cloud infrastructure instead of relying entirely on an organization's local infrastructure."],
+      "callout": "Workload in an AWS environment → Cloud deployment"
+    },
+    {
+      "id": "on-premises-deployment",
+      "title": "On-Premises Deployment",
+      "paragraphs": ["On-premises means infrastructure operates in facilities controlled by the organization. Servers, networking equipment, storage, and other systems remain locally operated."],
+      "callout": "Organization-controlled local infrastructure → On-premises deployment"
+    },
+    {
+      "id": "hybrid-deployment",
+      "title": "Hybrid Deployment",
+      "paragraphs": ["A hybrid environment combines connected on-premises and cloud resources. Some workloads or resources remain local while others operate in AWS."],
+      "entries": [
+        {"title": "Hybrid Scenario", "paragraphs": ["A company keeps certain systems in its own data center but connects those systems to AWS workloads."], "memoryHook": "On premises plus AWS."}
+      ],
+      "callout": "AWS plus on premises → Hybrid deployment"
+    },
+    {
+      "id": "deployment-model-exam-trap",
+      "title": "Deployment Model Exam Trap",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Cloud", "paragraphs": ["The workload operates in a cloud environment."]},
+        {"title": "On-Premises", "paragraphs": ["The workload operates on infrastructure controlled locally by the organization."]},
+        {"title": "Hybrid", "paragraphs": ["Connected cloud and on-premises environments are both used."]}
+      ],
+      "callout": "CLOUD = AWS · LOCAL = ON PREMISES · BOTH = HYBRID"
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "entries": [
+        {"title": "Scenario 1", "paragraphs": ["A new administrator wants to manually create one EC2 instance through a graphical interface."], "memoryHook": "AWS Management Console."},
+        {"title": "Scenario 2", "paragraphs": ["An administrator wants to manage AWS through terminal commands."], "memoryHook": "AWS CLI."},
+        {"title": "Scenario 3", "paragraphs": ["A developer needs an application to interact with AWS."], "memoryHook": "API or AWS SDK."},
+        {"title": "Scenario 4", "paragraphs": ["A company must repeatedly deploy identical environments."], "memoryHook": "Infrastructure as code."},
+        {"title": "Scenario 5", "paragraphs": ["AWS infrastructure needs to be deployed using templates."], "memoryHook": "AWS CloudFormation."},
+        {"title": "Scenario 6", "paragraphs": ["A company operates some infrastructure locally and some in AWS."], "memoryHook": "Hybrid deployment."}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Browser GUI → AWS Management Console", "Terminal → AWS CLI", "Software communication → API", "Programming-language tools → AWS SDK", "Repeatable infrastructure → IaC", "AWS IaC templates → AWS CloudFormation", "AWS environment → Cloud", "Company-owned or local infrastructure → On premises", "Both connected → Hybrid"],
+      "callout": "CLICK = CONSOLE · TYPE = CLI · CONNECT = API · CODE = SDK · TEMPLATE = CLOUDFORMATION"
+    }
+  ]
+}

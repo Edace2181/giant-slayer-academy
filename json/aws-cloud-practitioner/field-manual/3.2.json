@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "3",
+  "objective": "3.2",
+  "title": "Define the AWS Global Infrastructure",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS operates infrastructure around the world. You need to understand how Regions, Availability Zones, and edge locations relate and when multi-AZ or multi-Region designs fit a requirement."],
+      "bullets": ["AWS Regions", "Availability Zones", "Edge locations", "High availability", "Multiple Regions", "Disaster recovery and business continuity", "Latency", "Data sovereignty"],
+      "callout": "Where should the AWS workload run?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["REGION → Geographic area", "AVAILABILITY ZONE → Isolated location within a Region", "MULTI-AZ → High availability", "MULTI-REGION → Geographic resilience or requirements", "EDGE → Closer to users"],
+      "callout": "REGION = WHERE · AZ = ISOLATION · EDGE = CLOSER"
+    },
+    {
+      "id": "aws-regions",
+      "title": "AWS Regions",
+      "paragraphs": ["An AWS Region is a distinct geographic area containing multiple isolated Availability Zones. Organizations select Regions based on user location, latency, regulations, data sovereignty, service availability, and recovery strategy."],
+      "callout": "Separate geographic AWS area → Region"
+    },
+    {
+      "id": "availability-zones",
+      "title": "Availability Zones",
+      "paragraphs": ["Availability Zones are distinct, isolated locations within a Region. They are designed with independent infrastructure so a failure affecting one location is less likely to affect another, while low-latency connectivity supports resilient architectures."],
+      "callout": "Isolated location inside a Region → Availability Zone"
+    },
+    {
+      "id": "high-availability",
+      "title": "High Availability and Multiple AZs",
+      "paragraphs": ["High availability means designing systems to remain accessible when components fail. Distributing redundant resources across multiple Availability Zones helps a workload survive disruption in one AZ without losing the whole application."],
+      "callout": "High availability within one Region → Multiple Availability Zones"
+    },
+    {
+      "id": "multiple-regions",
+      "title": "Multiple Regions",
+      "paragraphs": ["Some organizations deploy resources in more than one AWS Region to meet geographic resilience, user-experience, or legal requirements."],
+      "bullets": ["Disaster recovery", "Business continuity", "Lower latency for geographically distant users", "Data sovereignty and residency"],
+      "callout": "Geographically separate recovery or requirements → Multiple Regions"
+    },
+    {
+      "id": "data-sovereignty",
+      "title": "Data Sovereignty",
+      "paragraphs": ["Data sovereignty concerns legal or regulatory requirements governing where data is stored or processed. These obligations can determine which Region an organization selects."],
+      "callout": "Geographic law or residency requirement → Region selection"
+    },
+    {
+      "id": "edge-locations",
+      "title": "Edge Locations",
+      "paragraphs": ["Edge locations are points of presence used by supported AWS services to place content or networking capabilities closer to end users, improving delivery performance and reducing latency."],
+      "callout": "Deliver supported content closer to users → Edge location"
+    },
+    {
+      "id": "amazon-cloudfront",
+      "title": "Amazon CloudFront",
+      "paragraphs": ["Amazon CloudFront is AWS's content delivery network (CDN). It can cache and deliver content through edge locations closer to users instead of sending every request to the application's origin."],
+      "bullets": ["CDN", "Cached content", "Global content delivery", "Reduced content-delivery latency"],
+      "callout": "CDN and edge delivery → Amazon CloudFront"
+    },
+    {
+      "id": "infrastructure-comparison",
+      "title": "Region vs. AZ vs. Edge",
+      "table": {
+        "caption": "Separate the three global-infrastructure layers",
+        "headers": ["Layer", "Recognition"],
+        "rows": [["Region", "Geographic AWS area"], ["Availability Zone", "Isolated location within a Region"], ["Edge location", "Point of presence closer to users"]]
+      }
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Choose a geographic AWS location → Region", "Remain available if one isolated location fails → Multiple AZs", "Recover in a geographically separate AWS area → Multiple Regions", "Deliver content globally with lower latency → Edge locations or CloudFront", "Keep data in an approved jurisdiction → Region selection and data sovereignty"],
+      "callout": "Location, resilience, proximity, or legal geography reveal the answer."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.2 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "Region vs. Availability Zone", "paragraphs": ["A Region is a geographic area. An AZ is an isolated location within a Region."]},
+        {"title": "Multi-AZ vs. Multi-Region", "paragraphs": ["High availability inside one Region → Multi-AZ. Geographic recovery, reach, or legal requirements → Multi-Region."]},
+        {"title": "Region vs. Edge", "paragraphs": ["A Region hosts workloads and services. An edge location brings supported delivery capabilities closer to users."]},
+        {"title": "Latency Clue", "paragraphs": ["Choose a nearby Region for workload placement; use edge services such as CloudFront for content delivery closer to users."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Geographic area → Region", "Isolated location in a Region → Availability Zone", "High availability → Multiple AZs", "Geographic disaster recovery → Multiple Regions", "Closer to users → Edge location", "CDN → CloudFront", "Location law → Data sovereignty"],
+      "callout": "REGION = GEOGRAPHY · AZ = ISOLATION · EDGE = CLOSE"
+    }
+  ]
+}

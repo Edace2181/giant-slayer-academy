@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "4",
+  "objective": "3.6",
+  "title": "Identify AWS Storage Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS storage questions become easier when you first identify the storage model and then match access patterns, persistence, sharing, lifecycle, or backup needs."],
+      "bullets": ["Object storage and Amazon S3 storage classes", "Block storage with Amazon EBS and instance store", "File storage with Amazon EFS and Amazon FSx", "Hybrid cached storage with AWS Storage Gateway", "Lifecycle policies", "AWS Backup"],
+      "callout": "Is this object, block, file, hybrid or cached storage, or backup?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["OBJECT → Amazon S3", "PERSISTENT BLOCK → Amazon EBS", "TEMPORARY BLOCK → Instance store", "SHARED LINUX FILE → Amazon EFS", "SPECIALIZED FILE → Amazon FSx", "HYBRID STORAGE → Storage Gateway", "AGE THE DATA → Lifecycle policy", "BACK IT UP → AWS Backup"],
+      "callout": "OBJECT · BLOCK · FILE · HYBRID · LIFECYCLE · BACKUP"
+    },
+    {
+      "id": "storage-models",
+      "title": "Three Core Storage Models",
+      "paragraphs": ["Object, block, and file storage represent different ways to organize and access data. Selecting the model comes before selecting the service."],
+      "table": {"caption": "Identify the storage model", "headers": ["Model", "Recognition"], "rows": [["Object", "Objects accessed through object APIs"], ["Block", "Raw addressable volumes used like disks"], ["File", "Shared files and directories through file-system protocols"]]}
+    },
+    {
+      "id": "amazon-s3",
+      "title": "Object Storage and Amazon S3",
+      "paragraphs": ["Amazon Simple Storage Service (Amazon S3) provides highly scalable object storage. Objects live in buckets and can include files, images, videos, backups, logs, static content, and large datasets."],
+      "callout": "Scalable object storage → Amazon S3"
+    },
+    {
+      "id": "s3-storage-classes",
+      "title": "Amazon S3 Storage Classes",
+      "paragraphs": ["S3 storage classes provide different combinations of storage price, access cost, retrieval behavior, and resilience. Match the class to access frequency and retrieval needs."],
+      "entries": [
+        {"title": "Frequently Accessed Data", "paragraphs": ["Use a class designed for regular, immediate access when data is used often."], "memoryHook": "Hot data."},
+        {"title": "Infrequently Accessed Data", "paragraphs": ["Use an infrequent-access class when data must remain available but is read less often."], "memoryHook": "Less frequent access."},
+        {"title": "Archive Data", "paragraphs": ["Use archival classes for long-term retention when data is rarely retrieved and retrieval timing permits."], "memoryHook": "Cold long-term data."},
+        {"title": "S3 Intelligent-Tiering", "paragraphs": ["Use when access patterns are unknown or changing; objects can move among access tiers based on usage."], "memoryHook": "Unknown pattern."}
+      ]
+    },
+    {
+      "id": "amazon-ebs",
+      "title": "Block Storage and Amazon EBS",
+      "paragraphs": ["Amazon Elastic Block Store (Amazon EBS) provides persistent block volumes designed for use with Amazon EC2. It behaves like a disk volume for operating systems, applications, and databases."],
+      "callout": "Persistent EC2 block volume → Amazon EBS"
+    },
+    {
+      "id": "instance-store",
+      "title": "Instance Store",
+      "paragraphs": ["Instance store provides temporary block storage physically associated with the host used by an EC2 instance. Its data does not survive certain instance lifecycle events."],
+      "callout": "Temporary or ephemeral local EC2 storage → Instance store"
+    },
+    {
+      "id": "ebs-vs-instance-store",
+      "title": "EBS vs. Instance Store",
+      "table": {"caption": "Persistence is the key distinction", "headers": ["Need", "Storage"], "rows": [["Persistent EC2 block storage", "Amazon EBS"], ["Temporary host-attached block storage", "Instance store"]]},
+      "callout": "EBS = KEEP IT · INSTANCE STORE = TEMPORARY"
+    },
+    {
+      "id": "file-storage",
+      "title": "File Storage",
+      "paragraphs": ["File services organize data into files and directories and provide shared file-system access through supported protocols."],
+      "entries": [
+        {"title": "Amazon EFS", "paragraphs": ["Amazon Elastic File System provides managed elastic shared file storage for Linux workloads using NFS."], "memoryHook": "Shared Linux file system."},
+        {"title": "Amazon FSx", "paragraphs": ["Amazon FSx provides managed file systems for specialized technologies and workloads, including Windows-oriented use cases."], "memoryHook": "Managed specialized file systems."}
+      ]
+    },
+    {
+      "id": "storage-gateway",
+      "title": "AWS Storage Gateway",
+      "paragraphs": ["AWS Storage Gateway connects on-premises environments with AWS cloud storage. It supports hybrid storage workflows and can maintain cached access to cloud-backed data."],
+      "callout": "On premises plus AWS storage or cached cloud-backed access → AWS Storage Gateway"
+    },
+    {
+      "id": "lifecycle-policies",
+      "title": "Lifecycle Policies",
+      "paragraphs": ["A lifecycle policy automates object transitions to suitable storage classes or expiration when data reaches defined ages or conditions."],
+      "callout": "Move or expire data automatically as it ages → Lifecycle policy"
+    },
+    {
+      "id": "aws-backup",
+      "title": "AWS Backup",
+      "paragraphs": ["AWS Backup centralizes and automates backup policies, schedules, retention, and monitoring across supported AWS resources."],
+      "callout": "Centralized backup management → AWS Backup"
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Store image objects → S3", "Unknown changing access pattern → S3 Intelligent-Tiering", "Persistent EC2 disk → EBS", "Temporary local EC2 storage → Instance store", "Shared Linux file storage → EFS", "Specialized managed file system → FSx", "Connect local storage workflows to AWS → Storage Gateway", "Automatically archive old objects → Lifecycle policy", "Centrally manage backups → AWS Backup"],
+      "callout": "Identify the storage model and persistence requirement first."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.6 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "S3 vs. EBS", "paragraphs": ["Object storage → S3. Persistent block volume for EC2 → EBS."]},
+        {"title": "EBS vs. Instance Store", "paragraphs": ["Persistent block volume → EBS. Temporary host-attached storage → Instance store."]},
+        {"title": "EFS vs. EBS", "paragraphs": ["Shared Linux file system → EFS. Block volume → EBS."]},
+        {"title": "EFS vs. FSx", "paragraphs": ["Elastic shared Linux NFS → EFS. Specialized managed file-system technology → FSx."]},
+        {"title": "Lifecycle vs. Backup", "paragraphs": ["Transition or expire objects as they age → Lifecycle. Create and manage backups → AWS Backup."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Object → S3", "Unknown access pattern → Intelligent-Tiering", "Persistent block → EBS", "Temporary block → Instance store", "Shared Linux file → EFS", "Specialized managed file → FSx", "Hybrid cached storage → Storage Gateway", "Age-based movement → Lifecycle policy", "Central backups → AWS Backup"],
+      "callout": "S3 · EBS · INSTANCE STORE · EFS · FSx · STORAGE GATEWAY · LIFECYCLE · BACKUP"
+    }
+  ]
+}

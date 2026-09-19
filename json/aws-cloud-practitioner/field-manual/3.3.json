@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "3",
+  "objective": "3.3",
+  "title": "Identify AWS Compute Services",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Compute answers where the work actually runs. The exam asks you to match virtual servers, instance families, containers, serverless compute, scaling, and traffic distribution to the right requirement."],
+      "bullets": ["Amazon EC2", "EC2 instance types", "Amazon ECS and Amazon EKS", "AWS Lambda and AWS Fargate", "Auto Scaling", "Load balancers"],
+      "callout": "Match the compute requirement to the right AWS service."
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["SERVER → EC2", "AWS CONTAINERS → ECS", "KUBERNETES → EKS", "FUNCTION → Lambda", "SERVERLESS CONTAINER → Fargate", "CAPACITY → Auto Scaling", "TRAFFIC → Load balancer"],
+      "callout": "SERVER · CONTAINER · FUNCTION · CAPACITY · TRAFFIC"
+    },
+    {
+      "id": "amazon-ec2",
+      "title": "Amazon EC2",
+      "paragraphs": ["Amazon Elastic Compute Cloud (Amazon EC2) provides resizable virtual compute capacity. The customer has significant control over the operating system and software running on an instance."],
+      "callout": "Virtual server or OS-level control → Amazon EC2"
+    },
+    {
+      "id": "ec2-instance-types",
+      "title": "EC2 Instance Types",
+      "paragraphs": ["Different workloads need different combinations of CPU, memory, storage, and networking. EC2 instance families provide resource profiles suited to those workload needs."],
+      "entries": [
+        {"title": "General Purpose", "paragraphs": ["Balances compute, memory, and networking for workloads without one dominant resource need."], "memoryHook": "Balanced."},
+        {"title": "Compute Optimized", "paragraphs": ["Provides a high ratio of compute power for processor-intensive workloads."], "memoryHook": "CPU heavy."},
+        {"title": "Memory Optimized", "paragraphs": ["Supports workloads requiring large amounts of RAM or in-memory processing."], "memoryHook": "RAM heavy."},
+        {"title": "Storage Optimized", "paragraphs": ["Supports workloads requiring high local-storage throughput or high random I/O."], "memoryHook": "Storage and I/O heavy."}
+      ]
+    },
+    {
+      "id": "containers",
+      "title": "Containers",
+      "paragraphs": ["Containers package application code and dependencies into portable units that run consistently across compatible environments."],
+      "entries": [
+        {"title": "Amazon ECS", "paragraphs": ["Amazon Elastic Container Service is AWS-native managed container orchestration."], "memoryHook": "AWS container management."},
+        {"title": "Amazon EKS", "paragraphs": ["Amazon Elastic Kubernetes Service provides a managed Kubernetes control plane."], "memoryHook": "Kubernetes on AWS."}
+      ],
+      "callout": "AWS-native orchestration → ECS · Kubernetes → EKS"
+    },
+    {
+      "id": "serverless-compute",
+      "title": "Serverless Compute",
+      "paragraphs": ["Serverless means AWS manages the underlying infrastructure while the customer focuses on application code or container workloads. It does not mean that servers do not exist."],
+      "entries": [
+        {"title": "AWS Lambda", "paragraphs": ["Runs event-driven functions without requiring the customer to provision or manage servers."], "memoryHook": "Run code without managing servers."},
+        {"title": "AWS Fargate", "paragraphs": ["Provides serverless compute capacity for supported container workloads."], "memoryHook": "Run containers without managing servers."}
+      ]
+    },
+    {
+      "id": "lambda-vs-fargate",
+      "title": "Lambda vs. Fargate",
+      "table": {
+        "caption": "Choose the serverless model that matches the workload",
+        "headers": ["Need", "Service"],
+        "rows": [["Run event-driven code or functions", "AWS Lambda"], ["Run containers without managing underlying servers", "AWS Fargate"]]
+      }
+    },
+    {
+      "id": "auto-scaling",
+      "title": "Auto Scaling",
+      "paragraphs": ["Auto scaling adjusts capacity as demand changes. Resources can grow when demand rises and contract when demand falls, supporting elasticity instead of permanently provisioning for peak load."],
+      "callout": "Automatically adjust capacity to demand → Auto Scaling"
+    },
+    {
+      "id": "load-balancers",
+      "title": "Load Balancers",
+      "paragraphs": ["A load balancer distributes incoming traffic across healthy targets. This helps avoid overloading one resource and supports application availability, scalability, and performance."],
+      "callout": "Distribute incoming application traffic → Load balancer"
+    },
+    {
+      "id": "scaling-vs-balancing",
+      "title": "Auto Scaling vs. Load Balancing",
+      "table": {
+        "caption": "These capabilities often cooperate but solve different problems",
+        "headers": ["Question", "Capability"],
+        "rows": [["How many resources do I need?", "Auto Scaling"], ["Where should this request go?", "Load balancer"]]
+      }
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Virtual server with OS control → EC2", "Processor-intensive workload → Compute optimized", "Large in-memory workload → Memory optimized", "High local-storage performance → Storage optimized", "AWS-native container orchestration → ECS", "Managed Kubernetes → EKS", "Event-driven serverless code → Lambda", "Serverless containers → Fargate", "Capacity changes automatically → Auto Scaling", "Incoming requests are distributed → Load balancer"],
+      "callout": "Find the dominant compute requirement."
+    },
+    {
+      "id": "exam-trap",
+      "title": "Task Statement 3.3 Exam Traps",
+      "variant": "exam-trap",
+      "entries": [
+        {"title": "ECS vs. EKS", "paragraphs": ["AWS-native container orchestration → ECS. Kubernetes → EKS."]},
+        {"title": "Lambda vs. Fargate", "paragraphs": ["Run functions or event-driven code → Lambda. Run containers without server management → Fargate."]},
+        {"title": "Auto Scaling vs. Load Balancing", "paragraphs": ["Auto Scaling changes capacity. A load balancer distributes traffic."]},
+        {"title": "Compute vs. Memory vs. Storage", "paragraphs": ["CPU clue → Compute optimized. RAM clue → Memory optimized. Local disk and I/O clue → Storage optimized."]},
+        {"title": "Serverless Trap", "paragraphs": ["Serverless means AWS manages the underlying servers; it does not mean no servers exist."]}
+      ]
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Virtual server → EC2", "Balanced workload → General purpose", "CPU → Compute optimized", "RAM → Memory optimized", "Storage or I/O → Storage optimized", "AWS containers → ECS", "Kubernetes → EKS", "Serverless function → Lambda", "Serverless container → Fargate", "Elastic capacity → Auto Scaling", "Traffic distribution → Load balancer"],
+      "callout": "EC2 · ECS · EKS · LAMBDA · FARGATE · SCALE · BALANCE"
+    }
+  ]
+}

@@ -66,12 +66,72 @@ const objectives = {
     firstId: "AWSCLF-2.4-R001",
     sections: ["what-you-are-learning", "maestro-focus", "security-capabilities", "security-services", "aws-marketplace", "security-documentation", "trusted-advisor", "toolbox-comparison", "exam-trap", "maestro-recognition-sheet", "world-two-connection"],
     topics: ["AWS Security Capabilities", "AWS Security Documentation", "AWS WAF", "AWS Firewall Manager", "AWS Shield", "Amazon GuardDuty", "AWS Marketplace", "AWS Knowledge Center", "AWS Security Center", "AWS Security Blog", "AWS Trusted Advisor"]
+  },
+  "3.1": {
+    count: 12,
+    hash: "DF5030BCCFBCFE64B32967DE7897555505DBC1A54F2BDA2FF213AD4F7E6FEA10",
+    firstId: "AWSCLF-3.1-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "provisioning-and-operating", "management-console", "aws-cli", "apis", "aws-sdks", "access-method-exam-trap", "infrastructure-as-code", "aws-cloudformation", "one-time-operations", "repeatable-processes", "one-time-vs-repeatable", "cloud-deployment", "on-premises-deployment", "hybrid-deployment", "deployment-model-exam-trap", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Provisioning", "AWS Management Console", "AWS Command Line Interface", "AWS Service API", "AWS SDKs", "Infrastructure as Code", "AWS CloudFormation", "One-Time Operations", "Repeatable Processes", "Cloud Deployment", "Hybrid Deployment", "On-Premises Deployment"]
+  },
+  "3.2": {
+    count: 13,
+    hash: "6E569849482E8ACDBD2F3B867E6B488FC8C56D96FB584D124E3D7D416A883EC0",
+    firstId: "AWSCLF-3.2-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "aws-regions", "availability-zones", "high-availability", "multiple-regions", "data-sovereignty", "edge-locations", "amazon-cloudfront", "infrastructure-comparison", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["AWS Regions", "Availability Zones", "Edge Locations", "High Availability", "Multiple Regions", "Disaster Recovery", "Business Continuity", "Latency", "Data Sovereignty", "Amazon CloudFront"]
+  },
+  "3.3": {
+    count: 12,
+    hash: "96BE00BDAC803A18394D327044BB8BC03A8116F2F182C76DC423C8A501547A03",
+    firstId: "AWSCLF-3.3-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "amazon-ec2", "ec2-instance-types", "containers", "serverless-compute", "lambda-vs-fargate", "auto-scaling", "load-balancers", "scaling-vs-balancing", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Amazon EC2", "General Purpose", "Compute Optimized", "Memory Optimized", "Storage Optimized", "Amazon ECS", "Amazon EKS", "AWS Lambda", "AWS Fargate", "Auto Scaling", "Load Balancers"]
+  },
+  "3.4": {
+    count: 13,
+    hash: "95EE365B68772813EE18D76E652A16FCFEB1BC4D9F41F0FA8967877446EF8782",
+    firstId: "AWSCLF-3.4-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "ec2-vs-managed", "relational-databases", "rds-vs-aurora", "nosql-and-dynamodb", "elasticache", "database-types", "database-migration", "migration-sequence", "scenario-recognition", "exam-trap", "maestro-recognition-sheet", "world-three-connection"],
+    topics: ["EC2-Hosted", "AWS-Managed Databases", "Amazon RDS", "Amazon Aurora", "NoSQL", "Amazon DynamoDB", "Amazon ElastiCache", "AWS Database Migration Service", "AWS Schema Conversion Tool"]
+  },
+  "3.5": {
+    world: "4",
+    count: 12,
+    hash: "61605681B12F772087DAECF3691E77BE5E7B4373F3C3132B7D0433E0AC2A6DD9",
+    firstId: "AWSCLF-3.5-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "network-services", "amazon-vpc", "subnets", "gateways", "vpc-security", "security-group-vs-nacl", "route-53", "connectivity-options", "vpn-vs-direct-connect", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Amazon VPC", "Subnets", "Gateways", "Security Groups", "Network ACLs", "Amazon Inspector", "Amazon Route 53", "AWS VPN", "AWS Direct Connect"]
+  },
+  "3.6": {
+    world: "4",
+    count: 12,
+    hash: "EEB5EDF0DDA8650FCF190112D38D792C711DED9345BE0467A3D5ACF65302D077",
+    firstId: "AWSCLF-3.6-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "storage-models", "amazon-s3", "s3-storage-classes", "amazon-ebs", "instance-store", "ebs-vs-instance-store", "file-storage", "storage-gateway", "lifecycle-policies", "aws-backup", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Object Storage", "Amazon S3", "S3 Storage Classes", "S3 Intelligent-Tiering", "Block Storage", "Amazon EBS", "Instance Store", "File Storage", "Amazon EFS", "Amazon FSx", "AWS Storage Gateway", "Lifecycle Policies", "AWS Backup"]
+  },
+  "3.7": {
+    world: "4",
+    count: 10,
+    hash: "677EB5B85CDC5F278FDD960C12F37607EABFDACFC13A202AA95D3A0BF572C8EF",
+    firstId: "AWSCLF-3.7-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "ai-vs-analytics", "sagemaker-ai", "amazon-lex", "amazon-kendra", "amazon-athena", "amazon-kinesis", "aws-glue", "amazon-quicksight", "analytics-comparison", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    topics: ["Amazon SageMaker AI", "Amazon Lex", "Amazon Kendra", "Amazon Athena", "Amazon Kinesis", "AWS Glue", "Amazon QuickSight"]
+  },
+  "3.8": {
+    world: "4",
+    count: 22,
+    hash: "748D6FE95127C230503C4105843046AF45DBF77BE29F12D5C083F51C6DF2A66D",
+    firstId: "AWSCLF-3.8-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "application-integration", "integration-comparison", "business-applications", "aws-support", "developer-tools", "end-user-computing", "end-user-computing-comparison", "frontend-web-mobile", "iot-core", "scenario-recognition", "exam-trap", "maestro-recognition-sheet", "world-four-connection"],
+    topics: ["Amazon EventBridge", "Amazon SNS", "Amazon SQS", "Amazon Connect", "Amazon SES", "AWS Support", "AWS CodeBuild", "AWS CodePipeline", "AWS X-Ray", "Amazon AppStream 2.0", "Amazon WorkSpaces", "Amazon WorkSpaces Secure Browser", "AWS Amplify", "AWS AppSync", "AWS IoT Core"]
   }
 };
 
 for (const [objective, expected] of Object.entries(objectives)) {
   const lesson = json(`json/aws-cloud-practitioner/field-manual/${objective}.json`);
-  const expectedWorld = objective.split(".")[0];
+  const expectedWorld = expected.world || objective.split(".")[0];
   const bankPath = path.join(root, `json/aws-cloud-practitioner/world${expectedWorld}/${objective}-hatchling.json`);
   const bankBytes = fs.readFileSync(bankPath);
   const bank = JSON.parse(bankBytes.toString("utf8"));
@@ -94,7 +154,9 @@ for (const [objective, expected] of Object.entries(objectives)) {
 
 const hubs = {
   "1": read("aws-cloud-practitioner-world1-objectives.html"),
-  "2": read("aws-cloud-practitioner-world2-objectives.html")
+  "2": read("aws-cloud-practitioner-world2-objectives.html"),
+  "3": read("aws-cloud-practitioner-world3-objectives.html"),
+  "4": read("aws-cloud-practitioner-world4-objectives.html")
 };
 const campaign = read("aws-cloud-practitioner-campaign.html");
 const manualPage = read("aws-cloud-practitioner-field-manual.html");
@@ -104,8 +166,10 @@ const quizScript = read("aws-cloud-practitioner-quiz.js");
 
 requireValue(campaign.includes('href="aws-cloud-practitioner-world1-objectives.html"'), "Campaign World 1 must route to its Objective Hub.");
 requireValue(campaign.includes('href="aws-cloud-practitioner-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
-for (const objective of Object.keys(objectives)) {
-  const world = objective.split(".")[0];
+requireValue(campaign.includes('href="aws-cloud-practitioner-world3-objectives.html"'), "Campaign World 3 must route to its Objective Hub.");
+requireValue(campaign.includes('href="aws-cloud-practitioner-world4-objectives.html"'), "Campaign World 4 must route to its Objective Hub.");
+for (const [objective, expected] of Object.entries(objectives)) {
+  const world = expected.world || objective.split(".")[0];
   const hub = hubs[world];
   requireValue(hub.includes(`aws-cloud-practitioner-field-manual.html?world=${world}&amp;objective=${objective}`), `World ${world} Hub is missing the ${objective} Field Manual action.`);
   requireValue(hub.includes(`aws-cloud-practitioner-quiz.html?world=${world}&amp;objective=${objective}`), `${objective} Sweep route changed unexpectedly.`);
@@ -123,6 +187,8 @@ requireValue(manualScript.includes('window.location.assign("aws-cloud-practition
 requireValue(manualScript.includes('elements.returnLink.href = "aws-cloud-practitioner-world" + world + "-objectives.html"'), "Field Manuals must return to their Objective Hub.");
 requireValue(manualScript.includes('world === "1" && /^1\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 1 objectives 1.1-1.4.");
 requireValue(manualScript.includes('world === "2" && /^2\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
+requireValue(manualScript.includes('world === "3" && /^3\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 3 objectives 3.1-3.4.");
+requireValue(manualScript.includes('world === "4" && /^3\\.[5-8]$/.test(objective)'), "The Field Manual route gate must include only published World 4 objectives 3.5-3.8.");
 requireValue(quizScript.includes('return { href: `aws-cloud-practitioner-world${world}-objectives.html`'), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {
