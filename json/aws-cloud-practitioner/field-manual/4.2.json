@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "5",
+  "objective": "4.2",
+  "title": "Understand Resources for Billing, Budget, and Cost Management",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS gives customers several tools for understanding, predicting, controlling, and allocating cloud costs. The exam wants you to recognize which cost tool to use."],
+      "bullets": ["Billing support and information", "AWS service pricing", "AWS Organizations", "Cost allocation tags", "AWS Budgets", "AWS Cost Explorer", "AWS Pricing Calculator", "Consolidated billing", "Cost allocation", "AWS Cost and Usage Report"],
+      "callout": "Which cost tool do I use?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["WARN ME → AWS Budgets", "SHOW ME → AWS Cost Explorer", "ESTIMATE IT → AWS Pricing Calculator", "COMBINE ACCOUNTS → AWS Organizations", "WHO SPENT IT → Cost allocation tags", "GIVE ME THE DETAILS → AWS Cost and Usage Report"],
+      "callout": "ESTIMATE · ANALYZE · ALERT · COMBINE · ALLOCATE · REPORT"
+    },
+    {
+      "id": "aws-budgets",
+      "title": "AWS Budgets",
+      "paragraphs": ["AWS Budgets lets customers define budgets and receive alerts when costs or usage reach configured thresholds. You can establish a budget and monitor actual or forecasted spending against it."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A manager says: Tell me when our AWS spending approaches $5,000 this month."], "recognitionCue": "Spending threshold, budget limit, cost alert, or usage alert → AWS Budgets"}],
+      "callout": "AWS BUDGETS = WARN ME"
+    },
+    {
+      "id": "cost-explorer",
+      "title": "AWS Cost Explorer",
+      "paragraphs": ["AWS Cost Explorer helps customers visualize and analyze AWS costs and usage over time. It answers questions about how spending changed, which services cost money, cost trends, and visible usage patterns."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company wants to analyze its AWS spending over the last several months."], "recognitionCue": "Analyze historical cost, visualize spending, cost trends, or usage trends → AWS Cost Explorer"}],
+      "callout": "COST EXPLORER = SHOW ME WHERE THE MONEY WENT"
+    },
+    {
+      "id": "budgets-vs-cost-explorer",
+      "title": "Exam Trap — Budgets vs. Cost Explorer",
+      "variant": "exam-trap",
+      "table": {"caption": "Separate warning from investigation", "headers": ["Tool", "Purpose"], "rows": [["AWS Budgets", "Alert me when cost or usage reaches a threshold"], ["AWS Cost Explorer", "Analyze and visualize cost and usage"]]},
+      "callout": "BUDGETS = WARNING · COST EXPLORER = INVESTIGATION"
+    },
+    {
+      "id": "pricing-calculator",
+      "title": "AWS Pricing Calculator",
+      "paragraphs": ["AWS Pricing Calculator helps estimate the expected cost of an AWS architecture before or while planning deployment."],
+      "entries": [{"title": "Scenario", "paragraphs": ["An architect is planning a new AWS environment and wants an estimated monthly cost."], "recognitionCue": "Estimate future AWS costs, model architecture pricing, or make a pre-deployment estimate → AWS Pricing Calculator"}],
+      "callout": "PRICING CALCULATOR = WHAT WILL THIS COST?"
+    },
+    {
+      "id": "big-three-comparison",
+      "title": "Big Three Cost Tool Comparison",
+      "table": {"caption": "Choose by timing and required action", "headers": ["Tool", "Question"], "rows": [["AWS Pricing Calculator", "Before: What might this architecture cost?"], ["AWS Cost Explorer", "After or current analysis: Where is our money going?"], ["AWS Budgets", "Watch: Tell me if spending crosses my threshold."]]},
+      "callout": "ESTIMATE → CALCULATOR · ANALYZE → EXPLORER · ALERT → BUDGETS"
+    },
+    {
+      "id": "aws-organizations",
+      "title": "AWS Organizations",
+      "paragraphs": ["AWS Organizations helps centrally manage multiple AWS accounts. For billing, one major capability is consolidated billing. Instead of treating every AWS account as a separate billing island, an organization can consolidate billing across member accounts."],
+      "callout": "MANY ACCOUNTS → ONE ORGANIZATION"
+    },
+    {
+      "id": "consolidated-billing",
+      "title": "Consolidated Billing",
+      "paragraphs": ["Consolidated billing provides a combined view of charges across accounts in an AWS Organization."],
+      "bullets": ["Centralized billing", "Easier cost tracking", "Aggregated usage", "Potential sharing of eligible pricing benefits"],
+      "callout": "Combine billing for multiple AWS accounts → AWS Organizations consolidated billing"
+    },
+    {
+      "id": "cost-allocation",
+      "title": "Cost Allocation",
+      "paragraphs": ["A company may have one AWS bill but still need to know which department, application, project, environment, or customer caused each cost. Cost allocation connects parts of the total bill to their owners."],
+      "callout": "TOTAL BILL → WHO OWNS EACH PART?"
+    },
+    {
+      "id": "cost-allocation-tags",
+      "title": "Cost Allocation Tags",
+      "paragraphs": ["AWS resources can use tags such as Department = IT, Project = GSA, Environment = Production, and Owner = TeamA. Certain tags can be activated for cost allocation."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company wants to separate AWS costs for the marketing and IT departments."], "recognitionCue": "Department cost, project cost, resource ownership cost, or allocate charges → Cost allocation tags"}],
+      "callout": "TAG IT → TRACK THE COST"
+    },
+    {
+      "id": "tag-types",
+      "title": "AWS-Generated vs. User-Defined Tags",
+      "entries": [{"title": "AWS-generated tags", "paragraphs": ["Created by AWS for supported purposes."]}, {"title": "User-defined tags", "paragraphs": ["Created by the customer to represent organizational information such as CostCenter, Department, Application, or Project."]}],
+      "callout": "TAGS HELP ORGANIZE AND ALLOCATE COSTS"
+    },
+    {
+      "id": "cost-and-usage-report",
+      "title": "AWS Cost and Usage Report",
+      "paragraphs": ["The AWS Cost and Usage Report (CUR) provides detailed AWS cost and usage information. It is useful when organizations need more granular cost reporting and analysis."],
+      "callout": "Detailed cost data, usage data, billing report, or granular cost information → AWS Cost and Usage Report"
+    },
+    {
+      "id": "cost-explorer-vs-cur",
+      "title": "Exam Trap — Cost Explorer vs. CUR",
+      "variant": "exam-trap",
+      "table": {"caption": "Separate visual exploration from detailed reporting", "headers": ["Tool", "Purpose"], "rows": [["AWS Cost Explorer", "Visual analysis of cost and usage trends"], ["AWS Cost and Usage Report", "Detailed raw or granular reporting"]]},
+      "callout": "EXPLORER = LOOK · CUR = REPORT"
+    },
+    {
+      "id": "billing-information",
+      "title": "Billing Information",
+      "paragraphs": ["AWS provides billing information through AWS billing and cost-management capabilities. Customers should understand where to find current charges, billing information, cost details, payment-related information, and cost-management tools. The exam usually tests which tool best matches the business requirement rather than asking you to memorize every screen."],
+      "callout": "Charges, invoices, and billing details → AWS Billing and Cost Management"
+    },
+    {
+      "id": "pricing-information",
+      "title": "Pricing Information",
+      "paragraphs": ["AWS service prices vary by service, Region, usage, resource configuration, storage class, data transfer, and purchasing model. Check current AWS service pricing dimensions when exact pricing matters."],
+      "bullets": ["Planning → AWS Pricing Calculator", "Actual usage and cost trends → AWS Cost Explorer", "Alerts → AWS Budgets", "Detailed billing records → AWS Cost and Usage Report"],
+      "callout": "Choose the tool by whether you need an estimate, analysis, alert, or detailed record."
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Alert if monthly AWS spending exceeds $1,000 → AWS Budgets", "Examine spending trends over six months → AWS Cost Explorer", "Estimate a proposed architecture before deployment → AWS Pricing Calculator", "Centralized billing for 20 AWS accounts → AWS Organizations consolidated billing", "Separate AWS costs by department → Cost allocation tags", "Highly detailed cost and usage reporting → AWS Cost and Usage Report"],
+      "callout": "Turn the business verb into the AWS cost tool."
+    },
+    {
+      "id": "exam-traps",
+      "title": "GSA Exam Traps",
+      "variant": "exam-trap",
+      "entries": [{"title": "Budgets vs. Calculator", "paragraphs": ["Alert about spending → Budgets. Estimate a future architecture → Pricing Calculator."]}, {"title": "Calculator vs. Cost Explorer", "paragraphs": ["Estimate before deployment → Pricing Calculator. Analyze actual or historical costs → Cost Explorer."]}, {"title": "Cost Explorer vs. CUR", "paragraphs": ["Visualize or analyze trends → Cost Explorer. Detailed granular billing report → Cost and Usage Report."]}, {"title": "Organizations vs. Tags", "paragraphs": ["Combine multiple-account billing → Organizations. Identify which department or project generated cost → Cost allocation tags."]}],
+      "callout": "ALERT · ESTIMATE · ANALYZE · REPORT · COMBINE · ALLOCATE"
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Alert → AWS Budgets", "Analyze → AWS Cost Explorer", "Estimate → AWS Pricing Calculator", "Multiple accounts → AWS Organizations", "Combined bill → Consolidated billing", "Department or project → Cost allocation tags", "Detailed billing dataset or report → AWS Cost and Usage Report"],
+      "callout": "WARN · SHOW · ESTIMATE · COMBINE · ATTRIBUTE · DETAIL"
+    }
+  ]
+}

@@ -143,8 +143,8 @@
   function showRouteError(message) {
     elements.loading.classList.add("hidden"); elements.application.classList.add("hidden"); elements.error.classList.remove("hidden");
     elements.errorMessage.textContent = message;
-    elements.errorReturn.href = /^[1-4]$/.test(world) ? "aws-cloud-practitioner-world" + world + "-objectives.html" : "aws-cloud-practitioner-campaign.html";
-    elements.errorReturn.textContent = /^[1-4]$/.test(world) ? "← Return to World " + world + " Objective Hub" : "← Return to AWS Cloud Practitioner Campaign Map";
+    elements.errorReturn.href = /^[1-5]$/.test(world) ? "aws-cloud-practitioner-world" + world + "-objectives.html" : "aws-cloud-practitioner-campaign.html";
+    elements.errorReturn.textContent = /^[1-5]$/.test(world) ? "← Return to World " + world + " Objective Hub" : "← Return to AWS Cloud Practitioner Campaign Map";
   }
 
   elements.miniForm.addEventListener("submit", event => {
@@ -175,7 +175,8 @@
     const validRoute = (world === "1" && /^1\.[1-4]$/.test(objective)) ||
       (world === "2" && /^2\.[1-4]$/.test(objective)) ||
       (world === "3" && /^3\.[1-4]$/.test(objective)) ||
-      (world === "4" && /^3\.[5-8]$/.test(objective));
+      (world === "4" && /^3\.[5-8]$/.test(objective)) ||
+      (world === "5" && /^4\.[1-3]$/.test(objective));
     if (!validRoute) {
       showRouteError("The requested AWS Cloud Practitioner Field Manual route is invalid."); return;
     }

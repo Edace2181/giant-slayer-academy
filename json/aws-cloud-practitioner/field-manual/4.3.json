@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "5",
+  "objective": "4.3",
+  "title": "Identify AWS Technical Resources and AWS Support Options",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["Sometimes the correct AWS answer is not another server, database, or security service. Sometimes the question is: Where do I get help?"],
+      "bullets": ["Official AWS technical resources", "AWS Support plans", "AWS Partner Network", "Independent software vendors", "System integrators", "AWS Support Center", "AWS documentation, whitepapers, blogs, Prescriptive Guidance, Knowledge Center, and re:Post", "AWS Trusted Advisor, AWS Health Dashboard, AWS Health API, and AWS Trust and Safety", "AWS Marketplace, AWS Partners, AWS Professional Services, and AWS solutions architects"],
+      "callout": "WHERE DO I GET HELP?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["HOW DOES IT WORK? → AWS Documentation", "DEEP GUIDANCE → AWS whitepapers", "HOW SHOULD WE DO IT? → AWS Prescriptive Guidance", "COMMON PROBLEM → AWS Knowledge Center", "ASK THE COMMUNITY → AWS re:Post", "NEED AWS HELP → AWS Support Center", "IMPROVE IT → AWS Trusted Advisor", "WHAT IS HAPPENING? → AWS Health", "REPORT ABUSE → AWS Trust and Safety", "PARTNERS → AWS Partner Network", "BUILDS SOFTWARE → ISV", "INTEGRATES IT → System integrator", "BUY SOFTWARE → AWS Marketplace", "AWS PROJECT HELP → AWS Professional Services", "DESIGN HELP → AWS solutions architect"],
+      "callout": "RESOURCE · SUPPORT · HEALTH · PARTNER · MARKETPLACE · EXPERT"
+    },
+    {
+      "id": "official-aws-resources",
+      "title": "Official AWS Documentation, Whitepapers, and Blogs",
+      "entries": [{"title": "AWS Documentation", "paragraphs": ["AWS publishes official documentation explaining its services, features, configurations, APIs, and recommended usage."], "memoryHook": "Documentation = how AWS works.", "recognitionCue": "Need official technical information about an AWS service → AWS Documentation"}, {"title": "AWS Whitepapers", "paragraphs": ["AWS whitepapers provide deeper guidance on architecture, security, cloud adoption, best practices, and Well-Architected design."], "memoryHook": "Whitepaper = deep AWS guidance."}, {"title": "AWS Blogs", "paragraphs": ["AWS blogs contain announcements, technical explanations, architecture guidance, examples, and updates."], "memoryHook": "AWS Blog = articles, updates, and guidance."}]
+    },
+    {
+      "id": "prescriptive-guidance",
+      "title": "AWS Prescriptive Guidance",
+      "paragraphs": ["AWS Prescriptive Guidance provides strategies, guides, and patterns for cloud projects and technical implementations."],
+      "bullets": ["Migration patterns", "Implementation strategies", "Technical patterns", "Recommended approaches"],
+      "callout": "How should we approach this? → AWS Prescriptive Guidance"
+    },
+    {
+      "id": "knowledge-center",
+      "title": "AWS Knowledge Center",
+      "paragraphs": ["The AWS Knowledge Center contains answers and troubleshooting guidance for common AWS technical questions."],
+      "callout": "Troubleshooting question, common AWS issue, or technical answer → AWS Knowledge Center"
+    },
+    {
+      "id": "aws-repost",
+      "title": "AWS re:Post",
+      "paragraphs": ["AWS re:Post is an AWS community knowledge service where customers and experts can ask and answer technical questions."],
+      "callout": "Community technical question and answer → AWS re:Post"
+    },
+    {
+      "id": "technical-resource-comparison",
+      "title": "Exam Trap — Documentation vs. Knowledge Center vs. re:Post",
+      "variant": "exam-trap",
+      "table": {"caption": "Choose the right technical resource", "headers": ["Resource", "Best fit"], "rows": [["AWS Documentation", "Official service instructions"], ["AWS Knowledge Center", "Common troubleshooting answers"], ["AWS re:Post", "Community question and answer"]]},
+      "callout": "DOCUMENTATION = INSTRUCTIONS · KNOWLEDGE CENTER = ANSWERS · re:POST = COMMUNITY"
+    },
+    {
+      "id": "aws-support",
+      "title": "AWS Support",
+      "paragraphs": ["AWS provides different support options based on customer needs. The official CLF-C02 scope includes customer service and communities, AWS Developer Support, AWS Business Support, AWS Enterprise On-Ramp Support, and AWS Enterprise Support. Different plans provide different levels of technical support, response, guidance, and business or enterprise assistance."],
+      "callout": "Match the workload's business criticality and support requirements to the AWS Support offering."
+    },
+    {
+      "id": "support-plans",
+      "title": "AWS Support Plans",
+      "entries": [{"title": "AWS Developer Support", "paragraphs": ["Developer Support is intended for customers developing and testing workloads who need technical support beyond basic customer service resources."], "memoryHook": "Developer = development support."}, {"title": "AWS Business Support", "paragraphs": ["Business Support provides broader technical assistance for customers operating business and production workloads."], "memoryHook": "Business = production or business support."}, {"title": "AWS Enterprise On-Ramp Support", "paragraphs": ["Enterprise On-Ramp provides an intermediate level of enterprise-oriented support for organizations that need enhanced assistance but may not require the highest enterprise support level."], "memoryHook": "Enterprise On-Ramp = step toward enterprise."}, {"title": "AWS Enterprise Support", "paragraphs": ["Enterprise Support provides AWS's highest level of support for organizations with critical business workloads and extensive support requirements."], "memoryHook": "Enterprise = mission-critical AWS support."}]
+    },
+    {
+      "id": "support-recognition-ladder",
+      "title": "Support Recognition Ladder",
+      "paragraphs": ["As business criticality and support requirements increase, the appropriate support offering changes. Do not memorize imaginary guarantees; match the scenario to the support level described by AWS."],
+      "bullets": ["Developer", "Business", "Enterprise On-Ramp", "Enterprise"],
+      "callout": "DEVELOPER → BUSINESS → ENTERPRISE ON-RAMP → ENTERPRISE"
+    },
+    {
+      "id": "support-center",
+      "title": "AWS Support Center",
+      "paragraphs": ["The AWS Support Center provides a location for managing support interactions with AWS."],
+      "callout": "Create or manage an AWS support case → AWS Support Center"
+    },
+    {
+      "id": "trusted-advisor",
+      "title": "AWS Trusted Advisor",
+      "paragraphs": ["AWS Trusted Advisor analyzes AWS environments and provides recommendations. Its checks can address cost optimization, performance, security, fault tolerance, and service limits or quotas."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company wants AWS recommendations for reducing unnecessary cost."], "recognitionCue": "Recommendations, best-practice checks, or cost-optimization suggestions → AWS Trusted Advisor"}],
+      "callout": "TRUSTED ADVISOR = RECOMMENDATIONS"
+    },
+    {
+      "id": "health-dashboard",
+      "title": "AWS Health Dashboard",
+      "paragraphs": ["The AWS Health Dashboard provides information about AWS events that can affect customer resources and services."],
+      "callout": "AWS event affecting resources or service health relevant to a customer environment → AWS Health Dashboard"
+    },
+    {
+      "id": "health-api",
+      "title": "AWS Health API",
+      "paragraphs": ["The AWS Health API provides programmatic access to AWS Health information."],
+      "callout": "Programmatically retrieve AWS Health events → AWS Health API"
+    },
+    {
+      "id": "advisor-vs-health",
+      "title": "Exam Trap — Trusted Advisor vs. AWS Health",
+      "variant": "exam-trap",
+      "table": {"caption": "Separate improvement advice from current events", "headers": ["Resource", "Question answered"], "rows": [["AWS Trusted Advisor", "What should I improve?"], ["AWS Health Dashboard or API", "What is happening to my environment?"]]},
+      "callout": "ADVISOR = ADVICE · HEALTH = EVENTS"
+    },
+    {
+      "id": "trust-and-safety",
+      "title": "AWS Trust and Safety",
+      "paragraphs": ["The AWS Trust and Safety team handles reports involving abuse of AWS resources, including AWS resources being used for abusive or prohibited activity."],
+      "callout": "Report abuse involving AWS resources → AWS Trust and Safety"
+    },
+    {
+      "id": "partner-network",
+      "title": "AWS Partner Network",
+      "paragraphs": ["The AWS Partner Network (APN) is the global community of AWS partners. Partners can include independent software vendors, system integrators, consulting organizations, and technology providers."],
+      "callout": "APN = AWS PARTNER ECOSYSTEM"
+    },
+    {
+      "id": "isvs",
+      "title": "Independent Software Vendors",
+      "paragraphs": ["An independent software vendor (ISV) creates and sells software products."],
+      "callout": "ISV = BUILDS SOFTWARE"
+    },
+    {
+      "id": "system-integrators",
+      "title": "System Integrators",
+      "paragraphs": ["System integrators help customers design, combine, implement, and operate technology solutions."],
+      "callout": "SYSTEM INTEGRATOR = PUT THE SOLUTION TOGETHER"
+    },
+    {
+      "id": "isv-vs-system-integrator",
+      "title": "Exam Trap — ISV vs. System Integrator",
+      "variant": "exam-trap",
+      "table": {"caption": "Separate the partner roles", "headers": ["Partner type", "Primary role"], "rows": [["Independent software vendor", "Builds and sells software"], ["System integrator", "Implements and integrates solutions"]]},
+      "callout": "ISV = SOFTWARE PRODUCT · SYSTEM INTEGRATOR = IMPLEMENTED SOLUTION"
+    },
+    {
+      "id": "partner-benefits",
+      "title": "Benefits of AWS Partnership",
+      "paragraphs": ["AWS supports a partner ecosystem around its cloud."],
+      "bullets": ["Training", "Certification opportunities", "Partner events", "Programs and resources", "Potential volume discounts depending on program arrangements"],
+      "callout": "Partners can gain skills, resources, community access, and eligible commercial benefits."
+    },
+    {
+      "id": "aws-marketplace",
+      "title": "AWS Marketplace",
+      "paragraphs": ["AWS Marketplace is a digital catalog where customers can find, purchase, deploy, and manage third-party software and services that run on AWS. Marketplace can also help with procurement, entitlements, governance, and cost management."],
+      "callout": "Find or buy third-party software for AWS → AWS Marketplace"
+    },
+    {
+      "id": "professional-services",
+      "title": "AWS Professional Services",
+      "paragraphs": ["AWS Professional Services provides expert assistance from AWS for cloud initiatives. This can involve large or complex transformation and implementation efforts."],
+      "callout": "Need AWS experts for a cloud project → AWS Professional Services"
+    },
+    {
+      "id": "solutions-architects",
+      "title": "AWS Solutions Architects",
+      "paragraphs": ["AWS solutions architects help customers understand and design architectures using AWS services."],
+      "callout": "Need architectural guidance → AWS solutions architect"
+    },
+    {
+      "id": "professional-services-vs-solutions-architect",
+      "title": "Exam Trap — Professional Services vs. Solutions Architect",
+      "variant": "exam-trap",
+      "table": {"caption": "Keep the business need in mind", "headers": ["Resource", "Best fit"], "rows": [["AWS Solutions Architect", "Architectural guidance"], ["AWS Professional Services", "Project and implementation expertise"]]},
+      "callout": "DESIGN HELP = SOLUTIONS ARCHITECT · PROJECT HELP = PROFESSIONAL SERVICES"
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Official instructions for configuring an AWS service → AWS Documentation", "Architectural best-practice guidance → AWS whitepapers", "Implementation patterns for a migration → AWS Prescriptive Guidance", "Common technical troubleshooting question → AWS Knowledge Center", "Community question and answer → AWS re:Post", "Open an AWS support case → AWS Support Center", "Recommendations for cost optimization → AWS Trusted Advisor", "Determine whether an AWS event affects resources → AWS Health Dashboard", "Retrieve AWS Health information programmatically → AWS Health API", "Report abuse of AWS resources → AWS Trust and Safety", "Find third-party software for AWS → AWS Marketplace", "Vendor develops software products → ISV", "Partner integrates multiple technologies → System integrator", "AWS experts for a complex cloud initiative → AWS Professional Services", "AWS architecture guidance → AWS solutions architect"],
+      "callout": "Identify whether the need is information, support, health, partnership, procurement, implementation, or design."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["Official instructions → AWS Documentation", "Deep guidance → AWS whitepapers", "Implementation patterns → AWS Prescriptive Guidance", "Common troubleshooting → AWS Knowledge Center", "Community Q&A → AWS re:Post", "Technical support → AWS Support", "Support case → AWS Support Center", "Recommendations → AWS Trusted Advisor", "Resource-impacting AWS events → AWS Health Dashboard", "Programmatic health → AWS Health API", "Abuse → AWS Trust and Safety", "Partner ecosystem → AWS Partner Network", "Software vendor → ISV", "Technology integration → System integrator", "Third-party software → AWS Marketplace", "AWS project experts → AWS Professional Services", "Architecture guidance → AWS solutions architect"],
+      "callout": "DOCUMENT · GUIDE · TROUBLESHOOT · ASK · SUPPORT · ADVISE · HEALTH · PARTNER · BUY · BUILD · DESIGN"
+    },
+    {
+      "id": "world-five-connection",
+      "title": "World 5 and Full AWS Path",
+      "bullets": ["4.1 PRICING → On-Demand, Reserved, Spot, Savings Plans, Dedicated Hosts and Instances, Capacity Reservations, data transfer, and storage pricing", "4.2 COST MANAGEMENT → Budgets, Cost Explorer, Pricing Calculator, Organizations, consolidated billing, cost allocation tags, and Cost and Usage Report", "4.3 SUPPORT AND RESOURCES → Documentation, Prescriptive Guidance, Knowledge Center, re:Post, Support plans, Trusted Advisor, AWS Health, Partners, Marketplace, and Professional Services", "World 1 → Cloud Concepts", "World 2 → Security and Compliance", "Worlds 3–4 → Cloud Technology and Services", "World 5 → Billing, Pricing, and Support"],
+      "callout": "19 OFFICIAL TASK STATEMENTS · 5 GSA WORLDS · AWS CLOUD PRACTITIONER FIELD MANUAL COMPLETE"
+    }
+  ]
+}

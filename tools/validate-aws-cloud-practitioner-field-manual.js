@@ -126,6 +126,30 @@ const objectives = {
     firstId: "AWSCLF-3.8-R001",
     sections: ["what-you-are-learning", "maestro-focus", "application-integration", "integration-comparison", "business-applications", "aws-support", "developer-tools", "end-user-computing", "end-user-computing-comparison", "frontend-web-mobile", "iot-core", "scenario-recognition", "exam-trap", "maestro-recognition-sheet", "world-four-connection"],
     topics: ["Amazon EventBridge", "Amazon SNS", "Amazon SQS", "Amazon Connect", "Amazon SES", "AWS Support", "AWS CodeBuild", "AWS CodePipeline", "AWS X-Ray", "Amazon AppStream 2.0", "Amazon WorkSpaces", "Amazon WorkSpaces Secure Browser", "AWS Amplify", "AWS AppSync", "AWS IoT Core"]
+  },
+  "4.1": {
+    world: "5",
+    count: 17,
+    hash: "2E6C19B42DA0FF627BA96DB75DB7ADD436C845E28B195B42E29A629588AA48C3",
+    firstId: "AWSCLF-4.1-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "on-demand-instances", "reserved-instances", "reserved-instance-flexibility", "reserved-instances-organizations", "spot-instances", "compute-purchasing-trap", "savings-plans", "reserved-vs-savings-plans", "dedicated-hosts", "dedicated-instances", "dedicated-host-vs-instance", "capacity-reservations", "reserved-vs-capacity", "data-transfer-pricing", "same-vs-different-regions", "storage-pricing", "storage-tiers", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["On-Demand Instances", "Reserved Instances", "Spot Instances", "AWS Savings Plans", "Dedicated Hosts", "Dedicated Instances", "Capacity Reservations", "AWS Organizations", "Data Transfer Pricing", "Storage Pricing", "Storage Tiers"]
+  },
+  "4.2": {
+    world: "5",
+    count: 11,
+    hash: "B2B55CA8CEE91B3F00FB6ED1DD21F0BA2543B8AE2E8C48FDEF206CC10AD3172D",
+    firstId: "AWSCLF-4.2-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "aws-budgets", "cost-explorer", "budgets-vs-cost-explorer", "pricing-calculator", "big-three-comparison", "aws-organizations", "consolidated-billing", "cost-allocation", "cost-allocation-tags", "tag-types", "cost-and-usage-report", "cost-explorer-vs-cur", "billing-information", "pricing-information", "scenario-recognition", "exam-traps", "maestro-recognition-sheet"],
+    topics: ["AWS Budgets", "AWS Cost Explorer", "AWS Pricing Calculator", "AWS Organizations", "Consolidated Billing", "Cost Allocation", "Cost Allocation Tags", "AWS-Generated", "User-Defined", "AWS Cost and Usage Report", "Billing Information", "Pricing Information"]
+  },
+  "4.3": {
+    world: "5",
+    count: 29,
+    hash: "762B944B3DA2B2706BD139115CA03D1457BCB15CF22FC5E205E898758931B4F0",
+    firstId: "AWSCLF-4.3-R001",
+    sections: ["what-you-are-learning", "maestro-focus", "official-aws-resources", "prescriptive-guidance", "knowledge-center", "aws-repost", "technical-resource-comparison", "aws-support", "support-plans", "support-recognition-ladder", "support-center", "trusted-advisor", "health-dashboard", "health-api", "advisor-vs-health", "trust-and-safety", "partner-network", "isvs", "system-integrators", "isv-vs-system-integrator", "partner-benefits", "aws-marketplace", "professional-services", "solutions-architects", "professional-services-vs-solutions-architect", "scenario-recognition", "maestro-recognition-sheet", "world-five-connection"],
+    topics: ["AWS Documentation", "AWS Whitepapers", "AWS Blogs", "AWS Prescriptive Guidance", "AWS Knowledge Center", "AWS re:Post", "AWS Developer Support", "AWS Business Support", "AWS Enterprise On-Ramp Support", "AWS Enterprise Support", "AWS Support Center", "AWS Trusted Advisor", "AWS Health Dashboard", "AWS Health API", "AWS Trust and Safety", "AWS Partner Network", "Independent Software Vendor", "System Integrator", "AWS Marketplace", "AWS Professional Services", "AWS Solutions Architects"]
   }
 };
 
@@ -156,7 +180,8 @@ const hubs = {
   "1": read("aws-cloud-practitioner-world1-objectives.html"),
   "2": read("aws-cloud-practitioner-world2-objectives.html"),
   "3": read("aws-cloud-practitioner-world3-objectives.html"),
-  "4": read("aws-cloud-practitioner-world4-objectives.html")
+  "4": read("aws-cloud-practitioner-world4-objectives.html"),
+  "5": read("aws-cloud-practitioner-world5-objectives.html")
 };
 const campaign = read("aws-cloud-practitioner-campaign.html");
 const manualPage = read("aws-cloud-practitioner-field-manual.html");
@@ -168,6 +193,7 @@ requireValue(campaign.includes('href="aws-cloud-practitioner-world1-objectives.h
 requireValue(campaign.includes('href="aws-cloud-practitioner-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
 requireValue(campaign.includes('href="aws-cloud-practitioner-world3-objectives.html"'), "Campaign World 3 must route to its Objective Hub.");
 requireValue(campaign.includes('href="aws-cloud-practitioner-world4-objectives.html"'), "Campaign World 4 must route to its Objective Hub.");
+requireValue(campaign.includes('href="aws-cloud-practitioner-world5-objectives.html"'), "Campaign World 5 must route to its Objective Hub.");
 for (const [objective, expected] of Object.entries(objectives)) {
   const world = expected.world || objective.split(".")[0];
   const hub = hubs[world];
@@ -189,6 +215,7 @@ requireValue(manualScript.includes('world === "1" && /^1\\.[1-4]$/.test(objectiv
 requireValue(manualScript.includes('world === "2" && /^2\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
 requireValue(manualScript.includes('world === "3" && /^3\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 3 objectives 3.1-3.4.");
 requireValue(manualScript.includes('world === "4" && /^3\\.[5-8]$/.test(objective)'), "The Field Manual route gate must include only published World 4 objectives 3.5-3.8.");
+requireValue(manualScript.includes('world === "5" && /^4\\.[1-3]$/.test(objective)'), "The Field Manual route gate must include only published World 5 objectives 4.1-4.3.");
 requireValue(quizScript.includes('return { href: `aws-cloud-practitioner-world${world}-objectives.html`'), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {

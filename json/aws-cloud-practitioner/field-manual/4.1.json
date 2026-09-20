@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "certification": "aws-cloud-practitioner",
+  "examCode": "CLF-C02",
+  "world": "5",
+  "objective": "4.1",
+  "title": "Compare AWS Pricing Models",
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {
+      "id": "what-you-are-learning",
+      "title": "What You Are Learning",
+      "paragraphs": ["AWS gives customers different ways to purchase compute and storage because different workloads have different requirements. The exam wants you to recognize which pricing option fits the workload."],
+      "bullets": ["Compute purchasing options: On-Demand Instances, Reserved Instances, Spot Instances, AWS Savings Plans, Dedicated Hosts, Dedicated Instances, and Capacity Reservations", "Storage options and storage tiers", "Selecting appropriate compute purchasing options", "Understanding Reserved Instance flexibility and Reserved Instances in AWS Organizations", "Understanding incoming and outgoing data-transfer costs", "Understanding pricing differences among storage options and tiers"],
+      "callout": "Which pricing option fits the workload?"
+    },
+    {
+      "id": "maestro-focus",
+      "title": "Maestro Mental Model",
+      "bullets": ["NEED IT NOW → On-Demand", "KNOW I WILL USE IT → Reserved Instances", "CAN BE INTERRUPTED → Spot", "COMMIT TO COMPUTE → Savings Plans", "PHYSICAL SERVER → Dedicated Host", "DEDICATED HARDWARE → Dedicated Instance", "SAVE CAPACITY → Capacity Reservation", "DATA IN → Often free", "DATA OUT → Watch the cost", "OLD OR RARE DATA → Lower-cost storage options"],
+      "callout": "Match commitment, interruption tolerance, isolation, capacity, transfer direction, and access frequency to the pricing choice."
+    },
+    {
+      "id": "on-demand-instances",
+      "title": "On-Demand Instances",
+      "paragraphs": ["On-Demand Instances let customers use EC2 compute capacity without making a long-term commitment. They provide flexibility for short-term, unpredictable, irregular workloads that are not suitable for a long-term commitment."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company is launching a new application and does not yet know how much compute it will need."], "recognitionCue": "No long-term commitment → On-Demand"}],
+      "callout": "ON-DEMAND = USE IT WHEN I NEED IT"
+    },
+    {
+      "id": "reserved-instances",
+      "title": "Reserved Instances",
+      "paragraphs": ["Reserved Instances provide billing discounts compared with equivalent On-Demand usage when customers make a longer-term commitment. They make sense for predictable workloads where customers expect sustained usage."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company knows an application will run continuously for a long period."], "recognitionCue": "Predictable workload + long-term commitment + discount compared with On-Demand → Reserved Instances"}],
+      "callout": "RESERVED = COMMIT FOR SAVINGS"
+    },
+    {
+      "id": "reserved-instance-flexibility",
+      "title": "Reserved Instance Flexibility",
+      "paragraphs": ["Not all Reserved Instances provide identical flexibility. AWS provides different RI options that can vary in the ability to change certain attributes. Do not assume every reservation behaves exactly the same way."],
+      "callout": "More flexibility may come with different discount tradeoffs."
+    },
+    {
+      "id": "reserved-instances-organizations",
+      "title": "Reserved Instances and AWS Organizations",
+      "paragraphs": ["AWS Organizations can provide consolidated billing across accounts. Under applicable conditions, Reserved Instance pricing benefits can be shared across accounts in an organization. The exam may describe multiple AWS accounts under one organization and ask about sharing eligible pricing benefits."],
+      "callout": "ORGANIZATION = BILLING BENEFITS CAN CROSS ACCOUNTS"
+    },
+    {
+      "id": "spot-instances",
+      "title": "Spot Instances",
+      "paragraphs": ["Spot Instances use spare EC2 capacity at significant discounts, but AWS can interrupt the capacity. Spot is appropriate for workloads that can tolerate interruptions, including batch processing, flexible workloads, fault-tolerant processing, and jobs that can restart."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company has a large batch-processing job that can stop and resume later."], "recognitionCue": "Interruptible workload + lower cost → Spot"}],
+      "callout": "SPOT = CHEAP BUT INTERRUPTIBLE"
+    },
+    {
+      "id": "compute-purchasing-trap",
+      "title": "Exam Trap — On-Demand vs. Reserved vs. Spot",
+      "variant": "exam-trap",
+      "table": {"caption": "Choose by the workload's defining requirement", "headers": ["Option", "Defining idea"], "rows": [["On-Demand", "Flexibility; no long-term commitment"], ["Reserved Instances", "Commitment for predictable sustained usage"], ["Spot Instances", "Interruption tolerance; spare capacity at a discount"]]},
+      "callout": "ON-DEMAND = NOW · RESERVED = COMMIT · SPOT = CHEAP BUT INTERRUPTIBLE"
+    },
+    {
+      "id": "savings-plans",
+      "title": "AWS Savings Plans",
+      "paragraphs": ["AWS Savings Plans offer savings in exchange for committing to a consistent amount of compute usage over a specified term. Depending on the plan, Savings Plans can provide more flexibility than tying the discount exclusively to one exact instance configuration."],
+      "bullets": ["Commit to consistent compute usage", "Reduce compute cost", "Use a flexible discount model"],
+      "callout": "SAVINGS PLAN = COMMIT TO COMPUTE SPEND OR USAGE"
+    },
+    {
+      "id": "reserved-vs-savings-plans",
+      "title": "Reserved Instances vs. Savings Plans",
+      "variant": "exam-trap",
+      "paragraphs": ["Both involve commitment for savings."],
+      "table": {"caption": "Separate the two commitment models", "headers": ["Option", "Recognition cue"], "rows": [["Reserved Instances", "Discounted EC2 usage associated with reservation attributes"], ["Savings Plans", "Commitment to consistent compute usage or spend with flexibility depending on the plan"]]},
+      "callout": "RI = RESERVATION · SAVINGS PLAN = COMPUTE COMMITMENT"
+    },
+    {
+      "id": "dedicated-hosts",
+      "title": "Dedicated Hosts",
+      "paragraphs": ["A Dedicated Host is a physical server dedicated to a single AWS customer. It can be important for compliance requirements, licensing requirements, server-bound software licensing, and visibility or control over physical server placement."],
+      "callout": "Need an entire physical server dedicated to one customer → Dedicated Host"
+    },
+    {
+      "id": "dedicated-instances",
+      "title": "Dedicated Instances",
+      "paragraphs": ["Dedicated Instances run on hardware dedicated to a single customer. They do not provide the same level of host-level visibility or control as Dedicated Hosts."],
+      "callout": "DEDICATED INSTANCE = ISOLATED HARDWARE"
+    },
+    {
+      "id": "dedicated-host-vs-instance",
+      "title": "Exam Trap — Dedicated Host vs. Dedicated Instance",
+      "variant": "exam-trap",
+      "table": {"caption": "Separate physical-host control from tenant isolation", "headers": ["Option", "Need"], "rows": [["Dedicated Host", "Physical server visibility or control, or certain licensing requirements"], ["Dedicated Instance", "Instances on single-customer hardware without the same host-level control"]]},
+      "callout": "HOST = CONTROL THE HOUSE · INSTANCE = YOUR TENANT IS ISOLATED"
+    },
+    {
+      "id": "capacity-reservations",
+      "title": "Capacity Reservations",
+      "paragraphs": ["An On-Demand Capacity Reservation reserves EC2 capacity in a particular Availability Zone. Its primary goal is capacity availability, not a pricing discount."],
+      "entries": [{"title": "Scenario", "paragraphs": ["A company must ensure EC2 capacity will be available in a specific Availability Zone when needed."], "recognitionCue": "Guarantee or reserve EC2 capacity → Capacity Reservation"}],
+      "callout": "CAPACITY RESERVATION = SAVE ME A SEAT"
+    },
+    {
+      "id": "reserved-vs-capacity",
+      "title": "Exam Trap — Reserved Instance vs. Capacity Reservation",
+      "variant": "exam-trap",
+      "table": {"caption": "Do not let the word reservation decide the answer", "headers": ["Option", "Primary purpose"], "rows": [["Reserved Instance", "Pricing benefit and commitment"], ["Capacity Reservation", "Capacity availability in a specific Availability Zone"]]},
+      "callout": "RI = PRICING BENEFIT · CAPACITY RESERVATION = SAVE CAPACITY"
+    },
+    {
+      "id": "data-transfer-pricing",
+      "title": "Data Transfer Pricing",
+      "paragraphs": ["AWS data-transfer pricing depends on where data is moving. Data entering AWS from the internet is often free, while data leaving AWS can cost money. Exact pricing varies by service and transfer path, and data movement between AWS Regions can also incur charges. Network architecture can therefore affect cost."],
+      "callout": "DATA IN IS OFTEN FREE · DATA OUT CAN COST MONEY"
+    },
+    {
+      "id": "same-vs-different-regions",
+      "title": "Same Region vs. Different Regions",
+      "paragraphs": ["Pricing for moving data between resources can depend on the service, Availability Zone, Region, and direction of transfer. Never assume all AWS network transfers are free."],
+      "callout": "DATA LOCATION CAN AFFECT PRICE"
+    },
+    {
+      "id": "storage-pricing",
+      "title": "Storage Pricing",
+      "paragraphs": ["Storage cost depends on the storage service, amount of data, storage class or tier, access frequency, retrieval requirements, data transfer, and operations or requests. This connects directly to the storage services learned in Task Statement 3.6."],
+      "callout": "Choose the storage option by workload and access pattern."
+    },
+    {
+      "id": "storage-tiers",
+      "title": "Storage Tiers",
+      "paragraphs": ["Frequently accessed data generally has different pricing characteristics from rarely accessed archival data. Frequent-access tiers are optimized for immediate use. Archive tiers are optimized for lower-cost long-term retention with different retrieval characteristics."],
+      "callout": "FREQUENT ACCESS = IMMEDIATE USE · ARCHIVE = LOWER-COST RETENTION"
+    },
+    {
+      "id": "scenario-recognition",
+      "title": "GSA Scenario Recognition",
+      "bullets": ["Unknown short-term workload with no commitment → On-Demand", "Predictable long-running EC2 workload → Reserved Instances", "Interruptible batch-processing workload → Spot Instances", "Commit to consistent compute usage and want flexible savings → Savings Plans", "Physical-server control for licensing → Dedicated Host", "Single-customer hardware without host-level control → Dedicated Instances", "Guarantee EC2 capacity in a particular Availability Zone → Capacity Reservation", "Large data transfers between Regions → Consider data-transfer charges", "Rarely accessed data needs long-term retention → Consider lower-cost archival storage tiers or classes"],
+      "callout": "Find the defining workload requirement first."
+    },
+    {
+      "id": "maestro-recognition-sheet",
+      "title": "Maestro Recognition Sheet",
+      "bullets": ["No commitment → On-Demand", "Predictable + commitment → Reserved Instances", "Interruptible → Spot", "Compute commitment → Savings Plans", "Physical host → Dedicated Host", "Single-customer hardware → Dedicated Instances", "Guarantee capacity → Capacity Reservation", "Data entering AWS → Often no transfer charge", "Data leaving AWS or crossing Regions → May incur charges", "Storage price → Match tier to access pattern"],
+      "callout": "NOW · COMMIT · INTERRUPT · SAVE · HOST · ISOLATE · RESERVE · IN · OUT · ARCHIVE"
+    }
+  ]
+}
