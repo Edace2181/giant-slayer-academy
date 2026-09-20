@@ -100,7 +100,7 @@ const objectives = {
     count: 12,
     hash: "61605681B12F772087DAECF3691E77BE5E7B4373F3C3132B7D0433E0AC2A6DD9",
     firstId: "AWSCLF-3.5-R001",
-    sections: ["what-you-are-learning", "maestro-focus", "network-services", "amazon-vpc", "subnets", "gateways", "vpc-security", "security-group-vs-nacl", "route-53", "connectivity-options", "vpn-vs-direct-connect", "scenario-recognition", "exam-trap", "maestro-recognition-sheet"],
+    sections: ["what-you-are-learning", "maestro-focus", "amazon-vpc", "subnets", "public-private-placement", "gateways", "security-groups", "network-acls", "security-group-vs-nacl", "amazon-inspector", "inspector-vs-security-group", "amazon-route-53", "route53-exam-trap", "connecting-to-aws", "aws-vpn", "aws-direct-connect", "vpn-vs-direct-connect", "scenario-recognition", "maestro-recognition-sheet"],
     topics: ["Amazon VPC", "Subnets", "Gateways", "Security Groups", "Network ACLs", "Amazon Inspector", "Amazon Route 53", "AWS VPN", "AWS Direct Connect"]
   },
   "3.6": {
