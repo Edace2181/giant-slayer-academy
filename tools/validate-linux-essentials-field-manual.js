@@ -58,6 +58,61 @@ const objectives = {
     world: "2", count: 9, hash: "654051F6224C5BC6D6F874BE97FF1940FFBE2BE669F45ACBD0384589F95ADA8C", firstId: "L010-2.4-R001",
     sections: ["mission", "touch", "cp", "mv", "cp-vs-mv", "rm", "mkdir", "rmdir", "rm-vs-rmdir", "case-sensitivity", "simple-globbing", "asterisk-wildcard", "question-wildcard", "wildcard-trap", "globbing-with-commands", "safety-lesson", "simple-workspace", "scenario-recognition", "exam-traps", "maestro-recognition-sheet", "world-two-connection"],
     topics: ["Files and Directories", "touch", "cp", "mv", "rm", "mkdir", "rmdir", "Case Sensitivity", "Simple Globbing"]
+  },
+  "3.1": {
+    world: "3", count: 11, hash: "8E2233223A7BEDBF4138BC95FC358B2C0CA8A829D9E41375A2572BC7B1C6A83F", firstId: "L010-3.1-R001",
+    sections: ["mission", "archive-vs-compression", "tar", "tar-options", "creating-tar", "extracting-tar", "gzip", "tar-gzip", "bzip2", "xz", "tar-compression-options", "zip", "unzip", "tar-vs-gzip", "compression-comparison", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Files and directories", "Archives and compression", "tar", "-c", "-x", "-f", "-v", "gzip", "bzip2", "xz", "zip", "unzip", ".tar.gz", ".tar.bz2", ".tar.xz"]
+  },
+  "3.2": {
+    world: "3", count: 15, hash: "6BD75EE3B1ADE9875913B213DC642F8DAAD49F64CD10E9375E26EFB005A56248", firstId: "L010-3.2-R001",
+    sections: ["mission", "standard-streams", "cat", "less", "cat-vs-less", "head", "tail", "head-vs-tail", "grep", "sort", "cut", "wc", "pipes", "pipe-power", "output-redirection", "overwrite-warning", "append-redirection", "overwrite-vs-append", "input-redirection", "pipes-vs-redirection", "regular-expressions", "regex-dot", "character-classes", "regex-star", "glob-vs-regex-star", "question-mark-awareness", "grep-with-patterns", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Command-line pipes", "I/O redirection", "Regular Expressions", "grep", "less", "cat", "head", "tail", "sort", "cut", "wc", "STDIN", "STDOUT", "STDERR"]
+  },
+  "3.3": {
+    world: "3", count: 10, hash: "14A7A2B8EF703B29D35D9D9E26B65EC875BA9F862C1EBD5935489D806B4E869A", firstId: "L010-3.3-R001",
+    sections: ["mission", "shell-script", "why-script", "text-editors", "vi", "nano", "shebang", "bin-bash", "shebang-trap", "simple-script", "variables", "arguments", "script-name-arguments", "argument-value", "for-loops", "understanding-loop", "why-loops", "echo-in-scripts", "exit-status", "last-exit-status", "exit-status-trap", "decisions-from-results", "putting-pieces-together", "automation-connection", "scenario-recognition", "exam-traps", "maestro-recognition-sheet", "world-three-connection"],
+    topics: ["Basic shell scripting", "vi", "nano", "#!", "/bin/bash", "Variables", "Arguments", "for", "echo", "Exit status", "$1", "$?"]
+  },
+  "4.1": {
+    world: "4", count: 10, hash: "E8941C282500DB9523AAEA5BC7F98DA190D12EFA957DDE9A4607C956E12AFB8F", firstId: "L010-4.1-R001",
+    sections: ["mission", "operating-system-role", "windows", "macos", "linux", "gui-vs-cli", "linux-interface-trap", "desktop-configuration", "distribution-life-cycles", "maintenance-cycles", "beta-releases", "stable-releases", "beta-vs-stable", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Windows", "OS X/macOS", "Linux", "GUI", "command line", "Desktop configuration", "Maintenance cycles", "Beta", "Stable"]
+  },
+  "4.2": {
+    world: "4", count: 11, hash: "6C36DA734F6622D06C26634A961AEABB15E44E3C862E773F191954A84510B80E", firstId: "L010-4.2-R001",
+    sections: ["mission", "motherboard", "processor", "power-supply", "optical-drives", "peripherals", "hard-disk-drives", "solid-state-drives", "hdd-vs-ssd", "partitions", "device-files", "dev-sd", "disk-vs-partition", "drivers", "why-drivers-matter", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Motherboard", "Processor", "Power Supply", "Optical Drives", "Peripherals", "HDD", "SSD", "Partitions", "/dev/sd", "Drivers"]
+  },
+  "4.3": {
+    world: "4", count: 17, hash: "E1BB76B8E74830AE5F7D4847F474AE11580B4AF1A5511486D906CCEA9AAB7266", firstId: "L010-4.3-R001",
+    sections: ["mission", "filesystem-hierarchy", "etc", "var-log", "etc-vs-var-log", "boot", "dev", "proc", "proc-processes", "sys", "proc-dev-sys", "processes", "ps", "top", "ps-vs-top", "free", "memory-runtime", "system-messaging", "syslog", "dmesg", "syslog-vs-dmesg", "logs-as-evidence", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Programs and configuration", "Processes", "Memory", "System messaging", "Logging", "ps", "top", "free", "syslog", "dmesg", "/etc/", "/var/log/", "/boot/", "/proc/", "/dev/", "/sys/"]
+  },
+  "4.4": {
+    world: "4", count: 17, hash: "6739B4773BDB2CC7CAD12B8165312D792CAD8ABC6E74C5E3A75E91CA08686C73", firstId: "L010-4.4-R001",
+    sections: ["mission", "network", "internet", "router", "ipv4", "ipv6", "ipv4-vs-ipv6", "network-interfaces", "ifconfig", "ip-addr-show", "interface-command-comparison", "routing-table", "route", "ip-route-show", "address-vs-route", "default-route", "dns", "resolv-conf", "hosts", "resolv-vs-hosts", "host-command", "ping", "ping-limitation", "netstat", "ss", "netstat-vs-ss", "lan-requirements", "troubleshooting-symptoms", "scenario-recognition", "exam-traps", "maestro-recognition-sheet"],
+    topics: ["Internet", "Network", "Router", "IPv4", "IPv6", "route", "ip route show", "ifconfig", "ip addr show", "netstat", "ss", "/etc/resolv.conf", "/etc/hosts", "ping", "host"]
+  },
+  "5.1": {
+    world: "5", count: 12, hash: "FA524D0289ABFE34BB019D188A0359DB93240B21F4024C6D922145D2D1ACE758", firstId: "L010-5.1-R001",
+    sections: ["mission", "multi-user-system", "standard-users", "root", "root-security", "system-users", "user-types", "etc-passwd", "etc-shadow", "passwd-vs-shadow", "etc-group", "id-command", "who", "w-command", "who-vs-w", "last", "sudo", "su", "sudo-vs-su", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Root", "Standard Users", "System Users", "/etc/passwd", "/etc/shadow", "/etc/group", "id", "last", "who", "w", "sudo", "su"]
+  },
+  "5.2": {
+    world: "5", count: 10, hash: "57585212198B93F39575E0763AA702D44BACF5DF4409AD38FCC24FB6FD109ABE", firstId: "L010-5.2-R001",
+    sections: ["mission", "numeric-identities", "why-uids-matter", "groups", "useradd", "groupadd", "useradd-vs-groupadd", "passwd-command", "passwd-command-vs-file", "etc-passwd", "etc-shadow", "etc-group", "etc-skel", "why-skel-matters", "creation-workflow", "account-file-connection", "scenario-recognition", "exam-traps", "maestro-recognition-sheet"],
+    topics: ["User IDs", "UID", "useradd", "groupadd", "passwd", "/etc/passwd", "/etc/shadow", "/etc/group", "/etc/skel/"]
+  },
+  "5.3": {
+    world: "5", count: 8, hash: "6D3A21A01FF77F72FA015FB08F280E1CF95E46E7AE33383B793CAE8C3A451D8C", firstId: "L010-5.3-R001",
+    sections: ["mission", "file-ownership", "permission-classes", "basic-permissions", "read-permission", "write-permission", "execute-permission", "ls-long", "permission-string", "missing-permission", "ls-all", "chmod", "symbolic-chmod", "numeric-permissions", "numeric-examples", "three-digit-modes", "chown", "chmod-vs-chown", "directory-permissions", "file-vs-directory-x", "ownership-and-mode", "scenario-recognition", "exam-traps", "maestro-recognition-sheet"],
+    topics: ["Ownership", "Permissions", "ls -l", "ls -a", "chmod", "chown", "Read", "Write", "Execute", "755", "644"]
+  },
+  "5.4": {
+    world: "5", count: 8, hash: "FD15FD267DD98F1B92852350DCF50C32364F2526B45555C5F0FC9DF79071C27F", firstId: "L010-5.4-R001",
+    sections: ["mission", "temporary-files", "tmp", "var-tmp", "tmp-vs-var-tmp", "shared-directory-problem", "sticky-bit", "sticky-bit-recognition", "sticky-bit-trap", "symbolic-links", "why-symbolic-links", "ln-s", "source-link-order", "symlink-behavior", "link-vs-copy", "ls-d", "ls-options", "scenario-recognition", "exam-traps", "maestro-recognition-sheet", "world-five-connection"],
+    topics: ["Temporary files", "/tmp/", "/var/tmp/", "Sticky Bit", "Symbolic link", "ls -d", "ln -s"]
   }
 };
 
@@ -86,7 +141,10 @@ for (const [objective, expected] of Object.entries(objectives)) {
 
 const hubs = {
   "1": read("linux-essentials-world1-objectives.html"),
-  "2": read("linux-essentials-world2-objectives.html")
+  "2": read("linux-essentials-world2-objectives.html"),
+  "3": read("linux-essentials-world3-objectives.html"),
+  "4": read("linux-essentials-world4-objectives.html"),
+  "5": read("linux-essentials-world5-objectives.html")
 };
 const campaign = read("linux-essentials-campaign.html");
 const manualPage = read("linux-essentials-field-manual.html");
@@ -96,6 +154,9 @@ const quizScript = read("linux-essentials-quiz.js");
 
 requireValue(campaign.includes('href="linux-essentials-world1-objectives.html"'), "Campaign World 1 must route to its Objective Hub.");
 requireValue(campaign.includes('href="linux-essentials-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
+requireValue(campaign.includes('href="linux-essentials-world3-objectives.html"'), "Campaign World 3 must route to its Objective Hub.");
+requireValue(campaign.includes('href="linux-essentials-world4-objectives.html"'), "Campaign World 4 must route to its Objective Hub.");
+requireValue(campaign.includes('href="linux-essentials-world5-objectives.html"'), "Campaign World 5 must route to its Objective Hub.");
 for (const [objective, expected] of Object.entries(objectives)) {
   const world = expected.world || "1";
   const hub = hubs[world];
@@ -115,6 +176,9 @@ requireValue(manualScript.includes('window.location.assign("linux-essentials-qui
 requireValue(manualScript.includes('elements.returnLink.href = "linux-essentials-world" + world + "-objectives.html"'), "Field Manuals must return to their Objective Hub.");
 requireValue(manualScript.includes('world === "1" && /^1\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 1 objectives 1.1-1.4.");
 requireValue(manualScript.includes('world === "2" && /^2\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
+requireValue(manualScript.includes('world === "3" && /^3\\.[1-3]$/.test(objective)'), "The Field Manual route gate must include only published World 3 objectives 3.1-3.3.");
+requireValue(manualScript.includes('world === "4" && /^4\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 4 objectives 4.1-4.4.");
+requireValue(manualScript.includes('world === "5" && /^5\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 5 objectives 5.1-5.4.");
 requireValue(quizScript.includes('return { href: `linux-essentials-world${world}-objectives.html`'), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "certification": "linux-essentials",
+  "examCode": "010-160",
+  "blueprintVersion": "1.6",
+  "world": "3",
+  "objective": "3.1",
+  "title": "Archiving Files on the Command Line",
+  "weight": 2,
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id":"mission","title":"Mission · Archive, Compress, and Extract","paragraphs":["Linux administrators frequently need to package files together, compress them, move them, back them up, or extract them later. The central distinction is archiving versus compression."],"bullets":["Files and directories","Archives and compression","tar and common tar options","gzip, bzip2, and xz","zip and unzip"],"callout":"ARCHIVING BUNDLES · COMPRESSION SHRINKS"},
+    {"id":"archive-vs-compression","title":"Archive vs. Compression","paragraphs":["An archive combines files or directories into one container. Compression reduces the storage space data requires. A file can be archived without compression, and an archive can also be compressed."],"table":{"caption":"Related, but not identical","headers":["Concept","Purpose"],"rows":[["Archive","Bundle files and directories"],["Compression","Shrink data"]]},"callout":"ARCHIVE = BUNDLE · COMPRESS = SHRINK"},
+    {"id":"tar","title":"tar · Tape Archive","paragraphs":["tar is one of the most important Linux archiving utilities. Its name comes from tape archive, but it now commonly packages files and directories regardless of whether tape is involved. notes.txt, report.txt, and project/ can become backup.tar."],"callout":"TAR = BUNDLE FILES TOGETHER"},
+    {"id":"tar-options","title":"Common tar Options","table":{"caption":"Core tar option recognition","headers":["Option","Meaning"],"rows":[["-c","Create an archive"],["-x","Extract an archive"],["-f","Specify the archive filename"],["-v","Verbose output; display files as tar processes them"]]},"callout":"C = CREATE · X = EXTRACT · F = FILE · V = VERBOSE"},
+    {"id":"creating-tar","title":"Creating a tar Archive","paragraphs":["tar -cf backup.tar Documents/ creates backup.tar from Documents/. The c creates, f says the archive filename follows, backup.tar is the result, and Documents/ is the content."],"callout":"CREATE = tar -cf"},
+    {"id":"extracting-tar","title":"Extracting a tar Archive","paragraphs":["tar -xf backup.tar extracts the archive. The x means extract and f identifies the specified archive file."],"callout":"EXTRACT = tar -xf"},
+    {"id":"gzip","title":"gzip","paragraphs":["gzip is a compression utility. A gzip-compressed file commonly uses .gz, such as notes.txt.gz. A gzip-compressed tar archive commonly uses .tar.gz or .tgz."],"callout":"GZIP = .gz"},
+    {"id":"tar-gzip","title":"tar + gzip","paragraphs":["tar uses -z for gzip compression. tar -czf backup.tar.gz Documents/ creates and gzip-compresses the archive; tar -xzf backup.tar.gz extracts it."],"callout":"TAR + z = GZIP"},
+    {"id":"bzip2","title":"bzip2","paragraphs":["bzip2 is another compression utility. It uses .bz2, while a tar archive compressed with bzip2 commonly uses .tar.bz2. tar commonly uses -j for bzip2."],"callout":"BZIP2 = .bz2 · TAR + j = BZIP2"},
+    {"id":"xz","title":"xz","paragraphs":["xz is another compression format and tool. It uses .xz, while a compressed tar archive may use .tar.xz. tar commonly uses uppercase -J for xz."],"callout":"XZ = .xz · TAR + CAPITAL J = XZ"},
+    {"id":"tar-compression-options","title":"Exam Trap · tar Compression Options","variant":"exam-trap","table":{"caption":"Capitalization matters","headers":["Option","Compression"],"rows":[["-z","gzip"],["-j","bzip2"],["-J","xz"]]},"callout":"z = GZIP · j = BZIP2 · J = XZ"},
+    {"id":"zip","title":"zip","paragraphs":["zip can package and compress files into a .zip archive. zip archive.zip file1 file2 is the basic pattern. ZIP is widely used across operating systems."],"callout":"ZIP = ARCHIVE + COMPRESSION"},
+    {"id":"unzip","title":"unzip","paragraphs":["unzip extracts ZIP archives. For example, unzip archive.zip opens the archive."],"callout":"ZIP = PACK IT · UNZIP = OPEN IT"},
+    {"id":"tar-vs-gzip","title":"Exam Trap · tar vs. gzip","variant":"exam-trap","paragraphs":["tar is primarily archiving. gzip is compression. Together, .tar.gz means archived and compressed. Do not automatically say tar itself means compression."],"callout":"TAR = ARCHIVE · GZIP = COMPRESSION"},
+    {"id":"compression-comparison","title":"gzip vs. bzip2 vs. xz","table":{"caption":"Recognize the filename extension","headers":["Tool","Extension"],"rows":[["gzip",".gz"],["bzip2",".bz2"],["xz",".xz"]]},"paragraphs":["All three are compression technologies. The exam can test the tool or extension rather than deep compression theory."]},
+    {"id":"scenario-recognition","title":"GSA Scenario Recognition","bullets":["Combine several files into one archive → tar","Create a tar archive → tar -cf","Extract a tar archive → tar -xf","Compress using gzip → gzip","See .tar.gz → tar archive + gzip compression","See .tar.bz2 → tar archive + bzip2 compression","See .tar.xz → tar archive + xz compression","Extract a .zip archive → unzip"],"callout":"MATCH THE TASK OR EXTENSION TO THE TOOL"},
+    {"id":"maestro-recognition-sheet","title":"Maestro Recognition Sheet","bullets":["Archive → Bundle files","Compression → Reduce size","tar → Archive","-c → Create","-x → Extract","-f → Archive filename","-v → Verbose","gzip → .gz","bzip2 → .bz2","xz → .xz","zip → ZIP archive and compression","unzip → Extract ZIP"],"callout":"TAR = BUNDLE · COMPRESSION = SHRINK · C CREATE · X EXTRACT · F FILE · V VERBOSE · z GZIP · j BZIP2 · J XZ"}
+  ]
+}
