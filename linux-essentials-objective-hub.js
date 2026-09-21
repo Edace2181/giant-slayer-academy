@@ -3,7 +3,7 @@
 
   const MANUAL_KEY = "hydra-linux-essentials-field-manual-v1";
   const PROGRESS_KEY = "hydra-linux-essentials-progress-v1";
-  const objectiveStatuses = ["1.1", "1.2", "1.3", "1.4"].map(objective => ({
+  const objectiveStatuses = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4"].map(objective => ({
     objective,
     manualStatus: document.getElementById("objective" + objective.replace(".", "") + "ManualStatus"),
     sweepStatus: document.getElementById("objective" + objective.replace(".", "") + "SweepStatus")

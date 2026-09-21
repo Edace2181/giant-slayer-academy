@@ -143,8 +143,8 @@
   function showRouteError(message) {
     elements.loading.classList.add("hidden"); elements.application.classList.add("hidden"); elements.error.classList.remove("hidden");
     elements.errorMessage.textContent = message;
-    elements.errorReturn.href = world === "1" ? "linux-essentials-world1-objectives.html" : "linux-essentials-campaign.html";
-    elements.errorReturn.textContent = world === "1" ? "← Return to World 1 Objective Hub" : "← Return to Linux Essentials Campaign Map";
+    elements.errorReturn.href = /^[1-2]$/.test(world) ? "linux-essentials-world" + world + "-objectives.html" : "linux-essentials-campaign.html";
+    elements.errorReturn.textContent = /^[1-2]$/.test(world) ? "← Return to World " + world + " Objective Hub" : "← Return to Linux Essentials Campaign Map";
   }
 
   elements.miniForm.addEventListener("submit", event => {
@@ -172,7 +172,8 @@
   });
 
   async function initialize() {
-    const validRoute = world === "1" && /^1\.[1-4]$/.test(objective);
+    const validRoute = (world === "1" && /^1\.[1-4]$/.test(objective)) ||
+      (world === "2" && /^2\.[1-4]$/.test(objective));
     if (!validRoute) {
       showRouteError("The requested Linux Essentials Field Manual route is invalid or has not been published yet."); return;
     }

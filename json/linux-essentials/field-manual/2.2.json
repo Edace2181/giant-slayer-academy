@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "certification": "linux-essentials",
+  "examCode": "010-160",
+  "blueprintVersion": "1.6",
+  "world": "2",
+  "objective": "2.2",
+  "title": "Using the Command Line to Get Help",
+  "weight": 2,
+  "miniCheckSource": "objective-sweep-bank",
+  "sections": [
+    {"id":"mission","title":"Mission · Find the Answer from the System","paragraphs":["Linux administrators do not memorize every option for every command. A major skill is knowing how to find the answer using built-in documentation."],"bullets":["Man pages","Info pages","man","info","/usr/share/doc/","locate"],"callout":"HOW DO I FIND THE ANSWER FROM THE SYSTEM?"},
+    {"id":"built-in-documentation","title":"Linux Has Built-In Documentation","paragraphs":["Instead of guessing command syntax, consult documentation directly. Linux Essentials emphasizes man, info, /usr/share/doc/, and locate."],"callout":"USE THE RIGHT LOCAL RESOURCE"},
+    {"id":"man","title":"man","paragraphs":["man means manual. man ls displays the manual page for ls. A man page can describe a command's purpose, syntax, options, behavior, and related commands."],"callout":"Read a command's manual page → man"},
+    {"id":"man-navigation","title":"Man Page Navigation","paragraphs":["Man pages are interactive. Understand the concepts of moving through documentation, searching within it, and exiting. The important skill is finding the information you need, not memorizing the whole page."],"callout":"NAVIGATE, SEARCH, AND EXIT"},
+    {"id":"man-sections","title":"Man Page Sections","paragraphs":["Manual pages are organized into sections for different kinds of system documentation. The same name can sometimes exist in more than one section. man is structured documentation, not a simple web search."],"callout":"MAN PAGES ARE ORGANIZED DOCUMENTATION"},
+    {"id":"info","title":"info","paragraphs":["info is another Linux documentation system. info ls can provide structured or hypertext-style documentation and may be more extensive than a traditional man page for some software."],"callout":"INFO = STRUCTURED DOCUMENTATION"},
+    {"id":"man-vs-info","title":"Exam Trap — man vs. info","variant":"exam-trap","table":{"caption":"Both provide help, with different documentation styles","headers":["Tool","Documentation"],"rows":[["man","Traditional Linux and Unix manual pages"],["info","Structured or hypertext-style Info documentation"]]}},
+    {"id":"usr-share-doc","title":"/usr/share/doc/","paragraphs":["/usr/share/doc/ commonly stores documentation installed by software packages, including README files, examples, package documentation, and changelogs."],"callout":"Locally installed package documentation → /usr/share/doc/"},
+    {"id":"locate","title":"locate","paragraphs":["locate searches a filename database to quickly find files by name. locate hosts may return paths containing hosts."],"callout":"LOCATE = FIND FILES BY NAME"},
+    {"id":"locate-database","title":"locate and Its Database","paragraphs":["locate generally searches an indexed database rather than crawling the filesystem live each time. This is fast, but very recent changes may not appear until the database is updated."],"callout":"LOCATE = FAST DATABASE SEARCH"},
+    {"id":"man-vs-locate","title":"Exam Trap — man vs. locate","variant":"exam-trap","table":{"caption":"Documentation versus location","headers":["Need","Tool"],"rows":[["Understand how a command works","man"],["Find where a file exists","locate"]]},"callout":"MAN = DOCUMENTATION · LOCATE = FILE LOCATION"},
+    {"id":"choosing-help-source","title":"Choosing the Right Help Source","bullets":["Command syntax or options → man","Structured GNU-style documentation → info","Documentation installed with a package → /usr/share/doc/","Find a file by name → locate"],"callout":"CHOOSE BY THE KIND OF HELP NEEDED"},
+    {"id":"scenario-recognition","title":"GSA Scenario Recognition","bullets":["Forgot the options for ls → man ls","Want Info documentation → info","Need locally installed package documentation → /usr/share/doc/","Know a filename but not its location → locate","New file missing from locate results → Database may not yet reflect the change"],"callout":"MANUAL · INFO · PACKAGE DOCS · FILE LOCATION"},
+    {"id":"maestro-recognition-sheet","title":"Maestro Recognition Sheet","bullets":["man → Manual pages","info → Info documentation","/usr/share/doc/ → Installed package documentation","locate → Filename database search"],"callout":"HOW DOES IT WORK? = MAN · STRUCTURED HELP = INFO · PACKAGE DOCS = /usr/share/doc/ · WHERE IS IT? = LOCATE"}
+  ]
+}

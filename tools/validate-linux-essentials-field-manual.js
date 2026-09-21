@@ -38,12 +38,33 @@ const objectives = {
     firstId: "L010-1.4-R001",
     sections: ["mission", "desktop-skills", "using-a-browser", "searching-the-web", "saving-content", "privacy-concerns", "browser-configuration", "getting-to-command-line", "terminal", "console", "command-line-value", "password-issues", "privacy-tools", "linux-in-industry", "cloud-computing", "virtualization", "cloud-vs-virtualization", "open-source-projects", "scenario-recognition", "exam-traps", "maestro-recognition-sheet", "world-one-connection"],
     topics: ["Desktop Skills", "Using a Browser", "Searching the Web", "Saving Content", "Privacy Concerns", "Browser Configuration", "Getting to the Command Line", "Terminal", "Console", "Password Issues", "Privacy Issues and Tools", "Industry Uses of Linux", "Cloud Computing", "Virtualization", "Open-Source Applications in Projects"]
+  },
+  "2.1": {
+    world: "2", count: 10, hash: "691B4ACC3F01CDEDDB4A26BEDA2500DE6F8E05971986FD9559F1CF5CB86FCC70", firstId: "L010-2.1-R001",
+    sections: ["mission", "shell", "bash", "command-line-syntax", "commands-options-arguments", "echo", "variables", "variable-assignment-trap", "environment-variables", "path", "why-path-matters", "export", "quoting", "double-quotes", "single-quotes", "quote-trap", "spaces-and-quoting", "history", "type", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Basic Shell", "Bash", "Command-Line Syntax", "Variables", "Quoting", "echo", "history", "PATH", "export", "type"]
+  },
+  "2.2": {
+    world: "2", count: 6, hash: "B7876B3550988C641BBDE5FFEE9813FD757DA0AECBE3167E2E6B29021B416D90", firstId: "L010-2.2-R001",
+    sections: ["mission", "built-in-documentation", "man", "man-navigation", "man-sections", "info", "man-vs-info", "usr-share-doc", "locate", "locate-database", "man-vs-locate", "choosing-help-source", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Man Pages", "Info Pages", "man", "info", "/usr/share/doc/", "locate"]
+  },
+  "2.3": {
+    world: "2", count: 13, hash: "BC3164F8532E5A0589E9BBC4CC148627044C9FB04ABE0B477A97E1EABA21D7A8", firstId: "L010-2.3-R001",
+    sections: ["mission", "filesystem-hierarchy", "root-directory-vs-user", "files-and-directories", "ls", "ls-long", "hidden-files", "ls-all", "hidden-vs-secure", "combining-options", "recursive-listings", "current-directory", "parent-directory", "dot-recognition", "cd", "home-directory", "tilde", "absolute-paths", "relative-paths", "absolute-vs-relative", "moving-around", "scenario-recognition", "maestro-recognition-sheet"],
+    topics: ["Files", "Directories", "Hidden Files and Directories", "Home Directories", "Absolute Paths", "Relative Paths", "ls", "Long Listing", "Hidden Entries", "Recursive Listings", "cd", "Current Directory", "Parent Directory", "Home", "Tilde"]
+  },
+  "2.4": {
+    world: "2", count: 9, hash: "654051F6224C5BC6D6F874BE97FF1940FFBE2BE669F45ACBD0384589F95ADA8C", firstId: "L010-2.4-R001",
+    sections: ["mission", "touch", "cp", "mv", "cp-vs-mv", "rm", "mkdir", "rmdir", "rm-vs-rmdir", "case-sensitivity", "simple-globbing", "asterisk-wildcard", "question-wildcard", "wildcard-trap", "globbing-with-commands", "safety-lesson", "simple-workspace", "scenario-recognition", "exam-traps", "maestro-recognition-sheet", "world-two-connection"],
+    topics: ["Files and Directories", "touch", "cp", "mv", "rm", "mkdir", "rmdir", "Case Sensitivity", "Simple Globbing"]
   }
 };
 
 for (const [objective, expected] of Object.entries(objectives)) {
   const lesson = json(`json/linux-essentials/field-manual/${objective}.json`);
-  const bankPath = path.join(root, `json/linux-essentials/world1/${objective}-hatchling.json`);
+  const expectedWorld = expected.world || "1";
+  const bankPath = path.join(root, `json/linux-essentials/world${expectedWorld}/${objective}-hatchling.json`);
   const bankBytes = fs.readFileSync(bankPath);
   const bank = JSON.parse(bankBytes.toString("utf8"));
   const hash = crypto.createHash("sha256").update(bankBytes).digest("hex").toUpperCase();
@@ -52,7 +73,7 @@ for (const [objective, expected] of Object.entries(objectives)) {
 
   requireValue(lesson.schemaVersion === 1, `${objective} schemaVersion must be 1.`);
   requireValue(lesson.certification === "linux-essentials" && lesson.examCode === "010-160" && lesson.blueprintVersion === "1.6", `${objective} metadata must match LPI Linux Essentials 010-160 v1.6.`);
-  requireValue(lesson.world === "1" && lesson.objective === objective, `${objective} route metadata must match World 1.`);
+  requireValue(lesson.world === expectedWorld && lesson.objective === objective, `${objective} route metadata must match World ${expectedWorld}.`);
   requireValue(lesson.miniCheckSource === "objective-sweep-bank", `${objective} must use the GSA-owned Mini Check source.`);
   requireValue(!Object.prototype.hasOwnProperty.call(lesson, "miniCheck"), `${objective} must not author a Mini Check question.`);
   requireValue(sectionIds.length === new Set(sectionIds).size, `${objective} section IDs must be unique.`);
@@ -63,7 +84,10 @@ for (const [objective, expected] of Object.entries(objectives)) {
   requireValue(hash === expected.hash, `${objective} protected Sweep bank bytes changed.`);
 }
 
-const hub = read("linux-essentials-world1-objectives.html");
+const hubs = {
+  "1": read("linux-essentials-world1-objectives.html"),
+  "2": read("linux-essentials-world2-objectives.html")
+};
 const campaign = read("linux-essentials-campaign.html");
 const manualPage = read("linux-essentials-field-manual.html");
 const manualScript = read("linux-essentials-field-manual.js");
@@ -71,13 +95,18 @@ const hubScript = read("linux-essentials-objective-hub.js");
 const quizScript = read("linux-essentials-quiz.js");
 
 requireValue(campaign.includes('href="linux-essentials-world1-objectives.html"'), "Campaign World 1 must route to its Objective Hub.");
-for (const objective of Object.keys(objectives)) {
-  requireValue(hub.includes(`linux-essentials-field-manual.html?world=1&amp;objective=${objective}`), `World 1 Hub is missing the ${objective} Field Manual action.`);
-  requireValue(hub.includes(`linux-essentials-quiz.html?world=1&amp;objective=${objective}`), `${objective} Sweep route changed unexpectedly.`);
+requireValue(campaign.includes('href="linux-essentials-world2-objectives.html"'), "Campaign World 2 must route to its Objective Hub.");
+for (const [objective, expected] of Object.entries(objectives)) {
+  const world = expected.world || "1";
+  const hub = hubs[world];
+  requireValue(hub.includes(`linux-essentials-field-manual.html?world=${world}&amp;objective=${objective}`), `World ${world} Hub is missing the ${objective} Field Manual action.`);
+  requireValue(hub.includes(`linux-essentials-quiz.html?world=${world}&amp;objective=${objective}`), `${objective} Sweep route changed unexpectedly.`);
   requireValue(hub.includes(`id="objective${objective.replace(".", "")}ManualStatus"`) && hub.includes(`id="objective${objective.replace(".", "")}SweepStatus"`), `${objective} Manual and Sweep statuses must remain separate.`);
 }
-requireValue(hub.includes('href="security-plus-field-manual.css"') && hub.includes('src="linux-essentials-objective-hub.js"'), "World 1 Hub must use the established Field Manual card presentation and status engine.");
-requireValue(hub.includes('href="linux-essentials-campaign.html" class="back-link">← Return to Campaign Map</a>'), "World 1 Hub must return to the Linux Essentials Campaign Map.");
+for (const [world, hub] of Object.entries(hubs)) {
+  requireValue(hub.includes('href="security-plus-field-manual.css"') && hub.includes('src="linux-essentials-objective-hub.js"'), `World ${world} Hub must use the established Field Manual card presentation and status engine.`);
+  requireValue(hub.includes('href="linux-essentials-campaign.html" class="back-link">← Return to Campaign Map</a>'), `World ${world} Hub must return to the Linux Essentials Campaign Map.`);
+}
 requireValue(manualPage.includes('id="linuxManualNavigation"') && manualScript.includes("function renderNavigation()"), "The Linux Essentials Field Manual is missing lesson navigation.");
 requireValue(manualScript.includes('const MANUAL_KEY = "hydra-linux-essentials-field-manual-v1"'), "Manual completion storage must remain isolated.");
 requireValue(hubScript.includes('const PROGRESS_KEY = "hydra-linux-essentials-progress-v1"'), "The Objective Hub must read the existing Sweep progress key.");
@@ -85,6 +114,7 @@ requireValue(manualScript.includes('"json/linux-essentials/world" + world + "/" 
 requireValue(manualScript.includes('window.location.assign("linux-essentials-quiz.html?world="'), "Completing a manual must continue to the existing Objective Sweep.");
 requireValue(manualScript.includes('elements.returnLink.href = "linux-essentials-world" + world + "-objectives.html"'), "Field Manuals must return to their Objective Hub.");
 requireValue(manualScript.includes('world === "1" && /^1\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 1 objectives 1.1-1.4.");
+requireValue(manualScript.includes('world === "2" && /^2\\.[1-4]$/.test(objective)'), "The Field Manual route gate must include only published World 2 objectives 2.1-2.4.");
 requireValue(quizScript.includes('return { href: `linux-essentials-world${world}-objectives.html`'), "Objective Sweeps must continue returning to their Objective Hub.");
 
 if (errors.length) {
