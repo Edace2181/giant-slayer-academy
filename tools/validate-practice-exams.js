@@ -100,6 +100,14 @@ function normalizeText(value) {
     .replace(/\s+/g, " ");
 }
 
+function normalizeChoice(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
 function isBlank(value) {
   return typeof value !== "string" || value.trim() === "";
 }
@@ -296,8 +304,8 @@ function validateExamQuestions(questions, context) {
     if (!Array.isArray(question.choices) || question.choices.length !== 4) {
       invalidChoices.push(`${id || location}: ${Array.isArray(question.choices) ? question.choices.length : "not an array"}`);
     } else {
-      const normalizedChoices = question.choices.map(normalizeText);
-      if (normalizedChoices.some(choice => !choice)) blankChoices.push(id || location);
+      const normalizedChoices = question.choices.map(normalizeChoice);
+      if (question.choices.some(isBlank)) blankChoices.push(id || location);
       if (new Set(normalizedChoices).size !== normalizedChoices.length) duplicateChoices.push(id || location);
     }
     if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer > 3) invalidAnswers.push(`${id || location}: ${JSON.stringify(question.answer)}`);

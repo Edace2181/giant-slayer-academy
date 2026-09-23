@@ -370,6 +370,114 @@
     elements.terminalOutput.scrollTop = elements.terminalOutput.scrollHeight;
   }
 
+  function tokenizeCommand(input) {
+    const tokens = [];
+    const expression = /"([^"]*)"|'([^']*)'|(\S+)/g;
+    let match;
+    while ((match = expression.exec(String(input || ""))) !== null) {
+      tokens.push(match[1] ?? match[2] ?? match[3]);
+    }
+    return tokens;
+  }
+
+  function expandTrainingVariables(value) {
+    return String(value)
+      .replace(/\$HOME\b/g, "/home/hydra")
+      .replace(/\$USER\b/g, "hydra")
+      .replace(/\$SHELL\b/g, "/bin/bash");
+  }
+
+  function normalizedTarFlags(value) {
+    return [...String(value || "").replace(/^-+/, "")].sort().join("");
+  }
+
+  function scriptInvocation(tokens) {
+    if (!tokens.length) return null;
+    if (tokens[0].toLowerCase() === "bash" && tokens[1]) {
+      return { script: tokens[1].replace(/^\.\//, ""), args: tokens.slice(2) };
+    }
+    if (/^\.\//.test(tokens[0])) {
+      return { script: tokens[0].slice(2), args: tokens.slice(1) };
+    }
+    return null;
+  }
+
+  function commandInputMatches(entry, expectedInput) {
+    if (!entry.ok) return false;
+    const actual = tokenizeCommand(entry.input);
+    const expected = tokenizeCommand(expectedInput);
+    if (!actual.length || !expected.length) return false;
+
+    const actualScript = scriptInvocation(actual);
+    const expectedScript = scriptInvocation(expected);
+    if (actualScript && expectedScript) {
+      return actualScript.script === expectedScript.script &&
+        actualScript.args.join("\u0000") === expectedScript.args.join("\u0000");
+    }
+
+    const actualCommand = actual[0].toLowerCase();
+    const expectedCommand = expected[0].toLowerCase();
+
+    if (actualCommand === "echo" && expectedCommand === "echo" && !expected.includes(">") && !expected.includes(">>")) {
+      const expectedOutput = expandTrainingVariables(expected.slice(1).join(" "));
+      return entry.output === expectedOutput;
+    }
+
+    if (actualCommand === "ls" && expectedCommand === "ls") {
+      const actualOptions = actual.filter(token => token.startsWith("-")).join("").replace(/-/g, "");
+      const expectedOptions = expected.filter(token => token.startsWith("-")).join("").replace(/-/g, "");
+      const actualPath = actual.find(token => !token.startsWith("-") && token !== "ls") || ".";
+      const expectedPath = expected.find(token => !token.startsWith("-") && token !== "ls") || ".";
+      return [...expectedOptions].every(option => actualOptions.includes(option)) && actualPath === expectedPath;
+    }
+
+    if (actualCommand === "cd" && expectedCommand === "cd") {
+      const expectedTarget = expected[1] || "/home/hydra";
+      if (expectedTarget === "~") return entry.cwd === "/home/hydra";
+      if (expectedTarget.startsWith("~/")) return entry.cwd === `/home/hydra/${expectedTarget.slice(2)}`;
+      if (expectedTarget.startsWith("/")) {
+        const normalizedTarget = expectedTarget === "/" ? "/" : expectedTarget.replace(/\/$/, "");
+        return entry.cwd === normalizedTarget;
+      }
+      if (expectedTarget === ".." && entry.previousCwd) {
+        const parent = entry.previousCwd.split("/").slice(0, -1).join("/") || "/";
+        return entry.cwd === parent;
+      }
+      if (expectedTarget !== "..") return entry.cwd.endsWith(`/${expectedTarget.replace(/^\.\//, "")}`);
+    }
+
+    if (actualCommand === "tar" && expectedCommand === "tar") {
+      return normalizedTarFlags(actual[1]) === normalizedTarFlags(expected[1]) &&
+        actual.slice(2).join("\u0000") === expected.slice(2).join("\u0000");
+    }
+
+    if (actualCommand === "chmod" && expectedCommand === "chmod" && actual[2] === expected[2]) {
+      if (actual[1] === expected[1]) return true;
+      if (expected[1] === "+t" && /^[1-7][0-7]{3}$/.test(actual[1])) return true;
+      if (expected[1] === "+x" && /^[0-7]{3,4}$/.test(actual[1])) {
+        return [...actual[1].slice(-3)].some(digit => (Number(digit) & 1) === 1);
+      }
+    }
+
+    if (expectedCommand === "chown" && actualCommand === "chown" && actual[2] === expected[2]) {
+      return actual[1].split(":")[0] === expected[1];
+    }
+    if (expectedCommand === "chgrp" && actualCommand === "chown" && actual[2] === expected[2]) {
+      return actual[1].includes(":") && actual[1].split(":")[1] === expected[1];
+    }
+
+    if (actualCommand === "ip" && expectedCommand === "ip") {
+      const normalizeIp = tokens => tokens.slice(1).join(" ")
+        .replace(/^address(?: show)?$/, "addr")
+        .replace(/^addr show$/, "addr")
+        .replace(/^route show$/, "route");
+      return normalizeIp(actual) === normalizeIp(expected);
+    }
+
+    return actual.map(expandTrainingVariables).join("\u0000") ===
+      expected.map(expandTrainingVariables).join("\u0000");
+  }
+
   function checkGoals(goals) {
     return goals.map(goal => {
       if (goal.type === "command-ran") return simulator.ranCommand(goal.command);
@@ -381,7 +489,7 @@
         ));
       }
       if (goal.type === "command-input") {
-        return simulator.history.some(entry => entry.ok && entry.input === goal.input);
+        return simulator.history.some(entry => commandInputMatches(entry, goal.input));
       }
       if (goal.type === "file-missing") return !simulator.getNode(goal.path);
       if (goal.type === "directory-missing") return !simulator.getNode(goal.path);

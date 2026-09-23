@@ -71,10 +71,23 @@
         "incorrectFeedback": "The terminal is safe to retry. One or more navigation steps are still missing.",
         "retryHint": "Use pwd, then ls, then cd Documents. Run pwd once more after changing directories.",
         "goals": [
-          { "type": "command-ran", "command": "pwd" },
-          { "type": "command-ran", "command": "ls" },
-          { "type": "cwd", "path": "/home/hydra/Documents" },
-          { "type": "command-ran-at-path", "command": "pwd", "path": "/home/hydra/Documents" }
+          {
+            "type": "command-ran",
+            "command": "pwd"
+          },
+          {
+            "type": "command-ran",
+            "command": "ls"
+          },
+          {
+            "type": "cwd",
+            "path": "/home/hydra/Documents"
+          },
+          {
+            "type": "command-ran-at-path",
+            "command": "pwd",
+            "path": "/home/hydra/Documents"
+          }
         ]
       },
       "commanderChallenge": {
@@ -107,10 +120,22 @@
         "incorrectFeedback": "The destination has not been confirmed yet.",
         "retryHint": "List the available directories if needed, use cd with the destination name, and use pwd to verify the final path.",
         "goals": [
-          { "type": "command-ran", "command": "ls" },
-          { "type": "command-ran", "command": "cd" },
-          { "type": "command-ran", "command": "pwd" },
-          { "type": "cwd", "path": "/home/hydra/Downloads" }
+          {
+            "type": "command-ran",
+            "command": "ls"
+          },
+          {
+            "type": "command-ran",
+            "command": "cd"
+          },
+          {
+            "type": "command-ran",
+            "command": "pwd"
+          },
+          {
+            "type": "cwd",
+            "path": "/home/hydra/Downloads"
+          }
         ]
       },
       "correctFeedback": "Excellent navigation. You recognized the purpose of pwd, ls, and cd and used them in a meaningful sequence.",
@@ -192,9 +217,18 @@
         "incorrectFeedback": "The simulated workspace does not yet match the mission.",
         "retryHint": "Create workshop with mkdir, enter it with cd, create notes.txt with touch, and finish with ls.",
         "goals": [
-          { "type": "directory-exists", "path": "/home/hydra/workshop" },
-          { "type": "file-exists", "path": "/home/hydra/workshop/notes.txt" },
-          { "type": "command-ran", "command": "ls" }
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/workshop"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/workshop/notes.txt"
+          },
+          {
+            "type": "command-ran",
+            "command": "ls"
+          }
         ]
       },
       "commanderChallenge": {
@@ -229,10 +263,22 @@
         "incorrectFeedback": "The reports workspace is not complete yet.",
         "retryHint": "Use the same four-part pattern: mkdir, cd, touch, then ls.",
         "goals": [
-          { "type": "directory-exists", "path": "/home/hydra/reports" },
-          { "type": "file-exists", "path": "/home/hydra/reports/status.txt" },
-          { "type": "cwd", "path": "/home/hydra/reports" },
-          { "type": "command-ran", "command": "ls" }
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/reports"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/reports/status.txt"
+          },
+          {
+            "type": "cwd",
+            "path": "/home/hydra/reports"
+          },
+          {
+            "type": "command-ran",
+            "command": "ls"
+          }
         ]
       },
       "correctFeedback": "Workspace construction complete. You created and verified a directory-and-file structure using safe foundational commands.",
@@ -253,43 +299,105 @@
       "difficulty": 1,
       "briefing": "The command console is online, but the Commander will only accept precisely formatted status messages. You will learn how the shell separates a command name from the information that follows it.",
       "learn": [
-        { "command": "echo Hydra", "badge": "Command + argument", "explanation": "echo is the command. Hydra is its argument, so the terminal displays Hydra." },
-        { "command": "echo \"mission ready\"", "badge": "Quoted argument", "explanation": "Quotation marks keep words together as one argument when the text contains spaces." },
-        { "command": "history", "badge": "Review command", "explanation": "history lists commands entered during the activity so you can review your work." }
+        {
+          "command": "echo Hydra",
+          "badge": "Command + argument",
+          "explanation": "echo is the command. Hydra is its argument, so the terminal displays Hydra."
+        },
+        {
+          "command": "echo \"mission ready\"",
+          "badge": "Quoted argument",
+          "explanation": "Quotation marks keep words together as one argument when the text contains spaces."
+        },
+        {
+          "command": "history",
+          "badge": "Review command",
+          "explanation": "history lists commands entered during the activity so you can review your work."
+        }
       ],
       "walkthrough": [
-        { "title": "Send one word", "text": "Run echo Hydra. The terminal prints the argument Hydra.", "command": "echo Hydra" },
-        { "title": "Protect spaces", "text": "Run echo \"mission ready\". The quotes keep the two-word message together.", "command": "echo \"mission ready\"" },
-        { "title": "Review the session", "text": "Run history. The terminal lists the commands in the order you used them.", "command": "history" }
+        {
+          "title": "Send one word",
+          "text": "Run echo Hydra. The terminal prints the argument Hydra.",
+          "command": "echo Hydra"
+        },
+        {
+          "title": "Protect spaces",
+          "text": "Run echo \"mission ready\". The quotes keep the two-word message together.",
+          "command": "echo \"mission ready\""
+        },
+        {
+          "title": "Review the session",
+          "text": "Run history. The terminal lists the commands in the order you used them.",
+          "command": "history"
+        }
       ],
       "guidedPractice": {
         "instructions": "Display Hydra, display the exact phrase mission ready with quotes, and review your command history.",
-        "steps": ["Type echo Hydra.", "Type echo \"mission ready\".", "Run history to review both commands."],
-        "helpExamples": ["echo Hydra", "echo \"mission ready\"", "history"],
+        "steps": [
+          "Type echo Hydra.",
+          "Type echo \"mission ready\".",
+          "Run history to review both commands."
+        ],
+        "helpExamples": [
+          "echo Hydra",
+          "echo \"mission ready\"",
+          "history"
+        ],
         "successFeedback": "Guided practice complete. You supplied arguments, protected a phrase with quotes, and reviewed the command history.",
         "incorrectFeedback": "The required messages or history review are still missing.",
         "retryHint": "Use echo for each message. Put quotation marks around mission ready, then run history.",
         "goals": [
-          { "type": "command-input", "input": "echo Hydra" },
-          { "type": "command-input", "input": "echo \"mission ready\"" },
-          { "type": "command-ran", "command": "history" }
+          {
+            "type": "command-input",
+            "input": "echo Hydra"
+          },
+          {
+            "type": "command-input",
+            "input": "echo \"mission ready\""
+          },
+          {
+            "type": "command-ran",
+            "command": "history"
+          }
         ]
       },
       "commanderChallenge": {
         "instructions": "Send the exact two-word status academy online, then prove the command is recorded in your history.",
-        "steps": ["Display academy online as one quoted phrase.", "Review the session history."],
-        "helpExamples": ["echo — display supplied text", "history — review commands entered"],
+        "steps": [
+          "Display academy online as one quoted phrase.",
+          "Review the session history."
+        ],
+        "helpExamples": [
+          "echo — display supplied text",
+          "history — review commands entered"
+        ],
         "hints": [
-          { "label": "Concept Hint", "text": "Choose a command that displays text, protect the phrase as one argument, and then inspect the session record." },
-          { "label": "Recognition Hint", "text": "echo displays arguments, quotation marks protect spaces, and history shows previous commands." },
-          { "label": "Command Reveal", "text": "Run echo \"academy online\", then run history." }
+          {
+            "label": "Concept Hint",
+            "text": "Choose a command that displays text, protect the phrase as one argument, and then inspect the session record."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "echo displays arguments, quotation marks protect spaces, and history shows previous commands."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run echo \"academy online\", then run history."
+          }
         ],
         "successFeedback": "Commander Challenge complete. The exact status message was displayed and recorded.",
         "incorrectFeedback": "The exact quoted message and history review have not both been completed.",
         "retryHint": "Display the required phrase with echo and quotes, then inspect history.",
         "goals": [
-          { "type": "command-input", "input": "echo \"academy online\"" },
-          { "type": "command-ran", "command": "history" }
+          {
+            "type": "command-input",
+            "input": "echo \"academy online\""
+          },
+          {
+            "type": "command-ran",
+            "command": "history"
+          }
         ]
       },
       "correctFeedback": "You correctly separated the command from its arguments and used quotes to preserve a phrase.",
@@ -302,59 +410,126 @@
       "id": "linux-lab-04",
       "missionNumber": 4,
       "kingdom": "Kingdom I — Navigation and Commands",
-      "title": "Expand the Shell",
-      "skill": "Recognize variables, quoting, and filename patterns",
-      "goal": "Use shell variables and wildcard patterns to produce predictable terminal results.",
-      "bigIdea": "Before a command runs, the shell can transform variables, quoted text, and wildcard patterns into usable values.",
+      "title": "Expand Shell Variables",
+      "skill": "Recognize variables and quoting",
+      "goal": "Use shell variables and quotation marks to produce predictable terminal results.",
+      "bigIdea": "Before a command runs, the shell expands variables while quotation marks preserve related text as one argument.",
       "objective": "2.1 Command Line Basics",
       "difficulty": 2,
-      "briefing": "A scout left instructions containing symbols instead of full paths and filenames. You must recognize how the shell expands those symbols before passing the result to a command.",
+      "briefing": "A scout left instructions containing variables instead of full values. Recognize how the shell expands those variables and how quotes preserve messages before passing them to a command.",
       "learn": [
-        { "command": "echo $HOME", "badge": "Variable", "explanation": "$HOME expands to the current user's home directory, /home/hydra." },
-        { "command": "ls *.txt", "badge": "Wildcard", "explanation": "The asterisk matches any filename ending in .txt in the current directory." },
-        { "command": "echo \"shell ready\"", "badge": "Quoting review", "explanation": "Double quotes preserve spaces so the phrase is handled together." }
+        {
+          "command": "echo $HOME",
+          "badge": "Variable",
+          "explanation": "$HOME expands to the current user's home directory, /home/hydra."
+        },
+        {
+          "command": "echo \"$USER\"",
+          "badge": "Quoted variable",
+          "explanation": "$USER expands to the current username, while double quotes preserve the expanded value as one argument."
+        },
+        {
+          "command": "echo \"shell ready\"",
+          "badge": "Quoting review",
+          "explanation": "Double quotes preserve spaces so the phrase is handled together."
+        }
       ],
       "walkthrough": [
-        { "title": "Expand a variable", "text": "Run echo $HOME. The shell substitutes the home-directory value.", "command": "echo $HOME" },
-        { "title": "Match a group", "text": "Run ls *.txt. The wildcard selects visible names ending in .txt.", "command": "ls *.txt" },
-        { "title": "Protect a phrase", "text": "Run echo \"shell ready\" so the space remains part of one phrase.", "command": "echo \"shell ready\"" }
+        {
+          "title": "Expand a variable",
+          "text": "Run echo $HOME. The shell substitutes the home-directory value.",
+          "command": "echo $HOME"
+        },
+        {
+          "title": "Expand a quoted variable",
+          "text": "Run echo \"$USER\". The shell expands the username inside double quotes.",
+          "command": "echo \"$USER\""
+        },
+        {
+          "title": "Protect a phrase",
+          "text": "Run echo \"shell ready\" so the space remains part of one phrase.",
+          "command": "echo \"shell ready\""
+        }
       ],
       "guidedPractice": {
-        "instructions": "Display your home directory variable, list the .txt files in your current directory with a wildcard, and display shell ready as a quoted phrase.",
-        "steps": ["Display $HOME.", "List names matching *.txt.", "Display shell ready with quotes."],
-        "helpExamples": ["echo $HOME", "ls *.txt", "echo \"shell ready\""],
-        "successFeedback": "Guided practice complete. Variables, wildcards, and quotes produced the expected values.",
+        "instructions": "Display your home directory variable, display the quoted username variable, and display shell ready as a quoted phrase.",
+        "steps": [
+          "Display $HOME.",
+          "Display the quoted $USER value.",
+          "Display shell ready with quotes."
+        ],
+        "helpExamples": [
+          "echo $HOME",
+          "echo \"$USER\"",
+          "echo \"shell ready\""
+        ],
+        "successFeedback": "Guided practice complete. Variables and quotes produced the expected values.",
         "incorrectFeedback": "One or more shell expansions are still missing.",
-        "retryHint": "Use echo with $HOME, ls with *.txt, and echo with a quoted phrase.",
+        "retryHint": "Use echo with $HOME, echo with quoted $USER, and echo with a quoted phrase.",
         "goals": [
-          { "type": "command-input", "input": "echo $HOME" },
-          { "type": "command-input", "input": "ls *.txt" },
-          { "type": "command-input", "input": "echo \"shell ready\"" }
+          {
+            "type": "command-input",
+            "input": "echo $HOME"
+          },
+          {
+            "type": "command-input",
+            "input": "echo \"$USER\""
+          },
+          {
+            "type": "command-input",
+            "input": "echo \"shell ready\""
+          }
         ]
       },
       "commanderChallenge": {
-        "instructions": "Display the current username variable, find all .txt files with a wildcard, and send the quoted status expansion complete.",
-        "steps": ["Display the current username variable.", "List every visible .txt file.", "Display expansion complete as one quoted phrase."],
-        "helpExamples": ["echo — display expanded values", "ls — list matching names", "$NAME — reference a variable", "* — match filename characters"],
-        "hints": [
-          { "label": "Concept Hint", "text": "Use one variable, one filename wildcard, and one quoted phrase." },
-          { "label": "Recognition Hint", "text": "$USER identifies the current user, *.txt matches text files, and quotes preserve a spaced message." },
-          { "label": "Command Reveal", "text": "Run echo $USER, ls *.txt, and echo \"expansion complete\"." }
+        "instructions": "Display the current username variable, display the home-directory variable, and send the quoted status expansion complete.",
+        "steps": [
+          "Display the current username variable.",
+          "Display the home-directory variable.",
+          "Display expansion complete as one quoted phrase."
         ],
-        "successFeedback": "Commander Challenge complete. All three shell expansion forms were used correctly.",
+        "helpExamples": [
+          "echo — display expanded values",
+          "$NAME — reference a variable",
+          "double quotes — preserve a spaced value"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Use two variables and one quoted phrase."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "$USER identifies the current user, $HOME identifies the home directory, and quotes preserve a spaced message."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run echo $USER, echo $HOME, and echo \"expansion complete\"."
+          }
+        ],
+        "successFeedback": "Commander Challenge complete. Variables and quoting were used correctly.",
         "incorrectFeedback": "The variable, wildcard, and quoted-message requirements are not all complete.",
-        "retryHint": "Use echo with a user variable, ls with a text-file wildcard, and echo with a quoted status.",
+        "retryHint": "Use echo with the user and home variables, then echo the quoted status.",
         "goals": [
-          { "type": "command-input", "input": "echo $USER" },
-          { "type": "command-input", "input": "ls *.txt" },
-          { "type": "command-input", "input": "echo \"expansion complete\"" }
+          {
+            "type": "command-input",
+            "input": "echo $USER"
+          },
+          {
+            "type": "command-input",
+            "input": "echo $HOME"
+          },
+          {
+            "type": "command-input",
+            "input": "echo \"expansion complete\""
+          }
         ]
       },
-      "correctFeedback": "You recognized three transformations performed by the shell before a command completes.",
+      "correctFeedback": "You recognized variable expansion and quotation marks as separate shell behaviors.",
       "incorrectFeedback": "Review variables, wildcard matching, and quotation marks as separate shell behaviors.",
       "fenrirTip": "When symbols appear in a command, ask what the shell will replace or preserve before the tool receives them.",
-      "debrief": "You expanded $HOME and $USER, selected filenames with *.txt, and preserved phrases with quotes. These behaviors make short commands flexible and precise.",
-      "takeaway": "$ expands a variable. * matches names. Quotes protect text."
+      "debrief": "You expanded $HOME and $USER and preserved phrases with quotes. These behaviors make short commands flexible and precise.",
+      "takeaway": "$ expands a variable. Double quotes allow expansion while preserving related text."
     },
     {
       "id": "linux-lab-05",
@@ -368,44 +543,111 @@
       "difficulty": 2,
       "briefing": "A new set of tools has arrived without a printed guide. Instead of guessing, you will use the documentation already available from the command line.",
       "learn": [
-        { "command": "man ls", "badge": "Manual page", "explanation": "man opens the structured manual page for a command." },
-        { "command": "ls --help", "badge": "Quick option help", "explanation": "--help usually displays a concise usage summary and common options." },
-        { "command": "info mkdir", "badge": "Info document", "explanation": "info opens topic-oriented documentation that may contain connected sections." }
+        {
+          "command": "man ls",
+          "badge": "Manual page",
+          "explanation": "man opens the structured manual page for a command."
+        },
+        {
+          "command": "ls --help",
+          "badge": "Quick option help",
+          "explanation": "--help usually displays a concise usage summary and common options."
+        },
+        {
+          "command": "info mkdir",
+          "badge": "Info document",
+          "explanation": "info opens topic-oriented documentation that may contain connected sections."
+        }
       ],
       "walkthrough": [
-        { "title": "Open a manual", "text": "Run man ls to inspect the command's name and synopsis.", "command": "man ls" },
-        { "title": "Request quick help", "text": "Run ls --help for a concise usage reference.", "command": "ls --help" },
-        { "title": "Open an info node", "text": "Run info mkdir for topic-oriented documentation.", "command": "info mkdir" }
+        {
+          "title": "Open a manual",
+          "text": "Run man ls to inspect the command's name and synopsis.",
+          "command": "man ls"
+        },
+        {
+          "title": "Request quick help",
+          "text": "Run ls --help for a concise usage reference.",
+          "command": "ls --help"
+        },
+        {
+          "title": "Open an info node",
+          "text": "Run info mkdir for topic-oriented documentation.",
+          "command": "info mkdir"
+        }
       ],
       "guidedPractice": {
         "instructions": "Open the ls manual, request ls option help, and open the mkdir info documentation.",
-        "steps": ["Run man ls.", "Run ls --help.", "Run info mkdir."],
-        "helpExamples": ["man ls", "ls --help", "info mkdir"],
+        "steps": [
+          "Run man ls.",
+          "Run ls --help.",
+          "Run info mkdir."
+        ],
+        "helpExamples": [
+          "man ls",
+          "ls --help",
+          "info mkdir"
+        ],
         "successFeedback": "Guided practice complete. You used three standard command-line help paths.",
         "incorrectFeedback": "One or more documentation sources have not been opened.",
         "retryHint": "Use man with ls, --help with ls, and info with mkdir.",
         "goals": [
-          { "type": "command-input", "input": "man ls" },
-          { "type": "command-input", "input": "ls --help" },
-          { "type": "command-input", "input": "info mkdir" }
+          {
+            "type": "command-input",
+            "input": "man ls"
+          },
+          {
+            "type": "command-input",
+            "input": "ls --help"
+          },
+          {
+            "type": "command-input",
+            "input": "info mkdir"
+          }
         ]
       },
       "commanderChallenge": {
         "instructions": "Research file-copy and file-move commands using a manual page, quick option help, and an info document.",
-        "steps": ["Open the manual for the copy command.", "Request quick help from the copy command.", "Open info documentation for the move command."],
-        "helpExamples": ["man COMMAND — open a manual", "COMMAND --help — request quick usage", "info COMMAND — open an info node"],
+        "steps": [
+          "Open the manual for the copy command.",
+          "Request quick help from the copy command.",
+          "Open info documentation for the move command."
+        ],
+        "helpExamples": [
+          "man COMMAND — open a manual",
+          "COMMAND --help — request quick usage",
+          "info COMMAND — open an info node"
+        ],
         "hints": [
-          { "label": "Concept Hint", "text": "Use the three documentation routes demonstrated in Guided Practice with the requested tools." },
-          { "label": "Recognition Hint", "text": "The copy command is cp and the move command is mv." },
-          { "label": "Command Reveal", "text": "Run man cp, cp --help, and info mv." }
+          {
+            "label": "Concept Hint",
+            "text": "Use the three documentation routes demonstrated in Guided Practice with the requested tools."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "The copy command is cp and the move command is mv."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run man cp, cp --help, and info mv."
+          }
         ],
         "successFeedback": "Commander Challenge complete. You researched unfamiliar commands instead of guessing.",
         "incorrectFeedback": "All three requested documentation checks are not yet present.",
         "retryHint": "Use a manual, a --help request, and an info node for the named tools.",
         "goals": [
-          { "type": "command-input", "input": "man cp" },
-          { "type": "command-input", "input": "cp --help" },
-          { "type": "command-input", "input": "info mv" }
+          {
+            "type": "command-input",
+            "input": "man cp"
+          },
+          {
+            "type": "command-input",
+            "input": "cp --help"
+          },
+          {
+            "type": "command-input",
+            "input": "info mv"
+          }
         ]
       },
       "correctFeedback": "You selected appropriate built-in documentation sources for different help needs.",
@@ -426,50 +668,146 @@
       "difficulty": 2,
       "briefing": "A hidden Academy record and a distant training directory must be inspected. You will combine listing options with absolute and relative navigation.",
       "learn": [
-        { "command": "ls -a", "badge": "Hidden entries", "explanation": "-a includes names beginning with a dot, plus . and ..." },
-        { "command": "ls -l", "badge": "Detailed listing", "explanation": "-l displays a long format with entry type and permission information." },
-        { "command": "cd /home/hydra/training", "badge": "Absolute path", "explanation": "An absolute path begins at / and identifies the same destination from any current directory." },
-        { "command": "cd ..", "badge": "Relative path", "explanation": ".. means the parent directory relative to your current location." }
+        {
+          "command": "ls -a",
+          "badge": "Hidden entries",
+          "explanation": "-a includes names beginning with a dot, plus . and ..."
+        },
+        {
+          "command": "ls -l",
+          "badge": "Detailed listing",
+          "explanation": "-l displays a long format with entry type and permission information."
+        },
+        {
+          "command": "cd /home/hydra/training",
+          "badge": "Absolute path",
+          "explanation": "An absolute path begins at / and identifies the same destination from any current directory."
+        },
+        {
+          "command": "cd ..",
+          "badge": "Relative path",
+          "explanation": ".. means the parent directory relative to your current location."
+        }
       ],
       "walkthrough": [
-        { "title": "Reveal hidden entries", "text": "Run ls -a. The output includes .academy.", "command": "ls -a" },
-        { "title": "Inspect details", "text": "Run ls -l to view entry types and permission-like details.", "command": "ls -l" },
-        { "title": "Use an absolute path", "text": "Run cd /home/hydra/training to move directly to training.", "command": "cd /home/hydra/training" },
-        { "title": "Move relatively", "text": "Run cd .., then pwd. You return to /home/hydra and verify it.", "command": "cd ..\npwd" }
+        {
+          "title": "Reveal hidden entries",
+          "text": "Run ls -a. The output includes .academy.",
+          "command": "ls -a"
+        },
+        {
+          "title": "Inspect details",
+          "text": "Run ls -l to view entry types and permission-like details.",
+          "command": "ls -l"
+        },
+        {
+          "title": "Use an absolute path",
+          "text": "Run cd /home/hydra/training to move directly to training.",
+          "command": "cd /home/hydra/training"
+        },
+        {
+          "title": "Move relatively",
+          "text": "Run cd .., then pwd. You return to /home/hydra and verify it.",
+          "command": "cd ..\npwd"
+        }
       ],
       "guidedPractice": {
         "instructions": "Reveal hidden entries, request a long listing, move directly to training with an absolute path, return with .., and verify /home/hydra.",
-        "steps": ["Run ls -a.", "Run ls -l.", "Enter /home/hydra/training.", "Return with cd ...", "Verify the final path."],
-        "helpExamples": ["ls -a", "ls -l", "cd /home/hydra/training", "cd ..", "pwd"],
+        "steps": [
+          "Run ls -a.",
+          "Run ls -l.",
+          "Enter /home/hydra/training.",
+          "Return with cd ...",
+          "Verify the final path."
+        ],
+        "helpExamples": [
+          "ls -a",
+          "ls -l",
+          "cd /home/hydra/training",
+          "cd ..",
+          "pwd"
+        ],
         "successFeedback": "Guided practice complete. You revealed hidden data and navigated with both path forms.",
         "incorrectFeedback": "The listing or path-navigation requirements are not all complete.",
         "retryHint": "Use both ls options, visit training by absolute path, return with .., and finish with pwd.",
         "goals": [
-          { "type": "command-input", "input": "ls -a" },
-          { "type": "command-input", "input": "ls -l" },
-          { "type": "command-input", "input": "cd /home/hydra/training" },
-          { "type": "command-input", "input": "cd .." },
-          { "type": "command-ran-at-path", "command": "pwd", "path": "/home/hydra" }
+          {
+            "type": "command-input",
+            "input": "ls -a"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l"
+          },
+          {
+            "type": "command-input",
+            "input": "cd /home/hydra/training"
+          },
+          {
+            "type": "command-input",
+            "input": "cd .."
+          },
+          {
+            "type": "command-ran-at-path",
+            "command": "pwd",
+            "path": "/home/hydra"
+          }
         ]
       },
       "commanderChallenge": {
         "instructions": "Inspect hidden and detailed entries, enter training using a relative path, return home using an absolute path, and prove your final location.",
-        "steps": ["Reveal hidden entries.", "Request a detailed listing.", "Enter training relatively.", "Return directly to /home/hydra.", "Confirm your location."],
-        "helpExamples": ["ls options change listing detail", "relative paths begin from the current directory", "absolute paths begin with /", "pwd confirms location"],
+        "steps": [
+          "Reveal hidden entries.",
+          "Request a detailed listing.",
+          "Enter training relatively.",
+          "Return directly to /home/hydra.",
+          "Confirm your location."
+        ],
+        "helpExamples": [
+          "ls options change listing detail",
+          "relative paths begin from the current directory",
+          "absolute paths begin with /",
+          "pwd confirms location"
+        ],
         "hints": [
-          { "label": "Concept Hint", "text": "Combine two listing options, two different path styles, and a final location check." },
-          { "label": "Recognition Hint", "text": "-a reveals hidden names, -l shows detail, training is relative from home, and /home/hydra is absolute." },
-          { "label": "Command Reveal", "text": "Run ls -a, ls -l, cd training, cd /home/hydra, and pwd." }
+          {
+            "label": "Concept Hint",
+            "text": "Combine two listing options, two different path styles, and a final location check."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "-a reveals hidden names, -l shows detail, training is relative from home, and /home/hydra is absolute."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run ls -a, ls -l, cd training, cd /home/hydra, and pwd."
+          }
         ],
         "successFeedback": "Commander Challenge complete. Hidden entries, details, and both path styles were handled correctly.",
         "incorrectFeedback": "The required listings, navigation forms, or final verification are incomplete.",
         "retryHint": "Use -a and -l, navigate once relatively and once absolutely, then verify with pwd.",
         "goals": [
-          { "type": "command-input", "input": "ls -a" },
-          { "type": "command-input", "input": "ls -l" },
-          { "type": "command-input", "input": "cd training" },
-          { "type": "command-input", "input": "cd /home/hydra" },
-          { "type": "command-ran-at-path", "command": "pwd", "path": "/home/hydra" }
+          {
+            "type": "command-input",
+            "input": "ls -a"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l"
+          },
+          {
+            "type": "command-input",
+            "input": "cd training"
+          },
+          {
+            "type": "command-input",
+            "input": "cd /home/hydra"
+          },
+          {
+            "type": "command-ran-at-path",
+            "command": "pwd",
+            "path": "/home/hydra"
+          }
         ]
       },
       "correctFeedback": "You combined listing options with absolute and relative navigation accurately.",
@@ -490,56 +828,173 @@
       "difficulty": 3,
       "briefing": "The training account contains reports, drafts, temporary files, and empty directories. You must preserve needed data, rename unfinished work, and safely remove clutter.",
       "learn": [
-        { "command": "cp report.txt archive/report.txt", "badge": "Copy", "explanation": "cp creates a second file while leaving the source in place." },
-        { "command": "mv draft.txt final.txt", "badge": "Move or rename", "explanation": "mv changes a file's path; in the same directory, that renames it." },
-        { "command": "rm temp.txt", "badge": "Remove file", "explanation": "rm removes the named file. Verify the target before running it." },
-        { "command": "rmdir empty", "badge": "Remove empty directory", "explanation": "rmdir removes a directory only when it contains nothing." }
+        {
+          "command": "cp report.txt archive/report.txt",
+          "badge": "Copy",
+          "explanation": "cp creates a second file while leaving the source in place."
+        },
+        {
+          "command": "mv draft.txt final.txt",
+          "badge": "Move or rename",
+          "explanation": "mv changes a file's path; in the same directory, that renames it."
+        },
+        {
+          "command": "rm temp.txt",
+          "badge": "Remove file",
+          "explanation": "rm removes the named file. Verify the target before running it."
+        },
+        {
+          "command": "rmdir empty",
+          "badge": "Remove empty directory",
+          "explanation": "rmdir removes a directory only when it contains nothing."
+        }
       ],
       "walkthrough": [
-        { "title": "Create a destination", "text": "Run mkdir archive before copying a file into it.", "command": "mkdir archive" },
-        { "title": "Copy required data", "text": "Run cp report.txt archive/report.txt. Both copies now exist.", "command": "cp report.txt archive/report.txt" },
-        { "title": "Rename the draft", "text": "Run mv draft.txt final.txt.", "command": "mv draft.txt final.txt" },
-        { "title": "Remove clutter", "text": "Run rm temp.txt and rmdir empty, then list the result.", "command": "rm temp.txt\nrmdir empty\nls" }
+        {
+          "title": "Create a destination",
+          "text": "Run mkdir archive before copying a file into it.",
+          "command": "mkdir archive"
+        },
+        {
+          "title": "Copy required data",
+          "text": "Run cp report.txt archive/report.txt. Both copies now exist.",
+          "command": "cp report.txt archive/report.txt"
+        },
+        {
+          "title": "Rename the draft",
+          "text": "Run mv draft.txt final.txt.",
+          "command": "mv draft.txt final.txt"
+        },
+        {
+          "title": "Remove clutter",
+          "text": "Run rm temp.txt and rmdir empty, then list the result.",
+          "command": "rm temp.txt\nrmdir empty\nls"
+        }
       ],
       "guidedPractice": {
         "instructions": "Create archive, copy report.txt into it, rename draft.txt to final.txt, remove temp.txt, remove the empty directory, and list the result.",
-        "steps": ["Create archive.", "Copy report.txt into archive.", "Rename draft.txt.", "Remove temp.txt.", "Remove empty.", "List the final state."],
-        "helpExamples": ["mkdir archive", "cp report.txt archive/report.txt", "mv draft.txt final.txt", "rm temp.txt", "rmdir empty", "ls"],
+        "steps": [
+          "Create archive.",
+          "Copy report.txt into archive.",
+          "Rename draft.txt.",
+          "Remove temp.txt.",
+          "Remove empty.",
+          "List the final state."
+        ],
+        "helpExamples": [
+          "mkdir archive",
+          "cp report.txt archive/report.txt",
+          "mv draft.txt final.txt",
+          "rm temp.txt",
+          "rmdir empty",
+          "ls"
+        ],
         "successFeedback": "Guided practice complete. Required files were preserved and clutter was removed.",
         "incorrectFeedback": "The filesystem does not yet match the required organized state.",
         "retryHint": "Create the destination, copy the report, rename the draft, remove the file and empty directory, then list.",
         "goals": [
-          { "type": "directory-exists", "path": "/home/hydra/archive" },
-          { "type": "file-exists", "path": "/home/hydra/report.txt" },
-          { "type": "file-exists", "path": "/home/hydra/archive/report.txt" },
-          { "type": "file-exists", "path": "/home/hydra/final.txt" },
-          { "type": "file-missing", "path": "/home/hydra/draft.txt" },
-          { "type": "file-missing", "path": "/home/hydra/temp.txt" },
-          { "type": "directory-missing", "path": "/home/hydra/empty" },
-          { "type": "command-ran", "command": "ls" }
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/archive"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/report.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/archive/report.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/final.txt"
+          },
+          {
+            "type": "file-missing",
+            "path": "/home/hydra/draft.txt"
+          },
+          {
+            "type": "file-missing",
+            "path": "/home/hydra/temp.txt"
+          },
+          {
+            "type": "directory-missing",
+            "path": "/home/hydra/empty"
+          },
+          {
+            "type": "command-ran",
+            "command": "ls"
+          }
         ]
       },
       "commanderChallenge": {
         "instructions": "Create completed, copy mission.txt into it, rename notes.txt to briefing.txt, remove scratch.txt and unused, then verify the final state.",
-        "steps": ["Create completed.", "Preserve mission.txt inside completed.", "Rename notes.txt.", "Remove scratch.txt.", "Remove unused.", "Inspect the result."],
-        "helpExamples": ["mkdir — create a destination", "cp — preserve a source while copying", "mv — move or rename", "rm — remove a file", "rmdir — remove an empty directory", "ls — verify"],
+        "steps": [
+          "Create completed.",
+          "Preserve mission.txt inside completed.",
+          "Rename notes.txt.",
+          "Remove scratch.txt.",
+          "Remove unused.",
+          "Inspect the result."
+        ],
+        "helpExamples": [
+          "mkdir — create a destination",
+          "cp — preserve a source while copying",
+          "mv — move or rename",
+          "rm — remove a file",
+          "rmdir — remove an empty directory",
+          "ls — verify"
+        ],
         "hints": [
-          { "label": "Concept Hint", "text": "Create the container, preserve one file, rename another, remove two kinds of clutter, and verify the state." },
-          { "label": "Recognition Hint", "text": "Use mkdir, cp, mv, rm, rmdir, and ls with the names given in the mission." },
-          { "label": "Command Reveal", "text": "Run mkdir completed, cp mission.txt completed/mission.txt, mv notes.txt briefing.txt, rm scratch.txt, rmdir unused, and ls." }
+          {
+            "label": "Concept Hint",
+            "text": "Create the container, preserve one file, rename another, remove two kinds of clutter, and verify the state."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use mkdir, cp, mv, rm, rmdir, and ls with the names given in the mission."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run mkdir completed, cp mission.txt completed/mission.txt, mv notes.txt briefing.txt, rm scratch.txt, rmdir unused, and ls."
+          }
         ],
         "successFeedback": "Commander Challenge complete. The home directory now matches the required organized state.",
         "incorrectFeedback": "The required copied, renamed, or removed entries are not all correct.",
         "retryHint": "Check that the source copy remains, the renamed source is gone, and both clutter targets were removed.",
         "goals": [
-          { "type": "directory-exists", "path": "/home/hydra/completed" },
-          { "type": "file-exists", "path": "/home/hydra/mission.txt" },
-          { "type": "file-exists", "path": "/home/hydra/completed/mission.txt" },
-          { "type": "file-exists", "path": "/home/hydra/briefing.txt" },
-          { "type": "file-missing", "path": "/home/hydra/notes.txt" },
-          { "type": "file-missing", "path": "/home/hydra/scratch.txt" },
-          { "type": "directory-missing", "path": "/home/hydra/unused" },
-          { "type": "command-ran", "command": "ls" }
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/completed"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/mission.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/completed/mission.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/briefing.txt"
+          },
+          {
+            "type": "file-missing",
+            "path": "/home/hydra/notes.txt"
+          },
+          {
+            "type": "file-missing",
+            "path": "/home/hydra/scratch.txt"
+          },
+          {
+            "type": "directory-missing",
+            "path": "/home/hydra/unused"
+          },
+          {
+            "type": "command-ran",
+            "command": "ls"
+          }
         ]
       },
       "correctFeedback": "You organized the filesystem by its final state while preserving every required source.",
@@ -549,255 +1004,2361 @@
       "takeaway": "Preserve → cp. Relocate or rename → mv. Remove file → rm. Remove empty directory → rmdir."
     },
     {
-      "id": "linux-lab-08", "missionNumber": 8, "kingdom": "Kingdom II — Data and Automation", "title": "Pack the Archive",
-      "skill": "Create, inspect, and extract compressed archives", "goal": "Protect the training directory in a compressed archive and verify its contents.", "bigIdea": "An archive groups files into one transportable unit, while compression reduces the space that unit requires.", "objective": "3.1 Archiving Files on the Command Line", "difficulty": 2,
+      "id": "linux-lab-08",
+      "missionNumber": 8,
+      "kingdom": "Kingdom II — Data and Automation",
+      "title": "Pack the Archive",
+      "skill": "Create, inspect, and extract compressed archives",
+      "goal": "Protect the training directory in a compressed archive and verify its contents.",
+      "bigIdea": "An archive groups files into one transportable unit, while compression reduces the space that unit requires.",
+      "objective": "3.1 Archiving Files on the Command Line",
+      "difficulty": 2,
       "briefing": "Training records must cross the mountain intact. Create a compressed archive, inspect it before trusting it, and practice extraction.",
       "learn": [
-        { "command": "tar -czf training.tar.gz training", "badge": "Create", "explanation": "tar collects training; z applies gzip compression; f names the archive." },
-        { "command": "tar -tzf training.tar.gz", "badge": "Inspect", "explanation": "t lists archive contents without extracting them." },
-        { "command": "tar -xzf training.tar.gz", "badge": "Extract", "explanation": "x extracts the compressed archive." }
+        {
+          "command": "tar -czf training.tar.gz training",
+          "badge": "Create",
+          "explanation": "tar collects training; z applies gzip compression; f names the archive."
+        },
+        {
+          "command": "tar -tzf training.tar.gz",
+          "badge": "Inspect",
+          "explanation": "t lists archive contents without extracting them."
+        },
+        {
+          "command": "tar -xzf training.tar.gz",
+          "badge": "Extract",
+          "explanation": "x extracts the compressed archive."
+        }
       ],
       "walkthrough": [
-        { "title": "Create the archive", "text": "Run tar -czf training.tar.gz training.", "command": "tar -czf training.tar.gz training" },
-        { "title": "Inspect before extraction", "text": "Run tar -tzf training.tar.gz and confirm training appears.", "command": "tar -tzf training.tar.gz" },
-        { "title": "Extract safely", "text": "Run tar -xzf training.tar.gz.", "command": "tar -xzf training.tar.gz" }
+        {
+          "title": "Create the archive",
+          "text": "Run tar -czf training.tar.gz training.",
+          "command": "tar -czf training.tar.gz training"
+        },
+        {
+          "title": "Inspect before extraction",
+          "text": "Run tar -tzf training.tar.gz and confirm training appears.",
+          "command": "tar -tzf training.tar.gz"
+        },
+        {
+          "title": "Extract safely",
+          "text": "Run tar -xzf training.tar.gz.",
+          "command": "tar -xzf training.tar.gz"
+        }
       ],
       "guidedPractice": {
-        "instructions": "Create training.tar.gz from training, inspect it, and extract it.", "steps": ["Create the archive.", "List its contents.", "Extract it."],
-        "helpExamples": ["tar -czf training.tar.gz training", "tar -tzf training.tar.gz", "tar -xzf training.tar.gz"],
-        "successFeedback": "Archive creation, inspection, and extraction complete.", "incorrectFeedback": "The archive workflow is incomplete.", "retryHint": "Use tar with c, then t, then x; keep z and f in each command.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/training.tar.gz" }, { "type": "command-input", "input": "tar -tzf training.tar.gz" }, { "type": "command-input", "input": "tar -xzf training.tar.gz" }]
+        "instructions": "Create training.tar.gz from training, inspect it, and extract it.",
+        "steps": [
+          "Create the archive.",
+          "List its contents.",
+          "Extract it."
+        ],
+        "helpExamples": [
+          "tar -czf training.tar.gz training",
+          "tar -tzf training.tar.gz",
+          "tar -xzf training.tar.gz"
+        ],
+        "successFeedback": "Archive creation, inspection, and extraction complete.",
+        "incorrectFeedback": "The archive workflow is incomplete.",
+        "retryHint": "Use tar with c, then t, then x; keep z and f in each command.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/training.tar.gz"
+          },
+          {
+            "type": "command-input",
+            "input": "tar -tzf training.tar.gz"
+          },
+          {
+            "type": "command-input",
+            "input": "tar -xzf training.tar.gz"
+          }
+        ]
       },
       "commanderChallenge": {
-        "instructions": "Create records.tar.gz from Documents, inspect it, and extract it.", "steps": ["Archive Documents.", "Inspect the archive.", "Extract it."],
-        "helpExamples": ["tar c creates", "tar t lists", "tar x extracts", "z uses gzip", "f names the archive"],
-        "hints": [{ "label": "Concept Hint", "text": "Create, inspect, then extract." }, { "label": "Recognition Hint", "text": "Use the same c/t/x pattern with records.tar.gz and Documents." }, { "label": "Command Reveal", "text": "Run tar -czf records.tar.gz Documents, tar -tzf records.tar.gz, and tar -xzf records.tar.gz." }],
-        "successFeedback": "Commander archive verified and extracted.", "incorrectFeedback": "The records archive workflow is incomplete.", "retryHint": "Create the named archive from Documents before listing and extracting it.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/records.tar.gz" }, { "type": "command-input", "input": "tar -tzf records.tar.gz" }, { "type": "command-input", "input": "tar -xzf records.tar.gz" }]
+        "instructions": "Create records.tar.gz from Documents, inspect it, and extract it.",
+        "steps": [
+          "Archive Documents.",
+          "Inspect the archive.",
+          "Extract it."
+        ],
+        "helpExamples": [
+          "tar c creates",
+          "tar t lists",
+          "tar x extracts",
+          "z uses gzip",
+          "f names the archive"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Create, inspect, then extract."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use the same c/t/x pattern with records.tar.gz and Documents."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run tar -czf records.tar.gz Documents, tar -tzf records.tar.gz, and tar -xzf records.tar.gz."
+          }
+        ],
+        "successFeedback": "Commander archive verified and extracted.",
+        "incorrectFeedback": "The records archive workflow is incomplete.",
+        "retryHint": "Create the named archive from Documents before listing and extracting it.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/records.tar.gz"
+          },
+          {
+            "type": "command-input",
+            "input": "tar -tzf records.tar.gz"
+          },
+          {
+            "type": "command-input",
+            "input": "tar -xzf records.tar.gz"
+          }
+        ]
       },
-      "correctFeedback": "You treated inspection as part of the archive workflow.", "incorrectFeedback": "Review create, list, and extract modes.", "fenrirTip": "Never trust a sealed pack until you inspect what it contains.", "debrief": "You created gzip-compressed tar archives, listed their contents, and extracted them.", "takeaway": "Create → c. Inspect → t. Extract → x. gzip → z. Archive name → f."
+      "correctFeedback": "You treated inspection as part of the archive workflow.",
+      "incorrectFeedback": "Review create, list, and extract modes.",
+      "fenrirTip": "Never trust a sealed pack until you inspect what it contains.",
+      "debrief": "You created gzip-compressed tar archives, listed their contents, and extracted them.",
+      "takeaway": "Create → c. Inspect → t. Extract → x. gzip → z. Archive name → f."
     },
     {
-      "id": "linux-lab-09", "missionNumber": 9, "kingdom": "Kingdom II — Data and Automation", "title": "Find the Signal",
-      "skill": "Search, sample, count, and extract useful text", "goal": "Turn logs and delimited data into concise evidence.", "bigIdea": "Text tools answer different questions: which lines match, which lines matter first or last, how many exist, and which fields are needed.", "objective": "3.2 Searching and Extracting Data from Files", "difficulty": 2,
+      "id": "linux-lab-09",
+      "missionNumber": 9,
+      "kingdom": "Kingdom II — Data and Automation",
+      "title": "Find the Signal",
+      "skill": "Search, sample, count, and extract useful text",
+      "goal": "Turn logs and delimited data into concise evidence.",
+      "bigIdea": "Text tools answer different questions: which lines match, which lines matter first or last, how many exist, and which fields are needed.",
+      "objective": "3.2 Searching and Extracting Data from Files",
+      "difficulty": 2,
       "briefing": "The patrol log is noisy and the score roster contains more data than the Commander needs. Extract only the evidence that answers each question.",
       "learn": [
-        { "command": "grep ERROR events.log", "badge": "Search", "explanation": "grep prints lines containing ERROR." },
-        { "command": "head events.log", "badge": "Beginning", "explanation": "head samples the start of a file; tail samples its end." },
-        { "command": "wc -l events.log", "badge": "Count", "explanation": "wc -l counts lines." },
-        { "command": "cut -d, -f1 scores.csv", "badge": "Extract field", "explanation": "cut uses comma as the delimiter and returns field one." }
+        {
+          "command": "grep ERROR events.log",
+          "badge": "Search",
+          "explanation": "grep prints lines containing ERROR."
+        },
+        {
+          "command": "head events.log",
+          "badge": "Beginning",
+          "explanation": "head samples the start of a file; tail samples its end."
+        },
+        {
+          "command": "wc -l events.log",
+          "badge": "Count",
+          "explanation": "wc -l counts lines."
+        },
+        {
+          "command": "cut -d, -f1 scores.csv",
+          "badge": "Extract field",
+          "explanation": "cut uses comma as the delimiter and returns field one."
+        }
       ],
       "walkthrough": [
-        { "title": "Find an error", "text": "Search the log for ERROR.", "command": "grep ERROR events.log" },
-        { "title": "Inspect both edges", "text": "Sample the beginning and end.", "command": "head events.log\ntail events.log" },
-        { "title": "Count and extract", "text": "Count log lines and extract score names.", "command": "wc -l events.log\ncut -d, -f1 scores.csv" }
+        {
+          "title": "Find an error",
+          "text": "Search the log for ERROR.",
+          "command": "grep ERROR events.log"
+        },
+        {
+          "title": "Inspect both edges",
+          "text": "Sample the beginning and end.",
+          "command": "head events.log\ntail events.log"
+        },
+        {
+          "title": "Count and extract",
+          "text": "Count log lines and extract score names.",
+          "command": "wc -l events.log\ncut -d, -f1 scores.csv"
+        }
       ],
       "guidedPractice": {
-        "instructions": "Find ERROR, inspect the first and last log entries, count lines, and extract score names.", "steps": ["Search ERROR.", "Run head.", "Run tail.", "Count lines.", "Extract CSV field one."],
-        "helpExamples": ["grep ERROR events.log", "head events.log", "tail events.log", "wc -l events.log", "cut -d, -f1 scores.csv"],
-        "successFeedback": "Text evidence extracted.", "incorrectFeedback": "One or more text checks are missing.", "retryHint": "Use grep, head, tail, wc -l, and cut.",
-        "goals": [{ "type": "command-input", "input": "grep ERROR events.log" }, { "type": "command-input", "input": "head events.log" }, { "type": "command-input", "input": "tail events.log" }, { "type": "command-input", "input": "wc -l events.log" }, { "type": "command-input", "input": "cut -d, -f1 scores.csv" }]
+        "instructions": "Find ERROR, inspect the first and last log entries, count lines, and extract score names.",
+        "steps": [
+          "Search ERROR.",
+          "Run head.",
+          "Run tail.",
+          "Count lines.",
+          "Extract CSV field one."
+        ],
+        "helpExamples": [
+          "grep ERROR events.log",
+          "head events.log",
+          "tail events.log",
+          "wc -l events.log",
+          "cut -d, -f1 scores.csv"
+        ],
+        "successFeedback": "Text evidence extracted.",
+        "incorrectFeedback": "One or more text checks are missing.",
+        "retryHint": "Use grep, head, tail, wc -l, and cut.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "grep ERROR events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "head events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "tail events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "wc -l events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "cut -d, -f1 scores.csv"
+          }
+        ]
       },
       "commanderChallenge": {
-        "instructions": "Find WARN, inspect the log edges, count it, and extract the score names.", "steps": ["Search WARN.", "Inspect first and last.", "Count.", "Extract names."],
-        "helpExamples": ["grep searches", "head/tail sample", "wc counts", "cut selects fields"],
-        "hints": [{ "label": "Concept Hint", "text": "Use one tool per question." }, { "label": "Recognition Hint", "text": "Search WARN, sample both ends, count lines, then select CSV field one." }, { "label": "Command Reveal", "text": "Run grep WARN events.log, head events.log, tail events.log, wc -l events.log, and cut -d, -f1 scores.csv." }],
-        "successFeedback": "Commander evidence extracted.", "incorrectFeedback": "The requested evidence set is incomplete.", "retryHint": "Match each question to grep, head/tail, wc, or cut.",
-        "goals": [{ "type": "command-input", "input": "grep WARN events.log" }, { "type": "command-input", "input": "head events.log" }, { "type": "command-input", "input": "tail events.log" }, { "type": "command-input", "input": "wc -l events.log" }, { "type": "command-input", "input": "cut -d, -f1 scores.csv" }]
+        "instructions": "Find WARN, inspect the log edges, count it, and extract the score names.",
+        "steps": [
+          "Search WARN.",
+          "Inspect first and last.",
+          "Count.",
+          "Extract names."
+        ],
+        "helpExamples": [
+          "grep searches",
+          "head/tail sample",
+          "wc counts",
+          "cut selects fields"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Use one tool per question."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Search WARN, sample both ends, count lines, then select CSV field one."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run grep WARN events.log, head events.log, tail events.log, wc -l events.log, and cut -d, -f1 scores.csv."
+          }
+        ],
+        "successFeedback": "Commander evidence extracted.",
+        "incorrectFeedback": "The requested evidence set is incomplete.",
+        "retryHint": "Match each question to grep, head/tail, wc, or cut.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "grep WARN events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "head events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "tail events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "wc -l events.log"
+          },
+          {
+            "type": "command-input",
+            "input": "cut -d, -f1 scores.csv"
+          }
+        ]
       },
-      "correctFeedback": "You selected tools by the question each tool answers.", "incorrectFeedback": "Review search, sampling, counting, and field extraction.", "fenrirTip": "Do not read the whole forest when one track answers the question.", "debrief": "You searched logs, sampled file edges, counted lines, and extracted CSV fields.", "takeaway": "Match → grep. Edges → head/tail. Count → wc. Field → cut."
+      "correctFeedback": "You selected tools by the question each tool answers.",
+      "incorrectFeedback": "Review search, sampling, counting, and field extraction.",
+      "fenrirTip": "Do not read the whole forest when one track answers the question.",
+      "debrief": "You searched logs, sampled file edges, counted lines, and extracted CSV fields.",
+      "takeaway": "Match → grep. Edges → head/tail. Count → wc. Field → cut."
     },
     {
-      "id": "linux-lab-10", "missionNumber": 10, "kingdom": "Kingdom II — Data and Automation", "title": "Build the Pipeline",
-      "skill": "Connect commands with pipes and save output with redirection", "goal": "Filter command output and route the result to the screen or a file.", "bigIdea": "A pipeline lets one command's output become the next command's input, while redirection chooses where the final result goes.", "objective": "3.2 Searching and Extracting Data from Files", "difficulty": 3,
+      "id": "linux-lab-10",
+      "missionNumber": 10,
+      "kingdom": "Kingdom II — Data and Automation",
+      "title": "Build the Pipeline",
+      "skill": "Connect commands with pipes and save output with redirection",
+      "goal": "Filter command output and route the result to the screen or a file.",
+      "bigIdea": "A pipeline lets one command's output become the next command's input, while redirection chooses where the final result goes.",
+      "objective": "3.2 Searching and Extracting Data from Files",
+      "difficulty": 3,
       "briefing": "The Commander wants compact reports without temporary manual work. Connect tools so data flows directly from source to filter to destination.",
       "learn": [
-        { "command": "grep INFO events.log | wc -l", "badge": "Pipe", "explanation": "| sends matching lines from grep into wc." },
-        { "command": "grep ERROR events.log > errors.txt", "badge": "Overwrite redirect", "explanation": "> saves output to a file, replacing prior contents." },
-        { "command": "grep WARN events.log | head", "badge": "Pipeline", "explanation": "The second command receives only the first command's output." }
+        {
+          "command": "grep INFO events.log | wc -l",
+          "badge": "Pipe",
+          "explanation": "| sends matching lines from grep into wc."
+        },
+        {
+          "command": "grep ERROR events.log > errors.txt",
+          "badge": "Overwrite redirect",
+          "explanation": "> saves output to a file, replacing prior contents."
+        },
+        {
+          "command": "grep WARN events.log | head",
+          "badge": "Pipeline",
+          "explanation": "The second command receives only the first command's output."
+        }
       ],
       "walkthrough": [
-        { "title": "Connect two tools", "text": "Count matching INFO lines through a pipe.", "command": "grep INFO events.log | wc -l" },
-        { "title": "Save a result", "text": "Redirect ERROR lines into errors.txt.", "command": "grep ERROR events.log > errors.txt" },
-        { "title": "Verify the artifact", "text": "List errors.txt to confirm it exists.", "command": "ls errors.txt" }
+        {
+          "title": "Connect two tools",
+          "text": "Count matching INFO lines through a pipe.",
+          "command": "grep INFO events.log | wc -l"
+        },
+        {
+          "title": "Save a result",
+          "text": "Redirect ERROR lines into errors.txt.",
+          "command": "grep ERROR events.log > errors.txt"
+        },
+        {
+          "title": "Verify the artifact",
+          "text": "List errors.txt to confirm it exists.",
+          "command": "ls errors.txt"
+        }
       ],
       "guidedPractice": {
-        "instructions": "Count INFO lines through a pipe, save ERROR lines to errors.txt, and verify the file.", "steps": ["Build the counting pipeline.", "Redirect ERROR output.", "Verify errors.txt."],
-        "helpExamples": ["grep INFO events.log | wc -l", "grep ERROR events.log > errors.txt", "ls errors.txt"],
-        "successFeedback": "Pipeline and redirection complete.", "incorrectFeedback": "The pipeline or saved result is missing.", "retryHint": "Use | to connect commands and > to create errors.txt.",
-        "goals": [{ "type": "command-input", "input": "grep INFO events.log | wc -l" }, { "type": "file-exists", "path": "/home/hydra/errors.txt" }, { "type": "command-input", "input": "ls errors.txt" }]
+        "instructions": "Count INFO lines through a pipe, save ERROR lines to errors.txt, and verify the file.",
+        "steps": [
+          "Build the counting pipeline.",
+          "Redirect ERROR output.",
+          "Verify errors.txt."
+        ],
+        "helpExamples": [
+          "grep INFO events.log | wc -l",
+          "grep ERROR events.log > errors.txt",
+          "ls errors.txt"
+        ],
+        "successFeedback": "Pipeline and redirection complete.",
+        "incorrectFeedback": "The pipeline or saved result is missing.",
+        "retryHint": "Use | to connect commands and > to create errors.txt.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "grep INFO events.log | wc -l"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/errors.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls errors.txt"
+          }
+        ]
       },
       "commanderChallenge": {
-        "instructions": "Send WARN lines through head, save them to warnings.txt, and verify the file.", "steps": ["Build a WARN pipeline.", "Redirect the final result.", "Verify warnings.txt."],
-        "helpExamples": ["| connects output to input", "> saves final output", "ls verifies"],
-        "hints": [{ "label": "Concept Hint", "text": "Search, sample, save, verify." }, { "label": "Recognition Hint", "text": "Connect grep WARN to head, then redirect." }, { "label": "Command Reveal", "text": "Run grep WARN events.log | head > warnings.txt, then ls warnings.txt." }],
-        "successFeedback": "Commander pipeline saved and verified.", "incorrectFeedback": "warnings.txt has not been produced and verified.", "retryHint": "Pipe grep into head before redirecting to warnings.txt.",
-        "goals": [{ "type": "command-input", "input": "grep WARN events.log | head > warnings.txt" }, { "type": "file-exists", "path": "/home/hydra/warnings.txt" }, { "type": "command-input", "input": "ls warnings.txt" }]
+        "instructions": "Send WARN lines through head, save them to warnings.txt, and verify the file.",
+        "steps": [
+          "Build a WARN pipeline.",
+          "Redirect the final result.",
+          "Verify warnings.txt."
+        ],
+        "helpExamples": [
+          "| connects output to input",
+          "> saves final output",
+          "ls verifies"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Search, sample, save, verify."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Connect grep WARN to head, then redirect."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run grep WARN events.log | head > warnings.txt, then ls warnings.txt."
+          }
+        ],
+        "successFeedback": "Commander pipeline saved and verified.",
+        "incorrectFeedback": "warnings.txt has not been produced and verified.",
+        "retryHint": "Pipe grep into head before redirecting to warnings.txt.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "grep WARN events.log | head > warnings.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/warnings.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls warnings.txt"
+          }
+        ]
       },
-      "correctFeedback": "You treated output as a stream that can be transformed and routed.", "incorrectFeedback": "Review pipes versus redirection.", "fenrirTip": "A pipe passes the trail onward; redirection chooses where the trail ends.", "debrief": "You connected commands and saved final output to files.", "takeaway": "Connect → |. Save/replace → >. Verify → ls."
+      "correctFeedback": "You treated output as a stream that can be transformed and routed.",
+      "incorrectFeedback": "Review pipes versus redirection.",
+      "fenrirTip": "A pipe passes the trail onward; redirection chooses where the trail ends.",
+      "debrief": "You connected commands and saved final output to files.",
+      "takeaway": "Connect → |. Save/replace → >. Verify → ls."
     },
     {
-      "id": "linux-lab-11", "missionNumber": 11, "kingdom": "Kingdom II — Data and Automation", "title": "Your First Script",
-      "skill": "Create and run a simple shell script with an argument", "goal": "Build an executable script that prints a supplied mission name.", "bigIdea": "A script turns tested command steps into a reusable tool whose arguments supply changing input.", "objective": "3.3 Turning Commands into a Script", "difficulty": 3,
+      "id": "linux-lab-11",
+      "missionNumber": 11,
+      "kingdom": "Kingdom II — Data and Automation",
+      "title": "Your First Script",
+      "skill": "Create and run a simple shell script with an argument",
+      "goal": "Build a simple script that prints a supplied mission name and run it through Bash.",
+      "bigIdea": "A script turns tested command steps into a reusable tool whose arguments supply changing input.",
+      "objective": "3.3 Turning Commands into a Script",
+      "difficulty": 3,
       "briefing": "The same status message must be produced for different missions. Store the command in a script and let its first argument provide the changing name.",
       "learn": [
-        { "command": "echo '#!/bin/sh' > patrol.sh", "badge": "Shebang", "explanation": "The shebang identifies the shell used to interpret the script." },
-        { "command": "echo 'echo $1' >> patrol.sh", "badge": "Argument", "explanation": "$1 represents the first argument supplied when the script runs." },
-        { "command": "chmod +x patrol.sh", "badge": "Executable", "explanation": "chmod +x permits the script to run directly." },
-        { "command": "./patrol.sh north", "badge": "Execute", "explanation": "./ selects the script in the current directory and north becomes $1." }
+        {
+          "command": "echo '#!/bin/sh' > patrol.sh",
+          "badge": "Shebang",
+          "explanation": "The shebang identifies the shell used to interpret the script."
+        },
+        {
+          "command": "echo 'echo $1' >> patrol.sh",
+          "badge": "Argument",
+          "explanation": "$1 represents the first argument supplied when the script runs."
+        },
+        {
+          "command": "bash patrol.sh north",
+          "badge": "Run with Bash",
+          "explanation": "bash reads the script and north becomes its first argument, $1; executable-file permission is not required for this form."
+        }
       ],
       "walkthrough": [
-        { "title": "Write the interpreter line", "text": "Create patrol.sh with a shebang.", "command": "echo '#!/bin/sh' > patrol.sh" },
-        { "title": "Add the command", "text": "Append an echo command that uses $1.", "command": "echo 'echo $1' >> patrol.sh" },
-        { "title": "Permit and run", "text": "Make it executable, then pass north.", "command": "chmod +x patrol.sh\n./patrol.sh north" }
+        {
+          "title": "Write the interpreter line",
+          "text": "Create patrol.sh with a shebang.",
+          "command": "echo '#!/bin/sh' > patrol.sh"
+        },
+        {
+          "title": "Add the command",
+          "text": "Append an echo command that uses $1.",
+          "command": "echo 'echo $1' >> patrol.sh"
+        },
+        {
+          "title": "Run through Bash",
+          "text": "Use Bash to run the script and pass north as its first argument.",
+          "command": "bash patrol.sh north"
+        }
       ],
       "guidedPractice": {
-        "instructions": "Create patrol.sh with a shebang and echo $1, make it executable, and run it with north.", "steps": ["Write shebang.", "Append echo $1.", "Run chmod +x.", "Execute with north."],
-        "helpExamples": ["echo '#!/bin/sh' > patrol.sh", "echo 'echo $1' >> patrol.sh", "chmod +x patrol.sh", "./patrol.sh north"],
-        "successFeedback": "First script created and executed.", "incorrectFeedback": "The script workflow is incomplete.", "retryHint": "Create, append, permit, and execute in that order.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/patrol.sh" }, { "type": "command-input", "input": "chmod +x patrol.sh" }, { "type": "command-input", "input": "./patrol.sh north" }]
+        "instructions": "Create patrol.sh with a shebang and echo $1, then run it through Bash with north.",
+        "steps": [
+          "Write shebang.",
+          "Append echo $1.",
+          "Run the script through Bash with north."
+        ],
+        "helpExamples": [
+          "echo '#!/bin/sh' > patrol.sh",
+          "echo 'echo $1' >> patrol.sh",
+          "bash patrol.sh north"
+        ],
+        "successFeedback": "First script created and executed.",
+        "incorrectFeedback": "The script workflow is incomplete.",
+        "retryHint": "Create both script lines, then run bash patrol.sh north.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/patrol.sh"
+          },
+          {
+            "type": "command-input",
+            "input": "bash patrol.sh north"
+          }
+        ]
       },
       "commanderChallenge": {
-        "instructions": "Create report.sh with a shebang and echo $1, make it executable, and run it with academy.", "steps": ["Create.", "Append.", "Permit.", "Execute."],
-        "helpExamples": ["$1 receives the first argument", "chmod +x permits direct execution", "./ runs a local script"],
-        "hints": [{ "label": "Concept Hint", "text": "Repeat the four-part script pattern with new names." }, { "label": "Recognition Hint", "text": "Use report.sh and pass academy as argument one." }, { "label": "Command Reveal", "text": "Run echo '#!/bin/sh' > report.sh, echo 'echo $1' >> report.sh, chmod +x report.sh, and ./report.sh academy." }],
-        "successFeedback": "Commander script executed with its argument.", "incorrectFeedback": "report.sh is not fully created and executed.", "retryHint": "Build both lines, permit execution, then pass academy.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/report.sh" }, { "type": "command-input", "input": "chmod +x report.sh" }, { "type": "command-input", "input": "./report.sh academy" }]
+        "instructions": "Create report.sh with a shebang and echo $1, then run it through Bash with academy.",
+        "steps": [
+          "Create the interpreter line.",
+          "Append the argument-driven command.",
+          "Run through Bash with academy."
+        ],
+        "helpExamples": [
+          "$1 receives the first argument",
+          "bash SCRIPT ARG runs a script through Bash"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Repeat the three-part script pattern with new names."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use report.sh and pass academy as argument one."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run echo '#!/bin/sh' > report.sh, echo 'echo $1' >> report.sh, and bash report.sh academy."
+          }
+        ],
+        "successFeedback": "Commander script executed with its argument.",
+        "incorrectFeedback": "report.sh is not fully created and executed.",
+        "retryHint": "Build both lines, then run the script through Bash with academy.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/report.sh"
+          },
+          {
+            "type": "command-input",
+            "input": "bash report.sh academy"
+          }
+        ]
       },
-      "correctFeedback": "You converted a command into a reusable argument-driven script.", "incorrectFeedback": "Review shebang, script body, permission, and execution.", "fenrirTip": "Automate only what you can explain step by step.", "debrief": "You created scripts, used $1, enabled execution, and supplied arguments.", "takeaway": "Interpreter → shebang. Input → $1. Permission → chmod +x. Run → ./script."
+      "correctFeedback": "You converted a command into a reusable argument-driven script.",
+      "incorrectFeedback": "Review the shebang, script body, argument, and Bash invocation.",
+      "fenrirTip": "Automate only what you can explain step by step.",
+      "debrief": "You created scripts, used $1, ran them through Bash, and supplied arguments.",
+      "takeaway": "Interpreter → shebang. Input → $1. Run without direct-execute permission → bash SCRIPT ARG."
     },
     {
-      "id": "linux-lab-12", "missionNumber": 12, "kingdom": "Kingdom II — Data and Automation", "title": "Automate the Patrol",
-      "skill": "Use a loop in a repeatable shell script", "goal": "Create and run a script that repeats one action for multiple patrol names.", "bigIdea": "A loop expresses repetition once, reducing duplicated commands and inconsistent results.", "objective": "3.3 Turning Commands into a Script", "difficulty": 3,
+      "id": "linux-lab-12",
+      "missionNumber": 12,
+      "kingdom": "Kingdom II — Data and Automation",
+      "title": "Automate the Patrol",
+      "skill": "Use a loop in a repeatable shell script",
+      "goal": "Create and run a script that repeats one action for multiple patrol names.",
+      "bigIdea": "A loop expresses repetition once, reducing duplicated commands and inconsistent results.",
+      "objective": "3.3 Turning Commands into a Script",
+      "difficulty": 3,
       "briefing": "Two patrol names must be processed the same way. Replace duplicated commands with a single loop that applies one action to each item.",
       "learn": [
-        { "command": "for item in alpha beta; do echo $item; done", "badge": "Loop anatomy", "explanation": "for assigns each word to item; do/done contain the repeated action." },
-        { "command": "echo 'echo $item' >> loop.sh", "badge": "Loop body", "explanation": "The body uses the current loop value." },
-        { "command": "./loop.sh", "badge": "Repeat", "explanation": "Running the script produces the repeated outputs." }
+        {
+          "command": "for item in alpha beta; do echo $item; done",
+          "badge": "Loop anatomy",
+          "explanation": "for assigns each word to item; do/done contain the repeated action."
+        },
+        {
+          "command": "echo 'echo $item' >> loop.sh",
+          "badge": "Loop body",
+          "explanation": "The body uses the current loop value."
+        },
+        {
+          "command": "bash loop.sh",
+          "badge": "Repeat",
+          "explanation": "Bash reads the saved script and performs the loop without requiring direct-execute permission."
+        }
       ],
       "walkthrough": [
-        { "title": "Create the script", "text": "Write a shebang to loop.sh.", "command": "echo '#!/bin/sh' > loop.sh" },
-        { "title": "Add the loop", "text": "Append the one-line for loop.", "command": "echo 'for item in alpha beta; do echo $item; done' >> loop.sh" },
-        { "title": "Run the automation", "text": "Permit and execute the script.", "command": "chmod +x loop.sh\n./loop.sh" }
+        {
+          "title": "Create the script",
+          "text": "Write a shebang to loop.sh.",
+          "command": "echo '#!/bin/sh' > loop.sh"
+        },
+        {
+          "title": "Add the loop",
+          "text": "Append the one-line for loop.",
+          "command": "echo 'for item in alpha beta; do echo $item; done' >> loop.sh"
+        },
+        {
+          "title": "Run the automation",
+          "text": "Run the saved loop through Bash.",
+          "command": "bash loop.sh"
+        }
       ],
       "guidedPractice": {
-        "instructions": "Create loop.sh, append the alpha/beta loop, make it executable, and run it.", "steps": ["Write shebang.", "Append loop.", "Permit execution.", "Run script."],
-        "helpExamples": ["echo '#!/bin/sh' > loop.sh", "echo 'for item in alpha beta; do echo $item; done' >> loop.sh", "chmod +x loop.sh", "./loop.sh"],
-        "successFeedback": "Loop script executed.", "incorrectFeedback": "The loop script workflow is incomplete.", "retryHint": "Create the file, append the loop, permit it, then run it.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/loop.sh" }, { "type": "command-input", "input": "chmod +x loop.sh" }, { "type": "command-input", "input": "./loop.sh" }]
+        "instructions": "Create loop.sh, append the alpha/beta loop, and run it through Bash.",
+        "steps": [
+          "Write shebang.",
+          "Append loop.",
+          "Run the script through Bash."
+        ],
+        "helpExamples": [
+          "echo '#!/bin/sh' > loop.sh",
+          "echo 'for item in alpha beta; do echo $item; done' >> loop.sh",
+          "bash loop.sh"
+        ],
+        "successFeedback": "Loop script executed.",
+        "incorrectFeedback": "The loop script workflow is incomplete.",
+        "retryHint": "Create the file, append the loop, then run bash loop.sh.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/loop.sh"
+          },
+          {
+            "type": "command-input",
+            "input": "bash loop.sh"
+          }
+        ]
       },
       "commanderChallenge": {
-        "instructions": "Create sweep.sh with a north/south loop, make it executable, and run it.", "steps": ["Write shebang.", "Append north/south loop.", "Permit.", "Run."],
-        "helpExamples": ["for NAME in VALUES; do ACTION; done", "chmod +x", "./script"],
-        "hints": [{ "label": "Concept Hint", "text": "Reuse the loop pattern with two different values." }, { "label": "Recognition Hint", "text": "The values are north and south; the variable is zone." }, { "label": "Command Reveal", "text": "Run echo '#!/bin/sh' > sweep.sh, echo 'for zone in north south; do echo $zone; done' >> sweep.sh, chmod +x sweep.sh, and ./sweep.sh." }],
-        "successFeedback": "Commander patrol loop executed.", "incorrectFeedback": "sweep.sh is not fully created and run.", "retryHint": "Build the loop script, permit it, and execute it.",
-        "goals": [{ "type": "file-exists", "path": "/home/hydra/sweep.sh" }, { "type": "command-input", "input": "chmod +x sweep.sh" }, { "type": "command-input", "input": "./sweep.sh" }]
+        "instructions": "Create sweep.sh with a north/south loop and run it through Bash.",
+        "steps": [
+          "Write shebang.",
+          "Append the north/south loop.",
+          "Run through Bash."
+        ],
+        "helpExamples": [
+          "for NAME in VALUES; do ACTION; done",
+          "bash SCRIPT"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Reuse the loop pattern with two different values."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "The values are north and south; the variable is zone."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run echo '#!/bin/sh' > sweep.sh, echo 'for zone in north south; do echo $zone; done' >> sweep.sh, and bash sweep.sh."
+          }
+        ],
+        "successFeedback": "Commander patrol loop executed.",
+        "incorrectFeedback": "sweep.sh is not fully created and run.",
+        "retryHint": "Build the loop script, then run it through Bash.",
+        "goals": [
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/sweep.sh"
+          },
+          {
+            "type": "command-input",
+            "input": "bash sweep.sh"
+          }
+        ]
       },
-      "correctFeedback": "You replaced repeated commands with a single controlled loop.", "incorrectFeedback": "Review the for/in/do/done structure.", "fenrirTip": "When only the target changes, a loop should carry the repeated work.", "debrief": "You stored loop logic in executable scripts and applied one command consistently to multiple values.", "takeaway": "Values → in. Repeated action → do/done. Current value → $variable."
+      "correctFeedback": "You replaced repeated commands with a single controlled loop.",
+      "incorrectFeedback": "Review the for/in/do/done structure.",
+      "fenrirTip": "When only the target changes, a loop should carry the repeated work.",
+      "debrief": "You stored loop logic in scripts and ran one command consistently for multiple values through Bash.",
+      "takeaway": "Values → in. Repeated action → do/done. Current value → $variable."
     },
     {
-      "id": "linux-lab-13", "missionNumber": 13, "kingdom": "Kingdom III — The Linux Ecosystem", "title": "Distribution Detective", "skill": "Identify Linux from standard system evidence", "goal": "Inspect distribution identity, kernel family, and architecture.", "bigIdea": "Evidence inside a system identifies it more reliably than appearance or branding.", "objective": "1.1 Linux Evolution and Popular Operating Systems", "difficulty": 2, "briefing": "An unlabeled cloud image must be identified before use.",
-      "learn": [{"command":"cat /etc/os-release","badge":"Distribution","explanation":"The standard file identifies the distribution."},{"command":"uname","badge":"Kernel","explanation":"uname reports the kernel family."},{"command":"uname -m","badge":"Architecture","explanation":"-m reports machine architecture."}],
-      "walkthrough": [{"title":"Read identity","text":"Display os-release.","command":"cat /etc/os-release"},{"title":"Confirm kernel","text":"Run uname.","command":"uname"},{"title":"Confirm architecture","text":"Run uname -m.","command":"uname -m"}],
-      "guidedPractice": {"instructions":"Collect all three identity signals.","steps":["Read distribution.","Check kernel.","Check architecture."],"helpExamples":["cat /etc/os-release","uname","uname -m"],"successFeedback":"System identified.","incorrectFeedback":"Evidence is incomplete.","retryHint":"Use os-release and both uname forms.","goals":[{"type":"command-input","input":"cat /etc/os-release"},{"type":"command-input","input":"uname"},{"type":"command-input","input":"uname -m"}]},
-      "commanderChallenge": {"instructions":"Independently reconstruct the image identity.","steps":["Identify distribution, kernel, and architecture."],"helpExamples":["cat reads evidence","uname queries the system"],"hints":[{"label":"Concept Hint","text":"Use one file and two system queries."},{"label":"Recognition Hint","text":"Inspect os-release, kernel, and machine architecture."},{"label":"Command Reveal","text":"Run cat /etc/os-release, uname, and uname -m."}],"successFeedback":"Commander image identified.","incorrectFeedback":"All three signals are required.","retryHint":"Gather distribution, kernel, and architecture.","goals":[{"type":"command-input","input":"cat /etc/os-release"},{"type":"command-input","input":"uname"},{"type":"command-input","input":"uname -m"}]},
-      "correctFeedback":"You identified Linux from standard evidence.","incorrectFeedback":"Review the three identity signals.","fenrirTip":"Labels can lie; system evidence does not.","debrief":"You identified a distribution, kernel, and architecture as you would on cloud, desktop, or embedded Linux.","takeaway":"Distribution → os-release. Kernel → uname. Architecture → uname -m."
+      "id": "linux-lab-13",
+      "missionNumber": 13,
+      "kingdom": "Kingdom III — The Linux Ecosystem",
+      "title": "Distribution Detective",
+      "skill": "Identify Linux from standard system evidence",
+      "goal": "Inspect distribution identity, kernel family, and architecture.",
+      "bigIdea": "Evidence inside a system identifies it more reliably than appearance or branding.",
+      "objective": "1.1 Linux Evolution and Popular Operating Systems",
+      "difficulty": 2,
+      "briefing": "An unlabeled cloud image must be identified before use.",
+      "learn": [
+        {
+          "command": "cat /etc/os-release",
+          "badge": "Distribution",
+          "explanation": "The standard file identifies the distribution."
+        },
+        {
+          "command": "uname",
+          "badge": "Kernel",
+          "explanation": "uname reports the kernel family."
+        },
+        {
+          "command": "uname -m",
+          "badge": "Architecture",
+          "explanation": "-m reports machine architecture."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Read identity",
+          "text": "Display os-release.",
+          "command": "cat /etc/os-release"
+        },
+        {
+          "title": "Confirm kernel",
+          "text": "Run uname.",
+          "command": "uname"
+        },
+        {
+          "title": "Confirm architecture",
+          "text": "Run uname -m.",
+          "command": "uname -m"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Collect all three identity signals.",
+        "steps": [
+          "Read distribution.",
+          "Check kernel.",
+          "Check architecture."
+        ],
+        "helpExamples": [
+          "cat /etc/os-release",
+          "uname",
+          "uname -m"
+        ],
+        "successFeedback": "System identified.",
+        "incorrectFeedback": "Evidence is incomplete.",
+        "retryHint": "Use os-release and both uname forms.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat /etc/os-release"
+          },
+          {
+            "type": "command-input",
+            "input": "uname"
+          },
+          {
+            "type": "command-input",
+            "input": "uname -m"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Independently reconstruct the image identity.",
+        "steps": [
+          "Identify distribution, kernel, and architecture."
+        ],
+        "helpExamples": [
+          "cat reads evidence",
+          "uname queries the system"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Use one file and two system queries."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Inspect os-release, kernel, and machine architecture."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run cat /etc/os-release, uname, and uname -m."
+          }
+        ],
+        "successFeedback": "Commander image identified.",
+        "incorrectFeedback": "All three signals are required.",
+        "retryHint": "Gather distribution, kernel, and architecture.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat /etc/os-release"
+          },
+          {
+            "type": "command-input",
+            "input": "uname"
+          },
+          {
+            "type": "command-input",
+            "input": "uname -m"
+          }
+        ]
+      },
+      "correctFeedback": "You identified Linux from standard evidence.",
+      "incorrectFeedback": "Review the three identity signals.",
+      "fenrirTip": "Labels can lie; system evidence does not.",
+      "debrief": "You identified a distribution, kernel, and architecture as you would on cloud, desktop, or embedded Linux.",
+      "takeaway": "Distribution → os-release. Kernel → uname. Architecture → uname -m."
     },
     {
-      "id":"linux-lab-14","missionNumber":14,"kingdom":"Kingdom III — The Linux Ecosystem","title":"Open Source Toolbox","skill":"Recognize open-source tools by workload","goal":"Verify tools for desktop, development, server, and package work.","bigIdea":"Open-source applications form an ecosystem in which each tool serves a recognizable workload.","objective":"1.2 Major Open Source Applications","difficulty":2,"briefing":"Verify that a workstation supports four required workloads.",
-      "learn":[{"command":"which firefox","badge":"Desktop","explanation":"Firefox is an open-source browser."},{"command":"which python3","badge":"Development","explanation":"Python supports software development."},{"command":"which nginx","badge":"Server","explanation":"NGINX serves web content."},{"command":"which apt-get","badge":"Packages","explanation":"apt-get works with package repositories."}],
-      "walkthrough":[{"title":"Desktop","text":"Locate Firefox.","command":"which firefox"},{"title":"Development and server","text":"Locate Python and NGINX.","command":"which python3\nwhich nginx"},{"title":"Packages","text":"Locate apt-get.","command":"which apt-get"}],
-      "guidedPractice":{"instructions":"Locate all four tools.","steps":["Check browser, language, server, and package tool."],"helpExamples":["which firefox","which python3","which nginx","which apt-get"],"successFeedback":"Toolbox verified.","incorrectFeedback":"A workload is missing.","retryHint":"Use which with every tool.","goals":[{"type":"command-input","input":"which firefox"},{"type":"command-input","input":"which python3"},{"type":"command-input","input":"which nginx"},{"type":"command-input","input":"which apt-get"}]},
-      "commanderChallenge":{"instructions":"Prove all four workload roles are available.","steps":["Verify every role."],"helpExamples":["which locates commands"],"hints":[{"label":"Concept Hint","text":"Check one tool per workload."},{"label":"Recognition Hint","text":"Use Firefox, Python, NGINX, and apt-get."},{"label":"Command Reveal","text":"Run which firefox, which python3, which nginx, and which apt-get."}],"successFeedback":"Commander toolbox verified.","incorrectFeedback":"All roles must be checked.","retryHint":"Locate each named tool.","goals":[{"type":"command-input","input":"which firefox"},{"type":"command-input","input":"which python3"},{"type":"command-input","input":"which nginx"},{"type":"command-input","input":"which apt-get"}]},
-      "correctFeedback":"You mapped tools to workloads.","incorrectFeedback":"Review application roles.","fenrirTip":"Choose tools by the work they perform.","debrief":"You verified representative desktop, development, server, and package applications.","takeaway":"Desktop → Firefox. Development → Python. Server → NGINX. Packages → apt-get."
+      "id": "linux-lab-14",
+      "missionNumber": 14,
+      "kingdom": "Kingdom III — The Linux Ecosystem",
+      "title": "Open Source Toolbox",
+      "skill": "Recognize open-source tools by workload",
+      "goal": "Verify tools for desktop, development, server, and package work.",
+      "bigIdea": "Open-source applications form an ecosystem in which each tool serves a recognizable workload.",
+      "objective": "1.2 Major Open Source Applications",
+      "difficulty": 2,
+      "briefing": "Verify that a workstation supports four required workloads.",
+      "learn": [
+        {
+          "command": "which firefox",
+          "badge": "Desktop",
+          "explanation": "Firefox is an open-source browser."
+        },
+        {
+          "command": "which python3",
+          "badge": "Development",
+          "explanation": "Python supports software development."
+        },
+        {
+          "command": "which nginx",
+          "badge": "Server",
+          "explanation": "NGINX serves web content."
+        },
+        {
+          "command": "which apt-get",
+          "badge": "Packages",
+          "explanation": "apt-get works with package repositories."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Desktop",
+          "text": "Locate Firefox.",
+          "command": "which firefox"
+        },
+        {
+          "title": "Development and server",
+          "text": "Locate Python and NGINX.",
+          "command": "which python3\nwhich nginx"
+        },
+        {
+          "title": "Packages",
+          "text": "Locate apt-get.",
+          "command": "which apt-get"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Locate all four tools.",
+        "steps": [
+          "Check browser, language, server, and package tool."
+        ],
+        "helpExamples": [
+          "which firefox",
+          "which python3",
+          "which nginx",
+          "which apt-get"
+        ],
+        "successFeedback": "Toolbox verified.",
+        "incorrectFeedback": "A workload is missing.",
+        "retryHint": "Use which with every tool.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "which firefox"
+          },
+          {
+            "type": "command-input",
+            "input": "which python3"
+          },
+          {
+            "type": "command-input",
+            "input": "which nginx"
+          },
+          {
+            "type": "command-input",
+            "input": "which apt-get"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Prove all four workload roles are available.",
+        "steps": [
+          "Verify every role."
+        ],
+        "helpExamples": [
+          "which locates commands"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Check one tool per workload."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use Firefox, Python, NGINX, and apt-get."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run which firefox, which python3, which nginx, and which apt-get."
+          }
+        ],
+        "successFeedback": "Commander toolbox verified.",
+        "incorrectFeedback": "All roles must be checked.",
+        "retryHint": "Locate each named tool.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "which firefox"
+          },
+          {
+            "type": "command-input",
+            "input": "which python3"
+          },
+          {
+            "type": "command-input",
+            "input": "which nginx"
+          },
+          {
+            "type": "command-input",
+            "input": "which apt-get"
+          }
+        ]
+      },
+      "correctFeedback": "You mapped tools to workloads.",
+      "incorrectFeedback": "Review application roles.",
+      "fenrirTip": "Choose tools by the work they perform.",
+      "debrief": "You verified representative desktop, development, server, and package applications.",
+      "takeaway": "Desktop → Firefox. Development → Python. Server → NGINX. Packages → apt-get."
     },
     {
-      "id":"linux-lab-15","missionNumber":15,"kingdom":"Kingdom III — The Linux Ecosystem","title":"The License Gate","skill":"Distinguish copyleft and permissive obligations","goal":"Inspect license notices and locate redistribution conditions.","bigIdea":"A license grants permissions with conditions that govern redistribution.","objective":"1.3 Open Source Software and Licensing","difficulty":2,"briefing":"Review two packages before approving redistribution.",
-      "learn":[{"command":"cat LICENSE-GPL","badge":"Copyleft","explanation":"GPL carries reciprocal source obligations."},{"command":"cat LICENSE-BSD","badge":"Permissive","explanation":"BSD permits broad reuse with retained notices."},{"command":"grep source LICENSE-GPL","badge":"Evidence","explanation":"grep isolates a specific condition."}],
-      "walkthrough":[{"title":"Read GPL","text":"Display GPL notice.","command":"cat LICENSE-GPL"},{"title":"Read BSD","text":"Display BSD notice.","command":"cat LICENSE-BSD"},{"title":"Find a condition","text":"Search GPL for source.","command":"grep source LICENSE-GPL"}],
-      "guidedPractice":{"instructions":"Read both notices and find the GPL source rule.","steps":["Read both.","Search source."],"helpExamples":["cat LICENSE-GPL","cat LICENSE-BSD","grep source LICENSE-GPL"],"successFeedback":"Obligations identified.","incorrectFeedback":"Evidence is incomplete.","retryHint":"Read both and search GPL.","goals":[{"type":"command-input","input":"cat LICENSE-GPL"},{"type":"command-input","input":"cat LICENSE-BSD"},{"type":"command-input","input":"grep source LICENSE-GPL"}]},
-      "commanderChallenge":{"instructions":"Read both notices and find BSD attribution.","steps":["Read both.","Search attribution."],"helpExamples":["cat reads","grep isolates"],"hints":[{"label":"Concept Hint","text":"Compare both, then locate the requested condition."},{"label":"Recognition Hint","text":"Search LICENSE-BSD for attribution."},{"label":"Command Reveal","text":"Run cat LICENSE-GPL, cat LICENSE-BSD, and grep attribution LICENSE-BSD."}],"successFeedback":"License review complete.","incorrectFeedback":"Evidence is incomplete.","retryHint":"Read both and search BSD.","goals":[{"type":"command-input","input":"cat LICENSE-GPL"},{"type":"command-input","input":"cat LICENSE-BSD"},{"type":"command-input","input":"grep attribution LICENSE-BSD"}]},
-      "correctFeedback":"You based judgment on license evidence.","incorrectFeedback":"Review copyleft and permissive conditions.","fenrirTip":"Open source means permission with terms.","debrief":"You compared license grants and practical redistribution obligations.","takeaway":"GPL → reciprocal source terms. BSD → permissive reuse with notices."
+      "id": "linux-lab-15",
+      "missionNumber": 15,
+      "kingdom": "Kingdom III — The Linux Ecosystem",
+      "title": "The License Gate",
+      "skill": "Distinguish copyleft and permissive obligations",
+      "goal": "Inspect license notices and locate redistribution conditions.",
+      "bigIdea": "A license grants permissions with conditions that govern redistribution.",
+      "objective": "1.3 Open Source Software and Licensing",
+      "difficulty": 2,
+      "briefing": "Review two packages before approving redistribution.",
+      "learn": [
+        {
+          "command": "cat LICENSE-GPL",
+          "badge": "Copyleft",
+          "explanation": "GPL carries reciprocal source obligations."
+        },
+        {
+          "command": "cat LICENSE-BSD",
+          "badge": "Permissive",
+          "explanation": "BSD permits broad reuse with retained notices."
+        },
+        {
+          "command": "grep source LICENSE-GPL",
+          "badge": "Evidence",
+          "explanation": "grep isolates a specific condition."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Read GPL",
+          "text": "Display GPL notice.",
+          "command": "cat LICENSE-GPL"
+        },
+        {
+          "title": "Read BSD",
+          "text": "Display BSD notice.",
+          "command": "cat LICENSE-BSD"
+        },
+        {
+          "title": "Find a condition",
+          "text": "Search GPL for source.",
+          "command": "grep source LICENSE-GPL"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Read both notices and find the GPL source rule.",
+        "steps": [
+          "Read both.",
+          "Search source."
+        ],
+        "helpExamples": [
+          "cat LICENSE-GPL",
+          "cat LICENSE-BSD",
+          "grep source LICENSE-GPL"
+        ],
+        "successFeedback": "Obligations identified.",
+        "incorrectFeedback": "Evidence is incomplete.",
+        "retryHint": "Read both and search GPL.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat LICENSE-GPL"
+          },
+          {
+            "type": "command-input",
+            "input": "cat LICENSE-BSD"
+          },
+          {
+            "type": "command-input",
+            "input": "grep source LICENSE-GPL"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Read both notices and find BSD attribution.",
+        "steps": [
+          "Read both.",
+          "Search attribution."
+        ],
+        "helpExamples": [
+          "cat reads",
+          "grep isolates"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Compare both, then locate the requested condition."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Search LICENSE-BSD for attribution."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run cat LICENSE-GPL, cat LICENSE-BSD, and grep attribution LICENSE-BSD."
+          }
+        ],
+        "successFeedback": "License review complete.",
+        "incorrectFeedback": "Evidence is incomplete.",
+        "retryHint": "Read both and search BSD.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat LICENSE-GPL"
+          },
+          {
+            "type": "command-input",
+            "input": "cat LICENSE-BSD"
+          },
+          {
+            "type": "command-input",
+            "input": "grep attribution LICENSE-BSD"
+          }
+        ]
+      },
+      "correctFeedback": "You based judgment on license evidence.",
+      "incorrectFeedback": "Review copyleft and permissive conditions.",
+      "fenrirTip": "Open source means permission with terms.",
+      "debrief": "You compared license grants and practical redistribution obligations.",
+      "takeaway": "GPL → reciprocal source terms. BSD → permissive reuse with notices."
     },
     {
-      "id":"linux-lab-16","missionNumber":16,"kingdom":"Kingdom III — The Linux Ecosystem","title":"Linux at Work","skill":"Verify a secure Linux work session before handling project data","goal":"Confirm terminal, identity, shell, and workplace safeguards.","bigIdea":"Before handling work data, verify who you are, where the session runs, and which security expectations govern the task.","objective":"1.4 ICT Skills and Working in Linux","difficulty":2,"briefing":"Before opening private project data on a local, virtual, or cloud Linux host, verify the session and safeguards.",
-      "learn":[{"command":"tty","badge":"Endpoint","explanation":"tty identifies the active terminal device."},{"command":"whoami","badge":"Identity","explanation":"whoami confirms the active account."},{"command":"echo $SHELL","badge":"Shell","explanation":"$SHELL identifies the interpreter."},{"command":"cat privacy-checklist.txt","badge":"Safeguards","explanation":"The checklist connects trusted sessions, unique passwords, and private-data care."}],
-      "walkthrough":[{"title":"Verify endpoint","text":"Run tty.","command":"tty"},{"title":"Verify identity and shell","text":"Run whoami and echo $SHELL.","command":"whoami\necho $SHELL"},{"title":"Review safeguards","text":"Read the checklist.","command":"cat privacy-checklist.txt"}],
-      "guidedPractice":{"instructions":"Verify endpoint, identity, shell, and safeguards.","steps":["Check tty.","Check user.","Check shell.","Read checklist."],"helpExamples":["tty","whoami","echo $SHELL","cat privacy-checklist.txt"],"successFeedback":"Work session verified.","incorrectFeedback":"Verification is incomplete.","retryHint":"Check all four signals.","goals":[{"type":"command-input","input":"tty"},{"type":"command-input","input":"whoami"},{"type":"command-input","input":"echo $SHELL"},{"type":"command-input","input":"cat privacy-checklist.txt"}]},
-      "commanderChallenge":{"instructions":"Verify the work session and locate the unique-password safeguard before accepting private data.","steps":["Verify endpoint, user, shell, checklist, and password rule."],"helpExamples":["technical evidence first","grep isolates a rule"],"hints":[{"label":"Concept Hint","text":"Verify the technical session, then the human safeguard."},{"label":"Recognition Hint","text":"Check tty, identity, shell, checklist, and unique password."},{"label":"Command Reveal","text":"Run tty, whoami, echo $SHELL, cat privacy-checklist.txt, and grep \"unique password\" privacy-checklist.txt."}],"successFeedback":"Commander work session verified.","incorrectFeedback":"Technical and password evidence are required.","retryHint":"Verify session and locate the password rule.","goals":[{"type":"command-input","input":"tty"},{"type":"command-input","input":"whoami"},{"type":"command-input","input":"echo $SHELL"},{"type":"command-input","input":"cat privacy-checklist.txt"},{"type":"command-input","input":"grep \"unique password\" privacy-checklist.txt"}]},
-      "correctFeedback":"You treated workplace security as one verified pre-work decision.","incorrectFeedback":"Review session and safeguard evidence.","fenrirTip":"Verify the den, the identity at the door, and the rules inside.","debrief":"You verified a cohesive Linux work session before handling data; the habit applies to terminals on local systems, VMs, and cloud hosts.","takeaway":"Endpoint → tty. Identity → whoami. Shell → $SHELL. Safeguards → checklist."
+      "id": "linux-lab-16",
+      "missionNumber": 16,
+      "kingdom": "Kingdom III — The Linux Ecosystem",
+      "title": "Linux at Work",
+      "skill": "Verify a secure Linux work session before handling project data",
+      "goal": "Confirm terminal, identity, shell, and workplace safeguards.",
+      "bigIdea": "Before handling work data, verify who you are, where the session runs, and which security expectations govern the task.",
+      "objective": "1.4 ICT Skills and Working in Linux",
+      "difficulty": 2,
+      "briefing": "Before opening private project data on a local, virtual, or cloud Linux host, verify the session and safeguards.",
+      "learn": [
+        {
+          "command": "tty",
+          "badge": "Endpoint",
+          "explanation": "tty identifies the active terminal device."
+        },
+        {
+          "command": "whoami",
+          "badge": "Identity",
+          "explanation": "whoami confirms the active account."
+        },
+        {
+          "command": "echo $SHELL",
+          "badge": "Shell",
+          "explanation": "$SHELL identifies the interpreter."
+        },
+        {
+          "command": "cat privacy-checklist.txt",
+          "badge": "Safeguards",
+          "explanation": "The checklist connects trusted sessions, unique passwords, and private-data care."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Verify endpoint",
+          "text": "Run tty.",
+          "command": "tty"
+        },
+        {
+          "title": "Verify identity and shell",
+          "text": "Run whoami and echo $SHELL.",
+          "command": "whoami\necho $SHELL"
+        },
+        {
+          "title": "Review safeguards",
+          "text": "Read the checklist.",
+          "command": "cat privacy-checklist.txt"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Verify endpoint, identity, shell, and safeguards.",
+        "steps": [
+          "Check tty.",
+          "Check user.",
+          "Check shell.",
+          "Read checklist."
+        ],
+        "helpExamples": [
+          "tty",
+          "whoami",
+          "echo $SHELL",
+          "cat privacy-checklist.txt"
+        ],
+        "successFeedback": "Work session verified.",
+        "incorrectFeedback": "Verification is incomplete.",
+        "retryHint": "Check all four signals.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "tty"
+          },
+          {
+            "type": "command-input",
+            "input": "whoami"
+          },
+          {
+            "type": "command-input",
+            "input": "echo $SHELL"
+          },
+          {
+            "type": "command-input",
+            "input": "cat privacy-checklist.txt"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Verify the work session and locate the unique-password safeguard before accepting private data.",
+        "steps": [
+          "Verify endpoint, user, shell, checklist, and password rule."
+        ],
+        "helpExamples": [
+          "technical evidence first",
+          "grep isolates a rule"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Verify the technical session, then the human safeguard."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Check tty, identity, shell, checklist, and unique password."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run tty, whoami, echo $SHELL, cat privacy-checklist.txt, and grep \"unique password\" privacy-checklist.txt."
+          }
+        ],
+        "successFeedback": "Commander work session verified.",
+        "incorrectFeedback": "Technical and password evidence are required.",
+        "retryHint": "Verify session and locate the password rule.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "tty"
+          },
+          {
+            "type": "command-input",
+            "input": "whoami"
+          },
+          {
+            "type": "command-input",
+            "input": "echo $SHELL"
+          },
+          {
+            "type": "command-input",
+            "input": "cat privacy-checklist.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "grep \"unique password\" privacy-checklist.txt"
+          }
+        ]
+      },
+      "correctFeedback": "You treated workplace security as one verified pre-work decision.",
+      "incorrectFeedback": "Review session and safeguard evidence.",
+      "fenrirTip": "Verify the den, the identity at the door, and the rules inside.",
+      "debrief": "You verified a cohesive Linux work session before handling data; the habit applies to terminals on local systems, VMs, and cloud hosts.",
+      "takeaway": "Endpoint → tty. Identity → whoami. Shell → $SHELL. Safeguards → checklist."
     },
     {
-      "id":"linux-lab-17","missionNumber":17,"kingdom":"Kingdom IV — System Awareness","title":"Choose the Right System","skill":"Match an operating-system release style to workload requirements","goal":"Use written requirements and system identity evidence to choose a stable server platform.","bigIdea":"The best operating system is the one whose interface, support cycle, and release model fit the workload.","objective":"4.1 Choosing an Operating System","difficulty":2,"briefing":"Choose a platform for an Academy server by comparing requirements with system evidence.",
-      "learn":[{"command":"cat server-requirements.txt","badge":"Workload","explanation":"Requirements define stability, support, and administration needs."},{"command":"cat desktop-requirements.txt","badge":"Contrast","explanation":"Desktop priorities may favor a GUI and faster feature changes."},{"command":"cat /etc/os-release","badge":"Candidate evidence","explanation":"os-release identifies the candidate platform."}],
-      "walkthrough":[{"title":"Read server needs","text":"Inspect server requirements.","command":"cat server-requirements.txt"},{"title":"Contrast desktop needs","text":"Inspect desktop requirements.","command":"cat desktop-requirements.txt"},{"title":"Identify candidate","text":"Read os-release.","command":"cat /etc/os-release"}],
-      "guidedPractice":{"instructions":"Read both requirement sets and identify the candidate system.","steps":["Read server.","Read desktop.","Read os-release."],"helpExamples":["cat server-requirements.txt","cat desktop-requirements.txt","cat /etc/os-release"],"successFeedback":"Platform evidence reviewed.","incorrectFeedback":"Comparison is incomplete.","retryHint":"Read all three files.","goals":[{"type":"command-input","input":"cat server-requirements.txt"},{"type":"command-input","input":"cat desktop-requirements.txt"},{"type":"command-input","input":"cat /etc/os-release"}]},
-      "commanderChallenge":{"instructions":"Verify the candidate fits a stable command-line server workload.","steps":["Review server needs, candidate identity, and kernel."],"helpExamples":["requirements first","system evidence second"],"hints":[{"label":"Concept Hint","text":"Compare workload needs to platform evidence."},{"label":"Recognition Hint","text":"Read server requirements and os-release, then confirm Linux."},{"label":"Command Reveal","text":"Run cat server-requirements.txt, cat /etc/os-release, and uname."}],"successFeedback":"Commander platform choice supported.","incorrectFeedback":"The choice lacks complete evidence.","retryHint":"Review requirements and system identity.","goals":[{"type":"command-input","input":"cat server-requirements.txt"},{"type":"command-input","input":"cat /etc/os-release"},{"type":"command-input","input":"uname"}]},
-      "correctFeedback":"You chose by workload fit rather than preference.","incorrectFeedback":"Review interface and lifecycle needs.","fenrirTip":"A good platform serves the mission longer than the novelty of its features.","debrief":"You compared workload requirements, release priorities, and Linux identity evidence.","takeaway":"Workload needs → requirements. Platform lifecycle → release model. Candidate → os-release."
+      "id": "linux-lab-17",
+      "missionNumber": 17,
+      "kingdom": "Kingdom IV — System Awareness",
+      "title": "Choose the Right System",
+      "skill": "Match an operating-system release style to workload requirements",
+      "goal": "Use written requirements and system identity evidence to choose a stable server platform.",
+      "bigIdea": "The best operating system is the one whose interface, support cycle, and release model fit the workload.",
+      "objective": "4.1 Choosing an Operating System",
+      "difficulty": 2,
+      "briefing": "Choose a platform for an Academy server by comparing requirements with system evidence.",
+      "learn": [
+        {
+          "command": "cat server-requirements.txt",
+          "badge": "Workload",
+          "explanation": "Requirements define stability, support, and administration needs."
+        },
+        {
+          "command": "cat desktop-requirements.txt",
+          "badge": "Contrast",
+          "explanation": "Desktop priorities may favor a GUI and faster feature changes."
+        },
+        {
+          "command": "cat /etc/os-release",
+          "badge": "Candidate evidence",
+          "explanation": "os-release identifies the candidate platform."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Read server needs",
+          "text": "Inspect server requirements.",
+          "command": "cat server-requirements.txt"
+        },
+        {
+          "title": "Contrast desktop needs",
+          "text": "Inspect desktop requirements.",
+          "command": "cat desktop-requirements.txt"
+        },
+        {
+          "title": "Identify candidate",
+          "text": "Read os-release.",
+          "command": "cat /etc/os-release"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Read both requirement sets and identify the candidate system.",
+        "steps": [
+          "Read server.",
+          "Read desktop.",
+          "Read os-release."
+        ],
+        "helpExamples": [
+          "cat server-requirements.txt",
+          "cat desktop-requirements.txt",
+          "cat /etc/os-release"
+        ],
+        "successFeedback": "Platform evidence reviewed.",
+        "incorrectFeedback": "Comparison is incomplete.",
+        "retryHint": "Read all three files.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat server-requirements.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "cat desktop-requirements.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "cat /etc/os-release"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Verify the candidate fits a stable command-line server workload.",
+        "steps": [
+          "Review server needs, candidate identity, and kernel."
+        ],
+        "helpExamples": [
+          "requirements first",
+          "system evidence second"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Compare workload needs to platform evidence."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Read server requirements and os-release, then confirm Linux."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run cat server-requirements.txt, cat /etc/os-release, and uname."
+          }
+        ],
+        "successFeedback": "Commander platform choice supported.",
+        "incorrectFeedback": "The choice lacks complete evidence.",
+        "retryHint": "Review requirements and system identity.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat server-requirements.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "cat /etc/os-release"
+          },
+          {
+            "type": "command-input",
+            "input": "uname"
+          }
+        ]
+      },
+      "correctFeedback": "You chose by workload fit rather than preference.",
+      "incorrectFeedback": "Review interface and lifecycle needs.",
+      "fenrirTip": "A good platform serves the mission longer than the novelty of its features.",
+      "debrief": "You compared workload requirements, release priorities, and Linux identity evidence.",
+      "takeaway": "Workload needs → requirements. Platform lifecycle → release model. Candidate → os-release."
     },
     {
-      "id":"linux-lab-18","missionNumber":18,"kingdom":"Kingdom IV — System Awareness","title":"Inspect the Machine","skill":"Inspect CPU, memory, and storage-device evidence","goal":"Verify that required hardware resources are visible to Linux.","bigIdea":"Linux exposes hardware through system files, device entries, and resource-reporting commands.","objective":"4.2 Understanding Computer Hardware","difficulty":2,"briefing":"Confirm the virtual training host can see its processor, memory, and primary disk.",
-      "learn":[{"command":"cat /proc/cpuinfo","badge":"CPU","explanation":"cpuinfo exposes processor information."},{"command":"free","badge":"Memory","explanation":"free summarizes memory capacity and availability."},{"command":"ls /dev/sda","badge":"Storage device","explanation":"Block devices appear beneath /dev."}],
-      "walkthrough":[{"title":"Inspect CPU","text":"Read cpuinfo.","command":"cat /proc/cpuinfo"},{"title":"Inspect memory","text":"Run free.","command":"free"},{"title":"Inspect disk","text":"List /dev/sda.","command":"ls /dev/sda"}],
-      "guidedPractice":{"instructions":"Verify CPU, memory, and disk.","steps":["Check CPU.","Check memory.","Check disk."],"helpExamples":["cat /proc/cpuinfo","free","ls /dev/sda"],"successFeedback":"Hardware verified.","incorrectFeedback":"A hardware check is missing.","retryHint":"Inspect all three resources.","goals":[{"type":"command-input","input":"cat /proc/cpuinfo"},{"type":"command-input","input":"free"},{"type":"command-input","input":"ls /dev/sda"}]},
-      "commanderChallenge":{"instructions":"Prove processor, available memory, and storage visibility.","steps":["Collect all three signals."],"helpExamples":["/proc reports","free summarizes","/dev exposes devices"],"hints":[{"label":"Concept Hint","text":"Use one source per hardware class."},{"label":"Recognition Hint","text":"CPU is in /proc, memory uses free, disk is /dev/sda."},{"label":"Command Reveal","text":"Run cat /proc/cpuinfo, free, and ls /dev/sda."}],"successFeedback":"Commander hardware inspection complete.","incorrectFeedback":"All hardware evidence is required.","retryHint":"Check CPU, memory, and disk.","goals":[{"type":"command-input","input":"cat /proc/cpuinfo"},{"type":"command-input","input":"free"},{"type":"command-input","input":"ls /dev/sda"}]},
-      "correctFeedback":"You verified hardware through Linux interfaces.","incorrectFeedback":"Review /proc, memory tools, and /dev.","fenrirTip":"Ask the operating system what it can see before blaming the hardware.","debrief":"You inspected processor, memory, and storage-device evidence.","takeaway":"CPU → /proc/cpuinfo. Memory → free. Devices → /dev."
+      "id": "linux-lab-18",
+      "missionNumber": 18,
+      "kingdom": "Kingdom IV — System Awareness",
+      "title": "Inspect the Machine",
+      "skill": "Inspect CPU, memory, and storage-device evidence",
+      "goal": "Verify that required hardware resources are visible to Linux.",
+      "bigIdea": "Linux exposes hardware through system files, device entries, and resource-reporting commands.",
+      "objective": "4.2 Understanding Computer Hardware",
+      "difficulty": 2,
+      "briefing": "Confirm the virtual training host can see its processor, memory, and primary disk.",
+      "learn": [
+        {
+          "command": "cat /proc/cpuinfo",
+          "badge": "CPU",
+          "explanation": "cpuinfo exposes processor information."
+        },
+        {
+          "command": "free",
+          "badge": "Memory",
+          "explanation": "free summarizes memory capacity and availability."
+        },
+        {
+          "command": "ls /dev/sda",
+          "badge": "Storage device",
+          "explanation": "Block devices appear beneath /dev."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Inspect CPU",
+          "text": "Read cpuinfo.",
+          "command": "cat /proc/cpuinfo"
+        },
+        {
+          "title": "Inspect memory",
+          "text": "Run free.",
+          "command": "free"
+        },
+        {
+          "title": "Inspect disk",
+          "text": "List /dev/sda.",
+          "command": "ls /dev/sda"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Verify CPU, memory, and disk.",
+        "steps": [
+          "Check CPU.",
+          "Check memory.",
+          "Check disk."
+        ],
+        "helpExamples": [
+          "cat /proc/cpuinfo",
+          "free",
+          "ls /dev/sda"
+        ],
+        "successFeedback": "Hardware verified.",
+        "incorrectFeedback": "A hardware check is missing.",
+        "retryHint": "Inspect all three resources.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat /proc/cpuinfo"
+          },
+          {
+            "type": "command-input",
+            "input": "free"
+          },
+          {
+            "type": "command-input",
+            "input": "ls /dev/sda"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Prove processor, available memory, and storage visibility.",
+        "steps": [
+          "Collect all three signals."
+        ],
+        "helpExamples": [
+          "/proc reports",
+          "free summarizes",
+          "/dev exposes devices"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Use one source per hardware class."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "CPU is in /proc, memory uses free, disk is /dev/sda."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run cat /proc/cpuinfo, free, and ls /dev/sda."
+          }
+        ],
+        "successFeedback": "Commander hardware inspection complete.",
+        "incorrectFeedback": "All hardware evidence is required.",
+        "retryHint": "Check CPU, memory, and disk.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "cat /proc/cpuinfo"
+          },
+          {
+            "type": "command-input",
+            "input": "free"
+          },
+          {
+            "type": "command-input",
+            "input": "ls /dev/sda"
+          }
+        ]
+      },
+      "correctFeedback": "You verified hardware through Linux interfaces.",
+      "incorrectFeedback": "Review /proc, memory tools, and /dev.",
+      "fenrirTip": "Ask the operating system what it can see before blaming the hardware.",
+      "debrief": "You inspected processor, memory, and storage-device evidence.",
+      "takeaway": "CPU → /proc/cpuinfo. Memory → free. Devices → /dev."
     },
     {
-      "id":"linux-lab-19","missionNumber":19,"kingdom":"Kingdom IV — System Awareness","title":"Follow the Data","skill":"Inspect processes, memory, kernel messages, and logs","goal":"Build a concise system-health picture from the correct data sources.","bigIdea":"Linux separates live process state, resource state, kernel messages, and persistent logs into distinct evidence sources.","objective":"4.3 Where Data is Stored","difficulty":3,"briefing":"A host reports trouble. Inspect live state and stored messages before deciding what happened.",
-      "learn":[{"command":"ps","badge":"Processes","explanation":"ps lists a process snapshot."},{"command":"top","badge":"Live activity","explanation":"top summarizes active processes and resources."},{"command":"dmesg","badge":"Kernel messages","explanation":"dmesg displays kernel messages."},{"command":"cat /var/log/hydra.log","badge":"Persistent log","explanation":"System logs commonly live under /var/log."}],
-      "walkthrough":[{"title":"Inspect processes","text":"Run ps and top.","command":"ps\ntop"},{"title":"Inspect memory","text":"Run free.","command":"free"},{"title":"Inspect messages","text":"Run dmesg and read the log.","command":"dmesg\ncat /var/log/hydra.log"}],
-      "guidedPractice":{"instructions":"Inspect ps, top, free, dmesg, and the Hydra log.","steps":["Check processes.","Check resources.","Check messages and log."],"helpExamples":["ps","top","free","dmesg","cat /var/log/hydra.log"],"successFeedback":"System evidence assembled.","incorrectFeedback":"Evidence is incomplete.","retryHint":"Use all five checks.","goals":[{"type":"command-input","input":"ps"},{"type":"command-input","input":"top"},{"type":"command-input","input":"free"},{"type":"command-input","input":"dmesg"},{"type":"command-input","input":"cat /var/log/hydra.log"}]},
-      "commanderChallenge":{"instructions":"Collect live process, memory, kernel, and persistent-log evidence.","steps":["Collect all evidence classes."],"helpExamples":["ps/top live","free memory","dmesg kernel","/var/log persistent"],"hints":[{"label":"Concept Hint","text":"Use a different source for each evidence class."},{"label":"Recognition Hint","text":"Run ps, top, free, dmesg, and read the Hydra log."},{"label":"Command Reveal","text":"Run ps, top, free, dmesg, and cat /var/log/hydra.log."}],"successFeedback":"Commander diagnosis evidence complete.","incorrectFeedback":"Every evidence class is required.","retryHint":"Check live and stored sources.","goals":[{"type":"command-input","input":"ps"},{"type":"command-input","input":"top"},{"type":"command-input","input":"free"},{"type":"command-input","input":"dmesg"},{"type":"command-input","input":"cat /var/log/hydra.log"}]},
-      "correctFeedback":"You separated live state from stored messages.","incorrectFeedback":"Review where each data type lives.","fenrirTip":"The freshest track and the oldest record answer different questions.","debrief":"You inspected process tables, memory, kernel messages, and logs.","takeaway":"Processes → ps/top. Memory → free. Kernel → dmesg. Logs → /var/log."
+      "id": "linux-lab-19",
+      "missionNumber": 19,
+      "kingdom": "Kingdom IV — System Awareness",
+      "title": "Follow the Data",
+      "skill": "Inspect processes, memory, kernel messages, and logs",
+      "goal": "Build a concise system-health picture from the correct data sources.",
+      "bigIdea": "Linux separates live process state, resource state, kernel messages, and persistent logs into distinct evidence sources.",
+      "objective": "4.3 Where Data is Stored",
+      "difficulty": 3,
+      "briefing": "A host reports trouble. Inspect live state and stored messages before deciding what happened.",
+      "learn": [
+        {
+          "command": "ps",
+          "badge": "Processes",
+          "explanation": "ps lists a process snapshot."
+        },
+        {
+          "command": "top",
+          "badge": "Live activity",
+          "explanation": "top summarizes active processes and resources."
+        },
+        {
+          "command": "dmesg",
+          "badge": "Kernel messages",
+          "explanation": "dmesg displays kernel messages."
+        },
+        {
+          "command": "cat /var/log/hydra.log",
+          "badge": "Persistent log",
+          "explanation": "System logs commonly live under /var/log."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Inspect processes",
+          "text": "Run ps and top.",
+          "command": "ps\ntop"
+        },
+        {
+          "title": "Inspect memory",
+          "text": "Run free.",
+          "command": "free"
+        },
+        {
+          "title": "Inspect messages",
+          "text": "Run dmesg and read the log.",
+          "command": "dmesg\ncat /var/log/hydra.log"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Inspect ps, top, free, dmesg, and the Hydra log.",
+        "steps": [
+          "Check processes.",
+          "Check resources.",
+          "Check messages and log."
+        ],
+        "helpExamples": [
+          "ps",
+          "top",
+          "free",
+          "dmesg",
+          "cat /var/log/hydra.log"
+        ],
+        "successFeedback": "System evidence assembled.",
+        "incorrectFeedback": "Evidence is incomplete.",
+        "retryHint": "Use all five checks.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "ps"
+          },
+          {
+            "type": "command-input",
+            "input": "top"
+          },
+          {
+            "type": "command-input",
+            "input": "free"
+          },
+          {
+            "type": "command-input",
+            "input": "dmesg"
+          },
+          {
+            "type": "command-input",
+            "input": "cat /var/log/hydra.log"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Collect live process, memory, kernel, and persistent-log evidence.",
+        "steps": [
+          "Collect all evidence classes."
+        ],
+        "helpExamples": [
+          "ps/top live",
+          "free memory",
+          "dmesg kernel",
+          "/var/log persistent"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Use a different source for each evidence class."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Run ps, top, free, dmesg, and read the Hydra log."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run ps, top, free, dmesg, and cat /var/log/hydra.log."
+          }
+        ],
+        "successFeedback": "Commander diagnosis evidence complete.",
+        "incorrectFeedback": "Every evidence class is required.",
+        "retryHint": "Check live and stored sources.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "ps"
+          },
+          {
+            "type": "command-input",
+            "input": "top"
+          },
+          {
+            "type": "command-input",
+            "input": "free"
+          },
+          {
+            "type": "command-input",
+            "input": "dmesg"
+          },
+          {
+            "type": "command-input",
+            "input": "cat /var/log/hydra.log"
+          }
+        ]
+      },
+      "correctFeedback": "You separated live state from stored messages.",
+      "incorrectFeedback": "Review where each data type lives.",
+      "fenrirTip": "The freshest track and the oldest record answer different questions.",
+      "debrief": "You inspected process tables, memory, kernel messages, and logs.",
+      "takeaway": "Processes → ps/top. Memory → free. Kernel → dmesg. Logs → /var/log."
     },
     {
-      "id":"linux-lab-20","missionNumber":20,"kingdom":"Kingdom IV — System Awareness","title":"Check the Network","skill":"Verify address, route, name resolution, and reachability","goal":"Test the four basic requirements of a functioning network connection.","bigIdea":"Network diagnosis becomes manageable when address, route, DNS, and reachability are checked separately.","objective":"4.4 Your Computer on the Network","difficulty":3,"briefing":"The Academy host may be connected but unable to reach a named service. Test each network layer in order.",
-      "learn":[{"command":"ip addr","badge":"Address","explanation":"ip addr shows interface addresses."},{"command":"ip route","badge":"Route","explanation":"ip route shows the default gateway path."},{"command":"host academy.local","badge":"DNS","explanation":"host resolves a name to an address."},{"command":"ping 192.0.2.1","badge":"Reachability","explanation":"ping tests whether a destination responds."}],
-      "walkthrough":[{"title":"Check address","text":"Run ip addr.","command":"ip addr"},{"title":"Check route","text":"Run ip route.","command":"ip route"},{"title":"Check DNS and reachability","text":"Resolve and ping.","command":"host academy.local\nping 192.0.2.1"}],
-      "guidedPractice":{"instructions":"Verify address, route, DNS, and reachability.","steps":["Check address.","Check route.","Resolve name.","Ping gateway."],"helpExamples":["ip addr","ip route","host academy.local","ping 192.0.2.1"],"successFeedback":"Network path verified.","incorrectFeedback":"A network layer is unchecked.","retryHint":"Test all four layers.","goals":[{"type":"command-input","input":"ip addr"},{"type":"command-input","input":"ip route"},{"type":"command-input","input":"host academy.local"},{"type":"command-input","input":"ping 192.0.2.1"}]},
-      "commanderChallenge":{"instructions":"Verify the host can identify itself, find a route, resolve server.local, and reach the gateway.","steps":["Test all four layers."],"helpExamples":["address","route","DNS","reachability"],"hints":[{"label":"Concept Hint","text":"Check local configuration before external reachability."},{"label":"Recognition Hint","text":"Use ip addr, ip route, host, and ping."},{"label":"Command Reveal","text":"Run ip addr, ip route, host server.local, and ping 192.0.2.1."}],"successFeedback":"Commander network verification complete.","incorrectFeedback":"All four network checks are required.","retryHint":"Check address, route, name, and ping.","goals":[{"type":"command-input","input":"ip addr"},{"type":"command-input","input":"ip route"},{"type":"command-input","input":"host server.local"},{"type":"command-input","input":"ping 192.0.2.1"}]},
-      "correctFeedback":"You diagnosed the network by layer.","incorrectFeedback":"Review address, route, DNS, and reachability.","fenrirTip":"Start at your paws, then follow the path outward.","debrief":"You separated local addressing, routing, name resolution, and reachability.","takeaway":"Address → ip addr. Route → ip route. DNS → host. Reachability → ping."
+      "id": "linux-lab-20",
+      "missionNumber": 20,
+      "kingdom": "Kingdom IV — System Awareness",
+      "title": "Check the Network",
+      "skill": "Verify address, route, name resolution, and reachability",
+      "goal": "Test the four basic requirements of a functioning network connection.",
+      "bigIdea": "Network diagnosis becomes manageable when address, route, DNS, and reachability are checked separately.",
+      "objective": "4.4 Your Computer on the Network",
+      "difficulty": 3,
+      "briefing": "The Academy host may be connected but unable to reach a named service. Test each network layer in order.",
+      "learn": [
+        {
+          "command": "ip addr",
+          "badge": "Address",
+          "explanation": "ip addr shows interface addresses."
+        },
+        {
+          "command": "ip route",
+          "badge": "Route",
+          "explanation": "ip route shows the default gateway path."
+        },
+        {
+          "command": "host academy.local",
+          "badge": "DNS",
+          "explanation": "host resolves a name to an address."
+        },
+        {
+          "command": "ping 192.0.2.1",
+          "badge": "Reachability",
+          "explanation": "ping tests whether a destination responds."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Check address",
+          "text": "Run ip addr.",
+          "command": "ip addr"
+        },
+        {
+          "title": "Check route",
+          "text": "Run ip route.",
+          "command": "ip route"
+        },
+        {
+          "title": "Check DNS and reachability",
+          "text": "Resolve and ping.",
+          "command": "host academy.local\nping 192.0.2.1"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Verify address, route, DNS, and reachability.",
+        "steps": [
+          "Check address.",
+          "Check route.",
+          "Resolve name.",
+          "Ping gateway."
+        ],
+        "helpExamples": [
+          "ip addr",
+          "ip route",
+          "host academy.local",
+          "ping 192.0.2.1"
+        ],
+        "successFeedback": "Network path verified.",
+        "incorrectFeedback": "A network layer is unchecked.",
+        "retryHint": "Test all four layers.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "ip addr"
+          },
+          {
+            "type": "command-input",
+            "input": "ip route"
+          },
+          {
+            "type": "command-input",
+            "input": "host academy.local"
+          },
+          {
+            "type": "command-input",
+            "input": "ping 192.0.2.1"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Verify the host can identify itself, find a route, resolve server.local, and reach the gateway.",
+        "steps": [
+          "Test all four layers."
+        ],
+        "helpExamples": [
+          "address",
+          "route",
+          "DNS",
+          "reachability"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Check local configuration before external reachability."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use ip addr, ip route, host, and ping."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run ip addr, ip route, host server.local, and ping 192.0.2.1."
+          }
+        ],
+        "successFeedback": "Commander network verification complete.",
+        "incorrectFeedback": "All four network checks are required.",
+        "retryHint": "Check address, route, name, and ping.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "ip addr"
+          },
+          {
+            "type": "command-input",
+            "input": "ip route"
+          },
+          {
+            "type": "command-input",
+            "input": "host server.local"
+          },
+          {
+            "type": "command-input",
+            "input": "ping 192.0.2.1"
+          }
+        ]
+      },
+      "correctFeedback": "You diagnosed the network by layer.",
+      "incorrectFeedback": "Review address, route, DNS, and reachability.",
+      "fenrirTip": "Start at your paws, then follow the path outward.",
+      "debrief": "You separated local addressing, routing, name resolution, and reachability.",
+      "takeaway": "Address → ip addr. Route → ip route. DNS → host. Reachability → ping."
     },
     {
-      "id":"linux-lab-21","missionNumber":21,"kingdom":"Kingdom V — Users and Security","title":"Who Am I?","skill":"Inspect user identity and active sessions","goal":"Verify the current account, group memberships, and signed-in users.","bigIdea":"Linux security decisions begin with knowing which identity and session are active.","objective":"5.1 Basic Security and Identifying User Types","difficulty":2,"briefing":"Confirm who is operating the Academy terminal and which sessions are active before granting access.",
-      "learn":[{"command":"whoami","badge":"Current user","explanation":"whoami prints the effective account name."},{"command":"id","badge":"Identity details","explanation":"id reports user, primary group, and supplementary groups."},{"command":"who","badge":"Sessions","explanation":"who lists signed-in users and their terminals."},{"command":"last","badge":"Login history","explanation":"last shows recent login records."}],
-      "walkthrough":[{"title":"Confirm identity","text":"Print the current account.","command":"whoami"},{"title":"Inspect groups","text":"Display identity details.","command":"id"},{"title":"Review sessions","text":"Check current and recent logins.","command":"who\nlast"}],
-      "guidedPractice":{"instructions":"Verify your account, groups, current sessions, and login history.","steps":["Run whoami.","Run id.","Run who.","Run last."],"helpExamples":["whoami","id","who","last"],"successFeedback":"Identity and sessions verified.","incorrectFeedback":"One or more identity checks are missing.","retryHint":"Use all four identity and session commands.","goals":[{"type":"command-input","input":"whoami"},{"type":"command-input","input":"id"},{"type":"command-input","input":"who"},{"type":"command-input","input":"last"}]},
-      "commanderChallenge":{"instructions":"Independently confirm the operator, memberships, active workload, and login history.","steps":["Collect all four identity signals."],"helpExamples":["identity","groups","active session","history"],"hints":[{"label":"Concept Hint","text":"Separate account identity from session activity."},{"label":"Recognition Hint","text":"Check the current name, numeric identity, active workload, and prior logins."},{"label":"Command Reveal","text":"Run whoami, id, w, and last."}],"successFeedback":"Commander identity review complete.","incorrectFeedback":"All four signals are required.","retryHint":"Check identity, memberships, activity, and history.","goals":[{"type":"command-input","input":"whoami"},{"type":"command-input","input":"id"},{"type":"command-input","input":"w"},{"type":"command-input","input":"last"}]},
-      "correctFeedback":"You verified the identity behind the session.","incorrectFeedback":"Review user and session evidence.","fenrirTip":"Before opening a gate, know whose paw is on the latch.","debrief":"You distinguished effective identity, group membership, current sessions, and login history.","takeaway":"Name → whoami. Memberships → id. Sessions → who/w. History → last."
+      "id": "linux-lab-21",
+      "missionNumber": 21,
+      "kingdom": "Kingdom V — Users and Security",
+      "title": "Who Am I?",
+      "skill": "Inspect user identity and active sessions",
+      "goal": "Verify the current account, group memberships, and signed-in users.",
+      "bigIdea": "Linux security decisions begin with knowing which identity and session are active.",
+      "objective": "5.1 Basic Security and Identifying User Types",
+      "difficulty": 2,
+      "briefing": "Confirm who is operating the Academy terminal and which sessions are active before granting access.",
+      "learn": [
+        {
+          "command": "whoami",
+          "badge": "Current user",
+          "explanation": "whoami prints the effective account name."
+        },
+        {
+          "command": "id",
+          "badge": "Identity details",
+          "explanation": "id reports user, primary group, and supplementary groups."
+        },
+        {
+          "command": "who",
+          "badge": "Sessions",
+          "explanation": "who lists signed-in users and their terminals."
+        },
+        {
+          "command": "last",
+          "badge": "Login history",
+          "explanation": "last shows recent login records."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Confirm identity",
+          "text": "Print the current account.",
+          "command": "whoami"
+        },
+        {
+          "title": "Inspect groups",
+          "text": "Display identity details.",
+          "command": "id"
+        },
+        {
+          "title": "Review sessions",
+          "text": "Check current and recent logins.",
+          "command": "who\nlast"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Verify your account, groups, current sessions, and login history.",
+        "steps": [
+          "Run whoami.",
+          "Run id.",
+          "Run who.",
+          "Run last."
+        ],
+        "helpExamples": [
+          "whoami",
+          "id",
+          "who",
+          "last"
+        ],
+        "successFeedback": "Identity and sessions verified.",
+        "incorrectFeedback": "One or more identity checks are missing.",
+        "retryHint": "Use all four identity and session commands.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "whoami"
+          },
+          {
+            "type": "command-input",
+            "input": "id"
+          },
+          {
+            "type": "command-input",
+            "input": "who"
+          },
+          {
+            "type": "command-input",
+            "input": "last"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Independently confirm the operator, memberships, active workload, and login history.",
+        "steps": [
+          "Collect all four identity signals."
+        ],
+        "helpExamples": [
+          "identity",
+          "groups",
+          "active session",
+          "history"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Separate account identity from session activity."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Check the current name, numeric identity, active workload, and prior logins."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run whoami, id, w, and last."
+          }
+        ],
+        "successFeedback": "Commander identity review complete.",
+        "incorrectFeedback": "All four signals are required.",
+        "retryHint": "Check identity, memberships, activity, and history.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "whoami"
+          },
+          {
+            "type": "command-input",
+            "input": "id"
+          },
+          {
+            "type": "command-input",
+            "input": "w"
+          },
+          {
+            "type": "command-input",
+            "input": "last"
+          }
+        ]
+      },
+      "correctFeedback": "You verified the identity behind the session.",
+      "incorrectFeedback": "Review user and session evidence.",
+      "fenrirTip": "Before opening a gate, know whose paw is on the latch.",
+      "debrief": "You distinguished effective identity, group membership, current sessions, and login history.",
+      "takeaway": "Name → whoami. Memberships → id. Sessions → who/w. History → last."
     },
     {
-      "id":"linux-lab-22","missionNumber":22,"kingdom":"Kingdom V — Users and Security","title":"Build the Team","skill":"Create users and assign group membership","goal":"Create a role group, add a user to it, and verify the resulting identity.","bigIdea":"Groups make access manageable by assigning permissions to roles instead of individuals.","objective":"5.2 Creating Users and Groups","difficulty":3,"briefing":"Prepare a new Academy recruit with a home directory, password, and role membership.",
-      "learn":[{"command":"groupadd trainees","badge":"Role","explanation":"groupadd creates a group for a shared role."},{"command":"useradd -m -G trainees scout","badge":"Account","explanation":"-m creates a home; -G adds supplementary group membership."},{"command":"passwd scout","badge":"Credential","explanation":"passwd establishes the account credential."},{"command":"id scout","badge":"Verify","explanation":"id confirms the new user's groups."}],
-      "walkthrough":[{"title":"Create role","text":"Create the trainees group.","command":"groupadd trainees"},{"title":"Create account","text":"Add scout with a home and role.","command":"useradd -m -G trainees scout"},{"title":"Secure and verify","text":"Set a password and inspect identity.","command":"passwd scout\nid scout"}],
-      "guidedPractice":{"instructions":"Create the trainees role and scout account, secure it, then verify membership.","steps":["Create group.","Create user with home and group.","Set password.","Verify user."],"helpExamples":["groupadd trainees","useradd -m -G trainees scout","passwd scout","id scout"],"successFeedback":"Recruit account prepared.","incorrectFeedback":"The account workflow is incomplete.","retryHint":"Create role, account, credential, then verify.","goals":[{"type":"command-input","input":"groupadd trainees"},{"type":"command-input","input":"useradd -m -G trainees scout"},{"type":"command-input","input":"passwd scout"},{"type":"command-input","input":"id scout"}]},
-      "commanderChallenge":{"instructions":"Create the analysts group and ranger account with a home, password, and verified membership.","steps":["Create role, account, credential, and verify."],"helpExamples":["groupadd ROLE","useradd -m -G ROLE USER","passwd USER","id USER"],"hints":[{"label":"Concept Hint","text":"Build the role before assigning an account to it."},{"label":"Recognition Hint","text":"The role is analysts and the user is ranger."},{"label":"Command Reveal","text":"Run groupadd analysts, useradd -m -G analysts ranger, passwd ranger, and id ranger."}],"successFeedback":"Commander team account prepared.","incorrectFeedback":"Every account-management step is required.","retryHint":"Create, assign, secure, and verify.","goals":[{"type":"command-input","input":"groupadd analysts"},{"type":"command-input","input":"useradd -m -G analysts ranger"},{"type":"command-input","input":"passwd ranger"},{"type":"command-input","input":"id ranger"}]},
-      "correctFeedback":"You created access around a role.","incorrectFeedback":"Review the user lifecycle.","fenrirTip":"Build the pack by role; individual exceptions become tangled trails.","debrief":"You created a group, provisioned an account, set its credential, and verified membership.","takeaway":"Role → groupadd. Account → useradd. Credential → passwd. Proof → id."
+      "id": "linux-lab-22",
+      "missionNumber": 22,
+      "kingdom": "Kingdom V — Users and Security",
+      "title": "Build the Team",
+      "skill": "Create users and assign group membership",
+      "goal": "Create a role group, add a user to it, and verify the resulting identity.",
+      "bigIdea": "Groups make access manageable by assigning permissions to roles instead of individuals.",
+      "objective": "5.2 Creating Users and Groups",
+      "difficulty": 3,
+      "briefing": "Prepare a new Academy recruit with a home directory, password, and role membership.",
+      "learn": [
+        {
+          "command": "groupadd trainees",
+          "badge": "Role",
+          "explanation": "groupadd creates a group for a shared role."
+        },
+        {
+          "command": "useradd -m -G trainees scout",
+          "badge": "Account",
+          "explanation": "-m creates a home; -G adds supplementary group membership."
+        },
+        {
+          "command": "passwd scout",
+          "badge": "Credential",
+          "explanation": "passwd establishes the account credential."
+        },
+        {
+          "command": "id scout",
+          "badge": "Verify",
+          "explanation": "id confirms the new user's groups."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Create role",
+          "text": "Create the trainees group.",
+          "command": "groupadd trainees"
+        },
+        {
+          "title": "Create account",
+          "text": "Add scout with a home and role.",
+          "command": "useradd -m -G trainees scout"
+        },
+        {
+          "title": "Secure and verify",
+          "text": "Set a password and inspect identity.",
+          "command": "passwd scout\nid scout"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Create the trainees role and scout account, secure it, then verify membership.",
+        "steps": [
+          "Create group.",
+          "Create user with home and group.",
+          "Set password.",
+          "Verify user."
+        ],
+        "helpExamples": [
+          "groupadd trainees",
+          "useradd -m -G trainees scout",
+          "passwd scout",
+          "id scout"
+        ],
+        "successFeedback": "Recruit account prepared.",
+        "incorrectFeedback": "The account workflow is incomplete.",
+        "retryHint": "Create role, account, credential, then verify.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "groupadd trainees"
+          },
+          {
+            "type": "command-input",
+            "input": "useradd -m -G trainees scout"
+          },
+          {
+            "type": "command-input",
+            "input": "passwd scout"
+          },
+          {
+            "type": "command-input",
+            "input": "id scout"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Create the analysts group and ranger account with a home, password, and verified membership.",
+        "steps": [
+          "Create role, account, credential, and verify."
+        ],
+        "helpExamples": [
+          "groupadd ROLE",
+          "useradd -m -G ROLE USER",
+          "passwd USER",
+          "id USER"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Build the role before assigning an account to it."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "The role is analysts and the user is ranger."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run groupadd analysts, useradd -m -G analysts ranger, passwd ranger, and id ranger."
+          }
+        ],
+        "successFeedback": "Commander team account prepared.",
+        "incorrectFeedback": "Every account-management step is required.",
+        "retryHint": "Create, assign, secure, and verify.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "groupadd analysts"
+          },
+          {
+            "type": "command-input",
+            "input": "useradd -m -G analysts ranger"
+          },
+          {
+            "type": "command-input",
+            "input": "passwd ranger"
+          },
+          {
+            "type": "command-input",
+            "input": "id ranger"
+          }
+        ]
+      },
+      "correctFeedback": "You created access around a role.",
+      "incorrectFeedback": "Review the user lifecycle.",
+      "fenrirTip": "Build the pack by role; individual exceptions become tangled trails.",
+      "debrief": "You created a group, provisioned an account, set its credential, and verified membership.",
+      "takeaway": "Role → groupadd. Account → useradd. Credential → passwd. Proof → id."
     },
     {
-      "id":"linux-lab-23","missionNumber":23,"kingdom":"Kingdom V — Users and Security","title":"Decode Permissions","skill":"Read and change file permission modes","goal":"Inspect a file, apply the required access mode, and verify the change.","bigIdea":"Linux permissions express who may read, write, or execute a resource.","objective":"5.3 Managing File Permissions and Ownership","difficulty":3,"briefing":"Restrict an Academy report so its owner can read and write, its group can read, and others have no access.",
-      "learn":[{"command":"ls -l report.txt","badge":"Inspect","explanation":"Long listing displays owner, group, and permission bits."},{"command":"chmod 640 report.txt","badge":"Numeric mode","explanation":"640 grants owner read/write, group read, and others nothing."},{"command":"chmod u+x mission.txt","badge":"Symbolic mode","explanation":"u+x adds execute permission for the owner."}],
-      "walkthrough":[{"title":"Read mode","text":"Inspect the report metadata.","command":"ls -l report.txt"},{"title":"Apply policy","text":"Set mode 640.","command":"chmod 640 report.txt"},{"title":"Verify","text":"Inspect the report again.","command":"ls -l report.txt"}],
-      "guidedPractice":{"instructions":"Inspect report.txt, set mode 640, and verify it afterward.","steps":["Inspect permissions.","Apply 640.","Inspect again."],"helpExamples":["ls -l report.txt","chmod 640 report.txt"],"successFeedback":"Report permissions secured.","incorrectFeedback":"The required permission change is incomplete.","retryHint":"Inspect, change to 640, then verify.","goals":[{"type":"command-input","input":"chmod 640 report.txt"},{"type":"command-input","input":"ls -l report.txt"}]},
-      "commanderChallenge":{"instructions":"Inspect mission.txt, grant its owner execute permission symbolically, and verify it.","steps":["Inspect, modify, verify."],"helpExamples":["ls -l FILE","chmod WHO+PERMISSION FILE"],"hints":[{"label":"Concept Hint","text":"Symbolic modes identify who, the operation, and the permission."},{"label":"Recognition Hint","text":"Add execute permission to the user owner of mission.txt."},{"label":"Command Reveal","text":"Run ls -l mission.txt, chmod u+x mission.txt, and ls -l mission.txt."}],"successFeedback":"Commander permission change complete.","incorrectFeedback":"The owner execute change and verification are required.","retryHint":"Use a symbolic user-plus-execute mode.","goals":[{"type":"command-input","input":"chmod u+x mission.txt"},{"type":"command-input","input":"ls -l mission.txt"}]},
-      "correctFeedback":"You translated policy into a permission mode.","incorrectFeedback":"Review owner, group, other, and rwx.","fenrirTip":"Permissions are a three-gate lock: owner, pack, and everyone else.","debrief":"You inspected permissions and applied both numeric and symbolic modes.","takeaway":"Inspect → ls -l. Numeric policy → chmod 640. Symbolic change → chmod u+x."
+      "id": "linux-lab-23",
+      "missionNumber": 23,
+      "kingdom": "Kingdom V — Users and Security",
+      "title": "Decode Permissions",
+      "skill": "Read and change file permission modes",
+      "goal": "Inspect a file, apply the required access mode, and verify the change.",
+      "bigIdea": "Linux permissions express who may read, write, or execute a resource.",
+      "objective": "5.3 Managing File Permissions and Ownership",
+      "difficulty": 3,
+      "briefing": "Restrict an Academy report so its owner can read and write, its group can read, and others have no access.",
+      "learn": [
+        {
+          "command": "ls -l report.txt",
+          "badge": "Inspect",
+          "explanation": "Long listing displays owner, group, and permission bits."
+        },
+        {
+          "command": "chmod 640 report.txt",
+          "badge": "Numeric mode",
+          "explanation": "640 grants owner read/write, group read, and others nothing."
+        },
+        {
+          "command": "chmod u+x mission.txt",
+          "badge": "Symbolic mode",
+          "explanation": "u+x adds execute permission for the owner."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Read mode",
+          "text": "Inspect the report metadata.",
+          "command": "ls -l report.txt"
+        },
+        {
+          "title": "Apply policy",
+          "text": "Set mode 640.",
+          "command": "chmod 640 report.txt"
+        },
+        {
+          "title": "Verify",
+          "text": "Inspect the report again.",
+          "command": "ls -l report.txt"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Inspect report.txt, set mode 640, and verify it afterward.",
+        "steps": [
+          "Inspect permissions.",
+          "Apply 640.",
+          "Inspect again."
+        ],
+        "helpExamples": [
+          "ls -l report.txt",
+          "chmod 640 report.txt"
+        ],
+        "successFeedback": "Report permissions secured.",
+        "incorrectFeedback": "The required permission change is incomplete.",
+        "retryHint": "Inspect, change to 640, then verify.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "chmod 640 report.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l report.txt"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Inspect mission.txt, grant its owner execute permission symbolically, and verify it.",
+        "steps": [
+          "Inspect, modify, verify."
+        ],
+        "helpExamples": [
+          "ls -l FILE",
+          "chmod WHO+PERMISSION FILE"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Symbolic modes identify who, the operation, and the permission."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Add execute permission to the user owner of mission.txt."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run ls -l mission.txt, chmod u+x mission.txt, and ls -l mission.txt."
+          }
+        ],
+        "successFeedback": "Commander permission change complete.",
+        "incorrectFeedback": "The owner execute change and verification are required.",
+        "retryHint": "Use a symbolic user-plus-execute mode.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "chmod u+x mission.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l mission.txt"
+          }
+        ]
+      },
+      "correctFeedback": "You translated policy into a permission mode.",
+      "incorrectFeedback": "Review owner, group, other, and rwx.",
+      "fenrirTip": "Permissions are a three-gate lock: owner, pack, and everyone else.",
+      "debrief": "You inspected permissions and applied both numeric and symbolic modes.",
+      "takeaway": "Inspect → ls -l. Numeric policy → chmod 640. Symbolic change → chmod u+x."
     },
     {
-      "id":"linux-lab-24","missionNumber":24,"kingdom":"Kingdom V — Users and Security","title":"Control Ownership","skill":"Change and verify file owner and group","goal":"Assign a file to the correct owner and role group, then verify its metadata.","bigIdea":"Ownership connects a resource to one accountable user and one access-managing group.","objective":"5.3 Managing File Permissions and Ownership","difficulty":3,"briefing":"Assign an Academy report to its responsible operator and team.",
-      "learn":[{"command":"chown hydra report.txt","badge":"Owner","explanation":"chown changes the user owner."},{"command":"chgrp trainees report.txt","badge":"Group","explanation":"chgrp changes the group owner."},{"command":"ls -l report.txt","badge":"Verify","explanation":"A long listing verifies ownership metadata."}],
-      "walkthrough":[{"title":"Assign owner","text":"Set hydra as owner.","command":"chown hydra report.txt"},{"title":"Assign team","text":"Set trainees as group.","command":"chgrp trainees report.txt"},{"title":"Verify","text":"Inspect metadata.","command":"ls -l report.txt"}],
-      "guidedPractice":{"instructions":"Assign report.txt to owner hydra and group trainees, then verify.","steps":["Change owner.","Change group.","Verify."],"helpExamples":["chown hydra report.txt","chgrp trainees report.txt","ls -l report.txt"],"successFeedback":"Report ownership assigned.","incorrectFeedback":"Ownership assignment is incomplete.","retryHint":"Set both owner and group, then inspect.","goals":[{"type":"command-input","input":"chown hydra report.txt"},{"type":"command-input","input":"chgrp trainees report.txt"},{"type":"command-input","input":"ls -l report.txt"}]},
-      "commanderChallenge":{"instructions":"Assign mission.txt to owner hydra and group analysts, then verify the result.","steps":["Set owner, group, and verify."],"helpExamples":["chown OWNER FILE","chgrp GROUP FILE","ls -l FILE"],"hints":[{"label":"Concept Hint","text":"User ownership and group ownership are separate assignments."},{"label":"Recognition Hint","text":"Use hydra as owner and analysts as group for mission.txt."},{"label":"Command Reveal","text":"Run chown hydra mission.txt, chgrp analysts mission.txt, and ls -l mission.txt."}],"successFeedback":"Commander ownership assignment complete.","incorrectFeedback":"Both assignments and verification are required.","retryHint":"Change user owner, group owner, then inspect.","goals":[{"type":"command-input","input":"chown hydra mission.txt"},{"type":"command-input","input":"chgrp analysts mission.txt"},{"type":"command-input","input":"ls -l mission.txt"}]},
-      "correctFeedback":"You linked responsibility and team access.","incorrectFeedback":"Review owner and group metadata.","fenrirTip":"One file can have one keeper and one pack.","debrief":"You changed user and group ownership independently and verified the result.","takeaway":"User owner → chown. Group owner → chgrp. Proof → ls -l."
+      "id": "linux-lab-24",
+      "missionNumber": 24,
+      "kingdom": "Kingdom V — Users and Security",
+      "title": "Control Ownership",
+      "skill": "Change and verify file owner and group",
+      "goal": "Assign a file to the correct owner and role group, then verify its metadata.",
+      "bigIdea": "Ownership connects a resource to one accountable user and one access-managing group.",
+      "objective": "5.3 Managing File Permissions and Ownership",
+      "difficulty": 3,
+      "briefing": "Assign an Academy report to its responsible operator and team.",
+      "learn": [
+        {
+          "command": "chown hydra report.txt",
+          "badge": "Owner",
+          "explanation": "chown changes the user owner."
+        },
+        {
+          "command": "chgrp trainees report.txt",
+          "badge": "Group",
+          "explanation": "chgrp changes the group owner."
+        },
+        {
+          "command": "ls -l report.txt",
+          "badge": "Verify",
+          "explanation": "A long listing verifies ownership metadata."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Assign owner",
+          "text": "Set hydra as owner.",
+          "command": "chown hydra report.txt"
+        },
+        {
+          "title": "Assign team",
+          "text": "Set trainees as group.",
+          "command": "chgrp trainees report.txt"
+        },
+        {
+          "title": "Verify",
+          "text": "Inspect metadata.",
+          "command": "ls -l report.txt"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Assign report.txt to owner hydra and group trainees, then verify.",
+        "steps": [
+          "Change owner.",
+          "Change group.",
+          "Verify."
+        ],
+        "helpExamples": [
+          "chown hydra report.txt",
+          "chgrp trainees report.txt",
+          "ls -l report.txt"
+        ],
+        "successFeedback": "Report ownership assigned.",
+        "incorrectFeedback": "Ownership assignment is incomplete.",
+        "retryHint": "Set both owner and group, then inspect.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "chown hydra report.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "chgrp trainees report.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l report.txt"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Assign mission.txt to owner hydra and group analysts, then verify the result.",
+        "steps": [
+          "Set owner, group, and verify."
+        ],
+        "helpExamples": [
+          "chown OWNER FILE",
+          "chgrp GROUP FILE",
+          "ls -l FILE"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "User ownership and group ownership are separate assignments."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use hydra as owner and analysts as group for mission.txt."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run chown hydra mission.txt, chgrp analysts mission.txt, and ls -l mission.txt."
+          }
+        ],
+        "successFeedback": "Commander ownership assignment complete.",
+        "incorrectFeedback": "Both assignments and verification are required.",
+        "retryHint": "Change user owner, group owner, then inspect.",
+        "goals": [
+          {
+            "type": "command-input",
+            "input": "chown hydra mission.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "chgrp analysts mission.txt"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l mission.txt"
+          }
+        ]
+      },
+      "correctFeedback": "You linked responsibility and team access.",
+      "incorrectFeedback": "Review owner and group metadata.",
+      "fenrirTip": "One file can have one keeper and one pack.",
+      "debrief": "You changed user and group ownership independently and verified the result.",
+      "takeaway": "User owner → chown. Group owner → chgrp. Proof → ls -l."
     },
     {
-      "id":"linux-lab-25","missionNumber":25,"kingdom":"Kingdom V — Users and Security","title":"Safe Shared Spaces","skill":"Configure a sticky shared directory and create symbolic links","goal":"Build a protected shared workspace and a safe reference to an existing file.","bigIdea":"Shared directories need deletion safeguards, while symbolic links provide references without duplicating data.","objective":"5.4 Special Directories and Files","difficulty":3,"briefing":"Create a shared drop point where users cannot delete one another's files, and provide a link to the mission record.",
-      "learn":[{"command":"mkdir shared","badge":"Shared directory","explanation":"mkdir creates the common workspace."},{"command":"chmod +t shared","badge":"Sticky bit","explanation":"The sticky bit limits deletion in a shared directory to file owners and privileged users."},{"command":"ln -s report.txt report-link","badge":"Symbolic link","explanation":"A symbolic link points to another path without copying its content."},{"command":"ls -d shared","badge":"Verify directory","explanation":"-d lists the directory itself rather than its contents."}],
-      "walkthrough":[{"title":"Create protected space","text":"Create shared and apply its sticky bit.","command":"mkdir shared\nchmod +t shared"},{"title":"Place a file","text":"Create a shared note.","command":"touch shared/note.txt"},{"title":"Create and inspect link","text":"Link to the report and list both resources.","command":"ln -s report.txt report-link\nls -d shared\nls -l report-link"}],
-      "guidedPractice":{"instructions":"Create sticky directory shared, add a note, create report-link, and verify both resources.","steps":["Create directory.","Apply sticky bit.","Add note.","Create symbolic link.","Verify directory and link."],"helpExamples":["mkdir shared","chmod +t shared","touch shared/note.txt","ln -s report.txt report-link","ls -d shared","ls -l report-link"],"successFeedback":"Safe shared space prepared.","incorrectFeedback":"The protected space or link workflow is incomplete.","retryHint":"Create, protect, populate, link, and verify.","goals":[{"type":"directory-exists","path":"/home/hydra/shared"},{"type":"file-exists","path":"/home/hydra/shared/note.txt"},{"type":"file-exists","path":"/home/hydra/report-link"},{"type":"command-input","input":"chmod +t shared"},{"type":"command-input","input":"ls -d shared"},{"type":"command-input","input":"ls -l report-link"}]},
-      "commanderChallenge":{"instructions":"Create sticky directory dropbox with status.txt, link mission.txt as mission-link, and verify both.","steps":["Create, protect, populate, link, and verify."],"helpExamples":["mkdir DIR","chmod +t DIR","touch DIR/FILE","ln -s SOURCE LINK"],"hints":[{"label":"Concept Hint","text":"Protect the shared directory, then create a reference to existing data."},{"label":"Recognition Hint","text":"Use dropbox/status.txt and a symbolic mission-link to mission.txt."},{"label":"Command Reveal","text":"Run mkdir dropbox, chmod +t dropbox, touch dropbox/status.txt, ln -s mission.txt mission-link, ls -d dropbox, and ls -l mission-link."}],"successFeedback":"Commander shared space secured.","incorrectFeedback":"Every shared-space and link requirement must be satisfied.","retryHint":"Build the directory and link, then verify both.","goals":[{"type":"directory-exists","path":"/home/hydra/dropbox"},{"type":"file-exists","path":"/home/hydra/dropbox/status.txt"},{"type":"file-exists","path":"/home/hydra/mission-link"},{"type":"command-input","input":"chmod +t dropbox"},{"type":"command-input","input":"ls -d dropbox"},{"type":"command-input","input":"ls -l mission-link"}]},
-      "correctFeedback":"You secured collaboration without duplicating source data.","incorrectFeedback":"Review sticky directories and symbolic links.","fenrirTip":"Share the den, protect each hunter's cache, and point to one trusted map.","debrief":"You created a sticky shared directory and symbolic links, then verified the resulting resources.","takeaway":"Shared space → mkdir. Deletion safeguard → chmod +t. Reference → ln -s."
+      "id": "linux-lab-25",
+      "missionNumber": 25,
+      "kingdom": "Kingdom V — Users and Security",
+      "title": "Safe Shared Spaces",
+      "skill": "Configure a sticky shared directory and create symbolic links",
+      "goal": "Build a protected shared workspace and a safe reference to an existing file.",
+      "bigIdea": "Shared directories need deletion safeguards, while symbolic links provide references without duplicating data.",
+      "objective": "5.4 Special Directories and Files",
+      "difficulty": 3,
+      "briefing": "Create a shared drop point where users cannot delete one another's files, and provide a link to the mission record.",
+      "learn": [
+        {
+          "command": "mkdir shared",
+          "badge": "Shared directory",
+          "explanation": "mkdir creates the common workspace."
+        },
+        {
+          "command": "chmod +t shared",
+          "badge": "Sticky bit",
+          "explanation": "The sticky bit limits deletion in a shared directory to file owners and privileged users."
+        },
+        {
+          "command": "ln -s report.txt report-link",
+          "badge": "Symbolic link",
+          "explanation": "A symbolic link points to another path without copying its content."
+        },
+        {
+          "command": "ls -d shared",
+          "badge": "Verify directory",
+          "explanation": "-d lists the directory itself rather than its contents."
+        }
+      ],
+      "walkthrough": [
+        {
+          "title": "Create protected space",
+          "text": "Create shared and apply its sticky bit.",
+          "command": "mkdir shared\nchmod +t shared"
+        },
+        {
+          "title": "Place a file",
+          "text": "Create a shared note.",
+          "command": "touch shared/note.txt"
+        },
+        {
+          "title": "Create and inspect link",
+          "text": "Link to the report and list both resources.",
+          "command": "ln -s report.txt report-link\nls -d shared\nls -l report-link"
+        }
+      ],
+      "guidedPractice": {
+        "instructions": "Create sticky directory shared, add a note, create report-link, and verify both resources.",
+        "steps": [
+          "Create directory.",
+          "Apply sticky bit.",
+          "Add note.",
+          "Create symbolic link.",
+          "Verify directory and link."
+        ],
+        "helpExamples": [
+          "mkdir shared",
+          "chmod +t shared",
+          "touch shared/note.txt",
+          "ln -s report.txt report-link",
+          "ls -d shared",
+          "ls -l report-link"
+        ],
+        "successFeedback": "Safe shared space prepared.",
+        "incorrectFeedback": "The protected space or link workflow is incomplete.",
+        "retryHint": "Create, protect, populate, link, and verify.",
+        "goals": [
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/shared"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/shared/note.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/report-link"
+          },
+          {
+            "type": "command-input",
+            "input": "chmod +t shared"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -d shared"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l report-link"
+          }
+        ]
+      },
+      "commanderChallenge": {
+        "instructions": "Create sticky directory dropbox with status.txt, link mission.txt as mission-link, and verify both.",
+        "steps": [
+          "Create, protect, populate, link, and verify."
+        ],
+        "helpExamples": [
+          "mkdir DIR",
+          "chmod +t DIR",
+          "touch DIR/FILE",
+          "ln -s SOURCE LINK"
+        ],
+        "hints": [
+          {
+            "label": "Concept Hint",
+            "text": "Protect the shared directory, then create a reference to existing data."
+          },
+          {
+            "label": "Recognition Hint",
+            "text": "Use dropbox/status.txt and a symbolic mission-link to mission.txt."
+          },
+          {
+            "label": "Command Reveal",
+            "text": "Run mkdir dropbox, chmod +t dropbox, touch dropbox/status.txt, ln -s mission.txt mission-link, ls -d dropbox, and ls -l mission-link."
+          }
+        ],
+        "successFeedback": "Commander shared space secured.",
+        "incorrectFeedback": "Every shared-space and link requirement must be satisfied.",
+        "retryHint": "Build the directory and link, then verify both.",
+        "goals": [
+          {
+            "type": "directory-exists",
+            "path": "/home/hydra/dropbox"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/dropbox/status.txt"
+          },
+          {
+            "type": "file-exists",
+            "path": "/home/hydra/mission-link"
+          },
+          {
+            "type": "command-input",
+            "input": "chmod +t dropbox"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -d dropbox"
+          },
+          {
+            "type": "command-input",
+            "input": "ls -l mission-link"
+          }
+        ]
+      },
+      "correctFeedback": "You secured collaboration without duplicating source data.",
+      "incorrectFeedback": "Review sticky directories and symbolic links.",
+      "fenrirTip": "Share the den, protect each hunter's cache, and point to one trusted map.",
+      "debrief": "You created a sticky shared directory and symbolic links, then verified the resulting resources.",
+      "takeaway": "Shared space → mkdir. Deletion safeguard → chmod +t. Reference → ln -s."
     }
   ]
 }

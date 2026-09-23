@@ -168,6 +168,7 @@
     execute(rawInput) {
       const input = String(rawInput || "").trim();
       if (!input) return { input, output: "", ok: true, command: "" };
+      const previousCwd = this.cwd;
 
       const tokens = this.tokenize(input);
       const command = tokens.shift().toLowerCase();
@@ -179,6 +180,7 @@
         mkdir: () => this.commandMkdir(tokens),
         touch: () => this.commandTouch(tokens),
         echo: () => this.commandEcho(tokens),
+        bash: () => this.commandBash(tokens),
         history: () => this.commandHistory(tokens),
         man: () => this.commandManual(tokens),
         info: () => this.commandInfo(tokens),
@@ -243,6 +245,7 @@
         input,
         command,
         args: tokens,
+        previousCwd,
         cwd: this.cwd,
         output: result.output || "",
         ok: Boolean(result.ok)
@@ -254,11 +257,7 @@
     commandShellExpression(input) {
       if (/^\.\/\S+/.test(input)) {
         const [scriptPath, ...scriptArgs] = this.tokenize(input);
-        const node = this.getNode(scriptPath.slice(2));
-        if (!node || node.type !== FILE) return { output: `${scriptPath}: No such script`, ok: false };
-        const output = node.content.split("\n").filter(line => line.startsWith("echo "))
-          .map(line => line.slice(5).replace(/\$1\b/g, scriptArgs[0] || "").replace(/\$item\b/g, "alpha\nbeta")).join("\n");
-        return { output, ok: true };
+        return this.runScript(scriptPath.slice(2), scriptArgs);
       }
       const redirect = input.match(/^echo\s+(.+?)\s*(>>|>)\s*(\S+)$/);
       if (redirect) {
@@ -320,9 +319,26 @@
     }
 
     commandChmod(args) {
-      return args.length === 2 && /^(\+x|\+t|[0-7]{3}|[ugoa]*[+-][rwx]+)$/.test(args[0]) && Boolean(this.getNode(args[1]))
+      return args.length === 2 && /^(\+x|\+t|[0-7]{3,4}|[ugoa]*[+-][rwx]+)$/.test(args[0]) && Boolean(this.getNode(args[1]))
         ? { output: "", ok: true }
         : { output: "chmod: provide a valid mode and an existing target.", ok: false };
+    }
+
+    runScript(scriptPath, scriptArgs) {
+      const node = this.getNode(scriptPath);
+      if (!node || node.type !== FILE) return { output: `${scriptPath}: No such script`, ok: false };
+      const output = node.content.split("\n").filter(line => line.startsWith("echo ") || line.startsWith("for "))
+        .map(line => line.startsWith("echo ")
+          ? line.slice(5).replace(/\$1\b/g, scriptArgs[0] || "")
+          : line.includes("alpha beta") ? "alpha\nbeta" : line.includes("north south") ? "north\nsouth" : "")
+        .filter(Boolean)
+        .join("\n");
+      return { output, ok: true };
+    }
+
+    commandBash(args) {
+      if (!args.length) return { output: "bash: provide a script path.", ok: false };
+      return this.runScript(args[0].replace(/^\.\//, ""), args.slice(1));
     }
 
     commandOwnership(command, args) {
@@ -381,7 +397,7 @@
 
     commandIp(args) {
       const value = args.join(" ");
-      if (value === "addr" || value === "addr show") return { output: "eth0: inet 192.0.2.10/24", ok: true };
+      if (["addr", "addr show", "address", "address show"].includes(value)) return { output: "eth0: inet 192.0.2.10/24", ok: true };
       if (value === "route" || value === "route show") return { output: "default via 192.0.2.1 dev eth0", ok: true };
       return { output: "ip: use addr or route.", ok: false };
     }

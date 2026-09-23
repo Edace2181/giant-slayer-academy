@@ -7,7 +7,12 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which component is the core of a Linux operating system and manages hardware resources?",
-    "choices": ["Linux kernel", "Desktop wallpaper", "Web browser", "Package repository"],
+    "choices": [
+      "Linux kernel",
+      "Desktop wallpaper",
+      "Web browser",
+      "Package repository"
+    ],
     "answer": 0,
     "explanation": "The Linux kernel manages processors, memory, devices, and other fundamental system resources. The other choices are user-facing content or software distribution services rather than the operating-system core."
   },
@@ -19,7 +24,12 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A manufacturer needs an operating system for a network appliance with limited storage and wants to customize the included services. Why is Linux a suitable choice?",
-    "choices": ["It requires every desktop application to be installed", "It can be tailored to include only the required components", "It runs only on high-end workstation processors", "It prevents vendors from modifying system software"],
+    "choices": [
+      "It requires every desktop application to be installed",
+      "It can be tailored to include only the required components",
+      "It runs only on high-end workstation processors",
+      "It prevents vendors from modifying system software"
+    ],
     "answer": 1,
     "explanation": "Linux systems can be assembled with a focused set of components, which suits resource-constrained appliances. Linux is available on many architectures and does not require a full desktop stack."
   },
@@ -31,21 +41,31 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A designer needs an open-source application for editing raster photographs. Which tool should be selected?",
-    "choices": ["GIMP", "MariaDB", "Apache HTTP Server", "Bash"],
-    "answer": 0,
+    "choices": [
+      "MariaDB",
+      "Apache HTTP Server",
+      "Bash",
+      "GIMP"
+    ],
+    "answer": 3,
     "explanation": "GIMP is designed for raster image editing. MariaDB is a database, Apache serves web content, and Bash is a command shell."
   },
   {
     "id": "L010-PE2-004",
     "domain": "1",
     "objective": "1.2",
-    "blueprint": "Major Open Source Applications",
+    "blueprint": "Desktop Applications > GIMP",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A development team needs version control that records changes locally and can synchronize with remote collaborators. Which application BEST satisfies this need?",
-    "choices": ["Git", "VLC", "Samba", "Postfix"],
-    "answer": 0,
-    "explanation": "Git is a distributed version-control system that maintains local history and exchanges changes with remote repositories. The alternatives handle media, file sharing, or email transport."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which open source application is designed for editing raster images?",
+    "choices": [
+      "Thunderbird",
+      "GIMP",
+      "Apache HTTPD",
+      "Nextcloud"
+    ],
+    "answer": 1,
+    "explanation": "GIMP is an open source image-editing application commonly used to create and modify raster graphics."
   },
   {
     "id": "L010-PE2-005",
@@ -55,8 +75,13 @@
     "difficulty": "Level 4",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A company wants to incorporate a permissively licensed library into a proprietary product while retaining its own product license. Which license family is generally MOST compatible with that goal?",
-    "choices": ["BSD-style permissive license", "Strong copyleft license requiring the combined work's source distribution", "A license prohibiting all redistribution", "Public-domain status claimed without verifying ownership"],
-    "answer": 0,
+    "choices": [
+      "Strong copyleft license requiring the combined work's source distribution",
+      "BSD-style permissive license",
+      "A license prohibiting all redistribution",
+      "Public-domain status claimed without verifying ownership"
+    ],
+    "answer": 1,
     "explanation": "BSD-style permissive licenses generally allow use in proprietary products when their limited notice conditions are followed. Strong copyleft or no-redistribution terms impose different obligations, and unverified status creates legal risk."
   },
   {
@@ -67,45 +92,65 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which password practice provides the strongest protection for several unrelated websites?",
-    "choices": ["Use one short password everywhere", "Use unique long passwords stored in a reputable password manager", "Append the website name to the same dictionary word", "Share passwords through unencrypted email"],
-    "answer": 1,
+    "choices": [
+      "Use unique long passwords stored in a reputable password manager",
+      "Use one short password everywhere",
+      "Append the website name to the same dictionary word",
+      "Share passwords through unencrypted email"
+    ],
+    "answer": 0,
     "explanation": "Unique long passwords limit damage from one site's breach, and a reputable manager makes them practical to maintain. Reuse, predictable variations, and insecure sharing weaken account security."
   },
   {
     "id": "L010-PE2-007",
     "domain": "1",
     "objective": "1.4",
-    "blueprint": "ICT Skills and Working in Linux",
+    "blueprint": "Industry Uses > Virtualization",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A consultant must send a confidential configuration archive to a remote administrator over an untrusted network. Which approach BEST protects the data in transit?",
-    "choices": ["Transfer it with an encrypted protocol after verifying the remote host", "Post it to a public web directory", "Send it using plaintext FTP", "Rename the archive extension before sending it"],
-    "answer": 0,
-    "explanation": "An encrypted transfer with host verification protects confidentiality and helps authenticate the destination. Public or plaintext transfer exposes data, while renaming a file offers no cryptographic protection."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which technology allows multiple isolated operating-system instances to share one physical computer?",
+    "choices": [
+      "File compression",
+      "Email filtering",
+      "Virtualization",
+      "Document formatting"
+    ],
+    "answer": 2,
+    "explanation": "Virtualization allows multiple virtual machines, each with an isolated operating system, to share a physical host."
   },
   {
     "id": "L010-PE2-008",
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Command Line Basics",
+    "blueprint": "Bash",
     "difficulty": "Level 2",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "Which shell feature replaces a wildcard such as *.log with matching filenames before a command runs?",
-    "choices": ["Globbing", "Encryption", "Mounting", "Scheduling"],
-    "answer": 0,
-    "explanation": "Shell globbing expands wildcard patterns into matching pathnames. Encryption, mounting, and scheduling perform unrelated functions."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which program is a widely used Linux command shell?",
+    "choices": [
+      "GIMP",
+      "Samba",
+      "Bash",
+      "Firefox"
+    ],
+    "answer": 2,
+    "explanation": "Bash is a widely used command shell that provides interactive command processing and shell scripting features."
   },
   {
     "id": "L010-PE2-009",
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Command Line Basics",
+    "blueprint": "echo",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A command produces a report that should replace the previous contents of report.txt. Which redirection should be used?",
-    "choices": ["> report.txt", ">> report.txt", "< report.txt", "| report.txt"],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which command displays text or the expanded value of a shell variable?",
+    "choices": [
+      "echo",
+      "history",
+      "type",
+      "export"
+    ],
     "answer": 0,
-    "explanation": "The > operator redirects standard output and overwrites the destination file. >> appends, < supplies input, and a pipe expects another command."
+    "explanation": "The echo command writes its arguments to standard output and can display values after the shell expands variables."
   },
   {
     "id": "L010-PE2-010",
@@ -115,33 +160,48 @@
     "difficulty": "Level 4",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A user runs `printf '%s\n' '$HOME'` and sees the literal text $HOME. What caused this result?",
-    "choices": ["Single quotes prevented variable expansion", "The home directory was deleted", "printf cannot display environment variables", "The dollar sign redirected standard error"],
-    "answer": 0,
+    "choices": [
+      "The home directory was deleted",
+      "printf cannot display environment variables",
+      "The dollar sign redirected standard error",
+      "Single quotes prevented variable expansion"
+    ],
+    "answer": 3,
     "explanation": "Single quotes preserve their contents literally, so the shell does not expand $HOME. This behavior is independent of whether the directory exists, and printf can display expanded values when quoting permits expansion."
   },
   {
     "id": "L010-PE2-011",
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Using the Command Line to Get Help",
+    "blueprint": "/usr/share/doc/",
     "difficulty": "Level 2",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "Which common option displays a brief usage summary for many Linux commands?",
-    "choices": ["--help", "--erase", "--mount", "--owner"],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which directory commonly stores documentation installed with software packages?",
+    "choices": [
+      "/usr/share/doc/",
+      "/var/run/",
+      "/dev/input/",
+      "/boot/grub/"
+    ],
     "answer": 0,
-    "explanation": "Many commands implement --help to show syntax and available options. The other options are not a general convention for requesting usage information."
+    "explanation": "/usr/share/doc/ commonly contains package documentation such as README files, examples, changelogs, and licensing information."
   },
   {
     "id": "L010-PE2-012",
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Using the Command Line to Get Help",
+    "blueprint": "locate",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A user needs documentation for the shell's built-in `read` command, but `man read` shows an unrelated system call. What should the user try NEXT in Bash?",
-    "choices": ["help read", "locate --delete read", "chmod read", "mount read"],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which command quickly searches a filename database for paths matching a supplied pattern?",
+    "choices": [
+      "locate",
+      "info",
+      "export",
+      "echo"
+    ],
     "answer": 0,
-    "explanation": "Bash's help built-in documents shell built-ins such as read. The other commands do not provide built-in command documentation."
+    "explanation": "The locate command searches a prebuilt filename database, making pathname searches fast when the database is current."
   },
   {
     "id": "L010-PE2-013",
@@ -151,8 +211,13 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "In a pathname, what does `..` represent?",
-    "choices": ["The parent directory", "The filesystem root", "The user's home directory", "A hidden file suffix"],
-    "answer": 0,
+    "choices": [
+      "The filesystem root",
+      "The user's home directory",
+      "A hidden file suffix",
+      "The parent directory"
+    ],
+    "answer": 3,
     "explanation": "Two dots refer to the parent of the current directory. The filesystem root is /, and the home directory is commonly represented by ~ in the shell."
   },
   {
@@ -163,33 +228,48 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A support engineer needs a long listing that includes dotfiles in `/home/kim`. Which command is correct?",
-    "choices": ["ls -la /home/kim", "ls -d /home/kim", "cd -l /home/kim", "pwd -a /home/kim"],
-    "answer": 0,
+    "choices": [
+      "ls -d /home/kim",
+      "ls -la /home/kim",
+      "cd -l /home/kim",
+      "pwd -a /home/kim"
+    ],
+    "answer": 1,
     "explanation": "ls -l produces a long listing and -a includes entries whose names begin with a dot. The other commands do not provide both requested listing behaviors."
   },
   {
     "id": "L010-PE2-015",
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Creating, Moving and Deleting Files",
+    "blueprint": "cp",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A user wants to copy the directory `templates` and all of its contents into `archive`. Which command is appropriate?",
-    "choices": ["cp -r templates archive", "cp templates archive", "rmdir templates archive", "touch -d templates archive"],
-    "answer": 0,
-    "explanation": "cp -r recursively copies a directory tree. A plain cp does not normally copy directories, while rmdir and touch do not perform the requested copy."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which command creates a copy of a file at another location?",
+    "choices": [
+      "mv",
+      "rmdir",
+      "cp",
+      "history"
+    ],
+    "answer": 2,
+    "explanation": "The cp command copies files and, with appropriate options, directories to another path."
   },
   {
     "id": "L010-PE2-016",
     "domain": "2",
     "objective": "2.4",
-    "blueprint": "Creating, Moving and Deleting Files",
+    "blueprint": "rm",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "Before overwriting an existing destination during a file move, a technician wants the command to ask for confirmation. Which option should be added to `mv`?",
-    "choices": ["-i", "-r", "-z", "-h"],
-    "answer": 0,
-    "explanation": "The -i option requests interactive confirmation before overwriting an existing destination. The other options do not provide this safeguard for mv."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which command removes a regular file?",
+    "choices": [
+      "mkdir",
+      "touch",
+      "cd",
+      "rm"
+    ],
+    "answer": 3,
+    "explanation": "The rm command removes files; its use should be deliberate because command-line removal may not provide a desktop trash recovery step."
   },
   {
     "id": "L010-PE2-017",
@@ -199,8 +279,13 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which utility commonly compresses a single file and gives it a `.gz` suffix?",
-    "choices": ["gzip", "mkdir", "grep", "chmod"],
-    "answer": 0,
+    "choices": [
+      "mkdir",
+      "grep",
+      "chmod",
+      "gzip"
+    ],
+    "answer": 3,
     "explanation": "gzip compresses file data and commonly replaces the original with a .gz file. The remaining utilities create directories, search text, or change permissions."
   },
   {
@@ -211,7 +296,12 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A `.tar.xz` archive must be unpacked into the current directory. Which command is the BEST choice?",
-    "choices": ["tar -xJf package.tar.xz", "tar -czf package.tar.xz", "xz -l package.tar.xz > package", "zip -r package.tar.xz"],
+    "choices": [
+      "tar -xJf package.tar.xz",
+      "tar -czf package.tar.xz",
+      "xz -l package.tar.xz > package",
+      "zip -r package.tar.xz"
+    ],
     "answer": 0,
     "explanation": "tar -xJf extracts an xz-compressed tar archive. The create option and zip command build archives, while listing xz information does not unpack the tar contents."
   },
@@ -223,93 +313,133 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which command counts the number of lines in `inventory.txt`?",
-    "choices": ["wc -l inventory.txt", "tail -f inventory.txt", "sort -r inventory.txt", "cut -c inventory.txt"],
-    "answer": 0,
+    "choices": [
+      "tail -f inventory.txt",
+      "sort -r inventory.txt",
+      "wc -l inventory.txt",
+      "cut -c inventory.txt"
+    ],
+    "answer": 2,
     "explanation": "wc -l reports a file's line count. The alternatives follow, sort, or extract content without providing the requested count."
   },
   {
     "id": "L010-PE2-020",
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Searching and Extracting Data from Files",
+    "blueprint": "Regular Expressions > Brackets",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A directory tree must be searched for regular files whose names end in `.conf`. Which command meets the requirement?",
-    "choices": ["find . -type f -name '*.conf'", "grep -r '.conf' .", "ls -d .conf", "wc -f '*.conf'"],
-    "answer": 0,
-    "explanation": "find can recursively select regular files by pathname pattern. grep searches file contents, and the other forms do not correctly search the directory tree."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: What does the regular-expression pattern [abc] match?",
+    "choices": [
+      "The complete string abc only",
+      "Any three characters",
+      "One character that is a, b, or c",
+      "Every line except those containing a, b, or c"
+    ],
+    "answer": 2,
+    "explanation": "A bracket expression matches one character from the listed set, so [abc] matches a, b, or c."
   },
   {
     "id": "L010-PE2-021",
     "domain": "3",
     "objective": "3.2",
-    "blueprint": "Searching and Extracting Data from Files",
+    "blueprint": "Regular Expressions > Asterisk",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A report contains repeated hostnames, one per line. Which pipeline produces an alphabetized list with each hostname shown once?",
-    "choices": ["sort hosts.txt | uniq", "uniq hosts.txt | head -0", "wc hosts.txt | sort", "grep -v hosts.txt hosts.txt"],
-    "answer": 0,
-    "explanation": "Sorting places identical lines together, allowing uniq to remove adjacent duplicates. Running unrelated counting or filtering operations does not create the requested unique ordered list."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: What does an asterisk mean when it follows an item in a basic regular expression?",
+    "choices": [
+      "Match the item exactly once",
+      "Match zero or more occurrences of the preceding item",
+      "Match only at the end of a line",
+      "Treat the preceding item as a filename"
+    ],
+    "answer": 1,
+    "explanation": "The asterisk is a repetition operator that matches zero or more occurrences of the preceding regular-expression item."
   },
   {
     "id": "L010-PE2-022",
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Turning Commands into a Script",
+    "blueprint": "/bin/bash",
     "difficulty": "Level 2",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "Which command grants the owner execute permission on `check.sh` without changing other permission classes?",
-    "choices": ["chmod u+x check.sh", "chown +x check.sh", "mkdir -x check.sh", "grep u+x check.sh"],
-    "answer": 0,
-    "explanation": "chmod u+x adds execute permission for the owning user while leaving group and other permissions unchanged. The remaining commands do not make the script executable."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: What does /bin/bash identify when it appears in a script's shebang?",
+    "choices": [
+      "The directory where script output must be saved",
+      "The location of every user's home directory",
+      "The path to the Bash interpreter",
+      "The command used to archive the script"
+    ],
+    "answer": 2,
+    "explanation": "/bin/bash is a conventional filesystem path to the Bash shell executable and can identify Bash as the script interpreter."
   },
   {
     "id": "L010-PE2-023",
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Turning Commands into a Script",
+    "blueprint": "Script Variables",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A Bash script should repeat a command for each filename supplied on its command line. Which expansion represents all positional arguments as separate words?",
-    "choices": ["\"$@\"", "\"$0\"", "\"$?\"", "\"$$\""],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Why would a shell script assign a value to a variable?",
+    "choices": [
+      "To reuse named data in later commands",
+      "To change the computer's processor",
+      "To convert every file into a directory",
+      "To disable the command interpreter"
+    ],
     "answer": 0,
-    "explanation": "Quoted $@ expands all positional arguments while preserving each argument's boundaries. $0 is the script name, $? is an exit status, and $$ is the shell process ID."
+    "explanation": "A script variable stores a value under a name so later commands and expressions can reuse or update that data."
   },
   {
     "id": "L010-PE2-024",
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Turning Commands into a Script",
+    "blueprint": "Script Arguments",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A script needs to select one of several actions based on the value of a variable. Which shell construct is especially suitable?",
-    "choices": ["case", "comment", "alias", "export -n"],
-    "answer": 0,
-    "explanation": "A case construct compares a value against multiple patterns and runs the corresponding branch. Comments, aliases, and export settings do not implement multi-way control flow."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: In a Bash script, what does $1 normally reference?",
+    "choices": [
+      "The script's final exit status",
+      "The number of running processes",
+      "The first positional argument",
+      "The root user's numeric ID"
+    ],
+    "answer": 2,
+    "explanation": "$1 is the positional parameter containing the first argument supplied after the script name."
   },
   {
     "id": "L010-PE2-025",
     "domain": "3",
     "objective": "3.3",
-    "blueprint": "Turning Commands into a Script",
+    "blueprint": "for Loops",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A script reads filenames from users, including names containing spaces. Which assignment preserves the complete entered line in variable `name` without interpreting backslashes?",
-    "choices": ["IFS= read -r name", "for name in $*", "name=$(echo $1 $2)", "export -n name"],
-    "answer": 0,
-    "explanation": "Using read with an empty IFS and -r preserves leading or trailing whitespace behavior and prevents backslash interpretation, making it the safest listed input method. The alternatives can split or alter input."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which shell structure repeats a command block for each item in a list?",
+    "choices": [
+      "A shebang",
+      "An exit status",
+      "A for loop",
+      "A comment"
+    ],
+    "answer": 2,
+    "explanation": "A for loop iterates over a list of items and executes its command block once for each item."
   },
   {
     "id": "L010-PE2-026",
     "domain": "4",
     "objective": "4.1",
-    "blueprint": "Choosing an Operating System",
+    "blueprint": "User Interfaces > GUI",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A student wants to test Linux on a laptop without repartitioning its disk or replacing the installed operating system. Which approach is MOST appropriate?",
-    "choices": ["Run Linux in a virtual machine", "Erase the firmware", "Format every disk partition", "Replace the laptop's memory"],
-    "answer": 0,
-    "explanation": "A virtual machine provides an isolated Linux installation without repartitioning or replacing the host operating system. The other choices are destructive or unrelated."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which interface lets a user interact with windows, icons, menus, and a pointer?",
+    "choices": [
+      "Shell variable",
+      "Boot loader",
+      "Package repository",
+      "Graphical user interface"
+    ],
+    "answer": 3,
+    "explanation": "A graphical user interface, or GUI, provides visual elements such as windows, icons, menus, and pointer controls."
   },
   {
     "id": "L010-PE2-027",
@@ -319,81 +449,116 @@
     "difficulty": "Level 2",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which hardware device provides persistent solid-state storage with no moving parts?",
-    "choices": ["SSD", "RAM", "CPU cache", "Cooling fan"],
-    "answer": 0,
+    "choices": [
+      "RAM",
+      "CPU cache",
+      "Cooling fan",
+      "SSD"
+    ],
+    "answer": 3,
     "explanation": "An SSD stores data persistently in solid-state memory. RAM and cache are volatile, while a cooling fan does not store data."
   },
   {
     "id": "L010-PE2-028",
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Understanding Computer Hardware",
+    "blueprint": "Computer Components > Optical Drives",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A 64-bit Linux image fails immediately on an older computer whose processor supports only a 32-bit instruction set. What is the BEST remedy?",
-    "choices": ["Install a distribution image built for the supported processor architecture", "Increase the screen brightness", "Change the system hostname", "Replace the Ethernet cable"],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which device is designed to read media such as CDs or DVDs?",
+    "choices": [
+      "Optical drive",
+      "Processor socket",
+      "Heat sink",
+      "Memory module"
+    ],
     "answer": 0,
-    "explanation": "Executable code and the operating-system image must match an architecture the processor supports. Display, naming, and network changes cannot correct an instruction-set incompatibility."
+    "explanation": "An optical drive uses a laser to read, and in some models write, optical media such as CDs and DVDs."
   },
   {
     "id": "L010-PE2-029",
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Where Data is Stored",
+    "blueprint": "System Messaging",
     "difficulty": "Level 2",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "Which directory normally contains users' personal home directories?",
-    "choices": ["/home", "/bin", "/dev", "/proc"],
-    "answer": 0,
-    "explanation": "/home commonly contains personal directories for regular users. /bin contains commands, /dev represents devices, and /proc exposes process and kernel information."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which information helps an administrator identify events reported by the Linux kernel and system components?",
+    "choices": [
+      "Desktop wallpaper",
+      "System messages",
+      "Browser bookmarks",
+      "Compressed archives"
+    ],
+    "answer": 1,
+    "explanation": "System messages report events, conditions, and errors generated by the kernel and other operating-system components."
   },
   {
     "id": "L010-PE2-030",
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Where Data is Stored",
+    "blueprint": "Logging",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "An administrator wants to display mounted filesystems and their mount points in a tree. Which command is the BEST choice?",
-    "choices": ["findmnt", "passwd", "hostname", "uptime"],
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: What is the purpose of system logging?",
+    "choices": [
+      "To record events for later review",
+      "To divide a disk into partitions",
+      "To translate source code",
+      "To change a user's shell"
+    ],
     "answer": 0,
-    "explanation": "findmnt reports mounted filesystems and can present their relationships as a tree. The other utilities manage passwords or display host and uptime information."
+    "explanation": "System logging records events and messages so administrators can review activity and troubleshoot problems later."
   },
   {
     "id": "L010-PE2-031",
     "domain": "4",
     "objective": "4.3",
-    "blueprint": "Where Data is Stored",
+    "blueprint": "Process Information > ps",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A removable drive appears as `/dev/sdb1` but its files are not accessible through a directory. What must occur before normal file access?",
-    "choices": ["The filesystem must be mounted at a mount point", "The device file must be executed", "The kernel must be copied onto the drive", "The user's shell history must be cleared"],
-    "answer": 0,
-    "explanation": "Linux exposes files from a filesystem after mounting it into the directory tree. Executing a device node or changing unrelated system data does not make its filesystem accessible."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which command displays a snapshot of processes running on a Linux system?",
+    "choices": [
+      "free",
+      "dmesg",
+      "mkdir",
+      "ps"
+    ],
+    "answer": 3,
+    "explanation": "The ps command displays process information as a snapshot taken when the command runs."
   },
   {
     "id": "L010-PE2-032",
     "domain": "4",
     "objective": "4.4",
-    "blueprint": "Your Computer on the Network",
+    "blueprint": "Querying Network Configuration",
     "difficulty": "Level 3",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A workstation should receive its address, subnet settings, gateway, and DNS servers automatically. Which protocol normally supplies this configuration?",
-    "choices": ["DHCP", "HTTP", "SSH", "SMTP"],
-    "answer": 0,
-    "explanation": "DHCP supplies automatic network configuration parameters to clients. HTTP serves web content, SSH provides secure remote sessions, and SMTP transfers email."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which information would be examined when querying a computer's network interface configuration?",
+    "choices": [
+      "File ownership and permissions",
+      "Installed text editor themes",
+      "IP address and interface state",
+      "Archive compression ratio"
+    ],
+    "answer": 2,
+    "explanation": "Querying network configuration reveals details such as interface state, assigned IP addresses, and related network settings."
   },
   {
     "id": "L010-PE2-033",
     "domain": "4",
     "objective": "4.4",
-    "blueprint": "Your Computer on the Network",
+    "blueprint": "Routing Information > route",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A service listens only on 127.0.0.1. Remote clients cannot connect even though the firewall allows its port. Which explanation is MOST likely?",
-    "choices": ["The service is bound only to the loopback interface", "DNS has assigned too many aliases", "The filesystem is mounted read-only", "The system clock uses UTC"],
-    "answer": 0,
-    "explanation": "127.0.0.1 is the IPv4 loopback address, so a service bound only there accepts local connections rather than traffic arriving on external interfaces. The other conditions do not explain the binding behavior."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which traditional command can display the kernel's IP routing table?",
+    "choices": [
+      "passwd",
+      "route",
+      "mkdir",
+      "tail"
+    ],
+    "answer": 1,
+    "explanation": "The traditional route command can display and manipulate entries in the kernel IP routing table."
   },
   {
     "id": "L010-PE2-034",
@@ -403,21 +568,31 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which file traditionally stores local account names, numeric user IDs, home directories, and login shells without storing usable password hashes?",
-    "choices": ["/etc/passwd", "/etc/services", "/etc/hosts", "/etc/fstab"],
-    "answer": 0,
+    "choices": [
+      "/etc/services",
+      "/etc/passwd",
+      "/etc/hosts",
+      "/etc/fstab"
+    ],
+    "answer": 1,
     "explanation": "/etc/passwd contains core local account attributes, while password hashes are normally protected in /etc/shadow. The other files describe services, host mappings, or filesystem mounts."
   },
   {
     "id": "L010-PE2-035",
     "domain": "5",
     "objective": "5.1",
-    "blueprint": "Basic Security and Identifying User Types",
+    "blueprint": "Account Databases > /etc/shadow",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A background service does not require an interactive session. Which account configuration BEST reduces its exposure?",
-    "choices": ["Use a dedicated service account with a non-login shell", "Run it under a shared administrator account", "Give it an empty root password", "Assign it every supplementary group"],
-    "answer": 0,
-    "explanation": "A dedicated least-privilege account with a non-login shell limits interactive access and separates service ownership. Shared privileged credentials and broad memberships expand risk."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which protected file contains Linux password hashes and password-aging information?",
+    "choices": [
+      "/etc/hosts",
+      "/etc/profile",
+      "/proc/meminfo",
+      "/etc/shadow"
+    ],
+    "answer": 3,
+    "explanation": "/etc/shadow stores password hashes and password-aging fields in a file restricted from ordinary users."
   },
   {
     "id": "L010-PE2-036",
@@ -427,21 +602,31 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "An administrator creates a project group before assigning users to it. Which command performs this task?",
-    "choices": ["groupadd project", "useradd project", "chgrp project", "groups project > /dev/null"],
-    "answer": 0,
+    "choices": [
+      "useradd project",
+      "groupadd project",
+      "chgrp project",
+      "groups project > /dev/null"
+    ],
+    "answer": 1,
     "explanation": "groupadd creates a new group definition. useradd creates an account, chgrp changes file group ownership, and groups reports memberships."
   },
   {
     "id": "L010-PE2-037",
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Creating Users and Groups",
+    "blueprint": "Account Files > /etc/shadow",
     "difficulty": "Level 4",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "A new employee account must be created with `/bin/bash` as its login shell and a home directory generated automatically. Which command is appropriate?",
-    "choices": ["useradd -m -s /bin/bash riley", "groupadd -s /bin/bash riley", "passwd -d /home/riley", "chown -m /bin/bash riley"],
-    "answer": 0,
-    "explanation": "useradd -m creates the home directory and -s assigns the requested shell. The other commands do not create a correctly configured user account."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Where is the protected password record for a newly created local Linux account maintained?",
+    "choices": [
+      "/etc/services",
+      "/proc/",
+      "/boot/",
+      "/etc/shadow"
+    ],
+    "answer": 3,
+    "explanation": "/etc/shadow maintains protected password and aging data associated with local user accounts."
   },
   {
     "id": "L010-PE2-038",
@@ -451,8 +636,13 @@
     "difficulty": "Level 3",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "Which numeric mode grants an owner read and write access, a group read access, and others no access?",
-    "choices": ["640", "764", "604", "444"],
-    "answer": 0,
+    "choices": [
+      "764",
+      "640",
+      "604",
+      "444"
+    ],
+    "answer": 1,
     "explanation": "Mode 640 represents owner read/write (6), group read (4), and no permissions for others (0). Each alternative assigns a different permission combination."
   },
   {
@@ -463,7 +653,12 @@
     "difficulty": "Level 4",
     "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
     "question": "A file currently belongs to user `lee` and group `sales`. It must instead belong to user `morgan` and group `finance`. Which command makes both changes?",
-    "choices": ["chown morgan:finance file", "chmod morgan:finance file", "chgrp morgan:finance file", "passwd morgan:finance file"],
+    "choices": [
+      "chown morgan:finance file",
+      "chmod morgan:finance file",
+      "chgrp morgan:finance file",
+      "passwd morgan:finance file"
+    ],
     "answer": 0,
     "explanation": "chown with owner:group syntax changes both ownership fields in one command. chmod changes permissions, chgrp changes only the group, and passwd manages authentication data."
   },
@@ -471,12 +666,17 @@
     "id": "L010-PE2-040",
     "domain": "5",
     "objective": "5.4",
-    "blueprint": "Special Directories and Files",
+    "blueprint": "Temporary Directories > /var/tmp/",
     "difficulty": "Level 2",
-    "sourceType": "Original Hydra Linux Essentials Practice Exam Question",
-    "question": "What kind of filesystem object is `/dev/null`?",
-    "choices": ["Character device", "Regular text file", "Directory mount point", "Symbolic link to a user home"],
-    "answer": 0,
-    "explanation": "/dev/null is a character device that discards written data and returns end-of-file when read. It is not a regular file, directory, or home-directory link."
+    "sourceType": "Original Hydra Linux Essentials Practice Exam Question — 010-160 aligned",
+    "question": "During a Linux Essentials study session, answer this question: Which directory is intended for temporary files that should normally survive a system restart?",
+    "choices": [
+      "/proc/",
+      "/dev/",
+      "/var/tmp/",
+      "/sys/"
+    ],
+    "answer": 2,
+    "explanation": "/var/tmp/ holds temporary files with longer lifetimes that are normally preserved across reboots."
   }
 ]
