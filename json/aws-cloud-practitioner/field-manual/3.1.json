@@ -11,7 +11,7 @@
       "id": "what-you-are-learning",
       "title": "What You Are Learning",
       "paragraphs": ["AWS gives customers several different ways to create, configure, and operate cloud resources. The exam wants you to recognize which method makes sense for a particular situation."],
-      "bullets": ["Various ways of provisioning and operating in the AWS Cloud", "Various ways to access AWS services", "Types of cloud deployment models", "APIs, SDKs, AWS CLI, AWS Management Console, and infrastructure as code", "One-time operations and repeatable processes", "Cloud, hybrid, and on-premises deployments"],
+      "bullets": ["Various ways of provisioning and operating in the AWS Cloud", "Various ways to access AWS services", "Types of cloud deployment models", "Connectivity options", "APIs, SDKs, AWS CLI, AWS Management Console, and infrastructure as code", "One-time operations and repeatable processes", "Cloud, hybrid, and on-premises deployments", "Public internet, AWS VPN, and AWS Direct Connect"],
       "callout": "How should I interact with and deploy AWS resources?"
     },
     {
@@ -135,6 +135,16 @@
       "callout": "CLOUD = AWS · LOCAL = ON PREMISES · BOTH = HYBRID"
     },
     {
+      "id": "connectivity-options",
+      "title": "Connectivity Options",
+      "entries": [
+        {"title": "Public Internet", "paragraphs": ["Uses internet connectivity to reach public AWS service endpoints or public application endpoints. Security controls and encryption remain essential."], "memoryHook": "Public route over the internet."},
+        {"title": "AWS VPN", "paragraphs": ["Provides encrypted connectivity over an existing network such as the public internet."], "memoryHook": "Encrypted tunnel over existing connectivity."},
+        {"title": "AWS Direct Connect", "paragraphs": ["Provides a dedicated network connection between a customer location and AWS."], "memoryHook": "Dedicated private connection."}
+      ],
+      "callout": "PUBLIC INTERNET = PUBLIC PATH · VPN = ENCRYPTED TUNNEL · DIRECT CONNECT = DEDICATED LINK"
+    },
+    {
       "id": "scenario-recognition",
       "title": "GSA Scenario Recognition",
       "entries": [
@@ -149,8 +159,8 @@
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Browser GUI → AWS Management Console", "Terminal → AWS CLI", "Software communication → API", "Programming-language tools → AWS SDK", "Repeatable infrastructure → IaC", "AWS IaC templates → AWS CloudFormation", "AWS environment → Cloud", "Company-owned or local infrastructure → On premises", "Both connected → Hybrid"],
-      "callout": "CLICK = CONSOLE · TYPE = CLI · CONNECT = API · CODE = SDK · TEMPLATE = CLOUDFORMATION"
+      "bullets": ["Browser GUI → AWS Management Console", "Terminal → AWS CLI", "Software communication → API", "Programming-language tools → AWS SDK", "Repeatable infrastructure → IaC", "AWS IaC templates → AWS CloudFormation", "AWS environment → Cloud", "Company-owned or local infrastructure → On premises", "Both connected → Hybrid", "Public network path → Public internet", "Encrypted tunnel over existing connectivity → AWS VPN", "Dedicated connection to AWS → AWS Direct Connect"],
+      "callout": "CLICK · TYPE · CODE · TEMPLATE · DEPLOY · CONNECT"
     }
   ]
 }

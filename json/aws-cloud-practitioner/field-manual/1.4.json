@@ -62,9 +62,20 @@
     {
       "id": "automation",
       "title": "Benefits of Automation",
-      "paragraphs": ["Automation performs repeatable work without requiring the same manual effort each time. Human time and operational effort are also economic resources."],
+      "paragraphs": ["Automation performs repeatable work without requiring the same manual effort each time. Human time and operational effort are also economic resources. AWS CloudFormation can provision and configure approved infrastructure repeatedly from a template."],
       "bullets": ["Reduce repetitive manual work", "Improve consistency", "Increase operational efficiency", "Perform tasks more quickly", "Reduce operational overhead"],
       "callout": "MAKE THE COMPUTER DO THE REPEATABLE WORK"
+    },
+    {
+      "id": "managed-services",
+      "title": "Managed AWS Services",
+      "paragraphs": ["Managed services can reduce undifferentiated operational work because AWS operates more of the underlying service platform. The customer still configures access, data, and workload behavior according to the shared responsibility model."],
+      "entries": [
+        {"title": "Amazon RDS", "paragraphs": ["Managed relational database service."], "memoryHook": "Relational database without managing the database platform alone."},
+        {"title": "Amazon ECS and Amazon EKS", "paragraphs": ["Managed container orchestration services for ECS containers and Kubernetes workloads."], "memoryHook": "Managed container control planes."},
+        {"title": "Amazon DynamoDB", "paragraphs": ["Managed serverless NoSQL key-value and document database."], "memoryHook": "NoSQL without managing database servers."}
+      ],
+      "callout": "AWS MANAGES MORE OF THE PLATFORM → CUSTOMER TEAMS CAN FOCUS MORE ON THE WORKLOAD"
     },
     {
       "id": "economies-of-scale",
@@ -94,6 +105,7 @@
           ["License comes with the offering", "Included license"],
           ["Match capacity to actual workload", "Rightsizing"],
           ["Remove repetitive manual effort", "Automation"],
+          ["Reduce platform-management work for a database or container control plane", "Managed AWS service"],
           ["Provider's huge scale creates efficiencies", "Economies of scale"]
         ]
       }
@@ -108,13 +120,14 @@
         {"title": "Rightsizing vs. Elasticity", "paragraphs": ["Choose an appropriately sized resource → Rightsizing. Increase or decrease resources as demand changes → Elasticity."]},
         {"title": "Rightsizing vs. Cost Optimization", "paragraphs": ["Specific resource-sizing action → Rightsizing. Well-Architected financial-efficiency pillar → Cost Optimization."]},
         {"title": "Automation vs. Agility", "paragraphs": ["Perform repeatable tasks automatically → Automation. Experiment, adapt, and respond quickly → Agility."]},
+        {"title": "Managed Service vs. Self-Managed Workload", "paragraphs": ["AWS operates more of the service platform → Managed service. The customer installs and operates the software stack on compute → Self-managed workload."]},
         {"title": "Economies of Scale vs. Elasticity", "paragraphs": ["Provider scale creates economic efficiency → Economies of scale. Workload capacity changes with demand → Elasticity."]}
       ]
     },
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Financial considerations of cloud → Cloud economics", "Pay regardless of utilization → Fixed costs", "Pay according to consumption → Variable costs", "Facilities, power, cooling, maintenance, and hardware → On-premises costs", "Use an eligible license already owned → BYOL", "License comes with offering → Included license", "Match resources to workload needs → Rightsizing", "Perform repetitive processes automatically → Automation", "Provider scale creates financial efficiency → Economies of scale", "Potential financial advantage from changing the infrastructure model → Cloud cost savings"],
+      "bullets": ["Financial considerations of cloud → Cloud economics", "Pay regardless of utilization → Fixed costs", "Pay according to consumption → Variable costs", "Facilities, power, cooling, maintenance, and hardware → On-premises costs", "Use an eligible license already owned → BYOL", "License comes with offering → Included license", "Match resources to workload needs → Rightsizing", "Repeatable template provisioning → AWS CloudFormation", "Perform repetitive processes automatically → Automation", "Reduce platform-management work → Managed services such as RDS, ECS, EKS, and DynamoDB", "Provider scale creates financial efficiency → Economies of scale", "Potential financial advantage from changing the infrastructure model → Cloud cost savings"],
       "callout": "BUY → USE → SIZE → AUTOMATE → SCALE"
     },
     {

@@ -65,6 +65,16 @@
       "callout": "CDN and edge delivery → Amazon CloudFront"
     },
     {
+      "id": "edge-and-extension-services",
+      "title": "Edge and Infrastructure Extension Services",
+      "entries": [
+        {"title": "AWS Local Zones", "paragraphs": ["Place selected AWS services closer to large population and industry centers for applications that require very low latency."], "memoryHook": "AWS services closer to a metro area."},
+        {"title": "AWS Wavelength", "paragraphs": ["Embeds selected AWS services within telecommunications providers' 5G networks for applications that need ultra-low latency to mobile devices."], "memoryHook": "AWS at the 5G edge."},
+        {"title": "AWS Global Accelerator", "paragraphs": ["Uses the AWS global network and static anycast IP addresses to route users to healthy application endpoints with improved availability and performance."], "memoryHook": "Accelerate dynamic application traffic to healthy endpoints."}
+      ],
+      "callout": "METRO PROXIMITY → LOCAL ZONES · 5G EDGE → WAVELENGTH · GLOBAL APPLICATION ROUTING → GLOBAL ACCELERATOR"
+    },
+    {
       "id": "infrastructure-comparison",
       "title": "Region vs. AZ vs. Edge",
       "table": {
@@ -76,7 +86,7 @@
     {
       "id": "scenario-recognition",
       "title": "GSA Scenario Recognition",
-      "bullets": ["Choose a geographic AWS location → Region", "Remain available if one isolated location fails → Multiple AZs", "Recover in a geographically separate AWS area → Multiple Regions", "Deliver content globally with lower latency → Edge locations or CloudFront", "Keep data in an approved jurisdiction → Region selection and data sovereignty"],
+      "bullets": ["Choose a geographic AWS location → Region", "Remain available if one isolated location fails → Multiple AZs", "Recover in a geographically separate AWS area → Multiple Regions", "Deliver cached content globally with lower latency → Edge locations or CloudFront", "Place selected services closer to a metro area → Local Zones", "Run selected workloads at the 5G edge → Wavelength", "Route dynamic application traffic over the AWS global network → Global Accelerator", "Keep data in an approved jurisdiction → Region selection and data sovereignty"],
       "callout": "Location, resilience, proximity, or legal geography reveal the answer."
     },
     {
@@ -93,8 +103,8 @@
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Geographic area → Region", "Isolated location in a Region → Availability Zone", "High availability → Multiple AZs", "Geographic disaster recovery → Multiple Regions", "Closer to users → Edge location", "CDN → CloudFront", "Location law → Data sovereignty"],
-      "callout": "REGION = GEOGRAPHY · AZ = ISOLATION · EDGE = CLOSE"
+      "bullets": ["Geographic area → Region", "Isolated location in a Region → Availability Zone", "High availability → Multiple AZs", "Geographic disaster recovery → Multiple Regions", "Closer to users → Edge location", "CDN → CloudFront", "Metro extension → Local Zones", "5G edge → Wavelength", "Global application routing → Global Accelerator", "Location law → Data sovereignty"],
+      "callout": "REGION · AZ · EDGE · EXTENSION"
     }
   ]
 }

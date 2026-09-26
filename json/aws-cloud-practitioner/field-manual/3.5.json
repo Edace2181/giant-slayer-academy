@@ -103,6 +103,15 @@
       "callout": "ROUTE 53 = DNS"
     },
     {
+      "id": "edge-services",
+      "title": "Edge Services",
+      "entries": [
+        {"title": "Amazon CloudFront", "paragraphs": ["A content delivery network that caches and delivers supported content through edge locations closer to users."], "memoryHook": "Cache content near users."},
+        {"title": "AWS Global Accelerator", "paragraphs": ["Uses the AWS global network and static anycast IP addresses to route users to healthy application endpoints."], "memoryHook": "Accelerate global application traffic."}
+      ],
+      "callout": "CACHED CONTENT → CLOUDFRONT · DYNAMIC APPLICATION TRAFFIC → GLOBAL ACCELERATOR"
+    },
+    {
       "id": "connecting-to-aws",
       "title": "Connecting to AWS",
       "paragraphs": ["Organizations often need to connect their existing networks to AWS. The two major options in this objective are AWS VPN and AWS Direct Connect."],
@@ -144,16 +153,18 @@
         {"title": "Scenario 3", "paragraphs": ["Traffic needs to be filtered at the resource level with stateful rules."], "memoryHook": "Security group."},
         {"title": "Scenario 4", "paragraphs": ["Traffic needs subnet-level stateless filtering."], "memoryHook": "Network ACL."},
         {"title": "Scenario 5", "paragraphs": ["A company needs DNS."], "memoryHook": "Amazon Route 53."},
-        {"title": "Scenario 6", "paragraphs": ["A company needs encrypted network connectivity to AWS."], "memoryHook": "AWS VPN."},
-        {"title": "Scenario 7", "paragraphs": ["A company wants dedicated network connectivity to AWS."], "memoryHook": "AWS Direct Connect."},
-        {"title": "Scenario 8", "paragraphs": ["A company wants to identify unintended network exposure."], "memoryHook": "Amazon Inspector."}
+        {"title": "Scenario 6", "paragraphs": ["A company wants cached content delivered through edge locations."], "memoryHook": "Amazon CloudFront."},
+        {"title": "Scenario 7", "paragraphs": ["A company wants dynamic application traffic routed globally to healthy endpoints."], "memoryHook": "AWS Global Accelerator."},
+        {"title": "Scenario 8", "paragraphs": ["A company needs encrypted network connectivity to AWS."], "memoryHook": "AWS VPN."},
+        {"title": "Scenario 9", "paragraphs": ["A company wants dedicated network connectivity to AWS."], "memoryHook": "AWS Direct Connect."},
+        {"title": "Scenario 10", "paragraphs": ["A company wants to identify unintended network exposure."], "memoryHook": "Amazon Inspector."}
       ]
     },
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Virtual AWS network → VPC", "Network segment → Subnet", "Network door → Gateway", "Resource-level plus stateful → Security group", "Subnet-level plus stateless → Network ACL", "Vulnerability or exposure identification → Inspector", "DNS → Route 53", "Encrypted tunnel → AWS VPN", "Dedicated AWS connection → Direct Connect"],
-      "callout": "NETWORK = VPC · SEGMENT = SUBNET · PATH = GATEWAY · DNS = ROUTE 53 · TUNNEL = VPN · DEDICATED = DIRECT CONNECT"
+      "bullets": ["Virtual AWS network → VPC", "Network segment → Subnet", "Network door → Gateway", "Resource-level plus stateful → Security group", "Subnet-level plus stateless → Network ACL", "Vulnerability or exposure identification → Inspector", "DNS → Route 53", "Cached edge delivery → CloudFront", "Global dynamic application routing → Global Accelerator", "Encrypted tunnel → AWS VPN", "Dedicated AWS connection → Direct Connect"],
+      "callout": "BUILD · SECURE · NAME · DELIVER · CONNECT"
     }
   ]
 }

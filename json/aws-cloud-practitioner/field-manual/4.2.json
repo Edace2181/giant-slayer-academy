@@ -11,13 +11,13 @@
       "id": "what-you-are-learning",
       "title": "What You Are Learning",
       "paragraphs": ["AWS gives customers several tools for understanding, predicting, controlling, and allocating cloud costs. The exam wants you to recognize which cost tool to use."],
-      "bullets": ["Billing support and information", "AWS service pricing", "AWS Organizations", "Cost allocation tags", "AWS Budgets", "AWS Cost Explorer", "AWS Pricing Calculator", "Consolidated billing", "Cost allocation", "AWS Cost and Usage Report"],
+      "bullets": ["Billing support and information", "AWS service pricing", "AWS Organizations", "AWS Billing Conductor", "Cost allocation tags", "AWS Budgets", "AWS Cost Explorer", "AWS Pricing Calculator", "Consolidated billing", "Cost allocation", "AWS Cost and Usage Report"],
       "callout": "Which cost tool do I use?"
     },
     {
       "id": "maestro-focus",
       "title": "Maestro Mental Model",
-      "bullets": ["WARN ME → AWS Budgets", "SHOW ME → AWS Cost Explorer", "ESTIMATE IT → AWS Pricing Calculator", "COMBINE ACCOUNTS → AWS Organizations", "WHO SPENT IT → Cost allocation tags", "GIVE ME THE DETAILS → AWS Cost and Usage Report"],
+      "bullets": ["WARN ME → AWS Budgets", "SHOW ME → AWS Cost Explorer", "ESTIMATE IT → AWS Pricing Calculator", "COMBINE ACCOUNTS → AWS Organizations", "CUSTOMIZE BILLING VIEWS → AWS Billing Conductor", "WHO SPENT IT → Cost allocation tags", "GIVE ME THE DETAILS → AWS Cost and Usage Report"],
       "callout": "ESTIMATE · ANALYZE · ALERT · COMBINE · ALLOCATE · REPORT"
     },
     {
@@ -59,6 +59,12 @@
       "title": "AWS Organizations",
       "paragraphs": ["AWS Organizations helps centrally manage multiple AWS accounts. For billing, one major capability is consolidated billing. Instead of treating every AWS account as a separate billing island, an organization can consolidate billing across member accounts."],
       "callout": "MANY ACCOUNTS → ONE ORGANIZATION"
+    },
+    {
+      "id": "billing-conductor",
+      "title": "AWS Billing Conductor",
+      "paragraphs": ["AWS Billing Conductor creates customized billing views and pricing arrangements for groups of accounts without changing the actual AWS invoice. It is useful for chargeback and showback workflows that need customer-defined rates or billing groups."],
+      "callout": "CUSTOM BILLING VIEW OR INTERNAL RATE → AWS BILLING CONDUCTOR"
     },
     {
       "id": "consolidated-billing",
@@ -115,21 +121,21 @@
     {
       "id": "scenario-recognition",
       "title": "GSA Scenario Recognition",
-      "bullets": ["Alert if monthly AWS spending exceeds $1,000 → AWS Budgets", "Examine spending trends over six months → AWS Cost Explorer", "Estimate a proposed architecture before deployment → AWS Pricing Calculator", "Centralized billing for 20 AWS accounts → AWS Organizations consolidated billing", "Separate AWS costs by department → Cost allocation tags", "Highly detailed cost and usage reporting → AWS Cost and Usage Report"],
+      "bullets": ["Alert if monthly AWS spending exceeds $1,000 → AWS Budgets", "Examine spending trends over six months → AWS Cost Explorer", "Estimate a proposed architecture before deployment → AWS Pricing Calculator", "Centralized billing for 20 AWS accounts → AWS Organizations consolidated billing", "Create a custom internal billing view for groups of accounts → AWS Billing Conductor", "Separate AWS costs by department → Cost allocation tags", "Highly detailed cost and usage reporting → AWS Cost and Usage Report"],
       "callout": "Turn the business verb into the AWS cost tool."
     },
     {
       "id": "exam-traps",
       "title": "GSA Exam Traps",
       "variant": "exam-trap",
-      "entries": [{"title": "Budgets vs. Calculator", "paragraphs": ["Alert about spending → Budgets. Estimate a future architecture → Pricing Calculator."]}, {"title": "Calculator vs. Cost Explorer", "paragraphs": ["Estimate before deployment → Pricing Calculator. Analyze actual or historical costs → Cost Explorer."]}, {"title": "Cost Explorer vs. CUR", "paragraphs": ["Visualize or analyze trends → Cost Explorer. Detailed granular billing report → Cost and Usage Report."]}, {"title": "Organizations vs. Tags", "paragraphs": ["Combine multiple-account billing → Organizations. Identify which department or project generated cost → Cost allocation tags."]}],
+      "entries": [{"title": "Budgets vs. Calculator", "paragraphs": ["Alert about spending → Budgets. Estimate a future architecture → Pricing Calculator."]}, {"title": "Calculator vs. Cost Explorer", "paragraphs": ["Estimate before deployment → Pricing Calculator. Analyze actual or historical costs → Cost Explorer."]}, {"title": "Cost Explorer vs. CUR", "paragraphs": ["Visualize or analyze trends → Cost Explorer. Detailed granular billing report → Cost and Usage Report."]}, {"title": "Organizations vs. Billing Conductor", "paragraphs": ["Centrally manage accounts and consolidated billing → Organizations. Create custom billing views or internal pricing for account groups → Billing Conductor."]}, {"title": "Organizations vs. Tags", "paragraphs": ["Combine multiple-account billing → Organizations. Identify which department or project generated cost → Cost allocation tags."]}],
       "callout": "ALERT · ESTIMATE · ANALYZE · REPORT · COMBINE · ALLOCATE"
     },
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Alert → AWS Budgets", "Analyze → AWS Cost Explorer", "Estimate → AWS Pricing Calculator", "Multiple accounts → AWS Organizations", "Combined bill → Consolidated billing", "Department or project → Cost allocation tags", "Detailed billing dataset or report → AWS Cost and Usage Report"],
-      "callout": "WARN · SHOW · ESTIMATE · COMBINE · ATTRIBUTE · DETAIL"
+      "bullets": ["Alert → AWS Budgets", "Analyze → AWS Cost Explorer", "Estimate → AWS Pricing Calculator", "Multiple accounts → AWS Organizations", "Combined bill → Consolidated billing", "Custom internal billing view → AWS Billing Conductor", "Department or project → Cost allocation tags", "Detailed billing dataset or report → AWS Cost and Usage Report"],
+      "callout": "WARN · SHOW · ESTIMATE · COMBINE · CUSTOMIZE · ATTRIBUTE · DETAIL"
     }
   ]
 }

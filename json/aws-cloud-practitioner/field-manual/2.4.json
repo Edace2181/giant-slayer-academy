@@ -11,7 +11,7 @@
       "id": "what-you-are-learning",
       "title": "What You Are Learning",
       "paragraphs": ["AWS provides different security services for different jobs, third-party products, security documentation, educational resources, and checks that identify security concerns."],
-      "bullets": ["AWS WAF", "AWS Firewall Manager", "AWS Shield", "Amazon GuardDuty", "AWS Marketplace", "AWS Knowledge Center", "AWS Security Center", "AWS Security Blog", "AWS Trusted Advisor"],
+      "bullets": ["Security groups and network ACLs", "AWS WAF", "AWS Firewall Manager", "AWS Shield", "Amazon GuardDuty", "AWS Marketplace", "AWS Knowledge Center", "AWS Security Center", "AWS Security Blog", "AWS Trusted Advisor"],
       "callout": "Which AWS security service or security resource matches this need?"
     },
     {
@@ -30,6 +30,8 @@
       "id": "security-services",
       "title": "AWS Security Features and Services",
       "entries": [
+        {"title": "Security Groups", "paragraphs": ["Stateful virtual firewalls associated with supported resources that control allowed inbound and outbound traffic."], "memoryHook": "Resource-level stateful traffic control."},
+        {"title": "Network ACLs", "paragraphs": ["Stateless traffic filters applied at the subnet boundary in an Amazon VPC."], "memoryHook": "Subnet-level stateless traffic control."},
         {"title": "AWS WAF", "paragraphs": ["A web application firewall that controls and filters HTTP or HTTPS web requests using rules."], "memoryHook": "Web traffic bouncer."},
         {"title": "AWS Shield", "paragraphs": ["Helps protect AWS workloads against distributed denial-of-service (DDoS) attacks."], "memoryHook": "DDoS → Shield."},
         {"title": "AWS Firewall Manager", "paragraphs": ["Centrally configures and manages firewall rules and security policies across multiple accounts and resources."], "memoryHook": "Central security-policy boss."},
@@ -68,6 +70,8 @@
         "headers": ["Need", "Service or resource"],
         "rows": [
           ["Filter web requests", "AWS WAF"],
+          ["Control supported resource traffic", "Security group"],
+          ["Filter traffic at a subnet boundary", "Network ACL"],
           ["DDoS protection", "AWS Shield"],
           ["Central firewall policy management", "AWS Firewall Manager"],
           ["Threat detection", "Amazon GuardDuty"],
@@ -85,6 +89,7 @@
       "variant": "exam-trap",
       "entries": [
         {"title": "WAF vs. Shield", "paragraphs": ["Filter web requests → WAF. DDoS protection → Shield."]},
+        {"title": "Security Group vs. Network ACL", "paragraphs": ["Stateful control on supported resources → Security group. Stateless subnet-boundary filter → Network ACL."]},
         {"title": "WAF vs. Firewall Manager", "paragraphs": ["Apply web request rules → WAF. Centrally manage firewall and security policies → Firewall Manager."]},
         {"title": "Shield vs. GuardDuty", "paragraphs": ["DDoS protection → Shield. Threat detection → GuardDuty."]},
         {"title": "GuardDuty vs. Inspector", "paragraphs": ["Suspicious activity → GuardDuty. Software vulnerabilities and exposure → Inspector."]},
@@ -96,7 +101,7 @@
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Web request filtering → AWS WAF", "DDoS protection → AWS Shield", "Central firewall policies → AWS Firewall Manager", "Threat detection → Amazon GuardDuty", "Best-practice recommendations → AWS Trusted Advisor", "Third-party products → AWS Marketplace", "Common AWS guidance → AWS Knowledge Center", "AWS security resources → AWS Security Center", "Security articles and updates → AWS Security Blog"],
+      "bullets": ["Resource-level stateful traffic control → Security group", "Subnet-level stateless traffic control → Network ACL", "Web request filtering → AWS WAF", "DDoS protection → AWS Shield", "Central firewall policies → AWS Firewall Manager", "Threat detection → Amazon GuardDuty", "Best-practice recommendations → AWS Trusted Advisor", "Third-party products → AWS Marketplace", "Common AWS guidance → AWS Knowledge Center", "AWS security resources → AWS Security Center", "Security articles and updates → AWS Security Blog"],
       "callout": "FILTER → PROTECT → MANAGE → DETECT → ADVISE → LEARN"
     },
     {

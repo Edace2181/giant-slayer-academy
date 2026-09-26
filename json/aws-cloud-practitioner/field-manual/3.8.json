@@ -50,14 +50,32 @@
       "callout": "Business or technical assistance from AWS → AWS Support"
     },
     {
+      "id": "customer-engagement",
+      "title": "Customer Engagement and Assistance",
+      "entries": [
+        {"title": "AWS Activate for Startups", "paragraphs": ["Provides eligible startups with AWS credits, technical support, training, and business resources."], "memoryHook": "Startup resources and credits."},
+        {"title": "AWS IQ", "paragraphs": ["Connects customers with AWS Certified independent experts for project assistance."], "memoryHook": "Find an independent AWS expert."},
+        {"title": "AWS Managed Services (AMS)", "paragraphs": ["Provides ongoing AWS infrastructure operations and management using AWS practices and automation."], "memoryHook": "AWS-assisted ongoing operations."},
+        {"title": "AWS Support", "paragraphs": ["Provides account and technical support options through support plans and AWS resources."], "memoryHook": "AWS support for operating your environment."}
+      ],
+      "callout": "STARTUP → ACTIVATE · PROJECT EXPERT → IQ · ONGOING OPERATIONS → AMS · SUPPORT CASE → AWS SUPPORT"
+    },
+    {
       "id": "developer-tools",
       "title": "Developer Tools",
       "entries": [
+        {"title": "AWS AppConfig", "paragraphs": ["Deploys and validates application configuration changes independently from application code deployments."], "memoryHook": "Safely release configuration."},
+        {"title": "AWS Cloud9", "paragraphs": ["A cloud-based integrated development environment for writing, running, and debugging code."], "memoryHook": "Cloud IDE."},
+        {"title": "AWS CloudShell", "paragraphs": ["A browser-based shell with AWS CLI access and credentials from the current console session."], "memoryHook": "AWS shell in the browser."},
+        {"title": "AWS CodeArtifact", "paragraphs": ["Managed artifact repository for software packages used by development and build tools."], "memoryHook": "Store software packages."},
         {"title": "AWS CodeBuild", "paragraphs": ["A managed continuous-integration service that compiles source code, runs tests, and produces deployable artifacts."], "memoryHook": "Build the code."},
+        {"title": "AWS CodeCommit", "paragraphs": ["Managed private Git repositories for source code."], "memoryHook": "Store source code."},
+        {"title": "AWS CodeDeploy", "paragraphs": ["Automates application deployments to supported compute targets."], "memoryHook": "Deploy the application."},
         {"title": "AWS CodePipeline", "paragraphs": ["Models and automates build, test, approval, and deployment stages in a software release workflow."], "memoryHook": "Move code through the delivery pipeline."},
+        {"title": "AWS CodeStar", "paragraphs": ["Provides a unified project experience for setting up and managing software-development projects with AWS developer tools."], "memoryHook": "Coordinate the development project."},
         {"title": "AWS X-Ray", "paragraphs": ["Traces requests through distributed applications to identify errors, bottlenecks, and performance problems."], "memoryHook": "See inside the application."}
       ],
-      "callout": "BUILD = CODEBUILD · DELIVER = CODEPIPELINE · TRACE = X-RAY"
+      "callout": "CONFIGURE · CODE · PACKAGE · BUILD · DEPLOY · PIPELINE · TRACE"
     },
     {
       "id": "end-user-computing",
@@ -83,14 +101,17 @@
     },
     {
       "id": "iot-core",
-      "title": "AWS IoT Core",
-      "paragraphs": ["AWS IoT Core securely connects and manages Internet of Things devices, enabling device communication and message exchange with AWS services."],
-      "callout": "Connect devices and exchange IoT messages with AWS → AWS IoT Core"
+      "title": "IoT Services",
+      "entries": [
+        {"title": "AWS IoT Core", "paragraphs": ["Securely connects and manages Internet of Things devices, enabling device communication and message exchange with AWS services."], "memoryHook": "Connect devices to AWS."},
+        {"title": "AWS IoT Greengrass", "paragraphs": ["Extends AWS capabilities to edge devices so they can process data and act locally, including during intermittent cloud connectivity."], "memoryHook": "Run IoT logic at the edge."}
+      ],
+      "callout": "CLOUD DEVICE CONNECTION → IOT CORE · LOCAL EDGE PROCESSING → IOT GREENGRASS"
     },
     {
       "id": "scenario-recognition",
       "title": "GSA Scenario Recognition",
-      "bullets": ["Route an application event → EventBridge", "Notify many subscribers → SNS", "Buffer messages for later processing → SQS", "Cloud contact center → Connect", "Send application email → SES", "Get AWS assistance → AWS Support", "Compile and test code → CodeBuild", "Automate release stages → CodePipeline", "Trace a distributed application → X-Ray", "Stream applications → AppStream 2.0", "Provide virtual desktops → WorkSpaces", "Provide secure browser access → WorkSpaces Secure Browser", "Build and deploy a frontend → Amplify", "Managed GraphQL API and real-time sync → AppSync", "Connect IoT devices → IoT Core"],
+      "bullets": ["Route an application event → EventBridge", "Notify many subscribers → SNS", "Buffer messages for later processing → SQS", "Cloud contact center → Connect", "Send application email → SES", "Startup resources → AWS Activate", "Independent AWS expert → AWS IQ", "Ongoing infrastructure operations → AWS Managed Services", "Get AWS assistance → AWS Support", "Application configuration release → AppConfig", "Cloud IDE → Cloud9", "Browser shell → CloudShell", "Package repository → CodeArtifact", "Compile and test code → CodeBuild", "Private Git repository → CodeCommit", "Deploy application code → CodeDeploy", "Automate release stages → CodePipeline", "Coordinate developer-tool projects → CodeStar", "Trace a distributed application → X-Ray", "Stream applications → AppStream 2.0", "Provide virtual desktops → WorkSpaces", "Provide secure browser access → WorkSpaces Secure Browser", "Build and deploy a frontend → Amplify", "Managed GraphQL API and real-time sync → AppSync", "Connect IoT devices → IoT Core", "Run IoT logic at the edge → IoT Greengrass"],
       "callout": "Identify the business action before looking at service names."
     },
     {
@@ -102,16 +123,19 @@
         {"title": "EventBridge vs. SNS", "paragraphs": ["Event routing → EventBridge. Publish/subscribe notification → SNS."]},
         {"title": "Connect vs. SES", "paragraphs": ["Contact center → Connect. Email → SES."]},
         {"title": "CodeBuild vs. CodePipeline vs. X-Ray", "paragraphs": ["Build and test → CodeBuild. Automate delivery → CodePipeline. Trace and troubleshoot → X-Ray."]},
+        {"title": "CodeCommit vs. CodeArtifact", "paragraphs": ["Store source code in Git repositories → CodeCommit. Store software packages → CodeArtifact."]},
+        {"title": "Cloud9 vs. CloudShell", "paragraphs": ["Cloud development environment → Cloud9. Browser-based command shell → CloudShell."]},
         {"title": "AppStream vs. WorkSpaces vs. Secure Browser", "paragraphs": ["Stream an application → AppStream. Full virtual desktop → WorkSpaces. Isolated browser → WorkSpaces Secure Browser."]},
         {"title": "Amplify vs. AppSync", "paragraphs": ["Frontend development, hosting, and deployment → Amplify. Managed GraphQL APIs and real-time data synchronization → AppSync."]},
         {"title": "Amplify vs. AppStream", "paragraphs": ["Build or deploy a web/mobile frontend → Amplify. Stream an existing desktop application interface → AppStream."]}
+        ,{"title": "IoT Core vs. IoT Greengrass", "paragraphs": ["Connect and manage devices through AWS → IoT Core. Process and act locally on edge devices → IoT Greengrass."]}
       ]
     },
     {
       "id": "maestro-recognition-sheet",
       "title": "Maestro Recognition Sheet",
-      "bullets": ["Route events → EventBridge", "Broadcast notification → SNS", "Queue message → SQS", "Contact center → Connect", "Email → SES", "AWS assistance → AWS Support", "Build code → CodeBuild", "Release pipeline → CodePipeline", "Application tracing → X-Ray", "Stream application → AppStream 2.0", "Virtual desktop → WorkSpaces", "Secure browser → WorkSpaces Secure Browser", "Frontend/mobile → Amplify", "GraphQL and data sync → AppSync", "IoT devices → IoT Core"],
-      "callout": "EVENT · SHOUT · QUEUE · CALL · EMAIL · HELP · BUILD · DELIVER · TRACE · PRESENT · CONNECT"
+      "bullets": ["Route events → EventBridge", "Broadcast notification → SNS", "Queue message → SQS", "Contact center → Connect", "Email → SES", "Startup resources → Activate", "Independent expert → IQ", "Managed operations → AMS", "AWS assistance → AWS Support", "Configuration deployment → AppConfig", "Cloud IDE → Cloud9", "Browser shell → CloudShell", "Package repository → CodeArtifact", "Build code → CodeBuild", "Git repository → CodeCommit", "Deploy code → CodeDeploy", "Release pipeline → CodePipeline", "Project coordination → CodeStar", "Application tracing → X-Ray", "Stream application → AppStream 2.0", "Virtual desktop → WorkSpaces", "Secure browser → WorkSpaces Secure Browser", "Frontend/mobile → Amplify", "GraphQL and data sync → AppSync", "IoT cloud connection → IoT Core", "IoT edge processing → IoT Greengrass"],
+      "callout": "INTEGRATE · ENGAGE · BUILD · DELIVER · PRESENT · CONNECT"
     },
     {
       "id": "world-four-connection",
