@@ -227,17 +227,17 @@
     "id": 22015,
     "domain": "4",
     "objective": "4.2",
-    "blueprint": "Rogue DHCP attacks",
+    "blueprint": "MAC flooding",
     "difficulty": "Level 2",
-    "question": "Clients suddenly receive leases naming an attacker-controlled default gateway. Switch captures show DHCP offers arriving from an unauthorized access port. Which threat is present?",
+    "question": "A switch suddenly learns thousands of fabricated source MAC addresses on one access port. Its forwarding table fills, and the switch begins sending unknown-unicast frames out many ports. Which attack best explains the behavior?",
     "choices": [
-      "A DNS zone-transfer attack",
-      "A rogue DHCP server",
-      "A VLAN pruning error",
-      "A wireless channel conflict"
+      "An ARP cache timeout",
+      "A MAC-flooding attack",
+      "A native-VLAN mismatch",
+      "A DNS amplification attack"
     ],
     "answer": 1,
-    "explanation": "Unauthorized DHCP offers can redirect clients through a malicious gateway or resolver. The capture directly identifies a rogue DHCP service."
+    "explanation": "MAC flooding overwhelms a switch's forwarding table with fabricated source addresses. When the table cannot hold the required entries, unknown-unicast traffic may be flooded like broadcast traffic."
   },
   {
     "id": 22016,
@@ -835,17 +835,17 @@
     "id": 22053,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Voice VLAN and QoS trust",
+    "blueprint": "Speed and duplex mismatch",
     "difficulty": "Level 4",
-    "question": "A switch port connects an IP phone with a workstation behind it. The phone marks voice EF, but the workstation is sending EF-marked backups. Which configuration best protects voice quality?",
+    "question": "A legacy switch port is forced to 100 Mbps full duplex, while the connected device has fallen back to 100 Mbps half duplex. The link stays up but develops late collisions and poor throughput under load. What is the best correction?",
     "choices": [
-      "Trust all incoming DSCP values on the port",
-      "Remove the voice VLAN and combine all traffic",
-      "Disable QoS on every uplink",
-      "Trust markings from the authenticated phone and remark workstation traffic at the access edge"
+      "Add the link to an LACP bundle",
+      "Change the access VLAN into the native VLAN",
+      "Increase the interface MTU to 9000 bytes",
+      "Configure compatible speed and duplex settings on both ends, preferably matching autonegotiation"
     ],
     "answer": 3,
-    "explanation": "The access edge should establish a controlled trust boundary so only authorized voice markings retain priority. Blind trust lets the workstation abuse the queue."
+    "explanation": "A duplex mismatch can leave the link operational while causing collisions and severe performance loss. Matching the endpoints' speed and duplex behavior removes the mismatch."
   },
   {
     "id": 22054,
@@ -979,17 +979,17 @@
     "id": 22062,
     "domain": "5",
     "objective": "5.5",
-    "blueprint": "Windows path diagnostics",
+    "blueprint": "ARP neighbor inspection",
     "difficulty": "Level 3",
-    "question": "Which Windows command sends repeated probes and reports hop-by-hop packet-loss statistics over time?",
+    "question": "A server was moved to a replacement NIC, but a Windows workstation still sends local-subnet traffic to the server's old MAC address. Which command displays the workstation's current IPv4-to-MAC neighbor mappings?",
     "choices": [
-      "hostname",
+      "nslookup",
+      "route print",
       "arp -a",
-      "pathping",
       "net use"
     ],
     "answer": 2,
-    "explanation": "Pathping combines route discovery with repeated measurements to estimate loss at each hop. The other commands display identity, neighbor mappings, or shares."
+    "explanation": "The arp -a command displays the local ARP cache, including IPv4-to-MAC mappings. That output reveals whether the workstation still holds the server's previous hardware address."
   },
   {
     "id": 22063,
@@ -1139,17 +1139,17 @@
     "id": 22072,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Floating static routes",
+    "blueprint": "Port address translation",
     "difficulty": "Level 3",
-    "question": "A router should use OSPF normally and a static route only if OSPF disappears. How should the static route be configured?",
+    "question": "Hundreds of private IPv4 clients simultaneously access the internet through one public address. The edge router keeps the sessions distinct by translating each flow to a different source port. Which technology is being used?",
     "choices": [
-      "With an administrative distance higher than OSPF",
-      "With a more specific destination prefix than the OSPF route",
-      "As an STP alternate port",
-      "With no next hop or exit interface"
+      "Port address translation",
+      "A first-hop redundancy protocol",
+      "A static one-to-one NAT mapping for every client",
+      "Generic routing encapsulation"
     ],
     "answer": 0,
-    "explanation": "A floating static route has a less-preferred administrative distance so it enters the table only when the dynamic route is unavailable."
+    "explanation": "Port address translation lets many private hosts share one public address by tracking unique transport-layer port mappings for their concurrent sessions."
   },
   {
     "id": 22073,
@@ -1187,17 +1187,17 @@
     "id": 22075,
     "domain": "5",
     "objective": "5.2",
-    "blueprint": "Damaged copper patch leads",
+    "blueprint": "Fiber transmit and receive polarity",
     "difficulty": "Level 2",
-    "question": "A switch link drops whenever the RJ45 plug is touched, and the latch no longer holds the plug securely. What is the appropriate repair?",
+    "question": "A new duplex-fiber link remains down even though both transceivers are compatible and optical power is within specification. Inspection shows that each endpoint's transmit strand reaches the other endpoint's transmit port. What is the appropriate correction?",
     "choices": [
-      "Increase the DNS cache lifetime",
-      "Enable jumbo frames",
-      "Change the routing protocol",
-      "Replace the damaged patch lead"
+      "Increase the Ethernet MTU",
+      "Replace the switches with wireless bridges",
+      "Configure both interfaces as half duplex",
+      "Reverse the fiber pair at one end so each transmitter reaches the opposite receiver"
     ],
     "answer": 3,
-    "explanation": "A mechanically damaged plug and reproducible movement-related failure justify replacing the patch lead rather than changing network settings."
+    "explanation": "A duplex optical link requires crossed polarity: TX at one endpoint must reach RX at the other. Reversing the pair at one end corrects the transposed transmit and receive strands."
   },
   {
     "id": 13076,

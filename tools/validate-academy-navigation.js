@@ -49,6 +49,7 @@ const rootRouteSources = fs.readdirSync(root, { withFileTypes: true })
   .map(entry => ({ name: entry.name, text: read(entry.name) }));
 const academyScript = read("script.js");
 const objectiveReturnScript = read("objective-quiz-return.js");
+const securityEntry = read("security-plus.html");
 
 requireValue(
   academyScript.includes('entryState.get("entered") === "1"'),
@@ -57,6 +58,10 @@ requireValue(
 requireValue(
   objectiveReturnScript.includes('returnLink.href = `${prefix}-world${world}-objectives.html`;'),
   "Shared Objective Sweep return no longer targets Chapter Objective Hubs."
+);
+requireValue(
+  securityEntry.includes('href="index.html?entered=1"') && securityEntry.includes("Return to Academy"),
+  "Security+ internal Return to Academy must open Select a Game."
 );
 
 certifications.forEach(certification => {

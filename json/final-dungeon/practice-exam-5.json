@@ -51,17 +51,17 @@
     "id": 21004,
     "domain": "2",
     "objective": "2.1",
-    "blueprint": "Route selection and administrative distance",
+    "blueprint": "Router subinterfaces",
     "difficulty": "Level 3",
-    "question": "A router learns 10.40.0.0/16 through OSPF and also has a floating static route to the same prefix. The OSPF path fails, but the static route never enters the table. What should be corrected?",
+    "question": "A Layer 2 switch sends VLANs 10, 20, and 30 over one 802.1Q trunk to a router. Each VLAN requires a separate default gateway and routing policy, but the router has only one physical interface available. Which configuration meets the requirement?",
     "choices": [
-      "Lower the static route prefix length to /8",
-      "Configure the static route as an OSPF designated router",
-      "Replace the next-hop address with the local loopback address",
-      "Set the static route administrative distance higher than OSPF but low enough to be eligible"
+      "Place one untagged address on the physical interface for all three VLANs",
+      "Create three loopback interfaces and bridge them to the switch",
+      "Convert the switch trunk into an access port for VLAN 10",
+      "Create one router subinterface per VLAN with matching 802.1Q tags and gateway addresses"
     ],
     "answer": 3,
-    "explanation": "A floating static route must be less preferred than OSPF during normal operation yet valid when OSPF disappears. Its administrative distance controls that preference; changing prefix length or DR status does not create the intended backup."
+    "explanation": "Router-on-a-stick uses tagged subinterfaces on one physical link. Each subinterface represents a VLAN and supplies that VLAN's Layer 3 gateway without requiring a separate physical router port."
   },
   {
     "id": 21005,
@@ -419,17 +419,17 @@
     "id": 21027,
     "domain": "1",
     "objective": "1.3",
-    "blueprint": "Cloud connectivity options",
+    "blueprint": "Cloud egress gateways",
     "difficulty": "Level 3",
-    "question": "A company needs predictable private connectivity from its data center to a cloud provider and does not want production traffic crossing the public internet. Which option best meets the requirement?",
+    "question": "Workloads in a private cloud subnet have no public IP addresses. They must download operating-system updates from the internet, but internet hosts must not be able to initiate connections to them. Which design best meets the requirement?",
     "choices": [
-      "A clientless SSL portal",
-      "A public DNS alias",
-      "A dedicated private cloud connection",
-      "A consumer broadband link with PAT"
+      "Attach a public IP address directly to every workload",
+      "Route the private subnet directly to an internet gateway",
+      "Route outbound traffic through a managed NAT gateway while keeping the workloads private",
+      "Publish every workload through a public load balancer"
     ],
     "answer": 2,
-    "explanation": "A provider dedicated connection offers private, predictable cloud connectivity. A VPN could encrypt public-internet traffic, but the requirement specifically avoids that path."
+    "explanation": "A NAT gateway lets private-subnet workloads initiate outbound internet sessions while hiding their private addresses. It does not create unsolicited inbound reachability to those workloads."
   },
   {
     "id": 21028,
@@ -1283,17 +1283,17 @@
     "id": 21081,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "VLAN trunk and pruning analysis",
+    "blueprint": "Switch virtual interface state",
     "difficulty": "Level 4",
-    "question": "VLAN 40 works between two access switches but not across the distribution trunk. Both trunk endpoints use the same native VLAN, and VLAN 40 exists on every switch. The trunk allowed lists show VLAN 40 on one end but not the other. What is the best correction?",
+    "question": "A multilayer switch has an SVI for VLAN 40 with the correct IP address, but the SVI remains down. The VLAN exists, routing is enabled, and every access port in VLAN 40 is administratively shut. What should be done first?",
     "choices": [
-      "Change VLAN 40 access ports into routed ports",
-      "Disable STP for VLAN 40",
-      "Add VLAN 40 to the allowed list consistently on both trunk endpoints",
-      "Make VLAN 40 the native VLAN everywhere"
+      "Delete VLAN 40 and use the native VLAN instead",
+      "Disable IP routing on the multilayer switch",
+      "Bring up at least one Layer 2 port or allowed trunk that carries VLAN 40",
+      "Convert the SVI into a physical routed port"
     ],
     "answer": 2,
-    "explanation": "The asymmetric allowed list prunes VLAN 40 from the trunk despite correct VLAN creation and native-VLAN settings. Adding it consistently restores tagged forwarding."
+    "explanation": "An SVI normally requires its VLAN to be active at Layer 2. Bringing up an access port in VLAN 40 or an operational trunk carrying VLAN 40 allows the SVI line protocol to come up."
   },
   {
     "id": 21082,
@@ -1331,17 +1331,17 @@
     "id": 21084,
     "domain": "2",
     "objective": "2.2",
-    "blueprint": "Link-aggregation hashing",
+    "blueprint": "Jumbo-frame consistency",
     "difficulty": "Level 3",
-    "question": "A four-link LACP bundle carries many user flows across all members, but one single high-volume TCP session never exceeds one member's capacity. What is the best explanation?",
+    "question": "Two storage servers use a 9000-byte MTU and can exchange small packets, but large storage transfers fail across an intermediate switch whose ports remain at the default 1500-byte MTU. What is the best correction?",
     "choices": [
-      "STP blocks three links inside every LACP bundle",
-      "LACP requires each packet to use the next member in sequence",
-      "The hashing algorithm keeps a flow on one member to preserve packet order",
-      "The switch converts the TCP session into a broadcast"
+      "Disable spanning tree on the storage VLAN",
+      "Replace the storage VLAN with the native VLAN",
+      "Configure a consistent supported MTU across both servers and every device in the path",
+      "Convert the storage traffic to broadcast frames"
     ],
     "answer": 2,
-    "explanation": "Link aggregation usually balances per flow, not per packet, so one flow stays on one member and cannot exceed that member's bandwidth while aggregate traffic uses the full bundle."
+    "explanation": "Jumbo frames must be supported consistently along the entire path. A 1500-byte intermediate interface drops or fragments larger frames, so every participating interface must use a compatible MTU."
   },
   {
     "id": 21085,
