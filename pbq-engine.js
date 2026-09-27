@@ -25,6 +25,12 @@
       bank: "json/security-plus/pbq/phase-1.json",
       returnHref: "security-plus-final-dungeon.html",
       returnLabel: "Return to Security+ Final Dungeon"
+    },
+    "cloud-plus": {
+      label: "CompTIA Cloud+ (CV0-004)",
+      bank: "json/cloud-plus/pbq/production.json",
+      returnHref: "cloud-plus-final-dungeon.html",
+      returnLabel: "Return to Cloud+ Final Dungeon"
     }
   });
 
