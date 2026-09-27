@@ -564,7 +564,7 @@ requireValue(manualPage.includes('id="cloudManualNavigation"') && manualScript.i
 requireValue(manualPage.includes("confirm the objective concepts") && manualScript.includes("Review the objective recognition cues"), "Cloud+ Mini Check guidance must remain objective-neutral.");
 requireValue(manualScript.includes('const MANUAL_KEY = "hydra-cloud-plus-field-manual-v1"'), "Cloud+ Field Manual completion storage must remain isolated.");
 requireValue(manualScript.includes('"json/cloud-plus/world" + world + "/" + objective + "-hatchling.json"'), "Cloud+ Mini Check must use the existing GSA bank at runtime.");
-requireValue(quizPage.includes('<script src="cloud-plus-quiz.js"></script>'), "Cloud+ quiz page no longer loads the existing quiz engine.");
+requireValue(quizPage.includes('<script src="cloud-plus-quiz.js?v=gsa-v1-results-1"></script>'), "Cloud+ quiz page no longer loads the existing quiz engine.");
 requireValue(quizScript.includes('saveObjectiveProgress({ objective, world'), "Cloud+ Objective Sweep progress integration is missing.");
 [
   "Security+ is the canonical learner-flow model",

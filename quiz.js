@@ -88,6 +88,7 @@ let currentQuestion = 0;
 let score = 0;
 let answered = false;
 let finished = false;
+let examResponses = [];
 
 // ============================================
 // PAGE ELEMENTS
@@ -352,6 +353,10 @@ submitBtn.addEventListener("click", () => {
     const correctAnswer = Number(questions[currentQuestion].answer);
 
     const isCorrect = userAnswer === correctAnswer;
+    if (isFinalExam) {
+        const question = questions[currentQuestion];
+        examResponses.push({ id: question.id, domain: question.domain, objective: question.objective, correct: isCorrect });
+    }
     if (isObjectiveMode) {
         const reviewConfig = window.HydraFlags?.currentConfig();
         const reviewMetadata = {
@@ -494,7 +499,7 @@ function showResults(options = {}) {
             <p>🐉 Hydra recognizes your victory.</p>
         `;
         if (timingSummary) {
-            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary, { questions, responses: examResponses, score, passed }));
         }
 
         if (isFinalExam) {
@@ -554,7 +559,7 @@ function showResults(options = {}) {
             <p>Review the objective and try again.</p>
         `;
         if (timingSummary) {
-            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+            feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary, { questions, responses: examResponses, score, passed }));
         }
 
         if (isFinalExam) {

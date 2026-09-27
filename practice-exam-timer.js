@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_PREFIX = "hydra-practice-timer:";
+  const RESULT_PREFIX = "hydra-practice-result:";
   const ACTIVE_SESSION_KEY = `${STORAGE_PREFIX}active`;
 
   const CERTIFICATIONS = Object.freeze({
@@ -9,43 +10,50 @@
       id: "network-plus",
       name: "CompTIA Network+",
       questions: 90,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "Networking Concepts", "2": "Network Implementation", "3": "Network Operations", "4": "Network Security", "5": "Network Troubleshooting" }
     },
     "aplus-core1-quiz.html": {
       id: "aplus-core1",
       name: "CompTIA A+ Core 1",
       questions: 90,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "Mobile Devices", "2": "Networking", "3": "Hardware", "4": "Virtualization and Cloud Computing", "5": "Hardware and Network Troubleshooting" }
     },
     "aplus-core2-quiz.html": {
       id: "aplus-core2",
       name: "CompTIA A+ Core 2",
       questions: 90,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "Operating Systems", "2": "Security", "3": "Software Troubleshooting", "4": "Operational Procedures" }
     },
     "security-plus-quiz.html": {
       id: "security-plus",
       name: "CompTIA Security+",
       questions: 90,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "General Security Concepts", "2": "Threats, Vulnerabilities, and Mitigations", "3": "Security Architecture", "4": "Security Operations", "5": "Security Program Management and Oversight" }
     },
     "cloud-plus-quiz.html": {
       id: "cloud-plus",
       name: "CompTIA Cloud+",
       questions: 90,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "Cloud Architecture", "2": "Deployment", "3": "Operations", "4": "Security", "5": "DevOps Fundamentals", "6": "Troubleshooting" }
     },
     "linux-essentials-quiz.html": {
       id: "linux-essentials",
       name: "LPI Linux Essentials",
       questions: 40,
-      minutes: 60
+      minutes: 60,
+      domains: { "1": "The Linux Community and a Career in Open Source", "2": "Finding Your Way on a Linux System", "3": "The Power of the Command Line", "4": "The Linux Operating System", "5": "Security and File Permissions" }
     },
     "aws-cloud-practitioner-quiz.html": {
       id: "aws-cloud-practitioner",
       name: "AWS Cloud Practitioner",
       questions: 65,
-      minutes: 90
+      minutes: 90,
+      domains: { "1": "Cloud Concepts", "2": "Security and Compliance", "3": "Cloud Technology and Services", "4": "Billing, Pricing, and Support" }
     }
   });
 
@@ -87,6 +95,107 @@
     return [hours, minutes, remainder]
       .map(value => String(value).padStart(2, "0"))
       .join(":");
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[character]);
+  }
+
+  function resultStorageKey(config) {
+    return `${RESULT_PREFIX}${config.id}:exam-${config.exam}`;
+  }
+
+  function readStoredResult(config) {
+    try {
+      const result = JSON.parse(localStorage.getItem(resultStorageKey(config)) || "null");
+      return result?.version === 1 && result.certificationId === config.id && result.exam === config.exam
+        ? result
+        : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveStoredResult(config, result) {
+    try {
+      localStorage.setItem(resultStorageKey(config), JSON.stringify(result));
+    } catch (_) {
+      // Results remain visible for the current submission if storage is unavailable.
+    }
+  }
+
+  function calculatePerformance(config, resultData = {}) {
+    const questions = Array.isArray(resultData.questions) ? resultData.questions : [];
+    const responses = Array.isArray(resultData.responses) ? resultData.responses : [];
+    const domains = new Map();
+
+    questions.forEach(question => {
+      const id = String(question?.domain || "Unknown");
+      const current = domains.get(id) || { id, label: config.domains?.[id] || `Domain ${id}`, correct: 0, total: 0 };
+      current.total += 1;
+      domains.set(id, current);
+    });
+
+    const answered = new Set();
+    responses.forEach(response => {
+      const questionId = String(response?.id ?? "");
+      if (!questionId || answered.has(questionId)) return;
+      answered.add(questionId);
+      const id = String(response?.domain || "Unknown");
+      const current = domains.get(id) || { id, label: config.domains?.[id] || `Domain ${id}`, correct: 0, total: 0 };
+      if (response.correct) current.correct += 1;
+      domains.set(id, current);
+    });
+
+    const correct = responses.filter(response => response?.correct).length;
+    const total = questions.length;
+    const percent = total ? Math.round((correct / total) * 100) : 0;
+    const domainResults = [...domains.values()]
+      .sort((left, right) => left.id.localeCompare(right.id, undefined, { numeric: true }))
+      .map(domain => ({ ...domain, percent: domain.total ? Math.round((domain.correct / domain.total) * 100) : 0 }));
+
+    return {
+      version: 1,
+      certificationId: config.id,
+      certificationName: config.name,
+      exam: config.exam,
+      correct,
+      total,
+      percent,
+      passed: percent >= 85,
+      readinessThreshold: 85,
+      answered: answered.size,
+      domains: domainResults,
+      submittedAt: new Date().toISOString()
+    };
+  }
+
+  function performanceMarkup(result, heading = "📊 Complete Performance Summary") {
+    if (!result) return "";
+    const needsStudy = result.domains.filter(domain => domain.percent < result.readinessThreshold);
+    const domainRows = result.domains.map(domain => `
+      <div class="hydra-domain-result">
+        <dt>Domain ${escapeHtml(domain.id)} — ${escapeHtml(domain.label)}</dt>
+        <dd>${domain.correct}/${domain.total} (${domain.percent}%)</dd>
+      </div>`).join("");
+    const studyText = needsStudy.length
+      ? needsStudy.map(domain => `Domain ${escapeHtml(domain.id)} — ${escapeHtml(domain.label)}`).join("; ")
+      : "No domain scored below the current GSA readiness threshold.";
+
+    return `
+      <section class="hydra-performance-results" aria-label="Practice exam performance results">
+        <h3>${heading}</h3>
+        <div class="hydra-result-overview">
+          <p><strong>Raw Score:</strong> ${result.correct}/${result.total}</p>
+          <p><strong>Percentage:</strong> ${result.percent}%</p>
+          <p><strong>GSA Readiness:</strong> ${result.passed ? "PASS — Ready" : "KEEP TRAINING"} (${result.readinessThreshold}% threshold)</p>
+        </div>
+        <h4>Performance by Every Exam Domain</h4>
+        <dl class="hydra-domain-results">${domainRows}</dl>
+        <p class="hydra-study-areas"><strong>Areas Requiring Additional Study:</strong> ${studyText}</p>
+      </section>`;
   }
 
   function readStoredSession(config) {
@@ -188,6 +297,14 @@
       </label>
       <button id="hydraBeginExam" class="link-btn" type="button">⚔️ Begin Exam</button>
     `;
+    const previousResult = readStoredResult(config);
+    if (previousResult) {
+      startPanel.insertAdjacentHTML("beforeend", `
+        <details class="hydra-previous-result">
+          <summary>View Last Submitted Result</summary>
+          ${performanceMarkup(previousResult, "📊 Last Submitted Result")}
+        </details>`);
+    }
 
     timerPanel = document.createElement("section");
     timerPanel.id = "hydraExamTimer";
@@ -526,8 +643,11 @@
     return finalSummary;
   }
 
-  function resultsMarkup(summary) {
+  function resultsMarkup(summary, resultData = {}) {
     if (!summary) return "";
+    const config = session?.config;
+    const performance = config ? calculatePerformance(config, resultData) : null;
+    if (config && performance) saveStoredResult(config, performance);
     const exceeded = summary.exceededSeconds > 0;
     const notice = summary.timeExpired
       ? `<p class="hydra-time-limit-notice">⏰ Time Expired — the exam was submitted automatically.</p>`
@@ -535,7 +655,7 @@
         ? `<p class="hydra-time-limit-notice">⚠️ The official certification time limit was exceeded.</p>`
         : "";
 
-    return `
+    return `${performanceMarkup(performance)}
       <section class="hydra-time-results" aria-label="Practice exam timing results">
         <h3>⏱️ Certification Timing</h3>
         <p><strong>Official Time Limit:</strong> ${formatDuration(summary.officialSeconds)}</p>
@@ -550,6 +670,7 @@
     certifications: CERTIFICATIONS,
     prepare,
     finish,
-    resultsMarkup
+    resultsMarkup,
+    calculatePerformance
   });
 })();

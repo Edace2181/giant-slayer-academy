@@ -2104,7 +2104,7 @@ requireValue(
 });
 requireValue(world5Hub.includes('data-world-progress="5" data-questions="157"'), "World 5 Objective Hub does not preserve the verified 157-question total.");
 requireValue(
-  quiz.includes('<script src="security-plus-quiz.js"></script>'),
+  quiz.includes('<script src="security-plus-quiz.js?v=gsa-v1-results-1"></script>'),
   "Security+ quiz page no longer loads the existing quiz engine."
 );
 requireValue(

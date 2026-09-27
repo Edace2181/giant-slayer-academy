@@ -74,6 +74,7 @@ let score = 0;
 let selected = null;
 let finished = false;
 let questionAnswered = false;
+let examResponses = [];
 
 function shuffle(items) {
   const copy = [...items];
@@ -244,6 +245,7 @@ submitBtn.addEventListener("click", () => {
   questionAnswered = true;
   const question = questions[current];
   const correct = selected === Number(question.answer);
+  if (exam) examResponses.push({ id: question.id, domain: question.domain, objective: question.objective, correct });
   if (/^[1-5]$/.test(world) && objective) {
     const metadata = {
       questionId: question.id,
@@ -318,7 +320,7 @@ function showResults(options = {}) {
     ? `<h2>🏆 VICTORY!</h2><p>Score: ${score}/${questions.length} (${percent}%)</p><p>Congratulations Commander!</p><p>🐉 Hydra recognizes your victory.</p><a href="${destination.href}" class="next-objective-btn">${destination.label}</a>`
     : `<h2>⚔️ Keep Training</h2><p>Score: ${score}/${questions.length} (${percent}%)</p><p>Hydra has identified weaknesses.</p><p>Review the objective and try again.</p><a href="${destination.href}" class="next-objective-btn">${destination.label}</a>`;
   if (timingSummary) {
-    feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+    feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary, { questions, responses: examResponses, score, passed }));
   }
   rankEl.textContent = passed ? "Hatchling Victor" : "Hatchling";
   submitBtn.classList.add("hidden");

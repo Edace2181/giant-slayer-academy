@@ -43,7 +43,7 @@ const quizInfo = el("quizInfo"), objectiveTitle = el("objectiveTitle"), objectiv
 const questionCount = el("questionCount"), questionEl = el("question"), answersEl = el("answers");
 const submitBtn = el("submitBtn"), nextBtn = el("nextBtn"), feedback = el("feedback");
 const scoreEl = el("score"), rankEl = el("rank"), modeDisplay = el("modeDisplay"), returnLink = el("returnLink");
-let questions = [], current = 0, score = 0, selected = null, finished = false, questionAnswered = false;
+let questions = [], current = 0, score = 0, selected = null, finished = false, questionAnswered = false, examResponses = [];
 
 function shuffle(items) {
   const copy = [...items];
@@ -207,6 +207,7 @@ submitBtn.addEventListener("click", () => {
   questionAnswered = true;
   const q = questions[current];
   const correct = selected === q.answer;
+  if (exam) examResponses.push({ id: q.id, domain: q.domain, objective: q.objective, correct });
   if (/^[1-5]$/.test(world) && objective) {
     const reviewMetadata = { questionId: q.id, world, objective, bankPath: `json/linux-essentials/world${world}/${objective}-hatchling.json` };
     window.HydraFlags?.recordObjectiveEvidence(window.HydraFlags.currentConfig(), reviewMetadata, correct);
@@ -288,7 +289,7 @@ function showResults(options = {}) {
        <p>Review the objective and try again.</p>
        <a href="${destination.href}" class="next-objective-btn">${destination.label}</a>`;
   if (timingSummary) {
-    feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary));
+    feedback.insertAdjacentHTML("beforeend", window.HydraExamTimer.resultsMarkup(timingSummary, { questions, responses: examResponses, score, passed }));
   }
   rankEl.textContent = passed ? "Hatchling Victor" : "Hatchling";
   submitBtn.classList.add("hidden");
