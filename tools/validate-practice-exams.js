@@ -86,7 +86,8 @@ function loadConfiguration() {
     "GSA Readiness:",
     "Performance by Every Exam Domain",
     "Areas Requiring Additional Study:",
-    "View Last Submitted Result"
+    "View Last Submitted Result",
+    "objectives: objectiveResults"
   ];
   for (const feature of requiredResultFeatures) {
     if (!timerSource.includes(feature)) throw new Error(`Practice Exam results experience is missing: ${feature}`);
@@ -108,10 +109,10 @@ function loadConfiguration() {
       ? "quiz.js"
       : certification.quizPage.replace(/\.html$/, ".js");
     const quizScriptSource = fs.readFileSync(path.resolve(PROJECT_ROOT, quizScriptName), "utf8");
-    if (!quizPageSource.includes("practice-exam-timer.js?v=gsa-v1-results-1") || !quizPageSource.includes(`${quizScriptName}?v=gsa-v1-results-1`)) {
+    if (!quizPageSource.includes("practice-exam-timer.js?v=gsa-command-intelligence-1") || !quizPageSource.includes(`${quizScriptName}?v=gsa-v1-results-1`)) {
       throw new Error(`Practice Exam results assets are not versioned on ${certification.quizPage}.`);
     }
-    if (!quizScriptSource.includes("examResponses") || !quizScriptSource.includes("responses: examResponses")) {
+    if (!quizScriptSource.includes("examResponses") || !quizScriptSource.includes("objective:") || !quizScriptSource.includes("responses: examResponses")) {
       throw new Error(`Practice Exam answer evidence is not connected for ${id}.`);
     }
   }
@@ -546,7 +547,7 @@ function main() {
   console.log("Giant Slayer Academy Practice Exam Validation System v1.0");
   console.log(`Mode: ${options.certification || "all implemented certifications"}${options.exam ? `, Practice Exam ${options.exam}` : ""}`);
   console.log("Expected question counts are loaded from practice-exam-timer.js.");
-  console.log("Learner-facing raw score, percentage, readiness, all-domain breakdown, study-area guidance, and reload persistence integration: PASS");
+  console.log("Learner-facing raw score, percentage, readiness, all-domain breakdown, study-area guidance, objective diagnostics, and reload persistence integration: PASS");
   if (skipped.length) console.log(`Inactive placeholders skipped: ${skipped.join(", ")} (use --include-placeholders or --cert to inspect them)`);
 
   const reports = [];

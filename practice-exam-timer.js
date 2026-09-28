@@ -130,12 +130,17 @@
     const questions = Array.isArray(resultData.questions) ? resultData.questions : [];
     const responses = Array.isArray(resultData.responses) ? resultData.responses : [];
     const domains = new Map();
+    const objectives = new Map();
 
     questions.forEach(question => {
       const id = String(question?.domain || "Unknown");
       const current = domains.get(id) || { id, label: config.domains?.[id] || `Domain ${id}`, correct: 0, total: 0 };
       current.total += 1;
       domains.set(id, current);
+      const objectiveId = String(question?.objective || "Unknown");
+      const objective = objectives.get(objectiveId) || { id: objectiveId, domain: id, correct: 0, total: 0 };
+      objective.total += 1;
+      objectives.set(objectiveId, objective);
     });
 
     const answered = new Set();
@@ -147,6 +152,10 @@
       const current = domains.get(id) || { id, label: config.domains?.[id] || `Domain ${id}`, correct: 0, total: 0 };
       if (response.correct) current.correct += 1;
       domains.set(id, current);
+      const objectiveId = String(response?.objective || "Unknown");
+      const objective = objectives.get(objectiveId) || { id: objectiveId, domain: id, correct: 0, total: 0 };
+      if (response.correct) objective.correct += 1;
+      objectives.set(objectiveId, objective);
     });
 
     const correct = responses.filter(response => response?.correct).length;
@@ -155,6 +164,9 @@
     const domainResults = [...domains.values()]
       .sort((left, right) => left.id.localeCompare(right.id, undefined, { numeric: true }))
       .map(domain => ({ ...domain, percent: domain.total ? Math.round((domain.correct / domain.total) * 100) : 0 }));
+    const objectiveResults = [...objectives.values()]
+      .sort((left, right) => left.id.localeCompare(right.id, undefined, { numeric: true }))
+      .map(objective => ({ ...objective, percent: objective.total ? Math.round((objective.correct / objective.total) * 100) : 0 }));
 
     return {
       version: 1,
@@ -168,6 +180,7 @@
       readinessThreshold: 85,
       answered: answered.size,
       domains: domainResults,
+      objectives: objectiveResults,
       submittedAt: new Date().toISOString()
     };
   }

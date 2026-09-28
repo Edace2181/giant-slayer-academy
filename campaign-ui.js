@@ -2,41 +2,49 @@
   "use strict";
 
   const clamp = value => Math.max(0, Math.min(100, Math.round(value || 0)));
+  const DIAGNOSTIC_MIN_SAMPLES = 5;
 
   const CAMPAIGNS = {
     "hydra-network-plus-progress-v1": {
-      name: "Network+", campaign: "network-campaign.html", totalQuestions: 467,
+      id: "network-plus", name: "Network+", campaign: "network-campaign.html", quiz: "hydra-quiz.html", totalQuestions: 467,
       objectiveCounts: [8, 4, 5, 3, 5],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8"], "2": ["2.1", "2.2", "2.3", "2.4"], "3": ["3.1", "3.2", "3.3", "3.4", "3.5"], "4": ["4.1", "4.2", "4.3"], "5": ["5.1", "5.2", "5.3", "5.4", "5.5"] },
       domains: { "1": "Networking Concepts", "2": "Network Implementation", "3": "Network Operations", "4": "Network Security", "5": "Network Troubleshooting" }
     },
     "hydra-aplus-core1-progress-v1": {
-      name: "A+ Core 1", campaign: "aplus-core1-campaign.html", totalQuestions: 455,
+      id: "aplus-core1", name: "A+ Core 1", campaign: "aplus-core1-campaign.html", quiz: "aplus-core1-quiz.html", totalQuestions: 455,
       objectiveCounts: [3, 8, 8, 2, 6],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3"], "2": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8"], "3": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"], "4": ["4.1", "4.2"], "5": ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"] },
       domains: { "1": "Mobile Devices", "2": "Networking", "3": "Hardware", "4": "Virtualization and Cloud", "5": "Hardware and Network Troubleshooting" }
     },
     "hydra-aplus-core2-progress-v1": {
-      name: "A+ Core 2", campaign: "aplus-core2-campaign.html", totalQuestions: 795,
+      id: "aplus-core2", name: "A+ Core 2", campaign: "aplus-core2-campaign.html", quiz: "aplus-core2-quiz.html", totalQuestions: 795,
       objectiveCounts: [11, 11, 4, 5, 5],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11"], "2": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10", "2.11"], "3": ["3.1", "3.2", "3.3", "3.4"], "4": ["4.1", "4.2", "4.3", "4.4", "4.5"], "5": ["4.6", "4.7", "4.8", "4.9", "4.10"] },
       domains: { "1": "Operating Systems", "2": "Security", "3": "Software Troubleshooting", "4": "Operational Procedures" }
     },
     "hydra-security-plus-progress-v1": {
-      name: "Security+", campaign: "security-plus-campaign.html", totalQuestions: 797,
+      id: "security-plus", name: "Security+", campaign: "security-plus-campaign.html", quiz: "security-plus-quiz.html", totalQuestions: 797,
       objectiveCounts: [4, 5, 4, 9, 6],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4"], "2": ["2.1", "2.2", "2.3", "2.4", "2.5"], "3": ["3.1", "3.2", "3.3", "3.4"], "4": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9"], "5": ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6"] },
       domains: { "1": "General Security Concepts", "2": "Threats, Vulnerabilities, and Mitigations", "3": "Security Architecture", "4": "Security Operations", "5": "Security Program Management and Oversight" }
     },
     "hydra-cloud-plus-progress-v1": {
-      name: "Cloud+", campaign: "cloud-plus-campaign.html", totalQuestions: 402,
+      id: "cloud-plus", name: "Cloud+", campaign: "cloud-plus-campaign.html", quiz: "cloud-plus-quiz.html", totalQuestions: 402,
       objectiveCounts: [11, 5, 4, 6, 7],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11"], "2": ["2.1", "2.2", "2.3", "2.4", "2.5"], "3": ["3.1", "3.2", "3.3", "3.4"], "4": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6"], "5": ["5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "6.3"] },
       domains: { "1": "Cloud Architecture", "2": "Deployment", "3": "Operations", "4": "Security", "5": "DevOps Fundamentals", "6": "Troubleshooting" }
     },
     "hydra-linux-essentials-progress-v1": {
-      name: "Linux Essentials", campaign: "linux-essentials-campaign.html", totalQuestions: 235,
+      id: "linux-essentials", name: "Linux Essentials", campaign: "linux-essentials-campaign.html", quiz: "linux-essentials-quiz.html", totalQuestions: 235,
       objectiveCounts: [4, 4, 3, 4, 4],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4"], "2": ["2.1", "2.2", "2.3", "2.4"], "3": ["3.1", "3.2", "3.3"], "4": ["4.1", "4.2", "4.3", "4.4"], "5": ["5.1", "5.2", "5.3", "5.4"] },
       domains: { "1": "Linux Community and Open Source", "2": "Finding Your Way on Linux", "3": "Power of the Command Line", "4": "The Linux Operating System", "5": "Security and File Permissions" }
     },
     "hydra-aws-cloud-practitioner-progress-v1": {
-      name: "AWS Cloud Practitioner", campaign: "aws-cloud-practitioner-campaign.html", totalQuestions: 261,
+      id: "aws-cloud-practitioner", name: "AWS Cloud Practitioner", campaign: "aws-cloud-practitioner-campaign.html", quiz: "aws-cloud-practitioner-quiz.html", totalQuestions: 261,
       objectiveCounts: [4, 4, 4, 4, 3],
+      objectivesByWorld: { "1": ["1.1", "1.2", "1.3", "1.4"], "2": ["2.1", "2.2", "2.3", "2.4"], "3": ["3.1", "3.2", "3.3", "3.4"], "4": ["3.5", "3.6", "3.7", "3.8"], "5": ["4.1", "4.2", "4.3"] },
       domains: { "1": "Cloud Concepts", "2": "Security and Compliance", "3": "Cloud Technology and Services", "4": "Billing, Pricing, and Support" }
     }
   };
@@ -516,6 +524,179 @@
     return { strongest: rows[0] || null, weakest: rows.length ? rows[rows.length - 1] : null };
   }
 
+  const captainLabels = {
+    "boss-rush-1": "Boss Rush I",
+    "boss-rush-2": "Boss Rush II",
+    "weakness-captains": "Weakness Captain Rush",
+    "final-captain-rush": "Final Captain Rush"
+  };
+
+  function readJsonStorage(key, fallback = {}) {
+    try {
+      const value = JSON.parse(localStorage.getItem(key) || "null");
+      return value && typeof value === "object" ? value : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  }
+
+  function objectiveWorldLookup(config) {
+    const lookup = {};
+    Object.entries(config.objectivesByWorld || {}).forEach(([world, objectives]) => {
+      objectives.forEach(objective => { lookup[objective] = world; });
+    });
+    return lookup;
+  }
+
+  function objectiveSweepIntelligence(key, state, config) {
+    const weaknessKey = key.replace(/-progress-v1$/, "-weakness-v1");
+    const weakness = readJsonStorage(weaknessKey, { objectives: {} });
+    const evidence = weakness.objectives && typeof weakness.objectives === "object" ? weakness.objectives : {};
+    const completedSessions = state.sessions.filter(session => session.type === "objective-sweep");
+    return Object.entries(config.objectivesByWorld).flatMap(([world, objectives]) => objectives.map(objective => {
+      const progress = state.objectives[objective] || {};
+      const record = evidence[objective] || {};
+      const answered = Math.max(0, Number(record.attempts) || 0);
+      const correct = Math.max(0, Math.min(answered, Number(record.correct) || 0));
+      const sessions = completedSessions.filter(session => session.objective === objective);
+      return {
+        objective,
+        world,
+        mastered: Boolean(progress.complete),
+        bestScore: Math.max(0, Number(progress.bestScore) || 0),
+        total: Math.max(0, Number(progress.total) || 0),
+        answered,
+        correct,
+        misses: Math.max(0, Number(record.misses) || answered - correct),
+        accuracy: answered ? Math.round((correct / answered) * 100) : null,
+        diagnostic: answered < DIAGNOSTIC_MIN_SAMPLES ? "insufficient" : (Math.round((correct / answered) * 100) >= 85 ? "strong" : "needs-work"),
+        retainedSessions: sessions.length,
+        lastSession: sessions[0] || null,
+        updatedAt: record.updatedAt || "",
+        href: `${config.quiz}?world=${encodeURIComponent(world)}&objective=${encodeURIComponent(objective)}`
+      };
+    }));
+  }
+
+  function mixedReviewIntelligence(state) {
+    const sessions = state.sessions.filter(session => session.type === "mixed-review" && session.world === "6");
+    const modes = new Map();
+    sessions.forEach(session => {
+      const id = session.mode || "mixed-review";
+      const current = modes.get(id) || { id, label: session.label || id, retainedSessions: 0, bestPercent: 0, lastPercent: null, lastSession: null };
+      current.retainedSessions += 1;
+      current.bestPercent = Math.max(current.bestPercent, Number(session.percent) || 0);
+      if (!current.lastSession) {
+        current.lastSession = session;
+        current.lastPercent = Number(session.percent) || 0;
+      }
+      modes.set(id, current);
+    });
+    return { retainedSessions: sessions.length, modes: [...modes.values()] };
+  }
+
+  function bossRushIntelligence(state) {
+    const sessions = state.sessions.filter(session => session.type === "captain" && session.world === "7");
+    return Object.entries(captainLabels).map(([id, label]) => {
+      const record = state.captains[id] || {};
+      const lastSession = sessions.find(session => session.mode === id) || null;
+      return {
+        id,
+        label,
+        attempts: Math.max(0, Number(record.attempts) || 0),
+        completed: Boolean(record.completed),
+        passed: Boolean(record.passed),
+        bestPercent: Math.max(0, Number(record.bestPercent) || 0),
+        lastPercent: Number.isFinite(Number(record.lastPercent)) ? Number(record.lastPercent) : null,
+        updatedAt: record.updatedAt || "",
+        lastSession
+      };
+    });
+  }
+
+  function practiceExamIntelligence(config) {
+    const results = [];
+    for (let exam = 1; exam <= 6; exam += 1) {
+      const key = `hydra-practice-result:${config.id}:exam-${exam}`;
+      const result = readJsonStorage(key, null);
+      if (result?.certificationId === config.id && String(result.exam) === String(exam)) results.push(result);
+    }
+    const domains = new Map();
+    const objectives = new Map();
+    let legacyResults = 0;
+    results.forEach(result => {
+      (Array.isArray(result.domains) ? result.domains : []).forEach(domain => {
+        const id = String(domain.id);
+        const current = domains.get(id) || { id, label: config.domains[id] || domain.label || `Domain ${id}`, correct: 0, total: 0 };
+        current.correct += Number(domain.correct) || 0;
+        current.total += Number(domain.total) || 0;
+        domains.set(id, current);
+      });
+      if (!Array.isArray(result.objectives)) legacyResults += 1;
+      (Array.isArray(result.objectives) ? result.objectives : []).forEach(objective => {
+        const id = String(objective.id);
+        const current = objectives.get(id) || { id, domain: String(objective.domain || id.split(".")[0]), correct: 0, total: 0 };
+        current.correct += Number(objective.correct) || 0;
+        current.total += Number(objective.total) || 0;
+        objectives.set(id, current);
+      });
+    });
+    const withPercent = item => ({ ...item, percent: item.total ? Math.round((item.correct / item.total) * 100) : 0 });
+    const domainRows = [...domains.values()].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true })).map(withPercent);
+    const worldLookup = objectiveWorldLookup(config);
+    const objectiveRows = [...objectives.values()]
+      .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
+      .map(item => ({
+        ...withPercent(item),
+        world: worldLookup[item.id] || "",
+        diagnostic: item.total < DIAGNOSTIC_MIN_SAMPLES ? "insufficient" : (withPercent(item).percent >= 85 ? "strong" : "needs-work")
+      }));
+    return {
+      results: results.sort((a, b) => Number(a.exam) - Number(b.exam)),
+      domains: domainRows,
+      studyDomains: domainRows.filter(domain => domain.percent < 85),
+      objectives: objectiveRows,
+      legacyResults
+    };
+  }
+
+  function priorityReview(objectives, practiceObjectives) {
+    const examLookup = new Map(practiceObjectives.map(record => [record.id, record]));
+    const classifications = {
+      confirmed: [],
+      applicationGap: [],
+      improvingTransfer: [],
+      insufficientEvidence: []
+    };
+    objectives.forEach(sweep => {
+      const exam = examLookup.get(sweep.objective) || null;
+      const hasSweep = sweep.answered >= DIAGNOSTIC_MIN_SAMPLES;
+      const hasExam = Number(exam?.total) >= DIAGNOSTIC_MIN_SAMPLES;
+      if (!hasSweep || !hasExam) {
+        if (sweep.answered > 0 || Number(exam?.total) > 0 || sweep.mastered) classifications.insufficientEvidence.push({ sweep, exam });
+        return;
+      }
+      const sweepWeak = sweep.accuracy < 85;
+      const examWeak = exam.percent < 85;
+      if (sweepWeak && examWeak) classifications.confirmed.push({ sweep, exam });
+      else if (!sweepWeak && examWeak) classifications.applicationGap.push({ sweep, exam });
+      else if (sweepWeak && !examWeak) classifications.improvingTransfer.push({ sweep, exam });
+    });
+    return classifications;
+  }
+
+  function trainingIntelligence(key, state, config) {
+    const objectiveSweeps = objectiveSweepIntelligence(key, state, config);
+    const practiceExams = practiceExamIntelligence(config);
+    return {
+      objectiveSweeps,
+      mixedReview: mixedReviewIntelligence(state),
+      bossRush: bossRushIntelligence(state),
+      practiceExams,
+      priorityReview: priorityReview(objectiveSweeps, practiceExams.objectives)
+    };
+  }
+
   function getCampaignSummary(key) {
     const config = CAMPAIGNS[key];
     if (!config) return null;
@@ -531,6 +712,7 @@
     const completedExams = Object.values(state.exams).filter(record => record.completed).length;
     const passedExams = Object.values(state.exams).filter(record => record.passed).length;
     const ranking = domainRanking(state, config);
+    const intelligence = trainingIntelligence(key, state, config);
     return {
       key,
       config,
@@ -551,6 +733,7 @@
       achievements: Object.keys(ACHIEVEMENTS).filter(id => state.achievements[id]).map(id => ({ id, ...ACHIEVEMENTS[id], ...state.achievements[id] })),
       strongestDomain: ranking.strongest,
       weakestDomain: ranking.weakest,
+      intelligence,
       finalBossesDefeated: state.achievements.finalBoss ? 1 : 0,
       currentMission: state.currentMission
     };
@@ -577,6 +760,7 @@
   window.HydraCampaignUI = {
     CampaignStats, ObjectiveCard, ProgressBar, CompletionBadge,
     saveObjectiveProgress, recordAnswer, saveQuizResult, recordSession, getSessionHistory, getCampaignSummary,
+    trainingIntelligence,
     campaigns: CAMPAIGNS, achievements: ACHIEVEMENTS, render
   };
   document.addEventListener("DOMContentLoaded", initialize);

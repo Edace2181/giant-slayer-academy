@@ -1817,6 +1817,174 @@ HYDRA QUIZ
     line-height: 1.5;
 }
 
+.dashboard-domain-context {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--cert-accent, #00eaff);
+    background: rgba(255, 255, 255, 0.035);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.dashboard-domain-context span,
+.dashboard-intelligence-note,
+.dashboard-priority-group > p,
+.dashboard-objective-exam-row small {
+    color: #b9c8d8;
+}
+
+.dashboard-training-intelligence {
+    display: grid;
+    gap: 10px;
+}
+
+.dashboard-intelligence-section,
+.dashboard-world-details {
+    min-width: 0;
+    border: 1px solid color-mix(in srgb, var(--cert-accent, #00eaff) 55%, transparent);
+    border-radius: 9px;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.dashboard-intelligence-section > summary,
+.dashboard-world-details > summary {
+    min-height: 44px;
+    padding: 12px 14px;
+    cursor: pointer;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.dashboard-intelligence-section > summary { color: #fff0a6; }
+
+.dashboard-world-details > summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #dffcff;
+    font-size: 0.82rem;
+}
+
+.dashboard-intelligence-section[open] > summary,
+.dashboard-world-details[open] > summary {
+    border-bottom: 1px solid rgba(0, 234, 255, 0.25);
+}
+
+.dashboard-intelligence-section > :not(summary) { margin-inline: 14px; }
+.dashboard-intelligence-section > :last-child { margin-bottom: 14px; }
+.dashboard-intelligence-section h4,
+.dashboard-intelligence-section h5 { margin-block: 16px 8px; }
+
+.dashboard-intelligence-note,
+.dashboard-empty-state,
+.dashboard-legacy-note,
+.dashboard-study-areas {
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+.dashboard-legacy-note {
+    padding: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.42);
+    border-radius: 7px;
+    background: rgba(255, 215, 0, 0.07);
+    color: #fff0a6;
+}
+
+.dashboard-world-list,
+.dashboard-evidence-list,
+.dashboard-domain-results,
+.dashboard-objective-exam-grid {
+    display: grid;
+    gap: 8px;
+}
+
+.dashboard-evidence-list,
+.dashboard-objective-exam-grid { padding: 10px; }
+
+.dashboard-reinforcement-grid,
+.dashboard-exam-grid,
+.dashboard-priority-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.dashboard-evidence-row,
+.dashboard-exam-result,
+.dashboard-domain-result,
+.dashboard-objective-exam-row,
+.dashboard-priority-group,
+.dashboard-priority-row {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid rgba(0, 234, 255, 0.24);
+    border-radius: 7px;
+    background: rgba(0, 234, 255, 0.045);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.dashboard-evidence-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.dashboard-evidence-metrics,
+.dashboard-priority-row { display: grid; gap: 4px; }
+
+.dashboard-evidence-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #7df9ff;
+}
+
+.dashboard-status {
+    flex: 0 0 auto;
+    padding: 2px 7px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 800;
+}
+
+.dashboard-status-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.dashboard-status.is-ready { color: #72ff9d; }
+.dashboard-status.insufficient { color: #b9c8d8; }
+.dashboard-status.needs-work,
+.dashboard-domain-result.needs-study,
+.dashboard-objective-exam-row.needs-study {
+    color: #ffd166;
+    border-color: rgba(255, 209, 102, 0.48);
+}
+
+.dashboard-exam-result,
+.dashboard-domain-result,
+.dashboard-objective-exam-row { display: grid; gap: 5px; }
+
+.dashboard-priority-group > h5,
+.dashboard-priority-group > p { margin: 0 0 7px; }
+
+.dashboard-priority-group {
+    display: grid;
+    align-content: start;
+    gap: 7px;
+}
+
+.dashboard-no-priority { color: #72ff9d; font-size: 0.74rem; }
+
 .dashboard-achievements {
     display: flex;
     justify-content: center;
@@ -1932,6 +2100,24 @@ HYDRA QUIZ
     .dashboard-domain-row {
         grid-template-columns: 1fr;
     }
+
+    .dashboard-domain-context,
+    .dashboard-evidence-heading,
+    .dashboard-world-details > summary {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-reinforcement-grid,
+    .dashboard-exam-grid,
+    .dashboard-priority-grid { grid-template-columns: 1fr; }
+
+    .dashboard-intelligence-section > summary,
+    .dashboard-world-details > summary { padding: 12px 10px; }
+
+    .dashboard-intelligence-section > :not(summary) { margin-inline: 10px; }
+    .dashboard-evidence-list,
+    .dashboard-objective-exam-grid { padding: 8px; }
 
     .dashboard-achievements {
         gap: 8px;
