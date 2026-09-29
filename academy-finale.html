@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giant Slayer Academy | Hall of Giant Slayers</title>
+  <link rel="stylesheet" href="academy-finale.css?v=gsa-academy-finale-1">
+  <link rel="icon" type="image/png" href="hydra.png">
+</head>
+<body class="finale-body">
+  <div class="finale-atmosphere" aria-hidden="true"></div>
+  <main class="finale-shell">
+    <header class="finale-header">
+      <span class="finale-kicker">GIANT SLAYER ACADEMY</span>
+      <h1>Hall of Giant Slayers</h1>
+      <p id="finaleCompletionStatus" class="finale-completion-status" aria-live="polite">Checking Academy completion…</p>
+    </header>
+
+    <section id="finaleLocked" class="finale-panel hidden" aria-labelledby="finaleLockedTitle">
+      <span class="finale-lock-icon" aria-hidden="true">🔒</span>
+      <h2 id="finaleLockedTitle">The Hall Remains Sealed</h2>
+      <p>Defeat the Final Boss in all seven certification tracks to unlock the Academy Finale.</p>
+      <ul id="finaleIncompleteList" class="finale-incomplete-list"></ul>
+      <div class="finale-navigation-row">
+        <a class="finale-button" href="dashboard.html">View Command Center</a>
+        <a class="finale-button secondary" href="index.html?entered=1">Return to Select a Game</a>
+      </div>
+    </section>
+
+    <section id="finaleUnlocked" class="finale-panel hidden" aria-labelledby="finaleUnlockedTitle">
+      <span class="finale-unlock-icon" aria-hidden="true">🏆</span>
+      <h2 id="finaleUnlockedTitle">Academy Finale Unlocked</h2>
+      <p>The Finale player is ready for the supplied creative package.</p>
+      <button id="beginFinale" class="finale-button" type="button">Begin Finale</button>
+    </section>
+
+    <section id="finaleExperience" class="finale-experience hidden" aria-labelledby="finaleExperienceTitle">
+      <h2 id="finaleExperienceTitle" class="visually-hidden">Academy Finale Player</h2>
+      <div class="finale-stage" role="group" aria-label="Synchronized Finale presentation">
+        <div class="finale-cue-copy" aria-live="polite">
+          <p id="finaleCueDirection" class="finale-cue-direction">Canonical narration preview</p>
+          <p id="finaleCueText" class="finale-cue-text">Rise, Giant Slayer.</p>
+        </div>
+      </div>
+
+      <div id="finaleManualStart" class="finale-manual-start hidden" role="status">
+        <p id="finaleManualStartMessage">Playback needs a manual start.</p>
+        <button id="manualStartFinale" class="finale-button" type="button">Start Finale with Sound</button>
+      </div>
+
+      <div class="finale-timeline">
+        <label for="finaleSeek">Finale timeline</label>
+        <input id="finaleSeek" type="range" min="0" max="0" step="0.1" value="0" aria-describedby="finaleTime">
+        <output id="finaleTime" for="finaleSeek">00:00 / 00:00</output>
+      </div>
+
+      <div class="finale-controls" aria-label="Finale playback controls">
+        <button id="finalePlayPause" class="finale-button" type="button">▶ Play</button>
+        <button id="finaleMute" class="finale-button secondary" type="button" aria-pressed="false">🔊 Mute</button>
+        <label class="finale-volume" for="finaleVolume">Volume
+          <input id="finaleVolume" type="range" min="0" max="1" step="0.05" value="0.75">
+        </label>
+        <button id="replayFinale" class="finale-button secondary" type="button">↻ Replay Finale</button>
+      </div>
+
+      <p id="finalePlaybackStatus" class="finale-playback-status" aria-live="polite"></p>
+      <div class="finale-navigation-row">
+        <a class="finale-button secondary" href="dashboard.html">Exit to Command Center</a>
+        <a class="finale-button secondary" href="index.html?entered=1">Exit to Select a Game</a>
+      </div>
+    </section>
+
+    <audio id="finaleMusic" preload="metadata"></audio>
+    <audio id="finaleNarration" preload="auto"></audio>
+  </main>
+
+  <script src="campaign-ui.js?v=gsa-academy-finale-1"></script>
+  <script src="academy-finale.js?v=gsa-academy-finale-1"></script>
+</body>
+</html>

@@ -240,6 +240,20 @@
   const overallMastery = totals.totalQuestions ? Math.round((totals.masteredQuestions / totals.totalQuestions) * 100) : 0;
   const currentMission = summaries.map(summary => ({ ...summary.currentMission, certification: summary.config.name }))
     .filter(mission => mission.updatedAt).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0];
+  const academyCompletion = ui.syncAcademyCompletion({ announce: true });
+
+  function finaleAccessMarkup(completion) {
+    const missing = completion.incomplete.map(certification => escapeHtml(certification.name)).join(", ");
+    return `
+      <section id="academyFinaleAccess" class="academy-finale-access${completion.unlocked ? " unlocked" : " locked"}" aria-labelledby="academyFinaleAccessTitle">
+        <div>
+          <span class="campaign-panel-label">ACADEMY COMPLETION</span>
+          <h3 id="academyFinaleAccessTitle">${completion.unlocked ? "Hall of Giant Slayers Unlocked" : "Hall of Giant Slayers Locked"}</h3>
+          <p><strong>${completion.completedCount}/${completion.totalCount} certifications complete.</strong>${completion.unlocked ? " The Academy Finale is permanently available." : ` Remaining: ${missing || "Complete all seven certification Final Bosses."}`}</p>
+        </div>
+        ${completion.unlocked ? '<a class="link-btn" href="academy-finale.html">🏆 Enter the Hall</a>' : '<span class="academy-finale-lock" aria-label="Finale locked">🔒</span>'}
+      </section>`;
+  }
 
   academySummary.innerHTML = `
     <div class="academy-summary-heading"><div><span class="campaign-panel-label">ACADEMY-WIDE PROGRESS</span><h2>Overall Academy</h2></div><strong>${overallMastery}% Mastery</strong></div>
@@ -253,6 +267,19 @@
       ${metric("Worlds Completed", `${totals.worlds} / ${summaries.length * 5}`)}
       ${metric("Achievements", `${totals.achievements} / ${summaries.length * achievementOrder.length}`)}
       ${metric("Final Bosses Defeated", `${totals.finalBosses} / ${summaries.length}`)}
+      <div class="dashboard-metric"><strong id="academyCompletionMetric">${academyCompletion.completedCount} / ${academyCompletion.totalCount}</strong><span>Academy Completion</span></div>
     </div>
-    <div class="current-mission"><span class="campaign-panel-label">CURRENT MISSION</span>${currentMission ? `<a href="${currentMission.href}">${currentMission.certification}: ${currentMission.label}</a>` : "Begin an Objective Sweep to establish your current mission."}</div>`;
+    <div class="current-mission"><span class="campaign-panel-label">CURRENT MISSION</span>${currentMission ? `<a href="${currentMission.href}">${currentMission.certification}: ${currentMission.label}</a>` : "Begin an Objective Sweep to establish your current mission."}</div>
+    ${finaleAccessMarkup(academyCompletion)}`;
+
+  window.addEventListener("hydra-academy-completion-updated", event => {
+    const completion = event.detail || ui.getAcademyCompletion();
+    const metricValue = document.getElementById("academyCompletionMetric");
+    if (metricValue) metricValue.textContent = `${completion.completedCount} / ${completion.totalCount}`;
+    const current = document.getElementById("academyFinaleAccess");
+    if (!current) return;
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = finaleAccessMarkup(completion);
+    current.replaceWith(wrapper.firstElementChild);
+  });
 }());

@@ -3,6 +3,8 @@
 
   const clamp = value => Math.max(0, Math.min(100, Math.round(value || 0)));
   const DIAGNOSTIC_MIN_SAMPLES = 5;
+  const ACADEMY_FINALE_KEY = "hydra-academy-finale-v1";
+  const PRACTICE_EXAM_IDS = ["1", "2", "3", "4", "5", "6"];
 
   const CAMPAIGNS = {
     "hydra-network-plus-progress-v1": {
@@ -140,6 +142,115 @@
     if (!key) return;
     localStorage.setItem(key, JSON.stringify(state));
     window.dispatchEvent(new CustomEvent("hydra-progress-updated"));
+  }
+
+  function readFinaleState() {
+    let parsed = {};
+    try { parsed = JSON.parse(localStorage.getItem(ACADEMY_FINALE_KEY) || "{}"); } catch (_) { parsed = {}; }
+    return {
+      version: 1,
+      unlockedAt: typeof parsed.unlockedAt === "string" ? parsed.unlockedAt : "",
+      announcementShownAt: typeof parsed.announcementShownAt === "string" ? parsed.announcementShownAt : "",
+      firstViewedAt: typeof parsed.firstViewedAt === "string" ? parsed.firstViewedAt : "",
+      lastViewedAt: typeof parsed.lastViewedAt === "string" ? parsed.lastViewedAt : "",
+      viewCount: Math.max(0, Number(parsed.viewCount) || 0)
+    };
+  }
+
+  function saveFinaleState(state) {
+    const normalized = {
+      version: 1,
+      unlockedAt: state.unlockedAt || "",
+      announcementShownAt: state.announcementShownAt || "",
+      firstViewedAt: state.firstViewedAt || "",
+      lastViewedAt: state.lastViewedAt || "",
+      viewCount: Math.max(0, Number(state.viewCount) || 0)
+    };
+    localStorage.setItem(ACADEMY_FINALE_KEY, JSON.stringify(normalized));
+    window.dispatchEvent(new CustomEvent("hydra-academy-completion-updated", { detail: getAcademyCompletion() }));
+    return normalized;
+  }
+
+  function certificationCompletion(key, config) {
+    let parsed = {};
+    try { parsed = JSON.parse(localStorage.getItem(key) || "{}"); } catch (_) { parsed = {}; }
+    const state = normalizeState(parsed);
+    const achievement = state.achievements.finalBoss;
+    const legacyExamFallback = PRACTICE_EXAM_IDS.every(exam => state.exams[exam]?.passed === true);
+    return {
+      key,
+      id: config.id,
+      name: config.name,
+      campaign: config.campaign,
+      complete: Boolean(achievement || legacyExamFallback),
+      source: achievement ? "finalBoss" : legacyExamFallback ? "six-exam-fallback" : "incomplete",
+      completedAt: typeof achievement?.unlockedAt === "string" ? achievement.unlockedAt : ""
+    };
+  }
+
+  function getAcademyCompletion() {
+    const certifications = Object.entries(CAMPAIGNS).map(([key, config]) => certificationCompletion(key, config));
+    const completed = certifications.filter(certification => certification.complete);
+    const finale = readFinaleState();
+    return {
+      completedCount: completed.length,
+      totalCount: certifications.length,
+      allComplete: completed.length === certifications.length,
+      unlocked: completed.length === certifications.length || Boolean(finale.unlockedAt),
+      certifications,
+      complete: completed,
+      incomplete: certifications.filter(certification => !certification.complete),
+      finale
+    };
+  }
+
+  function showAcademyCompletionAnnouncement(completion) {
+    if (!completion.unlocked || document.querySelector(".academy-finale-announcement")) return;
+    const announcement = document.createElement("aside");
+    announcement.className = "academy-finale-announcement";
+    announcement.setAttribute("role", "dialog");
+    announcement.setAttribute("aria-modal", "false");
+    announcement.setAttribute("aria-labelledby", "academyFinaleAnnouncementTitle");
+    announcement.innerHTML = `
+      <span class="campaign-panel-label">ACADEMY 7/7 COMPLETE</span>
+      <h2 id="academyFinaleAnnouncementTitle">Hall of Giant Slayers Unlocked</h2>
+      <p>All seven certification Final Bosses have been defeated.</p>
+      <div class="academy-finale-announcement-actions">
+        <a class="link-btn" href="academy-finale.html">🏆 Enter the Hall of Giant Slayers</a>
+        <button class="link-btn academy-finale-later" type="button">Later</button>
+      </div>`;
+    announcement.querySelector(".academy-finale-later")?.addEventListener("click", () => announcement.remove());
+    document.body.append(announcement);
+  }
+
+  function syncAcademyCompletion({ announce = false } = {}) {
+    let completion = getAcademyCompletion();
+    let finale = completion.finale;
+    let newlyUnlocked = false;
+    if (completion.allComplete && !finale.unlockedAt) {
+      finale = saveFinaleState({ ...finale, unlockedAt: new Date().toISOString() });
+      newlyUnlocked = true;
+      completion = getAcademyCompletion();
+    }
+    if (announce && completion.unlocked && !completion.finale.announcementShownAt) {
+      finale = saveFinaleState({ ...completion.finale, announcementShownAt: new Date().toISOString() });
+      completion = getAcademyCompletion();
+      showAcademyCompletionAnnouncement(completion);
+    }
+    return { ...completion, newlyUnlocked, finale };
+  }
+
+  function markAcademyFinaleViewed() {
+    const completion = syncAcademyCompletion();
+    if (!completion.unlocked) return completion;
+    const now = new Date().toISOString();
+    saveFinaleState({
+      ...completion.finale,
+      firstViewedAt: completion.finale.firstViewedAt || now,
+      lastViewedAt: now,
+      viewCount: completion.finale.viewCount + 1
+    });
+    return getAcademyCompletion();
   }
 
   const STUDY_IDLE_LIMIT_MS = 5 * 60 * 1000;
@@ -296,6 +407,9 @@
     const unlocked = evaluateAchievements(state, key);
     saveState(key, state);
     announceAchievements(unlocked);
+    if (type === "exam" && unlocked.some(achievement => achievement.id === "finalBoss")) {
+      syncAcademyCompletion({ announce: true });
+    }
     return unlocked;
   }
 
@@ -760,11 +874,16 @@
   window.HydraCampaignUI = {
     CampaignStats, ObjectiveCard, ProgressBar, CompletionBadge,
     saveObjectiveProgress, recordAnswer, saveQuizResult, recordSession, getSessionHistory, getCampaignSummary,
-    trainingIntelligence,
+    trainingIntelligence, getAcademyCompletion, syncAcademyCompletion, markAcademyFinaleViewed,
     campaigns: CAMPAIGNS, achievements: ACHIEVEMENTS, render
   };
   document.addEventListener("DOMContentLoaded", initialize);
   window.addEventListener("hydra-progress-updated", render);
-  window.addEventListener("storage", render);
+  window.addEventListener("storage", event => {
+    render();
+    if (event.key === ACADEMY_FINALE_KEY || CAMPAIGNS[event.key]) {
+      window.dispatchEvent(new CustomEvent("hydra-academy-completion-updated", { detail: getAcademyCompletion() }));
+    }
+  });
   window.addEventListener("hydra-achievements-unlocked", showAchievementToast);
 }());

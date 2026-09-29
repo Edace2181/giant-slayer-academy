@@ -199,7 +199,7 @@ const css = read("style.css");
   "Confirmed Priority", "Application Gap", "Improving Transfer", "Insufficient Evidence"
 ].forEach(label => requireCheck(dashboard.includes(label), `Command Center renders ${label}.`));
 requireCheck(dashboard.includes("Five answered questions") && dashboard.includes("Fewer than five questions"), "Command Center explains the five-sample diagnostic-confidence rule.");
-requireCheck(dashboardHtml.includes("campaign-ui.js?v=gsa-command-intelligence-1") && dashboardHtml.includes("dashboard.js?v=gsa-command-intelligence-1"), "Command Center assets are cache-versioned.");
+requireCheck(dashboardHtml.includes("campaign-ui.js?v=gsa-academy-finale-1") && dashboardHtml.includes("dashboard.js?v=gsa-academy-finale-1"), "Command Center assets are cache-versioned.");
 requireCheck(css.includes("@media (max-width: 480px)") && css.includes(".dashboard-priority-grid"), "Command Center intelligence has responsive mobile styling.");
 
 const quizPages = ["aplus-core1-quiz.html", "aplus-core2-quiz.html", "hydra-quiz.html", "security-plus-quiz.html", "cloud-plus-quiz.html", "linux-essentials-quiz.html", "aws-cloud-practitioner-quiz.html"];
