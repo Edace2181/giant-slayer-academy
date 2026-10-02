@@ -54,16 +54,49 @@ function Write-HttpResponse {
         [string]$StatusText,
         [string]$ContentType,
         [byte[]]$Body,
-        [bool]$HeadOnly = $false
+        [bool]$HeadOnly = $false,
+        [hashtable]$Headers = @{}
     )
 
-    $header = "HTTP/1.1 $StatusCode $StatusText`r`nContent-Type: $ContentType`r`nContent-Length: $($Body.Length)`r`nCache-Control: no-cache`r`nConnection: close`r`nX-Content-Type-Options: nosniff`r`n`r`n"
+    $header = "HTTP/1.1 $StatusCode $StatusText`r`nContent-Type: $ContentType`r`nContent-Length: $($Body.Length)`r`nCache-Control: no-cache`r`nConnection: close`r`nX-Content-Type-Options: nosniff`r`n"
+    foreach ($name in $Headers.Keys) {
+        $header += "$name`: $($Headers[$name])`r`n"
+    }
+    $header += "`r`n"
     $headerBytes = [System.Text.Encoding]::ASCII.GetBytes($header)
     $Stream.Write($headerBytes, 0, $headerBytes.Length)
     if (-not $HeadOnly -and $Body.Length -gt 0) {
         $Stream.Write($Body, 0, $Body.Length)
     }
     $Stream.Flush()
+}
+
+function Get-FileRange {
+    param(
+        [string]$Path,
+        [long]$Start,
+        [long]$End
+    )
+
+    $length = [int]($End - $Start + 1)
+    $body = [byte[]]::new($length)
+    $file = [System.IO.File]::Open($Path, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileShare]::Read)
+    try {
+        [void]$file.Seek($Start, [System.IO.SeekOrigin]::Begin)
+        $offset = 0
+        while ($offset -lt $length) {
+            $read = $file.Read($body, $offset, $length - $offset)
+            if ($read -le 0) { break }
+            $offset += $read
+        }
+        if ($offset -ne $length) {
+            throw "Could not read the complete requested byte range."
+        }
+        return $body
+    }
+    finally {
+        $file.Dispose()
+    }
 }
 
 function Get-ContentType {
@@ -236,7 +269,17 @@ if ($Server) {
                 $stream = $client.GetStream()
                 $reader = [System.IO.StreamReader]::new($stream, [System.Text.Encoding]::ASCII, $false, 4096, $true)
                 $requestLine = $reader.ReadLine()
-                while ($reader.ReadLine()) { }
+                $requestHeaders = @{}
+                while ($true) {
+                    $headerLine = $reader.ReadLine()
+                    if ([string]::IsNullOrEmpty($headerLine)) { break }
+                    $separator = $headerLine.IndexOf(':')
+                    if ($separator -gt 0) {
+                        $headerName = $headerLine.Substring(0, $separator).Trim().ToLowerInvariant()
+                        $headerValue = $headerLine.Substring($separator + 1).Trim()
+                        $requestHeaders[$headerName] = $headerValue
+                    }
+                }
 
                 if ([string]::IsNullOrWhiteSpace($requestLine)) {
                     continue
@@ -275,8 +318,62 @@ if ($Server) {
                     continue
                 }
 
+                $fileLength = (Get-Item -LiteralPath $fullPath).Length
+                $rangeHeader = [string]$requestHeaders["range"]
+                if (-not [string]::IsNullOrWhiteSpace($rangeHeader)) {
+                    $rangeMatch = [regex]::Match($rangeHeader, '^bytes=(\d*)-(\d*)$', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+                    $rangeStart = [long]0
+                    $rangeEnd = [long]($fileLength - 1)
+                    $validRange = $rangeMatch.Success -and $fileLength -gt 0
+
+                    if ($validRange) {
+                        $startText = $rangeMatch.Groups[1].Value
+                        $endText = $rangeMatch.Groups[2].Value
+                        if ([string]::IsNullOrEmpty($startText) -and [string]::IsNullOrEmpty($endText)) {
+                            $validRange = $false
+                        }
+                        elseif ([string]::IsNullOrEmpty($startText)) {
+                            $suffixLength = [long]$endText
+                            if ($suffixLength -le 0) {
+                                $validRange = $false
+                            }
+                            else {
+                                $rangeStart = [Math]::Max([long]0, $fileLength - $suffixLength)
+                            }
+                        }
+                        else {
+                            $rangeStart = [long]$startText
+                            if (-not [string]::IsNullOrEmpty($endText)) {
+                                $rangeEnd = [long]$endText
+                            }
+                            if ($rangeStart -ge $fileLength -or $rangeEnd -lt $rangeStart) {
+                                $validRange = $false
+                            }
+                            else {
+                                $rangeEnd = [Math]::Min($rangeEnd, $fileLength - 1)
+                            }
+                        }
+                    }
+
+                    if (-not $validRange) {
+                        $body = [System.Text.Encoding]::UTF8.GetBytes("Requested Range Not Satisfiable")
+                        Write-HttpResponse $stream 416 "Range Not Satisfiable" "text/plain; charset=utf-8" $body $headOnly @{
+                            "Accept-Ranges" = "bytes"
+                            "Content-Range" = "bytes */$fileLength"
+                        }
+                        continue
+                    }
+
+                    $body = Get-FileRange $fullPath $rangeStart $rangeEnd
+                    Write-HttpResponse $stream 206 "Partial Content" (Get-ContentType $fullPath) $body $headOnly @{
+                        "Accept-Ranges" = "bytes"
+                        "Content-Range" = "bytes $rangeStart-$rangeEnd/$fileLength"
+                    }
+                    continue
+                }
+
                 $body = [System.IO.File]::ReadAllBytes($fullPath)
-                Write-HttpResponse $stream 200 "OK" (Get-ContentType $fullPath) $body $headOnly
+                Write-HttpResponse $stream 200 "OK" (Get-ContentType $fullPath) $body $headOnly @{ "Accept-Ranges" = "bytes" }
             }
             catch {
                 # A malformed or aborted local request must not stop the server.

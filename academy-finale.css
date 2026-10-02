@@ -159,37 +159,221 @@ body {
   padding: clamp(1rem, 3vw, 1.6rem);
 }
 
-.finale-stage {
+.finale-player-state {
+  opacity: 1;
+  transition: opacity 1.6s ease;
+}
+
+.finale-experience.is-founder-transition .finale-player-state {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.founder-thank-you {
+  position: relative;
+  isolation: isolate;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  border: 1px solid rgba(255, 216, 107, 0.32);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255, 216, 107, 0.11), transparent 34%),
+    linear-gradient(155deg, rgba(4, 8, 19, 0.98), rgba(13, 9, 26, 0.98));
+  box-shadow: inset 0 0 3rem rgba(113, 239, 255, 0.04), 0 1rem 3rem rgba(0, 0, 0, 0.42);
+  color: #e9edf7;
+  opacity: 0;
+  text-align: left;
+  transform: translateY(0.75rem);
+  transition: opacity 1.8s ease, transform 1.8s ease;
+}
+
+.founder-thank-you::before {
+  position: absolute;
+  z-index: -1;
+  inset: 8% 4%;
   display: grid;
-  min-height: clamp(18rem, 52vw, 32rem);
-  padding: 2rem;
+  color: rgba(113, 239, 255, 0.025);
+  content: "GSA";
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(7rem, 26vw, 15rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
   place-items: center;
+  pointer-events: none;
+}
+
+.founder-thank-you.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founder-thank-you:focus {
+  outline: none;
+}
+
+.founder-crest {
+  color: rgba(255, 216, 107, 0.7);
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0 0 1rem rgba(255, 216, 107, 0.28);
+}
+
+.founder-kicker {
+  margin: 0.35rem 0 0;
+  color: #71efff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.founder-thank-you h2 {
+  margin: 0.45rem 0 1.4rem;
+  color: #fff1bd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 5vw, 2.65rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.founder-message {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 2vw, 1.13rem);
+  line-height: 1.72;
+}
+
+.founder-message p {
+  margin: 0 0 1rem;
+}
+
+.founder-belief {
+  color: #ffd86b;
+  font-size: clamp(1.12rem, 2.5vw, 1.35rem);
+  text-align: center;
+}
+
+.founder-signature {
+  margin-top: 1.6rem;
+  color: #c9d5ef;
+  text-align: right;
+}
+
+.finale-stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid rgba(255, 216, 107, 0.5);
   border-radius: 1rem;
-  background: radial-gradient(circle, rgba(41, 54, 92, 0.55), rgba(2, 4, 11, 0.94) 70%);
+  background: #02040b;
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.48);
+  isolation: isolate;
 }
 
-.finale-cue-text {
-  max-width: 48rem;
+.finale-scene-stack,
+.finale-stage-vignette {
+  position: absolute;
+  inset: 0;
+}
+
+.finale-scene-stack {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.finale-scene-layer {
+  position: absolute;
+  inset: -2.5%;
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.025);
+  transition: opacity 1.45s ease;
+  will-change: opacity, transform;
+}
+
+.finale-scene-layer.is-active {
+  opacity: 1;
+}
+
+.finale-scene-layer.is-active.motion-push {
+  animation: finale-push 15s linear both;
+}
+
+.finale-scene-layer.is-active.motion-pull {
+  animation: finale-pull 18s linear both;
+}
+
+.finale-scene-layer.is-active.motion-pan-left {
+  animation: finale-pan-left 15s linear both;
+}
+
+.finale-scene-layer.is-active.motion-pan-right {
+  animation: finale-pan-right 15s linear both;
+}
+
+.finale-stage-vignette {
+  z-index: 1;
+  background:
+    linear-gradient(to bottom, rgba(2, 4, 11, 0.06) 42%, rgba(2, 4, 11, 0.6) 100%),
+    radial-gradient(ellipse at center, transparent 48%, rgba(2, 4, 11, 0.42) 100%);
+  pointer-events: none;
+}
+
+.finale-title-card {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  padding: clamp(1rem, 5vw, 3rem);
+  place-items: center;
+  background: rgba(2, 4, 11, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.015);
+  transition: opacity 0.85s ease, transform 1.2s ease;
+}
+
+.finale-title-card.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.finale-title-card p {
+  max-width: 52rem;
   margin: 0;
-  color: #fff;
-  font-size: clamp(1.35rem, 4vw, 2.4rem);
-  line-height: 1.35;
-  text-shadow: 0 0 1rem rgba(113, 239, 255, 0.45);
-}
-
-.finale-cue-copy {
-  max-width: 50rem;
-}
-
-.finale-cue-direction {
-  margin: 0 0 1rem;
-  color: #ffd86b;
-  font-size: 0.78rem;
+  color: #fff5d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 5.2vw, 3.65rem);
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: clamp(0.04em, 0.7vw, 0.13em);
+  line-height: 1.12;
+  text-align: center;
+  text-shadow: 0 0 0.35rem #02040b, 0 0 1.4rem rgba(2, 4, 11, 0.95), 0 0 2.8rem rgba(255, 216, 107, 0.52);
   text-transform: uppercase;
+}
+
+@keyframes finale-push {
+  from { transform: scale(1.025); }
+  to { transform: scale(1.095); }
+}
+
+@keyframes finale-pull {
+  from { transform: scale(1.095); }
+  to { transform: scale(1.025); }
+}
+
+@keyframes finale-pan-left {
+  from { transform: scale(1.075) translateX(1.2%); }
+  to { transform: scale(1.075) translateX(-1.2%); }
+}
+
+@keyframes finale-pan-right {
+  from { transform: scale(1.075) translateX(-1.2%); }
+  to { transform: scale(1.075) translateX(1.2%); }
 }
 
 .finale-manual-start {
@@ -248,8 +432,12 @@ body {
   }
 
   .finale-stage {
-    min-height: 19rem;
-    padding: 1rem;
+    border-radius: 0.65rem;
+  }
+
+  .finale-title-card p {
+    font-size: clamp(1.1rem, 6.5vw, 1.75rem);
+    letter-spacing: 0.055em;
   }
 
   .finale-timeline {

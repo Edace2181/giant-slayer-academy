@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giant Slayer Academy | Hall of Giant Slayers</title>
-  <link rel="stylesheet" href="academy-finale.css?v=gsa-academy-finale-1">
+  <link rel="stylesheet" href="academy-finale.css?v=gsa-academy-finale-3">
   <link rel="icon" type="image/png" href="hydra.png">
 </head>
 <body class="finale-body">
@@ -30,17 +30,23 @@
     <section id="finaleUnlocked" class="finale-panel hidden" aria-labelledby="finaleUnlockedTitle">
       <span class="finale-unlock-icon" aria-hidden="true">🏆</span>
       <h2 id="finaleUnlockedTitle">Academy Finale Unlocked</h2>
-      <p>The Finale player is ready for the supplied creative package.</p>
+      <p>The production Finale is ready. Rise, Giant Slayer.</p>
       <button id="beginFinale" class="finale-button" type="button">Begin Finale</button>
     </section>
 
     <section id="finaleExperience" class="finale-experience hidden" aria-labelledby="finaleExperienceTitle">
       <h2 id="finaleExperienceTitle" class="visually-hidden">Academy Finale Player</h2>
-      <div class="finale-stage" role="group" aria-label="Synchronized Finale presentation">
-        <div class="finale-cue-copy" aria-live="polite">
-          <p id="finaleCueDirection" class="finale-cue-direction">Canonical narration preview</p>
-          <p id="finaleCueText" class="finale-cue-text">Rise, Giant Slayer.</p>
+      <div id="finalePlayerState" class="finale-player-state">
+      <div id="finaleStage" class="finale-stage" role="group" aria-label="Synchronized Finale presentation" data-scene="academy-establishing">
+        <div class="finale-scene-stack" aria-hidden="true">
+          <img id="finaleSceneA" class="finale-scene-layer is-active" alt="">
+          <img id="finaleSceneB" class="finale-scene-layer" alt="">
         </div>
+        <div class="finale-stage-vignette" aria-hidden="true"></div>
+        <div id="finaleTitleCard" class="finale-title-card" aria-live="polite" aria-atomic="true">
+          <p id="finaleTitleText"></p>
+        </div>
+        <p id="finaleSceneDescription" class="visually-hidden" aria-live="polite"></p>
       </div>
 
       <div id="finaleManualStart" class="finale-manual-start hidden" role="status">
@@ -68,13 +74,34 @@
         <a class="finale-button secondary" href="dashboard.html">Exit to Command Center</a>
         <a class="finale-button secondary" href="index.html?entered=1">Exit to Select a Game</a>
       </div>
+      </div>
+
+      <section id="founderThankYou" class="founder-thank-you hidden" aria-labelledby="founderThankYouTitle" tabindex="-1">
+        <div class="founder-crest" aria-hidden="true">⚔</div>
+        <p class="founder-kicker">GIANT SLAYER ACADEMY</p>
+        <h2 id="founderThankYouTitle">A Personal Thank You</h2>
+        <div class="founder-message">
+          <p>Thank you for taking this journey through Giant Slayer Academy.</p>
+          <p>What began as an idea to make studying more engaging became something far greater than I ever imagined.</p>
+          <p>Every kingdom, every battle, and every giant was created around one simple belief:</p>
+          <p class="founder-belief"><strong>Difficult does not mean impossible.</strong></p>
+          <p>If Giant Slayer Academy helped you understand something that once seemed difficult, prepare for a certification, or simply keep going when you wanted to quit, then it accomplished what I hoped it would.</p>
+          <p>Keep learning. Keep building. Keep moving forward.</p>
+          <p>There will always be another giant.</p>
+          <p class="founder-signature"><strong>— Edelmiro Acevedo</strong><br>Founder &amp; Creator<br>Giant Slayer Academy</p>
+        </div>
+        <div class="finale-navigation-row">
+          <button id="replayFinaleFromFounder" class="finale-button" type="button">↻ Replay Finale</button>
+          <a class="finale-button secondary" href="dashboard.html">Exit to Command Center</a>
+          <a class="finale-button secondary" href="index.html?entered=1">Exit to Select a Game</a>
+        </div>
+      </section>
     </section>
 
     <audio id="finaleMusic" preload="metadata"></audio>
-    <audio id="finaleNarration" preload="auto"></audio>
   </main>
 
   <script src="campaign-ui.js?v=gsa-academy-finale-1"></script>
-  <script src="academy-finale.js?v=gsa-academy-finale-1"></script>
+  <script src="academy-finale.js?v=gsa-academy-finale-3"></script>
 </body>
 </html>

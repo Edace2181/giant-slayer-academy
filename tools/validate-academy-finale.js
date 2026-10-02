@@ -4,6 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -161,31 +162,76 @@ const sharedCss = read("style.css");
 const finaleHtml = read("academy-finale.html");
 const finaleJs = read("academy-finale.js");
 const finaleCss = read("academy-finale.css");
+const localServer = read("hydra-local-server.ps1");
 
 requireCheck(campaignUi.includes("hydra-academy-finale-v1") && campaignUi.includes("six-exam-fallback"), "Shared engine exposes the approved completion authority and legacy fallback.");
 requireCheck(indexHtml.includes("academyFinaleLink") && hubScript.includes("syncAcademyCompletion"), "Select a Game exposes permanent Hall access after unlock.");
 requireCheck(dashboard.includes("Academy Completion") && dashboard.includes("Enter the Hall") && dashboardHtml.includes("gsa-academy-finale-1"), "Command Center exposes 0/7–7/7 status and permanent Hall access.");
 requireCheck(sharedCss.includes("academy-finale-announcement") && sharedCss.includes("@media (max-width: 480px)"), "Shared completion announcement has exact 390px-compatible styling.");
-requireCheck(finaleHtml.includes("finaleLocked") && finaleHtml.includes("finaleUnlocked") && finaleHtml.includes("finalePlayPause") && finaleHtml.includes("replayFinale"), "Finale direct route contains locked, unlocked, playback, and replay surfaces.");
-requireCheck(finaleJs.includes("window.GSA_FINALE_CONFIG") && finaleJs.includes("narrationSrc") && finaleJs.includes("requestAnimationFrame(renderTimeline)"), "Finale player exposes media, narration, text, and synchronized cue hooks.");
+requireCheck(finaleHtml.includes("finaleLocked") && finaleHtml.includes("finaleUnlocked") && finaleHtml.includes("finalePlayPause") && finaleHtml.includes("replayFinale") && finaleHtml.includes("finaleSceneA") && finaleHtml.includes("finaleSceneB") && finaleHtml.includes("finaleTitleCard"), "Finale direct route contains locked, unlocked, dual-layer cinematic stage, title, playback, and replay surfaces.");
+requireCheck(finaleHtml.includes('id="founderThankYou"') && finaleHtml.includes("A Personal Thank You") && finaleHtml.includes("Difficult does not mean impossible.") && finaleHtml.includes("— Edelmiro Acevedo") && finaleHtml.includes('id="replayFinaleFromFounder"'), "Post-Finale Founder card preserves the approved personal message and independent Replay action.");
+requireCheck(finaleJs.includes("window.GSA_FINALE_CONFIG") && finaleJs.includes("assets/rise-giant-slayer-ending.mp3") && finaleJs.includes("requestAnimationFrame(renderTimeline)"), "Finale player uses the production master as its synchronized media clock while preserving the deployment hook.");
+requireCheck(finaleJs.includes('elements.music.addEventListener("ended"') && finaleJs.includes("showFounderThankYou();") && finaleJs.includes("POST_FINALE_HOLD_MS = 1200") && finaleJs.includes("POST_FINALE_FADE_MS = 1600"), "Founder message begins only after the production audio ends, following a resolved ending and fade to black.");
+requireCheck(finaleJs.includes('elements.founderReplay.addEventListener("click", () => beginExperience({ replay: true }))') && finaleJs.includes("resetFounderThankYou();"), "Founder Replay resets the original Finale independently without changing entitlement.");
+requireCheck(finaleJs.includes("const MASTER_DURATION_SECONDS = 228.624") && finaleJs.includes("return config.durationSeconds;"), "Visible and seekable Finale timing remains aligned to the approved 3:48.624 production cue map despite decoder padding.");
 requireCheck(finaleJs.includes("browser paused automatic audio") && finaleHtml.includes("Start Finale with Sound"), "Autoplay failure degrades to an obvious manual-start action.");
-requireCheck(finaleCss.includes("overflow-x: hidden") && finaleCss.includes("@media (max-width: 520px)"), "Finale has overflow protection and responsive mobile layout.");
+requireCheck(finaleCss.includes("overflow-x: hidden") && finaleCss.includes("@media (max-width: 520px)") && finaleCss.includes(".finale-scene-layer") && finaleCss.includes("@keyframes finale-push") && finaleCss.includes("@keyframes finale-pull"), "Finale has overflow protection, responsive mobile layout, crossfades, and restrained cinematic motion.");
 [
-  "Seven kingdoms. Seven battles. One journey.",
+  "Seven kingdoms.",
+  "Seven battles.",
+  "One journey.",
   "You leave them as a Giant Slayer.",
-  "But everything you learned... stands with you.",
+  "But everything you learned...",
+  "stands with you.",
   "It was meant to prepare you...",
   "Rise, Giant Slayer.",
-  "Your journey... has only begun.",
-  "Welcome... to the ranks of the Giant Slayers."
+  "Your journey...",
+  "has only begun.",
+  "Welcome...",
+  "to the ranks of the Giant Slayers."
 ].forEach(line => requireCheck(finaleJs.includes(line), `Canonical Finale narration includes: ${line}`));
+requireCheck((finaleJs.match(/type: "line"/g) || []).length === 39, "Production cue map contains all 39 embedded spoken phrases.");
+requireCheck((finaleJs.match(/type: "scene"/g) || []).length === 7, "Production cue map contains all seven major musical/scene transitions.");
+requireCheck((finaleJs.match(/assets\/finale\/scenes\/finale-/g) || []).length === 24, "Cinematic storyboard maps all 24 approved production scene plates.");
+requireCheck(finaleJs.includes('{ id: "cloud-plus", start: 126.000') && finaleJs.includes('{ id: "future-beyond-gates", start: 130.600'), "Cloud+ Maestro hold ends at the 130.600-second narration return after a 4.600-second montage appearance.");
+[
+  "SEVEN KINGDOMS. SEVEN BATTLES. ONE JOURNEY.",
+  "RISE, GIANT SLAYER.",
+  "WELCOME TO THE RANKS OF THE GIANT SLAYERS."
+].forEach(title => requireCheck(finaleJs.includes(`text: "${title}"`), `Approved major title is present: ${title}`));
+requireCheck(!finaleHtml.includes("finaleCueText") && !finaleHtml.includes("finaleCueDirection"), "Default presentation no longer renders every narration phrase as subtitles.");
+[
+  'start: 4.800', 'start: 25.860', 'start: 57.600', 'start: 96.140', 'start: 157.940',
+  'start: 171.300', 'start: 205.820', 'start: 208.500', 'start: 212.620'
+].forEach(timestamp => requireCheck(finaleJs.includes(timestamp), `Waveform-aligned cue is preserved: ${timestamp}`));
+[
+  "Music begins to rise", "Orchestra grows larger", "Huge heroic orchestral climax", "Music begins settling",
+  "Prologue melody slowly returns", "Final quiet orchestral ending"
+].forEach(direction => requireCheck(finaleJs.includes(`productionCue: "${direction}"`), `Production transition is encoded as a non-dialogue scene cue: ${direction}`));
 requireCheck(finaleJs.includes('new URLSearchParams(window.location.search).get("preview") === "1"') && finaleJs.includes('"localhost", "127.0.0.1", "::1"'), "Localhost-only ?preview=1 path previews the Finale without production entitlement.");
 requireCheck(finaleJs.includes("if (!previewMode) ui.markAcademyFinaleViewed()"), "Developer preview does not write learner Finale-view evidence.");
-requireCheck(!/\.mp3|\.wav|\.ogg/i.test(finaleJs), "Finale skeleton does not integrate a production audio asset.");
+requireCheck(localServer.includes('206 "Partial Content"') && localServer.includes('"Content-Range"') && localServer.includes('"Accept-Ranges" = "bytes"') && localServer.includes('416 "Range Not Satisfiable"'), "Localhost server implements valid byte-range, 206, and 416 responses for seeking and replay.");
+
+const sceneDirectory = path.join(ROOT, "assets", "finale", "scenes");
+const sceneFiles = fs.readdirSync(sceneDirectory).filter(file => file.toLowerCase().endsWith(".png")).sort();
+requireCheck(sceneFiles.length === 24, "Exactly 24 approved cinematic scene assets are present.");
+sceneFiles.forEach(file => {
+  const bytes = fs.readFileSync(path.join(sceneDirectory, file));
+  requireCheck(bytes.length > 1_000_000 && bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), `Cinematic scene is a substantive valid PNG: ${file}`);
+});
+const referenceDirectory = path.join(ROOT, "assets", "finale", "references");
+requireCheck(fs.readdirSync(referenceDirectory).filter(file => file.toLowerCase().endsWith(".png")).length === 8, "All eight locked continuity references remain present.");
+
+const finaleMasterPath = path.join(ROOT, "assets", "rise-giant-slayer-ending.mp3");
+const finaleMaster = fs.readFileSync(finaleMasterPath);
+requireCheck(finaleMaster.length === 5298518, "Production master byte length matches the supplied canonical MP3.");
+requireCheck(crypto.createHash("sha256").update(finaleMaster).digest("hex") === "9df935591008077b4b58836be45f47cb7cab3461a6b8d105027da7351ab6d07c", "Production master SHA-256 matches the supplied canonical MP3.");
+const embeddedMetadata = finaleMaster.subarray(0, 30000).toString("utf8");
+requireCheck(embeddedMetadata.includes("Seven kingdoms.") && embeddedMetadata.includes("Welcome...") && embeddedMetadata.includes("to the ranks of the Giant Slayers."), "Production master retains the embedded English canonical lyrics metadata.");
 
 const allowedFiles = new Set([
-  "academy-finale.css", "academy-finale.html", "academy-finale.js", "campaign-ui.js", "dashboard.html", "dashboard.js",
-  "index.html", "script.js", "style.css", "tools/validate-academy-finale.js", "tools/validate-command-center-intelligence.js"
+  "academy-finale.css", "academy-finale.html", "academy-finale.js", "assets/finale/", "assets/rise-giant-slayer-ending.mp3", "hydra-local-server.ps1",
+  "tools/validate-academy-finale.js"
 ]);
 const statusLines = execFileSync("git", ["status", "--porcelain"], { cwd: ROOT, encoding: "utf8" }).split(/\r?\n/).filter(line => line.trim());
 const changedFiles = statusLines.map(line => line.slice(3).replace(/\\/g, "/"));
