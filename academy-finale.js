@@ -393,7 +393,7 @@
     const accessGranted = completion.unlocked || previewMode;
     elements.completionStatus.textContent = previewMode
       ? `Developer preview — learner entitlement remains ${completion.completedCount}/${completion.totalCount}.`
-      : `${completion.completedCount}/${completion.totalCount} certification Final Bosses defeated.`;
+      : `${completion.completedCount}/${completion.totalCount} certification tracks complete.`;
     elements.locked.classList.toggle("hidden", accessGranted);
     elements.unlocked.classList.toggle("hidden", !accessGranted || experienceStarted);
     if (!accessGranted) {

@@ -30,6 +30,45 @@
       <div id="campaignDashboard" class="dashboard-grid"></div>
     </section>
 
+    <dialog id="alreadyCertifiedDialog" class="already-certified-dialog" aria-labelledby="alreadyCertifiedDialogTitle">
+      <form id="alreadyCertifiedForm" novalidate>
+        <section id="alreadyCertifiedEntryPanel">
+          <span class="campaign-panel-label">ACADEMY COMPLETION PATHWAY</span>
+          <h2 id="alreadyCertifiedDialogTitle">Record an existing certification</h2>
+          <p id="alreadyCertifiedDialogDescription">Record the date this certification was earned.</p>
+          <p class="already-certified-trust-note"><strong>Learner-declared:</strong> Giant Slayer Academy does not independently verify this certification with CompTIA, AWS, LPI, an employer, or another issuer.</p>
+          <input id="alreadyCertifiedId" type="hidden">
+          <label class="already-certified-date-label" for="alreadyCertifiedDate">Certification earned date
+            <input id="alreadyCertifiedDate" type="date" required>
+          </label>
+          <fieldset class="already-certified-honor">
+            <legend>Honor System</legend>
+            <p><em>Giant Slayer Academy accepts Already Certified records on the honor system. By recording this certification, you confirm that you earned the certification shown and that the date entered is accurate.</em></p>
+            <label for="alreadyCertifiedHonor">
+              <input id="alreadyCertifiedHonor" type="checkbox" required>
+              <span>I confirm that I earned this certification and that the date entered is accurate.</span>
+            </label>
+          </fieldset>
+          <p id="alreadyCertifiedError" class="already-certified-error" role="alert" aria-live="polite"></p>
+          <div class="already-certified-dialog-actions">
+            <button id="cancelAlreadyCertified" class="link-btn secondary" type="button">Cancel</button>
+            <button class="link-btn" type="submit">Save certification</button>
+          </div>
+        </section>
+
+        <section id="alreadyCertifiedRemovePanel" class="hidden" aria-labelledby="alreadyCertifiedRemoveTitle">
+          <span class="campaign-panel-label">REMOVE LEARNER-DECLARED RECORD</span>
+          <h2 id="alreadyCertifiedRemoveTitle">Remove Already Certified record?</h2>
+          <p id="alreadyCertifiedRemoveDescription"></p>
+          <p class="already-certified-trust-note">Only this learner-declared certification record will be removed. Existing Giant Slayer Academy training progress, scores, mastery, exams, achievements, PBQs, and labs will not be deleted.</p>
+          <div class="already-certified-dialog-actions">
+            <button id="cancelAlreadyCertifiedRemove" class="link-btn secondary" type="button">Keep record</button>
+            <button id="confirmAlreadyCertifiedRemove" class="link-btn danger" type="button">Remove record</button>
+          </div>
+        </section>
+      </form>
+    </dialog>
+
     <footer class="arcade-footer">
       <a href="index.html" class="link-btn">🏰 Return to Academy 🏰</a>
     </footer>

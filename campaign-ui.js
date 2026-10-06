@@ -4,6 +4,7 @@
   const clamp = value => Math.max(0, Math.min(100, Math.round(value || 0)));
   const DIAGNOSTIC_MIN_SAMPLES = 5;
   const ACADEMY_FINALE_KEY = "hydra-academy-finale-v1";
+  const CERTIFICATION_IMPORTS_KEY = "hydra-academy-certification-imports-v1";
   const PRACTICE_EXAM_IDS = ["1", "2", "3", "4", "5", "6"];
 
   const CAMPAIGNS = {
@@ -58,6 +59,103 @@
     hydraSlayer: { icon: "🐉", name: "Hydra Slayer" },
     finalBoss: { icon: "👑", name: "Final Boss Defeated" }
   };
+
+  function todayDateOnly() {
+    const now = new Date();
+    return [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-");
+  }
+
+  function validTimestamp(value) {
+    return typeof value === "string"
+      && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value)
+      && Number.isFinite(Date.parse(value));
+  }
+
+  function validCertificationDate(value) {
+    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const [year, month, day] = value.split("-").map(Number);
+    const parsed = new Date(Date.UTC(year, month - 1, day));
+    if (parsed.getUTCFullYear() !== year || parsed.getUTCMonth() !== month - 1 || parsed.getUTCDate() !== day) return false;
+    return value <= todayDateOnly();
+  }
+
+  function formatCertificationDate(value) {
+    if (!validCertificationDate(value)) return "";
+    const [year, month, day] = value.split("-").map(Number);
+    return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      .format(new Date(Date.UTC(year, month - 1, day)));
+  }
+
+  function normalizeCertificationImport(certificationId, record) {
+    if (!Object.values(CAMPAIGNS).some(config => config.id === certificationId)) return null;
+    if (!record || record.certificationId !== certificationId || record.status !== "already-certified") return null;
+    if (record.evidenceType !== "learner-declared" || !validCertificationDate(record.earnedDate)) return null;
+    if (!validTimestamp(record.recordedAt) || !validTimestamp(record.updatedAt)) return null;
+    if (Date.parse(record.updatedAt) < Date.parse(record.recordedAt)) return null;
+    return {
+      certificationId,
+      status: "already-certified",
+      earnedDate: record.earnedDate,
+      evidenceType: "learner-declared",
+      recordedAt: record.recordedAt,
+      updatedAt: record.updatedAt
+    };
+  }
+
+  function getCertificationImports() {
+    let parsed = {};
+    try { parsed = JSON.parse(localStorage.getItem(CERTIFICATION_IMPORTS_KEY) || "{}"); } catch (_) { parsed = {}; }
+    const certifications = {};
+    if (parsed?.version === 1 && parsed.certifications && typeof parsed.certifications === "object" && !Array.isArray(parsed.certifications)) {
+      Object.entries(parsed.certifications).forEach(([certificationId, record]) => {
+        const normalized = normalizeCertificationImport(certificationId, record);
+        if (normalized) certifications[certificationId] = normalized;
+      });
+    }
+    return { version: 1, certifications };
+  }
+
+  function getAlreadyCertified(certificationId) {
+    return getCertificationImports().certifications[certificationId] || null;
+  }
+
+  function publishCertificationImportUpdate(imports, { announce = false } = {}) {
+    const completion = syncAcademyCompletion({ announce });
+    window.dispatchEvent(new CustomEvent("hydra-certification-imports-updated", { detail: imports }));
+    window.dispatchEvent(new CustomEvent("hydra-academy-completion-updated", { detail: completion }));
+  }
+
+  function saveAlreadyCertified(certificationId, earnedDate) {
+    const config = Object.values(CAMPAIGNS).find(item => item.id === certificationId);
+    if (!config) throw new Error("Unknown certification.");
+    if (!validCertificationDate(earnedDate)) throw new Error("Enter a valid certification date that is not in the future.");
+    const imports = getCertificationImports();
+    const prior = imports.certifications[certificationId];
+    const generatedAt = new Date().toISOString();
+    const updatedAt = prior?.updatedAt && generatedAt <= prior.updatedAt
+      ? new Date(Date.parse(prior.updatedAt) + 1).toISOString()
+      : generatedAt;
+    imports.certifications[certificationId] = {
+      certificationId,
+      status: "already-certified",
+      earnedDate,
+      evidenceType: "learner-declared",
+      recordedAt: prior?.recordedAt || generatedAt,
+      updatedAt
+    };
+    localStorage.setItem(CERTIFICATION_IMPORTS_KEY, JSON.stringify(imports));
+    publishCertificationImportUpdate(imports, { announce: true });
+    return imports.certifications[certificationId];
+  }
+
+  function removeAlreadyCertified(certificationId) {
+    const imports = getCertificationImports();
+    if (!imports.certifications[certificationId]) return false;
+    delete imports.certifications[certificationId];
+    localStorage.setItem(CERTIFICATION_IMPORTS_KEY, JSON.stringify(imports));
+    publishCertificationImportUpdate(imports);
+    return true;
+  }
 
   function ProgressBar(percent, label) {
     const value = clamp(percent);
@@ -171,35 +269,47 @@
     return normalized;
   }
 
-  function certificationCompletion(key, config) {
+  function certificationCompletion(key, config, imports = getCertificationImports()) {
     let parsed = {};
     try { parsed = JSON.parse(localStorage.getItem(key) || "{}"); } catch (_) { parsed = {}; }
     const state = normalizeState(parsed);
     const achievement = state.achievements.finalBoss;
     const legacyExamFallback = PRACTICE_EXAM_IDS.every(exam => state.exams[exam]?.passed === true);
+    const imported = imports.certifications[config.id] || null;
+    const trainingComplete = Boolean(achievement || legacyExamFallback);
     return {
       key,
       id: config.id,
       name: config.name,
       campaign: config.campaign,
-      complete: Boolean(achievement || legacyExamFallback),
-      source: achievement ? "finalBoss" : legacyExamFallback ? "six-exam-fallback" : "incomplete",
-      completedAt: typeof achievement?.unlockedAt === "string" ? achievement.unlockedAt : ""
+      complete: Boolean(trainingComplete || imported),
+      trainingComplete,
+      alreadyCertified: Boolean(imported),
+      source: achievement ? "finalBoss" : legacyExamFallback ? "six-exam-fallback" : imported ? "already-certified" : "incomplete",
+      trainingSource: achievement ? "finalBoss" : legacyExamFallback ? "six-exam-fallback" : "incomplete",
+      completedAt: typeof achievement?.unlockedAt === "string" ? achievement.unlockedAt : "",
+      certificationDate: imported?.earnedDate || "",
+      evidenceType: imported?.evidenceType || "",
+      importedRecord: imported
     };
   }
 
   function getAcademyCompletion() {
-    const certifications = Object.entries(CAMPAIGNS).map(([key, config]) => certificationCompletion(key, config));
+    const imports = getCertificationImports();
+    const certifications = Object.entries(CAMPAIGNS).map(([key, config]) => certificationCompletion(key, config, imports));
     const completed = certifications.filter(certification => certification.complete);
     const finale = readFinaleState();
+    const allComplete = completed.length === certifications.length;
     return {
       completedCount: completed.length,
       totalCount: certifications.length,
-      allComplete: completed.length === certifications.length,
-      unlocked: completed.length === certifications.length || Boolean(finale.unlockedAt),
+      allComplete,
+      unlocked: allComplete,
+      everUnlocked: Boolean(finale.unlockedAt),
       certifications,
       complete: completed,
       incomplete: certifications.filter(certification => !certification.complete),
+      imports,
       finale
     };
   }
@@ -214,7 +324,7 @@
     announcement.innerHTML = `
       <span class="campaign-panel-label">ACADEMY 7/7 COMPLETE</span>
       <h2 id="academyFinaleAnnouncementTitle">Hall of Giant Slayers Unlocked</h2>
-      <p>All seven certification Final Bosses have been defeated.</p>
+      <p>All seven certification tracks are complete.</p>
       <div class="academy-finale-announcement-actions">
         <a class="link-btn" href="academy-finale.html">🏆 Enter the Hall of Giant Slayers</a>
         <button class="link-btn academy-finale-later" type="button">Later</button>
@@ -875,13 +985,19 @@
     CampaignStats, ObjectiveCard, ProgressBar, CompletionBadge,
     saveObjectiveProgress, recordAnswer, saveQuizResult, recordSession, getSessionHistory, getCampaignSummary,
     trainingIntelligence, getAcademyCompletion, syncAcademyCompletion, markAcademyFinaleViewed,
+    getCertificationImports, getAlreadyCertified, saveAlreadyCertified, removeAlreadyCertified,
+    validCertificationDate, formatCertificationDate, todayDateOnly,
+    certificationImportsKey: CERTIFICATION_IMPORTS_KEY,
     campaigns: CAMPAIGNS, achievements: ACHIEVEMENTS, render
   };
   document.addEventListener("DOMContentLoaded", initialize);
   window.addEventListener("hydra-progress-updated", render);
   window.addEventListener("storage", event => {
     render();
-    if (event.key === ACADEMY_FINALE_KEY || CAMPAIGNS[event.key]) {
+    if (event.key === ACADEMY_FINALE_KEY || event.key === CERTIFICATION_IMPORTS_KEY || CAMPAIGNS[event.key]) {
+      if (event.key === CERTIFICATION_IMPORTS_KEY) {
+        window.dispatchEvent(new CustomEvent("hydra-certification-imports-updated", { detail: getCertificationImports() }));
+      }
       window.dispatchEvent(new CustomEvent("hydra-academy-completion-updated", { detail: getAcademyCompletion() }));
     }
   });

@@ -72,6 +72,20 @@ const allObjectives = campaignEntries.flatMap(([, config]) => Object.values(conf
 requireCheck(allObjectives.length === 187, "All 187 objectives have an authoritative GSA World mapping.");
 requireCheck(campaignEntries.every(([, config]) => Object.keys(config.objectivesByWorld).join(",") === "1,2,3,4,5"), "Every certification maps Worlds 1–5 explicitly.");
 
+const [importedTrainingKey, importedConfig] = campaignEntries[0];
+const importedTrainingBefore = storage.getItem(importedTrainingKey);
+const importedSummaryBefore = ui.getCampaignSummary(importedTrainingKey);
+const importedRecord = ui.saveAlreadyCertified(importedConfig.id, "2026-07-17");
+const importedSummaryAfter = ui.getCampaignSummary(importedTrainingKey);
+const importedCompletion = ui.getAcademyCompletion();
+requireCheck(importedRecord.status === "already-certified" && importedRecord.evidenceType === "learner-declared", "Already Certified evidence remains explicitly learner-declared.");
+requireCheck(importedRecord.earnedDate === "2026-07-17" && ui.formatCertificationDate(importedRecord.earnedDate) === "July 17, 2026", "Already Certified dates retain date-only semantics and Academy display formatting.");
+requireCheck(importedCompletion.completedCount === 1 && importedCompletion.certifications.find(item => item.id === importedConfig.id)?.source === "already-certified", "An imported certification contributes exactly once to Academy Completion.");
+requireCheck(importedSummaryAfter.masteryPercent === importedSummaryBefore.masteryPercent && importedSummaryAfter.completedExams === importedSummaryBefore.completedExams && importedSummaryAfter.finalBossesDefeated === importedSummaryBefore.finalBossesDefeated, "Already Certified evidence does not manufacture training, exam, mastery, or Final Boss evidence.");
+requireCheck(storage.getItem(importedTrainingKey) === importedTrainingBefore, "Recording Already Certified evidence does not write the certification training key.");
+ui.removeAlreadyCertified(importedConfig.id);
+requireCheck(ui.getAcademyCompletion().completedCount === 0 && storage.getItem(importedTrainingKey) === importedTrainingBefore, "Removing Already Certified evidence preserves training evidence and recalculates Academy Completion.");
+
 for (const [key, config] of campaignEntries) {
   const summary = ui.getCampaignSummary(key);
   requireCheck(summary.intelligence.objectiveSweeps.length === Object.values(config.objectivesByWorld).flat().length, `${config.name}: empty-state Objective Sweep rows are complete.`);
@@ -201,6 +215,13 @@ const css = read("style.css");
 requireCheck(dashboard.includes("Five answered questions") && dashboard.includes("Fewer than five questions"), "Command Center explains the five-sample diagnostic-confidence rule.");
 requireCheck(dashboardHtml.includes("campaign-ui.js?v=gsa-academy-finale-1") && dashboardHtml.includes("dashboard.js?v=gsa-academy-finale-1"), "Command Center assets are cache-versioned.");
 requireCheck(css.includes("@media (max-width: 480px)") && css.includes(".dashboard-priority-grid"), "Command Center intelligence has responsive mobile styling.");
+requireCheck(dashboardHtml.includes('id="alreadyCertifiedDialog"') && dashboardHtml.includes("Learner-declared:") && dashboardHtml.includes("will not be deleted"), "Command Center provides one reusable, trust-labeled Already Certified dialog with safe removal copy.");
+requireCheck(dashboardHtml.includes("Honor System") && dashboardHtml.includes('id="alreadyCertifiedHonor"') && dashboardHtml.includes("I confirm that I earned this certification and that the date entered is accurate."), "Already Certified dialog presents the required Honor System acknowledgment.");
+requireCheck(dashboard.includes("Already certified? Record certification") && dashboard.includes("✓ Already Certified") && dashboard.includes("Edit date") && dashboard.includes("Remove"), "Command Center renders the required Already Certified add, edit, and remove controls.");
+requireCheck(dashboard.includes("alreadyCertifiedHonor.checked = false") && dashboard.includes("Confirm the Honor System acknowledgment before saving this certification."), "Already Certified record and edit flows reset and enforce save-time Honor System confirmation.");
+requireCheck(dashboard.includes("data-already-certified-slot") && dashboard.includes("hydra-certification-imports-updated"), "All certification cards refresh from the isolated imported-certification evidence source.");
+requireCheck(dashboard.includes("available while all seven certification tracks remain complete") && !dashboard.includes("permanently available"), "Command Center explains that Hall access follows current 7/7 Academy Completion.");
+requireCheck(css.includes(".already-certified-dialog") && css.includes(".already-certified-recorded") && css.includes(".already-certified-honor") && css.includes("@media (max-width: 390px)"), "Already Certified controls, Honor System acknowledgment, and dialog have exact 390px responsive coverage.");
 
 const quizPages = ["aplus-core1-quiz.html", "aplus-core2-quiz.html", "hydra-quiz.html", "security-plus-quiz.html", "cloud-plus-quiz.html", "linux-essentials-quiz.html", "aws-cloud-practitioner-quiz.html"];
 quizPages.forEach(page => requireCheck(read(page).includes("practice-exam-timer.js?v=gsa-command-intelligence-1"), `${page} loads the versioned objective-rollup engine.`));
@@ -213,4 +234,5 @@ console.log(`- ${checks.length} architecture, mapping, compatibility, isolation,
 console.log("- Seven certifications, 187 objectives, 42 Practice Exams, and 3,330 question mappings: PASS");
 console.log("- Five-sample diagnostic confidence and sticky mastery independence: PASS");
 console.log("- Empty, partial, legacy, complete-compatible, and certification-isolated states: PASS");
+console.log("- Already Certified UI, evidence separation, Academy Completion, and Final Boss metric independence: PASS");
 console.log("- Protected Sweep and Practice Exam banks unchanged: PASS");

@@ -83,6 +83,7 @@
   let currentIndex = 0;
   let state = null;
   let storageKey = "";
+  let durableStorageKey = "";
 
   const renderers = new Map();
 
@@ -116,13 +117,51 @@
     return state.answers[activeMission.id];
   }
 
-  function saveState() {
+  function saveSessionState() {
     sessionStorage.setItem(storageKey, JSON.stringify(state));
+  }
+
+  function durableState(source = state) {
+    const missionIds = bank.missions.map(item => item.id);
+    const submitted = {};
+    const answers = {};
+    const flags = {};
+
+    missionIds.forEach(missionId => {
+      if (source.submitted?.[missionId]) {
+        submitted[missionId] = source.submitted[missionId];
+        answers[missionId] = source.answers?.[missionId] || {};
+      }
+      if (source.flags?.[missionId]) flags[missionId] = true;
+    });
+
+    return {
+      schemaVersion: 1,
+      certification: bank.certification,
+      missionIds,
+      answers,
+      flags,
+      submitted
+    };
+  }
+
+  function saveDurableState() {
+    try {
+      localStorage.setItem(durableStorageKey, JSON.stringify(durableState()));
+    } catch {
+      // Session play remains available when durable browser storage is unavailable.
+    }
+  }
+
+  function saveState(options = {}) {
+    saveSessionState();
+    if (options.durable) saveDurableState();
   }
 
   function freshState() {
     return {
       schemaVersion: 1,
+      durableVersion: 1,
       missionIds: bank.missions.map(item => item.id),
       currentIndex: 0,
       answers: {},
@@ -131,25 +170,75 @@
     };
   }
 
-  function restoreState() {
-    try {
-      const stored = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      const missionIds = bank.missions.map(item => item.id);
-      if (
-        !stored ||
-        stored.schemaVersion !== 1 ||
-        JSON.stringify(stored.missionIds) !== JSON.stringify(missionIds)
-      ) {
-        return freshState();
-      }
-      stored.answers ||= {};
-      stored.flags ||= {};
-      stored.submitted ||= {};
-      stored.currentIndex = Math.min(Math.max(Number(stored.currentIndex) || 0, 0), missionIds.length - 1);
-      return stored;
-    } catch {
-      return freshState();
+  function validStoredState(candidate, missionIds, options = {}) {
+    if (
+      !candidate ||
+      candidate.schemaVersion !== 1 ||
+      JSON.stringify(candidate.missionIds) !== JSON.stringify(missionIds)
+    ) {
+      return null;
     }
+    if (options.certification && candidate.certification !== options.certification) return null;
+    candidate.answers ||= {};
+    candidate.flags ||= {};
+    candidate.submitted ||= {};
+    return candidate;
+  }
+
+  function restoreState() {
+    const missionIds = bank.missions.map(item => item.id);
+    let restored = freshState();
+    let durable = null;
+    let sessionNeedsMigration = false;
+
+    try {
+      const stored = validStoredState(
+        JSON.parse(sessionStorage.getItem(storageKey) || "null"),
+        missionIds
+      );
+      if (stored) {
+        sessionNeedsMigration = stored.durableVersion !== 1;
+        stored.currentIndex = Math.min(Math.max(Number(stored.currentIndex) || 0, 0), missionIds.length - 1);
+        restored = stored;
+      }
+    } catch {
+      restored = freshState();
+    }
+
+    try {
+      durable = validStoredState(
+        JSON.parse(localStorage.getItem(durableStorageKey) || "null"),
+        missionIds,
+        { certification: bank.certification }
+      );
+    } catch {
+      durable = null;
+    }
+
+    if (!durable) {
+      restored.durableVersion = 1;
+      return restored;
+    }
+
+    if (sessionNeedsMigration) {
+      missionIds.forEach(missionId => {
+        if (restored.submitted[missionId]) {
+          durable.submitted[missionId] = restored.submitted[missionId];
+          durable.answers[missionId] = restored.answers[missionId] || {};
+        }
+        if (restored.flags[missionId]) durable.flags[missionId] = true;
+      });
+    }
+
+    restored.submitted = durable.submitted;
+    restored.flags = durable.flags;
+    missionIds.forEach(missionId => {
+      if (durable.submitted[missionId]) {
+        restored.answers[missionId] = durable.answers[missionId] || {};
+      }
+    });
+    restored.durableVersion = 1;
+    return restored;
   }
 
   function validateBank(candidate, certification) {
@@ -637,7 +726,7 @@
     const activeMission = mission();
     const result = renderers.get(activeMission.type).grade(activeMission, missionAnswers(activeMission));
     state.submitted[activeMission.id] = result;
-    saveState();
+    saveState({ durable: true });
     renderChecklist(activeMission);
     renderReview(activeMission, result);
     disableSubmittedWorkspace(activeMission);
@@ -650,7 +739,7 @@
     if (!window.confirm("Reset this scenario? All answers and review results for this PBQ will be cleared.")) return;
     state.answers[activeMission.id] = {};
     delete state.submitted[activeMission.id];
-    saveState();
+    saveState({ durable: true });
     renderMission();
     announce("Scenario reset. All answers for this PBQ were cleared.");
   }
@@ -993,7 +1082,7 @@
     elements.flag.addEventListener("click", () => {
       const activeMission = mission();
       state.flags[activeMission.id] = !state.flags[activeMission.id];
-      saveState();
+      saveState({ durable: true });
       updateFlag(activeMission);
       announce(state.flags[activeMission.id] ? "Mission flagged for review." : "Mission flag removed.");
     });
@@ -1019,7 +1108,9 @@
       if (!response.ok) throw new Error(`Unable to load PBQ bank (${response.status}).`);
       bank = validateBank(await response.json(), certification);
       storageKey = `hydra-pbq-arena:v1:${certification}`;
+      durableStorageKey = `hydra-pbq-results:v1:${certification}`;
       state = restoreState();
+      saveDurableState();
       currentIndex = state.currentIndex;
 
       elements.certification.textContent = `${configuration.label} · Production PBQ Campaign`;

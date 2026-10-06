@@ -4,6 +4,17 @@
   const ui = window.HydraCampaignUI;
   const campaignDashboard = document.getElementById("campaignDashboard");
   const academySummary = document.getElementById("academySummary");
+  const alreadyCertifiedDialog = document.getElementById("alreadyCertifiedDialog");
+  const alreadyCertifiedForm = document.getElementById("alreadyCertifiedForm");
+  const alreadyCertifiedEntryPanel = document.getElementById("alreadyCertifiedEntryPanel");
+  const alreadyCertifiedRemovePanel = document.getElementById("alreadyCertifiedRemovePanel");
+  const alreadyCertifiedDialogTitle = document.getElementById("alreadyCertifiedDialogTitle");
+  const alreadyCertifiedDialogDescription = document.getElementById("alreadyCertifiedDialogDescription");
+  const alreadyCertifiedId = document.getElementById("alreadyCertifiedId");
+  const alreadyCertifiedDate = document.getElementById("alreadyCertifiedDate");
+  const alreadyCertifiedHonor = document.getElementById("alreadyCertifiedHonor");
+  const alreadyCertifiedError = document.getElementById("alreadyCertifiedError");
+  const alreadyCertifiedRemoveDescription = document.getElementById("alreadyCertifiedRemoveDescription");
   if (!ui || !campaignDashboard || !academySummary) return;
 
   const achievementOrder = ["firstObjective", "firstWorld", "certificationChampion", "hydraSlayer", "finalBoss"];
@@ -26,6 +37,63 @@
     return String(value ?? "").replace(/[&<>"']/g, character => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     })[character]);
+  }
+
+  function openAlreadyCertifiedDialog(certificationId, mode = "record") {
+    if (!alreadyCertifiedDialog || !alreadyCertifiedForm) return;
+    const config = Object.values(ui.campaigns).find(item => item.id === certificationId);
+    if (!config) return;
+    const record = ui.getAlreadyCertified(certificationId);
+    alreadyCertifiedId.value = certificationId;
+    alreadyCertifiedError.textContent = "";
+    if (alreadyCertifiedHonor) alreadyCertifiedHonor.checked = false;
+    const removing = mode === "remove";
+    alreadyCertifiedEntryPanel.classList.toggle("hidden", removing);
+    alreadyCertifiedRemovePanel.classList.toggle("hidden", !removing);
+    if (removing) {
+      alreadyCertifiedRemoveDescription.textContent = `Remove the Already Certified record for ${config.name}${record ? ` (${ui.formatCertificationDate(record.earnedDate)})` : ""}?`;
+    } else {
+      const editing = Boolean(record);
+      alreadyCertifiedDialogTitle.textContent = editing ? `Edit ${config.name} certification date` : `Record ${config.name} certification`;
+      alreadyCertifiedDialogDescription.textContent = editing
+        ? "Update only the date associated with this learner-declared certification record."
+        : "Record the date this certification was earned so it can count toward Academy completion.";
+      alreadyCertifiedDate.max = ui.todayDateOnly();
+      alreadyCertifiedDate.value = record?.earnedDate || "";
+    }
+    if (typeof alreadyCertifiedDialog.showModal === "function") alreadyCertifiedDialog.showModal();
+    else alreadyCertifiedDialog.setAttribute("open", "");
+    window.setTimeout(() => (removing ? document.getElementById("cancelAlreadyCertifiedRemove") : alreadyCertifiedDate)?.focus(), 0);
+  }
+
+  function closeAlreadyCertifiedDialog() {
+    if (!alreadyCertifiedDialog) return;
+    if (typeof alreadyCertifiedDialog.close === "function") alreadyCertifiedDialog.close();
+    else alreadyCertifiedDialog.removeAttribute("open");
+  }
+
+  function alreadyCertifiedMarkup(certificationId) {
+    const record = ui.getAlreadyCertified(certificationId);
+    if (!record) {
+      return `<button class="already-certified-record-action" type="button" data-already-certified-action="record" data-certification-id="${escapeHtml(certificationId)}">Already certified? Record certification</button>`;
+    }
+    return `
+      <div class="already-certified-recorded" role="status">
+        <strong>✓ Already Certified — ${escapeHtml(ui.formatCertificationDate(record.earnedDate))}</strong>
+        <span>Learner-declared</span>
+        <small>Counts toward Academy completion; GSA training evidence remains independent.</small>
+        <div class="already-certified-card-actions">
+          <button type="button" data-already-certified-action="edit" data-certification-id="${escapeHtml(certificationId)}">Edit date</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-already-certified-action="remove" data-certification-id="${escapeHtml(certificationId)}">Remove</button>
+        </div>
+      </div>`;
+  }
+
+  function renderAlreadyCertifiedControls() {
+    document.querySelectorAll("[data-already-certified-slot]").forEach(slot => {
+      slot.innerHTML = alreadyCertifiedMarkup(slot.dataset.alreadyCertifiedSlot);
+    });
   }
 
   function percent(value) {
@@ -217,11 +285,53 @@
       <div class="dashboard-domain-row"><span><b>Strongest Domain:</b> ${strongest}</span><span><b>Weakest Domain:</b> ${weakest}</span></div>
       ${intelligenceMarkup(summary)}
       <div class="dashboard-achievements" aria-label="${summary.config.name} achievements">${achievementShelf(summary)}</div>
+      <div class="already-certified-slot" data-already-certified-slot="${summary.config.id}" aria-label="${summary.config.name} Already Certified pathway"></div>
       <a href="${summary.config.campaign}" class="link-btn dashboard-enter">Enter ${summary.config.name}</a>`;
     campaignDashboard.append(card);
   }
 
   summaries.forEach(renderCampaign);
+  renderAlreadyCertifiedControls();
+
+  campaignDashboard.addEventListener("click", event => {
+    const action = event.target.closest("[data-already-certified-action]");
+    if (!action) return;
+    openAlreadyCertifiedDialog(action.dataset.certificationId, action.dataset.alreadyCertifiedAction);
+  });
+
+  document.getElementById("cancelAlreadyCertified")?.addEventListener("click", closeAlreadyCertifiedDialog);
+  document.getElementById("cancelAlreadyCertifiedRemove")?.addEventListener("click", closeAlreadyCertifiedDialog);
+
+  alreadyCertifiedForm?.addEventListener("submit", event => {
+    event.preventDefault();
+    const earnedDate = alreadyCertifiedDate.value;
+    if (!earnedDate) {
+      alreadyCertifiedError.textContent = "Certification earned date is required.";
+      alreadyCertifiedDate.focus();
+      return;
+    }
+    if (!ui.validCertificationDate(earnedDate)) {
+      alreadyCertifiedError.textContent = "Enter a valid certification date that is not in the future.";
+      alreadyCertifiedDate.focus();
+      return;
+    }
+    if (!alreadyCertifiedHonor?.checked) {
+      alreadyCertifiedError.textContent = "Confirm the Honor System acknowledgment before saving this certification.";
+      alreadyCertifiedHonor?.focus();
+      return;
+    }
+    try {
+      ui.saveAlreadyCertified(alreadyCertifiedId.value, earnedDate);
+      closeAlreadyCertifiedDialog();
+    } catch (error) {
+      alreadyCertifiedError.textContent = error?.message || "The certification record could not be saved.";
+    }
+  });
+
+  document.getElementById("confirmAlreadyCertifiedRemove")?.addEventListener("click", () => {
+    ui.removeAlreadyCertified(alreadyCertifiedId.value);
+    closeAlreadyCertifiedDialog();
+  });
 
   const totals = summaries.reduce((all, summary) => ({
     questions: all.questions + summary.questionsAnswered,
@@ -249,7 +359,7 @@
         <div>
           <span class="campaign-panel-label">ACADEMY COMPLETION</span>
           <h3 id="academyFinaleAccessTitle">${completion.unlocked ? "Hall of Giant Slayers Unlocked" : "Hall of Giant Slayers Locked"}</h3>
-          <p><strong>${completion.completedCount}/${completion.totalCount} certifications complete.</strong>${completion.unlocked ? " The Academy Finale is permanently available." : ` Remaining: ${missing || "Complete all seven certification Final Bosses."}`}</p>
+          <p><strong>${completion.completedCount}/${completion.totalCount} certifications complete.</strong>${completion.unlocked ? " The Academy Finale is available while all seven certification tracks remain complete." : ` Remaining: ${missing || "Complete all seven certification tracks."}`}</p>
         </div>
         ${completion.unlocked ? '<a class="link-btn" href="academy-finale.html">🏆 Enter the Hall</a>' : '<span class="academy-finale-lock" aria-label="Finale locked">🔒</span>'}
       </section>`;
@@ -281,5 +391,8 @@
     const wrapper = document.createElement("div");
     wrapper.innerHTML = finaleAccessMarkup(completion);
     current.replaceWith(wrapper.firstElementChild);
+    renderAlreadyCertifiedControls();
   });
+
+  window.addEventListener("hydra-certification-imports-updated", renderAlreadyCertifiedControls);
 }());
