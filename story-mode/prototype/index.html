@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Story Mode Prototype — The Scrap Gremlin</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="story-mode.css">
+</head>
+<body>
+  <main class="prototype-shell" id="prototypeApp">
+    <header class="prototype-header">
+      <div>
+        <p class="eyebrow">Giant Slayer Academy · Story Mode Prototype</p>
+        <h1>The Technician's Forge</h1>
+      </div>
+      <div class="objective-badge" aria-label="Current training objective">
+        <span>A+ Core 1</span>
+        <strong>Objective 1.1</strong>
+      </div>
+    </header>
+
+    <section class="screen centered-screen" id="loadingScreen" aria-labelledby="loadingTitle">
+      <div class="loading-rune" aria-hidden="true"></div>
+      <h2 id="loadingTitle" tabindex="-1">Preparing the training forge…</h2>
+      <p>Validating the protected Hydra training source.</p>
+    </section>
+
+    <section class="screen maestro-screen" id="maestroScreen" aria-labelledby="maestroTitle" hidden>
+      <div class="maestro-portrait-wrap">
+        <img src="../../assets/finale/references/maestro-aplus-core1.png" alt="The A+ Core 1 Maestro in blue and gold technician armor" class="maestro-portrait">
+        <span class="prototype-stamp">Temporary prototype presentation</span>
+      </div>
+      <div class="maestro-copy">
+        <p class="eyebrow">Maestro Briefing</p>
+        <h2 id="maestroTitle" tabindex="-1">A saboteur has entered the forge.</h2>
+        <p>The Scrap Gremlin steals, loosens, and mismatches mobile-device components. Defeat it by demonstrating your knowledge of A+ Core 1 Objective 1.1.</p>
+        <div class="briefing-rules" aria-label="Encounter rules">
+          <span><strong>5</strong> question turns</span>
+          <span><strong>3</strong> correct to win</span>
+          <span><strong>Full</strong> explanation after every answer</span>
+        </div>
+        <p class="maestro-message" id="maestroMessage" role="status"></p>
+        <div class="button-row">
+          <button class="button primary" type="button" id="beginEncounter">Begin Encounter</button>
+          <button class="button secondary" type="button" id="endFromMaestro">End Prototype</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen battle-screen" id="battleScreen" aria-labelledby="battleTitle" hidden>
+      <div class="battle-status">
+        <div>
+          <p class="eyebrow">Ordinary Training Encounter</p>
+          <h2 id="battleTitle">The Scrap Gremlin</h2>
+        </div>
+        <p class="turn-counter" id="turnCounter">Turn 1 of 5</p>
+      </div>
+
+      <div class="battlefield" aria-label="Class-neutral Academy trainee facing the Scrap Gremlin">
+        <article class="combatant hero-combatant" id="heroCombatant">
+          <div class="hp-card">
+            <div class="hp-heading"><strong>Academy Trainee</strong><span id="heroHpText">5/5 HP</span></div>
+            <div class="hp-segments" id="heroHpSegments" aria-hidden="true"></div>
+          </div>
+          <div class="hero-placeholder" aria-hidden="true">
+            <div class="hero-head"></div>
+            <div class="hero-shoulders"></div>
+            <div class="hero-shield">GSA</div>
+          </div>
+          <span class="prototype-label">Class-neutral placeholder</span>
+        </article>
+
+        <div class="battle-marker" aria-hidden="true"><span>VS</span></div>
+
+        <article class="combatant enemy-combatant" id="enemyCombatant">
+          <div class="hp-card">
+            <div class="hp-heading"><strong>Scrap Gremlin</strong><span id="enemyHpText">5/5 HP</span></div>
+            <div class="hp-segments" id="enemyHpSegments" aria-hidden="true"></div>
+          </div>
+          <div class="gremlin-placeholder" aria-hidden="true">
+            <div class="gremlin-antenna"></div>
+            <div class="gremlin-head"><i></i><i></i></div>
+            <div class="gremlin-body"><span></span></div>
+            <div class="gremlin-wire wire-left"></div>
+            <div class="gremlin-wire wire-right"></div>
+          </div>
+          <span class="prototype-label">Temporary Scrap Gremlin</span>
+        </article>
+      </div>
+
+      <section class="question-panel" id="questionPanel" aria-labelledby="questionNumber">
+        <p class="question-meta" id="questionNumber">Question 1 of 5</p>
+        <h3 id="questionText"></h3>
+        <form id="answerForm">
+          <fieldset id="choiceFieldset">
+            <legend class="visually-hidden">Choose one answer</legend>
+            <div class="answer-list" id="answerList"></div>
+          </fieldset>
+          <button class="button primary submit-button" type="submit" id="submitAnswer" disabled>Submit Answer</button>
+        </form>
+
+        <div class="feedback-panel" id="feedbackPanel" tabindex="-1" hidden>
+          <p class="feedback-result" id="feedbackResult"></p>
+          <dl class="answer-review">
+            <div><dt>Your answer</dt><dd id="submittedAnswer"></dd></div>
+            <div><dt>Approved answer</dt><dd id="approvedAnswer"></dd></div>
+          </dl>
+          <div class="explanation-box">
+            <h4>Hydra Explanation</h4>
+            <p id="explanationText"></p>
+          </div>
+          <button class="button primary" type="button" id="continueBattle">Continue Battle</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="screen result-screen centered-screen" id="resultScreen" aria-labelledby="resultTitle" hidden>
+      <p class="result-mark" id="resultMark" aria-hidden="true">⚔</p>
+      <p class="eyebrow">Encounter Complete</p>
+      <h2 id="resultTitle" tabindex="-1"></h2>
+      <div class="result-grid">
+        <div><span>Knowledge</span><strong id="resultScore"></strong></div>
+        <div><span>Hero</span><strong id="resultHeroHp"></strong></div>
+        <div><span>Gremlin</span><strong id="resultEnemyHp"></strong></div>
+        <div><span>Objective</span><strong>1.1</strong></div>
+      </div>
+      <div class="button-row" id="resultActions">
+        <button class="button primary" type="button" id="retryEncounter">Retry Encounter</button>
+        <button class="button secondary" type="button" id="returnToMaestro">Return to the Maestro</button>
+      </div>
+    </section>
+
+    <section class="screen failure-screen centered-screen" id="failureScreen" aria-labelledby="failureTitle" hidden>
+      <div class="failure-symbol" aria-hidden="true">!</div>
+      <h2 id="failureTitle" tabindex="-1">Training Content Unavailable</h2>
+      <p>This encounter was stopped safely. No result was recorded.</p>
+      <div class="button-row">
+        <button class="button primary" type="button" id="recheckContent">Recheck Training Content</button>
+        <button class="button secondary" type="button" id="endFromFailure">End Prototype</button>
+      </div>
+    </section>
+
+    <section class="screen ended-screen centered-screen" id="endedScreen" aria-labelledby="endedTitle" hidden>
+      <p class="eyebrow">Training Session Closed</p>
+      <h2 id="endedTitle" tabindex="-1">Prototype ended safely.</h2>
+      <p>No Giant Slayer Academy progress or certification evidence was changed.</p>
+      <p class="quiet-note">You may close this tab when you are ready.</p>
+    </section>
+
+    <p class="visually-hidden" id="liveRegion" aria-live="polite" aria-atomic="true"></p>
+  </main>
+
+  <script src="story-mode-engine.js"></script>
+  <script src="story-mode-app.js"></script>
+</body>
+</html>
