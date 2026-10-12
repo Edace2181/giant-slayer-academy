@@ -27,25 +27,91 @@
       <p>Validating the protected Hydra training source.</p>
     </section>
 
-    <section class="screen maestro-screen" id="maestroScreen" aria-labelledby="maestroTitle" hidden>
-      <div class="maestro-portrait-wrap">
-        <img src="../../assets/finale/references/maestro-aplus-core1.png" alt="The A+ Core 1 Maestro in blue and gold technician armor" class="maestro-portrait">
-        <span class="prototype-stamp">Temporary prototype presentation</span>
+    <section class="screen entry-screen centered-screen" id="entryScreen" aria-labelledby="entryTitle" hidden>
+      <p class="entry-crest" aria-hidden="true">⚒</p>
+      <p class="eyebrow">World / Exploration Prototype</p>
+      <h2 id="entryTitle" tabindex="-1">Enter the Technician's Forge</h2>
+      <p>Meet the A+ Core 1 Maestro, explore the forge, and confront the Scrap Gremlin through demonstrated knowledge.</p>
+      <p class="prototype-stamp inline-stamp">Temporary prototype world</p>
+      <div class="button-row">
+        <button class="button primary" type="button" id="enterForge">Enter Story Mode</button>
+        <button class="button secondary" type="button" id="endFromEntry">End Prototype</button>
       </div>
-      <div class="maestro-copy">
-        <p class="eyebrow">Maestro Briefing</p>
-        <h2 id="maestroTitle" tabindex="-1">A saboteur has entered the forge.</h2>
-        <p>The Scrap Gremlin steals, loosens, and mismatches mobile-device components. Defeat it by demonstrating your knowledge of A+ Core 1 Objective 1.1.</p>
-        <div class="briefing-rules" aria-label="Encounter rules">
-          <span><strong>5</strong> question turns</span>
-          <span><strong>3</strong> correct to win</span>
-          <span><strong>Full</strong> explanation after every answer</span>
+    </section>
+
+    <section class="screen world-screen" id="worldScreen" aria-labelledby="worldTitle" hidden>
+      <div class="world-toolbar">
+        <div>
+          <p class="eyebrow">Exploration Area</p>
+          <h2 id="worldTitle" tabindex="-1">Technician's Forge</h2>
         </div>
-        <p class="maestro-message" id="maestroMessage" role="status"></p>
-        <div class="button-row">
-          <button class="button primary" type="button" id="beginEncounter">Begin Encounter</button>
-          <button class="button secondary" type="button" id="endFromMaestro">End Prototype</button>
+        <div class="world-toolbar-actions">
+          <span class="world-status" id="worldStatus">Explore the forge</span>
+          <button class="button compact secondary" type="button" id="endFromWorld">End Prototype</button>
         </div>
+      </div>
+
+      <div class="forge-viewport">
+        <div class="forge-stage" id="forgeStage" role="application" aria-label="Top-down Technician's Forge exploration area">
+          <div class="forge-floor" aria-hidden="true"></div>
+          <div class="forge-prop furnace" aria-label="Forge furnace"><span></span></div>
+          <div class="forge-prop workbench" aria-label="Technician workbench"><i></i><i></i><i></i></div>
+          <div class="forge-prop parts-rack" aria-label="Parts storage rack"><i></i><i></i><i></i></div>
+          <div class="forge-prop anvil" aria-label="Forge anvil"></div>
+          <div class="forge-prop crates" aria-label="Stacked equipment crates"><i></i><i></i></div>
+          <div class="forge-entrance" aria-label="Forge entrance"><span>ENTRY</span></div>
+
+          <div class="world-maestro" id="worldMaestro" aria-label="A+ Core 1 Maestro">
+            <img src="../../assets/finale/references/maestro-aplus-core1.png" alt="">
+            <span>Maestro</span>
+          </div>
+
+          <div class="world-gremlin" id="worldGremlin" aria-label="Active Scrap Gremlin">
+            <div class="gremlin-mini" aria-hidden="true"><i></i><b></b><span></span></div>
+            <strong>Scrap Gremlin</strong>
+          </div>
+          <div class="world-scrap" id="worldScrap" aria-label="Inert Scrap Gremlin remains" hidden>
+            <i></i><i></i><i></i><span>Inert scrap</span>
+          </div>
+
+          <div class="world-hero facing-up" id="worldHero" aria-label="Academy trainee">
+            <div class="hero-world-head"></div>
+            <div class="hero-world-body">GSA</div>
+          </div>
+
+          <p class="world-prompt" id="worldPrompt" role="status" hidden>Press E or Enter — Talk to Maestro</p>
+          <div class="encounter-transition" id="encounterTransition" aria-live="assertive" hidden>
+            <span>Encounter!</span>
+            <strong>The Scrap Gremlin</strong>
+          </div>
+
+          <section class="dialogue-panel" id="dialoguePanel" role="dialog" aria-modal="true" aria-labelledby="dialogueSpeaker" hidden>
+            <img src="../../assets/finale/references/maestro-aplus-core1.png" alt="The A+ Core 1 Maestro" class="dialogue-portrait">
+            <div class="dialogue-copy">
+              <p class="dialogue-speaker" id="dialogueSpeaker">A+ Core 1 Maestro</p>
+              <p id="dialogueText"></p>
+              <div class="dialogue-actions">
+                <button class="button primary" type="button" id="dialogueContinue">Continue</button>
+                <button class="button secondary" type="button" id="prepareEncounter" hidden>Prepare Another Training Encounter</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="exploration-controls" aria-label="Exploration controls">
+        <div class="control-help">
+          <strong>Move</strong>
+          <span>Hold WASD, arrow keys, or the directional controls.</span>
+        </div>
+        <div class="dpad" aria-label="Movement directional pad">
+          <button type="button" class="dpad-button dpad-up" data-direction="up" aria-label="Move up">▲</button>
+          <button type="button" class="dpad-button dpad-left" data-direction="left" aria-label="Move left">◀</button>
+          <button type="button" class="dpad-button dpad-center" tabindex="-1" aria-hidden="true">◆</button>
+          <button type="button" class="dpad-button dpad-right" data-direction="right" aria-label="Move right">▶</button>
+          <button type="button" class="dpad-button dpad-down" data-direction="down" aria-label="Move down">▼</button>
+        </div>
+        <button class="button primary talk-button" type="button" id="talkButton" disabled>Talk to Maestro</button>
       </div>
     </section>
 
@@ -153,6 +219,7 @@
   </main>
 
   <script src="story-mode-engine.js"></script>
-  <script src="story-mode-app.js"></script>
+  <script src="story-mode-world.js"></script>
+  <script src="story-mode-exploration-app.js"></script>
 </body>
 </html>

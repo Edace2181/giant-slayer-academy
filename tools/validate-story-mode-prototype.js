@@ -10,11 +10,13 @@ const root = path.resolve(__dirname, "..");
 const prototypeDir = path.join(root, "story-mode", "prototype");
 const bankPath = path.join(root, "json", "aplus-core1", "world1", "1.1-hatchling.json");
 const enginePath = path.join(prototypeDir, "story-mode-engine.js");
-const appPath = path.join(prototypeDir, "story-mode-app.js");
+const worldPath = path.join(prototypeDir, "story-mode-world.js");
+const appPath = path.join(prototypeDir, "story-mode-exploration-app.js");
 const htmlPath = path.join(prototypeDir, "index.html");
 const cssPath = path.join(prototypeDir, "story-mode.css");
 const expectedHash = "ced5202569fc6be240eddd160ed6dedc54a2684467cb8d3b38789c17a6d40869";
 const Engine = require(enginePath);
+const World = require(worldPath);
 
 const metadata = Object.freeze({
   version: 1,
@@ -186,13 +188,68 @@ test("invalid state transitions are rejected", () => {
   assert.throws(() => Engine.resolveAnswer(attempt, bank[0], bank[0].answer, trace), Engine.StoryModeStateError);
 });
 
+test("Forge world uses smooth continuous movement over a 10 by 7 collision map", () => {
+  assert.equal(World.MAP.columns, 10);
+  assert.equal(World.MAP.rows, 7);
+  let world = World.createState();
+  assert.equal(world.movementLocked, true);
+  world = World.setMovementLocked(world, false);
+  const before = world.player.x;
+  const movement = World.movePlayer(world, "right", 0.016);
+  assert.equal(movement.moved, true);
+  assert.ok(movement.state.player.x > before);
+  assert.notEqual(movement.state.player.x % World.MAP.tileSize, 0);
+  assert.ok(movement.state.player.x - before < World.MAP.tileSize);
+});
+
+test("Forge collision blocks props, NPCs, enemy bodies, and world boundaries", () => {
+  let world = World.setMovementLocked(World.createState(), false);
+  assert.equal(World.positionIsBlocked(world, -100, 100), true);
+  assert.equal(World.positionIsBlocked(world, 100, 100), true);
+  assert.equal(World.positionIsBlocked(world, 175, 350), true);
+  assert.equal(World.positionIsBlocked(world, 770, 315), true);
+  assert.equal(World.positionIsBlocked(world, 300, 300), false);
+});
+
+test("physical Gremlin boundary triggers once and locks movement", () => {
+  let world = World.setMovementLocked(World.createState(), false);
+  world = World.placePlayer(world, 681, 320, "right");
+  let triggered = false;
+  for (let step = 0; step < 20 && !triggered; step += 1) {
+    const movement = World.movePlayer(world, "right", 0.05);
+    world = movement.state;
+    triggered = movement.encounterTriggered;
+  }
+  assert.equal(triggered, true);
+  assert.equal(world.encounterLatched, true);
+  assert.equal(world.movementLocked, true);
+  assert.equal(World.movePlayer(world, "right", 0.05).moved, false);
+});
+
+test("battle return and repeat-training world states follow the locked contract", () => {
+  const original = World.createState();
+  const victory = World.returnToMaestro(original, "VICTORY");
+  assert.equal(victory.gremlinState, "defeated");
+  assert.equal(victory.encounterEnabled, false);
+  assert.deepEqual(victory.player, World.MAESTRO_RETURN);
+  assert.equal(World.canTalkToMaestro(victory), true);
+  const prepared = World.prepareTrainingEncounter(World.finishSafeReturn(victory));
+  assert.equal(prepared.gremlinState, "active");
+  assert.equal(prepared.encounterEnabled, true);
+  const defeat = World.returnToMaestro(original, "DEFEAT");
+  assert.equal(defeat.gremlinState, "active");
+  assert.equal(defeat.encounterEnabled, true);
+});
+
 test("presentation includes required learner states and controls", () => {
   const html = fs.readFileSync(htmlPath, "utf8");
   const app = fs.readFileSync(appPath, "utf8");
   const presentationSource = `${html}\n${app}`;
   [
-    "Maestro Briefing",
-    "Begin Encounter",
+    "Enter Story Mode",
+    "Begin Exploring",
+    "Talk to Maestro",
+    "Prepare Another Training Encounter",
     "Submit Answer",
     "Continue Battle",
     "View Battle Result",
@@ -204,6 +261,8 @@ test("presentation includes required learner states and controls", () => {
     "End Prototype"
   ].forEach((text) => assert.ok(presentationSource.includes(text), `Missing presentation text: ${text}`));
   assert.ok(html.includes("../../assets/finale/references/maestro-aplus-core1.png"));
+  assert.ok(html.includes("story-mode-world.js"));
+  assert.ok(html.includes("story-mode-exploration-app.js"));
   assert.equal(/href=["'][^"']*(?:index\.html|campaign|objective)/i.test(html), false);
 });
 
@@ -222,6 +281,8 @@ test("responsive and reduced-motion contracts exist", () => {
   assert.ok(css.includes("@media (max-width: 430px)"));
   assert.ok(css.includes("@media (prefers-reduced-motion: reduce)"));
   assert.ok(css.includes("overflow: hidden"));
+  assert.ok(css.includes("touch-action: none"));
+  assert.ok(css.includes("aspect-ratio: 10 / 7"));
 });
 
 test("prototype is silent and contains no media player", () => {

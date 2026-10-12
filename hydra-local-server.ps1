@@ -266,6 +266,10 @@ if ($Server) {
         while ($true) {
             $client = $listener.AcceptTcpClient()
             try {
+                # Browsers can open speculative keep-alive sockets without sending a
+                # request. Do not let one abandoned socket block every later local
+                # preview request on this deliberately small, single-threaded server.
+                $client.ReceiveTimeout = 1000
                 $stream = $client.GetStream()
                 $reader = [System.IO.StreamReader]::new($stream, [System.Text.Encoding]::ASCII, $false, 4096, $true)
                 $requestLine = $reader.ReadLine()
