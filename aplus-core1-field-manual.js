@@ -36,6 +36,19 @@
     return element;
   }
 
+  function shuffleQuestionChoices(question, random = Math.random) {
+    const choices = question.choices.map((text, sourceIndex) => ({ text, sourceIndex }));
+    for (let i = choices.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1));
+      [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
+    return {
+      ...question,
+      choices: choices.map(choice => choice.text),
+      answer: choices.findIndex(choice => choice.sourceIndex === Number(question.answer))
+    };
+  }
+
   function readState() {
     try {
       const value = JSON.parse(localStorage.getItem(MANUAL_KEY) || "{}");
@@ -242,7 +255,7 @@
       if (!bankResponse.ok) throw new Error("The GSA Mini Check source could not be loaded.");
       const rawBank = await bankResponse.json();
       const bank = Array.isArray(rawBank) ? rawBank : rawBank.questions;
-      miniCheck = validateMiniCheck(bank?.[0]);
+      miniCheck = shuffleQuestionChoices(validateMiniCheck(bank?.[0]));
 
       elements.kicker.textContent = "CompTIA A+ Core 1 · 220-1201 · World " + world + " · Objective " + objective;
       elements.objective.textContent = lesson.title;
