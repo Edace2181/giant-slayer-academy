@@ -71,6 +71,19 @@ function shuffle(items) {
   return copy;
 }
 
+function shuffleQuestionChoices(question, random = Math.random) {
+  const choices = question.choices.map((text, sourceIndex) => ({ text, sourceIndex }));
+  for (let i = choices.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [choices[i], choices[j]] = [choices[j], choices[i]];
+  }
+  return {
+    ...question,
+    choices: choices.map(choice => choice.text),
+    answer: choices.findIndex(choice => choice.sourceIndex === Number(question.answer))
+  };
+}
+
 function buildWeaknessMix(allQuestions, count) {
   const config = window.HydraFlags?.configFor("aws-cloud-practitioner");
   const weaknessState = window.HydraFlags?.readWeaknessState(config) || { objectives: {} };
@@ -168,6 +181,10 @@ async function loadQuiz() {
     }
     if (!questions.length) return showPlaceholder();
     questions = shuffle(questions);
+    // Prepare stable presentations once for Objective Sweeps and their mixed modes.
+    if (!exam && (/^[1-5]$/.test(world) || (world === "6" && world6Modes[mode]))) {
+      questions = questions.map(question => shuffleQuestionChoices(question));
+    }
     startQuizOrTimer();
   } catch (error) {
     questionEl.textContent = "Unable to load quiz.";
