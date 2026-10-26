@@ -12,9 +12,14 @@
   const alreadyCertifiedDialogDescription = document.getElementById("alreadyCertifiedDialogDescription");
   const alreadyCertifiedId = document.getElementById("alreadyCertifiedId");
   const alreadyCertifiedDate = document.getElementById("alreadyCertifiedDate");
+  const alreadyCertifiedDateLabel = document.getElementById("alreadyCertifiedDateLabel");
+  const alreadyCertifiedTrustNote = document.getElementById("alreadyCertifiedTrustNote");
+  const alreadyCertifiedHonorDescription = document.getElementById("alreadyCertifiedHonorDescription");
+  const alreadyCertifiedHonorConfirmation = document.getElementById("alreadyCertifiedHonorConfirmation");
   const alreadyCertifiedHonor = document.getElementById("alreadyCertifiedHonor");
   const alreadyCertifiedError = document.getElementById("alreadyCertifiedError");
   const alreadyCertifiedRemoveDescription = document.getElementById("alreadyCertifiedRemoveDescription");
+  const saveAlreadyCertified = document.getElementById("saveAlreadyCertified");
   if (!ui || !campaignDashboard || !academySummary) return;
 
   const achievementOrder = ["firstObjective", "firstWorld", "certificationChampion", "hydraSlayer", "finalBoss"];
@@ -39,11 +44,55 @@
     })[character]);
   }
 
+  function completionPathwayCopy(config) {
+    const isExam = config.id === "aplus-core1" || config.id === "aplus-core2";
+    return isExam ? {
+      isExam,
+      cardAction: "Already passed this exam? Record Exam Pass",
+      recordedStatus: config.id === "aplus-core1" ? "Core 1 Passed" : "Core 2 Passed",
+      pathwayLabel: `${config.name} exam pass pathway`,
+      dateLabel: "Exam Pass Date",
+      recordTitle: `Record ${config.name} exam pass`,
+      editTitle: `Edit ${config.name} exam pass date`,
+      recordDescription: "Record the date this exam was passed so it can count toward Academy completion.",
+      editDescription: "Update only the Exam Pass Date associated with this learner-declared exam record.",
+      trustNote: `<strong>Learner-declared:</strong> Giant Slayer Academy does not independently verify this exam pass with CompTIA.`,
+      honorDescription: "Giant Slayer Academy accepts exam pass records on the honor system. By recording this result, you confirm that you passed the exam shown and that the date entered is accurate.",
+      honorConfirmation: "I confirm that I passed this exam and that the date entered is accurate.",
+      recordButton: "Record Exam Pass",
+      editButton: "Save Exam Pass",
+      requiredError: "Exam Pass Date is required.",
+      invalidError: "Enter a valid Exam Pass Date that is not in the future.",
+      honorError: "Confirm the Honor System acknowledgment before saving this exam pass.",
+      removeDescription: "exam pass record"
+    } : {
+      isExam,
+      cardAction: "Already Certified? Record Your Certification",
+      recordedStatus: "Already Certified",
+      pathwayLabel: `${config.name} Already Certified pathway`,
+      dateLabel: "Certification Earned Date",
+      recordTitle: `Record ${config.name} certification`,
+      editTitle: `Edit ${config.name} certification earned date`,
+      recordDescription: "Record the date this certification was earned so it can count toward Academy completion.",
+      editDescription: "Update only the Certification Earned Date associated with this learner-declared certification record.",
+      trustNote: `<strong>Learner-declared:</strong> Giant Slayer Academy does not independently verify this certification with CompTIA, AWS, LPI, an employer, or another issuer.`,
+      honorDescription: "Giant Slayer Academy accepts Already Certified records on the honor system. By recording this certification, you confirm that you earned the certification shown and that the date entered is accurate.",
+      honorConfirmation: "I confirm that I earned this certification and that the date entered is accurate.",
+      recordButton: "Record Your Certification",
+      editButton: "Save Certification",
+      requiredError: "Certification Earned Date is required.",
+      invalidError: "Enter a valid Certification Earned Date that is not in the future.",
+      honorError: "Confirm the Honor System acknowledgment before saving this certification.",
+      removeDescription: "Already Certified record"
+    };
+  }
+
   function openAlreadyCertifiedDialog(certificationId, mode = "record") {
     if (!alreadyCertifiedDialog || !alreadyCertifiedForm) return;
     const config = Object.values(ui.campaigns).find(item => item.id === certificationId);
     if (!config) return;
     const record = ui.getAlreadyCertified(certificationId);
+    const copy = completionPathwayCopy(config);
     alreadyCertifiedId.value = certificationId;
     alreadyCertifiedError.textContent = "";
     if (alreadyCertifiedHonor) alreadyCertifiedHonor.checked = false;
@@ -51,13 +100,16 @@
     alreadyCertifiedEntryPanel.classList.toggle("hidden", removing);
     alreadyCertifiedRemovePanel.classList.toggle("hidden", !removing);
     if (removing) {
-      alreadyCertifiedRemoveDescription.textContent = `Remove the Already Certified record for ${config.name}${record ? ` (${ui.formatCertificationDate(record.earnedDate)})` : ""}?`;
+      alreadyCertifiedRemoveDescription.textContent = `Remove the ${copy.removeDescription} for ${config.name}${record ? ` (${ui.formatCertificationDate(record.earnedDate)})` : ""}?`;
     } else {
       const editing = Boolean(record);
-      alreadyCertifiedDialogTitle.textContent = editing ? `Edit ${config.name} certification date` : `Record ${config.name} certification`;
-      alreadyCertifiedDialogDescription.textContent = editing
-        ? "Update only the date associated with this learner-declared certification record."
-        : "Record the date this certification was earned so it can count toward Academy completion.";
+      alreadyCertifiedDialogTitle.textContent = editing ? copy.editTitle : copy.recordTitle;
+      alreadyCertifiedDialogDescription.textContent = editing ? copy.editDescription : copy.recordDescription;
+      alreadyCertifiedDateLabel.textContent = copy.dateLabel;
+      alreadyCertifiedTrustNote.innerHTML = copy.trustNote;
+      alreadyCertifiedHonorDescription.textContent = copy.honorDescription;
+      alreadyCertifiedHonorConfirmation.textContent = copy.honorConfirmation;
+      saveAlreadyCertified.textContent = editing ? copy.editButton : copy.recordButton;
       alreadyCertifiedDate.max = ui.todayDateOnly();
       alreadyCertifiedDate.value = record?.earnedDate || "";
     }
@@ -73,13 +125,16 @@
   }
 
   function alreadyCertifiedMarkup(certificationId) {
+    const config = Object.values(ui.campaigns).find(item => item.id === certificationId);
+    if (!config) return "";
+    const copy = completionPathwayCopy(config);
     const record = ui.getAlreadyCertified(certificationId);
     if (!record) {
-      return `<button class="already-certified-record-action" type="button" data-already-certified-action="record" data-certification-id="${escapeHtml(certificationId)}">Already certified? Record certification</button>`;
+      return `<button class="already-certified-record-action" type="button" data-already-certified-action="record" data-certification-id="${escapeHtml(certificationId)}">${copy.cardAction}</button>`;
     }
     return `
       <div class="already-certified-recorded" role="status">
-        <strong>✓ Already Certified — ${escapeHtml(ui.formatCertificationDate(record.earnedDate))}</strong>
+        <strong>✓ ${copy.recordedStatus} — ${escapeHtml(ui.formatCertificationDate(record.earnedDate))}</strong>
         <span>Learner-declared</span>
         <small>Counts toward Academy completion; GSA training evidence remains independent.</small>
         <div class="already-certified-card-actions">
@@ -285,7 +340,7 @@
       <div class="dashboard-domain-row"><span><b>Strongest Domain:</b> ${strongest}</span><span><b>Weakest Domain:</b> ${weakest}</span></div>
       ${intelligenceMarkup(summary)}
       <div class="dashboard-achievements" aria-label="${summary.config.name} achievements">${achievementShelf(summary)}</div>
-      <div class="already-certified-slot" data-already-certified-slot="${summary.config.id}" aria-label="${summary.config.name} Already Certified pathway"></div>
+      <div class="already-certified-slot" data-already-certified-slot="${summary.config.id}" aria-label="${completionPathwayCopy(summary.config).pathwayLabel}"></div>
       <a href="${summary.config.campaign}" class="link-btn dashboard-enter">Enter ${summary.config.name}</a>`;
     campaignDashboard.append(card);
   }
@@ -305,18 +360,20 @@
   alreadyCertifiedForm?.addEventListener("submit", event => {
     event.preventDefault();
     const earnedDate = alreadyCertifiedDate.value;
+    const config = Object.values(ui.campaigns).find(item => item.id === alreadyCertifiedId.value);
+    const copy = completionPathwayCopy(config);
     if (!earnedDate) {
-      alreadyCertifiedError.textContent = "Certification earned date is required.";
+      alreadyCertifiedError.textContent = copy.requiredError;
       alreadyCertifiedDate.focus();
       return;
     }
     if (!ui.validCertificationDate(earnedDate)) {
-      alreadyCertifiedError.textContent = "Enter a valid certification date that is not in the future.";
+      alreadyCertifiedError.textContent = copy.invalidError;
       alreadyCertifiedDate.focus();
       return;
     }
     if (!alreadyCertifiedHonor?.checked) {
-      alreadyCertifiedError.textContent = "Confirm the Honor System acknowledgment before saving this certification.";
+      alreadyCertifiedError.textContent = copy.honorError;
       alreadyCertifiedHonor?.focus();
       return;
     }

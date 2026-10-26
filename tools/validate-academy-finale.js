@@ -145,6 +145,13 @@ requireCheck(importedProgressionCounts.join(",") === "0,1,2,3,4,5,6,7", "Already
 requireCheck(campaignEntries.every(([key]) => importedProgressionStorage.getItem(key) === null), "Seven imported certifications create no training-progress records.");
 requireCheck(importedProgression.ui.getAcademyCompletion().certifications.every(certification => certification.alreadyCertified && !certification.trainingComplete), "Seven imported certifications remain distinct from seven Final Boss completions.");
 
+const aplusExamStorage = createStorage();
+const aplusExamUi = loadCampaignUi(aplusExamStorage).ui;
+aplusExamUi.saveAlreadyCertified("aplus-core1", "2026-04-11");
+aplusExamUi.saveAlreadyCertified("aplus-core2", "2026-08-23");
+requireCheck(aplusExamUi.getAlreadyCertified("aplus-core1").earnedDate === "2026-04-11" && aplusExamUi.getAlreadyCertified("aplus-core2").earnedDate === "2026-08-23", "A+ Core 1 and Core 2 preserve independent exam pass dates in the existing saved-record schema.");
+requireCheck(aplusExamUi.getAcademyCompletion().completedCount === 2, "Independent A+ Core 1 and Core 2 exam pass records preserve the seven-track completion calculation.");
+
 const editId = campaignEntries[0][1].id;
 const beforeEdit = importedProgression.ui.getAlreadyCertified(editId);
 const afterEdit = importedProgression.ui.saveAlreadyCertified(editId, "2025-06-09");
@@ -287,7 +294,8 @@ requireCheck(campaignUi.includes("hydra-academy-finale-v1") && campaignUi.includ
 requireCheck(campaignUi.includes("hydra-academy-certification-imports-v1") && campaignUi.includes("learner-declared") && campaignUi.includes("already-certified"), "Shared engine exposes the separate versioned learner-declared certification pathway.");
 requireCheck(indexHtml.includes("academyFinaleLink") && hubScript.includes("syncAcademyCompletion"), "Select a Game exposes Hall access from the shared current-completion authority.");
 requireCheck(dashboard.includes("Academy Completion") && dashboard.includes("Enter the Hall") && dashboardHtml.includes("gsa-academy-finale-1"), "Command Center exposes 0/7–7/7 status and current-state Hall access.");
-requireCheck(dashboard.includes("Already certified? Record certification") && dashboard.includes("Learner-declared") && dashboard.includes("Edit date") && dashboard.includes("Remove"), "Command Center certification cards expose the approved Already Certified lifecycle.");
+requireCheck(dashboard.includes("Already passed this exam? Record Exam Pass") && dashboard.includes("Core 1 Passed") && dashboard.includes("Core 2 Passed") && dashboard.includes("Exam Pass Date"), "A+ Core 1 and Core 2 cards use exam-pass terminology.");
+requireCheck(dashboard.includes("Already Certified? Record Your Certification") && dashboard.includes("Already Certified") && dashboard.includes("Certification Earned Date") && dashboard.includes("Edit date") && dashboard.includes("Remove"), "The other five certification cards preserve certification-earned terminology and lifecycle controls.");
 requireCheck(dashboardHtml.includes('id="alreadyCertifiedDialog"') && dashboardHtml.includes("does not independently verify") && dashboardHtml.includes("training progress, scores, mastery, exams, achievements, PBQs, and labs will not be deleted"), "Reusable Command Center dialog communicates the trust boundary and safe removal scope.");
 requireCheck(dashboardHtml.includes("Honor System") && dashboardHtml.includes('id="alreadyCertifiedHonor"') && dashboard.includes("alreadyCertifiedHonor.checked = false") && dashboard.includes("Confirm the Honor System acknowledgment before saving this certification."), "Record and Edit Date require a fresh, save-time Honor System acknowledgment without changing imported evidence.");
 requireCheck(sharedCss.includes("academy-finale-announcement") && sharedCss.includes("@media (max-width: 480px)"), "Shared completion announcement has exact 390px-compatible styling.");

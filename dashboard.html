@@ -36,23 +36,23 @@
           <span class="campaign-panel-label">ACADEMY COMPLETION PATHWAY</span>
           <h2 id="alreadyCertifiedDialogTitle">Record an existing certification</h2>
           <p id="alreadyCertifiedDialogDescription">Record the date this certification was earned.</p>
-          <p class="already-certified-trust-note"><strong>Learner-declared:</strong> Giant Slayer Academy does not independently verify this certification with CompTIA, AWS, LPI, an employer, or another issuer.</p>
+          <p id="alreadyCertifiedTrustNote" class="already-certified-trust-note"><strong>Learner-declared:</strong> Giant Slayer Academy does not independently verify this certification with CompTIA, AWS, LPI, an employer, or another issuer.</p>
           <input id="alreadyCertifiedId" type="hidden">
-          <label class="already-certified-date-label" for="alreadyCertifiedDate">Certification earned date
+          <label class="already-certified-date-label" for="alreadyCertifiedDate"><span id="alreadyCertifiedDateLabel">Certification Earned Date</span>
             <input id="alreadyCertifiedDate" type="date" required>
           </label>
           <fieldset class="already-certified-honor">
             <legend>Honor System</legend>
-            <p><em>Giant Slayer Academy accepts Already Certified records on the honor system. By recording this certification, you confirm that you earned the certification shown and that the date entered is accurate.</em></p>
+            <p><em id="alreadyCertifiedHonorDescription">Giant Slayer Academy accepts Already Certified records on the honor system. By recording this certification, you confirm that you earned the certification shown and that the date entered is accurate.</em></p>
             <label for="alreadyCertifiedHonor">
               <input id="alreadyCertifiedHonor" type="checkbox" required>
-              <span>I confirm that I earned this certification and that the date entered is accurate.</span>
+              <span id="alreadyCertifiedHonorConfirmation">I confirm that I earned this certification and that the date entered is accurate.</span>
             </label>
           </fieldset>
           <p id="alreadyCertifiedError" class="already-certified-error" role="alert" aria-live="polite"></p>
           <div class="already-certified-dialog-actions">
             <button id="cancelAlreadyCertified" class="link-btn secondary" type="button">Cancel</button>
-            <button class="link-btn" type="submit">Save certification</button>
+            <button id="saveAlreadyCertified" class="link-btn" type="submit">Record Your Certification</button>
           </div>
         </section>
 
