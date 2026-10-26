@@ -220,6 +220,10 @@ async function loadQuestions() {
             modeDisplay.textContent = world7Modes[mode].name;
         }
         
+        // Prepare stable presentations once for Objective Sweeps and their mixed modes.
+        if (isObjectiveMode || (!isFinalExam && isWorld6Mode)) {
+            questions = questions.map(question => shuffleQuestionChoices(question));
+        }
         startQuizOrTimer();
 
     } catch (error) {
@@ -239,6 +243,19 @@ function shuffle(items) {
         [items[index], items[randomIndex]] = [items[randomIndex], items[index]];
     }
     return items;
+}
+
+function shuffleQuestionChoices(question, random = Math.random) {
+    const choices = question.choices.map((text, sourceIndex) => ({ text, sourceIndex }));
+    for (let i = choices.length - 1; i > 0; i--) {
+        const j = Math.floor(random() * (i + 1));
+        [choices[i], choices[j]] = [choices[j], choices[i]];
+    }
+    return {
+        ...question,
+        choices: choices.map(choice => choice.text),
+        answer: choices.findIndex(choice => choice.sourceIndex === Number(question.answer))
+    };
 }
 
 function buildWeaknessMix(allQuestions, count, certificationSlug) {
