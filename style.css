@@ -3168,3 +3168,20 @@ HYDRA QUIZ
     }
 }
 
+
+@media (hover: none) and (pointer: coarse) {
+    .arcade-body #start-screen,
+    .arcade-body #main-content {
+        padding-inline: env(safe-area-inset-left, 0px) env(safe-area-inset-right, 0px);
+    }
+
+    .arcade-body #start-screen {
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .arcade-body .start-gate,
+    .arcade-body .hydra-image {
+        max-width: min(92vw, 100%);
+    }
+}
